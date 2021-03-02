@@ -1,0 +1,133 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema  http://www.spase-group.org/data/schema/spase-2_2_0.xsd",
+    "Version": "2.2.0",
+    "NumericalData": {
+      "ResourceID": "spase://VMO/NumericalData/Geotail/MGF/PT15S",
+      "ResourceHeader": {
+        "ResourceName": "Geotail 15-sec magnetic field data, solar wind only",
+        "ReleaseDate": "2011-04-07T00:00:00",
+        "Description": "Data consist of 15-sec averages of magnetic field \nmagnitude and GSE Cartesian components, from the MGF magnetometer on \nGeotail.  Data are for only the solar wind phases of the Geotail orbit.  \nThe Geotail position vector in GSE coordinates is included.",
+        "Acknowledgement": "Dr. T. Nagai",
+        "Contact": [
+          {
+            "PersonID": "spase://SMWG/Person/Tsugunobu.Nagai",
+            "Role": "PrincipalInvestigator"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Natalia.E.Papitashvili",
+            "Role": "DataProducer"
+          }
+        ],
+        "InformationURL": {
+          "Name": "Readme file at SPDF",
+          "URL": "ftp://spdf.gsfc.nasa.gov/pub/data/geotail/mgf/mag_sw_15s_ascii/00readme",
+          "Description": "Details on creation of this data set"
+        }
+      },
+      "AccessInformation": {
+        "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+        "Availability": "Online",
+        "AccessRights": "Open",
+        "AccessURL": [
+          {
+            "Name": "FTP access to files at SPDF",
+            "URL": "ftp://spdf.gsfc.nasa.gov/pub/data/geotail/mgf/mag_sw_15s_ascii/"
+          },
+          {
+            "Name": "HTTP access to files at SPDF",
+            "URL": "http://spdf.gsfc.nasa.gov/pub/data/geotail/mgf/mag_sw_15s_ascii/",
+            "Description": "In CDF via HTTP from SPDF"
+          },
+          {
+            "Name": "OMNIWeb-Plus",
+            "URL": "http://omniweb.sci.gsfc.nasa.gov/ftpbrowser/geotail_mag15s.html",
+            "Description": "FTPBrowser graphical display interface to ASCII data"
+          }
+        ],
+        "Format": "Text",
+        "Acknowledgement": "Please acknowledge Principal Investigator T. Nagai, U. Tokyo, \nand J. King and N. Papitashvili, NASA/GSFC/SPDF, data set producers."
+      },
+      "ProcessingLevel": "Calibrated",
+      "InstrumentID": "spase://SMWG/Instrument/Geotail/MGF",
+      "MeasurementType": "MagneticField",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "1995-03-01T00:00:00",
+          "StopDate": "2000-06-10T00:00:00"
+        },
+        "Cadence": "PT0.32S"
+      },
+      "ObservedRegion": [
+        "Heliosphere.NearEarth",
+        "Earth.Magnetosphere.Magnetotail"
+      ],
+      "Parameter": [
+        {
+          "Name": "Time",
+          "ParameterKey": "Column_1, Column_2, Column_3, Column_4, Column_5",
+          "Description": "Universal time at start of average",
+          "Cadence": "PT15S",
+          "Structure": {
+            "Size": "5",
+            "Description": "Year, day-of-year, hour, minute, second at start of average"
+          },
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Magnetic Field Magnitude",
+          "ParameterKey": "Column_7",
+          "Description": "Average magnitude magnitude",
+          "Cadence": "PT15S",
+          "Units": "nT",
+          "Field": {
+            "Qualifier": "Vector",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "Magnetic Field Vector",
+          "ParameterKey": "Column_8, Column_9, Column_10",
+          "Description": "GSE Cartesian components of magnetic field vector",
+          "Cadence": "PT15S",
+          "Units": "nT",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GSE"
+          },
+          "Structure": {
+            "Size": "3",
+            "Description": "GSE Cartesian components in X,Y,Z sequence"
+          },
+          "Field": {
+            "Qualifier": "Vector",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "Spacecraft position vector",
+          "ParameterKey": "Column_11, Column_12, Column_13",
+          "Description": "GSE Cartesian components of spacecraft position vector",
+          "Cadence": "PT15S",
+          "Units": "Re",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GSE"
+          },
+          "Structure": {
+            "Size": "3",
+            "Description": "GSE Cartesian components in X,Y,Z sequence"
+          },
+          "Support": {
+            "Qualifier": "Vector",
+            "SupportQuantity": "Positional"
+          }
+        }
+      ]
+    }
+  }
+}

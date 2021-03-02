@@ -1,0 +1,170 @@
+<?xml version="1.0"?>
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_2_9.xsd">
+  <Version>2.2.9</Version>
+  <NumericalData>
+    <ResourceID>spase://VSPO/NumericalData/SAC-C/CSC/MAGF/PT1S</ResourceID>
+    <ResourceHeader>
+      <ResourceName>SAC-C Mag-F: High Precision Magnetic Scalar Data</ResourceName>
+      <AlternateName>Sat&#xE9;lite de Aplicaciones Cient&#xED;ficas-C Mag-F: Calibrated CSC data</AlternateName>
+      <ReleaseDate>2019-05-05T12:34:56Z</ReleaseDate>
+      <Description>This dataset contains 1 second measurements of the scalar magnetic field from from the Compact Spherical Coil (CSC) Fluxgate Vector Magnetometer on the SAC-C spacecraft.</Description>
+      <Acknowledgement>Centre National d'Etudes Spatiales (France); National Aeronautics and Space Administration (United States); Danish Space Research Institute (Denmark); National Commission of Space Activities (CONAE) (Argentina); Instituto Nacional de Pesquisas Espaciais, Brazil (Brazil); Agenzia Spaziale Italiana (Italy)</Acknowledgement>
+      <Contact>
+        <PersonID>spase://SMWG/Person/UNKNOWN</PersonID>
+        <Role>ProjectScientist</Role>
+</Contact>
+      <Contact>
+        <PersonID>spase://SMWG/Person/James.M.Weygand</PersonID>
+        <Role>MetadataContact</Role>
+</Contact>
+      <InformationURL>
+        <Name>The SAC-C Project</Name>
+        <URL>https://directory.eoportal.org/web/eoportal/satellite-missions/s/sac-c</URL>
+        <Description>Information about the SAC-C Compact Spherical Coil Fluxgate Vector Magnetometer.</Description>
+        <Language>en</Language>
+</InformationURL>
+      <PriorID>spase://VMO/NumericalData/SAC-C/CSC/MAGF/PT1S</PriorID>
+</ResourceHeader>
+    <AccessInformation>
+      <RepositoryID>spase://SMWG/Repository/SAC-C</RepositoryID>
+      <Availability>Online</Availability>
+      <AccessRights>Open</AccessRights>
+      <AccessURL>
+        <Name>Virtual Magnetospheric Observatory</Name>
+        <URL>http://vmo.igpp.ucla.edu/data1/SAC-C/</URL>
+        <Description>Compact Spherical Coil Fluxgate Vector Magnetometer MAG-R data.</Description>
+</AccessURL>
+      <Format>Text</Format>
+      <Acknowledgement>Dr. Jose J Achache; Dr. Ib Laursen</Acknowledgement>
+</AccessInformation>
+    <ProcessingLevel>Calibrated</ProcessingLevel>
+    <ProviderResourceName>Overhauser Effect Scalar Magnetometer Data</ProviderResourceName>
+    <ProviderProcessingLevel>Calibrated</ProviderProcessingLevel>
+    <InstrumentID>spase://SMWG/Instrument/SAC-C/CSC</InstrumentID>
+    <MeasurementType>MagneticField</MeasurementType>
+    <TemporalDescription>
+      <TimeSpan>
+        <StartDate>2001-01-23T00:00:00Z</StartDate>
+        <StopDate>2002-05-04T23:59:59Z</StopDate>
+        <Note>It is not clear if this mission is still active.</Note>
+</TimeSpan>
+      <Cadence>PT1S</Cadence>
+</TemporalDescription>
+    <ObservedRegion>Earth.NearSurface</ObservedRegion>
+    <ObservedRegion>Earth.NearSurface.AuroralRegion</ObservedRegion>
+    <ObservedRegion>Earth.NearSurface.Ionosphere</ObservedRegion>
+    <ObservedRegion>Earth.NearSurface.PolarCap</ObservedRegion>
+    <Parameter>
+      <Name>Universal Time</Name>
+      <ParameterKey>Time</ParameterKey>
+      <Description>Universal time columns from left to right are: year-month-day (yyyy-mm-dd) and seconds of the day.</Description>
+      <Cadence>PT1S</Cadence>
+      <Structure>
+        <Size>2</Size>
+        <Description>Universal Time expressed using a 6-column day, month, year, hour, minute, second representation</Description>
+        <Element>
+          <Name>Year-Month-Day</Name>
+          <Index>1</Index>
+          <ParameterKey>Column_1-Column_2-Column_3</ParameterKey>
+</Element>
+        <Element>
+          <Name>Second</Name>
+          <Index>2</Index>
+          <ParameterKey>Second</ParameterKey>
+</Element>
+</Structure>
+      <Support>
+        <SupportQuantity>Temporal</SupportQuantity>
+</Support>
+</Parameter>
+    <Parameter>
+      <Name>SAC-C Spacecraft Position Vector in ECEF polar coordinates</Name>
+      <ParameterKey>Position Vectors</ParameterKey>
+      <Description>Location of the spacecraft in Earth Centered, Earth Fixed polar coordinates in units of Re and degrees.</Description>
+      <Cadence>PT1S</Cadence>
+      <CoordinateSystem>
+        <CoordinateRepresentation>Spherical</CoordinateRepresentation>
+        <CoordinateSystemName>ECEF</CoordinateSystemName>
+</CoordinateSystem>
+      <Structure>
+        <Size>3</Size>
+        <Element>
+          <Name>Radius</Name>
+          <Qualifier>Component.I</Qualifier>
+          <Index>1</Index>
+          <ParameterKey>r</ParameterKey>
+          <Units>km</Units>
+</Element>
+        <Element>
+          <Name>Theta</Name>
+          <Qualifier>Component.J</Qualifier>
+          <Index>2</Index>
+          <ParameterKey>theta</ParameterKey>
+          <Units>degrees</Units>
+</Element>
+        <Element>
+          <Name>Phi</Name>
+          <Qualifier>Component.K</Qualifier>
+          <Index>3</Index>
+          <ParameterKey>Phi</ParameterKey>
+          <Units>degrees</Units>
+</Element>
+</Structure>
+      <Support>
+        <SupportQuantity>Positional</SupportQuantity>
+</Support>
+</Parameter>
+    <Parameter>
+      <Name>Information and quality flag relating to position.</Name>
+      <ParameterKey>Qpos</ParameterKey>
+      <Description>The bits have the following interpretation (bit 1 is least significant bit - LSB): 0 = poor quality, 1 = Good quality (below 25 m spatial).</Description>
+      <Cadence>PT1S</Cadence>
+      <Units>unitless</Units>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+</Support>
+</Parameter>
+    <Parameter>
+      <Name>Magnetic Field Magnitude</Name>
+      <ParameterKey>F</ParameterKey>
+      <Description>SAC-C Mag-F Magnitude data.</Description>
+      <Cadence>PT1S</Cadence>
+      <Units>nT</Units>
+      <Field>
+        <Qualifier>Magnitude</Qualifier>
+        <FieldQuantity>Magnetic</FieldQuantity>
+</Field>
+</Parameter>
+    <Parameter>
+      <Name>Information and quality flag relating to F (scalar magnetic measurement).</Name>
+      <ParameterKey>Qf</ParameterKey>
+      <Description>Information and quality flag relating to F (scalar magnetic measurement). The bits of this CDF_UINT2 has the following interpretation (bit 1 is least significant bit - LSB):
+
+    1.  Frequency calibration: 0 = not applied (poor), 1 = applied (good).
+    2.  Has occasional time shifts: 0 = yes (poor), 1 = no (good).
+    3.  Spacecraft disturbance: 0 = ignored, 1 = compensated.
+    4.  Scalar magnetometer temperature information: 0 = unavailable, 1 = available.
+    5.  Not currently used = 0.
+    6.  Not currently used = 0.
+    7.  Not currently used = 0.
+    8.  Scalar derived from: 0 = Scalar magnetometer, 1 = Vector magnetometer.
+    9.  General vector data quality: 0 = poor, 1 = good.
+    10. Vector magnetometer sample rate: 0 = 25 Hz, 1 = 100 Hz.
+    11. Vector magnetometer temperature information: 0 = unavailable, 1 = available.
+    12. Not currently used = 0.
+    13. Torquer coils: 0 = on, 1 = off.
+    14. Torquer coils disturbance: 0 = &gt;1nT, 1 = &lt;1nT.
+    15. Scalar magnetometer power: 0 = on, 1 = off.
+    16. Not currently used = 0.
+
+If bit 8 is set to 0 (Scalar magnetometer), one can rely on the bits 1-7. If bit 8 is is set to 1 (Vector magnetometer), one can rely on bits 9-16. Further information may be included in this field.
+Example: QF = 12928 = 011001010000000b: Scalar derived from Vector magnetometer, scalar magnetometer on, torquer coils off (=&gt;no disturbance), poor attitude, vector magnetometer temperature information unavailable, 100 Hz poor quality CSC data.
+Example: To quickly identify Ovh samples (bit 8) do: if QF/28-1 is even then from Ovh.</Description>
+      <Cadence>PT1S</Cadence>
+      <Units>unitless</Units>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+</Support>
+</Parameter>
+</NumericalData>
+</Spase>

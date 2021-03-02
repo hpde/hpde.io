@@ -1,0 +1,255 @@
+{
+  "Spase": {
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_2_2.xsd",
+    "Version": "2.2.2",
+    "NumericalData": {
+      "ResourceID": "spase://VMO/NumericalData/THEMIS/Ground/Yellowknife/Magnetometer/PT0.5S",
+      "ResourceHeader": {
+        "ResourceName": "Yellowknife Vector Magnetic Field Data",
+        "ReleaseDate": "2012-06-05T12:34:56.789",
+        "Description": "Ground-based vector magnetic field at Yellowknife, Canada, 0.5 s, THEMIS GBO Network, CANMON Network, Higher latitude chain (Lat 62.5, Long 245.7). Station Code: YKNF.",
+        "Acknowledgement": "V. Angelopoulos, C. T. Russell, NASA Contract NAS5-02099.",
+        "Contact": [
+          {
+            "PersonID": "spase://SMWG/Person/Vassilis.Angelopoulos",
+            "Role": "PrincipalInvestigator"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Christopher.T.Russell",
+            "Role": "PrincipalInvestigator"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Lee.Frost.Bargatze",
+            "Role": "MetadataContact"
+          }
+        ],
+        "InformationURL": {
+          "Name": "THEMIS Ground-based Observatory (GBO) Network Information Web Site",
+          "URL": "http://themis.ssl.berkeley.edu/gmag_desc.shtml",
+          "Description": "THEMIS Ground-based Observatory (GBO) MAGnetometers (GMAGs)"
+        }
+      },
+      "AccessInformation": {
+        "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF/CDAWeb",
+        "Availability": "Online",
+        "AccessRights": "Open",
+        "AccessURL": [
+          {
+            "Name": "CDAWeb FTP Access",
+            "URL": "ftp://cdaweb.gsfc.nasa.gov/pub/data/themis/thg/l2/mag/yknf/2008",
+            "Description": "NASA/GSFC CDAWeb ftp access to the data."
+          },
+          {
+            "Name": "ASCII, CDF, and plots from CDAWeb",
+            "URL": "http://cdaweb.gsfc.nasa.gov",
+            "Description": "Access to ASCII, CDF, and plots via NASA/GSFC CDAWeb"
+          }
+        ],
+        "Format": "CDF",
+        "Encoding": "None",
+        "Acknowledgement": "V. Angelopoulos, C. T. Russell, NASA Contract NAS5-02099."
+      },
+      "ProcessingLevel": "Calibrated",
+      "InstrumentID": "spase://SMWG/Instrument/Ground/Yellowknife/Magnetometer",
+      "MeasurementType": "MagneticField",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "2008-03-14T00:00:00.000",
+          "StopDate": "2008-10-16T23:59:59.500"
+        },
+        "Cadence": "PT0.5S"
+      },
+      "Keyword": [
+        "Station Code:  YKNF",
+        "CDF Global Attribute PROJECT:                    THEMIS",
+        "CDF Global Attribute DATA_VERSION:               1",
+        "CDF Global Attribute DISCIPLINE:                 Space Physics>Magnetospheric Science",
+        "CDF Global Attribute DISCIPLINE:                 Space Physics>Ionospheric Science",
+        "CDF Global Attribute DATA_TYPE:                  MAG>Magnetic Field",
+        "CDF Global Attribute ADID_REF:                   NSSD0110",
+        "CDF Global Attribute GENERATION_DATE:            2008-03-15",
+        "CDF Global Attribute MODS:                       Revision Aug 16 2006",
+        "CDF Global Attribute GENERATED_BY:               THEMIS SOC",
+        "CDF Global Attribute RULES_OF_USE:               Open Data for Scientific Use."
+      ],
+      "Parameter": [
+        {
+          "Name": "B in HDZ Components",
+          "Set": "Time series defined by using:  thg_mag_yknf_epoch",
+          "ParameterKey": "thg_mag_yknf",
+          "Description": "Magnetic field B in HDZ vector components",
+          "Cadence": "PT0.5S",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "LGM"
+          },
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "B in HDZ Components",
+            "ValueFormat": "F7.1",
+            "ScaleType": "LinearScale"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "Magnetic North - H",
+                "Qualifier": "Component.I",
+                "Index": "1",
+                "Units": "nT",
+                "UnitsConversion": "1e-9>T",
+                "ValidMin": "-60000.0",
+                "ValidMax": "60000.0"
+              },
+              {
+                "Name": "Magnetic East - D",
+                "Qualifier": "Component.J",
+                "Index": "2",
+                "Units": "nT",
+                "UnitsConversion": "1e-9>T",
+                "ValidMin": "-60000.0",
+                "ValidMax": "60000.0"
+              },
+              {
+                "Name": "Vertical Down - Z",
+                "Qualifier": "Component.K",
+                "Index": "3",
+                "Units": "nT",
+                "UnitsConversion": "1e-9>T",
+                "ValidMin": "-60000.0",
+                "ValidMax": "60000.0"
+              }
+            ]
+          },
+          "FillValue": "NaN",
+          "Field": {
+            "Qualifier": "Vector",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "H component of B",
+          "Set": "Time series defined by using:  thg_mag_yknf_epoch",
+          "ParameterKey": "thg_magh_yknf",
+          "Description": "H component of the Magnetic Field Vector",
+          "Caveats": "This parameter is virtual.  It is calculated by calling the function ALTERNATE_VIEW with the following input parameters:  thg_mag_yknf.",
+          "Cadence": "PT0.5S",
+          "Units": "nT",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "Magnetic North - H",
+            "ValueFormat": "F7.1",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "-60000.0",
+          "ValidMax": "60000.0",
+          "FillValue": "NaN",
+          "Field": {
+            "Qualifier": "Component.I",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "D component of B",
+          "Set": "Time series defined by using:  thg_mag_yknf_epoch",
+          "ParameterKey": "thg_magd_yknf",
+          "Description": "D component of the Magnetic Field Vector",
+          "Caveats": "This parameter is virtual.  It is calculated by calling the function ALTERNATE_VIEW with the following input parameters:  thg_mag_yknf.",
+          "Cadence": "PT0.5S",
+          "Units": "nT",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "Magnetic East - D",
+            "ValueFormat": "F7.1",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "-60000.0",
+          "ValidMax": "60000.0",
+          "FillValue": "NaN",
+          "Field": {
+            "Qualifier": "Component.J",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "Z component of B",
+          "Set": "Time series defined by using:  thg_mag_yknf_epoch",
+          "ParameterKey": "thg_magz_yknf",
+          "Description": "Z component of the Magnetic Field Vector",
+          "Caveats": "This parameter is virtual.  It is calculated by calling the function ALTERNATE_VIEW with the following input parameters:  thg_mag_yknf.",
+          "Cadence": "PT0.5S",
+          "Units": "nT",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "Vertical Down - Z",
+            "ValueFormat": "F7.1",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "-60000.0",
+          "ValidMax": "60000.0",
+          "FillValue": "NaN",
+          "Field": {
+            "Qualifier": "Component.K",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "thg_mag_yknf_time",
+          "ParameterKey": "thg_mag_yknf_time",
+          "Description": "thg_mag_yknf_time, UTC, in seconds since 01-Jan-1970 00:00:00",
+          "Caveats": "Unleaped seconds",
+          "Cadence": "PT0.5S",
+          "Units": "s",
+          "RenderingHints": {
+            "AxisLabel": "UT",
+            "ValueFormat": "E12.2"
+          },
+          "ValidMin": "0.0",
+          "ValidMax": "5.0e+9",
+          "FillValue": "NaN",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "thg_mag_yknf_epoch",
+          "ParameterKey": "thg_mag_yknf_epoch",
+          "Description": "thg_mag_yknf_epoch",
+          "Caveats": "This parameter is virtual.  It is calculated by calling the function COMP_THEMIS_EPOCH with the following input parameters:  thg_mag_yknf_epoch0, thg_mag_yknf_time.",
+          "Cadence": "PT0.5S",
+          "RenderingHints": {
+            "AxisLabel": "UT"
+          },
+          "ValidMin": "01-Jan-2001 00:00:00.000",
+          "ValidMax": "31-Dec-2100 23:59:59.999",
+          "FillValue": "31-Dec-9999 23:59:59.999",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "range_epoch",
+          "ParameterKey": "range_epoch",
+          "Description": "range_epoch",
+          "Cadence": "PT0.5S",
+          "Units": "ms",
+          "UnitsConversion": "1.0e-3>sec",
+          "RenderingHints": {
+            "AxisLabel": "UT"
+          },
+          "ValidMin": "01-Jan-2001 00:00:00.000",
+          "ValidMax": "31-Dec-2100 23:59:59.999",
+          "FillValue": "31-Dec-9999 23:59:59.999",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        }
+      ],
+      "Extension": {
+        "Note": "\n            CDAWEB ISTP CDF Global Attribute Metadata\n            Project                              1   00   CDF_CHAR              6    THEMIS\n            Source_name                          1   00   CDF_CHAR             38    THG_L2>THEMIS Ground Based Observatory\n            Discipline                           2   00   CDF_CHAR             36    Space Physics>Magnetospheric Science\n            Discipline                           2   01   CDF_CHAR             33    Space Physics>Ionospheric Science\n            Data_type                            1   00   CDF_CHAR              3    MAG\n            Descriptor                           1   00   CDF_CHAR             24    YKNF>Yellowknife, Canada\n            Data_version                         1   00   CDF_CHAR              1    1\n            PI_name                              1   00   CDF_CHAR             31    V. Angelopoulos and C. T. Russell\n            PI_affiliation                       1   00   CDF_CHAR             40    UCB and UCLA respectively, NASA NAS5-02099\n            TEXT                                 1   00   CDF_CHAR             61    THEMIS Ground Based Observatory part of the THEMIS GBO effort\n            Instrument_type                      1   00   CDF_CHAR             47    Ground-Based Magnetometers, Riometers, Sounders\n            Mission_group                        1   00   CDF_CHAR              6    THEMIS\n            Logical_source                       1   00   CDF_CHAR             15    thg_l2_mag_yknf\n            Logical_file_id                      1   00   CDF_UCHAR            28    thg_l2_mag_yknf_20080314_v01\n            Logical_source_description           1   00   CDF_CHAR            132    Higher latitude chain (Lat 62.5, Long 245.7), Ground-based Vector Magnetic Field at Yellowknife, Canada, 0.5 sec, THEMIS GBO network\n            Time_resolution                      1   00   CDF_CHAR              4    0.5s\n            Rules_of_use                         1   00   CDF_CHAR             28    Open Data for Scientific Use\n            Generated_by                         1   00   CDF_CHAR             10    THEMIS SOC\n            Generation_date                      1   00   CDF_UCHAR            10    2008-03-15\n            Acknowledgement                      1   00   CDF_CHAR             24    NASA Contract NAS5-02099\n            MODS                                 1   00   CDF_CHAR             15    Rev- 2006-08-16\n            ADID_ref                             1   00   CDF_CHAR              8    NSSD0110\n            LINK_TEXT                            2   00   CDF_CHAR             59    THEMIS Ground-based Observatory (GBO) MAGnetometers (GMAGs)\n            LINK_TEXT                            2   01   CDF_CHAR             66    CAL files at http://www-ssc.igpp.ucla.edu/themis_data/calib_files/\n            LINK_TITLE                           1   00   CDF_CHAR              8    overview\n            HTTP_LINK                            1   00   CDF_CHAR             46    http://themis.ssl.berkeley.edu/gmag_desc.shtml\n            File_naming_convention               1   00   CDF_CHAR             26    source_datatype_descriptor\n         "
+      }
+    }
+  }
+}

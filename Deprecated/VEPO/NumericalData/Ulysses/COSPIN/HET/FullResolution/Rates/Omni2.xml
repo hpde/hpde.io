@@ -1,0 +1,788 @@
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_2_1.xsd">
+    <Version>2.2.1</Version>
+    <NumericalData>
+        <ResourceID>spase://VEPO/NumericalData/Ulysses/COSPIN/HET/FullResolution/Rates/Omni2</ResourceID>
+        <ResourceHeader>
+            <ResourceName>Ulysses COSPIN/HET readout by readout counts and accumulation times for spin-averaged counting rates H10-H27.</ResourceName>
+            <ReleaseDate>2009-09-24T00:00:00.000</ReleaseDate>
+            <Description>
+           A directory containing daily ftp-downloadable files containing readout-by-readout listings of
+           the counts accumulated in the H1-H27 spin-averaged counting rates.  The rates H10-H13 are 
+           coincidence counting rates corresponding primarily to heavy nuclei (Z&gt;2) with penetrating
+           power equivalent to carbon-12 nuclei in the approximate energy ranges 26-36, 44-127, 127-173,
+           and &gt;173 MeV/nucleon, resspectively.
+           H14-H27 are single detector counting rates giving, in order,  the total number of counts 
+           above the lowest level discriminator thresholds of detectors D1-D6, K1-K6 (or D7-D12), 
+           A (or D13), and the anti-coincidence scintillator S.  The single detector counting rates 
+           are provided simply to assess the health of the detectors and are of little use 
+           scientifically.
+           The naming convention for the daily files is uly_het_full_rat_omni2_YYYDDD.txt, where YYY 
+           indicates the three-digit year since 1900 (e.g. YYY=090 for 1990, and YYY=102 for 2002) and 
+           DDD indicates the three digit day of year (Jan. 1 = 1). 
+           In each file, following a detailed description of the format, the data consist of a listing 
+           of counts accumulated in the H10-H27 spin-averaged counting rates during the intervals
+           between successive readouts, organized into columns as described below.
+           The first 4 columns give the start time of the counting rate accumulation period as 
+           fractional year (to 12 decimal places) and as  year since 1900, day of year, and ms 
+           of day at the start of the accumulation, followed by 1 column giving the duration of 
+           the accumulation period in milli-seconds (it is the same for all rates except H13, 
+           which is read out twice in each accumulation period, and is thus represented as
+           H13a and H13b - see below and embedded documentation in each daily file), and 19 
+           columns giving the counts accumulated in that period for each rate.  All fields 
+           except for the fractional year are in integer format.  The start time for H13a is
+           the time given  as the start time for the line, but (to sufficient accuracy) its 
+           accumulation period is half the period given under "coverage".  Again, to sufficient 
+           accuracy, the start time for H13b is the time given plus half the accumulation period, 
+           and the accumulation period for H13b is half the period given under "coverage".
+           Each line contains data for one single readout of the rates H10-H12, H13a,
+           H13b, and H14-H27.  All readouts where at least one of the rates has a non-fill value 
+           are included.  Where fill does occur it is indicated by -1. 
+           Since the accumulation period for each readout is forced to include an integral number 
+           of spacecraft spins in order to produce pure spin-averaged measurements, the lengths of 
+           the accumulation periods vary in a cyclic manner as the period of the telemetry cycle 
+           beats with the spacecraft spin period.  At the most common science telemetry rate, 
+           2048 bps, each rate in this file is read out on average once every 128 seconds, except for 
+           H13 which is readout on average twice in every 128 seconds.  At 2048 bps, the cycle of
+           accumulation periods is 132, 132, 120, 132, 132,, 120, 132, ... seconds.
+           No noise-removal or despiking has been done, so caution must be used in
+           interpreting isolated large increases or decreases in the counting rates.
+       </Description>
+            <Acknowledgement>
+         Please acknowledge the Lead HET Investigator and COSPIN P.I., Dr. R. Bruce McKibben
+       </Acknowledgement>
+            <Contact>
+                <PersonID>spase://SMWG/Person/R.Bruce.McKibben</PersonID>
+                <Role>PrincipalInvestigator</Role>
+                <Role>TeamLeader</Role>
+            </Contact>
+            <Contact>
+                <PersonID>spase://SMWG/Person/Clifford.Lopate</PersonID>
+                <Role>DataProducer</Role>
+            </Contact>
+            <Contact>
+                <PersonID>spase://SMWG/Person/James.Connell</PersonID>
+                <Role>CoInvestigator</Role>
+            </Contact>
+            <InformationURL>
+                <Name>
+           The Ulysses cosmic ray and solar particle investigation
+         </Name>
+                <URL>
+          http://ufa.esac.esa.int/ufa/#instruments
+         </URL>
+                <Description>
+           Published (J.A. Simpson et al., Astron. Astrophys. v92, pp365-399, 1992) description 
+           of the COSPIN Instrumentation.  See especially section 4.3 for a detailed description 
+           of the HET.
+         </Description>
+            </InformationURL>
+            <InformationURL>
+                <Name>
+           COSPIN/HET User Notes
+         </Name>
+                <URL>
+           http://ufa.esac.esa.int/ufa/#instruments
+         </URL>
+                <Description>
+           Identification of data channels archived and brief discussion of data structure
+         </Description>
+            </InformationURL>
+            <InformationURL>
+                <Name>
+           ReadMeHETFullRes.doc
+         </Name>
+                <URL>
+           http://ufa.esac.esa.int/ufa/#instruments
+         </URL>
+                <Description>
+           Top Level descriptions of formats and contents of the six file types that make up the
+           COSPIN HET Full Resolution Data Set. Detailed descriptions of the formats and contents
+           are to found in header lines at the start of each downloaded data file.  The data 
+           covered by this spase description are described in the ReadMe under the heading
+           rat_omni2.
+           (*** Note ***:  During the build-up of this data set, a few errors and omissions have been 
+           found in the header lines for some of the file types.  These errors and omissions are listed 
+           in this ReadMe file.  Upon completion of the data set, all errors and omissions discovered
+           will be corrected in all of the header lines of all of the file types and this note will be 
+           removed.)
+         </Description>
+            </InformationURL>
+        </ResourceHeader>
+        <AccessInformation>
+            <RepositoryID>spase://SMWG/Repository/ESA/ESAC/UlyssesFinalArchive</RepositoryID>
+            <Availability>Online</Availability>
+            <AccessRights>Open</AccessRights>
+            <AccessURL>
+                <Name>Ulysses COSPIN/HET Full Resolution Spin-Average (Omni2) Counting Rate Data</Name>
+                <URL>http://ufa.esac.esa.int/ufa/#data</URL>
+                <Description>
+           Parent directory containing daily ftp-downloadable files with the format described below
+        </Description>
+            </AccessURL>
+            <Format>Text</Format>
+            <Encoding>ASCII</Encoding>
+            <Acknowledgement>R.B. McKibben, Space Science Center, University of New Hampshire</Acknowledgement>
+        </AccessInformation>
+        <InstrumentID>spase://SMWG/Instrument/Ulysses/COSPIN/HET</InstrumentID>
+        <MeasurementType>EnergeticParticles</MeasurementType>
+        <TemporalDescription>
+            <TimeSpan>
+                <StartDate>1990-10-22T00:00:00.000</StartDate>
+                <StopDate>2009-06-29T23:59:59.000</StopDate>
+            </TimeSpan>
+        </TemporalDescription>
+        <ObservedRegion>Heliosphere.Outer</ObservedRegion>
+        <Parameter>
+            <Name>Interval Start Time</Name>
+            <Description>
+          Nominal Start Time for the average given in decimal year, 
+          integer year, day of year, and milli-secnds of day.
+       </Description>
+            <Cadence>PT128S</Cadence>
+            <Structure>
+                <Size>4</Size>
+                <Element>
+                    <Name>Decimal Year</Name>
+                    <Index>1</Index>
+                    <ParameterKey>Column_1</ParameterKey>
+                    <ValidMin>1990</ValidMin>
+                    <ValidMax>2009</ValidMax>
+                    <FillValue>0.00000000000</FillValue>
+                </Element>
+                <Element>
+                    <Name>year</Name>
+                    <Index>2</Index>
+                    <ParameterKey>Column_2</ParameterKey>
+                    <ValidMin>1990</ValidMin>
+                    <ValidMax>2009</ValidMax>
+                    <FillValue>0</FillValue>
+                </Element>
+                <Element>
+                    <Name>day</Name>
+                    <Index>3</Index>
+                    <ParameterKey>Column_3</ParameterKey>
+                    <ValidMin>1</ValidMin>
+                    <ValidMax>366</ValidMax>
+                    <FillValue>0</FillValue>
+                </Element>
+                <Element>
+                    <Name>msec</Name>
+                    <Index>4</Index>
+                    <ParameterKey>Column_4</ParameterKey>
+                    <ValidMin>0</ValidMin>
+                    <ValidMax>86400000</ValidMax>
+                    <FillValue>0</FillValue>
+                </Element>
+            </Structure>
+            <Support>
+                <SupportQuantity>Temporal</SupportQuantity>
+            </Support>
+        </Parameter>
+        <Parameter>
+            <Name>Accumulation period</Name>
+            <ParameterKey>Column_5</ParameterKey>
+            <Description>
+          Length of the accumulation period in milli-seconds.  
+       </Description>
+            <Caveats>
+          None
+       </Caveats>
+            <Cadence>PT128S</Cadence>
+            <Units>milliseconds</Units>
+            <ValidMin>100000</ValidMin>
+            <ValidMax>1200000</ValidMax>
+            <FillValue>0</FillValue>
+            <Support>
+                <SupportQuantity>Temporal</SupportQuantity>
+            </Support>
+        </Parameter>
+        <Parameter>
+            <Name>COSPIN/HET H10</Name>
+            <ParameterKey>Column_6</ParameterKey>
+            <Description>
+          Counts accumulated by counting rate H10 during the period of coverage (column 5) starting
+          at the time defined in columns 1-4.  The H10 counting rate normally responds primarily to 
+          nuclei with Z&gt;2 with penetrating power equivalent to 26-36 MeV/n Carbon-12 nuclei.  Protons,
+          helium nuclei, and electrons are excluded by discriminators requiring an energy deposit in 
+          at least one detector greater than can be produced by a Z=2 nucleus.
+       </Description>
+            <Caveats> 
+           The energy range given above and below is appropriate only for Carbon-12 nuclei
+       </Caveats>
+            <Cadence>PT128S</Cadence>
+            <ValidMin>0.0</ValidMin>
+            <ValidMax>1.00E+06</ValidMax>
+            <FillValue>-1</FillValue>
+            <Particle>
+                <ParticleType>Ion</ParticleType>
+                <ParticleQuantity>Counts</ParticleQuantity>
+                <EnergyRange>
+                    <Low>26</Low>
+                    <High>36</High>
+                    <Units>MeV/n</Units>
+                </EnergyRange>
+            </Particle>
+        </Parameter>
+        <Parameter>
+            <Name>COSPIN/HET H11</Name>
+            <ParameterKey>Column_7</ParameterKey>
+            <Description>
+          Counts accumulated by counting rate H11 during the period of coverage (column 5) starting
+          at the time defined in columns 1-4.  The H11 counting rate normally responds primarily to 
+          nuclei with Z&gt;2 with penetrating power equivalent to 44-127 MeV/n Carbon-12 nuclei.  Protons,
+          helium nuclei, and electrons are excluded by discriminators requiring an energy deposit in 
+          at least one detector greater than can be produced by a Z=2 nucleus.
+       </Description>
+            <Caveats> 
+           The energy range given below is appropriate only for Carbon-12 nuclei
+       </Caveats>
+            <Cadence>PT128S</Cadence>
+            <ValidMin>0.0</ValidMin>
+            <ValidMax>1.00E+06</ValidMax>
+            <FillValue>-1</FillValue>
+            <Particle>
+                <ParticleType>Ion</ParticleType>
+                <ParticleQuantity>Counts</ParticleQuantity>
+                <EnergyRange>
+                    <Low>44</Low>
+                    <High>127</High>
+                    <Units>MeV/n</Units>
+                </EnergyRange>
+            </Particle>
+        </Parameter>
+        <Parameter>
+            <Name>COSPIN/HET H12</Name>
+            <ParameterKey>Column_8</ParameterKey>
+            <Description>
+          Counts accumulated by counting rate H12 during the period of coverage (column 5) starting
+          at the time defined in columns 1-4.  The H12 counting rate normally responds primarily to 
+          nuclei with Z&gt;2 with penetrating power equivalent to 127-173 MeV/n Carbon-12 nuclei.  Protons,
+          helium nuclei, and electrons are excluded by discriminators requiring an energy deposit in 
+          at least one detector greater than can be produced by a Z=2 nucleus.
+       </Description>
+            <Caveats> 
+           The energy range given below is appropriate only for Carbon-12 nuclei.
+           The H12 counting rate has a bit rate dependence which is not fully understood.  It is 
+           most clear during solar particle events when the H12 rate is elevated above its normally 
+           very low background rate.  
+           Also, during In-Flight-Calibrate (IFC) sequences, which over several hours (depending on
+           telemetry bit rate) feed two ramps of pulses to the detector amplifiers, the H12 counts 
+           counts all of the IFC pulses that have sufficient amplitude to exceed the high level 
+           discriminators used to exclude protons and helium from being counted by H12.  Most of 
+           the IFC pulses do exceed the levels necessary to trigger these discriminators, so that 
+           the H12 counting rate is dramatically elevated for a period of several hours when the 
+           IFC sequence is performed.
+           A particularly clear example of both effects can be found in days 83-86 of 1991, when
+           an IFC sequence is performed on day 86 in the tail of a solar particle event that began
+           at the very end of day 83.
+	   As a result of these effects, the H12 counting rate should not be used to determine
+           accurate particle flux levels.
+       </Caveats>
+            <Cadence>PT128S</Cadence>
+            <ValidMin>0.0</ValidMin>
+            <ValidMax>1.00E+06</ValidMax>
+            <FillValue>-1</FillValue>
+            <Particle>
+                <ParticleType>Ion</ParticleType>
+                <ParticleQuantity>Counts</ParticleQuantity>
+                <EnergyRange>
+                    <Low>127</Low>
+                    <High>173</High>
+                    <Units>MeV/n</Units>
+                </EnergyRange>
+            </Particle>
+        </Parameter>
+        <Parameter>
+            <Name>COSPIN/HET H13a</Name>
+            <ParameterKey>Column_9</ParameterKey>
+            <Description>
+          Counts accumulated by counting rate H13a during the first half of the period of coverage 
+          (column 5) starting at the time defined in columns 1-4.  
+          The H13a counting rate normally responds primarily to nuclei with Z&gt;2 with penetrating 
+          power equivalent to Carbon-12 nuclei with energies greater than 173 MeV/n.  Such nuclei 
+          completely penetrate the telescope.  Therefore, the H13 is also sensitive, above a poorly 
+          known energy threshold, to nuclei going backward through the HET after penetrating the 
+          spacecraft structures and other instruments that lie behind the HET on the spacecraft.  
+          Protons, helium nuclei, and electrons are excluded by discriminators requiring an 
+          energy deposit in  at least one detector greater than can be produced by a Z=2 nucleus.
+       </Description>
+            <Caveats> 
+          The energy range given below is appropriate only for Carbon-12 nuclei
+       </Caveats>
+            <Cadence>PT128S</Cadence>
+            <ValidMin>0.0</ValidMin>
+            <ValidMax>1.00E+06</ValidMax>
+            <FillValue>-1</FillValue>
+            <Particle>
+                <ParticleType>Ion</ParticleType>
+                <ParticleQuantity>Counts</ParticleQuantity>
+                <EnergyRange>
+                    <Low>173</Low>
+                    <High>1.0E+14</High>
+                    <Units>MeV/n</Units>
+                </EnergyRange>
+            </Particle>
+        </Parameter>
+        <Parameter>
+            <Name>COSPIN/HET H13b</Name>
+            <ParameterKey>Column_10</ParameterKey>
+            <Description>
+          H13b is identical to H13a except that it accumulates counts during the second half of 
+          the period of coverage (column 5) starting at the time defined in columns 1-4.  Thus
+          the start time for the H13b accumulation is the time in columns 1-4 plus half coverage
+          interval listed in column 5.  
+          All other considerations described for H13a apply equally to H13b.
+       </Description>
+            <Caveats> 
+          The energy range given below is appropriate only for Carbon-12 nuclei
+       </Caveats>
+            <Cadence>PT128S</Cadence>
+            <ValidMin>0.0</ValidMin>
+            <ValidMax>1.00E+06</ValidMax>
+            <FillValue>-1</FillValue>
+            <Particle>
+                <ParticleType>Ion</ParticleType>
+                <ParticleQuantity>Counts</ParticleQuantity>
+                <EnergyRange>
+                    <Low>173</Low>
+                    <High>1.0E+14</High>
+                    <Units>MeV/n</Units>
+                </EnergyRange>
+            </Particle>
+        </Parameter>
+        <Parameter>
+            <Name>COSPIN/HET H14</Name>
+            <ParameterKey>Column_11</ParameterKey>
+            <Description>
+          H14 registers the total number of counts above the lowest level threshold  in detector 
+          D1 of the HET during the accumulation period (column 5) starting at the time defined 
+          in columns 1-4.
+          No coincidence conditions are applied, so no particle identification can be made, nor 
+          can any energy range be defined  other than that the particle (or gamma ray) must be 
+          able to reach the detector either through the telescope aperture and overlying detector 
+          stack, or through the side of the telescope and any spacecraft or instrument structure
+          in its path.  Consequently, the counting rate is most often dominated by high energy 
+          cosmic rays and by electrons produced by gamma-rays in the telescope.  
+       </Description>
+            <Caveats> 
+          The minimum energy given below is accurate only to order of magnitude.
+       </Caveats>
+            <Cadence>PT128S</Cadence>
+            <ValidMin>0.0</ValidMin>
+            <ValidMax>1.00E+06</ValidMax>
+            <FillValue>-1</FillValue>
+            <Particle>
+                <ParticleType>Ion</ParticleType>
+                <ParticleQuantity>Counts</ParticleQuantity>
+                <EnergyRange>
+                    <Low>1</Low>
+                    <High>1.0E+14</High>
+                    <Units>MeV</Units>
+                </EnergyRange>
+            </Particle>
+        </Parameter>
+        <Parameter>
+            <Name>COSPIN/HET H15</Name>
+            <ParameterKey>Column_12</ParameterKey>
+            <Description>
+          H15 registers the total number of counts above the lowest level threshold  in detector 
+          D2 of the HET during the accumulation period (column 5) starting at the time defined 
+          in columns 1-4.
+          No coincidence conditions are applied, so no particle identification can be made, nor 
+          can any energy range be defined  other than that the particle (or gamma ray) must be 
+          able to reach the detector either through the telescope aperture and overlying detector 
+          stack, or through the side of the telescope and any spacecraft or instrument structure
+          in its path.  Consequently, the counting rate is most often dominated by high energy 
+          cosmic rays and by electrons produced by gamma-rays in the telescope.  
+       </Description>
+            <Caveats> 
+          The minimum energy given below is accurate only to order of magnitude.
+       </Caveats>
+            <Cadence>PT128S</Cadence>
+            <ValidMin>0.0</ValidMin>
+            <ValidMax>1.00E+06</ValidMax>
+            <FillValue>-1</FillValue>
+            <Particle>
+                <ParticleType>Ion</ParticleType>
+                <ParticleQuantity>Counts</ParticleQuantity>
+                <EnergyRange>
+                    <Low>1</Low>
+                    <High>1.0E+14</High>
+                    <Units>MeV</Units>
+                </EnergyRange>
+            </Particle>
+        </Parameter>
+        <Parameter>
+            <Name>COSPIN/HET H16</Name>
+            <ParameterKey>Column_13</ParameterKey>
+            <Description>
+          H16 registers the total number of counts above the lowest level threshold  in detector 
+          D3 of the HET during the accumulation period (column 5) starting at the time defined 
+          in columns 1-4.
+          No coincidence conditions are applied, so no particle identification can be made, nor 
+          can any energy range be defined  other than that the particle (or gamma ray) must be 
+          able to reach the detector either through the telescope aperture and overlying detector 
+          stack, or through the side of the telescope and any spacecraft or instrument structure
+          in its path.  Consequently, the counting rate is most often dominated by high energy 
+          cosmic rays and by electrons produced by gamma-rays in the telescope.  
+       </Description>
+            <Caveats> 
+          The minimum energy given below is accurate only to order of magnitude.
+       </Caveats>
+            <Cadence>PT128S</Cadence>
+            <ValidMin>0.0</ValidMin>
+            <ValidMax>1.00E+06</ValidMax>
+            <FillValue>-1</FillValue>
+            <Particle>
+                <ParticleType>Ion</ParticleType>
+                <ParticleQuantity>Counts</ParticleQuantity>
+                <EnergyRange>
+                    <Low>1</Low>
+                    <High>1.0E+14</High>
+                    <Units>MeV</Units>
+                </EnergyRange>
+            </Particle>
+        </Parameter>
+        <Parameter>
+            <Name>COSPIN/HET H17</Name>
+            <ParameterKey>Column_14</ParameterKey>
+            <Description>
+          H17 registers the total number of counts above the lowest level threshold  in detector 
+          D4 of the HET during the accumulation period (column 5) starting at the time defined 
+          in columns 1-4.
+          No coincidence conditions are applied, so no particle identification can be made, nor 
+          can any energy range be defined  other than that the particle (or gamma ray) must be 
+          able to reach the detector either through the telescope aperture and overlying detector 
+          stack, or through the side of the telescope and any spacecraft or instrument structure
+          in its path.  Consequently, the counting rate is most often dominated by high energy 
+          cosmic rays and by electrons produced by gamma-rays in the telescope.  
+       </Description>
+            <Caveats> 
+          The minimum energy given below is accurate only to order of magnitude.
+       </Caveats>
+            <Cadence>PT128S</Cadence>
+            <ValidMin>0.0</ValidMin>
+            <ValidMax>1.00E+06</ValidMax>
+            <FillValue>-1</FillValue>
+            <Particle>
+                <ParticleType>Ion</ParticleType>
+                <ParticleQuantity>Counts</ParticleQuantity>
+                <EnergyRange>
+                    <Low>1</Low>
+                    <High>1.0E+14</High>
+                    <Units>MeV</Units>
+                </EnergyRange>
+            </Particle>
+        </Parameter>
+        <Parameter>
+            <Name>COSPIN/HET H18</Name>
+            <ParameterKey>Column_15</ParameterKey>
+            <Description>
+          H18 registers the total number of counts above the lowest level threshold  in detector 
+          D5 of the HET during the accumulation period (column 5) starting at the time defined 
+          in columns 1-4.
+          No coincidence conditions are applied, so no particle identification can be made, nor 
+          can any energy range be defined  other than that the particle (or gamma ray) must be 
+          able to reach the detector either through the telescope aperture and overlying detector 
+          stack, or through the side of the telescope and any spacecraft or instrument structure
+          in its path.  Consequently, the counting rate is most often dominated by high energy 
+          cosmic rays and by electrons produced by gamma-rays in the telescope.  
+       </Description>
+            <Caveats> 
+          The minimum energy given below is accurate only to order of magnitude.
+       </Caveats>
+            <Cadence>PT128S</Cadence>
+            <ValidMin>0.0</ValidMin>
+            <ValidMax>1.00E+06</ValidMax>
+            <FillValue>-1</FillValue>
+            <Particle>
+                <ParticleType>Ion</ParticleType>
+                <ParticleQuantity>Counts</ParticleQuantity>
+                <EnergyRange>
+                    <Low>1</Low>
+                    <High>1.0E+14</High>
+                    <Units>MeV</Units>
+                </EnergyRange>
+            </Particle>
+        </Parameter>
+        <Parameter>
+            <Name>COSPIN/HET H19</Name>
+            <ParameterKey>Column_16</ParameterKey>
+            <Description>
+          H19 registers the total number of counts above the lowest level threshold  in detector 
+          D6 of the HET during the accumulation period (column 5) starting at the time defined 
+          in columns 1-4.
+          No coincidence conditions are applied, so no particle identification can be made, nor 
+          can any energy range be defined  other than that the particle (or gamma ray) must be 
+          able to reach the detector either through the telescope aperture and overlying detector 
+          stack, or through the side of the telescope and any spacecraft or instrument structure
+          in its path.  Consequently, the counting rate is most often dominated by high energy 
+          cosmic rays and by electrons produced by gamma-rays in the telescope.  
+       </Description>
+            <Caveats> 
+          The minimum energy given below is accurate only to order of magnitude.
+       </Caveats>
+            <Cadence>PT128S</Cadence>
+            <ValidMin>0.0</ValidMin>
+            <ValidMax>1.00E+06</ValidMax>
+            <FillValue>-1</FillValue>
+            <Particle>
+                <ParticleType>Ion</ParticleType>
+                <ParticleQuantity>Counts</ParticleQuantity>
+                <EnergyRange>
+                    <Low>1</Low>
+                    <High>1.0E+14</High>
+                    <Units>MeV</Units>
+                </EnergyRange>
+            </Particle>
+        </Parameter>
+        <Parameter>
+            <Name>COSPIN/HET H20</Name>
+            <ParameterKey>Column_17</ParameterKey>
+            <Description>
+          H20 registers the total number of counts above the lowest level threshold  in detector 
+          K1 (D7) of the HET during the accumulation period (column 5) starting at the time defined 
+          in columns 1-4.
+          No coincidence conditions are applied, so no particle identification can be made, nor 
+          can any energy range be defined  other than that the particle (or gamma ray) must be 
+          able to reach the detector either through the telescope aperture and overlying detector 
+          stack, or through the side of the telescope and any spacecraft or instrument structure
+          in its path.  Consequently, the counting rate is most often dominated by high energy 
+          cosmic rays and by electrons produced by gamma-rays in the telescope.  
+       </Description>
+            <Caveats> 
+          The minimum energy given below is accurate only to order of magnitude.
+       </Caveats>
+            <Cadence>PT128S</Cadence>
+            <ValidMin>0.0</ValidMin>
+            <ValidMax>1.00E+06</ValidMax>
+            <FillValue>-1</FillValue>
+            <Particle>
+                <ParticleType>Ion</ParticleType>
+                <ParticleQuantity>Counts</ParticleQuantity>
+                <EnergyRange>
+                    <Low>1</Low>
+                    <High>1.0E+14</High>
+                    <Units>MeV</Units>
+                </EnergyRange>
+            </Particle>
+        </Parameter>
+        <Parameter>
+            <Name>COSPIN/HET H21</Name>
+            <ParameterKey>Column_18</ParameterKey>
+            <Description>
+          H21 registers the total number of counts above the lowest level threshold  in detector 
+          K2 (D8) of the HET during the accumulation period (column 5) starting at the time defined 
+          in columns 1-4.
+          No coincidence conditions are applied, so no particle identification can be made, nor 
+          can any energy range be defined  other than that the particle (or gamma ray) must be 
+          able to reach the detector either through the telescope aperture and overlying detector 
+          stack, or through the side of the telescope and any spacecraft or instrument structure
+          in its path.  Consequently, the counting rate is most often dominated by high energy 
+          cosmic rays and by electrons produced by gamma-rays in the telescope.  
+       </Description>
+            <Caveats> 
+          The minimum energy given below is accurate only to order of magnitude.
+       </Caveats>
+            <Cadence>PT128S</Cadence>
+            <ValidMin>0.0</ValidMin>
+            <ValidMax>1.00E+06</ValidMax>
+            <FillValue>-1</FillValue>
+            <Particle>
+                <ParticleType>Ion</ParticleType>
+                <ParticleQuantity>Counts</ParticleQuantity>
+                <EnergyRange>
+                    <Low>1</Low>
+                    <High>1.0E+14</High>
+                    <Units>MeV</Units>
+                </EnergyRange>
+            </Particle>
+        </Parameter>
+        <Parameter>
+            <Name>COSPIN/HET H22</Name>
+            <ParameterKey>Column_19</ParameterKey>
+            <Description>
+          H22 registers the total number of counts above the lowest level threshold  in detector 
+          K3 (D9) of the HET during the accumulation period (column 5) starting at the time defined 
+          in columns 1-4.
+          No coincidence conditions are applied, so no particle identification can be made, nor 
+          can any energy range be defined  other than that the particle (or gamma ray) must be 
+          able to reach the detector either through the telescope aperture and overlying detector 
+          stack, or through the side of the telescope and any spacecraft or instrument structure
+          in its path.  Consequently, the counting rate is most often dominated by high energy 
+          cosmic rays and by electrons produced by gamma-rays in the telescope.  
+       </Description>
+            <Caveats> 
+          The minimum energy given below is accurate only to order of magnitude.
+       </Caveats>
+            <Cadence>PT128S</Cadence>
+            <ValidMin>0.0</ValidMin>
+            <ValidMax>1.00E+06</ValidMax>
+            <FillValue>-1</FillValue>
+            <Particle>
+                <ParticleType>Ion</ParticleType>
+                <ParticleQuantity>Counts</ParticleQuantity>
+                <EnergyRange>
+                    <Low>1</Low>
+                    <High>1.0E+14</High>
+                    <Units>MeV</Units>
+                </EnergyRange>
+            </Particle>
+        </Parameter>
+        <Parameter>
+            <Name>COSPIN/HET H23</Name>
+            <ParameterKey>Column_20</ParameterKey>
+            <Description>
+          H23 registers the total number of counts above the lowest level threshold  in detector 
+          K4 (D10) of the HET during the accumulation period (column 5) starting at the time defined 
+          in columns 1-4.
+          No coincidence conditions are applied, so no particle identification can be made, nor 
+          can any energy range be defined  other than that the particle (or gamma ray) must be 
+          able to reach the detector either through the telescope aperture and overlying detector 
+          stack, or through the side of the telescope and any spacecraft or instrument structure
+          in its path.  Consequently, the counting rate is most often dominated by high energy 
+          cosmic rays and by electrons produced by gamma-rays in the telescope.  
+       </Description>
+            <Caveats> 
+          The minimum energy given below is accurate only to order of magnitude.
+       </Caveats>
+            <Cadence>PT128S</Cadence>
+            <ValidMin>0.0</ValidMin>
+            <ValidMax>1.00E+06</ValidMax>
+            <FillValue>-1</FillValue>
+            <Particle>
+                <ParticleType>Ion</ParticleType>
+                <ParticleQuantity>Counts</ParticleQuantity>
+                <EnergyRange>
+                    <Low>1</Low>
+                    <High>1.0E+14</High>
+                    <Units>MeV</Units>
+                </EnergyRange>
+            </Particle>
+        </Parameter>
+        <Parameter>
+            <Name>COSPIN/HET H24</Name>
+            <ParameterKey>Column_21</ParameterKey>
+            <Description>
+          H24 registers the total number of counts above the lowest level threshold  in detector 
+          K5 (D11) of the HET during the accumulation period (column 5) starting at the time defined 
+          in columns 1-4.
+          No coincidence conditions are applied, so no particle identification can be made, nor 
+          can any energy range be defined  other than that the particle (or gamma ray) must be 
+          able to reach the detector either through the telescope aperture and overlying detector 
+          stack, or through the side of the telescope and any spacecraft or instrument structure
+          in its path.  Consequently, the counting rate is most often dominated by high energy 
+          cosmic rays and by electrons produced by gamma-rays in the telescope.  
+       </Description>
+            <Caveats> 
+          The minimum energy given below is accurate only to order of magnitude.
+       </Caveats>
+            <Cadence>PT128S</Cadence>
+            <ValidMin>0.0</ValidMin>
+            <ValidMax>1.00E+06</ValidMax>
+            <FillValue>-1</FillValue>
+            <Particle>
+                <ParticleType>Ion</ParticleType>
+                <ParticleQuantity>Counts</ParticleQuantity>
+                <EnergyRange>
+                    <Low>1</Low>
+                    <High>1.0E+14</High>
+                    <Units>MeV</Units>
+                </EnergyRange>
+            </Particle>
+        </Parameter>
+        <Parameter>
+            <Name>COSPIN/HET H25</Name>
+            <ParameterKey>Column_22</ParameterKey>
+            <Description>
+          H25 registers the total number of counts above the lowest level threshold  in detector 
+          K6 (D12) of the HET during the accumulation period (column 5) starting at the time defined 
+          in columns 1-4.
+          No coincidence conditions are applied, so no particle identification can be made, nor 
+          can any energy range be defined  other than that the particle (or gamma ray) must be 
+          able to reach the detector either through the telescope aperture and overlying detector 
+          stack, or through the side of the telescope and any spacecraft or instrument structure
+          in its path.  Consequently, the counting rate is most often dominated by high energy 
+          cosmic rays and by electrons produced by gamma-rays in the telescope.  
+       </Description>
+            <Caveats> 
+          The minimum energy given below is accurate only to order of magnitude.
+       </Caveats>
+            <Cadence>PT128S</Cadence>
+            <ValidMin>0.0</ValidMin>
+            <ValidMax>1.00E+06</ValidMax>
+            <FillValue>-1</FillValue>
+            <Particle>
+                <ParticleType>Ion</ParticleType>
+                <ParticleQuantity>Counts</ParticleQuantity>
+                <EnergyRange>
+                    <Low>1</Low>
+                    <High>1.0E+14</High>
+                    <Units>MeV</Units>
+                </EnergyRange>
+            </Particle>
+        </Parameter>
+        <Parameter>
+            <Name>COSPIN/HET H26</Name>
+            <ParameterKey>Column_23</ParameterKey>
+            <Description>
+          H26 registers the total number of counts above threshold  in detector A (D13) of the 
+          HET during the accumulation period (column 5) starting at the time defined 
+          in columns 1-4.
+          No coincidence conditions are applied, so no particle identification can be made, nor 
+          can any energy range be defined  other than that the particle (or gamma ray) must be 
+          able to reach the detector either through the telescope aperture and overlying detector 
+          stack, or through the side of the telescope and any spacecraft or instrument structure
+          in its path.  Consequently, the counting rate is most often dominated by high energy 
+          cosmic rays and by electrons produced by gamma-rays in the telescope.  
+       </Description>
+            <Caveats> 
+          The minimum energy given below is accurate only to order of magnitude.
+       </Caveats>
+            <Cadence>PT128S</Cadence>
+            <ValidMin>0.0</ValidMin>
+            <ValidMax>1.00E+06</ValidMax>
+            <FillValue>-1</FillValue>
+            <Particle>
+                <ParticleType>Ion</ParticleType>
+                <ParticleQuantity>Counts</ParticleQuantity>
+                <EnergyRange>
+                    <Low>1</Low>
+                    <High>1.0E+14</High>
+                    <Units>MeV</Units>
+                </EnergyRange>
+            </Particle>
+        </Parameter>
+        <Parameter>
+            <Name>COSPIN/HET H27</Name>
+            <ParameterKey>Column_24</ParameterKey>
+            <Description>
+          H27 registers the total number of counts above threshold in the anti-coincidence 
+          plastic scintillator, S, that surrounds the HET detector stack during the 
+          accumulation period (column 5) starting at the time defined in columns 1-4.
+          No coincidence conditions are applied, so no particle identification can be made, nor 
+          can any energy range be defined  other than that the particle (or gamma ray) must be 
+          able to reach the detector either through the telescope aperture and overlying detector 
+          stack, or through the side of the telescope and any spacecraft or instrument structure
+          in its path.  Consequently, the counting rate is most often dominated by high energy 
+          cosmic rays and by electrons produced by gamma-rays in the telescope.  
+       </Description>
+            <Caveats> 
+          The minimum energy given below is accurate only to order of magnitude.
+       </Caveats>
+            <Cadence>PT128S</Cadence>
+            <ValidMin>0.0</ValidMin>
+            <ValidMax>1.00E+06</ValidMax>
+            <FillValue>-1</FillValue>
+            <Particle>
+                <ParticleType>Ion</ParticleType>
+                <ParticleQuantity>Counts</ParticleQuantity>
+                <EnergyRange>
+                    <Low>1</Low>
+                    <High>1.0E+14</High>
+                    <Units>MeV</Units>
+                </EnergyRange>
+            </Particle>
+        </Parameter>
+    </NumericalData>
+</Spase>

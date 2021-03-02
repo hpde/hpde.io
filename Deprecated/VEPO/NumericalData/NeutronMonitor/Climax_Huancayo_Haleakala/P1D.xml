@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <Spase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns="http://www.spase-group.org/data/schema" 
+    xsi:schemaLocation="http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_0_0.xsd">
+   <Version>2.0.0</Version>
+   <NumericalData>
+     <ResourceID>spase://VEPO/NumericalData/NeutronMonitor/Climax_Huancayo_Haleakala/P1D</ResourceID>
+     <ResourceHeader>
+       <ResourceName>
+         Daily Average Cosmic Ray Intensities from the Climax, Huancayo, and Haleakala Neutron Monitors
+       </ResourceName>
+       <AlternateName>
+         Climax, Huancayo, and Haleakala Daily Average Counting Rates
+       </AlternateName>
+       <ReleaseDate>
+         2009-03-19T00:00:00.000
+       </ReleaseDate>
+       <Description>
+         Daily averages of relativistic cosmic ray intensities from the Climax, Huancayo, and Haleakala Neutron Monitors
+       </Description>
+       <Acknowledgement>
+         Please acknowledge the Principal Investigator  (Dr. Clifford Lopate)
+       </Acknowledgement>
+       <Contact>
+         <PersonID>
+           spase://SMWG/Person/Clifford.Lopate
+         </PersonID>
+         <Role>PrincipalInvestigator</Role>
+         <Role>DataProducer</Role>
+       </Contact>
+       <InformationURL>
+         <Name>
+           General ReadMe file for data from the Climax, Haleakala, and Haleakala Neutron Monitors
+         </Name>
+           <URL>ftp://ulysses.sr.unh.edu/NeutronMonitor/00General.ReadMe.txt</URL>
+         <Description>
+           This ReadMe file provides basic information about the neutron monitors at Climax,
+           Haleakala, and, for data before 1992, Haleakala, including geomagnetic cutoffs and 
+           configurations of the monitors at each site.
+         </Description>
+       </InformationURL>
+       <InformationURL>
+         <Name>
+           ReadMe file for Daily average files for the Climax, Huancay, and Haleakala Neutron Monitors
+         </Name>
+           <URL>ftp://ulysses.sr.unh.edu/NeutronMonitor/DailyAverages.ReadMe.txt</URL>
+         <Description>
+           This ReadMe file provides information about the Climax, Huancayo, and Haleakala neutron monitors
+           and a description of the format of the data files
+         </Description>
+       </InformationURL>
+     </ResourceHeader>
+     <AccessInformation>
+       <RepositoryID>spase://SMWG/Repository/UNH</RepositoryID>
+       <Availability>Online</Availability>
+       <AccessRights>Open</AccessRights>
+       <AccessURL>
+         <Name>
+           Climax, Huancay, and Haleakala Daily Average Intensities
+         </Name>
+           <URL>ftp://ulysses.sr.unh.edu/NeutronMonitor/DailyAverages.1951-.txt</URL>
+         <Description>
+	   Daily average intensities from the Climax, Huancayo, and Haleakala neutron monitors
+           Fortran format for reading file: (i2,1x,i2,1x,i4,1x,i10,f13.2,1a,f8.2,1a,f8.2,1a,f9.2,f10.2)
+         </Description>
+       </AccessURL>
+       <Format>Text</Format>
+       <Acknowledgement>C. Lopate, University of New Hampshire</Acknowledgement>
+     </AccessInformation>
+     <InstrumentID>spase://SMWG/Instrument/NeutronMonitor/Climax</InstrumentID>
+     <InstrumentID>spase://SMWG/Instrument/NeutronMonitor/Haleakala</InstrumentID>
+     <InstrumentID>spase://SMWG/Instrument/NeutronMonitor/Huancayo</InstrumentID>
+     <MeasurementType>EnergeticParticles</MeasurementType>
+     <TemporalDescription>
+       <TimeSpan>
+         <StartDate>1953-01-01T00:00:00.000</StartDate>
+         <StopDate>1992-12-31T23:59:59.000</StopDate>
+       </TimeSpan>
+       <Cadence>P27D</Cadence>
+     </TemporalDescription>
+     <ObservedRegion>Heliosphere.NearEarth</ObservedRegion>
+     <Parameter>
+       <Name>Interval Start Time</Name>
+       <ParameterKey>Columns 1-2</ParameterKey>
+       <Description>
+          Nominal Start Time (UT) for the average given as 
+          MM/DD/YYYY SSSSSSSSSS
+          where MM         = month of year (01-12)
+                DD         = Day of Month (01-31)
+                YYYY       = Gregorian Year AD
+                SSSSSSSSSS = Seconds since 00:00:00 Jan. 01, 1904 at start of day
+       </Description>
+       <Cadence>P1D</Cadence>
+       <Support>
+         <SupportQuantity>Temporal</SupportQuantity>
+       </Support>
+     </Parameter>
+     <Parameter>
+       <Name>Climax Daily Average Data</Name>
+       <ParameterKey>Column 3</ParameterKey>
+       <Description>
+          Climax pressure corrected counts per hour, prescaled by 100
+          Periods with no data are indicated by NaN
+	  A "G" immediately following the rate indicates a period affected by
+          a ground level event.
+       </Description>
+       <Caveats>
+          For true counts per hour, the value given must be multiplied by 100.
+       </Caveats>
+       <Cadence>P1D</Cadence>
+       <Units>(counts/hr)</Units>
+       <ValidMin>0</ValidMin>
+       <ValidMax>100000</ValidMax>
+       <FillValue>NaN</FillValue>
+         <Particle>
+           <ParticleType>Proton</ParticleType>
+           <Qualifier>Integral</Qualifier>
+           <ParticleQuantity>Counts</ParticleQuantity>
+           <EnergyRange>
+             <Low>12.92</Low>
+             <High>1.0E6</High>
+             <Units>GV</Units>
+           </EnergyRange>
+         </Particle>
+     </Parameter>
+     <Parameter>
+       <Name>Huancayo Daily Average Data</Name>
+       <ParameterKey>Column 4</ParameterKey>
+       <Description>
+          Huancayo pressure-corrected counts per hour, prescaled by 100
+          Periods with no data are indicated by NaN
+	  A "G" immediately following the rate indicates a period affected by
+          a ground level event.
+       </Description>
+       <Caveats>
+          For true counts per hour, the value given must be multiplied by 100.
+       </Caveats>
+       <Cadence>P1D</Cadence>
+       <Units>(counts/hr)</Units>
+       <ValidMin>0</ValidMin>
+       <ValidMax>100000</ValidMax>
+       <FillValue>NaN</FillValue>
+         <Particle>
+           <ParticleType>Proton</ParticleType>
+           <Qualifier>Integral</Qualifier>
+           <ParticleQuantity>Counts</ParticleQuantity>
+           <EnergyRange>
+             <Low>12.92</Low>
+             <High>1.0E6</High>
+             <Units>GV</Units>
+           </EnergyRange>
+         </Particle>
+     </Parameter>
+     <Parameter>
+       <Name>Huancayo Drift Corrected Daily Average Data</Name>
+       <ParameterKey>Column 5</ParameterKey>
+       <Description>
+          Huancayo pressure corrected counts per hour, prescaled by 100 and
+          further corrected for drift in the cutoff caused by secular changes
+          in the geomagnetic field.
+          Periods with no data are indicated by NaN.
+	  A "G" immediately following the rate indicates a period affected by
+          a ground level event.
+       </Description>
+       <Caveats>
+          For true counts per hour, the value given must be multiplied by 100.
+       </Caveats>
+       <Cadence>P1D</Cadence>
+       <Units>(counts/hr)</Units>
+       <ValidMin>0</ValidMin>
+       <ValidMax>100000</ValidMax>
+       <FillValue>NaN</FillValue>
+         <Particle>
+           <ParticleType>Proton</ParticleType>
+           <Qualifier>Integral</Qualifier>
+           <ParticleQuantity>Counts</ParticleQuantity>
+           <EnergyRange>
+             <Low>12.92</Low>
+             <High>1.0E6</High>
+             <Units>GV</Units>
+           </EnergyRange>
+         </Particle>
+     </Parameter>
+     <Parameter>
+       <Name>Haleakala IGY Monitor Daily Data</Name>
+       <ParameterKey>Column 6</ParameterKey>
+       <Description>
+          Haleakala pressure-corrected counts per hour, prescaled by 100.
+          Periods with no data are indicated by NaN.
+       </Description>
+       <Caveats>
+          For true counts per hour, the value given must be multiplied by 100.
+       </Caveats>
+       <Cadence>P1D</Cadence>
+       <Units>(counts/hr)</Units>
+       <ValidMin>0</ValidMin>
+       <ValidMax>100000</ValidMax>
+       <FillValue>NaN</FillValue>
+         <Particle>
+           <ParticleType>Proton</ParticleType>
+           <Qualifier>Integral</Qualifier>
+           <ParticleQuantity>Counts</ParticleQuantity>
+           <EnergyRange>
+             <Low>12.92</Low>
+             <High>1.0E6</High>
+             <Units>GV</Units>
+           </EnergyRange>
+         </Particle>
+     </Parameter>
+     <Parameter>
+       <Name>Haleakala SuperMonitor Daily Data</Name>
+       <ParameterKey>Column 7</ParameterKey>
+       <Description>
+          Haleakala SuperMonitor pressure corrected counts per hour, prescaled by 100.
+          Periods with no data are indicated by NaN.
+       </Description>
+       <Caveats>
+          For true counts per hour, the value given must be multiplied by 100.
+       </Caveats>
+       <Cadence>P1D</Cadence>
+       <Units>(counts/hr)</Units>
+       <ValidMin>0</ValidMin>
+       <ValidMax>100000</ValidMax>
+       <FillValue>NaN</FillValue>
+         <Particle>
+           <ParticleType>Proton</ParticleType>
+           <Qualifier>Integral</Qualifier>
+           <ParticleQuantity>Counts</ParticleQuantity>
+           <EnergyRange>
+             <Low>12.92</Low>
+             <High>1.0E6</High>
+             <Units>GV</Units>
+           </EnergyRange>
+         </Particle>
+     </Parameter>
+   </NumericalData>
+</Spase>

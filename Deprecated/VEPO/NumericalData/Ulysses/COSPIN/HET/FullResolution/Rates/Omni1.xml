@@ -1,0 +1,464 @@
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_2_1.xsd">
+    <Version>2.2.1</Version>
+    <NumericalData>
+        <ResourceID>spase://VEPO/NumericalData/Ulysses/COSPIN/HET/FullResolution/Rates/Omni1</ResourceID>
+        <ResourceHeader>
+            <ResourceName>Ulysses COSPIN/HET readout by readout counts and accumulation times for spin-averaged counting rates H1-H9</ResourceName>
+            <ReleaseDate>2009-09-24T00:00:00.000</ReleaseDate>
+            <Description>
+           A directory containing daily ftp-downloadable files containing readout-by-readout listings of 
+           the counts accumulated in the H1-H9 spin-averaged counting rates. These counting rates respond 
+           primarily to protons (H1-H5, H9) in the approximate energy ranges 5.4-14, 14-19, 24-31, 34-68,
+           68-92, and &gt;92 MeV, respectively, and to electrons (H6-8) in the very approximate energy ranges 
+           1-3, 5-10, and 3-5 MeV, respectively.
+           The naming convention for the daily files is uly_het_full_rat_omni1_YYYDDD.txt, where YYY 
+           indicates the three-digit year since 1900 (e.g. YYY=090 for 1990, and YYY=102 for 2002) and 
+           DDD indicates the three digit day of year (Jan. 1 = 1).
+           In each file, following a detailed description of the format, the data consist of a
+           listing of counts accumulated in the H1-H9 spin-averaged counting  rates during the intervals 
+           between successive readouts, organized into columns as described below.
+           The first 4 columns give the start time of the counting rate accumulation period as
+           fractional year (to 12 decimal places) and as  year since 1900, day of year, and ms
+           of day at the start of the accumulation, followed by 1 column giving the duration of
+           the accumulation period in milli-seconds (it is the same for all 9 rates), and 9
+           columns giving the counts accumulated in that period for each rate.  All fields
+           except for the fractional year are in integer format.
+           Each line contains data for one single readout of the rates H1-H9, and all readouts
+           where at least one of the rates has a non-fill value are included.  Where fill
+           does occur it is indicated by -1.
+           Since the accumulation period for each readout is forced to include an integral number
+           of spacecraft spins in order to produce pure spin-averaged measurements, the lengths of
+           the accumulation periods vary in a cyclic manner as the period of the telemetry cycle
+           beats with the spacecraft spin period.  All counting rates in this file are read out
+           twice per spacecraft format.  At the most common science telemetry bit rate (2048 bps)
+           this corresponds to an average interval between readouts of 16 seconds.  Thus, with a
+           typical 5 rpm spacecraft spin rate the accumulation intervals vary in a repeating cycle of
+           12, 12, 24, 12, 12, 24, 12, etc. seconds.  At lower bit rates the average interval is
+           equal to 16x(2048/BR) seconds and the cycle automatically adjusts to produce this average
+           accumulation.
+           No noise-removal or despiking has been done, so caution must be used in interpreting isolated 
+           large increases or decreases in the counting rates.
+       </Description>
+            <Acknowledgement>
+         Please acknowledge the Lead HET Investigator and COSPIN P.I., Dr. R. Bruce McKibben
+       </Acknowledgement>
+            <Contact>
+                <PersonID>spase://SMWG/Person/R.Bruce.McKibben</PersonID>
+                <Role>PrincipalInvestigator</Role>
+                <Role>TeamLeader</Role>
+            </Contact>
+            <Contact>
+                <PersonID>spase://SMWG/Person/Clifford.Lopate</PersonID>
+                <Role>DataProducer</Role>
+            </Contact>
+            <Contact>
+                <PersonID>spase://SMWG/Person/James.Connell</PersonID>
+                <Role>CoInvestigator</Role>
+            </Contact>
+            <InformationURL>
+                <Name>
+           The Ulysses cosmic ray and solar particle investigation
+         </Name>
+                <URL>
+          http://ufa.esac.esa.int/ufa/#instruments
+         </URL>
+                <Description>
+           Published (J.A. Simpson et al., Astron. Astrophys. v92, pp365-399, 1992) description 
+           of the COSPIN Instrumentation.  See especially section 4.3 for a detailed description 
+           of the HET.
+         </Description>
+            </InformationURL>
+            <InformationURL>
+                <Name>
+           COSPIN/HET User Notes
+         </Name>
+                <URL>
+               http://ufa.esac.esa.int/ufa/#instruments
+         </URL>
+                <Description>
+           Identification of data channels archived and brief discussion of data structure
+         </Description>
+            </InformationURL>
+            <InformationURL>
+                <Name>
+           ReadMeHETFullRes.doc
+         </Name>
+                <URL>
+           http://ufa.esac.esa.int/ufa/#instruments
+         </URL>
+                <Description>
+           Top Level descriptions of formats and contents of the six file types that make up the
+           COSPIN HET Full Resolution Data Set. Detailed descriptions of the formats and contents
+           are to found in header lines at the start of each downloaded data file.  The data 
+           covered by this spase description are described in the ReadMe under the heading
+           rat_omni1.
+           (*** Note ***:  During the build-up of this data set, a few errors and omissions have been 
+           found in the header lines for some of the file types.  These errors and omissions are listed 
+           in this ReadMe file.  Upon completion of the data set, all errors and omissions discovered
+           will be corrected in all of the header lines of all of the file types and this note will be 
+           removed.)
+         </Description>
+            </InformationURL>
+        </ResourceHeader>
+        <AccessInformation>
+            <RepositoryID>spase://SMWG/Repository/ESA/ESAC/UlyssesFinalArchive</RepositoryID>
+            <Availability>Online</Availability>
+            <AccessRights>Open</AccessRights>
+            <AccessURL>
+                <Name>Ulysses COSPIN/HET Full Resolution Spin-Average (Omni1) Counting Rate Data</Name>
+                <URL>http://ufa.esac.esa.int/ufa/#data</URL>
+                <Description>
+           Parent directory containing daily downloadable files with the format described below
+         </Description>
+            </AccessURL>
+            <Format>Text</Format>
+            <Encoding>ASCII</Encoding>
+            <Acknowledgement>R.B. McKibben, Space Science Center, University of New Hampshire</Acknowledgement>
+        </AccessInformation>
+        <InstrumentID>spase://SMWG/Instrument/Ulysses/COSPIN/HET</InstrumentID>
+        <MeasurementType>EnergeticParticles</MeasurementType>
+        <TemporalDescription>
+            <TimeSpan>
+                <StartDate>1990-10-22T00:00:00.000</StartDate>
+                <StopDate>2009-06-29T23:59:59.000</StopDate>
+            </TimeSpan>
+        </TemporalDescription>
+        <ObservedRegion>Heliosphere.Outer</ObservedRegion>
+        <Parameter>
+            <Name>Interval Start Time</Name>
+            <Description>
+          Nominal Start Time for the average given in decimal year, 
+          integer year, day of year, and milli-secnds of day.
+       </Description>
+            <Cadence>PT12S</Cadence>
+            <Structure>
+                <Size>4</Size>
+                <Element>
+                    <Name>Decimal Year</Name>
+                    <Index>1</Index>
+                    <ParameterKey>Column_1</ParameterKey>
+                    <ValidMin>1990</ValidMin>
+                    <ValidMax>2009</ValidMax>
+                    <FillValue>0.00000000000</FillValue>
+                </Element>
+                <Element>
+                    <Name>year</Name>
+                    <Index>2</Index>
+                    <ParameterKey>Column_2</ParameterKey>
+                    <ValidMin>1990</ValidMin>
+                    <ValidMax>2009</ValidMax>
+                    <FillValue>0</FillValue>
+                </Element>
+                <Element>
+                    <Name>day</Name>
+                    <Index>3</Index>
+                    <ParameterKey>Column_3</ParameterKey>
+                    <ValidMin>1</ValidMin>
+                    <ValidMax>366</ValidMax>
+                    <FillValue>0</FillValue>
+                </Element>
+                <Element>
+                    <Name>msec</Name>
+                    <Index>4</Index>
+                    <ParameterKey>Column_4</ParameterKey>
+                    <ValidMin>0</ValidMin>
+                    <ValidMax>86400000</ValidMax>
+                    <FillValue>0</FillValue>
+                </Element>
+            </Structure>
+            <Support>
+                <SupportQuantity>Temporal</SupportQuantity>
+            </Support>
+        </Parameter>
+        <Parameter>
+            <Name>Accumulation period</Name>
+            <ParameterKey>Column_5</ParameterKey>
+            <Description>
+          Length of the accumulation period in milli-seconds.  
+       </Description>
+            <Caveats>
+          None
+       </Caveats>
+            <Cadence>PT12S</Cadence>
+            <Units>milliseconds</Units>
+            <ValidMin>10000</ValidMin>
+            <ValidMax>150000</ValidMax>
+            <FillValue>0</FillValue>
+            <Support>
+                <SupportQuantity>Temporal</SupportQuantity>
+            </Support>
+        </Parameter>
+        <Parameter>
+            <Name>COSPIN/HET H01</Name>
+            <ParameterKey>Column_6</ParameterKey>
+            <Description>
+          Counts accumulated by counting rate H1 during the period of coverage (column 5) starting
+          at the time defined in columns 1-4.  The H1 counting rate normally responds primarily to 
+          protons in the energy interval 5.4-14 MeV (normal incidence).
+       </Description>
+            <Caveats>
+           Heavier nuclei with similar penetrating power to 5.4-14 MeV protons also produce counts 
+           in H1.  However the intensities of such heavier nuclei are usually much lower than the proton
+           intensity.  The most significant contributor to such contamination is usually helium.  
+           During quiet times the H1 counting rates is dominated by background counts induced by gamma
+           rays from the RTG.
+       </Caveats>
+            <Cadence>PT12S</Cadence>
+            <FillValue>-1</FillValue>
+            <Particle>
+                <ParticleType>Proton</ParticleType>
+                <ParticleQuantity>Counts</ParticleQuantity>
+                <EnergyRange>
+                    <Low>5.4</Low>
+                    <High>14</High>
+                    <Units>MeV</Units>
+                </EnergyRange>
+            </Particle>
+        </Parameter>
+        <Parameter>
+            <Name>COSPIN/HET H02</Name>
+            <ParameterKey>Column_7</ParameterKey>
+            <Description>
+          Counts accumulated by counting rate H2 during the period of coverage (column 5) starting
+          at the time defined in columns 1-4.  The H2 counting rate normally responds primarily to 
+          protons in the energy interval 14-19 MeV (normal incidence). 
+       </Description>
+            <Caveats>
+           Heavier nuclei with similar penetrating power to 14-19 MeV protons also produce counts 
+           in H2.  However the intensities of such heavier nuclei are usually much lower than the proton
+           intensity.  The most significant contributor to such contamination is usually helium.
+           Use of higher level discriminators on the triggered detectors (D1 and D2) discriminates strongly
+           against electrons, and thus also against RTG-induced background.
+       </Caveats>
+            <Cadence>PT12S</Cadence>
+            <FillValue>-1</FillValue>
+            <Particle>
+                <ParticleType>Proton</ParticleType>
+                <ParticleQuantity>Counts</ParticleQuantity>
+                <EnergyRange>
+                    <Low>14</Low>
+                    <High>19</High>
+                    <Units>MeV</Units>
+                </EnergyRange>
+            </Particle>
+        </Parameter>
+        <Parameter>
+            <Name>COSPIN/HET H03</Name>
+            <ParameterKey>Column_8</ParameterKey>
+            <Description>
+          Counts accumulated by counting rate H3 during the period of coverage (column 5) starting
+          at the time defined in columns 1-4.  The H3 counting rate normally responds primarily to 
+          protons in the energy interval 24-31 MeV (normal incidence). 
+       </Description>
+            <Caveats>
+           Heavier nuclei with similar penetrating power to 24-31 MeV protons also produce counts 
+           in H3.  However the intensities of such heavier nuclei are usually much lower than the proton
+           intensity.  The most significant contributor to such contamination is usually helium.  Electrons
+           produced by the RTG gammas are excluded by the coincidence requirement, which requires greater 
+           range for electrons than that of the maximum energy electrons that RTG gammas can produce.  
+           However higher energy electrons of cosmic ray, solar, magnetospheric or other natural origin 
+           may in some circumstances make significant contributions to the counting rate.
+       </Caveats>
+            <Cadence>PT12S</Cadence>
+            <FillValue>-1</FillValue>
+            <Particle>
+                <ParticleType>Proton</ParticleType>
+                <ParticleQuantity>Counts</ParticleQuantity>
+                <EnergyRange>
+                    <Low>24</Low>
+                    <High>31</High>
+                    <Units>MeV</Units>
+                </EnergyRange>
+            </Particle>
+        </Parameter>
+        <Parameter>
+            <Name>COSPIN/HET H04</Name>
+            <ParameterKey>Column_9</ParameterKey>
+            <Description>
+          Counts accumulated by counting rate H4 during the period of coverage (column 5) starting
+          at the time defined in columns 1-4.  The H4 counting rate normally responds primarily to 
+          protons in the energy interval 34-68 MeV (normal incidence). 
+       </Description>
+            <Caveats>
+           Heavier nuclei with similar penetrating power to 34-68 MeV protons also produce counts 
+           in H4.  However the intensities of such heavier nuclei are usually much lower than the proton
+           intensity.  The most significant contributor to such contamination is usually helium.  Electrons
+           produced by the RTG gammas are excluded by the coincidence requirement, which requires greater 
+           range for electrons than that of the maximum energy electrons that RTG gammas can produce.  
+           However higher energy electrons of cosmic ray, solar, magnetospheric or other natural origin 
+           may in some circumstances make significant contributions to the counting rate.
+       </Caveats>
+            <Cadence>PT12S</Cadence>
+            <FillValue>-1</FillValue>
+            <Particle>
+                <ParticleType>Proton</ParticleType>
+                <ParticleQuantity>Counts</ParticleQuantity>
+                <EnergyRange>
+                    <Low>34</Low>
+                    <High>68</High>
+                    <Units>MeV</Units>
+                </EnergyRange>
+            </Particle>
+        </Parameter>
+        <Parameter>
+            <Name>COSPIN/HET H05</Name>
+            <ParameterKey>Column_10</ParameterKey>
+            <Description>
+          Counts accumulated by counting rate H5 during the period of coverage (column 5) starting
+          at the time defined in columns 1-4.  The H5 counting rate normally responds primarily to 
+          protons in the energy interval 68-92 MeV (normal incidence). 
+       </Description>
+            <Caveats>
+           Heavier nuclei with similar penetrating power to 68-92 MeV protons also produce counts 
+           in H5.  However the intensities of such heavier nuclei are usually much lower than the proton
+           intensity.  The most significant contributor to such contamination is usually helium.  Electrons
+           produced by the RTG gammas are excluded by the coincidence requirement, which requires greater 
+           range for electrons than that of the maximum energy electrons that RTG gammas can produce.  
+           However higher energy electrons of cosmic ray, solar, magnetospheric or other natural origin 
+           may in some circumstances make significant contributions to the counting rate.
+           During In-Flight-Calibrate (IFC) sequences, two ramps of pulse are fed to the detector 
+           amplifiers over several hours.  For part of each sequence, the pulses satisfy the H5 counting
+           rate logic.  The H5 counting rate responds to those pulses that are so small that they do not 
+           trigger the high level discriminators on the detectors.  This leads to two small spikes separated 
+           by several hours (depending on bit rate) in the H5 counting rate.  A clear example of this effect 
+           (and of the corresponding effect on H12, which counts the larger pulses) can be found on day 31 
+           of 1991.  
+       </Caveats>
+            <Cadence>PT12S</Cadence>
+            <FillValue>-1</FillValue>
+            <Particle>
+                <ParticleType>Proton</ParticleType>
+                <ParticleQuantity>Counts</ParticleQuantity>
+                <EnergyRange>
+                    <Low>68</Low>
+                    <High>92</High>
+                    <Units>MeV</Units>
+                </EnergyRange>
+            </Particle>
+        </Parameter>
+        <Parameter>
+            <Name>COSPIN/HET H06</Name>
+            <ParameterKey>Column_11</ParameterKey>
+            <Description>
+          Counts accumulated by counting rate H6 during the period of coverage (column 5) starting
+          at the time defined in columns 1-4.  The H6 counting rate normally responds primarily to 
+          electrons in the energy interval ~1-3 MeV (normal incidence). This counting rate 
+          discriminates strongly against nuclei by requiring anticoincidence with a discriminator
+          set slightly slightly above the energy deposited by minimum ionizing particles in D1, but 
+          below the minimum energy deposited by a proton stopping in D2. 
+        </Description>
+            <Caveats>
+	   Because of scattering of the electons in the telescope, the energy range given is very 
+           approximate.
+           During quiet times, the H6 counting rate is dominated by electrons produced by RTG gamma rays 
+           in the telescope. 
+       </Caveats>
+            <Cadence>PT12S</Cadence>
+            <FillValue>-1</FillValue>
+            <Particle>
+                <ParticleType>Electron</ParticleType>
+                <ParticleQuantity>Counts</ParticleQuantity>
+                <EnergyRange>
+                    <Low>1</Low>
+                    <High>3</High>
+                    <Units>MeV</Units>
+                </EnergyRange>
+            </Particle>
+        </Parameter>
+        <Parameter>
+            <Name>COSPIN/HET H07</Name>
+            <ParameterKey>Column_12</ParameterKey>
+            <Description>
+          Counts accumulated by counting rate H7 during the period of coverage (column 5) starting
+          at the time defined in columns 1-4.  The H7 counting rate normally responds primarily to 
+          electrons in the energy interval ~5-10 MeV (normal incidence). This counting rate 
+          discriminates strongly against nuclei by requiring anti-coincidence with discriminators 
+          set above the energy deposited by minimum ionizing particles, but below the minimum energy 
+          deposited by a proton stopping in the telescope.  
+       </Description>
+            <Caveats>
+           Because of scattering during propagation of the electons in the telescope, the energy 
+           range given is very approximate.
+           The coincidence logic for H7 requires a greater penetration depth in the telescope than is
+           possible for electrons produced by RTG gamma rays, so no background is induced in this
+           counting rate by the presence of the RTG. 
+       </Caveats>
+            <Cadence>PT12S</Cadence>
+            <FillValue>-1</FillValue>
+            <Particle>
+                <ParticleType>Electron</ParticleType>
+                <ParticleQuantity>Counts</ParticleQuantity>
+                <EnergyRange>
+                    <Low>5</Low>
+                    <High>10</High>
+                    <Units>MeV</Units>
+                </EnergyRange>
+            </Particle>
+        </Parameter>
+        <Parameter>
+            <Name>COSPIN/HET H08</Name>
+            <ParameterKey>Column_13</ParameterKey>
+            <Description>
+          Counts accumulated by counting rate H8 during the period of coverage (column 5) starting
+          at the time defined in columns 1-4.  The H8 counting rate normally responds primarily to 
+          electrons in the energy interval ~3-5 MeV (normal incidence). This counting rate 
+          discriminates strongly against nuclei by requiring anti-coincidence with discriminators 
+          set above the energy deposited by minimum ionizing particles, but below the minimum energy 
+          deposited by a proton stopping in the telescope.  
+       </Description>
+            <Caveats>
+	   Because of scattering during propagation of the electons in the telescope, the energy range 
+           given is very approximate.
+           The coincidence logic for H8 requires a greater penetration depth in the telescope than is
+           possible for electrons produced by RTG gamma rays, so no background is induced in this
+           counting rate by the presence of the RTG. 
+       </Caveats>
+            <Cadence>PT12S</Cadence>
+            <FillValue>-1</FillValue>
+            <Particle>
+                <ParticleType>Electron</ParticleType>
+                <ParticleQuantity>Counts</ParticleQuantity>
+                <EnergyRange>
+                    <Low>3</Low>
+                    <High>5</High>
+                    <Units>MeV</Units>
+                </EnergyRange>
+            </Particle>
+        </Parameter>
+        <Parameter>
+            <Name>COSPIN/HET H09</Name>
+            <ParameterKey>Column_14</ParameterKey>
+            <Description>
+          Counts accumulated by counting rate H9 during the period of coverage (column 5) starting
+          at the time defined in columns 1-4.  The H9 counting rate normally responds primarily to 
+          protons with energies greater than ~92 MeV, which completely penetrate the telescope
+          detector stack.  Thus it provides a measure of the integral intensity of energetic charged
+          particles with penetrating power equal or greater to that of 92 MeV protons.  
+       </Description>
+            <Caveats>
+           Because of proximity of the low-level discriminators on several of the detectors to the
+           expected energy deposits by minimum ionizing protons, the efficiency of detection decreases
+           somewhat for minimum ionizing particles.  Because of the dependence of the detector noise
+           on temperature, the decrease in efficiency depends to some extent on the telescope 
+           temperature.  
+           Since the particles that trigger H9 completely penetrate the telescope, both forward and 
+           backward-going particles are counted.  Backward-going particles must also penetrate the
+           spacecraft structure and instruments behind the HET before entering the telescope, so 
+           the energy threshold for backward-going particles is very poorly known.  Thus this 
+           counting rate is more suitable for study of relative variations in the particle intensity 
+           than for derivation of an accurate integral flux.  
+       </Caveats>
+            <Cadence>PT12S</Cadence>
+            <FillValue>-1</FillValue>
+            <Particle>
+                <ParticleType>Electron</ParticleType>
+                <ParticleQuantity>Counts</ParticleQuantity>
+                <EnergyRange>
+                    <Low>92</Low>
+                    <High>1.0E+14</High>
+                    <Units>MeV</Units>
+                </EnergyRange>
+            </Particle>
+        </Parameter>
+    </NumericalData>
+</Spase>

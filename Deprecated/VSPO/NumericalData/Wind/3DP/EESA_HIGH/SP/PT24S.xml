@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_2_3.xsd">
+  <Version>2.2.3</Version>
+  <NumericalData>
+    <ResourceID>spase://VSPO/NumericalData/Wind/3DP/EESA_HIGH/SP/PT24S</ResourceID>
+    <ResourceHeader>
+      <ResourceName>Wind 3DP 24-sec ESSA-HIGH Electron Omnidirectional Fluxes</ResourceName>
+      <ReleaseDate>2020-07-03T23:28:58Z</ReleaseDate>
+      <Description>Electron omnidirectional fluxes 100 eV-30 keV, often at 24 sec, EESA High, Wind 3DP - R. Lin (UC Berkeley)</Description>
+      <Acknowledgement>Principle Investigators Robert Lin and Stuart Bale, the Wind 3DP team, and the Space Physics Data Facility (SPDF)/NASA GSFC</Acknowledgement>
+      <Contact>
+        <PersonID>spase://SMWG/Person/Robert.P.Lin</PersonID>
+        <Role>PrincipalInvestigator</Role>
+</Contact>
+      <Contact>
+        <PersonID>spase://SMWG/Person/Stuart.D.Bale</PersonID>
+        <Role>PrincipalInvestigator</Role>
+</Contact>
+      <Contact>
+        <PersonID>spase://SMWG/Person/Robert.E.McGuire</PersonID>
+        <Role>GeneralContact</Role>
+</Contact>
+      <InformationURL>
+        <Name>Caveats to the use of Wind 3DP data</Name>
+        <URL>https://spdf.gsfc.nasa.gov/pub/data/wind/3dp/wind3dp_caveats.pdf</URL>
+        <Description>Caveats for the correct use of Wind 3DP datasets</Description>
+</InformationURL>
+      <InformationURL>
+        <Name>Wind 3DP home page at UCB</Name>
+        <URL>http://sprg.ssl.berkeley.edu/wind3dp/</URL>
+        <Description>home page at UCB (with plotting and digital data)</Description>
+</InformationURL>
+</ResourceHeader>
+    <AccessInformation>
+      <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF</RepositoryID>
+      <Availability>Online</Availability>
+      <AccessRights>Open</AccessRights>
+      <AccessURL>
+        <Name>FTPS from SPDF (not with most browsers)</Name>
+        <URL>ftps://spdf.gsfc.nasa.gov/pub/data/wind/3dp/3dp_ehsp/</URL>
+        <Description>In CDF via ftp from SPDF</Description>
+</AccessURL>
+      <AccessURL>
+        <Name>HTTPS from SPDF</Name>
+        <URL>https://spdf.gsfc.nasa.gov/pub/data/wind/3dp/3dp_ehsp/</URL>
+        <Description>In CDF via HTTP from SPDF</Description>
+</AccessURL>
+      <Format>CDF</Format>
+      <Acknowledgement>Please acknowledge the CDAWeb team at GSFC/SPDF.</Acknowledgement>
+</AccessInformation>
+    <AccessInformation>
+      <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF</RepositoryID>
+      <Availability>Online</Availability>
+      <AccessRights>Open</AccessRights>
+      <AccessURL>
+        <Name>CDAWeb</Name>
+        <URL>https://cdaweb.sci.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=WI_EHSP_3DP&amp;index=sp_phys</URL>
+        <ProductKey>WI_EHSP_3DP</ProductKey>
+</AccessURL>
+      <Format>Text</Format>
+</AccessInformation>
+    <InstrumentID>spase://SMWG/Instrument/Wind/3DP</InstrumentID>
+    <MeasurementType>EnergeticParticles</MeasurementType>
+    <TemporalDescription>
+      <TimeSpan>
+        <StartDate>1994-12-20T15:10:03.000Z</StartDate>
+        <RelativeStopDate>-P30D</RelativeStopDate>
+</TimeSpan>
+      <Cadence>PT24S</Cadence>
+</TemporalDescription>
+    <ObservedRegion>Heliosphere.NearEarth</ObservedRegion>
+    <Caveats>With respect to time resolution: 24 sec timing changes and is not necessarily constant, depending on the mode that the instrument happens to be in.  Not only does the period/interval between each point change, the duration over which the data were taken can change as well.</Caveats>
+    <Parameter>
+      <Name>Epoch</Name>
+      <ParameterKey>Epoch</ParameterKey>
+      <Description>Number of milliseconds since CDF_EPOCH: 0000-01-01T00:00:00.000.</Description>
+      <Units>ms</Units>
+      <UnitsConversion>1e-3&gt;s</UnitsConversion>
+      <ValidMin>01-Jan-1956 00:00:00.000</ValidMin>
+      <ValidMax>01-Jan-2083 00:00:00.000</ValidMax>
+      <FillValue>-1.0E31</FillValue>
+      <Support>
+        <SupportQuantity>Temporal</SupportQuantity>
+</Support>
+</Parameter>
+    <Parameter>
+      <Name>Unix Time</Name>
+      <ParameterKey>TIME</ParameterKey>
+      <Description>Time since 1970-01-01T00:00:00Z in seconds</Description>
+      <Units>s</Units>
+      <Support>
+        <SupportQuantity>Temporal</SupportQuantity>
+</Support>
+</Parameter>
+    <Parameter>
+      <Name>Electron Flux</Name>
+      <ParameterKey>FLUX</ParameterKey>
+      <Description>Electron differential number flux 100 eV - 30 keV, as a function of energy</Description>
+      <Units>#/(cm^2*ster*eV*s)</Units>
+      <Particle>
+        <ParticleType>Electron</ParticleType>
+        <ParticleQuantity>NumberFlux</ParticleQuantity>
+</Particle>
+</Parameter>
+    <Parameter>
+      <Name>Electron Energy</Name>
+      <ParameterKey>ENERGY</ParameterKey>
+      <Description>Average electron energy</Description>
+      <Units>eV</Units>
+      <Structure>
+        <Size>15</Size>
+        <Description>The 15 average electron energies</Description>
+</Structure>
+      <Particle>
+        <ParticleType>Electron</ParticleType>
+        <Qualifier>Average</Qualifier>
+        <ParticleQuantity>Energy</ParticleQuantity>
+        <EnergyRange>
+          <Low>100</Low>
+          <High>30000</High>
+          <Units>eV</Units>
+</EnergyRange>
+</Particle>
+</Parameter>
+</NumericalData>
+</Spase>

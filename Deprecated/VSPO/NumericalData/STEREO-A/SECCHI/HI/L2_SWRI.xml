@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Spase xmlns="http://www.spase-group.org/data/schema">
+    <Version>2.2.8</Version>
+    <NumericalData>
+        <ResourceID>spase://VSPO/NumericalData/STEREO-A/SECCHI/HI/L2_SWRI</ResourceID>
+        <ResourceHeader>
+            <ResourceName>STEREO-A SECCHI HI Level 2 produced by Southwest Research Institute</ResourceName>
+            <ReleaseDate>2016-11-09T21:27:00Z</ReleaseDate>
+            <Description>The STEREO SECCHI HI Level 2 FITS files produced by Southwest Research Institute exist in FITS form for both STEREO-A HI-1 and STEREO-A HI-2, through the end of 2013. They are photometric images of feature-excess brightness (radiance) in Thomson scattered light, extracted from the original images. The L1 photometry was performed using the standard SECCHI_PREP pipeline. Subsequent processing was as described initially in by DeForest, Howard &amp; Tappin 2011 (Astrophys. J. 738, 103). Like the L1 data, the images are calibrated in "mean solar radiance" units (B_\odot or B_s), which consist of the solar intensity divided by its apparent size in steradians. A paper is in work for Astrophys. J. describing the processing in more detail.
+The HI-1 images have been post-processed using two separate pipelines. The first, "L2S", uses a slight variant of the steps in DeForest et al. 2011, only through the starfield subtraction step. This results in the best photometry in the bright portions of each image, but leaves a noticeable remnant of the starfield. The second, "L2M", uses also the motion-filtering step mentioned in DeForest et al. 2011. This results in the best photometry in the faint portions of each image, but results in slight ringing artifacts near the bright edge of the field (amplitude is about 1%-3% of the Thomson signal) and also rejects some quasi-stationary features that are retained by the L2S series.
+For general-purpose viewing, L2M is preferred, but for some applications (e.g. comet tracking) L2S is preferred.
+The HI-1 L2M and L2S images are both batch-processed. The batches are 7 days long and are staggered by 0.5 day. They include steps that take place in the celestial plane rather than the instrument plane, so a small number of pixels on the left and right side of each image are set to NaN by each processing step. The images are resampled back to the original focal plane after processing, leaving a small and variable margin at the right and left side of each image.
+The HI-2 data require deeper background subtraction than the HI-1 data, and only "L2" are produced -- these are similar to the HI-1 "L2M" data. Batch sizes are longer (14 days) but the staggering time is the same (12 hours).</Description>
+            <Contact>
+                <PersonID>spase://SMWG/Person/William.T.Thompson</PersonID>
+                <Role>GeneralContact</Role>
+            </Contact>
+            <Contact>
+                <PersonID>spase://SMWG/Person/Craig.E.DeForest</PersonID>
+                <Role>GeneralContact</Role>
+            </Contact>
+            <Contact>
+                <PersonID>spase://SMWG/Person/Timothy.A.Howard</PersonID>
+                <Role>GeneralContact</Role>
+            </Contact>
+        </ResourceHeader>
+        <AccessInformation>
+            <RepositoryID>spase://SMWG/Repository/NASA/GSFC/STEREO_SC</RepositoryID>
+            <Availability>Online</Availability>
+            <AccessRights>Open</AccessRights>
+            <AccessURL>
+                <Name>STEREO Science Center</Name>
+                <URL>https://stereo-ssc.nascom.nasa.gov/data/ins_data/secchi_hi/L2_SWRI/</URL>
+            </AccessURL>
+            <Format>Text</Format>
+        </AccessInformation>
+        <InstrumentID>spase://SMWG/Instrument/STEREO-A/SECCHI</InstrumentID>
+        <MeasurementType>ImageIntensity</MeasurementType>
+        <TemporalDescription>
+            <TimeSpan>
+                <StartDate>2006-10-01T00:00:00Z</StartDate>
+                <StopDate>2013-12-31T23:59:59Z</StopDate>
+            </TimeSpan>
+        </TemporalDescription>
+	<Caveats>The HI data, particularly the HI-2 data, contain many artifacts that must be distinguished visually from the actual data. A non-exclusive list follows. In case of doubt, you can contact the instrument team, Craig DeForest, or Tim Howard (deforest@boulder.swri.edu).
+* Glint from the interior of the instrument affects the HI-1 images. Planets moving outside the field of view glint off the optics and produce strange circular artifacts.
+* "Telegraph stars" and remnant vertical stripes are present in all images, from detector nonlinearity effects that manifest with the brightest stars. These are due to nonlinearity in the CCD, the exact nature of which is still being discussed. The result is that bright stars have variable reported brightness as they cross the field of view. Furthermore, the brightness is systematically underreported, which confuses the (non-SwRI) destreaking algorithm.
+* "Bowtie" artifacts are present near bright planets, in the HI-2 data and the HI-1 L2M data. These are due to interaction between each bright planet's motion and the motion filter.
+* Large blobby artifacts when the galaxy is in the field of view. The Milky Way is quite bright and also spiky. This produces enough telegraph stars in each small region of the sky, to confuse the background finding algorithm, leaving positive-going remnants. Data acquired during the passage of the Milky Way through the field of view are essentially unusable.
+* The HI-2 data, and some HI-1 data, have flashing vertical stripes that are generated by CCD saturation and blooming during the passage of planets and a very few bright stars (such as Vega) across the field of view.
+* The photometric zero-point shifts slightly across each image, particularly in the HI-2 L2 sequence, with an amplitude of approximately 1-3x10^{-17} B_s.</Caveats>
+    </NumericalData>
+</Spase>

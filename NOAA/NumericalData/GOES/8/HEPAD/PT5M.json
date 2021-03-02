@@ -1,0 +1,185 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_3_0.xsd",
+    "Version": "2.3.0",
+    "NumericalData": {
+      "ResourceID": "spase://NOAA/NumericalData/GOES/8/HEPAD/PT5M",
+      "ResourceHeader": {
+        "ResourceName": "GOES 8 High Energy Proton and Alpha Detector (HEPAD) AP data at 5 min Time Resolution in Spacecraft Coordinates",
+        "AlternateName": "GOES 8 HEPAD AP data",
+        "ReleaseDate": "2019-10-11T16:15:00Z",
+        "Description": "The GOES 8 High Energy Proton and Alpha Detector (HEPAD) provides flux measurements of high energy proton and alpha particles. This data set consists of protons in 4 energy channels from 350 to >700 MeV and the alpha particles consist of 2 energy channels from 2560 to >3400 MeV.",
+        "Acknowledgement": "NASA Office of Space Science Applications (United States), NOAA National Environmental Satellite Service (United States), Terry G. Onsager",
+        "Contact": [
+          {
+            "PersonID": "spase://SMWG/Person/Terry.Onsager",
+            "Role": "PrincipalInvestigator"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/James.M.Weygand",
+            "Role": "MetadataContact"
+          }
+        ],
+        "InformationURL": [
+          {
+            "Name": "GOES 8 Energetic Particle Monitor",
+            "URL": "https://nssdc.gsfc.nasa.gov/nmc/experiment/display.action?id=1994-022A-05",
+            "Description": "Introduction to the GOES 8 Energetic Particle Sensor."
+          },
+          {
+            "Name": "GOES 8 Energetic Particle Sensor Additional Data File Information",
+            "URL": "ftp://satdat.ngdc.noaa.gov/sem/goes/goes_docs/full/readme.txt",
+            "Description": "Additional GOES EPM data file information."
+          }
+        ],
+        "PriorID": [
+          "spase://VMO/NumericalData/GOES/8/HEPAD/PT5M",
+          "spase://VSPO/NumericalData/GOES/8/HEPAD/PT5M"
+        ]
+      },
+      "AccessInformation": {
+        "RepositoryID": "spase://SMWG/Repository/NOAA/SEC",
+        "Availability": "Online",
+        "AccessRights": "Open",
+        "AccessURL": {
+          "Name": "Direct access to the GOES 8 High Energy Proton and Alpha Detector (HEPAD) Data",
+          "URL": "https://satdat.ngdc.noaa.gov/sem/goes/data/full/",
+          "Description": "Direct link to the GOES 8 High Energy Proton and Alpha Detector (HEPAD) data in CSV format as well as the energetic particle data from other GOES spacecraft. The data are sorted by year, month, spacecraft, and file type. The file names indicates the data type, spacecraft number, year, month, and resolution. For example, g08_hepad_5m_19960401_19960430.csv, indicates GOES 8 magnetometer data at 5 min time resolution from 1996-04-01 to 1996-04-30."
+        },
+        "Format": "Text.ASCII",
+        "Encoding": "None",
+        "Acknowledgement": "NASA, NOAA, Terry G. Onsager"
+      },
+      "ProcessingLevel": "Calibrated",
+      "ProviderResourceName": "NOAA GOES 8 HEPAD",
+      "ProviderProcessingLevel": "Level-0",
+      "InstrumentID": "spase://SMWG/Instrument/GOES/8/EPM",
+      "MeasurementType": "EnergeticParticles",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "1995-01-01T00:00:00",
+          "StopDate": "2003-06-30T23:59:59",
+          "Note": "Time format in data files is year-month-day hour:minute:seconds. Data file may fill out the first month and last month with flags."
+        },
+        "Cadence": "PT5M"
+      },
+      "Caveats": "Flags=-99999.0",
+      "Keyword": [
+        "5 min",
+        "geosynchronous",
+        "GOES",
+        "High Energy Proton and Alpha Detector"
+      ],
+      "Parameter": [
+        {
+          "Name": "Time Format",
+          "ParameterKey": "Time",
+          "Description": "Time format in data files is year-month-day hour:minute:seconds.",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Flux of protons with energies from 350 to 420 MeV.",
+          "ParameterKey": "p8_flux",
+          "Description": "P8 Proton channel 350 to 420 MeV",
+          "Units": "(cm^2 s sr MeV)^-1",
+          "ValidMin": "1.0e-6",
+          "ValidMax": "1000.0",
+          "FillValue": "-99999",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "350",
+              "High": "420.0",
+              "Units": "MeV"
+            }
+          }
+        },
+        {
+          "Name": "Flux of protons with energies from 420 to 510 MeV.",
+          "ParameterKey": "p9_flux",
+          "Description": "P9 Proton channel 420 to 510 MeV",
+          "Units": "(cm^2 s sr MeV)^-1",
+          "ValidMin": "1.0e-6",
+          "ValidMax": "1000.0",
+          "FillValue": "-99999",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "420.0",
+              "High": "510.0",
+              "Units": "MeV"
+            }
+          }
+        },
+        {
+          "Name": "Flux of protons with energies from 510 to 700 MeV.",
+          "ParameterKey": "p10_flux",
+          "Description": "P10 Proton channel 510 to 700 MeV",
+          "Units": "(cm^2 s sr MeV)^-1",
+          "ValidMin": "1.0e-6",
+          "ValidMax": "1000.0",
+          "FillValue": "-99999",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "510.0",
+              "High": "700.0",
+              "Units": "MeV"
+            }
+          }
+        },
+        {
+          "Name": "Flux of protons with energies >700 MeV.",
+          "ParameterKey": "p4_flux",
+          "Description": "P11 Proton integral >700 MeV",
+          "Units": "(cm^2 s sr MeV)^-1",
+          "ValidMin": "1.0e-6",
+          "ValidMax": "1000.0",
+          "FillValue": "-99999",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "Flux of Alpha Particles with energies from 2560 to 3400 MeV.",
+          "ParameterKey": "a7_flux",
+          "Description": "A7 Alpha Particles 2560 to 3400 MeV/nucleon.",
+          "Units": "(cm^2 s sr MeV)^-1",
+          "ValidMin": "1.0e-6",
+          "ValidMax": "1000.0",
+          "FillValue": "-99999",
+          "Particle": {
+            "ParticleType": "AlphaParticle",
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "2560",
+              "High": "3400",
+              "Units": "MeV"
+            }
+          }
+        },
+        {
+          "Name": "Flux of Alpha Particles with energies >3400 MeV.",
+          "ParameterKey": "a2_flux",
+          "Description": "A8 Alpha Particles >3400 MeV/nucleon.",
+          "Units": "(cm^2 s sr MeV)^-1",
+          "ValidMin": "1.0e-6",
+          "ValidMax": "1000.0",
+          "FillValue": "-99999",
+          "Particle": {
+            "ParticleType": "AlphaParticle",
+            "ParticleQuantity": "NumberFlux"
+          }
+        }
+      ]
+    }
+  }
+}

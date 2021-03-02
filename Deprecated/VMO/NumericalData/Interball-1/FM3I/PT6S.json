@@ -1,0 +1,194 @@
+{
+  "Spase": {
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_0_1.xsd",
+    "Version": "2.0.1",
+    "NumericalData": {
+      "ResourceID": "spase://VMO/NumericalData/Interball-1/FM3I/PT6S",
+      "ResourceHeader": {
+        "ResourceName": "Interball-1 6-sec vector magnetic field data",
+        "AlternateName": "Interball-1 MFI H0 data",
+        "ReleaseDate": "2010-03-12T12:34:56.789",
+        "Description": "Magnetic field measurements on-board the Interball 1 probe are carried out by the FM-3I and MFI (FGM-I) instruments. Data presented here are the combination of the data of all magnetometers. First, all FM-3I M1 data are used, if they are absent, the MFI data are used, and if data from both magnetometer are absent, FM-3I M2 data presented. The FM-3 M1 and MFI data are averaged over 6-second time intervals.",
+        "Acknowledgement": "The Interball project, IZMIRAN and Space Research Institute RAS  (SRI).",
+        "Contact": [
+          {
+            "PersonID": "spase://SMWG/Person/Mikhail.Nozdrachev",
+            "Role": "PrincipalInvestigator"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Valery.G.Petrov",
+            "Role": "DataProducer"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Ramona.L.Kessel",
+            "Role": "DataProducer"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Jan.Merka",
+            "Role": "MetadataContact"
+          }
+        ]
+      },
+      "AccessInformation": {
+        "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF/CDAWeb",
+        "Availability": "Online",
+        "AccessRights": "Open",
+        "AccessURL": {
+          "Name": "CDAWeb FTP download",
+          "URL": "ftp://cdaweb.gsfc.nasa.gov/pub/data/interball/tail/mfi_h0/"
+        },
+        "Format": "CDF",
+        "Encoding": "None"
+      },
+      "InstrumentID": [
+        "spase://SMWG/Instrument/Interball-1/FGMI",
+        "spase://SMWG/Instrument/Interball-1/FM3I"
+      ],
+      "MeasurementType": "MagneticField",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "1995-08-06T07:11:09",
+          "StopDate": "2000-10-15T21:53:26"
+        },
+        "Cadence": "PT6S"
+      },
+      "ObservedRegion": [
+        "Heliosphere.NearEarth",
+        "Earth.Magnetosheath",
+        "Earth.Magnetosphere",
+        "Earth.Magnetosphere.Main",
+        "Earth.Magnetosphere.Polar"
+      ],
+      "Parameter": [
+        {
+          "Name": "Epoch",
+          "ParameterKey": "Epoch",
+          "Description": "Time in miliseconds since CDF epoch",
+          "Units": "ms",
+          "UnitsConversion": "1e-3>s",
+          "ValidMin": "01-Jan-1990 00:00:00.000",
+          "ValidMax": "31-Dec-2010 00:00:00.000",
+          "FillValue": "-1.0E31",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "B",
+          "ParameterKey": "BF1",
+          "Description": "Magnetic Field Magnitude, 6 sec, scalar ",
+          "Units": "nT",
+          "UnitsConversion": "1e-9>T",
+          "ValidMin": "0.0",
+          "ValidMax": "350.0",
+          "FillValue": "-1.0E31",
+          "Field": {
+            "Qualifier": [
+              "Magnitude",
+              "Average"
+            ],
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "Bxyz GSE",
+          "ParameterKey": "B_GSE_cart",
+          "Description": "Magnetic Field, 6 sec, cartesian GSE ",
+          "Units": "nT",
+          "UnitsConversion": "1e-9>T",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GSE"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "Bx GSE",
+                "Qualifier": "Component.I",
+                "Index": "1",
+                "ValidMin": "-350.0",
+                "ValidMax": "350.0",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "By GSE",
+                "Qualifier": "Component.J",
+                "Index": "2",
+                "ValidMin": "-350.0",
+                "ValidMax": "350.0",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "Bz GSE",
+                "Qualifier": "Component.K",
+                "Index": "3",
+                "ValidMin": "-350.0",
+                "ValidMax": "350.0",
+                "FillValue": "-1.0E31"
+              }
+            ]
+          },
+          "Field": {
+            "Qualifier": [
+              "Vector",
+              "Average"
+            ],
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "Brtp GSE",
+          "ParameterKey": "B_GSE_polar",
+          "Description": "Magnetic Field, 6 sec, polar GSE. Br is the radial component, Bt is the elevation angle from the XY plane, Bp is the azimuthal angle from the X axis.",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "GSE"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "Br GSE",
+                "Qualifier": "Magnitude",
+                "Index": "1",
+                "Units": "nT",
+                "UnitsConversion": "1e-9>T",
+                "ValidMin": "-350.0",
+                "ValidMax": "350.0",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "Bt GSE",
+                "Qualifier": "DirectionAngle.ElevationAngle",
+                "Index": "2",
+                "Units": "deg",
+                "ValidMin": "-90.0",
+                "ValidMax": "90.0",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "Bp GSE",
+                "Qualifier": "DirectionAngle.AzimuthAngle",
+                "Index": "3",
+                "Units": "deg",
+                "ValidMin": "0.0",
+                "ValidMax": "360.0",
+                "FillValue": "-1.0E31"
+              }
+            ]
+          },
+          "Field": {
+            "Qualifier": [
+              "Vector",
+              "Average"
+            ],
+            "FieldQuantity": "Magnetic"
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,147 @@
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema file:/C:/Projects/Voyager/spase-2_2_2.xsd">
+<Version>2.2.2</Version>
+<NumericalData>
+               <ResourceID>spase://VMO/NumericalData/Voyager1/PWS/Jupiter/PT1S</ResourceID>
+               <ResourceHeader>
+                      <ResourceName>Voyager 1 Jupiter Plasma Wave Spectrometer Density 1-s V1.0</ResourceName>
+                      <ReleaseDate>2017-01-19T10:00:00.00</ReleaseDate>
+                      <Description>                                        
+                                                                              
+  Data Set Overview                                                           
+  =================                                                           
+    This data set consists of ASCII formatted plasma wave frequency           
+    and electron plasma density measurements as measured by the Plasma        
+    Waves Science instrument and calculated from the equations of cold        
+    plasma theory.  These frequency measurements were taken from              
+    Voyager 1 electric field waveform samples from Voyager 1 Plasma           
+    Wave Science (PWS) waveform receiver obtained during its Jupiter          
+    flyby.  The data set includes select measurements from spacecraft         
+    event time (SCET) 1979-03-01T19:58:22.500Z to                             
+    1979-03-21T14:25:32.500Z.  The data are separated into day files          
+    and the individual data points are taken every 1-second.  As will         
+    be explained in more detail below, the frequency measurements and         
+    therefore the density measurements in this data set are measured          
+    from high-resolution wideband plasma wave spectra.  To learn more         
+    about these spectra and their specific submitted volumes, see the         
+    Related PDS Products section in the AAREADME files found in the           
+    root directory of this volume.                                            
+                                                                              
+  Parameters                                                                  
+  ==========                                                                  
+    While the data essential to this volume are the electron plasma           
+    densities, there are a number of other plasma parameters included         
+    with this data.  The data set consists of ASCII files with one            
+    record per time step, occurring in 1-second increments.  Each             
+    record includes the time, magnetic field strength (obtained from          
+    the Voyager 1 magnetometer), the electron cyclotron frequency (if         
+    available), the frequency of the cutoff or resonance measured, a          
+    code indicating the name of the frequency measured, the calculated        
+    electron density, and a set of position coordinates for the               
+    spacecraft at the time of the observation.  Also included in each         
+    record are the electron plasma frequency fpe, extraordinary mode          
+    cutoff frequency fR=0, ordinary mode cutoff frequency fL=0, upper         
+    hybrid resonance frequency fUH, and a quality index.  One of these        
+    four frequencies is just a copy of the measured cutoff or resonance       
+    frequency while the remaining frequencies are calculated using the        
+    magnetic field data and the equations of cold plasma theory.              
+    Different files are used for each day.                                    
+                                                                              
+  Processing                                                                  
+  ==========                                                                  
+    The ASCII density data files produced in this volume were derived         
+    from measuring the characteristic frequencies from the local plasma.      
+    The density was calculated from these data, along with cyclotron          
+    frequency data derived from magnetic field data, using the equations      
+    of cold plasma theory.                                                    
+                                                                              
+    In order to measure these characteristic frequencies, this work           
+    utilizes a new program that allows the operator to highlight the          
+    general vicinity of the cutoff or resonance on a frequency-time           
+    spectrogram.  Then, an algorithm finds the cutoff or resonance in         
+    the region and records the frequency at 1 second intervals.  Hence,       
+    the automated procedure has a high temporal resolution (1 second)         
+    and requires a relatively low level of both manual effort and             
+    subjective judgment by the operator.                                      
+                                                                              
+    There are two different algorithms used: one for cutoff detection         
+    and one for resonance or peak detection.  The cutoff detection            
+    algorithm is controlled by a small number of parameters that can          
+    be set by the operator.  The first parameter is the cutoff level.         
+    In determining possible cutoff candidates, the algorithm scans the        
+    region highlighted by the operator and records two separate points,       
+    one above the cutoff level and one below.  The closer the two points      
+    are, temporally, the steeper the slope will be.  Therefore, the           
+    operator can change the location of the cutoff level to manipulate        
+    where the algorithm looks for cutoffs within the highlighted region       
+    of interest.  The next parameter is the slope magnitude, which            
+    designates the minimum magnitude of the finite difference slope           
+    where the cutoff must reside.  The operator may raise the slope           
+    level in order to scan only for sharp cutoffs, or lower it in order       
+    to accommodate less steep slopes, depending on the quality of the         
+    spectrum data.  When there is more than one possible cutoff, the          
+    detection program will display them as cutoff candidates.  The            
+    cutoff level, slope magnitude and cutoff candidates are displayed by      
+    the program for viewing by the operator.  While the algorithm             
+    chooses the lowest frequency cutoff by default, the operator may          
+    override the algorithm and choose any of the possible cutoffs to be       
+    recorded.                                                                 
+                                                                              
+    While most of the characteristic frequencies are, by definition,          
+    the cutoff of propagating wave modes, there are certain                   
+    circumstances when the characteristic frequency is denoted as the         
+    peak of a wave mode in the spectrum.  Because of this, there is an        
+    algorithm specifically for resonance or peak detection.  Many             
+    spectra of interest to this study include Z-mode radiation, which         
+    has a low-frequency cutoff at fL=0.  Barbosa et al.                       
+    [BARBOSAETAL1990B] demonstrated that taking the peak of the Z-mode        
+    as fL=0 yields the highest consistency in the determination of            
+    fpe.  Hence, when the Z-mode is enhanced, we utilize the peak             
+    detection algorithm to identify fL=0 from which fpe and the               
+    electron density can be derived.  This algorithm can also be used         
+    to determine fUH when an enhancement at that frequency is present         
+    in the spectrum.  In order to measure this resonance or spectral          
+    peak, the peak detection algorithm fits a Gaussian curve to the           
+    highest peak within the region specified by the program operator.         
+    The algorithm then records the frequency of the Gaussian&apos;s peak           
+    as the peak frequency in the spectrum.  The algorithm displays            
+    the spectrum and a darker line which is the Gaussian.  Because            
+    there may be noise which exhibits a large peak in the highlighted         
+    spectrum, the spectrum is displayed along with the Gaussian curve         
+    and a vertical line designating where the peak was measured.      </Description>
+                      <Contact>
+                             <PersonID>spase://SMWG/Person/Todd.A.King</PersonID>
+                             <Role>MetadataContact</Role>
+                     </Contact>
+                      <InformationURL>
+                             <Name>VG1-J-PWS-5-DDR-ELE-DENSITY-1S-V1.0</Name>
+                             <URL>http://pds-ppi.igpp.ucla.edu/data/VG1-J-PWS-5-DDR-ELE-DENSITY-1S-V1.0/AAREADME.TXT</URL>
+                             <Description>The document describing the contents of the collection.</Description>
+                             <Language>En</Language>
+                     </InformationURL>
+              </ResourceHeader>
+               <AccessInformation>
+                      <RepositoryID>spase://SMWG/Repository/PDS/PPI</RepositoryID>
+                      <Availability>Online</Availability>
+                      <AccessRights>Open</AccessRights>
+                      <AccessURL>
+                             <Name>PDS/PPI</Name>
+                             <URL>http://pds-ppi.igpp.ucla.edu/search/view/?f=yes&amp;id=pds://PPI/VG1-J-PWS-5-DDR-ELE-DENSITY-1S-V1.0</URL>
+                             <ProductKey>VG1-J-PWS-5-DDR-ELE-DENSITY-1S-V1.0</ProductKey>
+                             <Description>This collection is archived with NASA&apos;s Planetary Data System.</Description>
+                             <Language>En</Language>
+                     </AccessURL>
+                      <Format>Text.ASCII</Format>
+                      <Acknowledgement>NASA&apos;s Planetary Plasma Interactions (PPI) Node of the Planetary Data System (PDS) and the P.I. for the data.</Acknowledgement>
+              </AccessInformation>
+               <InstrumentID>spase://SMWG/Instrument/Voyager1/PWS</InstrumentID>
+               <MeasurementType>Waves.Passive</MeasurementType>
+               <TemporalDescription>
+                      <TimeSpan>
+                             <StartDate>1979-03-01T19:58:22.50</StartDate>
+                             <StopDate>1979-03-21T14:25:32.50</StopDate>
+                     </TimeSpan>
+                      <Cadence>PT1S</Cadence>
+              </TemporalDescription>
+               <ObservedRegion>Jupiter</ObservedRegion>
+       </NumericalData>
+</Spase>

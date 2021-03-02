@@ -1,0 +1,488 @@
+<?xml version="1.0"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><title>SPASE Resource Description</title><script type="application/ld+json">{
+		"@context": "https://schema.org/",
+		"@type" :"Dataset",
+		"name": "Cluster Salsa Wideband (WBD) Data Plasma Wave Receiver/High Time Resolution Waveform Data",
+     
+ 		"description": "The following description applies to the Wideband Data (WBD) Plasma \nWave Receivers on all four Cluster satellites, each satellite being uniquely identified \nby its number (1 through 4) or its given name (Rumba, Salsa, Samba, Tango, \nrespectively).  High time resolution calibrated waveform data sampled in one \nof 3 frequency bands in the range 0-577 kHz along one axis using either an \nelectric field antenna or a magnetic search coil sensor. The dataset also \nincludes instrument mode, data quality and the angles required to orient the \nmeasurement with respect to the magnetic field and to the GSE coordinate \nsystem. The AC electric field data are obtained by using one of the two 88m \nspin plane electric field antennas of the EFW (Electric Fields and Waves) \ninstrument as a sensor. The AC magnetic field data are obtained by using \none of the two search coil magnetometers (one in the spin plane, the other \nalong the spin axis) of the STAFF (Spatio-Temporal Analysis of Field \nFluctuations) instrument as a sensor. The WBD data are obtained in one of \nthree filter bandwidth modes: (1) 9.5 kHz, (2) 19 kHz, or (3) 77 kHz. The \nminimum frequency of each of these three frequency bands can be shifted \nup (converted) from the default 0 kHz base frequency by 125.454, 250.908 \nor 501.816 kHz. The time resolution of the data shown in the plots is \ndetermined from the WBD instrument mode. The highest time resolution \ndata (generally the 77 kHz bandwidth mode) are sampled at 4.6 \nmicroseconds in the time domain (~4.7 milliseconds in the frequency \ndomain using a standard 1024 point FFT). The lowest time resolution data \n(generally the 9.5 kHz bandwidth mode) are sampled at 36.5 microseconds \nin the time domain (~37.3 milliseconds in the frequency domain using a \nstandard 1024 point FFT). The availability of these files depends on times of \nDSN and Panska Ves ground station telemetry downlinks. A list of the status \nof the WBD instrument on each spacecraft, the telemetry time spans, \noperating modes and other details are available under Science Data \nAvailability on the University of Iowa Cluster WBD web site at http://www-\npw.physics.uiowa.edu/cluster/ and through the documentation section of \nthe Cluster Science Archive (CSA) (https://www.cosmos.esa.int/web/csa/documentation). Details on \nCluster WBD Interpretation Issues and Caveats can be found at http://www-\npw.physics.uiowa.edu/cluster/  by clicking on the links next to the Caution symbol \nin the listing on the left side of the web site.  These documents are also available \nfrom the Documentation section of the CSA website.   For further details on \nthe Cluster WBD data products see Pickett, J.S., et al., \"Cluster Wideband \nData Products in the Cluster Active Archive\" in _The Cluster Active Archive_, \n2010, Springer-Verlag, pp 169-183, and the Cluster WBD User Guide \narchived at the CSA website in the Documentation section. ... \n\nCALIBRATION: ... The procedure used in computing the calibrated Electric \nField and Magnetic Field values found in this file can be obtained from the \nCluster WBD Calibration Report archived at the CSA website in the \nDocumentation section. Because the calibration was applied in the time \ndomain using simple equations the raw counts actually measured by the \nWBD instrument can be obtained by using these equations and solving for \n'Raw Counts', keeping in mind that this number is an Integer ranging from 0 \nto 255. Since DC offset is a real number, the resultant when solving for raw \ncounts will need to be converted to the nearest whole number.  A sample \nIDL routine for reverse calibrating to obtain 'Raw Counts' is provided in the \nWBD Calibration Report archived at the CSA. ... \n\nCONVERSION TO FREQUENCY DOMAIN: ... In order to convert the WBD data to the frequency \ndomain via an FFT, the following steps need to be carried out: 1) If Electric \nField, first divide calibrated data values by 1000 to get V/m; 2) Apply \nwindow of preference, if any (such as Hann, etc.); 3) Divide data values by \nsqrt(2) to get back to the rms domain; 4) perform FFT (see Bandwidth \nvariable notes for non-continuous modes and/or the WBD User Guide \narchived at the CSA); 5) divide by the noise bandwidth, which is equal to \nthe sampling frequency divided by the FFT size (see table below for \nappropriate sampling frequency); 6) multiply by the appropriate constant \nfor the window used, if any. These steps are more fully explained in the \nWBD Calibration Report archived at the CSA.... \n\n+--------------------------+ \n| Bandwidth | Sample Rate | \n|-----------|--------------| \n| 9.5 kHz | 27.443 kHz | \n| 19 kHz | 54.886 kHz | \n| 77 kHz | 219.544 kHz | \n+--------------------------+ \n\n\nCOORDINATE SYSTEM USED: ... One axis measurements made in the \nAntenna Coordinate System, i.e., if electric field measurement, it will either \nbe Ey or Ez, both of which are in the spin plane of the spacecraft, and if \nmagnetic field measurement, it will either be Bx, along the spin axis, or By, \nin spin plane.  The user of WBD data should refer to the WBD User Guide, \narchived at the CSA, Section 5.4.1 and Figure 5.3 for a description of the \nthree orientation angles provided in these files.  Since WBD measurements \nare made along one axis only, these three angles provide the only means for \norienting the WBD measurements with respect to a geocentric coordinate \nsystem and to the magnetic field direction ...",
+		"abstract": "The following description applies to the Wideband Data (WBD) Plasma \nWave Receivers on all four Cluster satellites, each satellite being uniquely identified \nby its number (1 through 4) or its given name (Rumba, Salsa, Samba, Tango, \nrespectively).  High time resolution calibrated waveform data sampled in one \nof 3 frequency bands in the range 0-577 kHz along one axis using either an \nelectric field antenna or a magnetic search coil sensor. The dataset also \nincludes instrument mode, data quality and the angles required to orient the \nmeasurement with respect to the magnetic field and to the GSE coordinate \nsystem. The AC electric field data are obtained by using one of the two 88m \nspin plane electric field antennas of the EFW (Electric Fields and Waves) \ninstrument as a sensor. The AC magnetic field data are obtained by using \none of the two search coil magnetometers (one in the spin plane, the other \nalong the spin axis) of the STAFF (Spatio-Temporal Analysis of Field \nFluctuations) instrument as a sensor. The WBD data are obtained in one of \nthree filter bandwidth modes: (1) 9.5 kHz, (2) 19 kHz, or (3) 77 kHz. The \nminimum frequency of each of these three frequency bands can be shifted \nup (converted) from the default 0 kHz base frequency by 125.454, 250.908 \nor 501.816 kHz. The time resolution of the data shown in the plots is \ndetermined from the WBD instrument mode. The highest time resolution \ndata (generally the 77 kHz bandwidth mode) are sampled at 4.6 \nmicroseconds in the time domain (~4.7 milliseconds in the frequency \ndomain using a standard 1024 point FFT). The lowest time resolution data \n(generally the 9.5 kHz bandwidth mode) are sampled at 36.5 microseconds \nin the time domain (~37.3 milliseconds in the frequency domain using a \nstandard 1024 point FFT). The availability of these files depends on times of \nDSN and Panska Ves ground station telemetry downlinks. A list of the status \nof the WBD instrument on each spacecraft, the telemetry time spans, \noperating modes and other details are available under Science Data \nAvailability on the University of Iowa Cluster WBD web site at http://www-\npw.physics.uiowa.edu/cluster/ and through the documentation section of \nthe Cluster Science Archive (CSA) (https://www.cosmos.esa.int/web/csa/documentation). Details on \nCluster WBD Interpretation Issues and Caveats can be found at http://www-\npw.physics.uiowa.edu/cluster/  by clicking on the links next to the Caution symbol \nin the listing on the left side of the web site.  These documents are also available \nfrom the Documentation section of the CSA website.   For further details on \nthe Cluster WBD data products see Pickett, J.S., et al., \"Cluster Wideband \nData Products in the Cluster Active Archive\" in _The Cluster Active Archive_, \n2010, Springer-Verlag, pp 169-183, and the Cluster WBD User Guide \narchived at the CSA website in the Documentation section. ... \n\nCALIBRATION: ... The procedure used in computing the calibrated Electric \nField and Magnetic Field values found in this file can be obtained from the \nCluster WBD Calibration Report archived at the CSA website in the \nDocumentation section. Because the calibration was applied in the time \ndomain using simple equations the raw counts actually measured by the \nWBD instrument can be obtained by using these equations and solving for \n'Raw Counts', keeping in mind that this number is an Integer ranging from 0 \nto 255. Since DC offset is a real number, the resultant when solving for raw \ncounts will need to be converted to the nearest whole number.  A sample \nIDL routine for reverse calibrating to obtain 'Raw Counts' is provided in the \nWBD Calibration Report archived at the CSA. ... \n\nCONVERSION TO FREQUENCY DOMAIN: ... In order to convert the WBD data to the frequency \ndomain via an FFT, the following steps need to be carried out: 1) If Electric \nField, first divide calibrated data values by 1000 to get V/m; 2) Apply \nwindow of preference, if any (such as Hann, etc.); 3) Divide data values by \nsqrt(2) to get back to the rms domain; 4) perform FFT (see Bandwidth \nvariable notes for non-continuous modes and/or the WBD User Guide \narchived at the CSA); 5) divide by the noise bandwidth, which is equal to \nthe sampling frequency divided by the FFT size (see table below for \nappropriate sampling frequency); 6) multiply by the appropriate constant \nfor the window used, if any. These steps are more fully explained in the \nWBD Calibration Report archived at the CSA.... \n\n+--------------------------+ \n| Bandwidth | Sample Rate | \n|-----------|--------------| \n| 9.5 kHz | 27.443 kHz | \n| 19 kHz | 54.886 kHz | \n| 77 kHz | 219.544 kHz | \n+--------------------------+ \n\n\nCOORDINATE SYSTEM USED: ... One axis measurements made in the \nAntenna Coordinate System, i.e., if electric field measurement, it will either \nbe Ey or Ez, both of which are in the spin plane of the spacecraft, and if \nmagnetic field measurement, it will either be Bx, along the spin axis, or By, \nin spin plane.  The user of WBD data should refer to the WBD User Guide, \narchived at the CSA, Section 5.4.1 and Figure 5.3 for a description of the \nthree orientation angles provided in these files.  Since WBD measurements \nare made along one axis only, these three angles provide the only means for \norienting the WBD measurements with respect to a geocentric coordinate \nsystem and to the magnetic field direction ...",
+		"temporalCoverage": "1990.10.06  2009.30.06",
+		"keywords": [  "Time Series", "Waveform", "AKR", "Auroral hiss", "Auroral Kilometric Radiation", "Chorus", "Continuum radiation", "Equatorial Noise", "Kilometric Continuum radiation", "Plasmaspheric Hiss", "Terrestrial Kilometric Radiation", "TKR", "Very Long Baseline Interferometry", "VLBI", "Langmuir Waves", "Type III Solar Bursts", "Electostatic Solitary Waves", "ESW", "Whistlers", "Ion Acoustic Waves", "Bernstein Waves", "Upper Hybrid Waves", "Lower Hybrid Waves" ],
+		"license": "https://cdla.io/permissive-1-0/",
+        "audience":{
+            "@type": "Audience",
+            "audienceType": ["Space Physicist", "Space Community", "Data Scientists", "Machine Learning Users"]
+        }
+	  }
+	  </script><style>
+/* http://spase-group.org/tools/xmlviewer */
+/* v1.0 | 20160908 */
+
+* {
+   margin: 0;
+   padding: 0;
+   border: 0;
+   outline: 0;
+   font-size: 100%;
+   vertical-align: baseline;
+   background: transparent;
+}
+
+body {
+	background-color: #f0f0f0; // #eaf5e9; #277bc0; #d3d3f9;
+	color: black;
+	font-family: Verdana, Arial, sans-serif; 
+	font-size:12px; 
+	line-height: 1.2;
+}
+ 
+h1,h2,h3,h4,h5,h6 {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-weight:bold;
+}
+
+h1 {
+	font-size: 140%;
+}
+
+h2 {
+	font-size: 120%;
+}
+
+h3 {
+	font-size: 110%;
+	font-style: oblique;
+}
+
+p {
+	margin-bottom: 0.75ex;
+}
+
+dt {
+	margin-top: 5px;
+	padding-left: 5px;
+	border-top: 1px solid #DDD;
+	font-weight: bold;
+}
+
+dd {
+	margin-left: 5ex;
+}
+
+a:link,
+a:visited {
+   color: #277bc0;/* #339;*/
+   font-weight:bolder; 
+   text-decoration:none; 
+}
+
+a:hover {
+   color: blue;
+   font-weight:bolder; 
+   text-decoration:underline; 
+}
+
+ul {
+	list-style: square inside ;
+	margin-bottom: 0.75ex;
+}
+
+table {
+   border: thin solid #666;
+	margin-top: 5px;
+	margin-bottom: 10px;
+}
+
+thead,tbody {
+   border: thin solid #666;
+}
+
+td, th {
+   margin: 0;
+	padding: 2px 2px 2px 2px;
+}
+
+th {
+	font-style: oblique;
+}
+
+h1.detail {
+}
+
+.header {
+	width:100%;
+	padding: 1em 10px 1em 10px;
+	color: #fff;
+	background: #5e87b0;
+	font-weight: bold;
+	text-shadow: 0 /*{b-bar-shadow-x}*/ 1px /*{b-bar-shadow-y}*/ 1px /*{b-bar-shadow-radius}*/ #3e6790 /*{b-bar-shadow-color}*/;
+	text-align: center;
+	font-size: 16px;
+	display: block;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	outline: 0 !important;
+}
+
+.inset {
+	margin-left: 22%;
+}
+
+.page {
+	padding: 10px 3% 10px 3%;
+}
+
+div.product {
+	background-color: white;
+	border: thin solid #333;
+	padding: 10px 15px 10px 15px;
+	margin-top: 10px;
+}
+
+div.parameter {
+	margin-top: 10px;
+	padding: 5px 10px 10px 10px;
+	border: thin dotted #333;
+	background-color: #ebebeb;
+}
+
+dt.parameter {
+	margin-top: 10px;
+	padding: 5px 10px 10px 10px;
+	border: thin dotted #333;
+	background-color: #ebebeb;
+}
+
+#toc {
+   border: thin solid #333;
+   background-color: #F5F5F5; 
+   padding: 10px 15px 10px 15px;
+   margin-left: 5%;
+   margin-right: 5%;
+   margin-bottom: 30px;
+}
+
+#toc ol, ul, li {
+	padding-left: 5ex;
+}
+
+#toc ol {
+	list-style-type: decimal;
+	list-style-position: inside; 
+}
+
+#toc ul {
+	list-style-type: square;
+	list-style-position: inside; 
+}
+
+p.version {
+  float: right;
+  width: 100%;
+  margin-top: 5px;
+  text-align: right;
+  font-size: x-small;
+}
+
+p.right {
+  float: right;
+  text-align: right;
+}
+
+.box-title {
+	font-size: 120%;
+	font-weight:bold;
+	text-align: center;
+	border-bottom: 1px solid #DDD;
+}
+
+ul.list {
+	list-style-position: outside;
+	padding-left: 1.5em;
+}
+
+li.list {
+	text-align: left;
+	padding-left: 0px;
+}
+
+.no-break {
+	white-space: nowrap;
+}
+
+p.author {
+	font-size: 120%;
+}
+
+div.brand {
+	width: 100%;
+	text-align: right;
+}
+
+div.abstract {
+	display: table;
+	position: relative;
+	width: 100%;
+}
+
+div.citation {
+}
+
+div.access {
+	float: left;
+	width: 20%;
+	background-color: white;
+	border: thin solid #333;
+	padding: 5px 5px 5px 5px;
+	margin-right: 1em;
+}
+
+a.xml-logo:link,
+a.xml-logo:visited {
+   background: #ff6600;
+   color: #ffffff;
+   font-weight:bolder; 
+   text-decoration:none; 
+   padding-left:2px;
+   padding-right:2px;
+}
+a.xml-logo:hover {
+   text-decoration:underline; 
+}
+
+	  </style></head><body><div><a id="top"/></div><div class="header"><div class="middle">HPDE.io</div></div><div class="page"><div class="spase"><div class="abstract"><div class="access"><p class="box-title">Data Access</p><ul class="list"><li class="list"><a target="_blank" href="ftp://cdaweb.gsfc.nasa.gov/pub/data/cluster/c2/wbd/">CDAWeb FTP access to Cluster WBD CDFs</a></li><li class="list"><a target="_blank" href="https://cdaweb.gsfc.nasa.gov/istp_public/">CDAWeb web access portal to Cluster WBD CDF data</a></li><li class="list"><a target="_blank" href="https://www.cosmos.esa.int/web/csa/">Access to Cluster WBD CEFs</a></li></ul></div><div class="citation inset"><h1><a name="spase://VWO/NumericalData/Cluster-Salsa/WBD/PT0.0000046S">Cluster Salsa Wideband (WBD) Data Plasma Wave Receiver/High Time Resolution Waveform Data</a></h1><p><dt>ResourceID</dt><dd>spase://VWO/NumericalData/Cluster-Salsa/WBD/PT0.0000046S</dd></p><p><dt>Description</dt><dd><p>The following description applies to the Wideband Data (WBD) Plasma<br>
+Wave Receivers on all four Cluster satellites, each satellite being uniquely identified<br>
+by its number (1 through 4) or its given name (Rumba, Salsa, Samba, Tango,<br>
+respectively).  High time resolution calibrated waveform data sampled in one<br>
+of 3 frequency bands in the range 0-577 kHz along one axis using either an<br>
+electric field antenna or a magnetic search coil sensor. The dataset also<br>
+includes instrument mode, data quality and the angles required to orient the<br>
+measurement with respect to the magnetic field and to the GSE coordinate<br>
+system. The AC electric field data are obtained by using one of the two 88m<br>
+spin plane electric field antennas of the EFW (Electric Fields and Waves)<br>
+instrument as a sensor. The AC magnetic field data are obtained by using<br>
+one of the two search coil magnetometers (one in the spin plane, the other<br>
+along the spin axis) of the STAFF (Spatio-Temporal Analysis of Field<br>
+Fluctuations) instrument as a sensor. The WBD data are obtained in one of<br>
+three filter bandwidth modes: (1) 9.5 kHz, (2) 19 kHz, or (3) 77 kHz. The<br>
+minimum frequency of each of these three frequency bands can be shifted<br>
+up (converted) from the default 0 kHz base frequency by 125.454, 250.908<br>
+or 501.816 kHz. The time resolution of the data shown in the plots is<br>
+determined from the WBD instrument mode. The highest time resolution<br>
+data (generally the 77 kHz bandwidth mode) are sampled at 4.6<br>
+microseconds in the time domain (~4.7 milliseconds in the frequency<br>
+domain using a standard 1024 point FFT). The lowest time resolution data<br>
+(generally the 9.5 kHz bandwidth mode) are sampled at 36.5 microseconds<br>
+in the time domain (~37.3 milliseconds in the frequency domain using a<br>
+standard 1024 point FFT). The availability of these files depends on times of<br>
+DSN and Panska Ves ground station telemetry downlinks. A list of the status<br>
+of the WBD instrument on each spacecraft, the telemetry time spans,<br>
+operating modes and other details are available under Science Data<br>
+Availability on the University of Iowa Cluster WBD web site at http://www-<br>
+pw.physics.uiowa.edu/cluster/ and through the documentation section of<br>
+the Cluster Science Archive (CSA) (https://www.cosmos.esa.int/web/csa/documentation). Details on<br>
+Cluster WBD Interpretation Issues and Caveats can be found at http://www-<br>
+pw.physics.uiowa.edu/cluster/  by clicking on the links next to the Caution symbol<br>
+in the listing on the left side of the web site.  These documents are also available<br>
+from the Documentation section of the CSA website.   For further details on<br>
+the Cluster WBD data products see Pickett, J.S., et al., &quot;Cluster Wideband<br>
+Data Products in the Cluster Active Archive&quot; in <em>The Cluster Active Archive</em>,<br>
+2010, Springer-Verlag, pp 169-183, and the Cluster WBD User Guide<br>
+archived at the CSA website in the Documentation section. ...</p>
+<p>CALIBRATION: ... The procedure used in computing the calibrated Electric<br>
+Field and Magnetic Field values found in this file can be obtained from the<br>
+Cluster WBD Calibration Report archived at the CSA website in the<br>
+Documentation section. Because the calibration was applied in the time<br>
+domain using simple equations the raw counts actually measured by the<br>
+WBD instrument can be obtained by using these equations and solving for<br>
+'Raw Counts', keeping in mind that this number is an Integer ranging from 0<br>
+to 255. Since DC offset is a real number, the resultant when solving for raw<br>
+counts will need to be converted to the nearest whole number.  A sample<br>
+IDL routine for reverse calibrating to obtain 'Raw Counts' is provided in the<br>
+WBD Calibration Report archived at the CSA. ...</p>
+<p>CONVERSION TO FREQUENCY DOMAIN: ... In order to convert the WBD data to the frequency<br>
+domain via an FFT, the following steps need to be carried out: 1) If Electric<br>
+Field, first divide calibrated data values by 1000 to get V/m; 2) Apply<br>
+window of preference, if any (such as Hann, etc.); 3) Divide data values by<br>
+sqrt(2) to get back to the rms domain; 4) perform FFT (see Bandwidth<br>
+variable notes for non-continuous modes and/or the WBD User Guide<br>
+archived at the CSA); 5) divide by the noise bandwidth, which is equal to<br>
+the sampling frequency divided by the FFT size (see table below for<br>
+appropriate sampling frequency); 6) multiply by the appropriate constant<br>
+for the window used, if any. These steps are more fully explained in the<br>
+WBD Calibration Report archived at the CSA....</p>
+<p>+--------------------------+</p>
+<table>
+<thead>
+<tr><th>Bandwidth</th><th>Sample Rate</th></tr>
+</thead>
+<tbody>
+<tr><td>9.5 kHz</td><td>27.443 kHz</td></tr>
+<tr><td>19 kHz</td><td>54.886 kHz</td></tr>
+<tr><td>77 kHz</td><td>219.544 kHz</td></tr>
+</tbody>
+</table>
+<p>+--------------------------+</p>
+<p>COORDINATE SYSTEM USED: ... One axis measurements made in the<br>
+Antenna Coordinate System, i.e., if electric field measurement, it will either<br>
+be Ey or Ez, both of which are in the spin plane of the spacecraft, and if<br>
+magnetic field measurement, it will either be Bx, along the spin axis, or By,<br>
+in spin plane.  The user of WBD data should refer to the WBD User Guide,<br>
+archived at the CSA, Section 5.4.1 and Figure 5.3 for a description of the<br>
+three orientation angles provided in these files.  Since WBD measurements<br>
+are made along one axis only, these three angles provide the only means for<br>
+orienting the WBD measurements with respect to a geocentric coordinate<br>
+system and to the magnetic field direction ...</p>
+</dd></p></div></div><div><p class="right"><a target="_blank" href="PT0.0000046S.xml">View XML</a> | <a target="_blank" href="PT0.0000046S.json">View JSON</a></p><h1 class="detail">Details</h1></div><div><div class="product"><p class="version">Version:2.2.8</p><h1>NumericalData</h1><dt>ResourceID</dt><dd>spase://VWO/NumericalData/Cluster-Salsa/WBD/PT0.0000046S</dd><dl><dt>ResourceHeader</dt><dd><dl><dt>ResourceName</dt><dd>Cluster Salsa Wideband (WBD) Data Plasma Wave Receiver/High Time Resolution Waveform Data</dd></dl><dl><dt>AlternateName</dt><dd>Cluster 2 Wideband Data Plasma Wave Receiver/High Time Resolution Waveform Data</dd></dl><dl><dt>AlternateName</dt><dd>C2_CE_Waveform_WBD_CDF</dd></dl><dl><dt>AlternateName</dt><dd>C2_CP_Waveform_WBD</dd></dl><dl><dt>AlternateName</dt><dd>C2_WAVEFORM_WBD</dd></dl><dl><dt>ReleaseDate</dt><dd>2017-09-13 17:00:00Z</dd></dl><dt>Description</dt><dd><p>The following description applies to the Wideband Data (WBD) Plasma<br>
+Wave Receivers on all four Cluster satellites, each satellite being uniquely identified<br>
+by its number (1 through 4) or its given name (Rumba, Salsa, Samba, Tango,<br>
+respectively).  High time resolution calibrated waveform data sampled in one<br>
+of 3 frequency bands in the range 0-577 kHz along one axis using either an<br>
+electric field antenna or a magnetic search coil sensor. The dataset also<br>
+includes instrument mode, data quality and the angles required to orient the<br>
+measurement with respect to the magnetic field and to the GSE coordinate<br>
+system. The AC electric field data are obtained by using one of the two 88m<br>
+spin plane electric field antennas of the EFW (Electric Fields and Waves)<br>
+instrument as a sensor. The AC magnetic field data are obtained by using<br>
+one of the two search coil magnetometers (one in the spin plane, the other<br>
+along the spin axis) of the STAFF (Spatio-Temporal Analysis of Field<br>
+Fluctuations) instrument as a sensor. The WBD data are obtained in one of<br>
+three filter bandwidth modes: (1) 9.5 kHz, (2) 19 kHz, or (3) 77 kHz. The<br>
+minimum frequency of each of these three frequency bands can be shifted<br>
+up (converted) from the default 0 kHz base frequency by 125.454, 250.908<br>
+or 501.816 kHz. The time resolution of the data shown in the plots is<br>
+determined from the WBD instrument mode. The highest time resolution<br>
+data (generally the 77 kHz bandwidth mode) are sampled at 4.6<br>
+microseconds in the time domain (~4.7 milliseconds in the frequency<br>
+domain using a standard 1024 point FFT). The lowest time resolution data<br>
+(generally the 9.5 kHz bandwidth mode) are sampled at 36.5 microseconds<br>
+in the time domain (~37.3 milliseconds in the frequency domain using a<br>
+standard 1024 point FFT). The availability of these files depends on times of<br>
+DSN and Panska Ves ground station telemetry downlinks. A list of the status<br>
+of the WBD instrument on each spacecraft, the telemetry time spans,<br>
+operating modes and other details are available under Science Data<br>
+Availability on the University of Iowa Cluster WBD web site at http://www-<br>
+pw.physics.uiowa.edu/cluster/ and through the documentation section of<br>
+the Cluster Science Archive (CSA) (https://www.cosmos.esa.int/web/csa/documentation). Details on<br>
+Cluster WBD Interpretation Issues and Caveats can be found at http://www-<br>
+pw.physics.uiowa.edu/cluster/  by clicking on the links next to the Caution symbol<br>
+in the listing on the left side of the web site.  These documents are also available<br>
+from the Documentation section of the CSA website.   For further details on<br>
+the Cluster WBD data products see Pickett, J.S., et al., &quot;Cluster Wideband<br>
+Data Products in the Cluster Active Archive&quot; in <em>The Cluster Active Archive</em>,<br>
+2010, Springer-Verlag, pp 169-183, and the Cluster WBD User Guide<br>
+archived at the CSA website in the Documentation section. ...</p>
+<p>CALIBRATION: ... The procedure used in computing the calibrated Electric<br>
+Field and Magnetic Field values found in this file can be obtained from the<br>
+Cluster WBD Calibration Report archived at the CSA website in the<br>
+Documentation section. Because the calibration was applied in the time<br>
+domain using simple equations the raw counts actually measured by the<br>
+WBD instrument can be obtained by using these equations and solving for<br>
+'Raw Counts', keeping in mind that this number is an Integer ranging from 0<br>
+to 255. Since DC offset is a real number, the resultant when solving for raw<br>
+counts will need to be converted to the nearest whole number.  A sample<br>
+IDL routine for reverse calibrating to obtain 'Raw Counts' is provided in the<br>
+WBD Calibration Report archived at the CSA. ...</p>
+<p>CONVERSION TO FREQUENCY DOMAIN: ... In order to convert the WBD data to the frequency<br>
+domain via an FFT, the following steps need to be carried out: 1) If Electric<br>
+Field, first divide calibrated data values by 1000 to get V/m; 2) Apply<br>
+window of preference, if any (such as Hann, etc.); 3) Divide data values by<br>
+sqrt(2) to get back to the rms domain; 4) perform FFT (see Bandwidth<br>
+variable notes for non-continuous modes and/or the WBD User Guide<br>
+archived at the CSA); 5) divide by the noise bandwidth, which is equal to<br>
+the sampling frequency divided by the FFT size (see table below for<br>
+appropriate sampling frequency); 6) multiply by the appropriate constant<br>
+for the window used, if any. These steps are more fully explained in the<br>
+WBD Calibration Report archived at the CSA....</p>
+<p>+--------------------------+</p>
+<table>
+<thead>
+<tr><th>Bandwidth</th><th>Sample Rate</th></tr>
+</thead>
+<tbody>
+<tr><td>9.5 kHz</td><td>27.443 kHz</td></tr>
+<tr><td>19 kHz</td><td>54.886 kHz</td></tr>
+<tr><td>77 kHz</td><td>219.544 kHz</td></tr>
+</tbody>
+</table>
+<p>+--------------------------+</p>
+<p>COORDINATE SYSTEM USED: ... One axis measurements made in the<br>
+Antenna Coordinate System, i.e., if electric field measurement, it will either<br>
+be Ey or Ez, both of which are in the spin plane of the spacecraft, and if<br>
+magnetic field measurement, it will either be Bx, along the spin axis, or By,<br>
+in spin plane.  The user of WBD data should refer to the WBD User Guide,<br>
+archived at the CSA, Section 5.4.1 and Figure 5.3 for a description of the<br>
+three orientation angles provided in these files.  Since WBD measurements<br>
+are made along one axis only, these three angles provide the only means for<br>
+orienting the WBD measurements with respect to a geocentric coordinate<br>
+system and to the magnetic field direction ...</p>
+</dd><dl><dt>Acknowledgement</dt><dd>Users of the Cluster WBD data are encouraged to 
+acknowledge Jolene S. Pickett, PI and Donald A. Gurnett, Co-I University of 
+Iowa and the Coordinated Data Analysis Web (CDAWeb) at the NASA 
+Goddard Space Flight Center, or the Cluster Science Archive, as appropriate, 
+as the source of the data in any publication.</dd></dl><dt>Contacts</dt><dd><table class="nested" cellspacing="0"><tr><th/><th class="center">Role</th><th class="center">Person</th></tr><tbody><tr><td>1.</td><td>PrincipalInvestigator</td><td><a target="_blank" href="https://hpde.io/SMWG/Person/Jolene.S.Pickett.html">spase://SMWG/Person/Jolene.S.Pickett</a></td></tr><tr><td>2.</td><td>CoInvestigator</td><td><a target="_blank" href="https://hpde.io/SMWG/Person/Donald.A.Gurnett.html">spase://SMWG/Person/Donald.A.Gurnett</a></td></tr></tbody></table></dd><dl><dt>InformationURL</dt><dd><dl><dt>Name</dt><dd>Cluster WBD Instrument Page</dd></dl><dl><dt>URL</dt><dd><a target="_blank" href="http://www-pw.physics.uiowa.edu/cluster/">http://www-pw.physics.uiowa.edu/cluster/</a></dd></dl><dt>Description</dt><dd><p>Cluster WBD Instrument page maintained by the University of<br>
+Iowa with links to instrument descriptions and team members, publications,<br>
+lists of coordinated observing times, science data availability catalogs, data,<br>
+data interpretation and caveat descriptions as well as data analysis<br>
+tools.</p>
+</dd><dl><dt>Language</dt><dd>en</dd></dl></dd></dl><dl><dt>InformationURL</dt><dd><dl><dt>Name</dt><dd>Cluster Science Archive Documentation Page</dd></dl><dl><dt>URL</dt><dd><a target="_blank" href="https://www.cosmos.esa.int/web/csa/documentation">https://www.cosmos.esa.int/web/csa/documentation</a></dd></dl><dt>Description</dt><dd><p>Cluster WBD documentation with links to lists of coordinated<br>
+observing times, science data availability catalogs, WBD User Guide, WBD<br>
+Calibration Report, WBD Interface Control Document, and data<br>
+interpretation and caveat descriptions.</p>
+</dd><dl><dt>Language</dt><dd>en</dd></dl></dd></dl><dt>PriorIDs</dt><dd/><dd>spase://VWO/NumericalData/Cluster-Salsa/WBD/Cluster_2_Waveform_WBD</dd></dd></dl><dl><dt>AccessInformation</dt><dd><dl><dt>RepositoryID</dt><dd><a href="https://hpde.io/SMWG/Repository/NASA/GSFC/SPDF/CDAWeb.html">spase://SMWG/Repository/NASA/GSFC/SPDF/CDAWeb</a></dd></dl><dl><dt>Availability</dt><dd>Online</dd></dl><dl><dt>AccessRights</dt><dd>Open</dd></dl><dl><dt>AccessURL</dt><dd><dl><dt>Name</dt><dd>CDAWeb FTP access to Cluster WBD CDFs</dd></dl><dl><dt>URL</dt><dd><a target="_blank" href="ftp://cdaweb.gsfc.nasa.gov/pub/data/cluster/c2/wbd/">ftp://cdaweb.gsfc.nasa.gov/pub/data/cluster/c2/wbd/</a></dd></dl><dt>Description</dt><dd><p>FTP access to repository of Cluster 2 WBD CDFs at NASA<br>
+CDAWeb.Name of the data resource: C2_WAVEFORM_WBD</p>
+</dd><dl><dt>Language</dt><dd>en</dd></dl></dd></dl><dl><dt>AccessURL</dt><dd><dl><dt>Name</dt><dd>CDAWeb web access portal to Cluster WBD CDF data</dd></dl><dl><dt>URL</dt><dd><a target="_blank" href="https://cdaweb.gsfc.nasa.gov/istp_public/">https://cdaweb.gsfc.nasa.gov/istp_public/</a></dd></dl><dl><dt>ProductKey</dt><dd>C2_WAVEFORM_WBD</dd></dl><dt>Description</dt><dd><p>Repository of Cluster 2 WBD data in CDF format at NASA CDAWeb,<br>
+accessible via web interface. Name of the data resource:<br>
+C2_WAVEFORM_WBD.</p>
+</dd><dl><dt>Language</dt><dd>en</dd></dl></dd></dl><dl><dt>Format</dt><dd>CDF</dd></dl><dl><dt>Encoding</dt><dd>None</dd></dl><dl><dt>Acknowledgement</dt><dd>Users of the Cluster WBD data are encouraged to 
+acknowledge Jolene S. Pickett, PI and Donald A. Gurnett, Co-I University of 
+Iowa and the Coordinated Data Analysis Web (CDAWeb) at the NASA 
+Goddard Space Flight Center, as the source of the data in any publication.</dd></dl></dd></dl><dl><dt>AccessInformation</dt><dd><dl><dt>RepositoryID</dt><dd><a href="https://hpde.io/SMWG/Repository/CSA.html">spase://SMWG/Repository/CSA</a></dd></dl><dl><dt>Availability</dt><dd>Online</dd></dl><dl><dt>AccessRights</dt><dd>Open</dd></dl><dl><dt>AccessURL</dt><dd><dl><dt>Name</dt><dd>Access to Cluster WBD CEFs</dd></dl><dl><dt>URL</dt><dd><a target="_blank" href="https://www.cosmos.esa.int/web/csa/">https://www.cosmos.esa.int/web/csa/</a></dd></dl><dl><dt>ProductKey</dt><dd>C2_CP_WBD_WAVEFORM</dd></dl><dl><dt>ProductKey</dt><dd>C2_CE_WBD_WAVEFORM_CDF</dd></dl><dt>Description</dt><dd><p>Access to repository of Cluster 2 Wideband data in Cluster Exchange Format (CEF) and CDF format at the Cluster Science Archive. The CEF format files have the designation C[n]_CP_WBD_WAVEFORM, the CDF format has the designation C[n]_CE_WBD_WAVEFORM_CDF, where n=1,2,3,4. Access to data through the Cluster Science Archive is available via a java GUI interface and a command-line interface. Access is open but registration is required.</p>
+</dd><dl><dt>Language</dt><dd>en</dd></dl></dd></dl><dl><dt>Format</dt><dd>Text.ASCII</dd></dl><dl><dt>Encoding</dt><dd>None</dd></dl><dl><dt>Acknowledgement</dt><dd>Users of the Cluster WBD data are encouraged to 
+acknowledge Jolene S. Pickett, PI and Donald A. Gurnett, Co-I University of 
+Iowa and the Cluster Science Archive, as appropriate, as the source of the data in any publication.</dd></dl></dd></dl><dl><dt>ProcessingLevel</dt><dd>Calibrated</dd></dl><dl><dt>ProviderResourceName</dt><dd>Electric and magnetic waveform data (full resolution)</dd></dl><dt>InstrumentIDs</dt><dd><a target="_blank" href="https://hpde.io/SMWG/Instrument/Cluster-Salsa/WBD.html">spase://SMWG/Instrument/Cluster-Salsa/WBD</a></dd><dl><dt>MeasurementType</dt><dd>Waves.Passive</dd></dl><dl><dt>MeasurementType</dt><dd>ElectricField</dd></dl><dl><dt>MeasurementType</dt><dd>MagneticField</dd></dl><dl><dt>TemporalDescription</dt><dd><dl><dt>TimeSpan</dt><dd><dl><dt>StartDate</dt><dd>2001-02-03 05:26:00Z</dd></dl><dl><dt>StopDate</dt><dd>2016-06-30 21:00:00Z</dd></dl></dd></dl><dl><dt>Cadence</dt><dd>PT0.0000046S</dd></dl></dd></dl><dl><dt>SpectralRange</dt><dd>RadioFrequency</dd></dl><dl><dt>ObservedRegion</dt><dd>Earth.Magnetosphere</dd></dl><dl><dt>ObservedRegion</dt><dd>Earth.Magnetosheath</dd></dl><dl><dt>ObservedRegion</dt><dd>Earth.NearSurface.Plasmasphere</dd></dl><dl><dt>ObservedRegion</dt><dd>Earth.NearSurface.AuroralRegion</dd></dl><dl><dt>ObservedRegion</dt><dd>Earth.NearSurface.PolarCap</dd></dl><dl><dt>ObservedRegion</dt><dd>Earth.NearSurface.Ionosphere</dd></dl><dl><dt>ObservedRegion</dt><dd>Heliosphere.Inner</dd></dl><dl><dt>Caveats</dt><dd>See the Cluster WBD WBD data Interpretation Issues and Caveats 
+documents at the web site http://www-pw.physics.uiowa.edu/cluster/ , and 
+clicking on the links next to the "Caution" symbol in the listing on the left 
+hand side of the page.  The documents can also be retrieved from the 
+Documentation section of the CSA.
+</dd></dl><dt>Keywords</dt><dd>Time Series</dd><dd>Waveform</dd><dd>AKR</dd><dd>Auroral hiss</dd><dd>Auroral Kilometric Radiation</dd><dd>Chorus</dd><dd>Continuum radiation</dd><dd>Equatorial Noise</dd><dd>Kilometric Continuum radiation</dd><dd>Plasmaspheric Hiss</dd><dd>Terrestrial Kilometric Radiation</dd><dd>TKR</dd><dd>Very Long Baseline Interferometry</dd><dd>VLBI</dd><dd>Langmuir Waves</dd><dd>Type III Solar Bursts</dd><dd>Electostatic Solitary Waves</dd><dd>ESW</dd><dd>Whistlers</dd><dd>Ion Acoustic Waves</dd><dd>Bernstein Waves</dd><dd>Upper Hybrid Waves</dd><dd>Lower Hybrid Waves</dd><dl><dt class="parameter">Parameter #1</dt><dd><dl><dt>Name</dt><dd>UT Time</dd></dl><dl><dt>ParameterKey</dt><dd>Epoch</dd></dl><dt>Description</dt><dd><p>UT Time, time of WBD data point. On-board time is corrected to a<br>
+precision of order 50 microseconds when compared to UTC. The applied<br>
+time correction comes from the DWP TCOR time correction files located at<br>
+the Cluster Science Archive (CSA).</p>
+</dd><dl><dt>Units</dt><dd>picoseconds</dd></dl><dl><dt>Support</dt><dd><dl><dt>SupportQuantity</dt><dd>Temporal</dd></dl></dd></dl></dd></dl><dl><dt class="parameter">Parameter #2</dt><dd><dl><dt>Name</dt><dd>Frequency Bandwidth</dd></dl><dl><dt>ParameterKey</dt><dd>Bandwidth</dd></dl><dt>Description</dt><dd><p>Frequency Bandwidth: 9.5 kHz, 19 kHz, 77 kHz. WARNING: 19 and<br>
+77 kHz Bandwidth modes with 8-bit resolution, and 77 kHz Bandwidth mode<br>
+with 4-bit resolution (see Resolution variable) are not continuous data<br>
+modes. Always check for periodic time jumps for these modes.</p>
+</dd><dl><dt>Units</dt><dd>kHz</dd></dl><dl><dt>ValidMin</dt><dd>0.0</dd></dl><dl><dt>ValidMax</dt><dd>80.0</dd></dl><dl><dt>Support</dt><dd><dl><dt>SupportQuantity</dt><dd>Other</dd></dl></dd></dl></dd></dl><dl><dt class="parameter">Parameter #3</dt><dd><dl><dt>Name</dt><dd>Frequency Shift</dd></dl><dl><dt>ParameterKey</dt><dd>Translation</dd></dl><dt>Description</dt><dd><p>Base freq. of freq. bandwidth (0.0, 125.454, 250.908, and<br>
+501.816 kHz) - Also known as Conversion Frequency.</p>
+</dd><dl><dt>Units</dt><dd>kHz</dd></dl><dl><dt>ValidMin</dt><dd>0.0</dd></dl><dl><dt>ValidMax</dt><dd>510.0</dd></dl><dl><dt>Support</dt><dd><dl><dt>SupportQuantity</dt><dd>Other</dd></dl></dd></dl></dd></dl><dl><dt class="parameter">Parameter #4</dt><dd><dl><dt>Name</dt><dd>Digital Resolution</dd></dl><dl><dt>ParameterKey</dt><dd>Resolution</dd></dl><dt>Description</dt><dd><p>Number of bits used when digitizing waveform (8-bit, 4-bit, or 1-<br>
+bit)</p>
+</dd><dl><dt>Units</dt><dd>bits</dd></dl><dl><dt>ValidMin</dt><dd>1</dd></dl><dl><dt>ValidMax</dt><dd>8</dd></dl><dl><dt>Support</dt><dd><dl><dt>SupportQuantity</dt><dd>Other</dd></dl></dd></dl></dd></dl><dl><dt class="parameter">Parameter #5</dt><dd><dl><dt>Name</dt><dd>Antenna</dd></dl><dl><dt>ParameterKey</dt><dd>ANTENNA</dd></dl><dt>Description</dt><dd><p>Antenna (0=Ez, 1=Bx, 2=By, 3=Ey)</p>
+</dd><dl><dt>Support</dt><dd><dl><dt>SupportQuantity</dt><dd>Other</dd></dl></dd></dl></dd></dl><dl><dt class="parameter">Parameter #6</dt><dd><dl><dt>Name</dt><dd>Gain</dd></dl><dl><dt>ParameterKey</dt><dd>Gain</dd></dl><dt>Description</dt><dd><p>Gain state of WBD instrument. Steps of 5 dB from 0 to</p>
+<ol start="75">
+<li></li>
+</ol>
+</dd><dl><dt>Units</dt><dd>dB</dd></dl><dl><dt>ValidMin</dt><dd>-1</dd></dl><dl><dt>ValidMax</dt><dd>80</dd></dl><dl><dt>Support</dt><dd><dl><dt>SupportQuantity</dt><dd>Other</dd></dl></dd></dl></dd></dl><dl><dt class="parameter">Parameter #7</dt><dd><dl><dt>Name</dt><dd>Antenna-B Field Total Angle</dd></dl><dl><dt>ParameterKey</dt><dd>Ant_B_Field_Angle</dd></dl><dt>Description</dt><dd><p>Total angle between antenna used for WBD measurement and<br>
+measured B field direction. Antenna refers to the antenna in use, either E or<br>
+B. See ANTENNA variable.</p>
+</dd><dl><dt>Units</dt><dd>degrees</dd></dl><dl><dt>ValidMin</dt><dd>0.0</dd></dl><dl><dt>ValidMax</dt><dd>180.0</dd></dl><dl><dt>Support</dt><dd><dl><dt>SupportQuantity</dt><dd>Other</dd></dl></dd></dl></dd></dl><dl><dt class="parameter">Parameter #8</dt><dd><dl><dt>Name</dt><dd>Antenna Xgse Angle</dd></dl><dl><dt>ParameterKey</dt><dd>Ant_Xgse_Angle</dd></dl><dt>Description</dt><dd><p>Total angle between the Xgse axis and the antenna direction.<br>
+Antenna refers to the antenna in use, either E or B. See ANTENNA<br>
+variable.</p>
+</dd><dl><dt>Units</dt><dd>degrees</dd></dl><dl><dt>ValidMin</dt><dd>0.0</dd></dl><dl><dt>ValidMax</dt><dd>180.0</dd></dl><dl><dt>Support</dt><dd><dl><dt>SupportQuantity</dt><dd>Other</dd></dl></dd></dl></dd></dl><dl><dt class="parameter">Parameter #9</dt><dd><dl><dt>Name</dt><dd>Antenna YZgse-Plane Angle</dd></dl><dl><dt>ParameterKey</dt><dd>Ant_YZgse_Plane_Angle</dd></dl><dt>Description</dt><dd><p>Total angle between Ygse axis and the projection of the antenna<br>
+direction in the Ygse-Zgse plane, measured counter-clockwise from +Ygse<br>
+(angle=0 deg) to +Zgse (angle=90 deg), -Ygse (angle=180 deg) and -Zgse<br>
+(angle=270 deg). Antenna refers to the antenna in use, either E or B. See<br>
+ANTENNA variable.</p>
+</dd><dl><dt>Units</dt><dd>degrees</dd></dl><dl><dt>ValidMin</dt><dd>0.0</dd></dl><dl><dt>ValidMax</dt><dd>360.0</dd></dl><dl><dt>Support</dt><dd><dl><dt>SupportQuantity</dt><dd>Other</dd></dl></dd></dl></dd></dl><dl><dt class="parameter">Parameter #10</dt><dd><dl><dt>Name</dt><dd>DC Offset</dd></dl><dl><dt>ParameterKey</dt><dd>DC_Offset</dd></dl><dt>Description</dt><dd><p>DC Offset used when converting from raw digital values to<br>
+calibrated data. DC Offset values may be used to reverse calibrate the data<br>
+to the original raw counts and to determine the boundaries of the original<br>
+transport packets.</p>
+</dd><dl><dt>Support</dt><dd><dl><dt>SupportQuantity</dt><dd>Temporal</dd></dl></dd></dl></dd></dl><dl><dt class="parameter">Parameter #11</dt><dd><dl><dt>Name</dt><dd>WBD AC Electric Field</dd></dl><dl><dt>ParameterKey</dt><dd>WBD_Elec</dd></dl><dt>Description</dt><dd><p>Calibrated AC WBD Electric Field</p>
+</dd><dl><dt>Units</dt><dd>mV m^-1</dd></dl><dl><dt>ValidMin</dt><dd>-50.0</dd></dl><dl><dt>ValidMax</dt><dd>50.0</dd></dl><dl><dt>Wave</dt><dd><dl><dt>WaveType</dt><dd>PlasmaWaves</dd></dl><dl><dt>WaveQuantity</dt><dd>ACElectricField</dd></dl><dl><dt>FrequencyRange</dt><dd><dl><dt>SpectralRange</dt><dd>RadioFrequency</dd></dl><dl><dt>Low</dt><dd>25</dd></dl><dl><dt>High</dt><dd>577000</dd></dl><dl><dt>Units</dt><dd>Hz</dd></dl></dd></dl></dd></dl></dd></dl><dl><dt class="parameter">Parameter #12</dt><dd><dl><dt>Name</dt><dd>WBD AC Magnetic Field</dd></dl><dl><dt>ParameterKey</dt><dd>WBD_Mag</dd></dl><dt>Description</dt><dd><p>Calibrated AC WBD Magnetic Field.</p>
+</dd><dl><dt>Units</dt><dd>nT</dd></dl><dl><dt>ValidMin</dt><dd>-10.0</dd></dl><dl><dt>ValidMax</dt><dd>10.0</dd></dl><dl><dt>Wave</dt><dd><dl><dt>WaveType</dt><dd>PlasmaWaves</dd></dl><dl><dt>WaveQuantity</dt><dd>ACMagneticField</dd></dl><dl><dt>FrequencyRange</dt><dd><dl><dt>SpectralRange</dt><dd>RadioFrequency</dd></dl><dl><dt>Low</dt><dd>25</dd></dl><dl><dt>High</dt><dd>577000</dd></dl><dl><dt>Units</dt><dd>Hz</dd></dl></dd></dl></dd></dl></dd></dl><dl><dt class="parameter">Parameter #13</dt><dd><dl><dt>Name</dt><dd>Data Quality</dd></dl><dl><dt>ParameterKey</dt><dd>DATA_QUALITY</dd></dl><dt>Description</dt><dd><p>Data Quality: 0 = OK, 1 = clipped or questionable, 2 = bad data<br>
+point. Clipped data: Measurement was equal to raw data value maximum<br>
+(255) or minimum (0). This does not necessarily mean the receiver was in<br>
+saturation, which would be accompanied by non-linear effects.</p>
+</dd><dl><dt>Support</dt><dd><dl><dt>SupportQuantity</dt><dd>Other</dd></dl></dd></dl></dd></dl><dl><dt>Extension</dt><dd/></dl></div></div></div></div></body></html>

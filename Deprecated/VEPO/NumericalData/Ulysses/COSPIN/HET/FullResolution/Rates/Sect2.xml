@@ -1,0 +1,310 @@
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_2_1.xsd">
+    <Version>2.2.1</Version>
+    <NumericalData>
+        <ResourceID>spase://VEPO/NumericalData/Ulysses/COSPIN/HET/FullResolution/Rates/Sect2</ResourceID>
+        <ResourceHeader>
+            <ResourceName>Ulysses COSPIN/HET readout by readout counts and accumulation times for the 8-sectored counting rate H45S</ResourceName>
+            <ReleaseDate>2009-09-24T00:00:00.000</ReleaseDate>
+            <Description>
+            A directory containing daily ftp-downloadable files containing readout-by-readout listings 
+            of the counts accumulated in each spin-sector of the 8-sectored H45S counting rate.  Aside
+            from its division of counts into spin-sectors, H45S is a coincidence counting rate with 
+            coincidence logic requirements satisfying the logical inclusive OR of the H4 and H5 spin-
+            averaged counting rates.  Therefore the H45S counting rate responds primarily to protons
+            in the approximate energy range 34-92 MeV.
+            The naming convention for the daily files is uly_het_full_rat_sect2_YYYDDD.txt, where YYY 
+            indicates the three-digit year since 1900 (e.g. YYY=090 for 1990, and YYY=102 for 2002) and 
+            DDD indicates the three digit day of year (Jan. 1 = 1). 
+            In each file, following a detailed description of the format, the data consist of a
+            readout by readout listing of counts accumulated in the eight 45 degree spin sectors
+            of the sectored counting rate H45S during the intervals between successive readouts, organized
+            into columns as described below.  
+            The first 4 columns give the start time of the counting rate accumulation period for
+            sector 7 of the rate as fractional year (to 12 decimal places) and as  year since 1900, 
+            day of year, and ms of day at the start of the accumulation, followed by 1 column (labeled
+            cov) giving the duration of the total accumulation period for all 8 sectors in 
+            milli-seconds.  Thus the accumulation period in each of the sectors is the value given
+            in the "cov" column divided by 8.  The accumulation in each of the successive sectors 
+            7,8,1,2,3,4,5, and 6 starts cov/8 milliseconds after the start of the accumulation in 
+            the previous sector.  Columns 6-13 then give the counts accumulated in each of the 
+            eight sectors during the accumulation period.
+            Each line contains data for one single readout accumulation of the 8 sectors of H45S.
+            Since the accumulation period for each readout is forced to include an integral number 
+            of spacecraft spins in order to produce equal coverage in all sectors, the lengths of 
+            the accumulation periods vary in a cyclic manner as the period of the telemetry cycle 
+            beats with the spacecraft spin period.  
+            The H45S counting rate is fully read out every 128 seconds at the most common science 
+            telemetry bit rate (2048 bps).  Thus, with a typical 5 rpm spacecraft spin rate the 
+            accumulation intervals vary in a repeating cycle of  132, 132, 120, 132, 132, 120, etc.
+            seconds.  At lower bit rates the average interval is equal to 128x(2048/BR) seconds 
+            and the cycle automatically adjusts to produce this average accumulation. 
+            The spin plane of the Ulysses spacecraft, in which the sectors are defined, is
+            normal to the spin axis (spacecraft +Z axis), which is maintained within 1-2 degrees 
+            of Earth-pointing at all times.  Viewed from Earth the spacecraft spins counter-clockwise.  
+            The start of sector 1 is defined by the spacecraft-generated Sun Pulse, which is issued 
+            when the sun crosses the +X/+Z quadrant of the X/Z plane.  The HET telescope axis is 
+            parallel to the +X axis and normal to the Z axis. 
+            No noise-removal or despiking has been done, so caution must be used in
+            interpreting isolated large increases or decreases in the counting rates.  
+        </Description>
+            <Acknowledgement>
+          Please acknowledge the Lead HET Investigator and COSPIN P.I., Dr. R. Bruce McKibben
+        </Acknowledgement>
+            <Contact>
+                <PersonID>spase://SMWG/Person/R.Bruce.McKibben</PersonID>
+                <Role>PrincipalInvestigator</Role>
+                <Role>TeamLeader</Role>
+            </Contact>
+            <Contact>
+                <PersonID>spase://SMWG/Person/Clifford.Lopate</PersonID>
+                <Role>DataProducer</Role>
+            </Contact>
+            <Contact>
+                <PersonID>spase://SMWG/Person/James.Connell</PersonID>
+                <Role>CoInvestigator</Role>
+            </Contact>
+            <InformationURL>
+                <Name>
+            The Ulysses cosmic ray and solar particle investigation
+          </Name>
+                <URL>
+            http://ufa.esac.esa.int/ufa/#instruments
+          </URL>
+                <Description>
+            Published (J.A. Simpson et al., Astron. Astrophys. v92, pp365-399, 1992) description 
+            of the COSPIN Instrumentation.  See especially section 4.3 for a detailed description 
+            of the HET.
+          </Description>
+            </InformationURL>
+            <InformationURL>
+                <Name>
+            COSPIN/HET User Notes
+          </Name>
+                <URL>
+            http://ufa.esac.esa.int/ufa/#instruments
+          </URL>
+                <Description>
+            Identification of data channels archived and brief discussion of data structure
+          </Description>
+            </InformationURL>
+            <InformationURL>
+                <Name>
+            ReadMeHETFullRes.doc
+          </Name>
+                <URL>
+           http://ufa.esac.esa.int/ufa/#instruments
+          </URL>
+                <Description>
+            Top Level descriptions of formats and contents of the six file types that make up the
+            COSPIN HET Full Resolution Data Set. Detailed descriptions of the formats and contents
+            are to found in header lines at the start of each downloaded data file.  The data 
+            covered by this spase description are described in the ReadMe under the heading
+            sect2.
+            (*** Note ***:  During the build-up of this data set, a few errors and omissions have been 
+            found in the header lines for some of the file types.  These errors and omissions are listed 
+            in this ReadMe file.  Upon completion of the data set, all errors and omissions discovered
+            will be corrected in all of the header lines of all of the file types and this note will be 
+            removed.)
+          </Description>
+            </InformationURL>
+        </ResourceHeader>
+        <AccessInformation>
+            <RepositoryID>spase://SMWG/Repository/ESA/ESAC/UlyssesFinalArchive</RepositoryID>
+            <Availability>Online</Availability>
+            <AccessRights>Open</AccessRights>
+            <AccessURL>
+                <Name>Ulysses COSPIN/HET Full Resolution 8-Sectored Counting Rate Data for H45S</Name>
+                <URL>http://ufa.esac.esa.int/ufa/#data</URL>
+                <Description>
+            Parent directory containing daily ftp-downloadable files with the format described below.
+          </Description>
+            </AccessURL>
+            <Format>Text</Format>
+            <Encoding>ASCII</Encoding>
+            <Acknowledgement>R.B. McKibben, Space Science Center, University of New Hampshire</Acknowledgement>
+        </AccessInformation>
+        <InstrumentID>spase://SMWG/Instrument/Ulysses/COSPIN/HET</InstrumentID>
+        <MeasurementType>EnergeticParticles</MeasurementType>
+        <TemporalDescription>
+            <TimeSpan>
+                <StartDate>1990-10-22T00:00:00.000</StartDate>
+                <StopDate>2009-06-29T23:59:59.000</StopDate>
+            </TimeSpan>
+        </TemporalDescription>
+        <ObservedRegion>Heliosphere.Outer</ObservedRegion>
+        <Parameter>
+            <Name>Interval Start Time</Name>
+            <Description>
+           Nominal Start Time for the accumulation of counts in Sector 7, given in decimal year, 
+           integer year, day of year, and milli-secnds of day.
+         </Description>
+            <Cadence>PT128S</Cadence>
+            <Structure>
+                <Size>4</Size>
+                <Element>
+                    <Name>Decimal Year</Name>
+                    <Index>1</Index>
+                    <ParameterKey>Column_1</ParameterKey>
+                    <ValidMin>1990</ValidMin>
+                    <ValidMax>2009</ValidMax>
+                    <FillValue>0.00000000000</FillValue>
+                </Element>
+                <Element>
+                    <Name>year</Name>
+                    <Index>2</Index>
+                    <ParameterKey>Column_2</ParameterKey>
+                    <ValidMin>1990</ValidMin>
+                    <ValidMax>2009</ValidMax>
+                    <FillValue>0</FillValue>
+                </Element>
+                <Element>
+                    <Name>day</Name>
+                    <Index>3</Index>
+                    <ParameterKey>Column_3</ParameterKey>
+                    <ValidMin>1</ValidMin>
+                    <ValidMax>366</ValidMax>
+                    <FillValue>0</FillValue>
+                </Element>
+                <Element>
+                    <Name>msec</Name>
+                    <Index>4</Index>
+                    <ParameterKey>Column_4</ParameterKey>
+                    <ValidMin>0</ValidMin>
+                    <ValidMax>86400000</ValidMax>
+                    <FillValue>0</FillValue>
+                </Element>
+            </Structure>
+            <Support>
+                <SupportQuantity>Temporal</SupportQuantity>
+            </Support>
+        </Parameter>
+        <Parameter>
+            <Name>Accumulation period</Name>
+            <ParameterKey>Column_5</ParameterKey>
+            <Description>
+           Length of the summed accumulation periods for all 8 sectors in milli-seconds. This represents
+           an integral number of spacecraft spin periods, most commonly 10 or 11 for H45S at 2048 bps.
+         </Description>
+            <Caveats>
+           None
+         </Caveats>
+            <Cadence>PT128S</Cadence>
+            <Units>milliseconds</Units>
+            <ValidMin>100000</ValidMin>
+            <ValidMax>1100000</ValidMax>
+            <FillValue>0</FillValue>
+            <Support>
+                <SupportQuantity>Temporal</SupportQuantity>
+            </Support>
+        </Parameter>
+        <Parameter>
+            <Name>Counts per sector for COSPIN/HET 8-Sectored Counting Rate H45S</Name>
+            <Description>
+            Counts accumulated in each of the 8 sectors of counting rate H45S during the accumulation 
+            period starting at the time given in columns 1-4 and with a duration as given in column 5.
+            Each sector contains counts incident from a specific 45 degree sector of the spin plane. 
+            The start of sector 1 (0 degrees) is coincident with the spacecraft-generated Sun-pulse, 
+            and the start of each subsequent sector is shifted by 45 degrees with respect to the preceding
+            sector. For example, H45S1 covers the azimuthal range 0-45 degrees, H45S2 covers the azimuthal 
+            range 45-90 degrees, etc.  In each sector, counts are registered only when the axis of the 
+            telescope view cone is within that sector.
+            The H45S normally responds primarily to protons in the energy interval ~34-92 MeV.
+          </Description>
+            <Caveats>
+            Because the orbit of the spacecraft about the Sun lies in a plane inclined 80 degrees to the
+            heliographic equator, and because the spacecraft spin axis (and thus the axis of the high gain 
+            antenna) be pointed at Earth within 2 degrees at all times, determination of the direction 
+            in space corresponding to the start of sector 1 can be complex.
+            Depending upon conditions, H45S may also respond to heavier nuclei, primarily Helium in the 
+            energy range 34-92 MeV/n, and to electrons in the energy range ~5-10 MeV.  When significant 
+            electron contamination is present, the H7 spin-averaged rate and/or the H7S sectored rate
+            should also be elevated and closely tracking the H45S rate. 
+          </Caveats>
+            <Cadence>PT128S</Cadence>
+            <Structure>
+                <Size>8</Size>
+                <Element>
+                    <Name>H45S1</Name>
+                    <Index>1</Index>
+                    <ParameterKey>Column_6</ParameterKey>
+                    <Units>counts</Units>
+                    <ValidMin>0</ValidMin>
+                    <ValidMax>1000000</ValidMax>
+                    <FillValue>-1</FillValue>
+                </Element>
+                <Element>
+                    <Name>H45S2</Name>
+                    <Index>2</Index>
+                    <ParameterKey>Column_7</ParameterKey>
+                    <Units>counts</Units>
+                    <ValidMin>0</ValidMin>
+                    <ValidMax>1000000</ValidMax>
+                    <FillValue>-1</FillValue>
+                </Element>
+                <Element>
+                    <Name>H45S3</Name>
+                    <Index>3</Index>
+                    <ParameterKey>Column_8</ParameterKey>
+                    <Units>counts</Units>
+                    <ValidMin>0</ValidMin>
+                    <ValidMax>1000000</ValidMax>
+                    <FillValue>-1</FillValue>
+                </Element>
+                <Element>
+                    <Name>H45S4</Name>
+                    <Index>4</Index>
+                    <ParameterKey>Column_9</ParameterKey>
+                    <Units>counts</Units>
+                    <ValidMin>0</ValidMin>
+                    <ValidMax>1000000</ValidMax>
+                    <FillValue>-1</FillValue>
+                </Element>
+                <Element>
+                    <Name>H45S5</Name>
+                    <Index>5</Index>
+                    <ParameterKey>Column_10</ParameterKey>
+                    <Units>counts</Units>
+                    <ValidMin>0</ValidMin>
+                    <ValidMax>1000000</ValidMax>
+                    <FillValue>-1</FillValue>
+                </Element>
+                <Element>
+                    <Name>H45S6</Name>
+                    <Index>6</Index>
+                    <ParameterKey>Column_11</ParameterKey>
+                    <Units>counts</Units>
+                    <ValidMin>0</ValidMin>
+                    <ValidMax>1000000</ValidMax>
+                    <FillValue>-1</FillValue>
+                </Element>
+                <Element>
+                    <Name>H45S7</Name>
+                    <Index>7</Index>
+                    <ParameterKey>Column_12</ParameterKey>
+                    <Units>counts</Units>
+                    <ValidMin>0</ValidMin>
+                    <ValidMax>1000000</ValidMax>
+                    <FillValue>-1</FillValue>
+                </Element>
+                <Element>
+                    <Name>H45S8</Name>
+                    <Index>8</Index>
+                    <ParameterKey>Column_13</ParameterKey>
+                    <Units>counts</Units>
+                    <ValidMin>0</ValidMin>
+                    <ValidMax>1000000</ValidMax>
+                    <FillValue>-1</FillValue>
+                </Element>
+            </Structure>
+            <Particle>
+                <ParticleType>Proton</ParticleType>
+                <ParticleQuantity>Counts</ParticleQuantity>
+                <EnergyRange>
+                    <Low>34</Low>
+                    <High>92</High>
+                    <Units>MeV</Units>
+                </EnergyRange>
+            </Particle>
+        </Parameter>
+    </NumericalData>
+</Spase>

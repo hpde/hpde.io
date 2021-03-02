@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Spase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.spase-group.org/data/schema" 
+    xsi:schemaLocation="http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_2_2.xsd">
+    <Version>2.2.2</Version>
+    <NumericalData>
+        <ResourceID>spase://VHO/NumericalData/Voyager1/MAG/1977.PT1H</ResourceID>
+        <ResourceHeader>
+            <ResourceName>Voyager 1 Hourly Magnetic Field Data</ResourceName>
+            <ReleaseDate>2012-06-01T00:00:00</ReleaseDate>
+            <Description>This data set contains hour averages of the interplanetary magnetic field 
+                (IMF) measurements obtained by the triaxial fluxgate magnetometer (MAG)
+                experiment on Voyager 1. Identical instruments on Voyager 1 and 2 were 
+                designed to measure the IMF between  Earth and Saturn (10 AU) during the 
+                primary Voyager mission. The  design and performance yielded absolute 
+                accuracies to better than 0.1 nT. In general, each component of the IMF 
+                hourly average has an uncertainty of up  to (+/- 0.05 nT) in the region 
+                beyond 10 AU. More accurate measurements can be  obtained by special 
+                processing of the data, but it was not feasible to do this for the entire 
+                data set included here. The magnetic field magnitude in nT is provided 
+                along with angles of the field vector in the spacecraft-centered 
+                Heliographic (HG) coordinate system, also known as RTN. The X-HG axis is 
+                directed from the Sun to the spacecraft, Y-HG is the cross product of the 
+                solar rotation axis and X-HG, and Z-HG completes the orthogonal axis system. 
+                The accompanying format description file defines the transformation of the 
+                HG angles to vector components. Cartesian coordinates are given for the 
+                spacecraft in the sun-centered Inertial Heliographic (IHG) system, where 
+                the Z-IHG axis is parallel to the solar rotation axis, X-IHG points towards 
+                the ascending node direction of the solar equator's intersection with the
+                Ecliptic, and Y-IHG is parallel to the solar equator and completes the
+                orthogonal system. The MAG instruments are described by K. W. Behannon et 
+                al., Space Science Reviews, 21, 235, 1977. The data and coordinates are 
+                described by L. F. Burlaga, Space Science Reviews, 39, 255, 1984.
+                
+                These data are from 1977-1989 and include spacecraft position data whereas the 
+                1990-2004 data do not. The seperation into two data products resulted from the 
+                fact that mean fields were falling towards the instrumentation digitization resolution.  
+                The Voyager/MAG team temporarily stopped production while they addressed the issue. 
+                Subsequent production in 1990 resulted in a similar data set, but without the spacecraft position.
+                This data set is also related to the 1-hour merged Voyager mag and plasma data set. These
+                associations are listed below using the SPASE AssociationID notation.
+            </Description>
+            <Acknowledgement>Use of these data in publications should be accompanied at minimum by
+                acknowledgements of the National Space Science Data Center and the Principal Investigator Norman Ness.</Acknowledgement>
+            <Contact>
+                <PersonID>spase://SMWG/Person/Norman.F.Ness</PersonID>
+                <Role>PrincipalInvestigator</Role>
+            </Contact>
+            <InformationURL>
+                <Name>Data set description page at SPDF</Name>
+                <URL>ftp://spdf.gsfc.nasa.gov/pub/data/voyager/voyager1/magnetic_fields/ip_1hour_ascii/1977-1989/vy1mag_1h_fmt.txt</URL>
+            </InformationURL>
+            <Association>
+                <AssociationID>spase://VHO/NumericalData/Voyager1/MAG/1990.PT1H</AssociationID>
+                <AssociationType>PartOf</AssociationType>
+            </Association>
+            <Association>
+                <AssociationID>spase://VHO/NumericalData/Voyager1/MAGandPLS/PT1H</AssociationID>
+                <AssociationType>PartOf</AssociationType>
+            </Association>
+        </ResourceHeader>
+        <AccessInformation>
+            <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF</RepositoryID>
+            <Availability>Online</Availability>
+            <AccessRights>Open</AccessRights>
+            <AccessURL>
+                <Name>SPDF site</Name>
+                <URL>ftp://spdf.gsfc.nasa.gov/pub/data/voyager/voyager1/magnetic_fields/ip_1hour_ascii/1977-1989/</URL>
+            </AccessURL>
+            <Format>Text.ASCII</Format>
+        </AccessInformation>
+        <InstrumentID>spase://SMWG/Instrument/Voyager1/MAG</InstrumentID>
+        <MeasurementType>MagneticField</MeasurementType>
+        <TemporalDescription>
+            <TimeSpan>
+                <StartDate>1977-01-01T00:00:00</StartDate>
+                <StopDate>1989-12-31T23:59:59</StopDate>
+            </TimeSpan>
+            <Cadence>PT1H</Cadence>
+        </TemporalDescription>
+        <ObservedRegion>Heliosphere.NearEarth</ObservedRegion>
+        <ObservedRegion>Heliosphere.Outer</ObservedRegion>
+        <Parameter>
+            <Name>Spacecraft ID</Name>
+            <ParameterKey>Column_1</ParameterKey>
+            <Description>1 = Voyager-1, 2 = Voyager-2</Description>
+            <Support>
+                <SupportQuantity>Other</SupportQuantity>
+            </Support>
+        </Parameter>
+        <Parameter>
+            <Name>Year</Name>
+            <ParameterKey>Column_2</ParameterKey>
+            <Description>Year</Description>
+            <Support>
+                <SupportQuantity>Temporal</SupportQuantity>
+            </Support>
+        </Parameter>
+        <Parameter>
+            <Name>Day</Name>
+            <ParameterKey>Column_3</ParameterKey>
+            <Description>Day of Year</Description>
+            <Support>
+                <SupportQuantity>Temporal</SupportQuantity>
+            </Support>
+        </Parameter>
+        <Parameter>
+            <Name>Hour</Name>
+            <ParameterKey>Column_4</ParameterKey>
+            <Description>Hour (0-23)</Description>
+            <Support>
+                <SupportQuantity>Temporal</SupportQuantity>
+            </Support>
+        </Parameter>
+        <Parameter>
+            <Name>IHG X Position</Name>
+            <ParameterKey>Column_5</ParameterKey>
+            <Description>X position in IHG coordinates</Description>
+            <Units>AU</Units>
+            <CoordinateSystem>
+                <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+                <CoordinateSystemName>HGI</CoordinateSystemName>
+            </CoordinateSystem>
+            <Support>
+                <SupportQuantity>Positional</SupportQuantity>
+            </Support>
+        </Parameter>
+        <Parameter>
+            <Name>IHG Y Position</Name>
+            <ParameterKey>Column_6</ParameterKey>
+            <Description>Y position in IHG coordinates</Description>
+            <Units>AU</Units>
+            <CoordinateSystem>
+                <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+                <CoordinateSystemName>HGI</CoordinateSystemName>
+            </CoordinateSystem>
+            <Support>
+                <SupportQuantity>Positional</SupportQuantity>
+            </Support>
+        </Parameter>
+        <Parameter>
+            <Name>IHG Z Position</Name>
+            <ParameterKey>Column_7</ParameterKey>
+            <Description>Z position in IHG coordinates</Description>
+            <Units>AU</Units>
+            <CoordinateSystem>
+                <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+                <CoordinateSystemName>HGI</CoordinateSystemName>
+            </CoordinateSystem>
+            <Support>
+                <SupportQuantity>Positional</SupportQuantity>
+            </Support>
+        </Parameter>
+        <Parameter>
+            <Name>IHG Position Vector Magntitude</Name>
+            <ParameterKey>Column_8</ParameterKey>
+            <Description>R - Magnitude of the IHG coordinates</Description>
+            <Units>AU</Units>
+            <CoordinateSystem>
+                <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+                <CoordinateSystemName>HGI</CoordinateSystemName>
+            </CoordinateSystem>
+            <Support>
+                <SupportQuantity>Positional</SupportQuantity>
+            </Support>
+        </Parameter>
+        <Parameter>
+            <Name>F1 - Field Magnitude</Name>
+            <ParameterKey>Column_9</ParameterKey>
+            <Description>Magnetic Field Magnitude average of 48-sec F2</Description>
+            <Units>nT</Units>
+            <Field>
+                <Qualifier>Magnitude</Qualifier>
+                <FieldQuantity>Magnetic</FieldQuantity>
+            </Field>
+        </Parameter>
+        <Parameter>
+            <Name>F2 - Field Magnitude</Name>
+            <ParameterKey>Column_10</ParameterKey>
+            <Description>Magnetic Field Magnitude norm(B1,B2,B3)</Description>
+            <Units>nT</Units>
+            <CoordinateSystem>
+                <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+                <CoordinateSystemName>HG</CoordinateSystemName>
+            </CoordinateSystem>
+            <Field>
+                <Qualifier>Magnitude</Qualifier>
+                <FieldQuantity>Magnetic</FieldQuantity>
+            </Field>
+        </Parameter>
+        <Parameter>
+            <Name>Delta</Name>
+            <ParameterKey>Column_11</ParameterKey>
+            <Description>Latitude Angle</Description>
+            <Units>degrees</Units>
+            <CoordinateSystem>
+                <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+                <CoordinateSystemName>HG</CoordinateSystemName>
+            </CoordinateSystem>
+            <Field>
+                <Qualifier>DirectionAngle</Qualifier>
+                <FieldQuantity>Magnetic</FieldQuantity>
+            </Field>
+        </Parameter>
+        <Parameter>
+            <Name>Lambda</Name>
+            <ParameterKey>Column_12</ParameterKey>
+            <Description>Longitudinal Angle</Description>
+            <Units>degrees</Units>
+            <CoordinateSystem>
+                <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+                <CoordinateSystemName>HG</CoordinateSystemName>
+            </CoordinateSystem>
+            <Field>
+                <Qualifier>DirectionAngle</Qualifier>
+                <FieldQuantity>Magnetic</FieldQuantity>
+            </Field>
+        </Parameter>
+    </NumericalData>
+</Spase>

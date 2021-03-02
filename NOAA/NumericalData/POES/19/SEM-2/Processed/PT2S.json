@@ -1,0 +1,1984 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_2_8.xsd",
+    "Version": "2.2.9",
+    "NumericalData": {
+      "ResourceID": "spase://NOAA/NumericalData/POES/19/SEM-2/Processed/PT2S",
+      "ResourceHeader": {
+        "ResourceName": "NOAA 19 POES Space Environment Monitor-2 (SEM-2) processed, uncorrectecd data at 2 s Resolution",
+        "AlternateName": "NOAA 19 POES SEM processed data",
+        "ReleaseDate": "2018-05-15T18:38:16Z",
+        "Description": "The NOAA POES SEM data consists of  location information, magnetic field estimates,  energy fluxes, and total energies from the Medium Energy Proton/Electron Detector (MEPED) and the Total Energy Detector (TED).",
+        "Acknowledgement": "NOAA National Environmental Satellite Service (United States); Dr. R. Bushnell",
+        "Contact": [
+          {
+            "PersonID": "spase://SMWG/Person/R.Bushnell",
+            "Role": "PrincipalInvestigator"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/James.M.Weygand",
+            "Role": "MetadataContact"
+          }
+        ],
+        "InformationURL": [
+          {
+            "Name": "Archive and Instrument Documentation at NOAA National Geophysical Data Center (NGDC)",
+            "URL": "https://www.ngdc.noaa.gov/stp/satellite/poes/",
+            "Description": "Information about the NOAA POES MEPED and TED instruments.",
+            "Language": "en"
+          },
+          {
+            "Name": "NOAA SEM Instrument Descriptions and Archive Data Documentation",
+            "URL": "https://satdat.ngdc.noaa.gov/sem/poes/docs/sem2_docs/2006/SEM2v2.0.pdf",
+            "Description": "Information about the NOAA POES SEM documentation.",
+            "Language": "en"
+          }
+        ],
+        "PriorID": "spase://VMO/NumericalData/NOAA/19/SEM/full/PT2S"
+      },
+      "AccessInformation": {
+        "RepositoryID": "spase://SMWG/Repository/NOAA/NGDC",
+        "Availability": "Online",
+        "AccessRights": "Open",
+        "AccessURL": {
+          "Name": "Direct access to the NOAA POES SEM data",
+          "URL": "https://satdat.ngdc.noaa.gov/sem/poes/data/processed/ngdc/uncorrected/full/",
+          "Description": "Direct link to the NOAA POES SEM processed full resolution netcdf data. The data are sorted by year and spacecraft. The data files are daily files."
+        },
+        "Format": "NetCDF",
+        "Encoding": "None",
+        "Acknowledgement": "NOAA; Dr. R. Bushnell"
+      },
+      "ProcessingLevel": "Uncalibrated",
+      "ProviderResourceName": "NOAA POES 19 SEM-2",
+      "ProviderProcessingLevel": "Level-0",
+      "InstrumentID": "spase://SMWG/Instrument/NOAA/19/SEM-2",
+      "MeasurementType": "EnergeticParticles",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "2013-01-01T00:00:00",
+          "RelativeStopDate": "-P1D",
+          "Note": "Time format in data files is year month day hour minute seconds."
+        },
+        "Cadence": "PT2S"
+      },
+      "Keyword": [
+        "2 s",
+        "polar orbiting",
+        "NOAA",
+        "POES",
+        "SEM-2",
+        "Total Energy Detector",
+        "Magnetospheric Electron Detector",
+        "Magnetospheric Proton Detector"
+      ],
+      "Parameter": [
+        {
+          "Name": "Universal Time",
+          "ParameterKey": "Time",
+          "Description": "Universal time.",
+          "Cadence": "PT2S",
+          "Structure": {
+            "Size": "4",
+            "Description": "Universal Time expressed milliseconds since 1970, year, day of year, and milliseconds of day.",
+            "Element": [
+              {
+                "Name": "seconds since 1970",
+                "Index": "1",
+                "ParameterKey": "time",
+                "Units": "msec"
+              },
+              {
+                "Name": "4 digit year",
+                "Index": "2",
+                "ParameterKey": "year",
+                "Units": "year",
+                "ValidMin": "1995",
+                "ValidMax": "2050"
+              },
+              {
+                "Name": "Day Of Year",
+                "Index": "3",
+                "ParameterKey": "day",
+                "Units": "day",
+                "ValidMin": "0",
+                "ValidMax": "366"
+              },
+              {
+                "Name": "Milliseconds of the day",
+                "Index": "4",
+                "ParameterKey": "msec",
+                "Units": "millisec",
+                "ValidMin": "0",
+                "ValidMax": "8.64e+007"
+              }
+            ]
+          },
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Satellite identification number",
+          "ParameterKey": "satID",
+          "Description": "2 digit number identifying the satellite the data is from.",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Satellite Hemisphere Location",
+          "ParameterKey": "sat_direction",
+          "Description": "Satellite direction 0-North/1-South.",
+          "ValidMin": "0",
+          "ValidMax": "1",
+          "Support": {
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Altitude of the Spacecraft",
+          "ParameterKey": "alt",
+          "Description": "Altitude of the satellite.",
+          "Units": "km",
+          "ValidMin": "800",
+          "ValidMax": "1000",
+          "Support": {
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Geographic Latitude of sub-satellite point.",
+          "ParameterKey": "lat",
+          "Description": "Geographic Latitude Position of sub-satellite point in degrees.",
+          "Units": "degrees",
+          "ValidMin": "-90",
+          "ValidMax": "90",
+          "Support": {
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Geographic Longitude of sub-satellite point.",
+          "ParameterKey": "lon",
+          "Description": "Geographic Longitude Position of sub-satellite point in degrees.",
+          "Units": "degrees",
+          "ValidMin": "0",
+          "ValidMax": "360",
+          "Support": {
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "MEPED proton flux ~39 keV 0 deg telescope",
+          "ParameterKey": "mep_pro_tel0_flux_p1",
+          "Description": "MEPED proton ~39 keV at the 0 deg telescope.",
+          "Caveats": "Energy range based information in the raw SEM netCDFs.",
+          "Units": "#/cm2-s-str-keV",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "30",
+              "High": "80",
+              "Units": "keV"
+            }
+          }
+        },
+        {
+          "Name": "MEPED proton flux ~115keV  0 deg telescope",
+          "ParameterKey": "mep_pro_tel0_flux_p2",
+          "Description": "MEPED proton channel 2 ~115 keV at the 0 deg telescope.",
+          "Caveats": "Energy range based information in the raw SEM netCDFs.",
+          "Units": "#/cm2-s-str-keV",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "80",
+              "High": "240",
+              "Units": "keV"
+            }
+          }
+        },
+        {
+          "Name": "MEPED proton flux ~332 keV 0 deg telescope",
+          "ParameterKey": "mep_pro_tel0_flux_p3",
+          "Description": "MEPED proton channel 3 ~332 keV at the 0 deg telescope.",
+          "Caveats": "Energy range based information in the raw SEM netCDFs.",
+          "Units": "#/cm2-s-str-keV",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "240",
+              "High": "800",
+              "Units": "keV"
+            }
+          }
+        },
+        {
+          "Name": "MEPED proton flux ~1105 keV 0 deg telescope",
+          "ParameterKey": "mep_pro_tel0_flux_p4",
+          "Description": "MEPED proton channel 4 ~1105 keV at the 0 deg telescope.",
+          "Caveats": "Energy range based information in the raw SEM netCDFs.",
+          "Units": "#/cm2-s-str-keV",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "800",
+              "High": "2500",
+              "Units": "keV"
+            }
+          }
+        },
+        {
+          "Name": "MEPED proton flux ~2723 keV 0 deg telescope",
+          "ParameterKey": "mep_pro_tel0_flux_p5",
+          "Description": "MEPED proton channel 5 ~2723 keV at the 0 deg telescope.",
+          "Caveats": "Energy range based information in the raw SEM netCDFs.",
+          "Units": "#/cm2-s-str-keV",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "2500",
+              "High": "6900",
+              "Units": "keV"
+            }
+          }
+        },
+        {
+          "Name": "MEPED proton flux ~6174 keV 0 deg telescope",
+          "ParameterKey": "mep_pro_tel0_flux_p6",
+          "Description": "MEPED proton channel 6 ~6174 keV at the 0 deg telescope.",
+          "Units": "#/cm2-s-str-keV",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "MEPED proton flux percent error ~39 keV  0 deg telescope",
+          "ParameterKey": "mep_pro_tel0_flux_p1_err",
+          "Description": "Error for MEPED proton ~39 keV at the 0 deg telescope.",
+          "Caveats": "Energy range based information in the raw SEM netCDFs.",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": "Uncertainty",
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "30",
+              "High": "80",
+              "Units": "keV"
+            }
+          }
+        },
+        {
+          "Name": "MEPED proton flux percent error ~115 keV  0 deg telescope",
+          "ParameterKey": "mep_pro_tel0_flux_p2_err",
+          "Description": "Error for MEPED proton channel 2 ~115 keV at the 0 deg telescope.",
+          "Caveats": "Energy range based information in the raw SEM netCDFs.",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": "Uncertainty",
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "80",
+              "High": "240",
+              "Units": "keV"
+            }
+          }
+        },
+        {
+          "Name": "MEPED proton flux percent error ~332 keV 0 deg telescope",
+          "ParameterKey": "mep_pro_tel0_flux_p3_err",
+          "Description": "Error for MEPED proton channel 3 ~332 keV at the 0 deg telescope.",
+          "Caveats": "Energy range based information in the raw SEM netCDFs.",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": "Uncertainty",
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "240",
+              "High": "800",
+              "Units": "keV"
+            }
+          }
+        },
+        {
+          "Name": "MEPED proton flux percent error ~1105 keV 0 deg",
+          "ParameterKey": "mep_pro_tel0_flux_p4_err",
+          "Description": "Error for MEPED proton channel 4 ~1105 keV at the 0 deg telescope.",
+          "Caveats": "Energy range based information in the raw SEM netCDFs.",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": "Uncertainty",
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "800",
+              "High": "2500",
+              "Units": "keV"
+            }
+          }
+        },
+        {
+          "Name": "MEPED proton flux percent error ~2723 keV 0 deg",
+          "ParameterKey": "mep_pro_tel0_flux_p5_err",
+          "Description": "Error for MEPED proton channel 5 ~2723 keV at the 0 deg telescope.",
+          "Caveats": "Energy range based information in the raw SEM netCDFs.",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": "Uncertainty",
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "2500",
+              "High": "6900",
+              "Units": "keV"
+            }
+          }
+        },
+        {
+          "Name": "MEPED proton flux percent error ~6174 keV 0 deg",
+          "ParameterKey": "mep_pro_tel0_flux_p6_err",
+          "Description": "MEPED proton channel 6 ~6174 keV at the 0 deg telescope.",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": "Uncertainty",
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "MEPED proton flux ~39 keV 90 deg telescope",
+          "ParameterKey": "mep_pro_tel90_flux_p1",
+          "Description": "MEPED proton channel 1 ~39 keV at the 90 deg telescope.",
+          "Caveats": "Energy range based information in the raw SEM netCDFs.",
+          "Units": "#/cm2-s-str-keV",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "30",
+              "High": "80",
+              "Units": "keV"
+            }
+          }
+        },
+        {
+          "Name": "MEPED proton flux ~115 keV 90 deg telescope",
+          "ParameterKey": "mep_pro_tel90_flux_p2",
+          "Description": "MEPED proton channel 2 ~115 keV at the 90 deg telescope.",
+          "Caveats": "Energy range based information in the raw SEM netCDFs.",
+          "Units": "#/cm2-s-str-keV",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "80",
+              "High": "240",
+              "Units": "keV"
+            }
+          }
+        },
+        {
+          "Name": "MEPED proton flux ~332 keV 90 deg telescope",
+          "ParameterKey": "mep_pro_tel90_flux_p3",
+          "Description": "MEPED proton channel 3 ~332 keV at the 90 deg telescope.",
+          "Caveats": "Energy range based information in the raw SEM netCDFs.",
+          "Units": "#/cm2-s-str-keV",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "240",
+              "High": "800",
+              "Units": "keV"
+            }
+          }
+        },
+        {
+          "Name": "MEPED proton flux ~1105 keV 90 deg telescope",
+          "ParameterKey": "mep_pro_tel90_flux_p4",
+          "Description": "MEPED proton channel 4 ~1105 keV at the 90 deg telescope.",
+          "Caveats": "Energy range based information in the raw SEM netCDFs.",
+          "Units": "#/cm2-s-str-keV",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "800",
+              "High": "2500",
+              "Units": "keV"
+            }
+          }
+        },
+        {
+          "Name": "MEPED proton flux ~2723 keV 90 deg telescope",
+          "ParameterKey": "mep_pro_tel90_flux_p5",
+          "Description": "MEPED proton channel 5 ~2723 keV at the 90 deg telescope.",
+          "Caveats": "Energy range based information in the raw SEM netCDFs.",
+          "Units": "#/cm2-s-str-keV",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "2500",
+              "High": "6900",
+              "Units": "keV"
+            }
+          }
+        },
+        {
+          "Name": "MEPED proton flux ~6174 keV 90 deg telescope",
+          "ParameterKey": "mep_pro_tel90_flux_p6",
+          "Description": "MEPED proton channel 6 ~6174 keV at the 90 deg telescope.",
+          "Caveats": "Energy range based information in the raw SEM netCDFs.",
+          "Units": "#/cm2-s-str",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "MEPED proton flux percent error ~39 keV  90 deg telescope",
+          "ParameterKey": "mep_pro_tel90_flux_p1_err",
+          "Description": "Error for MEPED proton ~39 keV at the 90 deg telescope.",
+          "Caveats": "Energy range based information in the raw SEM netCDFs.",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": "Uncertainty",
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "30",
+              "High": "80",
+              "Units": "keV"
+            }
+          }
+        },
+        {
+          "Name": "MEPED proton flux percent error ~115 keV 90 deg telescope",
+          "ParameterKey": "mep_pro_tel90_flux_p2_err",
+          "Description": "Error for MEPED proton channel 2 ~115 keV at the 90 deg telescope.",
+          "Caveats": "Energy range based information in the raw SEM netCDFs.",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": "Uncertainty",
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "80",
+              "High": "240",
+              "Units": "keV"
+            }
+          }
+        },
+        {
+          "Name": "MEPED proton flux percent error ~332 keV 90 deg telescope",
+          "ParameterKey": "mep_pro_tel90_flux_p3_err",
+          "Description": "Error for MEPED proton channel 3 ~332 keV at the 90 deg telescope.",
+          "Caveats": "Energy range based information in the raw SEM netCDFs.",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": "Uncertainty",
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "240",
+              "High": "800",
+              "Units": "keV"
+            }
+          }
+        },
+        {
+          "Name": "MEPED proton flux percent error ~1105 keV 90 deg",
+          "ParameterKey": "mep_pro_tel90_flux_p4_err",
+          "Description": "Error for MEPED proton channel 4 ~1105 keV at the 90 deg telescope.",
+          "Caveats": "Energy range based information in the raw SEM netCDFs.",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": "Uncertainty",
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "800",
+              "High": "2500",
+              "Units": "keV"
+            }
+          }
+        },
+        {
+          "Name": "MEPED proton flux percent error ~2723 keV 90 deg",
+          "ParameterKey": "mep_pro_tel90_flux_p5_err",
+          "Description": "Error for MEPED proton channel 5 ~2723 keV at the 90 deg telescope.",
+          "Caveats": "Energy range based information in the raw SEM netCDFs.",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": "Uncertainty",
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "2500",
+              "High": "6900",
+              "Units": "keV"
+            }
+          }
+        },
+        {
+          "Name": "MEPED proton flux percent error ~6174 keV 90 deg",
+          "ParameterKey": "mep_pro_tel90_flux_p6_err",
+          "Description": "MEPED proton channel 6 ~6174 keV at the 90 deg telescope.",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": "Uncertainty",
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "MEPED electron flux >40 keV 0 deg telescope",
+          "ParameterKey": "mep_ele_tel0_flux_e1",
+          "Description": "MEPED electron channel 1 >40 keV at the 0 deg telescope.",
+          "Units": "#/cm2-s-str",
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "MEPED electron flux >130 keV 0 deg telescope",
+          "ParameterKey": "mep_ele_tel0_flux_e2",
+          "Description": "MEPED electron channel 2 >130 keV at the 0 deg telescope.",
+          "Units": "#/cm2-s-str",
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "MEPED electron flux >287 keV 0 deg telescope",
+          "ParameterKey": "mep_ele_tel0_flux_e3",
+          "Description": "MEPED electron channel 3 >287 keV at the 0 deg telescope.",
+          "Units": "#/cm2-s-str",
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "MEPED electron flux >612 keV 0 deg telescope",
+          "ParameterKey": "mep_ele_tel0_flux_e4",
+          "Description": "MEPED electron channel 4 >612 keV at the 0 deg telescope.",
+          "Units": "#/cm2-s-str",
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "MEPED electron flux percent error >40 keV 0 deg telescope",
+          "ParameterKey": "mep_ele_tel0_flux_e1_err",
+          "Description": "Error for MEPED electron channel 1 >40 keV at the 0 deg telescope.",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": "Uncertainty",
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "MEPED electron flux percent error >130 keV 0 deg telescope",
+          "ParameterKey": "mep_ele_tel0_flux_e2_err",
+          "Description": "Error for MEPED electron channel 2 >130 keV at the 0 deg telescope.",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": "Uncertainty",
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "MEPED electron flux percent error >287 keV 0 deg telescope",
+          "ParameterKey": "mep_ele_tel0_flux_e3",
+          "Description": "Error for MEPED electron channel 3 >287 keV at the 0 deg telescope.",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": "Uncertainty",
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "MEPED electron flux percent error >612 keV 0 deg telescope",
+          "ParameterKey": "mep_ele_tel0_flux_e4_err",
+          "Description": "Error for MEPED electron channel 4 >612 keV at the 0 deg telescope.",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": "Uncertainty",
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "MEPED electron flux >40 keV 90 deg telescope",
+          "ParameterKey": "mep_ele_tel90_flux_e1",
+          "Description": "MEPED electron channel 1 >40 keV at the 90 deg telescope.",
+          "Units": "#/cm2-s-str",
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "MEPED electron flux >130 keV 90 deg telescope",
+          "ParameterKey": "mep_ele_tel90_flux_e2",
+          "Description": "MEPED electron channel 2 >130 keV at the 90 deg telescope.",
+          "Units": "#/cm2-s-str",
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "MEPED electron flux >287 keV 90 deg telescope",
+          "ParameterKey": "mep_ele_tel90_flux_e3",
+          "Description": "MEPED electron channel 3 >287 keV  at the 90 deg telescope.",
+          "Units": "#/cm2-s-str",
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "MEPED electron flux >6174 keV 90 deg telescope",
+          "ParameterKey": "mep_ele_tel90_flux_e4",
+          "Description": "MEPED electron channel 4 >6174 keV  at the 90 deg telescope.",
+          "Units": "#/cm2-s-str",
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "MEPED electron flux percent error >40 keV 90 deg telescope",
+          "ParameterKey": "mep_ele_tel90_flux_e1_err",
+          "Description": "Error for MEPED electron channel 1 >40 keV at the 90 deg telescope.",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": "Uncertainty",
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "MEPED electron flux percent error >130 keV 90 deg telescope",
+          "ParameterKey": "mep_ele_tel90_flux_e2_err",
+          "Description": "Error for MEPED electron channel 2 >130 keV at the 90 deg telescope.",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": "Uncertainty",
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "MEPED electron flux percent error >287 keV 90 deg telescope",
+          "ParameterKey": "mep_ele_tel90_flux_e3",
+          "Description": "Error for MEPED electron channel 3 >287 keV at the 90 deg telescope.",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": "Uncertainty",
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "MEPED electron flux percent error >6174 keV 90 deg telescope",
+          "ParameterKey": "mep_ele_tel90_flux_e4_err",
+          "Description": "Error for MEPED electron channel 4 >6174 keV at the 90 deg telescope.",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": "Uncertainty",
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "MEPED proton flux >25 MeV omnidirection telescope",
+          "ParameterKey": "mep_omni_flux_p1",
+          "Description": "MEPED proton fluxes >25 MeV in the omnidirectional telescope.",
+          "Units": "#/cm2-s-str",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "MEPED proton flux >50 MeV omnidirection telescope",
+          "ParameterKey": "mep_omni_flux_p2",
+          "Description": "MEPED proton fluxes >50 MeV in the omnidirectional telescope.",
+          "Units": "#/cm2-s-str",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "MEPED proton flux >100 MeV omnidirection telescope",
+          "ParameterKey": "mep_omni_flux_p3",
+          "Description": "MEPED proton fluxes >100 MeV in the omnidirectional telescope.",
+          "Units": "#/cm2-s-str",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "MEPED omni fit flag",
+          "ParameterKey": "mep_omni_flux_flag_fit",
+          "Description": "The purpose of this parameter is unclear.",
+          "ValidMin": "-1",
+          "ValidMax": "2",
+          "Support": {
+            "SupportQuantity": "InstrumentMode"
+          }
+        },
+        {
+          "Name": "MEPED omni flag for fit iteration limit",
+          "ParameterKey": "mep_omni_flux_flag_iter_lim",
+          "Description": "The purpose of this parameter is unclear.",
+          "ValidMin": "0",
+          "ValidMax": "1",
+          "Support": {
+            "SupportQuantity": "InstrumentMode"
+          }
+        },
+        {
+          "Name": "Gamma derived for p1 energy band",
+          "ParameterKey": "mep_omni_gamma_p1",
+          "Description": "Gamma derived for the 30-80 keV energy band",
+          "Support": {
+            "Qualifier": "Fit",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Gamma derived for p2 energy band",
+          "ParameterKey": "mep_omni_gamma_p2",
+          "Description": "Gamma derived for the 80-240 keV energy band",
+          "Support": {
+            "Qualifier": "Fit",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Gamma derived for p3 energy band",
+          "ParameterKey": "mep_omni_gamma_p3",
+          "Description": "Gamma derived for the 240-800 keV energy band",
+          "Support": {
+            "Qualifier": "Fit",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "TED electron 189 eV 0 deg telescope",
+          "ParameterKey": "ted_ele_tel0_flux_4",
+          "Description": "TED electron energy band 4 at the 0 deg telescope.",
+          "Units": "#/cm2-s-str-eV",
+          "ValidMin": "0",
+          "ValidMax": "4000000000",
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "TED electron 844 eV 0 deg telescope",
+          "ParameterKey": "ted_ele_tel0_flux_8",
+          "Description": "TED electron energy band 8 at the 0 deg telescope.",
+          "Units": "#/cm2-s-str-eV",
+          "ValidMin": "0",
+          "ValidMax": "4000000000",
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "TED electron 2595 eV 0 deg telescope",
+          "ParameterKey": "ted_ele_tel0_flux_11",
+          "Description": "TED electron energy band 11 at the 0 deg telescope.",
+          "Units": "#/cm2-s-str-eV",
+          "ValidMin": "0",
+          "ValidMax": "4000000000",
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "TED electron 7980 eV 0 deg telescope",
+          "ParameterKey": "ted_ele_tel0_flux_14",
+          "Description": "TED electron energy band 14 at the 0 deg telescope.",
+          "Units": "#/cm2-s-str-eV",
+          "ValidMin": "0",
+          "ValidMax": "4000000000",
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "TED electron 189 eV 30 deg telescope",
+          "ParameterKey": "ted_ele_tel30_flux_4",
+          "Description": "TED electron energy band 4 at the 30 deg telescope.",
+          "Units": "#/cm2-s-str-eV",
+          "ValidMin": "0",
+          "ValidMax": "4000000000",
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "TED electron 844 eV 30 deg telescope",
+          "ParameterKey": "ted_ele_tel30_flux_8",
+          "Description": "TED electron energy band 8 at the 30 deg telescope.",
+          "Units": "#/cm2-s-str-eV",
+          "ValidMin": "0",
+          "ValidMax": "4000000000",
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "TED electron 2595 eV 30 deg telescope",
+          "ParameterKey": "ted_ele_tel30_flux_11",
+          "Description": "TED electron energy band 11 at the 30 deg telescope.",
+          "Units": "#/cm2-s-str-eV",
+          "ValidMin": "0",
+          "ValidMax": "4000000000",
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "TED electron 7980 eV 30 deg telescope",
+          "ParameterKey": "ted_ele_tel30_flux_14",
+          "Description": "TED electron energy band 14 at the 30 deg telescope.",
+          "Units": "#/cm2-s-str-eV",
+          "ValidMin": "0",
+          "ValidMax": "4000000000",
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "TED proton 189 eV 0 deg telescope",
+          "ParameterKey": " ted_pro_tel0_flux_4",
+          "Description": "TED proton energy band 4 at the 0 deg telescope.",
+          "Units": "#/cm2-s-str-eV",
+          "ValidMin": "0",
+          "ValidMax": "4000000000",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "TED proton 844 eV  0 deg telescope",
+          "ParameterKey": "ted_pro_tel0_flux_8",
+          "Description": "TED proton energy band 8 at the 0 deg telescope.",
+          "Units": "#/cm2-s-str-eV",
+          "ValidMin": "0",
+          "ValidMax": "4000000000",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "TED proton 2595 eV 0 deg telescope",
+          "ParameterKey": "ted_pro_tel0_flux_11",
+          "Description": "TED proton energy band 11 at the 0 deg telescope.",
+          "Units": "#/cm2-s-str-eV",
+          "ValidMin": "0",
+          "ValidMax": "4000000000",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "TED proton 7980 0 deg telescope",
+          "ParameterKey": "ted_pro_tel0_flux_14",
+          "Description": "TED proton energy band 14 at the 0 deg telescope.",
+          "Units": "#/cm2-s-str-eV",
+          "ValidMin": "0",
+          "ValidMax": "4000000000",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "TED proton 189 eV 30 deg telescope",
+          "ParameterKey": " ted_pro_tel30_flux_4",
+          "Description": "TED proton energy band 4 at the 30 deg telescope.",
+          "Units": "#/cm2-s-str-eV",
+          "ValidMin": "0",
+          "ValidMax": "4000000000",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "TED proton 844 eV  30 deg telescope",
+          "ParameterKey": "ted_pro_tel30_flux_8",
+          "Description": "TED proton energy band 8 at the 30 deg telescope.",
+          "Units": "#/cm2-s-str-eV",
+          "ValidMin": "0",
+          "ValidMax": "4000000000",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "TED proton 2595 eV 30 deg telescope",
+          "ParameterKey": "ted_pro_tel30_flux_11",
+          "Description": "TED proton energy band 11 at the 30 deg telescope.",
+          "Units": "#/cm2-s-str-eV",
+          "ValidMin": "0",
+          "ValidMax": "4000000000",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "TED proton 7980 30 deg telescope",
+          "ParameterKey": "ted_pro_tel30_flux_14",
+          "Description": "TED proton energy band 14 at the 30 deg telescope.",
+          "Units": "#/cm2-s-str-eV",
+          "ValidMin": "0",
+          "ValidMax": "4000000000",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "TED electron (50eV-1 keV) 0 deg telescope energy flux",
+          "ParameterKey": "ted_ele_tel0_low_eflux",
+          "Description": "TED electron energy flux (50 eV -1 keV) at the 0 deg telescope.",
+          "Units": "mW/m2-str",
+          "ValidMin": "-200",
+          "ValidMax": "200",
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "TED electron (50eV-1 keV) 30 deg telescope energy flux",
+          "ParameterKey": "ted_ele_tel30_low_eflux",
+          "Description": "TED electron energy flux (50 eV -1 keV) at the 30 deg telescope.",
+          "Units": "mW/m2-str",
+          "ValidMin": "-200",
+          "ValidMax": "200",
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "TED electron (1-20 keV) 0 deg telescope energy flux",
+          "ParameterKey": "ted_ele_tel0_hi_eflux",
+          "Description": "TED electron energy flux (1-20 keV) at the 0 deg telescope.",
+          "Units": "mW/m2-str",
+          "ValidMin": "-200",
+          "ValidMax": "200",
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "TED electron (1-20 keV) 30 deg telescope energy flux",
+          "ParameterKey": "ted_ele_tel30_hi_eflux",
+          "Description": "TED electron energy flux (1-20 keV) at the 30 deg telescope.",
+          "Units": "mW/m2-str",
+          "ValidMin": "-200",
+          "ValidMax": "200",
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "TED proton (50eV-1 keV) 0 deg telescope energy flux",
+          "ParameterKey": "ted_pro_tel0_low_eflux",
+          "Description": "TED proton energy flux (50 eV -1 keV) at the 0 deg telescope.",
+          "Units": "mW/m2-str",
+          "ValidMin": "-200",
+          "ValidMax": "200",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "TEDproton (50eV-1 keV) 30 deg telescope energy flux",
+          "ParameterKey": "ted_pro_tel30_low_eflux",
+          "Description": "TED proton energy flux (50 eV -1 keV) at the 30 deg telescope.",
+          "Units": "mW/m2-str",
+          "ValidMin": "-200",
+          "ValidMax": "200",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "TED proton (1-20 keV)  0 deg telescope energy flux",
+          "ParameterKey": "ted_pro_tel0_hi_eflux",
+          "Description": "TED proton energy flux (1-20 keV) at the 0 deg telescope.",
+          "Units": "mW/m2-str",
+          "ValidMin": "-200",
+          "ValidMax": "200",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "TED proton (1-20 keV) 30 deg telescope energy flux",
+          "ParameterKey": "ted_pro_tel30_hi_eflux",
+          "Description": "TED proton energy flux (1-20 keV) at the 30 deg telescope.",
+          "Units": "mW/m2-str",
+          "ValidMin": "-200",
+          "ValidMax": "200",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "TED electron (50eV-1 keV) 0 deg telescope energy flux percent error",
+          "ParameterKey": "ted_ele_tel0_low_eflux_error",
+          "Description": "Error for TED electron energy flux (50 eV-1 keV) at the 0 deg telescope.",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": "Uncertainty",
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "TED electron (50eV-1 keV) 30 deg telescope energy flux percent error",
+          "ParameterKey": "ted_ele_tel30_low_eflux_error",
+          "Description": "Error for TED electron energy flux (50 eV -1 keV) at the 30 deg telescope.",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": "Uncertainty",
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "TED electron (1-20 keV) 0 deg telescope energy flux percent error",
+          "ParameterKey": "ted_ele_tel0_hi_eflux_error",
+          "Description": "Error for TED electron energy flux (1-20 keV) at the 0 deg telescope.",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": "Uncertainty",
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "TED electron (1-20 keV)  30 deg telescope energy flux percent error",
+          "ParameterKey": "ted_ele_tel30_hi_eflux_error",
+          "Description": "Error for TED electron energy flux (1-20 keV) at the 30 deg telescope.",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": "Uncertainty",
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "TED proton (50eV-1 keV) 0 deg telescope energy flux percent error",
+          "ParameterKey": "ted_pro_tel0_low_eflux_error",
+          "Description": "Error for TED proton energy flux (50 eV -1 keV) at the 0 deg telescope.",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": "Uncertainty",
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "TEDproton (50eV-1 keV) 30 deg telescope energy flux percent error",
+          "ParameterKey": "ted_pro_tel30_low_eflux_error",
+          "Description": "Error for TED proton energy flux (50 eV-1 keV) at the 30 deg telescope.",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": "Uncertainty",
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "TED proton (1-20 keV)  0 deg telescope energy flux percent error",
+          "ParameterKey": "ted_pro_tel0_hi_eflux_error",
+          "Description": "Error for TED proton energy flux (1-20 keV) at the 0 deg telescope.",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": "Uncertainty",
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "TED proton (1-20 keV)  30 deg telescope energy flux percent error",
+          "ParameterKey": "ted_pro_tel30_hi_eflux_error",
+          "Description": "TED proton energy flux (1-20 keV) at the 30 deg telescope.",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": "Uncertainty",
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "TED electron (50eV-1 keV) energy flux at 120 km",
+          "ParameterKey": "ted_ele_eflux_atmo_low",
+          "Description": "TED electron energy flux (50 eV -1 keV) at 120 km.",
+          "Units": "mW/m2",
+          "ValidMin": "-6400",
+          "ValidMax": "6400",
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "TED electron (1-20 keV) energy flux at 120 km",
+          "ParameterKey": "ted_ele_eflux_atmo_hi",
+          "Description": "TED electron energy flux (50 eV -1 keV) at 120 km.",
+          "Units": "mW/m2",
+          "ValidMin": "-6400",
+          "ValidMax": "6400",
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "TED electron (50 eV-20 keV) energy flux at 120 km",
+          "ParameterKey": "ted_ele_eflux_atmo_total",
+          "Description": "TED electron energy flux (50 eV -20 keV) at 120 km.",
+          "Units": "mW/m2",
+          "ValidMin": "-12800",
+          "ValidMax": "6400",
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "TED electron (50eV-1 keV) energy flux percent error at 120 km",
+          "ParameterKey": "ted_ele_eflux_atmo_low_err",
+          "Description": "Error for TED electron energy flux (50 eV -1 keV) at 120 km.",
+          "Units": "mW/m2",
+          "ValidMin": "0",
+          "ValidMax": "6400",
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "TED electron (1-20 keV) energy flux percent error at 120 km",
+          "ParameterKey": "ted_ele_eflux_atmo_hi",
+          "Description": "Error for TED electron energy flux (1-20 keV) at 120 km.",
+          "Units": "mW/m2",
+          "ValidMin": "0",
+          "ValidMax": "6400",
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "TED electron (50 eV-20 keV) energy flux percent error at 120 km",
+          "ParameterKey": "ted_ele_eflux_atmo_total_err",
+          "Description": "Error for TED electron energy flux (50 eV-20 keV) at 120 km.",
+          "Units": "mW/m2",
+          "ValidMin": "0",
+          "ValidMax": "6400",
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "TED proton (50eV-1 keV) energy flux at 120 km",
+          "ParameterKey": "ted_pro_eflux_atmo_low",
+          "Description": "TED protn energy flux (50 eV-1 keV) at 120 km.",
+          "Units": "mW/m2",
+          "ValidMin": "-6400",
+          "ValidMax": "6400",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "TED proton (1-20 keV) energy flux at 120 km",
+          "ParameterKey": "ted_pro_eflux_atmo_hi",
+          "Description": "TED proton energy flux (1-20 keV) at 120 km.",
+          "Units": "mW/m2",
+          "ValidMin": "-6400",
+          "ValidMax": "6400",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "TED proton (50 eV-20 keV) energy flux at 120 km",
+          "ParameterKey": "ted_pro_eflux_atmo_total",
+          "Description": "TED proton energy flux(50 eV -20 keV) at 120 km.",
+          "Units": "mW/m2",
+          "ValidMin": "-12800",
+          "ValidMax": "12800",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "TED proton (50eV-1 keV) energy flux percent error at 120 km",
+          "ParameterKey": "ted_pro_eflux_atmo_low_err",
+          "Description": "Error for TED proton energy flux (50 eV -1 keV) at 120 km.",
+          "Units": "mW/m2",
+          "ValidMin": "0",
+          "ValidMax": "6400",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "TED proton (1-20 keV) energy flux percent error at 120 km",
+          "ParameterKey": "ted_pro_eflux_atmo_hi_err",
+          "Description": "Error for TED proton energy flux (1-20 keV) at 120 km.",
+          "Units": "mW/m2",
+          "ValidMin": "0",
+          "ValidMax": "6400",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "TED proton (50 eV-20 keV) energy flux percent error at 120 km",
+          "ParameterKey": "ted_pro_eflux_atmo_total_err",
+          "Description": "Error for TED proton energy flux (50 eV -20 keV) at 120 km.",
+          "Units": "mW/m2",
+          "ValidMin": "0",
+          "ValidMax": "12800",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "TED total (50 ev-20 keV) energy flux of protons and electrons at 120 km",
+          "ParameterKey": "ted_total_eflux_atmo",
+          "Description": "TED proton and electron energy flux (50 ev -20 keV) at 120 km.",
+          "Units": "mW/m2",
+          "ValidMin": "-25600",
+          "ValidMax": "25600",
+          "Particle": {
+            "ParticleType": [
+              "Proton",
+              "Electron"
+            ],
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "TED total (50 ev-20 keV) energy flux percent error of protons and electrons at 120 km",
+          "ParameterKey": "ted_total_eflux_atmo_err",
+          "Description": "Error for TED proton and electron energy flux (50 ev-20 keV) at 120 km.",
+          "Units": "mW/m2",
+          "ValidMin": "-25600",
+          "ValidMax": "25600",
+          "Particle": {
+            "ParticleType": [
+              "Proton",
+              "Electron"
+            ],
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "TED electron characteristic energy channel 0 deg telescope",
+          "ParameterKey": "ted_ele_energy_tel0",
+          "Description": "Defines TED electron characteristic energy channel for 0 deg telescope.",
+          "Units": "energy channel",
+          "ValidMin": "0",
+          "ValidMax": "15",
+          "Support": {
+            "SupportQuantity": "InstrumentMode"
+          }
+        },
+        {
+          "Name": "TED electron characteristic energy channel 30 deg telescope",
+          "ParameterKey": "ted_ele_energy_tel30",
+          "Description": "Defines TED electron characteristic energy channel for 30 deg telescope.",
+          "Units": "energy channel",
+          "ValidMin": "0",
+          "ValidMax": "15",
+          "Support": {
+            "SupportQuantity": "InstrumentMode"
+          }
+        },
+        {
+          "Name": "TED proton characteristic energy channel  0 deg telescope",
+          "ParameterKey": "ted_pro_energy_tel0",
+          "Description": "Defines TED proton characteristic energy channel for 0 deg telescope.",
+          "Units": "energy channel",
+          "ValidMin": "0",
+          "ValidMax": "15",
+          "Support": {
+            "SupportQuantity": "InstrumentMode"
+          }
+        },
+        {
+          "Name": "TED proton characteristic energy channel 30 deg telescope",
+          "ParameterKey": "ted_pro_energy_tel30",
+          "Description": "Defines TED proton characteristic energy channel for 30 deg telescope.",
+          "Units": "energy channel",
+          "ValidMin": "0",
+          "ValidMax": "15",
+          "Support": {
+            "SupportQuantity": "InstrumentMode"
+          }
+        },
+        {
+          "Name": "TED electron maximum flux [#/cm2-s-str-eV] 0 deg telescope",
+          "ParameterKey": "ted_ele_max_flux_tel0",
+          "Description": "TED electron maximum flux at the 0 deg telescope.",
+          "Units": "#/cm2-s-str-eV",
+          "ValidMin": "0",
+          "ValidMax": "4000000000",
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "TED electron maximum flux [#/cm2-s-str-eV] 30 deg telescope",
+          "ParameterKey": "ted_ele_max_flux_tel30",
+          "Description": "TED electron maximum flux at the 30 deg telescope.",
+          "Units": "#/cm2-s-str-eV",
+          "ValidMin": "0",
+          "ValidMax": "4000000000",
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "TED proton maximum flux [#/cm2-s-str-eV] 0 deg telescope",
+          "ParameterKey": "ted_pro_max_flux_tel0",
+          "Description": "TED proton maximum flux at the 0 deg telescope.",
+          "Units": "#/cm2-s-str-eV",
+          "ValidMin": "0",
+          "ValidMax": "4000000000",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "TED proton maximum flux [#/cm2-s-str-eV] 30 deg telescope",
+          "ParameterKey": "ted_pro_max_flux_tel30",
+          "Description": "TED proton maximum flux at the 30 deg telescope.",
+          "Units": "#/cm2-s-str-eV",
+          "ValidMin": "0",
+          "ValidMax": "4000000000",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "TED electron background low energy 0 degree telescope",
+          "ParameterKey": "ted_ele_eflux_bg_tel0_low",
+          "Description": "TED electron background low energy (50eV-1 keV) at the 0 deg telescope.",
+          "Units": "mW/m2-str",
+          "ValidMin": "0",
+          "ValidMax": "200",
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "TED electron background low energy 30 degree telescope",
+          "ParameterKey": "ted_ele_eflux_bg_tel30_low",
+          "Description": "TED electron background low energy (50eV-1 keV) at the 30 deg telescope.",
+          "Units": "mW/m2-str",
+          "ValidMin": "0",
+          "ValidMax": "200",
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "TED electron background high energy 0 degree telescope",
+          "ParameterKey": "ted_ele_eflux_bg_tel0_hi",
+          "Description": "TED electron background high energy (1-20 keV) at the 0 deg telescope.",
+          "Units": "mW/m2-str",
+          "ValidMin": "0",
+          "ValidMax": "200",
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "TED electron background high energy 30 degree telescope",
+          "ParameterKey": "ted_ele_eflux_bg_tel30_hi",
+          "Description": "TED electron background high energy (1-20 keV) at the 30 deg telescope.",
+          "Units": "mW/m2-str",
+          "ValidMin": "0",
+          "ValidMax": "200",
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "TED proton background low energy 0 degree telescope",
+          "ParameterKey": "ted_pro_eflux_bg_tel0_low",
+          "Description": "TED proton background low energy (50eV-1 keV) at the 0 deg telescope.",
+          "Units": "mW/m2-str",
+          "ValidMin": "0",
+          "ValidMax": "200",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "TED proton background low energy 30 degree telescope",
+          "ParameterKey": "ted_pro_eflux_bg_tel30_low",
+          "Description": "TED proton background low energy (50eV-1 keV) at the 30 deg telescope.",
+          "Units": "mW/m2-str",
+          "ValidMin": "0",
+          "ValidMax": "200",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "TED proton background high energy 0 degree telescope",
+          "ParameterKey": "ted_pro_eflux_bg_tel0_hi",
+          "Description": "TED proton background high energy (1-20 keV) at the 0 deg telescope.",
+          "Units": "mW/m2-str",
+          "ValidMin": "0",
+          "ValidMax": "200",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "TED proton background high energy 30 degree telescope",
+          "ParameterKey": "ted_pro_eflux_bg_tel30_hi",
+          "Description": "TED proton background high energy (1-20 keV) at the 30 deg telescope.",
+          "Units": "mW/m2-str",
+          "ValidMin": "0",
+          "ValidMax": "200",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "TED electron background low energy 0 degree telescope counts",
+          "ParameterKey": "ted_ele_eflux_bg_tel0_low_cps",
+          "Description": "TED electron background low energy (50 eV -1 keV) counts at the 0 deg telescope.",
+          "Units": "counts",
+          "ValidMin": "0",
+          "ValidMax": "1998848",
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "Counts"
+          }
+        },
+        {
+          "Name": "TED electron background low energy 30 degree telescope counts",
+          "ParameterKey": "ted_ele_eflux_bg_tel30_low_cps",
+          "Description": "TED electron background low energy (50 eV -1 keV) counts at the 30 deg telescope.",
+          "Units": "counts",
+          "ValidMin": "0",
+          "ValidMax": "1998848",
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "Counts"
+          }
+        },
+        {
+          "Name": "TED electron background high energy 0 degree telescope counts",
+          "ParameterKey": "ted_ele_eflux_bg_tel0_hi_cps",
+          "Description": "TED electron background high energy (1-20 keV) counts at the 0 deg telescope.",
+          "Units": "mW/m2-str",
+          "ValidMin": "0",
+          "ValidMax": "1998848",
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "Counts"
+          }
+        },
+        {
+          "Name": "TED electron background high energy 30 degree telescope counts",
+          "ParameterKey": "ted_ele_eflux_bg_tel30_hi_cps",
+          "Description": "TED electron background high energy (1-20 keV) counts at the 30 deg telescope.",
+          "Units": "mW/m2-str",
+          "ValidMin": "0",
+          "ValidMax": "1998848",
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "Counts"
+          }
+        },
+        {
+          "Name": "TED proton background low energy 0 degree telescope counts",
+          "ParameterKey": "ted_pro_eflux_bg_tel0_low_cps",
+          "Description": "TED proton background low energy (50 eV - 1 keV) counts at the 0 deg telescope.",
+          "Units": "counts",
+          "ValidMin": "0",
+          "ValidMax": "1998848",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "Counts"
+          }
+        },
+        {
+          "Name": "TED proton background low energy 30 degree telescope counts",
+          "ParameterKey": "ted_pro_eflux_bg_tel30_low_cps",
+          "Description": "TED proton background low energy (50 eV - 1 keV) counts at the 30 deg telescope.",
+          "Units": "counts",
+          "ValidMin": "0",
+          "ValidMax": "1998848",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "Counts"
+          }
+        },
+        {
+          "Name": "TED proton background high energy 0 degree telescope counts",
+          "ParameterKey": "ted_pro_eflux_bg_tel0_hi_cps",
+          "Description": "TED proton background high energy (1-20 keV) counts at the 0 deg telescope.",
+          "Units": "mW/m2-str",
+          "ValidMin": "0",
+          "ValidMax": "1998848",
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "Counts"
+          }
+        },
+        {
+          "Name": "TED proton background high energy 30 degree telescope counts",
+          "ParameterKey": "ted_pro_eflux_bg_tel30_hi_cps",
+          "Description": "TED proton background high energy (1-20 keV) counts at the 30 deg telescope.",
+          "Units": "mW/m2-str",
+          "ValidMin": "0",
+          "ValidMax": "1998848",
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "Counts"
+          }
+        },
+        {
+          "Name": "IGRF magnetic field vector at the spacecraft",
+          "Description": "International Geomagnetic Reference Field vector at the spacecraft in units of nT.",
+          "Units": "nT",
+          "Structure": {
+            "Size": "4",
+            "Element": [
+              {
+                "Name": "Bradial IGRF (satellite)",
+                "Index": "1",
+                "ParameterKey": "Br_sat",
+                "ValidMin": "-32000",
+                "ValidMax": "32000"
+              },
+              {
+                "Name": "Btheta IGRF (satellite)",
+                "Index": "2",
+                "ParameterKey": "Bt_sat",
+                "ValidMin": "-32000",
+                "ValidMax": "32000"
+              },
+              {
+                "Name": "Bphi IGRF (satellite)",
+                "Index": "3",
+                "ParameterKey": "Bp_sat",
+                "ValidMin": "-32000",
+                "ValidMax": "32000"
+              },
+              {
+                "Name": "Btotal IGRF (satellite)",
+                "Index": "4",
+                "ParameterKey": "Btot_sat",
+                "ValidMin": "-32000",
+                "ValidMax": "32000"
+              }
+            ]
+          },
+          "Field": {
+            "Qualifier": "Vector",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "IGRF magnetic field vector at the foot of the field line at the spacecraft",
+          "Description": "International Geomagnetic Reference Field vector at the foot of the field line at the spacecraft in units of nT.",
+          "Units": "nT",
+          "Structure": {
+            "Size": "4",
+            "Element": [
+              {
+                "Name": "Bradial IGRF (foot of field line)",
+                "Index": "1",
+                "ParameterKey": "Br_foot",
+                "ValidMin": "-32000",
+                "ValidMax": "32000"
+              },
+              {
+                "Name": "Btheta IGRF (foot of field line)",
+                "Index": "2",
+                "ParameterKey": "Bt_foot",
+                "ValidMin": "-32000",
+                "ValidMax": "32000"
+              },
+              {
+                "Name": "Bphi IGRF (foot of field line)",
+                "Index": "3",
+                "ParameterKey": "Bp_foot",
+                "ValidMin": "-32000",
+                "ValidMax": "32000"
+              },
+              {
+                "Name": "Btotal IGRF (satellite)",
+                "Index": "4",
+                "ParameterKey": "Btot_foot",
+                "ValidMin": "-32000",
+                "ValidMax": "32000"
+              }
+            ]
+          },
+          "Field": {
+            "Qualifier": "Vector",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "Geodetic position of footpoint",
+          "Description": "Geodetic coordinates of the foot of the field line at the spacecraft in units of degrees.",
+          "Units": "deg",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "WGS84"
+          },
+          "Structure": {
+            "Size": "2",
+            "Element": [
+              {
+                "Name": "Geodetic latitude (foot of field line)",
+                "Index": "1",
+                "ParameterKey": "geod_lat_foot",
+                "ValidMin": "-90",
+                "ValidMax": "90"
+              },
+              {
+                "Name": "Geodetic longitude (foot of field line)",
+                "Index": "2",
+                "ParameterKey": "geod_lon_foot",
+                "ValidMin": "0",
+                "ValidMax": "360"
+              }
+            ]
+          },
+          "Support": {
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "AACGM position of footpoint",
+          "Description": "Altitude adjustment corrected geomagnetic (AACGM) coordinates of the foot of the field line at the spacecraft in units of degrees.",
+          "Units": "deg",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "CGM"
+          },
+          "Structure": {
+            "Size": "2",
+            "Element": [
+              {
+                "Name": "AACGM latitude (foot of field line)",
+                "Index": "1",
+                "ParameterKey": "aacgm_lat_foot",
+                "ValidMin": "-90",
+                "ValidMax": "90"
+              },
+              {
+                "Name": "AACGM longitude (foot of field line)",
+                "Index": "2",
+                "ParameterKey": "aacgm_lon_foot",
+                "ValidMin": "0",
+                "ValidMax": "360"
+              }
+            ]
+          },
+          "Support": {
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Geomagnetic coordinates of footpoint",
+          "Description": "Geomagnetic coordinates of the foot of the field line at the spacecraft in units of degrees.",
+          "Units": "deg",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "MAG"
+          },
+          "Structure": {
+            "Size": "2",
+            "Element": [
+              {
+                "Name": "magnetic latitude (foot of field line)",
+                "Index": "1",
+                "ParameterKey": "mag_lat_foot",
+                "ValidMin": "-90",
+                "ValidMax": "90"
+              },
+              {
+                "Name": "magnetic longitude (foot of field line)",
+                "Index": "2",
+                "ParameterKey": "mag_lon_foot",
+                "ValidMin": "0",
+                "ValidMax": "360"
+              }
+            ]
+          },
+          "Support": {
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Geomagnetic coordinates of the spacecraft",
+          "Description": "Geomagnetic coordinates of the spacecraft in units of degrees.",
+          "Units": "deg",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "MAG"
+          },
+          "Structure": {
+            "Size": "2",
+            "Element": [
+              {
+                "Name": "magnetic latitude (satellite)",
+                "Index": "1",
+                "ParameterKey": "mag_lat_sat",
+                "ValidMin": "-90",
+                "ValidMax": "90"
+              },
+              {
+                "Name": "magnetic longitude (satellite)",
+                "Index": "2",
+                "ParameterKey": "mag_lon_sat",
+                "ValidMin": "0",
+                "ValidMax": "360"
+              }
+            ]
+          },
+          "Support": {
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "IGRF satellite coordinates",
+          "Description": "International Geomagnetic Reference Field vector at the spacecraft in units of nT.",
+          "Units": "nT",
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "Bx IGRF satellite coordinates (towards Earth)",
+                "Index": "1",
+                "ParameterKey": "Bx_sat",
+                "ValidMin": "-32000",
+                "ValidMax": "32000"
+              },
+              {
+                "Name": "By IGRF satellite coordinates (opposite velocity direction)",
+                "Index": "2",
+                "ParameterKey": "By_sat",
+                "ValidMin": "-32000",
+                "ValidMax": "32000"
+              },
+              {
+                "Name": "Bz IGRF satellite coordinates (XxY direction)",
+                "Index": "3",
+                "ParameterKey": "Bz_sat",
+                "ValidMin": "-32000",
+                "ValidMax": "32000"
+              }
+            ]
+          },
+          "Field": {
+            "Qualifier": "Vector",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "TED 0 deg telescope pitch angle (satellite)",
+          "ParameterKey": "ted_alpha_0_sat",
+          "Description": "TED pitch angle at the satellite for the 0 deg telescope.",
+          "Units": "deg",
+          "ValidMin": "0",
+          "ValidMax": "180",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": "DirectionAngle",
+            "ParticleQuantity": "ArrivalDirection"
+          }
+        },
+        {
+          "Name": "TED 30 deg telescope pitch angle (satellite)",
+          "ParameterKey": "ted_alpha_30_sat",
+          "Description": "TED pitch angle at the satellite for the 30 deg telescope.",
+          "Units": "deg",
+          "ValidMin": "0",
+          "ValidMax": "180",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": "DirectionAngle",
+            "ParticleQuantity": "ArrivalDirection"
+          }
+        },
+        {
+          "Name": "TED 0 deg telescope pitch angle (foot of field line)",
+          "ParameterKey": "ted_alpha_0_foot",
+          "Description": "TED pitch angle at the foot point for the 0 deg telescope.",
+          "Units": "deg",
+          "ValidMin": "0",
+          "ValidMax": "180",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": "DirectionAngle",
+            "ParticleQuantity": "ArrivalDirection"
+          }
+        },
+        {
+          "Name": "TED 30 deg telescope pitch angle (foot of field line)",
+          "ParameterKey": "ted_alpha_30_sat",
+          "Description": "TED pitch angle at the foot point for the 30 deg telescope.",
+          "Units": "deg",
+          "ValidMin": "0",
+          "ValidMax": "180",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": "DirectionAngle",
+            "ParticleQuantity": "ArrivalDirection"
+          }
+        },
+        {
+          "Name": "MEPED 0 deg telescope pitch angle (satellite)",
+          "ParameterKey": "meped_alpha_0_sat",
+          "Description": "MEPED pitch angle at the satellite for the 0 deg telescope.",
+          "Units": "deg",
+          "ValidMin": "0",
+          "ValidMax": "180",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": "DirectionAngle",
+            "ParticleQuantity": "ArrivalDirection"
+          }
+        },
+        {
+          "Name": "MEPED 90 deg telescope pitch angle (satellite)",
+          "ParameterKey": "meped_alpha_90_sat",
+          "Description": "TED pitch angle at the satellite for the 90 deg telescope.",
+          "Units": "deg",
+          "ValidMin": "0",
+          "ValidMax": "180",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": "DirectionAngle",
+            "ParticleQuantity": "ArrivalDirection"
+          }
+        },
+        {
+          "Name": "MEPED 0 deg telescope pitch angle (foot of field line)",
+          "ParameterKey": "meped_alpha_0_foot",
+          "Description": "MEPED pitch angle at the foot point for the 0 deg telescope.",
+          "Units": "deg",
+          "ValidMin": "0",
+          "ValidMax": "180",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": "DirectionAngle",
+            "ParticleQuantity": "ArrivalDirection"
+          }
+        },
+        {
+          "Name": "MEPED 90 deg telescope pitch angle (foot of field line)",
+          "ParameterKey": "meped_alpha_90_foot",
+          "Description": "MEPED pitch angle at the foot point for the 90 deg telescope.",
+          "Units": "deg",
+          "ValidMin": "0",
+          "ValidMax": "180",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": "DirectionAngle",
+            "ParticleQuantity": "ArrivalDirection"
+          }
+        },
+        {
+          "Name": "L value from IGRF field",
+          "ParameterKey": "L_IGRF",
+          "Description": "L shell value of the IGRF field line of the spacecraft",
+          "ValidMin": "0",
+          "ValidMax": "20",
+          "Support": {
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Magnetic local time (hours)",
+          "ParameterKey": "MLT",
+          "Description": "Magnetic local time of the spacecraft",
+          "ValidMin": "0",
+          "ValidMax": "25",
+          "Support": {
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "TED IFC flag (0 off 1 on)",
+          "ParameterKey": "ted_IFC_on",
+          "Description": "Total electron detector in-flight calibration flag (0 off 1 on).",
+          "Support": {
+            "SupportQuantity": "InstrumentMode"
+          }
+        },
+        {
+          "Name": "MEPED IFC flag (0 off 1 on)",
+          "ParameterKey": "mep_IFC_on",
+          "Description": "MEPED in-flight calibration flag (0 off 1 on).",
+          "Support": {
+            "SupportQuantity": "InstrumentMode"
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,389 @@
+<?xml version="1.0"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><title>SPASE Resource Description</title><script type="application/ld+json">{
+		"@context": "https://schema.org/",
+		"@type" :"Dataset",
+		"name": "Wind Solar Wind Experiment (SWE) Thermal Plamsa Moments, Key Parameter (K0), 99 s Data",
+     
+ 		"description": "Wind SWE Key Parameter data: proton density, thermal speed, flow velocity vectors, and spacecraft position vectors. Various versions differ slightly from each other. The version at MIT has flow velocity vectors experessed bby using Geocentric Solar Ecliptic, GSE, Cartesian and spherical representations and GSE Cartesian position vectors. The version available via nssdcftp and FTPBrowser has temperature instead of thermal speed and has no flow direction angles. The CDAWeb version has flow velocity and spacecraft position vectors in both GSE and Geocentric Solar Magnetospheric, GSM, coordinates, flow dynamic pressure, NmV^2, and velocity and density quality flags. The data were progressively despiked in passing from CDAWeb to MIT to nssdcftp/FTPBrowser.\n\nUse of the Quality Variables:\n\nQuality flags are set in the analysis program that generates the KP data. Previous descriptions of their meaning were out of date.\n\nGood data is indicated by a quality flag equal to 0.\n\nThe quality flags for each parameter are given as integers 4 bytes long, integer*4.\n\nThe individual 'bits' for each quality value are set or cleared in the analysis code by adding or subtracting a power of 2 as follows. To set the first bit, add 1, the second bit, add 2, the third bit, add 4, the fourth bit, add 8, and so on. See the table below.\n\n+------------------------------------------------------------------------------------------------------------------------------+\n| Bit | Set Value | MEANING                                                                                                    |\n|------------------------------------------------------------------------------------------------------------------------------|\n| 1   | 1         | Three point parabolic fits to proton peaks were not attempted.                                             |\n| 2   | 2         | Non-linear least squares fit was not attempted.                                                            |\n| 3   | 4         | Three point parabolic fits to proton peaks failed.                                                         |\n| 4   | 8         | Non-linear least squares fit failed.                                                                       |\n| 5   | 16        | Alpha parameters not valid since the non-linear least squares fit was done for protons only.               |\n|     |           | Not enough good energy channels to do simultaneous alpha fit. This value applies to iqual_core(5) only.    |\n| 6   | 32        | Analysis code unable to get good value for spin period.                                                    |\n| 7   | 64        | SWE instrument in mode 1, calibration state mode. Key parameters are produced in mode 1, science mode.     |\n| 8   | 128       | Three point fits done for cup 1 only. Split collector ratio of currents used to get the north/south angle. |\n|     |           | Either cup 2 turned off, or cup 2 densities were low indicating noise associated with vibration.           |\n| 9   | 256       | Fewer than ten fc_blocks in spectrum. Analysis skipped.                                                    |\n| 10  | 512       | Alpha particle non-linear fit produced values of density and thermal speed that do not seem reasonable.    |\n| 11  | 1024      | Three point parabolic fits to proton peaks done for cup 2 only. Probably Cup 1 is turned off.              |\n|     |           | The ratio of currents on split collectors used to get north/south angle.                                   |\n| 12  | 2048      | Single width windows. Delta E over E 6.5% instead of the default 13%.                                      |\n| 13  | 4096      | Tracking mode operation.                                                                                   |\n| 14  | 8192      | Limited tracking mode scan, not a full scan.                                                               |\n+------------------------------------------------------------------------------------------------------------------------------+\n\nParticular flag settings:\n\n+-------------------------------------------------------------------------------------------+\n| Flag Value | Meaning                                                                      |\n|-------------------------------------------------------------------------------------------|\n| 4098       | Tracking mode operation is full scan (4096) and No non-linear fits (2)       |\n| 14338      | Tracking mode operation is full scan (4096) and Limited tracking mode (8192) |\n+-------------------------------------------------------------------------------------------+\n\nComments:\n\n* Note that in bit 4 of the quality flag the non-linear fit may be reported as good for protons and, at the same time, not good for alphas.\n* Non-linear fits are not done for Key Parameters, KPs, but those parameter values are excellent and should be used to do science.\n* Non-linear fits are available are available in this data product, but they have problems which suggests strongly that the KP parameters should be used, see the paper by Kasper et al., Physics-based tests to identify the accuracy of solar wind ion measurements: A case study with the Wind Faraday Cups, J. Geophys. Res., 111, A03105, DOI: 101029/2005JA011442.\n* Note that all quality flag values that are even numbers are for data values when non-linear fits were not attempted.\n\nFor the complete guide to the quality flag values see https://cdaweb.gsfc.nasa.gov/wind_swe_quality.html.\n\nNote that this SPASE Numerical Description only describes the MESSENGER Magnetometer data stored in Common Data Files. Other links to Wind SWE data in non CDF format are listed in the following table:\n\n+--------------------------------------------------------------------------------------------------------------------------------------------+\n| SPASE Repository Resource ID   | Data Source                          | Data Access URL                                                    |\n|--------------------------------------------------------------------------------------------------------------------------------------------|\n| SMWG/Repository/MIT_CSR        | ASCII via ftp from MIT               | ftp://space.mit.edu/pub/plasma/wind/kp_files/                      |\n| SMWG/Repository/NASA/GSFC/SPDF | ASCII via ftps from SPDF             | ftps://spdf.gsfc.nasa.gov/pub/data/wind/swe/ascii/swe_kp_unspike/  |\n| SMWG/Repository/NASA/GSFC/SPDF | ASCII via https from SPDF            | https://spdf.gsfc.nasa.gov/pub/data/wind/swe/ascii/swe_kp_unspike/ |\n| SMWG/Repository/NASA/GSFC/SPDF | Subset, plot and list via FTPBrowser | https://omniweb.sci.gsfc.nasa.gov/ftpbrowser/wind_swe_kp.html      |\n+--------------------------------------------------------------------------------------------------------------------------------------------+",
+		"abstract": "Wind SWE Key Parameter data: proton density, thermal speed, flow velocity vectors, and spacecraft position vectors. Various versions differ slightly from each other. The version at MIT has flow velocity vectors experessed bby using Geocentric Solar Ecliptic, GSE, Cartesian and spherical representations and GSE Cartesian position vectors. The version available via nssdcftp and FTPBrowser has temperature instead of thermal speed and has no flow direction angles. The CDAWeb version has flow velocity and spacecraft position vectors in both GSE and Geocentric Solar Magnetospheric, GSM, coordinates, flow dynamic pressure, NmV^2, and velocity and density quality flags. The data were progressively despiked in passing from CDAWeb to MIT to nssdcftp/FTPBrowser.\n\nUse of the Quality Variables:\n\nQuality flags are set in the analysis program that generates the KP data. Previous descriptions of their meaning were out of date.\n\nGood data is indicated by a quality flag equal to 0.\n\nThe quality flags for each parameter are given as integers 4 bytes long, integer*4.\n\nThe individual 'bits' for each quality value are set or cleared in the analysis code by adding or subtracting a power of 2 as follows. To set the first bit, add 1, the second bit, add 2, the third bit, add 4, the fourth bit, add 8, and so on. See the table below.\n\n+------------------------------------------------------------------------------------------------------------------------------+\n| Bit | Set Value | MEANING                                                                                                    |\n|------------------------------------------------------------------------------------------------------------------------------|\n| 1   | 1         | Three point parabolic fits to proton peaks were not attempted.                                             |\n| 2   | 2         | Non-linear least squares fit was not attempted.                                                            |\n| 3   | 4         | Three point parabolic fits to proton peaks failed.                                                         |\n| 4   | 8         | Non-linear least squares fit failed.                                                                       |\n| 5   | 16        | Alpha parameters not valid since the non-linear least squares fit was done for protons only.               |\n|     |           | Not enough good energy channels to do simultaneous alpha fit. This value applies to iqual_core(5) only.    |\n| 6   | 32        | Analysis code unable to get good value for spin period.                                                    |\n| 7   | 64        | SWE instrument in mode 1, calibration state mode. Key parameters are produced in mode 1, science mode.     |\n| 8   | 128       | Three point fits done for cup 1 only. Split collector ratio of currents used to get the north/south angle. |\n|     |           | Either cup 2 turned off, or cup 2 densities were low indicating noise associated with vibration.           |\n| 9   | 256       | Fewer than ten fc_blocks in spectrum. Analysis skipped.                                                    |\n| 10  | 512       | Alpha particle non-linear fit produced values of density and thermal speed that do not seem reasonable.    |\n| 11  | 1024      | Three point parabolic fits to proton peaks done for cup 2 only. Probably Cup 1 is turned off.              |\n|     |           | The ratio of currents on split collectors used to get north/south angle.                                   |\n| 12  | 2048      | Single width windows. Delta E over E 6.5% instead of the default 13%.                                      |\n| 13  | 4096      | Tracking mode operation.                                                                                   |\n| 14  | 8192      | Limited tracking mode scan, not a full scan.                                                               |\n+------------------------------------------------------------------------------------------------------------------------------+\n\nParticular flag settings:\n\n+-------------------------------------------------------------------------------------------+\n| Flag Value | Meaning                                                                      |\n|-------------------------------------------------------------------------------------------|\n| 4098       | Tracking mode operation is full scan (4096) and No non-linear fits (2)       |\n| 14338      | Tracking mode operation is full scan (4096) and Limited tracking mode (8192) |\n+-------------------------------------------------------------------------------------------+\n\nComments:\n\n* Note that in bit 4 of the quality flag the non-linear fit may be reported as good for protons and, at the same time, not good for alphas.\n* Non-linear fits are not done for Key Parameters, KPs, but those parameter values are excellent and should be used to do science.\n* Non-linear fits are available are available in this data product, but they have problems which suggests strongly that the KP parameters should be used, see the paper by Kasper et al., Physics-based tests to identify the accuracy of solar wind ion measurements: A case study with the Wind Faraday Cups, J. Geophys. Res., 111, A03105, DOI: 101029/2005JA011442.\n* Note that all quality flag values that are even numbers are for data values when non-linear fits were not attempted.\n\nFor the complete guide to the quality flag values see https://cdaweb.gsfc.nasa.gov/wind_swe_quality.html.\n\nNote that this SPASE Numerical Description only describes the MESSENGER Magnetometer data stored in Common Data Files. Other links to Wind SWE data in non CDF format are listed in the following table:\n\n+--------------------------------------------------------------------------------------------------------------------------------------------+\n| SPASE Repository Resource ID   | Data Source                          | Data Access URL                                                    |\n|--------------------------------------------------------------------------------------------------------------------------------------------|\n| SMWG/Repository/MIT_CSR        | ASCII via ftp from MIT               | ftp://space.mit.edu/pub/plasma/wind/kp_files/                      |\n| SMWG/Repository/NASA/GSFC/SPDF | ASCII via ftps from SPDF             | ftps://spdf.gsfc.nasa.gov/pub/data/wind/swe/ascii/swe_kp_unspike/  |\n| SMWG/Repository/NASA/GSFC/SPDF | ASCII via https from SPDF            | https://spdf.gsfc.nasa.gov/pub/data/wind/swe/ascii/swe_kp_unspike/ |\n| SMWG/Repository/NASA/GSFC/SPDF | Subset, plot and list via FTPBrowser | https://omniweb.sci.gsfc.nasa.gov/ftpbrowser/wind_swe_kp.html      |\n+--------------------------------------------------------------------------------------------------------------------------------------------+",
+		"temporalCoverage": "1990.10.06  2009.30.06",
+		"keywords": [  ],
+		"license": "https://cdla.io/permissive-1-0/",
+        "audience":{
+            "@type": "Audience",
+            "audienceType": ["Space Physicist", "Space Community", "Data Scientists", "Machine Learning Users"]
+        }
+	  }
+	  </script><style>
+/* http://spase-group.org/tools/xmlviewer */
+/* v1.0 | 20160908 */
+
+* {
+   margin: 0;
+   padding: 0;
+   border: 0;
+   outline: 0;
+   font-size: 100%;
+   vertical-align: baseline;
+   background: transparent;
+}
+
+body {
+	background-color: #f0f0f0; // #eaf5e9; #277bc0; #d3d3f9;
+	color: black;
+	font-family: Verdana, Arial, sans-serif; 
+	font-size:12px; 
+	line-height: 1.2;
+}
+ 
+h1,h2,h3,h4,h5,h6 {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-weight:bold;
+}
+
+h1 {
+	font-size: 140%;
+}
+
+h2 {
+	font-size: 120%;
+}
+
+h3 {
+	font-size: 110%;
+	font-style: oblique;
+}
+
+p {
+	margin-bottom: 0.75ex;
+}
+
+dt {
+	margin-top: 5px;
+	padding-left: 5px;
+	border-top: 1px solid #DDD;
+	font-weight: bold;
+}
+
+dd {
+	margin-left: 5ex;
+}
+
+a:link,
+a:visited {
+   color: #277bc0;/* #339;*/
+   font-weight:bolder; 
+   text-decoration:none; 
+}
+
+a:hover {
+   color: blue;
+   font-weight:bolder; 
+   text-decoration:underline; 
+}
+
+ul {
+	list-style: square inside ;
+	margin-bottom: 0.75ex;
+}
+
+table {
+   border: thin solid #666;
+	margin-top: 5px;
+	margin-bottom: 10px;
+}
+
+thead,tbody {
+   border: thin solid #666;
+}
+
+td, th {
+   margin: 0;
+	padding: 2px 2px 2px 2px;
+}
+
+th {
+	font-style: oblique;
+}
+
+h1.detail {
+}
+
+.header {
+	width:100%;
+	padding: 1em 10px 1em 10px;
+	color: #fff;
+	background: #5e87b0;
+	font-weight: bold;
+	text-shadow: 0 /*{b-bar-shadow-x}*/ 1px /*{b-bar-shadow-y}*/ 1px /*{b-bar-shadow-radius}*/ #3e6790 /*{b-bar-shadow-color}*/;
+	text-align: center;
+	font-size: 16px;
+	display: block;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	outline: 0 !important;
+}
+
+.inset {
+	margin-left: 22%;
+}
+
+.page {
+	padding: 10px 3% 10px 3%;
+}
+
+div.product {
+	background-color: white;
+	border: thin solid #333;
+	padding: 10px 15px 10px 15px;
+	margin-top: 10px;
+}
+
+div.parameter {
+	margin-top: 10px;
+	padding: 5px 10px 10px 10px;
+	border: thin dotted #333;
+	background-color: #ebebeb;
+}
+
+dt.parameter {
+	margin-top: 10px;
+	padding: 5px 10px 10px 10px;
+	border: thin dotted #333;
+	background-color: #ebebeb;
+}
+
+#toc {
+   border: thin solid #333;
+   background-color: #F5F5F5; 
+   padding: 10px 15px 10px 15px;
+   margin-left: 5%;
+   margin-right: 5%;
+   margin-bottom: 30px;
+}
+
+#toc ol, ul, li {
+	padding-left: 5ex;
+}
+
+#toc ol {
+	list-style-type: decimal;
+	list-style-position: inside; 
+}
+
+#toc ul {
+	list-style-type: square;
+	list-style-position: inside; 
+}
+
+p.version {
+  float: right;
+  width: 100%;
+  margin-top: 5px;
+  text-align: right;
+  font-size: x-small;
+}
+
+p.right {
+  float: right;
+  text-align: right;
+}
+
+.box-title {
+	font-size: 120%;
+	font-weight:bold;
+	text-align: center;
+	border-bottom: 1px solid #DDD;
+}
+
+ul.list {
+	list-style-position: outside;
+	padding-left: 1.5em;
+}
+
+li.list {
+	text-align: left;
+	padding-left: 0px;
+}
+
+.no-break {
+	white-space: nowrap;
+}
+
+p.author {
+	font-size: 120%;
+}
+
+div.brand {
+	width: 100%;
+	text-align: right;
+}
+
+div.abstract {
+	display: table;
+	position: relative;
+	width: 100%;
+}
+
+div.citation {
+}
+
+div.access {
+	float: left;
+	width: 20%;
+	background-color: white;
+	border: thin solid #333;
+	padding: 5px 5px 5px 5px;
+	margin-right: 1em;
+}
+
+a.xml-logo:link,
+a.xml-logo:visited {
+   background: #ff6600;
+   color: #ffffff;
+   font-weight:bolder; 
+   text-decoration:none; 
+   padding-left:2px;
+   padding-right:2px;
+}
+a.xml-logo:hover {
+   text-decoration:underline; 
+}
+
+	  </style></head><body><div><a id="top"/></div><div class="header"><div class="middle">HPDE.io</div></div><div class="page"><div class="spase"><div class="abstract"><div class="access"><p class="box-title">Data Access</p><ul class="list"><li class="list"><a target="_blank" href="ftps://spdf.gsfc.nasa.gov/pub/data/wind/swe/swe_k0/">FTPS from SPDF (not with most browsers)</a></li><li class="list"><a target="_blank" href="https://spdf.gsfc.nasa.gov/pub/data/wind/swe/swe_k0/">HTTPS from SPDF</a></li><li class="list"><a target="_blank" href="https://cdaweb.sci.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=WI_K0_SWE&amp;index=sp_phys">CDAWeb</a></li></ul></div><div class="citation inset"><h1><a name="spase://VSPO/NumericalData/Wind/SWE/IonMoments/KeyParameter/PT99S">Wind Solar Wind Experiment (SWE) Thermal Plamsa Moments, Key Parameter (K0), 99 s Data</a></h1><p><dt>ResourceID</dt><dd>spase://VSPO/NumericalData/Wind/SWE/IonMoments/KeyParameter/PT99S</dd></p><p><dt>Description</dt><dd><p>Wind SWE Key Parameter data: proton density, thermal speed, flow velocity vectors, and spacecraft position vectors. Various versions differ slightly from each other. The version at MIT has flow velocity vectors experessed bby using Geocentric Solar Ecliptic, GSE, Cartesian and spherical representations and GSE Cartesian position vectors. The version available via nssdcftp and FTPBrowser has temperature instead of thermal speed and has no flow direction angles. The CDAWeb version has flow velocity and spacecraft position vectors in both GSE and Geocentric Solar Magnetospheric, GSM, coordinates, flow dynamic pressure, NmV^2, and velocity and density quality flags. The data were progressively despiked in passing from CDAWeb to MIT to nssdcftp/FTPBrowser.</p>
+<p>Use of the Quality Variables:</p>
+<p>Quality flags are set in the analysis program that generates the KP data. Previous descriptions of their meaning were out of date.</p>
+<p>Good data is indicated by a quality flag equal to 0.</p>
+<p>The quality flags for each parameter are given as integers 4 bytes long, integer*4.</p>
+<p>The individual 'bits' for each quality value are set or cleared in the analysis code by adding or subtracting a power of 2 as follows. To set the first bit, add 1, the second bit, add 2, the third bit, add 4, the fourth bit, add 8, and so on. See the table below.</p>
+<p>+------------------------------------------------------------------------------------------------------------------------------+<br>
+| Bit | Set Value | MEANING                                                                                                    |<br>
+|------------------------------------------------------------------------------------------------------------------------------|<br>
+| 1   | 1         | Three point parabolic fits to proton peaks were not attempted.                                             |<br>
+| 2   | 2         | Non-linear least squares fit was not attempted.                                                            |<br>
+| 3   | 4         | Three point parabolic fits to proton peaks failed.                                                         |<br>
+| 4   | 8         | Non-linear least squares fit failed.                                                                       |<br>
+| 5   | 16        | Alpha parameters not valid since the non-linear least squares fit was done for protons only.               |<br>
+|     |           | Not enough good energy channels to do simultaneous alpha fit. This value applies to iqual_core(5) only.    |<br>
+| 6   | 32        | Analysis code unable to get good value for spin period.                                                    |<br>
+| 7   | 64        | SWE instrument in mode 1, calibration state mode. Key parameters are produced in mode 1, science mode.     |<br>
+| 8   | 128       | Three point fits done for cup 1 only. Split collector ratio of currents used to get the north/south angle. |<br>
+|     |           | Either cup 2 turned off, or cup 2 densities were low indicating noise associated with vibration.           |<br>
+| 9   | 256       | Fewer than ten fc_blocks in spectrum. Analysis skipped.                                                    |<br>
+| 10  | 512       | Alpha particle non-linear fit produced values of density and thermal speed that do not seem reasonable.    |<br>
+| 11  | 1024      | Three point parabolic fits to proton peaks done for cup 2 only. Probably Cup 1 is turned off.              |<br>
+|     |           | The ratio of currents on split collectors used to get north/south angle.                                   |<br>
+| 12  | 2048      | Single width windows. Delta E over E 6.5% instead of the default 13%.                                      |<br>
+| 13  | 4096      | Tracking mode operation.                                                                                   |<br>
+| 14  | 8192      | Limited tracking mode scan, not a full scan.                                                               |<br>
++------------------------------------------------------------------------------------------------------------------------------+</p>
+<p>Particular flag settings:</p>
+<p>+-------------------------------------------------------------------------------------------+<br>
+| Flag Value | Meaning                                                                      |<br>
+|-------------------------------------------------------------------------------------------|<br>
+| 4098       | Tracking mode operation is full scan (4096) and No non-linear fits (2)       |<br>
+| 14338      | Tracking mode operation is full scan (4096) and Limited tracking mode (8192) |<br>
++-------------------------------------------------------------------------------------------+</p>
+<p>Comments:</p>
+<ul>
+<li>Note that in bit 4 of the quality flag the non-linear fit may be reported as good for protons and, at the same time, not good for alphas.</li>
+<li>Non-linear fits are not done for Key Parameters, KPs, but those parameter values are excellent and should be used to do science.</li>
+<li>Non-linear fits are available are available in this data product, but they have problems which suggests strongly that the KP parameters should be used, see the paper by Kasper et al., Physics-based tests to identify the accuracy of solar wind ion measurements: A case study with the Wind Faraday Cups, J. Geophys. Res., 111, A03105, DOI: 101029/2005JA011442.</li>
+<li>Note that all quality flag values that are even numbers are for data values when non-linear fits were not attempted.</li>
+</ul>
+<p>For the complete guide to the quality flag values see https://cdaweb.gsfc.nasa.gov/wind_swe_quality.html.</p>
+<p>Note that this SPASE Numerical Description only describes the MESSENGER Magnetometer data stored in Common Data Files. Other links to Wind SWE data in non CDF format are listed in the following table:</p>
+<p>+--------------------------------------------------------------------------------------------------------------------------------------------+<br>
+| SPASE Repository Resource ID   | Data Source                          | Data Access URL                                                    |<br>
+|--------------------------------------------------------------------------------------------------------------------------------------------|<br>
+| SMWG/Repository/MIT_CSR        | ASCII via ftp from MIT               | ftp://space.mit.edu/pub/plasma/wind/kp_files/                      |<br>
+| SMWG/Repository/NASA/GSFC/SPDF | ASCII via ftps from SPDF             | ftps://spdf.gsfc.nasa.gov/pub/data/wind/swe/ascii/swe_kp_unspike/  |<br>
+| SMWG/Repository/NASA/GSFC/SPDF | ASCII via https from SPDF            | https://spdf.gsfc.nasa.gov/pub/data/wind/swe/ascii/swe_kp_unspike/ |<br>
+| SMWG/Repository/NASA/GSFC/SPDF | Subset, plot and list via FTPBrowser | https://omniweb.sci.gsfc.nasa.gov/ftpbrowser/wind_swe_kp.html      |<br>
++--------------------------------------------------------------------------------------------------------------------------------------------+</p>
+</dd></p></div></div><div><p class="right"><a target="_blank" href="PT99S.xml">View XML</a> | <a target="_blank" href="PT99S.json">View JSON</a></p><h1 class="detail">Details</h1></div><div><div class="product"><p class="version">Version:2.3.1</p><h1>NumericalData</h1><dt>ResourceID</dt><dd>spase://VSPO/NumericalData/Wind/SWE/IonMoments/KeyParameter/PT99S</dd><dl><dt>ResourceHeader</dt><dd><dl><dt>ResourceName</dt><dd>Wind Solar Wind Experiment (SWE) Thermal Plamsa Moments, Key Parameter (K0), 99 s Data</dd></dl><dl><dt>ReleaseDate</dt><dd>2020-07-03 23:28:58Z</dd></dl><dt>Description</dt><dd><p>Wind SWE Key Parameter data: proton density, thermal speed, flow velocity vectors, and spacecraft position vectors. Various versions differ slightly from each other. The version at MIT has flow velocity vectors experessed bby using Geocentric Solar Ecliptic, GSE, Cartesian and spherical representations and GSE Cartesian position vectors. The version available via nssdcftp and FTPBrowser has temperature instead of thermal speed and has no flow direction angles. The CDAWeb version has flow velocity and spacecraft position vectors in both GSE and Geocentric Solar Magnetospheric, GSM, coordinates, flow dynamic pressure, NmV^2, and velocity and density quality flags. The data were progressively despiked in passing from CDAWeb to MIT to nssdcftp/FTPBrowser.</p>
+<p>Use of the Quality Variables:</p>
+<p>Quality flags are set in the analysis program that generates the KP data. Previous descriptions of their meaning were out of date.</p>
+<p>Good data is indicated by a quality flag equal to 0.</p>
+<p>The quality flags for each parameter are given as integers 4 bytes long, integer*4.</p>
+<p>The individual 'bits' for each quality value are set or cleared in the analysis code by adding or subtracting a power of 2 as follows. To set the first bit, add 1, the second bit, add 2, the third bit, add 4, the fourth bit, add 8, and so on. See the table below.</p>
+<p>+------------------------------------------------------------------------------------------------------------------------------+<br>
+| Bit | Set Value | MEANING                                                                                                    |<br>
+|------------------------------------------------------------------------------------------------------------------------------|<br>
+| 1   | 1         | Three point parabolic fits to proton peaks were not attempted.                                             |<br>
+| 2   | 2         | Non-linear least squares fit was not attempted.                                                            |<br>
+| 3   | 4         | Three point parabolic fits to proton peaks failed.                                                         |<br>
+| 4   | 8         | Non-linear least squares fit failed.                                                                       |<br>
+| 5   | 16        | Alpha parameters not valid since the non-linear least squares fit was done for protons only.               |<br>
+|     |           | Not enough good energy channels to do simultaneous alpha fit. This value applies to iqual_core(5) only.    |<br>
+| 6   | 32        | Analysis code unable to get good value for spin period.                                                    |<br>
+| 7   | 64        | SWE instrument in mode 1, calibration state mode. Key parameters are produced in mode 1, science mode.     |<br>
+| 8   | 128       | Three point fits done for cup 1 only. Split collector ratio of currents used to get the north/south angle. |<br>
+|     |           | Either cup 2 turned off, or cup 2 densities were low indicating noise associated with vibration.           |<br>
+| 9   | 256       | Fewer than ten fc_blocks in spectrum. Analysis skipped.                                                    |<br>
+| 10  | 512       | Alpha particle non-linear fit produced values of density and thermal speed that do not seem reasonable.    |<br>
+| 11  | 1024      | Three point parabolic fits to proton peaks done for cup 2 only. Probably Cup 1 is turned off.              |<br>
+|     |           | The ratio of currents on split collectors used to get north/south angle.                                   |<br>
+| 12  | 2048      | Single width windows. Delta E over E 6.5% instead of the default 13%.                                      |<br>
+| 13  | 4096      | Tracking mode operation.                                                                                   |<br>
+| 14  | 8192      | Limited tracking mode scan, not a full scan.                                                               |<br>
++------------------------------------------------------------------------------------------------------------------------------+</p>
+<p>Particular flag settings:</p>
+<p>+-------------------------------------------------------------------------------------------+<br>
+| Flag Value | Meaning                                                                      |<br>
+|-------------------------------------------------------------------------------------------|<br>
+| 4098       | Tracking mode operation is full scan (4096) and No non-linear fits (2)       |<br>
+| 14338      | Tracking mode operation is full scan (4096) and Limited tracking mode (8192) |<br>
++-------------------------------------------------------------------------------------------+</p>
+<p>Comments:</p>
+<ul>
+<li>Note that in bit 4 of the quality flag the non-linear fit may be reported as good for protons and, at the same time, not good for alphas.</li>
+<li>Non-linear fits are not done for Key Parameters, KPs, but those parameter values are excellent and should be used to do science.</li>
+<li>Non-linear fits are available are available in this data product, but they have problems which suggests strongly that the KP parameters should be used, see the paper by Kasper et al., Physics-based tests to identify the accuracy of solar wind ion measurements: A case study with the Wind Faraday Cups, J. Geophys. Res., 111, A03105, DOI: 101029/2005JA011442.</li>
+<li>Note that all quality flag values that are even numbers are for data values when non-linear fits were not attempted.</li>
+</ul>
+<p>For the complete guide to the quality flag values see https://cdaweb.gsfc.nasa.gov/wind_swe_quality.html.</p>
+<p>Note that this SPASE Numerical Description only describes the MESSENGER Magnetometer data stored in Common Data Files. Other links to Wind SWE data in non CDF format are listed in the following table:</p>
+<p>+--------------------------------------------------------------------------------------------------------------------------------------------+<br>
+| SPASE Repository Resource ID   | Data Source                          | Data Access URL                                                    |<br>
+|--------------------------------------------------------------------------------------------------------------------------------------------|<br>
+| SMWG/Repository/MIT_CSR        | ASCII via ftp from MIT               | ftp://space.mit.edu/pub/plasma/wind/kp_files/                      |<br>
+| SMWG/Repository/NASA/GSFC/SPDF | ASCII via ftps from SPDF             | ftps://spdf.gsfc.nasa.gov/pub/data/wind/swe/ascii/swe_kp_unspike/  |<br>
+| SMWG/Repository/NASA/GSFC/SPDF | ASCII via https from SPDF            | https://spdf.gsfc.nasa.gov/pub/data/wind/swe/ascii/swe_kp_unspike/ |<br>
+| SMWG/Repository/NASA/GSFC/SPDF | Subset, plot and list via FTPBrowser | https://omniweb.sci.gsfc.nasa.gov/ftpbrowser/wind_swe_kp.html      |<br>
++--------------------------------------------------------------------------------------------------------------------------------------------+</p>
+</dd><dl><dt>Acknowledgement</dt><dd>Please acknowledge the Principal Investigator K.W. Ogilvie for use of the Data</dd></dl><dt>Contacts</dt><dd><table class="nested" cellspacing="0"><tr><th/><th class="center">Role</th><th class="center">Person</th></tr><tbody><tr><td>1.</td><td>PrincipalInvestigator</td><td><a target="_blank" href="https://hpde.io/SMWG/Person/Keith.W.Ogilvie.html">spase://SMWG/Person/Keith.W.Ogilvie</a></td></tr><tr><td>2.</td><td>CoInvestigator</td><td><a target="_blank" href="https://hpde.io/SMWG/Person/Alan.J.Lazarus.html">spase://SMWG/Person/Alan.J.Lazarus</a></td></tr><tr><td>3.</td><td>DataProducer</td><td><a target="_blank" href="https://hpde.io/SMWG/Person/Justin.C.Kasper.html">spase://SMWG/Person/Justin.C.Kasper</a></td></tr><tr><td>4.</td><td>MetadataContact</td><td><a target="_blank" href="https://hpde.io/SMWG/Person/Robert.M.Candey.html">spase://SMWG/Person/Robert.M.Candey</a></td></tr><tr><td>5.</td><td>MetadataContact</td><td><a target="_blank" href="https://hpde.io/SMWG/Person/Lee.Frost.Bargatze.html">spase://SMWG/Person/Lee.Frost.Bargatze</a></td></tr></tbody></table></dd><dl><dt>InformationURL</dt><dd><dl><dt>Name</dt><dd>Wind Spacecraft Overview and News web page, GSFC</dd></dl><dl><dt>URL</dt><dd><a target="_blank" href="https://wind.nasa.gov">https://wind.nasa.gov</a></dd></dl><dt>Description</dt><dd><p>Wind overview web page with news updates and information about new data product releases, hosted by NASA GSFC</p>
+</dd><dl><dt>Language</dt><dd>en</dd></dl></dd></dl><dl><dt>InformationURL</dt><dd><dl><dt>Name</dt><dd>Wind Spacecraft General Instrument web page, GSFC</dd></dl><dl><dt>URL</dt><dd><a target="_blank" href="https://wind.nasa.gov/data.php">https://wind.nasa.gov/data.php</a></dd></dl><dt>Description</dt><dd><p>Wind spacecraft general instrument web page with links to data, documentation, and home pages for all instruments, hosted by NASA GSFC</p>
+</dd><dl><dt>Language</dt><dd>en</dd></dl></dd></dl><dl><dt>InformationURL</dt><dd><dl><dt>Name</dt><dd>Wind spacecraft General web page for data sources from all instruments, GSFC</dd></dl><dl><dt>URL</dt><dd><a target="_blank" href="https://wind.nasa.gov/data_sources.php">https://wind.nasa.gov/data_sources.php</a></dd></dl><dt>Description</dt><dd><p>Wind spacecraft general instrument web page with brief descriptions for data sources from all instruments, hosted by NASA GSFC</p>
+</dd><dl><dt>Language</dt><dd>en</dd></dl></dd></dl><dl><dt>InformationURL</dt><dd><dl><dt>Name</dt><dd>Wind SWE Instrument web page, GSFC</dd></dl><dl><dt>URL</dt><dd><a target="_blank" href="https://wind.nasa.gov/swe/index.html">https://wind.nasa.gov/swe/index.html</a></dd></dl><dt>Description</dt><dd><p>Wind Solar Wind Experiment, SWE, Instruments, History, and Data Products web page, hosted by NASA GSFC</p>
+</dd><dl><dt>Language</dt><dd>en</dd></dl></dd></dl><dl><dt>InformationURL</dt><dd><dl><dt>Name</dt><dd>NSSDC Master Catalog, Wind, SWE instrument</dd></dl><dl><dt>URL</dt><dd><a target="_blank" href="https://nssdc.gsfc.nasa.gov/nmc/experiment/display.action?id=1994-071A-06">https://nssdc.gsfc.nasa.gov/nmc/experiment/display.action?id=1994-071A-06</a></dd></dl><dt>Description</dt><dd><p>General information concerning the Wind, Solar Wind Experiment, SWE, instrument</p>
+</dd><dl><dt>Language</dt><dd>en</dd></dl></dd></dl><dl><dt>InformationURL</dt><dd><dl><dt>Name</dt><dd>Wind MFI and SWE Key Parameter Data Access and Plotting web page, GSFC</dd></dl><dl><dt>URL</dt><dd><a target="_blank" href="https://wind.nasa.gov/mfi_swe_plot.php">https://wind.nasa.gov/mfi_swe_plot.php</a></dd></dl><dt>Description</dt><dd><p>Wind Magnetic Field Instrument, MFI, and Solar Wind Experiment, SWE, Key Parameter data access and plotting web page with selectable overplotting of DSCOVR data and links to CDF data directories, hosted by NASA GSFC</p>
+</dd><dl><dt>Language</dt><dd>en</dd></dl></dd></dl><dl><dt>InformationURL</dt><dd><dl><dt>Name</dt><dd>Original Wind SWE web page, MIT</dd></dl><dl><dt>URL</dt><dd><a target="_blank" href="http://web.mit.edu/afs/athena/org/s/space/www/wind.html">http://web.mit.edu/afs/athena/org/s/space/www/wind.html</a></dd></dl><dt>Description</dt><dd><p>Wind Solar Wind Experiment, SWE, web page hosted by the Massachusetts Institute of Technology Space Plasma group. Since the Summer of 2015, the responsibility for Wind plasma data has been assumed by the Harvard Smithsonian Astrophysics Lab.</p>
+</dd><dl><dt>Language</dt><dd>en</dd></dl></dd></dl><dl><dt>InformationURL</dt><dd><dl><dt>Name</dt><dd>Original Wind SWE Instrument description web page, MIT</dd></dl><dl><dt>URL</dt><dd><a target="_blank" href="http://web.mit.edu/space/www/wind/wind_instruments.html">http://web.mit.edu/space/www/wind/wind_instruments.html</a></dd></dl><dt>Description</dt><dd><p>Wind Solar Wind Experiment, SWE, Instrument description web page hosted by the Massachusetts Institute of Technology Space Plasma group</p>
+</dd><dl><dt>Language</dt><dd>en</dd></dl></dd></dl><dl><dt>InformationURL</dt><dd><dl><dt>Name</dt><dd>Wind Magnetic Field Investigation, MFI, instrument, Space Science Reviews publication</dd></dl><dl><dt>URL</dt><dd><a target="_blank" href="https://link.springer.com/article/10.1007/BF00751326">https://link.springer.com/article/10.1007/BF00751326</a></dd></dl><dt>Description</dt><dd><p>Ogilvie, K.W., D.J. Chornay, R.J. Fritzenreiter, F. Hunsaker, J. Keller, J. Lobell, G. Miller, J.D. Scudder, E.C. Sittler, Jr., R.B. Torbert, D. Bodet, G. Needell, A.J. Lazarus, J.T. Steinberg, J.H. Tappan, A. Mavretic, and E. Gergin, SWE, a comprehensive plasma instrument for the Wind spacecraft, Space Sci. Rev., 71, 55-77, 1995, DOI: 10.1007/BF00751326</p>
+</dd><dl><dt>Language</dt><dd>en</dd></dl></dd></dl><dl><dt>InformationURL</dt><dd><dl><dt>Name</dt><dd>Wind SWE KP Readme file, MIT</dd></dl><dl><dt>URL</dt><dd><a target="_blank" href="ftp://space.mit.edu/pub/plasma/wind/kp_files/000_README_WIND_P_FILES.TXT">ftp://space.mit.edu/pub/plasma/wind/kp_files/000_README_WIND_P_FILES.TXT</a></dd></dl><dt>Description</dt><dd><p>Wind Solar Wind Experiment, SWE, Key Parameter Readme file, hosted by the Massachusetts Institute of Technology, MIT</p>
+</dd><dl><dt>Language</dt><dd>en</dd></dl></dd></dl><dt>PriorIDs</dt><dd>spase://VSPO/NumericalData/P_Wind_HDR_SWE_KP_92S</dd><dd>spase://VSPO/NumericalData/Wind/SWE/KeyParameters/PT92S</dd></dd></dl><dl><dt>AccessInformation</dt><dd><dl><dt>RepositoryID</dt><dd><a href="https://hpde.io/SMWG/Repository/NASA/GSFC/SPDF.html">spase://SMWG/Repository/NASA/GSFC/SPDF</a></dd></dl><dl><dt>Availability</dt><dd>Online</dd></dl><dl><dt>AccessRights</dt><dd>Open</dd></dl><dl><dt>AccessURL</dt><dd><dl><dt>Name</dt><dd>FTPS from SPDF (not with most browsers)</dd></dl><dl><dt>URL</dt><dd><a target="_blank" href="ftps://spdf.gsfc.nasa.gov/pub/data/wind/swe/swe_k0/">ftps://spdf.gsfc.nasa.gov/pub/data/wind/swe/swe_k0/</a></dd></dl><dt>Description</dt><dd><p>Access to Data in CDF Format via ftp from SPDF</p>
+</dd></dd></dl><dl><dt>AccessURL</dt><dd><dl><dt>Name</dt><dd>HTTPS from SPDF</dd></dl><dl><dt>URL</dt><dd><a target="_blank" href="https://spdf.gsfc.nasa.gov/pub/data/wind/swe/swe_k0/">https://spdf.gsfc.nasa.gov/pub/data/wind/swe/swe_k0/</a></dd></dl><dt>Description</dt><dd><p>Access to Data in CDF Format via http from SPDF</p>
+</dd></dd></dl><dl><dt>AccessURL</dt><dd><dl><dt>Name</dt><dd>CDAWeb</dd></dl><dl><dt>URL</dt><dd><a target="_blank" href="https://cdaweb.sci.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=WI_K0_SWE&amp;index=sp_phys">https://cdaweb.sci.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=WI_K0_SWE&amp;index=sp_phys</a></dd></dl><dl><dt>ProductKey</dt><dd>WI_K0_SWE</dd></dl><dt>Description</dt><dd><p>Access to ASCII, CDF, and Plots via NASA/GSFC CDAWeb</p>
+</dd></dd></dl><dl><dt>Format</dt><dd>CDF</dd></dl><dl><dt>Encoding</dt><dd>None</dd></dl><dl><dt>Acknowledgement</dt><dd>Please acknowledge the Principal Investigator K.W. Ogilvie. Please acknowledge the Data Providers and CDAWeb when using these Data.</dd></dl></dd></dl><dl><dt>ProcessingLevel</dt><dd>Calibrated</dd></dl><dl><dt>ProviderProcessingLevel</dt><dd>Calculated</dd></dl><dt>InstrumentIDs</dt><dd><a target="_blank" href="https://hpde.io/SMWG/Instrument/Wind/SWE.html">spase://SMWG/Instrument/Wind/SWE</a></dd><dl><dt>MeasurementType</dt><dd>Ephemeris</dd></dl><dl><dt>MeasurementType</dt><dd>InstrumentStatus</dd></dl><dl><dt>MeasurementType</dt><dd>ThermalPlasma</dd></dl><dl><dt>TemporalDescription</dt><dd><dl><dt>TimeSpan</dt><dd><dl><dt>StartDate</dt><dd>1994-11-01 12:00:00.000</dd></dl><dl><dt>StopDate</dt><dd>2019-01-18 23:58:49.000</dd></dl></dd></dl><dl><dt>Cadence</dt><dd>PT99S</dd></dl></dd></dl><dl><dt>ObservedRegion</dt><dd>Heliosphere</dd></dl><dl><dt>ObservedRegion</dt><dd>Heliosphere.Inner</dd></dl><dl><dt>ObservedRegion</dt><dd>Heliosphere.NearEarth</dd></dl><dl><dt class="parameter">Parameter #1</dt><dd><dl><dt>Name</dt><dd>Epoch Time</dd></dl><dl><dt>ParameterKey</dt><dd>Epoch</dd></dl><dt>Description</dt><dd><p>Epoch Time Tags, centered</p>
+</dd><dl><dt>Caveats</dt><dd>Average Type: standard This Parameter exhibits an increasing Monotonic Progression.</dd></dl><dl><dt>Cadence</dt><dd>PT99S</dd></dl><dl><dt>Units</dt><dd>ms</dd></dl><dl><dt>UnitsConversion</dt><dd>1.0e-3&gt;s</dd></dl><dl><dt>RenderingHints</dt><dd><dl><dt>AxisLabel</dt><dd>Epoch</dd></dl><dl><dt>ScaleMin</dt><dd>6.2950845819904e+13</dd></dl><dl><dt>ScaleMax</dt><dd>6.3776657018904e+13</dd></dl></dd></dl><dl><dt>ValidMin</dt><dd>01-Nov-1994 00:00:00.000</dd></dl><dl><dt>ValidMax</dt><dd>31-Dec-2020 23:59:59.000</dd></dl><dl><dt>FillValue</dt><dd>31-Dec-9999 23:59:59.999</dd></dl><dl><dt>Support</dt><dd><dl><dt>SupportQuantity</dt><dd>Temporal</dd></dl></dd></dl></dd></dl><dl><dt class="parameter">Parameter #2</dt><dd><dl><dt>Name</dt><dd>Time Interval, half interval</dd></dl><dl><dt>Set</dt><dd>Time series defined by using: EPOCH</dd></dl><dl><dt>ParameterKey</dt><dd>Delta_time</dd></dl><dt>Description</dt><dd><p>Time Interval, half interval, delta time from center time start/finish to sample data for parameters</p>
+</dd><dl><dt>Caveats</dt><dd>Average Type: standard</dd></dl><dl><dt>Cadence</dt><dd>PT99S</dd></dl><dl><dt>Units</dt><dd>ms</dd></dl><dl><dt>UnitsConversion</dt><dd>1.0e-3&gt;s</dd></dl><dl><dt>RenderingHints</dt><dd><dl><dt>AxisLabel</dt><dd>Del Time</dd></dl><dl><dt>ValueFormat</dt><dd>E10.4</dd></dl><dl><dt>ScaleMin</dt><dd>2000.0</dd></dl><dl><dt>ScaleMax</dt><dd>200000.0</dd></dl></dd></dl><dl><dt>ValidMin</dt><dd>0.0</dd></dl><dl><dt>ValidMax</dt><dd>300000.0</dd></dl><dl><dt>FillValue</dt><dd>-1.0e+31</dd></dl><dl><dt>Support</dt><dd><dl><dt>SupportQuantity</dt><dd>Temporal</dd></dl></dd></dl></dd></dl><dl><dt class="parameter">Parameter #3</dt><dd><dl><dt>Name</dt><dd>Time, PB5 format</dd></dl><dl><dt>Set</dt><dd>Time series defined by using: EPOCH</dd></dl><dl><dt>ParameterKey</dt><dd>Time_PB5</dd></dl><dt>Description</dt><dd><p>Time in PB5 format: Year, Day, and Milliseconds of Day</p>
+</dd><dl><dt>Cadence</dt><dd>PT99S</dd></dl><dl><dt>Structure</dt><dd><dl><dt>Size</dt><dd>3</dd></dl><dl><dt>Element</dt><dd><dl><dt>Name</dt><dd>Year</dd></dl><dl><dt>Index</dt><dd>1</dd></dl><dl><dt>Units</dt><dd>a</dd></dl><dl><dt>ValidMin</dt><dd>1994</dd></dl><dl><dt>ValidMax</dt><dd>2020</dd></dl><dl><dt>RenderingHints</dt><dd><dl><dt>AxisLabel</dt><dd>year</dd></dl><dl><dt>ScaleMin</dt><dd>1994</dd></dl><dl><dt>ScaleMax</dt><dd>2020</dd></dl></dd></dl></dd></dl><dl><dt>Element</dt><dd><dl><dt>Name</dt><dd>Day of Year (Jan 1 = Day 1)</dd></dl><dl><dt>Index</dt><dd>2</dd></dl><dl><dt>Units</dt><dd>d</dd></dl><dl><dt>ValidMin</dt><dd>305</dd></dl><dl><dt>ValidMax</dt><dd>365</dd></dl><dl><dt>RenderingHints</dt><dd><dl><dt>AxisLabel</dt><dd>day</dd></dl><dl><dt>ScaleMin</dt><dd>305</dd></dl><dl><dt>ScaleMax</dt><dd>365</dd></dl></dd></dl></dd></dl><dl><dt>Element</dt><dd><dl><dt>Name</dt><dd>Elapsed millisecond of day</dd></dl><dl><dt>Index</dt><dd>3</dd></dl><dl><dt>Units</dt><dd>ms</dd></dl><dl><dt>ValidMin</dt><dd>0</dd></dl><dl><dt>ValidMax</dt><dd>86399000</dd></dl><dl><dt>RenderingHints</dt><dd><dl><dt>AxisLabel</dt><dd>msec</dd></dl><dl><dt>ScaleMin</dt><dd>0</dd></dl><dl><dt>ScaleMax</dt><dd>86399000</dd></dl></dd></dl></dd></dl></dd></dl><dl><dt>FillValue</dt><dd>-2147483648</dd></dl><dl><dt>Support</dt><dd><dl><dt>Qualifier</dt><dd>Array</dd></dl><dl><dt>SupportQuantity</dt><dd>Temporal</dd></dl></dd></dl></dd></dl><dl><dt class="parameter">Parameter #4</dt><dd><dl><dt>Name</dt><dd>Post Gap Flag</dd></dl><dl><dt>Set</dt><dd>Time series defined by using: EPOCH</dd></dl><dl><dt>ParameterKey</dt><dd>GAP_FLAG</dd></dl><dt>Description</dt><dd><p>Post Gap Flag: 0=No gap immediately prior to this record, for other values: see guidelines</p>
+</dd><dl><dt>Cadence</dt><dd>PT99S</dd></dl><dl><dt>RenderingHints</dt><dd><dl><dt>DisplayType</dt><dd>TimeSeries</dd></dl><dl><dt>AxisLabel</dt><dd>Data Gap</dd></dl><dl><dt>ValueFormat</dt><dd>I2</dd></dl><dl><dt>ScaleMin</dt><dd>0</dd></dl><dl><dt>ScaleMax</dt><dd>3</dd></dl></dd></dl><dl><dt>ValidMin</dt><dd>0</dd></dl><dl><dt>ValidMax</dt><dd>15</dd></dl><dl><dt>FillValue</dt><dd>-2147483648</dd></dl><dl><dt>Support</dt><dd><dl><dt>Qualifier</dt><dd>Scalar</dd></dl><dl><dt>SupportQuantity</dt><dd>Velocity</dd></dl></dd></dl></dd></dl><dl><dt class="parameter">Parameter #5</dt><dd><dl><dt>Name</dt><dd>SWE Instrument Mode</dd></dl><dl><dt>Set</dt><dd>Time series defined by using: EPOCH</dd></dl><dl><dt>ParameterKey</dt><dd>MODE</dd></dl><dt>Description</dt><dd><p>Solar Wind Experiment, SWE, Instrument Mode</p>
+</dd><dl><dt>Cadence</dt><dd>PT99S</dd></dl><dl><dt>RenderingHints</dt><dd><dl><dt>AxisLabel</dt><dd>Mode</dd></dl><dl><dt>ValueFormat</dt><dd>I2</dd></dl><dl><dt>ScaleMin</dt><dd>0</dd></dl><dl><dt>ScaleMax</dt><dd>5</dd></dl></dd></dl><dl><dt>ValidMin</dt><dd>0</dd></dl><dl><dt>ValidMax</dt><dd>15</dd></dl><dl><dt>FillValue</dt><dd>-2147483648</dd></dl><dl><dt>Support</dt><dd><dl><dt>Qualifier</dt><dd>Scalar</dd></dl><dl><dt>SupportQuantity</dt><dd>InstrumentMode</dd></dl></dd></dl></dd></dl><dl><dt class="parameter">Parameter #6</dt><dd><dl><dt>Name</dt><dd>Spacecraft Position, GSE Cartesian coordinates</dd></dl><dl><dt>Set</dt><dd>Time series defined by using: EPOCH</dd></dl><dl><dt>ParameterKey</dt><dd>SC_pos_gse</dd></dl><dt>Description</dt><dd><p>Spacecraft Position, Geocentric Solar Ecliptic, GSE, Cartesian coordinates</p>
+</dd><dl><dt>Caveats</dt><dd>Average Type: standard</dd></dl><dl><dt>Cadence</dt><dd>PT99S</dd></dl><dl><dt>Units</dt><dd>km</dd></dl><dl><dt>UnitsConversion</dt><dd>1.0e3&gt;m</dd></dl><dl><dt>CoordinateSystem</dt><dd><dl><dt>CoordinateRepresentation</dt><dd>Cartesian</dd></dl><dl><dt>CoordinateSystemName</dt><dd>GSE</dd></dl></dd></dl><dl><dt>RenderingHints</dt><dd><dl><dt>DisplayType</dt><dd>TimeSeries</dd></dl><dl><dt>ValueFormat</dt><dd>F9.1</dd></dl><dl><dt>ScaleMin</dt><dd>-2.0e+06</dd></dl><dl><dt>ScaleMax</dt><dd>2.0e+06</dd></dl></dd></dl><dl><dt>Structure</dt><dd><dl><dt>Size</dt><dd>3</dd></dl><dl><dt>Element</dt><dd><dl><dt>Name</dt><dd>WI X (GSE)</dd></dl><dl><dt>Index</dt><dd>1</dd></dl><dl><dt>RenderingHints</dt><dd><dl><dt>AxisLabel</dt><dd>x</dd></dl></dd></dl></dd></dl><dl><dt>Element</dt><dd><dl><dt>Name</dt><dd>WI Y (GSE)</dd></dl><dl><dt>Index</dt><dd>2</dd></dl><dl><dt>RenderingHints</dt><dd><dl><dt>AxisLabel</dt><dd>y</dd></dl></dd></dl></dd></dl><dl><dt>Element</dt><dd><dl><dt>Name</dt><dd>WI Z (GSE)</dd></dl><dl><dt>Index</dt><dd>3</dd></dl><dl><dt>RenderingHints</dt><dd><dl><dt>AxisLabel</dt><dd>z</dd></dl></dd></dl></dd></dl></dd></dl><dl><dt>ValidMin</dt><dd>-2.0e+06</dd></dl><dl><dt>ValidMax</dt><dd>2.0e+06</dd></dl><dl><dt>FillValue</dt><dd>-1.0e+31</dd></dl><dl><dt>Support</dt><dd><dl><dt>Qualifier</dt><dd>Vector</dd></dl><dl><dt>SupportQuantity</dt><dd>Velocity</dd></dl></dd></dl></dd></dl><dl><dt class="parameter">Parameter #7</dt><dd><dl><dt>Name</dt><dd>Spacecraft Position, GSM Cartesian coordinates</dd></dl><dl><dt>Set</dt><dd>Time series defined by using: EPOCH</dd></dl><dl><dt>ParameterKey</dt><dd>SC_pos_GSM</dd></dl><dt>Description</dt><dd><p>Spacecraft Position, Geocentric Solar Magnetospheric, GSM, Cartesian coordinates</p>
+</dd><dl><dt>Caveats</dt><dd>Average Type: standard</dd></dl><dl><dt>Cadence</dt><dd>PT99S</dd></dl><dl><dt>Units</dt><dd>km</dd></dl><dl><dt>UnitsConversion</dt><dd>1.0e3&gt;m</dd></dl><dl><dt>CoordinateSystem</dt><dd><dl><dt>CoordinateRepresentation</dt><dd>Cartesian</dd></dl><dl><dt>CoordinateSystemName</dt><dd>GSM</dd></dl></dd></dl><dl><dt>RenderingHints</dt><dd><dl><dt>DisplayType</dt><dd>TimeSeries</dd></dl><dl><dt>ValueFormat</dt><dd>F9.1</dd></dl><dl><dt>ScaleMin</dt><dd>-2.0e+06</dd></dl><dl><dt>ScaleMax</dt><dd>2.0e+06</dd></dl></dd></dl><dl><dt>Structure</dt><dd><dl><dt>Size</dt><dd>3</dd></dl><dl><dt>Element</dt><dd><dl><dt>Name</dt><dd>WI X (GSM)</dd></dl><dl><dt>Index</dt><dd>1</dd></dl><dl><dt>RenderingHints</dt><dd><dl><dt>AxisLabel</dt><dd>x</dd></dl></dd></dl></dd></dl><dl><dt>Element</dt><dd><dl><dt>Name</dt><dd>WI Y (GSM)</dd></dl><dl><dt>Index</dt><dd>2</dd></dl><dl><dt>RenderingHints</dt><dd><dl><dt>AxisLabel</dt><dd>y</dd></dl></dd></dl></dd></dl><dl><dt>Element</dt><dd><dl><dt>Name</dt><dd>WI Z (GSM)</dd></dl><dl><dt>Index</dt><dd>3</dd></dl><dl><dt>RenderingHints</dt><dd><dl><dt>AxisLabel</dt><dd>z</dd></dl></dd></dl></dd></dl></dd></dl><dl><dt>ValidMin</dt><dd>-2.0e+06</dd></dl><dl><dt>ValidMax</dt><dd>2.0e+06</dd></dl><dl><dt>FillValue</dt><dd>-1.0e+31</dd></dl><dl><dt>Support</dt><dd><dl><dt>Qualifier</dt><dd>Vector</dd></dl><dl><dt>SupportQuantity</dt><dd>Velocity</dd></dl></dd></dl></dd></dl><dl><dt class="parameter">Parameter #8</dt><dd><dl><dt>Name</dt><dd>Spacecraft Position, Geocentric Radial Distance</dd></dl><dl><dt>Set</dt><dd>Time series defined by using: EPOCH</dd></dl><dl><dt>ParameterKey</dt><dd>SC_pos_R</dd></dl><dt>Description</dt><dd><p>Spacecraft Position, Geocentric Radial Distance, R</p>
+</dd><dl><dt>Caveats</dt><dd>Average Type: standard</dd></dl><dl><dt>Cadence</dt><dd>PT99S</dd></dl><dl><dt>Units</dt><dd>km</dd></dl><dl><dt>UnitsConversion</dt><dd>1.0e3&gt;m</dd></dl><dl><dt>RenderingHints</dt><dd><dl><dt>DisplayType</dt><dd>TimeSeries</dd></dl><dl><dt>AxisLabel</dt><dd>WI Rad Dist</dd></dl><dl><dt>ValueFormat</dt><dd>F9.1</dd></dl><dl><dt>ScaleMin</dt><dd>6400.0</dd></dl><dl><dt>ScaleMax</dt><dd>4.0e+06</dd></dl></dd></dl><dl><dt>ValidMin</dt><dd>6400.0</dd></dl><dl><dt>ValidMax</dt><dd>4.0e+06</dd></dl><dl><dt>FillValue</dt><dd>-1.0e+31</dd></dl><dl><dt>Support</dt><dd><dl><dt>Qualifier</dt><dd>Magnitude</dd></dl><dl><dt>Qualifier</dt><dd>Scalar</dd></dl><dl><dt>SupportQuantity</dt><dd>Velocity</dd></dl></dd></dl></dd></dl><dl><dt class="parameter">Parameter #9</dt><dd><dl><dt>Name</dt><dd>Data Quality Flag, overall</dd></dl><dl><dt>Set</dt><dd>Time series defined by using: EPOCH</dd></dl><dl><dt>ParameterKey</dt><dd>DQF</dd></dl><dt>Description</dt><dd><p>Data Quality Flag, overall: 0=Good, 1=Bad</p>
+</dd><dl><dt>Cadence</dt><dd>PT99S</dd></dl><dl><dt>RenderingHints</dt><dd><dl><dt>AxisLabel</dt><dd>DQ FLAG</dd></dl><dl><dt>ValueFormat</dt><dd>I1</dd></dl><dl><dt>ScaleMin</dt><dd>0</dd></dl><dl><dt>ScaleMax</dt><dd>1</dd></dl></dd></dl><dl><dt>ValidMin</dt><dd>0</dd></dl><dl><dt>ValidMax</dt><dd>1</dd></dl><dl><dt>FillValue</dt><dd>-2147483648</dd></dl><dl><dt>Support</dt><dd><dl><dt>Qualifier</dt><dd>Scalar</dd></dl><dl><dt>SupportQuantity</dt><dd>Velocity</dd></dl></dd></dl></dd></dl><dl><dt class="parameter">Parameter #10</dt><dd><dl><dt>Name</dt><dd>Data Quality Flag, Velocity</dd></dl><dl><dt>Set</dt><dd>Time series defined by using: EPOCH</dd></dl><dl><dt>ParameterKey</dt><dd>QF_V</dd></dl><dt>Description</dt><dd><p>Data Quality Flag, Velocity, V: 0=OK, 2=Caution, 130=Caution, all other values=Not valid</p>
+</dd><dl><dt>Caveats</dt><dd>Velocity Quality Flag: 0=OK; 2=parabolic 3-point fit only; 130=parabolic 3-point fit only, senso only, N/S angle zero degrees assumed; Other values NOT VALID</dd></dl><dl><dt>Cadence</dt><dd>PT99S</dd></dl><dl><dt>RenderingHints</dt><dd><dl><dt>AxisLabel</dt><dd>QF_V</dd></dl><dl><dt>ValueFormat</dt><dd>I11</dd></dl><dl><dt>ScaleMin</dt><dd>0</dd></dl><dl><dt>ScaleMax</dt><dd>256</dd></dl></dd></dl><dl><dt>ValidMin</dt><dd>0</dd></dl><dl><dt>ValidMax</dt><dd>2147483647</dd></dl><dl><dt>FillValue</dt><dd>-2147483648</dd></dl><dl><dt>Support</dt><dd><dl><dt>Qualifier</dt><dd>Scalar</dd></dl><dl><dt>SupportQuantity</dt><dd>Velocity</dd></dl></dd></dl></dd></dl><dl><dt class="parameter">Parameter #11</dt><dd><dl><dt>Name</dt><dd>Data Quality Flag, Proton Thermal Speed</dd></dl><dl><dt>Set</dt><dd>Time series defined by using: EPOCH</dd></dl><dl><dt>ParameterKey</dt><dd>QF_Vth</dd></dl><dt>Description</dt><dd><p>Data Quality Flag, Proton Thermal Speed, Vth: 0=OK, 2=Caution, 130=Caution, all other values=Not valid</p>
+</dd><dl><dt>Caveats</dt><dd>Proton thermal speed Quality Flag: 0=OK; 2=parabolic 3-point fit only; 130=parabolic 3-point fit only, senso only, N/S angle zero degrees assumed; Other values NOT VALID</dd></dl><dl><dt>Cadence</dt><dd>PT99S</dd></dl><dl><dt>RenderingHints</dt><dd><dl><dt>AxisLabel</dt><dd>QF_Vth</dd></dl><dl><dt>ValueFormat</dt><dd>I11</dd></dl><dl><dt>ScaleMin</dt><dd>0</dd></dl><dl><dt>ScaleMax</dt><dd>255</dd></dl></dd></dl><dl><dt>ValidMin</dt><dd>0</dd></dl><dl><dt>ValidMax</dt><dd>2147483647</dd></dl><dl><dt>FillValue</dt><dd>-2147483648</dd></dl><dl><dt>Support</dt><dd><dl><dt>Qualifier</dt><dd>Scalar</dd></dl><dl><dt>SupportQuantity</dt><dd>Velocity</dd></dl></dd></dl></dd></dl><dl><dt class="parameter">Parameter #12</dt><dd><dl><dt>Name</dt><dd>Data Quality Flag, Proton Number Density</dd></dl><dl><dt>Set</dt><dd>Time series defined by using: EPOCH</dd></dl><dl><dt>ParameterKey</dt><dd>QF_Np</dd></dl><dt>Description</dt><dd><p>Data Quality Flag, Proton Density, Np: 0=OK, 2=Caution, 130=Caution, all other values=Not valid</p>
+</dd><dl><dt>Caveats</dt><dd>Proton Density Quality Flag: 0=OK; 2=parabolic 3-point fit only; 130=parabolic 3-point fit only, senso only, N/S angle zero degrees assumed; Other values NOT VALID</dd></dl><dl><dt>Cadence</dt><dd>PT99S</dd></dl><dl><dt>RenderingHints</dt><dd><dl><dt>AxisLabel</dt><dd>QF_Np</dd></dl><dl><dt>ValueFormat</dt><dd>I11</dd></dl><dl><dt>ScaleMin</dt><dd>0</dd></dl><dl><dt>ScaleMax</dt><dd>255</dd></dl></dd></dl><dl><dt>ValidMin</dt><dd>0</dd></dl><dl><dt>ValidMax</dt><dd>2147483647</dd></dl><dl><dt>FillValue</dt><dd>-2147483648</dd></dl><dl><dt>Support</dt><dd><dl><dt>Qualifier</dt><dd>Scalar</dd></dl><dl><dt>SupportQuantity</dt><dd>Velocity</dd></dl></dd></dl></dd></dl><dl><dt class="parameter">Parameter #13</dt><dd><dl><dt>Name</dt><dd>Data Quality Flag, Alpha/Proton Number Density Ratio</dd></dl><dl><dt>Set</dt><dd>Time series defined by using: EPOCH</dd></dl><dl><dt>ParameterKey</dt><dd>QF_a/p</dd></dl><dt>Description</dt><dd><p>Data Quality Flag, Alpha Particle to Proton Number Density Ratio, Na/Np: 0=OK, All values greater than zero=Not valid</p>
+</dd><dl><dt>Cadence</dt><dd>PT99S</dd></dl><dl><dt>RenderingHints</dt><dd><dl><dt>AxisLabel</dt><dd>QF_a/p</dd></dl><dl><dt>ValueFormat</dt><dd>I11</dd></dl><dl><dt>ScaleMin</dt><dd>0</dd></dl><dl><dt>ScaleMax</dt><dd>256</dd></dl></dd></dl><dl><dt>ValidMin</dt><dd>0</dd></dl><dl><dt>ValidMax</dt><dd>2147483647</dd></dl><dl><dt>FillValue</dt><dd>-2147483648</dd></dl><dl><dt>Support</dt><dd><dl><dt>Qualifier</dt><dd>Scalar</dd></dl><dl><dt>SupportQuantity</dt><dd>Velocity</dd></dl></dd></dl></dd></dl><dl><dt class="parameter">Parameter #14</dt><dd><dl><dt>Name</dt><dd>Solar Wind Velocity Vector, GSE Cartesian coordinates</dd></dl><dl><dt>Set</dt><dd>Time series defined by using: EPOCH</dd></dl><dl><dt>ParameterKey</dt><dd>V_GSE</dd></dl><dt>Description</dt><dd><p>Solar Wind Velocity Vector, Geocentric Solar Ecliptic, GSE, Cartesian coordinates</p>
+</dd><dl><dt>Cadence</dt><dd>PT99S</dd></dl><dl><dt>Units</dt><dd>km/s</dd></dl><dl><dt>UnitsConversion</dt><dd>1.0e3&gt;m/s</dd></dl><dl><dt>CoordinateSystem</dt><dd><dl><dt>CoordinateRepresentation</dt><dd>Cartesian</dd></dl><dl><dt>CoordinateSystemName</dt><dd>GSE</dd></dl></dd></dl><dl><dt>RenderingHints</dt><dd><dl><dt>DisplayType</dt><dd>TimeSeries</dd></dl><dl><dt>ValueFormat</dt><dd>F8.1</dd></dl></dd></dl><dl><dt>Structure</dt><dd><dl><dt>Size</dt><dd>3</dd></dl><dl><dt>Element</dt><dd><dl><dt>Name</dt><dd>VX (GSE)</dd></dl><dl><dt>Index</dt><dd>1</dd></dl><dl><dt>ValidMin</dt><dd>-1800.0</dd></dl><dl><dt>ValidMax</dt><dd>0.0</dd></dl><dl><dt>RenderingHints</dt><dd><dl><dt>AxisLabel</dt><dd>x</dd></dl><dl><dt>ScaleMin</dt><dd>-1200.0</dd></dl><dl><dt>ScaleMax</dt><dd>0.0</dd></dl></dd></dl></dd></dl><dl><dt>Element</dt><dd><dl><dt>Name</dt><dd>VY (GSE)</dd></dl><dl><dt>Index</dt><dd>2</dd></dl><dl><dt>ValidMin</dt><dd>-900.0</dd></dl><dl><dt>ValidMax</dt><dd>900.0</dd></dl><dl><dt>RenderingHints</dt><dd><dl><dt>AxisLabel</dt><dd>y</dd></dl><dl><dt>ScaleMin</dt><dd>-500.0</dd></dl><dl><dt>ScaleMax</dt><dd>500.0</dd></dl></dd></dl></dd></dl><dl><dt>Element</dt><dd><dl><dt>Name</dt><dd>VZ (GSE)</dd></dl><dl><dt>Index</dt><dd>3</dd></dl><dl><dt>ValidMin</dt><dd>-900.0</dd></dl><dl><dt>ValidMax</dt><dd>900.0</dd></dl><dl><dt>RenderingHints</dt><dd><dl><dt>AxisLabel</dt><dd>z</dd></dl><dl><dt>ScaleMin</dt><dd>-500.0</dd></dl><dl><dt>ScaleMax</dt><dd>500.0</dd></dl></dd></dl></dd></dl></dd></dl><dl><dt>FillValue</dt><dd>-1.0e+31</dd></dl><dl><dt>Particle</dt><dd><dl><dt>ParticleType</dt><dd>Ion</dd></dl><dl><dt>Qualifier</dt><dd>Vector</dd></dl><dl><dt>ParticleQuantity</dt><dd>Velocity</dd></dl></dd></dl></dd></dl><dl><dt class="parameter">Parameter #15</dt><dd><dl><dt>Name</dt><dd>Solar Wind Velocity Vector, GSM Cartesian coordinates</dd></dl><dl><dt>Set</dt><dd>Time series defined by using: EPOCH</dd></dl><dl><dt>ParameterKey</dt><dd>V_GSM</dd></dl><dt>Description</dt><dd><p>Solar Wind Velocity Vector, Geocentric Solar Magnetospheric, GSM, Cartesian coordinates</p>
+</dd><dl><dt>Cadence</dt><dd>PT99S</dd></dl><dl><dt>Units</dt><dd>km/s</dd></dl><dl><dt>UnitsConversion</dt><dd>1.0e3&gt;m/s</dd></dl><dl><dt>CoordinateSystem</dt><dd><dl><dt>CoordinateRepresentation</dt><dd>Cartesian</dd></dl><dl><dt>CoordinateSystemName</dt><dd>GSM</dd></dl></dd></dl><dl><dt>RenderingHints</dt><dd><dl><dt>DisplayType</dt><dd>TimeSeries</dd></dl><dl><dt>ValueFormat</dt><dd>F8.1</dd></dl></dd></dl><dl><dt>Structure</dt><dd><dl><dt>Size</dt><dd>3</dd></dl><dl><dt>Element</dt><dd><dl><dt>Name</dt><dd>VX (GSM)</dd></dl><dl><dt>Index</dt><dd>1</dd></dl><dl><dt>ValidMin</dt><dd>-1800.0</dd></dl><dl><dt>ValidMax</dt><dd>0.0</dd></dl><dl><dt>RenderingHints</dt><dd><dl><dt>AxisLabel</dt><dd>x</dd></dl><dl><dt>ScaleMin</dt><dd>-1200.0</dd></dl><dl><dt>ScaleMax</dt><dd>0.0</dd></dl></dd></dl></dd></dl><dl><dt>Element</dt><dd><dl><dt>Name</dt><dd>VY (GSM)</dd></dl><dl><dt>Index</dt><dd>2</dd></dl><dl><dt>ValidMin</dt><dd>-900.0</dd></dl><dl><dt>ValidMax</dt><dd>900.0</dd></dl><dl><dt>RenderingHints</dt><dd><dl><dt>AxisLabel</dt><dd>y</dd></dl><dl><dt>ScaleMin</dt><dd>-500.0</dd></dl><dl><dt>ScaleMax</dt><dd>500.0</dd></dl></dd></dl></dd></dl><dl><dt>Element</dt><dd><dl><dt>Name</dt><dd>VZ (GSM)</dd></dl><dl><dt>Index</dt><dd>3</dd></dl><dl><dt>ValidMin</dt><dd>-900.0</dd></dl><dl><dt>ValidMax</dt><dd>900.0</dd></dl><dl><dt>RenderingHints</dt><dd><dl><dt>AxisLabel</dt><dd>z</dd></dl><dl><dt>ScaleMin</dt><dd>-500.0</dd></dl><dl><dt>ScaleMax</dt><dd>500.0</dd></dl></dd></dl></dd></dl></dd></dl><dl><dt>FillValue</dt><dd>-1.0e+31</dd></dl><dl><dt>Particle</dt><dd><dl><dt>ParticleType</dt><dd>Ion</dd></dl><dl><dt>Qualifier</dt><dd>Array</dd></dl><dl><dt>ParticleQuantity</dt><dd>Velocity</dd></dl></dd></dl></dd></dl><dl><dt class="parameter">Parameter #16</dt><dd><dl><dt>Name</dt><dd>Solar Wind Ion Bulk Flow Vector, GSE spherical coordinates</dd></dl><dl><dt>Set</dt><dd>Time series defined by using: EPOCH</dd></dl><dl><dt>ParameterKey</dt><dd>V_GSE_p</dd></dl><dt>Description</dt><dd><p>Solar Wind Ion Bulk Flow Vector, Geocentric Solar Ecliptic, GSE, spherical coordinates, speed magnitude, E/W flow positive from the west of the Sun, N/S flow positive from the south of the Sun</p>
+</dd><dl><dt>Cadence</dt><dd>PT99S</dd></dl><dl><dt>CoordinateSystem</dt><dd><dl><dt>CoordinateRepresentation</dt><dd>Cartesian</dd></dl><dl><dt>CoordinateSystemName</dt><dd>GSE</dd></dl></dd></dl><dl><dt>RenderingHints</dt><dd><dl><dt>DisplayType</dt><dd>TimeSeries</dd></dl><dl><dt>ValueFormat</dt><dd>F6.1</dd></dl></dd></dl><dl><dt>Structure</dt><dd><dl><dt>Size</dt><dd>3</dd></dl><dl><dt>Element</dt><dd><dl><dt>Name</dt><dd>Flow Speed</dd></dl><dl><dt>Index</dt><dd>1</dd></dl><dl><dt>Units</dt><dd>km/s</dd></dl><dl><dt>ValidMin</dt><dd>0.0</dd></dl><dl><dt>ValidMax</dt><dd>2000.0</dd></dl><dl><dt>RenderingHints</dt><dd><dl><dt>AxisLabel</dt><dd>mag</dd></dl><dl><dt>ScaleMin</dt><dd>200.0</dd></dl><dl><dt>ScaleMax</dt><dd>1000.0</dd></dl></dd></dl></dd></dl><dl><dt>Element</dt><dd><dl><dt>Name</dt><dd>E/W Flow(GSE)</dd></dl><dl><dt>Index</dt><dd>2</dd></dl><dl><dt>Units</dt><dd>°</dd></dl><dl><dt>ValidMin</dt><dd>-50.0</dd></dl><dl><dt>ValidMax</dt><dd>50.0</dd></dl><dl><dt>RenderingHints</dt><dd><dl><dt>AxisLabel</dt><dd>lon</dd></dl><dl><dt>ScaleMin</dt><dd>-20.0</dd></dl><dl><dt>ScaleMax</dt><dd>20.0</dd></dl></dd></dl></dd></dl><dl><dt>Element</dt><dd><dl><dt>Name</dt><dd>N/S Flow(GSE)</dd></dl><dl><dt>Index</dt><dd>3</dd></dl><dl><dt>Units</dt><dd>°</dd></dl><dl><dt>ValidMin</dt><dd>-50.0</dd></dl><dl><dt>ValidMax</dt><dd>50.0</dd></dl><dl><dt>RenderingHints</dt><dd><dl><dt>AxisLabel</dt><dd>lat</dd></dl><dl><dt>ScaleMin</dt><dd>-20.0</dd></dl><dl><dt>ScaleMax</dt><dd>20.0</dd></dl></dd></dl></dd></dl></dd></dl><dl><dt>FillValue</dt><dd>-1.0e+31</dd></dl><dl><dt>Particle</dt><dd><dl><dt>ParticleType</dt><dd>Ion</dd></dl><dl><dt>Qualifier</dt><dd>Vector</dd></dl><dl><dt>ParticleQuantity</dt><dd>Velocity</dd></dl></dd></dl></dd></dl><dl><dt class="parameter">Parameter #17</dt><dd><dl><dt>Name</dt><dd>Solar Wind Thermal Speed</dd></dl><dl><dt>Set</dt><dd>Time series defined by using: EPOCH</dd></dl><dl><dt>ParameterKey</dt><dd>THERMAL_SPD</dd></dl><dt>Description</dt><dd><p>Solar Wind Thermal Speed, Vth, sqrt(2kT/M), most probable</p>
+</dd><dl><dt>Cadence</dt><dd>PT99S</dd></dl><dl><dt>Units</dt><dd>km/s</dd></dl><dl><dt>UnitsConversion</dt><dd>1.0e3&gt;m/s</dd></dl><dl><dt>RenderingHints</dt><dd><dl><dt>DisplayType</dt><dd>TimeSeries</dd></dl><dl><dt>AxisLabel</dt><dd>SW Vth</dd></dl><dl><dt>ValueFormat</dt><dd>F6.1</dd></dl><dl><dt>ScaleMin</dt><dd>0.0</dd></dl><dl><dt>ScaleMax</dt><dd>200.0</dd></dl></dd></dl><dl><dt>ValidMin</dt><dd>0.0</dd></dl><dl><dt>ValidMax</dt><dd>500.0</dd></dl><dl><dt>FillValue</dt><dd>-1.0e+31</dd></dl><dl><dt>Particle</dt><dd><dl><dt>ParticleType</dt><dd>Ion</dd></dl><dl><dt>Qualifier</dt><dd>Scalar</dd></dl><dl><dt>ParticleQuantity</dt><dd>ThermalSpeed</dd></dl></dd></dl></dd></dl><dl><dt class="parameter">Parameter #18</dt><dd><dl><dt>Name</dt><dd>Solar Wind Proton Number Density</dd></dl><dl><dt>Set</dt><dd>Time series defined by using: EPOCH</dd></dl><dl><dt>ParameterKey</dt><dd>Np</dd></dl><dt>Description</dt><dd><p>Solar Wind Proton Number Density, scalar</p>
+</dd><dl><dt>Cadence</dt><dd>PT99S</dd></dl><dl><dt>Units</dt><dd>cm^-3</dd></dl><dl><dt>UnitsConversion</dt><dd>1.0e6&gt;m^-3</dd></dl><dl><dt>RenderingHints</dt><dd><dl><dt>DisplayType</dt><dd>TimeSeries</dd></dl><dl><dt>AxisLabel</dt><dd>Ion N</dd></dl><dl><dt>ValueFormat</dt><dd>F7.1</dd></dl><dl><dt>ScaleMin</dt><dd>0.0</dd></dl><dl><dt>ScaleMax</dt><dd>200.0</dd></dl></dd></dl><dl><dt>ValidMin</dt><dd>0.0</dd></dl><dl><dt>ValidMax</dt><dd>1000.0</dd></dl><dl><dt>FillValue</dt><dd>-1.0e+31</dd></dl><dl><dt>Particle</dt><dd><dl><dt>ParticleType</dt><dd>Ion</dd></dl><dl><dt>Qualifier</dt><dd>Scalar</dd></dl><dl><dt>ParticleQuantity</dt><dd>NumberDensity</dd></dl></dd></dl></dd></dl><dl><dt class="parameter">Parameter #19</dt><dd><dl><dt>Name</dt><dd>Alpha Particle Density Percentage</dd></dl><dl><dt>Set</dt><dd>Time series defined by using: EPOCH</dd></dl><dl><dt>ParameterKey</dt><dd>Alpha_Percent</dd></dl><dt>Description</dt><dd><p>Alpha Particle Density Percentage</p>
+</dd><dl><dt>Cadence</dt><dd>PT99S</dd></dl><dl><dt>RenderingHints</dt><dd><dl><dt>DisplayType</dt><dd>TimeSeries</dd></dl><dl><dt>AxisLabel</dt><dd>Na/Np</dd></dl><dl><dt>ValueFormat</dt><dd>F7.3</dd></dl><dl><dt>ScaleMin</dt><dd>0.0</dd></dl><dl><dt>ScaleMax</dt><dd>100.0</dd></dl></dd></dl><dl><dt>ValidMin</dt><dd>0.0</dd></dl><dl><dt>ValidMax</dt><dd>100.0</dd></dl><dl><dt>FillValue</dt><dd>-1.0e+31</dd></dl><dl><dt>Particle</dt><dd><dl><dt>ParticleType</dt><dd>AlphaParticle</dd></dl><dl><dt>Qualifier</dt><dd>Ratio</dd></dl><dl><dt>Qualifier</dt><dd>Scalar</dd></dl><dl><dt>ParticleQuantity</dt><dd>NumberDensity</dd></dl><dl><dt>AtomicNumber</dt><dd>2</dd></dl></dd></dl></dd></dl></div></div></div></div></body></html>

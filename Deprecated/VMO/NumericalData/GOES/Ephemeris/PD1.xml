@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Spase xmlns="http://www.spase-group.org/data/schema">
+  <Version>2.2.0</Version>
+  <NumericalData>
+    <ResourceID>spase://VMO/NumericalData/GOES/Ephemeris/PD1</ResourceID>
+    <ResourceHeader>
+      <ResourceName>All GOES Longitudinal Locations at 1 Day Resolution as West Geographic longitude.</ResourceName>
+      <AlternateName>GOES longitudinal data</AlternateName>
+      <ReleaseDate>2011-11-14T19:30:51Z</ReleaseDate>
+      <Description>The GOES longitudinal location information consists of the west geographic longitude in degrees. The data are separated into spacecraft (GOES 2-12), year, and month. The location is given for each day of the month  is in units of degrees and the geographic latitude is assumed to be zero degrees.</Description>
+      <Acknowledgement>NOAA, Dr. Howard J. Singer</Acknowledgement>
+      <Contact>
+        <PersonID>spase://SMWG/Person/Howard.J.Singer</PersonID>
+        <Role>GeneralContact</Role>
+      </Contact>
+      <Contact>
+        <PersonID>spase://SMWG/Person/James.M.Weygand</PersonID>
+        <Role>MetadataContact</Role>
+      </Contact>
+      <InformationURL>
+        <Name>GOES Space Environment Monitor</Name>
+        <URL>http://www.ngdc.noaa.gov/stp/GOES/goes.html</URL>
+        <Description>Additional GOES scpaecraft information.</Description>
+      </InformationURL>
+    </ResourceHeader>
+    <AccessInformation>
+      <RepositoryID>spase://SMWG/Repository/NOAA/SEC</RepositoryID>
+      <Availability>Online</Availability>
+      <AccessRights>Open</AccessRights>
+      <AccessURL>
+        <Name>Direct access to the GOES spacecraft longitude location data</Name>
+        <URL>http://satdat.ngdc.noaa.gov/sem/goes/goes_docs/GoesLongitudes.txt
+        </URL>
+        <Description>Direct link to the GOES longitudinal data in ASCII format at 1 day resolution. The data are sorted by spacecraft.  </Description>
+      </AccessURL>
+      <Format>Text.ASCII</Format>
+      <Encoding>None</Encoding>
+      <Acknowledgement>NOAA, Dr. Howard J. Singer</Acknowledgement>
+    </AccessInformation>
+    <ProcessingLevel>Calibrated</ProcessingLevel>
+    <ProviderResourceName>NOAA GOES</ProviderResourceName>
+    <ProviderProcessingLevel>Level-2</ProviderProcessingLevel>
+    <InstrumentID>spase://SMWG/Instrument/GOES/2/Ephemeris</InstrumentID>
+    <InstrumentID>spase://SMWG/Instrument/GOES/3/Ephemeris</InstrumentID>
+    <InstrumentID>spase://SMWG/Instrument/GOES/4/Ephemeris</InstrumentID>
+    <InstrumentID>spase://SMWG/Instrument/GOES/5/Ephemeris</InstrumentID>
+    <InstrumentID>spase://SMWG/Instrument/GOES/6/Ephemeris</InstrumentID>
+    <InstrumentID>spase://SMWG/Instrument/GOES/7/Ephemeris</InstrumentID>
+    <InstrumentID>spase://SMWG/Instrument/GOES/8/Ephemeris</InstrumentID>
+    <InstrumentID>spase://SMWG/Instrument/GOES/9/Ephemeris</InstrumentID>
+    <InstrumentID>spase://SMWG/Instrument/GOES/10/Ephemeris</InstrumentID>
+    <InstrumentID>spase://SMWG/Instrument/GOES/11/Ephemeris</InstrumentID>
+    <InstrumentID>spase://SMWG/Instrument/GOES/12/Ephemeris</InstrumentID>
+    <MeasurementType>Ephemeris</MeasurementType>
+    <TemporalDescription>
+      <TimeSpan>
+        <StartDate>1986-01-01T00:00:00</StartDate>
+        <StopDate>2010-02-28T00:00:00</StopDate>
+        <Note>Time format in data files is each row corresponds to one month of data. Columns 3 to 33 corresponds to a longitude for each day.</Note>
+      </TimeSpan>
+      <Cadence>P31D</Cadence>
+    </TemporalDescription>
+    <Caveats>The flag for bad data is 0.0.  The Geographic latitude for each spacecraft is assumed to be 0 degrees. The spacecraft are kept within a few tenth's of a degree of 0 degrees latitude. However, there can be times when the spacecraft can reach several degrees inclination.  The user is recommended to  check with one of the online resources that calculate satellite inclination and longitude from two-line orbital elements.</Caveats>
+    <Keyword>1 Day</Keyword>
+    <Keyword>geosynchronus</Keyword>
+    <Keyword>GOES</Keyword>
+    <Keyword>Longitude</Keyword>
+    <Keyword/>
+    <Parameter>
+      <Name>Spacecraft Name</Name>
+      <ParameterKey>SAT</ParameterKey>
+      <Description>Spacecraft name in the format of GOES-** where ** is in a 2 digit format. At this time there is only information from GOES 2-14.</Description>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Year and Month of Longitude Information</Name>
+      <ParameterKey>YYMM</ParameterKey>
+      <Description>Year and Month information is in a 4 digit format of YYMM. </Description>
+      <ValidMin>8601</ValidMin>
+      <ValidMax>1004</ValidMax>
+      <Support>
+        <SupportQuantity>Temporal</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>GOES West Geographic Longitude Location at 1 day Resolution</Name>
+      <ParameterKey>GOES West Geographic Longitude </ParameterKey>
+      <Description>The GOES Geographic Longitude in degrees is an array of 31 numbers. One for each day of the month. Flag values are 0.0 for no data or for days of the month that do not exist such as February 31st. The latitude is assumed to be zero and the radius is geosynchronous orbit.</Description>
+      <Units>degrees</Units>
+      <CoordinateSystem>
+        <CoordinateRepresentation>Spherical</CoordinateRepresentation>
+        <CoordinateSystemName>GEO</CoordinateSystemName>
+      </CoordinateSystem>
+      <Structure>
+        <Size>31</Size>
+        <Description>GOES West Geographic Longitudinal location of the spacecraft in degrees. There are 31 elements in the structure. One for each day.</Description>
+      </Structure>
+      <Support>
+        <SupportQuantity>Positional</SupportQuantity>
+      </Support>
+    </Parameter>
+  </NumericalData>
+</Spase>

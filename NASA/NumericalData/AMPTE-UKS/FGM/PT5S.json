@@ -1,0 +1,129 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_2_9.xsd",
+    "lang": "en",
+    "Version": "2.2.9",
+    "NumericalData": {
+      "ResourceID": "spase://NASA/NumericalData/AMPTE-UKS/FGM/PT5S",
+      "ResourceHeader": {
+        "ResourceName": "AMPTE-UKS Magnetic Field Data",
+        "ReleaseDate": "2020-07-07T21:14:16Z",
+        "Description": "AMPTE-UKS 5-second (spin) averaged magnetic field measurements",
+        "Acknowledgement": "UKS-IRM Prime Parameters, UKS/IRM High Resolution Data, or products derived from them may NOT be published or shown in any form without the consent of the Principal Investigators concerned. Acknowledgements to the PI and the UK CDHF would\nbe appropriate in any published work; full-authorship may be required\nin some cases.\n\nScientists intending to embark on studies involving AMPTE UKS/IRM data\nproducts are advised to contact the relevant Principal Investigator(s)\nearly in order to ensure that the data is suitable for the study, that\nthe project does not infringe on other ongoing work, and that the\nPrincipal Investigator in general consents to the intended use of the\ndata. PIs can provide this support only on a best efforts basis, so please\nbe as precise and succinct as possible, and please be patient when awaiting\na PI response.",
+        "Contact": [
+          {
+            "PersonID": "spase://SMWG/Person/David.J.Southwood",
+            "Role": "PrincipalInvestigator"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Malcolm.W.Dunlop",
+            "Role": "DataProducer"
+          }
+        ],
+        "InformationURL": {
+          "Name": "AMPTE documents",
+          "URL": "http://www.mssl.ucl.ac.uk/www_plasma/missions/ampte.php",
+          "Description": "An overview of the AMPTE missions with some descriptions of instruments"
+        },
+        "PriorID": [
+          "spase://VMO/NumericalData/AMPTE_UKS/FGM/PT5S",
+          "spase://VMO/NumericalData/AMPTE-UKS/FGM/PT5S",
+          "spase://VSPO/NumericalData/AMPTE-UKS/FGM/PT5S"
+        ]
+      },
+      "AccessInformation": {
+        "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/VHO-VMO",
+        "Availability": "Online",
+        "AccessRights": "Open",
+        "AccessURL": {
+          "Name": "AMPTE/UKS Data",
+          "URL": "https://vmo.nasa.gov/mission/ampte_uks/mag/",
+          "Description": "A web-accessible directory hosting AMPTE/UKS spin-averaged magnetic field data."
+        },
+        "Format": "Text",
+        "Encoding": "ASCII"
+      },
+      "InstrumentID": "spase://SMWG/Instrument/AMPTE-UKS/FGM",
+      "MeasurementType": "MagneticField",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "1984-08-21T08:24:42.5Z",
+          "StopDate": "1985-01-15T08:01:02.5Z"
+        },
+        "Cadence": "PT5S"
+      },
+      "ObservedRegion": [
+        "Earth.Magnetosheath",
+        "Earth.Magnetosphere",
+        "Earth.Magnetosphere.Magnetotail",
+        "Heliosphere.NearEarth"
+      ],
+      "Caveats": "The time tags represent the start times of accumulation intervals (spin). UKS times are UT stamped on board while IRM time stamps are UT at time of ground receipt. Thus for time-critical science, the IRM times need to be corrected by subtracting the light travel time from the spacecraft to the ground-station (at Weilheim in Germany apart special events requiring NASA DSN). For the transmission frequencies used, the vacuum light speed is appropriate. At apogee, this correction is more than a third of a second. There are no other known time delays.",
+      "Parameter": [
+        {
+          "Name": "Epoch",
+          "ParameterKey": "Column 1",
+          "Description": "The start of the accumulation time interval for the data point, in DA/MO/YR HR:MI:SS.MS format.",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Bm",
+          "ParameterKey": "Column 2",
+          "Description": "Magnetic field magnitude",
+          "Units": "nT",
+          "UnitsConversion": "1e-9>T",
+          "FillValue": "-1e31",
+          "Field": {
+            "Qualifier": [
+              "Magnitude",
+              "Scalar"
+            ],
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "B",
+          "Description": "Magnetic field vector",
+          "Units": "nT",
+          "UnitsConversion": "1e-9>T",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GSE"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "Bx",
+                "Qualifier": "Component.I",
+                "Index": "1",
+                "ParameterKey": "Column 3"
+              },
+              {
+                "Name": "By",
+                "Qualifier": "Component.J",
+                "Index": "2",
+                "ParameterKey": "Column 4"
+              },
+              {
+                "Name": "Bz",
+                "Qualifier": "Component.K",
+                "Index": "3",
+                "ParameterKey": "Column 5"
+              }
+            ]
+          },
+          "FillValue": "-1e31",
+          "Field": {
+            "Qualifier": "Vector",
+            "FieldQuantity": "Magnetic"
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,215 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema  http://www.spase-group.org/data/schema/spase-2_2_2.xsd'",
+    "Version": "2.2.2",
+    "NumericalData": {
+      "ResourceID": "spase://VHO/NumericalData/Wind/3DP/ELPD.PT96S",
+      "ResourceHeader": {
+        "ResourceName": "Wind 3DP EESA-LOW Electron Pitch-Angle Distributions",
+        "ReleaseDate": "2012-03-02T22:08:00Z",
+        "Description": "Wind 3DP electron pitch angle product providing electron \nfluxes in 8 directional bins relative to the local magnetic field \ndirection at 15 different energy levels. Time resolution is mode-\ndependent, with 96s being used for the past several years and with\nhigher resolution (e.g., 24s) used for some earlier intervals.\nFor any given cadence, electron observations made over the full\ncadence interval and in all look directions in and out of the spacecraft\nspin plane, are folded together with the magnetic field vector as averaged\nover the cadence interval, to produce the pitch angle distributions.\nThe data are calibrated science quality data.",
+        "Acknowledgement": "User will acknowledge the Wind 3DP Team in any \npublication resulting from use of this data.",
+        "Contact": [
+          {
+            "PersonID": "spase://SMWG/Person/Peter.Schroeder",
+            "Role": "DataProducer"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Robert.P.Lin",
+            "Role": "PrincipalInvestigator"
+          }
+        ],
+        "InformationURL": {
+          "Name": "Wind 3DP instrument home page",
+          "URL": "http://sprg.ssl.berkeley.edu/wind3dp/",
+          "Description": "The Wind 3DP instrument home page contains \ninformation on the Wind 3DP instruments and their associated data sets."
+        }
+      },
+      "AccessInformation": [
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": [
+            {
+              "Name": "FTP access to files at SPDF",
+              "URL": "ftp://spdf.gsfc.nasa.gov/pub/data/wind/3dp/3dp_elpd",
+              "Description": "in CDF via ftp from CDAWeb"
+            },
+            {
+              "Name": "HTTP access to files at SPDF",
+              "URL": "http://spdf.gsfc.nasa.gov/pub/data/wind/3dp/3dp_elpd/",
+              "Description": "In CDF via HTTP from CDAWeb"
+            }
+          ],
+          "Format": "CDF",
+          "Encoding": "None"
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDAWeb",
+            "URL": "http://cdaweb.gsfc.nasa.gov/sp_phys/",
+            "ProductKey": "WI_ELPD_3DP",
+            "Description": "Subsets, plots, lists from CDAWeb"
+          },
+          "Format": "Text",
+          "Encoding": "None"
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/UCB/Wind/3DP",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "WIND 3DP ELPD data at UCB",
+            "URL": "http://sprg.ssl.berkeley.edu/wind3dp/data/wi/3dp/elpd/",
+            "Description": "in CDF via ftp from CDAWeb"
+          },
+          "Format": "CDF",
+          "Encoding": "None"
+        }
+      ],
+      "ProviderResourceName": "Wind 3DP ELPD Data",
+      "ProviderProcessingLevel": "1",
+      "ProviderVersion": "2",
+      "InstrumentID": "spase://SMWG/Instrument/Wind/3DP",
+      "MeasurementType": "ThermalPlasma",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "1994-11-15T12:53:43Z",
+          "RelativeStopDate": "-P02D"
+        },
+        "Cadence": "PT96S"
+      },
+      "ObservedRegion": "Heliosphere.NearEarth",
+      "Caveats": "There are several variables in the data files which are not populated in the publicly\n     available data product. These variables include EDENS, TEMP, QP, QM, QT, REDF, and VSW.",
+      "Parameter": [
+        {
+          "Name": "Epoch",
+          "ParameterKey": "Epoch",
+          "Description": "Number of milliseconds since CDF_EPOCH: 0000-01-01T00:00:00.000.",
+          "Units": "ms",
+          "UnitsConversion": "1e-3>s",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Unix Time",
+          "ParameterKey": "TIME",
+          "Description": "Time since 1970-01-01T00:00:00Z in seconds",
+          "Units": "s",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Electron Flux",
+          "ParameterKey": "FLUX",
+          "Description": "Electron flux is a 15 by 8 dimensional array. The first \ndimension corresponds to 15 time dependent energy bands (parameter ENERGY,\ncentered from ~5 eV to ~1150 eV).  The 2nd dimension corresponds to 8 time \ndependent pitch angles (parameter PANGLE, ranging from ~15 deg to ~165 deg) \nrelative to the magnetic field direction as averaged over the 96 sec (or \nother mode-dependent cadence) interval. Pitch angle distributions are \ncalculated using all EESA look directions (ie., the whole cone), not just \nthose in the spin plane.",
+          "Units": "#/(cm^2*ster*eV*s)",
+          "Structure": {
+            "Size": "15 8"
+          },
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "3",
+              "High": "30000",
+              "Units": "eV"
+            },
+            "AzimuthalAngleRange": {
+              "Low": "0",
+              "High": "360",
+              "Units": "degrees"
+            },
+            "PolarAngleRange": {
+              "Low": "-45",
+              "High": "45",
+              "Units": "degrees"
+            }
+          }
+        },
+        {
+          "Name": "Electron Energy",
+          "ParameterKey": "ENERGY",
+          "Description": "Average electron energy",
+          "Units": "eV",
+          "Structure": {
+            "Size": "15",
+            "Description": "The 15 average electron energies for this pitch angle\ndistribution"
+          },
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": "Average",
+            "ParticleQuantity": "Energy",
+            "EnergyRange": {
+              "Low": "3",
+              "High": "30000",
+              "Units": "eV"
+            }
+          }
+        },
+        {
+          "Name": "Electron Pitch Angle",
+          "ParameterKey": "PANGLE",
+          "Description": "Average electron pitch angle with respect to the magnetic field vector",
+          "Units": "degree",
+          "Structure": {
+            "Size": "8",
+            "Description": "The 8 average pitch angles for this pitch angle\ndistribution"
+          },
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": "DirectionAngle",
+            "ParticleQuantity": "ArrivalDirection",
+            "EnergyRange": {
+              "Low": "3",
+              "High": "30000",
+              "Units": "eV"
+            }
+          }
+        },
+        {
+          "Name": "Magnetic field vector in GSE coordinates",
+          "ParameterKey": "MAGF",
+          "Description": "Magnetic field vector in GSE coordinates, as averaged\nover higher resolutuion measurements during the 96s interval (or other\ninstrument-mode-dependent interval)",
+          "Units": "nT",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GSE"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "Bx",
+                "Index": "1"
+              },
+              {
+                "Name": "By",
+                "Index": "2"
+              },
+              {
+                "Name": "Bz",
+                "Index": "3"
+              }
+            ]
+          },
+          "Field": {
+            "Qualifier": [
+              "Average",
+              "Vector"
+            ],
+            "FieldQuantity": "Magnetic"
+          }
+        }
+      ]
+    }
+  }
+}

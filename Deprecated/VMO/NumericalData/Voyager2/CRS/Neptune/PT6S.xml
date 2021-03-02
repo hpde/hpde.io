@@ -1,0 +1,147 @@
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema file:/C:/Projects/Voyager/spase-2_2_2.xsd">
+<Version>2.2.2</Version>
+<NumericalData>
+               <ResourceID>spase://VMO/NumericalData/Voyager2/CRS/Neptune/PT6S</ResourceID>
+               <ResourceHeader>
+                      <ResourceName>Voyager 2 Neptune CRS Calib Rdr D1 Rate High-Res Electron 6-s V1.0</ResourceName>
+                      <ReleaseDate>2017-01-19T10:00:00.00</ReleaseDate>
+                      <Description>                                        
+                                                                              
+  Data Set Overview                                                           
+  =================                                                           
+    This data set describes the data of the high time resolution counting     
+    rate from the D1 detector in the Cosmic Ray System (CRS) electron         
+    telescope (TET) on Voyager 2 during the Neptune encounter.                
+    The D1 detector nominally responds to electrons with kinetic energies     
+    above approximately 1 MeV (see detector description for details).         
+                                                                              
+  Parameters                                                                  
+  ==========                                                                  
+                                                                              
+      Sampling parameter name             : time                              
+      Sampling parameter resolution       : 6.0 seconds                       
+      Minimum sampling parameter          : n/a                               
+      Maximum sampling parameter          : n/a                               
+      Sampling parameter interval         : 6.0 seconds                       
+      Minimum available sampling interval : 6.0 seconds                       
+      Data set parameter name             : D1 rate                           
+      Noise level                         : 0.000 counts/second               
+      Data set parameter unit             : counts/second                     
+                                                                              
+      The D1 rate is the counting rate from the D1 detector                   
+      of the Cosmic Ray System (CRS) electron telescope (TET).                
+      When the rate is above background it is approximately                   
+      proportional to the omnidirectional flux of electrons                   
+      with kinetic energy greater than ~1 MeV.                                
+      To obtain an accurate flux the D1 calibration tables                    
+      should be used (see below).  When the rate is near                      
+      background, the background rate should be subtracted.                   
+      The background rate is due to gamma rays generated in                   
+      the spacecraft RTG and to penetrating cosmic rays.  It                  
+      varies slightly with time on the time scale of months,                  
+      but is generally near 25 counts per second.  When the                   
+      rate is near saturation, corrections for discriminator                  
+      deadtime should be made.  The discriminator deadtime is                 
+      approximately 20 micro-seconds (it varies slightly with                 
+      the electron energy spectrum), so that the saturation                   
+      level is approximately 50,000 counts per second.                        
+      When the correction is near a factor of two or less                     
+      a reliable corrected rate can be obtained from the formula              
+      {corrected rate} = {uncorrected rate}/(1+deadtime*{uncorrected rate})   
+      When the deadtime correction is substantially larger than               
+      a factor of two, reliable corrections are not available.                
+      In this case, electron pileup and baseline shift may also               
+      be important, which may increase or decrease the expected               
+      rate.  The data points are 6 second averages taken                      
+      once every 96 seconds.                                                  
+                                                                              
+      Table 1 below provides the D1 response function R(E,theta)              
+      which is a function of electron energy E in MeV (column at left)        
+      and angle theta in degrees from the TET axis (row at top).              
+      Each table entry is R in cm**2 for the corresponding E and theta.       
+      The D1 electron rate is related to the differential intensity           
+      j(E,alpha) in (cm**2 s sr MeV)**-1, where alpha is the electron         
+      pitch-angle, by integrating the product R*j over E and solid angle.     
+      Note that the angle between the TET axis and the local magnetic         
+      field direction is also required.  The D1 RATE is then obtained         
+      by adding the background rate and applying the inverse of the           
+      deadtime correction described above.  At energies above the             
+      maximum provided R can be approximated by the value at the              
+      highest provided energy.  At angles above the maximum provided R        
+      can be approximated by zero.                                            
+                                                                              
+    -------------------------------------------------------------------       
+    Table 1. D1 response function                                             
+    -------------------------------------------------------------------       
+            |  11.    15.    23.    32.    41.    51.    61.                  
+    -------------------------------------------------------------------       
+            |                                                                 
+      0.618 | 0.014  0.005  0.007  0.007  0.006  0.003  0.001                 
+      0.801 | 0.151  0.134  0.103  0.087  0.038  0.016  0.008                 
+      0.989 | 1.384  1.440  1.219  0.998  0.610  0.311  0.143                 
+      1.179 | 2.233  2.402  2.095  1.796  1.255  0.689  0.380                 
+      1.372 | 2.829  2.938  2.593  2.241  1.636  0.956  0.583                 
+      1.567 | 3.212  3.283  2.936  2.536  1.940  1.167  0.724                 
+      1.763 | 3.495  3.534  3.206  2.772  2.161  1.356  0.860                 
+      1.959 | 3.708  3.705  3.404  2.964  2.357  1.495  0.969                 
+      2.157 | 3.620  3.790  3.452  3.053  2.427  1.602  1.049                 
+      2.355 | 3.995  3.948  3.576  3.231  2.617  1.758  1.155                 
+      2.553 | 4.096  4.091  3.735  3.395  2.735  1.875  1.263                 
+      2.752 | 4.154  4.098  3.808  3.426  2.792  1.927  1.298                 
+      2.951 | 4.043  4.054  3.727  3.371  2.819  1.951  1.339                 
+      3.150 | 3.946  4.029  3.700  3.335  2.648  1.956  1.358                 
+      3.350 | 3.876  4.194  3.611  3.573  2.863  1.927  1.290                 
+                                                                              
+    -------------------------------------------------------------------       
+    Table 1. D1 response function (continued)                                 
+    -------------------------------------------------------------------       
+            |  70.    80.    90.   100.                                       
+    -------------------------------------------------------------------       
+      0.618 | 0.002  0.001  0.000  0.000                                      
+      0.801 | 0.010  0.007  0.004  0.001                                      
+      0.989 | 0.163  0.095  0.047  0.018                                      
+      1.179 | 0.386  0.217  0.113  0.056                                      
+      1.372 | 0.526  0.301  0.163  0.087                                      
+      1.567 | 0.617  0.366  0.201  0.117                                      
+      1.763 | 0.679  0.413  0.241  0.146                                      
+      1.959 | 0.730  0.461  0.270  0.179                                      
+      2.157 | 0.760  0.484  0.296  0.207                                      
+      2.355 | 0.809  0.518  0.329  0.242                                      
+      2.553 | 0.836  0.551  0.363  0.292                              </Description>
+                      <Contact>
+                             <PersonID>spase://SMWG/Person/Todd.A.King</PersonID>
+                             <Role>MetadataContact</Role>
+                     </Contact>
+                      <InformationURL>
+                             <Name>VG2-N-CRS-3-RDR-D1-6SEC-V1.0</Name>
+                             <URL>http://pds-ppi.igpp.ucla.edu/data/VG2-N-CRS-3-RDR-D1-6SEC-V1.0/AAREADME.TXT</URL>
+                             <Description>The document describing the contents of the collection.</Description>
+                             <Language>En</Language>
+                     </InformationURL>
+              </ResourceHeader>
+               <AccessInformation>
+                      <RepositoryID>spase://SMWG/Repository/PDS/PPI</RepositoryID>
+                      <Availability>Online</Availability>
+                      <AccessRights>Open</AccessRights>
+                      <AccessURL>
+                             <Name>PDS/PPI</Name>
+                             <URL>http://pds-ppi.igpp.ucla.edu/search/view/?f=yes&amp;id=pds://PPI/VG2-N-CRS-3-RDR-D1-6SEC-V1.0</URL>
+                             <ProductKey>VG2-N-CRS-3-RDR-D1-6SEC-V1.0</ProductKey>
+                             <Description>This collection is archived with NASA&apos;s Planetary Data System.</Description>
+                             <Language>En</Language>
+                     </AccessURL>
+                      <Format>Text.ASCII</Format>
+                      <Acknowledgement>NASA&apos;s Planetary Plasma Interactions (PPI) Node of the Planetary Data System (PDS) and the P.I. for the data.</Acknowledgement>
+              </AccessInformation>
+               <InstrumentID>spase://SMWG/Instrument/Voyager2/CRS</InstrumentID>
+               <MeasurementType>EnergeticParticles</MeasurementType>
+               <TemporalDescription>
+                      <TimeSpan>
+                             <StartDate>1989-08-25T05:08:50.00</StartDate>
+                             <StopDate>1989-08-25T05:21:02.00</StopDate>
+                     </TimeSpan>
+                      <Cadence>PT6S</Cadence>
+              </TemporalDescription>
+               <ObservedRegion>Neptune</ObservedRegion>
+       </NumericalData>
+</Spase>

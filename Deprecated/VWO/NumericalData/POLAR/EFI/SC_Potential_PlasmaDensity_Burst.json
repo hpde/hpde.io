@@ -1,0 +1,93 @@
+{
+  "Spase": {
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_2_1.xsd",
+    "Version": "2.2.1",
+    "NumericalData": {
+      "ResourceID": "\n\t spase://VWO/NumericalData/POLAR/EFI/SC_Potential_PlasmaDensity_Burst\n      ",
+      "ResourceHeader": {
+        "ResourceName": "\n\t    PolarEFI_Burst_SC_Potential_PlasmaDensity\n         ",
+        "ReleaseDate": "\n\t    2012-03-05T00:00:00\n         ",
+        "Description": "\n\t    This data consists of the Spacecraft Potential\n\t    and the Plasma Density, at spacecraft burst\n\t    resolution, where the Plasma Density is obtained\n\t    as a function, provided by Dr. Jack Scudder,\n\t    the PI of the POLAR Hydra investigation.\n\t    This function was determined by a fit to the\n\t    POLAR Hydra particle data for 2001/04/01.\n\t    The relative accuracy of the Plasma  Density,\n\t    estimated from the spacecraft potential on\n\t    short time scales is ~10-30% depending on plasma\n\t    conditions.  The absolute accuracy is better\n\t    than a factor of two for densities less than\n\t    about 20 particles/cm^3.  Density values greater\n\t    than 30 particles/cm^3 are not plotted because\n\t    they are inaccurate due to the steep slope of\n\t    the curve of density versus spacecraft potential.\n\n\t    If the value of the argument to the function is\n\t    too large, then the Plasma Density is set to a\n\t    filler value of 1.0e+20.  Also, if the value\n\t    returned by the function is too large, then the\n\t    result is not reliable, and therefore the\n\t    Plasma Density is set to a filler value of\n\t    1.0e+20.\n\n\t    If the value of the argument to the function\n\t    is too small, then the Plasma Density is set to\n\t    a filler value of 1.0e-20.\n\n\t    So, a value of the Plasma Density is a filler\n\t    value if and only if it is either larger than\n\t    1.0e+2 (100.0) or smaller than 1.0e-4 (0.0001);\n\t    otherwise, it is a true value.\n\n\t    Note that all values of the Spacecraft Potential\n\t    are true values.   There is no filler.\n         ",
+        "Acknowledgement": "\n\t    The user will acknowledge, in any publication\n\t    which uses POLAR EFI data, the instrument PI,\n\t    as well as the instrument PI for the POLAR\n\t    Hydra instrument, if the Plasma Density is used.\n         ",
+        "Contact": [
+          {
+            "PersonID": "\n\t\tspase://SMWG/Person/Forrest.S.Mozer\n\t    ",
+            "Role": "PrincipalInvestigator"
+          },
+          {
+            "PersonID": "\n\t\tspase://SMWG/Person/Jack.B.Vernetti\n\t    ",
+            "Role": "MetadataContact"
+          }
+        ]
+      },
+      "AccessInformation": {
+        "RepositoryID": "\n\t    spase://SMWG/Repository/UCB/POLAR/EFI\n\t ",
+        "Availability": "Online",
+        "AccessRights": "Open",
+        "AccessURL": {
+          "URL": "http://polarefi.ssl.berkeley.edu/PolarEFI",
+          "Description": "\n\t       This URL is the root location of the POLAR EFI\n\t       archive.  It consists of Yearly subdirectories:\n\t          \"1996\", \"1997\", ..., \"2008\"\n\t       each of which consists of Monthly subdirectories:\n\t          \"01\", \"02\", ..., \"12\"\n\t       The archive files for a given date are located\n\t       in the corresponding YY/MM subdirectory.\n\t    ",
+          "Language": "en"
+        },
+        "Format": "CDF",
+        "Encoding": "None",
+        "Acknowledgement": "\n\t    The user will acknowledge, in any publication\n\t    which uses POLAR EFI data, the instrument PI,\n\t    as well as the instrument PI for the POLAR\n\t    Hydra instrument, if the Plasma Density is used.\n         "
+      },
+      "InstrumentID": "\n         spase://SMWG/Instrument/POLAR/EFI\n      ",
+      "MeasurementType": [
+        "ElectricField",
+        "ThermalPlasma"
+      ],
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "\n\t       1996-03-16T00:00:00\n            ",
+          "StopDate": "\n\t       2008-04-12T24:00:00\n            "
+        },
+        "Cadence": "PT6S"
+      },
+      "Parameter": [
+        {
+          "Name": "Time",
+          "ParameterKey": "TIME_TAG",
+          "Description": "\n\t    Data point time-tags which are double precision\n\t    floating point numbers which represent the number\n\t    of seconds, UTC, from midnight of the day\n\t    represented by the file.\n\t ",
+          "Cadence": "PT6S",
+          "Units": "seconds",
+          "ValidMin": "0.0",
+          "ValidMax": "86460.0",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "SCPotential",
+          "ParameterKey": "DATA_VALUES",
+          "Description": "\n\t    Data point value which represents the\n\t    Spacecraft Potential as single precision\n\t    floating point numbers.  The SCPotential\n\t    values are in in one-to-one correspondence\n\t    with the values in the TIME_TAG parameter.\n\t ",
+          "Cadence": "PT6S",
+          "Units": "Volts",
+          "ValidMin": "-80.0",
+          "ValidMax": "10.0",
+          "Field": {
+            "Qualifier": "Scalar",
+            "FieldQuantity": "Potential"
+          }
+        },
+        {
+          "Name": "PlasmaDensity",
+          "ParameterKey": "DATA_VALUES",
+          "Description": "\n\t    Data point value which represents the\n\t    Plasma Density as single precision\n\t    floating point numbers.  Not all times\n\t    in the TIME_TAG parameter correspond to\n\t    true PlasmaDensity data, so there are\n\t    filler values.\n\t ",
+          "Cadence": "PT6S",
+          "Units": "Particles/cm^3",
+          "ValidMin": "0.0001",
+          "ValidMax": "100.0",
+          "FillValue": "1.0e+20,1.0e-20",
+          "Field": {
+            "Qualifier": "Scalar",
+            "FieldQuantity": "PlasmaFrequency"
+          }
+        }
+      ]
+    }
+  }
+}

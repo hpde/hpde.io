@@ -1,0 +1,534 @@
+<?xml version="1.0"?>
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_3_0.xsd">
+  <Version>2.3.0</Version>
+  <Catalog>
+    <ResourceID>spase://VSPO/Catalog/BS_IMP8</ResourceID>
+    <ResourceHeader>
+      <ResourceName>IMP 8 bow shock crossings</ResourceName>
+      <ReleaseDate>2019-05-05T12:34:56Z</ReleaseDate>
+      <Description>A complete list of bow shock crossings observed by IMP 8 spacecraft. The shock crossings were manually identified in magnetic field and/or thermal plasma measurements by J. Merka, A. Szabo, K. Paularena, J. Richardson, and T. Narock.
+      Each identified crossing was reviewed by at least two persons from the team.
+     
+      Upstream parameters are as measured by IMP 8 on the solar wind side of the shock, typically over a few-minute interval judged by the IMP field and plasma teams as stable. For multiple-shock records, all upstream parameters are for the first shock crossing.
+     
+      Downstream parameters are as measured by IMP 8 on the magnetosheath side of the shock, typically over a few-minute interval. For a multiple-shock records, all downstream parameters are for the first shock crossing if possible.
+</Description>
+      <Contact>
+        <PersonID>spase://SMWG/Person/Jan.Merka</PersonID>
+        <Role>DataProducer</Role>
+</Contact>
+      <PriorID>spase://VMO/Catalog/BS_IMP8</PriorID>
+</ResourceHeader>
+    <AccessInformation>
+      <RepositoryID>spase://SMWG/Repository/NASA/GSFC/VHO-VMO</RepositoryID>
+      <Availability>Online</Availability>
+      <AccessRights>Open</AccessRights>
+      <AccessURL>
+        <Name>Download of IMP 8 bow shock crossing list</Name>
+        <URL>https://vho.nasa.gov/mission/imp8/bowshocks/</URL>
+        <Description>Repository of IMP 8 bow shock crossings</Description>
+</AccessURL>
+      <Format>Text</Format>
+      <Encoding>ASCII</Encoding>
+</AccessInformation>
+    <InstrumentID>spase://SMWG/Instrument/IMP8/MAG</InstrumentID>
+    <InstrumentID>spase://SMWG/Instrument/IMP8/PLS</InstrumentID>
+    <PhenomenonType>BowShockCrossing</PhenomenonType>
+    <TimeSpan>
+      <StartDate>1973-10-31T07:31:00Z</StartDate>
+      <StopDate>2000-06-08T16:45:00Z</StopDate>
+</TimeSpan>
+    <Caveats>The times are estimated to a minute (truncated).</Caveats>
+    <Parameter>
+      <Name>Time</Name>
+      <ParameterKey>Fields 1-4</ParameterKey>
+      <Description>Time of the bow shock crossing. In general, the minute given is that in/during which the crossing is observed. For "extended" crossings, the minute given is that in which the peak of the shock overshoot occurs. For records recording multiple shock crossings, the minute is the minute of the first shock crossing.
+</Description>
+      <Caveats>Truncated to a minute precision.</Caveats>
+      <Structure>
+        <Size>4</Size>
+        <Element>
+          <Name>Year</Name>
+          <Index>1</Index>
+          <ParameterKey>Field 1</ParameterKey>
+</Element>
+        <Element>
+          <Name>Day of year</Name>
+          <Index>2</Index>
+          <ParameterKey>Field 2</ParameterKey>
+</Element>
+        <Element>
+          <Name>Hour</Name>
+          <Index>3</Index>
+          <ParameterKey>Field 3</ParameterKey>
+</Element>
+        <Element>
+          <Name>Minute</Name>
+          <Index>4</Index>
+          <ParameterKey>Field 4</ParameterKey>
+</Element>
+</Structure>
+      <Support>
+        <SupportQuantity>Temporal</SupportQuantity>
+</Support>
+</Parameter>
+    <Parameter>
+      <Name>Orbit number</Name>
+      <ParameterKey>Field 5</ParameterKey>
+      <Description>Orbit number per IMP project</Description>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+</Support>
+</Parameter>
+    <Parameter>
+      <Name>Orbit leg</Name>
+      <ParameterKey>Field 6</ParameterKey>
+      <Description>0 for solarwindward orbit leg, 1 for magnetotailward orbit letg</Description>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+</Support>
+</Parameter>
+    <Parameter>
+      <Name>Sequence number</Name>
+      <ParameterKey>Field 7</ParameterKey>
+      <Description>Sequence number of the crossing for this orbit leg (1, 2, ...N; N will be an odd number except for Transdr=2 cases). For multiple-shock records (Flag2 = 6 or 7), this number increments by one for unresolvable shock periods (Flag2=6) or by the number of resolvable shocks plus the number of unresolvable-shock subintervals.</Description>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+</Support>
+</Parameter>
+    <Parameter>
+      <Name>Transdr</Name>
+      <ParameterKey>Field 8</ParameterKey>
+      <Description>Direction of crossing transition: 0 - spacecraft passing into solar wind, 1 - spacecraft passing into magnetosheath, 2 - non-resolvable shock(s), same domain (solar wind or magnetosheath) on both sides. See Timespan for duration of the crossing.</Description>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+</Support>
+</Parameter>
+    <Parameter>
+      <Name>Flag1</Name>
+      <ParameterKey>Field 9</ParameterKey>
+      <Description>Observation flag. Flag1 has the following values:
+      1. Shock observed in field and plasma data
+      2. Field data missing
+      3. Plasma data missing
+      4. Inferred crossing, data gap
+      5. Inferred crossing, data but no likely shock visible.
+      When a bow shock crossing is inferred to have happened during some time interval, the start time of the interval is given in the record. In addition, if the interval is less than 30 minutes in duration, the location of IMP 8 at the start of the interval is also given in the record. Otherwise the IMP location words have fill values in them. Note that the Timespan parameter is used to give the interval duration in such cases. In general, upstream parameter values are given as fill values for such cases. These intervals typically correspond to data gaps (Flag 1 = 4) with IMP 8 clearly in the solar wind on one side of the gap and in the magnetosheath on the other side. There are rare Flag 1 = 5 cases where IMP 8 is clearly in the solar wind on one side of the interval and in the magnetosheath on the other side and wherein there are data within the interval, yet it is impossible to discern on a finer scale when IMP 8 passed between the solar wind and the magnetosheath.
+</Description>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+</Support>
+</Parameter>
+    <Parameter>
+      <Name>Flag2</Name>
+      <ParameterKey>Field 10</ParameterKey>
+      <Description>Shock cleanliness flag. Flag 2 has the following values. 
+      (Note in particular that values 1-4 are relevant to cases of one shock while 6-8 are relevant to cases of multiple close shocks; note also that some or all of the members of a set of multiple close shocks may be unresolvable from each other and, separately, may be ambiguous in the sense of values 2-4 for individual shocks. In general, where an interval of multiple close shocks ends with a clean shock, there will be a separate record for that shock.)
+        1. The shock is clean and unambiguous in all available data
+        2. The shock is clean in field, ambiguous in plasma data
+        3. The shock is clean in plasma, ambiguous in field data
+        4. The shock is ambiguous in all available data
+        5. Used for inferred crossings (Flag1 = 4 or 5)
+        6. Multiple unresolvable shocks possibly involving relatively clean shocks at the start and end  (Sequence number increments by 1 whether same domain or different domains on two sides)
+        7. Multiple resolvable shocks with no subinterval(s) of unresolvable shocks. Used on for intervals with no shock pair separated by &gt;15 minutes. Sequence number increments by sum of number of shocks in the interval or one less if the ending shock is also given a separate record of its own.
+        8. Multiple shocks, mixed resolvable/unresolvable, some resolvable shocks may be ambiguous. Sequence number increments by the number of resolvable shocks in the interval or one less if the ending shock is given a record of its own.</Description>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+</Support>
+</Parameter>
+    <Parameter>
+      <Name>Flag3</Name>
+      <ParameterKey>Field 11</ParameterKey>
+      <Description>Upstream cleanliness flag. Flag 3 has the following values:
+        1. Upstream values steady and well defined
+        2. Upstream values unsteady and uncertainly defined
+        3. Used for inferred crossings (Flag1 = 4)</Description>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+</Support>
+</Parameter>
+    <Parameter>
+      <Name>Spacecraft position in GSE</Name>
+      <ParameterKey>Field 12-14</ParameterKey>
+      <Description>Spacecraft positition in GSE.</Description>
+      <Units>Re</Units>
+      <UnitsConversion>6.378e6&gt;m</UnitsConversion>
+      <CoordinateSystem>
+        <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+        <CoordinateSystemName>GSE</CoordinateSystemName>
+</CoordinateSystem>
+      <Structure>
+        <Size>3</Size>
+        <Element>
+          <Name>Xgse</Name>
+          <Qualifier>Component.I</Qualifier>
+          <Index>1</Index>
+          <ParameterKey>Field 12</ParameterKey>
+</Element>
+        <Element>
+          <Name>Ygse</Name>
+          <Qualifier>Component.J</Qualifier>
+          <Index>2</Index>
+          <ParameterKey>Field 13</ParameterKey>
+</Element>
+        <Element>
+          <Name>Zgse</Name>
+          <Qualifier>Component.K</Qualifier>
+          <Index>3</Index>
+          <ParameterKey>Field 14</ParameterKey>
+</Element>
+</Structure>
+      <FillValue>999.9</FillValue>
+      <Support>
+        <SupportQuantity>Positional</SupportQuantity>
+</Support>
+</Parameter>
+    <Parameter>
+      <Name>Spacecraft position in GSM</Name>
+      <ParameterKey>Field 15-16</ParameterKey>
+      <Description>Spacecraft positition in GSM (components Y and Z only).</Description>
+      <Units>Re</Units>
+      <UnitsConversion>6.378e6&gt;m</UnitsConversion>
+      <CoordinateSystem>
+        <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+        <CoordinateSystemName>GSM</CoordinateSystemName>
+</CoordinateSystem>
+      <Structure>
+        <Size>2</Size>
+        <Element>
+          <Name>Ygsm</Name>
+          <Qualifier>Component.J</Qualifier>
+          <Index>1</Index>
+          <ParameterKey>Field 15</ParameterKey>
+</Element>
+        <Element>
+          <Name>Zgsm</Name>
+          <Qualifier>Component.K</Qualifier>
+          <Index>2</Index>
+          <ParameterKey>Field 16</ParameterKey>
+</Element>
+</Structure>
+      <FillValue>999.9</FillValue>
+      <Support>
+        <SupportQuantity>Positional</SupportQuantity>
+</Support>
+</Parameter>
+    <Parameter>
+      <Name>B GSE</Name>
+      <ParameterKey>Field 17-19</ParameterKey>
+      <Description>Upstream magnetic field components in GSE</Description>
+      <Units>nT</Units>
+      <UnitsConversion>1e-9&gt;T</UnitsConversion>
+      <CoordinateSystem>
+        <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+        <CoordinateSystemName>GSE</CoordinateSystemName>
+</CoordinateSystem>
+      <Structure>
+        <Size>3</Size>
+        <Element>
+          <Name>Bx GSE</Name>
+          <Qualifier>Component.I</Qualifier>
+          <Index>1</Index>
+          <ParameterKey>Field 17</ParameterKey>
+</Element>
+        <Element>
+          <Name>By GSE</Name>
+          <Qualifier>Component.J</Qualifier>
+          <Index>2</Index>
+          <ParameterKey>Field 18</ParameterKey>
+</Element>
+        <Element>
+          <Name>Bz GSE</Name>
+          <Qualifier>Component.K</Qualifier>
+          <Index>3</Index>
+          <ParameterKey>Field 19</ParameterKey>
+</Element>
+</Structure>
+      <FillValue>999.9</FillValue>
+      <Field>
+        <Qualifier>Vector</Qualifier>
+        <Qualifier>Average</Qualifier>
+        <FieldQuantity>Magnetic</FieldQuantity>
+</Field>
+</Parameter>
+    <Parameter>
+      <Name>B GSM</Name>
+      <ParameterKey>Field 20-21</ParameterKey>
+      <Description>Upstream magnetic field components Y and Z in GSM</Description>
+      <Units>nT</Units>
+      <UnitsConversion>1e-9&gt;T</UnitsConversion>
+      <CoordinateSystem>
+        <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+        <CoordinateSystemName>GSM</CoordinateSystemName>
+</CoordinateSystem>
+      <Structure>
+        <Size>2</Size>
+        <Element>
+          <Name>By GSE</Name>
+          <Qualifier>Component.J</Qualifier>
+          <Index>1</Index>
+          <ParameterKey>Field 20</ParameterKey>
+</Element>
+        <Element>
+          <Name>Bz GSE</Name>
+          <Qualifier>Component.K</Qualifier>
+          <Index>2</Index>
+          <ParameterKey>Field 21</ParameterKey>
+</Element>
+</Structure>
+      <FillValue>999.9</FillValue>
+      <Field>
+        <Qualifier>Component.J</Qualifier>
+        <Qualifier>Component.K</Qualifier>
+        <Qualifier>Average</Qualifier>
+        <FieldQuantity>Magnetic</FieldQuantity>
+</Field>
+</Parameter>
+    <Parameter>
+      <Name>V GSE</Name>
+      <ParameterKey>Field 22-24</ParameterKey>
+      <Description>Solar wind velocity upstream of the shock.</Description>
+      <Caveats>The components of the velocity vector are negative, i.e. the vector is anti-aligned with the measured velocity vector.</Caveats>
+      <Units>km/s</Units>
+      <UnitsConversion>1e3&gt;ms/s</UnitsConversion>
+      <CoordinateSystem>
+        <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+        <CoordinateSystemName>GSE</CoordinateSystemName>
+</CoordinateSystem>
+      <Structure>
+        <Size>3</Size>
+        <Element>
+          <Name>-Vx GSE</Name>
+          <Qualifier>Component.I</Qualifier>
+          <Index>1</Index>
+          <ParameterKey>Field 22</ParameterKey>
+</Element>
+        <Element>
+          <Name>-Vy GSE</Name>
+          <Qualifier>Component.J</Qualifier>
+          <Index>2</Index>
+          <ParameterKey>Field 23</ParameterKey>
+</Element>
+        <Element>
+          <Name>-Vz GSE</Name>
+          <Qualifier>Component.K</Qualifier>
+          <Index>3</Index>
+          <ParameterKey>Field 24</ParameterKey>
+</Element>
+</Structure>
+      <FillValue>9999.9</FillValue>
+      <Particle>
+        <ParticleType>Proton</ParticleType>
+        <Qualifier>Average</Qualifier>
+        <ParticleQuantity>Velocity</ParticleQuantity>
+</Particle>
+</Parameter>
+    <Parameter>
+      <Name>Nu</Name>
+      <ParameterKey>Field 25</ParameterKey>
+      <Description>Upstream solar wind proton density</Description>
+      <Units>cm^-3</Units>
+      <UnitsConversion>1e3&gt;m^-3</UnitsConversion>
+      <FillValue>999.9</FillValue>
+      <Particle>
+        <ParticleType>Proton</ParticleType>
+        <Qualifier>Average</Qualifier>
+        <ParticleQuantity>NumberDensity</ParticleQuantity>
+</Particle>
+</Parameter>
+    <Parameter>
+      <Name>Nd</Name>
+      <ParameterKey>Field 26</ParameterKey>
+      <Description>Downstream (magnetosheath) proton density</Description>
+      <Units>cm^-3</Units>
+      <UnitsConversion>1e3&gt;m^-3</UnitsConversion>
+      <FillValue>999.9</FillValue>
+      <Particle>
+        <ParticleType>Proton</ParticleType>
+        <Qualifier>Average</Qualifier>
+        <ParticleQuantity>NumberDensity</ParticleQuantity>
+</Particle>
+</Parameter>
+    <Parameter>
+      <Name>T</Name>
+      <ParameterKey>Field 27</ParameterKey>
+      <Description>Upstream proton temperature</Description>
+      <Units>K</Units>
+      <FillValue>9999999</FillValue>
+      <Particle>
+        <ParticleType>Proton</ParticleType>
+        <Qualifier>Average</Qualifier>
+        <ParticleQuantity>Temperature</ParticleQuantity>
+</Particle>
+</Parameter>
+    <Parameter>
+      <Name>Time span</Name>
+      <ParameterKey>Field 28</ParameterKey>
+      <Description>The time span gives duration, in minutes, of gaps for inferred crossings (flag 1 = 4 cases) or duration of periods of multiple unresolved or resolved shocks (flag 2 = 6 or 7 cases).  For other cases, the time span gives the shock duration. In the majority of cases wherein the shock occurs in a fraction of minute, this field has value 0.</Description>
+      <Units>minutes</Units>
+      <UnitsConversion>60&gt;s</UnitsConversion>
+      <FillValue>9999</FillValue>
+      <Support>
+        <SupportQuantity>Temporal</SupportQuantity>
+</Support>
+</Parameter>
+    <Parameter>
+      <Name>Btot</Name>
+      <ParameterKey>Field 29</ParameterKey>
+      <Description>Upstream magnetic field intensity calculated from magnetic field components.</Description>
+      <Units>nT</Units>
+      <UnitsConversion>1e-9&gt;T</UnitsConversion>
+      <FillValue>999.9</FillValue>
+      <Field>
+        <Qualifier>Magnitude</Qualifier>
+        <Qualifier>Average</Qualifier>
+        <FieldQuantity>Magnetic</FieldQuantity>
+</Field>
+</Parameter>
+    <Parameter>
+      <Name>Vtot</Name>
+      <ParameterKey>Field 30</ParameterKey>
+      <Description>Upstream solar wind proton flow speed</Description>
+      <Units>km/s</Units>
+      <UnitsConversion>1e3&gt;m/s</UnitsConversion>
+      <FillValue>9999.9</FillValue>
+      <Particle>
+        <ParticleType>Proton</ParticleType>
+        <Qualifier>Average</Qualifier>
+        <ParticleQuantity>FlowSpeed</ParticleQuantity>
+</Particle>
+</Parameter>
+    <Parameter>
+      <Name>Vs</Name>
+      <ParameterKey>Field 31</ParameterKey>
+      <Description>Upstream sound speed</Description>
+      <Units>km/s</Units>
+      <UnitsConversion>1e3&gt;m/s</UnitsConversion>
+      <FillValue>9999.9</FillValue>
+      <Particle>
+        <ParticleType>Proton</ParticleType>
+        <Qualifier>Average</Qualifier>
+        <ParticleQuantity>SoundSpeed</ParticleQuantity>
+</Particle>
+</Parameter>
+    <Parameter>
+      <Name>Va</Name>
+      <ParameterKey>Field 32</ParameterKey>
+      <Description>Upstream Alfven speed</Description>
+      <Units>km/s</Units>
+      <UnitsConversion>1e3&gt;m/s</UnitsConversion>
+      <FillValue>9999.9</FillValue>
+      <Support>
+        <Qualifier>Average</Qualifier>
+        <SupportQuantity>Other</SupportQuantity>
+</Support>
+</Parameter>
+    <Parameter>
+      <Name>Vms</Name>
+      <ParameterKey>Field 33</ParameterKey>
+      <Description>Upstream magnetosonic speed</Description>
+      <Units>km/s</Units>
+      <UnitsConversion>1e3&gt;m/s</UnitsConversion>
+      <FillValue>9999.9</FillValue>
+      <Support>
+        <Qualifier>Average</Qualifier>
+        <SupportQuantity>Other</SupportQuantity>
+</Support>
+</Parameter>
+    <Parameter>
+      <Name>Ms</Name>
+      <ParameterKey>Field 34</ParameterKey>
+      <Description>Upstream sonic Mach number</Description>
+      <FillValue>99.9</FillValue>
+      <Particle>
+        <ParticleType>Proton</ParticleType>
+        <Qualifier>Average</Qualifier>
+        <ParticleQuantity>SonicMachNumber</ParticleQuantity>
+</Particle>
+</Parameter>
+    <Parameter>
+      <Name>Ma</Name>
+      <ParameterKey>Field 34</ParameterKey>
+      <Description>Upstream Alfven Mach number</Description>
+      <FillValue>999.9</FillValue>
+      <Support>
+        <Qualifier>Average</Qualifier>
+        <SupportQuantity>Other</SupportQuantity>
+</Support>
+</Parameter>
+    <Parameter>
+      <Name>Mms</Name>
+      <ParameterKey>Field 35</ParameterKey>
+      <Description>Upstream magnetosonic Mach number</Description>
+      <FillValue>99.9</FillValue>
+      <Support>
+        <Qualifier>Average</Qualifier>
+        <SupportQuantity>Other</SupportQuantity>
+</Support>
+</Parameter>
+    <Parameter>
+      <Name>Beta</Name>
+      <ParameterKey>Field 36</ParameterKey>
+      <Description>Upstream plasma beta</Description>
+      <FillValue>-999.99</FillValue>
+      <Support>
+        <Qualifier>Average</Qualifier>
+        <SupportQuantity>Other</SupportQuantity>
+</Support>
+</Parameter>
+    <Parameter>
+      <Name>Psw</Name>
+      <ParameterKey>Field 37</ParameterKey>
+      <Description>Upstream solar wind flow pressure</Description>
+      <Units>nPa</Units>
+      <UnitsConversion>1e-9&gt;Pa</UnitsConversion>
+      <FillValue>99.99</FillValue>
+      <Particle>
+        <ParticleType>Proton</ParticleType>
+        <Qualifier>Average</Qualifier>
+        <ParticleQuantity>Pressure</ParticleQuantity>
+</Particle>
+</Parameter>
+    <Parameter>
+      <Name>Str</Name>
+      <ParameterKey>Field 38</ParameterKey>
+      <Description>Shock strength: downstream to upstream density ratio (Nd/Nu).</Description>
+      <FillValue>9.9</FillValue>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+</Support>
+</Parameter>
+    <Parameter>
+      <Name>IMF cone</Name>
+      <ParameterKey>Field 39</ParameterKey>
+      <Description>IMF cone angle = acos(|Bx|/Bt)</Description>
+      <Units>deg</Units>
+      <CoordinateSystem>
+        <CoordinateRepresentation>Spherical</CoordinateRepresentation>
+        <CoordinateSystemName>GSM</CoordinateSystemName>
+</CoordinateSystem>
+      <FillValue>999</FillValue>
+      <Field>
+        <Qualifier>DirectionAngle</Qualifier>
+        <Qualifier>Average</Qualifier>
+        <FieldQuantity>Magnetic</FieldQuantity>
+</Field>
+</Parameter>
+    <Parameter>
+      <Name>IMF clock</Name>
+      <ParameterKey>Field 40</ParameterKey>
+      <Description>IMF clock angle = atan(|By GSM|/Bz GSM)</Description>
+      <Units>deg</Units>
+      <CoordinateSystem>
+        <CoordinateRepresentation>Spherical</CoordinateRepresentation>
+        <CoordinateSystemName>GSM</CoordinateSystemName>
+</CoordinateSystem>
+      <FillValue>999</FillValue>
+      <Field>
+        <Qualifier>DirectionAngle</Qualifier>
+        <Qualifier>Average</Qualifier>
+        <FieldQuantity>Magnetic</FieldQuantity>
+</Field>
+</Parameter>
+</Catalog>
+</Spase>

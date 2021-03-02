@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Spase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.spase-group.org/data/schema" 
+   xsi:schemaLocation="http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_2_3.xsd">
+  <Version>2.2.3</Version>
+  <NumericalData>
+    <ResourceID>spase://VMO/NumericalData/Oersted/CSC/MAGL/PT1S</ResourceID>
+    <ResourceHeader>
+      <ResourceName>Oersted Prelim Mag-L: High Precision Magnetic Field Data</ResourceName>
+      <ReleaseDate>2012-11-08T12:00:00Z</ReleaseDate>
+      <Description>This dataset contains 1 second measurements of the magnetic field vector from the Compact Spherical Coil (CSC) Fluxgate Vector Magnetometer on the Oersted spacecraft.</Description>
+      <Acknowledgement>Dr. Fritz Primdahl; Dr. Ib Laursen; The European Space Agency; Danish Meteorological Institute (Denmark); Danish Ministry of Commerce (Denmark); Danish Ministry of Transportation (Denmark); Centre National d'Etudes Spatiales (France); National Aeronautics and Space Administration (United States); Danish Ministry of Science (Denmark); Danish Space Research Institute (Denmark)</Acknowledgement>
+      <Contact>
+        <PersonID>spase://SMWG/Person/Fritz.Primdahl</PersonID>
+        <Role>PrincipalInvestigator</Role>
+      </Contact>
+      <InformationURL>
+        <Name>NSSDC's Master Catalog</Name>
+        <URL>http://nssdc.gsfc.nasa.gov/nmc/experimentDisplay.do?id=1999-008B-01</URL>
+        <Description>Information about the Oersted Compact Spherical Coil Fluxgate Vector Magnetometer.</Description>
+        <Language>en</Language>
+      </InformationURL>
+      <InformationURL>
+        <Name>MAG-L Format 1.1 Data Description</Name>
+        <URL>http://web.dmi.dk/projects/oersted/SDC/Format-MAG-L-1.1.shtml</URL>
+        <Description>Information about the Compact Spherical Coil Fluxgate Vector Magnetometer MAG-L data format.</Description>
+        <Language>en</Language>
+      </InformationURL>
+    </ResourceHeader>
+    <AccessInformation>
+         <RepositoryID>spase://SMWG/Repository/Oersted/CSC/MAGL/1S</RepositoryID>
+         <Availability>Online</Availability>
+         <AccessRights>Open</AccessRights>
+         <AccessURL>
+            <Name>Virtual Magnetospheric Observatory</Name>
+            <URL>http://vmo.igpp.ucla.edu/data1/Oersted/CSC/MAGL/1S</URL>
+            <Description>Compact Spherical Coil Fluxgate Vector Magnetometer MAG-L data format clearly described.</Description>
+         </AccessURL>
+         <Format>Text</Format>
+         <Acknowledgement>Dr. Fritz Primdahl;</Acknowledgement>
+      </AccessInformation>     
+    <ProcessingLevel>Calibrated</ProcessingLevel>
+    <ProviderResourceName>Compact Spherical Coil Fluxgate Vector Magnetometer MAG-L data</ProviderResourceName>
+    <ProviderProcessingLevel>Calibrated</ProviderProcessingLevel>
+    <InstrumentID>spase://SMWG/Instrument/Oersted/CSC</InstrumentID>
+    <MeasurementType>MagneticField</MeasurementType>
+    <TemporalDescription>
+      <TimeSpan>
+       <StartDate>1999-03-15T00:00:00Z</StartDate>
+    	 <StopDate>2007-11-22T23:59:59Z</StopDate>
+    	 <Note>It is not clear if this mission is still active.</Note>
+      </TimeSpan>
+      <Cadence>PT1S</Cadence>
+    </TemporalDescription>
+    <ObservedRegion>Earth.NearSurface</ObservedRegion>
+    <ObservedRegion>Earth.NearSurface.AuroralRegion</ObservedRegion>
+    <ObservedRegion>Earth.NearSurface.Ionosphere</ObservedRegion>
+    <ObservedRegion>Earth.NearSurface.PolarCap</ObservedRegion>  
+    <Parameter>
+         <Name>Universal Time</Name>
+         <ParameterKey>Time</ParameterKey>
+         <Description>Universal time columns from left to right are: year-month-day (yyyy-mm-dd) and seconds of the day.</Description>
+         <Cadence>PT1S</Cadence>
+         <Structure>
+            <Size>2</Size>
+            <Description>Universal Time expressed using a 6-column day, month, year, hour, minute, second representation</Description>
+            <Element>
+               <Name>Year-Month-Day</Name>
+               <Index>1</Index>
+               <ParameterKey>Column_1-Column_2-Column_3</ParameterKey>
+            </Element>
+            <Element>
+               <Name>Second</Name>
+               <Index>2</Index>
+               <ParameterKey>Second</ParameterKey>
+            </Element>
+         </Structure>
+         <Support>
+            <SupportQuantity>Temporal</SupportQuantity>
+         </Support>
+    </Parameter>
+    <Parameter>
+         <Name>Oersted Spacecraft Position Vector in ECEF polar coordinates</Name>
+         <ParameterKey>Position Vectors</ParameterKey>
+         <Description>Location of the spacecraft in Earth Centered, Earth Fixed polar coordinates in units of Re and degrees.</Description>
+         <Cadence>PT1S</Cadence>
+         <CoordinateSystem>
+            <CoordinateRepresentation>Spherical</CoordinateRepresentation>
+            <CoordinateSystemName>ECEF</CoordinateSystemName>
+         </CoordinateSystem>
+         <Structure>
+            <Size>3</Size>
+            <Element>
+               <Name>Radius</Name>
+               <Qualifier>Component.I</Qualifier>
+               <Index>1</Index>
+               <ParameterKey>r</ParameterKey>
+               <Units>km</Units>
+            </Element>
+            <Element>
+               <Name>Theta</Name>
+               <Qualifier>Component.J</Qualifier>
+               <Index>2</Index>
+               <ParameterKey>theta</ParameterKey>
+               <Units>degrees</Units>
+            </Element>
+            <Element>
+               <Name>Phi</Name>
+               <Qualifier>Component.K</Qualifier>
+               <Index>3</Index>
+               <ParameterKey>Phi</ParameterKey>
+               <Units>degrees</Units>
+            </Element>
+         </Structure>
+         <Support>
+            <SupportQuantity>Positional</SupportQuantity>
+         </Support>
+    </Parameter> 
+    <Parameter>
+         <Name>Oersted Stellar Compass boresight unit vector</Name>
+         <ParameterKey>SIM vector</ParameterKey>
+         <Description>This is a unit vector, giving the direction of the SIM boresight direction in the ECEF local coordinate system. It is given to facilitate adjusting for the non-uniform error distribution in the SIM instruments.</Description>
+         <Cadence>PT1S</Cadence>
+         <CoordinateSystem>
+            <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+            <CoordinateSystemName>ECEF</CoordinateSystemName>
+         </CoordinateSystem>
+         <Structure>
+            <Size>3</Size>
+            <Element>
+               <Name>Radial</Name>
+               <Qualifier>Component.I</Qualifier>
+               <Index>1</Index>
+               <ParameterKey>n_r</ParameterKey>
+               <Units>unitless</Units>
+            </Element>
+            <Element>
+               <Name>Southward</Name>
+               <Qualifier>Component.J</Qualifier>
+               <Index>2</Index>
+               <ParameterKey>n_theta</ParameterKey>
+               <Units>unitless</Units>
+            </Element>
+            <Element>
+               <Name>Eastward</Name>
+               <Qualifier>Component.K</Qualifier>
+               <Index>3</Index>
+               <ParameterKey>n_phi</ParameterKey>
+               <Units>unitless</Units>
+            </Element>
+         </Structure>
+         <Support>
+            <SupportQuantity>Positional</SupportQuantity>
+         </Support>
+    </Parameter>   
+    <Parameter>
+      <Name>Magnetic Field Magnitude</Name>
+      <ParameterKey>F</ParameterKey>
+      <Description>Oersted CSC Magnitude data.</Description>
+      <Cadence>PT1S</Cadence>
+      <Units>nT</Units>
+      <Field>
+        <Qualifier>Magnitude</Qualifier>
+        <FieldQuantity>Magnetic</FieldQuantity>
+      </Field>
+    </Parameter>
+    <Parameter>
+         <Name>Oersted CSC Magnetic Field Vectors in ECEF polar coordinates</Name>
+         <ParameterKey>Magnetic Field Vectors</ParameterKey>
+         <Description>Magnetic field vector for Oersted in Earth Centered, Earth Fixed polar coordinates in units of nT.</Description>
+         <Cadence>PT1S</Cadence>
+         <Units>nT</Units>
+         <CoordinateSystem>
+            <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+            <CoordinateSystemName>ECEF</CoordinateSystemName>
+         </CoordinateSystem>
+         <Structure>
+            <Size>3</Size>
+            <Element>
+               <Name>Radial component</Name>
+               <Qualifier>Component.I</Qualifier>
+               <Index>1</Index>
+               <ParameterKey>Br</ParameterKey>
+            </Element>
+            <Element>
+               <Name>Southward component</Name>
+               <Qualifier>Component.J</Qualifier>
+               <Index>2</Index>
+               <ParameterKey>Btheta</ParameterKey>
+            </Element>
+            <Element>
+               <Name>Eastward component</Name>
+               <Qualifier>Component.K</Qualifier>
+               <Index>3</Index>
+               <ParameterKey>Bphi</ParameterKey>
+            </Element>
+         </Structure>
+         <Field>
+            <Qualifier>Vector</Qualifier>
+            <FieldQuantity>Magnetic</FieldQuantity>
+         </Field>
+      </Parameter>   
+  </NumericalData>
+</Spase>

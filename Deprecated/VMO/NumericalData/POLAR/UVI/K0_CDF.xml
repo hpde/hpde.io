@@ -1,0 +1,568 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema  http://www.spase-group.org/data/schema/spase-2_2_2.xsd'">
+    <Version>2.2.2</Version>
+    <NumericalData>
+        <ResourceID>spase://VMO/NumericalData/POLAR/UVI/K0_CDF</ResourceID>
+        <ResourceHeader>
+            <ResourceName>Polar Ultraviolet Imager, Key Parameters</ResourceName>
+            <ReleaseDate>2014-07-31T12:34:56.789</ReleaseDate>
+            <Description>The Ultraviolet Imager (UVI) is a small camera that detected and produced images of the ultraviolet light of the aurora, day and night.
+            Key Parameter (KP) images are calculated at nominal 5-10 minute intervals at spacecraft altitudes above 6 Re.  The UVI KP image is
+            background subtracted and calibrated to radiance values (photon cm^-2 cm^-1). The data is a rectangular two-dimensional array
+            (228 rows x 200 columns). Only a circular region of the rectangular array contains valid image data.  The UVI KP Image Archive
+            (http://tideuvira.nsstc.nasa.gov/uvi/kpgs-Data.htm) allows the user to look at all the KP Mosaics for a selected month.  The gif or png
+            plot files contain the up to 35 KP images taken with the LBHL filter.   Reference images are also provided showing the location of the
+            UVI field of view relative to continental outlines.</Description>
+            <Contact>
+                <PersonID>spase://SMWG/Person/George.K.Parks</PersonID>
+                <Role>PrincipalInvestigator</Role>
+            </Contact>
+            <Contact>
+                <PersonID>spase://SMWG/Person/Peggy.Sloan</PersonID>
+                <Role>MetadataContact</Role>
+            </Contact>
+      <!--  <InformationURL>
+                <Name>UVI Home Page</Name>
+                <URL>http://tideuvira.nsstc.nasa.gov/uvi</URL>
+                <Description>The Polar Ultraviolet Imager (UVI) Home Page contains links that describe the instrument, its operation, allow the
+               user to view 36 second images and key parameter mosaics from the mission and download software, plus links
+               to the UVI data archive, to lists of UVI publications and presentations, and several miscellaneous mission sites.</Description>
+            </InformationURL> -->
+        </ResourceHeader>
+        <AccessInformation>
+            <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF/CDAWeb</RepositoryID>
+            <Availability>Online</Availability>
+            <AccessRights>Open</AccessRights>
+            <AccessURL>
+                <Name>FTP access to files at SPDF</Name>
+                <URL>ftp://spdf.gsfc.nasa.gov/pub/data/polar/uvi/uvi_k0</URL>
+            </AccessURL>
+            <AccessURL>
+                <Name>HTTP access to files at SPDF</Name>
+                <URL>http://spdf.gsfc.nasa.gov/pub/data/polar/uvi/uvi_k0</URL>
+                <Description>In CDF via HTTP from SPDF</Description>
+            </AccessURL>
+            <AccessURL>
+                <Name>CDAWeb</Name>
+                <URL>http://cdaweb.gsfc.nasa.gov/</URL>
+                <ProductKey>PO_K0_UVI</ProductKey>
+            </AccessURL>
+            <Format>CDF</Format>
+        </AccessInformation>
+        <ProcessingLevel>Calibrated</ProcessingLevel>
+        <ProviderProcessingLevel>Level 1</ProviderProcessingLevel>
+        <InstrumentID>spase://SMWG/Instrument/POLAR/UVI</InstrumentID>
+        <MeasurementType>ImageIntensity</MeasurementType>
+        <TemporalDescription>
+            <TimeSpan>
+                <StartDate>1996-03-23T15:56:15</StartDate>
+                <StopDate>2008-02-10T18:40:28</StopDate>
+            </TimeSpan>
+        </TemporalDescription>
+        <SpectralRange>Ultraviolet</SpectralRange>
+        <ObservedRegion>Earth.NearSurface.Ionosphere</ObservedRegion>
+        <Caveats>UVI Key Parameters are summary data only.  In some cases parameters such as pointing and calibration were not be adequate to
+         support quantitative scientific analysis.  They should not to be used for presentation, publication, or analysis. The UVI KP CDF files
+         only contain output for normal instrument mode when the spacecraft is in 9.2 second science telemetry mode.  No Key Parameters
+         are produced when the spacecraft is in maneuver telemetry mode, when UVI is in star (fast) mode, and when the despun platform
+         is pointed away from the earth.</Caveats>
+        <Parameter>
+            <Name>FUV Image</Name>
+            <ParameterKey>IMAGE_DATA</ParameterKey>
+            <Description>Far Ultraviolet Image - 8 degree full width (228 x 200 pixels)</Description>
+            <Caveats>The UVI field of view is circular with an 8 degree full width.  The circular image is stored in IMAGE_DATA as a rectangular
+            array of  228 rows and 200 columns.  Consequently, the corners of each image contain non-image data.  The non-active corner pixel
+            locations are identified by a corner fill value = -128.  The image is oriented such that the direction of decreasing row number points
+            along the spacecraft spin axis.  The direction of decreasing column number points to the outboard direction (relative to the spin axis).
+            The orientation is the same for both detectors.</Caveats>
+            <Units>photon cm^-2 s^-1</Units>
+            <Structure>
+                <Size>228 200</Size>
+            </Structure>
+            <Wave>
+                <WaveType>Photon</WaveType>
+                <Qualifier>Integral</Qualifier>
+                <WaveQuantity>Intensity</WaveQuantity>
+                <WavelengthRange>
+                    <SpectralRange>Ultraviolet</SpectralRange>
+                    <Low>125</Low>
+                    <High>190</High>
+                    <Units>nanometers</Units>
+                    <Bin>
+                        <BandName>1304 filter</BandName>
+                        <Low>125</Low>
+                        <High>135</High>
+                    </Bin>
+                    <Bin>
+                        <BandName>1356 filter</BandName>
+                        <Low>128</Low>
+                        <High>142</High>
+                    </Bin>
+                    <Bin>
+                        <BandName>LBHS filter</BandName>
+                        <Low>135</Low>
+                        <High>160</High>
+                    </Bin>
+                    <Bin>
+                        <BandName>LBHL filter</BandName>
+                        <Low>160</Low>
+                        <High>190</High>
+                    </Bin>
+                    <Bin>
+                        <BandName>SOLR filter</BandName>
+                        <Low>175</Low>
+                        <High>190</High>
+                    </Bin>
+                </WavelengthRange>
+            </Wave>
+        </Parameter>
+        <Parameter>
+            <Name>Time Line</Name>
+            <ParameterKey>Epoch</ParameterKey>
+            <Description>Image time.</Description>
+            <Caveats>The time in EPOCH and Time_PB5 refer to the center of the image in IMAGE_DATA. There is an offset of up to 8
+            major frames between the beginning of the image exposure and the ATC telemetry time stamp.  The times shown here are
+            corrected for this and describe the actual time of exposure.</Caveats>
+            <Units>ms</Units>
+            <ValidMin>01-Jan-1990 00:00:00.000</ValidMin>
+            <ValidMax>31-Dec-2020 23:59:59.000</ValidMax>
+            <FillValue>-1.0E31</FillValue>
+            <Support>
+                <SupportQuantity>Temporal</SupportQuantity>
+            </Support>
+        </Parameter>
+        <Parameter>
+            <Name>Time Line</Name>
+            <ParameterKey>Time_PB5</ParameterKey>
+            <Description>Image time.</Description>
+            <Caveats>The time in EPOCH and Time_PB5 refer to the center of the image in IMAGE_DATA.  There is an offset of up to 8
+            major frames between the beginning of the image exposure and the ATC telemetry time stamp.  The times shown here are
+            corrected for this and describe the actual time of exposure.</Caveats>
+            <Structure>
+                <Size>3</Size>
+                <Element>
+                    <Name>Year</Name>
+                    <Index>1</Index>
+                    <Units>year</Units>
+                    <ValidMin>1990</ValidMin>
+                    <ValidMax>2020</ValidMax>
+                    <FillValue>-2147483648</FillValue>
+                </Element>
+                <Element>
+                    <Name>Day of Year (Jan 1 = Day 1)</Name>
+                    <Index>2</Index>
+                    <Units>day</Units>
+                    <ValidMin>1</ValidMin>
+                    <ValidMax>366</ValidMax>
+                    <FillValue>-2147483648</FillValue>
+                </Element>
+                <Element>
+                    <Name>Elapsed millisecond of day</Name>
+                    <Index>3</Index>
+                    <Units>msec</Units>
+                    <ValidMin>0</ValidMin>
+                    <ValidMax>86399000</ValidMax>
+                    <FillValue>-2147483648</FillValue>
+                </Element>
+            </Structure>
+            <Support>
+                <SupportQuantity>Temporal</SupportQuantity>
+            </Support>
+        </Parameter>
+        <Parameter>
+            <Name>Relative beginning of image</Name>
+            <ParameterKey>IMG_MINUS_MSEC</ParameterKey>
+            <Description>The start of the image, measured from EPOCH/Time_PB5.</Description>
+            <Caveats>The beginning and ending time of the image is specified in msec relative to the time in EPOCH and Time_PB5 by
+            IMG_MINUS_MSEC and IMG_PLUS_MSEC, respectively.</Caveats>
+            <Units>ms</Units>
+            <ValidMin>-1800000.0</ValidMin>
+            <ValidMax>0.0</ValidMax>
+            <FillValue>-1.0E31</FillValue>
+            <Support>
+                <SupportQuantity>Temporal</SupportQuantity>
+            </Support>
+        </Parameter>
+        <Parameter>
+            <Name>Relative end of image</Name>
+            <ParameterKey>IMG_PLUS_MSEC</ParameterKey>
+            <Description>The end of the image, measured from EPOCH/Time_PB5.</Description>
+            <Caveats>The beginning and ending time of the image is specified in msec relative to the time in EPOCH and Time_PB5 by
+            IMG_MINUS_MSEC and IMG_PLUS_MSEC, respectively.</Caveats>
+            <Units>ms</Units>
+            <ValidMin>0.0</ValidMin>
+            <ValidMax>1800000.0</ValidMax>
+            <FillValue>-1.0E31</FillValue>
+            <Support>
+                <SupportQuantity>Temporal</SupportQuantity>
+            </Support>
+        </Parameter>
+        <Parameter>
+            <Name>Post Gap Flag</Name>
+            <ParameterKey>POST_GAP_FLAG</ParameterKey>
+            <Description>Explanation of preceding gap.</Description>
+            <Caveats>A gap is defined if the time between records is greater than twice the nominal output time (NOMINAL_OUTPUT_PERIOD).
+            The following values are defined for POST_GAP_FLAG: O = No Gap; 1 = Wrong Mode; 2 = Missing Data; 3 = Noisy Data;
+            4-9 = undefined; 10 = High voltage not enabled; 11 = gain set to zero; 12 =The first minor frame containing UVI housekeeping was
+            zero filled 13 = Unable to sync with telemetry stream; 14 = No background images were present; 15 = Requested filter setting was
+            not present; 16 = Spacecraft was near perigee pass where no kp's are generated; 17 = Despun platform was pointing away from the
+            earth; 18 = Image data lay outside requested process window (Not used for production); 19 = Unknown. Note that long gaps may be
+            caused by multiple events.  POST_GAP_FLAG attempts to represent the most severe event contributing to the gap. Also, since each
+            image frame requires a minimum of 4 major frames (36.8 s) very short values of NOMINAL_OUTPUT_PERIOD on the order of 1 minute
+            may always encounter a gap since the desired images may be several minutes apart.  This condition is not trapped and will result in an
+            unknown value for the post gap flag.</Caveats>
+            <ValidMin>0</ValidMin>
+            <ValidMax>19</ValidMax>
+            <FillValue>-2147483648</FillValue>
+            <Support>
+                <SupportQuantity>Other</SupportQuantity>
+            </Support>
+        </Parameter>
+        <Parameter>
+            <Name>Quality Flag</Name>
+            <ParameterKey>QUALITY_FLAG</ParameterKey>
+            <Description>Bit-mapped quality indicator.</Description>
+            <Caveats>QUALITY_FLAG is a  bit-mapped flag in which each bit corresponds to a single quality condition.  The most  significant
+            bit (minus sign) is not used.  Consequently up to 31 different quality conditions can be simultaneously flagged.  The flags are ordered
+            in severity with increasing bit position.  The following _hexadecimal_ values have been defined  for QUALITY_FLAG: 0 = No errors or
+            quality conditions;  1 = an error occurred writing an SFDU comment; 2 =  image time was outside of selected processing window;
+            4 = some level zero minor frames had fill values;  8 = some level zero minor frames had sync errors; 10 = the image single frame
+            integration period could not be determined due to bad telemetry (assumed to be 4 major frames);  20 = the despun platform was in
+            motion or had not settled down from a motion;   40 = the pointing calculations have not been validated or may be unreliable;
+            80 = the time flags for this image may be unreliable; 100 = there was an error decode star mode data; 200 =some major frames were
+            missing but an image could be partially  reconstructed;  400 = calibration data is missing or otherwise invalid;  800 = a background
+            image could not be found; 1000 = the  requested output image could not be found.</Caveats>
+            <ValidMin>0</ValidMin>
+            <ValidMax>2147483647</ValidMax>
+            <FillValue>-2147483648</FillValue>
+            <Support>
+                <SupportQuantity>Other</SupportQuantity>
+            </Support>
+        </Parameter>
+        <Parameter>
+            <Name>Nominal Time Between Records</Name>
+            <ParameterKey>NOMINAL_OUTPUT_PERIOD</ParameterKey>
+            <Description>Nominal time between output records.</Description>
+            <Caveats>This is the nominal time between output records.  The actual output spacing will vary depending on the nature of the
+            observing sequences being run.</Caveats>
+            <Units>minutes</Units>
+            <ValidMin>0</ValidMin>
+            <ValidMax>300</ValidMax>
+            <FillValue>-2147483648</FillValue>
+            <Support>
+                <SupportQuantity>Other</SupportQuantity>
+            </Support>
+        </Parameter>
+        <Parameter>
+            <Name>Primary/secondary detectors</Name>
+            <ParameterKey>SYSTEM</ParameterKey>
+            <Description>Operating system.</Description>
+            <Caveats>UVI has two independent systems. PRIMARY: +1, SECONDARY: -1</Caveats>
+            <ValidMin>-1</ValidMin>
+            <ValidMax>1</ValidMax>
+            <FillValue>-2147483648</FillValue>
+            <Support>
+                <SupportQuantity>Other</SupportQuantity>
+            </Support>
+        </Parameter>
+        <Parameter>
+            <Name>Observing sequence</Name>
+            <ParameterKey>SEQ</ParameterKey>
+            <Description>Predefined sequence of observations. Definitions will change over mission.</Description>
+            <ValidMin>0</ValidMin>
+            <ValidMax>49</ValidMax>
+            <FillValue>-2147483648</FillValue>
+            <Support>
+                <SupportQuantity>Other</SupportQuantity>
+            </Support>
+        </Parameter>
+        <Parameter>
+            <Name>Observing mode</Name>
+            <ParameterKey>MODE</ParameterKey>
+            <Description>Instrument operating mode.</Description>
+            <Caveats>(1=Normal, 2=Star, 3=Idle) Normal mode produces one 200 x 228 image every 4 major frames.  Star mode produces
+            multiple miniframe images every major frame.  Idle mode produces no image output.</Caveats>
+            <ValidMin>1</ValidMin>
+            <ValidMax>3</ValidMax>
+            <FillValue>-2147483648</FillValue>
+            <Support>
+                <SupportQuantity>Other</SupportQuantity>
+            </Support>
+        </Parameter>
+        <Parameter>
+            <Name>Detector Gain Setting</Name>
+            <ParameterKey>GAIN</ParameterKey>
+            <Description>Detector gain setting</Description>
+            <Caveats>0=off, 16=highest sensitivity</Caveats>
+            <ValidMin>0</ValidMin>
+            <ValidMax>16</ValidMax>
+            <FillValue>-2147483648</FillValue>
+            <Support>
+                <SupportQuantity>Other</SupportQuantity>
+            </Support>
+        </Parameter>
+        <Parameter>
+            <Name>Aperture door position</Name>
+            <ParameterKey>DOOR</ParameterKey>
+            <Description>Aperture door position</Description>
+            <Caveats>(OPEN: +1, CLOSED: -1) MgF2 window in door allows viewing when closed.</Caveats>
+            <ValidMin>-1</ValidMin>
+            <ValidMax>1</ValidMax>
+            <FillValue>-2147483648</FillValue>
+            <Support>
+                <SupportQuantity>Other</SupportQuantity>
+            </Support>
+        </Parameter>
+        <Parameter>
+            <Name>GCI Spacecraft Position Vector</Name>
+            <ParameterKey>GCI_POSITION</ParameterKey>
+            <Description>Spacecraft Position in GCI, 3 comp.</Description>
+            <Caveats>Copied from S/C orbit file.</Caveats>
+            <Units>km</Units>
+            <Structure>
+                <Size>3</Size>
+                <Element>
+                    <Name>X (GCI)</Name>
+                    <Index>1</Index>
+                    <ValidMin>-60000.0</ValidMin>
+                    <ValidMax>60000.0</ValidMax>
+                    <FillValue>-1.0E31</FillValue>
+                </Element>
+                <Element>
+                    <Name>Y (GCI)</Name>
+                    <Index>2</Index>
+                    <ValidMin>-60000.0</ValidMin>
+                    <ValidMax>60000.0</ValidMax>
+                    <FillValue>-1.0E31</FillValue>
+                </Element>
+                <Element>
+                    <Name>Z (GCI)</Name>
+                    <Index>3</Index>
+                    <ValidMin>-60000.0</ValidMin>
+                    <ValidMax>60000.0</ValidMax>
+                    <FillValue>-1.0E31</FillValue>
+                </Element>
+            </Structure>
+            <Support>
+                <SupportQuantity>Other</SupportQuantity>
+            </Support>
+        </Parameter>
+        <Parameter>
+            <Name>GCI Spacecraft Attitude Vector</Name>
+            <ParameterKey>ATTITUDE</ParameterKey>
+            <Description>Spacecraft Attitude in GCI, 3 comp.</Description>
+            <Caveats>Calculated from S/C attitude file.</Caveats>
+            <Structure>
+                <Size>3</Size>
+                <Element>
+                    <Name>X (GCI)</Name>
+                    <Index>1</Index>
+                    <ValidMin>-1.0</ValidMin>
+                    <ValidMax>1.0</ValidMax>
+                    <FillValue>-1.0E31</FillValue>
+                </Element>
+                <Element>
+                    <Name>Y (GCI)</Name>
+                    <Index>2</Index>
+                    <ValidMin>-1.0</ValidMin>
+                    <ValidMax>1.0</ValidMax>
+                    <FillValue>-1.0E31</FillValue>
+                </Element>
+                <Element>
+                    <Name>Z (GCI)</Name>
+                    <Index>3</Index>
+                    <ValidMin>-1.0</ValidMin>
+                    <ValidMax>1.0</ValidMax>
+                    <FillValue>-1.0E31</FillValue>
+                </Element>
+            </Structure>
+            <Support>
+                <SupportQuantity>Other</SupportQuantity>
+            </Support>
+        </Parameter>
+        <Parameter>
+            <Name>GCI Sun Vector</Name>
+            <ParameterKey>GCI_SUN</ParameterKey>
+            <Description>Sun Position in GCI, 3 comp.</Description>
+            <Caveats>Vector pointing to sun.</Caveats>
+            <Units>km</Units>
+            <Structure>
+                <Size>3</Size>
+                <Element>
+                    <Name>X (GCI)</Name>
+                    <Index>1</Index>
+                    <ValidMin>-1.6E8</ValidMin>
+                    <ValidMax>1.6E8</ValidMax>
+                    <FillValue>-1.0E31</FillValue>
+                </Element>
+                <Element>
+                    <Name>Y (GCI)</Name>
+                    <Index>2</Index>
+                    <ValidMin>-1.6E8</ValidMin>
+                    <ValidMax>1.6E8</ValidMax>
+                    <FillValue>-1.0E31</FillValue>
+                </Element>
+                <Element>
+                    <Name>Z (GCI)</Name>
+                    <Index>3</Index>
+                    <ValidMin>-1.6E8</ValidMin>
+                    <ValidMax>1.6E8</ValidMax>
+                    <FillValue>-1.0E31</FillValue>
+                </Element>
+            </Structure>
+            <Support>
+                <SupportQuantity>Other</SupportQuantity>
+            </Support>
+        </Parameter>
+        <Parameter>
+            <Name>GCI Look Direction</Name>
+            <ParameterKey>GCI_LOOK_DIR</ParameterKey>
+            <Description>Unit vector along field of view.</Description>
+            <Caveats>GCI_LOOK_DIR is a unit vector in GCI coordinates pointing from the spacecraft along the center of the UVI line of sight.
+            An external utility can be used to calculate latitude and longitude for any pixel of the UVI image.The pointing utility can be found on the
+            UVI WWW home page</Caveats>
+            <Structure>
+                <Size>3</Size>
+                <Element>
+                    <Name>X (GCI)</Name>
+                    <Index>1</Index>
+                    <ValidMin>-1.0</ValidMin>
+                    <ValidMax>1.0</ValidMax>
+                    <FillValue>-1.0E31</FillValue>
+                </Element>
+                <Element>
+                    <Name>Y (GCI)</Name>
+                    <Index>2</Index>
+                    <ValidMin>-1.0</ValidMin>
+                    <ValidMax>1.0</ValidMax>
+                    <FillValue>-1.0E31</FillValue>
+                </Element>
+                <Element>
+                    <Name>Z (GCI)</Name>
+                    <Index>3</Index>
+                    <ValidMin>-1.0</ValidMin>
+                    <ValidMax>1.0</ValidMax>
+                    <FillValue>-1.0E31</FillValue>
+                </Element>
+            </Structure>
+            <Support>
+                <SupportQuantity>Other</SupportQuantity>
+            </Support>
+        </Parameter>
+        <Parameter>
+            <Name>DSP Nadir Offset Angle</Name>
+            <ParameterKey>DSP_ANGLE</ParameterKey>
+            <Description>Offset angle of despun platform from nadir.</Description>
+            <Caveats>Positive in direction opposite of spacecraft rotation.</Caveats>
+            <Units>Degree</Units>
+            <ValidMin>-180.0</ValidMin>
+            <ValidMax>180.0</ValidMax>
+            <FillValue>-1.0E31</FillValue>
+            <Support>
+                <SupportQuantity>Other</SupportQuantity>
+            </Support>
+        </Parameter>
+        <Parameter>
+            <Name>Image Type</Name>
+            <ParameterKey>FILTER</ParameterKey>
+            <Description>Filter selection.</Description>
+            <Caveats>1304=2, 1356=3, LBHS=4, LBHL=5, SOLR=6</Caveats>
+            <ValidMin>2</ValidMin>
+            <ValidMax>6</ValidMax>
+            <FillValue>-2147483648</FillValue>
+            <Support>
+                <SupportQuantity>Other</SupportQuantity>
+            </Support>
+        </Parameter>
+        <Parameter>
+            <Name>Geodetic Latitude</Name>
+            <ParameterKey>GEODETIC_LAT</ParameterKey>
+            <Description>Geodetic latitude for IMAGE_DATA (23 x 20 pixels)</Description>
+            <Caveats>Sparse matrices (every 10 pixels) of latitude and longitude are given in GEODETIC_LAT and GEODETIC_LONG, respectively.
+            Latitude &amp; longitude are given in geodetic coordinates (determined from the normal to the assumed surface of the earth [assumed to be
+            an ellipsoid of revolution]) and not in geocentric coordinates (determined relative to the center of the earth).</Caveats>
+            <Units>Degrees</Units>
+            <Structure>
+                <Size>23 20</Size>
+            </Structure>
+            <Support>
+                <SupportQuantity>Other</SupportQuantity>
+            </Support>
+        </Parameter>
+        <Parameter>
+            <Name>Geodetic Longitude</Name>
+            <ParameterKey>GEODETIC_LONG</ParameterKey>
+            <Description>Geodetic longitude for IMAGE_DATA (23 x 20 pixels)</Description>
+            <Caveats>Sparse matrices (every 10 pixels) of latitude and longitude are given in GEODETIC_LAT and GEODETIC_LONG, respectively.
+            Latitude &amp; longitude are given in geodetic coordinates (determined from the normal to the assumed surface of the earth [assumed to be
+            an ellipsoid of revolution]) and not in geocentric coordinates (determined relative to the center of the earth).</Caveats>
+            <Units>Degrees</Units>
+            <Structure>
+                <Size>23 20</Size>
+            </Structure>
+            <Support>
+                <SupportQuantity>Other</SupportQuantity>
+            </Support>
+        </Parameter>
+        <Parameter>
+            <Name>Row Number</Name>
+            <ParameterKey>ptr_row</ParameterKey>
+            <Description>Row Number</Description>
+            <Units>pixel</Units>
+            <Structure>
+                <Size>23</Size>
+            </Structure>
+            <ValidMin>1.0</ValidMin>
+            <ValidMax>228.0</ValidMax>
+            <FillValue>-1.0E31</FillValue>
+            <Support>
+                <SupportQuantity>Other</SupportQuantity>
+            </Support>
+        </Parameter>
+        <Parameter>
+            <Name>Column Number</Name>
+            <ParameterKey>ptr_col</ParameterKey>
+            <Description>Column Number</Description>
+            <Units>pixel</Units>
+            <Structure>
+                <Size>20</Size>
+            </Structure>
+            <ValidMin>1.0</ValidMin>
+            <ValidMax>200.0</ValidMax>
+            <FillValue>-1.0E31</FillValue>
+            <Support>
+                <SupportQuantity>Other</SupportQuantity>
+            </Support>
+        </Parameter>
+        <Parameter>
+            <Name>Row Number</Name>
+            <ParameterKey>row</ParameterKey>
+            <Description>Row Number</Description>
+            <Units>pixel</Units>
+            <Structure>
+                <Size>228</Size>
+            </Structure>
+            <ValidMin>1.0</ValidMin>
+            <ValidMax>228.0</ValidMax>
+            <FillValue>-1.0E31</FillValue>
+            <Support>
+                <SupportQuantity>Other</SupportQuantity>
+            </Support>
+        </Parameter>
+        <Parameter>
+            <Name>Column Number</Name>
+            <ParameterKey>ptr_col</ParameterKey>
+            <Description>Column Number</Description>
+            <Units>pixel</Units>
+            <Structure>
+                <Size>20</Size>
+            </Structure>
+            <ValidMin>1.0</ValidMin>
+            <ValidMax>200.0</ValidMax>
+            <FillValue>-1.0E31</FillValue>
+            <Support>
+                <SupportQuantity>Other</SupportQuantity>
+            </Support>
+        </Parameter>
+    </NumericalData>
+</Spase>

@@ -1,0 +1,278 @@
+<?xml version="1.0"?>
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_2_9.xsd">
+  <Version>2.2.9</Version>
+  <NumericalData>
+    <ResourceID>spase://VSPO/NumericalData/IMP7/LEPEDEA/PT120S</ResourceID>
+    <ResourceHeader>
+      <ResourceName>IMP 7 LANL 2-m plasma data</ResourceName>
+      <ReleaseDate>2020-07-03T23:28:58Z</ReleaseDate>
+      <Description>IMP 7 LANL 2-min solar wind plasma parameter data, including temperature anisotropy and alpha/proton ratio</Description>
+      <Contact>
+        <PersonID>spase://SMWG/Person/John.T.Gosling</PersonID>
+        <Role>GeneralContact</Role>
+      </Contact>
+      <Contact>
+        <PersonID>spase://SMWG/Person/James.M.Weygand</PersonID>
+        <Role>MetadataContact</Role>
+      </Contact>
+      <PriorID>spase://VSPO/NumericalData/P_IMP7_HDR_LANL_2MIN</PriorID>
+      <PriorID>spase://VMO/NumericalData/IMP7/LANL/PT120S</PriorID>
+    </ResourceHeader>
+    <AccessInformation>
+      <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF</RepositoryID>
+      <Availability>Online</Availability>
+      <AccessRights>Open</AccessRights>
+      <AccessURL>
+        <Name>FTPBrowser</Name>
+        <URL>https://omniweb.sci.gsfc.nasa.gov/ftpbrowser/imp7_lanl_2m.html</URL>
+      </AccessURL>
+      <AccessURL>
+        <Name>FTPS from SPDF (not with most browsers)</Name>
+        <URL>ftps://spdf.gsfc.nasa.gov/pub/data/imp/imp7/plasma_lanl/solarwind_2min/</URL>
+      </AccessURL>
+      <AccessURL>
+        <Name>HTTPS from SPDF</Name>
+        <URL>https://spdf.gsfc.nasa.gov/pub/data/imp/imp7/plasma_lanl/solarwind_2min/</URL>
+        <Description>In CDF via HTTP from SPDF</Description>
+      </AccessURL>
+      <Format>Text</Format>
+      <Acknowledgement>National Aeronautics and Space Administration; National Space Science Data Center and Space Physics Data Facility, Dr John Gosling</Acknowledgement>
+    </AccessInformation>
+    <ProcessingLevel>Calibrated</ProcessingLevel>
+    <ProviderResourceName>Los Alamos National Laboratory IMP-7 Solar Plasma Electrostatic Analyzer data</ProviderResourceName>
+    <ProviderProcessingLevel>Calibrated</ProviderProcessingLevel>
+    <InstrumentID>spase://SMWG/Instrument/IMP7/LEPEDEA</InstrumentID>
+    <InstrumentID>spase://SMWG/Instrument/IMP7/GOSLING</InstrumentID>
+    <MeasurementType>ThermalPlasma</MeasurementType>
+    <TemporalDescription>
+      <TimeSpan>
+        <StartDate>1972-10-06T00:00:00</StartDate>
+        <StopDate>1978-09-30T00:00:00</StopDate>
+      </TimeSpan>
+      <Cadence>PT120S</Cadence>
+    </TemporalDescription>
+    <ObservedRegion>Heliosphere.NearEarth</ObservedRegion>
+    <ObservedRegion>Earth.Magnetosphere</ObservedRegion>
+    <ObservedRegion>Earth.NearSurface</ObservedRegion>
+    <Parameter>
+      <Name>Spacecraft Identification</Name>
+      <ParameterKey>Column_1</ParameterKey>
+      <Description>String identifying the spacecraft. In this dataset it should be IMP7.</Description>
+      <Cadence>PT120S</Cadence>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Universal Time</Name>
+      <ParameterKey>Column_2 Column_3 Column_4</ParameterKey>
+      <Description>The three universal time columns from left to right are: year month day (yymmdd), seconds of the day, and hour minute second (hhmmss).</Description>
+      <Cadence>PT120S</Cadence>
+      <Structure>
+        <Size>3</Size>
+        <Description>Universal Time expressed in two columns yymmdd and hhmms.</Description>
+        <Element>
+          <Name>Year Month Day (yymmdd)</Name>
+          <Index>1</Index>
+          <ParameterKey>Column_2</ParameterKey>
+        </Element>
+        <Element>
+          <Name>Seconds of the day</Name>
+          <Index>2</Index>
+          <ParameterKey>Column_3</ParameterKey>
+          <Units>seconds</Units>
+        </Element>
+        <Element>
+          <Name>Hour Minute Second (hhmmss)</Name>
+          <Index>3</Index>
+          <ParameterKey>Column_4</ParameterKey>
+        </Element>
+      </Structure>
+      <Support>
+        <SupportQuantity>Temporal</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>IMP7 Spacecraft Position Vector in Solar Ecliptic coordinates</Name>
+      <ParameterKey>Column_5 Column_6 Column_7</ParameterKey>
+      <Description>Location of the spacecraft in solar ecliptic coordinates in units of kilometers and degrees.</Description>
+      <Cadence>PT120S</Cadence>
+      <CoordinateSystem>
+        <CoordinateRepresentation>Spherical</CoordinateRepresentation>
+        <CoordinateSystemName>SE</CoordinateSystemName>
+      </CoordinateSystem>
+      <Structure>
+        <Size>3</Size>
+        <Element>
+          <Name>Radius</Name>
+          <Qualifier>Component.I</Qualifier>
+          <Index>1</Index>
+          <ParameterKey>column_5</ParameterKey>
+          <Units>km</Units>
+        </Element>
+        <Element>
+          <Name>SELat</Name>
+          <Qualifier>Component.J</Qualifier>
+          <Index>2</Index>
+          <ParameterKey>column_6</ParameterKey>
+          <Units>degrees</Units>
+        </Element>
+        <Element>
+          <Name>SELong</Name>
+          <Qualifier>Component.K</Qualifier>
+          <Index>3</Index>
+          <ParameterKey>column_7</ParameterKey>
+          <Units>degrees</Units>
+        </Element>
+      </Structure>
+      <Support>
+        <SupportQuantity>Positional</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>IMP7 Density</Name>
+      <ParameterKey>Column_8</ParameterKey>
+      <Description>IMP7 density values in units of #/cm^3.</Description>
+      <Cadence>PT120S</Cadence>
+      <Units>#/cm^3</Units>
+      <Particle>
+        <ParticleType>Proton</ParticleType>
+        <Qualifier>Magnitude</Qualifier>
+        <ParticleQuantity>NumberDensity</ParticleQuantity>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>IMP7 Flow Speed</Name>
+      <ParameterKey>Column_9</ParameterKey>
+      <Description>IMP7 speed values in units of km/s.</Description>
+      <Cadence>PT120S</Cadence>
+      <Units>km/s</Units>
+      <Particle>
+        <ParticleType>Proton</ParticleType>
+        <Qualifier>Magnitude</Qualifier>
+        <ParticleQuantity>FlowSpeed</ParticleQuantity>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>IMP7 Flow Azimuth</Name>
+      <ParameterKey>Column_10</ParameterKey>
+      <Description>IMP7 flow azimuth direction in units of degrees.</Description>
+      <Cadence>PT120S</Cadence>
+      <Units>degrees</Units>
+      <Particle>
+        <ParticleType>Proton</ParticleType>
+        <Qualifier>Magnitude</Qualifier>
+        <ParticleQuantity>ArrivalDirection</ParticleQuantity>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>Proton Parallel Temperature</Name>
+      <ParameterKey>Column_11</ParameterKey>
+      <Description>Proton temprature in the parallel direction in units of Kelvin.</Description>
+      <Cadence>PT120S</Cadence>
+      <Units>K</Units>
+      <Particle>
+        <ParticleType>Proton</ParticleType>
+        <Qualifier>Parallel</Qualifier>
+        <ParticleQuantity>Temperature</ParticleQuantity>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>Proton Perpendicular Temperature</Name>
+      <ParameterKey>Column_12</ParameterKey>
+      <Description>Proton temprature in the perpendicular direction in units of Kelvin.</Description>
+      <Cadence>PT120S</Cadence>
+      <Units>K</Units>
+      <Particle>
+        <ParticleType>Proton</ParticleType>
+        <Qualifier>Perpendicular</Qualifier>
+        <ParticleQuantity>Temperature</ParticleQuantity>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>Pressure Tensor Symmetry Axis, AZ</Name>
+      <ParameterKey>Column_13</ParameterKey>
+      <Description>Pressure tensor symmetry axis in units of degrees.</Description>
+      <Cadence>PT120S</Cadence>
+      <Units>degrees</Units>
+      <Particle>
+        <ParticleType>Proton</ParticleType>
+        <Qualifier>DirectionAngle</Qualifier>
+        <ParticleQuantity>Pressure</ParticleQuantity>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>Alpha proton ratio</Name>
+      <ParameterKey>Column_14</ParameterKey>
+      <Description>Ratio of alphas to protons.</Description>
+      <Cadence>PT120S</Cadence>
+      <Particle>
+        <ParticleType>AlphaParticle</ParticleType>
+        <ParticleType>Proton</ParticleType>
+        <Qualifier>Ratio</Qualifier>
+        <ParticleQuantity>NumberDensity</ParticleQuantity>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>Flow Speed AP</Name>
+      <ParameterKey>Column_15</ParameterKey>
+      <Description>Relative flow speed of alphas to protons in units of km/s.</Description>
+      <Cadence>PT120S</Cadence>
+      <Units>km/s</Units>
+      <Particle>
+        <ParticleType>AlphaParticle</ParticleType>
+        <ParticleType>Proton</ParticleType>
+        <Qualifier>Magnitude</Qualifier>
+        <ParticleQuantity>FlowSpeed</ParticleQuantity>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>Flow Azimuth AP</Name>
+      <ParameterKey>Column_16</ParameterKey>
+      <Description>Relative Flow Angle of alphas to protons in units of degrees.</Description>
+      <Cadence>PT120S</Cadence>
+      <Units>degrees</Units>
+      <Particle>
+        <ParticleType>AlphaParticle</ParticleType>
+        <ParticleType>Proton</ParticleType>
+        <Qualifier>Magnitude</Qualifier>
+        <ParticleQuantity>ArrivalDirection</ParticleQuantity>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>Alpha proton temperature ratio</Name>
+      <ParameterKey>Column_17</ParameterKey>
+      <Description>Ratio of the temperature of the alphas to the temperature of the protons.</Description>
+      <Cadence>PT120S</Cadence>
+      <Particle>
+        <ParticleType>AlphaParticle</ParticleType>
+        <ParticleType>Proton</ParticleType>
+        <Qualifier>Ratio</Qualifier>
+        <ParticleQuantity>Temperature</ParticleQuantity>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>Alpha Temperature Anisotropy</Name>
+      <ParameterKey>Column_18</ParameterKey>
+      <Description>Alpha temperature anisotropy of perpendicular temperature to parallel temperature.</Description>
+      <Cadence>PT120S</Cadence>
+      <Particle>
+        <ParticleType>AlphaParticle</ParticleType>
+        <Qualifier>Anisotropy</Qualifier>
+        <ParticleQuantity>Temperature</ParticleQuantity>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>Alpha Pressure Tensor Symmetry Axis, AZ</Name>
+      <ParameterKey>Column_19</ParameterKey>
+      <Description>Alpha pressure tensor symmetry axis in units of degrees.</Description>
+      <Cadence>PT120S</Cadence>
+      <Units>degrees</Units>
+      <Particle>
+        <ParticleType>AlphaParticle</ParticleType>
+        <Qualifier>DirectionAngle</Qualifier>
+        <ParticleQuantity>Pressure</ParticleQuantity>
+      </Particle>
+    </Parameter>
+  </NumericalData>
+</Spase>

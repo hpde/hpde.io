@@ -1,0 +1,203 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_2_9.xsd",
+    "Version": "2.2.9",
+    "NumericalData": {
+      "ResourceID": "spase://GBO/NumericalData/Svalgaard/Panagyurishte/PT1H",
+      "ResourceHeader": {
+        "ResourceName": "Magnetic Field Hourly Mean Panagyurishte Station",
+        "AlternateName": [
+          "IAGA:Panagyurishte Hourly Mean Magnetic Field",
+          "IAGA:PAG Hourly Mean Magnetic Field"
+        ],
+        "ReleaseDate": "2019-05-05T12:34:56Z",
+        "Description": "Hourly mean magnetic field data determined for magnetometer data from the Panagyurishte station (IAGA Station Code: PAG).  The field observations that have been corrected for possible errors in timing, calibration, sign, transcription, omission, and misunderstanding. The hourly mean is calculated using data from the beginning of the hour to the end.",
+        "Acknowledgement": "Please acknowledge Leif Svalgaard and Edward W. Cliver when using this data.",
+        "Contact": [
+          {
+            "PersonID": "spase://SMWG/Person/Leif.Svalgaard",
+            "Role": "PrincipalInvestigator"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Edward.W.Cliver",
+            "Role": "PrincipalInvestigator"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Todd.A.King",
+            "Role": "MetadataContact"
+          }
+        ],
+        "InformationURL": {
+          "Name": "InterHourly Variability (IHV) Index Publication",
+          "URL": "https://www.leif.org:443/research/2007JA012437.pdf",
+          "Description": "Information regarding the generation of the hourly mean data and its use in calculating interhourly variability (IHV) index of geomagnetic activity can be found in \"Interhourly variability index of geomagnetic activity and its use in deriving the long-term variation of solar wind speed\", Svalgaard, Leif and Cliver, Edward W., Journal of Geophysical Research, Vol. 112, A10111, doi:10.1029/2007JA012437, 2007."
+        },
+        "PriorID": "spase://VMO/NumericalData/Svalgaard/Panagyurishte/PT1H"
+      },
+      "AccessInformation": {
+        "RepositoryID": "spase://SMWG/Repository/UCLA/VMO",
+        "Availability": "Online",
+        "AccessRights": "Open",
+        "AccessURL": {
+          "Name": "VMO Data Repository",
+          "URL": "http://vmo.igpp.ucla.edu/data1/Svalgaard/PAG.TXT",
+          "Description": "The Virtual Magnetospheric Observatory Data Repository hosted by the Institute of Geophysics and Planetary Physics, University of California, Los Angeles."
+        },
+        "Format": "Text",
+        "Encoding": "ASCII",
+        "Acknowledgement": "Leif Svalgaard and Edward W. Cliver for the generation of the interhourly variability (IHV) index of geomagnetic activity."
+      },
+      "ProcessingLevel": "Calibrated",
+      "InstrumentID": "spase://SMWG/Instrument/Ground/Panagyurishte/Magnetometer",
+      "MeasurementType": "MagneticField",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "1963-01-01T00:00:00",
+          "StopDate": "2005-12-31T23:00:00",
+          "Note": "Some data gaps may be present. If a gap is present at the beginning or end of the file, the time span start and end dates could be inaccurate as they are assigned assuming an absence of such gaps."
+        },
+        "Cadence": "PT1H"
+      },
+      "ObservedRegion": "Earth.Magnetosphere",
+      "Keyword": [
+        "Panagyurishte",
+        "PAG",
+        "IAGA:PAG",
+        "Magnetic Field",
+        "Magnetometer",
+        "Ground Station"
+      ],
+      "Parameter": [
+        {
+          "Name": "Time",
+          "Description": "Universal Time (UT) Start of Hour",
+          "Units": "s",
+          "Structure": {
+            "Size": "4",
+            "Element": [
+              {
+                "Name": "Year",
+                "Index": "1",
+                "ParameterKey": "Column_1"
+              },
+              {
+                "Name": "Month",
+                "Index": "2",
+                "ParameterKey": "Column_2"
+              },
+              {
+                "Name": "Day",
+                "Index": "3",
+                "ParameterKey": "Column_3"
+              },
+              {
+                "Name": "Hour",
+                "Index": "4",
+                "ParameterKey": "Column_4"
+              }
+            ]
+          },
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Magnetic Field (DHZ)",
+          "Description": "Magnetic Field Vector expressed by using H, D and Z.",
+          "Units": "nT",
+          "UnitsConversion": "1e-9>T",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cylindrical",
+            "CoordinateSystemName": "CGM"
+          },
+          "Structure": {
+            "Size": "3",
+            "Description": "The total magnetic field vector expressed by using H, the horizontal field magnitude, D, the horizontal field declination, and Z, the vertical magnetic field.",
+            "Element": [
+              {
+                "Name": "D",
+                "Qualifier": "DirectionAngle.AzimuthAngle",
+                "Index": "1",
+                "ParameterKey": "Column_6",
+                "Units": "Tenth of an Angular Minute",
+                "UnitsConversion": "pi/(600*180)>rad",
+                "FillValue": "999999"
+              },
+              {
+                "Name": "H",
+                "Qualifier": "Projection.IJ",
+                "Index": "2",
+                "ParameterKey": "Column_5",
+                "Units": "nT",
+                "UnitsConversion": "1e-9>T",
+                "FillValue": "999999"
+              },
+              {
+                "Name": "Z",
+                "Qualifier": "Component.K",
+                "Index": "3",
+                "ParameterKey": "Column_9",
+                "Units": "nT",
+                "UnitsConversion": "1e-9>T",
+                "FillValue": "999999"
+              }
+            ]
+          },
+          "Field": {
+            "Qualifier": "Vector",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "Magnetic Field (XYZ)",
+          "Description": "Total Magnetic Field Vector expressed by using X, Y, and Z",
+          "Units": "nT",
+          "UnitsConversion": "1e-9>T",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "CGM"
+          },
+          "Structure": {
+            "Size": "3",
+            "Description": "The total magnetic field vector expressed by using the X, Y, and Z-components measured positive northward, positive eastward, and positive down, respectively",
+            "Element": [
+              {
+                "Name": "X",
+                "Qualifier": "Component.I",
+                "Index": "1",
+                "ParameterKey": "Column_7",
+                "Units": "nT",
+                "UnitsConversion": "1e-9>T",
+                "FillValue": "999999"
+              },
+              {
+                "Name": "Y",
+                "Qualifier": "Component.J",
+                "Index": "2",
+                "ParameterKey": "Column_8",
+                "Units": "nT",
+                "UnitsConversion": "1e-9>T",
+                "FillValue": "999999"
+              },
+              {
+                "Name": "Z",
+                "Qualifier": "Component.K",
+                "Index": "3",
+                "ParameterKey": "Column_9",
+                "Units": "nT",
+                "UnitsConversion": "1e-9>T",
+                "FillValue": "999999"
+              }
+            ]
+          },
+          "Field": {
+            "Qualifier": "Vector",
+            "FieldQuantity": "Magnetic"
+          }
+        }
+      ]
+    }
+  }
+}

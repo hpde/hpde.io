@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Spase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.spase-group.org/data/schema" 
+   xsi:schemaLocation="http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_2_3.xsd">
+  <Version>2.2.3</Version>
+  <NumericalData>
+    <ResourceID>spase://VMO/NumericalData/Oersted/CSC/MAGR/PT1S</ResourceID>
+    <ResourceHeader>
+      <ResourceName>Oersted Mag-R: Calibrated CSC and raw SIM data</ResourceName>
+      <ReleaseDate>2012-11-08T12:00:00Z</ReleaseDate>
+      <Description>This dataset contains 1 second measurements of the magnetic field vector from the Compact Spherical Coil (CSC) Fluxgate Vector Magnetometer and matrices describing rotation from J2000 reference system to stellar compass coordinate system and Earth Centered, Earth Fixed polar coordinates to J2000 reference system on the Oersted spacecraft.</Description>
+      <Acknowledgement>Dr. Fritz Primdahl; Dr. Ib Laursen; The European Space Agency; Danish Meteorological Institute (Denmark); Danish Ministry of Commerce (Denmark); Danish Ministry of Transportation (Denmark); Centre National d'Etudes Spatiales (France); National Aeronautics and Space Administration (United States); Danish Ministry of Science (Denmark); Danish Space Research Institute (Denmark)</Acknowledgement>
+      <Contact>
+        <PersonID>spase://SMWG/Person/Fritz.Primdahl</PersonID>
+        <Role>PrincipalInvestigator</Role>
+      </Contact>
+      <InformationURL>
+        <Name>NSSDC's Master Catalog</Name>
+        <URL>http://nssdc.gsfc.nasa.gov/nmc/experimentDisplay.do?id=1999-008B-01</URL>
+        <Description>Information about the Oersted Compact Spherical Coil Fluxgate Vector Magnetometer.</Description>
+        <Language>en</Language>
+      </InformationURL>
+      <InformationURL>
+        <Name>MAG-R Format 1.0 Description</Name>
+        <URL>http://web.dmi.dk/projects/oersted/SDC/Format-MAG-R-1.0.shtml</URL>
+        <Description>Information about the Compact Spherical Coil Fluxgate Vector Magnetometer MAG-R data format.</Description>
+        <Language>en</Language>
+      </InformationURL>
+    </ResourceHeader>
+    <AccessInformation>
+         <RepositoryID>spase://SMWG/Repository/Oersted/CSC/MAGR/1S</RepositoryID>
+         <Availability>Online</Availability>
+         <AccessRights>Open</AccessRights>
+         <AccessURL>
+            <Name>Virtual Magnetospheric Observatory</Name>
+            <URL>http://vmo.igpp.ucla.edu/data1/Oersted/CSC/MAGR/1S</URL>
+            <Description>Compact Spherical Coil Fluxgate Vector Magnetometer MAG-R data format clearly described.</Description>
+         </AccessURL>
+         <Format>Text</Format>
+         <Acknowledgement>Dr. Fritz Primdahl;</Acknowledgement>
+      </AccessInformation>     
+    <ProcessingLevel>Calibrated</ProcessingLevel>
+    <ProviderResourceName>Compact Spherical Coil Fluxgate Vector Magnetometer MAG-R data</ProviderResourceName>
+    <ProviderProcessingLevel>Calibrated</ProviderProcessingLevel>
+    <InstrumentID>spase://SMWG/Instrument/Oersted/CSC</InstrumentID>
+    <MeasurementType>MagneticField</MeasurementType>
+    <TemporalDescription>
+      <TimeSpan>
+       <StartDate>1999-03-15T00:00:00Z</StartDate>
+    	 <StopDate>2007-12-31T23:59:59Z</StopDate>
+    	 <Note>It is not clear if this mission is still active.</Note>
+      </TimeSpan>
+      <Cadence>PT1S</Cadence>
+    </TemporalDescription>
+    <ObservedRegion>Earth.NearSurface</ObservedRegion>
+    <ObservedRegion>Earth.NearSurface.AuroralRegion</ObservedRegion>
+    <ObservedRegion>Earth.NearSurface.Ionosphere</ObservedRegion>
+    <ObservedRegion>Earth.NearSurface.PolarCap</ObservedRegion> 
+    <Parameter>
+         <Name>Universal Time</Name>
+         <ParameterKey>Time</ParameterKey>
+         <Description>Universal time columns from left to right are: year-month-day (yyyy-mm-dd) and seconds of the day.</Description>
+         <Cadence>PT1S</Cadence>
+         <Structure>
+            <Size>2</Size>
+            <Description>Universal Time expressed using a 6-column day, month, year, hour, minute, second representation</Description>
+            <Element>
+               <Name>Year-Month-Day</Name>
+               <Index>1</Index>
+               <ParameterKey>Column_1-Column_2-Column_3</ParameterKey>
+            </Element>
+            <Element>
+               <Name>Second</Name>
+               <Index>2</Index>
+               <ParameterKey>Second</ParameterKey>
+            </Element>
+         </Structure>
+         <Support>
+            <SupportQuantity>Temporal</SupportQuantity>
+         </Support>
+    </Parameter>
+    <Parameter>
+         <Name>Oersted Spacecraft Position Vector in ECEF polar coordinates</Name>
+         <ParameterKey>Position Vectors</ParameterKey>
+         <Description>Location of the spacecraft in Earth Centered, Earth Fixed polar coordinates in units of Re and degrees.</Description>
+         <Cadence>PT1S</Cadence>
+         <CoordinateSystem>
+            <CoordinateRepresentation>Spherical</CoordinateRepresentation>
+            <CoordinateSystemName>ECEF</CoordinateSystemName>
+         </CoordinateSystem>
+         <Structure>
+            <Size>3</Size>
+            <Element>
+               <Name>Radius</Name>
+               <Qualifier>Component.I</Qualifier>
+               <Index>1</Index>
+               <ParameterKey>r</ParameterKey>
+               <Units>km</Units>
+            </Element>
+            <Element>
+               <Name>Theta</Name>
+               <Qualifier>Component.J</Qualifier>
+               <Index>2</Index>
+               <ParameterKey>theta</ParameterKey>
+               <Units>degrees</Units>
+            </Element>
+            <Element>
+               <Name>Phi</Name>
+               <Qualifier>Component.K</Qualifier>
+               <Index>3</Index>
+               <ParameterKey>Phi</ParameterKey>
+               <Units>degrees</Units>
+            </Element>
+         </Structure>
+         <Support>
+            <SupportQuantity>Positional</SupportQuantity>
+         </Support>
+    </Parameter>  
+    <Parameter>
+         <Name>Oersted CSC Magnetic Field Vector in CSC coordinates</Name>
+         <ParameterKey>Magnetic Field Vectors</ParameterKey>
+         <Description>Magnetic field vector for Oersted in CSC coordinate sstem in units of nT.</Description>
+         <Cadence>PT1S</Cadence>
+         <Units>nT</Units>
+         <CoordinateSystem>
+            <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+            <CoordinateSystemName>SC</CoordinateSystemName>
+         </CoordinateSystem>
+         <Structure>
+            <Size>3</Size>
+            <Element>
+               <Name>B1</Name>
+               <Qualifier>Component.I</Qualifier>
+               <Index>1</Index>
+               <ParameterKey>B1</ParameterKey>
+            </Element>
+            <Element>
+               <Name>B2</Name>
+               <Qualifier>Component.J</Qualifier>
+               <Index>2</Index>
+               <ParameterKey>B2</ParameterKey>
+            </Element>
+            <Element>
+               <Name>B3</Name>
+               <Qualifier>Component.K</Qualifier>
+               <Index>3</Index>
+               <ParameterKey>B3</ParameterKey>
+            </Element>
+         </Structure>
+         <Field>
+            <Qualifier>Vector</Qualifier>
+            <FieldQuantity>Magnetic</FieldQuantity>
+         </Field>
+      </Parameter> 
+      <Parameter>
+         <Name>J2000 to Stella compass quaternion</Name>
+         <ParameterKey>J2000 2 SIM</ParameterKey>
+         <Description>A quaternion describing the rotation from j2000 star coordinate system to the stella compass coordinate system.</Description>
+         <Cadence>PT1S</Cadence>
+         <Units>unitless</Units>
+         <Structure>
+            <Size>4</Size>
+            <Element>
+               <Name>Q1</Name>
+               <Qualifier>Tensor</Qualifier>
+               <Index>1</Index>
+            </Element>
+            <Element>
+               <Name>Q2</Name>
+               <Qualifier>Tensor</Qualifier>
+               <Index>2</Index>
+            </Element>
+            <Element>
+               <Name>Q3</Name>
+               <Qualifier>Tensor</Qualifier>
+               <Index>3</Index>
+            </Element>
+            <Element>
+               <Name>Q4</Name>
+               <Qualifier>Tensor</Qualifier>
+               <Index>4</Index>
+            </Element>
+         </Structure>
+         <Support>
+            <SupportQuantity>Other</SupportQuantity>
+         </Support>
+      </Parameter>    
+      <Parameter>
+         <Name>Earth Centered, Earth Fixed to J2000 quaternion</Name>
+         <ParameterKey>ECEF 2 J2000</ParameterKey>
+         <Description>A quaternion describing the rotation from ECEF (Earth Centered, Earth Fixed) coordinate system (Note: not the local system) to the j2000 star coordinate system.</Description>
+         <Cadence>PT1S</Cadence>
+         <Units>unitless</Units>
+         <Structure>
+            <Size>4</Size>
+            <Element>
+               <Name>Q1</Name>
+               <Qualifier>Tensor</Qualifier>
+               <Index>1</Index>
+            </Element>
+            <Element>
+               <Name>Q2</Name>
+               <Qualifier>Tensor</Qualifier>
+               <Index>2</Index>
+            </Element>
+            <Element>
+               <Name>Q3</Name>
+               <Qualifier>Tensor</Qualifier>
+               <Index>3</Index>
+            </Element>
+            <Element>
+               <Name>Q4</Name>
+               <Qualifier>Tensor</Qualifier>
+               <Index>4</Index>
+            </Element>
+         </Structure>
+         <Support>
+            <SupportQuantity>Other</SupportQuantity>
+         </Support>
+      </Parameter>
+    
+    
+    
+  </NumericalData>
+</Spase>

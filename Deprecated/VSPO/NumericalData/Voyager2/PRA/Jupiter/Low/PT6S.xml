@@ -1,0 +1,288 @@
+<?xml version="1.0"?>
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_2_9.xsd">
+  <Version>2.3.0</Version>
+  <NumericalData>
+    <ResourceID>spase://VSPO/NumericalData/Voyager2/PRA/Jupiter/Low/PT6S</ResourceID>
+    <ResourceHeader>
+      <ResourceName>Voyager 2 Planetary Radio Astronomy (PRA) Lowband Receiver Jupiter encounter, 6 sec resolution</ResourceName>
+      <AlternateName>VG2-J-PRA-3-RDR-LOWBAND-6SEC-V1.0</AlternateName>
+      <ReleaseDate>2018-11-27T18:09:04Z</ReleaseDate>
+      <Description>
+	   (Description based on material from VG2_PRA_JUP_HRES_DS.CAT)
+
+      Voyager 2 Radio Astronomy (PRA) data from the Jupiter encounter (1979-04-25 to 1979-08-04).  
+      The data set provides 6 second high resolution lowband radio mean power data. The data 
+      are provided for 70 instrument channels, covering 1.2 to 1326.0 kHz.
+ 
+       This data set (VG2-J-PRA-3-RDR-LOWBAND-6SEC-V1.0) contains              
+      data acquired by the Voyager-2 Planetary Radio Astronomy (PRA)          
+      instrument during the Jupiter encounter. The bounding time              
+      interval set for most Voyager 2 Jupiter PDS data sets is the            
+      Voyager project defined 'far encounter' mission phase boundary          
+      (1979-07-02 to 1979-08-03). Since, however, the PRA instrument          
+      is able to observe planetary phenomenon at much larger ranges           
+      than other fields and particles experiments, this boundary is           
+      artificial with respect to PRA. Hence, PRA lowband data                 
+      provided here cover the entire Jupiter Encounter Phase                  
+      (1979-04-25 to 1979-08-04). Data from beyond the far encounter          
+      interval is contained in the cruise data archive which is               
+      available from the NSSDC.                                               
+                                                                             
+      VG2-J-PRA-3-RDR-LOWBAND-6SEC-V1.0 contains data at the highest          
+      time resolution possible during normal operations. The normal           
+      mode of PRA operations during the planetary encounters was to           
+      sweep through the two radio receiver bands, high band (40.5 to          
+      1.5 MHz in 128 channels spaced 0.3072 MHz apart) and low band           
+      (1326.0 to 1.2 kHz in 70 channels spaced 19.2 kHz apart) in a           
+      period of 6 seconds. The receivers measured, on alternate               
+      samples, the left hand circular and right hand circular (radio          
+      definition) power.                                                      
+                                                                              
+      Measured Parameters                                           
+          
+      ===================                                                     
+
+      The data here are from the low frequency receiver band and are          
+      'packaged' into spacecraft major frame records. Each major              
+      frame is 48 seconds long or eight sweeps through the PRA                
+      receiver. The data are calibrated and are given in units of             
+      'millibels' which is 1000 times the log of the received power.          
+      Zero millbels corresponds to approximately 1.4 x 10^-21 W m^-2          
+      Hz^-1, however, this value is never seen in practice. The               
+      minimum values detected, which includes receiver internal and           
+      spacecraft generated noise, are about 2300 to 2400 millibels,           
+      or about 3.5 x 10^-19 W m^-2 Hz^-1; even higher values are seen         
+      at the very lowest frequencies.                                         
+                                                                              
+      The data format is ASCII and consists of a time indicator               
+      followed by an array containing the eight low band sweeps. Time         
+      is spacecraft event time (SCET) which is basically universal            
+      time at the spacecraft. Specifically, time is in the form of            
+      YYMMDD and seconds into YYMMDD. Both are written as I6.                 
+      Example: July 1, 1979 at 12 hours SCET would be 790701, 43200.          
+      The seconds correspond, to the nearest second, to the start of          
+      the sweep (which occurs in PRA high band). The first value in           
+      low band (1326.0 kHz) occurs some 3.9 seconds after this time           
+      and samples at successively lower frequencies are spaced 0.03           
+      seconds apart. Only one time is given for the entire major              
+      frame, thus the start of each sweep is the time given plus 6            
+      times the sweep number minus 1 (i.e., 0 through 7).                     
+                                                                              
+      The data array is dimensioned as 71 X 8 and written as I4               
+      format (i.e. 568I4). The '8' corresponds to the eight PRA               
+      sweeps. The lowest 68 of the 70 low band channels (1287.6               
+      to 1.2 kHz) are in positions 2-69.  Positions 70-71 should be           
+      ignored. Missing or bad data values are set to zero. In                 
+      position 1 of each sweep is a status word where the 12 least            
+      significant bits have used, although not all 12 have meaning            
+      for PRA low band. Numbering those bits 0 for least significant          
+      to 11 for most significant, the bits that have meaning are as           
+      follows:                                                                
+
+      bit                                                                     
+
+       0: 15 dB attenuator in use when equal to 1                             
+
+       1: 30 dB attenuator in use when equal to 1                             
+
+       2: 45 dB attenuator in use when equal to 1                             
+
+       9,10 (together): polarization of first channel sampled (1326.0         
+                        kHz) according to the scheme:                         
+
+
+            +---------------------------+                                                                              
+	        |            |    |value bit|
+	        |            |    | 10=     |
+	        |            |    | 0  |  1 |
+            |value bit 9=|  0 | R  |  L |
+            |            |  1 | L  |  R |
+            +---------------------------+                                                                              
+                                                                              
+      Polarization at successively lower frequencies is opposite to           
+      the frequency above it, i.e. either a LRLR or an RLRL pattern.          
+      Successive 6-second sweeps start on the opposite polarization           
+      as the previous sweep as indicated in the status bits. Note             
+      that this polarization is the received polarization, not                
+      necessarily the emitted polarization. Correct interpretation of         
+      the received polarization depends on the antenna plane                  
+      orientation relative to the radio source. A good description of         
+      this concept can be found in Leblanc Y., Aubier M. G., Ortega-Molina A.,
+      Lecacheux A., 1987, J.Geophys. Res. 92, 15125 and in Wang, L. and Carr, T.D.,
+      Recalibration of the Voyager PRA antenna for polarization sense 
+      measurement, Astron. Astrophys., 281, 945-954, 1994. and references therein.
+                                                                              
+      Missing or bad data values are set to zero. If the status word          
+      is zero, any data in that receiver sweep should be discarded.           
+                                                                              
+      Data Coverage                                                  
+         
+      =============                                                           
+
+      The data are stored as 4 ASCII tables (.TAB), each accompanied with a PDS     
+      label file (.LBL) which describes properties of the data file.  Data          
+      cover the following time intervals:                                           
+
+
+      Volume ID: VGPR_1201                                                    
+
+     +-------------------------------------------------------------------------+
+     | Filename   |Records|              Start       |            Stop         |
+     |-------------------------------------------------------------------------|
+     | PRA_I.TAB  |  32707| 1979-04-25T00:00:04.000Z |1979-05-28T23:59:14.000Z | 
+     | PRA_II.TAB |  34207| 1979-05-29T00:00:02.000Z |1979-06-23T23:59:59.000Z | 
+     | PRA_III.TAB|  31652| 1979-06-24T00:00:47.000Z |1979-07-12T23:59:58.000Z | 
+     | PRA_IV.TAB |  34416| 1979-07-13T00:00:46.000Z |1979-08-04T23:05:33.000Z |
+     +-------------------------------------------------------------------------+                                                                              
+                                                                              
+      Confidence Level Overview                      
+                         
+      =========================                                               
+                                                                              
+      The accuracy of calibration in the PRA low band is                      
+      approximately 2 dB, except at frequencies below 100 kHz where           
+      it is somewhat worse. Interference from the Voyager power               
+      subsystem is a major problem to the PRA instrument, affecting           
+      many of the 70 low band channels. This interference manifests           
+      itself by abrupt changes in background levels. Some channels,           
+      notably 136 and 193 kHz, are almost always affected, whereas,           
+      others are only affected for short intervals. Usually, this             
+      interference is only a problem when the natural signals are             
+      weak.                                                                 
+                                                                              
+Additional information associated with this data set is available in the      
+following files:                                                              
+                                                                              
++------------------------------------------------------------------------------------------------------------------------------------------+   
+|                                   file                                                               |    contents                       |
+|------------------------------------------------------------------------------------------------------|-----------------------------------|
+|https://pds-ppi.igpp.ucla.edu/ditdos/download?id=pds://PPI/VGPR_1201/CATALOG/VG2_PRA_INST.CAT         | VG1 PRA instrument description    |
+|https://pds-ppi.igpp.ucla.edu/ditdos/download?id=pds://PPI/VGPR_1201/CATALOG/VG2_PRA_JUP_HRES_DS.CAT  | data set description              |
+|https://pds-ppi.igpp.ucla.edu/ditdos/download?id=pds://PPI/VGPR_1201/CATALOG/PERSON.CAT               | personnel information             | 
+|https://pds-ppi.igpp.ucla.edu/ditdos/download?id=pds://PPI/VGPR_1201/CATALOG/REF.CAT                  | key reference description         | 
+|https://pds-ppi.igpp.ucla.edu/ditdos/download?id=pds://PPI/VGPR_1201/DOCUMENT/INSTRUMENT              | ASCII and HTML versions of the PRA|   
+|                                                                                                      | investigation description paper   |
++------------------------------------------------------------------------------------------------------------------------------------------+   
+         </Description>
+      <Acknowledgement>When using delivered data please acknowledge the data provider and 
+PDS in accordance with the PDS citation policy. Full details can be found at:
+https://pds-ppi.igpp.ucla.edu/citations_policy.jsp
+         </Acknowledgement>
+      <Contact>
+        <PersonID>spase://SMWG/Person/James.W.Warwick</PersonID>
+        <Role>PrincipalInvestigator</Role>
+      </Contact>
+      <Contact>
+        <PersonID>spase://SMWG/Person/Todd.A.King</PersonID>
+        <Role>MetadataContact</Role>
+      </Contact>
+      <InformationURL>
+        <Name>PPI/PDS PRA Instrument catalog file PRAINST.CAT</Name>
+        <URL>https://pds-ppi.igpp.ucla.edu/ditdos/download?id=pds://PPI/VG_1601/CATALOG/PRAINST.CAT</URL>
+        <Description>Information about the PRA instrument on the Voyager mission including operational mode descriptions.
+         	</Description>
+      </InformationURL>
+      <InformationURL>
+        <Name>VG2_PRA_JUP_HRES_DS.CAT</Name>
+        <URL>https://pds-ppi.igpp.ucla.edu/ditdos/download?id=pds://PPI/VGPR_1201/CATALOG/VG2_PRA_JUP_HRES_DS.CAT</URL>
+        <Description>VG2-J-PRA-3-RDR-LOWBAND-6SEC-V1.0 dataset description file 
+         	</Description>
+      </InformationURL>
+      <PriorID>spase://VWO/NumericalData/Voyager2/PRA/VG2_PRA_Low_Jupiter_PT6S</PriorID>
+      <PriorID>spase://VWO/NumericalData/Voyager2/PRA/Jupiter/Low.PT6S</PriorID>
+    </ResourceHeader>
+    <AccessInformation>
+      <RepositoryID>spase://SMWG/Repository/PDS/PPI</RepositoryID>
+      <Availability>Online</Availability>
+      <AccessRights>Open</AccessRights>
+      <AccessURL>
+        <Name>Access to dataset ID VG2-J-PRA-3-RDR-LOWBAND-6SEC-V1.0</Name>
+        <URL>https://pds-ppi.igpp.ucla.edu/search/view/?f=yes&amp;id=pds://PPI/VG2-J-PRA-3-RDR-LOWBAND-6SEC-V1.0</URL>
+        <Description>Below this directory level are the 4 ASCII files (TAB) and the accompanying PDS label (LBL) files.
+            </Description>
+        <Language>en</Language>
+      </AccessURL>
+      <Format>Text.ASCII</Format>
+      <Encoding>None</Encoding>
+      <Acknowledgement>When using delivered data please acknowledge the data provider and 
+PDS in accordance with the PDS citation policy. Full details can be found at:
+https://pds-ppi.igpp.ucla.edu/citations_policy.jsp</Acknowledgement>
+    </AccessInformation>
+    <AccessInformation>
+      <RepositoryID>spase://SMWG/Repository/PDS/PPI</RepositoryID>
+      <Availability>Online</Availability>
+      <AccessRights>Open</AccessRights>
+      <AccessURL>
+        <Name>PDS/PPI</Name>
+        <URL>https://pds-ppi.igpp.ucla.edu/search/view/?f=yes&amp;id=pds://PPI/VG2-J-PRA-3-RDR-LOWBAND-6SEC-V1.0</URL>
+        <ProductKey>VG2-J-PRA-3-RDR-LOWBAND-6SEC-V1.0</ProductKey>
+        <Description>This collection is archived with NASA's Planetary Data System.</Description>
+        <Language>En</Language>
+      </AccessURL>
+      <Format>Text.ASCII</Format>
+      <Acknowledgement>NASA's Planetary Plasma Interactions (PPI) Node of the Planetary Data System (PDS) and the P.I. for the data.</Acknowledgement>
+    </AccessInformation>
+    <InstrumentID>spase://SMWG/Instrument/Voyager2/PRA</InstrumentID>
+    <MeasurementType>Waves.Passive</MeasurementType>
+    <MeasurementType>Spectrum</MeasurementType>
+    <MeasurementType>ElectricField</MeasurementType>
+    <MeasurementType>MagneticField</MeasurementType>
+    <TemporalDescription>
+      <TimeSpan>
+        <StartDate>1979-04-25T00:04:00Z</StartDate>
+        <StopDate>1979-08-04T23:05:33Z</StopDate>
+      </TimeSpan>
+      <Cadence>PT6S</Cadence>
+    </TemporalDescription>
+    <SpectralRange>RadioFrequency</SpectralRange>
+    <ObservedRegion>Jupiter</ObservedRegion>
+    <ObservedRegion>Heliosphere.Outer</ObservedRegion>
+    <!-- Keywords pertaining to the data presentation -->
+    <Keyword>Dynamic Spectrogram</Keyword>
+    <Keyword>Spectrogram</Keyword>
+    <!-- Keywords pertaining to the physical phenomena appearing in spectrograms -->
+    <Keyword>Jupiter</Keyword>
+    <Keyword>Kilometric Radio Emission</Keyword>
+    <Keyword>KOM</Keyword>
+    <Parameter>
+      <Name>Date</Name>
+      <Description>Year, month, and day of start of first sweep in (SCET) in the format YYMMDD (Format=I6) </Description>
+      <Support>
+        <SupportQuantity>Temporal</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Second</Name>
+      <Description>Seconds of day (SCET) of start of first sweep (Format=I6)</Description>
+      <Units>s</Units>
+      <Support>
+        <SupportQuantity>Temporal</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Spectral Power</Name>
+      <Description>Electric field power spectral density,
+	 8 sweeps of the PRA lowband receiver of 70 frequency channels each. 
+	 </Description>
+      <Units>millibels</Units>
+      <Wave>
+        <WaveType>PlasmaWaves</WaveType>
+        <WaveQuantity>ACElectricField</WaveQuantity>
+        <FrequencyRange>
+          <SpectralRange>RadioFrequency</SpectralRange>
+          <Low>1.2</Low>
+          <High>1326</High>
+          <Units>kHz</Units>
+        </FrequencyRange>
+      </Wave>
+    </Parameter>
+    <Parameter>
+      <Name>Status Word</Name>
+      <Description>indicates attenuators used to record the data and the polarization</Description>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Extension/>
+  </NumericalData>
+</Spase>

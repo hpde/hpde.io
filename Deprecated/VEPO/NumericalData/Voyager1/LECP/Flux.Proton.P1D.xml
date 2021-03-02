@@ -1,0 +1,235 @@
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_2_0.xsd">
+    <Version>2.2.0</Version>
+    <NumericalData>
+        <ResourceID>spase://VEPO/NumericalData/Voyager1/LECP/Flux.Proton.P1D</ResourceID>
+        <ResourceHeader>
+            <ResourceName>Voyager 1 LECP Proton Intensities in ASCII Format daily</ResourceName>
+            <AlternateName>V1-LECP-PROTONFLUX-PT24H</AlternateName>
+            <ReleaseDate>2010-07-09T00:00:00.000</ReleaseDate>
+            <Description>Count Rates, Averaged Over All Sectors, Voyager1, LECP, Filtered, Channel, Calibrated, CadencePT24H
+            
+            Each file in this directory contains one year's worth of data from the
+            LECP instrument on the Voyager 1 spacecraft. Each record in a file
+            contains 1-day (24-hour) averages of fluxes and flux uncertainties of
+            ions (Z&gt;=1) in eight contiguous energy channels, from 0.040-4.00
+            Mev/ion. Each file contains a 2-line header that identifies the
+            spacecraft, data type and time resolution, and labels each column of
+            data. Statistical uncertainties represent one standard deviation.
+            
+            Differential (in energy) flux units are: Ions/(cm^2 sec ster MeV).</Description>
+            <Acknowledgement>Please acknowledge the LECP PI (S.M. Krimigis) and the lead LECP CoI (R.B. Decker)</Acknowledgement>
+            <Contact>
+                <PersonID>spase://SMWG/Person/Stamatios.M.Krimigis</PersonID>
+                <Role>PrincipalInvestigator</Role>
+            </Contact>
+            <Contact>
+                <PersonID>spase://SMWG/Person/Robert.B.Decker</PersonID>
+                <Role>CoInvestigator</Role>
+            </Contact>
+            <Contact>
+                <PersonID>spase://SMWG/Person/Lawrence.Brown</PersonID>
+                <Role>ArchiveSpecialist</Role>
+            </Contact>
+            <InformationURL>
+                <Name>Informational Website for Voyager 1 and 2 LECP Instrument</Name>
+                <URL>http://sd-www.jhuapl.edu/VOYAGER/v1_data/v1_1d/v1_prot_1d/Read_Me.txt</URL>
+                <Description>The webpage provides a detailed description of Proton Channel Intensity files.</Description>
+            </InformationURL>
+        </ResourceHeader>
+        <AccessInformation>
+            <RepositoryID>spase://SMWG/Repository/JHU_APL</RepositoryID>
+            <Availability>Online</Availability>
+            <AccessRights>Open</AccessRights>
+            <AccessURL>
+                <Name>Voyager1 LECP Average Filtered Rate Data in ASCII Format</Name>
+                <URL>http://sd-www.jhuapl.edu/VOYAGER/v1_data/v1_1d/v1_prot_1d/</URL>
+                <Description>Count Rates, All Sectors Averaged, Voyager1, LECP, Filtered, Channel CSV Text Files, File Name Template: http://sd-www.jhuapl.edu/VOYAGER/v1_data/v1_1d/v1_prot_1d/v1_%Y_prot_flux_1d.txt</Description>
+            </AccessURL>
+            <Format>Text</Format>
+            <Encoding>GZIP</Encoding>
+            <Acknowledgement>S.M. Krimigis, JHU/APL</Acknowledgement>
+        </AccessInformation>
+        <AccessInformation>
+            <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF</RepositoryID>
+            <Availability>Online</Availability>
+            <AccessRights>Open</AccessRights>
+            <AccessURL>
+                <Name>SPDF FTP area</Name>
+                <URL>ftp://spdf.gsfc.nasa.gov/pub/data/voyager/voyager1/particle/lecp/v1_prot_1day/</URL>
+                <Description>ftp access to annual ASCII files</Description>
+            </AccessURL>
+            <AccessURL>
+                <Name>SPDF HTTP area</Name>
+                <URL>http://spdf.gsfc.nasa.gov/pub/data/voyager/voyager1/particle/lecp/v1_prot_1day/</URL>
+                <Description>In CDF via HTTP from SPDF</Description>
+            </AccessURL>
+            <Format>Text</Format>
+            <Acknowledgement>S.M. Krimigis, JHU/APL, and the Space Physics Data Facility</Acknowledgement>
+        </AccessInformation>
+        <InstrumentID>spase://SMWG/Instrument/Voyager1/LECP</InstrumentID>
+        <MeasurementType>EnergeticParticles</MeasurementType>
+        <TemporalDescription>
+            <TimeSpan>
+                <StartDate>1977-09-07T00:00:00.000Z</StartDate>
+                <StopDate>2009-05-31T23:59:59.999</StopDate>
+            </TimeSpan>
+            <Cadence>PT24H</Cadence>
+        </TemporalDescription>
+        <ObservedRegion>Heliosphere.Outer</ObservedRegion>
+        <ObservedRegion>Heliosphere.Heliosheath</ObservedRegion>
+        <Parameter>
+            <Name>Start Time of Data Record</Name>
+            <ParameterKey>StartTime</ParameterKey>
+            <Description>Start Time for the record given in year, day of
+				year, hour.</Description>
+            <Cadence>PT24H</Cadence>
+            <Structure>
+                <Size>3</Size>
+                <Element>
+                    <Name>Year</Name>
+                    <Index>1</Index>
+                    <ValidMin>1977</ValidMin>
+                    <ValidMax>2008</ValidMax>
+                </Element>
+                <Element>
+                    <Name>Day of year</Name>
+                    <Index>2</Index>
+                    <ValidMin>1</ValidMin>
+                    <ValidMax>366</ValidMax>
+                </Element>
+                <Element>
+                    <Name>Hour of day</Name>
+                    <Index>3</Index>
+                    <ValidMin>0</ValidMin>
+                    <ValidMax>23</ValidMax>
+                </Element>
+            </Structure>
+            <Support>
+                <SupportQuantity>Temporal</SupportQuantity>
+            </Support>
+        </Parameter>
+        <Parameter>
+            <Name>Start Time of Data Record (Decimal Year)</Name>
+            <ParameterKey>DEC_YEAR</ParameterKey>
+            <Description>decimal year (double precision) = year + (doy - 1 + hr/24)/dpy (dpy=365 or 366)</Description>
+            <Cadence>PT24H</Cadence>
+            <Support>
+                <SupportQuantity>Temporal</SupportQuantity>
+            </Support>
+        </Parameter>
+        <Parameter>
+            <Name>Start Time of Data Record (Decimal Day of Year)</Name>
+            <ParameterKey>DEC_DOY</ParameterKey>
+            <Description>Decimal Day of Year (1.0-365.0 or 366.0)</Description>
+            <Cadence>PT24H</Cadence>
+            <Support>
+                <SupportQuantity>Temporal</SupportQuantity>
+            </Support>
+        </Parameter>
+        <Parameter>
+            <Name>CH1 Flux</Name>
+            <ParameterKey>CH1_FLUX</ParameterKey>
+            <Description>Channel 1 Proton Flux</Description>
+            <Cadence>PT24H</Cadence>
+            <Units>Protons/(cm^2 sec ster MeV)</Units>
+            <FillValue>-1</FillValue>
+            <Particle>
+                <ParticleType>Proton</ParticleType>
+                <ParticleQuantity>EnergyFlux</ParticleQuantity>
+                <EnergyRange>
+                    <Low>0.57</Low>
+                    <High>1.78</High>
+                    <Units>MeV</Units>
+                </EnergyRange>
+            </Particle>
+        </Parameter>
+        <Parameter>
+            <Name>CH1 Flux Uncertainty</Name>
+            <ParameterKey>CH1_FLUXU</ParameterKey>
+            <Description>Channel 1 Proton Flux Statistical Uncertainty</Description>
+            <Cadence>PT24H</Cadence>
+            <Units>Protons/(cm^2 sec ster MeV)</Units>
+            <FillValue>-1</FillValue>
+            <Particle>
+                <ParticleType>Proton</ParticleType>
+                <Qualifier>Uncertainty</Qualifier>
+                <ParticleQuantity>EnergyFlux</ParticleQuantity>
+                <EnergyRange>
+                    <Low>0.57</Low>
+                    <High>1.78</High>
+                    <Units>MeV</Units>
+                </EnergyRange>
+            </Particle>
+        </Parameter>
+        <Parameter>
+            <Name>CH16 Flux</Name>
+            <ParameterKey>CH16_FLUX</ParameterKey>
+            <Description>Channel 16 Proton Flux</Description>
+            <Cadence>PT24H</Cadence>
+            <Units>Protons/(cm^2 sec ster MeV)</Units>
+            <FillValue>-1</FillValue>
+            <Particle>
+                <ParticleType>Proton</ParticleType>
+                <ParticleQuantity>EnergyFlux</ParticleQuantity>
+                <EnergyRange>
+                    <Low>3.4</Low>
+                    <High>17.6</High>
+                    <Units>MeV</Units>
+                </EnergyRange>
+            </Particle>
+        </Parameter>
+        <Parameter>
+            <Name>CH16 Flux Uncertainty</Name>
+            <ParameterKey>CH16_FLUXU</ParameterKey>
+            <Description>Channel 16 Proton Flux Statistical Uncertainty</Description>
+            <Cadence>PT24H</Cadence>
+            <Units>Protons/(cm^2 sec ster MeV)</Units>
+            <FillValue>-1</FillValue>
+            <Particle>
+                <ParticleType>Proton</ParticleType>
+                <Qualifier>Uncertainty</Qualifier>
+                <ParticleQuantity>EnergyFlux</ParticleQuantity>
+                <EnergyRange>
+                    <Low>3.4</Low>
+                    <High>17.6</High>
+                    <Units>MeV</Units>
+                </EnergyRange>
+            </Particle>
+        </Parameter>
+        <Parameter>
+            <Name>CH23 Flux</Name>
+            <ParameterKey>CH23_FLUX</ParameterKey>
+            <Description>Channel 23 Proton Flux</Description>
+            <Cadence>PT24H</Cadence>
+            <Units>Protons/(cm^2 sec ster MeV)</Units>
+            <FillValue>-1</FillValue>
+            <Particle>
+                <ParticleType>Proton</ParticleType>
+                <ParticleQuantity>EnergyFlux</ParticleQuantity>
+                <EnergyRange>
+                    <Low>22.0</Low>
+                    <High>31.0</High>
+                    <Units>MeV</Units>
+                </EnergyRange>
+            </Particle>
+        </Parameter>
+        <Parameter>
+            <Name>CH23 Flux Uncertainty</Name>
+            <ParameterKey>CH23_FLUXU</ParameterKey>
+            <Description>Channel 23 Proton Flux Statistical Uncertainty</Description>
+            <Cadence>PT24H</Cadence>
+            <Units>Protons/(cm^2 sec ster MeV)</Units>
+            <FillValue>-1</FillValue>
+            <Particle>
+                <ParticleType>Proton</ParticleType>
+                <Qualifier>Uncertainty</Qualifier>
+                <ParticleQuantity>EnergyFlux</ParticleQuantity>
+                <EnergyRange>
+                    <Low>22.0</Low>
+                    <High>31.0</High>
+                    <Units>MeV</Units>
+                </EnergyRange>
+            </Particle>
+        </Parameter>
+    </NumericalData>
+</Spase>

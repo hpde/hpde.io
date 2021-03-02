@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Spase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.spase-group.org/data/schema" 
+    xsi:schemaLocation="http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_2_2.xsd">
+    <Version>2.2.2</Version>
+    <NumericalData>
+        <ResourceID>spase://VHO/NumericalData/Wind/SMS/KP.PT4H</ResourceID>
+        <ResourceHeader>
+            <ResourceName>Wind SMS Key Parameter 4-hour Data</ResourceName>
+            <ReleaseDate>2012-05-30T00:00:00</ReleaseDate>
+            <Description>Combined SWICS and STICS data containing 4 hour averaged alpha particle velocity, C/O abundance ratio, 
+                and carbon and oxygen ionization temperatures. Time is for the start of the averaging interval. Computed are
+                the average alpha velocity, average C/O abundance ratio, average carbon ionization temperature (in million degs K) 
+                from C6 and C5 (using the tables of Arnaud and Rothenflug, 1985), the average oxygen ionization temperature from O7 
+                and O6 (in million degs K, using tables of Arnaud and Rothenflug, 1985). These averages are made over 4 hours. 
+                He velocity and He kinetic temperature are computed every 3 minutes and are contained in the K1 CDF.
+                References:  Space Science Reviews 71:79-124, 1995, Kluwer Academic Publishers, Belgium  
+                Instrument consist of: Solar Wind Ion Composition Spectrometer (SWICS); high resolution mass spectrometer (MASS); 
+                Supra-Thermal Ion Composition Spectrometer (STICS) and common DPU
+            </Description>
+            <Acknowledgement>Principle Investigator G. Gloeckler and the Wind team</Acknowledgement>
+            <Contact>
+                <PersonID>spase://SMWG/Person/George.Gloeckler</PersonID>
+                <Role>PrincipalInvestigator</Role>
+            </Contact>
+            <InformationURL>
+                <Name>Wind SMS home page at University of Maryland</Name>
+                <URL>http://space.umd.edu/wind/</URL>
+            </InformationURL>
+        </ResourceHeader>
+        <AccessInformation>
+            <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF/CDAWeb</RepositoryID>
+            <Availability>Online</Availability>
+            <AccessRights>Open</AccessRights>
+            <AccessURL>
+                <Name>CDAWeb FTP site</Name>
+                <URL>ftp://cdaweb.gsfc.nasa.gov/pub/cdaweb_data/wind/sms/</URL>
+                <Description>Directory with SMS CDF files at CDAWeb</Description>
+            </AccessURL>
+            <Format>CDF</Format>
+        </AccessInformation>
+        <InstrumentID>spase://SMWG/Instrument/Wind/SMS/STICS</InstrumentID>
+        <InstrumentID>spase://SMWG/Instrument/Wind/SMS/SWICS</InstrumentID>
+        <MeasurementType>EnergeticParticles</MeasurementType>
+        <MeasurementType>IonComposition</MeasurementType>
+        <TemporalDescription>
+            <TimeSpan>
+                <StartDate>1994-12-12T00:00:00</StartDate>
+                <StopDate>2000-05-27T23:59:59</StopDate>
+            </TimeSpan>
+            <Cadence>PT4H</Cadence>
+        </TemporalDescription>
+        <ObservedRegion>Heliosphere.NearEarth</ObservedRegion>
+        <Parameter>
+            <Name>Epoch</Name>
+            <ParameterKey>Epoch</ParameterKey>
+            <Description>Start time of the averaging interval</Description>
+            <Units>ms</Units>
+            <FillValue>-1.0000000e+31</FillValue>
+            <Support>
+                <SupportQuantity>Temporal</SupportQuantity>
+            </Support>
+        </Parameter>
+        <Parameter>
+            <Name>Time_PB5</Name>
+            <ParameterKey>PB5 Time</ParameterKey>
+            <Description>(yr, doy, ms) PB5 time</Description>
+            <FillValue>-2147483648</FillValue>
+            <Support>
+                <SupportQuantity>Temporal</SupportQuantity>
+            </Support>
+        </Parameter>
+        <Parameter>
+            <Name>Alpha Velocity</Name>
+            <ParameterKey>Alpha_vel</ParameterKey>
+            <Description>Alpha velocity in km/s</Description>
+            <Units>km/s</Units>
+            <FillValue>-1.00000e+31</FillValue>
+            <Particle>
+                <ParticleType>AlphaParticle</ParticleType>
+                <ParticleQuantity>FlowSpeed</ParticleQuantity>
+            </Particle>
+        </Parameter>
+        <Parameter>
+            <Name>C/O Ratio</Name>
+            <ParameterKey>C/O_ration</ParameterKey>
+            <Description>Carbon to Oxygen ratio</Description>
+            <FillValue>-1.00000e+31</FillValue>
+            <Particle>
+                <ParticleType>Ion</ParticleType>
+                <Qualifier>Ratio</Qualifier>
+                <ParticleQuantity>NumberDensity</ParticleQuantity>
+                <AtomicNumber>6</AtomicNumber>
+                <AtomicNumber>8</AtomicNumber>
+            </Particle>
+        </Parameter>
+        <Parameter>
+            <Name>C ion temp</Name>
+            <ParameterKey>C_ion_temp</ParameterKey>
+            <Description>Carbon ionization temperature from C5 and C6</Description>
+            <Units>MK</Units>
+            <FillValue>-1.00000e+31</FillValue>
+            <Particle>
+                <ParticleType>Ion</ParticleType>
+                <ParticleQuantity>Temperature</ParticleQuantity>
+                <AtomicNumber>6</AtomicNumber>
+            </Particle>
+        </Parameter>
+        <Parameter>
+            <Name>O ion temp</Name>
+            <ParameterKey>O_ion_temp</ParameterKey>
+            <Description>Oxygen ionization temperature from O6 and O7</Description>
+            <Units>MK</Units>
+            <FillValue>-1.00000e+31</FillValue>
+            <Particle>
+                <ParticleType>Ion</ParticleType>
+                <ParticleQuantity>Temperature</ParticleQuantity>
+                <AtomicNumber>8</AtomicNumber>
+            </Particle>
+        </Parameter>
+        <Parameter>
+            <Name>Alpha Delta</Name>
+            <ParameterKey>Alpha_Delta</ParameterKey>
+            <Description>Uncertainty (+/-30%) in Alpha Speed</Description>
+            <Units>km/s</Units>
+            <FillValue>-100</FillValue>
+            <Particle>
+                <ParticleType>AlphaParticle</ParticleType>
+                <Qualifier>Uncertainty</Qualifier>
+                <ParticleQuantity>FlowSpeed</ParticleQuantity>
+            </Particle>
+        </Parameter>
+        <Parameter>
+            <Name>C/O Delta</Name>
+            <ParameterKey>C/O_Delta</ParameterKey>
+            <Description>Uncertainty (+/-30%) in C/O abundance ratio</Description>
+            <FillValue>-100</FillValue>
+            <Particle>
+                <ParticleType>Ion</ParticleType>
+                <Qualifier>Ratio</Qualifier>
+                <Qualifier>Uncertainty</Qualifier>
+                <ParticleQuantity>NumberDensity</ParticleQuantity> 
+                <AtomicNumber>6</AtomicNumber>
+                <AtomicNumber>8</AtomicNumber>
+            </Particle>
+        </Parameter>
+        <Parameter>
+            <Name>C Delta</Name>
+            <ParameterKey>C_Delta</ParameterKey>
+            <Description>Uncertainty (+/- 10%) in C ionization temperature from C5 and C6</Description>
+            <Units>MK</Units>
+            <FillValue>-100</FillValue>
+            <Particle>
+                <ParticleType>Ion</ParticleType>
+                <Qualifier>Uncertainty</Qualifier>
+                <ParticleQuantity>Temperature</ParticleQuantity>     
+                <AtomicNumber>6</AtomicNumber>
+            </Particle>
+        </Parameter>
+        <Parameter>
+            <Name>O Delta</Name>
+            <ParameterKey>O_Delta</ParameterKey>
+            <Description>Uncertainty (+/- 10%) in O ionization temperature from O7 and O6</Description>
+            <Units>MK</Units>
+            <FillValue>-100</FillValue>
+            <Particle>
+                <ParticleType>Ion</ParticleType>
+                <Qualifier>Uncertainty</Qualifier>
+                <ParticleQuantity>Temperature</ParticleQuantity>    
+                <AtomicNumber>8</AtomicNumber>
+            </Particle>
+        </Parameter>
+        <Parameter>
+            <Name>Data Quality Flag</Name>
+            <ParameterKey>DQF_1</ParameterKey>
+            <Description>Data Quality Flag (0=Good, 2=Fair, 4=Poor)</Description>
+            <Support>
+               <SupportQuantity>Other</SupportQuantity>
+            </Support>
+        </Parameter>
+    </NumericalData>
+</Spase>

@@ -1,0 +1,393 @@
+<?xml version="1.0"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><title>SPASE Resource Description</title><script type="application/ld+json">{
+		"@context": "https://schema.org/",
+		"@type" :"Dataset",
+		"name": "PSP Solar Wind Electrons Alphas and Protons (SWEAP) SPAN-B Electron Energy Spectra, Level 2 (L2), 1.74 s Data",
+     
+ 		"description": "SPAN-E Level 2 ELectron Energy Spectra Data\n-------------------------------------------\n\nFile Naming Format: psp_swp_spb_sf1_L2_32E_YYYYMMDD_v01.cdf\n\nThe SF1 product is an energy spectrum produced on the spacecraft by summing over the Theta and Phi directions. The units are differential energy flux and eV. The sample filename above includes 32 Energies.\n\nThe larger Theta angles (deflection angles) are artificially enhanced in the \"sf1\" energy spectra data products due to the method of spectra production on the SPAN-E instrument (straight summing). Thus, SF1 energy spectra are not recommended for rigid statistical analysis.\n\nParker Solar Probe SWEAP Solar Probe Analyzer, SPAN, Electron Data Release Notes\n--------------------------------------------------------------------------------\n\nNovember 19, 2019 Initial Data Release\n--------------------------------------\n\nOverview of Measurements\n------------------------\n\nThe SWEAP team is pleased to release the data from Encounter 1 and Encounter 2. The files contain data from the time range October 31, 2018 - June 18, 2019.\n\nThe prime mission of Parker Solar Probe is to take data when within 0.25 AU of the Sun during its orbit. However, there has been some extended campaign measurements outside of this distance. The data are available for those days that are within 0.25 AU as well as those days when the instruments were operational outside of 0.25 AU.\n\nEach SWEAP data file includes a set of a particular type of measurements over a single observing day. Measurements are provided in Common Data Format (CDF), a self-documenting data framework for which convenient open source tools exist across most scientific computing platforms. Users are strongly encouraged to consult the global metadata in each file, and the metadata that are linked to each variable. The metadata includes comprehensive listings of relevant information, including units, coordinate systems, qualitative descriptions, measurement uncertainties, methodologies, links to further documentation, and so forth.\n\nSPAN-E Level 2 Version 01 Release Notes\n---------------------------------------\n\nThe SPAN-Ae and SPAN-B instruments together have fields of view covering &gt;90% of the sky; major obstructions to the FOV include the spacecraft heat shield and other intrusions by spacecraft components. Each individual SPAN-E has FOV of ±60° in Theta and 240° in Phi. The rotation matrices to convert into the spacecraft frame can be found in the individual CDF files, or in the instrument paper.\n\nThis data set covers all periods for which the instrument was turned on and taking data in the solar wind in ion mode. This includes maneuvers affecting the spacecraft attitude and orientation. Measurements taken by SPAN-B when the spacecraft is pointed away from the sun are taken in sunlight.\n\nThe data quality flags for the SPAN data can be found in the CDF files as: QUALITY_FLAG (0=good, 1=bad)\n\nGeneral Remarks for Version 01 Data\n-----------------------------------\n\nUsers interested in field-aligned electrons should take care regarding potential blockages from the heat shield when B is near radial, especially in SPAN-Ae. Artificial reductions in strahl width can result.\n\nDue to the relatively high electron temperature in the inner heliosphere, many secondary electrons are generated from spacecraft and instrument surfaces. As a result, electron measurements in this release below 30 eV are not advised for scientific analysis.\n\nThe fields of view in SPAN-Ae and SPAN-B have many intrusions by the spacecraft, and erroneous pixels discovered in analysis, in particular near the edges of the FOV, should be viewed with skepticism. Details on FOV intrusion are found in the instrument paper, forthcoming, or by contacting the SPAN-E instrument scientist.\n\nThe instrument mechanical attentuators are engaged during the eight days around perihelia 1 and perihelia 2, which results in a factor of about 10 reduction of the total electron flux into the instrument. During these eight days, halo electron measurements are artificially enhanced in the L2 products as a result of the reduced instrument geometric factor and subsequent ground corrections.\n\nA general note for Encounter 1 and Encounter 2 data: a miscalculation in the deflection tables loaded to both SPAN-Ae and SPAN-B resulted in over-deflection of the outermost Theta angles during these encounters. As such, pixels at large Thetas should be ignored. This error was corrected by a table upload prior to Encounter 3.\n\nLastly, when viewing time gaps in the SPAN-E measurements, be advised that the first data point produced by the instrument after a power-on is the maximum value permitted by internal instrument counters. Therefore, the first data point after powerup is erroneous and should be discarded, as indicated by quality flags.\n\nSPAN-E Encounter 1 Remarks\n--------------------------\n\nSPAN-E operated nominally for the majority of the first encounter. Exceptions to this include: a few instances of corrupted, higher-energy sweep tables, and an instrument commanding error for the two hours surrounding perihelion 1. These and other instrument diagnostic tests are indicated with the QUALITY_FLAG variable in the CDFs.\n\nThe mechanical attentuator was engaged for the 8 days around perihelion 1: as a result the microchannel plate, MCP, noise due to thermal effects and cosmic rays are artificially enhanced and are particularly obvious at higher energies. Exercise caution with this data release if looking for halo electrons when the mechanical attenuator is engaged.\n\nSPAN-E Cruise Phase Remarks\n---------------------------\n\nThe cruise mode rates of SPAN-E are greatly reduced compared to the encounter mode rates. When the PSP spacecraft is in a communications slew, the SPAN-B instrument occasionally reaches its maximum allowable operating temperature and is powered off by SWEM.\n\nTiming for the SF1 products in cruise phase is not corrected in v01, and thus it is not advised to use the data at this time for scientific analysis. The typical return of SF0 products is one spectrum out of every 32 survey spectra is returned every 15 minutes or so. One out of every four 27.75 s SF1 spectra is produced every 111 s.\n\nSPAN-E Encounter 2 Remarks\n--------------------------\n\nSPAN-E operated nominally for the majority of the second encounter. Exceptions include instrument diagnostic and health checks and a few instances of corrupted high-energy sweep tables. These tests and corrupted table loads are indicated with the QUALITY_FLAG parameter.\n\nThe mechanical attentuator was engaged for the 8 days around perihelion 2: as a result the MCP noise due to thermal effects and cosmic rays are artificially enhanced and are particularly obvious at higher energies. Exercise caution in this data release if looking for halo electrons when the mechanical attenuator is engaged.\n\nParker Solar Probe SWEAP Rules of the Road\n------------------------------------------\n\nAs part of the development of collaboration with the broader Heliophysics community, the mission has drafted a \"Rules of the Road\" to govern how PSP instrument data are to be used.\n\n* 1) Users should consult with the PI to discuss the appropriate use of instrument data or model results and to ensure that the users are accessing the most recently available versions of the data and of the analysis routines. Instrument team Science Operations Centers, SOCs, and/or Virtual Observatories, VOs, should facilitate this process serving as the contact point between PI and users in most cases.\n\n* 2) Users should heed the caveats of investigators to the interpretations and limitations of data or model results. Investigators supplying data or models may insist that such caveats be published. Data and model version numbers should also be specified.\n\n* 3) Browse products, Quicklook, and Planning data are not intended for science analysis or publication and should not be used for those purposes without consent of the PI.\n\n* 4) Users should acknowledge the sources of data used in all publications, presentations, and reports: \"We acknowledge the NASA Parker Solar Probe Mission and the SWEAP team led by J. Kasper for use of data.\".\n\n* 5) Users are encouraged to provide the PI a copy of each manuscript that uses the PI data prior to submission of that manuscript for consideration of publication. On publication, the citation should be transmitted to the PI and any other providers of data.",
+		"abstract": "SPAN-E Level 2 ELectron Energy Spectra Data\n-------------------------------------------\n\nFile Naming Format: psp_swp_spb_sf1_L2_32E_YYYYMMDD_v01.cdf\n\nThe SF1 product is an energy spectrum produced on the spacecraft by summing over the Theta and Phi directions. The units are differential energy flux and eV. The sample filename above includes 32 Energies.\n\nThe larger Theta angles (deflection angles) are artificially enhanced in the \"sf1\" energy spectra data products due to the method of spectra production on the SPAN-E instrument (straight summing). Thus, SF1 energy spectra are not recommended for rigid statistical analysis.\n\nParker Solar Probe SWEAP Solar Probe Analyzer, SPAN, Electron Data Release Notes\n--------------------------------------------------------------------------------\n\nNovember 19, 2019 Initial Data Release\n--------------------------------------\n\nOverview of Measurements\n------------------------\n\nThe SWEAP team is pleased to release the data from Encounter 1 and Encounter 2. The files contain data from the time range October 31, 2018 - June 18, 2019.\n\nThe prime mission of Parker Solar Probe is to take data when within 0.25 AU of the Sun during its orbit. However, there has been some extended campaign measurements outside of this distance. The data are available for those days that are within 0.25 AU as well as those days when the instruments were operational outside of 0.25 AU.\n\nEach SWEAP data file includes a set of a particular type of measurements over a single observing day. Measurements are provided in Common Data Format (CDF), a self-documenting data framework for which convenient open source tools exist across most scientific computing platforms. Users are strongly encouraged to consult the global metadata in each file, and the metadata that are linked to each variable. The metadata includes comprehensive listings of relevant information, including units, coordinate systems, qualitative descriptions, measurement uncertainties, methodologies, links to further documentation, and so forth.\n\nSPAN-E Level 2 Version 01 Release Notes\n---------------------------------------\n\nThe SPAN-Ae and SPAN-B instruments together have fields of view covering &gt;90% of the sky; major obstructions to the FOV include the spacecraft heat shield and other intrusions by spacecraft components. Each individual SPAN-E has FOV of ±60° in Theta and 240° in Phi. The rotation matrices to convert into the spacecraft frame can be found in the individual CDF files, or in the instrument paper.\n\nThis data set covers all periods for which the instrument was turned on and taking data in the solar wind in ion mode. This includes maneuvers affecting the spacecraft attitude and orientation. Measurements taken by SPAN-B when the spacecraft is pointed away from the sun are taken in sunlight.\n\nThe data quality flags for the SPAN data can be found in the CDF files as: QUALITY_FLAG (0=good, 1=bad)\n\nGeneral Remarks for Version 01 Data\n-----------------------------------\n\nUsers interested in field-aligned electrons should take care regarding potential blockages from the heat shield when B is near radial, especially in SPAN-Ae. Artificial reductions in strahl width can result.\n\nDue to the relatively high electron temperature in the inner heliosphere, many secondary electrons are generated from spacecraft and instrument surfaces. As a result, electron measurements in this release below 30 eV are not advised for scientific analysis.\n\nThe fields of view in SPAN-Ae and SPAN-B have many intrusions by the spacecraft, and erroneous pixels discovered in analysis, in particular near the edges of the FOV, should be viewed with skepticism. Details on FOV intrusion are found in the instrument paper, forthcoming, or by contacting the SPAN-E instrument scientist.\n\nThe instrument mechanical attentuators are engaged during the eight days around perihelia 1 and perihelia 2, which results in a factor of about 10 reduction of the total electron flux into the instrument. During these eight days, halo electron measurements are artificially enhanced in the L2 products as a result of the reduced instrument geometric factor and subsequent ground corrections.\n\nA general note for Encounter 1 and Encounter 2 data: a miscalculation in the deflection tables loaded to both SPAN-Ae and SPAN-B resulted in over-deflection of the outermost Theta angles during these encounters. As such, pixels at large Thetas should be ignored. This error was corrected by a table upload prior to Encounter 3.\n\nLastly, when viewing time gaps in the SPAN-E measurements, be advised that the first data point produced by the instrument after a power-on is the maximum value permitted by internal instrument counters. Therefore, the first data point after powerup is erroneous and should be discarded, as indicated by quality flags.\n\nSPAN-E Encounter 1 Remarks\n--------------------------\n\nSPAN-E operated nominally for the majority of the first encounter. Exceptions to this include: a few instances of corrupted, higher-energy sweep tables, and an instrument commanding error for the two hours surrounding perihelion 1. These and other instrument diagnostic tests are indicated with the QUALITY_FLAG variable in the CDFs.\n\nThe mechanical attentuator was engaged for the 8 days around perihelion 1: as a result the microchannel plate, MCP, noise due to thermal effects and cosmic rays are artificially enhanced and are particularly obvious at higher energies. Exercise caution with this data release if looking for halo electrons when the mechanical attenuator is engaged.\n\nSPAN-E Cruise Phase Remarks\n---------------------------\n\nThe cruise mode rates of SPAN-E are greatly reduced compared to the encounter mode rates. When the PSP spacecraft is in a communications slew, the SPAN-B instrument occasionally reaches its maximum allowable operating temperature and is powered off by SWEM.\n\nTiming for the SF1 products in cruise phase is not corrected in v01, and thus it is not advised to use the data at this time for scientific analysis. The typical return of SF0 products is one spectrum out of every 32 survey spectra is returned every 15 minutes or so. One out of every four 27.75 s SF1 spectra is produced every 111 s.\n\nSPAN-E Encounter 2 Remarks\n--------------------------\n\nSPAN-E operated nominally for the majority of the second encounter. Exceptions include instrument diagnostic and health checks and a few instances of corrupted high-energy sweep tables. These tests and corrupted table loads are indicated with the QUALITY_FLAG parameter.\n\nThe mechanical attentuator was engaged for the 8 days around perihelion 2: as a result the MCP noise due to thermal effects and cosmic rays are artificially enhanced and are particularly obvious at higher energies. Exercise caution in this data release if looking for halo electrons when the mechanical attenuator is engaged.\n\nParker Solar Probe SWEAP Rules of the Road\n------------------------------------------\n\nAs part of the development of collaboration with the broader Heliophysics community, the mission has drafted a \"Rules of the Road\" to govern how PSP instrument data are to be used.\n\n* 1) Users should consult with the PI to discuss the appropriate use of instrument data or model results and to ensure that the users are accessing the most recently available versions of the data and of the analysis routines. Instrument team Science Operations Centers, SOCs, and/or Virtual Observatories, VOs, should facilitate this process serving as the contact point between PI and users in most cases.\n\n* 2) Users should heed the caveats of investigators to the interpretations and limitations of data or model results. Investigators supplying data or models may insist that such caveats be published. Data and model version numbers should also be specified.\n\n* 3) Browse products, Quicklook, and Planning data are not intended for science analysis or publication and should not be used for those purposes without consent of the PI.\n\n* 4) Users should acknowledge the sources of data used in all publications, presentations, and reports: \"We acknowledge the NASA Parker Solar Probe Mission and the SWEAP team led by J. Kasper for use of data.\".\n\n* 5) Users are encouraged to provide the PI a copy of each manuscript that uses the PI data prior to submission of that manuscript for consideration of publication. On publication, the citation should be transmitted to the PI and any other providers of data.",
+		"temporalCoverage": "1990.10.06  2009.30.06",
+		"keywords": [  ],
+		"license": "https://cdla.io/permissive-1-0/",
+        "audience":{
+            "@type": "Audience",
+            "audienceType": ["Space Physicist", "Space Community", "Data Scientists", "Machine Learning Users"]
+        }
+	  }
+	  </script><style>
+/* http://spase-group.org/tools/xmlviewer */
+/* v1.0 | 20160908 */
+
+* {
+   margin: 0;
+   padding: 0;
+   border: 0;
+   outline: 0;
+   font-size: 100%;
+   vertical-align: baseline;
+   background: transparent;
+}
+
+body {
+	background-color: #f0f0f0; // #eaf5e9; #277bc0; #d3d3f9;
+	color: black;
+	font-family: Verdana, Arial, sans-serif; 
+	font-size:12px; 
+	line-height: 1.2;
+}
+ 
+h1,h2,h3,h4,h5,h6 {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-weight:bold;
+}
+
+h1 {
+	font-size: 140%;
+}
+
+h2 {
+	font-size: 120%;
+}
+
+h3 {
+	font-size: 110%;
+	font-style: oblique;
+}
+
+p {
+	margin-bottom: 0.75ex;
+}
+
+dt {
+	margin-top: 5px;
+	padding-left: 5px;
+	border-top: 1px solid #DDD;
+	font-weight: bold;
+}
+
+dd {
+	margin-left: 5ex;
+}
+
+a:link,
+a:visited {
+   color: #277bc0;/* #339;*/
+   font-weight:bolder; 
+   text-decoration:none; 
+}
+
+a:hover {
+   color: blue;
+   font-weight:bolder; 
+   text-decoration:underline; 
+}
+
+ul {
+	list-style: square inside ;
+	margin-bottom: 0.75ex;
+}
+
+table {
+   border: thin solid #666;
+	margin-top: 5px;
+	margin-bottom: 10px;
+}
+
+thead,tbody {
+   border: thin solid #666;
+}
+
+td, th {
+   margin: 0;
+	padding: 2px 2px 2px 2px;
+}
+
+th {
+	font-style: oblique;
+}
+
+h1.detail {
+}
+
+.header {
+	width:100%;
+	padding: 1em 10px 1em 10px;
+	color: #fff;
+	background: #5e87b0;
+	font-weight: bold;
+	text-shadow: 0 /*{b-bar-shadow-x}*/ 1px /*{b-bar-shadow-y}*/ 1px /*{b-bar-shadow-radius}*/ #3e6790 /*{b-bar-shadow-color}*/;
+	text-align: center;
+	font-size: 16px;
+	display: block;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	outline: 0 !important;
+}
+
+.inset {
+	margin-left: 22%;
+}
+
+.page {
+	padding: 10px 3% 10px 3%;
+}
+
+div.product {
+	background-color: white;
+	border: thin solid #333;
+	padding: 10px 15px 10px 15px;
+	margin-top: 10px;
+}
+
+div.parameter {
+	margin-top: 10px;
+	padding: 5px 10px 10px 10px;
+	border: thin dotted #333;
+	background-color: #ebebeb;
+}
+
+dt.parameter {
+	margin-top: 10px;
+	padding: 5px 10px 10px 10px;
+	border: thin dotted #333;
+	background-color: #ebebeb;
+}
+
+#toc {
+   border: thin solid #333;
+   background-color: #F5F5F5; 
+   padding: 10px 15px 10px 15px;
+   margin-left: 5%;
+   margin-right: 5%;
+   margin-bottom: 30px;
+}
+
+#toc ol, ul, li {
+	padding-left: 5ex;
+}
+
+#toc ol {
+	list-style-type: decimal;
+	list-style-position: inside; 
+}
+
+#toc ul {
+	list-style-type: square;
+	list-style-position: inside; 
+}
+
+p.version {
+  float: right;
+  width: 100%;
+  margin-top: 5px;
+  text-align: right;
+  font-size: x-small;
+}
+
+p.right {
+  float: right;
+  text-align: right;
+}
+
+.box-title {
+	font-size: 120%;
+	font-weight:bold;
+	text-align: center;
+	border-bottom: 1px solid #DDD;
+}
+
+ul.list {
+	list-style-position: outside;
+	padding-left: 1.5em;
+}
+
+li.list {
+	text-align: left;
+	padding-left: 0px;
+}
+
+.no-break {
+	white-space: nowrap;
+}
+
+p.author {
+	font-size: 120%;
+}
+
+div.brand {
+	width: 100%;
+	text-align: right;
+}
+
+div.abstract {
+	display: table;
+	position: relative;
+	width: 100%;
+}
+
+div.citation {
+}
+
+div.access {
+	float: left;
+	width: 20%;
+	background-color: white;
+	border: thin solid #333;
+	padding: 5px 5px 5px 5px;
+	margin-right: 1em;
+}
+
+a.xml-logo:link,
+a.xml-logo:visited {
+   background: #ff6600;
+   color: #ffffff;
+   font-weight:bolder; 
+   text-decoration:none; 
+   padding-left:2px;
+   padding-right:2px;
+}
+a.xml-logo:hover {
+   text-decoration:underline; 
+}
+
+	  </style></head><body><div><a id="top"/></div><div class="header"><div class="middle">HPDE.io</div></div><div class="page"><div class="spase"><div class="abstract"><div class="access"><p class="box-title">Data Access</p><ul class="list"><li class="list"><a target="_blank" href="ftps://spdf.gsfc.nasa.gov/pub/data/psp/sweap/spe/l2/spb_sf1_32e/">FTPS from SPDF (not with most browsers)</a></li><li class="list"><a target="_blank" href="https://spdf.gsfc.nasa.gov/pub/data/psp/sweap/spe/l2/spb_sf1_32e/">HTTPS from SPDF</a></li><li class="list"><a target="_blank" href="https://cdaweb.sci.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=PSP_SWP_SPB_SF1_L2_32E&amp;index=sp_phys">CDAWeb</a></li></ul></div><div class="citation inset"><h1><a name="spase://VSPO/NumericalData/ParkerSolarProbe/SWEAP/SPAN-B/Level2/ProtonAlphaFullSpectra/PT1.74S">PSP Solar Wind Electrons Alphas and Protons (SWEAP) SPAN-B Electron Energy Spectra, Level 2 (L2), 1.74 s Data</a></h1><p><dt>ResourceID</dt><dd>spase://VSPO/NumericalData/ParkerSolarProbe/SWEAP/SPAN-B/Level2/ProtonAlphaFullSpectra/PT1.74S</dd></p><p><dt>Description</dt><dd><h2>SPAN-E Level 2 ELectron Energy Spectra Data</h2>
+<p>File Naming Format: psp_swp_spb_sf1_L2_32E_YYYYMMDD_v01.cdf</p>
+<p>The SF1 product is an energy spectrum produced on the spacecraft by summing over the Theta and Phi directions. The units are differential energy flux and eV. The sample filename above includes 32 Energies.</p>
+<p>The larger Theta angles (deflection angles) are artificially enhanced in the &quot;sf1&quot; energy spectra data products due to the method of spectra production on the SPAN-E instrument (straight summing). Thus, SF1 energy spectra are not recommended for rigid statistical analysis.</p>
+<h2>Parker Solar Probe SWEAP Solar Probe Analyzer, SPAN, Electron Data Release Notes</h2>
+<h2>November 19, 2019 Initial Data Release</h2>
+<h2>Overview of Measurements</h2>
+<p>The SWEAP team is pleased to release the data from Encounter 1 and Encounter 2. The files contain data from the time range October 31, 2018 - June 18, 2019.</p>
+<p>The prime mission of Parker Solar Probe is to take data when within 0.25 AU of the Sun during its orbit. However, there has been some extended campaign measurements outside of this distance. The data are available for those days that are within 0.25 AU as well as those days when the instruments were operational outside of 0.25 AU.</p>
+<p>Each SWEAP data file includes a set of a particular type of measurements over a single observing day. Measurements are provided in Common Data Format (CDF), a self-documenting data framework for which convenient open source tools exist across most scientific computing platforms. Users are strongly encouraged to consult the global metadata in each file, and the metadata that are linked to each variable. The metadata includes comprehensive listings of relevant information, including units, coordinate systems, qualitative descriptions, measurement uncertainties, methodologies, links to further documentation, and so forth.</p>
+<h2>SPAN-E Level 2 Version 01 Release Notes</h2>
+<p>The SPAN-Ae and SPAN-B instruments together have fields of view covering &gt;90% of the sky; major obstructions to the FOV include the spacecraft heat shield and other intrusions by spacecraft components. Each individual SPAN-E has FOV of ±60° in Theta and 240° in Phi. The rotation matrices to convert into the spacecraft frame can be found in the individual CDF files, or in the instrument paper.</p>
+<p>This data set covers all periods for which the instrument was turned on and taking data in the solar wind in ion mode. This includes maneuvers affecting the spacecraft attitude and orientation. Measurements taken by SPAN-B when the spacecraft is pointed away from the sun are taken in sunlight.</p>
+<p>The data quality flags for the SPAN data can be found in the CDF files as: QUALITY_FLAG (0=good, 1=bad)</p>
+<h2>General Remarks for Version 01 Data</h2>
+<p>Users interested in field-aligned electrons should take care regarding potential blockages from the heat shield when B is near radial, especially in SPAN-Ae. Artificial reductions in strahl width can result.</p>
+<p>Due to the relatively high electron temperature in the inner heliosphere, many secondary electrons are generated from spacecraft and instrument surfaces. As a result, electron measurements in this release below 30 eV are not advised for scientific analysis.</p>
+<p>The fields of view in SPAN-Ae and SPAN-B have many intrusions by the spacecraft, and erroneous pixels discovered in analysis, in particular near the edges of the FOV, should be viewed with skepticism. Details on FOV intrusion are found in the instrument paper, forthcoming, or by contacting the SPAN-E instrument scientist.</p>
+<p>The instrument mechanical attentuators are engaged during the eight days around perihelia 1 and perihelia 2, which results in a factor of about 10 reduction of the total electron flux into the instrument. During these eight days, halo electron measurements are artificially enhanced in the L2 products as a result of the reduced instrument geometric factor and subsequent ground corrections.</p>
+<p>A general note for Encounter 1 and Encounter 2 data: a miscalculation in the deflection tables loaded to both SPAN-Ae and SPAN-B resulted in over-deflection of the outermost Theta angles during these encounters. As such, pixels at large Thetas should be ignored. This error was corrected by a table upload prior to Encounter 3.</p>
+<p>Lastly, when viewing time gaps in the SPAN-E measurements, be advised that the first data point produced by the instrument after a power-on is the maximum value permitted by internal instrument counters. Therefore, the first data point after powerup is erroneous and should be discarded, as indicated by quality flags.</p>
+<h2>SPAN-E Encounter 1 Remarks</h2>
+<p>SPAN-E operated nominally for the majority of the first encounter. Exceptions to this include: a few instances of corrupted, higher-energy sweep tables, and an instrument commanding error for the two hours surrounding perihelion 1. These and other instrument diagnostic tests are indicated with the QUALITY_FLAG variable in the CDFs.</p>
+<p>The mechanical attentuator was engaged for the 8 days around perihelion 1: as a result the microchannel plate, MCP, noise due to thermal effects and cosmic rays are artificially enhanced and are particularly obvious at higher energies. Exercise caution with this data release if looking for halo electrons when the mechanical attenuator is engaged.</p>
+<h2>SPAN-E Cruise Phase Remarks</h2>
+<p>The cruise mode rates of SPAN-E are greatly reduced compared to the encounter mode rates. When the PSP spacecraft is in a communications slew, the SPAN-B instrument occasionally reaches its maximum allowable operating temperature and is powered off by SWEM.</p>
+<p>Timing for the SF1 products in cruise phase is not corrected in v01, and thus it is not advised to use the data at this time for scientific analysis. The typical return of SF0 products is one spectrum out of every 32 survey spectra is returned every 15 minutes or so. One out of every four 27.75 s SF1 spectra is produced every 111 s.</p>
+<h2>SPAN-E Encounter 2 Remarks</h2>
+<p>SPAN-E operated nominally for the majority of the second encounter. Exceptions include instrument diagnostic and health checks and a few instances of corrupted high-energy sweep tables. These tests and corrupted table loads are indicated with the QUALITY_FLAG parameter.</p>
+<p>The mechanical attentuator was engaged for the 8 days around perihelion 2: as a result the MCP noise due to thermal effects and cosmic rays are artificially enhanced and are particularly obvious at higher energies. Exercise caution in this data release if looking for halo electrons when the mechanical attenuator is engaged.</p>
+<h2>Parker Solar Probe SWEAP Rules of the Road</h2>
+<p>As part of the development of collaboration with the broader Heliophysics community, the mission has drafted a &quot;Rules of the Road&quot; to govern how PSP instrument data are to be used.</p>
+<ul>
+<li><ol>
+<li>Users should consult with the PI to discuss the appropriate use of instrument data or model results and to ensure that the users are accessing the most recently available versions of the data and of the analysis routines. Instrument team Science Operations Centers, SOCs, and/or Virtual Observatories, VOs, should facilitate this process serving as the contact point between PI and users in most cases.</li>
+</ol></li>
+<li><ol start="2">
+<li>Users should heed the caveats of investigators to the interpretations and limitations of data or model results. Investigators supplying data or models may insist that such caveats be published. Data and model version numbers should also be specified.</li>
+</ol></li>
+<li><ol start="3">
+<li>Browse products, Quicklook, and Planning data are not intended for science analysis or publication and should not be used for those purposes without consent of the PI.</li>
+</ol></li>
+<li><ol start="4">
+<li>Users should acknowledge the sources of data used in all publications, presentations, and reports: &quot;We acknowledge the NASA Parker Solar Probe Mission and the SWEAP team led by J. Kasper for use of data.&quot;.</li>
+</ol></li>
+<li><ol start="5">
+<li>Users are encouraged to provide the PI a copy of each manuscript that uses the PI data prior to submission of that manuscript for consideration of publication. On publication, the citation should be transmitted to the PI and any other providers of data.</li>
+</ol></li>
+</ul>
+</dd></p></div></div><div><p class="right"><a target="_blank" href="PT1.74S.xml">View XML</a> | <a target="_blank" href="PT1.74S.json">View JSON</a></p><h1 class="detail">Details</h1></div><div><div class="product"><p class="version">Version:2.3.1</p><h1>NumericalData</h1><dt>ResourceID</dt><dd>spase://VSPO/NumericalData/ParkerSolarProbe/SWEAP/SPAN-B/Level2/ProtonAlphaFullSpectra/PT1.74S</dd><dl><dt>ResourceHeader</dt><dd><dl><dt>ResourceName</dt><dd>PSP Solar Wind Electrons Alphas and Protons (SWEAP) SPAN-B Electron Energy Spectra, Level 2 (L2), 1.74 s Data</dd></dl><dl><dt>ReleaseDate</dt><dd>2020-07-03 23:28:58Z</dd></dl><dt>Description</dt><dd><h2>SPAN-E Level 2 ELectron Energy Spectra Data</h2>
+<p>File Naming Format: psp_swp_spb_sf1_L2_32E_YYYYMMDD_v01.cdf</p>
+<p>The SF1 product is an energy spectrum produced on the spacecraft by summing over the Theta and Phi directions. The units are differential energy flux and eV. The sample filename above includes 32 Energies.</p>
+<p>The larger Theta angles (deflection angles) are artificially enhanced in the &quot;sf1&quot; energy spectra data products due to the method of spectra production on the SPAN-E instrument (straight summing). Thus, SF1 energy spectra are not recommended for rigid statistical analysis.</p>
+<h2>Parker Solar Probe SWEAP Solar Probe Analyzer, SPAN, Electron Data Release Notes</h2>
+<h2>November 19, 2019 Initial Data Release</h2>
+<h2>Overview of Measurements</h2>
+<p>The SWEAP team is pleased to release the data from Encounter 1 and Encounter 2. The files contain data from the time range October 31, 2018 - June 18, 2019.</p>
+<p>The prime mission of Parker Solar Probe is to take data when within 0.25 AU of the Sun during its orbit. However, there has been some extended campaign measurements outside of this distance. The data are available for those days that are within 0.25 AU as well as those days when the instruments were operational outside of 0.25 AU.</p>
+<p>Each SWEAP data file includes a set of a particular type of measurements over a single observing day. Measurements are provided in Common Data Format (CDF), a self-documenting data framework for which convenient open source tools exist across most scientific computing platforms. Users are strongly encouraged to consult the global metadata in each file, and the metadata that are linked to each variable. The metadata includes comprehensive listings of relevant information, including units, coordinate systems, qualitative descriptions, measurement uncertainties, methodologies, links to further documentation, and so forth.</p>
+<h2>SPAN-E Level 2 Version 01 Release Notes</h2>
+<p>The SPAN-Ae and SPAN-B instruments together have fields of view covering &gt;90% of the sky; major obstructions to the FOV include the spacecraft heat shield and other intrusions by spacecraft components. Each individual SPAN-E has FOV of ±60° in Theta and 240° in Phi. The rotation matrices to convert into the spacecraft frame can be found in the individual CDF files, or in the instrument paper.</p>
+<p>This data set covers all periods for which the instrument was turned on and taking data in the solar wind in ion mode. This includes maneuvers affecting the spacecraft attitude and orientation. Measurements taken by SPAN-B when the spacecraft is pointed away from the sun are taken in sunlight.</p>
+<p>The data quality flags for the SPAN data can be found in the CDF files as: QUALITY_FLAG (0=good, 1=bad)</p>
+<h2>General Remarks for Version 01 Data</h2>
+<p>Users interested in field-aligned electrons should take care regarding potential blockages from the heat shield when B is near radial, especially in SPAN-Ae. Artificial reductions in strahl width can result.</p>
+<p>Due to the relatively high electron temperature in the inner heliosphere, many secondary electrons are generated from spacecraft and instrument surfaces. As a result, electron measurements in this release below 30 eV are not advised for scientific analysis.</p>
+<p>The fields of view in SPAN-Ae and SPAN-B have many intrusions by the spacecraft, and erroneous pixels discovered in analysis, in particular near the edges of the FOV, should be viewed with skepticism. Details on FOV intrusion are found in the instrument paper, forthcoming, or by contacting the SPAN-E instrument scientist.</p>
+<p>The instrument mechanical attentuators are engaged during the eight days around perihelia 1 and perihelia 2, which results in a factor of about 10 reduction of the total electron flux into the instrument. During these eight days, halo electron measurements are artificially enhanced in the L2 products as a result of the reduced instrument geometric factor and subsequent ground corrections.</p>
+<p>A general note for Encounter 1 and Encounter 2 data: a miscalculation in the deflection tables loaded to both SPAN-Ae and SPAN-B resulted in over-deflection of the outermost Theta angles during these encounters. As such, pixels at large Thetas should be ignored. This error was corrected by a table upload prior to Encounter 3.</p>
+<p>Lastly, when viewing time gaps in the SPAN-E measurements, be advised that the first data point produced by the instrument after a power-on is the maximum value permitted by internal instrument counters. Therefore, the first data point after powerup is erroneous and should be discarded, as indicated by quality flags.</p>
+<h2>SPAN-E Encounter 1 Remarks</h2>
+<p>SPAN-E operated nominally for the majority of the first encounter. Exceptions to this include: a few instances of corrupted, higher-energy sweep tables, and an instrument commanding error for the two hours surrounding perihelion 1. These and other instrument diagnostic tests are indicated with the QUALITY_FLAG variable in the CDFs.</p>
+<p>The mechanical attentuator was engaged for the 8 days around perihelion 1: as a result the microchannel plate, MCP, noise due to thermal effects and cosmic rays are artificially enhanced and are particularly obvious at higher energies. Exercise caution with this data release if looking for halo electrons when the mechanical attenuator is engaged.</p>
+<h2>SPAN-E Cruise Phase Remarks</h2>
+<p>The cruise mode rates of SPAN-E are greatly reduced compared to the encounter mode rates. When the PSP spacecraft is in a communications slew, the SPAN-B instrument occasionally reaches its maximum allowable operating temperature and is powered off by SWEM.</p>
+<p>Timing for the SF1 products in cruise phase is not corrected in v01, and thus it is not advised to use the data at this time for scientific analysis. The typical return of SF0 products is one spectrum out of every 32 survey spectra is returned every 15 minutes or so. One out of every four 27.75 s SF1 spectra is produced every 111 s.</p>
+<h2>SPAN-E Encounter 2 Remarks</h2>
+<p>SPAN-E operated nominally for the majority of the second encounter. Exceptions include instrument diagnostic and health checks and a few instances of corrupted high-energy sweep tables. These tests and corrupted table loads are indicated with the QUALITY_FLAG parameter.</p>
+<p>The mechanical attentuator was engaged for the 8 days around perihelion 2: as a result the MCP noise due to thermal effects and cosmic rays are artificially enhanced and are particularly obvious at higher energies. Exercise caution in this data release if looking for halo electrons when the mechanical attenuator is engaged.</p>
+<h2>Parker Solar Probe SWEAP Rules of the Road</h2>
+<p>As part of the development of collaboration with the broader Heliophysics community, the mission has drafted a &quot;Rules of the Road&quot; to govern how PSP instrument data are to be used.</p>
+<ul>
+<li><ol>
+<li>Users should consult with the PI to discuss the appropriate use of instrument data or model results and to ensure that the users are accessing the most recently available versions of the data and of the analysis routines. Instrument team Science Operations Centers, SOCs, and/or Virtual Observatories, VOs, should facilitate this process serving as the contact point between PI and users in most cases.</li>
+</ol></li>
+<li><ol start="2">
+<li>Users should heed the caveats of investigators to the interpretations and limitations of data or model results. Investigators supplying data or models may insist that such caveats be published. Data and model version numbers should also be specified.</li>
+</ol></li>
+<li><ol start="3">
+<li>Browse products, Quicklook, and Planning data are not intended for science analysis or publication and should not be used for those purposes without consent of the PI.</li>
+</ol></li>
+<li><ol start="4">
+<li>Users should acknowledge the sources of data used in all publications, presentations, and reports: &quot;We acknowledge the NASA Parker Solar Probe Mission and the SWEAP team led by J. Kasper for use of data.&quot;.</li>
+</ol></li>
+<li><ol start="5">
+<li>Users are encouraged to provide the PI a copy of each manuscript that uses the PI data prior to submission of that manuscript for consideration of publication. On publication, the citation should be transmitted to the PI and any other providers of data.</li>
+</ol></li>
+</ul>
+</dd><dl><dt>Acknowledgement</dt><dd>Please acknowledge the Principal Investigator J.C. Kasper for use of the Data</dd></dl><dt>Contacts</dt><dd><table class="nested" cellspacing="0"><tr><th/><th class="center">Role</th><th class="center">Person</th></tr><tbody><tr><td>1.</td><td>PrincipalInvestigator</td><td><a target="_blank" href="https://hpde.io/SMWG/Person/Justin.C.Kasper.html">spase://SMWG/Person/Justin.C.Kasper</a></td></tr><tr><td>2.</td><td>MetadataContact</td><td><a target="_blank" href="https://hpde.io/SMWG/Person/Robert.M.Candey.html">spase://SMWG/Person/Robert.M.Candey</a></td></tr><tr><td>3.</td><td>MetadataContact</td><td><a target="_blank" href="https://hpde.io/SMWG/Person/Lee.Frost.Bargatze.html">spase://SMWG/Person/Lee.Frost.Bargatze</a></td></tr></tbody></table></dd><dl><dt>InformationURL</dt><dd><dl><dt>Name</dt><dd>PSP SWEAP Instrument Suite, Space Science Review Publication</dd></dl><dl><dt>URL</dt><dd><a target="_blank" href="https://doi.org/10.1007/s11214-015-0206-3">https://doi.org/10.1007/s11214-015-0206-3</a></dd></dl><dt>Description</dt><dd><p>Parker Solar Probe, PSP, SWEAP Instrument Suite Description: Kasper, J.C., Abiad, R., Austin, G. et al., Solar Wind Electrons Alphas and Protons (SWEAP) Investigation: Design of the Solar Wind and Coronal Plasma Instrument Suite for Solar Probe Plus, Space Scii. Rev., 204, 131–186 (2016)</p>
+</dd></dd></dl><dl><dt>InformationURL</dt><dd><dl><dt>Name</dt><dd>PSP SWEAP home page, SAO</dd></dl><dl><dt>URL</dt><dd><a target="_blank" href="http://sweap.cfa.harvard.edu">http://sweap.cfa.harvard.edu</a></dd></dl><dt>Description</dt><dd><p>Parker Solar Probe, PSP, SWEAP home page, Smithsonian Astrophysical Observatory</p>
+</dd></dd></dl><dl><dt>InformationURL</dt><dd><dl><dt>Name</dt><dd>PSP SWEAP Data Access web site, SAO</dd></dl><dl><dt>URL</dt><dd><a target="_blank" href="http://sweap.cfa.harvard.edu/Data.html">http://sweap.cfa.harvard.edu/Data.html</a></dd></dl><dt>Description</dt><dd><p>Parker Solar Probe, PSP, SWEAP Data Access web site, Smithsonian Astrophysical Observatory</p>
+</dd></dd></dl></dd></dl><dl><dt>AccessInformation</dt><dd><dl><dt>RepositoryID</dt><dd><a href="https://hpde.io/SMWG/Repository/NASA/GSFC/SPDF.html">spase://SMWG/Repository/NASA/GSFC/SPDF</a></dd></dl><dl><dt>Availability</dt><dd>Online</dd></dl><dl><dt>AccessRights</dt><dd>Open</dd></dl><dl><dt>AccessURL</dt><dd><dl><dt>Name</dt><dd>FTPS from SPDF (not with most browsers)</dd></dl><dl><dt>URL</dt><dd><a target="_blank" href="ftps://spdf.gsfc.nasa.gov/pub/data/psp/sweap/spe/l2/spb_sf1_32e/">ftps://spdf.gsfc.nasa.gov/pub/data/psp/sweap/spe/l2/spb_sf1_32e/</a></dd></dl><dt>Description</dt><dd><p>Access to Data in CDF Format via ftp from SPDF</p>
+</dd></dd></dl><dl><dt>AccessURL</dt><dd><dl><dt>Name</dt><dd>HTTPS from SPDF</dd></dl><dl><dt>URL</dt><dd><a target="_blank" href="https://spdf.gsfc.nasa.gov/pub/data/psp/sweap/spe/l2/spb_sf1_32e/">https://spdf.gsfc.nasa.gov/pub/data/psp/sweap/spe/l2/spb_sf1_32e/</a></dd></dl><dt>Description</dt><dd><p>Access to Data in CDF Format via http from SPDF</p>
+</dd></dd></dl><dl><dt>AccessURL</dt><dd><dl><dt>Name</dt><dd>CDAWeb</dd></dl><dl><dt>URL</dt><dd><a target="_blank" href="https://cdaweb.sci.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=PSP_SWP_SPB_SF1_L2_32E&amp;index=sp_phys">https://cdaweb.sci.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=PSP_SWP_SPB_SF1_L2_32E&amp;index=sp_phys</a></dd></dl><dl><dt>ProductKey</dt><dd>PSP_SWP_SPB_SF1_L2_32E</dd></dl><dt>Description</dt><dd><p>Access to ASCII, CDF, and Plots via NASA/GSFC CDAWeb</p>
+</dd></dd></dl><dl><dt>Format</dt><dd>CDF</dd></dl><dl><dt>Encoding</dt><dd>None</dd></dl><dl><dt>Acknowledgement</dt><dd>Please acknowledge the Principal Investigator J.C. Kasper. Please acknowledge the Data Providers and CDAWeb when using these Data.</dd></dl></dd></dl><dl><dt>ProcessingLevel</dt><dd>Calibrated</dd></dl><dt>InstrumentIDs</dt><dd><a target="_blank" href="https://hpde.io/SMWG/Instrument/ParkerSolarProbe/SWEAP/SPAN-B.html">spase://SMWG/Instrument/ParkerSolarProbe/SWEAP/SPAN-B</a></dd><dl><dt>MeasurementType</dt><dd>InstrumentStatus</dd></dl><dl><dt>MeasurementType</dt><dd>ThermalPlasma</dd></dl><dl><dt>TemporalDescription</dt><dd><dl><dt>TimeSpan</dt><dd><dl><dt>StartDate</dt><dd>2018-10-06 00:00:00.000</dd></dl><dl><dt>RelativeStopDate</dt><dd>-P6M</dd></dl></dd></dl><dl><dt>Cadence</dt><dd>PT1.74S</dd></dl></dd></dl><dl><dt>ObservedRegion</dt><dd>Heliosphere</dd></dl><dl><dt>ObservedRegion</dt><dd>Heliosphere.Inner</dd></dl><dl><dt>ObservedRegion</dt><dd>Heliosphere.NearEarth</dd></dl><dl><dt>ObservedRegion</dt><dd>Sun.Corona</dd></dl><dl><dt class="parameter">Parameter #1</dt><dd><dl><dt>Name</dt><dd>Epoch Time, TT2000, Midpoint of Integration</dd></dl><dl><dt>Set</dt><dd>Time Series defined by using: EPOCH</dd></dl><dl><dt>ParameterKey</dt><dd>Epoch</dd></dl><dt>Description</dt><dd><p>Epoch Time Tags, TT2000, Nanoseconds since J2000 at Midpoint of the Integration</p>
+</dd><dl><dt>Caveats</dt><dd>Warning: the Epoch time typically has an irregular cadence owing to frequent changes in the operating mode. TT2000 is measured in nanoseconds from J2000 with leap seconds included. Please refer to CDF TT2000 documentation with regards to this convention. This time corresponds to the first measurement of the spectrum. In accordance with SPDF standards, this epoch is interpreted a CDF_TT2000 time. It is acknowledged here that this epoch is not strictly equal to "terrestrial time" as it is defined in the CDF_TT2000 documentation nor is the calendar date interpreted by CDF_T2000 operation performed on this epoch strictly equal to Coordinated Universal Time, UTC This Parameter exhibits an increasing Monotonic Progression.</dd></dl><dl><dt>Cadence</dt><dd>PT1.74S</dd></dl><dl><dt>Units</dt><dd>ns</dd></dl><dl><dt>UnitsConversion</dt><dd>1.0e-9&gt;s</dd></dl><dl><dt>RenderingHints</dt><dd><dl><dt>AxisLabel</dt><dd>Epoch</dd></dl><dl><dt>ScaleType</dt><dd>LinearScale</dd></dl></dd></dl><dl><dt>ValidMin</dt><dd>01-Jan-1990 00:00:00.000000000</dd></dl><dl><dt>ValidMax</dt><dd>31-Dec-2029 23:59:58.999000000</dd></dl><dl><dt>FillValue</dt><dd>25-Jan-2073 11:55:40.029759487</dd></dl><dl><dt>Support</dt><dd><dl><dt>SupportQuantity</dt><dd>Temporal</dd></dl></dd></dl></dd></dl><dl><dt class="parameter">Parameter #2</dt><dd><dl><dt>Name</dt><dd>Time</dd></dl><dl><dt>Set</dt><dd>Time Series defined by using: EPOCH</dd></dl><dl><dt>ParameterKey</dt><dd>TIME</dd></dl><dt>Description</dt><dd><p>Time</p>
+</dd><dl><dt>Caveats</dt><dd>This Parameter exhibits an increasing Monotonic Progression</dd></dl><dl><dt>Cadence</dt><dd>PT1.74S</dd></dl><dl><dt>Units</dt><dd>s</dd></dl><dl><dt>RenderingHints</dt><dd><dl><dt>AxisLabel</dt><dd>Unix Time</dd></dl><dl><dt>ScaleType</dt><dd>LinearScale</dd></dl></dd></dl><dl><dt>ValidMin</dt><dd>1.2623e+09</dd></dl><dl><dt>ValidMax</dt><dd>1.89346e+09</dd></dl><dl><dt>FillValue</dt><dd>nan</dd></dl><dl><dt>Support</dt><dd><dl><dt>Qualifier</dt><dd>Scalar</dd></dl><dl><dt>SupportQuantity</dt><dd>Temporal</dd></dl></dd></dl></dd></dl><dl><dt class="parameter">Parameter #3</dt><dd><dl><dt>Name</dt><dd>Parker Solar Probe, Mission Elapsed Time</dd></dl><dl><dt>Set</dt><dd>Time Series defined by using: EPOCH</dd></dl><dl><dt>ParameterKey</dt><dd>MET</dd></dl><dt>Description</dt><dd><p>Parker Solar Probe, PSP, Mission Elapsed Time, MET, in string format</p>
+</dd><dl><dt>Caveats</dt><dd>The mission elapsed time string is constructed as met_seconds+':'+met_subseconds_base50000, where: met_seconds is the CCSDS_MET value cast as an integer string with no whitespace and met_subseconds_base50000 is an "I05" format integer string formed by converting the xxx_SUBSEC value to units of 1/50000 second. For example, if the xxx_SUBSEC value is recorded in parts per 65536 o second, the correct procedure would be to round 50000*(xxx_SUBSEC/65536) to the nearest integer and cast a string by using the "I05" format. Here, CCSDS_MET is the mission elapsed time, in seconds, from the PSP Epoch, which is defined to be January 1, 2010, 12:00:00 UTC and xxx_SUBSEC is the elapsed time in fractional seconds since the last tick of MET typically in units of 2^-16 seconds.</dd></dl><dl><dt>Cadence</dt><dd>PT1.74S</dd></dl><dl><dt>RenderingHints</dt><dd><dl><dt>AxisLabel</dt><dd>MET</dd></dl><dl><dt>ScaleType</dt><dd>LinearScale</dd></dl></dd></dl><dl><dt>ValidMin</dt><dd>-1.0e+30</dd></dl><dl><dt>ValidMax</dt><dd>1.0e+30</dd></dl><dl><dt>FillValue</dt><dd>nan</dd></dl><dl><dt>Support</dt><dd><dl><dt>Qualifier</dt><dd>Scalar</dd></dl><dl><dt>SupportQuantity</dt><dd>Temporal</dd></dl></dd></dl></dd></dl><dl><dt class="parameter">Parameter #4</dt><dd><dl><dt>Name</dt><dd>Application ID</dd></dl><dl><dt>Set</dt><dd>Time Series defined by using: EPOCH</dd></dl><dl><dt>ParameterKey</dt><dd>APID</dd></dl><dt>Description</dt><dd><p>Application Identifier, APID</p>
+</dd><dl><dt>Cadence</dt><dd>PT1.74S</dd></dl><dl><dt>RenderingHints</dt><dd><dl><dt>AxisLabel</dt><dd>APID</dd></dl><dl><dt>ScaleType</dt><dd>LinearScale</dd></dl></dd></dl><dl><dt>ValidMin</dt><dd>-1.0e+30</dd></dl><dl><dt>ValidMax</dt><dd>1.0e+30</dd></dl><dl><dt>FillValue</dt><dd>nan</dd></dl><dl><dt>Support</dt><dd><dl><dt>Qualifier</dt><dd>Scalar</dd></dl><dl><dt>SupportQuantity</dt><dd>InstrumentMode</dd></dl></dd></dl></dd></dl><dl><dt class="parameter">Parameter #5</dt><dd><dl><dt>Name</dt><dd>Sequence Number</dd></dl><dl><dt>Set</dt><dd>Time Series defined by using: EPOCH</dd></dl><dl><dt>ParameterKey</dt><dd>SEQN</dd></dl><dt>Description</dt><dd><p>Sequence Number</p>
+</dd><dl><dt>Cadence</dt><dd>PT1.74S</dd></dl><dl><dt>RenderingHints</dt><dd><dl><dt>AxisLabel</dt><dd>SEQN</dd></dl><dl><dt>ScaleType</dt><dd>LinearScale</dd></dl></dd></dl><dl><dt>ValidMin</dt><dd>-1.0e+30</dd></dl><dl><dt>ValidMax</dt><dd>1.0e+30</dd></dl><dl><dt>FillValue</dt><dd>nan</dd></dl><dl><dt>Support</dt><dd><dl><dt>Qualifier</dt><dd>Scalar</dd></dl><dl><dt>SupportQuantity</dt><dd>Other</dd></dl></dd></dl></dd></dl><dl><dt class="parameter">Parameter #6</dt><dd><dl><dt>Name</dt><dd>Sequence Number Delta</dd></dl><dl><dt>Set</dt><dd>Time Series defined by using: EPOCH</dd></dl><dl><dt>ParameterKey</dt><dd>SEQN_DELTA</dd></dl><dt>Description</dt><dd><p>Sequence Number Delta</p>
+</dd><dl><dt>Cadence</dt><dd>PT1.74S</dd></dl><dl><dt>RenderingHints</dt><dd><dl><dt>AxisLabel</dt><dd>SEQN_DELTA</dd></dl><dl><dt>ScaleType</dt><dd>LinearScale</dd></dl></dd></dl><dl><dt>ValidMin</dt><dd>-1.0e+30</dd></dl><dl><dt>ValidMax</dt><dd>1.0e+30</dd></dl><dl><dt>FillValue</dt><dd>nan</dd></dl><dl><dt>Support</dt><dd><dl><dt>Qualifier</dt><dd>Scalar</dd></dl><dl><dt>SupportQuantity</dt><dd>Other</dd></dl></dd></dl></dd></dl><dl><dt class="parameter">Parameter #7</dt><dd><dl><dt>Name</dt><dd>Sequence Group</dd></dl><dl><dt>Set</dt><dd>Time Series defined by using: EPOCH</dd></dl><dl><dt>ParameterKey</dt><dd>SEQ_GROUP</dd></dl><dt>Description</dt><dd><p>Sequence Group</p>
+</dd><dl><dt>Cadence</dt><dd>PT1.74S</dd></dl><dl><dt>RenderingHints</dt><dd><dl><dt>AxisLabel</dt><dd>SEQ_GROUP</dd></dl><dl><dt>ScaleType</dt><dd>LinearScale</dd></dl></dd></dl><dl><dt>ValidMin</dt><dd>-1.0e+30</dd></dl><dl><dt>ValidMax</dt><dd>1.0e+30</dd></dl><dl><dt>FillValue</dt><dd>nan</dd></dl><dl><dt>Support</dt><dd><dl><dt>Qualifier</dt><dd>Scalar</dd></dl><dl><dt>SupportQuantity</dt><dd>Other</dd></dl></dd></dl></dd></dl><dl><dt class="parameter">Parameter #8</dt><dd><dl><dt>Name</dt><dd>Packet Size</dd></dl><dl><dt>Set</dt><dd>Time Series defined by using: EPOCH</dd></dl><dl><dt>ParameterKey</dt><dd>PKT_SIZE</dd></dl><dt>Description</dt><dd><p>Packet Size</p>
+</dd><dl><dt>Cadence</dt><dd>PT1.74S</dd></dl><dl><dt>RenderingHints</dt><dd><dl><dt>AxisLabel</dt><dd>PKT_SIZE</dd></dl><dl><dt>ScaleType</dt><dd>LinearScale</dd></dl></dd></dl><dl><dt>ValidMin</dt><dd>-1.0e+30</dd></dl><dl><dt>ValidMax</dt><dd>1.0e+30</dd></dl><dl><dt>FillValue</dt><dd>nan</dd></dl><dl><dt>Support</dt><dd><dl><dt>Qualifier</dt><dd>Scalar</dd></dl><dl><dt>SupportQuantity</dt><dd>Other</dd></dl></dd></dl></dd></dl><dl><dt class="parameter">Parameter #9</dt><dd><dl><dt>Name</dt><dd>Source</dd></dl><dl><dt>Set</dt><dd>Time Series defined by using: EPOCH</dd></dl><dl><dt>ParameterKey</dt><dd>SOURCE</dd></dl><dt>Description</dt><dd><p>Source</p>
+</dd><dl><dt>Cadence</dt><dd>PT1.74S</dd></dl><dl><dt>RenderingHints</dt><dd><dl><dt>AxisLabel</dt><dd>SOURCE</dd></dl><dl><dt>ScaleType</dt><dd>LinearScale</dd></dl></dd></dl><dl><dt>ValidMin</dt><dd>-1.0e+30</dd></dl><dl><dt>ValidMax</dt><dd>1.0e+30</dd></dl><dl><dt>FillValue</dt><dd>nan</dd></dl><dl><dt>Support</dt><dd><dl><dt>Qualifier</dt><dd>Scalar</dd></dl><dl><dt>SupportQuantity</dt><dd>Other</dd></dl></dd></dl></dd></dl><dl><dt class="parameter">Parameter #10</dt><dd><dl><dt>Name</dt><dd>Source Hash Value</dd></dl><dl><dt>Set</dt><dd>Time Series defined by using: EPOCH</dd></dl><dl><dt>ParameterKey</dt><dd>SOURCE_HASH</dd></dl><dt>Description</dt><dd><p>Source Hash Value</p>
+</dd><dl><dt>Cadence</dt><dd>PT1.74S</dd></dl><dl><dt>RenderingHints</dt><dd><dl><dt>AxisLabel</dt><dd>SOURCE_HASH</dd></dl><dl><dt>ScaleType</dt><dd>LinearScale</dd></dl></dd></dl><dl><dt>ValidMin</dt><dd>-1.0e+30</dd></dl><dl><dt>ValidMax</dt><dd>1.0e+30</dd></dl><dl><dt>FillValue</dt><dd>nan</dd></dl><dl><dt>Support</dt><dd><dl><dt>Qualifier</dt><dd>Scalar</dd></dl><dl><dt>SupportQuantity</dt><dd>Other</dd></dl></dd></dl></dd></dl><dl><dt class="parameter">Parameter #11</dt><dd><dl><dt>Name</dt><dd>Compression Ratio</dd></dl><dl><dt>Set</dt><dd>Time Series defined by using: EPOCH</dd></dl><dl><dt>ParameterKey</dt><dd>COMPR_RATIO</dd></dl><dt>Description</dt><dd><p>Compression Ratio</p>
+</dd><dl><dt>Cadence</dt><dd>PT1.74S</dd></dl><dl><dt>RenderingHints</dt><dd><dl><dt>AxisLabel</dt><dd>COMPR_RATIO</dd></dl><dl><dt>ScaleType</dt><dd>LinearScale</dd></dl></dd></dl><dl><dt>ValidMin</dt><dd>-1.0e+30</dd></dl><dl><dt>ValidMax</dt><dd>1.0e+30</dd></dl><dl><dt>FillValue</dt><dd>nan</dd></dl><dl><dt>Support</dt><dd><dl><dt>Qualifier</dt><dd>Scalar</dd></dl><dl><dt>SupportQuantity</dt><dd>Other</dd></dl></dd></dl></dd></dl><dl><dt class="parameter">Parameter #12</dt><dd><dl><dt>Name</dt><dd>Number of Data Points</dd></dl><dl><dt>Set</dt><dd>Time Series defined by using: EPOCH</dd></dl><dl><dt>ParameterKey</dt><dd>NDAT</dd></dl><dt>Description</dt><dd><p>Number of Data Points</p>
+</dd><dl><dt>Cadence</dt><dd>PT1.74S</dd></dl><dl><dt>RenderingHints</dt><dd><dl><dt>AxisLabel</dt><dd>NDAT</dd></dl><dl><dt>ScaleType</dt><dd>LinearScale</dd></dl></dd></dl><dl><dt>ValidMin</dt><dd>-1.0e+30</dd></dl><dl><dt>ValidMax</dt><dd>1.0e+30</dd></dl><dl><dt>FillValue</dt><dd>nan</dd></dl><dl><dt>Support</dt><dd><dl><dt>Qualifier</dt><dd>Scalar</dd></dl><dl><dt>SupportQuantity</dt><dd>Other</dd></dl></dd></dl></dd></dl><dl><dt class="parameter">Parameter #13</dt><dd><dl><dt>Name</dt><dd>Data Size</dd></dl><dl><dt>Set</dt><dd>Time Series defined by using: EPOCH</dd></dl><dl><dt>ParameterKey</dt><dd>DATASIZE</dd></dl><dt>Description</dt><dd><p>Data Size</p>
+</dd><dl><dt>Cadence</dt><dd>PT1.74S</dd></dl><dl><dt>RenderingHints</dt><dd><dl><dt>AxisLabel</dt><dd>DATASIZE</dd></dl><dl><dt>ScaleType</dt><dd>LinearScale</dd></dl></dd></dl><dl><dt>ValidMin</dt><dd>-1.0e+30</dd></dl><dl><dt>ValidMax</dt><dd>1.0e+30</dd></dl><dl><dt>FillValue</dt><dd>nan</dd></dl><dl><dt>Support</dt><dd><dl><dt>Qualifier</dt><dd>Scalar</dd></dl><dl><dt>SupportQuantity</dt><dd>Other</dd></dl></dd></dl></dd></dl><dl><dt class="parameter">Parameter #14</dt><dd><dl><dt>Name</dt><dd>SMP Bits</dd></dl><dl><dt>Set</dt><dd>Time Series defined by using: EPOCH</dd></dl><dl><dt>ParameterKey</dt><dd>SMP_BITS</dd></dl><dt>Description</dt><dd><p>SMP Bits</p>
+</dd><dl><dt>Cadence</dt><dd>PT1.74S</dd></dl><dl><dt>RenderingHints</dt><dd><dl><dt>AxisLabel</dt><dd>SMP_BITS</dd></dl><dl><dt>ScaleType</dt><dd>LinearScale</dd></dl></dd></dl><dl><dt>ValidMin</dt><dd>-1.0e+30</dd></dl><dl><dt>ValidMax</dt><dd>1.0e+30</dd></dl><dl><dt>FillValue</dt><dd>nan</dd></dl><dl><dt>Support</dt><dd><dl><dt>Qualifier</dt><dd>Scalar</dd></dl><dl><dt>SupportQuantity</dt><dd>Other</dd></dl></dd></dl></dd></dl><dl><dt class="parameter">Parameter #15</dt><dd><dl><dt>Name</dt><dd>LTCS NNNN Bits</dd></dl><dl><dt>Set</dt><dd>Time Series defined by using: EPOCH</dd></dl><dl><dt>ParameterKey</dt><dd>LTCSNNNN_BITS</dd></dl><dt>Description</dt><dd><p>LTCS NNNN Bits</p>
+</dd><dl><dt>Cadence</dt><dd>PT1.74S</dd></dl><dl><dt>RenderingHints</dt><dd><dl><dt>AxisLabel</dt><dd>LTCSNNNN_BITS</dd></dl><dl><dt>ScaleType</dt><dd>LinearScale</dd></dl></dd></dl><dl><dt>ValidMin</dt><dd>-1.0e+30</dd></dl><dl><dt>ValidMax</dt><dd>1.0e+30</dd></dl><dl><dt>FillValue</dt><dd>nan</dd></dl><dl><dt>Support</dt><dd><dl><dt>Qualifier</dt><dd>Scalar</dd></dl><dl><dt>SupportQuantity</dt><dd>Other</dd></dl></dd></dl></dd></dl><dl><dt class="parameter">Parameter #16</dt><dd><dl><dt>Name</dt><dd>ARCH Bits</dd></dl><dl><dt>Set</dt><dd>Time Series defined by using: EPOCH</dd></dl><dl><dt>ParameterKey</dt><dd>ARCH_BITS</dd></dl><dt>Description</dt><dd><p>ARCH Bits</p>
+</dd><dl><dt>Cadence</dt><dd>PT1.74S</dd></dl><dl><dt>RenderingHints</dt><dd><dl><dt>AxisLabel</dt><dd>ARCH_BITS</dd></dl><dl><dt>ScaleType</dt><dd>LinearScale</dd></dl></dd></dl><dl><dt>ValidMin</dt><dd>-1.0e+30</dd></dl><dl><dt>ValidMax</dt><dd>1.0e+30</dd></dl><dl><dt>FillValue</dt><dd>nan</dd></dl><dl><dt>Support</dt><dd><dl><dt>Qualifier</dt><dd>Scalar</dd></dl><dl><dt>SupportQuantity</dt><dd>Other</dd></dl></dd></dl></dd></dl><dl><dt class="parameter">Parameter #17</dt><dd><dl><dt>Name</dt><dd>Mode 1</dd></dl><dl><dt>Set</dt><dd>Time Series defined by using: EPOCH</dd></dl><dl><dt>ParameterKey</dt><dd>MODE1</dd></dl><dt>Description</dt><dd><p>Mode Number 1</p>
+</dd><dl><dt>Cadence</dt><dd>PT1.74S</dd></dl><dl><dt>RenderingHints</dt><dd><dl><dt>AxisLabel</dt><dd>MODE1</dd></dl><dl><dt>ScaleType</dt><dd>LinearScale</dd></dl></dd></dl><dl><dt>ValidMin</dt><dd>-1.0e+30</dd></dl><dl><dt>ValidMax</dt><dd>1.0e+30</dd></dl><dl><dt>FillValue</dt><dd>nan</dd></dl><dl><dt>Support</dt><dd><dl><dt>Qualifier</dt><dd>Scalar</dd></dl><dl><dt>SupportQuantity</dt><dd>InstrumentMode</dd></dl></dd></dl></dd></dl><dl><dt class="parameter">Parameter #18</dt><dd><dl><dt>Name</dt><dd>ARCH SUM</dd></dl><dl><dt>Set</dt><dd>Time Series defined by using: EPOCH</dd></dl><dl><dt>ParameterKey</dt><dd>ARCH_SUM</dd></dl><dt>Description</dt><dd><p>ARCH SUM</p>
+</dd><dl><dt>Cadence</dt><dd>PT1.74S</dd></dl><dl><dt>RenderingHints</dt><dd><dl><dt>AxisLabel</dt><dd>ARCH_SUM</dd></dl><dl><dt>ScaleType</dt><dd>LinearScale</dd></dl></dd></dl><dl><dt>ValidMin</dt><dd>-1.0e+30</dd></dl><dl><dt>ValidMax</dt><dd>1.0e+30</dd></dl><dl><dt>FillValue</dt><dd>nan</dd></dl><dl><dt>Support</dt><dd><dl><dt>Qualifier</dt><dd>Scalar</dd></dl><dl><dt>SupportQuantity</dt><dd>Other</dd></dl></dd></dl></dd></dl><dl><dt class="parameter">Parameter #19</dt><dd><dl><dt>Name</dt><dd>ARCH SMP Data Quality Flag</dd></dl><dl><dt>Set</dt><dd>Time Series defined by using: EPOCH</dd></dl><dl><dt>ParameterKey</dt><dd>ARCH_SMP_FLAG</dd></dl><dt>Description</dt><dd><p>ARCH SMP Data Quality Flag</p>
+</dd><dl><dt>Cadence</dt><dd>PT1.74S</dd></dl><dl><dt>RenderingHints</dt><dd><dl><dt>AxisLabel</dt><dd>ARCH_SMP_FLAG</dd></dl><dl><dt>ScaleType</dt><dd>LinearScale</dd></dl></dd></dl><dl><dt>ValidMin</dt><dd>-1.0e+30</dd></dl><dl><dt>ValidMax</dt><dd>1.0e+30</dd></dl><dl><dt>FillValue</dt><dd>nan</dd></dl><dl><dt>Support</dt><dd><dl><dt>Qualifier</dt><dd>Scalar</dd></dl><dl><dt>SupportQuantity</dt><dd>InstrumentMode</dd></dl></dd></dl></dd></dl><dl><dt class="parameter">Parameter #20</dt><dd><dl><dt>Name</dt><dd>Total Accumulation Period</dd></dl><dl><dt>Set</dt><dd>Time Series defined by using: EPOCH</dd></dl><dl><dt>ParameterKey</dt><dd>TOT_ACCUM_PERIOD</dd></dl><dt>Description</dt><dd><p>Total Accumulation Period</p>
+</dd><dl><dt>Cadence</dt><dd>PT1.74S</dd></dl><dl><dt>RenderingHints</dt><dd><dl><dt>AxisLabel</dt><dd>TOT_ACCUM_PERIOD</dd></dl><dl><dt>ScaleType</dt><dd>LinearScale</dd></dl></dd></dl><dl><dt>ValidMin</dt><dd>-1.0e+30</dd></dl><dl><dt>ValidMax</dt><dd>1.0e+30</dd></dl><dl><dt>FillValue</dt><dd>nan</dd></dl><dl><dt>Support</dt><dd><dl><dt>Qualifier</dt><dd>Scalar</dd></dl><dl><dt>SupportQuantity</dt><dd>Temporal</dd></dl></dd></dl></dd></dl><dl><dt class="parameter">Parameter #21</dt><dd><dl><dt>Name</dt><dd>Number of Accumulations</dd></dl><dl><dt>Set</dt><dd>Time Series defined by using: EPOCH</dd></dl><dl><dt>ParameterKey</dt><dd>NUM_ACCUM</dd></dl><dt>Description</dt><dd><p>Number of Accumulations</p>
+</dd><dl><dt>Cadence</dt><dd>PT1.74S</dd></dl><dl><dt>RenderingHints</dt><dd><dl><dt>AxisLabel</dt><dd>NUM_ACCUM</dd></dl><dl><dt>ScaleType</dt><dd>LinearScale</dd></dl></dd></dl><dl><dt>ValidMin</dt><dd>-1.0e+30</dd></dl><dl><dt>ValidMax</dt><dd>1.0e+30</dd></dl><dl><dt>FillValue</dt><dd>nan</dd></dl><dl><dt>Support</dt><dd><dl><dt>Qualifier</dt><dd>Scalar</dd></dl><dl><dt>SupportQuantity</dt><dd>Other</dd></dl></dd></dl></dd></dl><dl><dt class="parameter">Parameter #22</dt><dd><dl><dt>Name</dt><dd>Mode 2, ORI</dd></dl><dl><dt>Set</dt><dd>Time Series defined by using: EPOCH</dd></dl><dl><dt>ParameterKey</dt><dd>MODE2_ORI</dd></dl><dt>Description</dt><dd><p>Mode Number 2, ORI</p>
+</dd><dl><dt>Cadence</dt><dd>PT1.74S</dd></dl><dl><dt>RenderingHints</dt><dd><dl><dt>AxisLabel</dt><dd>MODE2_ORI</dd></dl><dl><dt>ScaleType</dt><dd>LinearScale</dd></dl></dd></dl><dl><dt>ValidMin</dt><dd>-1.0e+30</dd></dl><dl><dt>ValidMax</dt><dd>1.0e+30</dd></dl><dl><dt>FillValue</dt><dd>nan</dd></dl><dl><dt>Support</dt><dd><dl><dt>Qualifier</dt><dd>Scalar</dd></dl><dl><dt>SupportQuantity</dt><dd>InstrumentMode</dd></dl></dd></dl></dd></dl><dl><dt class="parameter">Parameter #23</dt><dd><dl><dt>Name</dt><dd>Mode 2</dd></dl><dl><dt>Set</dt><dd>Time Series defined by using: EPOCH</dd></dl><dl><dt>ParameterKey</dt><dd>MODE2</dd></dl><dt>Description</dt><dd><p>Mode Number 2</p>
+</dd><dl><dt>Cadence</dt><dd>PT1.74S</dd></dl><dl><dt>RenderingHints</dt><dd><dl><dt>AxisLabel</dt><dd>MODE2</dd></dl><dl><dt>ScaleType</dt><dd>LinearScale</dd></dl></dd></dl><dl><dt>ValidMin</dt><dd>-1.0e+30</dd></dl><dl><dt>ValidMax</dt><dd>1.0e+30</dd></dl><dl><dt>FillValue</dt><dd>nan</dd></dl><dl><dt>Support</dt><dd><dl><dt>Qualifier</dt><dd>Scalar</dd></dl><dl><dt>SupportQuantity</dt><dd>InstrumentMode</dd></dl></dd></dl></dd></dl><dl><dt class="parameter">Parameter #24</dt><dd><dl><dt>Name</dt><dd>F0</dd></dl><dl><dt>Set</dt><dd>Time Series defined by using: EPOCH</dd></dl><dl><dt>ParameterKey</dt><dd>F0</dd></dl><dt>Description</dt><dd><p>F0</p>
+</dd><dl><dt>Cadence</dt><dd>PT1.74S</dd></dl><dl><dt>RenderingHints</dt><dd><dl><dt>AxisLabel</dt><dd>F0</dd></dl><dl><dt>ScaleType</dt><dd>LinearScale</dd></dl></dd></dl><dl><dt>ValidMin</dt><dd>-1.0e+30</dd></dl><dl><dt>ValidMax</dt><dd>1.0e+30</dd></dl><dl><dt>FillValue</dt><dd>nan</dd></dl><dl><dt>Support</dt><dd><dl><dt>Qualifier</dt><dd>Scalar</dd></dl><dl><dt>SupportQuantity</dt><dd>Other</dd></dl></dd></dl></dd></dl><dl><dt class="parameter">Parameter #25</dt><dd><dl><dt>Name</dt><dd>Status Bits</dd></dl><dl><dt>Set</dt><dd>Time Series defined by using: EPOCH</dd></dl><dl><dt>ParameterKey</dt><dd>STATUS_BITS</dd></dl><dt>Description</dt><dd><p>Status Bits</p>
+</dd><dl><dt>Cadence</dt><dd>PT1.74S</dd></dl><dl><dt>RenderingHints</dt><dd><dl><dt>AxisLabel</dt><dd>STATUS_BITS</dd></dl><dl><dt>ScaleType</dt><dd>LinearScale</dd></dl></dd></dl><dl><dt>ValidMin</dt><dd>-1.0e+30</dd></dl><dl><dt>ValidMax</dt><dd>1.0e+30</dd></dl><dl><dt>FillValue</dt><dd>nan</dd></dl><dl><dt>Support</dt><dd><dl><dt>Qualifier</dt><dd>Scalar</dd></dl><dl><dt>SupportQuantity</dt><dd>Other</dd></dl></dd></dl></dd></dl><dl><dt class="parameter">Parameter #26</dt><dd><dl><dt>Name</dt><dd>Peak Bin</dd></dl><dl><dt>Set</dt><dd>Time Series defined by using: EPOCH</dd></dl><dl><dt>ParameterKey</dt><dd>PEAK_BIN</dd></dl><dt>Description</dt><dd><p>Peak Bin</p>
+</dd><dl><dt>Cadence</dt><dd>PT1.74S</dd></dl><dl><dt>RenderingHints</dt><dd><dl><dt>AxisLabel</dt><dd>PEAK_BIN</dd></dl><dl><dt>ScaleType</dt><dd>LinearScale</dd></dl></dd></dl><dl><dt>ValidMin</dt><dd>-1.0e+30</dd></dl><dl><dt>ValidMax</dt><dd>1.0e+30</dd></dl><dl><dt>FillValue</dt><dd>nan</dd></dl><dl><dt>Support</dt><dd><dl><dt>Qualifier</dt><dd>Scalar</dd></dl><dl><dt>SupportQuantity</dt><dd>Other</dd></dl></dd></dl></dd></dl><dl><dt class="parameter">Parameter #27</dt><dd><dl><dt>Name</dt><dd>Product Bits</dd></dl><dl><dt>Set</dt><dd>Time Series defined by using: EPOCH</dd></dl><dl><dt>ParameterKey</dt><dd>PRODUCT_BITS</dd></dl><dt>Description</dt><dd><p>Product Bits</p>
+</dd><dl><dt>Cadence</dt><dd>PT1.74S</dd></dl><dl><dt>RenderingHints</dt><dd><dl><dt>AxisLabel</dt><dd>PRODUCT_BITS</dd></dl><dl><dt>ScaleType</dt><dd>LinearScale</dd></dl></dd></dl><dl><dt>ValidMin</dt><dd>-1.0e+30</dd></dl><dl><dt>ValidMax</dt><dd>1.0e+30</dd></dl><dl><dt>FillValue</dt><dd>nan</dd></dl><dl><dt>Support</dt><dd><dl><dt>Qualifier</dt><dd>Scalar</dd></dl><dl><dt>SupportQuantity</dt><dd>Other</dd></dl></dd></dl></dd></dl><dl><dt class="parameter">Parameter #28</dt><dd><dl><dt>Name</dt><dd>Particle Counts</dd></dl><dl><dt>Set</dt><dd>Time Series defined by using: EPOCH</dd></dl><dl><dt>ParameterKey</dt><dd>CNTS</dd></dl><dt>Description</dt><dd><p>Particle Counts</p>
+</dd><dl><dt>Cadence</dt><dd>PT1.74S</dd></dl><dl><dt>RenderingHints</dt><dd><dl><dt>AxisLabel</dt><dd>CNTS</dd></dl><dl><dt>ScaleType</dt><dd>LinearScale</dd></dl></dd></dl><dl><dt>ValidMin</dt><dd>-1.0e+30</dd></dl><dl><dt>ValidMax</dt><dd>1.0e+30</dd></dl><dl><dt>FillValue</dt><dd>nan</dd></dl><dl><dt>Particle</dt><dd><dl><dt>ParticleType</dt><dd>Electron</dd></dl><dl><dt>Qualifier</dt><dd>Scalar</dd></dl><dl><dt>ParticleQuantity</dt><dd>Counts</dd></dl></dd></dl></dd></dl><dl><dt class="parameter">Parameter #29</dt><dd><dl><dt>Name</dt><dd>Data</dd></dl><dl><dt>Set</dt><dd>Time Series defined by using: EPOCH</dd></dl><dl><dt>ParameterKey</dt><dd>DATA</dd></dl><dt>Description</dt><dd><p>Data</p>
+</dd><dl><dt>Cadence</dt><dd>PT1.74S</dd></dl><dl><dt>RenderingHints</dt><dd><dl><dt>DisplayType</dt><dd>TimeSeries</dd></dl><dl><dt>AxisLabel</dt><dd>DATA</dd></dl><dl><dt>ValueFormat</dt><dd>E10.2</dd></dl><dl><dt>ScaleType</dt><dd>LinearScale</dd></dl></dd></dl><dl><dt>Structure</dt><dd><dl><dt>Size</dt><dd>32</dd></dl></dd></dl><dl><dt>ValidMin</dt><dd>-1.0e+30</dd></dl><dl><dt>ValidMax</dt><dd>1.0e+30</dd></dl><dl><dt>FillValue</dt><dd>nan</dd></dl><dl><dt>Support</dt><dd><dl><dt>Qualifier</dt><dd>Array</dd></dl><dl><dt>SupportQuantity</dt><dd>Other</dd></dl></dd></dl></dd></dl><dl><dt class="parameter">Parameter #30</dt><dd><dl><dt>Name</dt><dd>Gap</dd></dl><dl><dt>Set</dt><dd>Time Series defined by using: EPOCH</dd></dl><dl><dt>ParameterKey</dt><dd>GAP</dd></dl><dt>Description</dt><dd><p>Gap</p>
+</dd><dl><dt>Cadence</dt><dd>PT1.74S</dd></dl><dl><dt>RenderingHints</dt><dd><dl><dt>AxisLabel</dt><dd>GAP</dd></dl><dl><dt>ScaleType</dt><dd>LinearScale</dd></dl></dd></dl><dl><dt>ValidMin</dt><dd>-1.0e+30</dd></dl><dl><dt>ValidMax</dt><dd>1.0e+30</dd></dl><dl><dt>FillValue</dt><dd>nan</dd></dl><dl><dt>Support</dt><dd><dl><dt>Qualifier</dt><dd>Scalar</dd></dl><dl><dt>SupportQuantity</dt><dd>Other</dd></dl></dd></dl></dd></dl><dl><dt class="parameter">Parameter #31</dt><dd><dl><dt>Name</dt><dd>Differential Energy Flux</dd></dl><dl><dt>Set</dt><dd>Time Series defined by using: EPOCH</dd></dl><dl><dt>ParameterKey</dt><dd>EFLUX</dd></dl><dt>Description</dt><dd><p>Differential Energy Flux</p>
+</dd><dl><dt>Cadence</dt><dd>PT1.74S</dd></dl><dl><dt>Units</dt><dd>eV/(cm^2 s sr eV)</dd></dl><dl><dt>UnitsConversion</dt><dd>1.0e4&gt;J/(m^2 s sr J)</dd></dl><dl><dt>RenderingHints</dt><dd><dl><dt>DisplayType</dt><dd>Spectrogram</dd></dl><dl><dt>AxisLabel</dt><dd>Diff Energy Flux</dd></dl><dl><dt>ValueFormat</dt><dd>E12.2</dd></dl><dl><dt>ScaleType</dt><dd>LogScale</dd></dl></dd></dl><dl><dt>Structure</dt><dd><dl><dt>Size</dt><dd>32</dd></dl></dd></dl><dl><dt>ValidMin</dt><dd>0.001</dd></dl><dl><dt>ValidMax</dt><dd>1.0e+12</dd></dl><dl><dt>FillValue</dt><dd>nan</dd></dl><dl><dt>Particle</dt><dd><dl><dt>ParticleType</dt><dd>Electron</dd></dl><dl><dt>Qualifier</dt><dd>Array</dd></dl><dl><dt>ParticleQuantity</dt><dd>NumberFlux</dd></dl></dd></dl></dd></dl><dl><dt class="parameter">Parameter #32</dt><dd><dl><dt>Name</dt><dd>Particle Energy</dd></dl><dl><dt>Set</dt><dd>Time Series defined by using: EPOCH</dd></dl><dl><dt>ParameterKey</dt><dd>ENERGY</dd></dl><dt>Description</dt><dd><p>Particle Energy</p>
+</dd><dl><dt>Cadence</dt><dd>PT1.74S</dd></dl><dl><dt>Units</dt><dd>eV</dd></dl><dl><dt>UnitsConversion</dt><dd>1.602176565e-19&gt;J</dd></dl><dl><dt>RenderingHints</dt><dd><dl><dt>DisplayType</dt><dd>TimeSeries</dd></dl><dl><dt>AxisLabel</dt><dd>Energy</dd></dl><dl><dt>ValueFormat</dt><dd>E12.2</dd></dl><dl><dt>ScaleType</dt><dd>LogScale</dd></dl></dd></dl><dl><dt>Structure</dt><dd><dl><dt>Size</dt><dd>32</dd></dl></dd></dl><dl><dt>ValidMin</dt><dd>1</dd></dl><dl><dt>ValidMax</dt><dd>100000.0</dd></dl><dl><dt>FillValue</dt><dd>nan</dd></dl><dl><dt>Particle</dt><dd><dl><dt>ParticleType</dt><dd>Electron</dd></dl><dl><dt>Qualifier</dt><dd>Array</dd></dl><dl><dt>ParticleQuantity</dt><dd>Energy</dd></dl></dd></dl></dd></dl><dl><dt class="parameter">Parameter #33</dt><dd><dl><dt>Name</dt><dd>Quality Flag</dd></dl><dl><dt>Set</dt><dd>Time Series defined by using: EPOCH</dd></dl><dl><dt>ParameterKey</dt><dd>QUALITY_FLAG</dd></dl><dt>Description</dt><dd><p>Quality Flag</p>
+</dd><dl><dt>Cadence</dt><dd>PT1.74S</dd></dl><dl><dt>RenderingHints</dt><dd><dl><dt>DisplayType</dt><dd>TimeSeries</dd></dl><dl><dt>AxisLabel</dt><dd>QUALITY_FLAG</dd></dl><dl><dt>ValueFormat</dt><dd>I10</dd></dl><dl><dt>ScaleType</dt><dd>LinearScale</dd></dl></dd></dl><dl><dt>ValidMax</dt><dd>256</dd></dl><dl><dt>FillValue</dt><dd>-1</dd></dl><dl><dt>Support</dt><dd><dl><dt>Qualifier</dt><dd>Scalar</dd></dl><dl><dt>SupportQuantity</dt><dd>Velocity</dd></dl></dd></dl></dd></dl><dl><dt class="parameter">Parameter #34</dt><dd><dl><dt>Name</dt><dd>Rotation Matrix, Spacecraft Instrument</dd></dl><dl><dt>Set</dt><dd>Time Series defined by using: EPOCH</dd></dl><dl><dt>ParameterKey</dt><dd>ROTMAT_SC_INST</dd></dl><dt>Description</dt><dd><p>Rotation Matrix, Spacecraft Instrument</p>
+</dd><dl><dt>Cadence</dt><dd>PT1.74S</dd></dl><dl><dt>RenderingHints</dt><dd><dl><dt>DisplayType</dt><dd>TimeSeries</dd></dl><dl><dt>AxisLabel</dt><dd>ROTMAT_SC_INST</dd></dl><dl><dt>ValueFormat</dt><dd>E10.2</dd></dl><dl><dt>ScaleType</dt><dd>LinearScale</dd></dl></dd></dl><dl><dt>Structure</dt><dd><dl><dt>Size</dt><dd>3 3</dd></dl></dd></dl><dl><dt>FillValue</dt><dd>nan</dd></dl><dl><dt>Support</dt><dd><dl><dt>Qualifier</dt><dd>Array</dd></dl><dl><dt>SupportQuantity</dt><dd>Other</dd></dl></dd></dl></dd></dl></div></div></div></div></body></html>

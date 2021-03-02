@@ -1,0 +1,344 @@
+<?xml version="1.0"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><title>SPASE Resource Description</title><script type="application/ld+json">{
+		"@context": "https://schema.org/",
+		"@type" :"Dataset",
+		"name": "PSP FIELDS Digital Fields Board (DFB) AC-coupled Searchcoil Magnetometer, SCM, Spectra, Low Frequency, High Gain, e-component, Sensor coordinates, Level 2 (L2), 0.873813 s Data",
+     
+ 		"description": "PSP FIELDS Digital Fields Board, DFB, SCMelfhg data:\n\nThe DFB is the low frequency, less than 75 kHz, component of the FIELDS experiment on the Parker Solar Probe spacecraft, see reference [1] below. For a full description of the FIELDS experiment, see reference [2]. For a description of the DFB, see reference [3].\n\nDFB AC spectra data consist of power spectral densities as a function of frequency and time. These spectra are averaged over both frequency and time as described in [3]. The spectra have pseudo-logarithmically spaced frequency bins with the bin central frequencies reported in the metadata. The AC spectra are duty-cycled such that spectral averaging takes place over the first 1/8 of any given NYsecond when the data cadence is equal to one NYsecond. Less data are averaged by a factor of 2^N for data cadences that are faster than one NYsecond by 2^N. For cadences slower than one NYsecond, the first 1/8 of each NYsecond of data included are averaged together to construct the reported data.\n\nThe Level 2 data products contained in this data file have been calibrated for:\n\n* 1) The Hanning window used in the spectral calculation\n* 2) DFB in-band gain\n* 3) DFB analog filter gain response\n* 4) DFB digital filter gain response\n* 5) The search coil preamplifier response, when applicable\n* 6) The bandwidth of each spectral bin\n\nNote that compensation for the DFB digital filters will introduce a non-physical positively sloped power trend at high frequencies when the non-corrected signal is dominated by noise. This effect should be examined carefully when determining spectral slopes and features at the highest frequencies. Calibrations for the FIELDS preamplifiers have not been implemented as the preamplifier response is flat and equal to one through the DFB frequency range. Corrections for plasma sheath impedance gain and antenna effective length have not been applied to voltage sensor signals. These corrections will be applied in the Level 3 DFB data products. Therefore, all voltage sensor quantities when present in these Level 2 data products are expressed by using units of Volts squared per Hertz. Likewise, all magnetic field quantities when present in these Level 2 data product are expressed by using units of nanoTesla squared per Hertz.\n\nThe Level 2 data products contained in this data file are expressed in sensor coordinates: e.g. dV12, dV34 for voltage measurements. For solar orbits 1 and 2, the search coil magnetometer spectral data are rotated into a non-intuitive coordinate system with components [d,e,f]. For solar orbits 3 and beyond, the magnetic field spectral data are in expressed in search coil magnetometer sensor coordinates with components [u,v,w].\n\nTo rotate from [d,e,f] coordinates into [u,v,w] search coil sensor coordinates, use the following matrix, written in IDL notation, and the following equation: spectra_uvw_vector = R ## spectra_def_vector.\n\nR = [[  0.46834856, -0.81336422 ,  0.34509170]\n[ -0.66921924, -0.071546954,  0.73961249]\n[ -0.57688408, -0.57733845 , -0.57782790]]\n\nThe time resolution of the DFB AC spectral data can vary by multiples of 2^N. During encounter when PSP is within 0.25 AU of the Sun, the DFB AC spectra data cadence is typically NYsecond NYsecond [2]. Timestamps correspond to the center time of each window.\n\nReferences:\n\n1) Fox, N.J., Velli, M.C., Bale, S.D. et al., Space Sci Rev (2016) 204:7. https://doi.org/10.1007/s1121401502116\n2) Bale, S.D., Goetz, K., Harvey, P.R. et al., Space Sci Rev (2016) 204:49. https://doi.org/10.1007/s1121401602445\n3) Malaspina, D.M., Ergun, R.E., Bolton, M. et al., JGR Space Physics (2016), 121, 5088-5096. https://doi.org/10.1002/2016JA022344",
+		"abstract": "PSP FIELDS Digital Fields Board, DFB, SCMelfhg data:\n\nThe DFB is the low frequency, less than 75 kHz, component of the FIELDS experiment on the Parker Solar Probe spacecraft, see reference [1] below. For a full description of the FIELDS experiment, see reference [2]. For a description of the DFB, see reference [3].\n\nDFB AC spectra data consist of power spectral densities as a function of frequency and time. These spectra are averaged over both frequency and time as described in [3]. The spectra have pseudo-logarithmically spaced frequency bins with the bin central frequencies reported in the metadata. The AC spectra are duty-cycled such that spectral averaging takes place over the first 1/8 of any given NYsecond when the data cadence is equal to one NYsecond. Less data are averaged by a factor of 2^N for data cadences that are faster than one NYsecond by 2^N. For cadences slower than one NYsecond, the first 1/8 of each NYsecond of data included are averaged together to construct the reported data.\n\nThe Level 2 data products contained in this data file have been calibrated for:\n\n* 1) The Hanning window used in the spectral calculation\n* 2) DFB in-band gain\n* 3) DFB analog filter gain response\n* 4) DFB digital filter gain response\n* 5) The search coil preamplifier response, when applicable\n* 6) The bandwidth of each spectral bin\n\nNote that compensation for the DFB digital filters will introduce a non-physical positively sloped power trend at high frequencies when the non-corrected signal is dominated by noise. This effect should be examined carefully when determining spectral slopes and features at the highest frequencies. Calibrations for the FIELDS preamplifiers have not been implemented as the preamplifier response is flat and equal to one through the DFB frequency range. Corrections for plasma sheath impedance gain and antenna effective length have not been applied to voltage sensor signals. These corrections will be applied in the Level 3 DFB data products. Therefore, all voltage sensor quantities when present in these Level 2 data products are expressed by using units of Volts squared per Hertz. Likewise, all magnetic field quantities when present in these Level 2 data product are expressed by using units of nanoTesla squared per Hertz.\n\nThe Level 2 data products contained in this data file are expressed in sensor coordinates: e.g. dV12, dV34 for voltage measurements. For solar orbits 1 and 2, the search coil magnetometer spectral data are rotated into a non-intuitive coordinate system with components [d,e,f]. For solar orbits 3 and beyond, the magnetic field spectral data are in expressed in search coil magnetometer sensor coordinates with components [u,v,w].\n\nTo rotate from [d,e,f] coordinates into [u,v,w] search coil sensor coordinates, use the following matrix, written in IDL notation, and the following equation: spectra_uvw_vector = R ## spectra_def_vector.\n\nR = [[  0.46834856, -0.81336422 ,  0.34509170]\n[ -0.66921924, -0.071546954,  0.73961249]\n[ -0.57688408, -0.57733845 , -0.57782790]]\n\nThe time resolution of the DFB AC spectral data can vary by multiples of 2^N. During encounter when PSP is within 0.25 AU of the Sun, the DFB AC spectra data cadence is typically NYsecond NYsecond [2]. Timestamps correspond to the center time of each window.\n\nReferences:\n\n1) Fox, N.J., Velli, M.C., Bale, S.D. et al., Space Sci Rev (2016) 204:7. https://doi.org/10.1007/s1121401502116\n2) Bale, S.D., Goetz, K., Harvey, P.R. et al., Space Sci Rev (2016) 204:49. https://doi.org/10.1007/s1121401602445\n3) Malaspina, D.M., Ergun, R.E., Bolton, M. et al., JGR Space Physics (2016), 121, 5088-5096. https://doi.org/10.1002/2016JA022344",
+		"temporalCoverage": "1990.10.06  2009.30.06",
+		"keywords": [  ],
+		"license": "https://cdla.io/permissive-1-0/",
+        "audience":{
+            "@type": "Audience",
+            "audienceType": ["Space Physicist", "Space Community", "Data Scientists", "Machine Learning Users"]
+        }
+	  }
+	  </script><style>
+/* http://spase-group.org/tools/xmlviewer */
+/* v1.0 | 20160908 */
+
+* {
+   margin: 0;
+   padding: 0;
+   border: 0;
+   outline: 0;
+   font-size: 100%;
+   vertical-align: baseline;
+   background: transparent;
+}
+
+body {
+	background-color: #f0f0f0; // #eaf5e9; #277bc0; #d3d3f9;
+	color: black;
+	font-family: Verdana, Arial, sans-serif; 
+	font-size:12px; 
+	line-height: 1.2;
+}
+ 
+h1,h2,h3,h4,h5,h6 {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-weight:bold;
+}
+
+h1 {
+	font-size: 140%;
+}
+
+h2 {
+	font-size: 120%;
+}
+
+h3 {
+	font-size: 110%;
+	font-style: oblique;
+}
+
+p {
+	margin-bottom: 0.75ex;
+}
+
+dt {
+	margin-top: 5px;
+	padding-left: 5px;
+	border-top: 1px solid #DDD;
+	font-weight: bold;
+}
+
+dd {
+	margin-left: 5ex;
+}
+
+a:link,
+a:visited {
+   color: #277bc0;/* #339;*/
+   font-weight:bolder; 
+   text-decoration:none; 
+}
+
+a:hover {
+   color: blue;
+   font-weight:bolder; 
+   text-decoration:underline; 
+}
+
+ul {
+	list-style: square inside ;
+	margin-bottom: 0.75ex;
+}
+
+table {
+   border: thin solid #666;
+	margin-top: 5px;
+	margin-bottom: 10px;
+}
+
+thead,tbody {
+   border: thin solid #666;
+}
+
+td, th {
+   margin: 0;
+	padding: 2px 2px 2px 2px;
+}
+
+th {
+	font-style: oblique;
+}
+
+h1.detail {
+}
+
+.header {
+	width:100%;
+	padding: 1em 10px 1em 10px;
+	color: #fff;
+	background: #5e87b0;
+	font-weight: bold;
+	text-shadow: 0 /*{b-bar-shadow-x}*/ 1px /*{b-bar-shadow-y}*/ 1px /*{b-bar-shadow-radius}*/ #3e6790 /*{b-bar-shadow-color}*/;
+	text-align: center;
+	font-size: 16px;
+	display: block;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	outline: 0 !important;
+}
+
+.inset {
+	margin-left: 22%;
+}
+
+.page {
+	padding: 10px 3% 10px 3%;
+}
+
+div.product {
+	background-color: white;
+	border: thin solid #333;
+	padding: 10px 15px 10px 15px;
+	margin-top: 10px;
+}
+
+div.parameter {
+	margin-top: 10px;
+	padding: 5px 10px 10px 10px;
+	border: thin dotted #333;
+	background-color: #ebebeb;
+}
+
+dt.parameter {
+	margin-top: 10px;
+	padding: 5px 10px 10px 10px;
+	border: thin dotted #333;
+	background-color: #ebebeb;
+}
+
+#toc {
+   border: thin solid #333;
+   background-color: #F5F5F5; 
+   padding: 10px 15px 10px 15px;
+   margin-left: 5%;
+   margin-right: 5%;
+   margin-bottom: 30px;
+}
+
+#toc ol, ul, li {
+	padding-left: 5ex;
+}
+
+#toc ol {
+	list-style-type: decimal;
+	list-style-position: inside; 
+}
+
+#toc ul {
+	list-style-type: square;
+	list-style-position: inside; 
+}
+
+p.version {
+  float: right;
+  width: 100%;
+  margin-top: 5px;
+  text-align: right;
+  font-size: x-small;
+}
+
+p.right {
+  float: right;
+  text-align: right;
+}
+
+.box-title {
+	font-size: 120%;
+	font-weight:bold;
+	text-align: center;
+	border-bottom: 1px solid #DDD;
+}
+
+ul.list {
+	list-style-position: outside;
+	padding-left: 1.5em;
+}
+
+li.list {
+	text-align: left;
+	padding-left: 0px;
+}
+
+.no-break {
+	white-space: nowrap;
+}
+
+p.author {
+	font-size: 120%;
+}
+
+div.brand {
+	width: 100%;
+	text-align: right;
+}
+
+div.abstract {
+	display: table;
+	position: relative;
+	width: 100%;
+}
+
+div.citation {
+}
+
+div.access {
+	float: left;
+	width: 20%;
+	background-color: white;
+	border: thin solid #333;
+	padding: 5px 5px 5px 5px;
+	margin-right: 1em;
+}
+
+a.xml-logo:link,
+a.xml-logo:visited {
+   background: #ff6600;
+   color: #ffffff;
+   font-weight:bolder; 
+   text-decoration:none; 
+   padding-left:2px;
+   padding-right:2px;
+}
+a.xml-logo:hover {
+   text-decoration:underline; 
+}
+
+	  </style></head><body><div><a id="top"/></div><div class="header"><div class="middle">HPDE.io</div></div><div class="page"><div class="spase"><div class="abstract"><div class="access"><p class="box-title">Data Access</p><ul class="list"><li class="list"><a target="_blank" href="ftps://spdf.gsfc.nasa.gov/pub/data/psp/fields/l2/dfb_ac_spec/scmelfhg/">FTPS from SPDF (not with most browsers)</a></li><li class="list"><a target="_blank" href="https://spdf.gsfc.nasa.gov/pub/data/psp/fields/l2/dfb_ac_spec/scmelfhg/">HTTPS from SPDF</a></li><li class="list"><a target="_blank" href="https://cdaweb.sci.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=PSP_FLD_L2_DFB_AC_SPEC_SCMELFHG&amp;index=sp_phys">CDAWeb</a></li></ul></div><div class="citation inset"><h1><a name="spase://VSPO/NumericalData/ParkerSolarProbe/FIELDS/DFB/Level2/AC/Spectra/SCM/E/LowFrequency/HighGain/PT0.873813S">PSP FIELDS Digital Fields Board (DFB) AC-coupled Searchcoil Magnetometer, SCM, Spectra, Low Frequency, High Gain, e-component, Sensor coordinates, Level 2 (L2), 0.873813 s Data</a></h1><p><dt>ResourceID</dt><dd>spase://VSPO/NumericalData/ParkerSolarProbe/FIELDS/DFB/Level2/AC/Spectra/SCM/E/LowFrequency/HighGain/PT0.873813S</dd></p><p><dt>Description</dt><dd><p>PSP FIELDS Digital Fields Board, DFB, SCMelfhg data:</p>
+<p>The DFB is the low frequency, less than 75 kHz, component of the FIELDS experiment on the Parker Solar Probe spacecraft, see reference [1] below. For a full description of the FIELDS experiment, see reference [2]. For a description of the DFB, see reference [3].</p>
+<p>DFB AC spectra data consist of power spectral densities as a function of frequency and time. These spectra are averaged over both frequency and time as described in [3]. The spectra have pseudo-logarithmically spaced frequency bins with the bin central frequencies reported in the metadata. The AC spectra are duty-cycled such that spectral averaging takes place over the first 1/8 of any given NYsecond when the data cadence is equal to one NYsecond. Less data are averaged by a factor of 2^N for data cadences that are faster than one NYsecond by 2^N. For cadences slower than one NYsecond, the first 1/8 of each NYsecond of data included are averaged together to construct the reported data.</p>
+<p>The Level 2 data products contained in this data file have been calibrated for:</p>
+<ul>
+<li><ol>
+<li>The Hanning window used in the spectral calculation</li>
+</ol></li>
+<li><ol start="2">
+<li>DFB in-band gain</li>
+</ol></li>
+<li><ol start="3">
+<li>DFB analog filter gain response</li>
+</ol></li>
+<li><ol start="4">
+<li>DFB digital filter gain response</li>
+</ol></li>
+<li><ol start="5">
+<li>The search coil preamplifier response, when applicable</li>
+</ol></li>
+<li><ol start="6">
+<li>The bandwidth of each spectral bin</li>
+</ol></li>
+</ul>
+<p>Note that compensation for the DFB digital filters will introduce a non-physical positively sloped power trend at high frequencies when the non-corrected signal is dominated by noise. This effect should be examined carefully when determining spectral slopes and features at the highest frequencies. Calibrations for the FIELDS preamplifiers have not been implemented as the preamplifier response is flat and equal to one through the DFB frequency range. Corrections for plasma sheath impedance gain and antenna effective length have not been applied to voltage sensor signals. These corrections will be applied in the Level 3 DFB data products. Therefore, all voltage sensor quantities when present in these Level 2 data products are expressed by using units of Volts squared per Hertz. Likewise, all magnetic field quantities when present in these Level 2 data product are expressed by using units of nanoTesla squared per Hertz.</p>
+<p>The Level 2 data products contained in this data file are expressed in sensor coordinates: e.g. dV12, dV34 for voltage measurements. For solar orbits 1 and 2, the search coil magnetometer spectral data are rotated into a non-intuitive coordinate system with components [d,e,f]. For solar orbits 3 and beyond, the magnetic field spectral data are in expressed in search coil magnetometer sensor coordinates with components [u,v,w].</p>
+<p>To rotate from [d,e,f] coordinates into [u,v,w] search coil sensor coordinates, use the following matrix, written in IDL notation, and the following equation: spectra_uvw_vector = R ## spectra_def_vector.</p>
+<p>R = [[  0.46834856, -0.81336422 ,  0.34509170]<br>
+[ -0.66921924, -0.071546954,  0.73961249]<br>
+[ -0.57688408, -0.57733845 , -0.57782790]]</p>
+<p>The time resolution of the DFB AC spectral data can vary by multiples of 2^N. During encounter when PSP is within 0.25 AU of the Sun, the DFB AC spectra data cadence is typically NYsecond NYsecond [2]. Timestamps correspond to the center time of each window.</p>
+<p>References:</p>
+<ol>
+<li>Fox, N.J., Velli, M.C., Bale, S.D. et al., Space Sci Rev (2016) 204:7. https://doi.org/10.1007/s1121401502116</li>
+<li>Bale, S.D., Goetz, K., Harvey, P.R. et al., Space Sci Rev (2016) 204:49. https://doi.org/10.1007/s1121401602445</li>
+<li>Malaspina, D.M., Ergun, R.E., Bolton, M. et al., JGR Space Physics (2016), 121, 5088-5096. https://doi.org/10.1002/2016JA022344</li>
+</ol>
+</dd></p></div></div><div><p class="right"><a target="_blank" href="PT0.873813S.xml">View XML</a> | <a target="_blank" href="PT0.873813S.json">View JSON</a></p><h1 class="detail">Details</h1></div><div><div class="product"><p class="version">Version:2.3.1</p><h1>NumericalData</h1><dt>ResourceID</dt><dd>spase://VSPO/NumericalData/ParkerSolarProbe/FIELDS/DFB/Level2/AC/Spectra/SCM/E/LowFrequency/HighGain/PT0.873813S</dd><dl><dt>ResourceHeader</dt><dd><dl><dt>ResourceName</dt><dd>PSP FIELDS Digital Fields Board (DFB) AC-coupled Searchcoil Magnetometer, SCM, Spectra, Low Frequency, High Gain, e-component, Sensor coordinates, Level 2 (L2), 0.873813 s Data</dd></dl><dl><dt>ReleaseDate</dt><dd>2020-07-03 23:28:58Z</dd></dl><dt>Description</dt><dd><p>PSP FIELDS Digital Fields Board, DFB, SCMelfhg data:</p>
+<p>The DFB is the low frequency, less than 75 kHz, component of the FIELDS experiment on the Parker Solar Probe spacecraft, see reference [1] below. For a full description of the FIELDS experiment, see reference [2]. For a description of the DFB, see reference [3].</p>
+<p>DFB AC spectra data consist of power spectral densities as a function of frequency and time. These spectra are averaged over both frequency and time as described in [3]. The spectra have pseudo-logarithmically spaced frequency bins with the bin central frequencies reported in the metadata. The AC spectra are duty-cycled such that spectral averaging takes place over the first 1/8 of any given NYsecond when the data cadence is equal to one NYsecond. Less data are averaged by a factor of 2^N for data cadences that are faster than one NYsecond by 2^N. For cadences slower than one NYsecond, the first 1/8 of each NYsecond of data included are averaged together to construct the reported data.</p>
+<p>The Level 2 data products contained in this data file have been calibrated for:</p>
+<ul>
+<li><ol>
+<li>The Hanning window used in the spectral calculation</li>
+</ol></li>
+<li><ol start="2">
+<li>DFB in-band gain</li>
+</ol></li>
+<li><ol start="3">
+<li>DFB analog filter gain response</li>
+</ol></li>
+<li><ol start="4">
+<li>DFB digital filter gain response</li>
+</ol></li>
+<li><ol start="5">
+<li>The search coil preamplifier response, when applicable</li>
+</ol></li>
+<li><ol start="6">
+<li>The bandwidth of each spectral bin</li>
+</ol></li>
+</ul>
+<p>Note that compensation for the DFB digital filters will introduce a non-physical positively sloped power trend at high frequencies when the non-corrected signal is dominated by noise. This effect should be examined carefully when determining spectral slopes and features at the highest frequencies. Calibrations for the FIELDS preamplifiers have not been implemented as the preamplifier response is flat and equal to one through the DFB frequency range. Corrections for plasma sheath impedance gain and antenna effective length have not been applied to voltage sensor signals. These corrections will be applied in the Level 3 DFB data products. Therefore, all voltage sensor quantities when present in these Level 2 data products are expressed by using units of Volts squared per Hertz. Likewise, all magnetic field quantities when present in these Level 2 data product are expressed by using units of nanoTesla squared per Hertz.</p>
+<p>The Level 2 data products contained in this data file are expressed in sensor coordinates: e.g. dV12, dV34 for voltage measurements. For solar orbits 1 and 2, the search coil magnetometer spectral data are rotated into a non-intuitive coordinate system with components [d,e,f]. For solar orbits 3 and beyond, the magnetic field spectral data are in expressed in search coil magnetometer sensor coordinates with components [u,v,w].</p>
+<p>To rotate from [d,e,f] coordinates into [u,v,w] search coil sensor coordinates, use the following matrix, written in IDL notation, and the following equation: spectra_uvw_vector = R ## spectra_def_vector.</p>
+<p>R = [[  0.46834856, -0.81336422 ,  0.34509170]<br>
+[ -0.66921924, -0.071546954,  0.73961249]<br>
+[ -0.57688408, -0.57733845 , -0.57782790]]</p>
+<p>The time resolution of the DFB AC spectral data can vary by multiples of 2^N. During encounter when PSP is within 0.25 AU of the Sun, the DFB AC spectra data cadence is typically NYsecond NYsecond [2]. Timestamps correspond to the center time of each window.</p>
+<p>References:</p>
+<ol>
+<li>Fox, N.J., Velli, M.C., Bale, S.D. et al., Space Sci Rev (2016) 204:7. https://doi.org/10.1007/s1121401502116</li>
+<li>Bale, S.D., Goetz, K., Harvey, P.R. et al., Space Sci Rev (2016) 204:49. https://doi.org/10.1007/s1121401602445</li>
+<li>Malaspina, D.M., Ergun, R.E., Bolton, M. et al., JGR Space Physics (2016), 121, 5088-5096. https://doi.org/10.1002/2016JA022344</li>
+</ol>
+</dd><dl><dt>Acknowledgement</dt><dd>Please acknowledge S.D. Bale for use of the Data</dd></dl><dt>Contacts</dt><dd><table class="nested" cellspacing="0"><tr><th/><th class="center">Role</th><th class="center">Person</th></tr><tbody><tr><td>1.</td><td>PrincipalInvestigator</td><td><a target="_blank" href="https://hpde.io/SMWG/Person/Stuart.D.Bale.html">spase://SMWG/Person/Stuart.D.Bale</a></td></tr><tr><td>2.</td><td>MetadataContact</td><td><a target="_blank" href="https://hpde.io/SMWG/Person/Robert.M.Candey.html">spase://SMWG/Person/Robert.M.Candey</a></td></tr><tr><td>3.</td><td>MetadataContact</td><td><a target="_blank" href="https://hpde.io/SMWG/Person/Lee.Frost.Bargatze.html">spase://SMWG/Person/Lee.Frost.Bargatze</a></td></tr></tbody></table></dd><dl><dt>InformationURL</dt><dd><dl><dt>Name</dt><dd>PSP FIELDS Instrument Suite, Space Science Review Publication</dd></dl><dl><dt>URL</dt><dd><a target="_blank" href="https://doi.org/10.1007/s11214-016-0244-5">https://doi.org/10.1007/s11214-016-0244-5</a></dd></dl><dt>Description</dt><dd><p>Parker Solar Probe, PSP, FIELDS Instrument Suite Description: Bale, S.D., Goetz, K., Harvey, P.R. et al., The FIELDS Instrument Suite for Solar Probe Plus, Space Sci Rev 204, 49–82 (2016)</p>
+</dd></dd></dl><dl><dt>InformationURL</dt><dd><dl><dt>Name</dt><dd>PSP FIELDS Instrument Suite, Digital Fields Board, JGR Space Physics Publication</dd></dl><dl><dt>URL</dt><dd><a target="_blank" href="https://doi.org/10.1002/2016JA022344">https://doi.org/10.1002/2016JA022344</a></dd></dl><dt>Description</dt><dd><p>Parker Solar Probe, PSP, FIELDS Instrument Suite, Digital Fields Board, DFB, Description: Malaspina, D.M., Ergun, R.E., Bolton, M. et al., The Digital Fields Board for the FIELDS Instrument Suite on the Solar Probe Plus Mission: Analog and Digital signal Processing, JGR Space Physics, 121, 5088-5096 (2016)</p>
+</dd></dd></dl><dl><dt>InformationURL</dt><dd><dl><dt>Name</dt><dd>PSP FIELDS Instrument Suite, Data Description, SOC Web Site, UC Berkeley</dd></dl><dl><dt>URL</dt><dd><a target="_blank" href="http://fields.ssl.berkeley.edu/data/">http://fields.ssl.berkeley.edu/data/</a></dd></dl><dt>Description</dt><dd><p>Parker Solar Probe, PSP, FIELDS Instrument Suite, Data Description, Spacecraft Operations Center, SOC, Web Site, UC Berkeley</p>
+</dd></dd></dl><dl><dt>InformationURL</dt><dd><dl><dt>Name</dt><dd>PSP FIELDS Instrument Suite, Rules of the Road, SOC Web Site, UC Berkeley</dd></dl><dl><dt>URL</dt><dd><a target="_blank" href="http://fields.ssl.berkeley.edu/rules/">http://fields.ssl.berkeley.edu/rules/</a></dd></dl><dt>Description</dt><dd><p>Parker Solar Probe, PSP, FIELDS Instrument Suite, Rules of the Road, Spacecraft Operations Center, SOC, Web Site, UC Berkeley</p>
+</dd></dd></dl><dl><dt>InformationURL</dt><dd><dl><dt>Name</dt><dd>PSP Mission Overview, APL, JHU</dd></dl><dl><dt>URL</dt><dd><a target="_blank" href="http://parkersolarprobe.jhuapl.edu/The-Mission/index.php">http://parkersolarprobe.jhuapl.edu/The-Mission/index.php</a></dd></dl><dt>Description</dt><dd><p>Parker Solar Probe, PSP, Mission Overview, hosted by the Applied Physics Laboratory, Johns Hopkins University</p>
+</dd></dd></dl></dd></dl><dl><dt>AccessInformation</dt><dd><dl><dt>RepositoryID</dt><dd><a href="https://hpde.io/SMWG/Repository/NASA/GSFC/SPDF.html">spase://SMWG/Repository/NASA/GSFC/SPDF</a></dd></dl><dl><dt>Availability</dt><dd>Online</dd></dl><dl><dt>AccessRights</dt><dd>Open</dd></dl><dl><dt>AccessURL</dt><dd><dl><dt>Name</dt><dd>FTPS from SPDF (not with most browsers)</dd></dl><dl><dt>URL</dt><dd><a target="_blank" href="ftps://spdf.gsfc.nasa.gov/pub/data/psp/fields/l2/dfb_ac_spec/scmelfhg/">ftps://spdf.gsfc.nasa.gov/pub/data/psp/fields/l2/dfb_ac_spec/scmelfhg/</a></dd></dl><dt>Description</dt><dd><p>Access to Data in CDF Format via ftp from SPDF</p>
+</dd></dd></dl><dl><dt>AccessURL</dt><dd><dl><dt>Name</dt><dd>HTTPS from SPDF</dd></dl><dl><dt>URL</dt><dd><a target="_blank" href="https://spdf.gsfc.nasa.gov/pub/data/psp/fields/l2/dfb_ac_spec/scmelfhg/">https://spdf.gsfc.nasa.gov/pub/data/psp/fields/l2/dfb_ac_spec/scmelfhg/</a></dd></dl><dt>Description</dt><dd><p>Access to Data in CDF Format via http from SPDF</p>
+</dd></dd></dl><dl><dt>AccessURL</dt><dd><dl><dt>Name</dt><dd>CDAWeb</dd></dl><dl><dt>URL</dt><dd><a target="_blank" href="https://cdaweb.sci.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=PSP_FLD_L2_DFB_AC_SPEC_SCMELFHG&amp;index=sp_phys">https://cdaweb.sci.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=PSP_FLD_L2_DFB_AC_SPEC_SCMELFHG&amp;index=sp_phys</a></dd></dl><dl><dt>ProductKey</dt><dd>PSP_FLD_L2_DFB_AC_SPEC_SCMELFHG</dd></dl><dt>Description</dt><dd><p>Access to ASCII, CDF, and Plots via NASA/GSFC CDAWeb</p>
+</dd></dd></dl><dl><dt>Format</dt><dd>CDF</dd></dl><dl><dt>Encoding</dt><dd>None</dd></dl><dl><dt>Acknowledgement</dt><dd>Please acknowledge S.D. Bale. Please acknowledge the Data Providers and CDAWeb when using these Data.</dd></dl></dd></dl><dl><dt>ProcessingLevel</dt><dd>Calibrated</dd></dl><dt>InstrumentIDs</dt><dd><a target="_blank" href="https://hpde.io/SMWG/Instrument/ParkerSolarProbe/FIELDS/DFB.html">spase://SMWG/Instrument/ParkerSolarProbe/FIELDS/DFB</a></dd><dd><a target="_blank" href="https://hpde.io/SMWG/Instrument/ParkerSolarProbe/FIELDS/SCM.html">spase://SMWG/Instrument/ParkerSolarProbe/FIELDS/SCM</a></dd><dl><dt>MeasurementType</dt><dd>InstrumentStatus</dd></dl><dl><dt>MeasurementType</dt><dd>Waves.Passive</dd></dl><dl><dt>TemporalDescription</dt><dd><dl><dt>TimeSpan</dt><dd><dl><dt>StartDate</dt><dd>2018-10-06 00:00:00.000</dd></dl><dl><dt>RelativeStopDate</dt><dd>-P6M</dd></dl></dd></dl><dl><dt>Cadence</dt><dd>PT0.873813S</dd></dl></dd></dl><dl><dt>ObservedRegion</dt><dd>Heliosphere</dd></dl><dl><dt>ObservedRegion</dt><dd>Heliosphere.Inner</dd></dl><dl><dt>ObservedRegion</dt><dd>Heliosphere.NearEarth</dd></dl><dl><dt>ObservedRegion</dt><dd>Sun.Corona</dd></dl><dl><dt class="parameter">Parameter #1</dt><dd><dl><dt>Name</dt><dd>Epoch Time, TT2000, DFB, AC Searchcoil Magnetometer, LF, HG, e-comp., Sensor coordinates Spectra</dd></dl><dl><dt>ParameterKey</dt><dd>epoch_ac_spec_SCMelfhg</dd></dl><dt>Description</dt><dd><p>Epoch Time Tags in Terrestrial Time 2000, TT2000, for Digital Fields Board, DFB, AC-coupled Searchcoil Magnetometer, SCM, Low Frequency, High Gain, e-component, Searchcoil Sensor coordinates Spectra</p>
+</dd><dl><dt>Caveats</dt><dd>This Parameter exhibits an increasing Monotonic Progression</dd></dl><dl><dt>Cadence</dt><dd>PT0.873813S</dd></dl><dl><dt>Units</dt><dd>ns</dd></dl><dl><dt>UnitsConversion</dt><dd>1.0e-9&gt;s</dd></dl><dl><dt>RenderingHints</dt><dd><dl><dt>AxisLabel</dt><dd>epoch</dd></dl><dl><dt>ValueFormat</dt><dd>I22</dd></dl><dl><dt>ScaleMin</dt><dd>6.3705981819904e+13</dd></dl><dl><dt>ScaleMax</dt><dd>6.3706068219904e+13</dd></dl></dd></dl><dl><dt>ValidMin</dt><dd>2010-01-01T00:00:00.000000000</dd></dl><dl><dt>ValidMax</dt><dd>2050-01-01T00:00:00.000000000</dd></dl><dl><dt>FillValue</dt><dd>9999-12-31T23:59:59.999999999</dd></dl><dl><dt>Support</dt><dd><dl><dt>SupportQuantity</dt><dd>Temporal</dd></dl></dd></dl></dd></dl><dl><dt class="parameter">Parameter #2</dt><dd><dl><dt>Name</dt><dd>DFB, Spectra, Frequency Bins for AC Searchcoil Magnetometer, LF, HG, e-comp., Sensor coordinates</dd></dl><dl><dt>Set</dt><dd>Time Series defined by using: EPOCH_AC_SPEC_SCMELFHG</dd></dl><dl><dt>ParameterKey</dt><dd>psp_fld_l2_dfb_ac_spec_SCMelfhg_frequency_bins</dd></dl><dt>Description</dt><dd><p>FIELDS Digital Fields Board, DFB, Frequency Bins for Spectra, AC-coupled Searchcoil Magnetometer, SCM, Low Frequency, High Gain, e-component, Searchcoil Sensor coordinates</p>
+</dd><dl><dt>Cadence</dt><dd>PT0.873813S</dd></dl><dl><dt>Units</dt><dd>Hz</dd></dl><dl><dt>RenderingHints</dt><dd><dl><dt>AxisLabel</dt><dd>frequency</dd></dl><dl><dt>ValueFormat</dt><dd>F8.1</dd></dl><dl><dt>ScaleType</dt><dd>LogScale</dd></dl></dd></dl><dl><dt>Structure</dt><dd><dl><dt>Size</dt><dd>43</dd></dl></dd></dl><dl><dt>ValidMin</dt><dd>366.211</dd></dl><dl><dt>ValidMax</dt><dd>29296.9</dd></dl><dl><dt>FillValue</dt><dd>-1.0e+31</dd></dl><dl><dt>Support</dt><dd><dl><dt>Qualifier</dt><dd>Array</dd></dl><dl><dt>SupportQuantity</dt><dd>Other</dd></dl></dd></dl></dd></dl><dl><dt class="parameter">Parameter #3</dt><dd><dl><dt>Name</dt><dd>psp_fld_l2_dfb_ac_spec_SCMelfhg</dd></dl><dl><dt>Set</dt><dd>Time Series defined by using: EPOCH_AC_SPEC_SCMELFHG</dd></dl><dl><dt>ParameterKey</dt><dd>psp_fld_l2_dfb_ac_spec_SCMelfhg</dd></dl><dt>Description</dt><dd><p>L2 Power Spectra for channel SCMELFHG</p>
+</dd><dl><dt>Cadence</dt><dd>PT0.873813S</dd></dl><dl><dt>Units</dt><dd>nT^2/Hz</dd></dl><dl><dt>UnitsConversion</dt><dd>1.0e-18&gt;T^2/Hz</dd></dl><dl><dt>RenderingHints</dt><dd><dl><dt>DisplayType</dt><dd>Spectrogram</dd></dl><dl><dt>AxisLabel</dt><dd>PSD</dd></dl><dl><dt>ValueFormat</dt><dd>F12.3</dd></dl><dl><dt>ScaleType</dt><dd>LogScale</dd></dl></dd></dl><dl><dt>Structure</dt><dd><dl><dt>Size</dt><dd>43</dd></dl></dd></dl><dl><dt>ValidMin</dt><dd>0.0</dd></dl><dl><dt>ValidMax</dt><dd>122880.0</dd></dl><dl><dt>FillValue</dt><dd>-1.0e+31</dd></dl><dl><dt>Wave</dt><dd><dl><dt>Qualifier</dt><dd>Array</dd></dl><dl><dt>Qualifier</dt><dd>Component.J</dd></dl><dl><dt>Qualifier</dt><dd>CrossSpectrum</dd></dl><dl><dt>WaveQuantity</dt><dd>ACMagneticField</dd></dl></dd></dl></dd></dl><dl><dt class="parameter">Parameter #4</dt><dd><dl><dt>Name</dt><dd>DFB, Spectra, Saturation Flags for AC Searchcoil Magnetometer, LF, HG, e-comp., Sensor coordinates</dd></dl><dl><dt>Set</dt><dd>Time Series defined by using: EPOCH_AC_SPEC_SCMELFHG</dd></dl><dl><dt>ParameterKey</dt><dd>psp_fld_l2_dfb_ac_spec_SCMelfhg_saturation_flags</dd></dl><dt>Description</dt><dd><p>FIELDS Digital Fields Board, DFB, Saturation Flags for Spectra, AC-coupled Spectra, Searchcoil Magnetometer, SCM, Low Frequency, High Gain, e-component, Searchcoil Sensor coordinates</p>
+</dd><dl><dt>Caveats</dt><dd>FIELDS Level 2 DFB Saturation Flag Values: 0=Spectra unsaturated, 1=Spectra saturated</dd></dl><dl><dt>Cadence</dt><dd>PT0.873813S</dd></dl><dl><dt>RenderingHints</dt><dd><dl><dt>DisplayType</dt><dd>TimeSeries</dd></dl><dl><dt>ValueFormat</dt><dd>I8</dd></dl><dl><dt>ScaleType</dt><dd>LinearScale</dd></dl></dd></dl><dl><dt>ValidMin</dt><dd>0</dd></dl><dl><dt>ValidMax</dt><dd>1</dd></dl><dl><dt>FillValue</dt><dd>-32768</dd></dl><dl><dt>Support</dt><dd><dl><dt>Qualifier</dt><dd>Scalar</dd></dl><dl><dt>SupportQuantity</dt><dd>InstrumentMode</dd></dl></dd></dl></dd></dl><dl><dt class="parameter">Parameter #5</dt><dd><dl><dt>Name</dt><dd>Epoch Time, TT2000, FIELDS Data Quality Flags</dd></dl><dl><dt>ParameterKey</dt><dd>epoch_quality_flags</dd></dl><dt>Description</dt><dd><p>Epoch Time Tags in Terrestrial Time 2000, TT2000, for FIELDS Instrument Suite Data Quality Flags</p>
+</dd><dl><dt>Caveats</dt><dd>This Parameter exhibits an increasing Monotonic Progression</dd></dl><dl><dt>Cadence</dt><dd>PT0.873813S</dd></dl><dl><dt>Units</dt><dd>ns</dd></dl><dl><dt>UnitsConversion</dt><dd>1.0e-9&gt;s</dd></dl><dl><dt>RenderingHints</dt><dd><dl><dt>AxisLabel</dt><dd>epoch</dd></dl><dl><dt>ValueFormat</dt><dd>I22</dd></dl><dl><dt>ScaleMin</dt><dd>6.3705981819904e+13</dd></dl><dl><dt>ScaleMax</dt><dd>6.3706068219904e+13</dd></dl></dd></dl><dl><dt>ValidMin</dt><dd>2010-01-01T00:00:00.000000000</dd></dl><dl><dt>ValidMax</dt><dd>2050-01-01T00:00:00.000000000</dd></dl><dl><dt>FillValue</dt><dd>9999-12-31T23:59:59.999999999</dd></dl><dl><dt>Support</dt><dd><dl><dt>SupportQuantity</dt><dd>Temporal</dd></dl></dd></dl></dd></dl><dl><dt class="parameter">Parameter #6</dt><dd><dl><dt>Name</dt><dd>FIELDS Data Quality Flags</dd></dl><dl><dt>Set</dt><dd>Time Series defined by using: EPOCH_QUALITY_FLAGS</dd></dl><dl><dt>ParameterKey</dt><dd>psp_fld_l2_quality_flags</dd></dl><dt>Description</dt><dd><p>FIELDS Instrument Suite Data Quality Flags</p>
+</dd><dl><dt>Caveats</dt><dd>FIELDS Data Quality Flags: The flags are bitwise variables. This means that multiple flags can be set for a single time by adding the separate flag bit values. Current flagged values are: 1=FIELDS Antenna Bias Sweep, 2=PSP Thruster Firing, 4=PSP Rotations for MAG Calibration (MAG Rolls), 8=FIELDS MAG Calibration Sequence, 16=SWEAP SPC in Electron Mode, 32=PSP Solar Limb Sensor,(SLS, Test. 64=PSP Spacecraft is Off Umbra Pointing. A value of zero corresponds to no set flags. Not all flags are relevant to all FIELDS data products, refer to notes in the CDF metadata and on the FIELDS Satellite Operations Center, SOC, website for information on how the various flags impact FIELDS data. Additional flagged items may be added in the future.</dd></dl><dl><dt>Cadence</dt><dd>PT0.873813S</dd></dl><dl><dt>RenderingHints</dt><dd><dl><dt>AxisLabel</dt><dd>flag</dd></dl><dl><dt>ValueFormat</dt><dd>I10</dd></dl></dd></dl><dl><dt>ValidMin</dt><dd>0</dd></dl><dl><dt>ValidMax</dt><dd>255</dd></dl><dl><dt>FillValue</dt><dd>4294967295</dd></dl><dl><dt>Support</dt><dd><dl><dt>Qualifier</dt><dd>Scalar</dd></dl><dl><dt>SupportQuantity</dt><dd>InstrumentMode</dd></dl></dd></dl></dd></dl><dl><dt class="parameter">Parameter #7</dt><dd><dl><dt>Name</dt><dd>Rotation Matrix, (d,e,f) to (u,v,w)</dd></dl><dl><dt>ParameterKey</dt><dd>scm_rotation_matrix_def_uvw</dd></dl><dt>Description</dt><dd><p>Rotation Matrix from (d,e,f) to (u,v,w) Coordinates</p>
+</dd><dl><dt>Cadence</dt><dd>PT0.873813S</dd></dl><dl><dt>RenderingHints</dt><dd><dl><dt>ValueFormat</dt><dd>F10.3</dd></dl></dd></dl><dl><dt>Structure</dt><dd><dl><dt>Size</dt><dd>3 3</dd></dl></dd></dl><dl><dt>Support</dt><dd><dl><dt>Qualifier</dt><dd>Array</dd></dl><dl><dt>SupportQuantity</dt><dd>Other</dd></dl></dd></dl></dd></dl></div></div></div></div></body></html>

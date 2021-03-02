@@ -1,0 +1,125 @@
+<?xml version="1.0"?>
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_2_9.xsd">
+  <Version>2.3.0</Version>
+  <NumericalData>
+    <ResourceID>spase://VSPO/NumericalData/Voyager1/MAG/Jupiter/PT48S</ResourceID>
+    <ResourceHeader>
+      <ResourceName>Voyager 1 Jupiter Magnetic Field in System III (1965) Coordinates, Resampled, Version 1.1, 48 s Data</ResourceName>
+      <ReleaseDate>2018-11-27T18:09:04Z</ReleaseDate>
+      <Description>* Data Set Overview
+* =================
+
+* Version 1.1
+* ===========
+
+This Version 1.1 Data Set replaces the Version 1.0 Data Set (DATA_SET_ID=VG1-J-MAG-4-48.0SEC) previously archived with PDS. Changes to this Version include the Addition of Data Columns not included in Version 1.0, the Modification of Time Format and Flag Values, and Upgrade of associated Labels and Catalog Templates to PDS Version 3.2.
+
+* Data Set Overview
+* =================
+
+This Data Set includes calibrated Magnetic Field Data acquired by the Voyager 1 Low Field Magnetometer (LFM) during the Jupiter Encounter. Coverage begins in the Solar Wind inbound to Jupiter and continues past the last outbound Bowshock Crossing. The Data are in System III (1965) (SYS3) Coordinates and have been averaged from the 9.6 s Summary Data to a 48 s Sample Rate. All Magnetic Field Measurements are given in nT. The Magnetic Field Data are calibrated (see the Calibration Description included in the Voyager 1 Magnetometer Instrument Catalog File for Details).
+
+Ephemeris Data, provided in 96 s sampled System III (1965) Coordinates, have been merged into the Data Files for this Data Set. The Ephemeris Data, generated from Voyager 1 SEDR and provided by the Voyager Magnetic Field Instrument Team, are Part of the Data Set VG1-J-POS-6-SUMM-S3COORDS-V1.1. The Position Vectors for Times at which Ephemeris is not provided have been flagged.
+
+* Parameters
+* ==========
+
+The full LFM Instrument Sample Rate is one Sample per 0.06 s. Full Telemetry Resolution "Detail" Data must be obtained from the Instrument Team. For this Data Set, the Data have been resampled to 48 s from 9.6 s Averages. The 9.6 s Data were resampled from 1.92 s Averages which were in turn resampled from the Detail Data.
+
+The LFM has eight Dynamic Ranges. The Instrument is designed to switch between Dynamic Ranges automatically depending on the observed Magnetic Field Magnitude and Fluctuations. Instrument Digitization Uncertainty depends on the Dynamic Range as indicated in the following Table from (Behannon et al., 1977).
+
+* LFM Dynamic Ranges and Quantization Uncertainty
+* ===============================================
+
++----------------------------------------------+
+| Range Num | Range (nT)   | Quantization (nT) |
+------------------------------------------------
+| 1         | &#xB1;8.8         | &#xB1;0.0022           |
+| 2         | &#xB1;26          | &#xB1;0.0063           |
+| 3         | &#xB1;79          | &#xB1;0.019            |
+| 4         | &#xB1;240         | &#xB1;0.059            |
+| 5         | &#xB1;710         | &#xB1;0.173            |
+| 6         | &#xB1;2,100       | &#xB1;0.513            |
+| 7         | &#xB1;6,400       | &#xB1;1.56             |
+| 8         | &#xB1;50,000      | &#xB1;12.2             |
++----------------------------------------------+
+
+* Processing
+* ==========
+
+Voyager EDRs undergo the following Processing in order to produce these 48 s averaged Summary Data:
+
+* Read EDR
+* Unpack Header Block (Receiver ID, Spacecraft ID, Telemetry Mode, FDS Counts, Data Flags)
+* Convert selected Time Tags to Integer Time (YY/DDD/HH:MM:SS.FFF)
+* Unpack Sub-header Block (MAG Status Words, Plasma Data)
+* Unpack Science Block (MAG Counts)
+* Convert Counts to nT
+* Apply Sensor and Boom Alignment Matrices
+* Rotate (optional) 1.92 s Averages while averaging Detail Data in nT to create 1.92 s Averages
+* Average 1.92 s Data to 9.6 s, then 9.6 s Data to 48 s
+* Write Summary Record
+
+Counts are measured onboard using 12-bit Words that may represent Values ranging from 0 to 4096. Integer Counts are converted to Magnetic Field Units (nT) by subtracting a Zero Offset from the measured MAG Value and multiplying this Difference by the Sensitivity of the Instrument.
+
+* Data
+* ====
+
+The Data Files are given in ASCII, Fixed Field Width, Comma-delimited Tables. The Record Structure is described in the following Table:
+
+* Resampled Magnetic Field Data in System III (1965) Coordinates
+* ==============================================================
+
++------------------------------------------------------------------------------------------------------------+
+| Column   | Type | Description                                                                              |
+--------------------------------------------------------------------------------------------------------------
+| Time     | a23  | Spacecraft Event Time (UT) of the Sample in the Format: YYYY-MM-DDTHH:MM:SS.SSS          |
+| sclk     | a12  | Spacecraft Clock in the Format: MOD65536:MOD60:FDS-LINE                                  |
+| mag_id   | i1   | Magnetometer ID (1=LFM, 2=HFM)                                                           |
+| Br       | f9.3 | Average of Detail Magnetic Field R Component in nT                                       |
+| Btheta   | f9.3 | Average of Detail Magnetic Field Theta Component in nT                                   |
+| Bphi     | f9.3 | Average of Detail Magnetic Field Phi Component in nT                                     |
+| Bmag     | f    |                                                                                          |
++------------------------------------------------------------------------------------------------------------+</Description>
+      <Contact>
+        <PersonID>spase://SMWG/Person/Todd.A.King</PersonID>
+        <Role>MetadataContact</Role>
+      </Contact>
+      <Contact>
+        <PersonID>spase://SMWG/Person/Lee.Frost.Bargatze</PersonID>
+        <Role>MetadataContact</Role>
+      </Contact>
+      <InformationURL>
+        <Name>VG1-J-MAG-4-SUMM-S3COORDS-48.0SEC-V1.1</Name>
+        <URL>https://pds-ppi.igpp.ucla.edu/data/VG1-J-MAG-4-SUMM-S3COORDS-48.0SEC-V1.1/AAREADME.TXT</URL>
+        <Description>The Document describing the Contents of the Collection.</Description>
+        <Language>En</Language>
+      </InformationURL>
+      <PriorID>spase://VMO/NumericalData/Voyager1/MAG/Jupiter/PT48.0S</PriorID>
+    </ResourceHeader>
+    <AccessInformation>
+      <RepositoryID>spase://SMWG/Repository/PDS/PPI</RepositoryID>
+      <Availability>Online</Availability>
+      <AccessRights>Open</AccessRights>
+      <AccessURL>
+        <Name>PDS/PPI</Name>
+        <URL>https://pds-ppi.igpp.ucla.edu/search/view/?f=yes&amp;id=pds://PPI/VG1-J-MAG-4-SUMM-S3COORDS-48.0SEC-V1.1</URL>
+        <ProductKey>VG1-J-MAG-4-SUMM-S3COORDS-48.0SEC-V1.1</ProductKey>
+        <Description>This Collection is archived with NASA Planetary Data System.</Description>
+        <Language>En</Language>
+      </AccessURL>
+      <Format>Text.ASCII</Format>
+      <Acknowledgement>NASA Planetary Plasma Interactions (PPI) Node of the Planetary Data System (PDS) and the Principal Investigator for the Data.</Acknowledgement>
+    </AccessInformation>
+    <InstrumentID>spase://SMWG/Instrument/Voyager1/MAG</InstrumentID>
+    <MeasurementType>MagneticField</MeasurementType>
+    <TemporalDescription>
+      <TimeSpan>
+        <StartDate>1979-03-03T00:00:35.97</StartDate>
+        <StopDate>1979-03-16T23:59:56.18</StopDate>
+      </TimeSpan>
+      <Cadence>PT48S</Cadence>
+    </TemporalDescription>
+    <ObservedRegion>Jupiter</ObservedRegion>
+  </NumericalData>
+</Spase>

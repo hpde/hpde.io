@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Spase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.spase-group.org/data/schema" 
+	xsi:schemaLocation="http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_3_1.xsd">
+  <Version>2.3.1</Version>
+  <NumericalData>
+    <ResourceID>spase://NASA/NumericalData/GOLD/L2/QEUV/PT8S</ResourceID>
+    <ResourceHeader>
+      <ResourceName>Gold Level L2 Solar EUV proxy</ResourceName>
+      <ReleaseDate>2020-09-14T16:47:17Z</ReleaseDate>
+      <Description>The GOLD solar irradiance proxy (QEUV) is a proxy for the integrated solar EUV 
+	  irradiance below 45 nm, which can be derived directly from far ultraviolet (FUV) radiance 
+	  measurements. QEUV is a dayside disk data product, derived from the GOLD DAY measurement mode.
+	  
+	  Algorithm heritage
+	  The disk QEUV retrieval algorithm was originally developed for use with GUVI and SSUSI images 
+	  (Strickland et al., [1995]).  The GOLD implementation of this algorithm takes advantage of GOLD’s 
+	  ability to transmit the full spectrum to maximize the signal-to-noise ratio and eliminate atomic 
+	  emission lines that contaminate the N2 LBH bands (e.g., N I 149.3 nm). This algorithm has been 
+	  extensively documented and applied (e.g., Strickland et al. [2004]; Evans et al., [1995]). The 
+	  associated GOLD Level 2 data product is called QEUV.
+	  
+	  References
+	  -Evans, J. S., D. J. Strickland and R. E. Huffman (1995), Satellite remote sensing of thermospheric 
+	   O/N2 and solar EUV: 2. Data analysis, J. Geophys. Res., Vol. 100, NO. A7, pages 12,227-12,233.
+      -Strickland, D. J., J. S. Evans, and L. J. Paxton (1995), Satellite remote sensing of thermospheric  
+	   O/N2 and solar EUV: 1. Theory, J. Geophys. Res., 110, A7, pages 12,217-12,226.
+      -Strickland, D. J., J. L. Lean, R. R. Meier, A. B. Christensen, L. J. Paxton, D. Morrison, J. D. 
+	   Craven, R. L. Walterscheid, D. L. Judge, and D. R. McMullin, (2004), Solar EUV irradiance variability 
+	   derived from terrestrial far ultraviolet dayglow observations, Vol. 31, L03801, doi:10.1029/2003GL018415.
+	  </Description>	  
+      <Acknowledgement>National Aeronautics and Space Administration; Dr. Richard Eastes</Acknowledgement>
+      <Contact>
+        <PersonID>spase://SMWG/Person/Richard.Eastes</PersonID>
+        <Role>PrincipalInvestigator</Role>
+      </Contact>
+      <Contact>
+        <PersonID>spase://SMWG/Person/James.M.Weygand</PersonID>
+        <Role>MetadataContact</Role>
+      </Contact>
+      <InformationURL>
+        <Name>GOLD Homepage web page</Name>
+        <URL>https://gold.cs.ucf.edu/</URL>
+        <Description>GOLD web page with news and other information.</Description>
+      </InformationURL>
+	  <InformationURL>
+        <Name>GOLD Missions Space Science Reviews Article</Name>
+        <URL>https://doi.org/10.1007/s11214-017-0392-2</URL>
+        <Description>Eastes, R.W., McClintock, W.E., Burns, A.G. et al. Space Sci. Rev. (2017) vol. 212, pp.383.</Description>
+      </InformationURL>
+        <PriorID>spase://VSPO/NumericalData/GOLD/L2/QEUV/PT8S</PriorID>
+        <PriorID>spase://NASA/NumericalData/SES-14/GOLD/L2/QEUV/PT8S</PriorID>
+    </ResourceHeader>    
+	<AccessInformation>
+        <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF</RepositoryID>
+        <Availability>Online</Availability>
+        <AccessRights>Open</AccessRights>
+	<AccessURL>
+            <Name>FTPS from SPDF (not with most browsers)</Name>
+            <URL>ftps://spdf.gsfc.nasa.gov/pub/data/gold/level2/</URL>
+            <Description>FTPS access to Gold Level L2 data</Description>
+         </AccessURL>
+         <AccessURL>
+           <Name>HTTPS from SPDF</Name>
+            <URL>https://spdf.gsfc.nasa.gov/pub/data/gold/level2/</URL>
+            <Description>HTTPS access to Gold Level L2 data</Description>
+         </AccessURL>
+         <Format>NetCDF</Format>
+         <Acknowledgement>Space Physics Data Facility of the NASA Goddard Space Flight Center; Robert E McGuire</Acknowledgement>
+    </AccessInformation>   	  
+    <ProcessingLevel>Calibrated</ProcessingLevel>
+	<ProviderName>GOLD</ProviderName>
+	<ProviderResourceName>Gold Level L2 Solar EUV proxy</ProviderResourceName>
+	<ProviderProcessingLevel>Level 2</ProviderProcessingLevel>
+	<ProviderVersion>1</ProviderVersion>
+    <InstrumentID>spase://SMWG/Instrument/GOLD</InstrumentID>   
+    <MeasurementType>ImageIntensity</MeasurementType>
+    <TemporalDescription>
+      <TimeSpan>
+        <StartDate>2018-10-05T00:00:00</StartDate>
+	<RelativeStopDate>P1D</RelativeStopDate>
+      </TimeSpan>
+      <Cadence>PT8S</Cadence>
+    </TemporalDescription>
+	<ObservedRegion>Earth.NearSurface.Ionosphere</ObservedRegion>
+    <Keyword></Keyword>
+    <Keyword>Solar EUV proxy</Keyword>
+    <Keyword>GOLD</Keyword>
+    <Keyword>SES-14</Keyword> 
+
+	  <Parameter>
+	    <Name>Random Uncertainty in N2 LBH brightness</Name>
+	    <ParameterKey>n2_lbh_unc_ran</ParameterKey>
+	    <Description>Random uncertainty in N2 LBH brightness.</Description>
+	    <Cadence>PT8S</Cadence>
+		<Units>Rayleighs</Units>
+		<Structure>
+			<Size>92 40</Size>
+		</Structure>
+		<ValidMin>0</ValidMin>
+		<ValidMax>100000</ValidMax>
+		<FillValue>9.9692e+36</FillValue>
+	    <Support>
+	        <Qualifier>Uncertainty</Qualifier>
+	        <SupportQuantity>Other</SupportQuantity>
+	    </Support>
+	  </Parameter>
+	  <Parameter>
+	    <Name>Random Uncertainty in in retrieved QEUV</Name>
+	    <ParameterKey>qeuv_unc_ran</ParameterKey>
+	    <Description>Random uncertainty in retrieved QEUV.</Description>
+	    <Cadence>PT8S</Cadence>
+		<Units>erg/cm2/s</Units>
+		<Structure>
+			<Size>92 40</Size>
+		</Structure>
+		<ValidMin>0</ValidMin>
+		<ValidMax>10</ValidMax>
+		<FillValue>9.9692e+36</FillValue>
+	    <Support>
+	        <Qualifier>Uncertainty</Qualifier>
+	        <SupportQuantity>Other</SupportQuantity>
+	    </Support>
+	  </Parameter>
+	  <Parameter>
+	    <Name>DEUV Lookup Table</Name>
+	    <ParameterKey>qeuv_lookup_table</ParameterKey>
+	    <Description>QEUV lookup table filename.</Description>
+	    <Cadence>PT8S</Cadence>
+		<Structure>
+			<Size>50 40</Size>
+		</Structure>
+		<FillValue> </FillValue>
+	    <Support>
+	        <SupportQuantity>Other</SupportQuantity>
+	    </Support>
+      </Parameter>
+	  <Parameter>
+	    <Name>O/N2 Ratio Quality Flag</Name>
+	    <ParameterKey>on2_dqi</ParameterKey>
+	    <Description>ON2 data quality index.</Description>
+	    <Cadence>PT8S</Cadence>
+		<Structure>
+			<Size>92 40</Size>
+		</Structure>
+		<ValidMin>0</ValidMin>
+		<ValidMax>2147483647</ValidMax>
+		<FillValue>-2147483647</FillValue>
+	    <Support>
+	        <Qualifier>Scalar</Qualifier>
+	        <SupportQuantity>Other</SupportQuantity>
+	    </Support>
+      </Parameter>
+	  <Parameter>
+	    <Name>Retrieved O/N2 column density ratio</Name>
+	    <ParameterKey>on2</ParameterKey>
+	    <Description>Retrieved O/N2 column density ratio used in QEUV retrieval.</Description>
+	    <Cadence>PT8S</Cadence>
+		<Structure>
+			<Size>92 40</Size>
+		</Structure>
+		<ValidMin>0</ValidMin>
+		<ValidMax>5</ValidMax>
+		<FillValue>9.9692e+36</FillValue>
+	    <Mixed>
+		    <MixedQuantity>Other</MixedQuantity>
+			<Qualifier>Ratio</Qualifier>
+	    </Mixed>
+      </Parameter>
+	  <Parameter>
+	    <Name>Random Uncertainty in Oxygen 135.6 nm Brightness</Name>
+	    <ParameterKey>oi_1356_unc_ran</ParameterKey>
+	    <Description>Random uncertainty in oxygen 135.6 nm brightness.</Description>
+	    <Cadence>PT8S</Cadence>
+	    <Units>Rayleighs</Units>
+		<Structure>
+			<Size>92 40</Size>
+		</Structure>
+		<ValidMin>0</ValidMin>
+		<ValidMax>100000</ValidMax>
+		<FillValue>9.9692e+36</FillValue>
+	    <Wave>
+		    <WaveType>Photon</WaveType>
+	        <Qualifier>Uncertainty</Qualifier>
+			<WaveQuantity>Intensity</WaveQuantity>
+	    </Wave>
+	  </Parameter>
+	  <Parameter>
+	    <Name>Systematic Uncertainty in in retrieved QEUV</Name>
+	    <ParameterKey>qeuv_unc_ran</ParameterKey>
+	    <Description>Systematic uncertainty in retrieved QEUV.</Description>
+	    <Cadence>PT8S</Cadence>
+		<Units>erg/cm2/s</Units>
+		<Structure>
+			<Size>92 40</Size>
+		</Structure>
+		<ValidMin>0</ValidMin>
+		<ValidMax>10</ValidMax>
+		<FillValue>9.9692e+36</FillValue>
+	    <Support>
+	        <Qualifier>Uncertainty</Qualifier>
+	        <SupportQuantity>Other</SupportQuantity>
+	    </Support>
+	  </Parameter>
+	  <Parameter>
+	    <Name>Scan Start Time</Name>
+	    <ParameterKey>scan_start_time</ParameterKey>
+	    <Description>UTC start time of scan, e.g., "2017-06-21T23:46:38.015Z".</Description>
+	    <Cadence>PT8S</Cadence>
+		<Structure>
+			<Size>50 40</Size>
+		</Structure>
+		<FillValue>' '</FillValue>
+	    <Support>
+	        <Qualifier>Magnitude</Qualifier>
+	        <SupportQuantity>Temporal</SupportQuantity>
+	    </Support>
+      </Parameter>  
+	  <Parameter>
+	    <Name>Retrieved QEUV Value</Name>
+	    <ParameterKey>qeuv</ParameterKey>
+	    <Description>Retrieved QEUV value.</Description>
+	    <Cadence>PT8S</Cadence>
+		<Units>erg/cm2/s</Units>
+		<Structure>
+			<Size>92 40</Size>
+		</Structure>
+		<ValidMin>0</ValidMin>
+		<ValidMax>10</ValidMax>
+		<FillValue>9.9692e+36</FillValue>
+	    <Support>
+	        <Qualifier>Uncertainty</Qualifier>
+	        <SupportQuantity>Other</SupportQuantity>
+	    </Support>
+	  </Parameter>
+	  <Parameter>
+	    <Name>Solar Zenith Angle</Name>
+	    <ParameterKey>solar_zenith_angle</ParameterKey>
+	    <Description>Solar zenith angle at tangent point.</Description>
+	    <Cadence>PT8S</Cadence>
+	    <Units>degrees</Units>
+		<Structure>
+			<Size>92 40</Size>
+		</Structure>
+		<ValidMin>0</ValidMin>
+		<ValidMax>180</ValidMax>
+		<FillValue>9.9692e+36</FillValue>
+	    <Support>
+	        <Qualifier>Direction</Qualifier>
+	        <SupportQuantity>Positional</SupportQuantity>
+	    </Support>
+      </Parameter>    
+	  <Parameter>
+	    <Name>Systematic Uncertainty in O/N2 Ratio</Name>
+	    <ParameterKey>on2_unc_sys</ParameterKey>
+	    <Description>Systematic uncertainty in ON2.</Description>
+	    <Cadence>PT8S</Cadence>
+		<Structure>
+			<Size>92 40</Size>
+		</Structure>
+		<ValidMin>0</ValidMin>
+		<ValidMax>5</ValidMax>
+		<FillValue>9.9692e+36</FillValue>
+	    <Support>
+	        <Qualifier>Uncertainty</Qualifier>
+	        <SupportQuantity>Other</SupportQuantity>
+	    </Support>
+	  </Parameter>
+	  <Parameter>
+	    <Name>Model Uncertainty in O/N2 Ratio</Name>
+	    <ParameterKey>on2_unc_mod</ParameterKey>
+	    <Description>Model uncertainty in retrieved O/N2 ratio.</Description>
+	    <Cadence>PT8S</Cadence>
+		<Structure>
+			<Size>92 40</Size>
+		</Structure>
+		<ValidMin>0</ValidMin>
+		<ValidMax>5</ValidMax>
+		<FillValue>9.9692e+36</FillValue>
+	    <Support>
+	        <Qualifier>Uncertainty</Qualifier>
+	        <SupportQuantity>Other</SupportQuantity>
+	    </Support>
+	  </Parameter>
+	  <Parameter>
+	    <Name>Systematic Uncertainty in N2 LBH brightness</Name>
+	    <ParameterKey>n2_lbh_unc_sys</ParameterKey>
+	    <Description>Systematic uncertainty in N2 LBH brightness.</Description>
+	    <Cadence>PT8S</Cadence>
+		<Units>Rayleighs</Units>
+		<Structure>
+			<Size>92 40</Size>
+		</Structure>
+		<ValidMin>0</ValidMin>
+		<ValidMax>100000</ValidMax>
+		<FillValue>9.9692e+36</FillValue>
+	    <Support>
+	        <Qualifier>Uncertainty</Qualifier>
+	        <SupportQuantity>Other</SupportQuantity>
+	    </Support>
+	  </Parameter>
+	  <Parameter>
+	    <Name>UTC time</Name>
+	    <ParameterKey>time_utc</ParameterKey>
+	    <Description>UTC date/time string: "2017-06-21T23:46:38.015Z".</Description>
+	    <Cadence>PT8S</Cadence>
+		<Structure>
+			<Size>50 92 40</Size>
+		</Structure>
+		<FillValue>' '</FillValue>
+	    <Support>
+	        <Qualifier>Magnitude</Qualifier>
+	        <SupportQuantity>Temporal</SupportQuantity>
+	    </Support>
+      </Parameter>
+	  <Parameter>
+	    <Name>L1C File Name</Name>
+	    <ParameterKey>input_l1c_file</ParameterKey>
+	    <Description>L1C file name for each occultation.</Description>
+	    <Cadence>PT8S</Cadence>
+		<Structure>
+			<Size>50 40</Size>
+		</Structure>
+		<FillValue>' '</FillValue>
+	    <Support>
+		    <Qualifier>Scalar</Qualifier>
+	        <SupportQuantity>Other</SupportQuantity>
+	    </Support>
+      </Parameter> 
+	  <Parameter>
+	    <Name>N2 LBH brightness</Name>
+	    <ParameterKey>radiance_n2_lbh</ParameterKey>
+	    <Description>N2 LBH brightness used in retrieval.</Description>
+	    <Cadence>PT8S</Cadence>
+	    <Units>nm</Units>
+		<Structure>
+			<Size>92 40</Size>
+		</Structure>
+		<ValidMin>0</ValidMin>
+		<ValidMax>100000</ValidMax>
+		<FillValue>9.9692e+36</FillValue>
+	    <Wave>
+			<WaveType>Photon</WaveType>
+	        <Qualifier>Scalar</Qualifier>
+	        <WaveQuantity>Intensity</WaveQuantity>
+	    </Wave>
+      </Parameter>
+	  <Parameter>
+	    <Name>QEUV data Quality Flag</Name>
+	    <ParameterKey>qeuv_dqi</ParameterKey>
+	    <Description>QEUV data quality index per pixel. 0 No known data quality issues. 1 Invalid wavelength mask. 2 No valid input. 4 No valid output. 8 Insufficient latitude coverage. 16 Invalid lookup table. Pixel Level</Description>
+	    <Cadence>PT8S</Cadence>
+		<Structure>
+			<Size>92 40</Size>
+		</Structure>
+		<ValidMin>0</ValidMin>
+		<ValidMax>2147483647</ValidMax>
+		<FillValue>-2147483647</FillValue>
+	    <Support>
+	        <Qualifier>Scalar</Qualifier>
+	        <SupportQuantity>Other</SupportQuantity>
+	    </Support>
+      </Parameter>
+	  <Parameter>
+	    <Name>Hemisphere Scanned</Name>
+	    <ParameterKey>hemisphere</ParameterKey>
+	    <Description>Hemisphere scanned (‘N’ or ‘S’).</Description>
+	    <Cadence>PT8S</Cadence>
+		<Structure>
+			<Size>50 40</Size>
+		</Structure>
+		<FillValue>' '</FillValue>
+	    <Support>
+		    <Qualifier>Scalar</Qualifier>
+	        <SupportQuantity>Other</SupportQuantity>
+	    </Support>
+      </Parameter>      
+	  <Parameter>
+	    <Name>Mask Defining OI 1356 Bandpass </Name>
+	    <ParameterKey>mask_oi_1356</ParameterKey>
+	    <Description>Wavelength mask defining OI 1356 bandpass used in retrieval.</Description>
+	    <Cadence>PT8S</Cadence>
+		<Structure>
+			<Size>4001</Size>
+		</Structure>
+		<ValidMin>0</ValidMin>
+		<ValidMax>1</ValidMax>
+		<FillValue>-2147483647</FillValue>
+	    <Support>
+	        <SupportQuantity>Other</SupportQuantity>
+	    </Support>
+      </Parameter> 
+	  <Parameter>
+	    <Name>GOLD channel</Name>
+	    <ParameterKey>channel</ParameterKey>
+	    <Description>GOLD channel (‘A’ or ‘B’).</Description>
+	    <Cadence>PT8S</Cadence>
+		<Structure>
+			<Size>50 40</Size>
+		</Structure>
+		<FillValue> </FillValue>
+	    <Support>
+	        <Qualifier>Scalar</Qualifier>
+	        <SupportQuantity>Other</SupportQuantity>
+	    </Support>
+      </Parameter>
+	  <Parameter>
+	    <Name>Random Uncertainty in O/N2 Ratio</Name>
+	    <ParameterKey>on2_unc_ran</ParameterKey>
+	    <Description>Random uncertainty in retrieved O/N2 ratio.</Description>
+	    <Cadence>PT8S</Cadence>
+		<Structure>
+			<Size>92 40</Size>
+		</Structure>
+		<ValidMin>0</ValidMin>
+		<ValidMax>5</ValidMax>
+		<FillValue>9.9692e+36</FillValue>
+	    <Support>
+	        <Qualifier>Uncertainty</Qualifier>
+	        <SupportQuantity>Other</SupportQuantity>
+	    </Support>
+	  </Parameter>
+	  <Parameter>
+	    <Name>Overall Quality Flag</Name>
+	    <ParameterKey>dqi</ParameterKey>
+	    <Description>NMAX data quality index (see table below).</Description>
+	    <Cadence>PT8S</Cadence>
+		<Structure>
+			<Size>40</Size>
+		</Structure>
+		<ValidMin>0</ValidMin>
+		<ValidMax>2147483647</ValidMax>
+		<FillValue>-2147483647</FillValue>
+	    <Support>
+	        <Qualifier>Scalar</Qualifier>
+	        <SupportQuantity>Other</SupportQuantity>
+	    </Support>
+      </Parameter>
+	  <Parameter>
+	    <Name>Model Uncertainty in in retrieved QEUV</Name>
+	    <ParameterKey>qeuv_unc_ran</ParameterKey>
+	    <Description>Model uncertainty in retrieved QEUV.</Description>
+	    <Cadence>PT8S</Cadence>
+		<Units>erg/cm2/s</Units>
+		<Structure>
+			<Size>92 40</Size>
+		</Structure>
+		<ValidMin>0</ValidMin>
+		<ValidMax>10</ValidMax>
+		<FillValue>9.9692e+36</FillValue>
+	    <Support>
+	        <Qualifier>Uncertainty</Qualifier>
+	        <SupportQuantity>Other</SupportQuantity>
+	    </Support>
+	  </Parameter> 
+	  <Parameter>
+	    <Name>Mask Defining LBH Bandpass </Name>
+	    <ParameterKey>mask_n2_lbh</ParameterKey>
+	    <Description>Wavelength mask defining LBH bandpass used in retrieval.</Description>
+	    <Cadence>PT8S</Cadence>
+		<Structure>
+			<Size>4001</Size>
+		</Structure>
+		<ValidMin>0</ValidMin>
+		<ValidMax>1</ValidMax>
+		<FillValue>-2147483647</FillValue>
+	    <Support>
+	        <SupportQuantity>Other</SupportQuantity>
+	    </Support>
+      </Parameter> 
+	  <Parameter>
+	    <Name>Pixel Emission Angle</Name>
+	    <ParameterKey>emission_angle</ParameterKey>
+	    <Description>Emission angle (relative to zenith).</Description>
+	    <Cadence>PT8S</Cadence>
+	    <Units>degrees</Units>
+		<Structure>
+			<Size>92 40</Size>
+		</Structure>
+		<ValidMin>0</ValidMin>
+		<ValidMax>90</ValidMax>
+		<FillValue>9.9692e+36</FillValue>
+	    <Support>
+	        <Qualifier>Direction</Qualifier>
+	        <SupportQuantity>Positional</SupportQuantity>
+	    </Support>
+      </Parameter>
+	  <Parameter>
+	    <Name>O/N2 Filename Lookup Table</Name>
+	    <ParameterKey>on2_lookup_table</ParameterKey>
+	    <Description>ON2 lookup table filename.</Description>
+	    <Cadence>PT8S</Cadence>
+		<Structure>
+			<Size>50 40</Size>
+		</Structure>
+		<FillValue> </FillValue>
+	    <Support>
+	        <SupportQuantity>Other</SupportQuantity>
+	    </Support>
+      </Parameter>
+	  <Parameter>
+	    <Name>Scan Stop Time</Name>
+	    <ParameterKey>scan_stop_time</ParameterKey>
+	    <Description>UTC stop time of scan, e.g., "2017-06-21T23:46:38.015Z".</Description>
+	    <Cadence>PT8S</Cadence>
+	    <Units>date/time</Units>
+		<Structure>
+			<Size>50 40</Size>
+		</Structure>
+		<FillValue>' '</FillValue>
+	    <Support>
+	        <Qualifier>Magnitude</Qualifier>
+	        <SupportQuantity>Temporal</SupportQuantity>
+	    </Support>
+      </Parameter>
+	  <Parameter>
+	    <Name>Systematic Uncertainty in Oxygen 135.6 nm Brightness</Name>
+	    <ParameterKey>oi_1356_unc_sys</ParameterKey>
+	    <Description>Systematic uncertainty in oxygen 135.6 nm brightness.</Description>
+	    <Cadence>PT8S</Cadence>
+	    <Units>Rayleighs</Units>
+		<Structure>
+			<Size>92 40</Size>
+		</Structure>
+		<ValidMin>0</ValidMin>
+		<ValidMax>100000</ValidMax>
+		<FillValue>9.9692e+36</FillValue>
+	    <Wave>
+		    <WaveType>Photon</WaveType>
+	        <Qualifier>Uncertainty</Qualifier>
+			<WaveQuantity>Intensity</WaveQuantity>
+	    </Wave>
+	  </Parameter>
+	  <Parameter>
+	    <Name>Mask Wavelength</Name>
+	    <ParameterKey>mask_wavelength</ParameterKey>
+	    <Description>Wavelength grid for 1356 mask.</Description>
+	    <Cadence>PT8S</Cadence>
+	    <Units>nm</Units>
+		<Structure>
+			<Size>4001</Size>
+		</Structure>
+		<ValidMin>130</ValidMin>
+		<ValidMax>170</ValidMax>
+		<FillValue>9.9692e+36</FillValue>
+	    <Wave>
+			<WaveType>Photon</WaveType>
+	        <Qualifier>Scalar</Qualifier>
+	        <WaveQuantity>Wavelength</WaveQuantity>
+	    </Wave>
+      </Parameter> 
+  </NumericalData>
+</Spase>

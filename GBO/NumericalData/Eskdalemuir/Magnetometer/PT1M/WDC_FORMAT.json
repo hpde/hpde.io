@@ -1,0 +1,229 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_3_0.xsd",
+    "Version": "2.3.0",
+    "NumericalData": {
+      "ResourceID": "spase://GBO/NumericalData/Eskdalemuir/Magnetometer/PT1M/WDC_FORMAT",
+      "ResourceHeader": {
+        "ResourceName": "Eskdalemuir Magnetometer 1-min Data in WDC Format",
+        "ReleaseDate": "2019-05-05T12:34:56Z",
+        "Description": "Eskdalemuir Magnetometer data, 1-min time resoluion, in WDC format. Magnetic Field Vector Element List: DHXYZF. Note that the list of magnetic field elements that appear in the data set may change over the course of time. For instance, many stations have shifted from DHZ to the XYZ representation of the magnetic field. The time history listed below summarizes changes in element content. A description of the WDC Data Exchange Format for 1-min magnetic field data is included at the end of this data product description.",
+        "Acknowledgement": "Please acknowledge: British Geological Survey for providing the data observations, and the British Geological Survey, World Data Center for Geomagnetism, Edinburgh for providing access to the data.",
+        "Contact": [
+          {
+            "PersonID": "spase://SMWG/Person/Sarah.Reay",
+            "Role": [
+              "GeneralContact",
+              "DataProducer"
+            ]
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Lee.Frost.Bargatze",
+            "Role": [
+              "MetadataContact",
+              "TechnicalContact"
+            ]
+          }
+        ],
+        "InformationURL": {
+          "Name": "The Geomagnetic Data Master Catalog at the WDC for Geomagnetism, Edinburgh",
+          "URL": "http://www.wdc.bgs.ac.uk/catalog/intro.html",
+          "Description": "Web site for access to magnetometer data hosted by the World Data Center for Geomagnetism, Edinburgh"
+        },
+        "PriorID": [
+          "spase://VMO/NumericalData/Eskdalemuir/Magnetometer/PT1M",
+          "spase://VMO/NumericalData/Eskdalemuir/Magnetometer/PT1M/WDC_FORMAT"
+        ]
+      },
+      "AccessInformation": {
+        "RepositoryID": "spase://SMWG/Repository/UCLA/VMO",
+        "Availability": "Online",
+        "AccessRights": "Open",
+        "AccessURL": {
+          "Name": "The WDC Geomagnetic Data Master Catalog Repository",
+          "URL": "ftp://ftp.nmh.ac.uk/wdc/obsdata/1minval/",
+          "Description": "The Geomagnetic Data Master Catalog hosted by the British Geological Survey, World Data Center for Geomagnetism, Edinburgh."
+        },
+        "Format": "Text",
+        "Encoding": "ZIP",
+        "DataExtent": {
+          "Quantity": "1196352",
+          "Units": "bytes",
+          "Per": "P1M"
+        },
+        "Acknowledgement": "Please thank the British Geological Survey, World Data Center, Edinburgh for use of data from the WDC Geomagnetic Data Master Catalog."
+      },
+      "ProcessingLevel": "Calibrated",
+      "InstrumentID": "spase://SMWG/Instrument/Ground/Eskdalemuir/Magnetometer",
+      "MeasurementType": "MagneticField",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "1983-01-01T00:00:00.000",
+          "StopDate": "2010-12-31T23:59:00.000",
+          "Note": "Some data gaps may be present. If a gap is present at the beginning or end of the file, the time span start and stop dates could be inaccurate as they are assigned assuming an absence of such gaps."
+        },
+        "Cadence": "PT1M"
+      },
+      "ObservedRegion": "Earth.Surface",
+      "Keyword": [
+        "ground station",
+        "magnetometer",
+        "magnetic field",
+        "magnetogram",
+        "Eskdalemuir",
+        "WDC Station Code: ESK",
+        "1-minute",
+        "WDC Format"
+      ],
+      "Parameter": [
+        {
+          "Name": "Universal Time",
+          "ParameterKey": "Time",
+          "Description": "Time is expressed using a five column format with the following order: year, month, day, hour, and minute, each stored in interger format. The time columns are the first five columns (1,2,3,4,5) in the flat file.",
+          "Cadence": "PT1M",
+          "Structure": {
+            "Size": "5",
+            "Description": "Universal Time expressed using a 5-column year, month, day, hour, minute representation",
+            "Element": [
+              {
+                "Name": "Year",
+                "Index": "1"
+              },
+              {
+                "Name": "Month",
+                "Index": "2"
+              },
+              {
+                "Name": "Day",
+                "Index": "3"
+              },
+              {
+                "Name": "Hour",
+                "Index": "4"
+              },
+              {
+                "Name": "Minute",
+                "Index": "5"
+              }
+            ]
+          },
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Magnetic Field Declination",
+          "ParameterKey": "D",
+          "Description": "Eskdalemuir Magnetic Field Vector Declination Angle",
+          "Cadence": "PT1M",
+          "Units": "Degree",
+          "UnitsConversion": "2*pi > Radian",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cylindrical",
+            "CoordinateSystemName": "CGM"
+          },
+          "ValidMin": "-180.0",
+          "ValidMax": "180.0",
+          "FillValue": "999999",
+          "Field": {
+            "Qualifier": "DirectionAngle.AzimuthAngle",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "Horzontal Magnetic Field Magnitude",
+          "ParameterKey": "H",
+          "Description": "Eskdalemuir Horzontal Magnetic Field Magnitude",
+          "Cadence": "PT1M",
+          "Units": "nT",
+          "UnitsConversion": "10^9 >T",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cylindrical",
+            "CoordinateSystemName": "CGM"
+          },
+          "ValidMin": "0",
+          "ValidMax": "70000",
+          "FillValue": "999999",
+          "Field": {
+            "Qualifier": "Projection.IJ",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "North-South Horizontal Magnetic Field Component",
+          "ParameterKey": "X",
+          "Description": "Eskdalemuir North-South Horizontal Magnetic Field Component, positive Northward",
+          "Cadence": "PT1M",
+          "Units": "nT",
+          "UnitsConversion": "10^9 >T",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "CGM"
+          },
+          "ValidMin": "-70000",
+          "ValidMax": "70000",
+          "FillValue": "999999",
+          "Field": {
+            "Qualifier": "Component.I",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "East-West Horizontal Magnetic Field Component",
+          "ParameterKey": "Y",
+          "Description": "Eskdalemuir East-West Horizontal Magnetic Field Component, positive Eastward",
+          "Cadence": "PT1M",
+          "Units": "nT",
+          "UnitsConversion": "10^9 >T",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "CGM"
+          },
+          "ValidMin": "-70000",
+          "ValidMax": "70000",
+          "FillValue": "999999",
+          "Field": {
+            "Qualifier": "Component.J",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "Vertical Magnetic Field Component",
+          "ParameterKey": "Z",
+          "Description": "Eskdalemuir Vertical Magnetic Field Component, positive upward in the Southern hemisphere, positive downward in the Northern hemisphere",
+          "Cadence": "PT1M",
+          "Units": "nT",
+          "UnitsConversion": "10^9 >T",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "CGM"
+          },
+          "ValidMin": "-70000",
+          "ValidMax": "70000",
+          "FillValue": "999999",
+          "Field": {
+            "Qualifier": "Component.K",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "Magnetic Field Magnitude",
+          "ParameterKey": "F",
+          "Description": "Eskdalemuir Magnetic Field Magnitude",
+          "Cadence": "PT1M",
+          "Units": "nT",
+          "UnitsConversion": "10^9 >T",
+          "ValidMin": "0",
+          "ValidMax": "70000",
+          "FillValue": "999999",
+          "Field": {
+            "Qualifier": "Magnitude",
+            "FieldQuantity": "Magnetic"
+          }
+        }
+      ]
+    }
+  }
+}

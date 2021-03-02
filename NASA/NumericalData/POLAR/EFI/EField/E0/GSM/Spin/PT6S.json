@@ -1,0 +1,84 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_2_9.xsd",
+    "Version": "2.2.9",
+    "NumericalData": {
+      "ResourceID": "spase://NASA/NumericalData/POLAR/EFI/EField/E0/GSM/Spin/PT6S",
+      "ResourceHeader": {
+        "ResourceName": "Polar Electric Fields Instrument (EFI), Electric field  in GSM coordinates, Spin Resolution (E_0 version)",
+        "ReleaseDate": "2020-07-07T21:15:01Z",
+        "Description": "Electric field in GSM coordinates (E_0 version), one vector per spin, computed by a spin-fit algorithm using the realtime electric field measurements.",
+        "Acknowledgement": "The user will acknowledge, in any publication which uses POLAR EFI data, the instrument PI.",
+        "Contact": [
+          {
+            "PersonID": "spase://SMWG/Person/Forrest.S.Mozer",
+            "Role": "PrincipalInvestigator"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Jack.B.Vernetti",
+            "Role": "MetadataContact"
+          }
+        ],
+        "PriorID": [
+          "spase://VWO/NumericalData/POLAR/EFI/EField_E0_GSM_Spin",
+          "spase://VSPO/NumericalData/POLAR/EFI/EField/E0/GSM/Spin/PT6S"
+        ]
+      },
+      "AccessInformation": {
+        "RepositoryID": "spase://SMWG/Repository/UCB/POLAR/EFI",
+        "Availability": "Online",
+        "AccessRights": "Open",
+        "AccessURL": {
+          "URL": "http://polarefi.ssl.berkeley.edu/PolarEFI",
+          "Description": "This URL is the root location of the POLAR EFI archive. It consists of Yearly subdirectories: 1996, 1997, ..., 2008 each of which consists of Monthly subdirectories: 01, 02, ..., 12 The archive files for a given date are located in the corresponding YY/MM subdirectory.",
+          "Language": "en"
+        },
+        "Format": "CDF",
+        "Encoding": "None",
+        "Acknowledgement": "The user will acknowledge, in any publication which uses POLAR EFI data, the instrument PI."
+      },
+      "InstrumentID": "spase://SMWG/Instrument/POLAR/EFI",
+      "MeasurementType": "ElectricField",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "1996-03-16T00:00:00",
+          "StopDate": "2008-04-12T24:00:00"
+        },
+        "Cadence": "PT6S"
+      },
+      "Parameter": [
+        {
+          "Name": "Time",
+          "ParameterKey": "TIME_TAG",
+          "Description": "Data point time-tags which are double precision floating point numbers which represent the number of seconds, UTC, from midnight of the day represented by the file.",
+          "Cadence": "PT6S",
+          "Units": "seconds",
+          "ValidMin": "0.0",
+          "ValidMax": "86460.0",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "ElectricFieldVector",
+          "ParameterKey": "DATA_VALUES",
+          "Description": "Data point vector values which are a triplet of single precision floating point numbers which represent the X,Y,Z components of the electric field. These vectors are in one-to-one correspondence with the values in the TIME_TAG parameter. This data is computed by a ground spin-fit algorithm on the realtime electric field and represents one point every spin.",
+          "Cadence": "PT6S",
+          "Units": "mV/m",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GSM"
+          },
+          "ValidMin": "-2000.0",
+          "ValidMax": "2000.0",
+          "Field": {
+            "Qualifier": "Vector",
+            "FieldQuantity": "Electric"
+          }
+        }
+      ]
+    }
+  }
+}

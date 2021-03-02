@@ -1,0 +1,109 @@
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema  http://www.spase-group.org/data/schema/spase-2_2_9.xsd">
+    <Version>2.2.9</Version>
+    <NumericalData>
+        <ResourceID>spase://VSPO/NumericalData/Wind/EPACT/LEMT/Events/SEC/PT1H</ResourceID>
+        <ResourceHeader>
+            <ResourceName>Wind Energetic Particle Acceleration, Composition and Transport (EPACT)/LEMT 1-Hr Spin-Sectored H,He,O,Fe Counts for Events</ResourceName>
+            <ReleaseDate>2018-02-22T15:50:20Z</ReleaseDate>
+            <Description>This data set contains hourly counts of H, He, O 
+and Fe nuclei in 16 look directions about the spacecraft spin axis.  
+Counts for each of the four species are given at 2.5-5 MeV/n, and an 
+additional count is given for 5-8 MeV/n He.  As of 10/2011, the data 
+cover 39 1997-2006 multi-day intervals that include energetic solar 
+particle events.  ASCII data words are comma-separated.  For a given 
+particle event, there are species-specific files.  File naming uses 
+the convention XX_sec_YYYYMMDD, where XX = H, He2 (2.5-5 MeV/n), 
+He5 (5-8 MeV/n), O or Fe, and where YYYYMMDD is the day of the first 
+record of the file.  Sectoring is defined with respect to the 
+ecliptic plane projection of the concurrently measured magnetic
+field vector.  The edge of sector #1 is coincided with the projection 
+of B on the ecliptic plane, so phi value of the center of sector i 
+is phiB+11.25+(i-1)*22.5 deg, where phiB is the longitudinal angle 
+of B.</Description>
+            <Acknowledgement>Dr. Tycho T. Von Rosenvinge</Acknowledgement>
+            <Contact>
+                <PersonID>spase://SMWG/Person/Tycho.T.Von.Rosenvinge</PersonID>
+                <Role>PrincipalInvestigator</Role>
+            </Contact>
+            <Contact>
+                <PersonID>spase://SMWG/Person/Donald.V.Reames</PersonID>
+                <Role>CoInvestigator</Role>
+            </Contact>
+            <Contact>
+                <PersonID>spase://SMWG/Person/Lun.C.Tan</PersonID>
+                <Role>DataProducer</Role>
+            </Contact>
+            <InformationURL>
+                <Name>Readme file</Name>
+                <URL>https://vho.nasa.gov/mission/wind/epact/omni/AA_read_me_first.txt</URL>
+            </InformationURL>
+            <PriorID>spase://VEPO/NumericalData/Wind/EPACT/LEMT/Events/SEC/PT1H</PriorID>
+        </ResourceHeader>
+        <AccessInformation>
+            <RepositoryID>spase://SMWG/Repository/NASA/GSFC/Wind</RepositoryID>
+            <Availability>Online</Availability>
+            <AccessRights>Open</AccessRights>
+            <AccessURL>
+                <Name>Wind repository</Name>
+                <URL>https://vho.nasa.gov/mission/wind/epact/sec/</URL>
+                <Description>File-level access to event-specific, species-specific 
+ASCII files</Description>
+            </AccessURL>
+            <Format>Text</Format>
+            <Acknowledgement>Please acknowledge Principal Investigator 
+T. von Rosenvinge and the Wind EPACT team.</Acknowledgement>
+        </AccessInformation>
+        <ProcessingLevel>Uncalibrated</ProcessingLevel>
+        <InstrumentID>spase://SMWG/Instrument/Wind/EPACT</InstrumentID>
+        <MeasurementType>EnergeticParticles</MeasurementType>
+        <TemporalDescription>
+            <TimeSpan>
+                <StartDate>1997-11-03T00:00:00</StartDate>
+                <StopDate>2006-12-17T00:00:00</StopDate>
+            </TimeSpan>
+            <Cadence>PT1H</Cadence>
+        </TemporalDescription>
+        <ObservedRegion>Heliosphere.NearEarth</ObservedRegion>
+        <Parameter>
+            <Name>Time</Name>
+            <ParameterKey>Column_1-Column_5</ParameterKey>
+            <Description>Universal time at start of hour average</Description>
+            <Cadence>PT1H</Cadence>
+            <Structure>
+                <Size>5</Size>
+                <Description>Year, month, day, hour at start of average, and
+fractional day of year at midpoint of average</Description>
+            </Structure>
+            <Support>
+                <SupportQuantity>Temporal</SupportQuantity>
+            </Support>
+        </Parameter>
+        <Parameter>
+            <Name>Species-specific counts</Name>
+            <ParameterKey>Column_6-Column_17</ParameterKey>
+            <Description>Counts in 16 look directions, for species identified 
+in the file name (H,He2,He5,O, or Fe)</Description>
+            <Cadence>PT1H</Cadence>
+            <Structure>
+                <Size>16</Size>
+                <Description>This is a 16 element array containing counts
+in each of 16 look directions.</Description>
+            </Structure>
+            <Particle>
+                <ParticleType>Proton</ParticleType>
+                <ParticleType>AlphaParticle</ParticleType>
+                <ParticleType>Ion</ParticleType>
+                <ParticleQuantity>Counts</ParticleQuantity>
+                <AtomicNumber>1</AtomicNumber>
+                <AtomicNumber>2</AtomicNumber>
+                <AtomicNumber>8</AtomicNumber>
+                <AtomicNumber>26</AtomicNumber>
+                <EnergyRange>
+                    <Low>2.5</Low>
+                    <High>5</High>
+                    <Units>MeV/n</Units>
+                </EnergyRange>
+            </Particle>
+        </Parameter>
+    </NumericalData>
+</Spase>

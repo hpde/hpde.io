@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Spase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.spase-group.org/data/schema" 
+	xsi:schemaLocation="http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_3_1.xsd">
+  <Version>2.3.1</Version>
+  <NumericalData>
+    <ResourceID>spase://NASA/NumericalData/STEREO-B/SWAVES/average_lfr/PT60S</ResourceID>
+    <ResourceHeader>
+      <ResourceName>STEREO-B SWAVES One minute averages of the low (lfr) frequency receiver data.</ResourceName>
+      <ReleaseDate>2020-06-17T00:00:00Z</ReleaseDate>
+      <Description>The two STEREO radio receivers measure wave intensity, source direction and angular size in the frequency 
+	  range 40 kHz to 16 MHz, corresponding to heliocentric source distances of about 1 Rs to 1 AU. One 10-40 kHz 
+	  receiver measures radio and plasma waves near the 1 AU electron plasma frequency. One receiver makes high 
+	  time resolution measurements at 50 MHz. Time Domain Samplers make simultaneous wideband waveform measurements 
+	  on three electric components. Antenna systems include three mutually orthogonal 6-meter monopoles. 
+	  </Description>
+      <Acknowledgement>National Aeronautics and Space Administration; Dr. Jean-Louis Henry Bougeret</Acknowledgement>
+      <Contact>
+        <PersonID>spase://SMWG/Person/Jean-Louis.Henry.Bougeret</PersonID>
+        <Role>PrincipalInvestigator</Role>
+      </Contact>
+      <Contact>
+        <PersonID>spase://SMWG/Person/James.M.Weygand</PersonID>
+        <Role>MetadataContact</Role>
+      </Contact>
+      <InformationURL>
+        <Name>SWAVES Resources page</Name>
+        <URL>https://stereo-ssc.nascom.nasa.gov/ins_resources/swaves_resources.shtml</URL>
+        <Description>NASA STEREO SWAVE resources information.</Description>
+      </InformationURL>
+	  <InformationURL>
+        <Name>NASA Master Catalog SWAVES Instrument page</Name>
+        <URL>https://nssdc.gsfc.nasa.gov/nmc/experiment/display.action?id=2006-047A-02</URL>
+        <Description>NASA STEREO SWAVE instrument information.</Description>
+      </InformationURL>
+	  <InformationURL>
+        <Name>STREREO SWAVES homepage</Name>
+        <URL>https://swaves.gsfc.nasa.gov/</URL>
+        <Description>WAVES Experiment on the STEREO Mission.</Description>
+      </InformationURL>
+    </ResourceHeader>   
+    <AccessInformation>
+         <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF</RepositoryID>
+         <Availability>Online</Availability>
+         <AccessRights>Open</AccessRights>
+         <AccessURL>
+            <Name>FTPS from SPDF (not with most browsers)</Name>
+            <URL>ftps://spdf.gsfc.nasa.gov/pub/data/stereo/behind/swaves/average_lfr_ascii/</URL>
+            <Description>FTPS access to SWAVES ASCII data</Description>
+         </AccessURL>
+         <AccessURL>
+            <Name>HTTPS from SPDF</Name>
+            <URL>https://spdf.gsfc.nasa.gov/pub/data/stereo/behind/swaves/average_lfr_ascii/</URL>
+            <Description>HTTPS access to SWAVES ASCII data</Description>
+         </AccessURL>
+         <Format>Text.ASCII</Format>
+         <Acknowledgement>Space Physics Data Facility of the NASA Goddard Space Flight Center; Robert E McGuire</Acknowledgement>
+    </AccessInformation>  	    
+    <ProcessingLevel>Calibrated</ProcessingLevel>
+	<ProviderName>STEREO-B</ProviderName>
+	<ProviderResourceName>STEREO-B SWAVES</ProviderResourceName>
+	<ProviderProcessingLevel>Level 2</ProviderProcessingLevel>
+    <InstrumentID>spase://SMWG/Instrument/STEREO-B/SWAVES</InstrumentID>   
+    <MeasurementType>Waves</MeasurementType>
+    <TemporalDescription>
+      <TimeSpan>
+        <StartDate>2006-10-27T00:00:00</StartDate>
+		<StopDate>2014-11-23T23:59:59</StopDate>
+      </TimeSpan>
+      <Cadence>PT60S</Cadence>
+    </TemporalDescription>
+	<ObservedRegion>Heliosphere.Remote1AU</ObservedRegion>
+    <Keyword>low frequency receiver</Keyword>
+    <Keyword>STEREO-B</Keyword>
+    <Keyword>SWAVES</Keyword> 	 
+	
+      <Parameter>
+	    <Name>Low Frequency Data</Name>
+	    <Description>High frequency data in 48 channels.</Description>    
+		<Caveats>This is the first 48 values in the daily file. Missing data is indicated by a value less than 0.</Caveats>
+        <Cadence>PT60S</Cadence>
+		<Units>kHz</Units>
+		<Structure>
+		  <Size>1 48</Size>
+		  <Description>This is the first 48 values in the daily file.</Description>
+		</Structure>
+	    <Wave>
+	        <WaveType>Electromagnetic</WaveType>
+			<Qualifier>Average</Qualifier>
+			<WaveQuantity>Frequency</WaveQuantity>
+			<FrequencyRange>
+			  <Low>2.6</Low>
+			  <High>153.4</High>
+			  <Units>kHz</Units>
+			</FrequencyRange>
+	    </Wave>
+      </Parameter>	  
+	  
+	  <Parameter>
+	    <Name>Background Value</Name>
+	    <Description>The 48 background value used in (currently) arbitrary decibel (dB) units.</Description>
+		<Caveats>This is the second 48 values in the daily file. Missing data is indicated by a value less than 0.</Caveats>
+	    <Cadence>PT60S</Cadence>
+	    <Units>dB</Units>
+		<Structure>
+			<Size>1 48</Size>
+			<Description>The 48 background value used in (currently) arbitrary decibel (dB) units.</Description>
+        </Structure>
+	    <Wave>
+	        <WaveType>Electromagnetic</WaveType>
+			<WaveQuantity>Intensity</WaveQuantity>
+			<FrequencyRange>
+			  <Low>2.6</Low>
+			  <High>153.4</High>
+			  <Units>kHz</Units>
+			</FrequencyRange>
+	    </Wave>
+      </Parameter>  
+	  
+	  <Parameter>
+	    <Name>Average Intensity</Name>
+	    <Description>The 2-dimensional (# of frequencies X 1440 minutes per day) array of averages in dB above the average (i.e. value-average in dB). Missing data is indicated by a value less than 0.</Description>
+		<Caveats>This is the next 1440 by 320 values in the daily file. Missing data is indicated by a value less than 0.</Caveats>
+	    <Cadence>PT60S</Cadence>
+		<Structure>
+			<Size>1 49</Size>
+			<Description>This is the next 1440 by 320 values in the daily file.</Description>
+			<Element>
+			  <Name>Minute of the day</Name>
+			  <Qualifier>Average</Qualifier>
+			  <Index>1</Index>
+			  <Units>minutes</Units>
+			  <ValidMin>0</ValidMin>
+			  <ValidMax>1439</ValidMax>
+		    </Element>
+            <Element>
+			  <Name>49 values of Average Intensity</Name>
+			  <Qualifier>Array</Qualifier>
+			  <Index>2</Index>
+			  <Units>dB</Units>
+			  <ValidMin>0</ValidMin>
+		    </Element>
+		</Structure>
+	    <Wave>
+	        <WaveType>Electromagnetic</WaveType>
+			<WaveQuantity>Intensity</WaveQuantity>
+			<FrequencyRange>
+			  <Low>2.6</Low>
+			  <High>153.4</High>
+			  <Units>kHz</Units>
+			</FrequencyRange>
+	    </Wave>
+      </Parameter>  
+	  
+  </NumericalData>
+</Spase>

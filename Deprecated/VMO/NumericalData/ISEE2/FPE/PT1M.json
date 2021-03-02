@@ -1,0 +1,193 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema  http://www.spase-group.org/data/schema/spase-2_2_2.xsd'",
+    "Version": "2.2.2",
+    "NumericalData": {
+      "ResourceID": "spase://VMO/NumericalData/ISEE2/FPE/PT1M",
+      "ResourceHeader": {
+        "ResourceName": "ISEE 2 FPE plasma parameters, 6 Re to bow shock",
+        "ReleaseDate": "2011-07-06T00:00:00",
+        "Description": "TBD",
+        "Acknowledgement": "Please acknowledge the FPE PI, Dr. John Gosling",
+        "Contact": {
+          "PersonID": "spase://SMWG/Person/John.T.Gosling",
+          "Role": "PrincipalInvestigator"
+        },
+        "InformationURL": {
+          "Name": "Skeleton table at CDAWeb/SPDF",
+          "URL": "ftp://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/0SKELTABLES/isee2_h1_fpe_00000000_v01.skt"
+        }
+      },
+      "AccessInformation": [
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": [
+            {
+              "Name": "FTP access to files at SPDF",
+              "URL": "ftp://spdf.gsfc.nasa.gov/pub/data/isee/isee2/isee2_cdaweb/1min_fpe/",
+              "Description": "For ftp retrieval of daily CDF files"
+            },
+            {
+              "Name": "HTTP access to files at SPDF",
+              "URL": "http://spdf.gsfc.nasa.gov/pub/data/isee/isee2/isee2_cdaweb/1min_fpe/",
+              "Description": "In CDF via HTTP from SPDF"
+            }
+          ],
+          "Format": "CDF",
+          "DataExtent": {
+            "Quantity": "80",
+            "Units": "KB",
+            "Per": "P1D"
+          },
+          "Acknowledgement": "Please acknowledge the FPE PI, Dr. John Gosling and the Space Physics Data Facility at NASA/GSFC"
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDAWeb",
+            "URL": "http://cdaweb.gsfc.nasa.gov/",
+            "ProductKey": "ISEE2_H1_FPE",
+            "Description": "For CDAWeb subset, plot and list capabilities"
+          },
+          "Format": "Text",
+          "Acknowledgement": "Please acknowledge the FPE PI, Dr. John Gosling and the Space Physics Data Facility at NASA/GSFC"
+        }
+      ],
+      "ProcessingLevel": "Calibrated",
+      "InstrumentID": "spase://SMWG/Instrument/ISEE2/FPE",
+      "MeasurementType": "ThermalPlasma",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "1977-10-27T00:00:00",
+          "StopDate": "1979-01-19T00:00:00"
+        },
+        "Cadence": "PT1M"
+      },
+      "ObservedRegion": [
+        "Earth.Magnetosphere",
+        "Earth.Magnetosheath"
+      ],
+      "Parameter": [
+        {
+          "Name": "Universal Time",
+          "ParameterKey": "Epoch",
+          "Description": "DD-MON-YY HH:MM:SS.SSS",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Proton number density",
+          "ParameterKey": "DEN",
+          "Units": "ergs/cc",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "NumberDensity"
+          }
+        },
+        {
+          "Name": "Plasma Energy Density",
+          "ParameterKey": "ENDEN",
+          "Units": "ergs/cc",
+          "Particle": {
+            "ParticleType": "Ion",
+            "ParticleQuantity": "EnergyDensity"
+          }
+        },
+        {
+          "Name": "2D Temperature",
+          "ParameterKey": "T",
+          "Description": "average 2D temperature, (Txx+Tyy)/2",
+          "Units": "Kelvin",
+          "Particle": {
+            "ParticleType": "Ion",
+            "ParticleQuantity": "Temperature"
+          }
+        },
+        {
+          "Name": "Xsc component of bulk velocity",
+          "ParameterKey": "VX",
+          "Description": "X component of plasma bulk velocity, spacecraft coordinates (close to GSE)",
+          "Units": "km/s",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": "Component.I",
+            "ParticleQuantity": "FlowVelocity"
+          }
+        },
+        {
+          "Name": "Ysc component of bulk velocity",
+          "ParameterKey": "VY",
+          "Description": "Y component of plasma bulk velocity, spacecraft coordinates (close to GSE)",
+          "Units": "km/s",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": "Component.J",
+            "ParticleQuantity": "FlowVelocity"
+          }
+        },
+        {
+          "Name": "Xgse component of spacecraft position vector",
+          "ParameterKey": "GSEX",
+          "Description": "X(GSE) component of spacecraft position vector",
+          "Units": "RE",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "SC"
+          },
+          "Support": {
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Ygse component of spacecraft position vector",
+          "ParameterKey": "GSEY",
+          "Description": "Y(GSE) component of spacecraft position vector",
+          "Units": "RE",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "SC"
+          },
+          "Support": {
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Zgse component of spacecraft position vector",
+          "ParameterKey": "GSEZ",
+          "Description": "Z(GSE) component of spacecraft position vector",
+          "Units": "RE",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "SC"
+          },
+          "Support": {
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Energy range flag",
+          "ParameterKey": "LH",
+          "Description": "Energy range flag whose value is 0 for a 50 eV - 20 keV per charge range and is 1 for a 70 eV - 40 keV per charge range",
+          "Support": {
+            "SupportQuantity": "InstrumentMode"
+          }
+        },
+        {
+          "Name": "Orbit number",
+          "ParameterKey": "IORB",
+          "Description": "Orbit number",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,157 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_3_0.xsd",
+    "Version": "2.3.0",
+    "NumericalData": {
+      "ResourceID": "spase://NOAA/NumericalData/GOES/6/EPM/PT3S",
+      "ResourceHeader": {
+        "ResourceName": "GOES 6 Energetic Particle Monitor at 3 s Time Resolution",
+        "AlternateName": "GOES 6 EPM data",
+        "ReleaseDate": "2019-05-05T12:34:56Z",
+        "Description": "The GOES 6 EPM data set contains various parameters at 3 s time resolution. Within the data files is the time given as seconds of the month where the date is given in the filename, a flag word that provides information on the data and satellite command state in a flagword, and the measured counts for a subset of available channels, which are indicated by the flagword.",
+        "Acknowledgement": "NOAA Environmental Research Laboratories, Herbert H. Sauer, Terry G. Onsager",
+        "Contact": [
+          {
+            "PersonID": "spase://SMWG/Person/Herbert.H.Sauer",
+            "Role": "PrincipalInvestigator"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Terry.Onsager",
+            "Role": "PrincipalInvestigator"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/James.M.Weygand",
+            "Role": "MetadataContact"
+          }
+        ],
+        "InformationURL": [
+          {
+            "Name": "GOES 6 Energetic Particle Monitor",
+            "URL": "https://nssdc.gsfc.nasa.gov/nmc/experiment/display.action?id=1983-041A-02",
+            "Description": "Introduction to the GOES 6 Energetic Particle Monitor."
+          },
+          {
+            "Name": "GOES 6 Energetic Particle Monitor Data File Information",
+            "URL": "https://satdat.ngdc.noaa.gov/sem/goes/software/part.txt",
+            "Description": "Additional GOES EPM information."
+          },
+          {
+            "Name": "GOES 6 Energetic Particle Monitor Additional Data File Information",
+            "URL": "ftp://satdat.ngdc.noaa.gov/sem/goes/goes_docs/full/readme.txt",
+            "Description": "Additional GOES EPM data file information."
+          }
+        ],
+        "PriorID": [
+          "spase://VMO/NumericalData/GOES/6/EPM/HighRes/PT3S",
+          "spase://VMO/NumericalData/GOES6/EPM/HighRes/PT3S",
+          "spase://VMO/NumericalData/GOES/6/EPM/PT3S",
+          "spase://VSPO/NumericalData/GOES/6/EPM/PT3S"
+        ]
+      },
+      "AccessInformation": {
+        "RepositoryID": "spase://SMWG/Repository/NOAA/SEC",
+        "Availability": "Online",
+        "AccessRights": "Open",
+        "AccessURL": {
+          "Name": "Direct access to the GOES 6 EPM data",
+          "URL": "ftp://satdat.ngdc.noaa.gov/sem/goes/data/full/",
+          "Description": "Direct link to the GOES 6 EPM data in FITS format as well as the energetic particle data from other GOES spacecraft. The data are sorted by year. The file names indicates the data type, spacecraft number, year, month, and resolution. For example, P0137607.FIT indicates particle data (P) for spacecraft 1 (01) at 3 s time resolution (3) from July 1976 (7607). Note that spacecraft IDs 91 and 92 refer to SMS satellites, not GOES."
+        },
+        "Format": "FITS",
+        "Encoding": "None",
+        "Acknowledgement": "NOAA Environmental Research Laboratories, Herbert H. Sauer, Terry G. Onsager"
+      },
+      "ProcessingLevel": "Calibrated",
+      "ProviderResourceName": "NOAA GOES 6 EPM",
+      "ProviderProcessingLevel": "Level-2",
+      "InstrumentID": "spase://SMWG/Instrument/GOES/6/EPM",
+      "MeasurementType": "EnergeticParticles",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "1983-05-01T00:00:00",
+          "StopDate": "1992-12-31T00:00:00",
+          "Note": "Time format in data files is seconds of the month. The year and month are derived from the file name."
+        },
+        "Cadence": "PT3S"
+      },
+      "Caveats": "The flag values are equal to 32711000, these data are temporarily offline until further notice",
+      "Keyword": [
+        "3 s",
+        "geosynchronous",
+        "GOES",
+        "energetic particle monitor",
+        "energetic particles"
+      ],
+      "Parameter": [
+        {
+          "Name": "Seconds of the Month",
+          "ParameterKey": "Time",
+          "Description": "Time is given as seconds of the month. The year and month values are derived from the filename.",
+          "Cadence": "PT3S",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Flag Word",
+          "ParameterKey": "Flag Word",
+          "Description": "The flag word contains packed information about the data such as the multiplex counter, data processing error flag, the satellite command state, and archive version number. The multiplex counter value indicates the three data channels from which the counts/s are recorded. Because the multiplex counter can change every three seconds is not possible to give the data channel, energy range, and other information in the next three parameters. The multiplex counter is equal to flagword mod 16. With the multiplex counter use the look up table at see https://satdat.ngdc.noaa.gov/sem/goes/software/part.txt to determine the energy channels, the associated particle, and the energy range.",
+          "Cadence": "PT3S",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "GOES 6 EPM 2-Channel Multiplexer at 3 s Time Resolution",
+          "ParameterKey": "MPX2",
+          "Description": "EPM 2-Channel Multiplexer for GOES 6 in units of counts/s. These data are the measured counts/s from the 2nd channel as identified by yhe multiplex counter given in the flag word.",
+          "Caveats": "The user must know what the multiplex count value is from the flagword",
+          "Cadence": "PT3S",
+          "Units": "s^-1",
+          "Particle": {
+            "ParticleType": [
+              "Proton",
+              "Electron"
+            ],
+            "Qualifier": "Scalar",
+            "ParticleQuantity": "Counts"
+          }
+        },
+        {
+          "Name": "GOES 6 EPM 4-Channel Multiplexer at 3 s Time Resolution",
+          "ParameterKey": "MPX4",
+          "Description": "EPM 4-Channel Multiplexer for GOES 6 in units of counts/s. These data are the measured counts/s from the 2nd channel as identified by yhe multiplex counter given in the flag word.",
+          "Caveats": "The user must know what the multiplex count value is from the flagword",
+          "Cadence": "PT3S",
+          "Units": "s^-1",
+          "Particle": {
+            "ParticleType": [
+              "Proton",
+              "Electron"
+            ],
+            "Qualifier": "Scalar",
+            "ParticleQuantity": "Counts"
+          }
+        },
+        {
+          "Name": "GOES 6 EPM 8-Channel Multiplexer at 3 s Time Resolution",
+          "ParameterKey": "MPX8",
+          "Description": "EPM 8-Channel Multiplexer for GOES 6 in units of counts/s. These data are the measured counts/s from the 2nd channel as identified by yhe multiplex counter given in the flag word.",
+          "Caveats": "The user must know what the multiplex count value is from the flagword",
+          "Cadence": "PT3S",
+          "Units": "s^-1",
+          "Particle": {
+            "ParticleType": [
+              "Proton",
+              "Electron"
+            ],
+            "Qualifier": "Scalar",
+            "ParticleQuantity": "Counts"
+          }
+        }
+      ]
+    }
+  }
+}

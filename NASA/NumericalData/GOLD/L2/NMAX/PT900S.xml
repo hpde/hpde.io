@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Spase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.spase-group.org/data/schema" 
+	xsi:schemaLocation="http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_3_1.xsd">
+  <Version>2.3.1</Version>
+  <NumericalData>
+    <ResourceID>spase://NASA/NumericalData/GOLD/L2/NMAX/PT900S</ResourceID>
+    <ResourceHeader>
+      <ResourceName>Gold Level L2 Peak Electron Density</ResourceName>
+      <ReleaseDate>2020-09-14T16:47:17Z</ReleaseDate>
+      <Description>The GOLD night disk scan (NI1) measurements are used to derive the peak electron density 
+	  (NMAX, electrons/cm3) on the disk. GOLD performs NI1 scans in both hemispheres from 17:00 to 21:00 hours 
+	  spacecraft local time each night. NMAX is retrieved on a 2D rectangular (latitude vs. longitude) grid 
+	  of fixed dimensions for each scan. However, the actual latitude and longitude values in the grid vary 
+	  from scan to scan as the NI1 sequence utilizes a pattern of short (15 minute) localized scans that 
+	  progress from east to west across the disk throughout the sequence.
+	  </Description>	  
+      <Acknowledgement>National Aeronautics and Space Administration; Dr. Richard Eastes</Acknowledgement>
+      <Contact>
+        <PersonID>spase://SMWG/Person/Richard.Eastes</PersonID>
+        <Role>PrincipalInvestigator</Role>
+      </Contact>
+      <Contact>
+        <PersonID>spase://SMWG/Person/James.M.Weygand</PersonID>
+        <Role>MetadataContact</Role>
+      </Contact>
+      <InformationURL>
+        <Name>GOLD Homepage web page</Name>
+        <URL>https://gold.cs.ucf.edu/</URL>
+        <Description>GOLD web page with news and other information.</Description>
+      </InformationURL>
+	  <InformationURL>
+        <Name>GOLD Missions Space Science Reviews Article</Name>
+        <URL>https://doi.org/10.1007/s11214-017-0392-2</URL>
+        <Description>Eastes, R.W., McClintock, W.E., Burns, A.G. et al. Space Sci. Rev. (2017) vol. 212, pp.383.</Description>
+      </InformationURL>
+        <PriorID>spase://VSPO/NumericalData/GOLD/L2/NMAX/PT900S</PriorID>
+        <PriorID>spase://NASA/NumericalData/SES-14/GOLD/L2/NMAX/PT900S</PriorID>
+    </ResourceHeader> 
+	<AccessInformation>
+        <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF</RepositoryID>
+        <Availability>Online</Availability>
+        <AccessRights>Open</AccessRights>
+	<AccessURL>
+            <Name>FTPS from SPDF (not with most browsers)</Name>
+            <URL>ftps://spdf.gsfc.nasa.gov/pub/data/gold/level2/</URL>
+            <Description>FTPS access to Gold Level L2 data</Description>
+         </AccessURL>
+         <AccessURL>
+           <Name>HTTPS from SPDF</Name>
+            <URL>https://spdf.gsfc.nasa.gov/pub/data/gold/level2/</URL>
+            <Description>HTTPS access to Gold Level L2 data</Description>
+         </AccessURL>
+         <Format>NetCDF</Format>
+         <Acknowledgement>Space Physics Data Facility of the NASA Goddard Space Flight Center; Robert E McGuire</Acknowledgement>
+    </AccessInformation>  	    	    
+    <ProcessingLevel>Calibrated</ProcessingLevel>
+	<ProviderName>GOLD</ProviderName>
+	<ProviderResourceName>Gold Level L2 Molecular Oxygen Density Profile</ProviderResourceName>
+	<ProviderProcessingLevel>Level 2</ProviderProcessingLevel>
+	<ProviderVersion>1</ProviderVersion>
+    <InstrumentID>spase://SMWG/Instrument/GOLD</InstrumentID>   
+    <MeasurementType>ImageIntensity</MeasurementType>
+    <TemporalDescription>
+      <TimeSpan>
+        <StartDate>2018-10-06T00:00:00</StartDate>
+	<RelativeStopDate>P1D</RelativeStopDate>
+      </TimeSpan>
+      <Cadence>PT900S</Cadence>
+    </TemporalDescription>
+	<ObservedRegion>Earth.NearSurface.Ionosphere</ObservedRegion>
+    <Keyword></Keyword>
+    <Keyword>O relative to N2</Keyword>
+    <Keyword>GOLD</Keyword>
+    <Keyword>SES-14</Keyword> 
+
+      <Parameter>
+	    <Name>Mask Defining OI 1356 Bandpass </Name>
+	    <ParameterKey>mask_oi_1356</ParameterKey>
+	    <Description>Wavelength mask defining the 135.6-nm emission passband.</Description>
+	    <Cadence>PT900S</Cadence>
+		<Structure>
+			<Size>4001</Size>
+		</Structure>
+		<ValidMin>0</ValidMin>
+		<ValidMax>1</ValidMax>
+		<FillValue>-2147483647</FillValue>
+	    <Support>
+	        <SupportQuantity>Other</SupportQuantity>
+	    </Support>
+      </Parameter> 
+	  <Parameter>
+	    <Name>Mask Wavelength</Name>
+	    <ParameterKey>mask_wavelength</ParameterKey>
+	    <Description>Wavelength grid for 1356 mask.</Description>
+	    <Cadence>PT900S</Cadence>
+	    <Units>nm</Units>
+		<Structure>
+			<Size>4001</Size>
+		</Structure>
+		<ValidMin>130</ValidMin>
+		<ValidMax>170</ValidMax>
+		<FillValue>9.9692e+36</FillValue>
+	    <Wave>
+			<WaveType>Photon</WaveType>
+	        <Qualifier>Scalar</Qualifier>
+	        <WaveQuantity>Wavelength</WaveQuantity>
+	    </Wave>
+      </Parameter>
+	  <Parameter>
+	    <Name>OI 1356 brightness</Name>
+	    <ParameterKey>radiance_oi_1356</ParameterKey>
+	    <Description>Radiance in Oxygen 135.6-nm bandpass.</Description>
+	    <Cadence>PT900S</Cadence>
+	    <Units>Rayleighs/nm</Units>
+		<Structure>
+			<Size>51 100 6</Size>
+		</Structure>
+		<ValidMin>0</ValidMin>
+		<ValidMax>100000</ValidMax>
+		<FillValue>9.9692e+36</FillValue>
+	    <Wave>
+			<WaveType>Photon</WaveType>
+	        <Qualifier>Scalar</Qualifier>
+	        <WaveQuantity>Intensity</WaveQuantity>
+	    </Wave>
+      </Parameter>
+	  <Parameter>
+	    <Name>GOLD channel</Name>
+	    <ParameterKey>channel</ParameterKey>
+	    <Description>GOLD channel (‘A’ or ‘B’).</Description>
+	    <Cadence>PT900S</Cadence>
+		<Structure>
+			<Size>50 6</Size>
+		</Structure>
+		<FillValue> </FillValue>
+	    <Support>
+	        <Qualifier>Scalar</Qualifier>
+	        <SupportQuantity>Other</SupportQuantity>
+	    </Support>
+      </Parameter>
+	  <Parameter>
+	    <Name>Random Uncertainty in NMAX</Name>
+	    <ParameterKey>nmax_unc_ran</ParameterKey>
+	    <Description>Random uncertainty in retrieved peak electron density.</Description>
+	    <Cadence>PT900S</Cadence>
+		<Units>electrons/cm^3</Units>
+		<Structure>
+			<Size>51 100 6</Size>
+		</Structure>
+		<ValidMin>0</ValidMin>
+		<ValidMax>1000000000</ValidMax>
+		<FillValue>9.9692e+36</FillValue>
+	    <Support>
+	        <Qualifier>Uncertainty</Qualifier>
+	        <SupportQuantity>Other</SupportQuantity>
+	    </Support>
+	  </Parameter>
+	  <Parameter>
+	    <Name>Model Uncertainty in NMAX</Name>
+	    <ParameterKey>nmax_unc_mod</ParameterKey>
+	    <Description>Model uncertainty in retrieved peak electron density.</Description>
+	    <Cadence>PT900S</Cadence>
+		<Units>electrons/cm^3</Units>
+		<Structure>
+			<Size>51 100 6</Size>
+		</Structure>
+		<ValidMin>0</ValidMin>
+		<ValidMax>1000000000</ValidMax>
+		<FillValue>9.9692e+36</FillValue>
+	    <Support>
+	        <Qualifier>Uncertainty</Qualifier>
+	        <SupportQuantity>Other</SupportQuantity>
+	    </Support>
+	  </Parameter>	  
+	  <Parameter>
+	    <Name>Latitude</Name>
+	    <ParameterKey>latitude</ParameterKey>
+	    <Description>Pixel latitude.</Description>
+	    <Cadence>PT900S</Cadence>
+	    <Units>degrees</Units>
+		<Structure>
+			<Size>51 100 6</Size>
+		</Structure>
+		<ValidMin>-90</ValidMin>
+		<ValidMax>90</ValidMax>
+		<FillValue>9.9692e+36</FillValue>
+	    <Support>
+	        <Qualifier>Direction</Qualifier>
+	        <SupportQuantity>Positional</SupportQuantity>
+	    </Support>
+      </Parameter>  
+	  <Parameter>
+	    <Name>Random Uncertainty in Oxygen 135.6 nm Brightness</Name>
+	    <ParameterKey>oi_1356_unc_ran</ParameterKey>
+	    <Description>Random uncertainty in oxygen 135.6 nm brightness.</Description>
+	    <Cadence>PT900S</Cadence>
+	    <Units>Rayleighs/nm</Units>
+		<Structure>
+			<Size>51 100 6</Size>
+		</Structure>
+		<ValidMin>0</ValidMin>
+		<ValidMax>100000</ValidMax>
+		<FillValue>9.9692e+36</FillValue>
+	    <Wave>
+		    <WaveType>Photon</WaveType>
+	        <Qualifier>Uncertainty</Qualifier>
+			<WaveQuantity>Intensity</WaveQuantity>
+	    </Wave>
+	  </Parameter>	  
+	  <Parameter>
+	    <Name>Counts in Oxygen Bandpass</Name>
+	    <ParameterKey>counts_oi_1356</ParameterKey>
+	    <Description>Counts in Oxygen 135.6-nm bandpass.</Description>
+	    <Cadence>PT900S</Cadence>
+	    <Units>counts</Units>
+		<Structure>
+			<Size>51 100 6</Size>
+		</Structure>
+		<ValidMin>0</ValidMin>
+		<ValidMax>100000</ValidMax>
+		<FillValue>9.9692e+36</FillValue>
+	    <Support>
+	        <Qualifier>Scalar</Qualifier>
+	        <SupportQuantity>Other</SupportQuantity>
+	    </Support>
+      </Parameter>
+	  
+	  <Parameter>
+	    <Name>Overall Quality Flag</Name>
+	    <ParameterKey>dqi</ParameterKey>
+	    <Description>NMAX data quality index (see table below).</Description>
+	    <Cadence>PT900S</Cadence>
+		<Structure>
+			<Size>6</Size>
+		</Structure>
+		<ValidMin>0</ValidMin>
+		<ValidMax>2147483647</ValidMax>
+		<FillValue>-2147483647</FillValue>
+	    <Support>
+	        <Qualifier>Scalar</Qualifier>
+	        <SupportQuantity>Other</SupportQuantity>
+	    </Support>
+      </Parameter>
+	  
+	  <Parameter>
+	    <Name>Scan Start Time</Name>
+	    <ParameterKey>scan_start_time</ParameterKey>
+	    <Description>UTC start time of scan, e.g., "2017-06-21T23:46:38.015Z".</Description>
+	    <Cadence>PT900S</Cadence>
+		<Structure>
+			<Size>50 6</Size>
+		</Structure>
+		<FillValue>' '</FillValue>
+	    <Support>
+	        <Qualifier>Magnitude</Qualifier>
+	        <SupportQuantity>Temporal</SupportQuantity>
+	    </Support>
+      </Parameter>  
+	  <Parameter>
+	    <Name>NMAX Quality Flag</Name>
+	    <ParameterKey>nmax_dqi</ParameterKey>
+	    <Description>NMAX data quality index (see table below).</Description>
+	    <Cadence>PT900S</Cadence>
+		<Structure>
+			<Size>50 100 6</Size>
+		</Structure>
+		<ValidMin>0</ValidMin>
+		<ValidMax>2147483647</ValidMax>
+		<FillValue>-2147483647</FillValue>
+	    <Support>
+	        <Qualifier>Scalar</Qualifier>
+	        <SupportQuantity>Other</SupportQuantity>
+	    </Support>
+      </Parameter>
+	  
+	  <Parameter>
+	    <Name>Solar Zenith Angle at 225 km</Name>
+	    <ParameterKey>solar_zenith_angle</ParameterKey>
+	    <Description>Solar zenith angle at 225 km tangent point.</Description>
+	    <Cadence>PT900S</Cadence>
+	    <Units>degrees</Units>
+		<Structure>
+			<Size>51 100 6</Size>
+		</Structure>
+		<ValidMin>0</ValidMin>
+		<ValidMax>180</ValidMax>
+		<FillValue>9.9692e+36</FillValue>
+	    <Support>
+	        <Qualifier>Direction</Qualifier>
+	        <SupportQuantity>Positional</SupportQuantity>
+	    </Support>
+      </Parameter>    
+      <Parameter>
+	    <Name>Longitude</Name>
+	    <ParameterKey>longitude</ParameterKey>
+	    <Description>Pixel longitude.</Description>
+	    <Cadence>PT900S</Cadence>
+	    <Units>degrees</Units>
+		<Structure>
+			<Size>51 100 6</Size>
+		</Structure>
+		<ValidMin>-180</ValidMin>
+		<ValidMax>180</ValidMax>
+		<FillValue>9.9692e+36</FillValue>
+	    <Support>
+	        <Qualifier>Direction</Qualifier>
+	        <SupportQuantity>Positional</SupportQuantity>
+	    </Support>
+      </Parameter>
+	  <Parameter>
+	    <Name>UTC time</Name>
+	    <ParameterKey>time_utc</ParameterKey>
+	    <Description>UTC date/time string: "2017-06-21T23:46:38.015Z".</Description>
+	    <Cadence>PT900S</Cadence>
+		<Structure>
+			<Size>50 51 6</Size>
+		</Structure>
+		<FillValue>' '</FillValue>
+	    <Support>
+	        <Qualifier>Magnitude</Qualifier>
+	        <SupportQuantity>Temporal</SupportQuantity>
+	    </Support>
+      </Parameter>
+	  <Parameter>
+	    <Name>NMAX</Name>
+	    <ParameterKey>nmax_unc_mod</ParameterKey>
+	    <Description>Retrieved peak electron density..</Description>
+	    <Cadence>PT900S</Cadence>
+		<Units>electrons/cm^3</Units>
+		<Structure>
+			<Size>51 100 6</Size>
+		</Structure>
+		<ValidMin>0</ValidMin>
+		<ValidMax>1000000000</ValidMax>
+		<FillValue>9.9692e+36</FillValue>
+	    <Support>
+	        <Qualifier>Uncertainty</Qualifier>
+	        <SupportQuantity>Other</SupportQuantity>
+	    </Support>
+	  </Parameter>
+	  <Parameter>
+	    <Name>L1C File Name</Name>
+	    <ParameterKey>input_l1c_file</ParameterKey>
+	    <Description>L1C file name for each occultation.</Description>
+	    <Cadence>PT900S</Cadence>
+		<Structure>
+			<Size>50 6</Size>
+		</Structure>
+		<FillValue>' '</FillValue>
+	    <Support>
+		    <Qualifier>Scalar</Qualifier>
+	        <SupportQuantity>Other</SupportQuantity>
+	    </Support>
+      </Parameter> 
+	  <Parameter>
+	    <Name>Pixel Emission Angle</Name>
+	    <ParameterKey>emission_angle</ParameterKey>
+	    <Description>Pixel emission angle (relative to zenith).</Description>
+	    <Cadence>PT900S</Cadence>
+	    <Units>degrees</Units>
+		<Structure>
+			<Size>51 100 6</Size>
+		</Structure>
+		<ValidMin>0</ValidMin>
+		<ValidMax>90</ValidMax>
+		<FillValue>9.9692e+36</FillValue>
+	    <Support>
+	        <Qualifier>Direction</Qualifier>
+	        <SupportQuantity>Positional</SupportQuantity>
+	    </Support>
+      </Parameter>
+	  <Parameter>
+	    <Name>Scan Stop Time</Name>
+	    <ParameterKey>scan_stop_time</ParameterKey>
+	    <Description>UTC stop time of scan, e.g., "2017-06-21T23:46:38.015Z".</Description>
+	    <Cadence>PT900S</Cadence>
+	    <Units>date/time</Units>
+		<Structure>
+			<Size>50 6</Size>
+		</Structure>
+		<FillValue>' '</FillValue>
+	    <Support>
+	        <Qualifier>Magnitude</Qualifier>
+	        <SupportQuantity>Temporal</SupportQuantity>
+	    </Support>
+      </Parameter>
+	  <Parameter>
+	    <Name>Systematic Uncertainty in Oxygen 135.6 nm Brightness</Name>
+	    <ParameterKey>oi_1356_unc_sys</ParameterKey>
+	    <Description>Systematic uncertainty in oxygen 135.6 nm brightness.</Description>
+	    <Cadence>PT900S</Cadence>
+	    <Units>Rayleighs</Units>
+		<Structure>
+			<Size>51 100 6</Size>
+		</Structure>
+		<ValidMin>0</ValidMin>
+		<ValidMax>100000</ValidMax>
+		<FillValue>9.9692e+36</FillValue>
+	    <Wave>
+		    <WaveType>Photon</WaveType>
+	        <Qualifier>Uncertainty</Qualifier>
+			<WaveQuantity>Intensity</WaveQuantity>
+	    </Wave>
+	  </Parameter>
+	  <Parameter>
+	    <Name>Hemisphere Scanned</Name>
+	    <ParameterKey>hemisphere</ParameterKey>
+	    <Description>Hemisphere scanned (‘N’ or ‘S’).</Description>
+	    <Cadence>PT900S</Cadence>
+		<Structure>
+			<Size>50 6</Size>
+		</Structure>
+		<FillValue>' '</FillValue>
+	    <Support>
+		    <Qualifier>Scalar</Qualifier>
+	        <SupportQuantity>Other</SupportQuantity>
+	    </Support>
+      </Parameter>      
+  </NumericalData>
+</Spase>

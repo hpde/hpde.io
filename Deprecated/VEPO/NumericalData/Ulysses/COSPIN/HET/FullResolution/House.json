@@ -1,0 +1,246 @@
+{
+  "Spase": {
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_0_0.xsd",
+    "Version": "2.0.0",
+    "NumericalData": {
+      "ResourceID": "spase://VEPO/NumericalData/Ulysses/COSPIN/HET/FullResolution/House",
+      "ResourceHeader": {
+        "ResourceName": "\n           High Energy Telescope (HET) Housekeeping Parameters\n         ",
+        "ReleaseDate": "2009-09-24T00:00:00.000",
+        "Description": "\n           A directory containing daily ftp-downloadable files containing readout-by-readout\n           listings of HET housekeeping paramaters (Voltages, Temperatures, Offsets).  \n           The naming convention of the files is uly_het_full_house_YYYDDD.txt, where YYY \n           indicates the three-digit year since 1900 (e.g. YYY=090 for 1990, and YYY=102 for \n           2002) and DDD indicates the three digit day of year (Jan. 1 = 1). \n           In each file, following a detailed description of the format, the data consist of a\n           a listing of HET housekeeping parameters measured at the time listed in the first \n           4 columns of each line.  Each line contains data for one readout of the parameters.  \n           The first 4 columns give the time of the measurement as fractional year (to 12 \n           decimal places) and as  year since 1900, day of year, and ms of day.\n           At the most common science telemetry rate, 2048 bps, each parameter in this file \n           is read out once every 256 seconds.  The measurements are instantaneous, and do\n           not represent an average of values over the interval since the last readout.\n           The sole function of these parameters is to monitor instrument health.\n           No noise-removal or despiking has been done, so caution must be used in\n           interpreting isolated large increases or decreases in the measured parameters.\n       ",
+        "Acknowledgement": "\n         Please acknowledge the Lead HET Investigator and COSPIN P.I., Dr. R. Bruce McKibben\n       ",
+        "Contact": [
+          {
+            "PersonID": "spase://SMWG/Person/R.Bruce.McKibben",
+            "Role": [
+              "PrincipalInvestigator",
+              "TeamLeader"
+            ]
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Clifford.Lopate",
+            "Role": "DataProducer"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/James.Connell",
+            "Role": "CoInvestigator"
+          }
+        ],
+        "InformationURL": [
+          {
+            "Name": "\n           The Ulysses cosmic ray and solar particle investigation\n         ",
+            "URL": "\n           ftp://www.rssd.esa.int/pub/ulysses/cdroms/uls_02_a/docs/cospin/cospin.htm\n         ",
+            "Description": "\n           Published (J.A. Simpson et al., Astron. Astrophys. v92, pp365-399, 1992) description \n           of the COSPIN Instrumentation.  See especially section 4.3 for a detailed description \n           of the HET.\n         "
+          },
+          {
+            "Name": "\n           COSPIN/HET User Notes\n         ",
+            "URL": "\n           http://www.rssd.esa.int/helio/archive/het_usernotes.pdf\n         ",
+            "Description": "\n           Identification of data channels archived and brief discussion of data structure\n         "
+          },
+          {
+            "Name": "\n           ReadMeHETFullRes.doc\n         ",
+            "URL": "\n           ftp://www.rssd.esa.int/pub/ulysses/COSPIN/HET/ReadMeHETFullRes.doc\n         ",
+            "Description": "\n           Top Level descriptions of formats and contents of the six file types that make up the\n           COSPIN HET Full Resolution Data Set. Detailed descriptions of the formats and contents\n           are to found in header lines at the start of each downloaded data file.  The data \n           covered by this spase description are described in the ReadMe under the heading\n           house.\n           (*** Note ***:  During the build-up of this data set, a few errors and omissions have been \n           found in the header lines for some of the file types.  These errors and omissions are listed \n           in this ReadMe file.  Upon completion of the data set, all errors and omissions discovered\n           will be corrected in all of the header lines of all of the file types and this note will be \n           removed.)\n         "
+          }
+        ]
+      },
+      "AccessInformation": {
+        "RepositoryID": "spase://SMWG/Repository/UDS",
+        "Availability": "Online",
+        "AccessRights": "Open",
+        "AccessURL": {
+          "Name": "Ulysses COSPIN/HET Full Resolution Housekeeping Parameters",
+          "URL": "ftp://www.rssd.esa.int/pub/ulysses/COSPIN/HET/house",
+          "Description": "\n\t   Parent directory containing daily ftp-downloadable files with the format described below.\n         "
+        },
+        "Format": "Text",
+        "Encoding": "ASCII",
+        "Acknowledgement": "R.B. McKibben, Space Science Center, University of New Hampshire"
+      },
+      "InstrumentID": "spase://SMWG/Instrument/Ulysses/COSPIN/HET",
+      "MeasurementType": "InstrumentStatus",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "1990-10-22T00:00:00.000",
+          "StopDate": "2009-06-29T23:59:59.000"
+        }
+      },
+      "ObservedRegion": "Heliosphere.Outer",
+      "Parameter": [
+        {
+          "Name": "Time of measurement",
+          "Description": "\n          Time at which the measurements were made\n       ",
+          "Cadence": "PT256S",
+          "Structure": {
+            "Size": "4",
+            "Element": [
+              {
+                "Name": "Decimal Year",
+                "Index": "1",
+                "ParameterKey": "Column_1",
+                "ValidMin": "1990",
+                "ValidMax": "2009",
+                "FillValue": "0.00000000000"
+              },
+              {
+                "Name": "year",
+                "Index": "2",
+                "ParameterKey": "Column_2",
+                "ValidMin": "1990",
+                "ValidMax": "2009",
+                "FillValue": "0"
+              },
+              {
+                "Name": "day",
+                "Index": "3",
+                "ParameterKey": "Column_3",
+                "ValidMin": "1",
+                "ValidMax": "366",
+                "FillValue": "0"
+              },
+              {
+                "Name": "msec",
+                "Index": "4",
+                "ParameterKey": "Column_4",
+                "ValidMin": "0",
+                "ValidMax": "86400000",
+                "FillValue": "0"
+              }
+            ]
+          },
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "ADC Offset",
+          "ParameterKey": "Column_5",
+          "Description": "\n          Offset of analogue to digital converter base from O Volts\n       ",
+          "Caveats": "\n          During In-Flight-Calibrate sequences, the ADC offset measurement is disabled\n          and is replaced in the telemetry by the +15 Volt Monitor measurement.  During\n          these time, the ADC Offset measurement in this listing is replaced by fill.\n       ",
+          "Cadence": "PT256S",
+          "Units": "millivolts",
+          "ValidMin": "-9600",
+          "ValidMax": "3200",
+          "FillValue": "-99999",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "COSPIN/HET +15 Volt Monitor",
+          "ParameterKey": "Column_6",
+          "Description": "\n          Measurement of the voltage on the +15V regulated power line from the COSPIN Converter.\n       ",
+          "Caveats": " \n           This measurement is reported only during In-Flight-Calibrate sequences.  At all other\n           times it is represented in this listing by fill.\n       ",
+          "Cadence": "PT256S",
+          "Units": "millivolts",
+          "ValidMin": "0",
+          "ValidMax": "18750",
+          "FillValue": "-99999",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "COSPIN/HET +10V Monitor",
+          "ParameterKey": "Column_7",
+          "Description": "\n          Measurement of the voltage on the +10 Volt line from the COSPIN Converter.\n       ",
+          "Caveats": " \n          None\n       ",
+          "Cadence": "PT256S",
+          "Units": "millivolts",
+          "ValidMin": "0",
+          "ValidMax": "12700",
+          "FillValue": "-99999",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "COSPIN/HET -6V Monitor",
+          "ParameterKey": "Column_8",
+          "Description": "\n          Measurement of the voltage on the -6 Volt line from the COSPIN Converter.\n       ",
+          "Caveats": " \n          None\n       ",
+          "Cadence": "PT256S",
+          "Units": "millivolts",
+          "ValidMin": "-7700",
+          "ValidMax": "0",
+          "FillValue": "-99999",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "COSPIN/HET -15V Monitor",
+          "ParameterKey": "Column_9",
+          "Description": "\n          Measurement of the voltage on the -15 Volt line from the COSPIN Converter.\n       ",
+          "Caveats": " \n          None\n       ",
+          "Cadence": "PT256S",
+          "Units": "millivolts",
+          "ValidMin": "-19000",
+          "ValidMax": "0",
+          "FillValue": "-99999",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "COSPIN/HET PMT Voltage",
+          "ParameterKey": "Column_10",
+          "Description": "\n          Operating voltage of the PMT viewing the HET anti-coincidence cylinder.\n       ",
+          "Caveats": " \n          None\n       ",
+          "Cadence": "PT256S",
+          "Units": "(counts)",
+          "ValidMin": "0",
+          "ValidMax": "1275000",
+          "FillValue": "-9999",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "COSPIN/HET K1Volt",
+          "ParameterKey": "Column_11",
+          "Description": "\n          Bias voltage for detectors KX,KY,KZ (DX,DY,DZ).\n          Documentation available in 2009 does not make clear whether\n          the detectors were K1,K2,K3 (D7,D8,D9) or\n          K4,K5,K6 (D10,D11,D12).\n       ",
+          "Caveats": " \n         None\n       ",
+          "Cadence": "PT256S",
+          "Units": "millivolts",
+          "ValidMin": "0.0",
+          "ValidMax": "1020000",
+          "FillValue": "-9999",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "COSPIN/HET K2Volt",
+          "ParameterKey": "Column_12",
+          "Description": "\n          Bias voltage for detectors KA,KB,KC (DA,DB,DC).\n          Documentation available in 2009 does not make clear whether\n          the detectors were K1,K2,K3 (D7,D8,D9) or\n          K4,K5,K6 (D10,D11,D12).\n       ",
+          "Caveats": " \n         None\n       ",
+          "Cadence": "PT256S",
+          "Units": "millivolts",
+          "ValidMin": "0.0",
+          "ValidMax": "1020000",
+          "FillValue": "-9999",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "COSPIN/HET ElecTemp",
+          "ParameterKey": "Column_13",
+          "Description": "\n          Temperature of the HET electronics.\n       ",
+          "Caveats": " \n          None\n       ",
+          "Cadence": "PT256S",
+          "Units": "millidegrees",
+          "ValidMin": "-60000",
+          "ValidMax": "70000",
+          "FillValue": "-99999",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        }
+      ]
+    }
+  }
+}

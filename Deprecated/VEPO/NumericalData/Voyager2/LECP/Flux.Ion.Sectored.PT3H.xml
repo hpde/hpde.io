@@ -1,0 +1,877 @@
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_2_0.xsd">
+    <Version>2.2.0</Version>
+    <NumericalData>
+        <ResourceID>spase://VEPO/NumericalData/Voyager2/LECP/Flux.Ion.Sectored.PT3H</ResourceID>
+        <ResourceHeader>
+            <ResourceName>Voyager 2 LECP Key Channel Intensities By Sector in ASCII Format 3-hour</ResourceName>
+            <AlternateName>V2-LECP-KEYFLUX-SECTORED-PT3H</AlternateName>
+            <ReleaseDate>2010-07-09T00:00:00.000</ReleaseDate>
+            <Description>Count Rates, For All Sectors, Voyager2, LECP, Filtered, Channel, Calibrated, CadencePT3H</Description>
+            <Acknowledgement>Please acknowledge the LECP PI (S.M. Krimigis) and the lead LECP CoI (R.B. Decker)</Acknowledgement>
+            <Contact>
+                <PersonID>spase://SMWG/Person/Stamatios.M.Krimigis</PersonID>
+                <Role>PrincipalInvestigator</Role>
+            </Contact>
+            <Contact>
+                <PersonID>spase://SMWG/Person/Robert.B.Decker</PersonID>
+                <Role>CoInvestigator</Role>
+            </Contact>
+            <Contact>
+                <PersonID>spase://SMWG/Person/Lawrence.Brown</PersonID>
+                <Role>ArchiveSpecialist</Role>
+            </Contact>
+            <InformationURL>
+                <Name>Informational Website for Voyager 1 and 2 LECP Instrument</Name>
+                <URL>http://sd-www.jhuapl.edu/VOYAGER/v2_data/v2_3h/v2_ion_3h/aaa_read_me.txt</URL>
+                <Description>The webpage provides a detailed description of Key Ion Channel Intensity files.</Description>
+            </InformationURL>
+        </ResourceHeader>
+        <AccessInformation>
+            <RepositoryID>spase://SMWG/Repository/JHU_APL</RepositoryID>
+            <Availability>Online</Availability>
+            <AccessRights>Open</AccessRights>
+            <AccessURL>
+                <Name>Voyager2 LECP Average Filtered Rate Data in ASCII Format</Name>
+                <URL>http://sd-www.jhuapl.edu/VOYAGER/v2_data/v2_3h/v2_ion_3h/</URL>
+                <Description>Count Rates, All Sectors, Voyager2, LECP, Filtered, Channel CSV Text Files, File Name Template: http://sd-www.jhuapl.edu/VOYAGER/v2_data/v2_3h/v2_ion_3h/v2_%Y_ion_3h/%{*;regexp='.*'}%Y%{*;regexp='.*'}</Description>
+            </AccessURL>
+            <Format>Text</Format>
+            <Encoding>GZIP</Encoding>
+            <Acknowledgement>S.M. Krimigis, JHU/APL</Acknowledgement>
+        </AccessInformation>
+        <AccessInformation>
+            <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF</RepositoryID>
+            <Availability>Online</Availability>
+            <AccessRights>Open</AccessRights>
+            <AccessURL>
+                <Name>SPDF FTP area</Name>
+                <URL>ftp://spdf.gsfc.nasa.gov/pub/data/voyager/voyager2/particle/lecp/v2_ion_flux_3hour/</URL>
+                <Description>ftp access to annual non-zipped ASCII files</Description>
+            </AccessURL>
+            <AccessURL>
+                <Name>SPDF HTTP area</Name>
+                <URL>http://spdf.gsfc.nasa.gov/pub/data/voyager/voyager2/particle/lecp/v2_ion_flux_3hour/</URL>
+                <Description>In CDF via HTTP from SPDF</Description>
+            </AccessURL>
+            <Format>Text</Format>
+            <Acknowledgement>S.M. Krimigis, JHU/APL, and the Space Physics Data Facility</Acknowledgement>
+        </AccessInformation>
+        <InstrumentID>spase://SMWG/Instrument/Voyager2/LECP</InstrumentID>
+        <MeasurementType>EnergeticParticles</MeasurementType>
+        <TemporalDescription>
+            <TimeSpan>
+                <StartDate>1991-01-03T00:00:00.000Z</StartDate>
+                <StopDate>2009-05-31T23:59:59.999</StopDate>
+            </TimeSpan>
+            <Cadence>PT3H</Cadence>
+        </TemporalDescription>
+        <ObservedRegion>Heliosphere.Outer</ObservedRegion>
+        <ObservedRegion>Heliosphere.Heliosheath</ObservedRegion>
+        <Parameter>
+            <Name>Start Time of Data Record</Name>
+            <ParameterKey>StartTime</ParameterKey>
+            <Description>Start Time for the record given in year, day of
+				year, hour.</Description>
+            <Cadence>PT3H</Cadence>
+            <Structure>
+                <Size>5</Size>
+                <Element>
+                    <Name>Year</Name>
+                    <Index>1</Index>
+                    <ValidMin>1990</ValidMin>
+                    <ValidMax>2008</ValidMax>
+                </Element>
+                <Element>
+                    <Name>Day of year</Name>
+                    <Index>2</Index>
+                    <ValidMin>1</ValidMin>
+                    <ValidMax>366</ValidMax>
+                </Element>
+                <Element>
+                    <Name>Hour of day</Name>
+                    <Index>3</Index>
+                    <ValidMin>0</ValidMin>
+                    <ValidMax>23</ValidMax>
+                </Element>
+                <Element>
+                    <Name>Minute of hour</Name>
+                    <Index>4</Index>
+                    <ValidMin>0</ValidMin>
+                    <ValidMax>59</ValidMax>
+                </Element>
+                <Element>
+                    <Name>Seconds of minute</Name>
+                    <Index>5</Index>
+                    <ValidMin>0</ValidMin>
+                    <ValidMax>59.99</ValidMax>
+                </Element>
+            </Structure>
+            <Support>
+                <SupportQuantity>Temporal</SupportQuantity>
+            </Support>
+        </Parameter>
+        <Parameter>
+            <Name>Start Time of Data Record (Decimal Year)</Name>
+            <ParameterKey>DEC_YEAR</ParameterKey>
+            <Description>decimal year (double precision) = year + (doy - 1 + hr/24)/dpy (dpy=365 or 366)</Description>
+            <Cadence>PT3H</Cadence>
+            <Support>
+                <SupportQuantity>Temporal</SupportQuantity>
+            </Support>
+        </Parameter>
+        <Parameter>
+            <Name>Start Time of Data Record (Decimal Day of Year)</Name>
+            <ParameterKey>DEC_DOY</ParameterKey>
+            <Description>Decimal Day of Year (1.0-365.0 or 366.0)</Description>
+            <Cadence>PT3H</Cadence>
+            <Support>
+                <SupportQuantity>Temporal</SupportQuantity>
+            </Support>
+        </Parameter>
+        <Parameter>
+            <Name>Start Time of Data Record (Decimal Hour of Day)</Name>
+            <ParameterKey>DEC_HR</ParameterKey>
+            <Description>Decimal Hour of Day</Description>
+            <Cadence>PT3H</Cadence>
+            <Support>
+                <SupportQuantity>Temporal</SupportQuantity>
+            </Support>
+        </Parameter>
+        <Parameter>
+            <Name>PL01 Flux</Name>
+            <ParameterKey>PL01_FLUX</ParameterKey>
+            <Description>PL01 Ion Flux</Description>
+            <Cadence>PT3H</Cadence>
+            <Units>Ions/(cm^2 sec ster MeV)</Units>
+            <Structure>
+                <Size>18</Size>
+                <Element>
+                    <Name>Sector 01</Name>
+                    <Index>0</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 01 Uncertainty</Name>
+                    <Index>1</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 02</Name>
+                    <Index>2</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 02 Uncertainty</Name>
+                    <Index>3</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 03</Name>
+                    <Index>4</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 03 Uncertainty</Name>
+                    <Index>5</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 04</Name>
+                    <Index>6</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 04 Uncertainty</Name>
+                    <Index>7</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 05</Name>
+                    <Index>8</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 05 Uncertainty</Name>
+                    <Index>9</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 06</Name>
+                    <Index>10</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 06 Uncertainty</Name>
+                    <Index>11</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 07</Name>
+                    <Index>12</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 07 Uncertainty</Name>
+                    <Index>13</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 08</Name>
+                    <Index>14</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 08 Uncertainty</Name>
+                    <Index>15</Index>
+                </Element>
+                <Element>
+                    <Name>Averaged Over All Sectors</Name>
+                    <Index>16</Index>
+                </Element>
+                <Element>
+                    <Name>Averaged Over All Sectors Uncertainty</Name>
+                    <Index>17</Index>
+                </Element>
+            </Structure>
+            <FillValue>-1</FillValue>
+            <Particle>
+                <ParticleType>Ion</ParticleType>
+                <ParticleQuantity>EnergyFlux</ParticleQuantity>
+                <EnergyRange>
+                    <Low>0.028</Low>
+                    <High>0.043</High>
+                    <Units>MeV/ion</Units>
+                </EnergyRange>
+            </Particle>
+        </Parameter>
+        <Parameter>
+            <Name>PL02 Flux</Name>
+            <ParameterKey>PL02_FLUX</ParameterKey>
+            <Description>PL02 Ion Flux</Description>
+            <Cadence>PT3H</Cadence>
+            <Units>Ions/(cm^2 sec ster MeV)</Units>
+            <Structure>
+                <Size>18</Size>
+                <Element>
+                    <Name>Sector 01</Name>
+                    <Index>0</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 01 Uncertainty</Name>
+                    <Index>1</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 02</Name>
+                    <Index>2</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 02 Uncertainty</Name>
+                    <Index>3</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 03</Name>
+                    <Index>4</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 03 Uncertainty</Name>
+                    <Index>5</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 04</Name>
+                    <Index>6</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 04 Uncertainty</Name>
+                    <Index>7</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 05</Name>
+                    <Index>8</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 05 Uncertainty</Name>
+                    <Index>9</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 06</Name>
+                    <Index>10</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 06 Uncertainty</Name>
+                    <Index>11</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 07</Name>
+                    <Index>12</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 07 Uncertainty</Name>
+                    <Index>13</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 08</Name>
+                    <Index>14</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 08 Uncertainty</Name>
+                    <Index>15</Index>
+                </Element>
+                <Element>
+                    <Name>Averaged Over All Sectors</Name>
+                    <Index>16</Index>
+                </Element>
+                <Element>
+                    <Name>Averaged Over All Sectors Uncertainty</Name>
+                    <Index>17</Index>
+                </Element>
+            </Structure>
+            <FillValue>-1</FillValue>
+            <Particle>
+                <ParticleType>Ion</ParticleType>
+                <ParticleQuantity>EnergyFlux</ParticleQuantity>
+                <EnergyRange>
+                    <Low>0.043</Low>
+                    <High>0.08</High>
+                    <Units>MeV/ion</Units>
+                </EnergyRange>
+            </Particle>
+        </Parameter>
+        <Parameter>
+            <Name>PL03 Flux</Name>
+            <ParameterKey>PL03_FLUX</ParameterKey>
+            <Description>PL03 Ion Flux</Description>
+            <Cadence>PT3H</Cadence>
+            <Units>Ions/(cm^2 sec ster MeV)</Units>
+            <Structure>
+                <Size>18</Size>
+                <Element>
+                    <Name>Sector 01</Name>
+                    <Index>0</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 01 Uncertainty</Name>
+                    <Index>1</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 02</Name>
+                    <Index>2</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 02 Uncertainty</Name>
+                    <Index>3</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 03</Name>
+                    <Index>4</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 03 Uncertainty</Name>
+                    <Index>5</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 04</Name>
+                    <Index>6</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 04 Uncertainty</Name>
+                    <Index>7</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 05</Name>
+                    <Index>8</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 05 Uncertainty</Name>
+                    <Index>9</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 06</Name>
+                    <Index>10</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 06 Uncertainty</Name>
+                    <Index>11</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 07</Name>
+                    <Index>12</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 07 Uncertainty</Name>
+                    <Index>13</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 08</Name>
+                    <Index>14</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 08 Uncertainty</Name>
+                    <Index>15</Index>
+                </Element>
+                <Element>
+                    <Name>Averaged Over All Sectors</Name>
+                    <Index>16</Index>
+                </Element>
+                <Element>
+                    <Name>Averaged Over All Sectors Uncertainty</Name>
+                    <Index>17</Index>
+                </Element>
+            </Structure>
+            <FillValue>-1</FillValue>
+            <Particle>
+                <ParticleType>Ion</ParticleType>
+                <ParticleQuantity>EnergyFlux</ParticleQuantity>
+                <EnergyRange>
+                    <Low>0.08</Low>
+                    <High>0.137</High>
+                    <Units>MeV/ion</Units>
+                </EnergyRange>
+            </Particle>
+        </Parameter>
+        <Parameter>
+            <Name>PL04 Flux</Name>
+            <ParameterKey>PL04_FLUX</ParameterKey>
+            <Description>PL04 Ion Flux</Description>
+            <Cadence>PT3H</Cadence>
+            <Units>Ions/(cm^2 sec ster MeV)</Units>
+            <Structure>
+                <Size>18</Size>
+                <Element>
+                    <Name>Sector 01</Name>
+                    <Index>0</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 01 Uncertainty</Name>
+                    <Index>1</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 02</Name>
+                    <Index>2</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 02 Uncertainty</Name>
+                    <Index>3</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 03</Name>
+                    <Index>4</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 03 Uncertainty</Name>
+                    <Index>5</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 04</Name>
+                    <Index>6</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 04 Uncertainty</Name>
+                    <Index>7</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 05</Name>
+                    <Index>8</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 05 Uncertainty</Name>
+                    <Index>9</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 06</Name>
+                    <Index>10</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 06 Uncertainty</Name>
+                    <Index>11</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 07</Name>
+                    <Index>12</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 07 Uncertainty</Name>
+                    <Index>13</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 08</Name>
+                    <Index>14</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 08 Uncertainty</Name>
+                    <Index>15</Index>
+                </Element>
+                <Element>
+                    <Name>Averaged Over All Sectors</Name>
+                    <Index>16</Index>
+                </Element>
+                <Element>
+                    <Name>Averaged Over All Sectors Uncertainty</Name>
+                    <Index>17</Index>
+                </Element>
+            </Structure>
+            <FillValue>-1</FillValue>
+            <Particle>
+                <ParticleType>Ion</ParticleType>
+                <ParticleQuantity>EnergyFlux</ParticleQuantity>
+                <EnergyRange>
+                    <Low>0.137</Low>
+                    <High>0.215</High>
+                    <Units>MeV/ion</Units>
+                </EnergyRange>
+            </Particle>
+        </Parameter>
+        <Parameter>
+            <Name>PL05 Flux</Name>
+            <ParameterKey>PL05_FLUX</ParameterKey>
+            <Description>PL05 Ion Flux</Description>
+            <Cadence>PT3H</Cadence>
+            <Units>Ions/(cm^2 sec ster MeV)</Units>
+            <Structure>
+                <Size>18</Size>
+                <Element>
+                    <Name>Sector 01</Name>
+                    <Index>0</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 01 Uncertainty</Name>
+                    <Index>1</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 02</Name>
+                    <Index>2</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 02 Uncertainty</Name>
+                    <Index>3</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 03</Name>
+                    <Index>4</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 03 Uncertainty</Name>
+                    <Index>5</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 04</Name>
+                    <Index>6</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 04 Uncertainty</Name>
+                    <Index>7</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 05</Name>
+                    <Index>8</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 05 Uncertainty</Name>
+                    <Index>9</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 06</Name>
+                    <Index>10</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 06 Uncertainty</Name>
+                    <Index>11</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 07</Name>
+                    <Index>12</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 07 Uncertainty</Name>
+                    <Index>13</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 08</Name>
+                    <Index>14</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 08 Uncertainty</Name>
+                    <Index>15</Index>
+                </Element>
+                <Element>
+                    <Name>Averaged Over All Sectors</Name>
+                    <Index>16</Index>
+                </Element>
+                <Element>
+                    <Name>Averaged Over All Sectors Uncertainty</Name>
+                    <Index>17</Index>
+                </Element>
+            </Structure>
+            <FillValue>-1</FillValue>
+            <Particle>
+                <ParticleType>Ion</ParticleType>
+                <ParticleQuantity>EnergyFlux</ParticleQuantity>
+                <EnergyRange>
+                    <Low>0.215</Low>
+                    <High>0.54</High>
+                    <Units>MeV/ion</Units>
+                </EnergyRange>
+            </Particle>
+        </Parameter>
+        <Parameter>
+            <Name>PL06 Flux</Name>
+            <ParameterKey>PL06_FLUX</ParameterKey>
+            <Description>PL06 Ion Flux</Description>
+            <Cadence>PT3H</Cadence>
+            <Units>Ions/(cm^2 sec ster MeV)</Units>
+            <Structure>
+                <Size>18</Size>
+                <Element>
+                    <Name>Sector 01</Name>
+                    <Index>0</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 01 Uncertainty</Name>
+                    <Index>1</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 02</Name>
+                    <Index>2</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 02 Uncertainty</Name>
+                    <Index>3</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 03</Name>
+                    <Index>4</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 03 Uncertainty</Name>
+                    <Index>5</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 04</Name>
+                    <Index>6</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 04 Uncertainty</Name>
+                    <Index>7</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 05</Name>
+                    <Index>8</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 05 Uncertainty</Name>
+                    <Index>9</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 06</Name>
+                    <Index>10</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 06 Uncertainty</Name>
+                    <Index>11</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 07</Name>
+                    <Index>12</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 07 Uncertainty</Name>
+                    <Index>13</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 08</Name>
+                    <Index>14</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 08 Uncertainty</Name>
+                    <Index>15</Index>
+                </Element>
+                <Element>
+                    <Name>Averaged Over All Sectors</Name>
+                    <Index>16</Index>
+                </Element>
+                <Element>
+                    <Name>Averaged Over All Sectors Uncertainty</Name>
+                    <Index>17</Index>
+                </Element>
+            </Structure>
+            <FillValue>-1</FillValue>
+            <Particle>
+                <ParticleType>Ion</ParticleType>
+                <ParticleQuantity>EnergyFlux</ParticleQuantity>
+                <EnergyRange>
+                    <Low>0.54</Low>
+                    <High>0.99</High>
+                    <Units>MeV/ion</Units>
+                </EnergyRange>
+            </Particle>
+        </Parameter>
+        <Parameter>
+            <Name>PL07 Flux</Name>
+            <ParameterKey>PL07_FLUX</ParameterKey>
+            <Description>PL07 Ion Flux</Description>
+            <Cadence>PT3H</Cadence>
+            <Units>Ions/(cm^2 sec ster MeV)</Units>
+            <Structure>
+                <Size>18</Size>
+                <Element>
+                    <Name>Sector 01</Name>
+                    <Index>0</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 01 Uncertainty</Name>
+                    <Index>1</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 02</Name>
+                    <Index>2</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 02 Uncertainty</Name>
+                    <Index>3</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 03</Name>
+                    <Index>4</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 03 Uncertainty</Name>
+                    <Index>5</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 04</Name>
+                    <Index>6</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 04 Uncertainty</Name>
+                    <Index>7</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 05</Name>
+                    <Index>8</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 05 Uncertainty</Name>
+                    <Index>9</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 06</Name>
+                    <Index>10</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 06 Uncertainty</Name>
+                    <Index>11</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 07</Name>
+                    <Index>12</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 07 Uncertainty</Name>
+                    <Index>13</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 08</Name>
+                    <Index>14</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 08 Uncertainty</Name>
+                    <Index>15</Index>
+                </Element>
+                <Element>
+                    <Name>Averaged Over All Sectors</Name>
+                    <Index>16</Index>
+                </Element>
+                <Element>
+                    <Name>Averaged Over All Sectors Uncertainty</Name>
+                    <Index>17</Index>
+                </Element>
+            </Structure>
+            <FillValue>-1</FillValue>
+            <Particle>
+                <ParticleType>Ion</ParticleType>
+                <ParticleQuantity>EnergyFlux</ParticleQuantity>
+                <EnergyRange>
+                    <Low>0.99</Low>
+                    <High>2.14</High>
+                    <Units>MeV/ion</Units>
+                </EnergyRange>
+            </Particle>
+        </Parameter>
+        <Parameter>
+            <Name>PL08 Flux</Name>
+            <ParameterKey>PL08_FLUX</ParameterKey>
+            <Description>PL08 Ion Flux</Description>
+            <Cadence>PT3H</Cadence>
+            <Units>Ions/(cm^2 sec ster MeV)</Units>
+            <Structure>
+                <Size>18</Size>
+                <Element>
+                    <Name>Sector 01</Name>
+                    <Index>0</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 01 Uncertainty</Name>
+                    <Index>1</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 02</Name>
+                    <Index>2</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 02 Uncertainty</Name>
+                    <Index>3</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 03</Name>
+                    <Index>4</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 03 Uncertainty</Name>
+                    <Index>5</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 04</Name>
+                    <Index>6</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 04 Uncertainty</Name>
+                    <Index>7</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 05</Name>
+                    <Index>8</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 05 Uncertainty</Name>
+                    <Index>9</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 06</Name>
+                    <Index>10</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 06 Uncertainty</Name>
+                    <Index>11</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 07</Name>
+                    <Index>12</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 07 Uncertainty</Name>
+                    <Index>13</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 08</Name>
+                    <Index>14</Index>
+                </Element>
+                <Element>
+                    <Name>Sector 08 Uncertainty</Name>
+                    <Index>15</Index>
+                </Element>
+                <Element>
+                    <Name>Averaged Over All Sectors</Name>
+                    <Index>16</Index>
+                </Element>
+                <Element>
+                    <Name>Averaged Over All Sectors Uncertainty</Name>
+                    <Index>17</Index>
+                </Element>
+            </Structure>
+            <FillValue>-1</FillValue>
+            <Particle>
+                <ParticleType>Ion</ParticleType>
+                <ParticleQuantity>EnergyFlux</ParticleQuantity>
+                <EnergyRange>
+                    <Low>2.14</Low>
+                    <High>3.5</High>
+                    <Units>MeV/ion</Units>
+                </EnergyRange>
+            </Particle>
+        </Parameter>
+    </NumericalData>
+</Spase>

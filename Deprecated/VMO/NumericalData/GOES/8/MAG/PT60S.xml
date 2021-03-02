@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Spase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.spase-group.org/data/schema" xsi:schemaLocation="http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_2_2.xsd">
+   <Version>2.2.2</Version>
+   <NumericalData>
+      <ResourceID>spase://VMO/NumericalData/GOES/8/MAG/PT60S</ResourceID>
+      <ResourceHeader>
+         <ResourceName>GOES 8 Schonstedt triaxial magnetometer data at 1 min Resolution in Spacecraft Coordinates</ResourceName>
+         <AlternateName>GOES 8 MAG data</AlternateName>
+         <ReleaseDate>2013-02-12T00:00:00.000</ReleaseDate>
+         <Description>The Schonstedt triaxial magnetometer, located at a few meters away from the spacecraft was designed to provide the orthogonal components of the magnetic field: Hp was parallel to the spin axis that was held nearly in the direction of Earth's axis, He was directed toward Earth center, and Hn pointed eastward. The magnetometer had a range of +/- 1000 nT (without saturation) and a resolution of 0.1 nT. After temperature correction, and before (undescribed) stray-field correction, the accuracy is at about 1 nT level. Data files contain long descriptive header.</Description>
+         <Acknowledgement>N0AA; Dr. Howard J. Singer</Acknowledgement>
+         <Contact>
+            <PersonID>spase://SMWG/Person/Howard.J.Singer</PersonID>
+            <Role>PrincipalInvestigator</Role>
+         </Contact>
+         <Contact>
+            <PersonID>spase://SMWG/Person/James.M.Weygand</PersonID>
+            <Role>MetadataContact</Role>
+         </Contact>
+         <InformationURL>
+            <Name>GOES 8 Magnetic Field Monitor</Name>
+            <URL>http://nssdc.gsfc.nasa.gov/nmc/experimentDisplay.do?id=1994-022A-04</URL>
+            <Description>Introduction to the GOES 8 Magnetometer.</Description>
+         </InformationURL>
+         <InformationURL>
+	          <Name>GOES 8 Space Environment Monitor</Name>
+	          <URL>http://satdat.ngdc.noaa.gov/sem/goes/data/full/readme.txt</URL>
+	          <Description>Additional GOES Magnetic Field Monitor information.</Description>
+         </InformationURL>
+      </ResourceHeader>
+      <AccessInformation>
+         <RepositoryID>spase://SMWG/Repository/NOAA/SEC</RepositoryID>
+         <Availability>Online</Availability>
+         <AccessRights>Open</AccessRights>
+         <AccessURL>
+            <Name>Direct access to the GOES 8 triaxial magnetometer data</Name>
+            <URL>http://satdat.ngdc.noaa.gov/sem/goes/data/new_avg/</URL>
+            <Description>Direct link to the GOES 8 Magnetic Field Monitor data in CSV format as well as the magnetometer data from other GOES spacecraft. The data are sorted by year, month, spacecraft, and file type. The file names indicates the data type, spacecraft number, year, month, and resolution. For example, g08_magneto_1m_19950201_1995_02_28.csv, indicates goes 8 magnetometer data at 1 min resolution from Feb 1, 1995 to Feb 28, 1995.</Description>
+         </AccessURL>
+         <Format>Text.ASCII</Format>
+         <Encoding>None</Encoding>
+         <Acknowledgement>NASA, Dr. Howard J. Singer</Acknowledgement>
+      </AccessInformation>
+      <ProcessingLevel>Calibrated</ProcessingLevel>
+      <ProviderResourceName>NOAA GOES 8 Magnetometer</ProviderResourceName>
+      <ProviderProcessingLevel>Level-2</ProviderProcessingLevel>
+      <InstrumentID>spase://SMWG/Instrument/GOES/8/MAG</InstrumentID>
+      <MeasurementType>MagneticField</MeasurementType>
+      <TemporalDescription>
+         <TimeSpan>
+            <StartDate>1995-01-01T00:00:00</StartDate>
+            <StopDate>2003-06-30T23:59:00</StopDate>
+            <Note>Data file may fill out the first month and last month with flags. Time format in data files is year-month-day hour:minute:seconds.</Note>
+         </TimeSpan>
+         <Cadence>PT1M</Cadence>
+      </TemporalDescription>
+      <Caveats>Flags=-99999.0</Caveats>
+      <Keyword>1 minute</Keyword>
+      <Keyword>geosynchronous</Keyword>
+      <Keyword>GOES</Keyword>
+      <Keyword>magnetic field</Keyword>
+      <Keyword>magnetometer</Keyword>
+      <Keyword>Magnetic Field Monitor</Keyword>
+      <Parameter>
+         <Name>Seconds of the Month</Name>
+         <ParameterKey>Time</ParameterKey>
+         <Description>Time format in data files is year-month-day hour:minute:seconds.</Description>
+         <Support>
+            <SupportQuantity>Temporal</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>GOES 8 Triaxial Magnetometer Magnetic Field Vector 1 min Resolution Data in Spacecraft Coordinates</Name>
+         <ParameterKey>Magnetic Field Vectors</ParameterKey>
+         <Description>Magnetic field vector for GOES 8 in spacecraft coordinates in units of nT. HP  is parallel to the satellite spin axis, which is itself: perpendicular to the satellite's orbital plane.  HE lies parallel: to the satellite-earth center line and points earthward.  HN is: perpendicular to both HP and HE, and point eastward for GOES 8.</Description>
+         <Units>nT</Units>
+         <CoordinateSystem>
+            <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+            <CoordinateSystemName>SC</CoordinateSystemName>
+         </CoordinateSystem>
+         <Structure>
+            <Size>4</Size>
+            <Description>HP  is parallel to the satellite spin axis, which is itself: perpendicular to the satellite's orbital plane. HE lies parallel: to the satellite-earth center line and points earthward. HN is: perpendicular to both HP and HE, and point eastward for GOES 8.</Description>
+            <Element>
+               <Name>HP</Name>
+               <Qualifier>Component.I</Qualifier>
+               <Index>1</Index>
+               <ParameterKey>MAGNETIC "NORTHWARD" COMPONENT</ParameterKey>
+               <Units>nT</Units>
+               <FillValue>-99999.0</FillValue>
+            </Element>
+            <Element>
+               <Name>HE</Name>
+               <Qualifier>Component.J</Qualifier>
+               <Index>2</Index>
+               <ParameterKey>MAGNETIC "EARTHWARD" COMPONENT</ParameterKey>
+               <Units>nT</Units>
+               <FillValue>-99999.0</FillValue>
+            </Element>
+            <Element>
+               <Name>HN</Name>
+               <Qualifier>Component.K</Qualifier>
+               <Index>3</Index>
+               <ParameterKey>MAGNETIC "EASTWARD" COMPONENT</ParameterKey>
+               <Units>nT</Units>
+               <FillValue>-99999.0</FillValue>
+            </Element>
+            <Element>
+               <Name>HT</Name>
+               <Qualifier>Magnitude</Qualifier>
+               <Index>4</Index>
+               <ParameterKey>Total Magnitude</ParameterKey>
+               <Units>nT</Units>
+               <UnitsConversion>0.1>nT</UnitsConversion>
+               <FillValue>-99999.0</FillValue>
+            </Element>
+         </Structure>
+         <Field>
+            <Qualifier>Vector</Qualifier>
+            <FieldQuantity>Magnetic</FieldQuantity>
+         </Field>
+      </Parameter>
+   </NumericalData>
+</Spase>

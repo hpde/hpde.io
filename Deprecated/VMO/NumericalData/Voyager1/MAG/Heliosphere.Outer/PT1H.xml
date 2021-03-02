@@ -1,0 +1,147 @@
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema file:/C:/Projects/Voyager/spase-2_2_2.xsd">
+<Version>2.2.2</Version>
+<NumericalData>
+               <ResourceID>spase://VMO/NumericalData/Voyager1/MAG/Heliosphere.Outer/PT1H</ResourceID>
+               <ResourceHeader>
+                      <ResourceName>VOYAGER 1 SOLAR WIND MAGNETIC FIELD HGCOORDS HOUR AVGS V1.0</ResourceName>
+                      <ReleaseDate>2014-12-01T10:06:36.89</ReleaseDate>
+                      <Description>                                        
+                                                                              
+    Data Set Overview                                                         
+    =================                                                         
+                                                                              
+      This data set contains hour averages of the interplanetary magnetic     
+      field (IMF) measurements obtained by the triaxial fluxgate magnetometer 
+      experiment on Voyager 1. Identical instruments on Voyager 1 and 2 were  
+      designed to measure the IMF between  Earth and Saturn (10 AU) during the
+      primary Voyager mission. The  design and performance yielded absolute   
+      accuracies to better than &lt; 0.1 nT. In general, each component of the   
+      hourly average has an uncertainty of up  to (+/- 0.05 nT) in the region 
+      beyond 10 AU. More accurate measurements can be  obtained by special    
+      processing of the data, but it was not feasible to do this for the      
+      entire data set included here. The magnetic field magnitude in nT is    
+      provided along with angles of the field vector in the spacecraft-       
+      centered Heliographic (HG) coordinate system, also known as RTN.        
+                                                                              
+    Coordinate System                                                         
+    =================                                                         
+                                                                              
+      Interplanetary magnetic field studies make use of two important         
+      coordinate systems, the Inertial Heliographic (IHG) coordinate system   
+      and the Heliographic (HG) coordinate system.                            
+                                                                              
+      The IHG coordinate system is use to define the spacecraft&apos;s position.   
+      The IHG system is defined with its origin at the Sun.  There are three  
+      orthogonal axes, X(IHG), Y(IHG), and Z(IHG).  The Z(IHG) axis points    
+      northward along the Sun&apos;s spin axis.  The X(IHG) - Y(IHG) plane lays in 
+      the solar equatorial plane.  The intersection of the solar equatorial   
+      plane with the ecliptic plane defines a line, the longitude of the      
+      ascending node, which is taken to be the X(IHG) axis.  The X(IHG) axis  
+      drifts slowly with time, approximately one degree per 72 years.         
+                                                                              
+      Magnetic field orientation is defined in relation to the spacecraft.    
+      Drawing a line from the Sun&apos;s center (IHG origin) to the spacecraft     
+      defines the X axis of the HG coordinate system.  The HG coordinate      
+      system is defined with its origin centered at the spacecraft.  Three    
+      orthogonal axes are defined, X(HG), Y(HG), and Z(HG).  The X(HG) axis   
+      points radially away from the Sun and the Y(HG) axis is parallel to the 
+      solar equatorial plane and therefore parallel to the X(IHG)-Y(IHG) plane
+      too.  The Z(HG) axis is chosen to complete the orthonormal triad.       
+                                                                              
+      An excellent reference guide with diagrams explaining the IHG and HG    
+      systems may be found in Space and Science Reviews, Volume 39 (1984),    
+      pages 255-316, MHD Processes in the Outer Heliosphere, L. F. Burlaga    
+      [BURLAGA1984].                                                          
+                                                                              
+    Data Formats                                                              
+    ============                                                              
+      field    description (data before 1990)                                 
+      -----    ------------------------------                                 
+      1. s/c id  (1 = Voyager-1, 2 = Voyager-2)                               
+      2. UTC     YY DDD HH where YY=year, DDD=day, and HH=hour                
+      3. X      X IHG position component (A.U. - IHG coordinates)             
+      4. Y      Y IHG position component (A.U. - IHG coordinates)             
+      5. Z      Z IHG position component (A.U. - IHG coordinates)             
+      6. Range  Heliocentric range = sqrt(X*X+Y*Y+Z*Z)                        
+      7. F1     Field magnitude (nT)  ( avg(F2(48sec)) )                      
+      8. F2     Field modulus (nT)  ( norm (B1,B2,B3) )                       
+      9. delta  Latitudinal angle (degrees - HG coordinates)                  
+     10. lambda Longitudinal angle (degrees - HG coordinates)                 
+                                                                              
+      field  descriptor (data after 1990)                                     
+      -----  ----------------------------                                     
+        1.   s/c identification (FLT1=Voyager 1)                              
+                                (FLT2=Voyager 2)                              
+        2.   Time (UTC) decimal year format (90.00000 is day 1 of 1990)       
+        3.   The magnetic field strength,  F1, computed from                  
+               high-resolution observations.                                  
+        4.   The elevation angle (degrees) in heliographic coordinates.       
+        5.   The azimuthal angle (degrees) in heliographic coordinates.       
+        6.   The magnetic field strength, F2, computed from hour              
+               averages of the components. The components of B can be         
+               computed from F2 and the two angles.                           
+                                                                              
+      MAG field components may be recovered using F2, delta and lambda.       
+                                                                              
+      BR = F2*COS(lambda)*COS(delta)      Fortran users need to convert       
+      BT = F2*SIN(lambda)*COS(delta)      degrees to radians before           
+      BN = F2*SIN(delta)                  using trig functions.               
+                                                                              
+    Contact Information                                                       
+    ===================                                                       
+                                                                              
+      Principal Investigator:                                                 
+                                                                              
+      Prof. Norman F. Ness                                                    
+      Bartol Research Institute                                               
+      Univerity of Delaware                                                   
+      Newark, Delaware 19716-4793                                             
+      Phone: (302) 831-8116                                                   
+      Fax: (302) 831-1843                                                     
+      Email: norman.ness@mus.udel.edu                                         
+                                                                              
+      Data Contact:                                                           
+                                                                              
+      Dr. Len Burlaga                                                         
+      Code 612.2                                                              
+      NASA Goddard Space Flight Center                                        
+      Greenbelt, MD 20771                                                     
+      Tel.: 301-286-5956                                                      
+      Fax: 301-286-1433                                               </Description>
+                      <Contact>
+                             <PersonID>spase://SMWG/Person/Todd.A.King</PersonID>
+                             <Role>MetadataContact</Role>
+                     </Contact>
+                      <InformationURL>
+                             <Name>VG1-SW-MAG-4-SUMM-HGCOORDS-1HR-V1.0</Name>
+                             <URL>http://pds-ppi.igpp.ucla.edu/data/VG1-SW-MAG-4-SUMM-HGCOORDS-1HR-V1.0/AAREADME.TXT</URL>
+                             <Description>The document describing the contents of the collection.</Description>
+                             <Language>En</Language>
+                     </InformationURL>
+              </ResourceHeader>
+               <AccessInformation>
+                      <RepositoryID>spase://SMWG/Repository/PDS/PPI</RepositoryID>
+                      <Availability>Online</Availability>
+                      <AccessRights>Open</AccessRights>
+                      <AccessURL>
+                             <Name>PDS/PPI</Name>
+                             <URL>http://pds-ppi.igpp.ucla.edu/search/view/?f=yes&amp;id=pds://PPI/VG1-SW-MAG-4-SUMM-HGCOORDS-1HR-V1.0</URL>
+                             <ProductKey>VG1-SW-MAG-4-SUMM-HGCOORDS-1HR-V1.0</ProductKey>
+                             <Description>This collection is archived with NASA&apos;s Planetary Data System.</Description>
+                             <Language>En</Language>
+                     </AccessURL>
+                      <Format>Text.ASCII</Format>
+                      <Acknowledgement>NASA&apos;s Planetary Plasma Interactions (PPI) Node of the Planetary Data System (PDS) and the P.I. for the data.</Acknowledgement>
+              </AccessInformation>
+               <InstrumentID>spase://SMWG/Instrument/Voyager1/MAG</InstrumentID>
+               <MeasurementType>MagneticField</MeasurementType>
+               <TemporalDescription>
+                      <TimeSpan>
+                             <StartDate>1977-09-05T00:00:00.00</StartDate>
+                             <StopDate>2004-12-31T01:00:00.000</StopDate>
+                     </TimeSpan>
+                      <Cadence>PT1H</Cadence>
+              </TemporalDescription>
+               <ObservedRegion>Heliosphere.Outer</ObservedRegion>
+       </NumericalData>
+</Spase>
