@@ -1,0 +1,1542 @@
+<Spase xmlns="https://spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://spase-group.org/data/schema  https://spase-group.org/data/schema/spase-2.3.2.xsd">
+  <Version>2.3.2</Version>
+  <NumericalData>
+    <ResourceID>spase://NASA/NumericalData/ICON/IVM/L2/PT1S</ResourceID>
+    <ResourceHeader>
+      <ResourceName>ICON Ion Velocity Meter Data</ResourceName>
+	  <AlternateName>IVM Data</AlternateName>
+      <ReleaseDate>2021-03-01T00:00:00Z</ReleaseDate>
+      <Description>The IVM consists of two planar thermal ion sensors, a retarding potential analyzer (RPA) and an ion drift meter (IDM).</Description>
+	  <Acknowledgement>National Aeronautics and Space Administration; Dr. Christoph Englert </Acknowledgement>
+	  <Funding>
+		<Agency>National Aeronautics and Space Administration</Agency>
+		<Project>Explorers Program</Project>
+		<AwardNumber>contracts NNG12FA44C</AwardNumber>
+	  </Funding>
+      <Contact>
+        <PersonID>spase://SMWG/Person/Roderick.A.Heelis</PersonID>
+        <Role>PrincipalInvestigator</Role>
+      </Contact>
+	  <InformationURL>
+        <Name>Additional information on ICON</Name>
+        <URL>https://icon.ssl.berkeley.edu/</URL>
+        <Description>ICON spacecraft Homepage.</Description>
+      </InformationURL>
+	  <InformationURL>
+        <Name>Ion Velocity Measurements for the Ionospheric Connections Explorer</Name>
+        <URL>https://doi.org/10.1007/s11214-017-0383-3</URL>
+        <Description>Space Science Reviews, 212(1-2), pp.615-629. DOI: 10.1007/s11214-017-0383-3</Description>
+      </InformationURL>
+    </ResourceHeader>
+	<AccessInformation>
+		<RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF</RepositoryID>
+		<Availability>Online</Availability>
+		<AccessRights>Open</AccessRights>
+		<AccessURL>
+			<Name>FTPS from SPDF (not with most browsers)</Name>
+			<URL>ftps://spdf.gsfc.nasa.gov/pub/data/icon/l2/</URL>
+			<Description>FTPS access to ICON data via ftps at the Space Physics Data Facility (SPDF)</Description>
+		</AccessURL>
+		<AccessURL>
+			<Name>HTTPS from SPDF</Name>
+			<URL>https://spdf.gsfc.nasa.gov/pub/data/icon/l2/</URL>
+			<Description>HTTPS access to ICON data at the Space Physics Data Facility (SPDF)</Description>
+		</AccessURL>
+		<Format>NetCDF</Format>
+	</AccessInformation>
+	<ProcessingLevel>Calibrated</ProcessingLevel>
+	<ProviderName>ICON Ion Velocity Meter team</ProviderName>
+	<ProviderResourceName></ProviderResourceName>
+	<InstrumentID>spase://SMWG/Instrument/ICON/IVM</InstrumentID>
+	<MeasurementType>Dopplergram</MeasurementType>
+	<TemporalDescription>
+		<TimeSpan>
+			<StartDate>2019-12-06T00:00:00Z</StartDate>
+			<RelativeStopDate>-P2M</RelativeStopDate>
+		</TimeSpan>
+		<Cadence>PT30S</Cadence>
+	</TemporalDescription>
+	<ObservedRegion>Earth.NearSurface.Atmosphere</ObservedRegion>
+	<ObservedRegion>Earth.NearSurface.Ionosphere</ObservedRegion>
+	
+	<Parameter>
+	    <Name>Epoch time</Name>
+	    <ParameterKey>Epoch</ParameterKey>
+	    <Description>Time at the midpoint of the IVM measurements.</Description>
+	    <Cadence>PT1S</Cadence>
+	    <Units>ms</Units>
+		<ValidMin>NaN</ValidMin>
+		<ValidMax>NaN</ValidMax>
+		<FillValue>-9223372036854775808</FillValue>
+	    <Support>
+	        <Qualifier>Magnitude</Qualifier>
+	        <SupportQuantity>Temporal</SupportQuantity>
+	    </Support>
+    </Parameter>  
+	<Parameter>
+	    <Name>Binary Coded Integer Describing the Activity Category of IVM-A</Name>
+	    <ParameterKey>ICON_L27_A_Activity</ParameterKey>
+	    <Description>Binary Coded Integer from Technical Note ICN-TN-027.
+		1: Earth Day View
+		2: Earth Night View
+		4: Calibration Target View
+		8: Off-target View
+		16: Sun Proximity View
+		32: Moon Proximity View
+		64: North Magnetic Footpoint View
+		128: South Magnetic Footpoint View
+		256: Science Data Collection View
+		512: Calibration Data Collection View
+		1024: RAM Proximity View.</Description>
+	    <Cadence>PT30S</Cadence>
+		<ValidMin>0</ValidMin>
+		<ValidMax>2047</ValidMax>
+		<FillValue>-999</FillValue>
+	    <Support>
+	        <Qualifier>Scalar</Qualifier>
+	        <SupportQuantity>Other</SupportQuantity>
+	    </Support>
+    </Parameter>
+	<Parameter>
+	    <Name>Binary Coded Integer Describing the View Status of IVM-A</Name>
+	    <ParameterKey>ICON_L27_A_Status</ParameterKey>
+	    <Description>Binary Coded Integer from Technical Note ICN-TN-027.
+		1: Earth Day View
+		2: Earth Night View
+		4: Calibration Target View
+		8: Off-target View
+		16: Sun Proximity View
+		32: Moon Proximity View
+		64: North Magnetic Footpoint View
+		128: South Magnetic Footpoint View
+		256: Science Data Collection View
+		512: Calibration Data Collection View
+		1024: RAM Proximity View.</Description>
+	    <Cadence>PT1S</Cadence>
+		<ValidMin>0</ValidMin>
+		<ValidMax>2047</ValidMax>
+		<FillValue>-999</FillValue>
+	    <Support>
+	        <Qualifier>Scalar</Qualifier>
+	        <SupportQuantity>InstrumentMode</SupportQuantity>
+	    </Support>
+    </Parameter>
+	
+	
+	<Parameter>
+	    <Name>WGS84 Altitude of Spacecraft Position (geodetic)</Name>
+	    <ParameterKey>ICON_L27_Altitude</ParameterKey>
+	    <Description>Geodetic Altitude of Spacecraft in WGS84.</Description>
+	    <Cadence>PT1S</Cadence>
+	    <Units>km</Units>
+		<ValidMin>0</ValidMin>
+		<ValidMax>1000</ValidMax>
+		<FillValue>-999.900024 </FillValue>
+	    <Support>
+	        <Qualifier>Direction</Qualifier>
+	        <SupportQuantity>Positional</SupportQuantity>
+	    </Support>
+    </Parameter> 
+	
+	<Parameter>
+	    <Name>Modified APEX Height</Name>
+	    <ParameterKey>ICON_L27_Apex_Height</ParameterKey>
+	    <Description>Modified APEX height for S/C position.</Description>
+	    <Cadence>PT1S</Cadence>
+	    <Units>km</Units>
+		<ValidMin>0</ValidMin>
+		<ValidMax>1000</ValidMax>
+		<FillValue>-999.900024 </FillValue>
+	    <Support>
+	        <Qualifier>Direction</Qualifier>
+	        <SupportQuantity>Positional</SupportQuantity>
+	    </Support>
+    </Parameter> 
+	
+	
+	<Parameter>
+	    <Name>Attitude Status</Name>
+	    <ParameterKey>ICON_L27_Attitude_Status</ParameterKey>
+	    <Cadence>PT1S</Cadence>
+		<FillValue>9969209968386869046778552952102584320.000000</FillValue>
+	    <Support>
+	        <Qualifier>Scalar</Qualifier>
+	        <SupportQuantity>Other</SupportQuantity>
+	    </Support>
+    </Parameter>
+	
+	<Parameter>
+	    <Name>Binary Coded Integer Describing the Activity Category of IVM-B</Name>
+	    <ParameterKey>ICON_L27_B_Activity</ParameterKey>
+	    <Description>Binary Coded Integer from Technical Note ICN-TN-027.
+		1: Earth Day View
+		2: Earth Night View
+		4: Calibration Target View
+		8: Off-target View
+		16: Sun Proximity View
+		32: Moon Proximity View
+		64: North Magnetic Footpoint View
+		128: South Magnetic Footpoint View
+		256: Science Data Collection View
+		512: Calibration Data Collection View
+		1024: RAM Proximity View.</Description>
+	    <Cadence>PT30S</Cadence>
+		<ValidMin>0</ValidMin>
+		<ValidMax>2047</ValidMax>
+		<FillValue>-999</FillValue>
+	    <Support>
+	        <Qualifier>Scalar</Qualifier>
+	        <SupportQuantity>Other</SupportQuantity>
+	    </Support>
+    </Parameter>
+	
+	
+	
+	
+	<Parameter>
+	    <Name>Binary Coded Integer Describing the View Status of IVM-B</Name>
+	    <ParameterKey>ICON_L27_B_Status</ParameterKey>
+	    <Description>Binary Coded Integer from Technical Note ICN-TN-027.
+		1: Earth Day View
+		2: Earth Night View
+		4: Calibration Target View
+		8: Off-target View
+		16: Sun Proximity View
+		32: Moon Proximity View
+		64: North Magnetic Footpoint View
+		128: South Magnetic Footpoint View
+		256: Science Data Collection View
+		512: Calibration Data Collection View
+		1024: RAM Proximity View
+		2048-32768: SPARE</Description>
+	    <Cadence>PT1S</Cadence>
+		<ValidMin>0</ValidMin>
+		<ValidMax>2047</ValidMax>
+		<FillValue>-999</FillValue>
+	    <Support>
+	        <Qualifier>Scalar</Qualifier>
+	        <SupportQuantity>InstrumentMode</SupportQuantity>
+	    </Support>
+    </Parameter>
+	<Parameter>
+	    <Name>Flag for Drift Meter Quality</Name>
+	    <ParameterKey>ICON_L27_DM_Flag</ParameterKey>
+	    <Description>Drift meter quality flag. 0 - Good data. 1 - Data may have artifacts due to s/c operations. 2 - Data temporarily removed for photoemission. 3 - Not enough O+ to measure arrival angle.</Description>
+	    <Cadence>PT1S</Cadence>
+		<ValidMin>0</ValidMin>
+		<ValidMax>2047</ValidMax>
+		<FillValue>-999</FillValue>
+	    <Support>
+	        <Qualifier>Scalar</Qualifier>
+	        <SupportQuantity>DataQuality</SupportQuantity>
+	    </Support>
+    </Parameter>
+	<Parameter>
+	    <Name>Equatorial Meridional Ion Velocity</Name>
+	    <ParameterKey>ICON_L27_Equator_Ion_Velocity_Meridional</ParameterKey>
+	    <Description>Velocity along local magnetic meridional direction, perpendicular to geomagnetic field and within local magnetic meridional plane, field-line mapped to apex/magnetic equator. The meridional vector is purely vertical at the magnetic equator, positive up. Velocity obtained using ion velocities relative to co-rotation in the instrument frame along with the corresponding unit vectors expressed in the instrument frame. Field-line mapping and the assumption of equi-potential field lines is used to translate the locally measured ion motion to the magnetic equator. The mapping is used to determine the change in magnetic field line distance, which, under assumption of equipotential field lines, in turn alters the electric field at that location (E=V/d).</Description>
+	    <Cadence>PT30S</Cadence>
+	    <Units>m/s</Units>
+		<ValidMin>-500.00</ValidMin>
+		<ValidMax>500.00</ValidMax>
+		<FillValue>-999.900024</FillValue>
+	    <Particle>
+		    <ParticleType>Molecule</ParticleType>
+			<Qualifier>Magnitude</Qualifier>
+	        <ParticleQuantity>FlowVelocity</ParticleQuantity>
+	    </Particle>
+    </Parameter>
+	<Parameter>
+	    <Name>Equatorial Zonal Ion Velocity</Name>
+	    <ParameterKey>ICON_L27_Equator_Ion_Velocity_Zonal</ParameterKey>
+	    <Description>Velocity along local magnetic zonal direction, perpendicular to geomagnetic field and the local magnetic meridional plane, field-line mapped to apex/magnetic equator. The zonal vector is purely horizontal when mapped to the magnetic equator, positive is generally eastward. Velocity obtained using ion velocities relative to co-rotation in the instrument frame along with the corresponding unit vectors expressed in the instrument frame. Field-line mapping and the assumption of equi-potential field lines is used to translate the locally measured ion motion to the magnetic equator. The mapping is used to determine the change in magnetic field line distance, which, under assumption of equipotential field lines, in turn alters the electric field at that location (E=V/d).</Description>
+	    <Cadence>PT30S</Cadence>
+	    <Units>m/s</Units>
+		<ValidMin>-500.00</ValidMin>
+		<ValidMax>500.00</ValidMax>
+		<FillValue>-999.900024</FillValue>
+	    <Particle>
+		    <ParticleType>Molecule</ParticleType>
+			<Qualifier>Magnitude</Qualifier>
+	        <ParticleQuantity>FlowVelocity</ParticleQuantity>
+	    </Particle>
+    </Parameter>
+	<Parameter>
+	    <Name>Altitude of Northern Magnetic Footpoint</Name>
+	    <ParameterKey>ICON_L27_Footpoint_Altitude_North</ParameterKey>
+	    <Description>Altitude location of the magnetic footpoint in Northern Hemisphere at 150 km. These data were interpolated using tricubic algorithm from IGRF and ephemeris data then linearly interploted to IVM times. These values should all be 150 km.</Description>
+	    <Cadence>PT1S</Cadence>
+	    <Units>km</Units>
+		<ValidMin>150</ValidMin>
+		<ValidMax>150</ValidMax>
+		<FillValue>-999.900024</FillValue>
+	    <Support>
+	        <Qualifier>Direction</Qualifier>
+	        <SupportQuantity>Positional</SupportQuantity>
+	    </Support>
+    </Parameter> 
+	<Parameter>
+	    <Name>Altitude of Southern Magnetic Footpoint</Name>
+	    <ParameterKey>ICON_L27_Footpoint_Altitude_South</ParameterKey>
+	    <Description>Altitude location of the magnetic footpoint in Northern Hemisphere at 150 km. These data were interpolated using tricubic algorithm from IGRF and ephemeris data then linearly interploted to IVM times. These values should all be 150 km.</Description>
+	    <Cadence>PT1S</Cadence>
+	    <Units>km</Units>
+		<ValidMin>150</ValidMin>
+		<ValidMax>150</ValidMax>
+		<FillValue>-999.900024</FillValue>
+	    <Support>
+	        <Qualifier>Direction</Qualifier>
+	        <SupportQuantity>Positional</SupportQuantity>
+	    </Support>
+    </Parameter> 
+	<Parameter>
+	    <Name>X-component of Field Aligned Drift</Name>
+	    <ParameterKey>ICON_L27_Footpoint_Field_Aligned_Vector_ECEF_X_North</ParameterKey>
+	    <Description>At the northern footpoint this is the x-component of the unit vector for field aligned ion drifts expressed in the Earth-Centered, Earth-Fixed  frame.</Description>
+	    <Cadence>PT1S</Cadence>
+	    <Units>dimensionless</Units>
+		<CoordinateSystem>
+			<CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+			<CoordinateSystemName>ECEF</CoordinateSystemName>
+		</CoordinateSystem>
+		<ValidMin>-1</ValidMin>
+		<ValidMax>1</ValidMax>
+		<FillValue>-999.900024</FillValue>
+	    <Support>
+	        <Qualifier>Direction</Qualifier>
+	        <SupportQuantity>Positional</SupportQuantity>
+	    </Support>
+    </Parameter> 
+	<Parameter>
+	    <Name>X-component of Field Aligned Drift</Name>
+	    <ParameterKey>ICON_L27_Footpoint_Field_Aligned_Vector_ECEF_X_South</ParameterKey>
+	    <Description>At the Southern footpoint this is the y-component of the unit vector for field aligned ion drifts expressed in the Earth-Centered, Earth-Fixed frame.</Description>
+	    <Cadence>PT1S</Cadence>
+	    <Units>dimensionless</Units>
+		<CoordinateSystem>
+			<CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+			<CoordinateSystemName>ECEF</CoordinateSystemName>
+		</CoordinateSystem>
+		<ValidMin>-1</ValidMin>
+		<ValidMax>1</ValidMax>
+		<FillValue>-999.900024</FillValue>
+	    <Support>
+	        <Qualifier>Direction</Qualifier>
+	        <SupportQuantity>Positional</SupportQuantity>
+	    </Support>
+    </Parameter> 
+	<Parameter>
+	    <Name>Y-component of field aligned drift</Name>
+	    <ParameterKey>ICON_L27_Footpoint_Field_Aligned_Vector_ECEF_Y_North</ParameterKey>
+	    <Description>At the northern footpoint this is the y-component of the unit vector for field aligned ion drifts expressed in the Earth-Centered, Earth-Fixed frame.</Description>
+	    <Cadence>PT1S</Cadence>
+	    <Units>dimensionless</Units>
+		<CoordinateSystem>
+			<CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+			<CoordinateSystemName>ECEF</CoordinateSystemName>
+		</CoordinateSystem>
+		<ValidMin>-1</ValidMin>
+		<ValidMax>1</ValidMax>
+		<FillValue>-999.900024</FillValue>
+	    <Support>
+	        <Qualifier>Direction</Qualifier>
+	        <SupportQuantity>Positional</SupportQuantity>
+	    </Support>
+    </Parameter> 
+	<Parameter>
+	    <Name>Y-component of field aligned drift</Name>
+	    <ParameterKey>ICON_L27_Footpoint_Field_Aligned_Vector_ECEF_Y_South</ParameterKey>
+	    <Description>At the Southern footpoint this is the y-component of the unit vector for field aligned ion drifts expressed in the Earth-Centered, Earth-Fixed frame.</Description>
+	    <Cadence>PT1S</Cadence>
+	    <Units>dimensionless</Units>
+		<CoordinateSystem>
+			<CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+			<CoordinateSystemName>ECEF</CoordinateSystemName>
+		</CoordinateSystem>
+		<ValidMin>-1</ValidMin>
+		<ValidMax>1</ValidMax>
+		<FillValue>-999.900024</FillValue>
+	    <Support>
+	        <Qualifier>Direction</Qualifier>
+	        <SupportQuantity>Positional</SupportQuantity>
+	    </Support>
+    </Parameter> 
+	<Parameter>
+	    <Name>Z-component of field aligned drift</Name>
+	    <ParameterKey>ICON_L27_Footpoint_Field_Aligned_Vector_ECEF_Z_North</ParameterKey>
+	    <Description>At the northern footpoint this is the z-component of the unit vector for field aligned ion drifts expressed in the Earth-Centered, Earth-Fixed frame.</Description>
+	    <Cadence>PT1S</Cadence>
+	    <Units>dimensionless</Units>
+		<CoordinateSystem>
+			<CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+			<CoordinateSystemName>ECEF</CoordinateSystemName>
+		</CoordinateSystem>
+		<ValidMin>-1</ValidMin>
+		<ValidMax>1</ValidMax>
+		<FillValue>-999.900024</FillValue>
+	    <Support>
+	        <Qualifier>Direction</Qualifier>
+	        <SupportQuantity>Positional</SupportQuantity>
+	    </Support>
+    </Parameter> 
+	<Parameter>
+	    <Name>Z-component of field aligned drift</Name>
+	    <ParameterKey>ICON_L27_Footpoint_Field_Aligned_Vector_ECEF_Z_South</ParameterKey>
+	    <Description>At the Southern footpoint this is the z-component of the unit vector for field aligned ion drifts expressed in the Earth-Centered, Earth-Fixed frame.</Description>
+	    <Cadence>PT1S</Cadence>
+	    <Units>dimensionless</Units>
+		<CoordinateSystem>
+			<CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+			<CoordinateSystemName>ECEF</CoordinateSystemName>
+		</CoordinateSystem>
+		<ValidMin>-1</ValidMin>
+		<ValidMax>1</ValidMax>
+		<FillValue>-999.900024</FillValue>
+	    <Support>
+	        <Qualifier>Direction</Qualifier>
+	        <SupportQuantity>Positional</SupportQuantity>
+	    </Support>
+    </Parameter> 
+	<Parameter>
+	    <Name>Latitude of Northern Magnetic Footpoint</Name>
+	    <ParameterKey>ICON_L27_Footpoint_Latitude_North</ParameterKey>
+	    <Description>Latitude location of the magnetic footpoint in Northern Hemisphere at 150 km. These data were interpolated using tricubic algorithm from IGRF and ephemeris data then linearly interploted to IVM times.</Description>
+	    <Cadence>PT1S</Cadence>
+	    <Units>degrees</Units>
+		<CoordinateSystem>
+			<CoordinateRepresentation>Spherical</CoordinateRepresentation>
+			<CoordinateSystemName>MAG</CoordinateSystemName>
+		</CoordinateSystem>
+		<ValidMin>-65</ValidMin>
+		<ValidMax>65</ValidMax>
+		<FillValue>-999.900024</FillValue>
+	    <Support>
+	        <Qualifier>Direction</Qualifier>
+	        <SupportQuantity>Positional</SupportQuantity>
+	    </Support>
+    </Parameter> 
+	<Parameter>
+	    <Name>Latitude of Southern Magnetic Footpoint</Name>
+	    <ParameterKey>ICON_L27_Footpoint_Latitude_South</ParameterKey>
+	    <Description>Latitude location of the magnetic footpoint in Southern Hemisphere at 150 km. These data were interpolated using tricubic algorithm from IGRF and ephemeris data then linearly interploted to IVM times.</Description>
+	    <Cadence>PT1S</Cadence>
+	    <Units>degrees</Units>
+		<CoordinateSystem>
+			<CoordinateRepresentation>Spherical</CoordinateRepresentation>
+			<CoordinateSystemName>MAG</CoordinateSystemName>
+		</CoordinateSystem>
+		<ValidMin>-65</ValidMin>
+		<ValidMax>65</ValidMax>
+		<FillValue>-999.900024</FillValue>
+	    <Support>
+	        <Qualifier>Direction</Qualifier>
+	        <SupportQuantity>Positional</SupportQuantity>
+	    </Support>
+    </Parameter>
+	<Parameter>
+	    <Name>Longitude of Northern Magnetic Footpoint</Name>
+	    <ParameterKey>ICON_L27_Footpoint_Longitude_North</ParameterKey>
+	    <Description>Longitude location of the magnetic footpoint in Northern Hemisphere at 150 km. These data were interpolated using tricubic algorithm from IGRF and ephemeris data then linearly interploted to IVM times.</Description>
+	    <Cadence>PT1S</Cadence>
+	    <Units>degrees</Units>
+		<CoordinateSystem>
+			<CoordinateRepresentation>Spherical</CoordinateRepresentation>
+			<CoordinateSystemName>MAG</CoordinateSystemName>
+		</CoordinateSystem>
+		<ValidMin>-180</ValidMin>
+		<ValidMax>180</ValidMax>
+		<FillValue>-999.900024</FillValue>
+	    <Support>
+	        <Qualifier>Direction</Qualifier>
+	        <SupportQuantity>Positional</SupportQuantity>
+	    </Support>
+    </Parameter> 
+	<Parameter>
+	    <Name>Longitude of Southern Magnetic Footpoint</Name>
+	    <ParameterKey>ICON_L27_Footpoint_Longitude_South</ParameterKey>
+	    <Description>Longitude location of the magnetic footpoint in Southern Hemisphere at 150 km. These data were interpolated using tricubic algorithm from IGRF and ephemeris data then linearly interploted to IVM times.</Description>
+	    <Cadence>PT1S</Cadence>
+	    <Units>degrees</Units>
+		<CoordinateSystem>
+			<CoordinateRepresentation>Spherical</CoordinateRepresentation>
+			<CoordinateSystemName>MAG</CoordinateSystemName>
+		</CoordinateSystem>
+		<ValidMin>-180</ValidMin>
+		<ValidMax>180</ValidMax>
+		<FillValue>-999.900024</FillValue>
+	    <Support>
+	        <Qualifier>Direction</Qualifier>
+	        <SupportQuantity>Positional</SupportQuantity>
+	    </Support>
+    </Parameter> 
+	<Parameter>
+	    <Name>Quesi Dipole Latitude of Northern Footpoint</Name>
+	    <ParameterKey>ICON_L27_Footpoint_Magnetic_Latitude_North</ParameterKey>
+	    <Description>Calculated value of quesi dipole latitude of northern footpoint from IGRF.</Description>
+	    <Cadence>PT1S</Cadence>
+	    <Units>degrees</Units>
+		<CoordinateSystem>
+			<CoordinateRepresentation>Spherical</CoordinateRepresentation>
+			<CoordinateSystemName>MAG</CoordinateSystemName>
+		</CoordinateSystem>
+		<ValidMin>-90</ValidMin>
+		<ValidMax>90</ValidMax>
+		<FillValue>-999.900024</FillValue>
+	    <Support>
+	        <Qualifier>Direction</Qualifier>
+	        <SupportQuantity>Positional</SupportQuantity>
+	    </Support>
+    </Parameter> 
+	<Parameter>
+	    <Name>Quesi Dipole Latitude of Southern Footpoint</Name>
+	    <ParameterKey>ICON_L27_Footpoint_Magnetic_Latitude_South</ParameterKey>
+	    <Description>Calculated value of quesi dipole latitude of southern footpoint from IGRF.</Description>
+	    <Cadence>PT1S</Cadence>
+	    <Units>degrees</Units>
+		<CoordinateSystem>
+			<CoordinateRepresentation>Spherical</CoordinateRepresentation>
+			<CoordinateSystemName>MAG</CoordinateSystemName>
+		</CoordinateSystem>
+		<ValidMin>-90</ValidMin>
+		<ValidMax>90</ValidMax>
+		<FillValue>-999.900024</FillValue>
+	    <Support>
+	        <Qualifier>Direction</Qualifier>
+	        <SupportQuantity>Positional</SupportQuantity>
+	    </Support>
+    </Parameter> 
+	<Parameter>
+	    <Name>Quesi Dipole Longitude of Northern Footpoint</Name>
+	    <ParameterKey>ICON_L27_Footpoint_Magnetic_Longitude_North</ParameterKey>
+	    <Description>Calculated value of quesi dipole longitude of northern footpoint from IGRF.</Description>
+	    <Cadence>PT1S</Cadence>
+	    <Units>degrees</Units>
+		<CoordinateSystem>
+			<CoordinateRepresentation>Spherical</CoordinateRepresentation>
+			<CoordinateSystemName>MAG</CoordinateSystemName>
+		</CoordinateSystem>
+		<ValidMin>-180</ValidMin>
+		<ValidMax>180</ValidMax>
+		<FillValue>-999.900024</FillValue>
+	    <Support>
+	        <Qualifier>Direction</Qualifier>
+	        <SupportQuantity>Positional</SupportQuantity>
+	    </Support>
+    </Parameter> 
+	<Parameter>
+	    <Name>Quesi Dipole Longitude of Southern Footpoint</Name>
+	    <ParameterKey>ICON_L27_Footpoint_Magnetic_Longitude_South</ParameterKey>
+	    <Description>Calculated value of quesi dipole longitude of southern footpoint from IGRF.</Description>
+	    <Cadence>PT1S</Cadence>
+	    <Units>degrees</Units>
+		<CoordinateSystem>
+			<CoordinateRepresentation>Spherical</CoordinateRepresentation>
+			<CoordinateSystemName>MAG</CoordinateSystemName>
+		</CoordinateSystem>
+		<ValidMin>-180</ValidMin>
+		<ValidMax>180</ValidMax>
+		<FillValue>-999.900024</FillValue>
+	    <Support>
+	        <Qualifier>Direction</Qualifier>
+	        <SupportQuantity>Positional</SupportQuantity>
+	    </Support>
+    </Parameter> 
+	<Parameter>
+	    <Name>Northern Meridional Ion Velocity</Name>
+	    <ParameterKey>ICON_L27_Footpoint_Meridional_Ion_Velocity_North</ParameterKey>
+	    <Description>Velocity along local magnetic meridional direction, perpendicular to geomagnetic field and within local magnetic meridional plane, field-line mapped to northern footpoint. The meridional vector is purely vertical at the magnetic equator, positive up. Velocity obtained using ion velocities relative to co-rotation in the instrument frame along with the corresponding unit vectors expressed in the instrument frame. Field-line mapping and the assumption of equi-potential field lines is used to translate the locally measured ion motion to the magnetic footpoint. The mapping is used to determine the change in magnetic field line distance, which, under assumption of equipotential field lines, in turn alters the electric field at that location (E=V/d).</Description>
+	    <Cadence>PT1S</Cadence>
+	    <Units>m/s</Units>
+		<ValidMin>-500</ValidMin>
+		<ValidMax>500</ValidMax>
+		<FillValue>-999.900024</FillValue>
+	    <Particle>
+		    <ParticleType>Ion</ParticleType>
+			<Qualifier>Magnitude</Qualifier>
+	        <ParticleQuantity>FlowSpeed</ParticleQuantity>
+	    </Particle>
+    </Parameter> 
+	<Parameter>
+	    <Name>Southern Meridional Ion Velocity</Name>
+	    <ParameterKey>ICON_L27_Footpoint_Meridional_Ion_Velocity_South</ParameterKey>
+	    <Description>Velocity along local magnetic meridional direction, perpendicular to geomagnetic field and within local magnetic meridional plane, field-line mapped to southern footpoint. The meridional vector is purely vertical at the magnetic equator, positive up. Velocity obtained using ion velocities relative to co-rotation in the instrument frame along with the corresponding unit vectors expressed in the instrument frame. Field-line mapping and the assumption of equi-potential field lines is used to translate the locally measured ion motion to the magnetic footpoint. The mapping is used to determine the change in magnetic field line distance, which, under assumption of equipotential field lines, in turn alters the electric field at that location (E=V/d).</Description>
+	    <Cadence>PT1S</Cadence>
+	    <Units>m/s</Units>
+		<ValidMin>-500</ValidMin>
+		<ValidMax>500</ValidMax>
+		<FillValue>-999.900024</FillValue>
+	    <Particle>
+		    <ParticleType>Ion</ParticleType>
+			<Qualifier>Magnitude</Qualifier>
+	        <ParticleQuantity>FlowSpeed</ParticleQuantity>
+	    </Particle>
+    </Parameter>
+	<Parameter>
+	    <Name>X-component of Northern Meridional Drift</Name>
+	    <ParameterKey>ICON_L27_Footpoint_Meridional_Vector_ECEF_X_North</ParameterKey>
+	    <Description>At the northern footpoint this is the x-component of the unit vector for meridional ion drifts expressed in the Earth-Centered, Earth-Fixed frame.</Description>
+	    <Cadence>PT1S</Cadence>
+	    <Units>dimensionless</Units>
+		<ValidMin>-1</ValidMin>
+		<ValidMax>1</ValidMax>
+		<FillValue>-999.900024</FillValue>
+	    <Particle>
+		    <ParticleType>Ion</ParticleType>
+			<Qualifier>Magnitude</Qualifier>
+	        <ParticleQuantity>FlowSpeed</ParticleQuantity>
+	    </Particle>
+    </Parameter>
+	<Parameter>
+	    <Name>X-component of Southern Meridional Drift</Name>
+	    <ParameterKey>ICON_L27_Footpoint_Meridional_Vector_ECEF_X_South</ParameterKey>
+	    <Description>At the Southern footpoint this is the y-component of the unit vector for meridional ion drifts expressed in the Earth-Centered, Earth-Fixed frame.</Description>
+	    <Cadence>PT1S</Cadence>
+	    <Units>dimensionless</Units>
+		<ValidMin>-1</ValidMin>
+		<ValidMax>1</ValidMax>
+		<FillValue>-999.900024</FillValue>
+	    <Particle>
+		    <ParticleType>Ion</ParticleType>
+			<Qualifier>Magnitude</Qualifier>
+	        <ParticleQuantity>FlowSpeed</ParticleQuantity>
+	    </Particle>
+    </Parameter>
+	<Parameter>
+	    <Name>Y-component of Northern Meridional Drift</Name>
+	    <ParameterKey>ICON_L27_Footpoint_Meridional_Vector_ECEF_Y_North</ParameterKey>
+	    <Description>At the northern footpoint this is the y-component of the unit vector for meridional ion drifts expressed in the Earth-Centered, Earth-Fixed frame.</Description>
+	    <Cadence>PT1S</Cadence>
+	    <Units>dimensionless</Units>
+		<ValidMin>-1</ValidMin>
+		<ValidMax>1</ValidMax>
+		<FillValue>-999.900024</FillValue>
+	    <Particle>
+		    <ParticleType>Ion</ParticleType>
+			<Qualifier>Magnitude</Qualifier>
+	        <ParticleQuantity>FlowSpeed</ParticleQuantity>
+	    </Particle>
+    </Parameter>
+	<Parameter>
+	    <Name>Y-component of Southern Meridional Drift</Name>
+	    <ParameterKey>ICON_L27_Footpoint_Meridional_Vector_ECEF_Y_South</ParameterKey>
+	    <Description>At the Southern footpoint this is the y-component of the unit vector for meridional ion drifts expressed in the Earth-Centered, Earth-Fixed frame.</Description>
+	    <Cadence>PT1S</Cadence>
+	    <Units>dimensionless</Units>
+		<ValidMin>-1</ValidMin>
+		<ValidMax>1</ValidMax>
+		<FillValue>-999.900024</FillValue>
+	    <Particle>
+		    <ParticleType>Ion</ParticleType>
+			<Qualifier>Magnitude</Qualifier>
+	        <ParticleQuantity>FlowSpeed</ParticleQuantity>
+	    </Particle>
+    </Parameter>
+	<Parameter>
+	    <Name>Z-component of Northern Meridional Drift</Name>
+	    <ParameterKey>ICON_L27_Footpoint_Meridional_Vector_ECEF_Z_North</ParameterKey>
+	    <Description>At the northern footpoint this is the z-component of the unit vector for meridional ion drifts expressed in the Earth-Centered, Earth-Fixed frame.</Description>
+	    <Cadence>PT1S</Cadence>
+	    <Units>dimensionless</Units>
+		<ValidMin>-1</ValidMin>
+		<ValidMax>1</ValidMax>
+		<FillValue>-999.900024</FillValue>
+	    <Particle>
+		    <ParticleType>Ion</ParticleType>
+			<Qualifier>Magnitude</Qualifier>
+	        <ParticleQuantity>FlowSpeed</ParticleQuantity>
+	    </Particle>
+    </Parameter>
+	<Parameter>
+	    <Name>Y-component of Southern Meridional Drift</Name>
+	    <ParameterKey>ICON_L27_Footpoint_Meridional_Vector_ECEF_Z_South</ParameterKey>
+	    <Description>At the Southern footpoint this is the z-component of the unit vector for meridional ion drifts expressed in the Earth-Centered, Earth-Fixed frame.</Description>
+	    <Cadence>PT1S</Cadence>
+	    <Units>dimensionless</Units>
+		<ValidMin>-1</ValidMin>
+		<ValidMax>1</ValidMax>
+		<FillValue>-999.900024</FillValue>
+	    <Particle>
+		    <ParticleType>Ion</ParticleType>
+			<Qualifier>Magnitude</Qualifier>
+	        <ParticleQuantity>FlowSpeed</ParticleQuantity>
+	    </Particle>
+    </Parameter>
+	<Parameter>
+	    <Name>Northern Zonal Ion Velocity</Name>
+	    <ParameterKey>ICON_L27_Footpoint_Zonal_Ion_Velocity_North</ParameterKey>
+	    <Description>Velocity along local magnetic zonal direction, perpendicular to geomagnetic field and the local magnetic meridional plane, field-line mapped to northern footpoint. The zonal vector is purely horizontal when mapped to the magnetic equator, positive is generally eastward. Velocity obtained using ion velocities relative to co-rotation in the instrument frame along with the corresponding unit vectors expressed in the instrument frame. Field-line mapping and the assumption of equi-potential field lines is used to translate the locally measured ion motion to the northern footpoint. The mapping is used to determine the change in magnetic field line distance, which, under assumption of equipotential field lines, in turn alters the electric field at that location (E=V/d).</Description>
+	    <Cadence>PT1S</Cadence>
+	    <Units>m/s</Units>
+		<ValidMin>-500</ValidMin>
+		<ValidMax>500</ValidMax>
+		<FillValue>-999.900024</FillValue>
+	    <Particle>
+		    <ParticleType>Ion</ParticleType>
+			<Qualifier>Magnitude</Qualifier>
+	        <ParticleQuantity>FlowSpeed</ParticleQuantity>
+	    </Particle>
+    </Parameter>
+	<Parameter>
+	    <Name>Southern Zonal Ion Velocity</Name>
+	    <ParameterKey>ICON_L27_Footpoint_Zonal_Ion_Velocity_South</ParameterKey>
+	    <Description>Velocity along local magnetic zonal direction, perpendicular to geomagnetic field and the local magnetic meridional plane, field-line mapped to southern footpoint. The zonal vector is purely horizontal when mapped to the magnetic equator, positive is generally eastward. Velocity obtained using ion velocities relative to co-rotation in the instrument frame along with the corresponding unit vectors expressed in the instrument frame. Field-line mapping and the assumption of equi-potential field lines is used to translate the locally measured ion motion to the southern footpoint. The mapping is used to determine the change in magnetic field line distance, which, under assumption of equipotential field lines, in turn alters the electric field at that location (E=V/d).</Description>
+	    <Cadence>PT1S</Cadence>
+	    <Units>m/s</Units>
+		<ValidMin>-500</ValidMin>
+		<ValidMax>500</ValidMax>
+		<FillValue>-999.900024</FillValue>
+	    <Particle>
+		    <ParticleType>Ion</ParticleType>
+			<Qualifier>Magnitude</Qualifier>
+	        <ParticleQuantity>FlowSpeed</ParticleQuantity>
+	    </Particle>
+    </Parameter>
+	<Parameter>
+	    <Name>X-component of Northern Meridional Drift</Name>
+	    <ParameterKey>ICON_L27_Footpoint_Zonal_Vector_ECEF_X_North</ParameterKey>
+	    <Description>At the northern footpoint this is the x-component of the unit vector for zonal ion drifts expressed in the Earth-Centered, Earth-Fixed frame.</Description>
+	    <Cadence>PT1S</Cadence>
+	    <Units>dimensionless</Units>
+		<ValidMin>-1</ValidMin>
+		<ValidMax>1</ValidMax>
+		<FillValue>-999.900024</FillValue>
+	    <Particle>
+		    <ParticleType>Ion</ParticleType>
+			<Qualifier>Magnitude</Qualifier>
+	        <ParticleQuantity>FlowSpeed</ParticleQuantity>
+	    </Particle>
+    </Parameter>
+	<Parameter>
+	    <Name>X-component of Southern Meridional Drift</Name>
+	    <ParameterKey>ICON_L27_Footpoint_Zonal_Vector_ECEF_X_South</ParameterKey>
+	    <Description>At the Southern footpoint this is the x-component of the unit vector for zonal ion drifts expressed in the Earth-Centered, Earth-Fixed frame.</Description>
+	    <Cadence>PT1S</Cadence>
+	    <Units>dimensionless</Units>
+		<ValidMin>-1</ValidMin>
+		<ValidMax>1</ValidMax>
+		<FillValue>-999.900024</FillValue>
+	    <Particle>
+		    <ParticleType>Ion</ParticleType>
+			<Qualifier>Magnitude</Qualifier>
+	        <ParticleQuantity>FlowSpeed</ParticleQuantity>
+	    </Particle>
+    </Parameter>
+	<Parameter>
+	    <Name>Y-component of Northern Meridional Drift</Name>
+	    <ParameterKey>ICON_L27_Footpoint_Zonal_Vector_ECEF_Y_North</ParameterKey>
+	    <Description>At the northern footpoint this is the y-component of the unit vector for zonal ion drifts expressed in the Earth-Centered, Earth-Fixed frame.</Description>
+	    <Cadence>PT1S</Cadence>
+	    <Units>dimensionless</Units>
+		<ValidMin>-1</ValidMin>
+		<ValidMax>1</ValidMax>
+		<FillValue>-999.900024</FillValue>
+	    <Particle>
+		    <ParticleType>Ion</ParticleType>
+			<Qualifier>Magnitude</Qualifier>
+	        <ParticleQuantity>FlowSpeed</ParticleQuantity>
+	    </Particle>
+    </Parameter>
+	<Parameter>
+	    <Name>Y-component of Southern Meridional Drift</Name>
+	    <ParameterKey>ICON_L27_Footpoint_Zonal_Vector_ECEF_Y_South</ParameterKey>
+	    <Description>At the Southern footpoint this is the y-component of the unit vector for zonal ion drifts expressed in the Earth-Centered, Earth-Fixed frame.</Description>
+	    <Cadence>PT1S</Cadence>
+	    <Units>dimensionless</Units>
+		<ValidMin>-1</ValidMin>
+		<ValidMax>1</ValidMax>
+		<FillValue>-999.900024</FillValue>
+	    <Particle>
+		    <ParticleType>Ion</ParticleType>
+			<Qualifier>Magnitude</Qualifier>
+	        <ParticleQuantity>FlowSpeed</ParticleQuantity>
+	    </Particle>
+    </Parameter>
+	<Parameter>
+	    <Name>Z-component of Northern Meridional Drift</Name>
+	    <ParameterKey>ICON_L27_Footpoint_Zonal_Vector_ECEF_Z_North</ParameterKey>
+	    <Description>At the northern footpoint this is the z-component of the unit vector for zonal ion drifts expressed in the Earth-Centered, Earth-Fixed frame.</Description>
+	    <Cadence>PT1S</Cadence>
+	    <Units>dimensionless</Units>
+		<ValidMin>-1</ValidMin>
+		<ValidMax>1</ValidMax>
+		<FillValue>-999.900024</FillValue>
+	    <Particle>
+		    <ParticleType>Ion</ParticleType>
+			<Qualifier>Magnitude</Qualifier>
+	        <ParticleQuantity>FlowSpeed</ParticleQuantity>
+	    </Particle>
+    </Parameter>
+	<Parameter>
+	    <Name>Z-component of Southern Meridional Drift</Name>
+	    <ParameterKey>ICON_L27_Footpoint_Zonal_Vector_ECEF_Z_South</ParameterKey>
+	    <Description>At the Southern footpoint this is the z-component of the unit vector for zonal ion drifts expressed in the Earth-Centered, Earth-Fixed frame.</Description>
+	    <Cadence>PT1S</Cadence>
+	    <Units>dimensionless</Units>
+		<ValidMin>-1</ValidMin>
+		<ValidMax>1</ValidMax>
+		<FillValue>-999.900024</FillValue>
+	    <Particle>
+		    <ParticleType>Ion</ParticleType>
+			<Qualifier>Magnitude</Qualifier>
+	        <ParticleQuantity>FlowSpeed</ParticleQuantity>
+	    </Particle>
+    </Parameter>
+	<Parameter>
+	    <Name>H+ Fractional Composition</Name>
+	    <ParameterKey>ICON_L27_Fractional_Ion_Density_H</ParameterKey>
+	    <Description>Determined via a non-linear least squares fit of retarding potential analyzers currents.</Description>
+	    <Cadence>PT1S</Cadence>
+		<ValidMin>0</ValidMin>
+		<ValidMax>1</ValidMax>
+		<FillValue>-999.900024</FillValue>
+	    <Particle>
+		    <ParticleType>Ion</ParticleType>
+			<Qualifier>Magnitude</Qualifier>
+	        <ParticleQuantity>NumberDensity</ParticleQuantity>
+			<AtomicNumber>1</AtomicNumber>
+	    </Particle>
+    </Parameter>
+	<Parameter>
+	    <Name>O+ Fractional Composition</Name>
+	    <ParameterKey>ICON_L27_Fractional_Ion_Density_O</ParameterKey>
+	    <Description>Determined via a non-linear least squares fit of retarding potential analyzers currents.</Description>
+	    <Cadence>PT1S</Cadence>
+		<ValidMin>0</ValidMin>
+		<ValidMax>1</ValidMax>
+		<FillValue>-999.900024</FillValue>
+	    <Particle>
+		    <ParticleType>Ion</ParticleType>
+			<Qualifier>Magnitude</Qualifier>
+	        <ParticleQuantity>NumberDensity</ParticleQuantity>
+			<AtomicNumber>8</AtomicNumber>
+	    </Particle>
+    </Parameter>
+	<Parameter>
+	    <Name>IVM Packet GPS Time</Name>
+	    <ParameterKey>ICON_L27_GPS_Epoch</ParameterKey>
+	    <Description>Milliseconds since 1980-01-06 00:00:00 TAI (coincident with UTC) at middle of reading.
+
+Time is generated from the time-code at byte 1015 of the IVM packet minus the time sync at byte 1019 of the IVM packet. This is the GPS time at the start of the integration period. The integration period is assumed to be 4 seconds so the center time is 2 seconds after that. The formula is (time-code * 1000ms) + 2000ms - (16 * time sync / 1000) in GPS milliseconds then converted to UTC time. See the UTD 206-024 Rev A document.
+
+Time may be delayed by up to 10 ms due to FSW polling delay.
+
+Maximum time is ~2150 UTC and minimum time is ~1970 UTC.</Description>
+	    <Cadence>PT1S</Cadence>
+	    <Units>ms</Units>
+		<ValidMin>0</ValidMin>
+		<ValidMax>5500000000000</ValidMax>
+		<FillValue>-999999999999999</FillValue>
+	    <Support>
+	        <Qualifier>Magnitude</Qualifier>
+	        <SupportQuantity>Temporal</SupportQuantity>
+	    </Support>
+    </Parameter>  
+	
+	<Parameter>
+	    <Name>Aperture Plane Plasma Potential</Name>
+	    <ParameterKey>ICON_L27_IVM_Aperture_Potential</ParameterKey>
+	    <Description>Incident plasma will have some potential relative to the IVM aperture plane. The aperture plane voltage matches that of a conductor allowed to float electrically with respect to the spacecraft. The flux of ions (driven by s/c motion) must be balanced by the flux of electrons (driven by electron temperature). The value of the aperture plane potential evolves naturally to limit the collection of electrons such the net flux is zero.</Description>
+	    <Cadence>PT1S</Cadence>
+	    <Units>V</Units>
+		<ValidMin>-5</ValidMin>
+		<ValidMax>20</ValidMax>
+		<FillValue>NaN</FillValue>
+	    <Field>
+	        <Qualifier>Magnitude</Qualifier>
+	        <FieldQuantity>Potential</FieldQuantity>
+	    </Field>
+    </Parameter>  
+	
+	<Parameter>
+	    <Name>Ion Density</Name>
+	    <ParameterKey>ICON_L27_Ion_Density</ParameterKey>
+	    <Description>Ion density uses measured currents and co-rotating atmosphere to determine density.</Description>
+	    <Cadence>PT1S</Cadence>
+		<Units>N/cc</Units>
+		<ValidMin>7000</ValidMin>
+		<ValidMax>3000000</ValidMax>
+		<FillValue>-999.900024</FillValue>
+	    <Particle>
+		    <ParticleType>Ion</ParticleType>
+			<Qualifier>Magnitude</Qualifier>
+	        <ParticleQuantity>NumberDensity</ParticleQuantity>
+	    </Particle>
+    </Parameter>
+	<Parameter>
+	    <Name>Ion Temperature</Name>
+	    <ParameterKey>ICON_L27_Ion_Temperature</ParameterKey>
+	    <Description>Temperature is obtained by assuming single temperature value for all plasma.</Description>
+	    <Cadence>PT1S</Cadence>
+		<Units>K</Units>
+		<ValidMin>0</ValidMin>
+		<ValidMax>4000</ValidMax>
+		<FillValue>NaN</FillValue>
+	    <Particle>
+		    <ParticleType>Ion</ParticleType>
+			<Qualifier>Scalar</Qualifier>
+	        <ParticleQuantity>Temperature</ParticleQuantity>
+	    </Particle>
+    </Parameter>
+	
+	<Parameter>
+	    <Name>Field-Aligned Ion Velocity</Name>
+	    <ParameterKey>ICON_L27_Ion_Velocity_Field_Aligned</ParameterKey>
+	    <Description>Ion velocity relative to co-rotation along geomagnetic field lines. Positive along the main field vector. Velocity obtained using ion velocities relative to co-rotation in the instrument frame along with the corresponding unit vectors expressed in the instrument frame to express the observed vector along a geomagnetic basis.</Description>
+	    <Cadence>PT1S</Cadence>
+	    <Units>m/s</Units>
+		<ValidMin>-500</ValidMin>
+		<ValidMax>500</ValidMax>
+		<FillValue>NaN</FillValue>
+	    <Particle>
+		    <ParticleType>Ion</ParticleType>
+			<Qualifier>Magnitude</Qualifier>
+	        <ParticleQuantity>FlowSpeed</ParticleQuantity>
+	    </Particle>
+    </Parameter>
+	<Parameter>
+	    <Name>Meridional Ion Velocity</Name>
+	    <ParameterKey>ICON_L27_Ion_Velocity_Meridional</ParameterKey>
+	    <Description>Ion velocity along local magnetic meridional direction, perpendicular to geomagnetic field and within local magnetic meridional plane. The local meridional vector maps to vertical at the magnetic equator, positive is up. Velocity obtained using ion velocities relative to co-rotation in the instrument frame along with the corresponding unit vectors expressed in the instrument frame to express the observed vector along a geomagnetic basis.</Description>
+	    <Cadence>PT1S</Cadence>
+	    <Units>m/s</Units>
+		<ValidMin>-500</ValidMin>
+		<ValidMax>500</ValidMax>
+		<FillValue>NaN</FillValue>
+	    <Particle>
+		    <ParticleType>Ion</ParticleType>
+			<Qualifier>Magnitude</Qualifier>
+	        <ParticleQuantity>FlowSpeed</ParticleQuantity>
+	    </Particle>
+    </Parameter>
+	<Parameter>
+	    <Name>Ion Velocity along IVM-x</Name>
+	    <ParameterKey>ICON_L27_Ion_Velocity_X</ParameterKey>
+	    <Description>Velocity is relative to co-rotation. Positive-x is normal to IVM aperture plane and in the direction of satellite motion. Velocity obtained through fitting of retarding potential analyzers currents to measure the along track ion velocity. Signals produced by the motion of the spacecraft and the rotation of the Earth are removed to produce this result.</Description>
+	    <Cadence>PT1S</Cadence>
+	    <Units>m/s</Units>
+		<ValidMin>-500</ValidMin>
+		<ValidMax>500</ValidMax>
+		<FillValue>NaN</FillValue>
+	    <Particle>
+		    <ParticleType>Ion</ParticleType>
+			<Qualifier>Component.I</Qualifier>
+	        <ParticleQuantity>FlowSpeed</ParticleQuantity>
+	    </Particle>
+    </Parameter>
+	<Parameter>
+	    <Name>Ion Velocity along IVM-y</Name>
+	    <ParameterKey>ICON_L27_Ion_Velocity_Y</ParameterKey>
+	    <Description>Velocity is relative to co-rotation. Positive-y points generally southward. Velocity obtained through conversion of arrival angles measured by the DM into a cross track velocity using trigonometry. Signals produced by the motion of the spacecraft and the rotation of the Earth are removed to produce this result.</Description>
+	    <Cadence>PT1S</Cadence>
+	    <Units>m/s</Units>
+		<ValidMin>-750</ValidMin>
+		<ValidMax>750</ValidMax>
+		<FillValue>NaN</FillValue>
+	    <Particle>
+		    <ParticleType>Ion</ParticleType>
+			<Qualifier>Component.J</Qualifier>
+	        <ParticleQuantity>FlowSpeed</ParticleQuantity>
+	    </Particle>
+    </Parameter>
+	
+	<Parameter>
+	    <Name>Ion Velocity along IVM-z</Name>
+	    <ParameterKey>ICON_L27_Ion_Velocity_Z</ParameterKey>
+	    <Description>Velocity is relative to co-rotation. Positive-z is directed towards nadir (Earth). Velocity obtained through conversion of arrival angles measured by the DM into a cross track velocity using trigonometry. Signals produced by the motion of the spacecraft and the rotation of the Earth are removed to produce this result.</Description>
+	    <Cadence>PT1S</Cadence>
+	    <Units>m/s</Units>
+		<ValidMin>-750</ValidMin>
+		<ValidMax>750</ValidMax>
+		<FillValue>NaN</FillValue>
+	    <Particle>
+		    <ParticleType>Ion</ParticleType>
+			<Qualifier>Component.K</Qualifier>
+	        <ParticleQuantity>FlowSpeed</ParticleQuantity>
+	    </Particle>
+    </Parameter>
+	<Parameter>
+	    <Name>Zonal Ion Velocity</Name>
+	    <ParameterKey>ICON_L27_Ion_Velocity_Zonal</ParameterKey>
+	    <Description>Ion velocity relative to co-rotation along the magnetic zonal direction, normal to local magnetic meridional plane and the geomagnetic field (positive east). The local zonal vector maps to purely horizontal at the magnetic equator. Velocity obtained using ion velocities relative to co-rotation in the instrument frame along with the corresponding unit vectors expressed in the instrument frame to express the observed vector along a geomagnetic basis.</Description>
+	    <Cadence>PT1S</Cadence>
+	    <Units>m/s</Units>
+		<ValidMin>-500</ValidMin>
+		<ValidMax>500</ValidMax>
+		<FillValue>NaN</FillValue>
+	    <Particle>
+		    <ParticleType>Ion</ParticleType>
+			<Qualifier>Magnitude</Qualifier>
+	        <ParticleQuantity>FlowSpeed</ParticleQuantity>
+	    </Particle>
+    </Parameter>
+	<Parameter>
+	    <Name>WGS84 Latitude of Spacecraft position (geodetic)</Name>
+	    <ParameterKey>ICON_L27_Latitude</ParameterKey>
+	    <Description>WGS84 Latitude of spacecraft position (geodetic).</Description>
+	    <Cadence>PT30S</Cadence>
+	    <Units>deg</Units>
+		<ValidMin>-90</ValidMin>
+		<ValidMax>90</ValidMax>
+		<FillValue>-999.900024</FillValue>
+	    <Support>
+	        <Qualifier>Direction</Qualifier>
+	        <SupportQuantity>Positional</SupportQuantity>
+	    </Support>
+    </Parameter>
+	<Parameter>
+	    <Name>WGS84 Longitude of Spacecraft position (geodetic)</Name>
+	    <ParameterKey>ICON_L27_Longitude</ParameterKey>
+	    <Description>Geodetic Longitude of Spacecraft in WGS84.</Description>
+	    <Cadence>PT30S</Cadence>
+	    <Units>deg</Units>
+		<ValidMin>0</ValidMin>
+		<ValidMax>360</ValidMax>
+		<FillValue>-999.900024</FillValue>
+	    <Support>
+	        <Qualifier>Direction</Qualifier>
+	        <SupportQuantity>Positional</SupportQuantity>
+	    </Support>
+    </Parameter>
+	
+	<Parameter>
+	    <Name>MTB Status [ON/OFF]</Name>
+	    <ParameterKey>ICON_L27_MTB_Status</ParameterKey>
+	    <Description>If the MTB are active during any part of the measurement, it is recorded as active for whole measurement. Decoded from s/c housekeeping file: /disks/icondata/Temporary/ICON.SDC.Pipeline.IVM.Ancillary.2020-03-13T161524.20CD292B-2A3B-4142-86C9-5D73B55AFDCE/Input/ICON_L0_Spacecraft_Housekeeping-MTB_2019-11-01_v01r010.CSV If the MTB are active during any part of the measurement, it is recorded as active for whole measurement. Decoded from s/c housekeeping file.</Description>
+	    <Cadence>PT1S</Cadence>
+		<ValidMin>0</ValidMin>
+		<ValidMax>10</ValidMax>
+		<FillValue>255</FillValue>
+	    <Support>
+	        <Qualifier>Scalar</Qualifier>
+	        <SupportQuantity>InstrumentMode</SupportQuantity>
+	    </Support>
+    </Parameter>
+	
+	<Parameter>
+	    <Name>Magnetic Latitude of Spacecraft Position</Name>
+	    <ParameterKey>ICON_L27_Magnetic_Latitude</ParameterKey>
+	    <Description>Quasi-dipole magnetic latitude for spacecraft position.</Description>
+	    <Cadence>PT30S</Cadence>
+	    <Units>deg</Units>
+		<ValidMin>-90</ValidMin>
+		<ValidMax>90</ValidMax>
+		<FillValue>-999.900024</FillValue>
+	    <Support>
+	        <Qualifier>Direction</Qualifier>
+	        <SupportQuantity>Positional</SupportQuantity>
+	    </Support>
+    </Parameter>
+	<Parameter>
+	    <Name>Magnetic Local Time at spacecraft</Name>
+	    <ParameterKey>ICON_L27_Magnetic_Local_Time</ParameterKey>
+	    <Description>Magnetic Local Time at spacecraft.</Description>
+	    <Cadence>PT30S</Cadence>
+	    <Units>hour</Units>
+		<ValidMin>0</ValidMin>
+		<ValidMax>24</ValidMax>
+		<FillValue>-999.900024</FillValue>
+	    <Support>
+	        <Qualifier>Direction</Qualifier>
+	        <SupportQuantity>Positional</SupportQuantity>
+	    </Support>
+    </Parameter>
+	<Parameter>
+	    <Name>Magnetic Longitude of Spacecraft Position</Name>
+	    <ParameterKey>ICON_L27_Magnetic_Longitude</ParameterKey>
+	    <Description>Quasi-dipole magnetic longitude for spacecraft position.</Description>
+	    <Cadence>PT30S</Cadence>
+	    <Units>deg</Units>
+		<ValidMin>0</ValidMin>
+		<ValidMax>360</ValidMax>
+		<FillValue>-999.900024</FillValue>
+	    <Support>
+	        <Qualifier>Direction</Qualifier>
+	        <SupportQuantity>Positional</SupportQuantity>
+	    </Support>
+    </Parameter>
+	<Parameter>
+	    <Name>Earth Corotation Velocity in the X component</Name>
+	    <ParameterKey>ICON_L27_Observatory_Corotation_X</ParameterKey>
+	    <Description>Earth Centered Inertial Earth Corotation Velocity Component of Earth's corotation velocity in the IVM instrament axes. [(X,Y,Z),Epoch].</Description>
+	    <Cadence>PT1S</Cadence>
+	    <Units>m/s</Units>
+		<ValidMin>-1000</ValidMin>
+		<ValidMax>1000</ValidMax>
+		<FillValue>-999.900024</FillValue>
+	    <Support>
+			<Qualifier>Component.I</Qualifier>
+	        <SupportQuantity>Other</SupportQuantity>
+	    </Support>
+    </Parameter>
+	<Parameter>
+	    <Name>Earth Corotation Velocity in the Y compnent</Name>
+	    <ParameterKey>ICON_L27_Observatory_Corotation_Y</ParameterKey>
+	    <Description>Earth Centered Inertial Earth Corotation Velocity Component of Earth's corotation velocity in the IVM instrament axes. [(X,Y,Z),Epoch].</Description>
+	    <Cadence>PT1S</Cadence>
+	    <Units>m/s</Units>
+		<ValidMin>-1000</ValidMin>
+		<ValidMax>1000</ValidMax>
+		<FillValue>-999.900024</FillValue>
+	    <Support>
+			<Qualifier>Component.J</Qualifier>
+	        <SupportQuantity>Other</SupportQuantity>
+	    </Support>
+    </Parameter>
+	<Parameter>
+	    <Name>Earth Corotation Velocity in the Z compnent</Name>
+	    <ParameterKey>ICON_L27_Observatory_Corotation_Z</ParameterKey>
+	    <Description>Earth Centered Inertial Earth Corotation Velocity Component of Earth's corotation velocity in the IVM instrament axes. [(X,Y,Z),Epoch].</Description>
+	    <Cadence>PT1S</Cadence>
+	    <Units>m/s</Units>
+		<ValidMin>-1000</ValidMin>
+		<ValidMax>1000</ValidMax>
+		<FillValue>-999.900024</FillValue>
+	    <Support>
+			<Qualifier>Component.J</Qualifier>
+	        <SupportQuantity>Other</SupportQuantity>
+	    </Support>
+    </Parameter>
+	<Parameter>
+	    <Name>X Component of the Magnetic Field</Name>
+	    <ParameterKey>ICON_L27_Observatory_Magnetic_Field_X</ParameterKey>
+	    <Description>Magnetic field from IGRF at v position, expressed in the Earth-Centered, Earth-Fixed frame. x - component</Description>
+	    <Cadence>PT1S</Cadence>
+	    <Units>nT</Units>
+		<ValidMin>-60000</ValidMin>
+		<ValidMax>60000</ValidMax>
+		<FillValue>-999.900024</FillValue>
+	    <Field>
+			<Qualifier>Component.I</Qualifier>
+	        <FieldQuantity>Magnetic</FieldQuantity>
+	    </Field>
+    </Parameter>
+	<Parameter>
+	    <Name>Y Component of the Magnetic Field</Name>
+	    <ParameterKey>ICON_L27_Observatory_Magnetic_Field_Y</ParameterKey>
+	    <Description>Magnetic field from IGRF at spacecraft position, expressed in the Earth-Centered, Earth-Fixed  frame. y - component</Description>
+	    <Cadence>PT1S</Cadence>
+	    <Units>nT</Units>
+		<ValidMin>-60000</ValidMin>
+		<ValidMax>60000</ValidMax>
+		<FillValue>-999.900024</FillValue>
+	    <Field>
+			<Qualifier>Component.J</Qualifier>
+	        <FieldQuantity>Magnetic</FieldQuantity>
+	    </Field>
+    </Parameter>
+	<Parameter>
+	    <Name>Z Component of the Magnetic Field</Name>
+	    <ParameterKey>ICON_L27_Observatory_Magnetic_Field_Z</ParameterKey>
+	    <Description>Magnetic field from IGRF at spacecraft position, expressed in the Earth-Centered, Earth-Fixed  frame. z - component</Description>
+	    <Cadence>PT1S</Cadence>
+	    <Units>nT</Units>
+		<ValidMin>-60000</ValidMin>
+		<ValidMax>60000</ValidMax>
+		<FillValue>-999.900024</FillValue>
+	    <Field>
+			<Qualifier>Component.K</Qualifier>
+	        <FieldQuantity>Magnetic</FieldQuantity>
+	    </Field>
+    </Parameter>
+	<Parameter>
+	    <Name>Earth Centered Inertial Spacecraft Velocity X Component</Name>
+	    <ParameterKey>ICON_L27_Observatory_Velocity_X</ParameterKey>
+	    <Description>Velocity of spacecraft in Earth Centered Inertial, J2000, cooridinates. Array is set up as [(X,Y,Z),Epoch]</Description>
+	    <Cadence>PT1S</Cadence>
+	    <Units>m/s</Units>
+		<ValidMin>-1000</ValidMin>
+		<ValidMax>1000</ValidMax>
+		<FillValue>-999.900024</FillValue>
+	    <Support>
+			<Qualifier>Component.I</Qualifier>
+	        <SupportQuantity>Other</SupportQuantity>
+	    </Support>
+    </Parameter>
+	<Parameter>
+	    <Name>Earth Centered Inertial Spacecraft Velocity Y Component </Name>
+	    <ParameterKey>ICON_L27_Observatory_Velocity_Y</ParameterKey>
+	    <Description>Velocity of spacecraft in Earth Centered Inertial, J2000, cooridinates. Array is set up as [(X,Y,Z),Epoch]</Description>
+	    <Cadence>PT1S</Cadence>
+	    <Units>m/s</Units>
+		<ValidMin>-1000</ValidMin>
+		<ValidMax>1000</ValidMax>
+		<FillValue>-999.900024</FillValue>
+	    <Support>
+			<Qualifier>Component.J</Qualifier>
+	        <SupportQuantity>Other</SupportQuantity>
+	    </Support>
+    </Parameter>
+	<Parameter>
+	    <Name>Earth Centered Inertial Spacecraft Velocity Z Component </Name>
+	    <ParameterKey>ICON_L27_Observatory_Velocity_Z</ParameterKey>
+	    <Description>Velocity of spacecraft in Earth Centered Inertial, J2000, cooridinates. Array is set up as [(X,Y,Z),Epoch]</Description>
+	    <Cadence>PT1S</Cadence>
+	    <Units>m/s</Units>
+		<ValidMin>-1000</ValidMin>
+		<ValidMax>1000</ValidMax>
+		<FillValue>-999.900024</FillValue>
+	    <Support>
+			<Qualifier>Component.K</Qualifier>
+	        <SupportQuantity>Other</SupportQuantity>
+	    </Support>
+    </Parameter>
+	<Parameter>
+	    <Name>Orbit Number</Name>
+	    <ParameterKey>ICON_L27_Orbit_Number</ParameterKey>
+	    <Description>Orbit Number</Description>
+	    <Cadence>PT1S</Cadence>
+		<ValidMin>0</ValidMin>
+		<ValidMax>105000</ValidMax>
+		<FillValue>-999.000000</FillValue>
+	    <Support>
+	        <Qualifier>Scalar</Qualifier>
+	        <SupportQuantity>Temporal</SupportQuantity>
+	    </Support>
+    </Parameter>
+	<Parameter>
+	    <Name>Flag for Retarding Potential Analyzers quality</Name>
+	    <ParameterKey>ICON_L27_RPA_Flag</ParameterKey>
+	    <Description>Status flag for retarding potential analyzers.  0 - All retarding potential analyzers parameters are good. Ion temperatures correspond to both O+ and H+.  1 - Ram Ion Velocities are not good. Other parameters good. Plasma is presumed to be co-rotating when fitting retarding potential analyzers curves that have an insufficient quantity of O+. Ion temperatures correspond to H+ only.  2 - Geophysical outputs may be impacted by spacecraft operations..</Description>
+	    <Cadence>PT30S</Cadence>
+		<ValidMin>0</ValidMin>
+		<ValidMax>3</ValidMax>
+		<FillValue>-9223372036854775808</FillValue>
+	    <Support>
+	        <Qualifier>Scalar</Qualifier>
+	        <SupportQuantity>DataQuality</SupportQuantity>
+	    </Support>
+    </Parameter>
+	<Parameter>
+	    <Name>Ion Velocity-X</Name>
+	    <ParameterKey>ICON_L27_Raw_Ion_Velocity_X</ParameterKey>
+	    <Description>This is the total ion velocity along direction into the retarding potential analyzers, including spacecraft motion.</Description>
+	    <Cadence>PT1S</Cadence>
+	    <Units>m/s</Units>
+		<ValidMin>6000</ValidMin>
+		<ValidMax>9000</ValidMax>
+		<FillValue>NaN</FillValue>
+	    <Particle>
+		    <ParticleType>Ion</ParticleType>
+			<Qualifier>Component.I</Qualifier>
+	        <ParticleQuantity>FlowSpeed</ParticleQuantity>
+	    </Particle>
+    </Parameter>
+	<Parameter>
+	    <Name>Ion Velocity-Y</Name>
+	    <ParameterKey>ICON_L27_Raw_Ion_Velocity_Y</ParameterKey>
+	    <Description>This is the total ion velocity along direction into the retarding potential analyzers, including spacecraft motion.</Description>
+	    <Cadence>PT1S</Cadence>
+	    <Units>m/s</Units>
+		<ValidMin>-1500.000000</ValidMin>
+		<ValidMax>1500.000000</ValidMax>
+		<FillValue>NaN</FillValue>
+	    <Particle>
+		    <ParticleType>Ion</ParticleType>
+			<Qualifier>Component.J</Qualifier>
+	        <ParticleQuantity>FlowSpeed</ParticleQuantity>
+	    </Particle>
+    </Parameter>
+	
+	<Parameter>
+	    <Name>Ion Velocity-Z</Name>
+	    <ParameterKey>ICON_L27_Raw_Ion_Velocity_Z</ParameterKey>
+	    <Description>This is the total ion velocity along direction into the retarding potential analyzers, including spacecraft motion.</Description>
+	    <Cadence>PT1S</Cadence>
+	    <Units>m/s</Units>
+		<ValidMin>-1500.000000</ValidMin>
+		<ValidMax>1500.000000</ValidMax>
+		<FillValue>NaN</FillValue>
+	    <Particle>
+		    <ParticleType>Ion</ParticleType>
+			<Qualifier>Component.K</Qualifier>
+	        <ParticleQuantity>FlowSpeed</ParticleQuantity>
+	    </Particle>
+    </Parameter>
+	<Parameter>
+	    <Name>Slew Status</Name>
+	    <ParameterKey>ICON_L27_Slew_Status</ParameterKey>
+	    <Description>Slew Status.</Description>
+	    <Cadence>PT1S</Cadence>
+		<ValidMin>NaN</ValidMin>
+		<ValidMax>NaN</ValidMax>
+		<FillValue>NaN</FillValue>
+	    <Support>
+	        <Qualifier>Scalar</Qualifier>
+	        <SupportQuantity>Other</SupportQuantity>
+	    </Support>
+    </Parameter>
+	<Parameter>
+	    <Name>Local Solar Time</Name>
+	    <ParameterKey>ICON_L27_Solar_Local_Time</ParameterKey>
+	    <Description>Local Solar Time at the spacecraft.</Description>
+	    <Cadence>PT30S</Cadence>
+	    <Units>hour</Units>
+		<ValidMin>0</ValidMin>
+		<ValidMax>24</ValidMax>
+		<FillValue>-999.900024</FillValue>
+	    <Support>
+	        <Qualifier>Direction</Qualifier>
+	        <SupportQuantity>Positional</SupportQuantity>
+	    </Support>
+    </Parameter>
+	<Parameter>
+	    <Name>Solar Zenith Angleof the Spacecraft</Name>
+	    <ParameterKey>ICON_L27_Solar_Zenith_Angle</ParameterKey>
+	    <Description>Solar Zenith Angle of spacecraft.</Description>
+	    <Cadence>PT30S</Cadence>
+	    <Units>degrees</Units>
+		<ValidMin>0</ValidMin>
+		<ValidMax>180</ValidMax>
+		<FillValue>9.969209968386869e+36</FillValue>
+	    <Support>
+	        <Qualifier>Direction</Qualifier>
+	        <SupportQuantity>Positional</SupportQuantity>
+	    </Support>
+    </Parameter>
+	<Parameter>
+	    <Name>Space Environment Region Status</Name>
+	    <ParameterKey>ICON_L27_Space_Environment_Region_Status</ParameterKey>
+	    <Description>Standarized for several missions, not all codes are relevant. Binary Coded Integer from Technical Note ICN-TN-027.
+1: Earth Shadow
+2: Lunar Shadow
+4: Atmospheric Absorption Zone
+8: South Atlantic Anomaly
+16: Northern Auroral Zone
+32: Southern Auroral Zone
+64: Periapsis Passage
+128: Inner and Outer Radiation Belts
+256: Deep Plasma Sphere
+512: Foreshock Solar Wind
+1024: Solar Wind Beam
+2048: High Magnetic Field
+4096: Average Plasma Sheet
+8192: Bowshock Crossing
+16384: Magnetopause Crossing
+32768: Ground Based Observatories
+65536: 2-Day Conjunctions
+131072: 4-Day Conjunctions
+262144: Time Based Conjunctions
+524288: Radial Distance Region 1
+1048576: Orbit Outbound
+2097152: Orbit Inbound
+4194304: Lunar Wake
+8388608: Magnetotail
+16777216: Magnetosheath
+33554432: Science
+67108864: Low Magnetic Latitude
+134217728: Conjugate Observation.</Description>
+	    <Cadence>PT1S</Cadence>
+	    <Units>binary</Units>
+		<ValidMin>0</ValidMin>
+		<ValidMax>268405455</ValidMax>
+		<FillValue>-999.000000 </FillValue>
+	    <Support>
+	        <Qualifier>Scalar</Qualifier>
+	        <SupportQuantity>Other</SupportQuantity>
+	    </Support>
+    </Parameter>
+	<Parameter>
+	    <Name>Spacecraft Sun/Shadow Status Code</Name>
+	    <ParameterKey>ICON_L27_Sun_Status</ParameterKey>
+	    <Description>Spacecraft Sun/Shadow Status Code.</Description>
+	    <Cadence>PT1S</Cadence>
+	    <Units>binary</Units>
+		<ValidMin>0</ValidMin>
+		<ValidMax>1</ValidMax>
+		<FillValue>-999.000000 </FillValue>
+	    <Support>
+	        <Qualifier>Scalar</Qualifier>
+	        <SupportQuantity>Other</SupportQuantity>
+	    </Support>
+    </Parameter>
+	<Parameter>
+	    <Name>IVM Packet Beginning UTC Time</Name>
+	    <ParameterKey>ICON_L27_Time_UTC_Start</ParameterKey>
+	    <Description>Milliseconds since 1970-01-01 00:00:00 UTC at start of reading.
+
+Time is generated from the time-code at byte 1015 of the IVM packet minus the time sync at byte 1019 of the IVM packet. This is the GPS time at the start of the integration period. The integration period is assumed to be 4 seconds so the center time is 2 seconds after that. The formula is (time-code * 1000ms) + 2000ms - (16 * time sync / 1000) in GPS milliseconds then converted to UTC time. See the UTD 206-024 Rev A document.
+
+Time may be delayed by up to 10 ms due to FSW polling delay.
+
+Maximum time is ~2150 UTC and minimum time is ~1970 UTC.</Description>
+	    <Cadence>PT1S</Cadence>
+	    <Units>milliseconds</Units>
+		<ValidMin>0</ValidMin>
+		<ValidMax>6000000000000</ValidMax>
+		<FillValue>-999999999999999</FillValue>
+	    <Support>
+	        <Qualifier>Magnitude</Qualifier>
+	        <SupportQuantity>Temporal</SupportQuantity>
+	    </Support>
+    </Parameter>
+	<Parameter>
+	    <Name>IVM Packet Ending UTC Time</Name>
+	    <ParameterKey>ICON_L27_Time_UTC_Stop</ParameterKey>
+	    <Description>Milliseconds since 1970-01-01 00:00:00 UTC at end of reading.
+
+Time is generated from the time-code at byte 1015 of the IVM packet minus the time sync at byte 1019 of the IVM packet. This is the GPS time at the start of the integration period. The integration period is assumed to be 4 seconds so the center time is 2 seconds after that. The formula is (time-code * 1000ms) + 2000ms - (16 * time sync / 1000) in GPS milliseconds then converted to UTC time. See the UTD 206-024 Rev A document.
+
+Time may be delayed by up to 10 ms due to FSW polling delay.
+
+Maximum time is ~2150 UTC and minimum time is ~1970 UTC.</Description>
+	    <Cadence>PT1S</Cadence>
+	    <Units>milliseconds</Units>
+		<ValidMin>0</ValidMin>
+		<ValidMax>6000000000000</ValidMax>
+		<FillValue>-999999999999999</FillValue>
+	    <Support>
+	        <Qualifier>Magnitude</Qualifier>
+	        <SupportQuantity>Temporal</SupportQuantity>
+	    </Support>
+    </Parameter>
+	<Parameter>
+	    <Name>UTC Time</Name>
+	    <ParameterKey>ICON_L27_UTC_Time</ParameterKey>
+	    <Description>ISO 9601 formatted UTC timestamp (at middle of reading).
+
+Time is generated from the time-code at byte 1015 of the IVM packet minus the time sync at byte 1019 of the IVM packet. This is the GPS time at the start of the integration period. The integration period is assumed to be 4 seconds so the center time is 2 seconds after that. The formula is (time-code * 1000ms) + 2000ms - (16 * time sync / 1000) in GPS milliseconds then converted to UTC time. See the UTD 206-024 Rev A document.
+
+Time may be delayed by up to 10 ms due to FSW polling delay.
+
+Maximum time is ~2150 UTC and minimum time is ~1970 UTC.</Description>
+	    <Cadence>PT1S</Cadence>
+		<ValidMin>1970-01-01 00:00:00 UTC</ValidMin>
+		<ValidMax>2150-01-01 00:00:00 UTC</ValidMax>
+	    <Support>
+	        <Qualifier>Magnitude</Qualifier>
+	        <SupportQuantity>Temporal</SupportQuantity>
+	    </Support>
+    </Parameter>
+	
+	
+	<Parameter>
+	    <Name>Field Aligned Unit Vector: IVM-X component</Name>
+	    <ParameterKey>ICON_L27_Unit_Vector_Field_Aligned_X</ParameterKey>
+	    <Description>Positive along the field, generally northward. Unit vector is along the geomagnetic field. The unit vector is expressed in the IVM coordinate system, x - along RAM, z - towards nadir, y - completes the system, generally southward. Calculated using the corresponding unit vector in Earth-Centered, Earth-Fixed and the orientation of the IVM also expressed in Earth-Centered, Earth-Fixed (sc_*hat_*).</Description>
+	    <Cadence>PT1S</Cadence>
+		<ValidMin>-1</ValidMin>
+		<ValidMax>1</ValidMax>
+		<FillValue>NaN</FillValue>
+	    <Particle>
+		    <ParticleType>Ion</ParticleType>
+			<Qualifier>Component.I</Qualifier>
+	        <ParticleQuantity>FlowSpeed</ParticleQuantity>
+	    </Particle>
+    </Parameter>
+	<Parameter>
+	    <Name>Field Aligned Unit Vector: IVM-Y component</Name>
+	    <ParameterKey>ICON_L27_Unit_Vector_Field_Aligned_Y</ParameterKey>
+	    <Description>Positive along the field, generally northward. Unit vector is along the geomagnetic field. The unit vector is expressed in the IVM coordinate system, x - along RAM, z - towards nadir, y - completes the system, generally southward. Calculated using the corresponding unit vector in Earth-Centered, Earth-Fixed and the orientation of the IVM also expressed in Earth-Centered, Earth-Fixed (sc_*hat_*).</Description>
+	    <Cadence>PT1S</Cadence>
+		<ValidMin>-1</ValidMin>
+		<ValidMax>1</ValidMax>
+		<FillValue>NaN</FillValue>
+	    <Particle>
+		    <ParticleType>Ion</ParticleType>
+			<Qualifier>Component.J</Qualifier>
+	        <ParticleQuantity>FlowSpeed</ParticleQuantity>
+	    </Particle>
+    </Parameter>
+	<Parameter>
+	    <Name>Field Aligned Unit Vector: IVM-Z component</Name>
+	    <ParameterKey>ICON_L27_Unit_Vector_Field_Aligned_Z</ParameterKey>
+	    <Description>Positive along the field, generally northward. Unit vector is along the geomagnetic field. The unit vector is expressed in the IVM coordinate system, x - along RAM, z - towards nadir, y - completes the system, generally southward. Calculated using the corresponding unit vector in Earth-Centered, Earth-Fixed and the orientation of the IVM also expressed in Earth-Centered, Earth-Fixed (sc_*hat_*).</Description>
+	    <Cadence>PT1S</Cadence>
+		<ValidMin>-1</ValidMin>
+		<ValidMax>1</ValidMax>
+		<FillValue>NaN</FillValue>
+	    <Particle>
+		    <ParticleType>Ion</ParticleType>
+			<Qualifier>Component.K</Qualifier>
+	        <ParticleQuantity>FlowSpeed</ParticleQuantity>
+	    </Particle>
+    </Parameter>
+	
+	<Parameter>
+	    <Name>Meridional Unit Vector: IVM-X component</Name>
+	    <ParameterKey>ICON_L27_Unit_Vector_Meridional_X</ParameterKey>
+	    <Description>Positive is aligned with vertical at geomagnetic equator. Unit vector is perpendicular to the geomagnetic field and in the plane of the meridian.The unit vector is expressed in the IVM coordinate system, x - along RAM, z - towards nadir, y - completes the system, generally southward. Calculated using the corresponding unit vector in Earth-Centered, Earth-Fixed and the orientation of the IVM also expressed in Earth-Centered, Earth-Fixed (sc_*hat_*).</Description>
+	    <Cadence>PT1S</Cadence>
+		<ValidMin>-1</ValidMin>
+		<ValidMax>1</ValidMax>
+		<FillValue>NaN</FillValue>
+	    <Particle>
+		    <ParticleType>Ion</ParticleType>
+			<Qualifier>Component.I</Qualifier>
+	        <ParticleQuantity>FlowSpeed</ParticleQuantity>
+	    </Particle>
+    </Parameter>
+	<Parameter>
+	    <Name>Meridional Unit Vector: IVM-Y component</Name>
+	    <ParameterKey>ICON_L27_Unit_Vector_Meridional_Y</ParameterKey>
+	    <Description>Positive is aligned with vertical at geomagnetic equator. Unit vector is perpendicular to the geomagnetic field and in the plane of the meridian.The unit vector is expressed in the IVM coordinate system, x - along RAM, z - towards nadir, y - completes the system, generally southward. Calculated using the corresponding unit vector in Earth-Centered, Earth-Fixed and the orientation of the IVM also expressed in Earth-Centered, Earth-Fixed (sc_*hat_*).</Description>
+	    <Cadence>PT1S</Cadence>
+		<ValidMin>-1</ValidMin>
+		<ValidMax>1</ValidMax>
+		<FillValue>NaN</FillValue>
+	    <Particle>
+		    <ParticleType>Ion</ParticleType>
+			<Qualifier>Component.J</Qualifier>
+	        <ParticleQuantity>FlowSpeed</ParticleQuantity>
+	    </Particle>
+    </Parameter>
+	<Parameter>
+	    <Name>Meridional Unit Vector: IVM-Z component</Name>
+	    <ParameterKey>ICON_L27_Unit_Vector_Meridional_Z</ParameterKey>
+	    <Description>Positive is aligned with vertical at geomagnetic equator. Unit vector is perpendicular to the geomagnetic field and in the plane of the meridian.The unit vector is expressed in the IVM coordinate system, x - along RAM, z - towards nadir, y - completes the system, generally southward. Calculated using the corresponding unit vector in Earth-Centered, Earth-Fixed and the orientation of the IVM also expressed in Earth-Centered, Earth-Fixed (sc_*hat_*).</Description>
+	    <Cadence>PT1S</Cadence>
+		<ValidMin>-1</ValidMin>
+		<ValidMax>1</ValidMax>
+		<FillValue>NaN</FillValue>
+	    <Particle>
+		    <ParticleType>Ion</ParticleType>
+			<Qualifier>Component.K</Qualifier>
+	        <ParticleQuantity>FlowSpeed</ParticleQuantity>
+	    </Particle>
+    </Parameter>
+	
+	
+	<Parameter>
+	    <Name>Zonal Unit Vector: IVM-X component</Name>
+	    <ParameterKey>ICON_L27_Unit_Vector_Zonal_X</ParameterKey>
+	    <Description>Positive towards the east. Zonal vector is normal to magnetic meridian plane. The unit vector is expressed in the IVM coordinate system, x - along RAM, z - towards nadir, y - completes the system, generally southward. Calculated using the corresponding unit vector in Earth-Centered, Earth-Fixed and the orientation of the IVM also expressed in Earth-Centered, Earth-Fixed (sc_*hat_*).</Description>
+	    <Cadence>PT1S</Cadence>
+		<ValidMin>-1</ValidMin>
+		<ValidMax>1</ValidMax>
+		<FillValue>NaN</FillValue>
+	    <Particle>
+		    <ParticleType>Ion</ParticleType>
+			<Qualifier>Component.I</Qualifier>
+	        <ParticleQuantity>FlowSpeed</ParticleQuantity>
+	    </Particle>
+    </Parameter>
+	<Parameter>
+	    <Name>Zonal Unit Vector: IVM-Y component</Name>
+	    <ParameterKey>ICON_L27_Unit_Vector_Zonal_Y</ParameterKey>
+	    <Description>Positive towards the east. Zonal vector is normal to magnetic meridian plane. The unit vector is expressed in the IVM coordinate system, x - along RAM, z - towards nadir, y - completes the system, generally southward. Calculated using the corresponding unit vector in Earth-Centered, Earth-Fixed and the orientation of the IVM also expressed in Earth-Centered, Earth-Fixed  (sc_*hat_*).</Description>
+	    <Cadence>PT1S</Cadence>
+		<ValidMin>-1</ValidMin>
+		<ValidMax>1</ValidMax>
+		<FillValue>NaN</FillValue>
+	    <Particle>
+		    <ParticleType>Ion</ParticleType>
+			<Qualifier>Component.J</Qualifier>
+	        <ParticleQuantity>FlowSpeed</ParticleQuantity>
+	    </Particle>
+    </Parameter>
+	<Parameter>
+	    <Name>Zonal Unit Vector: IVM-Z component</Name>
+	    <ParameterKey>ICON_L27_Unit_Vector_Zonal_Z</ParameterKey>
+	    <Description>Positive towards the east. Zonal vector is normal to magnetic meridian plane. The unit vector is expressed in the IVM coordinate system, x - along RAM, z - towards nadir, y - completes the system, generally southward. Calculated using the corresponding unit vector in Earth-Centered, Earth-Fixed and the orientation of the IVM also expressed in Earth-Centered, Earth-Fixed (sc_*hat_*).</Description>
+	    <Cadence>PT1S</Cadence>
+		<ValidMin>-1</ValidMin>
+		<ValidMax>1</ValidMax>
+		<FillValue>NaN</FillValue>
+	    <Particle>
+		    <ParticleType>Ion</ParticleType>
+			<Qualifier>Component.K</Qualifier>
+	        <ParticleQuantity>FlowSpeed</ParticleQuantity>
+	    </Particle>
+    </Parameter>
+  </NumericalData>
+</Spase>

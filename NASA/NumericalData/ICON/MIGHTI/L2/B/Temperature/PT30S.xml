@@ -1,0 +1,673 @@
+<Spase xmlns="https://spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://spase-group.org/data/schema  https://spase-group.org/data/schema/spase-2.3.2.xsd">
+  <Version>2.3.2</Version>
+  <NumericalData>
+    <ResourceID>spase://NASA/NumericalData/ICON/MIGHTI/L2/B/Temperature/PT30S</ResourceID>
+    <ResourceHeader>
+      <ResourceName>ICON Michelson Interferometer for Global High-resolution Thermospheric Imaging Viewing Direction B Temperature</ResourceName>
+	  <AlternateName>MIGHTI B Temperature</AlternateName>
+      <ReleaseDate>2021-01-01T00:00:00Z</ReleaseDate>
+      <Description>MIGHTI samples the O2 A band spectral region at five different wavelengths in order to both measure the shape of the band and to specify a background radiance that is subtracted from the signal. The wavelengths of the filter passbands are selected to maximize the sensitivity to lower thermospheric temperature variations. The temperature measurement is accomplished by a multichannel photometric measurement of the spectral shape of the molecular oxygen A-band around 762 nm wavelength. For each field of view, the signals of the two oxygen lines and the A-band are detected on different regions of a single, cooled, frame transfer charge coupled device (CCD) detector. Two filter channels sample either end of the band to define a background (754.1 nm and 780.1 nm) and three more sample its shape (760.0 nm, 762.8 nm and 765.2 nm). Using three filters that sample the band shape allows the simultaneous retrieval of the atmospheric temperature and common shifts in the center wavelengths of the pass bands due to thermal drifts of the filters. On-board calibration sources are used to periodically quantify thermal drifts, simultaneously with observing the atmosphere.</Description>
+	  <Acknowledgement>National Aeronautics and Space Administration; Dr. Christoph Englert; Dr. Thomas Immel; See http://icon.ssl.berkeley.edu/Data </Acknowledgement>
+	  <Funding>
+		<Agency>National Aeronautics and Space Administration</Agency>
+		<Project>Explorers Program</Project>
+		<AwardNumber>contracts NNG12FA45C and NNG12FA42I</AwardNumber>
+	  </Funding>
+      <Contact>
+        <PersonID>spase://SMWG/Person/Christoph.Englert</PersonID>
+        <Role>PrincipalInvestigator</Role>
+      </Contact>
+	  <InformationURL>
+        <Name>Additional information on ICON</Name>
+        <URL>https://icon.ssl.berkeley.edu/</URL>
+        <Description>ICON spacecraft Homepage.</Description>
+      </InformationURL>
+	  <InformationURL>
+        <Name>Michelson Interferometer for Global High-resolution Thermospheric Imaging (MIGHTI): instrument design and calibration</Name>
+        <URL>https://doi.org/10.1007/s11214-017-0358-4</URL>
+        <Description>Space Science Reviews, 212(1-2), pp.553-584. DOI: 10.1007/s11214-017-0358-4</Description>
+      </InformationURL>
+    </ResourceHeader>
+	<AccessInformation>
+		<RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF</RepositoryID>
+		<Availability>Online</Availability>
+		<AccessRights>Open</AccessRights>
+		<AccessURL>
+			<Name>FTPS from SPDF (not with most browsers)</Name>
+			<URL>ftps://spdf.gsfc.nasa.gov/pub/data/icon/l2/</URL>
+			<Description>FTPS access to ICON data via ftps at the Space Physics Data Facility (SPDF)</Description>
+		</AccessURL>
+		<AccessURL>
+			<Name>HTTPS from SPDF</Name>
+			<URL>https://spdf.gsfc.nasa.gov/pub/data/icon/l2/</URL>
+			<Description>HTTPS access to ICON data at the Space Physics Data Facility (SPDF)</Description>
+		</AccessURL>
+		<Format>NetCDF</Format>
+	</AccessInformation>
+	<ProcessingLevel>Calibrated</ProcessingLevel>
+	<ProviderName>ICON MIGHTI team</ProviderName>
+	<ProviderResourceName></ProviderResourceName>
+	<InstrumentID>spase://SMWG/Instrument/ICON/MIGHTI</InstrumentID>
+	<MeasurementType>Dopplergram</MeasurementType>
+	<TemporalDescription>
+		<TimeSpan>
+			<StartDate>2019-12-06T00:00:00Z</StartDate>
+			<RelativeStopDate>-P2M</RelativeStopDate>
+		</TimeSpan>
+		<Cadence>PT30S</Cadence>
+	</TemporalDescription>
+	<ObservedRegion>Earth.NearSurface.Atmosphere</ObservedRegion>
+	<ObservedRegion>Earth.NearSurface.Ionosphere</ObservedRegion>
+	<Parameter>
+	    <Name>Epoch time</Name>
+	    <ParameterKey>Epoch</ParameterKey>
+	    <Description>This variable contains the time corresponding to the temperature profiles reported in this file. The variable is in milliseconds since 1970-01-01 00:00:00 UTC at middle of image integration. A human-readable version of the time can be found in the variable ICON_...UTC_Time.</Description>
+	    <Cadence>PT30S</Cadence>
+	    <Units>ms</Units>
+		<ValidMin>0</ValidMin>
+		<ValidMax>6000000000000</ValidMax>
+		<FillValue>6000000000000</FillValue>
+	    <Support>
+	        <Qualifier>Magnitude</Qualifier>
+	        <SupportQuantity>Temporal</SupportQuantity>
+	    </Support>
+    </Parameter>  
+	<Parameter>
+	    <Name>Bad Calibration File Flag</Name>
+	    <ParameterKey>ICON_L1_MIGHTI_B_Quality_Flag_Bad_Calibration</ParameterKey>
+	    <Description>Quality Flag indicating an inappropriate calibration file has been used or was missing.</Description>
+	    <Cadence>PT30S</Cadence>
+		<ValidMin>0</ValidMin>
+		<ValidMax>1</ValidMax>
+		<FillValue>-9999999848243207295109594873856</FillValue>
+	    <Support>
+	        <Qualifier>Scalar</Qualifier>
+	        <SupportQuantity>DataQuality</SupportQuantity>
+	    </Support>
+    </Parameter>
+	<Parameter>
+	    <Name>South Atlantic Anomaly Flag</Name>
+	    <ParameterKey>ICON_L1_MIGHTI_B_Quality_Flag_South_Atlantic_Anomaly</ParameterKey>
+	    <Description>Quality Flag indicating that the spacecraft is within the South Atlantic Anomaly (0 = not in SAA).</Description>
+	    <Cadence>PT30S</Cadence>
+		<ValidMin>0</ValidMin>
+		<ValidMax>1</ValidMax>
+		<FillValue>-9999999848243207295109594873856</FillValue>
+	    <Support>
+	        <Qualifier>Scalar</Qualifier>
+	        <SupportQuantity>DataQuality</SupportQuantity>
+	    </Support>
+    </Parameter>
+	<Parameter>
+	    <Name>A Band Intensity Scaled</Name>
+	    <ParameterKey>ICON_L23_MIGHTI_B_ABand_Intensity_Scaled</ParameterKey>
+	    <Description>Derived common scaling of O2 A Band radiances in the 3 signal channels by altitude. Calculated forward radiances are fit to the observations from each of the  three signal channels. The scaling is done at each tangent altitude separately and interatively until a best fit solution is found. The intensity of each signal channel relative  to the other two determines the temperature, so the scale factor is unitless. The scaling is derived using pre-calculated spectra from the HITRAN 2016 database.</Description>
+	    <Cadence>PT30S</Cadence>
+		<ValidMin>-9999999848243207295109594873856</ValidMin>
+		<ValidMax>9999999848243207295109594873856</ValidMax>
+		<FillValue>-9999999848243207295109594873856</FillValue>
+	    <Support>
+	        <Qualifier>Scalar</Qualifier>
+	        <SupportQuantity>Other</SupportQuantity>
+	    </Support>
+    </Parameter>
+	<Parameter>
+	    <Name>Uncertainty (1-sigma) in A Band Intensity Scaled</Name>
+	    <ParameterKey>ICON_L23_MIGHTI_B_ABand_Intensity_Scaled_Uncertainty</ParameterKey>
+	    <Description>Derived uncertainty (1-sigma) in derived common scaling of O2 A Band to emergent intensity by altitude.</Description>
+	    <Cadence>PT30S</Cadence>
+		<ValidMin>0</ValidMin>
+		<ValidMax>9999999848243207295109594873856</ValidMax>
+		<FillValue>-9999999848243207295109594873856</FillValue>
+	    <Support>
+	        <Qualifier>Scalar</Qualifier>
+	        <SupportQuantity>Other</SupportQuantity>
+	    </Support>
+    </Parameter>
+	<Parameter>
+	    <Name>Background Signal per filter</Name>
+	    <ParameterKey>ICON_L23_MIGHTI_B_Background_Signal</ParameterKey>
+	    <Description>Background Signal by filter by altitude and filter. This has been corrected for flatfield effects across the detector.</Description>
+	    <Cadence>PT30S</Cadence>
+	    <Units>Electrons</Units>
+		<ValidMin>-9999999848243207295109594873856</ValidMin>
+		<ValidMax>9999999848243207295109594873856</ValidMax>
+		<FillValue>-9999999848243207295109594873856</FillValue>
+	    <Particle>
+		    <ParticleType>Electron</ParticleType>
+			<Qualifier>Scalar</Qualifier>
+	        <ParticleQuantity>Counts</ParticleQuantity>
+	    </Particle>
+    </Parameter>
+	<Parameter>
+	    <Name>Background Slope</Name>
+	    <ParameterKey>ICON_L23_MIGHTI_B_Background_Slope</ParameterKey>
+	    <Description>Derived slope of subtracted background. The slope of the background is saved here for diagnostic purposes. It is calculated by taking  the difference of the flatfielded signal from the two background channels and dividing by the difference of the the channel center wavelengths (in nm)  of the two background channels (approximately 780 nm - 754 nm). This is done explicitly by [bg2 - bg1]/flatfield/[wavelength2 - wavelength1],  where bg2 and bg1 are the observed background signals in electrons.</Description>
+	    <Cadence>PT30S</Cadence>
+	    <Units>/nm</Units>
+		<ValidMin>0</ValidMin>
+		<ValidMax>9999999848243207295109594873856</ValidMax>
+		<FillValue>-9999999848243207295109594873856</FillValue>
+	    <Wave>
+		    <WaveType>Photon</WaveType>
+			<Qualifier>Scalar</Qualifier>
+	        <WaveQuantity>Wavelength</WaveQuantity>
+	    </Wave>
+    </Parameter>
+	<Parameter>
+	    <Name>Total boresight to sun angle</Name>
+	    <ParameterKey>ICON_L23_MIGHTI_B_Boresight_Sun_Angle</ParameterKey>
+	    <Description>Total boresight to sun angle.</Description>
+	    <Cadence>PT30S</Cadence>
+	    <Units>degrees</Units>
+		<ValidMin>0</ValidMin>
+		<ValidMax>180</ValidMax>
+		<FillValue>-9999999848243207295109594873856</FillValue>
+	    <Support>
+	        <Qualifier>Direction</Qualifier>
+	        <SupportQuantity>Positional</SupportQuantity>
+	    </Support>
+    </Parameter>
+	<Parameter>
+	    <Name>Field of View Azimuth</Name>
+	    <ParameterKey>ICON_L23_MIGHTI_B_Field_of_View_Azimuth_Angle</ParameterKey>
+	    <Description>Field of view azimuth angle.</Description>
+	    <Cadence>PT30S</Cadence>
+	    <Units>degrees</Units>
+		<ValidMin>-90</ValidMin>
+		<ValidMax>90</ValidMax>
+		<FillValue>-9999999848243207295109594873856</FillValue>
+	    <Support>
+	        <Qualifier>Direction</Qualifier>
+	        <SupportQuantity>Positional</SupportQuantity>
+	    </Support>
+    </Parameter>
+	<Parameter>
+	    <Name>Filter Center Wavelength</Name>
+	    <ParameterKey>ICON_L23_MIGHTI_B_Filter_Center_Wavelength</ParameterKey>
+	    <Description>Filter Center Wavelength used in temperature retrieval (=1e7/FilterCWN).</Description>
+	    <Cadence>PT30S</Cadence>
+	    <Units>nm</Units>
+		<ValidMin>750</ValidMin>
+		<ValidMax>785</ValidMax>
+		<FillValue>-9999999848243207295109594873856</FillValue>
+	    <Wave>
+		    <WaveType>Photon</WaveType>
+			<Qualifier>Scalar</Qualifier>
+	        <WaveQuantity>Wavelength</WaveQuantity>
+	    </Wave>
+    </Parameter>
+	<Parameter>
+	    <Name>Filter Center Number</Name>
+	    <ParameterKey>ICON_L23_MIGHTI_B_Filter_Center_Wavenumber</ParameterKey>
+	    <Description>Filter Center Wavenumber used in temperature retrieval as measured in the laboratory and fitted by a Gaussian. These filter center wavenumbers vary with detector (MIGHTI A and MIGHTI B), with altitude as well as with channel. They are also  difference for daytime and nighttime operations. It is from these center wavenumbers that the common wavenumber shift (across all channels) is calculated.</Description>
+	    <Cadence>PT30S</Cadence>
+	    <Units>cm^-1</Units>
+		<ValidMin>12739</ValidMin>
+		<ValidMax>13333</ValidMax>
+		<FillValue>-9999999848243207295109594873856</FillValue>
+	    <Support>
+	        <Qualifier>Scalar</Qualifier>
+	        <SupportQuantity>Other</SupportQuantity>
+	    </Support>
+    </Parameter>
+	<Parameter>
+	    <Name>Filter Wavelength Labels</Name>
+	    <ParameterKey>ICON_L23_MIGHTI_B_Filter_Wavelengths</ParameterKey>
+	    <Description>Wavelength labels corresponding to the five filters. These are for guidance. Actual values used in retrieval for  MIGHTI-A and MIGHTI-B (day/night) are in ICON_L23_MIGHTI_(A or B)_Filter_Center_Wavelength.</Description>
+	    <Cadence>PT30S</Cadence>
+		<Support>
+	        <Qualifier>Scalar</Qualifier>
+	        <SupportQuantity>Other</SupportQuantity>
+	    </Support>
+    </Parameter>
+	<Parameter>
+	    <Name>Filter wavenumber shift</Name>
+	    <ParameterKey>ICON_L23_MIGHTI_B_Filter_Wavenumber_Shift</ParameterKey>
+	    <Description>Common shift of all filter center wavenumbers due to thermal drift that is added to laboratory measured filter center wavenumbers. The three channels measuring the A band overdetermines the temperature such that the wavenumber registration due to any thermal drift of the instrument can be additionally inferred. This is typically fixed with altitude and determined (along with temperature) from the signal originating from the O2 A band as measured from 3 signal channels.</Description>
+	    <Cadence>PT30S</Cadence>
+	    <Units>cm^-1</Units>
+		<ValidMin>-9999999848243207295109594873856</ValidMin>
+		<ValidMax>9999999848243207295109594873856</ValidMax>
+		<FillValue>-9999999848243207295109594873856</FillValue>
+	    <Support>
+	        <Qualifier>Scalar</Qualifier>
+	        <SupportQuantity>Other</SupportQuantity>
+	    </Support>
+    </Parameter>
+	<Parameter>
+	    <Name>Filter wavenumber shift uncertainty</Name>
+	    <ParameterKey>ICON_L23_MIGHTI_B_Filter_Wavenumber_Shift_Uncertainty</ParameterKey>
+	    <Description>Uncertainties (1-sigma) in the shift of all filter center wavenumbers. If the common wavenumber shift is fixed with altitude and prescribed, then this uncertainty is zero everywhere.</Description>
+	    <Cadence>PT30S</Cadence>
+	    <Units>cm^-1</Units>
+		<ValidMin>0</ValidMin>
+		<ValidMax>9999999848243207295109594873856</ValidMax>
+		<FillValue>-9999999848243207295109594873856</FillValue>
+	    <Support>
+	        <Qualifier>Scalar</Qualifier>
+	        <SupportQuantity>Other</SupportQuantity>
+	    </Support>
+    </Parameter>
+	<Parameter>
+	    <Name>GPS Time</Name>
+	    <ParameterKey>ICON_L23_MIGHTI_B_GPS_Time</ParameterKey>
+	    <Description>Milliseconds since 1980-01-06 00:00:00 TAI (coincident with UTC) at middle of image integration. Derived from original GPS values  reported from spacecraft (Time_GPS_Seconds and Time_GPS_Subseconds). Time calculation is offset by 615ms (flush time)  for the first image in the series and for all other images are adjusted by subtracting (integration time + 308 milliseconds)  from the reported GPS time.</Description>
+	    <Cadence>PT30S</Cadence>
+	    <Units>ms</Units>
+		<FillValue>-9223372036854775806</FillValue>
+	    <Support>
+	        <Qualifier>Magnitude</Qualifier>
+	        <SupportQuantity>Temporal</SupportQuantity>
+	    </Support>
+    </Parameter>  
+	<Parameter>
+	    <Name>GPS seconds count when image packet header received</Name>
+	    <ParameterKey>ICON_L23_MIGHTI_B_GPS_Time_Seconds</ParameterKey>
+	    <Description>The header of the first image received in a series 615 ms after start of image processing.  Following headers are adjusted by subtracting (integration time + 308 ms) from the reported GPS time.</Description>
+	    <Cadence>PT30S</Cadence>
+	    <Units>seconds</Units>
+		<FillValue>-9223372036854775806</FillValue>
+	    <Support>
+	        <Qualifier>Magnitude</Qualifier>
+	        <SupportQuantity>Temporal</SupportQuantity>
+	    </Support>
+    </Parameter>  
+	<Parameter>
+	    <Name>Clock GPS Time Offset</Name>
+	    <ParameterKey>ICON_L23_MIGHTI_B_GPS_Time_Subseconds</ParameterKey>
+	    <Description>GPS Time in sub seconds, 50 nanosecond offset from GPS seconds from 20 MHz clock.</Description>
+	    <Cadence>PT30S</Cadence>
+	    <Units>50 Nanoseconds</Units>
+		<ValidMin>0</ValidMin>
+		<ValidMax>100000000</ValidMax>
+		<FillValue>-9223372036854775806</FillValue>
+	    <Support>
+	        <Qualifier>Magnitude</Qualifier>
+	        <SupportQuantity>Temporal</SupportQuantity>
+	    </Support>
+    </Parameter> 
+	<Parameter>
+	    <Name>Time to integrate MIGHTI-B region of interest (ROI) image.</Name>
+	    <ParameterKey>ICON_L23_MIGHTI_B_Integration_Time</ParameterKey>
+	    <Description>MIGHTI Integration Time in millieconds.</Description>
+	    <Cadence>PT30S</Cadence>
+	    <Units>ms</Units>
+		<ValidMin>0</ValidMin>
+		<ValidMax>4294967294</ValidMax>
+		<FillValue>-9223372036854775806</FillValue>
+	    <Support>
+	        <Qualifier>Magnitude</Qualifier>
+	        <SupportQuantity>Temporal</SupportQuantity>
+	    </Support>
+    </Parameter> 
+	<Parameter>
+	    <Name>Relative Radiance per Filter</Name>
+	    <ParameterKey>ICON_L23_MIGHTI_B_Relative_Radiance</ParameterKey>
+	    <Description>Observed relative radiance by filter and altitude. The retrieval is based on a forward modeling approach to these observed radiances as  reported in electrons/s from the MIGHTI L1 product. These are converted to electrons based on the integration time during day (30 s) or night (60 s).</Description>
+	    <Cadence>PT30S</Cadence>
+	    <Units>Electrons</Units>
+		<ValidMin>0</ValidMin>
+		<ValidMax>9999999848243207295109594873856</ValidMax>
+		<FillValue>-9999999848243207295109594873856</FillValue>
+	    <Particle>
+		    <ParticleType>Electron</ParticleType>
+			<Qualifier>Scalar</Qualifier>
+	        <ParticleQuantity>Counts</ParticleQuantity>
+	    </Particle>
+    </Parameter>
+	<Parameter>
+	    <Name>Uncertainty in Rel Radiance per filter</Name>
+	    <ParameterKey>ICON_L23_MIGHTI_B_Relative_Radiance_Uncertainty</ParameterKey>
+	    <Description>Uncertainty (1-sigma) in relative radiance by filter by altitude and filter. These are calculated by taking the square root of the total number  of electrons in each of the three signal channels, which are 51 pixels wide for MIGHTI-A or MIGHTI-B (day or night).</Description>
+	    <Cadence>PT30S</Cadence>
+	    <Units>Electrons</Units>
+		<ValidMin>0</ValidMin>
+		<ValidMax>9999999848243207295109594873856</ValidMax>
+		<FillValue>-9999999848243207295109594873856</FillValue>
+	    <Particle>
+		    <ParticleType>Electron</ParticleType>
+			<Qualifier>Uncertainty</Qualifier>
+	        <ParticleQuantity>Counts</ParticleQuantity>
+	    </Particle>
+    </Parameter>
+	<Parameter>
+	    <Name>Tangent Altitude of the Line of Sight</Name>
+	    <ParameterKey>ICON_L23_MIGHTI_B_Tangent_Altitude</ParameterKey>
+	    <Description>Tangent point altitudes. These altitudes are the tangent altitude of the line of sight of each pixel.</Description>
+	    <Cadence>PT30S</Cadence>
+	    <Units>km</Units>
+		<ValidMin>100</ValidMin>
+		<ValidMax>9999999848243207295109594873856</ValidMax>
+		<FillValue>-9999999848243207295109594873856</FillValue>
+	    <Support>
+	        <Qualifier>Direction</Qualifier>
+	        <SupportQuantity>Positional</SupportQuantity>
+	    </Support>
+    </Parameter> 
+	<Parameter>
+	    <Name>Tangent Point Latitudes by Altitude.</Name>
+	    <ParameterKey>ICON_L23_MIGHTI_B_Tangent_Latitude</ParameterKey>
+	    <Description>Tangent point latitudes by altitude. Note that these are a function of both epoch and altitude. Note also that due to the nature of the limb observations these latitudes are typically an average over many hundreds of kilometers.</Description>
+	    <Cadence>PT30S</Cadence>
+	    <Units>deg</Units>
+		<ValidMin>-90</ValidMin>
+		<ValidMax>90</ValidMax>
+		<FillValue>-9999999848243207295109594873856</FillValue>
+	    <Support>
+	        <Qualifier>Direction</Qualifier>
+	        <SupportQuantity>Positional</SupportQuantity>
+	    </Support>
+    </Parameter>
+	<Parameter>
+	    <Name>Local Solar Time at Tangent Point</Name>
+	    <ParameterKey>ICON_L23_MIGHTI_B_Tangent_Local_Solar_Time</ParameterKey>
+	    <Description>Local solar time (0-24 h) at tangent point calculated using the equation of time. LST is a function of both epoch and altitude.</Description>
+	    <Cadence>PT30S</Cadence>
+	    <Units>hours</Units>
+		<ValidMin>0</ValidMin>
+		<ValidMax>24</ValidMax>
+		<FillValue>-9999999848243207295109594873856</FillValue>
+	    <Support>
+	        <Qualifier>Direction</Qualifier>
+	        <SupportQuantity>Positional</SupportQuantity>
+	    </Support>
+    </Parameter>
+	<Parameter>
+	    <Name>Tangent Point Longitudes by Altitude.</Name>
+	    <ParameterKey>ICON_L23_MIGHTI_B_Tangent_Longitude</ParameterKey>
+	    <Description>Tangent point longitudes (0-360) by altitude. Note that these are a function of both epoch and altitude. Note also that due to the nature of the limb observations these longitudes are typically an average over many hundreds of kilometers.</Description>
+	    <Cadence>PT30S</Cadence>
+	    <Units>deg</Units>
+		<ValidMin>0</ValidMin>
+		<ValidMax>9999999848243207295109594873856</ValidMax>
+		<FillValue>-9999999848243207295109594873856</FillValue>
+	    <Support>
+	        <Qualifier>Direction</Qualifier>
+	        <SupportQuantity>Positional</SupportQuantity>
+	    </Support>
+    </Parameter>
+	<Parameter>
+	    <Name>Tangent Point Magnetic Latitudes by Altitude.</Name>
+	    <ParameterKey>ICON_L23_MIGHTI_B_Tangent_Magnetic_Latitude</ParameterKey>
+	    <Description>Tangent point magnetic latitudes by altitude. Quasi-dipole latitude and longitude are calculated using the fast implementation developed by Emmert et al. (2010, doi:10.1029/2010JA015326) and the Python wrapper apexpy (doi.org/10.5281/zenodo.1214207). Quasi-dipole longitude is defined such that zero occurs where the geodetic longitude is near 285 deg east (depending on latitude). Note that these are a function of both epoch and altitude. Note also that due to the nature of the limb observations these latitudes are typically an average over many hundreds of kilometers.</Description>
+	    <Cadence>PT30S</Cadence>
+	    <Units>deg</Units>
+		<ValidMin>-90</ValidMin>
+		<ValidMax>90</ValidMax>
+		<FillValue>-9999999848243207295109594873856</FillValue>
+	    <Support>
+	        <Qualifier>Direction</Qualifier>
+	        <SupportQuantity>Positional</SupportQuantity>
+	    </Support>
+    </Parameter>
+	<Parameter>
+	    <Name>Tangent Point Magnetic Longitudes by Altitude.</Name>
+	    <ParameterKey>ICON_L23_MIGHTI_B_Tangent_Magnetic_Longitude</ParameterKey>
+	    <Description>Tangent point magnetic longitudes by altitude. Quasi-dipole latitude and longitude are calculated using the fast implementation developed by Emmert et al. (2010, doi:10.1029/2010JA015326) and the Python wrapper apexpy (doi.org/10.5281/zenodo.1214207). Quasi-dipole longitude is defined such that zero occurs where the geodetic longitude is near 285 deg east (depending on latitude). Note that these are a function of both epoch and altitude. Note also that due to the nature of the limb observations these longitudes are typically an average over many hundreds of kilometers.</Description>
+	    <Cadence>PT30S</Cadence>
+	    <Units>deg</Units>
+		<ValidMin>0</ValidMin>
+		<ValidMax>9999999848243207295109594873856</ValidMax>
+		<FillValue>-9999999848243207295109594873856</FillValue>
+	    <Support>
+	        <Qualifier>Direction</Qualifier>
+	        <SupportQuantity>Positional</SupportQuantity>
+	    </Support>
+    </Parameter>
+	<Parameter>
+	    <Name>Solar Zenith Angle at Tangent Point</Name>
+	    <ParameterKey>ICON_L23_MIGHTI_B_Tangent_Solar_Zenith_Angle</ParameterKey>
+	    <Description>Solar zenith angle at tangent point. SZA is a function of both epoch and altitude.</Description>
+	    <Cadence>PT30S</Cadence>
+	    <Units>degrees</Units>
+		<ValidMin>-180</ValidMin>
+		<ValidMax>180</ValidMax>
+		<FillValue>-9999999848243207295109594873856</FillValue>
+	    <Support>
+	        <Qualifier>Direction</Qualifier>
+	        <SupportQuantity>Positional</SupportQuantity>
+	    </Support>
+    </Parameter>
+	<Parameter>
+	    <Name>A-Band Temperatures</Name>
+	    <ParameterKey>ICON_L23_MIGHTI_B_Temperature</ParameterKey>
+	    <Description>Derived temperatures from A band by altitude. Temperatures are retrieved from the rotational distribution of emission lines in the O2 A band.  The measurement is made at 5 spectral channels. 3 channels measure the A band and 2 others on either side of the band measure a background, which is subtracted from the 3 signal channels. An entire altitude profile is observed simultaneously. An onion-peeling inversion is used on the raw observations to remove the effects of the integration along the line of sight. See Stevens et al. (Space Science Reviews (2018) 214:4. https://doi.org/10.1007/s11214-017-0434-9). O2 A band spectra are  pre-calculated from 100-400 K in 20 K increments based on the HITRAN 2016 database [Gordon et al., JQSRT (2017), 203:3-69.https://doi.org/10.1016/j.jqsrt.06.038]  and smoothed filter functions with FWHM of ~2.0 nm. The filter functions are based on Gaussian fits to laboratory measurements and are a function of channel,  row (altitude), and column. The fits are separately done for each pixel as a function of peak wavenumber (wavelength), width, and transmittance. For each of the  three signal channels the fitted Gaussians are co-added over 51 pixels where the transmittance is largest for a representative filter function for that channel.  The transmittances are not absolutely calibrated in photometric units, but the relative transmittance between channels and between detectors is maintained, which allows for the retrieval of temperature at the tangent altitude.</Description>
+	    <Cadence>PT30S</Cadence>
+	    <Units>K</Units>
+		<ValidMin>0</ValidMin>
+		<ValidMax>9999999848243207295109594873856</ValidMax>
+		<FillValue>-9999999848243207295109594873856</FillValue>
+	    <Particle>
+		    <ParticleType>Molecule</ParticleType>
+			<Qualifier>Scalar</Qualifier>
+	        <ParticleQuantity>Temperature</ParticleQuantity>
+			<AtomicNumber>16</AtomicNumber>
+	    </Particle>
+    </Parameter>
+	<Parameter>
+	    <Name>Temperature Bias Uncertainties</Name>
+	    <ParameterKey>ICON_L23_MIGHTI_B_Temperature_Bias_Uncertainty</ParameterKey>
+	    <Description>Estimated bias uncertainties in derived temperatures by altitude; aka systematic uncertainties. These uncertainties are present in each temperature profile and are primarily due to 1) a 1 cm-1 uncertainty in the common shift applied to pre-flight laboratory determined filter positions. This uncertainty was tested in the retrieval and a derived fixed uncertainty of 12 K is propagated at all altitudes and 2) the lack of measurements above the top altitude sampled,  and altitude dependent, with the topmost altitudes of the retrieval affected the most.  The temperature bias uncertainty is found by a root sum square of these two.  At most altitudes the estimated bias uncertainty is dominated by the uncertainty in the common shift.</Description>
+	    <Cadence>PT30S</Cadence>
+	    <Units>K</Units>
+		<ValidMin>0</ValidMin>
+		<ValidMax>9999999848243207295109594873856</ValidMax>
+		<FillValue>-9999999848243207295109594873856</FillValue>
+	    <Particle>
+		    <ParticleType>Molecule</ParticleType>
+			<Qualifier>Uncertainty</Qualifier>
+	        <ParticleQuantity>Temperature</ParticleQuantity>
+			<AtomicNumber>16</AtomicNumber>
+	    </Particle>
+    </Parameter>
+	<Parameter>
+	    <Name>Temperature Statistical Uncertainties</Name>
+	    <ParameterKey>ICON_L23_MIGHTI_B_Temperature_Statistical_Uncertainty</ParameterKey>
+	    <Description>Statistical uncertainties (one sigma) in derived temperatures by altitude.</Description>
+	    <Cadence>PT30S</Cadence>
+	    <Units>K</Units>
+		<ValidMin>0</ValidMin>
+		<ValidMax>9999999848243207295109594873856</ValidMax>
+		<FillValue>-9999999848243207295109594873856</FillValue>
+	    <Particle>
+		    <ParticleType>Molecule</ParticleType>
+			<Qualifier>Uncertainty</Qualifier>
+	        <ParticleQuantity>Temperature</ParticleQuantity>
+			<AtomicNumber>16</AtomicNumber>
+	    </Particle>
+    </Parameter>
+	<Parameter>
+	    <Name>Total Uncertainties in Derived Temperatures by Altitude</Name>
+	    <ParameterKey>ICON_L23_MIGHTI_B_Temperature_Total_Uncertainty</ParameterKey>
+	    <Description>Total uncertainties in derived temperatures by altitude: Here the statistical temperature uncertainty has been linearly added to the estimated temperature bias.</Description>
+	    <Cadence>PT30S</Cadence>
+	    <Units>K</Units>
+		<ValidMin>0</ValidMin>
+		<ValidMax>9999999848243207295109594873856</ValidMax>
+		<FillValue>-9999999848243207295109594873856</FillValue>
+	    <Particle>
+		    <ParticleType>Molecule</ParticleType>
+			<Qualifier>Uncertainty</Qualifier>
+	        <ParticleQuantity>Temperature</ParticleQuantity>
+			<AtomicNumber>16</AtomicNumber>
+	    </Particle>
+    </Parameter>
+	
+	<Parameter>
+	    <Name>Thermal Electric Cooler Cold Temperature</Name>
+	    <ParameterKey>ICON_L23_MIGHTI_B_Thermal_Electric_Cooler_Cold_Temperature</ParameterKey>
+	    <Description>Cold-side temperature of the thermoelectric cooler attached to the camera head.</Description>
+	    <Cadence>PT30S</Cadence>
+	    <Units>C</Units>
+		<ValidMin>-9999999848243207295109594873856</ValidMin>
+		<ValidMax>9999999848243207295109594873856</ValidMax>
+		<FillValue>-9999999848243207295109594873856</FillValue>
+	    <Support>
+	        <Qualifier>Scalar</Qualifier>
+	        <SupportQuantity>InstrumentMode</SupportQuantity>
+	    </Support>
+    </Parameter>
+	<Parameter>
+	    <Name>UTC time</Name>
+	    <ParameterKey>ICON_L23_MIGHTI_B_UTC_Time</ParameterKey>
+	    <Description>This variable is the same as Epoch but is formatted as a human-readable string.</Description>
+	    <Cadence>PT30S</Cadence>
+	    <Units>' '</Units>
+		<FillValue>-9999999848243207295109594873856</FillValue>
+	    <Support>
+	        <Qualifier>Magnitude</Qualifier>
+	        <SupportQuantity>Temporal</SupportQuantity>
+	    </Support>
+    </Parameter>
+	<Parameter>
+	    <Name>UTC Start time</Name>
+	    <ParameterKey>ICON_L23_MIGHTI_B_UTC_Time_Start</ParameterKey>
+	    <Description>Milliseconds since 1970-01-01 00:00:00 UTC at start of image integration. Derived from original GPS values reported from spacecraft (Time_GPS_Seconds and Time_GPS_Subseconds).  Time calculation is offset by 615ms (flush time) for the first image in the series and for all other images are adjusted by subtracting (integration time + 308 milliseconds)  from the reported GPS time.</Description>
+	    <Cadence>PT30S</Cadence>
+	    <Units>' '</Units>
+		<FillValue>-9999999848243207295109594873856</FillValue>
+	    <Support>
+	        <Qualifier>Magnitude</Qualifier>
+	        <SupportQuantity>Temporal</SupportQuantity>
+	    </Support>
+    </Parameter>
+	<Parameter>
+	    <Name>UTC Stop time</Name>
+	    <ParameterKey>ICON_L23_MIGHTI_B_UTC_Time_Stop</ParameterKey>
+	    <Description>Milliseconds since 1970-01-01 00:00:00 UTC at end of image integration. Derived from original GPS values reported from spacecraft (Time_GPS_Seconds and Time_GPS_Subseconds).  Time calculation is offset by 615ms (flush time) for the first image in the series and for all other images are adjusted by subtracting (integration time + 308 milliseconds)  from the reported GPS time.</Description>
+	    <Cadence>PT30S</Cadence>
+	    <Units>' '</Units>
+		<FillValue>-9999999848243207295109594873856</FillValue>
+	    <Support>
+	        <Qualifier>Magnitude</Qualifier>
+	        <SupportQuantity>Temporal</SupportQuantity>
+	    </Support>
+    </Parameter>
+	<Parameter>
+	    <Name>MIGHTI-B Aperture Position 1</Name>
+	    <ParameterKey>ICON_L23_MIGHTI_Aperture_1_Position</ParameterKey>
+	    <Description>Aperture Position 1: 0=OPEN, 1=CLOSED, 2=15% OPEN, 3=UNKNOWN. Note that when OPEN (0) the integration time is 60 s for nighttime observations  and when 15% OPEN (2) the integration time is 30 s for daytime observations.</Description>
+	    <Cadence>PT30S</Cadence>
+	    <Units>' '</Units>
+		<ValidMin>0</ValidMin>
+		<ValidMax>3</ValidMax>
+		<FillValue>-9999999848243207295109594873856</FillValue>
+	    <Support>
+	        <Qualifier>Scalar</Qualifier>
+	        <SupportQuantity>InstrumentMode</SupportQuantity>
+	    </Support>
+    </Parameter>
+	<Parameter>
+	    <Name>MIGHTI-B Aperture Position 2</Name>
+	    <ParameterKey>ICON_L23_MIGHTI_Aperture_2_Position</ParameterKey>
+	    <Description>Aperture Position 2: 0=OPEN, 1=CLOSED, 2=15% OPEN, 3=UNKNOWN. Note that when OPEN (0) the integration time is 60 s for nighttime observations  and when 15% OPEN (2) the integration time is 30 s for daytime observations.</Description>
+	    <Cadence>PT30S</Cadence>
+	    <Units>' '</Units>
+		<ValidMin>0</ValidMin>
+		<ValidMax>3</ValidMax>
+		<FillValue>-9999999848243207295109594873856</FillValue>
+	    <Support>
+	        <Qualifier>Scalar</Qualifier>
+	        <SupportQuantity>InstrumentMode</SupportQuantity>
+	    </Support>
+    </Parameter>
+	<Parameter>
+	    <Name>Altitude of the ICON Spacecraft</Name>
+	    <ParameterKey>ICON_L23_Observatory_Altitude</ParameterKey>
+	    <Description>Spacecraft altitude at middle of exposure.</Description>
+	    <Cadence>PT30S</Cadence>
+	    <Units>km</Units>
+		<ValidMin>0</ValidMin>
+		<ValidMax>9999999848243207295109594873856</ValidMax>
+		<FillValue>-9999999848243207295109594873856</FillValue>
+	    <Support>
+	        <Qualifier>Direction</Qualifier>
+	        <SupportQuantity>Positional</SupportQuantity>
+	    </Support>
+    </Parameter> 
+	
+	<Parameter>
+	    <Name>Latitude of the ICON Spacecraft</Name>
+	    <ParameterKey>ICON_L23_Observatory_Latitude</ParameterKey>
+	    <Description>Spacecraft latitude at middle of exposure.</Description>
+	    <Cadence>PT30S</Cadence>
+	    <Units>deg</Units>
+		<ValidMin>-90</ValidMin>
+		<ValidMax>90</ValidMax>
+		<FillValue>-9999999848243207295109594873856</FillValue>
+	    <Support>
+	        <Qualifier>Direction</Qualifier>
+	        <SupportQuantity>Positional</SupportQuantity>
+	    </Support>
+    </Parameter>
+	<Parameter>
+	    <Name>Local Solar Time of the ICON Spacecraft</Name>
+	    <ParameterKey>ICON_L23_Observatory_Local_Solar_Time</ParameterKey>
+	    <Description>Spacecraft local solar time (0-24) at middle of exposure.</Description>
+	    <Cadence>PT30S</Cadence>
+	    <Units>deg</Units>
+		<ValidMin>0</ValidMin>
+		<ValidMax>24</ValidMax>
+		<FillValue>-9999999848243207295109594873856</FillValue>
+	    <Support>
+	        <Qualifier>Direction</Qualifier>
+	        <SupportQuantity>Positional</SupportQuantity>
+	    </Support>
+    </Parameter>
+	<Parameter>
+	    <Name>Longitude of the ICON Spacecraft</Name>
+	    <ParameterKey>ICON_L23_Observatory_Longitude</ParameterKey>
+	    <Description>Spacecraft longitude (0-360) at middle of exposure.</Description>
+	    <Cadence>PT30S</Cadence>
+	    <Units>deg</Units>
+		<ValidMin>0</ValidMin>
+		<ValidMax>360</ValidMax>
+		<FillValue>-9999999848243207295109594873856</FillValue>
+	    <Support>
+	        <Qualifier>Direction</Qualifier>
+	        <SupportQuantity>Positional</SupportQuantity>
+	    </Support>
+    </Parameter>
+	<Parameter>
+	    <Name>Solar Zenith Angle of the ICON Spacecraft</Name>
+	    <ParameterKey>ICON_L23_Observatory_Solar_Zenith_Angle</ParameterKey>
+	    <Description>Spacecraft solar zenith angle at middle of exposure.</Description>
+	    <Cadence>PT30S</Cadence>
+	    <Units>deg</Units>
+		<ValidMin>-180</ValidMin>
+		<ValidMax>180</ValidMax>
+		<FillValue>-9999999848243207295109594873856</FillValue>
+	    <Support>
+	        <Qualifier>Direction</Qualifier>
+	        <SupportQuantity>Positional</SupportQuantity>
+	    </Support>
+    </Parameter>
+	<Parameter>
+	    <Name>Orbit Node Flag</Name>
+	    <ParameterKey>ICON_L23_Orbit_Node</ParameterKey>
+	    <Description>Flag indicating that the spacecraft is ascending (0) or descending (1) node.</Description>
+	    <Cadence>PT30S</Cadence>
+		<ValidMin>0</ValidMin>
+		<ValidMax>1</ValidMax>
+		<FillValue>-127</FillValue>
+	    <Support>
+	        <Qualifier>Scalar</Qualifier>
+	        <SupportQuantity>Orientation</SupportQuantity>
+	    </Support>
+    </Parameter>
+	<Parameter>
+	    <Name>Orbit Number</Name>
+	    <ParameterKey>ICON_L23_Orbit_Number</ParameterKey>
+	    <Description>Orbit Number</Description>
+	    <Cadence>PT30S</Cadence>
+		<ValidMin>0</ValidMin>
+		<ValidMax>105000</ValidMax>
+		<FillValue>-999</FillValue>
+	    <Support>
+	        <Qualifier>Scalar</Qualifier>
+	        <SupportQuantity>Temporal</SupportQuantity>
+	    </Support>
+    </Parameter>
+  </NumericalData>
+</Spase>

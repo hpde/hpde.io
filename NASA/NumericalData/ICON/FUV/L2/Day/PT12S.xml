@@ -1,0 +1,507 @@
+<Spase xmlns="https://spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://spase-group.org/data/schema  https://spase-group.org/data/schema/spase-2.3.2.xsd">
+  <Version>2.3.2</Version>
+  <NumericalData>
+    <ResourceID>spase://NASA/NumericalData/ICON/FUV/L2/Day/PT12S</ResourceID>
+    <ResourceHeader>
+      <ResourceName>ICON The Far Ultra Violet Imaging Spectrograph Dayside Images </ResourceName>
+	  <AlternateName>FUV Dayside Images</AlternateName>
+      <ReleaseDate>2021-01-01T00:00:00Z</ReleaseDate>
+      <Description>The FUV instrument takes 2D images of the Earth’s horizon in the Far ultraviolet. The imager is pointing approximately 90 degrees to the spacecraft motion, similar to looking out of the side window of a car as it drives down the road. Onboard electronics read the image 8 times per second and perform Time Delay Integration (TDI) to remove the motion-blur from the images. A turret is used to steer the field of view of the instrument left to right to ensure it always looks along the magnetic meridian (towards the magnetic pole).
+	  
+	  This describes the data product for ICON FUV Daytime O/N2 (DP 2.4). The ratio of oxygen to nitrogen in the thermosphere is obtained from the two channels of ICON FUV instrument data in, through an inversion process described in https://doi.org/10.1007/s11214-018-0477-6.  The L2 FUV Daytime files are produced from the L1 FUV files.</Description>
+	  <Acknowledgement>National Aeronautics and Space Administration; Dr. Stephen Mende</Acknowledgement>
+	  <Funding>
+		<Agency>National Aeronautics and Space Administration</Agency>
+		<Project>Explorers Program</Project>
+		<AwardNumber>contracts NNG12FA45C</AwardNumber>
+	  </Funding>
+      <Contact>
+        <PersonID>spase://SMWG/Person/Stephen.B.Mende</PersonID>
+        <Role>PrincipalInvestigator</Role>
+      </Contact>
+	  <InformationURL>
+        <Name>Additional information on ICON</Name>
+        <URL>https://icon.ssl.berkeley.edu/</URL>
+        <Description>ICON spacecraft Homepage.</Description>
+      </InformationURL>
+	  <InformationURL>
+        <Name>The far ultra-violet Imager on the ICON mission</Name>
+        <URL>https://doi.org/10.1007/s11214-017-0386-0</URL>
+        <Description>Space Science Reviews, 212(1-2), pp.655-696. DOI: 10.1007/s11214-017-0386-0</Description>
+      </InformationURL>
+    </ResourceHeader>
+	<AccessInformation>
+		<RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF</RepositoryID>
+		<Availability>Online</Availability>
+		<AccessRights>Open</AccessRights>
+		<AccessURL>
+			<Name>FTPS from SPDF (not with most browsers)</Name>
+			<URL>ftps://spdf.gsfc.nasa.gov/pub/data/icon/l2/</URL>
+			<Description>FTPS access to ICON data via ftps at the Space Physics Data Facility (SPDF)</Description>
+		</AccessURL>
+		<AccessURL>
+			<Name>HTTPS from SPDF</Name>
+			<URL>https://spdf.gsfc.nasa.gov/pub/data/icon/l2/</URL>
+			<Description>HTTPS access to ICON data at the Space Physics Data Facility (SPDF)</Description>
+		</AccessURL>
+		<Format>NetCDF</Format>
+	</AccessInformation>
+	<ProcessingLevel>Calibrated</ProcessingLevel>
+	<ProviderName>ICON FUV team</ProviderName>
+	<ProviderResourceName></ProviderResourceName>
+	<InstrumentID>spase://SMWG/Instrument/ICON/FUV</InstrumentID>
+	<MeasurementType>ImageIntensity</MeasurementType>
+	<TemporalDescription>
+		<TimeSpan>
+			<StartDate>2019-12-06T00:00:00Z</StartDate>
+			<RelativeStopDate>-P2M</RelativeStopDate>
+		</TimeSpan>
+		<Cadence>PT12S</Cadence>
+	</TemporalDescription>
+	<ObservedRegion>Earth.NearSurface.Atmosphere</ObservedRegion>
+	<ObservedRegion>Earth.NearSurface.Ionosphere</ObservedRegion>
+
+	<Parameter>
+	    <Name>Epoch Time</Name>
+	    <ParameterKey>Epoch</ParameterKey>
+	    <Description>Sample time, midpoint of exposure. Number of msec since Jan 1, 1970.</Description>
+	    <Cadence>PT12S</Cadence>
+	    <Units>ms</Units>
+		<ValidMin>0</ValidMin>
+		<ValidMax>6000000000000</ValidMax>
+		<FillValue>-999</FillValue>
+	    <Support>
+	        <Qualifier>Magnitude</Qualifier>
+	        <SupportQuantity>Temporal</SupportQuantity>
+	    </Support>
+    </Parameter>  
+	<Parameter>
+	    <Name>Disk Short Wave Emission</Name>
+	    <ParameterKey>ICON_L24_1356_Emission</ParameterKey>
+	    <Description>Short wave disk column emisison rate.</Description>
+	    <Cadence>PT12S</Cadence>
+	    <Units>Rayleighs</Units>
+		<ValidMin>-100.000000</ValidMin>
+		<ValidMax>10000000000</ValidMax>
+		<FillValue>-999</FillValue>
+	    <Wave>
+		    <WaveType>Photon</WaveType>
+			<Qualifier>LineOfSight</Qualifier>
+			<WaveQuantity>Intensity</WaveQuantity>
+	    </Wave>
+    </Parameter>
+	<Parameter>
+	    <Name>Ap Index</Name>
+	    <ParameterKey>ICON_L24_Ap</ParameterKey>
+	    <Description>Value of Ap used in the forward model, as a function of time. These data are from http://www-app3.gfz-potsdam.de/kp_index/. These are the tabulated Kp values from GFZ German Research Centre for Geosciences at the Helmholtz Centre Potsdam.</Description>
+	    <Cadence>PT12S</Cadence>
+		<ValidMin>0</ValidMin>
+		<ValidMax>400</ValidMax>
+		<FillValue>-999</FillValue>
+	    <Field>
+	        <Qualifier>Scalar</Qualifier>
+	        <FieldQuantity>Magnetic</FieldQuantity>
+	    </Field>
+    </Parameter>
+	<Parameter>
+	    <Name>Line of Sight Zenith Angle</Name>
+	    <ParameterKey>ICON_L24_Disk_LOS_Zen_Angle</ParameterKey>
+	    <Description>Line of sight zenith angle corresponding to disk retrieval.</Description>
+	    <Cadence>PT12S</Cadence>
+	    <Units>degrees</Units>
+		<ValidMin>0</ValidMin>
+		<ValidMax>180</ValidMax>
+		<FillValue>-999</FillValue>
+	    <Support>
+	        <Qualifier>Direction</Qualifier>
+	        <SupportQuantity>Positional</SupportQuantity>
+	    </Support>
+    </Parameter>
+	<Parameter>
+	    <Name>Retrieved Disk Geodetic Latitude</Name>
+	    <ParameterKey>ICON_L24_Disk_Latitude</ParameterKey>
+	    <Description>Geodetic latitude (WGS84) corresponding to disk retrieval.</Description>
+	    <Cadence>PT12S</Cadence>
+	    <Units>degrees</Units>
+		<ValidMin>-90</ValidMin>
+		<ValidMax>90</ValidMax>
+		<FillValue>-999</FillValue>
+	    <Support>
+	        <Qualifier>Direction</Qualifier>
+	        <SupportQuantity>Positional</SupportQuantity>
+	    </Support>
+    </Parameter>
+	<Parameter>
+	    <Name>Retrieved Disk Geodetic Longitude</Name>
+	    <ParameterKey>ICON_L24_Disk_Longitude</ParameterKey>
+	    <Description>Geodetic longitude (WGS84) corresponding to disk retrieval.</Description>
+	    <Cadence>PT12S</Cadence>
+	    <Units>degrees</Units>
+		<ValidMin>-90</ValidMin>
+		<ValidMax>90</ValidMax>
+		<FillValue>-999</FillValue>
+	    <Support>
+	        <Qualifier>Direction</Qualifier>
+	        <SupportQuantity>Positional</SupportQuantity>
+	    </Support>
+    </Parameter>
+	<Parameter>
+	    <Name>Magnetic Latitude on Disk</Name>
+	    <ParameterKey>ICON_L24_Disk_Magnetic_Latitude</ParameterKey>
+	    <Description>Quasi-Dipole Magnetic Latitude at 150 km at Disk Retrieval location, in degrees.</Description>
+	    <Cadence>PT12S</Cadence>
+	    <Units>degrees</Units>
+		<ValidMin>-90</ValidMin>
+		<ValidMax>90</ValidMax>
+		<FillValue>-999</FillValue>
+	    <Support>
+	        <Qualifier>Direction</Qualifier>
+	        <SupportQuantity>Positional</SupportQuantity>
+	    </Support>
+    </Parameter>
+	<Parameter>
+	    <Name>Magnetic Longitude on Disk</Name>
+	    <ParameterKey>ICON_L25_Magnetic_Longitude</ParameterKey>
+	    <Description>Quasi-Dipole Magnetic Longitude at 150 km at Disk Retrieval location, in degrees.</Description>
+	    <Cadence>PT12S</Cadence>
+	    <Units>degrees</Units>
+		<ValidMin>0</ValidMin>
+		<ValidMax>360</ValidMax>
+		<FillValue>-999</FillValue>
+	    <Support>
+	        <Qualifier>Direction</Qualifier>
+	        <SupportQuantity>Positional</SupportQuantity>
+	    </Support>
+    </Parameter>
+	<Parameter>
+	    <Name>Retrieved disk column O/N2</Name>
+	    <ParameterKey>ICON_L24_Disk_ON2</ParameterKey>
+	    <Description>Retrieved column O/N2 ratio on the disk.</Description>
+	    <Cadence>PT12S</Cadence>
+	    <Units>Dimensionless</Units>
+		<ValidMin>0</ValidMin>
+		<ValidMax>200</ValidMax>
+		<FillValue>-999</FillValue>
+	    <Mixed>
+		    <MixedQuantity>Other</MixedQuantity>
+			<Qualifier>Ratio</Qualifier>
+	    </Mixed>
+    </Parameter>
+	<Parameter>
+	    <Name>Retrieved Qeuv on the Disk</Name>
+	    <ParameterKey>ICON_L24_Disk_QEUV</ParameterKey>
+	    <Description>*Diagnostic* Effective solar EUV energy flux, mmW/m2 - multiply by model 4 * model 7 to obtain solar flux required for dayglow fit on the disk.</Description>
+	    <Cadence>PT12S</Cadence>
+	    <Units>mW/m2</Units>
+		<ValidMin>0</ValidMin>
+		<ValidMax>100000002004087734272</ValidMax>
+		<FillValue>-999</FillValue>
+	    <Wave>
+		    <WaveType>Photon</WaveType>
+			<Qualifier>Total</Qualifier>
+			<WaveQuantity>EnergyFlux</WaveQuantity>
+	    </Wave>
+    </Parameter>
+	<Parameter>
+	    <Name>Quality Flags</Name>
+	    <ParameterKey>ICON_L24_Disk_Retrieval_Flags</ParameterKey>
+	    <Description>Disk retrieval quality flag, where 0 = nominal retrieval, 1 = Disk short/long wave ratio out of model range, 2 = Disk O/N2 value out of expected range, 3 = Disk P/N2 uncertainty out of expected range.</Description>
+	    <Cadence>PT12S</Cadence>
+		<ValidMin>0</ValidMin>
+		<ValidMax>10</ValidMax>
+		<FillValue>-999</FillValue>
+	    <Support>
+	        <Qualifier>Scalar</Qualifier>
+	        <SupportQuantity>DataQuality</SupportQuantity>
+	    </Support>
+    </Parameter>
+	<Parameter>
+	    <Name>Retrieved Disk Solar Zenith Angle</Name>
+	    <ParameterKey>ICON_L24_Disk_SZA</ParameterKey>
+	    <Description>Solar zenith angle corresponding to disk retrieval.</Description>
+	    <Cadence>PT12S</Cadence>
+	    <Units>degrees</Units>
+		<ValidMin>0</ValidMin>
+		<ValidMax>180</ValidMax>
+		<FillValue>-999</FillValue>
+	    <Support>
+	        <Qualifier>Direction</Qualifier>
+	        <SupportQuantity>Positional</SupportQuantity>
+	    </Support>
+    </Parameter>
+	<Parameter>
+	    <Name>Retrieved Disk Column O/N2 Uncertainty</Name>
+	    <ParameterKey>ICON_L24_Disk_Sigma_ON2</ParameterKey>
+	    <Description>Uncertainty in retrieved column O/N2 ratio on the disk, based on spread in reported uncertainty in input data.</Description>
+	    <Cadence>PT12S</Cadence>
+	    <Units>Dimensionless</Units>
+		<ValidMin>0</ValidMin>
+		<ValidMax>200</ValidMax>
+		<FillValue>-999</FillValue>
+	    <Support>
+			<Qualifier>Uncertainty</Qualifier>
+			<SupportQuantity>DataQuality</SupportQuantity>
+	    </Support>
+    </Parameter>
+	<Parameter>
+	    <Name>F10.7 Used in Retreival</Name>
+	    <ParameterKey>ICON_L24_F107</ParameterKey>
+	    <Description>Unscaled value of F10.7 used as an input to the inversion process, as a function of time. These data are from ftp://ftp.seismo.nrcan.gc.ca/spaceweather/solar_flux/fluxtable.txt. These are the solar radio flux values tabulated from the Space Weather Canada which is a part of Natural Resources Canada.</Description>
+	    <Cadence>PT12S</Cadence>
+	    <Units>sfu</Units>
+		<ValidMin>0</ValidMin>
+		<ValidMax>500</ValidMax>
+		<FillValue>-999</FillValue>
+	    <Wave>
+		    <WaveType>Photon</WaveType>
+			<Qualifier>Scalar</Qualifier>
+			<WaveQuantity>EnergyFlux</WaveQuantity>
+	    </Wave>
+    </Parameter>
+    <Parameter>
+	    <Name>Initial Duess Disk Column O/N2</Name>
+	    <ParameterKey>ICON_L24_Initial_Disk_ON2</ParameterKey>
+	    <Description>Initial guess of column O/N2 ratio on the disk.</Description>
+	    <Cadence>PT12S</Cadence>
+	    <Units>Dimensionless</Units>
+		<ValidMin>0</ValidMin>
+		<ValidMax>200</ValidMax>
+		<FillValue>-999</FillValue>
+	    <Mixed>
+		    <MixedQuantity>Other</MixedQuantity>
+			<Qualifier>Ratio</Qualifier>
+	    </Mixed>
+    </Parameter>
+	<Parameter>
+	    <Name>Data Collection Mode</Name>
+	    <ParameterKey>ICON_L24_Instrument_Mode_Flag</ParameterKey>
+	    <Description>Data collection mode of FUV instrument
+        1 = Dayside science
+        2 = Nightside science
+        3 = Calibration
+        4 = Nadir
+        5 = Conjugate
+        6 = Stars
+        7 = Ram
+        8 = Off Target
+        9 = Engineering
+       13 = Unknown.</Description>
+	    <Cadence>PT12S</Cadence>
+		<ValidMin>0</ValidMin>
+		<ValidMax>127</ValidMax>
+		<FillValue>127</FillValue>
+	    <Support>
+	        <Qualifier>Scalar</Qualifier>
+	        <SupportQuantity>InstrumentMode</SupportQuantity>
+	    </Support>
+    </Parameter>
+	<Parameter>
+	    <Name>Disk Long Wave Emission</Name>
+	    <ParameterKey>ICON_L24_LBH_Emission</ParameterKey>
+	    <Description>Long wave disk column emisison rate.</Description>
+	    <Cadence>PT12S</Cadence>
+	    <Units>Rayleighs</Units>
+		<ValidMin>-100</ValidMin>
+		<ValidMax>10000000000</ValidMax>
+		<FillValue>-999</FillValue>
+	    <Wave>
+			<WaveType>Photon</WaveType>
+	        <Qualifier>Scalar</Qualifier>
+	        <WaveQuantity>Intensity</WaveQuantity>
+	    </Wave>
+    </Parameter>
+	<Parameter>
+	    <Name>Quality Flag of Profiles</Name>
+	    <ParameterKey>ICON_L24_Level_1_Quality_Flag</ParameterKey>
+	    <Description>QUALITY_FLAG is an indicator of data quality = 
+        0 = No errors or quality conditions, LVLH 
+        1 = No errors or quality conditions, R-LVLH 
+        2 = Lunar calibration 
+        3 = Insufficient high voltage 
+        4 = Nadir calibration 
+        5 = Zero wind calibration 
+        6 = Bad pointing 
+        7 = S/C attitude slew 
+        8 = Conjugate observation 
+        9 = Stellar calibration 
+       10 = Unreliable background subtracted 
+       17 = unspecified error condition.</Description>
+	    <Cadence>PT12S</Cadence>
+	    <Units>N/A</Units>
+		<ValidMin>0</ValidMin>
+		<ValidMax>127</ValidMax>
+		<FillValue>127</FillValue>
+	    <Support>
+			<Qualifier>Uncertainty</Qualifier>
+			<SupportQuantity>DataQuality</SupportQuantity>
+	    </Support>
+    </Parameter>
+	<Parameter>
+	    <Name>Limb Retrieval Flags</Name>
+	    <ParameterKey>ICON_L24_Limb_Retrieval_Flags</ParameterKey>
+	    <Description>Limb retrieval quality flag, where 0 = no limb inversion, 1 = retrieval nominal, 2 = number of iterations in retrieval algorithm reaches 10 without convergence, 3 = one or more inversion model parameters hits a priori upper or lower limit, 4 = altitude of peak intensity too close to boundary, 5 = standard deviation of one or more variables exceeds expected limit, 6 = Chi-squared value is outside of expected range - either too large or too small, 7 = one or more uncertainties is outside of expected range.</Description>
+	    <Cadence>PT12S</Cadence>
+	    <Units>integer</Units>
+		<ValidMin>0</ValidMin>
+		<ValidMax>10</ValidMax>
+		<FillValue>-999</FillValue>
+	    <Support>
+			<Qualifier>Uncertainty</Qualifier>
+			<SupportQuantity>DataQuality</SupportQuantity>
+	    </Support>
+    </Parameter>
+	<Parameter>
+	    <Name>Local Time on the Disk</Name>
+	    <ParameterKey>ICON_L24_Local_Solar_Time_Disk</ParameterKey>
+	    <Description>Local solar time of the retrieval on the disk, in hours.</Description>
+	    <Cadence>PT12S</Cadence>
+	    <Units>hours</Units>
+		<ValidMin>0</ValidMin>
+		<ValidMax>24</ValidMax>
+		<FillValue>-999</FillValue>
+	    <Support>
+	        <Qualifier>Direction</Qualifier>
+	        <SupportQuantity>Positional</SupportQuantity>
+	    </Support>
+    </Parameter>
+	<Parameter>
+	    <Name>Covariance Matrix of the Model Parameters</Name>
+	    <ParameterKey>ICON_L24_Model_Covariance</ParameterKey>
+	    <Description>Covariance matrix of the model parameters found by the algorithm, as a function of time.</Description>
+	    <Cadence>PT12S</Cadence>
+		<Units>unitless scalars</Units>
+		<ValidMin>-1000</ValidMin>
+		<ValidMax>1000</ValidMax>
+		<FillValue>-999</FillValue>
+	    <Support>
+	        <Qualifier>Tensor</Qualifier>
+	        <SupportQuantity>Other</SupportQuantity>
+	    </Support>
+    </Parameter>
+	<Parameter>
+	    <Name>Lower Limits of the Model Parameters</Name>
+	    <ParameterKey>ICON_L24_Model_Lower_Limit</ParameterKey>
+	    <Description>*Diagnostic* Lower limits of the model parameters used by the algorithm, as a function of time.</Description>
+	    <Cadence>PT12S</Cadence>
+		<Units>unitless</Units>
+		<ValidMin>-1000</ValidMin>
+		<ValidMax>1000</ValidMax>
+		<FillValue>-999</FillValue>
+	    <Support>
+	        <Qualifier>Fit</Qualifier>
+	        <SupportQuantity>Other</SupportQuantity>
+	    </Support>
+    </Parameter>
+	<Parameter>
+	    <Name>Upper Limits of the Model Parameters</Name>
+	    <ParameterKey>ICON_L24_Model_Upper_Limit</ParameterKey>
+	    <Description>*Diagnostic* Upper limits of the model parameters used by the algorithm, as a function of time.</Description>
+	    <Cadence>PT12S</Cadence>
+		<Units>unitless</Units>
+		<ValidMin>-1000</ValidMin>
+		<ValidMax>1000</ValidMax>
+		<FillValue>-999</FillValue>
+	    <Support>
+	        <Qualifier>Fit</Qualifier>
+	        <SupportQuantity>Other</SupportQuantity>
+	    </Support>
+    </Parameter>
+	<Parameter>
+	    <Name>Altitude of the ICON spacecraft</Name>
+	    <ParameterKey>ICON_L24_Observatory_Altitude</ParameterKey>
+	    <Description>Geodetic altitude (WGS84) of the spacecraft at the time corresponding to the middle of each FUV image, in kilometers.</Description>
+	    <Cadence>PT12S</Cadence>
+	    <Units>km</Units>
+		<ValidMin>0</ValidMin>
+		<ValidMax>1000</ValidMax>
+		<FillValue>-999</FillValue>
+	    <Support>
+	        <Qualifier>Direction</Qualifier>
+	        <SupportQuantity>Positional</SupportQuantity>
+	    </Support>
+    </Parameter> 
+	<Parameter>
+	    <Name>ICON Spacecraft WGS84 Latitude</Name>
+	    <ParameterKey>ICON_L24_Observatory_Latitude</ParameterKey>
+	    <Description>Geodetic latitude (WGS84) of the spacecraft at the time corresponding to the middle of each FUV image, in degrees.</Description>
+	    <Cadence>PT12S</Cadence>
+	    <Units>degrees</Units>
+		<ValidMin>-90</ValidMin>
+		<ValidMax>90</ValidMax>
+		<FillValue>-999</FillValue>
+	    <Support>
+	        <Qualifier>Direction</Qualifier>
+	        <SupportQuantity>Positional</SupportQuantity>
+	    </Support>
+    </Parameter>
+	<Parameter>
+	    <Name>ICON Spacecraft WGS84 Longitude</Name>
+	    <ParameterKey>ICON_L24_Observatory_Longitude</ParameterKey>
+	    <Description>Geodetic longitude (WGS84) of the spacecraft at the time corresponding to the middle of each FUV image, in degrees.</Description>
+	    <Cadence>PT12S</Cadence>
+	    <Units>degrees</Units>
+		<ValidMin>0</ValidMin>
+		<ValidMax>360</ValidMax>
+		<FillValue>-999</FillValue>
+	    <Support>
+	        <Qualifier>Direction</Qualifier>
+	        <SupportQuantity>Positional</SupportQuantity>
+	    </Support>
+    </Parameter>
+	<Parameter>
+	    <Name>Initial Guess Disk Short Wave Emission</Name>
+	    <ParameterKey>ICON_L24_Predicted_1356_Disk_Emission</ParameterKey>
+	    <Description>Initial guess short wave disk column emisison rate.</Description>
+	    <Cadence>PT12S</Cadence>
+	    <Units>Rayleighs</Units>
+		<ValidMin>-100</ValidMin>
+		<ValidMax>10000000000</ValidMax>
+		<FillValue>-999</FillValue>
+	    <Wave>
+		    <WaveType>Photon</WaveType>
+	        <Qualifier>Fit</Qualifier>
+			<WaveQuantity>Intensity</WaveQuantity>
+	    </Wave>
+	</Parameter>
+	<Parameter>
+	    <Name>Initial Guess Disk Short Wave Emission</Name>
+	    <ParameterKey>ICON_L24_Predicted_LBH_Disk_Emission</ParameterKey>
+	    <Description>Initial guess short wave disk column emisison rate.</Description>
+	    <Cadence>PT12S</Cadence>
+	    <Units>Rayleighs</Units>
+		<ValidMin>-100</ValidMin>
+		<ValidMax>10000000000</ValidMax>
+		<FillValue>-999</FillValue>
+	    <Wave>
+		    <WaveType>Photon</WaveType>
+	        <Qualifier>Fit</Qualifier>
+			<WaveQuantity>Intensity</WaveQuantity>
+	    </Wave>
+	</Parameter>
+	<Parameter>
+	    <Name>UTC Time String</Name>
+	    <ParameterKey>ICON_L24_UTC_Time</ParameterKey>
+	    <Description>UTC time corresponding to the retrieved parameters, in string format, as a function of time, in the format: 2017-05-27/00:00:01.435.</Description>
+	    <Cadence>PT12S</Cadence>
+		<FillValue>Bad</FillValue>
+	    <Support>
+	        <Qualifier>Magnitude</Qualifier>
+	        <SupportQuantity>Temporal</SupportQuantity>
+	    </Support>
+    </Parameter>
+	<Parameter>
+	    <Name>Whole Day Retrieval Flags</Name>
+	    <ParameterKey>ICON_L24_Whole_Day_Retrieval_Flag</ParameterKey>
+	    <Description>Single flag set for whole day, where 0 = nominal data set, 1 = whole day skipped because no solar zenith angles were within range.</Description>
+	    <Cadence>PT12S</Cadence>
+	    <Units>integer</Units>
+		<ValidMin>0</ValidMin>
+		<ValidMax>1</ValidMax>
+		<FillValue>-999</FillValue>
+	    <Support>
+			<Qualifier>Uncertainty</Qualifier>
+			<SupportQuantity>DataQuality</SupportQuantity>
+	    </Support>
+    </Parameter>
+  </NumericalData>
+</Spase>
