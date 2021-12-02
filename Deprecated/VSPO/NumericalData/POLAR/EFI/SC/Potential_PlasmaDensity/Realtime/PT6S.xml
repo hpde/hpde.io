@@ -1,0 +1,83 @@
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_2_9.xsd">
+   <Version>2.2.9</Version>
+   <NumericalData>
+      <ResourceID>spase://VSPO/NumericalData/POLAR/EFI/SC/Potential_PlasmaDensity/Realtime/PT6S</ResourceID>
+      <ResourceHeader>
+         <ResourceName>Polar Electric Fields Instrument (EFI), Spacecraft Potential and Plasma Density, Realtime Resolution</ResourceName>
+         <ReleaseDate>2018-03-09T15:35:11Z</ReleaseDate>
+         <Description>This data consists of the Spacecraft Potential and the Plasma Density, at spacecraft realtime resolution, where the Plasma Density is obtained as a function, provided by Dr. Jack Scudder, the PI of the POLAR Hydra investigation. This function was determined by a fit to the POLAR Hydra particle data for 2001/04/01. The relative accuracy of the Plasma Density, estimated from the spacecraft potential on short time scales is ~10-30% depending on plasma conditions. The absolute accuracy is better than a factor of two for densities less than about 20 particles/cm^3. Density values greater than 30 particles/cm^3 are not plotted because they are inaccurate due to the steep slope of the curve of density versus spacecraft potential. If the value of the argument to the function is too large, then the Plasma Density is set to a filler value of 1.0e+20. Also, if the value returned by the function is too large, then the result is not reliable, and therefore the Plasma Density is set to a filler value of 1.0e+20. If the value of the argument to the function is too small, then the Plasma Density is set to a filler value of 1.0e-20. So, a value of the Plasma Density is a filler value if and only if it is either larger than 1.0e+2 (100.0) or smaller than 1.0e-4 (0.0001); otherwise, it is a true value. Note that all values of the Spacecraft Potential are true values. There is no filler.</Description>
+         <Acknowledgement>The user will acknowledge, in any publication which uses POLAR EFI data, the instrument PI, as well as the instrument PI for the POLAR Hydra instrument, if the Plasma Density is used.</Acknowledgement>
+         <Contact>
+            <PersonID>spase://SMWG/Person/Forrest.S.Mozer</PersonID>
+            <Role>PrincipalInvestigator</Role>
+         </Contact>
+         <Contact>
+            <PersonID>spase://SMWG/Person/Jack.B.Vernetti</PersonID>
+            <Role>MetadataContact</Role>
+         </Contact>
+         <PriorID>spase://VWO/NumericalData/POLAR/EFI/SC_Potential_PlasmaDensity_Realtime</PriorID>
+      </ResourceHeader>
+      <AccessInformation>
+         <RepositoryID>spase://SMWG/Repository/UCB/POLAR/EFI</RepositoryID>
+         <Availability>Online</Availability>
+         <AccessRights>Open</AccessRights>
+         <AccessURL>
+            <URL>http://polarefi.ssl.berkeley.edu/PolarEFI</URL>
+            <Description>This URL is the root location of the POLAR EFI archive. It consists of Yearly subdirectories: 1996, 1997, ..., 2008 each of which consists of Monthly subdirectories: 01, 02, ..., 12 The archive files for a given date are located in the corresponding YY/MM subdirectory.</Description>
+            <Language>en</Language>
+         </AccessURL>
+         <Format>CDF</Format>
+         <Encoding>None</Encoding>
+         <Acknowledgement>The user will acknowledge, in any publication which uses POLAR EFI data, the instrument PI, as well as the instrument PI for the POLAR Hydra instrument, if the Plasma Density is used.</Acknowledgement>
+      </AccessInformation>
+      <InstrumentID>spase://SMWG/Instrument/POLAR/EFI</InstrumentID>
+      <MeasurementType>ElectricField</MeasurementType>
+      <MeasurementType>ThermalPlasma</MeasurementType>
+      <TemporalDescription>
+         <TimeSpan>
+            <StartDate>1996-03-16T00:00:00</StartDate>
+            <StopDate>2008-04-12T24:00:00</StopDate>
+         </TimeSpan>
+         <Cadence>PT6S</Cadence>
+      </TemporalDescription>
+      <Parameter>
+         <Name>Time</Name>
+         <ParameterKey>TIME_TAG</ParameterKey>
+         <Description>Data point time-tags which are double precision floating point numbers which represent the number of seconds, UTC, from midnight of the day represented by the file.</Description>
+         <Cadence>PT6S</Cadence>
+         <Units>seconds</Units>
+         <ValidMin>0.0</ValidMin>
+         <ValidMax>86460.0</ValidMax>
+         <Support>
+            <SupportQuantity>Temporal</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>SCPotential</Name>
+         <ParameterKey>DATA_VALUES</ParameterKey>
+         <Description>Data point value which represents the Spacecraft Potential as single precision floating point numbers. The SCPotential values are in in one-to-one correspondence with the values in the TIME_TAG parameter.</Description>
+         <Cadence>PT6S</Cadence>
+         <Units>Volts</Units>
+         <ValidMin>-80.0</ValidMin>
+         <ValidMax>10.0</ValidMax>
+         <Field>
+            <Qualifier>Scalar</Qualifier>
+            <FieldQuantity>Potential</FieldQuantity>
+         </Field>
+      </Parameter>
+      <Parameter>
+         <Name>PlasmaDensity</Name>
+         <ParameterKey>DATA_VALUES</ParameterKey>
+         <Description>Data point value which represents the Plasma Density as single precision floating point numbers. Not all times in the TIME_TAG parameter correspond to true PlasmaDensity data, so there are filler values.</Description>
+         <Cadence>PT6S</Cadence>
+         <Units>Particles/cm^3</Units>
+         <ValidMin>0.0001</ValidMin>
+         <ValidMax>100.0</ValidMax>
+         <FillValue>1.0e+20,1.0e-20</FillValue>
+         <Field>
+            <Qualifier>Scalar</Qualifier>
+            <FieldQuantity>PlasmaFrequency</FieldQuantity>
+         </Field>
+      </Parameter>
+   </NumericalData>
+</Spase>

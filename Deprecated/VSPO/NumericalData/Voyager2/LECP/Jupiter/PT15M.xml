@@ -1,0 +1,190 @@
+<?xml version="1.0"?>
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_3_0.xsd">
+  <Version>2.3.0</Version>
+  <NumericalData>
+    <ResourceID>spase://VSPO/NumericalData/Voyager2/LECP/Jupiter/PT15M</ResourceID>
+    <ResourceHeader>
+      <ResourceName>Voyager 2 Jupiter Low Energy Charged Particle (LECP) Calibrated, Resampled, Sectored, Version 1.1, 15 min Data</ResourceName>
+      <ReleaseDate>2018-11-27T18:09:04Z</ReleaseDate>
+      <Description>* Data Set Overview
+* =================
+
+* Data Set Description
+* ====================
+
+* Version 1.1
+* ===========
+
+This Version 1.1 Data Set replaces the Version 1.0 Data Set (DATA_SET_ID=VG2-J-LECP-4-15MIN) previously archived with the PDS. Data Records from the Version 1.0 Data Set provided Data for each of eight Sectors, plus the Average for all Sectors in a separate Record for each Channel. This resulted in nine repeated Times per Channel. Data Records for the Version 1.1 Data Set provide all Data for a given Channel and Time Period (eight Sectors, plus the Average for all Sectors) in a single Record. Other Changes to this Version include upgrading of the associated Labels and Templates to PDS Version 3.4 Compliance, Modification of the Time Formats and Flag Values.
+
+* Data Set Description
+* ====================
+
+This Encounter Data Set consists of Resampled Electron and Ion Data from the Low Energy Charged Particle (LECP) Experiment on Voyager 2 while the Spacecraft was within the Vicinity of Jupiter.
+
+The LECP Instrument measures the Intensities of in situ Charged Particles (&gt;13 keV Electrons and &gt;24 keV Ions) with various Levels of Discrimination based on Energy Range, Mass Species, and angular Arrival Direction. A Subset of almost 100 LECP Channels are included in this Data Set. The LECP Data are globally calibrated to the extent possible (see below).
+
+These LECP Data are Time averaged to about 15 min Time Intervals with the exact Beginning and Ending Times for those Intervals matching the LECP instrumental Cycle Periods (the angular Scanning Periods).
+
+The LECP Instrument has a rotating Head for obtaining angular Anisotropy Measurements of the Medium Energy Charged Particles. A gear-drive Motor steps through eight equal angular Sectors per Revolution for Data Collection.
+
+The Cycle Time for the Rotation is variable, but during Encounters it is always faster than 15 min. Thus, the full angular Anisotropy Information is preserved with these Data.
+
+The Data were originally collected in the Form of "Rate" Data which were not always converted to the usual Physical Units. The Reason is that such a Conversion would depend on uncertain Determinations such as the Mass Species of the Particles and the Level of the Background. Both the Mass Species and the Background are generally determined from context during the Study of particular Regions. To convert "Rate" to "Intensity" for a particular Channel, one performs the following Tasks:
+
+* 1) Decide on the Level of Background Contamination and subtract that off the given Rate Level. The Background is to be determined from context and from making use of Sector 8 Rates (Sector 8 is covered by a 2 mm Aluminium Sunshield and is used for Data Calibration).
+* 2) Divide the Background-corrected Rate by the Geometric Factor of the Channel and by the Energy Bandpass of the Channel.
+
+The Geometric Factor is found in the Entry for CHANNEL_GEOMETRIC_FACTOR as associated with the CHANNEL_ID of each Channel.
+
+* 1) Decide on the Level of Background Contamination and subtract that off the given Rate Level. The Background is to be determined from context and from making use of Sector 8 Rates (Sector 8 is covered by a 2 mm Aluminium Sunshield and is used for Data Calibration).
+* 2) Divide the Background-corrected Rate by the Geometric Factor of the Channel and by the Energy Bandpass of the Channel.
+
+To determine the Energy Bandpass, one must judge the Mass Species of the detected Particles (for Ions but not for Electrons). The Energy Bandpasses are given in the Entries MINIMUM_INSTRUMENT_PARAMETER and MAXIMUM_INSTRUMENT_PARAMETER in Table FPLECPENERGY, and are given in the Form of "Energy per Nucleon". For Channels that begin their Names with the Designations "CH", these Bandpasses can be used on Mass Species that are accepted into that Channel. See the Entries for MINIMUM_INSTRUMENT_PARAMETER and MAXIMUM_INSTRUMENT_PARAMETER in Table FPLECPCHANZ, which give the Minimum and Maximum "Z" Value accepted. Note that these Entries are Blank for Electron Channels. For other Channels the given Bandpass refers only to the lowest Z Value accepted. The Bandpasses for other Z Values are not all known, but some are given in the Literature (e.g., Krimigis et al., (1979a)). The final Product of these Instructions will be the Particle Intensity in Units of counts/(cm^2 s sr keV). LECP Data can also be expressed in the Form of Flux, whose Units are (cm^2 s sr)^-1.
+
+* Parameters
+* ==========
+
+* Electron Rate
+* =============
+
++-----------------------------------------------+
+| Parameter Characteristics     | Value         |
+-------------------------------------------------
+| Sampling Parameter Name       | TIME          |
+| Data Set Parameter Name       | ELECTRON RATE |
+| Sampling Parameter Resolution | 15.000000     |
+| Sampling Parameter Interval   | 15.000000     |
+| Data Set Parameter Unit       | COUNTS/SECOND |
+| Noise Level                   | 0.000000      |
+| Sampling Parameter Unit       | MINUTE        |
++-----------------------------------------------+
+
+A measured Parameter equaling the Number of Electrons striking a Particle Detector per specified Accumulation Interval. The counted Electrons may or may not be discriminated as to their Energies (e.g., greater than E1, or between E1 and E2).
+
+* Ion Rate
+* ========
+
++-----------------------------------------------+
+| Parameter Characteristics     | Value         |
+-------------------------------------------------
+| Sampling Parameter Name       | TIME          |
+| Data Set Parameter Name       | ION RATE      |
+| Sampling Parameter Resolution | 15.000000     |
+| Sampling Parameter Interval   | 15.000000     |
+| Data Set Parameter Unit       | COUNTS/SECOND |
+| Noise Level                   | 0.000000      |
+| Sampling Parameter Unit       | MINUTE        |
++-----------------------------------------------+
+
+A measured Parameter equaling the Number of Ions striking a Particle Detector per specified Accumulation Interval. The counted Ions may or may not be discriminated as to their Energies (e.g., Energy per Nucleon or Energy per Charge between E1 and E2 or greater than E1) and/or as to their Ion Composition (Atomic Number Z or Mass Number greater than Z1 or M1, or between Z1 and Z2 or M1 and M2).
+
+* Source Instrument Parameters
+* ============================
+
++--------------------------------------------+
+| Parameter Characteristics       | Value    |
+----------------------------------------------
+| Instrument Host ID              | VG2      |
+| Data Set Parameter Name         | ION RATE |
+| Instrument Parameter Name       | ION RATE |
+| Important Instrument Parameters | 1        |
++--------------------------------------------+
+
++-------------------------------------------------+
+| Parameter Characteristics       | Value         |
+---------------------------------------------------
+| Instrument Host ID              | VG2           |
+| Data Set Parameter Name         | ELECTRON RATE |
+| Instrument Parameter Name       | ELECTRON RATE |
+| Important Instrument Parameters | 1             |
++-------------------------------------------------+
+
+* Processing
+* ==========
+
++----------------------------------------+
+| Parameter Characteristics | Value      |
+------------------------------------------
+| Processing Level ID       | 4          |
+| Software Flag             | Y          |
+| Processing Start Time     | 1988-08-01 |
++----------------------------------------+
+
+* Processing History
+* ==================
+
++------------------------------------------------+
+| Parameter Characteristics | Value              |
+--------------------------------------------------
+| Source Data Set ID        | VG2-J-LECP-2-      |
+| Software                  | PFAT:VGER          |
+| Product Data Set ID       | VG2-J-LECP-4-15MIN |
++------------------------------------------------+
+
+* Software PFAT:VGER
+* ==================
+
++-----------------------------------------+
+| Parameter Characteristics   | Value     |
+-------------------------------------------
+| Software Name               | PFAT:VGER |
+| Software Type               | PIN       |
+| Software Release Date       | N/A       |
+| Node ID                     | N/A       |
+| Cognizant Engineer          | N/A       |
+| Software Access Description | N/A       |
++-----------------------------------------+
+
+* Data Coverage
+* =============
+
++----------------------------------------------------------------------------------+
+| Filename           | Records | Start Date and Time     | Stop Date and Time      |
+------------------------------------------------------------------------------------
+| Volume ID:         | VG_1502 |                         |                         |
+| SECTOR.TAB         | 64944   | 1979-07-02T07:35:11.000 | 1979-08-03T23:30:21.000 |
+| SECTOR_SUMMARY.TAB | 784     | 1979-07-02T07:00:00.000 | 1979-08-03T22:00:00.000 |
++----------------------------------------------------------------------------------+</Description>
+      <Contact>
+        <PersonID>spase://SMWG/Person/Todd.A.King</PersonID>
+        <Role>MetadataContact</Role>
+      </Contact>
+      <Contact>
+        <PersonID>spase://SMWG/Person/Lee.Frost.Bargatze</PersonID>
+        <Role>MetadataContact</Role>
+      </Contact>
+      <InformationURL>
+        <Name>VG2-J-LECP-4-SUMM-SECTOR-15MIN-V1.1</Name>
+        <URL>https://pds-ppi.igpp.ucla.edu/data/VG2-J-LECP-4-SUMM-SECTOR-15MIN-V1.1/AAREADME.TXT</URL>
+        <Description>The Document describing the Contents of the Collection.</Description>
+        <Language>En</Language>
+      </InformationURL>
+      <PriorID>spase://VMO/NumericalData/Voyager2/LECP/Jupiter/PT15M</PriorID>
+    </ResourceHeader>
+    <AccessInformation>
+      <RepositoryID>spase://SMWG/Repository/PDS/PPI</RepositoryID>
+      <Availability>Online</Availability>
+      <AccessRights>Open</AccessRights>
+      <AccessURL>
+        <Name>PDS/PPI</Name>
+        <URL>https://pds-ppi.igpp.ucla.edu/search/view/?f=yes&amp;id=pds://PPI/VG2-J-LECP-4-SUMM-SECTOR-15MIN-V1.1</URL>
+        <ProductKey>VG2-J-LECP-4-SUMM-SECTOR-15MIN-V1.1</ProductKey>
+        <Description>This Collection is archived with NASA Planetary Data System.</Description>
+        <Language>En</Language>
+      </AccessURL>
+      <Format>Text.ASCII</Format>
+      <Acknowledgement>NASA Planetary Plasma Interactions (PPI) Node of the Planetary Data System (PDS) and the Principal Investigator for the Data.</Acknowledgement>
+    </AccessInformation>
+    <InstrumentID>spase://SMWG/Instrument/Voyager2/LECP</InstrumentID>
+    <MeasurementType>EnergeticParticles</MeasurementType>
+    <TemporalDescription>
+      <TimeSpan>
+        <StartDate>1979-07-02T07:35:11.00</StartDate>
+        <StopDate>1979-08-03T23:44:45.00</StopDate>
+      </TimeSpan>
+      <Cadence>PT15M</Cadence>
+    </TemporalDescription>
+    <ObservedRegion>Jupiter</ObservedRegion>
+  </NumericalData>
+</Spase>

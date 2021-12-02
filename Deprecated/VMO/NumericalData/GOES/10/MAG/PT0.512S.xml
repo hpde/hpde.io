@@ -1,0 +1,574 @@
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema  http://www.spase-group.org/data/schema/spase-2_2_4.xsd'">
+    <Version>2.2.4</Version>
+    <NumericalData>
+        <ResourceID>spase://VMO/NumericalData/GOES/10/MAG/PT0.512S</ResourceID>
+        <ResourceHeader>
+            <ResourceName>GOES 10 high-resolution magnetometer data</ResourceName>
+            <ReleaseDate>2017-01-26T00:00:00</ReleaseDate>
+            <Description>GOES 10 magnetic field data at 0.512 second time resolution. The vector magnetic field is given in the spacecraft (s/c) earth-referenced coordinate system:  Hp, He, Hn, and Ht, where  Hp is perpendicular to the satellite orbital plane, or parallel to Earth's spin axis in the case of a zero degree inclination orbit; He is perpendicular to Hp and directed earthwards; Hn is perpendicular to both Hp and He and directed eastwards; and Ht is the total field.
+      
+      This data product also provides GOES 10 satellite positions and velocities derived from SSCWEB GEI ephemeris, interpolated to one minute time resolution.
+      
+The magnetometer data are downlinked from the spacecraft in real-time to the NOAA Space Weather Prediction Center (SWPC) in Boulder, CO. The data from the raw Command and Data Acquisition (CDA) telemetry stream are processed by pre-processors at SWPC and from there 1-minute averages are distributed to SWPC Space Weather Operations, as well a archived at NOAA’s National Geophysical Data Center (NGDC) and NASA’s Coordinated Data Analysis Web (http://cdaweb.gsfc.nasa.gov/). The raw high-resolution data are corrected and processed at NOAA’s SWPC, and later archived at NGDC. 
+
+The major issue for processing the high-resolution data is correction for the magnetic signature of spacecraft torquer currents as briefly discussed in the magnetometer instrument descriptions. In normal operation, the magnetometer samples its three axes every 0.512 seconds, synchronized with the telemetry frames.  The magnetometer has an anti-aliasing low-pass filter on each axis.  As part of the attitude control on the spacecraft, there are two magnetic torquers.  At the magnetometers, these torquers can generate magnetic fields larger than the ambient fields to be measured.  Therefore signals from these torquer currents need to be removed. The torquer currents are measured at the same rate as the magnetometer rate, and the currents are used to correct the magnetometer measurements.  
+
+However, the torquer currents were not low-pass filtered.  As a result, large instantaneous steps in the torquer currents show up in the magnetometer data as a delayed, slowly rising wave with some ringing, just what one would expect from the magnetometer low-pass filters. The so-called “Farthing coefficients” simulate, from a short past history of the torquer measurements, the effects of the magnetometer filters.  The torquer current changes are asynchronous with the telemetry frames and the timing between these events must be measured to a eighth of a telemetry frame interval for good performance. The transient responses in changes in torquer currents are reduced, but not eliminated for large changes in torquer currents.      
+      
+      There exists one opportunity at the beginning of each mission to perform a spacecraft rotation maneuver to determine magnetometer offsets. These offsets are used through the duration of each satellite's lifetime. 
+        
+Approximate coefficients are:
+  * 0.8 milliampere per torquer current count                
+  * 4 counts per torquer current command step (3.2 milliampere per command step)                                
+  * 410 milliamperes full scale current                      
+  * 32 magnetometer counts per nT (approximate)
+  * 8 torquer step counts can be up to approximately 0.5 nT (depends on axis, which torquer, which satellite, etc.)</Description>
+            <Acknowledgement>NASA Contract NAS5-02099</Acknowledgement>
+            <Contact>
+                <PersonID>spase://SMWG/Person/Howard.J.Singer</PersonID>
+                <Role>PrincipalInvestigator</Role>
+                <Role>DataProducer</Role>
+            </Contact>
+            <Contact>
+                <PersonID>spase://SMWG/Person/Ann.Newman</PersonID>
+                <Role>DataProducer</Role>
+            </Contact>
+            <Contact>
+                <PersonID>spase://SMWG/Person/Lorne.Matheson</PersonID>
+                <Role>DataProducer</Role>
+            </Contact>
+            <Contact>
+                <PersonID>spase://SMWG/Person/Jan.Merka</PersonID>
+                <Role>MetadataContact</Role>
+            </Contact>
+            <InformationURL>
+                <Name>README document</Name>
+                <URL>http://themis.ssl.berkeley.edu/data/goes/GOES8-12_readme_draft090108.doc</URL>
+                <Description>Notes on GOES 8-12 magnetometer data by Howard J. Singer.</Description>
+            </InformationURL>
+            <PriorID>spase://VMO/NumericalData/GOES10/MAG/PT0.512S</PriorID>
+        </ResourceHeader>
+        <AccessInformation>
+            <RepositoryID>spase://SMWG/Repository/UCB/THEMIS</RepositoryID>
+            <AccessURL>
+                <Name>GOES 10 Level2 0.512S Magnetic Field Data</Name>
+                <URL>http://themis.ssl.berkeley.edu/data/goes/mag/g10/l2/</URL>
+            </AccessURL>
+            <AccessURL>
+                <Name>CDAWeb</Name>
+                <URL>https://cdaweb.gsfc.nasa.gov/</URL>
+                <ProductKey>G10_L2_MAG</ProductKey>
+                <Description>For CDAWeb subset, plot and list capabilities</Description>
+            </AccessURL>
+            <Format>CDF</Format>
+            <Encoding>None</Encoding>
+        </AccessInformation>
+        <InstrumentID>spase://SMWG/Instrument/GOES/10/MAG</InstrumentID>
+        <MeasurementType>MagneticField</MeasurementType>
+        <MeasurementType>Ephemeris</MeasurementType>
+        <TemporalDescription>
+            <TimeSpan>
+                <StartDate>2006-12-31T23:59:58</StartDate>
+                <StopDate>2008-12-31T23:59:58</StopDate>
+            </TimeSpan>
+            <Cadence>PT0.512S</Cadence>
+        </TemporalDescription>
+        <ObservedRegion>Earth.Magnetosphere.Main</ObservedRegion>
+        <Caveats>Note that magnetic field values have been replaced with missing data values during calibration periods. Also, note that there can be small jumps in the data (typically &lt; 1 nT) when the torquer counts go through 0. The magnitude of the effect can be different for different spacecraft.    
+
+GOES 8-12 spacecraft are 3-axis stabilized and there is only one opportunity for a spin maneuver at the beginning of the mission to determine on-orbit offsets. There are additional complications that result from needing to know the changing offsets introduced by torquer coils on the satellites. Though comparisons of data to model fields during quiet times, we are doing rather well with the offsets, but it is not possible to give an exact number for the accuracy. We continue to look at comparisons of data and models, and data to other nearby spacecraft encounters. We are interested in anything learned by the user, or working with the user to help interpret the data, or to answer questions. While we have put in a significant effort to remove the effects of torquer coil interference, in the 0.512 s data there can be small, typically less than 1 nT spikes in the data at the time of torquer current changes. More information on this topic is included the more extensive “readme file.” This file is a living document that will be updated periodically.  
+
+  GOES 10 is an older satellite, and hasn’t been "operational" since about July 2006. The capability to keep it at 0 degrees inclination, or within a few tenths of a degree, no longer exists. The inclination is now several degrees. This will have a small diurnal effect on the data that can be handled with proper coordinate transformations that take into account the changing satellite location.</Caveats>
+        <Parameter>
+            <Name>g10_longitude_time</Name>
+            <ParameterKey>g10_longitude_time</ParameterKey>
+            <Description>GEOS 10 longitude time, UTC, in seconds since 01-Jan-1970 00:00:00</Description>
+            <Caveats>Unleaped seconds</Caveats>
+            <Cadence>P1D</Cadence>
+            <Units>s</Units>
+            <ValidMin>0.0</ValidMin>
+            <ValidMax>5.0E9</ValidMax>
+            <FillValue>NaN</FillValue>
+            <Support>
+                <SupportQuantity>Temporal</SupportQuantity>
+            </Support>
+        </Parameter>
+        <Parameter>
+            <Name>g10_longitude_epoch</Name>
+            <ParameterKey>g10_longitude_epoch</ParameterKey>
+            <Description>GEOS 10 longitude epoch</Description>
+            <Cadence>P1D</Cadence>
+            <ValidMin>01-Jan-2001 00:00:00.000</ValidMin>
+            <ValidMax>31-Dec-2100 23:59:59.999</ValidMax>
+            <FillValue>31-Dec-9999 23:59:59.999</FillValue>
+            <Support>
+                <SupportQuantity>Temporal</SupportQuantity>
+            </Support>
+        </Parameter>
+        <Parameter>
+            <Name>g10_longitude</Name>
+            <ParameterKey>g10_longitude</ParameterKey>
+            <Description>Satellite geographic west longitude at noon UTC</Description>
+            <Cadence>P1D</Cadence>
+            <Units>deg</Units>
+            <CoordinateSystem>
+                <CoordinateRepresentation>Spherical</CoordinateRepresentation>
+                <CoordinateSystemName>GEO</CoordinateSystemName>
+            </CoordinateSystem>
+            <ValidMin>-180.0</ValidMin>
+            <ValidMax>180.0</ValidMax>
+            <FillValue>NaN</FillValue>
+            <Support>
+                <Qualifier>DirectionAngle.AzimuthAngle</Qualifier>
+                <SupportQuantity>Positional</SupportQuantity>
+            </Support>
+        </Parameter>
+        <Parameter>
+            <Name>g10_mlt</Name>
+            <ParameterKey>g10_mlt</ParameterKey>
+            <Description>Magnetic local time at satellite position</Description>
+            <Cadence>PT1M</Cadence>
+            <Units>hours</Units>
+            <UnitsConversion>(g10_mlt - 12)*15&gt;deg</UnitsConversion>
+            <CoordinateSystem>
+                <CoordinateRepresentation>Spherical</CoordinateRepresentation>
+                <CoordinateSystemName>SM</CoordinateSystemName>
+            </CoordinateSystem>
+            <ValidMin>0.0</ValidMin>
+            <ValidMax>24.0</ValidMax>
+            <FillValue>NaN</FillValue>
+            <Support>
+                <Qualifier>DirectionAngle.AzimuthAngle</Qualifier>
+                <SupportQuantity>Positional</SupportQuantity>
+            </Support>
+        </Parameter>
+        <Parameter>
+            <Name>g10_pos_gei</Name>
+            <ParameterKey>g10_pos_gei</ParameterKey>
+            <Description>Satellite position vector in GEI coordinates</Description>
+            <Cadence>PT1M</Cadence>
+            <Units>km</Units>
+            <CoordinateSystem>
+                <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+                <CoordinateSystemName>GEI</CoordinateSystemName>
+            </CoordinateSystem>
+            <Structure>
+                <Size>3</Size>
+                <Element>
+                    <Name>X, GEI</Name>
+                    <Qualifier>Component.I</Qualifier>
+                    <Index>1</Index>
+                </Element>
+                <Element>
+                    <Name>Y, GEI</Name>
+                    <Qualifier>Component.J</Qualifier>
+                    <Index>2</Index>
+                </Element>
+                <Element>
+                    <Name>Z, GEI</Name>
+                    <Qualifier>Component.K</Qualifier>
+                    <Index>3</Index>
+                </Element>
+            </Structure>
+            <ValidMin>-1000000.0</ValidMin>
+            <ValidMax>1000000.0</ValidMax>
+            <FillValue>NaN</FillValue>
+            <Support>
+                <Qualifier>Vector</Qualifier>
+                <SupportQuantity>Positional</SupportQuantity>
+            </Support>
+        </Parameter>
+        <Parameter>
+            <Name>g10_pos_gsm</Name>
+            <ParameterKey>g10_pos_gsm</ParameterKey>
+            <Description>Satellite position vector in GSM coordinates</Description>
+            <Cadence>PT1M</Cadence>
+            <Units>km</Units>
+            <CoordinateSystem>
+                <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+                <CoordinateSystemName>GSM</CoordinateSystemName>
+            </CoordinateSystem>
+            <Structure>
+                <Size>3</Size>
+                <Element>
+                    <Name>X, GSM</Name>
+                    <Qualifier>Component.I</Qualifier>
+                    <Index>1</Index>
+                </Element>
+                <Element>
+                    <Name>Y, GSM</Name>
+                    <Qualifier>Component.J</Qualifier>
+                    <Index>2</Index>
+                </Element>
+                <Element>
+                    <Name>Z, GSM</Name>
+                    <Qualifier>Component.K</Qualifier>
+                    <Index>3</Index>
+                </Element>
+            </Structure>
+            <ValidMin>-1000000.0</ValidMin>
+            <ValidMax>1000000.0</ValidMax>
+            <FillValue>NaN</FillValue>
+            <Support>
+                <Qualifier>Vector</Qualifier>
+                <SupportQuantity>Positional</SupportQuantity>
+            </Support>
+        </Parameter>
+        <Parameter>
+            <Name>g10_vel_gei</Name>
+            <ParameterKey>g10_vel_gei</ParameterKey>
+            <Description>Satellite velocity vector in GEI coordinates</Description>
+            <Cadence>PT1M</Cadence>
+            <Units>km/s</Units>
+            <CoordinateSystem>
+                <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+                <CoordinateSystemName>GEI</CoordinateSystemName>
+            </CoordinateSystem>
+            <Structure>
+                <Size>3</Size>
+                <Element>
+                    <Name>Vx, GEI</Name>
+                    <Qualifier>Component.I</Qualifier>
+                    <Index>1</Index>
+                </Element>
+                <Element>
+                    <Name>Vy, GEI</Name>
+                    <Qualifier>Component.J</Qualifier>
+                    <Index>2</Index>
+                </Element>
+                <Element>
+                    <Name>Vz, GEI</Name>
+                    <Qualifier>Component.K</Qualifier>
+                    <Index>3</Index>
+                </Element>
+            </Structure>
+            <ValidMin>-1000.0</ValidMin>
+            <ValidMax>1000.0</ValidMax>
+            <FillValue>NaN</FillValue>
+            <Support>
+                <Qualifier>Vector</Qualifier>
+                <SupportQuantity>Velocity</SupportQuantity>
+            </Support>
+        </Parameter>
+        <Parameter>
+            <Name>g10_vel_gsm</Name>
+            <ParameterKey>g10_vel_gsm</ParameterKey>
+            <Description>Satellite velocity vector in GSM coordinates</Description>
+            <Cadence>PT1M</Cadence>
+            <Units>km/s</Units>
+            <CoordinateSystem>
+                <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+                <CoordinateSystemName>GSM</CoordinateSystemName>
+            </CoordinateSystem>
+            <Structure>
+                <Size>3</Size>
+                <Element>
+                    <Name>Vx, GSM</Name>
+                    <Qualifier>Component.I</Qualifier>
+                    <Index>1</Index>
+                </Element>
+                <Element>
+                    <Name>Vy, GSM</Name>
+                    <Qualifier>Component.J</Qualifier>
+                    <Index>2</Index>
+                </Element>
+                <Element>
+                    <Name>Vz, GSM</Name>
+                    <Qualifier>Component.K</Qualifier>
+                    <Index>3</Index>
+                </Element>
+            </Structure>
+            <ValidMin>-1000.0</ValidMin>
+            <ValidMax>1000.0</ValidMax>
+            <FillValue>NaN</FillValue>
+            <Support>
+                <Qualifier>Vector</Qualifier>
+                <SupportQuantity>Velocity</SupportQuantity>
+            </Support>
+        </Parameter>
+        <Parameter>
+            <Name>g10_perp</Name>
+            <ParameterKey>g10_perp</ParameterKey>
+            <Description>g10_perpendicular</Description>
+            <Cadence>PT1M</Cadence>
+            <CoordinateSystem>
+                <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+                <CoordinateSystemName>GEI</CoordinateSystemName>
+            </CoordinateSystem>
+            <Structure>
+                <Size>3</Size>
+                <Element>
+                    <Name>Px, GEI</Name>
+                    <Qualifier>Component.I</Qualifier>
+                    <Index>1</Index>
+                </Element>
+                <Element>
+                    <Name>Py, GEI</Name>
+                    <Qualifier>Component.J</Qualifier>
+                    <Index>2</Index>
+                </Element>
+                <Element>
+                    <Name>Pz, GEI</Name>
+                    <Qualifier>Component.K</Qualifier>
+                    <Index>3</Index>
+                </Element>
+            </Structure>
+            <ValidMin>-1.0</ValidMin>
+            <ValidMax>1.0</ValidMax>
+            <FillValue>NaN</FillValue>
+            <Support>
+                <Qualifier>Vector</Qualifier>
+                <SupportQuantity>Other</SupportQuantity>
+            </Support>
+        </Parameter>
+        <Parameter>
+            <Name>range_epoch</Name>
+            <ParameterKey>range_epoch</ParameterKey>
+            <Description>Data epoch range, UTC</Description>
+            <Units>ms</Units>
+            <UnitsConversion>1e-3&gt;s</UnitsConversion>
+            <ValidMin>01-Jan-1990 00:00:00.000</ValidMin>
+            <ValidMax>31-Dec-2029 23:59:59.999</ValidMax>
+            <FillValue>31-Dec-9999 23:59:59.999</FillValue>
+            <Support>
+                <SupportQuantity>Temporal</SupportQuantity>
+            </Support>
+        </Parameter>
+        <Parameter>
+            <Name>g10_ephem_time</Name>
+            <ParameterKey>g10_ephem_time</ParameterKey>
+            <Description>GEOS 10 ephemeris time, UTC, in seconds since 01-Jan-1970 00:00:00</Description>
+            <Caveats>Unleaped seconds</Caveats>
+            <Cadence>PT1M</Cadence>
+            <Units>s</Units>
+            <ValidMin>0.0</ValidMin>
+            <ValidMax>5.0E9</ValidMax>
+            <FillValue>NaN</FillValue>
+            <Support>
+                <SupportQuantity>Temporal</SupportQuantity>
+            </Support>
+        </Parameter>
+        <Parameter>
+            <Name>g10_ephem_epoch</Name>
+            <ParameterKey>g10_ephem_epoch</ParameterKey>
+            <Description>GEOS 10 ephemeris epoch, UTC</Description>
+            <Cadence>PT1M</Cadence>
+            <ValidMin>01-Jan-2001 00:00:00.000</ValidMin>
+            <ValidMax>31-Dec-2100 23:59:59.999</ValidMax>
+            <FillValue>31-Dec-9999 23:59:59.999</FillValue>
+            <Support>
+                <SupportQuantity>Temporal</SupportQuantity>
+            </Support>
+        </Parameter>
+        <Parameter>
+            <Name>g10_sample_time</Name>
+            <ParameterKey>g10_sample_time</ParameterKey>
+            <Description>GEOS 10 sample time, UTC, in seconds since 01-Jan-1970 00:00:00</Description>
+            <Caveats>Unleaped seconds</Caveats>
+            <Cadence>PT0.512S</Cadence>
+            <Units>s</Units>
+            <ValidMin>0.0</ValidMin>
+            <ValidMax>5.0E9</ValidMax>
+            <FillValue>NaN</FillValue>
+            <Support>
+                <SupportQuantity>Temporal</SupportQuantity>
+            </Support>
+        </Parameter>
+        <Parameter>
+            <Name>g10_sample_epoch</Name>
+            <ParameterKey>GEOS 10 sample epoch, UTC</ParameterKey>
+            <Description>g10_sample_epoch</Description>
+            <Cadence>PT0.512S</Cadence>
+            <ValidMin>01-Jan-2001 00:00:00.000</ValidMin>
+            <ValidMax>31-Dec-2100 23:59:59.999</ValidMax>
+            <FillValue>31-Dec-9999 23:59:59.999</FillValue>
+            <Support>
+                <SupportQuantity>Temporal</SupportQuantity>
+            </Support>
+        </Parameter>
+        <Parameter>
+            <Name>g10_b_enp</Name>
+            <ParameterKey>g10_b_enp</ParameterKey>
+            <Description>Magnetic field vector samples in ENP coordinates.
+    
+    Coordinate description for historically used PEN system: 
+    
+* Hp:&#160; magnetic field vector component, points northward, perpendicular to orbit plane which for a zero degree inclination orbit is parallel to Earth's spin axis. 
+* He:&#160; magnetic field vector component, perpendicular to Hp and Hn and points earthward. 
+* Hn:&#160; magnetic field vector component, perpendicular to Hp and He and points eastward. 
+* Ht:&#160; total field</Description>
+            <Cadence>PT0.512S</Cadence>
+            <Units>nT</Units>
+            <UnitsConversion>1e-9&gt;T</UnitsConversion>
+            <CoordinateSystem>
+                <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+                <CoordinateSystemName>ENP</CoordinateSystemName>
+            </CoordinateSystem>
+            <Structure>
+                <Size>3</Size>
+                <Element>
+                    <Name>He, LH-ENP (sat to earth)</Name>
+                    <Qualifier>Component.I</Qualifier>
+                    <Index>1</Index>
+                </Element>
+                <Element>
+                    <Name>Hn, LH-ENP (east, in plane)</Name>
+                    <Qualifier>Component.J</Qualifier>
+                    <Index>2</Index>
+                </Element>
+                <Element>
+                    <Name>Hp, LH-ENP (perpendicular to plane)</Name>
+                    <Qualifier>Component.K</Qualifier>
+                    <Index>3</Index>
+                </Element>
+            </Structure>
+            <ValidMin>-1000000.0</ValidMin>
+            <ValidMax>1000000.0</ValidMax>
+            <FillValue>NaN</FillValue>
+            <Field>
+                <Qualifier>Vector</Qualifier>
+                <FieldQuantity>Magnetic</FieldQuantity>
+            </Field>
+        </Parameter>
+        <Parameter>
+            <Name>g10_b_gei</Name>
+            <ParameterKey>g10_b_gei</ParameterKey>
+            <Description>Magnetic field vector samples in GEI coordinates</Description>
+            <Cadence>PT0.512S</Cadence>
+            <Units>nT</Units>
+            <UnitsConversion>1e-9&gt;T</UnitsConversion>
+            <CoordinateSystem>
+                <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+                <CoordinateSystemName>GEI</CoordinateSystemName>
+            </CoordinateSystem>
+            <Structure>
+                <Size>3</Size>
+                <Element>
+                    <Name>Bx, GEI</Name>
+                    <Qualifier>Component.I</Qualifier>
+                    <Index>1</Index>
+                </Element>
+                <Element>
+                    <Name>By, GEI</Name>
+                    <Qualifier>Component.J</Qualifier>
+                    <Index>2</Index>
+                </Element>
+                <Element>
+                    <Name>Bz, GEI</Name>
+                    <Qualifier>Component.K</Qualifier>
+                    <Index>3</Index>
+                </Element>
+            </Structure>
+            <ValidMin>-1000000.0</ValidMin>
+            <ValidMax>1000000.0</ValidMax>
+            <FillValue>NaN</FillValue>
+            <Field>
+                <Qualifier>Vector</Qualifier>
+                <FieldQuantity>Magnetic</FieldQuantity>
+            </Field>
+        </Parameter>
+        <Parameter>
+            <Name>g10_b_gsm</Name>
+            <ParameterKey>g10_b_gsm</ParameterKey>
+            <Description>Magnetic field vector samples in GSM coordinates</Description>
+            <Cadence>PT0.512S</Cadence>
+            <Units>nT</Units>
+            <UnitsConversion>1e-9&gt;T</UnitsConversion>
+            <CoordinateSystem>
+                <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+                <CoordinateSystemName>GSM</CoordinateSystemName>
+            </CoordinateSystem>
+            <Structure>
+                <Size>3</Size>
+                <Element>
+                    <Name>Bx, GSM</Name>
+                    <Qualifier>Component.I</Qualifier>
+                    <Index>1</Index>
+                </Element>
+                <Element>
+                    <Name>By, GSM</Name>
+                    <Qualifier>Component.J</Qualifier>
+                    <Index>2</Index>
+                </Element>
+                <Element>
+                    <Name>Bz, GSM</Name>
+                    <Qualifier>Component.K</Qualifier>
+                    <Index>3</Index>
+                </Element>
+            </Structure>
+            <ValidMin>-1000000.0</ValidMin>
+            <ValidMax>1000000.0</ValidMax>
+            <FillValue>NaN</FillValue>
+            <Field>
+                <Qualifier>Vector</Qualifier>
+                <FieldQuantity>Magnetic</FieldQuantity>
+            </Field>
+        </Parameter>
+        <Parameter>
+            <Name>g10_b_tot</Name>
+            <ParameterKey>g10_b_tot</ParameterKey>
+            <Description>Total magnetic field strength</Description>
+            <Cadence>PT0.512S</Cadence>
+            <Units>nT</Units>
+            <UnitsConversion>1e-9&gt;T</UnitsConversion>
+            <ValidMin>-1000000.0</ValidMin>
+            <ValidMax>1000000.0</ValidMax>
+            <FillValue>NaN</FillValue>
+            <Field>
+                <Qualifier>Magnitude</Qualifier>
+                <FieldQuantity>Magnetic</FieldQuantity>
+            </Field>
+        </Parameter>
+        <Parameter>
+            <Name>g10_t1_counts</Name>
+            <ParameterKey>g10_t1_counts</ParameterKey>
+            <Description>Magnetotorquer T1 filtered counts. Signed counts smoothed by 3-point average, delayed, or smoothed by Farthing coefficients.</Description>
+            <Cadence>PT0.512S</Cadence>
+            <Units>counts</Units>
+            <ValidMin>-1000000.0</ValidMin>
+            <ValidMax>1000000.0</ValidMax>
+            <FillValue>NaN</FillValue>
+            <Support>
+                <SupportQuantity>Other</SupportQuantity>
+            </Support>
+        </Parameter>
+        <Parameter>
+            <Name>g10_t2_counts</Name>
+            <ParameterKey>g10_t2_counts</ParameterKey>
+            <Description>Magnetotorquer T2 filtered counts. Signed counts smoothed by 3-point average, delayed, or smoothed by Farthing coefficients.</Description>
+            <Cadence>PT0.512S</Cadence>
+            <Units>counts</Units>
+            <ValidMin>-1000000.0</ValidMin>
+            <ValidMax>1000000.0</ValidMax>
+            <FillValue>NaN</FillValue>
+            <Support>
+                <SupportQuantity>Other</SupportQuantity>
+            </Support>
+        </Parameter>
+        <Parameter>
+            <Name>g10_dataqual</Name>
+            <ParameterKey>g10_dataqual</ParameterKey>
+            <Description>Data Quality Flag: An integer with a value from 1 through 7 indicating data quality, with 1 and 2 being no data, and 7 being the best data.
+                             
+Possible data quality values:
+* 0=no satellite data
+* 1=no Magnetometer data
+* 2=satellite is in storage (spinning) mode or non-standard attitude
+* 3=satellite is in calibration mode
+* 4=3-pt averaging failed
+* 5=torquer value not adjusted for commands
+* 6=smoothed with commands but not with Farthing coefficients
+* 7=best quality: smoothed with commands and Farthing coefficients
+
+Commands are not always available in the telemetry, in which case, a 3-point average is done.</Description>
+            <Cadence>PT0.512S</Cadence>
+            <Units>none</Units>
+            <ValidMin>0</ValidMin>
+            <ValidMax>7</ValidMax>
+            <FillValue>4294967295</FillValue>
+            <Support>
+                <SupportQuantity>Other</SupportQuantity>
+            </Support>
+        </Parameter>
+    </NumericalData>
+</Spase>

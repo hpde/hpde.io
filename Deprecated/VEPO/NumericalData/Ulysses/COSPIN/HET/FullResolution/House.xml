@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <Spase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.spase-group.org/data/schema" 
+   xsi:schemaLocation="http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_0_0.xsd">
+   <Version>2.0.0</Version>
+     <NumericalData>
+       <ResourceID>spase://VEPO/NumericalData/Ulysses/COSPIN/HET/FullResolution/House</ResourceID>
+       <ResourceHeader>
+         <ResourceName>
+           High Energy Telescope (HET) Housekeeping Parameters
+         </ResourceName>
+         <ReleaseDate>2009-09-24T00:00:00.000</ReleaseDate>
+         <Description>
+           A directory containing daily ftp-downloadable files containing readout-by-readout
+           listings of HET housekeeping paramaters (Voltages, Temperatures, Offsets).  
+           The naming convention of the files is uly_het_full_house_YYYDDD.txt, where YYY 
+           indicates the three-digit year since 1900 (e.g. YYY=090 for 1990, and YYY=102 for 
+           2002) and DDD indicates the three digit day of year (Jan. 1 = 1). 
+           In each file, following a detailed description of the format, the data consist of a
+           a listing of HET housekeeping parameters measured at the time listed in the first 
+           4 columns of each line.  Each line contains data for one readout of the parameters.  
+           The first 4 columns give the time of the measurement as fractional year (to 12 
+           decimal places) and as  year since 1900, day of year, and ms of day.
+           At the most common science telemetry rate, 2048 bps, each parameter in this file 
+           is read out once every 256 seconds.  The measurements are instantaneous, and do
+           not represent an average of values over the interval since the last readout.
+           The sole function of these parameters is to monitor instrument health.
+           No noise-removal or despiking has been done, so caution must be used in
+           interpreting isolated large increases or decreases in the measured parameters.
+       </Description>
+       <Acknowledgement>
+         Please acknowledge the Lead HET Investigator and COSPIN P.I., Dr. R. Bruce McKibben
+       </Acknowledgement>
+       <Contact>
+         <PersonID>spase://SMWG/Person/R.Bruce.McKibben</PersonID>
+         <Role>PrincipalInvestigator</Role>
+         <Role>TeamLeader</Role>
+       </Contact>
+       <Contact>
+         <PersonID>spase://SMWG/Person/Clifford.Lopate</PersonID>
+         <Role>DataProducer</Role>
+       </Contact>
+       <Contact>
+         <PersonID>spase://SMWG/Person/James.Connell</PersonID>
+         <Role>CoInvestigator</Role>
+       </Contact>
+       <InformationURL>
+         <Name>
+           The Ulysses cosmic ray and solar particle investigation
+         </Name>
+         <URL>
+           ftp://www.rssd.esa.int/pub/ulysses/cdroms/uls_02_a/docs/cospin/cospin.htm
+         </URL>
+         <Description>
+           Published (J.A. Simpson et al., Astron. Astrophys. v92, pp365-399, 1992) description 
+           of the COSPIN Instrumentation.  See especially section 4.3 for a detailed description 
+           of the HET.
+         </Description>
+       </InformationURL>
+       <InformationURL>
+         <Name>
+           COSPIN/HET User Notes
+         </Name>
+         <URL>
+           http://www.rssd.esa.int/helio/archive/het_usernotes.pdf
+         </URL>
+         <Description>
+           Identification of data channels archived and brief discussion of data structure
+         </Description>
+       </InformationURL>
+       <InformationURL>
+         <Name>
+           ReadMeHETFullRes.doc
+         </Name>
+         <URL>
+           ftp://www.rssd.esa.int/pub/ulysses/COSPIN/HET/ReadMeHETFullRes.doc
+         </URL>
+         <Description>
+           Top Level descriptions of formats and contents of the six file types that make up the
+           COSPIN HET Full Resolution Data Set. Detailed descriptions of the formats and contents
+           are to found in header lines at the start of each downloaded data file.  The data 
+           covered by this spase description are described in the ReadMe under the heading
+           house.
+           (*** Note ***:  During the build-up of this data set, a few errors and omissions have been 
+           found in the header lines for some of the file types.  These errors and omissions are listed 
+           in this ReadMe file.  Upon completion of the data set, all errors and omissions discovered
+           will be corrected in all of the header lines of all of the file types and this note will be 
+           removed.)
+         </Description>
+       </InformationURL>
+     </ResourceHeader>
+     <AccessInformation>
+       <RepositoryID>spase://SMWG/Repository/UDS</RepositoryID>
+       <Availability>Online</Availability>
+       <AccessRights>Open</AccessRights>
+       <AccessURL>
+         <Name>Ulysses COSPIN/HET Full Resolution Housekeeping Parameters</Name>
+         <URL>ftp://www.rssd.esa.int/pub/ulysses/COSPIN/HET/house</URL>
+         <Description>
+	   Parent directory containing daily ftp-downloadable files with the format described below.
+         </Description>
+       </AccessURL>
+       <Format>Text</Format>
+       <Encoding>ASCII</Encoding>
+       <Acknowledgement>R.B. McKibben, Space Science Center, University of New Hampshire</Acknowledgement>
+     </AccessInformation>
+     <InstrumentID>spase://SMWG/Instrument/Ulysses/COSPIN/HET</InstrumentID>
+     <MeasurementType>InstrumentStatus</MeasurementType>
+     <TemporalDescription>
+       <TimeSpan>
+         <StartDate>1990-10-22T00:00:00.000</StartDate>
+         <StopDate>2009-06-29T23:59:59.000</StopDate>
+       </TimeSpan>
+     </TemporalDescription>
+     <ObservedRegion>Heliosphere.Outer</ObservedRegion>
+     <Parameter>
+       <Name>Time of measurement</Name>
+       <Description>
+          Time at which the measurements were made
+       </Description>
+       <Cadence>PT256S</Cadence>
+       <Structure>
+         <Size>4</Size>
+         <Element>
+           <Name>Decimal Year</Name>
+	   <Index>1</Index>
+           <ParameterKey>Column_1</ParameterKey>
+           <ValidMin>1990</ValidMin>
+           <ValidMax>2009</ValidMax>
+           <FillValue>0.00000000000</FillValue>
+         </Element>
+         <Element>
+           <Name>year</Name>
+           <Index>2</Index>
+           <ParameterKey>Column_2</ParameterKey>
+           <ValidMin>1990</ValidMin>
+           <ValidMax>2009</ValidMax>
+           <FillValue>0</FillValue>
+         </Element>
+         <Element>
+           <Name>day</Name>
+           <Index>3</Index>
+           <ParameterKey>Column_3</ParameterKey>
+           <ValidMin>1</ValidMin>
+           <ValidMax>366</ValidMax>
+           <FillValue>0</FillValue>
+         </Element>
+         <Element>
+           <Name>msec</Name>
+           <Index>4</Index>
+           <ParameterKey>Column_4</ParameterKey>
+           <ValidMin>0</ValidMin>
+           <ValidMax>86400000</ValidMax>
+           <FillValue>0</FillValue>
+         </Element>
+       </Structure>
+       <Support>
+         <SupportQuantity>Temporal</SupportQuantity>
+       </Support>
+     </Parameter>
+     <Parameter>
+       <Name>ADC Offset</Name>
+       <ParameterKey>Column_5</ParameterKey>
+       <Description>
+          Offset of analogue to digital converter base from O Volts
+       </Description>
+       <Caveats>
+          During In-Flight-Calibrate sequences, the ADC offset measurement is disabled
+          and is replaced in the telemetry by the +15 Volt Monitor measurement.  During
+          these time, the ADC Offset measurement in this listing is replaced by fill.
+       </Caveats>
+       <Cadence>PT256S</Cadence>
+       <Units>millivolts</Units>
+       <ValidMin>-9600</ValidMin>
+       <ValidMax>3200</ValidMax>
+       <FillValue>-99999</FillValue>
+       <Support>
+         <SupportQuantity>Other</SupportQuantity>
+       </Support>
+     </Parameter>
+
+
+      <Parameter>
+       <Name>COSPIN/HET +15 Volt Monitor</Name>
+       <ParameterKey>Column_6</ParameterKey>
+       <Description>
+          Measurement of the voltage on the +15V regulated power line from the COSPIN Converter.
+       </Description>
+       <Caveats> 
+           This measurement is reported only during In-Flight-Calibrate sequences.  At all other
+           times it is represented in this listing by fill.
+       </Caveats>
+       <Cadence>PT256S</Cadence>
+       <Units>millivolts</Units>
+       <ValidMin>0</ValidMin>
+       <ValidMax>18750</ValidMax>
+       <FillValue>-99999</FillValue>
+       <Support>
+         <SupportQuantity>Other</SupportQuantity>
+       </Support>
+      </Parameter>
+
+      <Parameter>
+       <Name>COSPIN/HET +10V Monitor</Name>
+       <ParameterKey>Column_7</ParameterKey>
+       <Description>
+          Measurement of the voltage on the +10 Volt line from the COSPIN Converter.
+       </Description>
+       <Caveats> 
+          None
+       </Caveats>
+       <Cadence>PT256S</Cadence>
+       <Units>millivolts</Units>
+       <ValidMin>0</ValidMin>
+       <ValidMax>12700</ValidMax>
+       <FillValue>-99999</FillValue>
+       <Support>
+         <SupportQuantity>Other</SupportQuantity>
+       </Support>
+      </Parameter>
+
+      <Parameter>
+       <Name>COSPIN/HET -6V Monitor</Name>
+       <ParameterKey>Column_8</ParameterKey>
+       <Description>
+          Measurement of the voltage on the -6 Volt line from the COSPIN Converter.
+       </Description>
+       <Caveats> 
+          None
+       </Caveats>
+       <Cadence>PT256S</Cadence>
+       <Units>millivolts</Units>
+       <ValidMin>-7700</ValidMin>
+       <ValidMax>0</ValidMax>
+       <FillValue>-99999</FillValue>
+       <Support>
+         <SupportQuantity>Other</SupportQuantity>
+       </Support>
+      </Parameter>
+
+      <Parameter>
+       <Name>COSPIN/HET -15V Monitor</Name>
+       <ParameterKey>Column_9</ParameterKey>
+       <Description>
+          Measurement of the voltage on the -15 Volt line from the COSPIN Converter.
+       </Description>
+       <Caveats> 
+          None
+       </Caveats>
+       <Cadence>PT256S</Cadence>
+       <Units>millivolts</Units>
+       <ValidMin>-19000</ValidMin>
+       <ValidMax>0</ValidMax>
+       <FillValue>-99999</FillValue>
+       <Support>
+         <SupportQuantity>Other</SupportQuantity>
+       </Support>
+      </Parameter>
+
+      <Parameter>
+       <Name>COSPIN/HET PMT Voltage</Name>
+       <ParameterKey>Column_10</ParameterKey>
+       <Description>
+          Operating voltage of the PMT viewing the HET anti-coincidence cylinder.
+       </Description>
+       <Caveats> 
+          None
+       </Caveats>
+       <Cadence>PT256S</Cadence>
+       <Units>(counts)</Units>
+       <ValidMin>0</ValidMin>
+       <ValidMax>1275000</ValidMax>
+       <FillValue>-9999</FillValue>
+       <Support>
+         <SupportQuantity>Other</SupportQuantity>
+       </Support>
+      </Parameter>
+
+      <Parameter>
+       <Name>COSPIN/HET K1Volt</Name>
+       <ParameterKey>Column_11</ParameterKey>
+       <Description>
+          Bias voltage for detectors KX,KY,KZ (DX,DY,DZ).
+          Documentation available in 2009 does not make clear whether
+          the detectors were K1,K2,K3 (D7,D8,D9) or
+          K4,K5,K6 (D10,D11,D12).
+       </Description>
+       <Caveats> 
+         None
+       </Caveats>
+       <Cadence>PT256S</Cadence>
+       <Units>millivolts</Units>
+       <ValidMin>0.0</ValidMin>
+       <ValidMax>1020000</ValidMax>
+       <FillValue>-9999</FillValue>
+       <Support>
+         <SupportQuantity>Other</SupportQuantity>
+       </Support>
+      </Parameter>
+
+      <Parameter>
+       <Name>COSPIN/HET K2Volt</Name>
+       <ParameterKey>Column_12</ParameterKey>
+       <Description>
+          Bias voltage for detectors KA,KB,KC (DA,DB,DC).
+          Documentation available in 2009 does not make clear whether
+          the detectors were K1,K2,K3 (D7,D8,D9) or
+          K4,K5,K6 (D10,D11,D12).
+       </Description>
+       <Caveats> 
+         None
+       </Caveats>
+       <Cadence>PT256S</Cadence>
+       <Units>millivolts</Units>
+       <ValidMin>0.0</ValidMin>
+       <ValidMax>1020000</ValidMax>
+       <FillValue>-9999</FillValue>
+       <Support>
+         <SupportQuantity>Other</SupportQuantity>
+       </Support>
+      </Parameter>
+
+      <Parameter>
+       <Name>COSPIN/HET ElecTemp</Name>
+       <ParameterKey>Column_13</ParameterKey>
+       <Description>
+          Temperature of the HET electronics.
+       </Description>
+       <Caveats> 
+          None
+       </Caveats>
+       <Cadence>PT256S</Cadence>
+       <Units>millidegrees</Units>
+       <ValidMin>-60000</ValidMin>
+       <ValidMax>70000</ValidMax>
+       <FillValue>-99999</FillValue>
+       <Support>
+         <SupportQuantity>Other</SupportQuantity>
+       </Support>
+      </Parameter>
+
+   </NumericalData>
+   </Spase>
+
+
+

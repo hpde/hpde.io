@@ -1,0 +1,277 @@
+{
+  "Spase": {
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_2_2.xsd",
+    "Version": "2.2.2",
+    "NumericalData": {
+      "ResourceID": "spase://VMO/NumericalData/WDC/Sitka/Magnetometer/PT1H/ASCII_FORMAT",
+      "ResourceHeader": {
+        "ResourceName": "Sitka Magnetometer 1-hr Data in ASCII Flat Table Format",
+        "ReleaseDate": "2012-05-02T12:34:56.789",
+        "Description": "Sitka Magnetometer data, 1-hr time resoluion, in ASCII format. Magnetic Field Vector Element List: DHXYZF. Note that the list of magnetic field elements that appear in the data set may change over the course of time. For instance, many stations have shifted from DHZ to the XYZ representation of the magnetic field. The time history listed below summarizes changes in element content. A description of the WDC Data Exchange Format for CADENCE magnetic field data is included at the end of this data product description.",
+        "Acknowledgement": "Please acknowledge: U.S. Geological Survey for providing the data observations, and the British Geological Survey, World Data Center for Geomagnetism, Edinburgh for providing access to the data.",
+        "Contact": [
+          {
+            "PersonID": "spase://SMWG/Person/Carol.A.K.Finn",
+            "Role": [
+              "GeneralContact",
+              "DataProducer"
+            ]
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Jill.Caldwell",
+            "Role": [
+              "GeneralContact",
+              "DataProducer"
+            ]
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Jeffrey.J.Love",
+            "Role": [
+              "GeneralContact",
+              "DataProducer"
+            ]
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Lee.Frost.Bargatze",
+            "Role": [
+              "MetadataContact",
+              "TechnicalContact"
+            ]
+          }
+        ],
+        "InformationURL": {
+          "Name": "The Geomagnetic Data Master Catalog at the WDC for Geomagnetism, Edinburgh",
+          "URL": "http://www.wdc.bgs.ac.uk/catalog/intro.html",
+          "Description": "Web site for access to magnetometer data hosted by the World Data Center for Geomagnetism, Edinburgh"
+        },
+        "Association": {
+          "AssociationID": "spase://VMO/NumericalData/WDC/Sitka/Magnetometer/PT1H/WDC_FORMAT",
+          "AssociationType": "DerivedFrom"
+        },
+        "PriorID": "spase://VMO/NumericalData/WDC/Sitka/Magnetometer/PT1H/ASCII"
+      },
+      "AccessInformation": {
+        "RepositoryID": "spase://SMWG/Repository/UCLA/VMO",
+        "Availability": "Online",
+        "AccessRights": "Open",
+        "AccessURL": {
+          "Name": "The UCLA VMO Data Repository",
+          "URL": "http://vmo.igpp.ucla.edu/data1/WDC/MAGNETOGRAM/Sitka/PT1H/TXT",
+          "Description": "The Virtual Magnetospheric Observatory (VMO) Data Repository hosted by the Institute of Geophysics and Planetary Physics (IGPP) at the University of California, Los Angeles (UCLA)."
+        },
+        "Format": "Text",
+        "Encoding": "GZIP",
+        "DataExtent": {
+          "Quantity": "825696",
+          "Units": "bytes",
+          "Per": "P1Y"
+        },
+        "Acknowledgement": "Please thank the British Geological Survey, World Data Center, Edinburgh for use of data from the WDC Geomagnetic Data Master Catalog. The WDC to ASCII translation was performed at UCLA and the derived ASCII formatted data are available via the UCLA VMO data repository."
+      },
+      "ProcessingLevel": "Calibrated",
+      "InstrumentID": "spase://SMWG/Instrument/Ground/Sitka/Magnetometer",
+      "MeasurementType": "MagneticField",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "1902-03-01T00:00:00.000",
+          "StopDate": "2010-12-31T23:00:00.000",
+          "Note": "Some data gaps may be present. If a gap is present at the beginning or end of the file, the time span start and stop dates could be inaccurate as they are assigned assuming an absence of such gaps."
+        },
+        "Cadence": "PT1H"
+      },
+      "ObservedRegion": "Earth.Surface",
+      "Keyword": [
+        "ground station",
+        "magnetometer",
+        "magnetic field",
+        "magnetogram",
+        "Sitka",
+        "WDC Station Code: SIT",
+        "1-hour",
+        "ASCII Flat File",
+        "ASCII Flat Table"
+      ],
+      "Parameter": [
+        {
+          "Name": "Universal Time",
+          "ParameterKey": "Time",
+          "Description": "Time is expressed using a five column format with the following order: year, month, day, hour, and minute, each stored in interger format. The time columns are the first five columns (1,2,3,4,5) in the flat file.",
+          "Cadence": "PT1H",
+          "Structure": {
+            "Size": "5",
+            "Description": "Universal Time expressed using a 5-column year, month, day, hour, minute representation",
+            "Element": [
+              {
+                "Name": "Year",
+                "Index": "1",
+                "ParameterKey": "Column_1"
+              },
+              {
+                "Name": "Month",
+                "Index": "2",
+                "ParameterKey": "Column_2"
+              },
+              {
+                "Name": "Day",
+                "Index": "3",
+                "ParameterKey": "Column_3"
+              },
+              {
+                "Name": "Hour",
+                "Index": "4",
+                "ParameterKey": "Column_4"
+              },
+              {
+                "Name": "Minute",
+                "Index": "5",
+                "ParameterKey": "Column_5"
+              }
+            ]
+          },
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Magnetic Field DHZ",
+          "Description": "Sitka Magnetic Field in DHZ Coordinates",
+          "Cadence": "PT1H",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cylindrical",
+            "CoordinateSystemName": "CGM"
+          },
+          "Structure": {
+            "Size": "3",
+            "Description": "Sitka Magnetic Field Data in DHZ Coordinates. The DHZ data columns are numbers (6,8,11) in the flat file.",
+            "Element": [
+              {
+                "Name": "D",
+                "Qualifier": "DirectionAngle.AzimuthAngle",
+                "Index": "1",
+                "ParameterKey": "Column_6",
+                "Units": "Degree",
+                "UnitsConversion": "2*pi > Radian",
+                "ValidMin": "-180.0",
+                "ValidMax": "180.0",
+                "FillValue": "-99999.999"
+              },
+              {
+                "Name": "H",
+                "Qualifier": "Projection.IJ",
+                "Index": "2",
+                "ParameterKey": "Column_8",
+                "Units": "nT",
+                "UnitsConversion": "10^9 >T",
+                "ValidMin": "-70000",
+                "ValidMax": "70000",
+                "FillValue": "-99999.999"
+              },
+              {
+                "Name": "Z",
+                "Qualifier": "Component.K",
+                "Index": "3",
+                "ParameterKey": "Column_11",
+                "Units": "nT",
+                "UnitsConversion": "10^9 >T",
+                "ValidMin": "-70000",
+                "ValidMax": "70000",
+                "FillValue": "-99999.999"
+              }
+            ]
+          },
+          "Field": {
+            "Qualifier": "Vector",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "Sitka Magnetic Field XYZ",
+          "Description": "Sitka Magnetic Field in XYZ coordinates",
+          "Cadence": "PT1H",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "CGM"
+          },
+          "Structure": {
+            "Size": "3",
+            "Description": "Sitka Magnetic Field Data in XYZ Coordinates. The XYZ data columns are numbers (9,10,11) in the flat file.",
+            "Element": [
+              {
+                "Name": "X",
+                "Qualifier": "Component.I",
+                "Index": "1",
+                "ParameterKey": "Column_9",
+                "Units": "nT",
+                "UnitsConversion": "10^9 >T",
+                "ValidMin": "-70000",
+                "ValidMax": "70000",
+                "FillValue": "-99999.999"
+              },
+              {
+                "Name": "Y",
+                "Qualifier": "Component.J",
+                "Index": "2",
+                "ParameterKey": "Column_10",
+                "Units": "nT",
+                "UnitsConversion": "10^9 >T",
+                "ValidMin": "-70000",
+                "ValidMax": "70000",
+                "FillValue": "-99999.999"
+              },
+              {
+                "Name": "Z",
+                "Qualifier": "Component.K",
+                "Index": "3",
+                "ParameterKey": "Column_11",
+                "Units": "nT",
+                "UnitsConversion": "10^9 >T",
+                "ValidMin": "-70000",
+                "ValidMax": "70000",
+                "FillValue": "-99999.999"
+              }
+            ]
+          },
+          "Field": {
+            "Qualifier": "Vector",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "Magnetic Field Inclination",
+          "ParameterKey": "Column_7",
+          "Description": "Sitka Magnetic Field Vector Inclination",
+          "Cadence": "PT1H",
+          "Units": "Degree",
+          "UnitsConversion": "2*pi > Radian",
+          "ValidMin": "-180.0",
+          "ValidMax": "180.0",
+          "FillValue": "-99999.999",
+          "Field": {
+            "Qualifier": "DirectionAngle.ElevationAngle",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "Magnetic Field Magnitude",
+          "ParameterKey": "Column_12",
+          "Description": "Sitka Magnetic Field Vector Magnitude",
+          "Cadence": "PT1H",
+          "Units": "nT",
+          "UnitsConversion": "10^9 >T",
+          "ValidMin": "0",
+          "ValidMax": "70000",
+          "FillValue": "-99999.999",
+          "Field": {
+            "Qualifier": "Magnitude",
+            "FieldQuantity": "Magnetic"
+          }
+        }
+      ],
+      "Extension": {
+        "DataCoverage": "\n            SIT 1902 D H\n            SIT 1903 D H\n            SIT 1904 D H\n            SIT 1905 D H Z\n            SIT 1906 D H Z\n            SIT 1907 D H Z\n            SIT 1908 D H Z\n            SIT 1909 D H Z\n            SIT 1910 D H Z\n            SIT 1911 D H Z\n            SIT 1912 D H Z\n            SIT 1913 D H Z\n            SIT 1914 D H Z\n            SIT 1915 D H Z\n            SIT 1916 D H Z\n            SIT 1917 D H Z\n            SIT 1918 D H Z\n            SIT 1919 D H Z\n            SIT 1920 D H Z\n            SIT 1921 D H Z\n            SIT 1922 D H Z\n            SIT 1923 D H Z\n            SIT 1924 D H Z\n            SIT 1925 D H Z\n            SIT 1926 D H Z\n            SIT 1927 D H Z\n            SIT 1928 D H Z\n            SIT 1929 D H Z\n            SIT 1930 D H Z\n            SIT 1931 D H Z\n            SIT 1932 D H Z\n            SIT 1933 D H Z\n            SIT 1934 D H Z\n            SIT 1935 D H Z\n            SIT 1936 D H Z\n            SIT 1937 D H Z\n            SIT 1938 D H Z\n            SIT 1939 D H Z\n            SIT 1940 D H Z\n            SIT 1941 D H Z\n            SIT 1942 D H Z\n            SIT 1943 D H Z\n            SIT 1944 D H Z\n            SIT 1945 D H Z\n            SIT 1946 D H Z\n            SIT 1947 D H Z\n            SIT 1948 D H Z\n            SIT 1949 D H Z\n            SIT 1950 D H Z\n            SIT 1951 D H Z\n            SIT 1952 D H Z\n            SIT 1953 D H Z\n            SIT 1954 D H Z\n            SIT 1955 D H Z\n            SIT 1956 D H Z\n            SIT 1957 D H Z\n            SIT 1958 D H Z\n            SIT 1959 D H Z\n            SIT 1960 D H Z\n            SIT 1961 D H Z\n            SIT 1962 D H Z\n            SIT 1963 D H Z\n            SIT 1964 D H Z\n            SIT 1965 D H Z\n            SIT 1966 D H Z\n            SIT 1967 D H Z\n            SIT 1968 D H Z\n            SIT 1969 D H Z\n            SIT 1970 D H Z\n            SIT 1971 D H Z\n            SIT 1972 D H Z\n            SIT 1973 D H Z\n            SIT 1974 D H Z\n            SIT 1975 D H Z\n            SIT 1976 D H Z\n            SIT 1977 D H Z\n            SIT 1978 D H Z\n            SIT 1979 D H Z\n            SIT 1980 D H Z\n            SIT 1981 D H Z\n            SIT 1982 D H Z\n            SIT 1983 D H Z F\n            SIT 1984 D H Z F\n            SIT 1985 D H Z F\n            SIT 1986 D H Z F\n            SIT 1987 D H Z F\n            SIT 1988 D H Z F\n            SIT 1989 D H Z F\n            SIT 1990 D H Z F\n            SIT 1991 D H Z F\n            SIT 1992 D H Z F\n            SIT 1993 D H Z F\n            SIT 1994 D H Z F\n            SIT 1995 D H Z F\n            SIT 1996 D H Z F\n            SIT 1997 D H Z F\n            SIT 1998 D H Z F\n            SIT 1999 D H Z F\n            SIT 2000 D H Z F\n            SIT 2001 D H Z F\n            SIT 2002 D H Z F\n            SIT 2003 D H Z F\n            SIT 2004 X Y Z F\n            SIT 2005 X Y Z F\n            SIT 2006 X Y Z F\n            SIT 2007 X Y Z F\n            SIT 2008 X Y Z F\n            SIT 2009 X Y Z F\n            SIT 2010 X Y Z F\n         "
+      }
+    }
+  }
+}

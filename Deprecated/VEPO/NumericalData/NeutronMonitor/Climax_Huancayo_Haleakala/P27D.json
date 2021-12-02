@@ -1,0 +1,200 @@
+{
+  "Spase": {
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_0_0.xsd",
+    "Version": "2.0.0",
+    "NumericalData": {
+      "ResourceID": "spase://VEPO/NumericalData/NeutronMonitor/Climax_Huancayo_Haleakala/P27D",
+      "ResourceHeader": {
+        "ResourceName": "\n         Cosmic Ray Intensities Averaged over Bartels Solar Rotations from the Climax, Huancayo, and Haleakala Neutron Monitors\n       ",
+        "AlternateName": "\n         Climax, Huancayo, and Haleakala Bartels Rotation Counting Rates\n       ",
+        "ReleaseDate": "\n         2009-03-19T00:00:00.000\n       ",
+        "Description": "\n         Bartels Rotation  averages of relativistic cosmic ray intensities from the Climax, Huancayo, and Haleakala Neutron Monitors\n         For Climax only, averages are given both including and excluding days with  significant contributions from ground level \n            solar particle events.\n       ",
+        "Acknowledgement": "\n         Please acknowledge the Principal Investigator  (Dr. Clifford Lopate)\n       ",
+        "Contact": {
+          "PersonID": "\n           spase://SMWG/Person/clifford.Lopate\n         ",
+          "Role": [
+            "PrincipalInvestigator",
+            "DataProducer"
+          ]
+        },
+        "InformationURL": [
+          {
+            "Name": "\n           General ReadMe file for data from the Climax, Haleakala, and Haleakala Neutron Monitors\n         ",
+            "URL": "ftp://ulysses.sr.unh.edu/NeutronMonitor/00General.ReadMe.txt",
+            "Description": "\n           This ReadMe file provides basic information about the neutron monitors at Climax,\n           Haleakala, and, for data before 1992, Haleakala, including geomagnetic cutoffs and \n           configurations of the monitors at each site.\n         "
+          },
+          {
+            "Name": "\n           ReadMe file for Bartels rotation average files for the Climax, Huancay, and Haleakala Neutron Monitors\n         ",
+            "URL": "ftp://ulysses.sr.unh.edu/NeutronMonitor/BartelsAverages.ReadMe.txt",
+            "Description": "\n           This ReadMe file provides information about the Climax, Huancayo, and Haleakala neutron monitors\n           and a description of the format of the data files\n         "
+          }
+        ]
+      },
+      "AccessInformation": {
+        "RepositoryID": "spase://SMWG/Repository/UNH",
+        "Availability": "Online",
+        "AccessRights": "Open",
+        "AccessURL": {
+          "Name": "\n           Climax, Huancay, and Haleakala Bartels Rotation averaged  intensities\n         ",
+          "URL": "ftp://ulysses.sr.unh.edu/NeutronMonitor/BartelsAverages.txt",
+          "Description": "\n\t   Daily average intensities from the Climax, Huancayo, and Haleakala neutron monitors\n           Fortran format for reading file: (i2,1x,i2,1x,i4,1x,i10,f11.2,5f9.2)\n         "
+        },
+        "Format": "Text",
+        "Acknowledgement": "C. Lopate, University of New Hampshire"
+      },
+      "InstrumentID": [
+        "spase://SMWG/Instrument/NeutronMonitor/Climax",
+        "spase://SMWG/Instrument/NeutronMonitor/Haleakala",
+        "spase://SMWG/Instrument/NeutronMonitor/Huancayo"
+      ],
+      "MeasurementType": "EnergeticParticles",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "1951-01-18T00:00:00.000",
+          "StopDate": "2006-11-09T23:59:59.000"
+        },
+        "Cadence": "P27D"
+      },
+      "ObservedRegion": "Heliosphere.NearEarth",
+      "Parameter": [
+        {
+          "Name": "Interval Start Time",
+          "ParameterKey": "Columns 1-2",
+          "Description": "\n          Nominal Start Time (UT) for the average given as \n          MM/DD/YYYY SSSSSSSSSS \n          where MM         = month of year (01-12)\n                DD         = Day of Month (01-31)\n                YYYY       = Gregorian Year AD\n                SSSSSSSSSS = Seconds since 00:00:00 Jan. 01, 1904 at start of day\n       ",
+          "Cadence": "P27D",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Climax All Days Bartel Rotation Average Data",
+          "ParameterKey": "Column 3",
+          "Description": "\n          Climax pressure corrected counts per hour, prescaled by 100\n          Periods with no data are indicated by NaN.\n          All valid data are included in the averages.\n       ",
+          "Caveats": "\n          For true counts per hour, the value given must be multiplied by 100.\n\t  Some days may be affected by ground level enhancements from large solar energetic particle events.\n       ",
+          "Cadence": "P27D",
+          "Units": "(counts/hr)",
+          "ValidMin": "0",
+          "ValidMax": "100000",
+          "FillValue": "NaN",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": "Integral",
+            "ParticleQuantity": "Counts",
+            "EnergyRange": {
+              "Low": "12.92",
+              "High": "1.0E6",
+              "Units": "GV"
+            }
+          }
+        },
+        {
+          "Name": "Climax Quiet Time  Bartels Rotation Average Data",
+          "ParameterKey": "Column 4",
+          "Description": "\n          Climax pressure corrected counts per hour, prescaled by 100\n          Periods with no data are indicated by NaN.\n          Days with significant contributions from ground level solar energetic particle events\n             have been excluded from the averages.\n       ",
+          "Caveats": "\n          For true counts per hour, the value given must be multiplied by 100.\n\t  Days affected by solar ground level enhancements have been excluded from the averages.\n       ",
+          "Cadence": "P27D",
+          "Units": "(counts/hr)",
+          "ValidMin": "0",
+          "ValidMax": "100000",
+          "FillValue": "NaN",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": "Integral",
+            "ParticleQuantity": "Counts",
+            "EnergyRange": {
+              "Low": "12.92",
+              "High": "1.0E6",
+              "Units": "GV"
+            }
+          }
+        },
+        {
+          "Name": "Haleakala IGY Monitor Bartels-Rotation-Averaged  Data",
+          "ParameterKey": "Column 5",
+          "Description": "\n          Haleakala IGY monitor pressure-corrected counts per hour, prescaled by 100.\n          Periods with no data are indicated by NaN.\n       ",
+          "Caveats": "\n          For true counts per hour, the value given must be multiplied by 100.\n       ",
+          "Cadence": "P27D",
+          "Units": "(counts/hr)",
+          "ValidMin": "0",
+          "ValidMax": "100000",
+          "FillValue": "NaN",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": "Integral",
+            "ParticleQuantity": "Counts",
+            "EnergyRange": {
+              "Low": "12.92",
+              "High": "1.0E6",
+              "Units": "GV"
+            }
+          }
+        },
+        {
+          "Name": "Haleakala SuperMonitor Bartels-Rotation-Averaged Data",
+          "ParameterKey": "Column 6",
+          "Description": "\n          Haleakala SuperMonitor pressure corrected counts per hour, prescaled by 100.\n          Periods with no data are indicated by NaN.\n       ",
+          "Caveats": "\n          For true counts per hour, the value given must be multiplied by 100.\n       ",
+          "Cadence": "P27D",
+          "Units": "(counts/hr)",
+          "ValidMin": "0",
+          "ValidMax": "100000",
+          "FillValue": "NaN",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": "Integral",
+            "ParticleQuantity": "Counts",
+            "EnergyRange": {
+              "Low": "12.92",
+              "High": "1.0E6",
+              "Units": "GV"
+            }
+          }
+        },
+        {
+          "Name": "Huancayo Bartels-Rotation-Averaged Data",
+          "ParameterKey": "Column 7",
+          "Description": "\n          Huancayo pressure-corrected counts per hour, prescaled by 100\n          Periods with no data are indicated by NaN.\n          No corrections for secular changes in the geomagnetic field and cuttoff are included.\n       ",
+          "Caveats": "\n          For true counts per hour, the value given must be multiplied by 100.\n          No corrections for secular changes in the geomagnetic field and cuttoff are included.\n       ",
+          "Cadence": "P27D",
+          "Units": "(counts/hr)",
+          "ValidMin": "0",
+          "ValidMax": "100000",
+          "FillValue": "NaN",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": "Integral",
+            "ParticleQuantity": "Counts",
+            "EnergyRange": {
+              "Low": "12.92",
+              "High": "1.0E6",
+              "Units": "GV"
+            }
+          }
+        },
+        {
+          "Name": "Huancayo Drift Corrected Bartels-Rotation-Averaged Data",
+          "ParameterKey": "Column 8",
+          "Description": "\n          Haleakala pressure corrected counts per hour, prescaled by 100 and\n          further corrected for drift in the cutoff caused by secular changes\n          in the geomagnetic field.\n          Periods with no data are indicated by NaN.\n       ",
+          "Caveats": "\n          For true counts per hour, the value given must be multiplied by 100.\n       ",
+          "Cadence": "P27D",
+          "Units": "(counts/hr)",
+          "ValidMin": "0",
+          "ValidMax": "100000",
+          "FillValue": "NaN",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": "Integral",
+            "ParticleQuantity": "Counts",
+            "EnergyRange": {
+              "Low": "12.92",
+              "High": "1.0E6",
+              "Units": "GV"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

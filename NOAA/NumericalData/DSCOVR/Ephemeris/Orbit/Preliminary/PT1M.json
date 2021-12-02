@@ -1,0 +1,354 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema   http://www.spase-group.org/data/schema/spase-2_3_0.xsd",
+    "Version": "2.3.0",
+    "NumericalData": {
+      "ResourceID": "spase://NOAA/NumericalData/DSCOVR/Ephemeris/Orbit/Preliminary/PT1M",
+      "ResourceHeader": {
+        "ResourceName": "DSCOVR Orbital Ephemeris Predicted Spacecraft Position and Velocity",
+        "ReleaseDate": "2021-04-27T17:52:57Z",
+        "Description": "DSCOVR Predicted Orbit Data File",
+        "Acknowledgement": "A. Szabo",
+        "Contact": [
+          {
+            "PersonID": "spase://SMWG/Person/Adam.Szabo",
+            "Role": "PrincipalInvestigator"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Robert.E.McGuire",
+            "Role": "MetadataContact"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Lee.Frost.Bargatze",
+            "Role": "MetadataContact"
+          }
+        ],
+        "InformationURL": {
+          "Name": "Deep Space Climate Observatory, DSCOVR, Web Page, NESDIS, NOAA",
+          "URL": "https://www.nesdis.noaa.gov/content/dscovr-deep-space-climate-observatory",
+          "Description": "Deep Space Climate Observatory, DSCOVR, Web Page hosted by the National Environmental Satellite, Data, and Information Service, NESDIS, National Oceanic and Atmospheric Administration, NOAA"
+        },
+        "PriorID": [
+          "spase://VSPO/NumericalData/DSCOVR/Ephemeris/Orbit/PT1M",
+          "spase://VSPO/NumericalData/DSCOVR/Ephemeris/Orbit/Preliminary/PT1M"
+        ]
+      },
+      "AccessInformation": [
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": [
+            {
+              "Name": "FTPS from SPDF (not with most browsers)",
+              "URL": "ftps://spdf.gsfc.nasa.gov/pub/data/dscovr/orbit/pre_or/",
+              "Description": "In CDF via ftp from SPDF."
+            },
+            {
+              "Name": "HTTPS from SPDF",
+              "URL": "https://spdf.gsfc.nasa.gov/pub/data/dscovr/orbit/pre_or/",
+              "Description": "In CDF via http from SPDF."
+            },
+            {
+              "Name": "CDAWeb",
+              "URL": "https://cdaweb.gsfc.nasa.gov/index.html/",
+              "ProductKey": "DSCOVR_ORBIT_PRE",
+              "Description": "Access to ASCII, CDF, and plots via NASA/GSFC CDAWeb"
+            }
+          ],
+          "Format": "CDF",
+          "Encoding": "None",
+          "Acknowledgement": "A. Szabo. Please acknowledge the data providers and CDAWeb when using these data."
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDAWeb HAPI Server",
+            "URL": "https://cdaweb.gsfc.nasa.gov/hapi",
+            "Style": "HAPI",
+            "ProductKey": "DSCOVR_ORBIT_PRE",
+            "Description": "Web Service to this product using the HAPI interface."
+          },
+          "Format": "CSV",
+          "Acknowledgement": "A. Szabo. Please acknowledge the data providers and CDAWeb when using these data."
+        }
+      ],
+      "ProcessingLevel": "Calibrated",
+      "InstrumentID": [
+        "spase://SMWG/Instrument/DSCOVR/Ephemeris",
+        "spase://SMWG/Instrument/DSCOVR/PlasMag/FaradayCup",
+        "spase://SMWG/Instrument/DSCOVR/PlasMag/FluxgateMagnetometer"
+      ],
+      "MeasurementType": "Ephemeris",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "2015-02-11T00:00:00.000",
+          "StopDate": "2017-06-28T23:59:59.999"
+        },
+        "Cadence": "PT10S"
+      },
+      "ObservedRegion": [
+        "Heliosphere",
+        "Heliosphere.NearEarth",
+        "Heliosphere.Inner"
+      ],
+      "Parameter": [
+        {
+          "Name": "Epoch Time, since 0 A.D.",
+          "ParameterKey": "Epoch",
+          "Description": "Epoch Time, Milliseconds since 0 A.D.",
+          "Caveats": "This parameter exhibits an increasing monotonic progression.",
+          "Cadence": "PT10S",
+          "Units": "ms",
+          "UnitsConversion": "1e-3>s",
+          "RenderingHints": {
+            "AxisLabel": "Epoch",
+            "ValueFormat": "E14.8"
+          },
+          "ValidMin": "11-Feb-2015 00:00:00.000",
+          "ValidMax": "11-Feb-2065 00:00:00.000",
+          "FillValue": "31-Dec-9999 23:59:59.999",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Time PB5",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "Time_PB5",
+          "Description": "Time in PB5 Format: Year, Day, Milliseconds, Observation Time",
+          "Cadence": "PT10S",
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "Year",
+                "Index": "1",
+                "Units": "year",
+                "ValidMin": "2015",
+                "ValidMax": "2065"
+              },
+              {
+                "Name": "Day of Year",
+                "Index": "2",
+                "Units": "d",
+                "ValidMin": "0",
+                "ValidMax": "366"
+              },
+              {
+                "Name": "Elapsed milliseconds of day",
+                "Index": "3",
+                "Units": "ms",
+                "ValidMin": "0",
+                "ValidMax": "86400000"
+              }
+            ]
+          },
+          "FillValue": "-2147483647",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Sun-Earth Radial Distance",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "SUN_R",
+          "Description": "Sun-Earth Radial Distance",
+          "Cadence": "PT10S",
+          "Units": "km",
+          "UnitsConversion": "1e3>m",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "Earth Distance from Sun",
+            "ValueFormat": "F17.5",
+            "ScaleMin": "1.45e+08",
+            "ScaleMax": "1.55e+08"
+          },
+          "ValidMin": "0.0",
+          "ValidMax": "1.8e+08",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "Qualifier": "Magnitude",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Spacecraft Position, J2000 GCI",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "GCI_POS",
+          "Description": "Spacecraft Position Vector, Geocentric Inertial, J2000 GCI, Cartesian Coordinates",
+          "Cadence": "PT10S",
+          "Units": "km",
+          "UnitsConversion": "1e3>m",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GEI"
+          },
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "ValueFormat": "F17.5",
+            "ScaleMin": "-1.8e+06",
+            "ScaleMax": "1.8e+06"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "X GCI",
+                "Index": "1"
+              },
+              {
+                "Name": "Y GCI",
+                "Index": "2"
+              },
+              {
+                "Name": "Z GCI",
+                "Index": "3"
+              }
+            ]
+          },
+          "ValidMin": "-1.8e+06",
+          "ValidMax": "1.8e+06",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "Qualifier": "Vector",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Spacecraft Velocity, J2000 GCI",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "GCI_VEL",
+          "Description": "Spacecraft Velocity Vector, Geocentric Inertial, J2000 GCI, Cartesian Coordinates",
+          "Cadence": "PT10S",
+          "Units": "km/s",
+          "UnitsConversion": "1e3>m/s",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GEO"
+          },
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "ValueFormat": "F12.7",
+            "ScaleMin": "-12.0",
+            "ScaleMax": "12.0"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "Vx GCI",
+                "Index": "1"
+              },
+              {
+                "Name": "Vy GCI",
+                "Index": "2"
+              },
+              {
+                "Name": "Vz GCI",
+                "Index": "3"
+              }
+            ]
+          },
+          "ValidMin": "-12.0",
+          "ValidMax": "12.0",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "Qualifier": "Vector",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Spacecraft Position, GSE",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "GSE_POS",
+          "Description": "Spacecraft Position Vector, Geocentric Solar Ecliptic, GSE Cartesian Coordinates",
+          "Cadence": "PT10S",
+          "Units": "km",
+          "UnitsConversion": "1e3>m",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GSE"
+          },
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "ValueFormat": "F17.5",
+            "ScaleMin": "-1.8e+06",
+            "ScaleMax": "1.8e+06"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "X GSE",
+                "Index": "1"
+              },
+              {
+                "Name": "Y GSE",
+                "Index": "2"
+              },
+              {
+                "Name": "Z GSE",
+                "Index": "3"
+              }
+            ]
+          },
+          "ValidMin": "-1.8e+06",
+          "ValidMax": "1.8e+06",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "Qualifier": "Vector",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Moon Position, GSE",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "MOON_GSE_POS",
+          "Description": "Moon Position Vector, Geocentric Solar Ecliptic, GSE Cartesian Coordinates",
+          "Cadence": "PT10S",
+          "Units": "km",
+          "UnitsConversion": "1e3>m",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GSE"
+          },
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "ValueFormat": "F17.5",
+            "ScaleMin": "-450000.0",
+            "ScaleMax": "450000.0"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "Moon X GSE",
+                "Index": "1"
+              },
+              {
+                "Name": "Moon Y GSE",
+                "Index": "2"
+              },
+              {
+                "Name": "Moon Z GSE",
+                "Index": "3"
+              }
+            ]
+          },
+          "ValidMin": "-1.8e+06",
+          "ValidMax": "1.8e+06",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "Qualifier": "Vector",
+            "SupportQuantity": "Positional"
+          }
+        }
+      ]
+    }
+  }
+}

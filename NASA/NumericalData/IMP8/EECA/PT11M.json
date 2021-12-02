@@ -1,0 +1,542 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema  http://www.spase-group.org/data/schema/spase-2_2_9.xsd",
+    "Version": "2.2.9",
+    "NumericalData": {
+      "ResourceID": "spase://NASA/NumericalData/IMP8/EECA/PT11M",
+      "ResourceHeader": {
+        "ResourceName": "IMP 8 UMD EECA 10.92m Rates, PHA",
+        "ReleaseDate": "2021-03-11T18:39:11Z",
+        "Description": "This data set, from the Electrostatic Energy-Charge\nAnalyzer (EECA) part of the U. Maryland experiment on IMP 8, contains \ncount rate and pulse height data enabling the computation of 10.92-min \nresolution fluxes of: singly ionized ions in 5 energy/charge windows of \nlower limits between 130 and 740 keV/Q; doubly charged ions in the same \n5 keV/Q windows plus another at 65 keV/Q; ions with charge states between \n5 and 8 in the same 6 keV/Q windows as for doubly charged ions plus \nanother at 37 keV/Q; ions with charge states above about 10 at 37 and 65 \nkeV/Q windows; 600-860 keV electrons. Some of the modes are spin \nintegrated while others are given in 90 deg quadrants about the spacecraft \nspin vector (which is normal to the ecliptic plane).  The data set was \ncreated at NSSDC from the U.Md.-provided \"summary tapes\" (NSSDC IDs \nSPHE-00170 and 73-078A-03C) by dropping engineering data, dropping data \nfrom the ULET portion of the overall experiment (the ULET instrument \nfailed in 1978), and converting the remaining time, spacecraft position, \nand EECA instrument data from binary to ASCII representation.  The data \nare available via ftp in 1- month files of variable lengths in the 3-6 MB \nsize range. ",
+        "Acknowledgement": "Please acknowledge the successive PI's George Gloeckler,\nand Fred Ipavich.",
+        "Contact": [
+          {
+            "PersonID": "spase://SMWG/Person/George.Gloeckler",
+            "Role": "PrincipalInvestigator"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Fred.M.Ipavich",
+            "Role": "PrincipalInvestigator"
+          }
+        ],
+        "InformationURL": {
+          "Name": "NSSDC Data Set Catalog",
+          "URL": "https://spdf.gsfc.nasa.gov/pub/documents/old/documentation_from_nssdc/dataset_catalogs/DSC_0476.pdf",
+          "Description": "See especially the instrument-team-generated\ndescriptive material on the experiment and data inside the Data Set \nCatalog"
+        },
+        "PriorID": [
+          "spase://VEPO/NumericalData/IMP8/EECA/PT11M",
+          "spase://VSPO/NumericalData/IMP8/EECA/PT11M"
+        ]
+      },
+      "AccessInformation": {
+        "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+        "Availability": "Online",
+        "AccessRights": "Open",
+        "AccessURL": [
+          {
+            "Name": "FTPS from SPDF (not with most browsers)",
+            "URL": "ftps://spdf.gsfc.nasa.gov/pub/data/imp/imp8/particles_umd/11min_ascii/",
+            "Description": "monthly ASCII files via ftp"
+          },
+          {
+            "Name": "HTTPS from SPDF",
+            "URL": "https://spdf.gsfc.nasa.gov/pub/data/imp/imp8/particles_umd/11min_ascii/",
+            "Description": "In CDF via HTTP from SPDF"
+          }
+        ],
+        "Format": "Text",
+        "DataExtent": {
+          "Quantity": "1.5",
+          "Units": "GB"
+        },
+        "Acknowledgement": "Please acknowledge the successive PI's, George Gloeckler,\nFred Ipavich, and NSSDC and SPDF."
+      },
+      "ProcessingLevel": "Uncalibrated",
+      "InstrumentID": "spase://SMWG/Instrument/IMP8/EECA",
+      "MeasurementType": "EnergeticParticles",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "1973-11-01T00:00:00",
+          "StopDate": "2001-10-26T00:00:00"
+        },
+        "Cadence": "PT11M"
+      },
+      "ObservedRegion": [
+        "Heliosphere.NearEarth",
+        "Earth.Magnetosphere.Magnetotail"
+      ],
+      "Parameter": [
+        {
+          "Name": "Spin Integrated Counts",
+          "Description": "This parameter contains five data words for each of\nsix charge state - energy/charge (or species - energy range) combinations.  \nThe five words are (a) number of good readouts, (b) number of bad readouts, \n(c) total spin-integrated counts, (d) sum of squares of readout-specific \ncounts, (e) accumulation times in seconds.  Charge state - energy/charge \nand species - energy range combinations are specified in the \"elements\" \nbelow, where only the \"counts\" word is called out explicitly.",
+          "Cadence": "PT11M",
+          "Structure": {
+            "Size": "6 5",
+            "Description": "Array of the 5 words defined above for each of\nthe 6 charge state - energy/charge (or species - energy range)\ncombinations listed in the element names below.",
+            "Element": [
+              {
+                "Name": "Counts of Q.GE.1, 160-230 keV/Q ions",
+                "Index": "1 3",
+                "ParameterKey": "Column_30",
+                "Units": "counts"
+              },
+              {
+                "Name": "Counts of Q.GE.2, 550-900 keV/Q ions",
+                "Index": "2 3",
+                "ParameterKey": "Column_35",
+                "Units": "counts"
+              },
+              {
+                "Name": "Counts of Q.GE.4, 65-100 keV/Q ions",
+                "Index": "3 3",
+                "ParameterKey": "Column_40",
+                "Units": "counts"
+              },
+              {
+                "Name": "Counts of protons .GE. 18 MeV",
+                "Index": "4 3",
+                "ParameterKey": "Column_45",
+                "Units": "counts"
+              },
+              {
+                "Name": "Counts of protons .GE. 6 MeV",
+                "Index": "5 3",
+                "ParameterKey": "Column_50",
+                "Units": "counts"
+              },
+              {
+                "Name": "Counts of electrons 600-860 keV",
+                "Index": "6 3",
+                "ParameterKey": "Column_55",
+                "Units": "counts"
+              }
+            ]
+          },
+          "Particle": {
+            "ParticleType": "Ion",
+            "Qualifier": "Average",
+            "ParticleQuantity": "Counts",
+            "EnergyRange": {
+              "Low": "65",
+              "High": "900",
+              "Units": "keV/Q"
+            }
+          }
+        },
+        {
+          "Name": "Sectored and spin-integrated Counts",
+          "Description": "This parameter contains nine data words for each of\nnine charge state - energy/charge (or species - energy range) combinations.  \nThe nine words are (a) number of good readouts, (b) number of bad readouts, \n(c) total spin-integrated counts for all readouts and sectors, (d) sum of \nsquares of readout-specific, sector-specific counts, (e) accumulation time \nper sector, in seconds, (f) total counts in 90-deg sector 1, (g ) total \ncounts in 90-deg sector 2, (h) total counts in 90-deg sector 3, (i) total \ncounts in 90-deg sector 4.  Charge state - energy/charge combinations are \nspecified in the \"elements\" below, where only the \"sector 1 counts\" word \nis called out explicitly.",
+          "Cadence": "PT11M",
+          "Structure": {
+            "Size": "9 9",
+            "Description": "Array of the 9 words defined above for each of\nthe 9 charge state - energy/charge combinations listed in the element \nnames below.",
+            "Element": [
+              {
+                "Name": "Sector 1 counts of Q.GE.1, .GE.160 keV/Q ions",
+                "Index": "1 6",
+                "ParameterKey": "Column_63",
+                "Units": "counts"
+              },
+              {
+                "Name": "Sector 1 Counts of Q.GE.1, 550-900 keV/Q ions",
+                "Index": "2 6",
+                "ParameterKey": "Column_72",
+                "Units": "counts"
+              },
+              {
+                "Name": "Sector 1 counts of Q.GE.1, 390-600 keV/Q ions",
+                "Index": "3 6",
+                "ParameterKey": "Column_81",
+                "Units": "counts"
+              },
+              {
+                "Name": "Sector 1 counts of Q.GE.1, 130-210 keV/Q ions",
+                "Index": "4 6",
+                "ParameterKey": "Column_90",
+                "Units": "counts"
+              },
+              {
+                "Name": "Sector 1 Counts of Q.GE.4, 390-600 keV/Q",
+                "Index": "5 6",
+                "ParameterKey": "Column_99",
+                "Units": "counts"
+              },
+              {
+                "Name": "Sector 1 Counts of 600-860 keV electrons",
+                "Index": "6 6",
+                "ParameterKey": "Column_108",
+                "Units": "counts"
+              },
+              {
+                "Name": "Sector 1 Counts of Q.GE.1, 740-1200 keV/Q",
+                "Index": "7 6",
+                "ParameterKey": "Column_117",
+                "Units": "counts"
+              },
+              {
+                "Name": "Sector 1 Counts of Q.GE.2, 65-100 keV/Q",
+                "Index": "8 6",
+                "ParameterKey": "Column_126",
+                "Units": "counts"
+              },
+              {
+                "Name": "Sector 1 Counts of Q.GE.6, 37-55 keV/Q",
+                "Index": "9 6",
+                "ParameterKey": "Column_135",
+                "Units": "counts"
+              }
+            ]
+          },
+          "Particle": {
+            "ParticleType": "Ion",
+            "Qualifier": "Average",
+            "ParticleQuantity": "Counts",
+            "EnergyRange": {
+              "Low": "65",
+              "High": "900",
+              "Units": "keV/Q"
+            }
+          }
+        },
+        {
+          "Name": "Distribution of arrival directions of pulse-height-analyzed particles",
+          "Description": "This parameter contains ten data words for each of\nten charge state - energy/charge combinations.  (For each particle analyzed, \nmaximum of one per 1.28s, the spacecraft spin phase to the nearest 45 deg is \ncaptured.)  The ten words are (a) number of legal events, (b) number of \nillegal events, (c through j) counts of events analyzed in sectors 0 through 7, \nrespectively.  Charge state - energy/charge combinations are specified in the \n\"elements\" below, where only the \"sector 0 counts of events analyzed\" word is \ncalled out explicitly.",
+          "Cadence": "PT11M",
+          "Structure": {
+            "Size": "10 10",
+            "Description": "Array of the 10 words defined above for each of\nthe 10 charge state - energy/charge combinations listed in the element \nnames below.",
+            "Element": [
+              {
+                "Name": "Sector 0 counts of Q.GE.6, 37-55 keV/Q ions analyzed (P1)",
+                "Index": "1 3",
+                "ParameterKey": "Column_140",
+                "Units": "counts"
+              },
+              {
+                "Name": "Sector 0 counts of Q.GE.2, 65-100 keV/Q ions analyzed (P2)",
+                "Index": "2 3",
+                "ParameterKey": "Column_150",
+                "Units": "counts"
+              },
+              {
+                "Name": "Sector 0 counts of Q.GE.4, 65-100 keV/Q ions analyzed (P2\")",
+                "Index": "3 3",
+                "ParameterKey": "Column_160",
+                "Units": "counts"
+              },
+              {
+                "Name": "Sector 0 counts of Q.GE.1, 130-210 keV/Q ions analyzed (P3)",
+                "Index": "4 3",
+                "ParameterKey": "Column_170",
+                "Units": "counts"
+              },
+              {
+                "Name": "Sector 0 counts of Q.GE.1, 160-230 keV/Q ions analyzed (P4)",
+                "Index": "5 3",
+                "ParameterKey": "Column_180",
+                "Units": "counts"
+              },
+              {
+                "Name": "Sector 0 counts of Q.GE.1, .GE.160 keV/Q ions analyzed (P5)",
+                "Index": "6 3",
+                "ParameterKey": "Column_190",
+                "Units": "counts"
+              },
+              {
+                "Name": "Sector 0 counts of Q.GE.1, 390-600 keV/Q ions analyzed(P6)",
+                "Index": "7 3",
+                "ParameterKey": "Column_200",
+                "Units": "counts"
+              },
+              {
+                "Name": "Sector 0 counts of Q.GE.1, 550-900 keV/Q ions analyzed (P7)",
+                "Index": "8 3",
+                "ParameterKey": "Column_210",
+                "Units": "counts"
+              },
+              {
+                "Name": "Sector 0 counts of Q.GE.2, 550-900 keV/Q ions analyzed(P7')",
+                "Index": "9 3",
+                "ParameterKey": "Column_220",
+                "Units": "counts"
+              },
+              {
+                "Name": "Sector 0 counts of Q.GE.1, 740-1200 keV/Q ions analyzed (P8)",
+                "Index": "10 3",
+                "ParameterKey": "Column_230",
+                "Units": "counts"
+              }
+            ]
+          },
+          "Particle": {
+            "ParticleType": "Ion",
+            "Qualifier": "Average",
+            "ParticleQuantity": "Counts",
+            "EnergyRange": {
+              "Low": "37",
+              "High": "1200",
+              "Units": "keV/Q"
+            }
+          }
+        },
+        {
+          "Name": "Counts of events analyzed, by event type and charge group",
+          "Description": "This parameter contains 33 counts of events analyzed,\nafter pulse height analysis has enabled charge group separations for each \nof the ten \"event types\" listed in the preceding parameter array; see the \nnames of the elements of that array for the event type labels (e.g., P1) \nused below.  Note that of the 33 event counts, only 20 correspond to \nmeaningful charge groups, while 13 correspond to background rates\nthat are labelled as BG-low (low discriminator channels) or BG-High\n(high discriminator channels).  Above-referenced documentation contains \na mapping of discriminator channels to charge groups and background effect, \nfor each of the 10 \"event types.\"  Spin phase information is not retained \nin these 33 event counts.",
+          "Cadence": "PT11M",
+          "Structure": {
+            "Size": "33",
+            "Description": "List of 33 counts of events analyzed, by event type \nand charge group",
+            "Element": [
+              {
+                "Name": "Counts of events analyzed, P1, Q:5-8",
+                "Index": "1",
+                "ParameterKey": "Column_238",
+                "Units": "counts"
+              },
+              {
+                "Name": "Counts of events analyzed, P1, Q.GE.13",
+                "Index": "2",
+                "ParameterKey": "Column_239",
+                "Units": "counts"
+              },
+              {
+                "Name": "Counts of events analyzed, P1, BG-Low",
+                "Index": "3",
+                "ParameterKey": "Column_240",
+                "Units": "counts"
+              },
+              {
+                "Name": "Counts of events analyzed, P1, BG-High",
+                "Index": "4",
+                "ParameterKey": "Column_241",
+                "Units": "counts"
+              },
+              {
+                "Name": "Counts of events analyzed, P2, Q=2",
+                "Index": "5",
+                "ParameterKey": "Column_242",
+                "Units": "counts"
+              },
+              {
+                "Name": "Counts of events analyzed, P2, BG-Low",
+                "Index": "6",
+                "ParameterKey": "Column_243",
+                "Units": "counts"
+              },
+              {
+                "Name": "Counts of events analyzed, P2\", Q:5-8",
+                "Index": "7",
+                "ParameterKey": "Column_244",
+                "Units": "counts"
+              },
+              {
+                "Name": "Counts of events analyzed, P2\", Q.GE.13",
+                "Index": "8",
+                "ParameterKey": "Column_245",
+                "Units": "counts"
+              },
+              {
+                "Name": "Counts of events analyzed, P2\", BG-High",
+                "Index": "9",
+                "ParameterKey": "Column_246",
+                "Units": "counts"
+              },
+              {
+                "Name": "Counts of events analyzed, P3, Q=1",
+                "Index": "10",
+                "ParameterKey": "Column_247",
+                "Units": "counts"
+              },
+              {
+                "Name": "Counts of events analyzed, P3, Q=2",
+                "Index": "11",
+                "ParameterKey": "Column_248",
+                "Units": "counts"
+              },
+              {
+                "Name": "Counts of events analyzed, P3, Q:5-8",
+                "Index": "12",
+                "ParameterKey": "Column_249",
+                "Units": "counts"
+              },
+              {
+                "Name": "Counts of events analyzed, P3, BG-High",
+                "Index": "13",
+                "ParameterKey": "Column_250",
+                "Units": "counts"
+              },
+              {
+                "Name": "Counts of events analyzed, P4, Q=1",
+                "Index": "14",
+                "ParameterKey": "Column_251",
+                "Units": "counts"
+              },
+              {
+                "Name": "Counts of events analyzed, P4, Q=2",
+                "Index": "15",
+                "ParameterKey": "Column_252",
+                "Units": "counts"
+              },
+              {
+                "Name": "Counts of events analyzed, P4, Q:5-8",
+                "Index": "16",
+                "ParameterKey": "Column_253",
+                "Units": "counts"
+              },
+              {
+                "Name": "Counts of events analyzed, P4, BG-High",
+                "Index": "17",
+                "ParameterKey": "Column_254",
+                "Units": "counts"
+              },
+              {
+                "Name": "Counts of events analyzed, P5, BG-Low",
+                "Index": "18",
+                "ParameterKey": "Column_255",
+                "Units": "counts"
+              },
+              {
+                "Name": "Counts of events analyzed, P5, BG-High",
+                "Index": "19",
+                "ParameterKey": "Column_256",
+                "Units": "counts"
+              },
+              {
+                "Name": "Counts of events analyzed, P6, Q=1",
+                "Index": "20",
+                "ParameterKey": "Column_257",
+                "Units": "counts"
+              },
+              {
+                "Name": "Counts of events analyzed, P6, Q=2",
+                "Index": "21",
+                "ParameterKey": "Column_258",
+                "Units": "counts"
+              },
+              {
+                "Name": "Counts of events analyzed, P6, Q:5-8",
+                "Index": "22",
+                "ParameterKey": "Column_259",
+                "Units": "counts"
+              },
+              {
+                "Name": "Counts of events analyzed, P6, BG-Low",
+                "Index": "23",
+                "ParameterKey": "Column_260",
+                "Units": "counts"
+              },
+              {
+                "Name": "Counts of events analyzed, P6, BG-High",
+                "Index": "24",
+                "ParameterKey": "Column_261",
+                "Units": "counts"
+              },
+              {
+                "Name": "Counts of events analyzed, P7, Q=1",
+                "Index": "25",
+                "ParameterKey": "Column_262",
+                "Units": "counts"
+              },
+              {
+                "Name": "Counts of events analyzed, P7', Q=2",
+                "Index": "26",
+                "ParameterKey": "Column_263",
+                "Units": "counts"
+              },
+              {
+                "Name": "Counts of events analyzed, P7', Q:5-8",
+                "Index": "27",
+                "ParameterKey": "Column_264",
+                "Units": "counts"
+              },
+              {
+                "Name": "Counts of events analyzed, P7', BG-High",
+                "Index": "28",
+                "ParameterKey": "Column_265",
+                "Units": "counts"
+              },
+              {
+                "Name": "Counts of events analyzed, P8, Q=1",
+                "Index": "29",
+                "ParameterKey": "Column_266",
+                "Units": "counts"
+              },
+              {
+                "Name": "Counts of events analyzed, P8, Q=2",
+                "Index": "30",
+                "ParameterKey": "Column_267",
+                "Units": "counts"
+              },
+              {
+                "Name": "Counts of events analyzed, P8, Q:5-8",
+                "Index": "31",
+                "ParameterKey": "Column_268",
+                "Units": "counts"
+              },
+              {
+                "Name": "Counts of events analyzed, P8, BG-Low",
+                "Index": "32",
+                "ParameterKey": "Column_269",
+                "Units": "counts"
+              },
+              {
+                "Name": "Counts of events analyzed, P8, BG-High",
+                "Index": "33",
+                "ParameterKey": "Column_270",
+                "Units": "counts"
+              }
+            ]
+          },
+          "Particle": {
+            "ParticleType": "Ion",
+            "Qualifier": "Average",
+            "ParticleQuantity": "Counts",
+            "EnergyRange": {
+              "Low": "37",
+              "High": "1200",
+              "Units": "keV/Q"
+            }
+          }
+        },
+        {
+          "Name": "Spacecraft position vector",
+          "Description": "GSE X,Y,Z components of spacecraft position \nvector, in km.",
+          "Cadence": "PT11M",
+          "Structure": {
+            "Size": "3",
+            "Description": "GSE X,Y,Z components of spacecraft position \nvector, in km.",
+            "Element": [
+              {
+                "Name": "X Component, GSE",
+                "Qualifier": "Component.I",
+                "Index": "1",
+                "ParameterKey": "Column_07",
+                "Units": "km"
+              },
+              {
+                "Name": "Y Component, GSE",
+                "Qualifier": "Component.J",
+                "Index": "2",
+                "ParameterKey": "Column_08",
+                "Units": "km"
+              },
+              {
+                "Name": "Z Component, GSE",
+                "Qualifier": "Component.K",
+                "Index": "3",
+                "ParameterKey": "Column_09",
+                "Units": "km"
+              }
+            ]
+          },
+          "Support": {
+            "SupportQuantity": "Positional"
+          }
+        }
+      ]
+    }
+  }
+}

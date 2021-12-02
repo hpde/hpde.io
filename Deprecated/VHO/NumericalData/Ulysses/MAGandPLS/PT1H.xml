@@ -1,0 +1,274 @@
+<Spase xmlns="http://www.spase-group.org/data/schema">
+    <Version>2.2.2</Version>
+    <NumericalData>
+        <ResourceID>spase://VHO/NumericalData/Ulysses/MAGandPLS/PT1H</ResourceID>
+        <ResourceHeader>
+            <ResourceName>Ulysses hourly merged magnetic field and plasma data</ResourceName>
+            <ReleaseDate>2008-12-22T00:00:00</ReleaseDate>
+            <Description>This is an hourly resolution, merged magnetic field and plasma data set created at NSSDC for COHOWeb.  Magnetic field vectors and plasma flow direction angles are given in RTN coordinates.  Spacecraft position data are given in Heliographic inertial (HGI) coordinates.</Description>
+            <Acknowledgement>Please acknowledge the magnetic field and plasma Principal Investigators, Drs. A. Balogh and D. McComas, and NSSDC or GSFC-SPDF</Acknowledgement>
+            <Contact>
+                <PersonID>spase://SMWG/Person/Andre.Balogh</PersonID>
+                <Role>PrincipalInvestigator</Role>
+            </Contact>
+            <Contact>
+                <PersonID>spase://SMWG/Person/David.J.McComas</PersonID>
+                <Role>PrincipalInvestigator</Role>
+            </Contact>
+            <Contact>
+                <PersonID>spase://SMWG/Person/Natalia.E.Papitashvili</PersonID>
+                <Role>GeneralContact</Role>
+            </Contact>
+            <InformationURL>
+                <Name>Readme file at SPDF</Name>
+                <URL>ftp://spdf.gsfc.nasa.gov/pub/data/ulysses/merged/ulymgd.txt</URL>
+            </InformationURL>
+            <InformationURL>
+                <Name>SWOOPS data users' guide</Name>
+                <URL>ftp://spdf.gsfc.nasa.gov/pub/data/ulysses/plasma/swoops/ion/swoops_ion_users_guide_update_20030214.txt</URL>
+            </InformationURL>
+        </ResourceHeader>
+        <AccessInformation>
+            <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF</RepositoryID>
+            <Availability>Online</Availability>
+            <AccessRights>Open</AccessRights>
+            <AccessURL>
+                <Name>FTP access to files at SPDF</Name>
+                <URL>ftp://spdf.gsfc.nasa.gov/pub/data/ulysses/merged/</URL>
+                <Description>for annual files via ftp</Description>
+            </AccessURL>
+            <AccessURL>
+                <Name>HTTP access to files at SPDF</Name>
+                <URL>http://spdf.gsfc.nasa.gov/pub/data/ulysses/merged/</URL>
+                <Description>In CDF via HTTP from SPDF</Description>
+            </AccessURL>
+            <AccessURL>
+                <Name>CDAWeb</Name>
+                <URL>http://cdaweb.gsfc.nasa.gov/</URL>
+                <ProductKey>UY_COHO1HR_MERGED_MAG_PLASMA</ProductKey>
+                <Description> access to subset, plot, and list functionalities from CDAWeb</Description>
+            </AccessURL>
+            <AccessURL>
+                <Name>COHOWeb plots and lists</Name>
+                <URL>http://cohoweb.gsfc.nasa.gov/form/ulysses.html</URL>
+                <Description>Ulysses-specific page for plots and lists</Description>
+            </AccessURL>
+            <AccessURL>
+                <Name>COHOweb top page</Name>
+                <URL>http://cohoweb.gsfc.nasa.gov/</URL>
+                <Description>Plots, lists, scatter plots, regressions, distributions, means, etc.</Description>
+            </AccessURL>
+            <Format>Text</Format>
+            <DataExtent>
+                <Quantity>1</Quantity>
+                <Units>MB</Units>
+                <Per>P1Y</Per>
+            </DataExtent>
+            <Acknowledgement>Please acknowledge the magnetic field and plasma Principal Investigators, Drs. A. Balogh and D. McComas, and NSSDC or GSFC-SPDF</Acknowledgement>
+        </AccessInformation>
+        <InstrumentID>spase://SMWG/Instrument/Ulysses/FGM</InstrumentID>
+        <InstrumentID>spase://SMWG/Instrument/Ulysses/SWOOPS</InstrumentID>
+        <MeasurementType>MagneticField</MeasurementType>
+        <MeasurementType>ThermalPlasma</MeasurementType>
+        <TemporalDescription>
+            <TimeSpan>
+                <StartDate>1990-10-25T00:00:00</StartDate>
+                <StopDate>2008-10-18T00:00:00</StopDate>
+                <Note>Plasma data do not start until Nov. 18, 1990.  As of 12/31/2008, magnetic field data end on Feb. 29, 2008.  Plasma data become quite sparse after ~May 19, 2008.  Data may be extended.</Note>
+            </TimeSpan>
+            <Cadence>PT1H</Cadence>
+        </TemporalDescription>
+        <ObservedRegion>Heliosphere.Outer</ObservedRegion>
+        <Parameter>
+            <Name>Magnetic Field Magnitude</Name>
+            <ParameterKey>Column10</ParameterKey>
+            <Description>Hourly average of fine time scale magnetic field magnitudes</Description>
+            <Cadence>PT1H</Cadence>
+            <Units>nT</Units>
+            <FillValue>999.99</FillValue>
+            <Field>
+                <Qualifier>Magnitude</Qualifier>
+                <FieldQuantity>Magnetic</FieldQuantity>
+            </Field>
+        </Parameter>
+        <Parameter>
+            <Name>Magnetic Field Vector</Name>
+            <Description>Hourly averages of RTN components of fine time scale magnetic field vectors</Description>
+            <Cadence>PT1H</Cadence>
+            <Units>nT</Units>
+            <CoordinateSystem>
+                <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+                <CoordinateSystemName>RTN</CoordinateSystemName>
+            </CoordinateSystem>
+            <Structure>
+                <Size>3</Size>
+                <Description>R,T,N components</Description>
+                <Element>
+                    <Name>R component</Name>
+                    <Qualifier>Component.I</Qualifier>
+                    <Index>1</Index>
+                    <ParameterKey>Column07</ParameterKey>
+                </Element>
+                <Element>
+                    <Name>T component</Name>
+                    <Qualifier>Component.J</Qualifier>
+                    <Index>2</Index>
+                    <ParameterKey>Column08</ParameterKey>
+                </Element>
+                <Element>
+                    <Name>N component</Name>
+                    <Qualifier>Component.K</Qualifier>
+                    <Index>3</Index>
+                    <ParameterKey>Column09</ParameterKey>
+                </Element>
+            </Structure>
+            <FillValue>999.99</FillValue>
+            <Field>
+                <Qualifier>Vector</Qualifier>
+                <FieldQuantity>Magnetic</FieldQuantity>
+            </Field>
+        </Parameter>
+        <Parameter>
+            <Name>Flow speed</Name>
+            <ParameterKey>Column12</ParameterKey>
+            <Description>Hourly averaged solar wind plasma flow speed</Description>
+            <Cadence>PT1H</Cadence>
+            <Units>km/s</Units>
+            <FillValue>9999.9</FillValue>
+            <Particle>
+                <ParticleType>Proton</ParticleType>
+                <Qualifier>Average</Qualifier>
+                <ParticleQuantity>FlowSpeed</ParticleQuantity>
+            </Particle>
+        </Parameter>
+        <Parameter>
+            <Name>Flow elevation angle</Name>
+            <ParameterKey>Column13</ParameterKey>
+            <Description>Hourly averaged solar wind plasma flow elevation angle</Description>
+            <Cadence>PT1H</Cadence>
+            <Units>deg</Units>
+            <CoordinateSystem>
+                <CoordinateRepresentation>Spherical</CoordinateRepresentation>
+                <CoordinateSystemName>RTN</CoordinateSystemName>
+            </CoordinateSystem>
+            <FillValue>9999.9</FillValue>
+            <Particle>
+                <ParticleType>Proton</ParticleType>
+                <Qualifier>DirectionAngle.ElevationAngle</Qualifier>
+                <ParticleQuantity>FlowVelocity</ParticleQuantity>
+            </Particle>
+        </Parameter>
+        <Parameter>
+            <Name>Flow azimuth angle</Name>
+            <ParameterKey>Column14</ParameterKey>
+            <Description>Hourly averaged solar wind plasma flow azimuthal angle</Description>
+            <Cadence>PT1H</Cadence>
+            <Units/>
+            <CoordinateSystem>
+                <CoordinateRepresentation>Spherical</CoordinateRepresentation>
+                <CoordinateSystemName>RTN</CoordinateSystemName>
+            </CoordinateSystem>
+            <FillValue>9999.9</FillValue>
+            <Particle>
+                <ParticleType>Proton</ParticleType>
+                <Qualifier>DirectionAngle.AzimuthAngle</Qualifier>
+                <ParticleQuantity>FlowVelocity</ParticleQuantity>
+            </Particle>
+        </Parameter>
+        <Parameter>
+            <Name>Proton density</Name>
+            <ParameterKey>Column15</ParameterKey>
+            <Description>Hourly averaged solar wind proton plasma density</Description>
+            <Cadence>PT1H</Cadence>
+            <Units>n/cc</Units>
+            <FillValue>99.99999</FillValue>
+            <Particle>
+                <ParticleType>Proton</ParticleType>
+                <Qualifier>Average</Qualifier>
+                <ParticleQuantity>NumberDensity</ParticleQuantity>
+            </Particle>
+        </Parameter>
+        <Parameter>
+            <Name>Alpha particle density</Name>
+            <ParameterKey>Column16</ParameterKey>
+            <Description>Hourly averaged solar wind alpha particle plasma density</Description>
+            <Cadence>PT1H</Cadence>
+            <Units>n/cc</Units>
+            <FillValue>99.99999</FillValue>
+            <Particle>
+                <ParticleType>AlphaParticle</ParticleType>
+                <Qualifier>Average</Qualifier>
+                <ParticleQuantity>NumberDensity</ParticleQuantity>
+            </Particle>
+        </Parameter>
+        <Parameter>
+            <Name>Large Temperature</Name>
+            <ParameterKey>Column17</ParameterKey>
+            <Description>Hourly averaged solar wind plasma temperature deteremined as the integral of the distribution
+in three-dimensional velocity space over all energy channels and angle bins
+that are statistically above noise</Description>
+            <Cadence>PT1H</Cadence>
+            <Units>degK</Units>
+            <FillValue>9999999.</FillValue>
+            <Particle>
+                <ParticleType>Proton</ParticleType>
+                <Qualifier>Average</Qualifier>
+                <ParticleQuantity>Temperature</ParticleQuantity>
+            </Particle>
+        </Parameter>
+        <Parameter>
+            <Name>Small Temperature</Name>
+            <ParameterKey>Column18</ParameterKey>
+            <Description>Hourly averaged solar wind plasma temperature estimated by summing over angle the observations at a
+fixed energy. The moments of the resulting one dimensional plasma spectrum are
+then summed and the resulting RR (radial) component of the temperature tensor
+is used as the estimate of proton temperature.</Description>
+            <Cadence>PT1H</Cadence>
+            <Units>degK</Units>
+            <FillValue>9999999.</FillValue>
+            <Particle>
+                <ParticleType>Proton</ParticleType>
+                <Qualifier>Average</Qualifier>
+                <ParticleQuantity>Temperature</ParticleQuantity>
+            </Particle>
+        </Parameter>
+        <Parameter>
+            <Name>Ulysses radial distance</Name>
+            <ParameterKey>Column04</ParameterKey>
+            <Description>Heliocentric radial distance of Ulysses in AU</Description>
+            <Cadence>PT1H</Cadence>
+            <Units>AU</Units>
+            <Support>
+                <SupportQuantity>Positional</SupportQuantity>
+            </Support>
+        </Parameter>
+        <Parameter>
+            <Name>Ulysses latitude</Name>
+            <ParameterKey>Column05</ParameterKey>
+            <Description>Heliographic Inertial elevation angle of Ulysses in deg</Description>
+            <Cadence>PT1H</Cadence>
+            <Units>deg</Units>
+            <CoordinateSystem>
+                <CoordinateRepresentation>Spherical</CoordinateRepresentation>
+                <CoordinateSystemName>HGI</CoordinateSystemName>
+            </CoordinateSystem>
+            <Support>
+                <SupportQuantity>Positional</SupportQuantity>
+            </Support>
+        </Parameter>
+        <Parameter>
+            <Name>Ulysses longitude</Name>
+            <ParameterKey>Column06</ParameterKey>
+            <Description>Heliographic Inertial azimuthal angle of Ulysses in deg</Description>
+            <Cadence>PT1H</Cadence>
+            <Units>deg</Units>
+            <CoordinateSystem>
+                <CoordinateRepresentation>Spherical</CoordinateRepresentation>
+                <CoordinateSystemName>HGI</CoordinateSystemName>
+            </CoordinateSystem>
+            <Support>
+                <SupportQuantity>Positional</SupportQuantity>
+            </Support>
+        </Parameter>
+    </NumericalData>
+</Spase>

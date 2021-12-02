@@ -1,0 +1,416 @@
+<?xml version="1.0"?>
+<Spase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.spase-group.org/data/schema" 
+  xsi:schemaLocation="http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_2_2.xsd">
+  <Version>2.2.2</Version>
+  <NumericalData>
+    <ResourceID>spase://VHO/NumericalData/Ulysses/SWICS/PT13M</ResourceID>
+    <ResourceHeader>
+      <ResourceName>Ulysses SWICS Full Resolution Matrix Rate Data</ResourceName>
+      <ReleaseDate>2012-06-06T00:00:00Z</ReleaseDate>
+      <Description>
+        The Ulysses/SWICS instrument is a mass spectrometer combining an 
+        electrostatic analyzer with post acceleration, followed by a time-of-flight 
+        and energy measurement. The instrument covers an energy per charge range 
+        from 0.16 to 59.6 keV/e with a time resolution of about 13 minutes.
+        SWICS is designed to determine uniquely the elemental and ionic-charge 
+        composition, the temperatures and mean speeds of all major solar wind ions, 
+        from H through Fe. For more information see G. Gloeckler, J. Geiss et al., 
+        Astron. Astrophys. Suppl. Ser. 92, 267-289, 1992.
+        These data consist of all 18 Matrix Rates (MR) as a function of energy 
+        per charge (E/q) and of time. Each MR represents a specific element in one 
+        or several ionization states, but it may also contain significant 
+        contributions from neighbouring elements due to spillover. The MRs are given 
+        in units of count rates only. SAPRO (SWICS Archive Processor) software can be 
+        used both to convert the MR count rates to physical units (differential flux, 
+        phase space density), to correct for spillover between different MRs, and to 
+        obtain kinetic parameters (density, speed, thermal speed) of selected ions (to be used with caution).
+      </Description>
+      <Acknowledgement>Please acknowledge G. Gloeckler (P.I.)</Acknowledgement>
+      <Contact>
+        <PersonID>spase://SMWG/Person/George.Gloeckler</PersonID>
+        <Role>PrincipalInvestigator</Role>
+      </Contact>
+    </ResourceHeader>
+    <AccessInformation>
+      <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF</RepositoryID>
+      <Availability>Online</Availability>
+      <AccessRights>Open</AccessRights>
+      <AccessURL>
+        <Name>nssdcftp</Name>
+        <URL>ftp://cdaweb.gsfc.nasa.gov/pub/data/ulysses/h0/glg/</URL>
+        <Description>Directory listing of files</Description>
+      </AccessURL>
+      <Format>CDF</Format>
+    </AccessInformation>
+    <InstrumentID>spase://SMWG/Instrument/Ulysses/SWICS</InstrumentID>
+    <MeasurementType>ThermalPlasma</MeasurementType>
+    <TemporalDescription>
+      <TimeSpan>
+        <StartDate>1990-11-08T00:00:00</StartDate>
+        <StopDate>2000-12-31T00:00:00</StopDate>
+      </TimeSpan>
+      <Cadence>PT13M</Cadence>
+    </TemporalDescription>
+    <ObservedRegion>Heliosphere.Outer</ObservedRegion>
+    <ObservedRegion>Heliosphere.NearEarth</ObservedRegion>
+    <Parameter>
+      <Name>Epoch</Name>
+      <ParameterKey>Epoch</ParameterKey>
+      <Description>Epoch</Description>
+      <Units>ms</Units>
+      <FillValue>-1e31</FillValue>
+      <Support>
+        <SupportQuantity>Temporal</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Time PB5</Name>
+      <ParameterKey>Time_PB5</ParameterKey>
+      <FillValue>-2147483648</FillValue>
+      <Support>
+        <SupportQuantity>Temporal</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Spacecraft Event Time</Name>
+      <ParameterKey>SC_EVENT_TIME</ParameterKey>
+      <Description>Spacecraft Event Time measured in seconds since 1-Jan-1950</Description>
+      <Units>s</Units>
+      <FillValue>4294967295</FillValue>
+      <Support>
+        <SupportQuantity>Temporal</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Spacecraft Position</Name>
+      <ParameterKey>SC_POS</ParameterKey>
+      <Description>Spacecraft position in heliocentric polar coordinates</Description>
+      <FillValue>-1e31</FillValue>
+      <Support>
+        <SupportQuantity>Positional</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Gap Flag</Name>
+      <ParameterKey>GAP_FLAG</ParameterKey>
+      <Description>
+        0 = no gap immediately prior to this record, 
+        1 = prior gap due to inappropriate instrument mode, 
+        2 = prior gap due to missing level zero data, 
+        3 = prior gap due to noisy level zero data, 
+        10-255 = reserved
+      </Description>
+      <FillValue>-2147483648</FillValue>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Non Nominal Flag</Name>
+      <ParameterKey>NON_NOMINAL_FLAG</ParameterKey>
+      <Description>
+        Deflection voltage cycle non nominal flag bitmask: 
+          no bit set = all nominal, 
+          bit  0 set = DPU error - no sun puls, 
+          bit  1 set = DPU error - sun puls not within sun pulse sector, 
+          bit  2 set = DPU error - MCD address wrong, 
+          bit  3 set = DPU error - no spin rate, 
+          bit  4 set = DPU error - no bubble sync. word, 
+          bit  5 set = DPU error - no bubble HK identifier, 
+          bit  6 set = DPU error - interrupt error 2, 
+          bit  7 set = DPU error - interrupt error 1,
+          bit  8 set = DPU error - formating error, 
+          bit  9 set = DPU error - PHA error, 
+          bit 10 set = DPU error - mode status error, 
+          bit 11 set = non nominal matrix rate value (i.e. matrix rate overflow), 
+          bit 12 set = non nominal DV mode (i.e. DV mode != 1), 
+          bit 13 set = non nominal PAPS value (i.e. PAPS value != 22.6), 
+          bit 14 set = non nominal MCP bias power supply level (i.e. MCP level != 3), 
+          bit 15 set = non nominal emergency mode (i.e. emergency mode enabled), 
+          bit 16 set = non nominal DPU mode (i.e. DPU mode != 0), 
+          bit 17 set = non nominal TAC gain adjustment (i.e. TAC gain != 0%), 
+          bit 18 set = non nominal DV stepping (i.e. step reversal), 
+          bit 19 set = non nominal aspect angle (i.e. not within range: ]0.0 .. 50.0[), 
+          bit 20 set = non nominal ADC trigger type (i.e. trigger type != T), 
+          bit 21-31  = reserved (not set)
+      </Description>
+      <FillValue>4294967295</FillValue>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Status Flag</Name>
+      <ParameterKey>STATUS_FLAG</ParameterKey>
+      <Description>
+        Instrument status flag bitmask: 
+          bit  0-13: reserved (not set), 
+          bit 14-15 (2 bit): telemetry mode, 
+          bit 16-19 (4 bit): TAC gain adjustment, 
+          bit    20 (1 bit): data compression code, 
+          bit 21-22 (2 bit): emergency mode, 
+          bit 23-26 (4 bit): MCP bias power supply level, 
+          bit 27-29 (3 bit): DV mode, 
+          bit 30-31 (2 bit): DPU mode
+      </Description>
+      <FillValue>4294967295</FillValue>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Period Duration</Name>
+      <ParameterKey>PERIOD_DURATION</ParameterKey>
+      <Description>Instrument period duration is 12 seconds, with few exceptions</Description>
+      <Units>s</Units>
+      <ValidMin>10</ValidMin>
+      <ValidMax>50</ValidMax>
+      <FillValue>-1e31</FillValue>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Aspect Angle</Name>
+      <ParameterKey>ASPECT_ANGLE</ParameterKey>
+      <Description>Spacecraft aspect angle</Description>
+      <Units>degrees</Units>
+      <ValidMin>0</ValidMin>
+      <ValidMax>57</ValidMax>
+      <FillValue>-1e31</FillValue>
+      <Support>
+        <SupportQuantity>Positional</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Post acceleration power supply voltage</Name>
+      <ParameterKey>PAPS_VOLTAGE</ParameterKey>
+      <Units>kV</Units>
+      <FillValue>-1e31</FillValue>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Energy/Charge Step</Name>
+      <ParameterKey>DV_STEP</ParameterKey>
+      <Description>Electrostatic deflection system energy per charge step</Description>
+      <FillValue>-1e31</FillValue>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Matrix Rate 0</Name>
+      <ParameterKey>MATRIX_RATE_0</ParameterKey>
+      <Description>H+, protons, measured in triple coincidence</Description>
+      <FillValue>4294967295</FillValue>
+      <Particle>
+        <ParticleType>Proton</ParticleType>
+        <Qualifier>Differential</Qualifier>
+        <ParticleQuantity>NumberFlux</ParticleQuantity>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>Matrix Rate 1</Name>
+      <ParameterKey>MATRIX_RATE_1</ParameterKey>
+      <Description>4He++, alpha particles, measured in triple coincidence</Description>
+      <FillValue>4294967295</FillValue>
+      <Particle>
+        <ParticleType>AlphaParticle</ParticleType>
+        <Qualifier>Differential</Qualifier>
+        <ParticleQuantity>NumberFlux</ParticleQuantity>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>Matrix Rate 2</Name>
+      <ParameterKey>MATRIX_RATE_2</ParameterKey>
+      <Description>H+, protons, measured in double coincidence</Description>
+      <FillValue>4294967295</FillValue>
+      <Particle>
+        <ParticleType>Proton</ParticleType>
+        <Qualifier>Differential</Qualifier>
+        <ParticleQuantity>NumberFlux</ParticleQuantity>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>Matrix Rate 3</Name>
+      <ParameterKey>MATRIX_RATE_3</ParameterKey>
+      <Description>4He+, singly charged helium, measured in double coincidence</Description>
+      <FillValue>4294967295</FillValue>
+      <Particle>
+        <ParticleType>Ion</ParticleType>
+        <Qualifier>Differential</Qualifier>
+        <ParticleQuantity>NumberFlux</ParticleQuantity>
+        <AtomicNumber>2</AtomicNumber>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>Matrix Rate 4</Name>
+      <ParameterKey>MATRIX_RATE_4</ParameterKey>
+      <Description>Heavy ions with m/q>10, measured in double coincidence</Description>
+      <FillValue>4294967295</FillValue>
+      <Particle>
+        <ParticleType>Ion</ParticleType>
+        <Qualifier>Differential</Qualifier>
+        <ParticleQuantity>NumberFlux</ParticleQuantity>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>Matrix Rate 5</Name>
+      <ParameterKey>MATRIX_RATE_5</ParameterKey>
+      <Description>C4+ and C5+ nominal, with spillover from N and O</Description>
+      <FillValue>4294967295</FillValue>
+      <Particle>
+        <ParticleType>Ion</ParticleType>
+        <Qualifier>Differential</Qualifier>
+        <ParticleQuantity>NumberFlux</ParticleQuantity>
+        <AtomicNumber>6</AtomicNumber>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>Matrix Rate 6</Name>
+      <ParameterKey>MATRIX_RATE_6</ParameterKey>
+      <Description>C6+ nominal, with spillover from N and O</Description>
+      <FillValue>4294967295</FillValue>
+      <Particle>
+        <ParticleType>Ion</ParticleType>
+        <Qualifier>Differential</Qualifier>
+        <ParticleQuantity>NumberFlux</ParticleQuantity>
+        <AtomicNumber>6</AtomicNumber>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>Matrix Rate 7</Name>
+      <ParameterKey>MATRIX_RATE_7</ParameterKey>
+      <Description>N5+ to N7+ nominal, with strong spillover from C and O</Description>
+      <FillValue>4294967295</FillValue>
+      <Particle>
+        <ParticleType>Ion</ParticleType>
+        <Qualifier>Differential</Qualifier>
+        <ParticleQuantity>NumberFlux</ParticleQuantity>
+        <AtomicNumber>7</AtomicNumber>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>Matrix Rate 8</Name>
+      <ParameterKey>MATRIX_RATE_8</ParameterKey>
+      <Description>O6+ nominal, with spillover from C, N, and Ne</Description>
+      <FillValue>4294967295</FillValue>
+      <Particle>
+        <ParticleType>Ion</ParticleType>
+        <Qualifier>Differential</Qualifier>
+        <ParticleQuantity>NumberFlux</ParticleQuantity>
+        <AtomicNumber>8</AtomicNumber>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>Matrix Rate 9</Name>
+      <ParameterKey>MATRIX_RATE_9</ParameterKey>
+      <Description>O7+ and O8+ nominal, with spillover from C, N, and Ne</Description>
+      <FillValue>4294967295</FillValue>
+      <Particle>
+        <ParticleType>Ion</ParticleType>
+        <Qualifier>Differential</Qualifier>
+        <ParticleQuantity>NumberFlux</ParticleQuantity>
+        <AtomicNumber>8</AtomicNumber>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>Matrix Rate 10</Name>
+      <ParameterKey>MATRIX_RATE_10</ParameterKey>
+      <Description>Ne8+ nominal, with spillover from O and Mg</Description>
+      <FillValue>4294967295</FillValue>
+      <Particle>
+        <ParticleType>Ion</ParticleType>
+        <Qualifier>Differential</Qualifier>
+        <ParticleQuantity>NumberFlux</ParticleQuantity>
+        <AtomicNumber>10</AtomicNumber>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>Matrix Rate 11</Name>
+      <ParameterKey>MATRIX_RATE_11</ParameterKey>
+      <Description>Mg6+ to Mg8+ nominal, with spillover from Si</Description>
+      <FillValue>4294967295</FillValue>
+      <Particle>
+        <ParticleType>Ion</ParticleType>
+        <Qualifier>Differential</Qualifier>
+        <ParticleQuantity>NumberFlux</ParticleQuantity>
+        <AtomicNumber>12</AtomicNumber>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>Matrix Rate 12</Name>
+      <ParameterKey>MATRIX_RATE_12</ParameterKey>
+      <Description>Mg9+ to Mg11+ nominal, with spillover from O, Ne, and Si</Description>
+      <FillValue>4294967295</FillValue>
+      <Particle>
+        <ParticleType>Ion</ParticleType>
+        <Qualifier>Differential</Qualifier>
+        <ParticleQuantity>NumberFlux</ParticleQuantity>
+        <AtomicNumber>12</AtomicNumber>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>Matrix Rate 13</Name>
+      <ParameterKey>MATRIX_RATE_13</ParameterKey>
+      <Description>Si5+ to Si8+ nominal, with spillover from Mg and S</Description>
+      <FillValue>4294967295</FillValue>
+      <Particle>
+        <ParticleType>Ion</ParticleType>
+        <Qualifier>Differential</Qualifier>
+        <ParticleQuantity>NumberFlux</ParticleQuantity>
+        <AtomicNumber>14</AtomicNumber>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>Matrix Rate 14</Name>
+      <ParameterKey>MATRIX_RATE_14</ParameterKey>
+      <Description>Si9+ to Si12+ nominal, with spillover from Mg and S</Description>
+      <FillValue>4294967295</FillValue>
+      <Particle>
+        <ParticleType>Ion</ParticleType>
+        <Qualifier>Differential</Qualifier>
+        <ParticleQuantity>NumberFlux</ParticleQuantity>
+        <AtomicNumber>14</AtomicNumber>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>Matrix Rate 15</Name>
+      <ParameterKey>MATRIX_RATE_15</ParameterKey>
+      <Description>S6+ to S14+ nominal, with spillover from Mg, Si, and Fe</Description>
+      <FillValue>4294967295</FillValue>
+      <Particle>
+        <ParticleType>Ion</ParticleType>
+        <Qualifier>Differential</Qualifier>
+        <ParticleQuantity>NumberFlux</ParticleQuantity>
+        <AtomicNumber>16</AtomicNumber>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>Matrix Rate 16</Name>
+      <ParameterKey>MATRIX_RATE_16</ParameterKey>
+      <Description>Fe7+ to Fe9+ nominal, with spillover from Si and S</Description>
+      <FillValue>4294967295</FillValue>
+      <Particle>
+        <ParticleType>Ion</ParticleType>
+        <Qualifier>Differential</Qualifier>
+        <ParticleQuantity>NumberFlux</ParticleQuantity>
+        <AtomicNumber>26</AtomicNumber>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>Matrix Rate 17</Name>
+      <ParameterKey>MATRIX_RATE_17</ParameterKey>
+      <Description>Fe10+ to Fe14+ nominal, with spillover from Si and S</Description>
+      <FillValue>4294967295</FillValue>
+      <Particle>
+        <ParticleType>Ion</ParticleType>
+        <Qualifier>Differential</Qualifier>
+        <ParticleQuantity>NumberFlux</ParticleQuantity>
+        <AtomicNumber>26</AtomicNumber>
+      </Particle>
+    </Parameter>
+  </NumericalData>
+</Spase>

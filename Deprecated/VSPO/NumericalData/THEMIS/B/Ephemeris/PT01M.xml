@@ -1,0 +1,640 @@
+<?xml version="1.0"?>
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema  http://www.spase-group.org/data/schema/spase-2_3_1.xsd">
+  <Version>2.3.1</Version>
+  <NumericalData>
+    <ResourceID>spase://VSPO/NumericalData/THEMIS/B/Ephemeris/PT01M</ResourceID>
+    <ResourceHeader>
+      <ResourceName>THEMIS-B Level 1 Probe State Data</ResourceName>
+      <ReleaseDate>2020-07-03T23:28:58Z</ReleaseDate>
+      <Description>The L1 STATE files contain the following data, sampled at one-minute intervals:
+
+               * probe position and velocity in GEI, GSE, and GSM coordinates;
+               * flags to indicate regions of interest and maneuver status;
+               * RA and declination of spin axis;
+               * spin period and spin phase;
+               * spin model parameters for high-precision interpolation of spin phase between one-minute data points.
+
+               Version number indicates data source as follows:
+
+               * V00: predicted ephemeris and attitude, no spin period or spin phase;
+               * V01: predicted ephemeris and attitude, spin period and spin phase derived from probe telemetry;
+               * V02: predicted attitude, definitive ephemeris from magnetometer and Doppler tracking data;
+               * V03: corrected attitude and spin phase derived from fully calibrated magnetometer data. (added science attitude determination using perigee data post-processing).
+
+               Produced by Mission Ops, Science Ops and Science Team.</Description>
+      <Acknowledgement>NASA Contract NAS5-02099</Acknowledgement>
+      <Contact>
+        <PersonID>spase://SMWG/Person/Vassilis.Angelopoulos</PersonID>
+        <Role>PrincipalInvestigator</Role>
+</Contact>
+      <InformationURL>
+        <Name>THEMIS Data Overview</Name>
+        <URL>http://themis.ssl.berkeley.edu/overview_data.shtml</URL>
+        <Description>Overview of THEMIS data, descriptions, and data policy.</Description>
+</InformationURL>
+      <InformationURL>
+        <Name>THEMIS Data Policy and Credits</Name>
+        <URL>http://themis.ssl.berkeley.edu/roadrules.shtml</URL>
+        <Description>Details on THEMIS data policy and giving proper credits in publications.</Description>
+</InformationURL>
+      <InformationURL>
+        <Name>THEMIS Ephemeris Format Definition</Name>
+        <URL>https://spdf.gsfc.nasa.gov/pub/data/themis/documents/tdas/docs/thm_ogs_431m_ephemeris_format_definition.pdf</URL>
+        <Description>Ephemeris file format and quantity details including RoI descriptions.</Description>
+</InformationURL>
+      <PriorID>spase://VMO/NumericalData/THEMIS/B/Ephemeris/PT01M</PriorID>
+</ResourceHeader>
+    <AccessInformation>
+      <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF/CDAWeb</RepositoryID>
+      <Availability>Online</Availability>
+      <AccessRights>Open</AccessRights>
+      <AccessURL>
+        <Name>FTPS from SPDF (not with most browsers)</Name>
+        <URL>ftps://spdf.gsfc.nasa.gov/pub/data/themis/thb/l1/state/</URL>
+        <Description>NASA/GSFC CDAWeb ftp access to the data.</Description>
+</AccessURL>
+      <AccessURL>
+        <Name>HTTPS from SPDF</Name>
+        <URL>https://spdf.gsfc.nasa.gov/pub/data/themis/thb/l1/state/</URL>
+        <Description>In CDF via HTTP from SPDF</Description>
+</AccessURL>
+      <AccessURL>
+        <Name>CDAWeb</Name>
+        <URL>https://cdaweb.sci.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=THB_L1_STATE&amp;index=sp_phys</URL>
+        <ProductKey>THB_L1_STATE</ProductKey>
+        <Description>Access to ASCII, CDF, and plots via NASA/GSFC CDAWeb</Description>
+</AccessURL>
+      <AccessURL>
+        <Name>SSCWeb</Name>
+        <URL>https://sscweb.gsfc.nasa.gov/cgi-bin/Locator.cgi</URL>
+        <ProductKey>themisb</ProductKey>
+</AccessURL>
+      <Format>CDF</Format>
+      <Encoding>None</Encoding>
+</AccessInformation>
+    <AccessInformation>
+      <RepositoryID>spase://SMWG/Repository/UCB/THEMIS</RepositoryID>
+      <Availability>Online</Availability>
+      <AccessRights>Open</AccessRights>
+      <AccessURL>
+        <Name>THEMIS L1 state data at UC Berkeley</Name>
+        <URL>http://themis.ssl.berkeley.edu/data/themis/thb/l1/state/</URL>
+        <Description>CDF data files for download, organized by date.</Description>
+</AccessURL>
+      <Format>CDF</Format>
+      <Encoding>None</Encoding>
+</AccessInformation>
+    <ProcessingLevel>Uncalibrated</ProcessingLevel>
+    <ProviderProcessingLevel>Level 1</ProviderProcessingLevel>
+    <ProviderVersion>v3</ProviderVersion>
+    <InstrumentID>spase://SMWG/Instrument/THEMIS/B/Ephemeris</InstrumentID>
+    <MeasurementType>Ephemeris</MeasurementType>
+    <TemporalDescription>
+      <TimeSpan>
+        <StartDate>2007-02-17T23:35:58</StartDate>
+        <RelativeStopDate>-P7D</RelativeStopDate>
+</TimeSpan>
+      <Cadence>PT01M</Cadence>
+</TemporalDescription>
+    <ObservedRegion>Heliosphere.NearEarth</ObservedRegion>
+    <ObservedRegion>Earth.Magnetosphere.Magnetotail</ObservedRegion>
+    <ObservedRegion>Earth.Magnetosphere.Main</ObservedRegion>
+    <ObservedRegion>Earth.Magnetosheath</ObservedRegion>
+    <Caveats>Typical cadence is 1 min, occasionally 3s.</Caveats>
+    <Parameter>
+      <Name>THEMIS-B Position (GEI)</Name>
+      <ParameterKey>thb_pos</ParameterKey>
+      <Description>THEMIS-B position vector (km) in GEI coordinates.</Description>
+      <Units>km</Units>
+      <UnitsConversion>1e3&gt;m</UnitsConversion>
+      <CoordinateSystem>
+        <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+        <CoordinateSystemName>GEI</CoordinateSystemName>
+</CoordinateSystem>
+      <Structure>
+        <Size>3</Size>
+        <Element>
+          <Name>X GEI</Name>
+          <Qualifier>Component.I</Qualifier>
+          <Index>1</Index>
+</Element>
+        <Element>
+          <Name>Y GEI</Name>
+          <Qualifier>Component.J</Qualifier>
+          <Index>2</Index>
+</Element>
+        <Element>
+          <Name>Z GEI</Name>
+          <Qualifier>Component.K</Qualifier>
+          <Index>3</Index>
+</Element>
+</Structure>
+      <ValidMin>-1000000.0</ValidMin>
+      <ValidMax>1000000.0</ValidMax>
+      <FillValue>NaN</FillValue>
+      <Support>
+        <Qualifier>Vector</Qualifier>
+        <SupportQuantity>Positional</SupportQuantity>
+</Support>
+</Parameter>
+    <Parameter>
+      <Name>THEMIS-B Velocity (GEI)</Name>
+      <ParameterKey>thb_vel</ParameterKey>
+      <Description>THEMIS-B velocity vector (km/s) in GEI coordinates.</Description>
+      <Units>km/s</Units>
+      <UnitsConversion>1e3&gt;m/s</UnitsConversion>
+      <CoordinateSystem>
+        <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+        <CoordinateSystemName>GEI</CoordinateSystemName>
+</CoordinateSystem>
+      <Structure>
+        <Size>3</Size>
+        <Element>
+          <Name>Vx GEI</Name>
+          <Qualifier>Component.I</Qualifier>
+          <Index>1</Index>
+</Element>
+        <Element>
+          <Name>Vy GEI</Name>
+          <Qualifier>Component.J</Qualifier>
+          <Index>2</Index>
+</Element>
+        <Element>
+          <Name>Vz GEI</Name>
+          <Qualifier>Component.K</Qualifier>
+          <Index>3</Index>
+</Element>
+</Structure>
+      <ValidMin>-1000.0</ValidMin>
+      <ValidMax>1000.0</ValidMax>
+      <FillValue>NaN</FillValue>
+      <Support>
+        <Qualifier>Vector</Qualifier>
+        <SupportQuantity>Velocity</SupportQuantity>
+</Support>
+</Parameter>
+    <Parameter>
+      <Name>THEMIS-B Maneuver Flag</Name>
+      <ParameterKey>thb_man</ParameterKey>
+      <Description>THEMIS-B maneuver status code (XYYZZZ). Values indicate if/what maneuver is being performed.  Spacecraft data will be unreliable during maneuvers.
+
+      * Unpowered flight (Coast):
+          - X=0, Y=00, Z=000            
+      * Sequence Code X:
+          - 0= No Segmentation
+          - 1= Segmented Maneuver
+      * Type Code YY:
+          - 0= No Maneuver
+          - 1= Axial-thrust Maneuver
+          - 2= Side-thrust Maneuver
+          - 3= Beta-thrust Maneuver
+          - 4= Attitude Precession
+          - 5= Spin-Rate Change
+      * Sequence Number ZZZ:
+          - 001-999= Maneuver Sequence Number</Description>
+      <ValidMin>0</ValidMin>
+      <ValidMax>4294967295</ValidMax>
+      <FillValue>4294967295</FillValue>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+</Support>
+</Parameter>
+    <Parameter>
+      <Name>THEMIS-B RoI</Name>
+      <ParameterKey>thb_roi</ParameterKey>
+      <Description>Region of interest. Different bits of this parameter give a general indication of the region thbt the spacecraft is in.  The first 18 bits are significant.  An active bit indicates the spacecraft is in a given region.  Multiple bits may be set simultaneously. The value of the bit is in parentheses in the following table.
+
+          +---------------------------------------------------+
+          | Bit 1(1)      | Earth Shadow                      |
+          | Bit 2(2)      | Lunar Shadow                      |
+          | Bit 3(4)      | Atmospheric absorbtion zone       |
+          | Bit 4(8)      | South Atlantic Anomaly            |
+          | Bit 5(16)     | Northern Auroral Zone             |
+          | Bit 6(32)     | Southern Auroral Zone             |
+          | Bit 7(64)     | Perigee Passage                   |
+          | Bit 8(128)    | Inner &amp; Outer Radiation Belts |
+          | Bit 9(256)    | Deep Plasma Sphere                |
+          | Bit 10(512)   | Foreshock Solar Wind              |
+          | Bit 11(1024)  | Solar Wind Beam                   |
+          | Bit 12(2048)  | High Magnetic Field               |
+          | Bit 13(4096)  | Average Plasma Sheet              |
+          | Bit 14(8192)  | Bowshock Crossing                 |
+          | Bit 15(16384) | Magnetopause Crossing             |
+          | Bit 16(32768) | Ground Based Observatories        |
+          | Bit 17(65536) | 2-Day Conjunctions                |
+          | Bit 18(131072)| 4-Day Conjunctions                |
+          +---------------------------------------------------+</Description>
+      <ValidMin>0</ValidMin>
+      <ValidMax>4294967295</ValidMax>
+      <FillValue>4294967295</FillValue>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+</Support>
+</Parameter>
+    <Parameter>
+      <Name>THEMIS-B Spin Right Ascension</Name>
+      <ParameterKey>thb_spinras</ParameterKey>
+      <Description>THEMIS-B spin axis right ascension in GEI coordinates.</Description>
+      <Caveats>Measured from GEI x-axis towards GEI y-axis.</Caveats>
+      <Units>deg</Units>
+      <CoordinateSystem>
+        <CoordinateRepresentation>Spherical</CoordinateRepresentation>
+        <CoordinateSystemName>GEI</CoordinateSystemName>
+</CoordinateSystem>
+      <ValidMin>0.0</ValidMin>
+      <ValidMax>360.0</ValidMax>
+      <FillValue>NaN</FillValue>
+      <Support>
+        <Qualifier>DirectionAngle.AzimuthAngle</Qualifier>
+        <SupportQuantity>Positional</SupportQuantity>
+</Support>
+</Parameter>
+    <Parameter>
+      <Name>THEMIS-B Spin Declination</Name>
+      <ParameterKey>thb_spindec</ParameterKey>
+      <Description>THEMIS-B spin axis declination in GEI coordinates.</Description>
+      <Caveats>Measured from GEI x-y axis towards GEI z-axis.</Caveats>
+      <Units>deg</Units>
+      <CoordinateSystem>
+        <CoordinateRepresentation>Spherical</CoordinateRepresentation>
+        <CoordinateSystemName>GEI</CoordinateSystemName>
+</CoordinateSystem>
+      <ValidMin>-90.0</ValidMin>
+      <ValidMax>90.0</ValidMax>
+      <FillValue>NaN</FillValue>
+      <Support>
+        <Qualifier>DirectionAngle.ElevationAngle</Qualifier>
+        <SupportQuantity>Positional</SupportQuantity>
+</Support>
+</Parameter>
+    <Parameter>
+      <Name>THEMIS-B Spin Alpha</Name>
+      <ParameterKey>thb_spinalpha</ParameterKey>
+      <Description>THEMIS-B spin axis azimuth, Euler alpha, in Probe Geometric (SPG) coordinates</Description>
+      <Units>deg</Units>
+      <CoordinateSystem>
+        <CoordinateRepresentation>Spherical</CoordinateRepresentation>
+        <CoordinateSystemName>SC</CoordinateSystemName>
+</CoordinateSystem>
+      <ValidMin>0.0</ValidMin>
+      <ValidMax>360.0</ValidMax>
+      <FillValue>NaN</FillValue>
+      <Support>
+        <Qualifier>DirectionAngle.AzimuthAngle</Qualifier>
+        <SupportQuantity>Positional</SupportQuantity>
+</Support>
+</Parameter>
+    <Parameter>
+      <Name>THEMIS-B Spin Beta</Name>
+      <ParameterKey>thb_spinbeta</ParameterKey>
+      <Description>THEMIS-B spin axis colatitude, Euler beta, in Probe Geometric (SPG) coordinates</Description>
+      <Units>deg</Units>
+      <CoordinateSystem>
+        <CoordinateRepresentation>Spherical</CoordinateRepresentation>
+        <CoordinateSystemName>SC</CoordinateSystemName>
+</CoordinateSystem>
+      <ValidMin>0.0</ValidMin>
+      <ValidMax>180.0</ValidMax>
+      <FillValue>NaN</FillValue>
+      <Support>
+        <Qualifier>DirectionAngle.PolarAngle</Qualifier>
+        <SupportQuantity>Positional</SupportQuantity>
+</Support>
+</Parameter>
+    <Parameter>
+      <Name>THEMIS-B Spin Period</Name>
+      <ParameterKey>thb_spinper</ParameterKey>
+      <Description>THEMIS-B spin period, regularized and boxcar averaged.</Description>
+      <Units>s</Units>
+      <ValidMin>0.0</ValidMin>
+      <ValidMax>30.0</ValidMax>
+      <FillValue>NaN</FillValue>
+      <Support>
+        <SupportQuantity>Temporal</SupportQuantity>
+</Support>
+</Parameter>
+    <Parameter>
+      <Name>THEMIS-B Spin PhaseAngle</Name>
+      <ParameterKey>thb_spinphase</ParameterKey>
+      <Description>THEMIS-B angle rotated since the sun sensor registered the sun pulse, regularized and boxcar averaged.</Description>
+      <Units>deg</Units>
+      <ValidMin>0.0</ValidMin>
+      <ValidMax>360.0</ValidMax>
+      <FillValue>NaN</FillValue>
+      <Support>
+        <Qualifier>PhaseAngle</Qualifier>
+        <SupportQuantity>Positional</SupportQuantity>
+</Support>
+</Parameter>
+    <Parameter>
+      <Name>THEMIS-B Time</Name>
+      <ParameterKey>thb_state_time</ParameterKey>
+      <Description>Time, UTC, in seconds since 01-Jan-1970 00:00:00.</Description>
+      <Caveats>Not including leap seconds.</Caveats>
+      <Units>s</Units>
+      <ValidMin>0.0</ValidMin>
+      <ValidMax>5.0E9</ValidMax>
+      <FillValue>NaN</FillValue>
+      <Support>
+        <SupportQuantity>Temporal</SupportQuantity>
+</Support>
+</Parameter>
+    <Parameter>
+      <Name>Spin Correction Time</Name>
+      <ParameterKey>thb_spin_correction_time</ParameterKey>
+      <Description>Spin correction time, UTC, in seconds since 01-Jan-1970 00:00:00</Description>
+      <Caveats>Unleaped seconds</Caveats>
+      <Units>s</Units>
+      <ValidMin>0.0</ValidMin>
+      <ValidMax>5.0E9</ValidMax>
+      <FillValue>NaN</FillValue>
+      <Support>
+        <SupportQuantity>Temporal</SupportQuantity>
+</Support>
+</Parameter>
+    <Parameter>
+      <Name>THEMIS-B Initial Spin Period</Name>
+      <ParameterKey>thb_spin_spinper</ParameterKey>
+      <Description>Initial spin period for segment.</Description>
+      <Units>s</Units>
+      <ValidMin>0.0</ValidMin>
+      <ValidMax>30.0</ValidMax>
+      <FillValue>NaN</FillValue>
+      <Support>
+        <SupportQuantity>Temporal</SupportQuantity>
+</Support>
+</Parameter>
+    <Parameter>
+      <Name>THEMIS-B Spin Time</Name>
+      <ParameterKey>thb_spin_time</ParameterKey>
+      <Description>Spin time, UTC, in seconds since 01-Jan-1970 00:00:00.</Description>
+      <Caveats>Not including leap seconds.</Caveats>
+      <Units>s</Units>
+      <ValidMin>0.0</ValidMin>
+      <ValidMax>5.0E9</ValidMax>
+      <FillValue>NaN</FillValue>
+      <Support>
+        <SupportQuantity>Temporal</SupportQuantity>
+</Support>
+</Parameter>
+    <Parameter>
+      <Name>THEMIS-B Spin End Time</Name>
+      <ParameterKey>thb_spin_tend</ParameterKey>
+      <Description>Segment end time, UTC, in seconds since 01-Jan-1970 00:00:00</Description>
+      <Caveats>Not including leap seconds</Caveats>
+      <Units>s</Units>
+      <ValidMin>0.0</ValidMin>
+      <ValidMax>5.0E9</ValidMax>
+      <FillValue>NaN</FillValue>
+      <Support>
+        <SupportQuantity>Temporal</SupportQuantity>
+</Support>
+</Parameter>
+    <Parameter>
+      <Name>THEMIS-B Drift Term ('c')</Name>
+      <ParameterKey>thb_spin_c</ParameterKey>
+      <Description>Drift term for spin rate</Description>
+      <Caveats>Applies to angular velocity (deg/sec), not spin period.</Caveats>
+      <Units>deg/s^2</Units>
+      <ValidMin>-30.0</ValidMin>
+      <ValidMax>30.0</ValidMax>
+      <FillValue>NaN</FillValue>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+</Support>
+</Parameter>
+    <Parameter>
+      <Name>THEMIS-B Spin Correction</Name>
+      <ParameterKey>thb_spin_correction</ParameterKey>
+      <Description>Spin phase correction from definitive position and field model calculated at 1 minute intervals</Description>
+      <Units>deg</Units>
+      <ValidMin>-180.0</ValidMin>
+      <ValidMax>180.0</ValidMax>
+      <FillValue>NaN</FillValue>
+      <Support>
+        <Qualifier>DirectionAngle</Qualifier>
+        <SupportQuantity>Other</SupportQuantity>
+</Support>
+</Parameter>
+    <Parameter>
+      <Name>Spin Axis Right Ascension Correction</Name>
+      <ParameterKey>thb_spinras_correction</ParameterKey>
+      <Description>Spin axis right ascension correction from definitive position and field model</Description>
+      <Units>deg</Units>
+      <ValidMin>-180</ValidMin>
+      <ValidMax>180</ValidMax>
+      <FillValue>NaN</FillValue>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+</Support>
+</Parameter>
+    <Parameter>
+      <Name>Spin Axis Declination Correction</Name>
+      <ParameterKey>thb_spindec_correction</ParameterKey>
+      <Description>Spin axis declination correction from definitive position and field model</Description>
+      <Units>deg</Units>
+      <ValidMin>-180</ValidMin>
+      <ValidMax>180</ValidMax>
+      <FillValue>NaN</FillValue>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+</Support>
+</Parameter>
+    <Parameter>
+      <Name>THEMIS-B Phase Error</Name>
+      <ParameterKey>thb_spin_phaserr</ParameterKey>
+      <Description>Maximum absolute phase error between model and non-outlier sun crossing time.</Description>
+      <Caveats>Errors due to recognized BAU timing errors do not contribute to this quantity.</Caveats>
+      <Units>s</Units>
+      <ValidMin>0.0</ValidMin>
+      <ValidMax>30.0</ValidMax>
+      <FillValue>NaN</FillValue>
+      <Support>
+        <Qualifier>Uncertainty</Qualifier>
+        <SupportQuantity>Temporal</SupportQuantity>
+</Support>
+</Parameter>
+    <Parameter>
+      <Name>THEMIS-B Spin Number</Name>
+      <ParameterKey>thb_spin_nspins</ParameterKey>
+      <Description>Number of spins contained in this segment.</Description>
+      <ValidMin>0</ValidMin>
+      <ValidMax>65535</ValidMax>
+      <FillValue>65535</FillValue>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+</Support>
+</Parameter>
+    <Parameter>
+      <Name>THEMIS-B Sample Number</Name>
+      <ParameterKey>thb_spin_npts</ParameterKey>
+      <Description>Number of samples (points) contained in this segment.</Description>
+      <ValidMin>0</ValidMin>
+      <ValidMax>65535</ValidMax>
+      <FillValue>65535</FillValue>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+</Support>
+</Parameter>
+    <Parameter>
+      <Name>THEMIS-B Pulse Gap</Name>
+      <ParameterKey>thb_spin_maxgap</ParameterKey>
+      <Description>Duration, in seconds, of longest gap between sun pulses in this segment. Long gaps (60 sec or more) will generally indicate shadow periods.</Description>
+      <Units>s</Units>
+      <ValidMin>0.0</ValidMin>
+      <ValidMax>86400.0</ValidMax>
+      <FillValue>NaN</FillValue>
+      <Support>
+        <SupportQuantity>Temporal</SupportQuantity>
+</Support>
+</Parameter>
+    <Parameter>
+      <Name>THEMIS-B Position (GSE)</Name>
+      <ParameterKey>thb_pos_gse</ParameterKey>
+      <Description>Spacecraft position vector (km) in GSE coordinates.</Description>
+      <Cadence>PT01M</Cadence>
+      <Units>km</Units>
+      <UnitsConversion>1e3&gt;m</UnitsConversion>
+      <CoordinateSystem>
+        <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+        <CoordinateSystemName>GSE</CoordinateSystemName>
+</CoordinateSystem>
+      <Structure>
+        <Size>3</Size>
+        <Element>
+          <Name>X GSE</Name>
+          <Qualifier>Component.I</Qualifier>
+          <Index>1</Index>
+</Element>
+        <Element>
+          <Name>Y GSE</Name>
+          <Qualifier>Component.J</Qualifier>
+          <Index>2</Index>
+</Element>
+        <Element>
+          <Name>Z GSE</Name>
+          <Qualifier>Component.K</Qualifier>
+          <Index>3</Index>
+</Element>
+</Structure>
+      <ValidMin>-1000000.0</ValidMin>
+      <ValidMax>1000000.0</ValidMax>
+      <FillValue>NaN</FillValue>
+      <Support>
+        <Qualifier>Vector</Qualifier>
+        <SupportQuantity>Positional</SupportQuantity>
+</Support>
+</Parameter>
+    <Parameter>
+      <Name>THEMIS-B Position (GSM)</Name>
+      <ParameterKey>thb_pos_gsm</ParameterKey>
+      <Description>Spacecraft position vector (km) in GSM coordinates.</Description>
+      <Cadence>PT01M</Cadence>
+      <Units>km</Units>
+      <UnitsConversion>1e3&gt;m</UnitsConversion>
+      <CoordinateSystem>
+        <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+        <CoordinateSystemName>GSM</CoordinateSystemName>
+</CoordinateSystem>
+      <Structure>
+        <Size>3</Size>
+        <Element>
+          <Name>X GSM</Name>
+          <Qualifier>Component.I</Qualifier>
+          <Index>1</Index>
+</Element>
+        <Element>
+          <Name>Y GSM</Name>
+          <Qualifier>Component.J</Qualifier>
+          <Index>2</Index>
+</Element>
+        <Element>
+          <Name>Z GSM</Name>
+          <Qualifier>Component.K</Qualifier>
+          <Index>3</Index>
+</Element>
+</Structure>
+      <ValidMin>-1000000.0</ValidMin>
+      <ValidMax>1000000.0</ValidMax>
+      <FillValue>NaN</FillValue>
+      <Support>
+        <Qualifier>Vector</Qualifier>
+        <SupportQuantity>Positional</SupportQuantity>
+</Support>
+</Parameter>
+    <Parameter>
+      <Name>THEMIS-B Velocity (GSE)</Name>
+      <ParameterKey>thb_vel_gse</ParameterKey>
+      <Description>Spacecraft velocity (km/s) in GSE coordinates.</Description>
+      <Cadence>PT01M</Cadence>
+      <Units>km/s</Units>
+      <UnitsConversion>1e3&gt;m/s</UnitsConversion>
+      <CoordinateSystem>
+        <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+        <CoordinateSystemName>GSE</CoordinateSystemName>
+</CoordinateSystem>
+      <Structure>
+        <Size>3</Size>
+        <Element>
+          <Name>Vx GSE</Name>
+          <Qualifier>Component.I</Qualifier>
+          <Index>1</Index>
+</Element>
+        <Element>
+          <Name>Vy GSE</Name>
+          <Qualifier>Component.J</Qualifier>
+          <Index>2</Index>
+</Element>
+        <Element>
+          <Name>Vz GSE</Name>
+          <Qualifier>Component.K</Qualifier>
+          <Index>3</Index>
+</Element>
+</Structure>
+      <ValidMin>-1000.0</ValidMin>
+      <ValidMax>1000.0</ValidMax>
+      <FillValue>NaN</FillValue>
+      <Support>
+        <Qualifier>Vector</Qualifier>
+        <SupportQuantity>Velocity</SupportQuantity>
+</Support>
+</Parameter>
+    <Parameter>
+      <Name>THEMIS-B Velocity (GSM)</Name>
+      <ParameterKey>thb_vel_gsm</ParameterKey>
+      <Description>Spacecraft velocity (km/s) in GSM coordinates.</Description>
+      <Cadence>PT01M</Cadence>
+      <Units>km/s</Units>
+      <UnitsConversion>1e3&gt;m/s</UnitsConversion>
+      <CoordinateSystem>
+        <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+        <CoordinateSystemName>GSM</CoordinateSystemName>
+</CoordinateSystem>
+      <Structure>
+        <Size>3</Size>
+        <Element>
+          <Name>Vx GSM</Name>
+          <Qualifier>Component.I</Qualifier>
+          <Index>1</Index>
+</Element>
+        <Element>
+          <Name>Vy GSM</Name>
+          <Qualifier>Component.J</Qualifier>
+          <Index>2</Index>
+</Element>
+        <Element>
+          <Name>Vz GSM</Name>
+          <Qualifier>Component.K</Qualifier>
+          <Index>3</Index>
+</Element>
+</Structure>
+      <ValidMin>-1000.0</ValidMin>
+      <ValidMax>1000.0</ValidMax>
+      <FillValue>NaN</FillValue>
+      <Support>
+        <Qualifier>Vector</Qualifier>
+        <SupportQuantity>Velocity</SupportQuantity>
+</Support>
+</Parameter>
+</NumericalData>
+</Spase>

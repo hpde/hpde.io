@@ -1,0 +1,299 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema  http://www.spase-group.org/data/schema/spase-2_3_0.xsd'",
+    "Version": "2.3.0",
+    "NumericalData": {
+      "ResourceID": "spase://JAXA/NumericalData/Geotail/CPI/SWA/PT48S",
+      "ResourceHeader": {
+        "ResourceName": "Geotail CPI Definitive Solar Wind Moments",
+        "ReleaseDate": "2021-04-27T17:52:35Z",
+        "Description": "The CPI Solar Wind analyzer definitive plasma moments. The CPI/SW data are good in the solar wind and may be usefull in the magnetosheath.",
+        "Contact": [
+          {
+            "PersonID": "spase://SMWG/Person/Louis.A.Frank",
+            "Role": "PrincipalInvestigator"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Kent.L.Ackerson",
+            "Role": "DataProducer"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Jan.Merka",
+            "Role": "MetadataContact"
+          }
+        ],
+        "InformationURL": {
+          "Name": "CPI Survey Plots",
+          "URL": "http://www-pi.physics.uiowa.edu/cpi/",
+          "Description": "Geotail CPI description and survey plots."
+        },
+        "PriorID": [
+          "spase://VMO/NumericalData/Geotail/CPI/UIOWA_PT48S",
+          "spase://VMO/NumericalData/Geotail/CPI/SWA_PT48S",
+          "spase://VSPO/NumericalData/Geotail/CPI/SWA/PT48S"
+        ]
+      },
+      "AccessInformation": [
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF/CDAWeb",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": [
+            {
+              "Name": "FTPS from SPDF (not with most browsers)",
+              "URL": "ftps://spdf.gsfc.nasa.gov/pub/data/geotail/cpi/cpi_h0/"
+            },
+            {
+              "Name": "HTTPS from SPDF",
+              "URL": "https://spdf.gsfc.nasa.gov/pub/data/geotail/cpi/cpi_h0/",
+              "Description": "In CDF via HTTP from SPDF"
+            },
+            {
+              "Name": "CDAWeb",
+              "URL": "https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=GE_H0_CPI&index=sp_phys",
+              "ProductKey": "GE_H0_CPI"
+            }
+          ],
+          "Format": "CDF",
+          "Encoding": "None"
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDAWeb HAPI Server",
+            "URL": "https://cdaweb.gsfc.nasa.gov/hapi",
+            "Style": "HAPI",
+            "ProductKey": "GE_H0_CPI",
+            "Description": "Web Service to this product using the HAPI interface."
+          },
+          "Format": "CSV"
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/UIowa/ParticlesImagingGroup",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "University of Iowa: Geotail CPI SW data",
+            "URL": "http://www-pi.physics.uiowa.edu/cpi-data/sw/"
+          },
+          "Format": "Text",
+          "Encoding": "ASCII"
+        }
+      ],
+      "InstrumentID": "spase://SMWG/Instrument/Geotail/CPI/SWA",
+      "MeasurementType": [
+        "ThermalPlasma",
+        "IonComposition"
+      ],
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "1992-09-28T00:00:33",
+          "RelativeStopDate": "-P2M"
+        },
+        "Cadence": "PT48S"
+      },
+      "ObservedRegion": [
+        "Heliosphere.NearEarth",
+        "Earth.Magnetosheath"
+      ],
+      "Caveats": "The CPI solar wind ion analyzer is an E/Q analyzer and the initial distribution functions were calculated assuming that the plasma is H+. Care must be taken when multi-component plasmas are present. If He++ is present and is flowing with the same speed as the H+ component, it will contribute to the distribution function at twice the velocity (four times the energy) of the H+. To facilitate the automated processing of the data the integral was evaluated between  vmin  = 171 km/s and  vmax  = 1.35 ×  u . The resulting temperatures produce excellent fits to the observations. When He++ is present the distribution functions are consistent with an He++ temperature, THe++ = 4 × TH+, i.e., the H+ and He++ have similar thermal velocities.",
+      "Parameter": [
+        {
+          "Name": "Time",
+          "ParameterKey": "Epoch",
+          "Description": "Time in milliseconds, centered, since CDF Epoch",
+          "Units": "ms",
+          "UnitsConversion": "1e-3>s",
+          "ValidMin": "08-Sep-1992 00:00:00.000",
+          "ValidMax": "31-Dec-2020 20:00:00.000",
+          "FillValue": "-1.0E31",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Vi GSE (r,theta,phi)",
+          "ParameterKey": "SW_V",
+          "Description": "Ion bulk flow velocity vector in spherical GSE coordinates",
+          "Caveats": "From 5 deg angular bins",
+          "Units": "km/s",
+          "UnitsConversion": "1e3>m/s",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "GSE"
+          },
+          "RenderingHints": {
+            "ValueFormat": "F9.2"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "Vr",
+                "Qualifier": "Magnitude",
+                "Index": "1",
+                "Units": "km/s",
+                "ValidMin": "0.0",
+                "ValidMax": "1200.0",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "Vtheta",
+                "Qualifier": "DirectionAngle.ElevationAngle",
+                "Index": "2",
+                "Units": "deg",
+                "ValidMin": "0.0",
+                "ValidMax": "180.0",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "Vphi",
+                "Qualifier": "DirectionAngle.AzimuthAngle",
+                "Index": "3",
+                "Units": "deg",
+                "ValidMin": "0.0",
+                "ValidMax": "360.0",
+                "FillValue": "-1.0E31"
+              }
+            ]
+          },
+          "Particle": {
+            "ParticleType": [
+              "Proton",
+              "AlphaParticle",
+              "Ion"
+            ],
+            "Qualifier": [
+              "Moment",
+              "Vector"
+            ],
+            "ParticleQuantity": "FlowVelocity"
+          }
+        },
+        {
+          "Name": "Vi GSE",
+          "ParameterKey": "SW_Vc",
+          "Description": "Ion bulk flow velocity vector in GSE cartesian coordinates",
+          "Caveats": "From 5 deg angular bins",
+          "Units": "km/s",
+          "UnitsConversion": "1e3>m/s",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GSE"
+          },
+          "RenderingHints": {
+            "ValueFormat": "F7.0"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "Vx",
+                "Qualifier": "Component.I",
+                "Index": "1",
+                "ValidMin": "-1400.0",
+                "ValidMax": "1400.0",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "Vy",
+                "Qualifier": "Component.J",
+                "Index": "2",
+                "ValidMin": "-1400.0",
+                "ValidMax": "1400.0",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "Vz",
+                "Qualifier": "Component.K",
+                "Index": "3",
+                "ValidMin": "-1400.0",
+                "ValidMax": "1400.0",
+                "FillValue": "-1.0E31"
+              }
+            ]
+          },
+          "Particle": {
+            "ParticleType": [
+              "Proton",
+              "AlphaParticle",
+              "Ion"
+            ],
+            "Qualifier": [
+              "Moment",
+              "Vector"
+            ],
+            "ParticleQuantity": "FlowVelocity"
+          }
+        },
+        {
+          "Name": "Ti",
+          "ParameterKey": "SW_T",
+          "Description": "Kinetic temperature of hydrogen component of solar wind, scalar",
+          "Caveats": "Calculated by integrating the distribution function",
+          "Units": "Component.K",
+          "RenderingHints": {
+            "ValueFormat": "F7.0"
+          },
+          "ValidMin": "10000.0",
+          "ValidMax": "1.0E7",
+          "FillValue": "-1.0E31",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": [
+              "Moment",
+              "Scalar"
+            ],
+            "ParticleQuantity": "Temperature"
+          }
+        },
+        {
+          "Name": "Np",
+          "ParameterKey": "SW_P_Den",
+          "Description": "Ion number density (SWA), scalar",
+          "Caveats": "Assuming no helium (0.3 - several hundred) if the density is less than 0.3/cc the higher moments (velocity, temperature) shall not be used because of the poor counting statistics.",
+          "Units": "cm^-3",
+          "UnitsConversion": "1e6>m^-3",
+          "RenderingHints": {
+            "ValueFormat": "F8.3"
+          },
+          "ValidMin": "0.01",
+          "ValidMax": "1000.0",
+          "FillValue": "-1.0E31",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": [
+              "Moment",
+              "Scalar"
+            ],
+            "ParticleQuantity": "NumberDensity"
+          }
+        },
+        {
+          "Name": "Psw",
+          "ParameterKey": "SW_Pressure",
+          "Description": "Ion pressure (assuming protons measured and adding 5% alphas, from SWA), scalar",
+          "Caveats": "Assuming Vp = Va, P = C * Np * mp * Vp*Vp * [1 + 4(.05)]. mp = 1.67 * 10^(-27), C = 10^(21), Np in #/cc, Vp in km/s. Pressure not provided for density less than 0.3/cc because of the poor counting statistics.",
+          "Units": "nPa",
+          "UnitsConversion": "1e-9>Pa",
+          "ValidMin": "1.0E-4",
+          "ValidMax": "100.0",
+          "FillValue": "-1.0E31",
+          "Particle": {
+            "ParticleType": [
+              "Proton",
+              "AlphaParticle",
+              "Ion"
+            ],
+            "Qualifier": "Scalar",
+            "ParticleQuantity": "Pressure"
+          }
+        }
+      ]
+    }
+  }
+}

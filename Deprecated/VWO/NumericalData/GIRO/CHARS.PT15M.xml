@@ -1,0 +1,71 @@
+<Spase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.spase-group.org/data/schema" xsi:schemaLocation="http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_2_2.xsd">
+   <Version>2.2.2</Version>
+   <!-- Version of the GIRO_ASCII_CHARS_PT15M  document: v0.1 February  14, 2012  -->
+   <NumericalData>
+      <ResourceID>spase://VWO/NumericalData/GIRO/CHARS.PT15M</ResourceID>
+      <ResourceHeader>
+         <ResourceName>GIRO Ionogram-Derived Ionospheric Characteristics</ResourceName>
+         <AlternateName/>
+         <ReleaseDate>2012-02-14T19:47:00Z</ReleaseDate>
+         <Description>Standard ionogram-derived characteristics obtained by Global Ionospheric Radio Observatory (GIRO) operated by University of Massachusetts Lowell. The list of standard URSI characteristics that can be derived from ionograms can be found in the SAO.XML Data Model Specification for standard ionosonde data exchange, Appendix C, http://ulcar.uml.edu/SAOXML/. In order to request the characteristics values from GIRO, it is necessary to call DIDBGetValues() servlet at GIRO server using standard HTTP call that returns a text document. The values in the document are calculated using automatic or manual interpretation of ionogram images. Each measurement is accompanied by a confidence score value (from 0 to 100, 100 is best autoscaled confidence or data obtained manually) and a set of two QD letters (qualitative and descriptive letters per URSI ionogram interpretation manual). When QD letters are set to //, reported value is obtained automatically, all other combinations of the letters correspond to manual scaling.
+         </Description>
+         <Acknowledgement>Users please acknowledge Global Ionospheric Radio Observatory (GIRO) and GIRO Principal Investigator Prof. B. W. Reinisch of the University of Massachusetts Lowell for making these data files available.</Acknowledgement>
+         <Contact>
+            <PersonID>spase://SMWG/Person/Bodo.W.Reinisch</PersonID>
+            <Role>PrincipalInvestigator</Role>
+         </Contact>
+         <Contact>
+            <PersonID>spase://SMWG/Person/Ivan.A.Galkin</PersonID>
+            <Role>DataProducer</Role>
+            <Role>TechnicalContact</Role>
+         </Contact> 
+         <InformationURL>
+             <Name>GIRO (Global Ionospheric Radio Observatory) Home Page</Name>
+             <URL>http://giro.uml.edu</URL>
+             <Description>Access to real-time data and software tools</Description>
+             <Language>en</Language>
+         </InformationURL>
+         <Association>
+            <AssociationID>spase://VWO/DisplayData/GIRO/GRM.PT15M</AssociationID>
+			<AssociationType>DerivedFrom</AssociationType>
+         </Association>
+         <PriorID/>
+      </ResourceHeader>
+      <AccessInformation>
+         <RepositoryID>spase://SMWG/Repository/UML/DIDBase</RepositoryID>
+         <Availability>Online</Availability>
+         <AccessRights>Open</AccessRights>
+         <AccessURL>
+            <Name>GIRO access to ionogram-derived ionospheric characteristics</Name>
+            <URL>http://car.uml.edu/common/DIDBGetValues?ursiCode=[par1]&amp;charName=[par2]&amp;fromDate=[date1]&amp;toDate=[date2]</URL>
+            <Description>Call of GIRO servlet that access DIDBase repository and retrieves the list of characteristics. Servlet parameters: [par1] is URSI code of the GIRO ionospheric station, see http://ulcar.uml.edu/DIDBase/ for availability list of stations; [par2] is comma-separated list of standard URSI characteristic names, e.g., foF2; [date1] and [date2] are ISO 8061 stamps of from and to dates for the call. </Description>
+            <Language>en</Language>
+         </AccessURL>
+         <Format>Text.ASCII</Format>
+         <Encoding>ASCII</Encoding>
+         <Acknowledgement>A heavy investment of time, effort, expertise, and funds continues to be made to produce, collect, quality control, interpret, and store digisonde ionograms. It is important that data suppliers and the UML DIDBase developers are appropriately acknowledged in scientific publications that involve analysis of data obtained from the Lowell DIDBase.</Acknowledgement>
+      </AccessInformation>
+      <ProcessingLevel>Calibrated</ProcessingLevel>
+      <ProviderProcessingLevel>Ionogram-scaled ionospheric characteristics in physical units.</ProviderProcessingLevel>
+      <InstrumentID>spase://SMWG/Instrument/GIRO/Ionosonde</InstrumentID>
+      <MeasurementType>Waves.Active</MeasurementType>
+      <TemporalDescription>
+            <TimeSpan>
+                <StartDate>1987-01-01T00:00:05Z</StartDate>
+                <RelativeStopDate>PT5M</RelativeStopDate>
+                <Note>Cadence of ionogram measurements may vary depending on the scheduling requirements at GIRO sites; 15 minutes is nominal cadence</Note>
+            </TimeSpan>
+            <Cadence>PT15M</Cadence>
+            <Exposure>PT1M</Exposure>
+      </TemporalDescription>
+      <SpectralRange>RadioFrequency</SpectralRange>
+      <ObservedRegion>Earth.NearSurface.Ionosphere</ObservedRegion>
+      <Caveats>Data coverage is varying among different GIRO instrument locations</Caveats>
+      <!-- Keywords pertaining to the data presentation -->
+      <Keyword>Ionogram</Keyword>
+      <Keyword>Ionospheric Characteristics</Keyword>
+      <InputResourceID/>
+      <Extension/>
+   </NumericalData>
+</Spase>
+

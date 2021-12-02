@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Spase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.spase-group.org/data/schema" xsi:schemaLocation="http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_2_1.xsd">
+   <Version>2.2.1</Version>
+   <NumericalData>
+      <ResourceID>spase://VMO/NumericalData/Svalgaard/Yellowknife/PT1H</ResourceID>
+      <ResourceHeader>
+         <ResourceName>Magnetic Field Hourly Mean Yellowknife Station</ResourceName>
+         <AlternateName>IAGA:Yellowknife Hourly Mean Magnetic Field</AlternateName>
+         <AlternateName>IAGA:YKC Hourly Mean Magnetic Field</AlternateName>
+         <ReleaseDate>2011-09-28T11:35:50</ReleaseDate>
+         <Description>Hourly mean magnetic field data determined for magnetometer data from the Yellowknife station (IAGA Station Code: YKC).  The field observations that have been corrected for possible errors in timing, calibration, sign, transcription, omission, and misunderstanding. The hourly mean is calculated using data from the beginning of the hour to the end.</Description>
+         <Acknowledgement>Please acknowledge Leif Svalgaard and Edward W. Cliver when using this data.</Acknowledgement>
+         <Contact>
+            <PersonID>spase://SMWG/Person/Leif.Svalgaard</PersonID>
+            <Role>PrincipalInvestigator</Role>
+         </Contact>
+         <Contact>
+            <PersonID>spase://SMWG/Person/Edward.W.Cliver</PersonID>
+            <Role>PrincipalInvestigator</Role>
+         </Contact>
+         <Contact>
+            <PersonID>spase://SMWG/Person/Todd.A.King</PersonID>
+            <Role>MetadataContact</Role>
+         </Contact>
+         <InformationURL>
+            <Name>InterHourly Variability (IHV) Index Publication</Name>
+            <URL>http://www.leif.org/research/2007JA012437.pdf</URL>
+            <Description>Information regarding the generation of the hourly mean data and its use in calculating interhourly variability (IHV) index of geomagnetic activity can be found in "Interhourly variability index of geomagnetic activity and its use in deriving the long-term variation of solar wind speed", Svalgaard, Leif and Cliver, Edward W., Journal of Geophysical Research, Vol. 112, A10111, doi:10.1029/2007JA012437, 2007.</Description>
+         </InformationURL>
+      </ResourceHeader>
+      <AccessInformation>
+         <RepositoryID>spase://SMWG/Repository/UCLA/VMO</RepositoryID>
+         <Availability>Online</Availability>
+         <AccessRights>Open</AccessRights>
+         <AccessURL>
+            <Name>VMO Data Repository</Name>
+            <URL>http://vmo.igpp.ucla.edu/data1/Svalgaard/YKC.TXT</URL>
+            <Description>The Virtual Magnetospheric Observatory Data Repository hosted by the Institute of Geophysics and Planetary Physics, University of California, Los Angeles.</Description>
+         </AccessURL>
+         <Format>Text</Format>
+         <Encoding>ASCII</Encoding>
+         <Acknowledgement>Leif Svalgaard and Edward W. Cliver for the generation of the interhourly variability (IHV) index of geomagnetic activity.</Acknowledgement>
+      </AccessInformation>
+      <ProcessingLevel>Calibrated</ProcessingLevel>
+      <InstrumentID>spase://SMWG/Instrument/IAGA/Yellowknife/Magnetometer</InstrumentID>
+      <MeasurementType>MagneticField</MeasurementType>
+      <TemporalDescription>
+         <TimeSpan>
+            <StartDate>1976-01-01T00:00:00</StartDate>
+            <StopDate>2006-12-31T23:00:00</StopDate>
+            <Note>Some data gaps may be present. If a gap is present at the beginning or end of the file, the time span start and end dates could be inaccurate as they are assigned assuming an absence of such gaps.</Note>
+         </TimeSpan>
+         <Cadence>PT1H</Cadence>
+      </TemporalDescription>
+      <ObservedRegion>Earth.Magnetosphere</ObservedRegion>
+      <Keyword>Yellowknife</Keyword>
+      <Keyword>YKC</Keyword>
+      <Keyword>IAGA:YKC</Keyword>
+      <Keyword>Magnetic Field</Keyword>
+      <Keyword>Magnetometer</Keyword>
+      <Keyword>Ground Station</Keyword>
+      <Parameter>
+         <Name>Time</Name>
+         <Description>Universal Time (UT) Start of Hour</Description>
+         <Units>s</Units>
+         <Structure>
+            <Size>4</Size>
+            <Element>
+               <Name>Year</Name>
+               <Index>1</Index>
+               <ParameterKey>Column_1</ParameterKey>
+            </Element>
+            <Element>
+               <Name>Month</Name>
+               <Index>2</Index>
+               <ParameterKey>Column_2</ParameterKey>
+            </Element>
+            <Element>
+               <Name>Day</Name>
+               <Index>3</Index>
+               <ParameterKey>Column_3</ParameterKey>
+            </Element>
+            <Element>
+               <Name>Hour</Name>
+               <Index>4</Index>
+               <ParameterKey>Column_4</ParameterKey>
+            </Element>
+         </Structure>
+         <Support>
+            <SupportQuantity>Temporal</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Magnetic Field (DHZ)</Name>
+         <Description>Magnetic Field Vector expressed by using H, D and Z.</Description>
+         <Units>nT</Units>
+         <UnitsConversion>1e-9&gt;T</UnitsConversion>
+         <CoordinateSystem>
+            <CoordinateRepresentation>Cylindrical</CoordinateRepresentation>
+            <CoordinateSystemName>CGM</CoordinateSystemName>
+         </CoordinateSystem>
+         <Structure>
+            <Size>3</Size>
+            <Description>The total magnetic field vector expressed by using H, the horizontal field magnitude, D, the horizontal field declination, and Z, the vertical magnetic field.</Description>
+            <Element>
+               <Name>D</Name>
+               <Qualifier>DirectionAngle.AzimuthAngle</Qualifier>
+               <Index>1</Index>
+               <ParameterKey>Column_6</ParameterKey>
+               <Units>Tenth of an Angular Minute</Units>
+               <UnitsConversion>pi/(600*180)&gt;rad</UnitsConversion>
+               <FillValue>999999</FillValue>
+            </Element>
+            <Element>
+               <Name>H</Name>
+               <Qualifier>Projection.IJ</Qualifier>
+               <Index>2</Index>
+               <ParameterKey>Column_5</ParameterKey>
+               <Units>nT</Units>
+               <UnitsConversion>1e-9&gt;T</UnitsConversion>
+               <FillValue>999999</FillValue>
+            </Element>
+            <Element>
+               <Name>Z</Name>
+               <Qualifier>Component.K</Qualifier>
+               <Index>3</Index>
+               <ParameterKey>Column_9</ParameterKey>
+               <Units>nT</Units>
+               <UnitsConversion>1e-9&gt;T</UnitsConversion>
+               <FillValue>999999</FillValue>
+            </Element>
+         </Structure>
+         <Field>
+            <Qualifier>Vector</Qualifier>
+            <FieldQuantity>Magnetic</FieldQuantity>
+         </Field>
+      </Parameter>
+      <Parameter>
+         <Name>Magnetic Field (XYZ)</Name>
+         <Description>Total Magnetic Field Vector expressed by using X, Y, and Z</Description>
+         <Units>nT</Units>
+         <UnitsConversion>1e-9&gt;T</UnitsConversion>
+         <CoordinateSystem>
+            <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+            <CoordinateSystemName>CGM</CoordinateSystemName>
+         </CoordinateSystem>
+         <Structure>
+            <Size>3</Size>
+            <Description>The total magnetic field vector expressed by using the X, Y, and Z-components measured positive northward, positive eastward, and positive down, respectively</Description>
+            <Element>
+               <Name>X</Name>
+               <Qualifier>Component.I</Qualifier>
+               <Index>1</Index>
+               <ParameterKey>Column_7</ParameterKey>
+               <Units>nT</Units>
+               <UnitsConversion>1e-9&gt;T</UnitsConversion>
+               <FillValue>999999</FillValue>
+            </Element>
+            <Element>
+               <Name>Y</Name>
+               <Qualifier>Component.J</Qualifier>
+               <Index>2</Index>
+               <ParameterKey>Column_8</ParameterKey>
+               <Units>nT</Units>
+               <UnitsConversion>1e-9&gt;T</UnitsConversion>
+               <FillValue>999999</FillValue>
+            </Element>
+            <Element>
+               <Name>Z</Name>
+               <Qualifier>Component.K</Qualifier>
+               <Index>3</Index>
+               <ParameterKey>Column_9</ParameterKey>
+               <Units>nT</Units>
+               <UnitsConversion>1e-9&gt;T</UnitsConversion>
+               <FillValue>999999</FillValue>
+            </Element>
+         </Structure>
+         <Field>
+            <Qualifier>Vector</Qualifier>
+            <FieldQuantity>Magnetic</FieldQuantity>
+         </Field>
+      </Parameter>
+   </NumericalData>
+</Spase>

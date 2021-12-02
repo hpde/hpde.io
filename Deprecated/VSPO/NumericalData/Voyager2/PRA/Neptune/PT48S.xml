@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_2_9.xsd">
+  <Version>2.3.0</Version>
+  <NumericalData>
+    <ResourceID>spase://VSPO/NumericalData/Voyager2/PRA/Neptune/PT48S</ResourceID>
+    <ResourceHeader>
+      <ResourceName>Voyager 2 Neptune Planetary Radio Astronomy (PRA) Resampled Low-Frequency Receiver Band, Version 1.0, 48 s Summary Browse Data</ResourceName>
+      <ReleaseDate>2018-11-27T18:09:04Z</ReleaseDate>
+      <Description>* Data Set Overview
+* =================
+
+This Data Set consists of edited Browse Data derived from an original Data Set obtained from the Voyager 2 Planetary Radio Astronomy (PRA) Instrument in the Vicinity of Neptune. Data are provided for 70 Instrument Channels covering the Range from 1.2 kHz to 1326 kHz in uniform 19.2 kHz Steps, each 1 kHz wide. Data are included for the Period 1989:000:00:00 through 1989:23:59:59.
+
+* Parameters
+* ==========
+
++-----------------------------------------------------------+
+| Parameter Characteristics           | Value               |
+-------------------------------------------------------------
+| Sampling Parameter Name             | TIME                |
+| Sampling Parameter Resolution       | 0.001 SECONDS       |
+| Minimum Sampling Parameter          | N/A                 |
+| Maximum Sampling Parameter          | N/A                 |
+| Sampling Parameter Interval         | 48.0 SECONDS        |
+| Minimum Available Sampling Interval | 12.0 SECONDS        |
+| Data Set Parameter Name             | RADIO WAVE SPECTRUM |
+| Noise Level                         | 2400 mB             |
+| Data Set Parameter Unit             | MILLIBEL            |
++-----------------------------------------------------------+
+
+Radio Wave Spectrum: A Set of derived Parameters consisting of Power Fluxes at various contiguous Frequencies over a Range of Frequencies. The MKS Units are: Hz m^2.
+
+* Processing
+* ==========
+
+In order to produce this Data Set from the original Raw PRA Data, several Steps have been taken:
+
+* 1. The PRA operates in a Variety of Modes. Data from Modes in which the Receiver does not scan rapidly through its Frequency Range have been removed
+* 2. The Data have been calibrated as best we know how
+* 3. The Data have been split into Left Hand Circular (LHC) and Right Hand Circular (RHC) Components
+* 4. The Data have been binned into 48 s Intervals
+
+Thus, Values for a given Channel are separated in Time by an Increment of 48 s. Each 48 s Time Interval has associated with it a Value for LHC Polarization and one for RHC Polarization.
+
+During Data Gaps, the entire Record is absent from the Data Set; that is, missing Records have not been zero-filled or otherwise marked. Bad Data within a Record is indicated by the Value Zero, which cannot otherwise occur.
+
+Each Datum is returned as a 16 bit Quantity; it represents the mean Power received in the given Channel at the specified Time and Polarization. The returned Quantity is the Value in mB about a reference Flux Density. The Value of 0 mB represents a Voltage of 1 &#xB5;V across the front End of the Receiver. To convert a returned Quantity to Flux, use the Formula:
+
+flux = 7.0&#xD7;10^-22 (10^(mB/1000)) W/(m^2 Hz)</Description>
+      <Contact>
+        <PersonID>spase://SMWG/Person/Todd.A.King</PersonID>
+        <Role>MetadataContact</Role>
+      </Contact>
+      <Contact>
+        <PersonID>spase://SMWG/Person/Lee.Frost.Bargatze</PersonID>
+        <Role>MetadataContact</Role>
+      </Contact>
+      <InformationURL>
+        <Name>VG2-N-PRA-4-SUMM-BROWSE-48SEC-V1.0</Name>
+        <URL>https://pds-ppi.igpp.ucla.edu/data/VG2-N-PRA-4-SUMM-BROWSE-48SEC-V1.0/AAREADME.TXT</URL>
+        <Description>The Document describing the Contents of the Collection.</Description>
+        <Language>En</Language>
+      </InformationURL>
+      <PriorID>spase://VMO/NumericalData/Voyager2/PRA/Neptune/PT48S</PriorID>
+    </ResourceHeader>
+    <AccessInformation>
+      <RepositoryID>spase://SMWG/Repository/PDS/PPI</RepositoryID>
+      <Availability>Online</Availability>
+      <AccessRights>Open</AccessRights>
+      <AccessURL>
+        <Name>PDS/PPI</Name>
+        <URL>https://pds-ppi.igpp.ucla.edu/search/view/?f=yes&amp;id=pds://PPI/VG2-N-PRA-4-SUMM-BROWSE-48SEC-V1.0</URL>
+        <ProductKey>VG2-N-PRA-4-SUMM-BROWSE-48SEC-V1.0</ProductKey>
+        <Description>This Collection is archived with NASA Planetary Data System.</Description>
+        <Language>En</Language>
+      </AccessURL>
+      <Format>Text.ASCII</Format>
+      <Acknowledgement>NASA Planetary Plasma Interactions (PPI) Node of the Planetary Data System (PDS) and the Principal Investigator for the Data.</Acknowledgement>
+    </AccessInformation>
+    <InstrumentID>spase://SMWG/Instrument/Voyager2/PRA</InstrumentID>
+    <MeasurementType>Waves.Passive</MeasurementType>
+    <TemporalDescription>
+      <TimeSpan>
+        <StartDate>1989-08-18T00:00:00.00</StartDate>
+        <StopDate>1989-09-06T23:59:59.00</StopDate>
+      </TimeSpan>
+      <Cadence>PT48S</Cadence>
+    </TemporalDescription>
+    <ObservedRegion>Neptune</ObservedRegion>
+  </NumericalData>
+</Spase>

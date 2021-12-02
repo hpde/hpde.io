@@ -1,0 +1,143 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "Version": "2.2.9",
+    "NumericalData": {
+      "ResourceID": "spase://NASA/NumericalData/Helios1/E8/PT1H",
+      "ResourceHeader": {
+        "ResourceName": "Helios 1 E8 (Keppler) Hourly Particle Fluxes",
+        "ReleaseDate": "2021-03-11T18:39:11Z",
+        "Description": "Data set records contain hourly count rates of protons and \nelectrons in 16 energy ranges (protons: 15 differential channels between 21 and \n677 keV, plus >677 keV; electrons: 15 differential channels between 17 and 835 \nkeV, plus >835 keV), each in 16 22.5 deg azimuthal sectors. Accumulation times\nfor each count rate are also given.  No spacecraft position information is \nincluded.  Data are from the E8 experiment on Helios 1.",
+        "Acknowledgement": "Please acknowledge the P.I., Erhard Keppler of Max Planck\nInstiture, Lindau",
+        "Contact": {
+          "PersonID": "spase://SMWG/Person/Erhard.Keppler",
+          "Role": "PrincipalInvestigator"
+        },
+        "InformationURL": [
+          {
+            "Name": "Data set catalog at SPDF",
+            "URL": "https://spdf.gsfc.nasa.gov/pub/documents/old/documentation_from_nssdc/dataset_catalogs/DSC_0488.pdf"
+          },
+          {
+            "Name": "Readme file at SPDF",
+            "URL": "https://spdf.gsfc.nasa.gov/pub/data/helios/helios1/particle/e8_keppler/h-ep.txt"
+          }
+        ],
+        "PriorID": [
+          "spase://VEPO/NumericalData/Helios1/E8/PT1H",
+          "spase://VSPO/NumericalData/Helios1/E8/PT1H"
+        ]
+      },
+      "AccessInformation": {
+        "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+        "Availability": "Online",
+        "AccessRights": "Open",
+        "AccessURL": [
+          {
+            "Name": "FTPS from SPDF (not with most browsers)",
+            "URL": "ftps://spdf.gsfc.nasa.gov/pub/data/helios/helios1/particle/e8_keppler/"
+          },
+          {
+            "Name": "HTTPS from SPDF",
+            "URL": "https://spdf.gsfc.nasa.gov/pub/data/helios/helios1/particle/e8_keppler/",
+            "Description": "In CDF via HTTP from SPDF"
+          }
+        ],
+        "Format": "Text",
+        "DataExtent": {
+          "Quantity": "229",
+          "Units": "MB"
+        },
+        "Acknowledgement": "Please acknowledge the P.I., Erhard Keppler of MPI/Lindau \nand the Space Physics Data Facility at NASA/GSFC"
+      },
+      "InstrumentID": "spase://SMWG/Instrument/Helios1/E8",
+      "MeasurementType": "EnergeticParticles",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "1974-12-10T00:00:00",
+          "StopDate": "1980-12-31T00:00:00"
+        },
+        "Cadence": "PT1H"
+      },
+      "ObservedRegion": "Heliosphere.Inner",
+      "Parameter": [
+        {
+          "Name": "Time tag",
+          "Description": "The start times of the count rate averages, given as five \nwords: hours since start of 1974, year, day of year, hour, minute.  Values of \nthe last one is uniformly zero.",
+          "Cadence": "PT1H",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Electron count rates",
+          "Description": "16-sectored count rates of electrons in 16 energy ranges \n(17-22, 22-28, 28-36, 36-46, 46-58, 58-74, 74-92, 93-120, 120-153, 153-201,\n201-248, 248-298, 300-412, 412-525, 525-835, >835 keV).",
+          "Cadence": "PT1H",
+          "Units": "Particles/sec",
+          "Structure": {
+            "Size": "16 16",
+            "Description": "Count rates of electrons in 16 energy ranges for each of 16\nazimuthal sectors.  Data cycle through energies for first sector, then repeats\nfor second sector, etc."
+          },
+          "FillValue": "0.0",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": "Average",
+            "ParticleQuantity": "CountRate",
+            "EnergyRange": {
+              "Low": "17",
+              "High": "835",
+              "Units": "keV"
+            }
+          }
+        },
+        {
+          "Name": "Accumulation times for electron count rates",
+          "Description": "Accumulation times for each of the preceding 16x16 electron\ncount rates.",
+          "Cadence": "PT1H",
+          "Units": "Sec",
+          "Structure": {
+            "Size": "16 16",
+            "Description": "The accumulation time for a given count rate immediately\nfollows its associated count rate in the data records."
+          },
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Proton count rates",
+          "Description": "16-sectored count rates of electrons in 16 energy ranges \n(21-27, 27-35, 35-44, 44-56, 56-71, 71-90, 90-110, 110-137, 137-174, 174-222,\n222-279, 279-353, 353-444, 444-563, 563-677, >677 keV).",
+          "Cadence": "PT1H",
+          "Units": "Particles/sec",
+          "Structure": {
+            "Size": "16 16",
+            "Description": "Count rates of protonsons in 16 energy ranges for each of 16\nazimuthal sectors.  Data cycle through energies for first sector, then repeats\nfor second sector, etc."
+          },
+          "FillValue": "0.0",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": "Average",
+            "ParticleQuantity": "CountRate",
+            "EnergyRange": {
+              "Low": "21",
+              "High": "677",
+              "Units": "keV"
+            }
+          }
+        },
+        {
+          "Name": "Accumulation times for proton count rates",
+          "Description": "Accumulation times for each of the preceding 16x16 proton\ncount rates.",
+          "Cadence": "PT1H",
+          "Units": "Sec",
+          "Structure": {
+            "Size": "16 16",
+            "Description": "The accumulation time for a given count rate immediately\nfollows its associated count rate in the data records."
+          },
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        }
+      ]
+    }
+  }
+}

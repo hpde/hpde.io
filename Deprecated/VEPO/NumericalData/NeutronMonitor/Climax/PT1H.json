@@ -1,0 +1,91 @@
+{
+  "Spase": {
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_0_0.xsd",
+    "Version": "2.0.0",
+    "NumericalData": {
+      "ResourceID": "spase://VEPO/NumericalData/NeutronMonitor/Climax/PT1H",
+      "ResourceHeader": {
+        "ResourceName": "\n         Hourly Cosmic Ray Intensities from the Climax Neutron Monitor\n       ",
+        "AlternateName": "\n         Climax Hourly Counting Rates\n       ",
+        "ReleaseDate": "\n         2009-03-19T00:00:00.000\n       ",
+        "Description": "\n         Hourly averages of relativistic cosmic ray intensities from the Climax Neutron Monitor\n       ",
+        "Acknowledgement": "\n         Please acknowledge the Principal Investigator  (Dr. Clifford Lopate)\n       ",
+        "Contact": {
+          "PersonID": "\n           spase://SMWG/Person/Clifford.Lopate\n         ",
+          "Role": [
+            "PrincipalInvestigator",
+            "DataProducer"
+          ]
+        },
+        "InformationURL": [
+          {
+            "Name": "\n           General ReadMe file for data from the Climax, Haleakala, and Huancayo Neutron Monitors\n         ",
+            "URL": "ftp://ulysses.sr.unh.edu/NeutronMonitor/00General.ReadMe.txt",
+            "Description": "\n           This ReadMe file provides basic information about the neutron monitors at Climax,\n           Haleakala, and, for data before 1992, Huancayo, including geomagnetic cutoffs and \n           configurations of the monitors at each site.\n         "
+          },
+          {
+            "Name": "\n           Post-1980 corrections to the Climax, Colorado Neutron Monitor Counting Rate\n         ",
+            "URL": "http://ulysses.sr.unh.edu/NeutronMonitor/00ClimaxCorr.html",
+            "Description": "\n           This ReadMe file documents corrections made to the Climax counting rates after 1980.\n         "
+          }
+        ]
+      },
+      "AccessInformation": {
+        "RepositoryID": "spase://SMWG/Repository/UNH",
+        "Availability": "Online",
+        "AccessRights": "Open",
+        "AccessURL": {
+          "Name": "\n           Climax hourly intensities\n         ",
+          "URL": "ftp://ulysses.sr.unh.edu/NeutronMonitor/HourlyClimax/",
+          "Description": "\n           Parent directory containing compressed yearly files with naming convention \n           \"File: ClimaxYYYY\" containg hourly averaged Climax neutron monitor intensity \n           measurements for YYYY = 1951 through 2006.\n         "
+        },
+        "Format": "Text",
+        "Acknowledgement": "C. Lopate, University of New Hampshire"
+      },
+      "InstrumentID": "spase://SMWG/Instrument/NeutronMonitor/Climax",
+      "MeasurementType": "EnergeticParticles",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "1951-01-01T00:00:00.000",
+          "StopDate": "2006-11-30T23:59:59.000"
+        },
+        "Cadence": "PT1H"
+      },
+      "ObservedRegion": "Heliosphere.NearEarth",
+      "Parameter": [
+        {
+          "Name": "Interval Start Time",
+          "ParameterKey": "Columns 1-3",
+          "Description": "\n          Nominal Start Time for the average given as \n          MM/DD/YYYY HH SSSSSSSSSS\n          where MM         = month of year (01-12)\n                DD         = Day of Month (01-31)\n                YYYY       = Gregorian Year AD\n                HH         = Hour of Day (00-23)\n                SSSSSSSSSS = Seconds since 00:00:00 Jan. 01, 1904\n       ",
+          "Cadence": "PT1H",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Climax Hourly Average",
+          "ParameterKey": "Column 4",
+          "Description": "\n          Climax pressure corrected counts per hour, prescaled by 100\n          Periods with no data are indicated by -1\n       ",
+          "Caveats": "\n          For true counts per hour, the value given must be multiplied by 100.\n       ",
+          "Cadence": "PT1H",
+          "Units": "(counts/hr)",
+          "ValidMin": "0",
+          "ValidMax": "100000",
+          "FillValue": "-1",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": "Integral",
+            "ParticleQuantity": "Counts",
+            "EnergyRange": {
+              "Low": "2.99",
+              "High": "1.0E6",
+              "Units": "GV"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

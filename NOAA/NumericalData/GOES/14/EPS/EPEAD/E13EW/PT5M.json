@@ -1,0 +1,370 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_3_1.xsd",
+    "Version": "2.3.1",
+    "NumericalData": {
+      "ResourceID": "spase://NOAA/NumericalData/GOES/14/EPS/EPEAD/E13EW/PT5M",
+      "ResourceHeader": {
+        "ResourceName": "GOES 14 Energetic Proton, Electron and Alpha Detector (EPEAD) electron fluxes data at 5 min Time Resolution in Spacecraft Coordinates",
+        "AlternateName": "GOES 14 EPEAD E13EW data",
+        "ReleaseDate": "2020-05-04T13:45:15Z",
+        "Description": "The GOES 14 Energetic Proton, Electron and Alpha Detectors (EPEAD) are essentially the same as the Energetic Particle Sensor (EPS) on GOES 8-12. There are two EPEADs on each satellite, one looking east and one looking west. For more information, please see Onsager et al. 1996, Operational uses of the GOES energetic particle detectors, in GOES 8 and Beyond, Proc. SPIE, Vol. 2812, edited by E. R. Washwell, pp. 281-290, Bellingham, WA. These data file contain mainly information on the electron fluxes with energy with >0.8 MeV from both the A and B detectors. Data files contain long descriptive header.",
+        "Acknowledgement": "NASA Office of Space Science Applications (United States), NOAA National Environmental Satellite Service (United States), Terry G. Onsager",
+        "Contact": [
+          {
+            "PersonID": "spase://SMWG/Person/Terry.Onsager",
+            "Role": "PrincipalInvestigator"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/James.M.Weygand",
+            "Role": "MetadataContact"
+          }
+        ],
+        "InformationURL": {
+          "Name": "GOES N, O, and P Brochure",
+          "URL": "https://www.nasa.gov/pdf/112855main_GOESNOPWeb1.pdf",
+          "Description": "Information about the magnetometers onboard GOES 14",
+          "Language": "en"
+        },
+        "PriorID": [
+          "spase://VMO/NumericalData/GOES/14/EPEAD/epead_e13ew_PT5M",
+          "spase://VMO/NumericalData/GOES/14/EPS/epead_e13ew_PT5M",
+          "spase://VSPO/NumericalData/GOES/14/EPS/EPEAD/E13EW/PT5M"
+        ]
+      },
+      "AccessInformation": {
+        "RepositoryID": "spase://SMWG/Repository/NOAA/SEC",
+        "Availability": "Online",
+        "AccessRights": "Open",
+        "AccessURL": {
+          "Name": "Direct access to the GOES 14 Energetic Proton, Electron, and Alpha Detectors (EPEAD) Data",
+          "URL": "https://satdat.ngdc.noaa.gov/sem/goes/data/avg/",
+          "Description": "Direct link to the GOES 14 Energetic Proton, Electron and Alpha Detectors data in CSV format as well as the energetic particle data from other GOES spacecraft. The data are sorted by year, month, spacecraft, and file type. The file names indicates the data type, spacecraft number, year, month, and resolution. For example, g13_epead_e2ew_16s_20080301_20080301.csv, indicates GOES 13 magnetometer data at 16 s time resolution from 2008-03-01."
+        },
+        "Format": "Text.ASCII",
+        "Encoding": "None",
+        "Acknowledgement": "NASA, NOAA, Terry G. Onsager"
+      },
+      "ProcessingLevel": "Calibrated",
+      "ProviderResourceName": "NOAA GOES 14 EPEAD",
+      "ProviderProcessingLevel": "Level-2",
+      "InstrumentID": "spase://SMWG/Instrument/GOES/14/EPS",
+      "MeasurementType": "EnergeticParticles",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "2012-10-01T00:00:00",
+          "StopDate": "2012-11-30T23:59:00",
+          "Note": "Time format in data files is year-month-day hour:minute:seconds. Data file may fill out the first month and last month with flags."
+        },
+        "Cadence": "PT5M"
+      },
+      "Caveats": "Flags=-99999.0",
+      "Keyword": [
+        "5 min",
+        "geosynchronous",
+        "GOES",
+        "Energetic Proton, Electron and Alpha Detectors"
+      ],
+      "Parameter": [
+        {
+          "Name": "Seconds of the Month",
+          "ParameterKey": "Time",
+          "Description": "Time format in data files is year-month-day hour:minute:seconds",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Data points per average",
+          "ParameterKey": "E1E_NUM_PTS",
+          "Description": "Number of data points per average",
+          "ValidMin": "0",
+          "ValidMax": "75",
+          "FillValue": "0",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Quality flag for electrons with energy >0.8 MeV",
+          "ParameterKey": "E1E_QUAL_FLAG",
+          "Description": "Quality flag non-zero value indicates data quality issue",
+          "ValidMin": "0",
+          "ValidMax": "4294967295",
+          "FillValue": "99999",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Average flux of electrons with energy with >0.8 MeV",
+          "ParameterKey": "E1E_UNCOR_FLUX",
+          "Description": "Average flux of electrons with energy >0.8 MeV from the B detector that faces either East or West depending on the yaw flip of the satellite with no correction applied to remove proton contamination",
+          "Units": "(cm^2 s sr)^-1",
+          "ValidMin": "10.0",
+          "ValidMax": "1.0e6",
+          "FillValue": "-99999",
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "Average flux of electrons with energy with >0.8 MeV",
+          "ParameterKey": "E1E_COR_FLUX",
+          "Description": "Average flux of electrons with energy >0.8 MeV from the B detector that faces either East or West depending on the yaw flip of the satellite with a correction applied to remove proton contamination",
+          "Units": "(cm^2 s sr)^-1",
+          "ValidMin": "10.0",
+          "ValidMax": "1.0e6",
+          "FillValue": "-99999",
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "Data points per average",
+          "ParameterKey": "E1W_NUM_PTS",
+          "Description": "Number of data points per average",
+          "ValidMin": "0",
+          "ValidMax": "75",
+          "FillValue": "0",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Quality flag for electrons with energy >0.8 MeV",
+          "ParameterKey": "E1W_QUAL_FLAG",
+          "Description": "Quality flag non-zero value indicates data quality issue",
+          "ValidMin": "0",
+          "ValidMax": "4294967295",
+          "FillValue": "99999",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Average flux of electrons with energy with >0.8 MeV",
+          "ParameterKey": "E1W_UNCOR_FLUX",
+          "Description": "Average flux of electrons with energy >0.8 MeV from the A detector that faces either East or West depending on the yaw flip of the satellite with no correction applied to remove proton contamination",
+          "Units": "(cm^2 s sr)^-1",
+          "ValidMin": "10.0",
+          "ValidMax": "1.0e6",
+          "FillValue": "-99999",
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "Average flux of electrons with energy with >0.8 MeV",
+          "ParameterKey": "E1W_COR_FLUX",
+          "Description": "Average flux of electrons with energy >0.8 MeV from the A detector that faces either East or West depending on the yaw flip of the satellite with a correction applied to remove proton contamination",
+          "Units": "(cm^2 s sr)^-1",
+          "ValidMin": "10.0",
+          "ValidMax": "1.0e6",
+          "FillValue": "-99999",
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "Data points per average",
+          "ParameterKey": "E2E_NUM_PTS",
+          "Description": "Number of data points per average",
+          "ValidMin": "0",
+          "ValidMax": "75",
+          "FillValue": "0",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Quality flag for electrons with energy >2 MeV",
+          "ParameterKey": "E2E_QUAL_FLAG",
+          "Description": "Quality flag non-zero value indicates data quality issue",
+          "ValidMin": "0",
+          "ValidMax": "4294967295",
+          "FillValue": "99999",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Average flux of electrons with energy with >2 MeV",
+          "ParameterKey": "E2E_UNCOR_FLUX",
+          "Description": "Average flux of electrons with energy >2 MeV from the B detector that faces either East or West depending on the yaw flip of the satellite with no correction applied to remove proton contamination",
+          "Units": "(cm^2 s sr)^-1",
+          "ValidMin": "10.0",
+          "ValidMax": "1.0e6",
+          "FillValue": "-99999",
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "Average flux of electrons with energy with >2 MeV",
+          "ParameterKey": "E2E_COR_FLUX",
+          "Description": "Average flux of electrons with energy >2 MeV from the B detector that faces either East or West depending on the yaw flip of the satellite with a correction applied to remove proton contamination",
+          "Units": "(cm^2 s sr)^-1",
+          "ValidMin": "10.0",
+          "ValidMax": "1.0e6",
+          "FillValue": "-99999",
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "Data points per average",
+          "ParameterKey": "E2W_NUM_PTS",
+          "Description": "Number of data points per average",
+          "ValidMin": "0",
+          "ValidMax": "75",
+          "FillValue": "0",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Quality flag for electrons with energy >2 MeV",
+          "ParameterKey": "E2W_QUAL_FLAG",
+          "Description": "Quality flag non-zero value indicates data quality issue",
+          "ValidMin": "0",
+          "ValidMax": "4294967295",
+          "FillValue": "99999",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Average flux of electrons with energy with >2 MeV",
+          "ParameterKey": "E2W_UNCOR_FLUX",
+          "Description": "Average flux of electrons with energy >2 MeV from the A detector that faces either East or West depending on the yaw flip of the satellite with no correction applied to remove proton contamination",
+          "Units": "(cm^2 s sr)^-1",
+          "ValidMin": "10.0",
+          "ValidMax": "1.0e6",
+          "FillValue": "-99999",
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "Average flux of electrons with energy with >2 MeV",
+          "ParameterKey": "E2W_COR_FLUX",
+          "Description": "Average flux of electrons with energy >2 MeV from the A detector that faces either East or West depending on the yaw flip of the satellite with a correction applied to remove proton contamination",
+          "Units": "(cm^2 s sr)^-1",
+          "ValidMin": "10.0",
+          "ValidMax": "1.0e6",
+          "FillValue": "-99999",
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "Data points per average",
+          "ParameterKey": "E3E_NUM_PTS",
+          "Description": "Number of data points per average",
+          "ValidMin": "0",
+          "ValidMax": "75",
+          "FillValue": "0",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Quality flag for electrons with energy >4 MeV",
+          "ParameterKey": "E3E_QUAL_FLAG",
+          "Description": "Quality flag non-zero value indicates data quality issue",
+          "ValidMin": "0",
+          "ValidMax": "4294967295",
+          "FillValue": "99999",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Average flux of electrons with energy with >4 MeV",
+          "ParameterKey": "E3E_UNCOR_FLUX",
+          "Description": "Average flux of electrons with energy >4 MeV from the B detector that faces either East or West depending on the yaw flip of the satellite with no correction applied to remove proton contamination",
+          "Units": "(cm^2 s sr)^-1",
+          "ValidMin": "10.0",
+          "ValidMax": "1.0e6",
+          "FillValue": "-99999",
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "Average flux of electrons with energy with >4 MeV",
+          "ParameterKey": "E3E_COR_FLUX",
+          "Description": "Average flux of electrons with energy >4 MeV from the B detector that faces either East or West depending on the yaw flip of the satellite with a correction applied to remove proton contamination",
+          "Units": "(cm^2 s sr)^-1",
+          "ValidMin": "10.0",
+          "ValidMax": "1.0e6",
+          "FillValue": "-99999",
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "Data points per average",
+          "ParameterKey": "E3W_NUM_PTS",
+          "Description": "Number of data points per average",
+          "ValidMin": "0",
+          "ValidMax": "75",
+          "FillValue": "0",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Quality flag for electrons with energy >4 MeV",
+          "ParameterKey": "E3W_QUAL_FLAG",
+          "Description": "Quality flag non-zero value indicates data quality issue",
+          "ValidMin": "0",
+          "ValidMax": "4294967295",
+          "FillValue": "99999",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Average flux of electrons with energy with >4 MeV",
+          "ParameterKey": "E3W_UNCOR_FLUX",
+          "Description": "Average flux of electrons with energy >4 MeV from the A detector that faces either East or West depending on the yaw flip of the satellite with no correction applied to remove proton contamination",
+          "Units": "(cm^2 s sr)^-1",
+          "ValidMin": "10.0",
+          "ValidMax": "1.0e6",
+          "FillValue": "-99999",
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "Average flux of electrons with energy with >4 MeV",
+          "ParameterKey": "E3W_COR_FLUX",
+          "Description": "Average flux of electrons with energy >4 MeV from the A detector that faces either East or West depending on the yaw flip of the satellite with a correction applied to remove proton contamination",
+          "Units": "(cm^2 s sr)^-1",
+          "ValidMin": "10.0",
+          "ValidMax": "1.0e6",
+          "FillValue": "-99999",
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "NumberFlux"
+          }
+        }
+      ]
+    }
+  }
+}

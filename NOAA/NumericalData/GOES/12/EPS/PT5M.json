@@ -1,0 +1,577 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_3_0.xsd",
+    "Version": "2.3.0",
+    "NumericalData": {
+      "ResourceID": "spase://NOAA/NumericalData/GOES/12/EPS/PT5M",
+      "ResourceHeader": {
+        "ResourceName": "GOES 12 Energetic Particle Sensor Data at 5 min Time Resolution",
+        "AlternateName": "GOES 12 EPS data",
+        "ReleaseDate": "2019-10-11T16:15:00Z",
+        "Description": "The energetic particle sensor data consists of electron, proton, and alpha particle data. The electrons consists of 3 energy flux channels with energies greater than 0.6 MeV. The protons consist of 7 energy channels from 0.6 to 500 MeV and the alpha particles consist of 6 energy channels from 4 to 500 MeV.",
+        "Acknowledgement": "NOAA Environmental Research Laboratories, Terry G. Onsager",
+        "Contact": [
+          {
+            "PersonID": "spase://SMWG/Person/Terry.Onsager",
+            "Role": "PrincipalInvestigator"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/James.M.Weygand",
+            "Role": "MetadataContact"
+          }
+        ],
+        "InformationURL": [
+          {
+            "Name": "GOES 12 Space Environment Monitor",
+            "URL": "https://nssdc.gsfc.nasa.gov/nmc/experiment/display.action?id=2001-031A-03",
+            "Description": "Introduction to the GOES 12 Energetic Particle Sensor."
+          },
+          {
+            "Name": "GOES 12 Energetic Particle Sensor Data File Information",
+            "URL": "https://satdat.ngdc.noaa.gov/sem/goes/goes_docs/avg/readme.txt",
+            "Description": "Additional GOES EPS information."
+          }
+        ],
+        "PriorID": [
+          "spase://VMO/NumericalData/GOES/12/EPS/PT5M",
+          "spase://VSPO/NumericalData/GOES/12/EPS/PT5M"
+        ]
+      },
+      "AccessInformation": {
+        "RepositoryID": "spase://SMWG/Repository/NOAA/SEC",
+        "Availability": "Online",
+        "AccessRights": "Open",
+        "AccessURL": {
+          "Name": "Direct access to the GOES 12 SEM data",
+          "URL": "https://satdat.ngdc.noaa.gov/sem/goes/data/avg/",
+          "Description": "Direct link to the GOES 12 EPS data in ASCII format as well as the energetic particle data from other GOES spacecraft. The data are sorted by year, month, spacecraft. The file names indicates the spacecraft number, data type, and time range. For example, g08_eps_1m_19950801_19950131.csv indicates the GOES 8 spacecraft EPS data from 1995-08-01 to 1995-01-31."
+        },
+        "Format": "Text",
+        "Encoding": "None",
+        "Acknowledgement": "NOAA Environmental Research Laboratories, Terry G. Onsager"
+      },
+      "ProcessingLevel": "Calibrated",
+      "ProviderResourceName": "NOAA GOES",
+      "ProviderProcessingLevel": "Level-0",
+      "InstrumentID": "spase://SMWG/Instrument/GOES/12/SEM",
+      "MeasurementType": "EnergeticParticles",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "2003-01-01T00:00:00",
+          "StopDate": "2010-08-31T23:59:59",
+          "Note": "Time format in data files is year-month-day hour:minute:seconds."
+        },
+        "Cadence": "PT5M"
+      },
+      "Keyword": [
+        "5 min",
+        "geosynchronous",
+        "GOES",
+        "energetic particle monitor",
+        "energetic particles"
+      ],
+      "Parameter": [
+        {
+          "Name": "Time Format",
+          "ParameterKey": "Time",
+          "Description": "Time format in data files is year-month-day hour:minute:seconds.",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Flux of electrons with energy >0.6 MeV.",
+          "ParameterKey": "e1_flux_ic",
+          "Description": "E1 Electron integral flux >0.6 MeV, corrected unreliable during ion storms.",
+          "Units": "(cm^2 s sr)^-1",
+          "ValidMin": "0.01",
+          "ValidMax": "1.0e8",
+          "FillValue": "-99999",
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "Flux of electrons with energy >2 MeV.",
+          "ParameterKey": "e2_flux_ic",
+          "Description": "E2 Electron integral flux >2 MeV, corrected unreliable during ion storms.",
+          "Units": "(cm^2 s sr)^-1",
+          "ValidMin": "0.01",
+          "ValidMax": "1.0e6",
+          "FillValue": "-99999",
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "Flux of electrons with energy >4 MeV.",
+          "ParameterKey": "e3_flux_ic",
+          "Description": "E3 Electron integral flux >4 MeV, corrected unreliable during ion storms.",
+          "Units": "(cm^2 s sr)^-1",
+          "ValidMin": "0.01",
+          "ValidMax": "1.0e6",
+          "FillValue": "-99999",
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "Flux of protons with energies from 0.6 to 4.0 MeV.",
+          "ParameterKey": "p1_flux",
+          "Description": "P1 Proton channel 0.6 to 4.0 MeV",
+          "Units": "(cm^2 s sr MeV)^-1",
+          "ValidMin": "1.0e-4",
+          "ValidMax": "1.0e5",
+          "FillValue": "-99999",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "0.6",
+              "High": "4.0",
+              "Units": "MeV"
+            }
+          }
+        },
+        {
+          "Name": "Flux of protons with energies from 4 to 9 MeV.",
+          "ParameterKey": "p2_flux",
+          "Description": "P2 Proton channel 4 to 9 MeV",
+          "Units": "(cm^2 s sr MeV)^-1",
+          "ValidMin": "1.0e-4",
+          "ValidMax": "1.0e5",
+          "FillValue": "-99999",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "4.0",
+              "High": "9.0",
+              "Units": "MeV"
+            }
+          }
+        },
+        {
+          "Name": "Flux of protons with energies from 9 to 15 MeV.",
+          "ParameterKey": "p3_flux",
+          "Description": "P3 Proton channel 9 to 15 MeV",
+          "Units": "(cm^2 s sr MeV)^-1",
+          "ValidMin": "1.0e-4",
+          "ValidMax": "1.0e5",
+          "FillValue": "-99999",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "9.0",
+              "High": "15.0",
+              "Units": "MeV"
+            }
+          }
+        },
+        {
+          "Name": "Flux of protons with energies from 15 to 44 MeV.",
+          "ParameterKey": "p4_flux",
+          "Description": "P4 Proton channel 15 to 44 MeV",
+          "Units": "(cm^2 s sr MeV)^-1",
+          "ValidMin": "1.0e-4",
+          "ValidMax": "1.0e5",
+          "FillValue": "-99999",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "15.0",
+              "High": "44.0",
+              "Units": "MeV"
+            }
+          }
+        },
+        {
+          "Name": "Flux of protons with energies from 40 to 80 MeV.",
+          "ParameterKey": "p5_flux",
+          "Description": "P5 Proton channel 40 to 80 MeV",
+          "Units": "(cm^2 s sr MeV)^-1",
+          "ValidMin": "1.0e-4",
+          "ValidMax": "1.0e5",
+          "FillValue": "-99999",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "40.0",
+              "High": "80.0",
+              "Units": "MeV"
+            }
+          }
+        },
+        {
+          "Name": "Flux of protons with energies from 80 to 165 MeV.",
+          "ParameterKey": "p6_flux",
+          "Description": "P6 Proton channel 80 to 165 MeV",
+          "Units": "(cm^2 s sr MeV)^-1",
+          "ValidMin": "1.0e-4",
+          "ValidMax": "1.0e5",
+          "FillValue": "-99999",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "80.0",
+              "High": "165.0",
+              "Units": "MeV"
+            }
+          }
+        },
+        {
+          "Name": "Flux of protons with energies from 165 to 500 MeV.",
+          "ParameterKey": "p7_flux",
+          "Description": "P7 Proton channel 165 to 500 MeV",
+          "Units": "(cm^2 s sr MeV)^-1",
+          "ValidMin": "1.0e-4",
+          "ValidMax": "1.0e5",
+          "FillValue": "-99999",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "165.0",
+              "High": "500.0",
+              "Units": "MeV"
+            }
+          }
+        },
+        {
+          "Name": "Flux of Alpha Particles with energies from 4 to 10 MeV.",
+          "ParameterKey": "a1_flux",
+          "Description": "A1 Alpha Particles 4 to 10 MeV.",
+          "Units": "(cm^2 s sr MeV)^-1",
+          "ValidMin": "1.0e-4",
+          "ValidMax": "1.0e5",
+          "FillValue": "-99999",
+          "Particle": {
+            "ParticleType": "AlphaParticle",
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "4",
+              "High": "10.0",
+              "Units": "MeV"
+            }
+          }
+        },
+        {
+          "Name": "Flux of Alpha Particles with energies from 10 to 21 MeV.",
+          "ParameterKey": "a2_flux",
+          "Description": "A2 Alpha Particles 10 to 21 MeV.",
+          "Units": "(cm^2 s sr MeV)^-1",
+          "ValidMin": "1.0e-4",
+          "ValidMax": "1.0e5",
+          "FillValue": "-99999",
+          "Particle": {
+            "ParticleType": "AlphaParticle",
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "10",
+              "High": "21.0",
+              "Units": "MeV"
+            }
+          }
+        },
+        {
+          "Name": "Flux of Alpha Particles with energies from 21 to 60 MeV.",
+          "ParameterKey": "a3_flux",
+          "Description": "A3 Alpha Particles 21 to 60 MeV.",
+          "Units": "(cm^2 s sr MeV)^-1",
+          "ValidMin": "1.0e-4",
+          "ValidMax": "1.0e5",
+          "FillValue": "-99999",
+          "Particle": {
+            "ParticleType": "AlphaParticle",
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "21.0",
+              "High": "60.0",
+              "Units": "MeV"
+            }
+          }
+        },
+        {
+          "Name": "Flux of Alpha Particles with energies from 60 to 150 MeV.",
+          "ParameterKey": "a4_flux",
+          "Description": "A4 Alpha Particles 60 to 150 MeV.",
+          "Units": "(cm^2 s sr MeV)^-1",
+          "ValidMin": "1.0e-4",
+          "ValidMax": "1.0e5",
+          "FillValue": "-99999",
+          "Particle": {
+            "ParticleType": "AlphaParticle",
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "60.0",
+              "High": "150.0",
+              "Units": "MeV"
+            }
+          }
+        },
+        {
+          "Name": "Flux of Alpha Particles with energies from 150 to 250 MeV.",
+          "ParameterKey": "a5_flux",
+          "Description": "A5 Alpha Particles 150 to 250 MeV.",
+          "Units": "(cm^2 s sr MeV)^-1",
+          "ValidMin": "1.0e-4",
+          "ValidMax": "1.0e5",
+          "FillValue": "-99999",
+          "Particle": {
+            "ParticleType": "AlphaParticle",
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "150.0",
+              "High": "250.0",
+              "Units": "MeV"
+            }
+          }
+        },
+        {
+          "Name": "Flux of Alpha Particles with energies from 300 to 500 MeV.",
+          "ParameterKey": "a6_flux",
+          "Description": "A6 Alpha Particles 300 to 500 MeV.",
+          "Units": "(cm^2 s sr MeV)^-1",
+          "ValidMin": "1.0e-4",
+          "ValidMax": "1.0e5",
+          "FillValue": "-99999",
+          "Particle": {
+            "ParticleType": "AlphaParticle",
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "300.0",
+              "High": "500.0",
+              "Units": "MeV"
+            }
+          }
+        },
+        {
+          "Name": "Flux of protons with energies from 0.6 to 4.0 MeV.",
+          "ParameterKey": "p1_flux_c",
+          "Description": "P1 Proton channel 0.6 to 4.0 MeV, corrected",
+          "Units": "(cm^2 s sr MeV)^-1",
+          "ValidMin": "1.0e-4",
+          "ValidMax": "1.0e5",
+          "FillValue": "-99999",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "0.6",
+              "High": "4.0",
+              "Units": "MeV"
+            }
+          }
+        },
+        {
+          "Name": "Flux of protons with energies from 4 to 9 MeV.",
+          "ParameterKey": "p2_flux_c",
+          "Description": "P2 Proton channel 4 to 9 MeV, corrected.",
+          "Units": "(cm^2 s sr MeV)^-1",
+          "ValidMin": "1.0e-4",
+          "ValidMax": "1.0e5",
+          "FillValue": "-99999",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "4.0",
+              "High": "9.0",
+              "Units": "MeV"
+            }
+          }
+        },
+        {
+          "Name": "Flux of protons with energies from 9 to 15 MeV.",
+          "ParameterKey": "p3_flux_c",
+          "Description": "P3 Proton channel 9 to 15 MeV, corrected.",
+          "Units": "(cm^2 s sr MeV)^-1",
+          "ValidMin": "1.0e-4",
+          "ValidMax": "1.0e5",
+          "FillValue": "-99999",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "9.0",
+              "High": "15.0",
+              "Units": "MeV"
+            }
+          }
+        },
+        {
+          "Name": "Flux of protons with energies from 15 to 44 MeV.",
+          "ParameterKey": "p4_flux_c",
+          "Description": "P4 Proton channel 15 to 44 MeV, corrected.",
+          "Units": "(cm^2 s sr MeV)^-1",
+          "ValidMin": "1.0e-4",
+          "ValidMax": "1.0e5",
+          "FillValue": "-99999",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "15.0",
+              "High": "44.0",
+              "Units": "MeV"
+            }
+          }
+        },
+        {
+          "Name": "Flux of protons with energies from 40 to 80 MeV.",
+          "ParameterKey": "p5_flux_c",
+          "Description": "P5 Proton channel 40 to 80 MeV, corrected.",
+          "Units": "(cm^2 s sr MeV)^-1",
+          "ValidMin": "1.0e-4",
+          "ValidMax": "1.0e5",
+          "FillValue": "-99999",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "40.0",
+              "High": "80.0",
+              "Units": "MeV"
+            }
+          }
+        },
+        {
+          "Name": "Flux of protons with energies from 80 to 165 MeV.",
+          "ParameterKey": "p6_flux_c",
+          "Description": "P6 Proton channel 80 to 165 MeV, corrected.",
+          "Units": "(cm^2 s sr MeV)^-1",
+          "ValidMin": "1.0e-4",
+          "ValidMax": "1.0e5",
+          "FillValue": "-99999",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "80.0",
+              "High": "165.0",
+              "Units": "MeV"
+            }
+          }
+        },
+        {
+          "Name": "Flux of protons with energies from 165 to 500 MeV.",
+          "ParameterKey": "p7_flux_c",
+          "Description": "P7 Proton channel 165 to 500 MeV, corrected.",
+          "Units": "(cm^2 s sr MeV)^-1",
+          "ValidMin": "1.0e-4",
+          "ValidMax": "1.0e5",
+          "FillValue": "-99999",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "165.0",
+              "High": "500.0",
+              "Units": "MeV"
+            }
+          }
+        },
+        {
+          "Name": "Integral flux of protons with energies >1 MeV.",
+          "ParameterKey": "p1_flux_ic",
+          "Description": "P1 Proton integral >1 MeV, corrected.",
+          "Units": "(cm^2 s sr MeV)^-1",
+          "ValidMin": "1.0e-4",
+          "ValidMax": "1.0e5",
+          "FillValue": "-99999",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "Integral flux of protons with energies >5 MeV.",
+          "ParameterKey": "p2_flux_ic",
+          "Description": "P2 Proton integral >5 MeV, corrected.",
+          "Units": "(cm^2 s sr MeV)^-1",
+          "ValidMin": "1.0e-4",
+          "ValidMax": "1.0e5",
+          "FillValue": "-99999",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "Integral flux of protons with energies >10 MeV.",
+          "ParameterKey": "p3_flux_ic",
+          "Description": "P3 Proton ingegral >10 MeV, corrected.",
+          "Units": "(cm^2 s sr MeV)^-1",
+          "ValidMin": "1.0e-4",
+          "ValidMax": "1.0e5",
+          "FillValue": "-99999",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "Integral flux of protons with energies >30 MeV.",
+          "ParameterKey": "p4_flux_ic",
+          "Description": "P4 Proton ingegral >30 MeV, corrected.",
+          "Units": "(cm^2 s sr MeV)^-1",
+          "ValidMin": "1.0e-4",
+          "ValidMax": "1.0e5",
+          "FillValue": "-99999",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "Integral flux of protons with energies >50 MeV.",
+          "ParameterKey": "p5_flux_ic",
+          "Description": "P5 Proton ingegral >50 MeV, corrected.",
+          "Units": "(cm^2 s sr MeV)^-1",
+          "ValidMin": "1.0e-4",
+          "ValidMax": "1.0e5",
+          "FillValue": "-99999",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "Integral flux of protons with energies >60 MeV.",
+          "ParameterKey": "p6_flux_ic",
+          "Description": "P6 Proton ingegral >60 MeV, corrected.",
+          "Units": "(cm^2 s sr MeV)^-1",
+          "ValidMin": "1.0e-4",
+          "ValidMax": "1.0e5",
+          "FillValue": "-99999",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "Integral flux of protons with energies >100 MeV.",
+          "ParameterKey": "p7_flux_ic",
+          "Description": "P7 Proton ingegral >100 MeV, corrected.",
+          "Units": "(cm^2 s sr MeV)^-1",
+          "ValidMin": "1.0e-4",
+          "ValidMax": "1.0e5",
+          "FillValue": "-99999",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "NumberFlux"
+          }
+        }
+      ]
+    }
+  }
+}

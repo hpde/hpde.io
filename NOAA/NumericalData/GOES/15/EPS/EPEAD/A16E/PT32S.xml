@@ -1,0 +1,352 @@
+<?xml version="1.0"?>
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_3_1.xsd">
+  <Version>2.3.1</Version>
+  <NumericalData>
+    <ResourceID>spase://NOAA/NumericalData/GOES/15/EPS/EPEAD/A16E/PT32S</ResourceID>
+    <ResourceHeader>
+      <ResourceName>GOES 15 Energetic Proton, Electron and Alpha Detector (EPEAD) alpha particle fluxes data, east look direction, at 32 s Time Resolution in Spacecraft Coordinates</ResourceName>
+      <AlternateName>GOES 15 EPEAD A16E data</AlternateName>
+      <ReleaseDate>2020-05-04T13:45:15Z</ReleaseDate>
+      <Description>The GOES 15 Energetic Proton, Electron and Alpha Detectors (EPEAD) are essentially the same as the Energetic Particle Sensor (EPS) on GOES 8-12. There are two EPEADs on each satellite, one looking east and one looking west. For more information, please see Onsager et al. 1996, Operational uses of the GOES energetic particle detectors, in GOES 8 and Beyond, Proc. SPIE, Vol. 2812, edited by E. R. Washwell, pp. 281-290, Bellingham, WA. These data file contain mainly information on the alpha particle fluxes from B detector. Data files contain long descriptive header.</Description>
+      <Acknowledgement>NASA Office of Space Science Applications (United States), NOAA National Environmental Satellite Service (United States), Terry G. Onsager</Acknowledgement>
+      <Contact>
+        <PersonID>spase://SMWG/Person/Terry.Onsager</PersonID>
+        <Role>PrincipalInvestigator</Role>
+      </Contact>
+      <Contact>
+        <PersonID>spase://SMWG/Person/James.M.Weygand</PersonID>
+        <Role>MetadataContact</Role>
+      </Contact>
+      <InformationURL>
+        <Name>GOES N, O, and P Brochure</Name>
+        <URL>https://www.nasa.gov/pdf/112855main_GOESNOPWeb1.pdf</URL>
+        <Description>Information about the magnetometers onboard GOES 15</Description>
+        <Language>en</Language>
+      </InformationURL>
+      <PriorID>spase://VMO/NumericalData/GOES/15/EPEAD/epead_a16e_PT32S</PriorID>
+      <PriorID>spase://VMO/NumericalData/GOES/15/EPS/epead_a16e_PT32S</PriorID>
+      <PriorID>spase://VSPO/NumericalData/GOES/15/EPS/EPEAD/A16E/PT32S</PriorID>
+    </ResourceHeader>
+    <AccessInformation>
+      <RepositoryID>spase://SMWG/Repository/NOAA/SEC</RepositoryID>
+      <Availability>Online</Availability>
+      <AccessRights>Open</AccessRights>
+      <AccessURL>
+        <Name>Direct access to the GOES 15 Energetic Proton, Electron, and Alpha Detectors (EPEAD) Data</Name>
+        <URL>https://satdat.ngdc.noaa.gov/sem/goes/data/full/</URL>
+        <Description>Direct link to the GOES 15 Energetic Proton, Electron and Alpha Detectors data in CSV format as well as the energetic particle data from other GOES spacecraft. The data are sorted by year, month, spacecraft, and file type. The file names indicates the data type, spacecraft number, year, month, and resolution. For example, g15_epead_a16e_32s_20080301_20080301.csv, indicates GOES 15 magnetometer data at 32 s time resolution from 2008-03-01.</Description>
+      </AccessURL>
+      <Format>Text.ASCII</Format>
+      <Encoding>None</Encoding>
+      <Acknowledgement>NASA, NOAA, Terry G. Onsager</Acknowledgement>
+    </AccessInformation>
+    <ProcessingLevel>Calibrated</ProcessingLevel>
+    <ProviderResourceName>NOAA GOES 15 EPEAD</ProviderResourceName>
+    <ProviderProcessingLevel>Level-2</ProviderProcessingLevel>
+    <InstrumentID>spase://SMWG/Instrument/GOES/15/EPS</InstrumentID>
+    <MeasurementType>EnergeticParticles</MeasurementType>
+    <TemporalDescription>
+      <TimeSpan>
+        <StartDate>2008-03-01T00:00:00</StartDate>
+        <StopDate>2013-04-09T23:59:00</StopDate>
+        <Note>Time format in data files is year-month-day hour:minute:seconds. Data file may fill out the first month and last month with flags.</Note>
+      </TimeSpan>
+      <Cadence>PT32S</Cadence>
+    </TemporalDescription>
+    <Caveats>Flags=-99999.0</Caveats>
+    <Keyword>32 s</Keyword>
+    <Keyword>geosynchronous</Keyword>
+    <Keyword>GOES</Keyword>
+    <Keyword>Energetic Proton, Electron and Alpha Detectors</Keyword>
+    <Parameter>
+      <Name>Seconds of the Month</Name>
+      <ParameterKey>Time</ParameterKey>
+      <Description>Time format in data files is year-month-day hour:minute:seconds.</Description>
+      <Support>
+        <SupportQuantity>Temporal</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Quality flag for alpha particles with energy from 3.8 to 9.9 MeV.</Name>
+      <ParameterKey>A1E_QUAL_FLAG</ParameterKey>
+      <Description>Quality flag non-zero value indicates data quality issue.</Description>
+      <ValidMin>0</ValidMin>
+      <ValidMax>4294967295</ValidMax>
+      <FillValue>99999</FillValue>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Count rate of alpha particles with energy from 3.8 to 9.9 MeV.</Name>
+      <ParameterKey>A1E_CR</ParameterKey>
+      <Description>Average number of counts/s of alpha particles with energy from 3.8 to 9.9 MeV from the B detector that faces either East or West depending on the yaw flip of the satellite. The B detector faces East when the yaw flip flag is 0 and West when the yaw flip flag is 1.</Description>
+      <Units>s^-1</Units>
+      <ValidMin>0.001</ValidMin>
+      <ValidMax>1.0e5</ValidMax>
+      <FillValue>-99999</FillValue>
+      <Particle>
+        <ParticleType>AlphaParticle</ParticleType>
+        <ParticleQuantity>CountRate</ParticleQuantity>
+        <EnergyRange>
+          <Low>3.8</Low>
+          <High>9.9</High>
+          <Units>MeV</Units>
+        </EnergyRange>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>Average flux of alpha particles with energy from 3.8 to 9.9 MeV.</Name>
+      <ParameterKey>A1E_FLUX</ParameterKey>
+      <Description>Average flux of 6.9 MeV alpha particles from the B detector that faces either East or West depending on the yaw flip of the satellite. The B detector faces East when the yaw flip flag is 0 and West when the yaw flip flag is 1.</Description>
+      <Units>(cm^2 s sr MeV)^-1</Units>
+      <ValidMin>1.0e-5</ValidMin>
+      <ValidMax>1.0e4</ValidMax>
+      <FillValue>-99999</FillValue>
+      <Particle>
+        <ParticleType>AlphaParticle</ParticleType>
+        <ParticleQuantity>NumberFlux</ParticleQuantity>
+        <EnergyRange>
+          <Low>3.8</Low>
+          <High>9.9</High>
+          <Units>MeV</Units>
+        </EnergyRange>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>Quality flag for alpha particles with energy from 9.9 to 21.3 MeV.</Name>
+      <ParameterKey>A2E_QUAL_FLAG</ParameterKey>
+      <Description>Quality flag non-zero value indicates data quality issue.</Description>
+      <ValidMin>0</ValidMin>
+      <ValidMax>4294967295</ValidMax>
+      <FillValue>99999</FillValue>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Count rate of alpha particles with energy from 9.9 to 21.3 MeV</Name>
+      <ParameterKey>A2E_CR</ParameterKey>
+      <Description>Average number of counts/s of alpha particles with energy from 9.9 to 21.3 MeV from the B detector that faces either East or West depending on the yaw flip of the satellite. The B detector faces East when the yaw flip flag is 0 and West when the yaw flip flag is 1.</Description>
+      <Units>s^-1</Units>
+      <ValidMin>0.001</ValidMin>
+      <ValidMax>1.0e5</ValidMax>
+      <FillValue>-99999</FillValue>
+      <Particle>
+        <ParticleType>AlphaParticle</ParticleType>
+        <ParticleQuantity>CountRate</ParticleQuantity>
+        <EnergyRange>
+          <Low>9.9</Low>
+          <High>21.3</High>
+          <Units>MeV</Units>
+        </EnergyRange>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>Average flux of alpha particles with energy from 9.9 to 21.3 MeV</Name>
+      <ParameterKey>A2E_FLUX</ParameterKey>
+      <Description>Average flux of 16.1 MeV MeV alpha particles from the B detector that faces either East or West depending on the yaw flip of the satellite. The B detector faces East when the yaw flip flag is 0 and West when the yaw flip flag is 1.</Description>
+      <Units>(cm^2 s sr MeV)^-1</Units>
+      <ValidMin>1.0e-5</ValidMin>
+      <ValidMax>1.0e4</ValidMax>
+      <FillValue>-99999</FillValue>
+      <Particle>
+        <ParticleType>AlphaParticle</ParticleType>
+        <ParticleQuantity>NumberFlux</ParticleQuantity>
+        <EnergyRange>
+          <Low>9.9</Low>
+          <High>21.3</High>
+          <Units>MeV</Units>
+        </EnergyRange>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>Quality flag for alpha particles with energy from 21.3 to 61.0 MeV.</Name>
+      <ParameterKey>A3E_QUAL_FLAG</ParameterKey>
+      <Description>Quality flag non-zero value indicates data quality issue.</Description>
+      <ValidMin>0</ValidMin>
+      <ValidMax>4294967295</ValidMax>
+      <FillValue>99999</FillValue>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Count rate of alpha particles with energy from 21.3 to 61.0 MeV</Name>
+      <ParameterKey>A3E_CR</ParameterKey>
+      <Description>Average number of counts/s of alpha particles with energy from 21.3 to 61.0 MeV from the B detector that faces either East or West depending on the yaw flip of the satellite. The B detector faces East when the yaw flip flag is 0 and West when the yaw flip flag is 1.</Description>
+      <Units>s^-1</Units>
+      <ValidMin>0.001</ValidMin>
+      <ValidMax>1.0e5</ValidMax>
+      <FillValue>-99999</FillValue>
+      <Particle>
+        <ParticleType>AlphaParticle</ParticleType>
+        <ParticleQuantity>CountRate</ParticleQuantity>
+        <EnergyRange>
+          <Low>21.3</Low>
+          <High>61.0</High>
+          <Units>MeV</Units>
+        </EnergyRange>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>Average flux of alpha particles with energy from 21.3 to 61.0 MeV</Name>
+      <ParameterKey>A3E_FLUX</ParameterKey>
+      <Description>Average flux of 41.2 MeV MeV alpha particles from the B detector that faces either East or West depending on the yaw flip of the satellite. The B detector faces East when the yaw flip flag is 0 and West when the yaw flip flag is 1.</Description>
+      <Units>(cm^2 s sr MeV)^-1</Units>
+      <ValidMin>1.0e-5</ValidMin>
+      <ValidMax>1.0e4</ValidMax>
+      <FillValue>-99999</FillValue>
+      <Particle>
+        <ParticleType>AlphaParticle</ParticleType>
+        <ParticleQuantity>NumberFlux</ParticleQuantity>
+        <EnergyRange>
+          <Low>21.3</Low>
+          <High>61.0</High>
+          <Units>MeV</Units>
+        </EnergyRange>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>Quality flag for alpha particles with energy from 60 to 160 MeV.</Name>
+      <ParameterKey>A4E_QUAL_FLAG</ParameterKey>
+      <Description>Quality flag non-zero value indicates data quality issue.</Description>
+      <ValidMin>0</ValidMin>
+      <ValidMax>4294967295</ValidMax>
+      <FillValue>99999</FillValue>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Count rate of alpha particles with energy from 60 to 160 MeV</Name>
+      <ParameterKey>A4E_CR</ParameterKey>
+      <Description>Average number of counts/s of alpha particles with energy from 60 to 160 MeV from the B detector that faces either East or West depending on the yaw flip of the satellite. The B detector faces East when the yaw flip flag is 0 and West when the yaw flip flag is 1.</Description>
+      <Units>s^-1</Units>
+      <ValidMin>1.0e-5</ValidMin>
+      <ValidMax>1.0e5</ValidMax>
+      <FillValue>-99999</FillValue>
+      <Particle>
+        <ParticleType>AlphaParticle</ParticleType>
+        <ParticleQuantity>CountRate</ParticleQuantity>
+        <EnergyRange>
+          <Low>60.0</Low>
+          <High>160</High>
+          <Units>MeV</Units>
+        </EnergyRange>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>Average flux of alpha particles with energy from 60 to 160 MeV</Name>
+      <ParameterKey>A4E_FLUX</ParameterKey>
+      <Description>Average flux of 120 MeV MeV alpha particles from the B detector that faces either East or West depending on the yaw flip of the satellite. The B detector faces East when the yaw flip flag is 0 and West when the yaw flip flag is 1.</Description>
+      <Units>(cm^2 s sr MeV)^-1</Units>
+      <ValidMin>1.0e-5</ValidMin>
+      <ValidMax>1.0e4</ValidMax>
+      <FillValue>-99999</FillValue>
+      <Particle>
+        <ParticleType>AlphaParticle</ParticleType>
+        <ParticleQuantity>NumberFlux</ParticleQuantity>
+        <EnergyRange>
+          <Low>60.0</Low>
+          <High>160</High>
+          <Units>MeV</Units>
+        </EnergyRange>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>Quality flag for alpha particles with energy from 160 to 260 MeV.</Name>
+      <ParameterKey>A5E_QUAL_FLAG</ParameterKey>
+      <Description>Quality flag non-zero value indicates data quality issue.</Description>
+      <ValidMin>0</ValidMin>
+      <ValidMax>4294967295</ValidMax>
+      <FillValue>99999</FillValue>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Count rate of alpha particles with energy from 160 to 260 MeV.</Name>
+      <ParameterKey>A5E_CR</ParameterKey>
+      <Description>Average number of counts/s of alpha particles with energy from 160 to 260 MeV from the B detector that faces either East or West depending on the yaw flip of the satellite. The B detector faces East when the yaw flip flag is 0 and West when the yaw flip flag is 1.</Description>
+      <Units>s^-1</Units>
+      <ValidMin>1.0e-5</ValidMin>
+      <ValidMax>1.0e5</ValidMax>
+      <FillValue>-99999</FillValue>
+      <Particle>
+        <ParticleType>AlphaParticle</ParticleType>
+        <ParticleQuantity>CountRate</ParticleQuantity>
+        <EnergyRange>
+          <Low>160.0</Low>
+          <High>260</High>
+          <Units>MeV</Units>
+        </EnergyRange>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>Average flux of alpha particles with energy from 160 to 260 MeV.</Name>
+      <ParameterKey>A5E_FLUX</ParameterKey>
+      <Description>Average flux of 120 MeV MeV alpha particles from the B detector that faces either East or West depending on the yaw flip of the satellite. The B detector faces East when the yaw flip flag is 0 and West when the yaw flip flag is 1.</Description>
+      <Units>(cm^2 s sr MeV)^-1</Units>
+      <ValidMin>1.0e-5</ValidMin>
+      <ValidMax>1.0e4</ValidMax>
+      <FillValue>-99999</FillValue>
+      <Particle>
+        <ParticleType>AlphaParticle</ParticleType>
+        <ParticleQuantity>NumberFlux</ParticleQuantity>
+        <EnergyRange>
+          <Low>160.0</Low>
+          <High>260</High>
+          <Units>MeV</Units>
+        </EnergyRange>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>Quality flag for alpha particles with energy from 330 to 500 MeV.</Name>
+      <ParameterKey>A6E_QUAL_FLAG</ParameterKey>
+      <Description>Quality flag non-zero value indicates data quality issue.</Description>
+      <ValidMin>0</ValidMin>
+      <ValidMax>4294967295</ValidMax>
+      <FillValue>99999</FillValue>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Count rate of alpha particles with energy from 300 to 500 MeV.</Name>
+      <ParameterKey>A6E_CR</ParameterKey>
+      <Description>Average number of counts/s of alpha particles with energy from 330 to 500 MeV from the B detector that faces either East or West depending on the yaw flip of the satellite. The B detector faces East when the yaw flip flag is 0 and West when the yaw flip flag is 1.</Description>
+      <Units>s^-1</Units>
+      <ValidMin>1.0e-5</ValidMin>
+      <ValidMax>1.0e5</ValidMax>
+      <FillValue>-99999</FillValue>
+      <Particle>
+        <ParticleType>AlphaParticle</ParticleType>
+        <ParticleQuantity>CountRate</ParticleQuantity>
+        <EnergyRange>
+          <Low>300</Low>
+          <High>500</High>
+          <Units>MeV</Units>
+        </EnergyRange>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>Average flux of alpha particles with energy from 300 to 500 MeV.</Name>
+      <ParameterKey>A6E_FLUX</ParameterKey>
+      <Description>Average flux of 435 MeV MeV alpha particles from the B detector that faces either East or West depending on the yaw flip of the satellite. The B detector faces East when the yaw flip flag is 0 and West when the yaw flip flag is 1.</Description>
+      <Units>(cm^2 s sr MeV)^-1</Units>
+      <ValidMin>1.0e-5</ValidMin>
+      <ValidMax>1.0e4</ValidMax>
+      <FillValue>-99999</FillValue>
+      <Particle>
+        <ParticleType>AlphaParticle</ParticleType>
+        <ParticleQuantity>NumberFlux</ParticleQuantity>
+        <EnergyRange>
+          <Low>300</Low>
+          <High>500</High>
+          <Units>MeV</Units>
+        </EnergyRange>
+      </Particle>
+    </Parameter>
+  </NumericalData>
+</Spase>

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Spase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.spase-group.org/data/schema" xsi:schemaLocation="http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_2_9.xsd">
+   <Version>2.2.9</Version>
+   <NumericalData>
+      <ResourceID>spase://VSPO/NumericalData/Wind/SMS/STICS/Distfunc/P1D</ResourceID>
+      <ResourceHeader>
+         <ResourceName>Wind Suprathermal Ion Composition Spectrometer (STICS) Distribution Functions</ResourceName>
+         <AlternateName>Wind/STICS</AlternateName>
+         <ReleaseDate>2019-05-05T12:34:56Z</ReleaseDate>
+         <Description>Wind Suprathermal Ion Composition Spectrometer (STICS) phase-space distribution functions at 1-day time resolution for specified ions. Calibrated science quality data presented in the native spacecraft frame. The data files contain 3D phase space density distribution, A(v) (currently in arbitrary units) functions, for H+. There are 512 values for A(v) for each time step, corresponding to each directional sector (16 total directions) and each Deflection Voltage Step (DVS) corresponding to a set E/q value (32 total voltage steps per sector). Only proton distribution functions are currently released at the production level.</Description>
+         <Acknowledgement>Please acknowledge the Wind/STICS instrument team.</Acknowledgement>
+         <Contact>
+            <PersonID>spase://SMWG/Person/Jim.Raines</PersonID>
+            <Role>DataProducer</Role>
+</Contact>
+         <Contact>
+            <PersonID>spase://SMWG/Person/Susan.T.Lepri</PersonID>
+            <Role>Scientist</Role>
+</Contact>
+         <Contact>
+            <PersonID>spase://SMWG/Person/Thomas.Zurbuchen</PersonID>
+            <Role>Scientist</Role>
+</Contact>
+         <Contact>
+            <PersonID>spase://SMWG/Person/George.Gloeckler</PersonID>
+            <Role>CoInvestigator</Role>
+</Contact>
+         <InformationURL>
+            <Name>Wind STICS Level 2 Data Release Notes</Name>
+            <URL>https://vho.nasa.gov/mission/wind/sms/3d/wind_stics_lv2_release_notes_01Apr2010.pdf</URL>
+            <Description>PDF document, revision B, 1 April 2010</Description>
+</InformationURL>
+         <InformationURL>
+            <Name>WIND/SMS information at the University of Maryland Space Physics Group</Name>
+            <URL>https://space.umd.edu/wind/sms.html#STICS</URL>
+            <Description>Wind/STICS instrument and other Wind instrument information.</Description>
+</InformationURL>
+         <PriorID>spase://VHO/NumericalData/Wind/SMS/STICS/Distfunc.P1D</PriorID>
+</ResourceHeader>
+      <AccessInformation>
+         <RepositoryID>spase://SMWG/Repository/NASA/GSFC/VHO-VMO</RepositoryID>
+         <Availability>Online</Availability>
+         <AccessRights>Open</AccessRights>
+         <AccessURL>
+            <URL>https://vho.nasa.gov/mission/wind/sms/3d/daily/</URL>
+            <Description>Wind STICS data archive at NASA/GSFC</Description>
+</AccessURL>
+         <Format>Text</Format>
+         <Encoding>ASCII</Encoding>
+</AccessInformation>
+      <ProcessingLevel>Calibrated</ProcessingLevel>
+      <ProviderResourceName>Wind/STICS ACE SWICS Level 2 Data, 1-hour averages, in CDF Format</ProviderResourceName>
+      <ProviderProcessingLevel>Level 2</ProviderProcessingLevel>
+      <ProviderVersion>5</ProviderVersion>
+      <InstrumentID>spase://SMWG/Instrument/Wind/SMS/STICS</InstrumentID>
+      <MeasurementType>IonComposition</MeasurementType>
+      <TemporalDescription>
+         <TimeSpan>
+            <StartDate>1995-01-01T00:00:00Z</StartDate>
+            <RelativeStopDate>-P6M</RelativeStopDate>
+</TimeSpan>
+         <Cadence>P1D</Cadence>
+</TemporalDescription>
+      <ObservedRegion>Heliosphere.Inner</ObservedRegion>
+      <ObservedRegion>Heliosphere.NearEarth</ObservedRegion>
+      <Caveats>The quality of this data is such that it is suitable for serious scientific study. However, to avoid confusion and misunderstanding, it is recommended that users consult STICS Instrument Team before publishing work derived from the data. The STICS Instrument Team has worked hard to minimize errors, but the team cannot accept responsibility for erroneous data, or for misunderstandings about how the data may be used. This is especially true if the appropriate team members are not consulted before publication. At the very least, preprints should be forwarded to the STICS Instrument Team before publication.</Caveats>
+      <Parameter>
+         <Name>Year</Name>
+         <ParameterKey>year</ParameterKey>
+         <Description>Year in which measurement was made</Description>
+         <ValidMin>1995</ValidMin>
+         <ValidMax>2025</ValidMax>
+         <Support>
+            <SupportQuantity>Temporal</SupportQuantity>
+</Support>
+</Parameter>
+      <Parameter>
+         <Name>Day of Year</Name>
+         <ParameterKey>doy</ParameterKey>
+         <Description>Integer day of year. Timestamp marks beginning of interval.</Description>
+         <Cadence>P1D</Cadence>
+         <ValidMin>1</ValidMin>
+         <ValidMax>366</ValidMax>
+         <Support>
+            <SupportQuantity>Temporal</SupportQuantity>
+</Support>
+</Parameter>
+      <Parameter>
+         <Name>Sector</Name>
+         <ParameterKey>sector</ParameterKey>
+         <Description>Sector refers to the observation direction in the ecliptic plane (as shown in Figure 2 of the Release Notes PDF document). Azimuthal sector index of the data, keyed by the Wind Sun sensor. Sectors 8-10 are the solar direction, while Earthward is sectors 0-2. Each sector is 22.5 degrees. See release notes for details.</Description>
+         <Cadence>P1D</Cadence>
+         <ValidMin>0</ValidMin>
+         <ValidMax>15</ValidMax>
+         <Support>
+            <SupportQuantity>Other</SupportQuantity>
+</Support>
+</Parameter>
+      <Parameter>
+         <Name>DVS</Name>
+         <ParameterKey>DVS</ParameterKey>
+         <Description>Deflection voltage step of the STICS electrostatic analyzer (ESA). This is the step number corresponding to the E/q value given in the row. The set of DVS values are useful for natural binning of E/q values.</Description>
+         <Cadence>P1D</Cadence>
+         <ValidMin>0</ValidMin>
+         <ValidMax>31</ValidMax>
+         <Support>
+            <SupportQuantity>Other</SupportQuantity>
+</Support>
+</Parameter>
+      <Parameter>
+         <Name>E/q</Name>
+         <ParameterKey>e/q</ParameterKey>
+         <Description>Energy per charge ordinate for phase-space density. These are dictated by the voltage stepping of the STICS electrostatic analyzer (ESA).</Description>
+         <Units>keV/e</Units>
+         <ValidMin>6.19</ValidMin>
+         <ValidMax>223.12</ValidMax>
+         <Particle>
+            <ParticleType>Proton</ParticleType>
+            <ParticleQuantity>Energy</ParticleQuantity>
+</Particle>
+</Parameter>
+      <Parameter>
+         <Name>Velocity</Name>
+         <ParameterKey>vel</ParameterKey>
+         <Description>Velocity ordinate for phase-space density (the center of the velocity bin). These values are different for each ion, proportional to the ion mass per charge (m/q) as 1/sqrt(m/q).</Description>
+         <Units>km/s</Units>
+         <Particle>
+            <ParticleType>Proton</ParticleType>
+            <Qualifier>Magnitude</Qualifier>
+            <ParticleQuantity>Velocity</ParticleQuantity>
+</Particle>
+</Parameter>
+      <Parameter>
+         <Name>Ion Name</Name>
+         <ParameterKey>ion</ParameterKey>
+         <Description>Ion for which phase-space density is given in particular row.</Description>
+         <Support>
+            <SupportQuantity>Other</SupportQuantity>
+</Support>
+</Parameter>
+      <Parameter>
+         <Name>Phase-Space Density</Name>
+         <ParameterKey>df</ParameterKey>
+         <Description>The phase-space density, in arbitrary units, at the corresponding velocity bin for specified ion and time.</Description>
+         <Units>s^3/cm^3*km^3</Units>
+         <Particle>
+            <ParticleType>Proton</ParticleType>
+            <Qualifier>Magnitude</Qualifier>
+            <ParticleQuantity>PhaseSpaceDensity</ParticleQuantity>
+</Particle>
+</Parameter>
+</NumericalData>
+</Spase>

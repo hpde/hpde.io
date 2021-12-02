@@ -1,0 +1,130 @@
+{
+  "Spase": {
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_2_2.xsd",
+    "Version": "2.2.2",
+    "NumericalData": {
+      "ResourceID": "spase://VHO/NumericalData/Voyager1/MAG/1990.PT1H",
+      "ResourceHeader": {
+        "ResourceName": "Voyager 1 Hourly Magnetic Field Data",
+        "ReleaseDate": "2012-06-01T00:00:00",
+        "Description": "This data set contains hour averages of the interplanetary magnetic field \n                (IMF) measurements obtained by the triaxial fluxgate magnetometer (MAG)\n                experiment on Voyager 1. Identical instruments on Voyager 1 and 2 were \n                designed to measure the IMF between  Earth and Saturn (10 AU) during the \n                primary Voyager mission. The  design and performance yielded absolute \n                accuracies to better than 0.1 nT. In general, each component of the IMF \n                hourly average has an uncertainty of up  to (+/- 0.05 nT) in the region \n                beyond 10 AU. More accurate measurements can be  obtained by special \n                processing of the data, but it was not feasible to do this for the entire \n                data set included here. The magnetic field magnitude in nT is provided \n                along with angles of the field vector in the spacecraft-centered \n                Heliographic (HG) coordinate system, also known as RTN. The X-HG axis is \n                directed from the Sun to the spacecraft, Y-HG is the cross product of the \n                solar rotation axis and X-HG, and Z-HG completes the orthogonal axis system. \n                The accompanying format description file defines the transformation of the \n                HG angles to vector components. Cartesian coordinates are given for the \n                spacecraft in the sun-centered Inertial Heliographic (IHG) system, where \n                the Z-IHG axis is parallel to the solar rotation axis, X-IHG points towards \n                the ascending node direction of the solar equator's intersection with the\n                Ecliptic, and Y-IHG is parallel to the solar equator and completes the\n                orthogonal system. The MAG instruments are described by K. W. Behannon et \n                al., Space Science Reviews, 21, 235, 1977. The data and coordinates are \n                described by L. F. Burlaga, Space Science Reviews, 39, 255, 1984.\n                \n                These data are from 1990-2004 and do not include spacecraft position data whereas the \n                1977-1989 data do. The seperation into two data products resulted from the \n                fact that mean fields were falling towards the instrumentation digitization resolution.  \n                The Voyager/MAG team temporarily stopped production while they addressed the issue. \n                Subsequent production in 1990 resulted in a similar data set, but without the spacecraft position.\n                This data set is also related to the 1-hour merged Voyager mag and plasma data set. These\n                associations are listed below using the SPASE AssociationID notation.\n            ",
+        "Acknowledgement": "Use of these data in publications should be accompanied at minimum by\n                acknowledgements of the National Space Science Data Center and the Principal Investigator Norman Ness.",
+        "Contact": {
+          "PersonID": "spase://SMWG/Person/Norman.F.Ness",
+          "Role": "PrincipalInvestigator"
+        },
+        "InformationURL": {
+          "Name": "Data set description page at SPDF",
+          "URL": "ftp://spdf.gsfc.nasa.gov/pub/data/voyager/voyager1/magnetic_fields/ip_1hour_ascii/1990-2004/00readme.txt"
+        },
+        "Association": [
+          {
+            "AssociationID": "spase://VHO/NumericalData/Voyager1/MAG/1977.PT1H",
+            "AssociationType": "PartOf"
+          },
+          {
+            "AssociationID": "spase://VHO/NumericalData/Voyager1/MAGandPLS/PT1H",
+            "AssociationType": "PartOf"
+          }
+        ]
+      },
+      "AccessInformation": {
+        "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+        "Availability": "Online",
+        "AccessRights": "Open",
+        "AccessURL": {
+          "Name": "SPDF site",
+          "URL": "ftp://spdf.gsfc.nasa.gov/pub/data/voyager/voyager1/magnetic_fields/ip_1hour_ascii/1990-2004/"
+        },
+        "Format": "Text.ASCII"
+      },
+      "InstrumentID": "spase://SMWG/Instrument/Voyager1/MAG",
+      "MeasurementType": "MagneticField",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "1990-01-01T00:00:00",
+          "StopDate": "2004-12-31T23:59:59"
+        },
+        "Cadence": "PT1H"
+      },
+      "ObservedRegion": [
+        "Heliosphere.NearEarth",
+        "Heliosphere.Outer"
+      ],
+      "Parameter": [
+        {
+          "Name": "Spacecraft ID",
+          "ParameterKey": "Column_1",
+          "Description": "1 = Voyager-1, 2 = Voyager-2",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Year",
+          "ParameterKey": "Column_2",
+          "Description": "Decimal Year",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "F1 Mag",
+          "ParameterKey": "Column_3",
+          "Description": "Magnetic Field Magnitude computed from high-resolution observations",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "HG"
+          },
+          "Field": {
+            "Qualifier": "Magnitude",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "Elevation Angle",
+          "ParameterKey": "Column_4",
+          "Description": "Elevation Angle (degrees) in heliographic coordinates",
+          "Units": "degrees",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "HG"
+          },
+          "Field": {
+            "Qualifier": "DirectionAngle",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "Azimuthal Angle",
+          "ParameterKey": "Column_5",
+          "Description": "Azimuthal Angle (degrees) in heliographic coordinates",
+          "Units": "degrees",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "HG"
+          },
+          "Field": {
+            "Qualifier": "DirectionAngle",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "F2 Magnitude",
+          "ParameterKey": "Column_6",
+          "Description": "The magnetic field strength, F2, computed from the hour averages \n                of the components. The components of B can be computed from F2 \n                and the two angles.\n            ",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "HG"
+          },
+          "Field": {
+            "Qualifier": "Magnitude",
+            "FieldQuantity": "Magnetic"
+          }
+        }
+      ]
+    }
+  }
+}

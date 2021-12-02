@@ -1,0 +1,640 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_2_1.xsd",
+    "Version": "2.2.1",
+    "NumericalData": {
+      "ResourceID": "spase://VEPO/NumericalData/Ulysses/COSPIN/HET/FullResolution/PHA",
+      "ResourceHeader": {
+        "ResourceName": "Ulysses COSPIN/HET High Energy Telescope Pulse Height Analyzed Events",
+        "ReleaseDate": "2009-09-24T00:00:00.000",
+        "Description": "\n        A directory containing daily ftp-downloadable files containing full information for\n        every non-zero HET pulse-height event returned in telemetry, including raw channels \n        and discriminator states, the energy deposits corresponding to the channels, and certain\n        derived quantities including particle charge and trajectory through the telescope.\n        Pulse height analysis is performed for electrons and nuclei with penetrating power \n        equivalent to that of protons with energy greater than 14 MeV.  \n        The naming convention of the files is uly_het_full_pha_YYYDDD.txt, where YYY indicates \n        the three-digit year since 1900 (e.g. YYY=090 for 1990, and YYY=102 for 2002) and DDD \n        indicates the three digit day of year (Jan. 1 = 1). \n        At the start of each file there isa detailed description of the format, in which each \n        event is represented by a line with 54 columns that provide complete information \n        about the event.\n        The first 4 columns give the time of the opening of the window in which the event \n        was recorded as fractional year (to 12 decimal places) and as  year since 1900, \n        day of year, and ms of day.  At the most common science telemetry rate, 2048 bps, \n        six events are collected in every 32 second telemetry format.  Because of the large\n        geometrical factor of the telescope, almost every available pha slot contains an\n        event.  Since far more events are recorded in the telescope than can be returned\n        as pha events in the telemetry, only a sample of the events incident on the telescope\n        can be sent down as pha events.  \n        With the pha data for an event, the particle's charge, mass, kinetic energy, and \n        trajectory through the telescope can be determined.  While most of the nuclei incident \n        on the HET are protons, a three-level priority system selects events for pulse-height\n        analyis and return in the telemetry so as to assure capture of almost all of the\n        relatively rare heavy element nuclei that stop in the telescope.  The lowest priority \n        (P3) events are those that satisfy the most basic criteria for being an analyzable event, \n        as determined by the combination of discriminators on various detectors in the telescope \n        that fire.  A higher priority (P2) is given to events that stop in the telescope, and the\n        highest priority (P1) is given to events that stop in the telescope and that are identified \n        as heavy  nuclei by the size of their energy deposits in the detectors.  \n        The highest priority event that occurs in each window for accumulation of pha events\n        is selected for inclusion in the telemetry data returned to the ground.  Thus, in large \n        solar energetic particle events with abundant heavy nuclei, few protons may be included \n        in the pha events transmitted via telemetry.  The counting rates, however, count every \n        event, and in such cases it can usually be assumed the counting rates that respond to \n        protons are dominated by the proton flux.\n        Absolute fluxes for individual elements may be derived by identifying pha events that \n        would contribute to counting rates (i.e. that have the same discriminator configuration as\n        one of the counting rates) and determining the ratio between events counted by the rate\n        and returned in telemetry during a given interval.  Appropriate counting rates exist \n        that match each of the three pha priority states.  The priority levels corresponding to the \n        counting rates are listed in Table 7 of Simpson et al. (Astron. Astrophys., 92, 365-399, 1972).  \n          *** N.B. Three corrections are necessary in Table 7 of Simpson et al. (1972). *** \n           1) The (H) discrimator logic should include the discriminator K6H orred with the other \n              seven discriminators listed.  \n           2) the middle term of the P2 (medium priority) logic should include D4 as well as\n              D1, D2, and D6 as required detectors.\n           3) Because of an error in the logic design counting rate H3, listed as responding to \n              P3 (lowest priority) events, also includes P2 events which satisfy the first term \n              in the P2 logic.  Thus H3 should not be used for deriving absolute fluxes of P3 \n              events from PHA data.\n      ",
+        "Acknowledgement": "\n        Please acknowledge the Lead HET Investigator and COSPIN P.I., Dr. R. Bruce McKibben\n      ",
+        "Contact": [
+          {
+            "PersonID": "spase://SMWG/Person/R.Bruce.McKibben",
+            "Role": [
+              "PrincipalInvestigator",
+              "TeamLeader"
+            ]
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Clifford.Lopate",
+            "Role": "DataProducer"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/James.Connell",
+            "Role": [
+              "CoInvestigator",
+              "DataProducer"
+            ]
+          }
+        ],
+        "InformationURL": [
+          {
+            "Name": "\n          The Ulysses cosmic ray and solar particle investigation\n        ",
+            "URL": "\n         http://ufa.esac.esa.int/ufa/#instruments\n        ",
+            "Description": "\n          Published (J.A. Simpson et al., Astron. Astrophys. v92, pp365-399, 1992) description \n          of the COSPIN Instrumentation.  See especially section 4.3 for a detailed description \n          of the HET.\n        "
+          },
+          {
+            "Name": "\n          COSPIN/HET User Notes\n        ",
+            "URL": "\n          http://ufa.esac.esa.int/ufa/#instruments\n        ",
+            "Description": "\n          Identification of data channels archived and brief discussion of data structure\n        "
+          },
+          {
+            "Name": "\n          ReadMeHETFullRes.doc\n        ",
+            "URL": "\n          http://ufa.esac.esa.int/ufa/#instruments\n        ",
+            "Description": "\n          Top Level descriptions of formats and contents of the six file types that make up the\n          COSPIN HET Full Resolution Data Set. Detailed descriptions of the formats and contents\n          are to be found in header lines at the start of each downloaded data file.  The data \n          covered by this spase description are described in the ReadMe under the heading pha.\n          (*** Note ***:  During the build-up of this data set, a few errors and omissions have been \n          found in the header lines for some of the file types.  These errors and omissions are listed \n          in this ReadMe file.  Upon completion of the data set, all errors and omissions discovered\n          will be corrected in all of the header lines of all of the file types and this note will be \n          removed.)\n        "
+          }
+        ]
+      },
+      "AccessInformation": {
+        "RepositoryID": "spase://SMWG/Repository/ESA/ESAC/UlyssesFinalArchive",
+        "Availability": "Online",
+        "AccessRights": "Open",
+        "AccessURL": {
+          "Name": "Ulysses COSPIN/HET Complete Listing of Pulse Height Analyzed Events",
+          "URL": "http://ufa.esac.esa.int/ufa/#data",
+          "Description": "\n          Parent directory containing daily ftp-downloadable files with the format described below.\n        "
+        },
+        "Format": "Text",
+        "Encoding": "ASCII",
+        "Acknowledgement": "R.B. McKibben, Space Science Center, University of New Hampshire"
+      },
+      "InstrumentID": "spase://SMWG/Instrument/Ulysses/COSPIN/HET",
+      "MeasurementType": "EnergeticParticles",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "1990-10-22T00:00:00.000",
+          "StopDate": "2009-06-29T23:59:59.000"
+        }
+      },
+      "ObservedRegion": "Heliosphere.Outer",
+      "Parameter": [
+        {
+          "Name": "Time of measurement",
+          "Description": "\n          Start Time of the collection window in which the event occurred\n        ",
+          "Cadence": "PT5S",
+          "Structure": {
+            "Size": "4",
+            "Element": [
+              {
+                "Name": "Decimal Year",
+                "Index": "1",
+                "ParameterKey": "Column_1",
+                "ValidMin": "1990",
+                "ValidMax": "2009",
+                "FillValue": "0.00000000000"
+              },
+              {
+                "Name": "year",
+                "Index": "2",
+                "ParameterKey": "Column_2",
+                "ValidMin": "1990",
+                "ValidMax": "2009",
+                "FillValue": "0"
+              },
+              {
+                "Name": "day",
+                "Index": "3",
+                "ParameterKey": "Column_3",
+                "ValidMin": "1",
+                "ValidMax": "366",
+                "FillValue": "0"
+              },
+              {
+                "Name": "msec of day",
+                "Index": "4",
+                "ParameterKey": "Column_4",
+                "ValidMin": "0",
+                "ValidMax": "86400000",
+                "FillValue": "0"
+              }
+            ]
+          },
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Event Parameters",
+          "Description": "\n           All parameters related to a single PHA event.  The PHA data are complex, so a\n           careful study of the material below and of the similar material in the header of\n           each file is strongly recommended before trying to use these data.    \n \n           The parameters listed are:\n\n    \t   Column 5 (discs):  \n           12 character hexadecimal representation of the state of all discriminators on the\n           12 pulse-height analyzed detectors, D1-D6 and K1-K6 (or D7-D12) in the HET. \n           D1 and D2 each have 4 discriminator levels, denoted L,M,H, and S for Low, Medium,\n           High, and Switch (S controls the gain state of the detector amplifier).  \n           D3 has 3 levels (L,M, and S), while D4 has only 2 levels (L and S). \n           D5, D6, and K1-K6 each have 3 levels (L,H, and S).\n           As described in the in-line documentation in the header of each file, the states of \n           these discriminators are combined into one hexadecimal character for each detector.   \n\n           Column 6 (ash):       \n           3 character integer representation of the states of single level discriminators \n           (0=off, 1=on) on detectors A (detects particles which completely penetrate the \n           detector stack), S (scintillator which detects particles entering or exiting\n           through the side of the stack), and H (logical sum of H-level discriminators on\n           detectors D5-K6;  if set to 1, event is priority 1) \n \n           Column 7 (P123):\n           3 character integer representation of the priority level of the event. The effective\n           priority is that of the highest level triggered.  For example 1XX (X may be 0 or 1)\n           corresponds to a priority 1 event, 01X to a priority 2 event, and 001 to a priority 3\n           event.    \n \n           Column 8 (C1245):\n           4 character representationf of the state of commands 1,2,4, and 5 (See Simpson et al.,\n           1992 for definitions of commands).  1=command in effect, 0=command off.  These \n           commands were never issued in flight, so the value should always be 0000.     \n\n           Column 9 (sect):\n \t   Spin sector in which the analyzed event occurred.  PHA sectors are identical to the\n           sectors used for the sectored countint rates H45S and H7S.\n\n           Column 10 (ifc):\n           1 if IFC is in progress, 0 otherwise\n \n           Column 11 (step):\n           Most recent step executed in the 2048 step IFC sequence \n          \n           Columns 12-17 (p1-p6):\n           Channel numbers of the signals from the P-side of the position sensing detectors D1-D6.\n           The amplifiers on the D and K detectors have two gain ranges.  If the discriminator S\n           is triggered on any detector, the low gain range is used for that detector  and the \n           conversion of channel number to energy deposit must be interpreted accordingly.  \n           If the S(witch) discriminator is not triggered, the high gain range is used.\n           Contacts on the P-sides of the position sensing detectors consist of thin strips (223 for\n           detectors D1-D3, and 144 for detectors D4-D6) distributed along a resistive divider\n           chain.  Thus the signal collected from the P-side is proportional to the position of the\n           strip closest to the particle penetration along the divider chain.  See Lamport et al. (Nuc.\n           Inst. Meth., vol. 134, p.71, 1976) for a more detailed description of the function of the\n           position sensing detectors.    \n\n           Columns 18-23 (e1-e6):\n           Channel numbers of the signals from the E-side of the position sensing detectors D1-D6.\n           Again, if the S(sitch) discriminator is triggered for a detector, the channel number corresponds\n           to the output of the low gain amplifier for that detector..  \n           Contacts on the E-sides of the position sensing detectors are single evaporated contacts\n           covering the entire surface of the detector.  Thus the full signal is collected from the \n           E-side.  The P/E ratio then determines the position of the particle penetration in 1 dimension\n           perpendicular to the orientation of the strips on the P-side.\n           The single S discriminators on the D1-D6 detectors mean that the P and E signals from each \n           detector are always produced using the same gain range.\n\n           Columns 24-29 (k1-k6):\n  \n           Channel numbers of the signals from the 0.5 cm thick Kevex detectors that form the calorimeter\n           portion of the HET.  Again, the amplifier on these detectors  are dual range.  If the S discriminator\n           is fired, the signal size and thus the channel corresponds to the low gain range of the amplifier.\n\n           Columns 30-35 (p1ST-p6ST):\n           Strip numbers (X1000) corresponding to the P/E ratios from detectors D1-D6.\n\n           Columns 36-41 (e1EN-e6EN): \n           Energy deposits (MeV*1000) based on the E-signals from detectors D1-D6. \n           Channel to energy conversions are regularly updated based on results of\n           In-Flight Calibrate sequences performed approximately monthly. \n\n           Columns 42-47 (K1EN-K6EN):\n           Energy deposits (MeV*1000) based on PHA channels from detectors K1-K6.\n           Channel to energy conversions are similarly updated based on IFC sequences\n           performed roughly once per month.. \n\n           Column 48 (RANGE):\n           Detector number of the deepest detector in the stack with a signal above\n           the low-level (L) discriminator.  Values range from 1-13, where D1-D6 = 1-6,\n           K1-K6 = 7-12, and A=13.\n\n           Columns 49-50 (X0, Y0):\n           X, Y position (mm X 1000) of the particle trajectory in a plane half way \n           between detectors D3 and D4.\n           Computed from positions determined in D1-D6.\n\n           Column 51 (angle):\n           Angle of the trajectory with respect to the HET axis (degrees X 1000).\n           Computed from positions determined in D1-D6. \n\n           Columns 52-53 (RMS1, RMS2):\n           Root mean square deviations from the best fit trajectory in D1-D3 and D4-D6.\n           Computed from positions determined in D1-D6.\n\n           Columns 54-55  (DX, DY):\n           DX and DY are projections of the trajectory onto the X- and\n           Y-axes where the projection onto the Z-axis is 1.  Thus, the\n           tangent of the angle is sqrt(Dx * Dx + Dy * Dy) and the secant is\n           sqrt(1 + Dx * Dx + Dy * Dy).\n\n           Columns 56-57 (RS, RSP1)\n           Radius from the telescope axis in the stopping detector as defined by Range above (RS) \n           and in the next detector beyond the stopping detector (RSP1), measured in mm X1000.\n\n           Column 58 (ZCAL):\n           Estimate of particle charge (Zx1000) based on energy losses and trajectory in the \n           telescope, derived using the ZCAL algorithm developed by K.H. Lau (Cal Tech Ph.D. \n           Thesis, 1985).\n\n        ",
+          "Caveats": "\n          Occasional logically inconsistent combinations of status and flag bits (discriminator triggers, \n          status bits, etc.) occur.  For example, firing of the H discriminator but not the L for a \n          detector, or low (or higher) level discriminators fired for K1 and K3 but not K2. \n          These are probably the result of a timing glitch or pile-up of more than\n          one event within the resolving time of the logic.  For such events, and for events of \n          questionable quality for any other reason, no nuclear charge will be computed.\n\n          The ZCAL algorithm as implemented does not work well for Hydrogen, and often does not\n          work at all for electrons.  Hydrogen will generally be assigned a ZCAL near 0.7 (700\n          as listed in this file).  Electrons will either be given a fill (-1) value or some\n          small value.  To study protons and electrons using PHA data, it is recommended that\n          all events with ZCAL > 1.3 be eliminated, and that the remaining events be analyzed using\n          standard dE/dX vs. residual energy techniques, using the detector immediately in front\n          of the stopping detector to measure dE/dX, and the stopping detector (indicated by \n          Range in Column 49) to measure residual energy.\n\n          For protons and electrons, the trajectory determining system (P and E signals) does\n          not give accurate trajectories as a result of the small energy deposits left in the\n          position sensing detectors.\n          \n        ",
+          "Cadence": "PT5S",
+          "Structure": {
+            "Size": "54",
+            "Description": "\n            All parameters associated with a single pulse-height-analyzed event (see extended\n            description under Parameter above and in the file headers).\n          ",
+            "Element": [
+              {
+                "Name": "discs",
+                "Index": "1",
+                "ParameterKey": "Column_5",
+                "Units": "12characterHex"
+              },
+              {
+                "Name": "ash",
+                "Index": "2",
+                "ParameterKey": "Column 6",
+                "Units": "3CharacterBinary"
+              },
+              {
+                "Name": "P123",
+                "Index": "3",
+                "ParameterKey": "Column_7",
+                "Units": "3CharacterBinary"
+              },
+              {
+                "Name": "C1245",
+                "Index": "4",
+                "ParameterKey": "Column_8",
+                "Units": "4CharacterBinary"
+              },
+              {
+                "Name": "Sect",
+                "Index": "5",
+                "ParameterKey": "Column_9",
+                "Units": "numeric",
+                "ValidMin": "0",
+                "ValidMax": "7"
+              },
+              {
+                "Name": "ifc",
+                "Index": "6",
+                "ParameterKey": "Column_10",
+                "Units": "numeric",
+                "ValidMin": "0",
+                "ValidMax": "1"
+              },
+              {
+                "Name": "step",
+                "Index": "7",
+                "ParameterKey": "Column 11",
+                "Units": "numeric",
+                "ValidMin": "0",
+                "ValidMax": "2047"
+              },
+              {
+                "Name": "p1",
+                "Index": "8",
+                "ParameterKey": "Column_12",
+                "Units": "channel",
+                "ValidMin": "0",
+                "ValidMax": "4094",
+                "FillValue": "4095"
+              },
+              {
+                "Name": "p2",
+                "Index": "9",
+                "ParameterKey": "Column_13",
+                "Units": "channel",
+                "ValidMin": "0",
+                "ValidMax": "4094",
+                "FillValue": "4095"
+              },
+              {
+                "Name": "p3",
+                "Index": "10",
+                "ParameterKey": "Column 14",
+                "Units": "channel",
+                "ValidMin": "0",
+                "ValidMax": "4094",
+                "FillValue": "4095"
+              },
+              {
+                "Name": "p4",
+                "Index": "11",
+                "ParameterKey": "Column_15",
+                "Units": "channel",
+                "ValidMin": "0",
+                "ValidMax": "4094",
+                "FillValue": "4095"
+              },
+              {
+                "Name": "p5",
+                "Index": "12",
+                "ParameterKey": "Column_16",
+                "Units": "channel",
+                "ValidMin": "0",
+                "ValidMax": "4094",
+                "FillValue": "4095"
+              },
+              {
+                "Name": "p6",
+                "Index": "13",
+                "ParameterKey": "Column_17",
+                "Units": "channel",
+                "ValidMin": "0",
+                "ValidMax": "4094",
+                "FillValue": "4095"
+              },
+              {
+                "Name": "e1",
+                "Index": "14",
+                "ParameterKey": "Column_18",
+                "Units": "channel",
+                "ValidMin": "0",
+                "ValidMax": "4094",
+                "FillValue": "4095"
+              },
+              {
+                "Name": "e2",
+                "Index": "15",
+                "ParameterKey": "Column_19",
+                "Units": "channel",
+                "ValidMin": "0",
+                "ValidMax": "4094",
+                "FillValue": "4095"
+              },
+              {
+                "Name": "e3",
+                "Index": "16",
+                "ParameterKey": "Column_20",
+                "Units": "channel",
+                "ValidMin": "0",
+                "ValidMax": "4094",
+                "FillValue": "4095"
+              },
+              {
+                "Name": "e4",
+                "Index": "17",
+                "ParameterKey": "Column_21",
+                "Units": "channel",
+                "ValidMin": "0",
+                "ValidMax": "4094",
+                "FillValue": "4095"
+              },
+              {
+                "Name": "e5",
+                "Index": "18",
+                "ParameterKey": "Column_22",
+                "Units": "channel",
+                "ValidMin": "0",
+                "ValidMax": "4094",
+                "FillValue": "4095"
+              },
+              {
+                "Name": "e6",
+                "Index": "19",
+                "ParameterKey": "Column_23",
+                "Units": "channel",
+                "ValidMin": "0",
+                "ValidMax": "4094",
+                "FillValue": "4095"
+              },
+              {
+                "Name": "k1",
+                "Index": "20",
+                "ParameterKey": "Column_24",
+                "Units": "channel",
+                "ValidMin": "0",
+                "ValidMax": "4094",
+                "FillValue": "4095"
+              },
+              {
+                "Name": "k2",
+                "Index": "21",
+                "ParameterKey": "Column_25",
+                "Units": "channel",
+                "ValidMin": "0",
+                "ValidMax": "4094",
+                "FillValue": "4095"
+              },
+              {
+                "Name": "k3",
+                "Index": "22",
+                "ParameterKey": "Column_26",
+                "Units": "channel",
+                "ValidMin": "0",
+                "ValidMax": "4094",
+                "FillValue": "4095"
+              },
+              {
+                "Name": "k4",
+                "Index": "23",
+                "ParameterKey": "Column_27",
+                "Units": "channel",
+                "ValidMin": "0",
+                "ValidMax": "4094",
+                "FillValue": "4095"
+              },
+              {
+                "Name": "k5",
+                "Index": "24",
+                "ParameterKey": "Column_28",
+                "Units": "channel",
+                "ValidMin": "0",
+                "ValidMax": "4094",
+                "FillValue": "4095"
+              },
+              {
+                "Name": "k6",
+                "Index": "25",
+                "ParameterKey": "Column_29",
+                "Units": "channel",
+                "ValidMin": "0",
+                "ValidMax": "4094",
+                "FillValue": "4095"
+              },
+              {
+                "Name": "p1ST",
+                "Index": "26",
+                "ParameterKey": "Column_30",
+                "Units": "strip",
+                "ValidMin": "0",
+                "ValidMax": "223",
+                "FillValue": "-1"
+              },
+              {
+                "Name": "p2ST",
+                "Index": "27",
+                "ParameterKey": "Column_31",
+                "Units": "strip",
+                "ValidMin": "0",
+                "ValidMax": "223",
+                "FillValue": "-1"
+              },
+              {
+                "Name": "p3ST",
+                "Index": "28",
+                "ParameterKey": "Column_32",
+                "Units": "strip",
+                "ValidMin": "0",
+                "ValidMax": "223",
+                "FillValue": "-1"
+              },
+              {
+                "Name": "p4ST",
+                "Index": "29",
+                "ParameterKey": "Column_33",
+                "Units": "strip",
+                "ValidMin": "0",
+                "ValidMax": "144",
+                "FillValue": "-1"
+              },
+              {
+                "Name": "p5ST",
+                "Index": "30",
+                "ParameterKey": "Column_34",
+                "Units": "strip",
+                "ValidMin": "0",
+                "ValidMax": "144",
+                "FillValue": "-1"
+              },
+              {
+                "Name": "p6ST",
+                "Index": "31",
+                "ParameterKey": "Column_35",
+                "Units": "strip",
+                "ValidMin": "0",
+                "ValidMax": "223",
+                "FillValue": "-1"
+              },
+              {
+                "Name": "e1EN",
+                "Index": "32",
+                "ParameterKey": "Column_36",
+                "Units": "MeV",
+                "ValidMin": "0",
+                "ValidMax": "3500",
+                "FillValue": "-1"
+              },
+              {
+                "Name": "e2EN",
+                "Index": "33",
+                "ParameterKey": "Column_37",
+                "Units": "MeV",
+                "ValidMin": "0",
+                "ValidMax": "3500",
+                "FillValue": "-1"
+              },
+              {
+                "Name": "e3EN",
+                "Index": "34",
+                "ParameterKey": "Column_38",
+                "Units": "MeV",
+                "ValidMin": "0",
+                "ValidMax": "3500",
+                "FillValue": "-1"
+              },
+              {
+                "Name": "e4EN",
+                "Index": "35",
+                "ParameterKey": "Column_39",
+                "Units": "MeV",
+                "ValidMin": "0",
+                "ValidMax": "3500",
+                "FillValue": "-1"
+              },
+              {
+                "Name": "e5EN",
+                "Index": "36",
+                "ParameterKey": "Column_40",
+                "Units": "MeV",
+                "ValidMin": "0",
+                "ValidMax": "3500",
+                "FillValue": "-1"
+              },
+              {
+                "Name": "e6EN",
+                "Index": "37",
+                "ParameterKey": "Column_41",
+                "Units": "MeV",
+                "ValidMin": "0",
+                "ValidMax": "3500",
+                "FillValue": "-1"
+              },
+              {
+                "Name": "k1EN",
+                "Index": "38",
+                "ParameterKey": "Column_42",
+                "Units": "MeV",
+                "ValidMin": "0",
+                "ValidMax": "8000",
+                "FillValue": "-1"
+              },
+              {
+                "Name": "k2EN",
+                "Index": "39",
+                "ParameterKey": "Column_43",
+                "Units": "MeV",
+                "ValidMin": "0",
+                "ValidMax": "8000",
+                "FillValue": "-1"
+              },
+              {
+                "Name": "k3EN",
+                "Index": "40",
+                "ParameterKey": "Column_44",
+                "Units": "MeV",
+                "ValidMin": "0",
+                "ValidMax": "8000",
+                "FillValue": "-1"
+              },
+              {
+                "Name": "k4EN",
+                "Index": "41",
+                "ParameterKey": "Column_45",
+                "Units": "MeV",
+                "ValidMin": "0",
+                "ValidMax": "8000",
+                "FillValue": "-1"
+              },
+              {
+                "Name": "k5EN",
+                "Index": "42",
+                "ParameterKey": "Column_46",
+                "Units": "MeV",
+                "ValidMin": "0",
+                "ValidMax": "8000",
+                "FillValue": "-1"
+              },
+              {
+                "Name": "k6EN",
+                "Index": "43",
+                "ParameterKey": "Column_47",
+                "Units": "MeV",
+                "ValidMin": "0",
+                "ValidMax": "8000",
+                "FillValue": "-1"
+              },
+              {
+                "Name": "RANGE",
+                "Index": "44",
+                "ParameterKey": "Column_48",
+                "Units": "numeric",
+                "ValidMin": "1",
+                "ValidMax": "13",
+                "FillValue": "-1"
+              },
+              {
+                "Name": "X0",
+                "Index": "45",
+                "ParameterKey": "Column_49",
+                "Units": "mmx1000",
+                "ValidMin": "0",
+                "ValidMax": "40000",
+                "FillValue": "-1"
+              },
+              {
+                "Name": "Y0",
+                "Index": "46",
+                "ParameterKey": "Column_50",
+                "Units": "mmx1000",
+                "ValidMin": "0",
+                "ValidMax": "40000",
+                "FillValue": "-1"
+              },
+              {
+                "Name": "ANGLE",
+                "Index": "47",
+                "ParameterKey": "Column_51",
+                "Units": "degreesx1000",
+                "ValidMin": "0",
+                "ValidMax": "45000",
+                "FillValue": "-1"
+              },
+              {
+                "Name": "RMS1",
+                "Index": "48",
+                "ParameterKey": "Column_52",
+                "Units": "mmx1000",
+                "ValidMin": "0",
+                "ValidMax": "40000",
+                "FillValue": "-1"
+              },
+              {
+                "Name": "RMS2",
+                "Index": "49",
+                "ParameterKey": "Column_53",
+                "Units": "mmx1000",
+                "ValidMin": "0",
+                "ValidMax": "40000",
+                "FillValue": "-1"
+              },
+              {
+                "Name": "DX",
+                "Index": "50",
+                "ParameterKey": "Column_54",
+                "Units": "mmx1000",
+                "ValidMin": "0",
+                "ValidMax": "40000",
+                "FillValue": "-1"
+              },
+              {
+                "Name": "DY",
+                "Index": "51",
+                "ParameterKey": "Column_55",
+                "Units": "mmx1000",
+                "ValidMin": "0",
+                "ValidMax": "40000",
+                "FillValue": "-1"
+              },
+              {
+                "Name": "RS",
+                "Index": "52",
+                "ParameterKey": "Column_56",
+                "Units": "mmx1000",
+                "ValidMin": "0",
+                "ValidMax": "40000",
+                "FillValue": "-1"
+              },
+              {
+                "Name": "RSP1",
+                "Index": "53",
+                "ParameterKey": "Column_57",
+                "Units": "mmx1000",
+                "ValidMin": "0",
+                "ValidMax": "40000",
+                "FillValue": "-1"
+              },
+              {
+                "Name": "ZCAL",
+                "Index": "54",
+                "ParameterKey": "Column_58",
+                "Units": "numeric",
+                "ValidMin": "0",
+                "ValidMax": "30000",
+                "FillValue": "-1"
+              }
+            ]
+          },
+          "Particle": {
+            "ParticleType": "Ion",
+            "ParticleQuantity": "Energy",
+            "AtomicNumber": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9",
+              "10",
+              "11",
+              "12",
+              "13",
+              "14",
+              "15",
+              "16",
+              "17",
+              "18",
+              "19",
+              "20",
+              "21",
+              "22",
+              "23",
+              "24",
+              "25",
+              "26",
+              "26",
+              "28"
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

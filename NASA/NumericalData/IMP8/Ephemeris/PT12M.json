@@ -1,0 +1,279 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema  https://www.spase-group.org/data/schema/spase-2_3_2.xsd",
+    "Version": "2.3.2",
+    "NumericalData": {
+      "ResourceID": "spase://NASA/NumericalData/IMP8/Ephemeris/PT12M",
+      "ResourceHeader": {
+        "ResourceName": "IMP 8 Spacecraft Positions",
+        "ReleaseDate": "2021-04-27T15:38:11Z",
+        "Description": "IMP-8 spacecraft positions in various coordinate systems",
+        "Contact": {
+          "PersonID": "spase://SMWG/Person/Adam.Szabo",
+          "Role": "Scientist"
+        },
+        "PriorID": [
+          "spase://VMO/NumericalData/IMP8/Ephemeris/PT12M",
+          "spase://VSPO/NumericalData/IMP8/Ephemeris/PT12M"
+        ]
+      },
+      "AccessInformation": [
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF/CDAWeb",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": [
+            {
+              "Name": "FTPS from SPDF (not with most browsers)",
+              "URL": "ftps://spdf.gsfc.nasa.gov/pub/data/imp/imp8/orbit/or_ssc/",
+              "Description": "\n               NASA/GSFC CDAWeb ftp access to the data.\n            "
+            },
+            {
+              "Name": "HTTPS from SPDF",
+              "URL": "https://spdf.gsfc.nasa.gov/pub/data/imp/imp8/orbit/or_ssc/",
+              "Description": "In CDF via HTTP from SPDF"
+            }
+          ],
+          "Format": "CDF",
+          "Encoding": "None"
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": [
+            {
+              "Name": "CDAWeb",
+              "URL": "https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=I8_OR_SSC&index=sp_phys",
+              "ProductKey": "I8_OR_SSC",
+              "Description": "I8_OR_SSC with subset, plot and list via CDAWeb"
+            },
+            {
+              "Name": "SSCWeb",
+              "URL": "https://sscweb.gsfc.nasa.gov/cgi-bin/Locator.cgi",
+              "ProductKey": "imp8"
+            }
+          ],
+          "Format": "Text",
+          "Acknowledgement": " Please acknowledge the CDAWeb team at GSFC/SPDF."
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDAWeb HAPI Server",
+            "URL": "https://cdaweb.gsfc.nasa.gov/hapi",
+            "Style": "HAPI",
+            "ProductKey": "I8_OR_SSC",
+            "Description": "Web Service to this product using the HAPI interface."
+          },
+          "Format": "CSV",
+          "Acknowledgement": " Please acknowledge the CDAWeb team at GSFC/SPDF."
+        }
+      ],
+      "InstrumentID": "spase://SMWG/Instrument/IMP8/Ephemeris",
+      "MeasurementType": "Ephemeris",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "1973-10-30T00:00:00Z",
+          "RelativeStopDate": "P0D"
+        },
+        "Cadence": "PT12M"
+      },
+      "Parameter": [
+        {
+          "Name": "Epoch",
+          "ParameterKey": "Epoch",
+          "Description": "Number of milliseconds since the epoch 01-Jan-1956 00:00:00",
+          "Units": "ms",
+          "UnitsConversion": "1e-3>s",
+          "FillValue": "-1.0e31",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "GSE Latitude",
+          "ParameterKey": "GSE_LAT",
+          "Description": "Spacecraft latitude in GSE coordinates",
+          "Units": "deg",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "GSE"
+          },
+          "ValidMin": "-90.0",
+          "ValidMax": "90.0",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "Qualifier": "DirectionAngle.ElevationAngle",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "GSE Longitude",
+          "ParameterKey": "GSE_LON",
+          "Description": "Spacecraft longitude in GSE coordinates",
+          "Units": "deg",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "GSE"
+          },
+          "ValidMin": "0.0",
+          "ValidMax": "360.0",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "Qualifier": "DirectionAngle.AzimuthAngle",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "GSE Local Time",
+          "ParameterKey": "GSE_LCT_T",
+          "Description": "Local time in GSE coordinates",
+          "Units": "hr",
+          "UnitsConversion": "3600>s",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "GSE"
+          },
+          "ValidMin": "0.0",
+          "ValidMax": "24.0",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "Qualifier": "DirectionAngle.AzimuthAngle",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "GSM Latitude",
+          "ParameterKey": "GSM_LAT",
+          "Description": "Spacecraft latitude in GSM coordinates",
+          "Units": "deg",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "GSM"
+          },
+          "ValidMin": "-90.0",
+          "ValidMax": "90.0",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "Qualifier": "DirectionAngle.ElevationAngle",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "GSM Longitude",
+          "ParameterKey": "GSM_LON",
+          "Description": "Spacecraft longitude in GSM coordinates",
+          "Units": "deg",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "GSM"
+          },
+          "ValidMin": "0.0",
+          "ValidMax": "360.0",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "Qualifier": "DirectionAngle.AzimuthAngle",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Radial distance",
+          "ParameterKey": "RADIUS",
+          "Description": "Radial distance from the center of Earth",
+          "Units": "Re",
+          "UnitsConversion": "6.378e6>m",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "GSE"
+          },
+          "ValidMin": "0.0",
+          "ValidMax": "250.0",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "Qualifier": "Magnitude",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "GSE Position Vector",
+          "ParameterKey": "XYZ_GSE",
+          "Description": "Position in cartesian GSE coordinates",
+          "Units": "Re",
+          "UnitsConversion": "6.378e6>m",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GSE"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "GSE X",
+                "Qualifier": "Component.I",
+                "Index": "1"
+              },
+              {
+                "Name": "GSE Y",
+                "Qualifier": "Component.J",
+                "Index": "2"
+              },
+              {
+                "Name": "GSE Z",
+                "Qualifier": "Component.K",
+                "Index": "3"
+              }
+            ]
+          },
+          "ValidMin": "-250.0",
+          "ValidMax": "250.0",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "GSM Position Vector",
+          "ParameterKey": "XYZ_GSM",
+          "Description": "Position in cartesian GSM coordinates",
+          "Units": "Re",
+          "UnitsConversion": "6.378e6>m",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GSM"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "GSM X",
+                "Qualifier": "Component.I",
+                "Index": "1"
+              },
+              {
+                "Name": "GSM Y",
+                "Qualifier": "Component.J",
+                "Index": "2"
+              },
+              {
+                "Name": "GSM Z",
+                "Qualifier": "Component.K",
+                "Index": "3"
+              }
+            ]
+          },
+          "ValidMin": "-250.0",
+          "ValidMax": "250.0",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "SupportQuantity": "Positional"
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,153 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_2_9.xsd",
+    "lang": "en",
+    "Version": "2.2.9",
+    "NumericalData": {
+      "ResourceID": "spase://NASA/NumericalData/AMPTE-UKS/Plasma/FTR/PT5S",
+      "ResourceHeader": {
+        "ResourceName": "AMPTE-UKS Ion Plasma Data",
+        "ReleaseDate": "2020-07-07T21:14:17Z",
+        "Description": "AMPTE-UKS 5-second (spin) averaged ion plasma moments",
+        "Acknowledgement": "UKS-IRM Prime Parameters, UKS-IRM High Resolution Data, or products derived from them may NOT be published or shown in any form without the consent of the Principal Investigators concerned. Acknowledgements to the PI and the UK CDHF would\nbe appropriate in any published work; full-authorship may be required\nin some cases.\n\nScientists intending to embark on studies involving AMPTE UKS/IRM data\nproducts are advised to contact the relevant Principal Investigator(s)\nearly in order to ensure that the data is suitable for the study, that\nthe project does not infringe on other ongoing work, and that the\nPrincipal Investigator in general consents to the intended use of the\ndata. PIs can provide this support only on a best efforts basis, so please\nbe as precise and succinct as possible, and please be patient when awaiting\na PI response.",
+        "Contact": {
+          "PersonID": "spase://SMWG/Person/Alan.D.Johnstone",
+          "Role": "PrincipalInvestigator"
+        },
+        "InformationURL": {
+          "Name": "AMPTE documents",
+          "URL": "http://www.mssl.ucl.ac.uk/www_plasma/missions/ampte.php",
+          "Description": "An overview of the AMPTE missions with some description of the instruments"
+        },
+        "PriorID": [
+          "spase://VMO/NumericalData/AMPTE_UKS/Plasma/FTR_PT5S",
+          "spase://VMO/NumericalData/AMPTE-UKS/Plasma/FTR_PT5S",
+          "spase://VSPO/NumericalData/AMPTE-UKS/Plasma/FTR/PT5S"
+        ]
+      },
+      "AccessInformation": {
+        "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/VHO-VMO",
+        "Availability": "Online",
+        "AccessRights": "Open",
+        "AccessURL": {
+          "Name": "AMPTE/UKS Data",
+          "URL": "https://vmo.nasa.gov/mission/ampte_uks/ftr/",
+          "Description": "A web-accessible directory hosting AMPTE/UKS spin-averaged ion plasma data."
+        },
+        "Format": "Text",
+        "Encoding": "ASCII"
+      },
+      "InstrumentID": "spase://SMWG/Instrument/AMPTE-UKS/Plasma",
+      "MeasurementType": "ThermalPlasma",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "1984-08-27T14:10:53Z",
+          "StopDate": "1985-01-15T07:50:33Z"
+        },
+        "Cadence": "PT5S"
+      },
+      "ObservedRegion": [
+        "Earth.Magnetosheath",
+        "Earth.Magnetosphere",
+        "Earth.Magnetosphere.Magnetotail",
+        "Heliosphere.NearEarth"
+      ],
+      "Caveats": "The time tags represent the start times of accumulation intervals (spin). UKS times are UT stamped on board while IRM time stamps are UT at time of ground receipt. Thus for time-critical science, the IRM times need to be corrected by subtracting the light travel time from the spacecraft to the ground-station (at Weilheim in Germany apart special events requiring NASA DSN). For the transmission frequencies used, the vacuum light speed is appropriate. At apogee, this correction is more than a third of a second. There are no other known time delays.",
+      "Parameter": [
+        {
+          "Name": "Epoch",
+          "ParameterKey": "Column 1",
+          "Description": "The start of the accumulation time interval for the data point, in DA/MO/YR HR:MI:SS.MS format.",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Ni",
+          "ParameterKey": "Column 2",
+          "Description": "Ion density",
+          "Units": "cm^-3",
+          "UnitsConversion": "1e6>m^-3",
+          "FillValue": "-1e31",
+          "Particle": {
+            "ParticleType": [
+              "Proton",
+              "Ion"
+            ],
+            "Qualifier": [
+              "Moment",
+              "Scalar"
+            ],
+            "ParticleQuantity": "NumberDensity"
+          }
+        },
+        {
+          "Name": "Ti",
+          "ParameterKey": "Column 3",
+          "Description": "Ion temperature",
+          "Units": "eV",
+          "UnitsConversion": "1.16045e4>K",
+          "FillValue": "-1e31",
+          "Particle": {
+            "ParticleType": [
+              "Proton",
+              "Ion"
+            ],
+            "Qualifier": [
+              "Moment",
+              "Scalar"
+            ],
+            "ParticleQuantity": "Temperature"
+          }
+        },
+        {
+          "Name": "Vi",
+          "Description": "Bulk ion velocity",
+          "Units": "km/s",
+          "UnitsConversion": "1.0e3>m/s",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GSE"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "Vx",
+                "Qualifier": "Component.I",
+                "Index": "1",
+                "ParameterKey": "Column 4"
+              },
+              {
+                "Name": "Vy",
+                "Qualifier": "Component.J",
+                "Index": "2",
+                "ParameterKey": "Column 5"
+              },
+              {
+                "Name": "Vz",
+                "Qualifier": "Component.K",
+                "Index": "3",
+                "ParameterKey": "Column 6"
+              }
+            ]
+          },
+          "FillValue": "-1e31",
+          "Particle": {
+            "ParticleType": [
+              "Proton",
+              "Ion"
+            ],
+            "Qualifier": [
+              "Moment",
+              "Vector"
+            ],
+            "ParticleQuantity": "Velocity"
+          }
+        }
+      ]
+    }
+  }
+}

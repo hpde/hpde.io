@@ -1,0 +1,877 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema  http://www.spase-group.org/data/schema/spase-2_2_2.xsd'",
+    "Version": "2.2.2",
+    "NumericalData": {
+      "ResourceID": "spase://VEPO/NumericalData/Ulysses/COSPIN/HFT/Fluxes/PT10M",
+      "ResourceHeader": {
+        "ResourceName": "Ulysses COSPIN/HFT nominal 10 minute average fluxes of protons and heavier nuclei",
+        "AlternateName": "Ulysses COSPIN HFT 10 minute average fluxes of energetic (MeV) nuclei ",
+        "ReleaseDate": "2009-05-31T00:00:00.000",
+        "Description": "\n          Nominal 10 minute average spin-averages and sectored counting-rate-based fluxes of energetic protons and heavier\n          nuclei from the Ulysses COSPIN High Flux Telescope.  The parameter keys in the parameter-level segments below are specifically relevant to the UFA-accessible versions of the data.\n       ",
+        "Acknowledgement": "\n         Please acknowledge the Lead HFT Investigator  (Dr. J. David Anglin)\n       ",
+        "Contact": {
+          "PersonID": "\n           spase://SMWG/Person/J.David.Anglin\n         ",
+          "Role": [
+            "CoInvestigator",
+            "DataProducer",
+            "TeamLeader"
+          ]
+        },
+        "InformationURL": [
+          {
+            "Name": "\n           The Ulysses cosmic ray and solar particle investigation\n         ",
+            "URL": "\n         http://ufa.esac.esa.int/ufa/#instruments\n         ",
+            "Description": "\n           Published (J.A. Simpson et al., Astron. Astrophys. v92, pp365-399, 1992) description\n           of the COSPIN Instrumentation.  See especially section 4.4 for a detailed description\n           of the HFT.\n         "
+          },
+          {
+            "Name": "\n           COSPIN/HFT User Notes\n         ",
+            "URL": "\n         http://ufa.esac.esa.int/ufa/#instruments\n         ",
+            "Description": "\n           Identification of data channels archived and brief discussion of data structure\n         "
+          }
+        ]
+      },
+      "AccessInformation": [
+        {
+          "RepositoryID": "spase://SMWG/Repository/ESA/ESAC/UlyssesFinalArchive",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "Ulysses Final Archive",
+            "URL": "http://ufa.esac.esa.int/ufa/#data",
+            "Description": "\n           Parent directory containing yearly downloadable .zip compressed subdirectories with naming\n           convention coshftYY.zip, where YY indicates the two digit year corresponding to the data\n           in the subdirectory. Each subdirectory contains daily ascii files with naming convention\n           ucoshftaYYDDD.dat where YY and DOY are the two digit year and the three digit day of year\n           (Jan. 1 = 1).\n           Each file contains nominally 10-minute averages of HFT counting-rate-based fluxes of protons\n           and heavier nuclei from the COSPIN High Flux Telescope. The data are presented in flux units,\n           (s cmsq sr MeV/n)^-1.\n           Of the 22 data channels presented, 21 provide spin-averaged fluxes, and one proton channel\n           is accumulated in 32 spin-sectors.  Therefore each tab-delimited data record contains, in\n           addition to 5 integer time fields, 53 floating point fields of measured fluxes.\n           Since particle identification is based simply on energy losses exceeding discriminator thresholds\n           in a single 18 micron thick silicon solid state detector, explicit identification of nuclear charge\n           is not possible.  The channels are labeled with the usually dominant particle species, and may\n           contain significant contributions from heavier nuclei.\n           The contents of the 58 fields in each data record are described in the COSPIN/HFT User Notes\n           (http://helio.estec.esa.nl/ulysses/archive/cospin_hft_un.html)\n           referred to above.\n           (See also Anglin et al., J. Geophys. Res., 102, 1, 1997 for a further discussion of the HFT's function,,\n           especially in high flux environments.)\n           The thinness of the detector in combination with the discriminator threshold levels make the HFT\n           very insensitive to electrons.\n           The data cycle is complex (See Simpson et al., 1992, cited above), and, at the most common\n           science telemetry rate of 1024 bps, one complete data cycle is returned every 256 seconds.  Thus\n           at low bit rates (256 bps or lower) a full data cycle can not be completed in one 10 minute interval.\n           Fortunately, prior to loss of the Ulysses X-band transmitter in January 2008 periods where\n           such low bit rates were used were quite rare.\n           The accumulation intervals for all fluxes, both spin-averaged and sectored, are synchronized with\n           the spacecraft spin period so that each readout corresponds to an integral number of spins.\n        "
+          },
+          "Format": "Text",
+          "Encoding": "ZIP",
+          "Acknowledgement": "J.D. Anglin, HIA/NRC, Ottawa, Canada"
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": [
+            {
+              "Name": "FTP access to CDFs at SPDF",
+              "URL": "ftp://spdf.gsfc.nasa.gov/pub/data/ulysses/particle/cospin_cdaweb/hft/",
+              "Description": "In CDF via FTP from SPDF."
+            },
+            {
+              "Name": "HTTP access to CDFs at SPDF",
+              "URL": "http://spdf.gsfc.nasa.gov/pub/data/ulysses/particle/cospin_cdaweb/hft/",
+              "Description": "In CDF via HTTP from SPDF"
+            }
+          ],
+          "Format": "CDF",
+          "Acknowledgement": "CDAWeb or nssdcftp, as appropriate, from NASA/GSFC/SPDF"
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": [
+            {
+              "Name": "CDAWeb",
+              "URL": "http://cdaweb.gsfc.nasa.gov/cdaweb/sp_phys/",
+              "ProductKey": "UY_M0_HFT",
+              "Description": "subset, plot, list via CDAWeb"
+            },
+            {
+              "Name": "FTP access to ASCII files at SPDF",
+              "URL": "ftp://spdf.gsfc.nasa.gov/pub/data/ulysses/particle/cospin/hft/10_min/",
+              "Description": "In ASCII via FTP from SPDF"
+            },
+            {
+              "Name": "HTTP access to ASCII files at SPDF",
+              "URL": "http://spdf.gsfc.nasa.gov/pub/data/ulysses/particle/cospin/hft/10_min/",
+              "Description": "In ASCII via HTTP from SPDF"
+            }
+          ],
+          "Format": "Text",
+          "Acknowledgement": "Space Physics Data Facility at NASA/GSFC"
+        }
+      ],
+      "InstrumentID": "spase://SMWG/Instrument/Ulysses/COSPIN/HFT",
+      "MeasurementType": "EnergeticParticles",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "1990-10-22T00:00:00.000",
+          "StopDate": "2007-04-20T23:59:00.000"
+        },
+        "Cadence": "PT10M"
+      },
+      "ObservedRegion": "Heliosphere.Outer",
+      "Parameter": [
+        {
+          "Name": "Interval Start Time",
+          "ParameterKey": "Columns 1-5",
+          "Description": "\n          Nominal Start Time for the average given in year, day of year,\n              hour, min, second.\n       ",
+          "Cadence": "PT10M",
+          "Structure": {
+            "Size": "5",
+            "Element": [
+              {
+                "Name": "Year",
+                "Index": "1",
+                "ValidMin": "1990",
+                "ValidMax": "2009",
+                "FillValue": "Null"
+              },
+              {
+                "Name": "Day of year",
+                "Index": "2",
+                "ValidMin": "1",
+                "ValidMax": "366",
+                "FillValue": "Null"
+              },
+              {
+                "Name": "Hour of day",
+                "Index": "3",
+                "ValidMin": "0",
+                "ValidMax": "23",
+                "FillValue": "Null"
+              },
+              {
+                "Name": "Minute of hour",
+                "Index": "4",
+                "ValidMin": "0",
+                "ValidMax": "59",
+                "FillValue": "Null"
+              },
+              {
+                "Name": "Seconds of minute",
+                "Index": "5",
+                "ValidMin": "0",
+                "ValidMax": "59",
+                "FillValue": "Null"
+              }
+            ]
+          },
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "COSPIN/HFT 0.28-7.0 MeV Proton Spin-Averaged Flux based on counting rate F1J(0)",
+          "ParameterKey": "Column_6",
+          "Description": "\n          Nominal 10-minute average HFT spin-averaged flux based on counting rate F1J(0) responding\n          primarily to 0.7-0.9 MeV protons.\n          This flux represents one step in a 16 step sequence of discriminator levels.  The step is\n          identified in the rate name, where J(x) implies step x.  In the most common operational\n          mode the discriminator level advances one step with each readout of F1 (16 seconds at\n          1024 bps).  Each complete cycle thus takes 256 seconds (at 1024 bps).\n       ",
+          "Caveats": "\n          Since the energy range is defined entirely by a discriminator level on the single 18\n          micron thick silicon detector, other high energy nuclei with energy losses in the detector greater\n          than that of a normally incident 0.28 MeV proton will also contribute to this flux.\n          The total accumulation interval for this rate is much less than the 10 minute nominal\n          interval since it represents one step in a 16-step sequence of discriminator levels.\n       ",
+          "Cadence": "PT10M",
+          "Units": "(counts/(s*cm^2*sr*MeV))",
+          "ValidMin": "0.0",
+          "ValidMax": "1.00E+06",
+          "FillValue": "-999",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": "Average",
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "0.28",
+              "High": "7.0",
+              "Units": "MeV"
+            }
+          }
+        },
+        {
+          "Name": "COSPIN/HFT 0.50-2.27 MeV Proton Spin-Averaged Flux based on counting rate F1J(1)",
+          "ParameterKey": "Column_7",
+          "Description": "\n          Nominal 10-minute average HFT spin-averaged flux based on counting rate F1J(1) responding\n          primarily to 0.50-2.27 MeV protons.\n          This flux represents one step in a 16 step sequence of discriminator levels.  The step is\n          identified in the rate name, where J(x) implies step x.  In the most common operational\n          mode the discriminator level advances one step with each readout of F1 (16 seconds at\n          1024 bps).  Each complete cycle thus takes 256 seconds (at 1024 bps).\n       ",
+          "Caveats": "\n          Since the energy range is defined entirely by a discriminator level on the single 18\n          micron thick silicon detector, other high energy nuclei with energy losses in the detector greater\n          than that of a normally incident 0.50 MeV proton will also contribute to this flux.\n          The total accumulation interval for this rate is much less than the 10 minute nominal\n          interval since it represents one step in a 16-step sequence of discriminator levels.\n       ",
+          "Cadence": "PT10M",
+          "Units": "(counts/(s*cm^2*sr*MeV))",
+          "ValidMin": "0.0",
+          "ValidMax": "1.00E+06",
+          "FillValue": "-999",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": "Average",
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "0.50",
+              "High": "2.27",
+              "Units": "MeV"
+            }
+          }
+        },
+        {
+          "Name": "COSPIN/HFT 0.76-1.37 MeV Proton Spin-Averaged Flux based on counting rate F1J(2)",
+          "ParameterKey": "Column_8",
+          "Description": "\n          Nominal 10-minute average HFT spin-averaged flux based on counting rate F1J(2) responding\n          primarily to 0.76-1.37 MeV protons.\n          This flux represents one step in a 16 step sequence of discriminator levels.  The step is\n          identified in the rate name, where J(x) implies step x.  In the most common operational\n          mode the discriminator level advances one step with each readout of F1 (16 seconds at\n          1024 bps).  Each complete cycle thus takes 256 seconds (at 1024 bps).\n       ",
+          "Caveats": "\n          Since the energy range is defined entirely by a discriminator level on the single 18\n          micron thick silicon detector, other high energy nuclei with energy losses in the detector greater\n          than that of a normally incident 0.76  MeV proton will also contribute to this flux.\n          The total accumulation interval for this rate is much less than the 10 minute nominal\n          interval since it represents one step in a 16-step sequence of discriminator levels.\n       ",
+          "Cadence": "PT10M",
+          "Units": "(counts/(s*cm^2*sr*MeV))",
+          "ValidMin": "0.0",
+          "ValidMax": "1.00E+06",
+          "FillValue": "-999",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": "Average",
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "0.76",
+              "High": "1.37",
+              "Units": "MeV"
+            }
+          }
+        },
+        {
+          "Name": "COSPIN/HFT 0.31-5.4 MeV/n  Helium Spin-Averaged Flux based on counting rate F1J(3)",
+          "ParameterKey": "Column_9",
+          "Description": "\n          Nominal 10-minute average HFT spin-averaged flux based on counting rate F1J(3) responding\n          primarily to 0.31-5.4 MeV/n Helium nuclei.\n          This flux represents one step in a 16 step sequence of discriminator levels.  The step is\n          identified in the rate name, where J(x) implies step x.  In the most common operational\n          mode the discriminator level advances one step with each readout of F1 (16 seconds at\n          1024 bps).  Each complete cycle thus takes 256 seconds (at 1024 bps).\n       ",
+          "Caveats": "\n          Since the energy range is defined entirely by a discriminator level on the single 18\n          micron thick silicon detector, other high energy nuclei with energy losses in the detector greater\n          than that of a normally incident 0.31  MeV/n Helium nucleus (alpha particle) will also\n          contribute to this flux.\n          The total accumulation interval for this rate is much less than the 10 minute nominal\n          interval since it represents one step in a 16-step sequence of discriminator levels.\n       ",
+          "Cadence": "PT10M",
+          "Units": "(counts/(s*cm^2*sr*MeV/n))",
+          "ValidMin": "0.0",
+          "ValidMax": "1.00E+06",
+          "FillValue": "-999",
+          "Particle": {
+            "ParticleType": "AlphaParticle",
+            "Qualifier": "Average",
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "0.31",
+              "High": "5.4",
+              "Units": "MeV/n"
+            }
+          }
+        },
+        {
+          "Name": "COSPIN/HFT 0.38-3.9 MeV/n Helium Spin-Averaged Flux based on counting rate F1J(4)",
+          "ParameterKey": "Column_10",
+          "Description": "\n          Nominal 10-minute average HFT spin-averaged flux based on counting rate F1J(4) responding\n          primarily to 0.38-3.9 MeV/n Helium nuclei.\n          This flux represents one step in a 16 step sequence of discriminator levels.  The step is\n          identified in the rate name, where J(x) implies step x.  In the most common operational\n          mode the discriminator level advances one step with each readout of F1 (16 seconds at\n          1024 bps).  Each complete cycle thus takes 256 seconds (at 1024 bps).\n       ",
+          "Caveats": "\n          Since the energy range is defined entirely by a discriminator level on the single 18\n          micron thick silicon detector, other high energy nuclei with energy losses in the detector greater\n          than that of a normally incident 0.38  MeV/n Helium nucleus (alpha particle) will also\n          contribute to this flux.\n          The total accumulation interval for this rate is much less than the 10 minute nominal\n          interval since it represents one step in a 16-step sequence of discriminator levels.\n       ",
+          "Cadence": "PT10M",
+          "Units": "(counts/(s*cm^2*sr*MeV/n))",
+          "ValidMin": "0.0",
+          "ValidMax": "1.00E+06",
+          "FillValue": "-999",
+          "Particle": {
+            "ParticleType": "AlphaParticle",
+            "Qualifier": "Average",
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "0.38",
+              "High": "3.9",
+              "Units": "MeV/n"
+            }
+          }
+        },
+        {
+          "Name": "COSPIN/HFT 0.45-2.9 MeV/n Helium Spin-Averaged Flux based on counting rate F1J(5)",
+          "ParameterKey": "Column_11",
+          "Description": "\n          Nominal 10-minute average HFT spin-averaged flux based on counting rate F1J(5) responding\n          primarily to 0.45-2.9 MeV/n Helium nuclei.\n          This flux represents one step in a 16 step sequence of discriminator levels.  The step is\n          identified in the rate name, where J(x) implies step x.  In the most common operational\n          mode the discriminator level advances one step with each readout of F1 (16 seconds at\n          1024 bps).  Each complete cycle thus takes 256 seconds (at 1024 bps).\n       ",
+          "Caveats": "\n          Since the energy range is defined entirely by a discriminator level on the single 18\n          micron thick silicon detector, other high energy nuclei with energy losses in the detector greater\n          than that of a normally incident 0.45  MeV/n Helium nucleus (alpha particle) will also\n          contribute to this flux.\n          The total accumulation interval for this rate is much less than the 10 minute nominal\n          interval since it represents one step in a 16-step sequence of discriminator levels.\n       ",
+          "Cadence": "PT10M",
+          "Units": "(counts/(s*cm^2*sr*MeV/n))",
+          "ValidMin": "0.0",
+          "ValidMax": "1.00E+06",
+          "FillValue": "-999",
+          "Particle": {
+            "ParticleType": "AlphaParticle",
+            "Qualifier": "Average",
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "0.45",
+              "High": "2.9",
+              "Units": "MeV/n"
+            }
+          }
+        },
+        {
+          "Name": "COSPIN/HFT 0.51-2.26 MeV/n Helium Spin-Averaged Flux based on counting rate F1J(6)",
+          "ParameterKey": "Column_12",
+          "Description": "\n          Nominal 10-minute average HFT spin-averaged flux based on counting rate F1J(6) responding\n          primarily to 0.51-2.26 MeV/n Helium nuclei.\n          This flux represents one step in a 16 step sequence of discriminator levels.  The step is\n          identified in the rate name, where J(x) implies step x.  In the most common operational\n          mode the discriminator level advances one step with each readout of F1 (16 seconds at\n          1024 bps).  Each complete cycle thus takes 256 seconds (at 1024 bps).\n       ",
+          "Caveats": "\n          Since the energy range is defined entirely by a discriminator level on the single 18\n          micron thick silicon detector, other high energy nuclei with energy losses in the detector greater\n          than that of a normally incident 0.51  MeV/n Helium nucleus (alpha particle) will also\n          contribute to this flux.\n          The total accumulation interval for this rate is much less than the 10 minute nominal\n          interval since it represents one step in a 16-step sequence of discriminator levels.\n       ",
+          "Cadence": "PT10M",
+          "Units": "(counts/(s*cm^2*sr*MeV/n))",
+          "ValidMin": "0.0",
+          "ValidMax": "1.00E+06",
+          "FillValue": "-999",
+          "Particle": {
+            "ParticleType": "AlphaParticle",
+            "Qualifier": "Average",
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "0.51",
+              "High": "2.26",
+              "Units": "MeV/n"
+            }
+          }
+        },
+        {
+          "Name": "COSPIN/HFT 0.58-1.91 MeV/n Helium Spin-Averaged Flux based on counting rate F1J(7)",
+          "ParameterKey": "Column_13",
+          "Description": "\n          Nominal 10-minute average HFT spin-averaged flux based on counting rate F1J(7) responding\n          primarily to 0.58-1.91 MeV/n Helium nuclei.\n          This flux represents one step in a 16 step sequence of discriminator levels.  The step is\n          identified in the rate name, where J(x) implies step x.  In the most common operational\n          mode the discriminator level advances one step with each readout of F1 (16 seconds at\n          1024 bps).  Each complete cycle thus takes 256 seconds (at 1024 bps).\n       ",
+          "Caveats": "\n          Since the energy range is defined entirely by a discriminator level on the single 18\n          micron thick silicon detector, other high energy nuclei with energy losses in the detector greater\n          than that of a normally incident 0.58  MeV/n Helium nucleus (alpha particle) will also\n          contribute to this flux.\n          The total accumulation interval for this rate is much less than the 10 minute nominal\n          interval since it represents one step in a 16-step sequence of discriminator levels.\n       ",
+          "Cadence": "PT10M",
+          "Units": "(counts/(s*cm^2*sr*MeV/n))",
+          "ValidMin": "0.0",
+          "ValidMax": "1.00E+06",
+          "FillValue": "-999",
+          "Particle": {
+            "ParticleType": "AlphaParticle",
+            "Qualifier": "Average",
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "0.58",
+              "High": "1.91",
+              "Units": "MeV/n"
+            }
+          }
+        },
+        {
+          "Name": "COSPIN/HFT 0.64-1.66 MeV/n Helium Spin-Averaged Flux based on counting rate F1J(8)",
+          "ParameterKey": "Column_14",
+          "Description": "\n          Nominal 10-minute average HFT spin-averaged flux based on counting rate F1J(8) responding\n          primarily to 0.64-1.66 MeV/n Helium nuclei.\n          This flux represents one step in a 16 step sequence of discriminator levels.  The step is\n          identified in the rate name, where J(x) implies step x.  In the most common operational\n          mode the discriminator level advances one step with each readout of F1 (16 seconds at\n          1024 bps).  Each complete cycle thus takes 256 seconds (at 1024 bps).\n       ",
+          "Caveats": "\n          Since the energy range is defined entirely by a discriminator level on the single 18\n          micron thick silicon detector, other high energy nuclei with energy losses in the detector greater\n          than that of a normally incident 0.64  MeV/n Helium nucleus (alpha particle) will also\n          contribute to this flux.\n          The total accumulation interval for this rate is much less than the 10 minute nominal\n          interval since it represents one step in a 16-step sequence of discriminator levels.\n       ",
+          "Cadence": "PT10M",
+          "Units": "(counts/(s*cm^2*sr*MeV/n))",
+          "ValidMin": "0.0",
+          "ValidMax": "1.00E+06",
+          "FillValue": "-999",
+          "Particle": {
+            "ParticleType": "AlphaParticle",
+            "Qualifier": "Average",
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "0.64",
+              "High": "1.66",
+              "Units": "MeV/n"
+            }
+          }
+        },
+        {
+          "Name": "COSPIN/HFT 0.71-1.50 MeV/n Helium Spin-Averaged Flux based on counting rate F1J(9)",
+          "ParameterKey": "Column_15",
+          "Description": "\n          Nominal 10-minute average HFT spin-averaged flux based on counting rate F1J(9) responding\n          primarily to 0.71-1.50 MeV/n Helium nuclei.\n          This flux represents one step in a 16 step sequence of discriminator levels.  The step is\n          identified in the rate name, where J(x) implies step x.  In the most common operational\n          mode the discriminator level advances one step with each readout of F1 (16 seconds at\n          1024 bps).  Each complete cycle thus takes 256 seconds (at 1024 bps).\n       ",
+          "Caveats": "\n          Since the energy range is defined entirely by a discriminator level on the single 18\n          micron thick silicon detector, other high energy nuclei with energy losses in the detector greater\n          than that of a normally incident 0.71 MeV/n Helium nucleus (alpha particle) will also\n          contribute to this flux.\n          The total accumulation interval for this rate is much less than the 10 minute nominal\n          interval since it represents one step in a 16-step sequence of discriminator levels.\n       ",
+          "Cadence": "PT10M",
+          "Units": "(counts/(s*cm^2*sr*MeV/n))",
+          "ValidMin": "0.0",
+          "ValidMax": "1.00E+06",
+          "FillValue": "-999",
+          "Particle": {
+            "ParticleType": "AlphaParticle",
+            "Qualifier": "Average",
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "0.71",
+              "High": "1.50",
+              "Units": "MeV/n"
+            }
+          }
+        },
+        {
+          "Name": "COSPIN/HFT 0.78-1.35 MeV/n Helium Spin-Averaged Flux based on counting rate F1J(10)",
+          "ParameterKey": "Column_16",
+          "Description": "\n          Nominal 10-minute average HFT spin-averaged flux based on counting rate F1J(10) responding\n          primarily to 0.78-1.35 MeV/n Helium nuclei.\n          This flux represents one step in a 16 step sequence of discriminator levels.  The step is\n          identified in the rate name, where J(x) implies step x.  In the most common operational\n          mode the discriminator level advances one step with each readout of F1 (16 seconds at\n          1024 bps).  Each complete cycle thus takes 256 seconds (at 1024 bps).\n       ",
+          "Caveats": "\n          Since the energy range is defined entirely by a discriminator level on the single 18\n          micron thick silicon detector, other high energy nuclei with energy losses in the detector greater\n          than that of a normally incident 0.78 MeV/n Helium nucleus (alpha particle) will also\n          contribute to this flux.\n          The total accumulation interval for this rate is much less than the 10 minute nominal\n          interval since it represents one step in a 16-step sequence of discriminator levels.\n       ",
+          "Cadence": "PT10M",
+          "Units": "(counts/(s*cm^2*sr*MeV/n))",
+          "ValidMin": "0.0",
+          "ValidMax": "1.00E+06",
+          "FillValue": "-999",
+          "Particle": {
+            "ParticleType": "AlphaParticle",
+            "Qualifier": "Average",
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "0.78",
+              "High": "1.35",
+              "Units": "MeV/n"
+            }
+          }
+        },
+        {
+          "Name": "COSPIN/HFT 0.85-1.25 MeV/n Helium Spin-Averaged Flux based on counting rate F1J(11)",
+          "ParameterKey": "Column_17",
+          "Description": "\n          Nominal 10-minute average HFT spin-averaged flux based on counting rate F1J(11) responding\n          primarily to 0.85-1.25 MeV/n Helium nuclei.\n          This flux represents one step in a 16 step sequence of discriminator levels.  The step is\n          identified in the rate name, where J(x) implies step x.  In the most common operational\n          mode the discriminator level advances one step with each readout of F1 (16 seconds at\n          1024 bps).  Each complete cycle thus takes 256 seconds (at 1024 bps).\n       ",
+          "Caveats": "\n          Since the energy range is defined entirely by a discriminator level on the single 18\n          micron thick silicon detector, other high energy nuclei with energy losses in the detector greater\n          than that of a normally incident 0.85 MeV/n Helium nucleus (alpha particle) will also\n          contribute to this flux.\n          The total accumulation interval for this rate is much less than the 10 minute nominal\n          interval since it represents one step in a 16-step sequence of discriminator levels.\n       ",
+          "Cadence": "PT10M",
+          "Units": "(counts/(s*cm^2*sr*MeV/n))",
+          "ValidMin": "0.0",
+          "ValidMax": "1.00E+06",
+          "FillValue": "-999",
+          "Particle": {
+            "ParticleType": "AlphaParticle",
+            "Qualifier": "Average",
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "0.85",
+              "High": "1.25",
+              "Units": "MeV/n"
+            }
+          }
+        },
+        {
+          "Name": "COSPIN/HFT 0.91-1.17 MeV/n Helium Spin-Averaged Flux based on counting rate F1J(12)",
+          "ParameterKey": "Column_18",
+          "Description": "\n          Nominal 10-minute average HFT spin-averaged flux based on counting rate F1J(12) responding\n          primarily to 0.91-1.17 MeV/n Helium nuclei.\n          This flux represents one step in a 16 step sequence of discriminator levels.  The step is\n          identified in the rate name, where J(x) implies step x.  In the most common operational\n          mode the discriminator level advances one step with each readout of F1 (16 seconds at\n          1024 bps).  Each complete cycle thus takes 256 seconds (at 1024 bps).\n       ",
+          "Caveats": "\n          Since the energy range is defined entirely by a discriminator level on the single 18\n          micron thick silicon detector, other high energy nuclei with energy losses in the detector greater\n          than that of a normally incident 0.85 MeV/n Helium nucleus (alpha particle) will also\n          contribute to this flux.\n          The total accumulation interval for this rate is much less than the 10 minute nominal\n          interval since it represents one step in a 16-step sequence of discriminator levels.\n       ",
+          "Cadence": "PT10M",
+          "Units": "(counts/(s*cm^2*sr*MeV/n))",
+          "ValidMin": "0.0",
+          "ValidMax": "1.00E+06",
+          "FillValue": "-999",
+          "Particle": {
+            "ParticleType": "AlphaParticle",
+            "Qualifier": "Average",
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "0.91",
+              "High": "1.17",
+              "Units": "MeV/n"
+            }
+          }
+        },
+        {
+          "Name": "COSPIN/HFT 0.98-1.12 MeV/n Helium Spin-Averaged Flux based on counting rate F1J(13)",
+          "ParameterKey": "Column_19",
+          "Description": "\n          Nominal 10-minute average HFT spin-averaged flux based on counting rate F1J(13) responding\n          primarily to 0.98-1.12 MeV/n Helium nuclei.\n          This flux represents one step in a 16 step sequence of discriminator levels.  The step is\n          identified in the rate name, where J(x) implies step x.  In the most common operational\n          mode the discriminator level advances one step with each readout of F1 (16 seconds at\n          1024 bps).  Each complete cycle thus takes 256 seconds (at 1024 bps).\n       ",
+          "Caveats": "\n          Since the energy range is defined entirely by a discriminator level on the single 18\n          micron thick silicon detector, other high energy nuclei with energy losses in the detector greater\n          than that of a normally incident 0.98 MeV/n Helium nucleus (alpha particle) will also\n          contribute to this flux.\n          The total accumulation interval for this rate is much less than the 10 minute nominal\n          interval since it represents one step in a 16-step sequence of discriminator levels.\n       ",
+          "Cadence": "PT10M",
+          "Units": "(counts/(s*cm^2*sr*MeV/n))",
+          "ValidMin": "0.0",
+          "ValidMax": "1.00E+06",
+          "FillValue": "-999",
+          "Particle": {
+            "ParticleType": "AlphaParticle",
+            "Qualifier": "Average",
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "0.98",
+              "High": "1.12",
+              "Units": "MeV/n"
+            }
+          }
+        },
+        {
+          "Name": "COSPIN/HFT 0.34-29.6 MeV/n (for Oxygen) Spin-Averaged Flux based on counting rate F1J(14)",
+          "ParameterKey": "Column_20",
+          "Description": "\n          Nominal 10-minute average HFT spin-averaged flux based on counting rate F1J(14) responding\n          primarily to heavy nuclei (0.34-29.6 MeV/n for Oxygen) .\n          This flux represents one step in a 16 step sequence of discriminator levels.  The step is\n          identified in the rate name, where J(x) implies step x.  In the most common operational\n          mode the discriminator level advances one step with each readout of F1 (16 seconds at\n          1024 bps).  Each complete cycle thus takes 256 seconds (at 1024 bps).\n       ",
+          "Caveats": "\n          Since the energy range is defined entirely by a discriminator level on the single 18\n          micron thick silicon detector, other high energy nuclei with energy losses in the detector greater\n          than that of a normally incident 0.34 MeV/n Oxygen nucleus will also contribute to this flux.\n          The total accumulation interval for this rate is much less than the 10 minute nominal\n          interval since it represents one step in a 16-step sequence of discriminator levels.\n       ",
+          "Cadence": "PT10M",
+          "Units": "(counts/(s*cm^2*sr*MeV/n))",
+          "ValidMin": "0.0",
+          "ValidMax": "1.00E+06",
+          "FillValue": "-999",
+          "Particle": {
+            "ParticleType": "Ion",
+            "Qualifier": "Average",
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "0.34",
+              "High": "29.6",
+              "Units": "MeV/n"
+            }
+          }
+        },
+        {
+          "Name": "COSPIN/HFT 0.36-27.4 MeV/n (for Oxygen) Spin-Averaged Flux based on counting rate F1J(15)",
+          "ParameterKey": "Column_21",
+          "Description": "\n          Nominal 10-minute average HFT spin-averaged flux based on counting rate F1J(15) responding\n          primarily to heavy nuclei (0.36-27.4 MeV/n for Oxygen) .\n          This flux represents one step in a 16 step sequence of discriminator levels.  The step is\n          identified in the rate name, where J(x) implies step x.  In the most common operational\n          mode the discriminator level advances one step with each readout of F1 (16 seconds at\n          1024 bps).  Each complete cycle thus takes 256 seconds (at 1024 bps).\n       ",
+          "Caveats": "\n          Since the energy range is defined entirely by a discriminator level on the single 18\n          micron thick silicon detector, other high energy nuclei with energy losses in the detector greater\n          than that of a normally incident 0.36 MeV/n Oxygen nucleus will also contribute to this flux.\n          The total accumulation interval for this rate is much less than the 10 minute nominal\n          interval since it represents one step in a 16-step sequence of discriminator levels.\n       ",
+          "Cadence": "PT10M",
+          "Units": "(counts/(s*cm^2*sr*MeV/n))",
+          "ValidMin": "0.0",
+          "ValidMax": "1.00E+06",
+          "FillValue": "-999",
+          "Particle": {
+            "ParticleType": "Ion",
+            "Qualifier": "Average",
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "0.36",
+              "High": "27.4",
+              "Units": "MeV/n"
+            }
+          }
+        },
+        {
+          "Name": "COSPIN/HFT 0.20-6.7 MeV Proton Spin-Averaged Flux based on counting rate F2L",
+          "ParameterKey": "Column_22",
+          "Description": "\n          Nominal 10-minute average HFT spin-averaged flux based on counting rate F2L responding\n          primarily to 0.20-6.7 MeV protons.\n          This discriminator level corresponding to this flux is set to L or H by command.  If the\n          level is set to H, this field will be fill.\n       ",
+          "Caveats": "\n          Since the energy range is defined entirely by a discriminator level on the single 18\n          micron thick silicon detector, other high energy nuclei with energy losses in the detector greater\n          than that of a normally incident 0.20 MeV proton will also contribute to this flux.\n       ",
+          "Cadence": "PT10M",
+          "Units": "(counts/(s*cm^2*sr*MeV))",
+          "ValidMin": "0.0",
+          "ValidMax": "1.00E+06",
+          "FillValue": "-999",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": "Average",
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "0.20",
+              "High": "6.7",
+              "Units": "MeV"
+            }
+          }
+        },
+        {
+          "Name": "COSPIN/HFT 0.55-1.95 MeV Proton Spin-Averaged Flux based on counting rate F2H",
+          "ParameterKey": "Column_23",
+          "Description": "\n          Nominal 10-minute average HFT spin-averaged flux based on counting rate F2H responding\n          primarily to 0.55-1.95 MeV protons.\n          This discriminator level corresponding to this flux is set to L or H by command.  If the\n          level is set to L, this field will be fill.\n       ",
+          "Caveats": "\n          Since the energy range is defined entirely by a discriminator level on the single 18\n          micron thick silicon detector, other high energy nuclei with energy losses in the detector greater\n          than that of a normally incident 0.55 MeV proton will also contribute to this flux.\n       ",
+          "Cadence": "PT10M",
+          "Units": "(counts/(s*cm^2*sr*MeV))",
+          "ValidMin": "0.0",
+          "ValidMax": "1.00E+06",
+          "FillValue": "-999",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": "Average",
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "0.55",
+              "High": "1.95",
+              "Units": "MeV"
+            }
+          }
+        },
+        {
+          "Name": "COSPIN/HFT 0.68-1.56 MeV/n (for He) Z>=2 Spin-Averaged Flux based on counting rate F3",
+          "ParameterKey": "Column_24",
+          "Description": "\n          Nominal 10-minute average HFT spin-averaged flux based on counting rate F3 responding\n          primarily to 0.68-1.56 MeV/n (for He) Z>=2 nuclei.\n       ",
+          "Caveats": "\n          Since the energy range is defined entirely by a discriminator level on the single 18\n          micron thick silicon detector, other high energy nuclei with energy losses in the detector greater\n          than that of a normally incident 0.68 MeV/n helium nucleus will also contribute to this flux.\n       ",
+          "Cadence": "PT10M",
+          "Units": "(counts/(s*cm^2*sr*MeV/n))",
+          "ValidMin": "0.0",
+          "ValidMax": "1.00E+06",
+          "FillValue": "-999",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": "Average",
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "0.68",
+              "High": "1.56",
+              "Units": "MeV/n"
+            }
+          }
+        },
+        {
+          "Name": "COSPIN/HFT 0.8-4.9 MeV/n (for Carbon) Z>=3 Spin-Averaged Flux based on counting rate F4",
+          "ParameterKey": "Column_25",
+          "Description": "\n          Nominal 10-minute average HFT spin-averaged flux based on counting rate F4 responding\n          primarily to 0.8-4.9 MeV/n (for He) Z>=2 nuclei.\n       ",
+          "Caveats": "\n          Since the energy range is defined entirely by a discriminator level on the single 18\n          micron thick silicon detector, other high energy nuclei with energy losses in the detector greater\n          than that of a normally incident 0.8 MeV/n Carbon nucleus will also contribute to this flux.\n       ",
+          "Cadence": "PT10M",
+          "Units": "(counts/(s*cm^2*sr*MeV/n))",
+          "ValidMin": "0.0",
+          "ValidMax": "1.00E+06",
+          "FillValue": "-999",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": "Average",
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "0.8",
+              "High": "4.9",
+              "Units": "MeV/n"
+            }
+          }
+        },
+        {
+          "Name": "COSPIN/HFT 1.28-8.5 MeV/n (for Sulphur) Z>=12 Spin-Averaged Flux based on counting rate F5",
+          "ParameterKey": "Column_26",
+          "Description": "\n          Nominal 10-minute average HFT spin-averaged flux based on counting rate F3 responding\n          primarily to 1.28-8.5MeV/n (for Sulphur) Z>=12 nuclei.\n       ",
+          "Caveats": "\n          Since the energy range is defined entirely by a discriminator level on the single 18\n          micron thick silicon detector, other high energy nuclei with energy losses in the detector greater\n          than that of a normally incident 1.28 MeV/n Sulphur nucleus will also contribute to this flux.\n       ",
+          "Cadence": "PT10M",
+          "Units": "(counts/(s*cm^2*sr*MeV/n))",
+          "ValidMin": "0.0",
+          "ValidMax": "1.00E+06",
+          "FillValue": "-999",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": "Average",
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "1.28",
+              "High": "8.5",
+              "Units": "MeV/n"
+            }
+          }
+        },
+        {
+          "Name": "COSPIN/HFT Proton 32-Sectored Flux based on counting rate F2S",
+          "ParameterKey": "Columns 27 through 58",
+          "Description": "\n          Nominal 10-minute average HFT spin-averaged fluxes based on counting rate F2s, which split\n          directionality of the F2 fluxes using 32 spin sectors.  The counting rate responds primarily\n          to protons in the energy ranges 0.29-6.7 MeV or 0.55-1.95 MeV, depending on whether the F2\n          threshold is set low or high respectively.  The state of the F2 threshold is low if\n          column 23 contains fill, and high if column 22 contains fill.\n          See Anglin et al. , J. Geophys. Res., 102, 1, 1997 for more detailed discussion of\n          using the HFT F2S sectored rate.\n       ",
+          "Caveats": "\n          Since the energy range is defined entirely by a discriminator level on the single 18\n          micron thick silicon detector, other high energy nuclei with energy losses in the detector greater\n          than that of a normally incident 0.29 or 0.55 MeV proton (depending on the state of the\n          F2 discriminator) will also contribute to these fluxes.\n          Since the total accumulation time in each sector is less than 20 seconds in the nominal 10 minute\n          averaging period, statistical accuracy of these sectored fluxes in a single averaging interval is\n          usually poor except in large flux enhancements, most commonly produced by large solar energetic\n          particle events, but also by the high radiation levels in Jupiter's magnetosphere.\n       ",
+          "Cadence": "PT10M",
+          "Structure": {
+            "Size": "32",
+            "Element": [
+              {
+                "Name": "F2S1",
+                "Index": "1",
+                "Units": "(counts/(s*cm^2*sr*MeV))",
+                "ValidMin": "0.0",
+                "ValidMax": "1.00E+06",
+                "FillValue": "-999"
+              },
+              {
+                "Name": "F2S2",
+                "Index": "2",
+                "Units": "(counts/(s*cm^2*sr*MeV))",
+                "ValidMin": "0.0",
+                "ValidMax": "1.00E+06",
+                "FillValue": "-999"
+              },
+              {
+                "Name": "F2S3",
+                "Index": "3",
+                "Units": "(counts/(s*cm^2*sr*MeV))",
+                "ValidMin": "0.0",
+                "ValidMax": "1.00E+06",
+                "FillValue": "-999"
+              },
+              {
+                "Name": "F2S4",
+                "Index": "4",
+                "Units": "(counts/(s*cm^2*sr*MeV))",
+                "ValidMin": "0.0",
+                "ValidMax": "1.00E+06",
+                "FillValue": "-999"
+              },
+              {
+                "Name": "F2S5",
+                "Index": "5",
+                "Units": "(counts/(s*cm^2*sr*MeV))",
+                "ValidMin": "0.0",
+                "ValidMax": "1.00E+06",
+                "FillValue": "-999"
+              },
+              {
+                "Name": "F2S6",
+                "Index": "6",
+                "Units": "(counts/(s*cm^2*sr*MeV))",
+                "ValidMin": "0.0",
+                "ValidMax": "1.00E+06",
+                "FillValue": "-999"
+              },
+              {
+                "Name": "F2S7",
+                "Index": "7",
+                "Units": "(counts/(s*cm^2*sr*MeV))",
+                "ValidMin": "0.0",
+                "ValidMax": "1.00E+06",
+                "FillValue": "-999"
+              },
+              {
+                "Name": "F2S8",
+                "Index": "8",
+                "Units": "(counts/(s*cm^2*sr*MeV))",
+                "ValidMin": "0.0",
+                "ValidMax": "1.00E+06",
+                "FillValue": "-999"
+              },
+              {
+                "Name": "F2S9",
+                "Index": "9",
+                "Units": "(counts/(s*cm^2*sr*MeV))",
+                "ValidMin": "0.0",
+                "ValidMax": "1.00E+06",
+                "FillValue": "-999"
+              },
+              {
+                "Name": "F2S10",
+                "Index": "10",
+                "Units": "(counts/(s*cm^2*sr*MeV))",
+                "ValidMin": "0.0",
+                "ValidMax": "1.00E+06",
+                "FillValue": "-999"
+              },
+              {
+                "Name": "F2S11",
+                "Index": "11",
+                "Units": "(counts/(s*cm^2*sr*MeV))",
+                "ValidMin": "0.0",
+                "ValidMax": "1.00E+06",
+                "FillValue": "-999"
+              },
+              {
+                "Name": "F2S12",
+                "Index": "12",
+                "Units": "(counts/(s*cm^2*sr*MeV))",
+                "ValidMin": "0.0",
+                "ValidMax": "1.00E+06",
+                "FillValue": "-999"
+              },
+              {
+                "Name": "F2S13",
+                "Index": "13",
+                "Units": "(counts/(s*cm^2*sr*MeV))",
+                "ValidMin": "0.0",
+                "ValidMax": "1.00E+06",
+                "FillValue": "-999"
+              },
+              {
+                "Name": "F2S14",
+                "Index": "14",
+                "Units": "(counts/(s*cm^2*sr*MeV))",
+                "ValidMin": "0.0",
+                "ValidMax": "1.00E+06",
+                "FillValue": "-999"
+              },
+              {
+                "Name": "F2S15",
+                "Index": "15",
+                "Units": "(counts/(s*cm^2*sr*MeV))",
+                "ValidMin": "0.0",
+                "ValidMax": "1.00E+06",
+                "FillValue": "-999"
+              },
+              {
+                "Name": "F2S16",
+                "Index": "16",
+                "Units": "(counts/(s*cm^2*sr*MeV))",
+                "ValidMin": "0.0",
+                "ValidMax": "1.00E+06",
+                "FillValue": "-999"
+              },
+              {
+                "Name": "F2S17",
+                "Index": "17",
+                "Units": "(counts/(s*cm^2*sr*MeV))",
+                "ValidMin": "0.0",
+                "ValidMax": "1.00E+06",
+                "FillValue": "-999"
+              },
+              {
+                "Name": "F2S18",
+                "Index": "18",
+                "Units": "(counts/(s*cm^2*sr*MeV))",
+                "ValidMin": "0.0",
+                "ValidMax": "1.00E+06",
+                "FillValue": "-999"
+              },
+              {
+                "Name": "F2S19",
+                "Index": "19",
+                "Units": "(counts/(s*cm^2*sr*MeV))",
+                "ValidMin": "0.0",
+                "ValidMax": "1.00E+06",
+                "FillValue": "-999"
+              },
+              {
+                "Name": "F2S20",
+                "Index": "20",
+                "Units": "(counts/(s*cm^2*sr*MeV))",
+                "ValidMin": "0.0",
+                "ValidMax": "1.00E+06",
+                "FillValue": "-999"
+              },
+              {
+                "Name": "F2S21",
+                "Index": "21",
+                "Units": "(counts/(s*cm^2*sr*MeV))",
+                "ValidMin": "0.0",
+                "ValidMax": "1.00E+06",
+                "FillValue": "-999"
+              },
+              {
+                "Name": "F2S22",
+                "Index": "22",
+                "Units": "(counts/(s*cm^2*sr*MeV))",
+                "ValidMin": "0.0",
+                "ValidMax": "1.00E+06",
+                "FillValue": "-999"
+              },
+              {
+                "Name": "F2S23",
+                "Index": "23",
+                "Units": "(counts/(s*cm^2*sr*MeV))",
+                "ValidMin": "0.0",
+                "ValidMax": "1.00E+06",
+                "FillValue": "-999"
+              },
+              {
+                "Name": "F2S24",
+                "Index": "24",
+                "Units": "(counts/(s*cm^2*sr*MeV))",
+                "ValidMin": "0.0",
+                "ValidMax": "1.00E+06",
+                "FillValue": "-999"
+              },
+              {
+                "Name": "F2S25",
+                "Index": "25",
+                "Units": "(counts/(s*cm^2*sr*MeV))",
+                "ValidMin": "0.0",
+                "ValidMax": "1.00E+06",
+                "FillValue": "-999"
+              },
+              {
+                "Name": "F2S26",
+                "Index": "26",
+                "Units": "(counts/(s*cm^2*sr*MeV))",
+                "ValidMin": "0.0",
+                "ValidMax": "1.00E+06",
+                "FillValue": "-999"
+              },
+              {
+                "Name": "F2S27",
+                "Index": "27",
+                "Units": "(counts/(s*cm^2*sr*MeV))",
+                "ValidMin": "0.0",
+                "ValidMax": "1.00E+06",
+                "FillValue": "-999"
+              },
+              {
+                "Name": "F2S28",
+                "Index": "28",
+                "Units": "(counts/(s*cm^2*sr*MeV))",
+                "ValidMin": "0.0",
+                "ValidMax": "1.00E+06",
+                "FillValue": "-999"
+              },
+              {
+                "Name": "F2S29",
+                "Index": "29",
+                "Units": "(counts/(s*cm^2*sr*MeV))",
+                "ValidMin": "0.0",
+                "ValidMax": "1.00E+06",
+                "FillValue": "-999"
+              },
+              {
+                "Name": "F2S30",
+                "Index": "30",
+                "Units": "(counts/(s*cm^2*sr*MeV))",
+                "ValidMin": "0.0",
+                "ValidMax": "1.00E+06",
+                "FillValue": "-999"
+              },
+              {
+                "Name": "F2S31",
+                "Index": "31",
+                "Units": "(counts/(s*cm^2*sr*MeV))",
+                "ValidMin": "0.0",
+                "ValidMax": "1.00E+06",
+                "FillValue": "-999"
+              },
+              {
+                "Name": "F2S32",
+                "Index": "32",
+                "Units": "(counts/(s*cm^2*sr*MeV))",
+                "ValidMin": "0.0",
+                "ValidMax": "1.00E+06",
+                "FillValue": "-999"
+              }
+            ]
+          },
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": "Average",
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "0.29",
+              "High": "6.7",
+              "Units": "MeV"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

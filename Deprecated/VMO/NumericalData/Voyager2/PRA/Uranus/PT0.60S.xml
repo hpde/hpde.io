@@ -1,0 +1,112 @@
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema file:/C:/Projects/Voyager/spase-2_2_2.xsd">
+<Version>2.2.2</Version>
+<NumericalData>
+               <ResourceID>spase://VMO/NumericalData/Voyager2/PRA/Uranus/PT0.60S</ResourceID>
+               <ResourceHeader>
+                      <ResourceName>Voyager 2 Uranus PRA Edited RDR High Rate 60-ms V1.0</ResourceName>
+                      <ReleaseDate>2017-01-19T10:00:00.00</ReleaseDate>
+                      <Description>                                        
+                                                                              
+This data set (VG2-U-PRA-2-RDR-HIGHRATE-60MS-V1.0) contains data              
+acquired by the Voyager-2 Planetary Radio Astronomy (PRA) instrument          
+during the Uranus encounter.  Since the PRA instrument is able to             
+observe planetary phenomenon at much larger ranges than other fields          
+and particles experiments, thus the PRA data cover a variable and             
+longer encounter period. PRA lowband data provided here cover the             
+entire Uranus Encounter Phase (1985-10-24 to 1988-07-14).                     
+                                                                              
+Each file within the dataset represents a single PRA high rate frame,         
+of duration 48 seconds. Each file contains a 28 octet header, followed        
+by 1280000 octets of data.                                                    
+                                                                              
+The header format is described as below:                                      
+--------------------------------------------------------------------          
+Length (bytes) Name            Contents                                       
+--------------------------------------------------------------------          
+2              Year            Year A.D.                                      
+2              Day             Day of year (1 Jan == 1)                       
+1              Hour            Hour of day (midnight == 0)                    
+1              Minute          Minute of hour (o&apos;clock = 0)                   
+1              Second          Second of Minute                               
+                                 (exact minute == 0)                          
+1              Spacecraft      1 == V1, 2 == V2                               
+2              Integral FDS    Integer part of FDS count                      
+1              Fractional FDS  Fractional part of FDS count                   
+4              Freq. 1         Frequency of 1st channel (Hz)                  
+4              Freq. 2         Frequency of 2nd channel (Hz)                  
+4              Freq. 3         Frequency of 3rd channel (Hz)                  
+4              Freq. 4         Frequency of 4th channel (Hz)                  
+1              Bandwidth       Bandwidth (kHz)                                
+--------------------------------------------------------------------          
+where all values are unsigned, and multi-octet values are presented           
+with the most significant byte first.                                         
+                                                                              
+The data are 16 bit numbers, most significant byte first, with 0              
+indicating unavailable data. The data are presented as a single               
+stream of 16 bit numbers. The frame is logically divided into lines           
+(although there is no indication of the lines within the file). This          
+terminology comes from the fact that in this high rate mode, the PRA          
+data are treated exactly as if they were imaging data, and a 48 second        
+image comprises 800 horizontal scan lines. Similarly, there are 800           
+logical lines within a PRA frame. Each line comprises 800 values,             
+representing 400 data pairs. In the high rate mode, the PRA measures          
+the flux at two frequencies _simultaneously_ and returns these two data       
+sequentially. A sample pair is acquired every (actually every 138.88...       
+microseconds), through an RC filter with a 100 microsecond time constant.     
+A single line comprises 60 milliseconds of data. Lines are NOT contiguous     
+in time. There is a 4444.44... microsecond gap between the ending of one      
+line and the start of the succeeding line.                                    
+                                                                              
+The PRA samples a frequency pair in this manner for 24 seconds. It then       
+has the option of switching to a second pair for the final 24 seconds.        
+These frequencies are designated Freq. 1 through Freq. 4 in the header.       
+The data are presented such that the higher of the relevant frequency         
+pair is presented first.                                                    
+                                                                              
+    SAMPLING_PARAMETER_NAME        = TIME
+    SAMPLING_PARAMETER_RESOLUTION  = N/A
+    MINIMUM_SAMPLING_PARAMETER     = N/A
+    MAXIMUM_SAMPLING_PARAMETER     = N/A
+    SAMPLING_PARAMETER_INTERVAL    = 138.8
+    MINIMUM_AVAILABLE_SAMPLING_INT = 138.8
+    SAMPLING_PARAMETER_UNIT        = MICROSECOND
+    DATA_SET_PARAMETER_NAME        = RADIO WAVE SPECTRUM
+    NOISE_LEVEL                    = 2400
+    DATA_SET_PARAMETER_UNIT        = MILLIBEL</Description>
+                      <Contact>
+                             <PersonID>spase://SMWG/Person/Todd.A.King</PersonID>
+                             <Role>MetadataContact</Role>
+                     </Contact>
+                      <InformationURL>
+                             <Name>VG2-U-PRA-2-RDR-HIGHRATE-60MS-V1.0</Name>
+                             <URL>http://pds-ppi.igpp.ucla.edu/data/VG2-U-PRA-2-RDR-HIGHRATE-60MS-V1.0/AAREADME.TXT</URL>
+                             <Description>The document describing the contents of the collection.</Description>
+                             <Language>En</Language>
+                     </InformationURL>
+              </ResourceHeader>
+               <AccessInformation>
+                      <RepositoryID>spase://SMWG/Repository/PDS/PPI</RepositoryID>
+                      <Availability>Online</Availability>
+                      <AccessRights>Open</AccessRights>
+                      <AccessURL>
+                             <Name>PDS/PPI</Name>
+                             <URL>http://pds-ppi.igpp.ucla.edu/search/view/?f=yes&amp;id=pds://PPI/VG2-U-PRA-2-RDR-HIGHRATE-60MS-V1.0</URL>
+                             <ProductKey>VG2-U-PRA-2-RDR-HIGHRATE-60MS-V1.0</ProductKey>
+                             <Description>This collection is archived with NASA&apos;s Planetary Data System.</Description>
+                             <Language>En</Language>
+                     </AccessURL>
+                      <Format>Text.ASCII</Format>
+                      <Acknowledgement>NASA&apos;s Planetary Plasma Interactions (PPI) Node of the Planetary Data System (PDS) and the P.I. for the data.</Acknowledgement>
+              </AccessInformation>
+               <InstrumentID>spase://SMWG/Instrument/Voyager2/PRA</InstrumentID>
+               <MeasurementType>Waves.Passive</MeasurementType>
+               <TemporalDescription>
+                      <TimeSpan>
+                             <StartDate>1985-10-24T23:23:12.00</StartDate>
+                             <StopDate>1988-07-14T07:43:09.00</StopDate>
+                     </TimeSpan>
+                      <Cadence>PT0.60S</Cadence>
+              </TemporalDescription>
+               <ObservedRegion>Uranus</ObservedRegion>
+       </NumericalData>
+</Spase>

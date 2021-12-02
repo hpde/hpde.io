@@ -1,0 +1,808 @@
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema  http://www.spase-group.org/data/schema/spase-2_2_2.xsd'">
+    <Version>2.2.2</Version>
+    <NumericalData>
+        <ResourceID>spase://VEPO/NumericalData/Ulysses/COSPIN/AT/Fluxes/PT10M</ResourceID>
+        <ResourceHeader>
+            <ResourceName>Ulysses COSPIN/AT Ion 10-Minute Fluxes</ResourceName>
+            <AlternateName>COSPIN-AT-Fluxes-PT10M</AlternateName>
+            <ReleaseDate>2016-08-19T00:00:00</ReleaseDate>
+            <Description>10-Minute cadence proton and helium spin-averaged coincidence fluxes from the 
+            COSPIN Anisotropy Telescopes (AT1 and AT2). The two telescopes differ only by their orientation 
+            with respect to the spacecraft spin axis. The parameter keys in the parameter-level segments below are specifically relevant to the UFA-accessible versions of the data. </Description>
+            <Acknowledgement>Please acknowledge the COSPIN AT lead investigators 
+            (AT Group Leader: Dr. Andre Balogh, and Co-Investigator: Dr. Silvia Dalla) </Acknowledgement>
+            <Contact>
+                <PersonID>spase://SMWG/Person/Andre.Balogh</PersonID>
+                <Role>CoInvestigator</Role>
+                <Role>TeamLeader</Role>
+            </Contact>
+            <Contact>
+                <PersonID>spase://SMWG/Person/Silvia.Dalla</PersonID>
+                <Role>CoInvestigator</Role>
+                <Role>DataProducer</Role>
+            </Contact>
+            <Contact>
+                <PersonID>spase://SMWG/Person/Cecil.Tranquille</PersonID>
+                <Role>ArchiveSpecialist</Role>
+            </Contact>
+            <InformationURL>
+                <Name>Usernotes file for COSPIN/AT data files</Name>
+                <URL>http://ufa.esac.esa.int/ufa/#instruments</URL>
+                <Description>
+	     The UserNotes file at the Ulysses Final Archive (UFA) describes the
+	     format of the ASCII data files containing 10-minute average proton
+	     and helium spin-averaged and sectored fluxes for the 
+	     dual COSPIN Anisotropy Telescopes (AT1 and AT2), and caveats for their use.
+	     A description of the AT Telescopes may be found in 
+	     Simpson et al., Astron. Astrophys. 92, 365-399, 1992.  An electronic copy of
+             this paper is available at
+	     http://helio.estec.esa.nl/ulysses/ftp/cdroms/uls_02_a/Docs/Cospin/Cospin.htm
+             (Note:  in this paper, the pointing directions of the AT1 and AT2 are interchanged.
+              The correct pointing directions are given below.)
+         </Description>
+            </InformationURL>
+        </ResourceHeader>
+        <AccessInformation>
+            <RepositoryID>spase://SMWG/Repository/ESA/ESAC/UlyssesFinalArchive</RepositoryID>
+            <Availability>Online</Availability>
+            <AccessRights>Open</AccessRights>
+            <AccessURL>
+                <Name>Ulysses Final Archive</Name>
+                <URL>http://ufa.esac.esa.int/ufa/#data</URL>
+                <Description>
+           Parent directory containing yearly downloadable .zip compressed subdirectories with naming 
+           convention cosatNYY.zip.  Here and below N=1 or 2 to identify which of the two identical AT 
+           telescopes is the source of the data, and YY indicates the two digit year corresponding to 
+           the data in the subdirectory. 
+           Each subdirectory contains daily ascii files with naming convention ucosatNrYYDOY.uly where 
+           N and YY are as above, and DOY is the three digit day of year (Jan. 1 = 1).  
+           Each file contains nominally 1-minute averages of the COSPIN/AT spin-averaged and sectored
+           fluxes based on counting rates which respond primarily to protons and helium nuclei.  
+           Electron response is strongly suppressed by discriminator thresholds set on the 30 micron 
+           thick front detector, D1, which is required to fire for all events registered by the counting 
+           rates.  Times given are the center point of the nominal 10 minute averaging interval, and the 
+           data entries are given in units of flux, (s cmsq sr MeV)^-1.  (NB.  MeV, not MeV/n.)  For
+           channels which respond to both protons and helium, the flux is computed using the energy range
+           appropriate for protons, normally the dominant species in the channel. 
+           For each AT, the data are presented in the following format, where channels are named as in 
+           Table 5 of Simpson et al. (1992) and the energy ranges are given in MeV (not MeV/n). 
+           Energies listed are in the frame of the spacecraft.  In the range of energies measured by 
+           the AT telescopes, the energy shifts resulting from convection of the nuclei by the 
+           solar wind are significant, and for study of anisotropies in the solar wind frame, appropriate
+           corrections are necessary.  Telescope AT1 points at 60 degrees to the spacecraft spin axis 
+           and telescope AT2 points at 145 degrees to the spacecraft spin axis.  The Ulysses spacecraft 
+           spin axis is maintained within 1 degree of earth-pointing at all times.   
+           --------------------------------------------------------------------
+	   Field  Fortran	Definition		Protons		Helium
+	          Format				(MeV)		(MeV)
+           --------------------------------------------------------------------
+	   1	  i4		4 digitYear, e.g. 1992
+	   2	  i3		Day of year (Jan 1 = 1)
+	   3	  i2		Hour of day
+	   4      i2		Minute of hour
+	   5	  i2		Second of minute
+	   6	  e11.4		A1_N spin-averaged	0.7-0.9		2.3-2.5
+	   7	  e11.4		A2_N spin-averaged	0.9-1.3		2.5-2.7
+	   8	  e11.4		A3_N spin-averaged	1.3-2.2		2.7-3.0
+	   9	  e11.4		A4_N spin-averaged	2.2-3.6		no resp
+	   10	  e11.4		A5_N spin-averaged      3.6-6.5		24.0-28.0
+	   11	  e11.4		A38_N spin-averaged	no resp		3.0-7.5
+	   12	  e11.4		A39_N spin-averaged	no resp		7.5-12.0
+	   13	  e11.4		A40_N spin-averaged	no resp		12.0-26.0
+	   14	  e11.4		A6_N (A3 sector 1)	1.3-2.2		2.7-3.0
+	   15	  e11.4		A7_N (A3 sector 2)	   "		   "
+	   16	  e11.4		A8_N (A3 sector 3)	   "		   "	      
+	   17	  e11.4		A9_N (A3 sector 4)	   "		   "
+	   18	  e11.4		A10_N (A3 sector 5)	   "		   "
+	   19	  e11.4		A11_N (A3 sector 6)	   "		   "
+	   20	  e11.4		A12_N (A3 sector 7)	   "		   "
+	   21	  e11.4		A13_N (A3 sector 8)	   "		   "
+	   22	  e11.4		A14_N (A4 sector 1)	2.2-3.6		no resp
+	   23	  e11.4		A15_N (A4 sector 2)	   "		   "		
+	   24	  e11.4		A16_N (A4 sector 3)	   "		   "
+	   25	  e11.4		A17_N (A4 sector 4)	   "		   "
+	   26	  e11.4		A18_N (A4 sector 5)	   "		   "
+	   27	  e11.4		A19_N (A4 sector 6)	   "		   "
+	   28	  e11.4		A20_N (A4 sector 7)	   "		   "
+	   29	  e11.4		A21_N (A4 sector 8)	   "		   "
+	   30	  e11.4		A22_N (A5 sector 1)	3.6-6.5		24.0-28.0
+	   31	  e11.4		A23_N (A5 sector 2)	   "		   "
+	   32	  e11.4		A24_N  (A5 sector 3)	   "		   "
+	   33	  e11.4		A25_N  (A5 sector 4)	   "		   "
+	   34	  e11.4		A26_N  (A5 sector 5)	   "		   "
+	   35	  e11.4		A27_N  (A5 sector 6)	   "		   "
+	   36	  e11.4		A28_N  (A5 sector 7)	   "		   "
+	   37	  e11.4		A29_N  (A5 sector 8)	   "		   "
+ 
+           The actual accumulation intervals contributing to an average consist of an integral number of 
+           telemetry subcomm sequences, and correspond to all subcomm sequences which start in the nominal
+           10 minute reporting interval.  The minimum time corresponding to one subcomm sequence is 256
+           seconds at 1024 bps, the most common science telemetry rate.  Thus the actual start time of the 
+           accumulation may be up to 256 seconds later than the start time of the nominal
+           interval. Similarly, the end time of the accumulation may extend up to 256 seconds beyond the 
+           end of the nominal interval.  These data are therefore not useful for highly accurate timing
+           studies. 
+           Information on the definition the spin sectors and the sectoring process is given below in the
+           description of the A3 sectored data (channels 14-21 in the table above). 
+         </Description>
+            </AccessURL>
+            <Format>Text</Format>
+            <Encoding>ZIP</Encoding>
+            <Acknowledgement>Dr. Silvia Dalla, University of Central Lancashire, UK</Acknowledgement>
+        </AccessInformation>
+        <AccessInformation>
+            <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF</RepositoryID>
+            <Availability>Online</Availability>
+            <AccessRights>Open</AccessRights>
+            <AccessURL>
+                <Name>FTP access to AT1 CDFs at SPDF</Name>
+                <URL>ftp://spdf.gsfc.nasa.gov/pub/data/ulysses/particle/cospin_cdaweb/at1/</URL>
+                <Description>AT1 data via ftp in CDF from SPDF.</Description>
+            </AccessURL>
+            <AccessURL>
+                <Name>HTTP access to AT1 CDFs at SPDF</Name>
+                <URL>http://spdf.gsfc.nasa.gov/pub/data/ulysses/particle/cospin_cdaweb/at1/</URL>
+                <Description>In CDF via HTTP from SPDF</Description>
+            </AccessURL>
+            <Format>CDF</Format>
+            <Acknowledgement>Space Physics Data Facility at NASA/GSFC</Acknowledgement>
+        </AccessInformation>
+        <AccessInformation>
+            <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF</RepositoryID>
+            <Availability>Online</Availability>
+            <AccessRights>Open</AccessRights>
+            <AccessURL>
+                <Name>CDAWeb</Name>
+                <URL>http://cdaweb.gsfc.nasa.gov/cdaweb/sp_phys/</URL>
+                <ProductKey>UY_M0_AT1</ProductKey>
+                <Description>subset, plot, list via CDAWeb</Description>
+            </AccessURL>
+            <AccessURL>
+                <Name>FTP access to AT1 ASCII files at SPDF</Name>
+                <URL>ftp://spdf.gsfc.nasa.gov/pub/data/ulysses/particle/cospin/at1/10min_new/</URL>
+                <Description>AT1 data via ftp in ASCII from SPDF.</Description>
+            </AccessURL>
+            <AccessURL>
+                <Name>HTTP access to AT1 ASCII files at SPDF</Name>
+                <URL>http://spdf.gsfc.nasa.gov/pub/data/ulysses/particle/cospin/at1/10min_new/</URL>
+                <Description>AT1 data via http in ASCII from SPDF.</Description>
+            </AccessURL>
+            <Format>Text</Format>
+            <Acknowledgement>CDAWeb or nssdcftp, as appropriate, from NASA/GSFC/SPDF</Acknowledgement>
+        </AccessInformation>
+        <AccessInformation>
+            <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF</RepositoryID>
+            <Availability>Online</Availability>
+            <AccessRights>Open</AccessRights>
+            <AccessURL>
+                <Name>FTP access to AT2 CDFs at SPDF</Name>
+                <URL>ftp://spdf.gsfc.nasa.gov/pub/data/ulysses/particle/cospin_cdaweb/at2/</URL>
+                <Description>AT2 data via ftp in CDF from SPDF.</Description>
+            </AccessURL>
+            <AccessURL>
+                <Name>HTTP access to AT2 CDFs at SPDF</Name>
+                <URL>http://spdf.gsfc.nasa.gov/pub/data/ulysses/particle/cospin_cdaweb/at2/</URL>
+                <Description>In CDF via HTTP from SPDF</Description>
+            </AccessURL>
+            <Format>CDF</Format>
+            <Acknowledgement>Space Physics Data Facility at NASA/GSFC</Acknowledgement>
+        </AccessInformation>
+        <AccessInformation>
+            <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF</RepositoryID>
+            <Availability>Online</Availability>
+            <AccessRights>Open</AccessRights>
+            <AccessURL>
+                <Name>CDAWeb</Name>
+                <URL>http://cdaweb.gsfc.nasa.gov/cdaweb/sp_phys/</URL>
+                <ProductKey>UY_M0_AT2</ProductKey>
+                <Description>subset, plot, list via CDAWeb</Description>
+            </AccessURL>
+            <AccessURL>
+                <Name>FTP access to AT2 ASCII files at SPDF</Name>
+                <URL>ftp://spdf.gsfc.nasa.gov/pub/data/ulysses/particle/cospin/at2/10min_new/</URL>
+                <Description>AT2 data via ftp in ASCII from SPDF.</Description>
+            </AccessURL>
+            <AccessURL>
+                <Name>HTTP access to AT2 ASCII files at SPDF</Name>
+                <URL>http://spdf.gsfc.nasa.gov/pub/data/ulysses/particle/cospin/at2/10min_new/</URL>
+                <Description>AT1 data via http in ASCII from SPDF.</Description>
+            </AccessURL>
+            <Format>Text</Format>
+            <Acknowledgement>CDAWeb or nssdcftp, as appropriate, from NASA/GSFC/SPDF</Acknowledgement>
+        </AccessInformation>
+        <InstrumentID>spase://SMWG/Instrument/Ulysses/COSPIN/AT</InstrumentID>
+        <MeasurementType>EnergeticParticles</MeasurementType>
+        <TemporalDescription>
+            <TimeSpan>
+                <StartDate>1990-10-22T00:00:00.000</StartDate>
+                <RelativeStopDate>P9M</RelativeStopDate>
+            </TimeSpan>
+            <Cadence>PT10M</Cadence>
+        </TemporalDescription>
+        <ObservedRegion>Heliosphere.Outer</ObservedRegion>
+        <Parameter>
+            <Name>Interval Start Time</Name>
+            <ParameterKey>Columns 1-5</ParameterKey>
+            <Description>
+          Nominal Midpoint Time for the average given in year, day of year, 
+              hour, min, second.
+       </Description>
+            <Cadence>PT10M</Cadence>
+            <Structure>
+                <Size>5</Size>
+                <Element>
+                    <Name>Year</Name>
+                    <Index>1</Index>
+                    <ValidMin>1990</ValidMin>
+                    <ValidMax>2009</ValidMax>
+                    <FillValue>Null</FillValue>
+                </Element>
+                <Element>
+                    <Name>Day of year</Name>
+                    <Index>2</Index>
+                    <ValidMin>1</ValidMin>
+                    <ValidMax>366</ValidMax>
+                    <FillValue>Null</FillValue>
+                </Element>
+                <Element>
+                    <Name>Hour of day</Name>
+                    <Index>3</Index>
+                    <ValidMin>0</ValidMin>
+                    <ValidMax>23</ValidMax>
+                    <FillValue>Null</FillValue>
+                </Element>
+                <Element>
+                    <Name>Minute of hour</Name>
+                    <Index>4</Index>
+                    <ValidMin>0</ValidMin>
+                    <ValidMax>59</ValidMax>
+                    <FillValue>Null</FillValue>
+                </Element>
+                <Element>
+                    <Name>Seconds of minute</Name>
+                    <Index>5</Index>
+                    <ValidMin>0</ValidMin>
+                    <ValidMax>59</ValidMax>
+                    <FillValue>Null</FillValue>
+                </Element>
+            </Structure>
+            <Support>
+                <SupportQuantity>Temporal</SupportQuantity>
+            </Support>
+        </Parameter>
+        <Parameter>
+            <Name>COSPIN/ATN 0.7-0.9 MeV Proton Spin-Averaged Flux based on counting rate A1_N</Name>
+            <ParameterKey>Column_6</ParameterKey>
+            <Description>
+          Nominal 10-minute average ATN spin-averaged flux based on counting rate A1_N responding 
+          primarily to 0.7-0.9 MeV protons.
+       </Description>
+            <Caveats>
+          2.3 - 2.5 MeV helium nuclei, and possibly other high energy  nuclei with
+          similar energy losses in the front detector and similar ranges in Si may 
+          also contribute to this flux.
+       </Caveats>
+            <Cadence>PT10M</Cadence>
+            <Units>(counts/(s*cm^2*sr*MeV))</Units>
+            <ValidMin>0.0</ValidMin>
+            <ValidMax>1.00E+06</ValidMax>
+            <FillValue>-1.000E+35</FillValue>
+            <Particle>
+                <ParticleType>Proton</ParticleType>
+                <Qualifier>Average</Qualifier>
+                <ParticleQuantity>NumberFlux</ParticleQuantity>
+                <EnergyRange>
+                    <Low>0.7</Low>
+                    <High>0.9</High>
+                    <Units>MeV</Units>
+                </EnergyRange>
+            </Particle>
+        </Parameter>
+        <Parameter>
+            <Name>COSPIN/ATN 0.9-1.3 MeV Proton Spin-Averaged Flux based on counting rate A2_N</Name>
+            <ParameterKey>Column_7</ParameterKey>
+            <Description>
+          Nominal 10-minute average ATN spin-averaged flux based on counting rate A2_N responding 
+          primarily to 0.9-1.3 MeV protons.
+       </Description>
+            <Caveats>
+          2.5 - 2.7 MeV helium nuclei, and possibly other high energy  nuclei with
+          similar energy losses in the front detector and similar ranges in Si may 
+          also contribute to this flux.
+       </Caveats>
+            <Cadence>PT10M</Cadence>
+            <Units>(counts/(s*cm^2*sr*MeV))</Units>
+            <ValidMin>0.0</ValidMin>
+            <ValidMax>1.00E+06</ValidMax>
+            <FillValue>-1.000E+35</FillValue>
+            <Particle>
+                <ParticleType>Proton</ParticleType>
+                <Qualifier>Average</Qualifier>
+                <ParticleQuantity>NumberFlux</ParticleQuantity>
+                <EnergyRange>
+                    <Low>0.9</Low>
+                    <High>1.3</High>
+                    <Units>MeV</Units>
+                </EnergyRange>
+            </Particle>
+        </Parameter>
+        <Parameter>
+            <Name>COSPIN/ATN 1.3-2.2 MeV Proton Spin-Averaged Flux based on Counting Rate A3_N</Name>
+            <ParameterKey>Column_8</ParameterKey>
+            <Description>
+          Nominal 10-minute average ATN spin-averaged based on counting rate A3_N responding 
+          primarily to 1.3-2.2 MeV protons.
+       </Description>
+            <Caveats>
+          2.7 - 3.0 MeV helium nuclei, and possibly other high energy  nuclei with
+          similar energy losses in the front detector and similar ranges in Si may 
+          also contribute to this flux.
+       </Caveats>
+            <Cadence>PT10M</Cadence>
+            <Units>(counts/(s*cm^2*sr*MeV))</Units>
+            <ValidMin>0.0</ValidMin>
+            <ValidMax>1.00E+06</ValidMax>
+            <FillValue>-1.000E+35</FillValue>
+            <Particle>
+                <ParticleType>Proton</ParticleType>
+                <Qualifier>Average</Qualifier>
+                <ParticleQuantity>NumberFlux</ParticleQuantity>
+                <EnergyRange>
+                    <Low>1.3</Low>
+                    <High>2.2</High>
+                    <Units>MeV</Units>
+                </EnergyRange>
+            </Particle>
+        </Parameter>
+        <Parameter>
+            <Name>COSPIN/ATN 2.2-3.6 MeV Proton Spin-Averaged Flux based on Counting Rate A4_N</Name>
+            <ParameterKey>Column_9</ParameterKey>
+            <Description>
+          Nominal 10-minute average ATN spin-averaged flux based on counting rate A4_N responding 
+          to 2.2-3.6 MeV protons.
+       </Description>
+            <Caveats>
+          Discriminator and coincidence requirements exclude nuclei heavier than 
+          protons from contributing to this flux.
+       </Caveats>
+            <Cadence>PT10M</Cadence>
+            <Units>(counts/(s*cm^2*sr*MeV))</Units>
+            <ValidMin>0.0</ValidMin>
+            <ValidMax>1.00E+06</ValidMax>
+            <FillValue>-1.000E+35</FillValue>
+            <Particle>
+                <ParticleType>Proton</ParticleType>
+                <Qualifier>Average</Qualifier>
+                <ParticleQuantity>NumberFlux</ParticleQuantity>
+                <EnergyRange>
+                    <Low>2.2</Low>
+                    <High>3.6</High>
+                    <Units>MeV</Units>
+                </EnergyRange>
+            </Particle>
+        </Parameter>
+        <Parameter>
+            <Name>COSPIN/ATN 3.6-6.5 MeV Proton Spin-Averaged flux based on Counting Rate A5_N</Name>
+            <ParameterKey>Column_10</ParameterKey>
+            <Description>
+          Nominal 10-minute average ATN spin-averaged flux based on counting rate A5_N responding 
+          primarily to 3.6-6.5 MeV protons.
+       </Description>
+            <Caveats>
+          24.0 - 28.0 MeV helium nuclei, and possibly other high energy  nuclei with
+          similar energy losses in the front detector and similar ranges in Si may 
+          also contribute to this flux.
+       </Caveats>
+            <Cadence>PT10M</Cadence>
+            <Units>(counts/(s*cm^2*sr*MeV))</Units>
+            <ValidMin>0.0</ValidMin>
+            <ValidMax>1.00E+06</ValidMax>
+            <FillValue>-1.000E+35</FillValue>
+            <Particle>
+                <ParticleType>Proton</ParticleType>
+                <Qualifier>Average</Qualifier>
+                <ParticleQuantity>NumberFlux</ParticleQuantity>
+                <EnergyRange>
+                    <Low>3.6</Low>
+                    <High>6.5</High>
+                    <Units>MeV</Units>
+                </EnergyRange>
+            </Particle>
+        </Parameter>
+        <Parameter>
+            <Name>COSPIN/ATN 3.0-7.5 MeV Helium Spin-Averaged flux based on Counting Rate A38_N</Name>
+            <ParameterKey>Column_11</ParameterKey>
+            <Description>
+          Nominal 10-minute average ATN spin-averaged flux based on counting rate A38_N responding 
+          primarily to 3.0-7.5 MeV helium nuclei (alpha particles).
+       </Description>
+            <Caveats>
+          Other, heavier nuclei with similar energy losses in the front 
+	  detector and similar ranges in Si may also contribute to this flux.
+       </Caveats>
+            <Cadence>PT10M</Cadence>
+            <Units>(counts/(s*cm^2*sr*MeV))</Units>
+            <ValidMin>0.0</ValidMin>
+            <ValidMax>1.00E+06</ValidMax>
+            <FillValue>-1.000E+35</FillValue>
+            <Particle>
+                <ParticleType>AlphaParticle</ParticleType>
+                <Qualifier>Average</Qualifier>
+                <ParticleQuantity>NumberFlux</ParticleQuantity>
+                <EnergyRange>
+                    <Low>3.0</Low>
+                    <High>7.5</High>
+                    <Units>MeV</Units>
+                </EnergyRange>
+            </Particle>
+        </Parameter>
+        <Parameter>
+            <Name>COSPIN/ATN 7.5-12.0 MeV Helium Spin-Averaged Counting Rate (A39_N)</Name>
+            <ParameterKey>Column_12</ParameterKey>
+            <Description>
+          Nominal 10-minute average ATN spin-averaged counting rate responding 
+          primarily to 7.5-12.0 MeV helium nuclei (alpha particles).
+       </Description>
+            <Caveats>
+          Other, heavier nuclei with similar energy losses in the front 
+	  detector and similar ranges in Si may also contribute to this counting rate.
+       </Caveats>
+            <Cadence>PT10M</Cadence>
+            <Units>(counts/(s*cm^2*sr*MeV))</Units>
+            <ValidMin>0.0</ValidMin>
+            <ValidMax>1.00E+06</ValidMax>
+            <FillValue>-1.000E+35</FillValue>
+            <Particle>
+                <ParticleType>AlphaParticle</ParticleType>
+                <Qualifier>Average</Qualifier>
+                <ParticleQuantity>NumberFlux</ParticleQuantity>
+                <EnergyRange>
+                    <Low>7.5</Low>
+                    <High>12.0</High>
+                    <Units>MeV</Units>
+                </EnergyRange>
+            </Particle>
+        </Parameter>
+        <Parameter>
+            <Name>COSPIN/ATN 12.0-26.0 MeV Helium Spin-Averaged Flux based on Counting Rate A40_N</Name>
+            <ParameterKey>Column_13</ParameterKey>
+            <Description>
+          Nominal 10-minute average ATN spin-averaged flux based on counting rate A40_N responding 
+          primarily to 12.0-26.0 MeV helium nuclei (alpha particles).
+       </Description>
+            <Caveats>
+          Other, heavier nuclei with similar energy losses in the front 
+	  detector and similar ranges in Si may also contribute to this flux.
+       </Caveats>
+            <Cadence>PT10M</Cadence>
+            <Units>(counts/(s*cm^2*sr*MeV))</Units>
+            <ValidMin>0.0</ValidMin>
+            <ValidMax>1.00E+06</ValidMax>
+            <FillValue>-1.000E+35</FillValue>
+            <Particle>
+                <ParticleType>AlphaParticle</ParticleType>
+                <Qualifier>Average</Qualifier>
+                <ParticleQuantity>NumberFlux</ParticleQuantity>
+                <EnergyRange>
+                    <Low>12.0</Low>
+                    <High>26.0</High>
+                    <Units>MeV</Units>
+                </EnergyRange>
+            </Particle>
+        </Parameter>
+        <Parameter>
+            <Name>COSPIN/ATN  10-Minute Average Sectored Proton flux based on 
+       Counting Rate A3_NS</Name>
+            <ParameterKey>Columns_14-21</ParameterKey>
+            <Description>
+          Nominal 10-minute average ATN 8-sectored fluxs based on the 
+          counting rate A3_NS responding primarily to 1.3-2.2 MeV protons.
+          The rate has 8 elements, each corresponding to a 45 degree range of the 
+          spacecraft spin plane. The start of sector 1 (0 degrees) is coincident 
+          with the spacecraft-generated Sun-pulse, and the start of each 
+          subsequent sector is shifted by 45 degrees with respect to the preceding 
+          sector.  For example, A3_N1 covers the azimuthal range 0-45 degrees, 
+          A3_N2 covers the azimuthal range 45-90 degrees, etc.  In each sector,
+          counts are registered only when the axis of the telescope view cone is 
+          within that sector.
+          Data from multiple spacecraft spins contribute to the fluxes 
+          recorded for each sector, and the total accumulation time for the set of 
+          A3_N1-A3_N8 fluxes is required to be an integral number of spacecraft 
+          spins. Therefore the total accumulation time in each of the 8 sectors is 
+          1/8 of the total time interval for the average.
+       </Description>
+            <Caveats>
+          2.7 - 3.0 MeV helium nuclei, and possibly other high energy  nuclei with
+          similar energy losses in the front detector and similar ranges in Si may 
+          also contribute to these fluxes.
+       </Caveats>
+            <Cadence>PT10M</Cadence>
+            <Structure>
+                <Size>8</Size>
+                <Element>
+                    <Name>A3_N1</Name>
+                    <Index>1</Index>
+                    <Units>counts/(s*cm^2*sr*MeV)</Units>
+                    <ValidMin>0.0</ValidMin>
+                    <ValidMax>1.00E+06</ValidMax>
+                    <FillValue>-1.000E+35</FillValue>
+                </Element>
+                <Element>
+                    <Name>A3_N2</Name>
+                    <Index>2</Index>
+                    <Units>counts/(s*cm^2*sr*MeV)</Units>
+                    <ValidMin>0.0</ValidMin>
+                    <ValidMax>1.00E+06</ValidMax>
+                    <FillValue>-1.000E+35</FillValue>
+                </Element>
+                <Element>
+                    <Name>A3_N3</Name>
+                    <Index>3</Index>
+                    <Units>counts/(s*cm^2*sr*MeV)</Units>
+                    <ValidMin>0.0</ValidMin>
+                    <ValidMax>1.00E+06</ValidMax>
+                    <FillValue>-1.000E+35</FillValue>
+                </Element>
+                <Element>
+                    <Name>A3_N4</Name>
+                    <Index>4</Index>
+                    <Units>counts/(s*cm^2*sr*MeV)</Units>
+                    <ValidMin>0.0</ValidMin>
+                    <ValidMax>1.00E+06</ValidMax>
+                    <FillValue>-1.000E+35</FillValue>
+                </Element>
+                <Element>
+                    <Name>A3_N5</Name>
+                    <Index>5</Index>
+                    <Units>counts/(s*cm^2*sr*MeV)</Units>
+                    <ValidMin>0.0</ValidMin>
+                    <ValidMax>1.00E+06</ValidMax>
+                    <FillValue>-1.000E+35</FillValue>
+                </Element>
+                <Element>
+                    <Name>A3_N6</Name>
+                    <Index>6</Index>
+                    <Units>counts/(s*cm^2*sr*MeV)</Units>
+                    <ValidMin>0.0</ValidMin>
+                    <ValidMax>1.00E+06</ValidMax>
+                    <FillValue>-1.000E+35</FillValue>
+                </Element>
+                <Element>
+                    <Name>A3_N7</Name>
+                    <Index>7</Index>
+                    <Units>counts/(s*cm^2*sr*MeV)</Units>
+                    <ValidMin>0.0</ValidMin>
+                    <ValidMax>1.00E+06</ValidMax>
+                    <FillValue>-1.000E+35</FillValue>
+                </Element>
+                <Element>
+                    <Name>A3_N8</Name>
+                    <Index>8</Index>
+                    <Units>counts/(s*cm^2*sr*MeV)</Units>
+                    <ValidMin>0.0</ValidMin>
+                    <ValidMax>1.00E+06</ValidMax>
+                    <FillValue>-1.000E+35</FillValue>
+                </Element>
+            </Structure>
+            <Particle>
+                <ParticleType>Proton</ParticleType>
+                <Qualifier>Average</Qualifier>
+                <ParticleQuantity>NumberFlux</ParticleQuantity>
+                <EnergyRange>
+                    <Low>1.3</Low>
+                    <High>2.2</High>
+                    <Units>MeV</Units>
+                </EnergyRange>
+            </Particle>
+        </Parameter>
+        <Parameter>
+            <Name>COSPIN/ATN 10-Minute Average Sectored Proton Fluxes based on Counting Rate 
+        A4_NS</Name>
+            <ParameterKey>Columns_22-29</ParameterKey>
+            <Description>
+          Nominal 10-minute average ATN 8-sectored Proton Fluxes based on the Counting 
+          Rate A4_NS responding primarily to 2.2-3.6 MeV protons.
+          The rate has 8 elements, each corresponding to a 45 degree range of the 
+          spacecraft spin plane. The start of sector 1 (0 degrees) is coincident 
+          with the spacecraft-generated Sun-pulse, and the start of each 
+          subsequent sector is shifted by 45 degrees with respect to the preceding 
+          sector.  For example, A4_N1 covers the azimuthal range 0-45 degrees, 
+          A4_N2 covers the azimuthal range 45-90 degrees, etc.  In each sector,
+          counts are registered only when the axis of the telescope view cone is 
+          within that sector.
+          Data from multiple spacecraft spins contribute to the fluxes 
+          recorded for each sector, and the total accumulation time for the set of 
+          A4_N1-A4_N8 fluxes is required to be an integral number of spacecraft 
+          spins. Therefore the total accumulation time in each of the 8 sectors is 
+          1/8 of the total time interval for the average.
+       </Description>
+            <Caveats>
+          Discriminator and coincidence requirements exclude nuclei heavier than 
+          protons from contributing to these fluxes.
+       </Caveats>
+            <Cadence>PT10M</Cadence>
+            <Structure>
+                <Size>8</Size>
+                <Element>
+                    <Name>A4_N1</Name>
+                    <Index>1</Index>
+                    <Units>counts/(s*cm^2*sr*MeV)</Units>
+                    <ValidMin>0.0</ValidMin>
+                    <ValidMax>1.00E+06</ValidMax>
+                    <FillValue>-1.000E+35</FillValue>
+                </Element>
+                <Element>
+                    <Name>A4_N2</Name>
+                    <Index>2</Index>
+                    <Units>counts/(s*cm^2*sr*MeV)</Units>
+                    <ValidMin>0.0</ValidMin>
+                    <ValidMax>1.00E+06</ValidMax>
+                    <FillValue>-1.000E+35</FillValue>
+                </Element>
+                <Element>
+                    <Name>A4_N3</Name>
+                    <Index>3</Index>
+                    <Units>counts/(s*cm^2*sr*MeV)</Units>
+                    <ValidMin>0.0</ValidMin>
+                    <ValidMax>1.00E+06</ValidMax>
+                    <FillValue>-1.000E+35</FillValue>
+                </Element>
+                <Element>
+                    <Name>A4_N4</Name>
+                    <Index>4</Index>
+                    <Units>counts/(s*cm^2*sr*MeV)</Units>
+                    <ValidMin>0.0</ValidMin>
+                    <ValidMax>1.00E+06</ValidMax>
+                    <FillValue>-1.000E+35</FillValue>
+                </Element>
+                <Element>
+                    <Name>A4_N5</Name>
+                    <Index>5</Index>
+                    <Units>counts/(s*cm^2*sr*MeV)</Units>
+                    <ValidMin>0.0</ValidMin>
+                    <ValidMax>1.00E+06</ValidMax>
+                    <FillValue>-1.000E+35</FillValue>
+                </Element>
+                <Element>
+                    <Name>A4_N6</Name>
+                    <Index>6</Index>
+                    <Units>counts/(s*cm^2*sr*MeV)</Units>
+                    <ValidMin>0.0</ValidMin>
+                    <ValidMax>1.00E+06</ValidMax>
+                    <FillValue>-1.000E+35</FillValue>
+                </Element>
+                <Element>
+                    <Name>A4_N7</Name>
+                    <Index>7</Index>
+                    <Units>counts/(s*cm^2*sr*MeV)</Units>
+                    <ValidMin>0.0</ValidMin>
+                    <ValidMax>1.00E+06</ValidMax>
+                    <FillValue>-1.000E+35</FillValue>
+                </Element>
+                <Element>
+                    <Name>A4_N8</Name>
+                    <Index>8</Index>
+                    <Units>counts/(s*cm^2*sr*MeV)</Units>
+                    <ValidMin>0.0</ValidMin>
+                    <ValidMax>1.00E+06</ValidMax>
+                    <FillValue>-1.000E+35</FillValue>
+                </Element>
+            </Structure>
+            <Particle>
+                <ParticleType>Proton</ParticleType>
+                <Qualifier>Average</Qualifier>
+                <ParticleQuantity>NumberFlux</ParticleQuantity>
+                <EnergyRange>
+                    <Low>2.2</Low>
+                    <High>3.6</High>
+                    <Units>MeV</Units>
+                </EnergyRange>
+            </Particle>
+        </Parameter>
+        <Parameter>
+            <Name>COSPIN/ATN 10-Minute Average Sectored Proton Fluxes based on 
+             Counting Rate A5_NS</Name>
+            <ParameterKey>Columns_30-37</ParameterKey>
+            <Description>
+          Nominal 10-minute average ATN 8-sectored fluxes based on counting rate 
+          A5_NS responding primarily to 3.6-6.5 MeV protons.
+          The rate has 8 elements, each corresponding to a 45 degree range of the 
+          spacecraft spin plane. The start of sector 1 (0 degrees) is coincident 
+          with the spacecraft-generated Sun-pulse, and the start of each 
+          subsequent sector is shifted by 45 degrees with respect to the preceding 
+          sector.  For example, A5_N1 covers the azimuthal range 0-45 degrees, 
+          A5_N2 covers the azimuthal range 45-90 degrees, etc.  In each sector,
+          counts are registered only when the axis of the telescope view cone is 
+          within that sector.
+          Data from multiple spacecraft spins contribute to the fluxes 
+          recorded for each sector, and the total accumulation time for the set of 
+          A5_N1-A5_N8 fluxes is required to be an integral number of spacecraft 
+          spins. Therefore the total accumulation time in each of the 8 sectors is 
+          1/8 of the total time interval for the average.
+       </Description>
+            <Caveats>
+          24.0-28.0 MeV helium nuclei, and possibly other high energy  nuclei with
+          similar energy losses in the front detector and similar ranges in Si may 
+          also contribute to these fluxes.
+       </Caveats>
+            <Cadence>PT10M</Cadence>
+            <Structure>
+                <Size>8</Size>
+                <Element>
+                    <Name>A5_N1</Name>
+                    <Index>1</Index>
+                    <Units>counts/(s*cm^2*sr*MeV)</Units>
+                    <ValidMin>0.0</ValidMin>
+                    <ValidMax>1.00E+06</ValidMax>
+                    <FillValue>-1.000E+35</FillValue>
+                </Element>
+                <Element>
+                    <Name>A5_N2</Name>
+                    <Index>2</Index>
+                    <Units>counts/(s*cm^2*sr*MeV)</Units>
+                    <ValidMin>0.0</ValidMin>
+                    <ValidMax>1.00E+06</ValidMax>
+                    <FillValue>-1.000E+35</FillValue>
+                </Element>
+                <Element>
+                    <Name>A5_N3</Name>
+                    <Index>3</Index>
+                    <Units>counts/(s*cm^2*sr*MeV)</Units>
+                    <ValidMin>0.0</ValidMin>
+                    <ValidMax>1.00E+06</ValidMax>
+                    <FillValue>-1.000E+35</FillValue>
+                </Element>
+                <Element>
+                    <Name>A5_N4</Name>
+                    <Index>4</Index>
+                    <Units>counts/(s*cm^2*sr*MeV)</Units>
+                    <ValidMin>0.0</ValidMin>
+                    <ValidMax>1.00E+06</ValidMax>
+                    <FillValue>-1.000E+35</FillValue>
+                </Element>
+                <Element>
+                    <Name>A5_N5</Name>
+                    <Index>5</Index>
+                    <Units>counts/(s*cm^2*sr*MeV)</Units>
+                    <ValidMin>0.0</ValidMin>
+                    <ValidMax>1.00E+06</ValidMax>
+                    <FillValue>-1.000E+35</FillValue>
+                </Element>
+                <Element>
+                    <Name>A5_N6</Name>
+                    <Index>6</Index>
+                    <Units>counts/(s*cm^2*sr*MeV)</Units>
+                    <ValidMin>0.0</ValidMin>
+                    <ValidMax>1.00E+06</ValidMax>
+                    <FillValue>-1.000E+35</FillValue>
+                </Element>
+                <Element>
+                    <Name>A5_N7</Name>
+                    <Index>7</Index>
+                    <Units>counts/(s*cm^2*sr*MeV)</Units>
+                    <ValidMin>0.0</ValidMin>
+                    <ValidMax>1.00E+06</ValidMax>
+                    <FillValue>-1.000E+35</FillValue>
+                </Element>
+                <Element>
+                    <Name>A5_N8</Name>
+                    <Index>8</Index>
+                    <Units>counts/(s*cm^2*sr*MeV)</Units>
+                    <ValidMin>0.0</ValidMin>
+                    <ValidMax>1.00E+06</ValidMax>
+                    <FillValue>-1.000E+35</FillValue>
+                </Element>
+            </Structure>
+            <Particle>
+                <ParticleType>Proton</ParticleType>
+                <Qualifier>Average</Qualifier>
+                <ParticleQuantity>NumberFlux</ParticleQuantity>
+                <EnergyRange>
+                    <Low>3.6</Low>
+                    <High>6.5</High>
+                    <Units>MeV</Units>
+                </EnergyRange>
+            </Particle>
+        </Parameter>
+    </NumericalData>
+</Spase>

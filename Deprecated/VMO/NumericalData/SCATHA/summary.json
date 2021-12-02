@@ -1,0 +1,3780 @@
+{
+  "Spase": {
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_0_3.xsd",
+    "Version": "2.0.3",
+    "NumericalData": {
+      "ResourceID": "spase://VMO/NumericalData/SCATHA/summary",
+      "ResourceHeader": {
+        "ResourceName": "SCATHA Science Summary Data",
+        "ReleaseDate": "2012-02-06T12:34:56.789",
+        "Description": "Summary science data from SCATHA instruments (SC1, SC2, SC3, SC10, and SC11). One minute resolution processed at Aerospace from full-resolution data files.",
+        "Contact": [
+          {
+            "PersonID": "spase://SMWG/Person/Jonathan.Thomas.Niehof",
+            "Role": [
+              "TechnicalContact",
+              "MetadataContact"
+            ]
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Theodore.Allan.Fritz",
+            "Role": "GeneralContact"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Joseph.F.Fennell",
+            "Role": "DataProducer"
+          }
+        ],
+        "InformationURL": [
+          {
+            "Name": "SCATHA web page at the Boston University",
+            "URL": "http://spacedata.bu.edu/scatha.html",
+            "Description": "Web page providing access to the SCATHA science summary data, spacecraft description paper, and summary plots.",
+            "Language": "EN"
+          },
+          {
+            "Name": "Data Recovery from SCATHA Satellite",
+            "URL": "http://spacedata.bu.edu/docs/NASA_CR-97-207336.pdf",
+            "Description": "NASA/ESA report describing preparation of the science summary CDF files.",
+            "Language": "EN"
+          }
+        ]
+      },
+      "AccessInformation": {
+        "RepositoryID": "spase://SMWG/Repository/BU",
+        "Availability": "Online",
+        "AccessRights": "Open",
+        "AccessURL": {
+          "Name": "SCATHA repository at BU",
+          "URL": "http://spacedata.bu.edu/data/scatha/",
+          "Description": "Boston University-hosted science summary files for SCATHA (Spacecraft Charging at High Altitude). One CDF file per day, all instruments included.",
+          "Language": "EN"
+        },
+        "Format": "CDF",
+        "DataExtent": {
+          "Quantity": "1.1",
+          "Units": "MiB",
+          "Per": "P1D"
+        }
+      },
+      "ProcessingLevel": "Calibrated",
+      "ProviderResourceName": "SCATHA Science Summary Data",
+      "ProviderVersion": "01",
+      "InstrumentID": [
+        "spase://SMWG/Instrument/SCATHA/SC1",
+        "spase://SMWG/Instrument/SCATHA/SC2",
+        "spase://SMWG/Instrument/SCATHA/SC3",
+        "spase://SMWG/Instrument/SCATHA/SC10",
+        "spase://SMWG/Instrument/SCATHA/SC11"
+      ],
+      "MeasurementType": [
+        "MagneticField",
+        "Waves.Passive",
+        "ElectricField",
+        "ThermalPlasma",
+        "EnergeticParticles",
+        "Ephemeris"
+      ],
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "1979-02-06T00:15:29Z",
+          "StopDate": "1986-06-16T23:59:30Z",
+          "Note": "Coverage is not continuous"
+        }
+      },
+      "ObservedRegion": "Earth.Magnetosphere",
+      "Parameter": [
+        {
+          "Name": "NSSDC Standard Time ",
+          "ParameterKey": "Epoch",
+          "Description": "Midpoint of the high resolution data averaged into each parameter.",
+          "Units": "ms",
+          "ValidMin": "01-Jan-1979 00:00:00.000",
+          "ValidMax": "21-May-1990 23:59:59.000",
+          "FillValue": "-1.0E31",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Averaging time interval",
+          "ParameterKey": "AveInt",
+          "Description": "Except where noted, all parameters are averages of the high resolution data available from the corresponding measurement over the period of length 'AVEINT' with midpoint at time 'EPOCH'.",
+          "Units": "ms",
+          "ValidMin": "1.0",
+          "ValidMax": "1.0E8",
+          "FillValue": "-1.0E31",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Mag. field in GSM coordinates",
+          "ParameterKey": "B_GSM",
+          "Description": "From 4 s/s SC11 values averaged over AveInt time interval centered at Epoch time.",
+          "Units": "nT",
+          "UnitsConversion": "1.0e-9>T",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GSM"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "Bx (GSM)",
+                "Qualifier": "Component.I",
+                "Index": "1",
+                "Units": "nT",
+                "UnitsConversion": "1.0e-9>T",
+                "ValidMin": "-300.0",
+                "ValidMax": "300.0",
+                "FillValue": "-999.99"
+              },
+              {
+                "Name": "By (GSM)",
+                "Qualifier": "Component.J",
+                "Index": "2",
+                "Units": "nT",
+                "UnitsConversion": "1.0e-9>T",
+                "ValidMin": "-300.0",
+                "ValidMax": "300.0",
+                "FillValue": "-999.99"
+              },
+              {
+                "Name": "Bz (GSM)",
+                "Qualifier": "Component.K",
+                "Index": "3",
+                "Units": "nT",
+                "UnitsConversion": "1.0e-9>T",
+                "ValidMin": "-300.0",
+                "ValidMax": "300.0",
+                "FillValue": "-999.99"
+              }
+            ]
+          },
+          "Field": {
+            "Qualifier": "Vector",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "Count rate error of averaged B-field coordinates ",
+          "ParameterKey": "BSigma_GSM",
+          "Description": "Count Rate error of corresponding x-, y- and z- fields of B_GSM - SQRT( Sum of counts).",
+          "Units": "unitless",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GSM"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "Bx sigma (GSM)",
+                "Qualifier": "Component.I",
+                "Index": "1",
+                "Units": "unitless",
+                "ValidMin": "-300.0",
+                "ValidMax": "300.0",
+                "FillValue": "-999.99"
+              },
+              {
+                "Name": "By sigma (GSM)",
+                "Qualifier": "Component.J",
+                "Index": "2",
+                "Units": "unitless",
+                "ValidMin": "-300.0",
+                "ValidMax": "300.0",
+                "FillValue": "-999.99"
+              },
+              {
+                "Name": "Bz sigma (GSM)",
+                "Qualifier": "Component.K",
+                "Index": "3",
+                "Units": "unitless",
+                "ValidMin": "-300.0",
+                "ValidMax": "300.0",
+                "FillValue": "-999.99"
+              }
+            ]
+          },
+          "Support": {
+            "Qualifier": "Uncertainty",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "E-field VLF wave amplitude",
+          "ParameterKey": "EVLFAmp",
+          "Description": "Electric field VLF wave amplitudes at 8 frequencies - From  SC1-8A data averaged over 16 second period at 1sample/sec. Converted to science units using calibration data  Values within 30 seconds of time in Epoch interpolated to Epoch using IDL function NR_SPLINE.",
+          "Units": "dBV/m",
+          "Structure": {
+            "Size": "8",
+            "Element": [
+              {
+                "Name": "E-field VLF amplitude 0.4kHz",
+                "Index": "1",
+                "Units": "dBV/m",
+                "ValidMin": "-82.0",
+                "ValidMax": "-32.0",
+                "FillValue": "-99.999"
+              },
+              {
+                "Name": "E-field VLF amplitude 1.3kHz",
+                "Index": "2",
+                "Units": "dBV/m",
+                "ValidMin": "-82.0",
+                "ValidMax": "-32.0",
+                "FillValue": "-99.999"
+              },
+              {
+                "Name": "E-field VLF amplitude 2.3kHz",
+                "Index": "3",
+                "Units": "dBV/m",
+                "ValidMin": "-82.0",
+                "ValidMax": "-32.0",
+                "FillValue": "-99.999"
+              },
+              {
+                "Name": "E-field VLF amplitude 3.0kHz",
+                "Index": "4",
+                "Units": "dBV/m",
+                "ValidMin": "-82.0",
+                "ValidMax": "-32.0",
+                "FillValue": "-99.999"
+              },
+              {
+                "Name": "E-field VLF amplitude 10.5kHz",
+                "Index": "5",
+                "Units": "dBV/m",
+                "ValidMin": "-82.0",
+                "ValidMax": "-32.0",
+                "FillValue": "-99.999"
+              },
+              {
+                "Name": "E-field VLF amplitude 30.0kHz",
+                "Index": "6",
+                "Units": "dBV/m",
+                "ValidMin": "-82.0",
+                "ValidMax": "-32.0",
+                "FillValue": "-99.999"
+              },
+              {
+                "Name": "E-field VLF amplitude 100.0kHz",
+                "Index": "7",
+                "Units": "dBV/m",
+                "ValidMin": "-82.0",
+                "ValidMax": "-32.0",
+                "FillValue": "-99.999"
+              },
+              {
+                "Name": "E-field VLF amplitude 300.0kHz",
+                "Index": "8",
+                "Units": "dBV/m",
+                "ValidMin": "-82.0",
+                "ValidMax": "-32.0",
+                "FillValue": "-99.999"
+              }
+            ]
+          },
+          "Wave": {
+            "Qualifier": "Average",
+            "WaveType": "PlasmaWaves",
+            "WaveQuantity": "ACElectricField",
+            "FrequencyRange": {
+              "Low": "0.37",
+              "High": "323",
+              "Units": "kHz",
+              "Bin": [
+                {
+                  "Low": "0.37",
+                  "High": "0.43"
+                },
+                {
+                  "Low": "1.2",
+                  "High": "1.4"
+                },
+                {
+                  "Low": "2.1",
+                  "High": "2.5"
+                },
+                {
+                  "Low": "2.8",
+                  "High": "3.2"
+                },
+                {
+                  "Low": "9.71",
+                  "High": "11.3"
+                },
+                {
+                  "Low": "28",
+                  "High": "32.25"
+                },
+                {
+                  "Low": "93",
+                  "High": "108"
+                },
+                {
+                  "Low": "278",
+                  "High": "323"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "Name": "E-field VLF peak wave amplitude",
+          "ParameterKey": "EVLFPAmp",
+          "Description": "Electric field VLF peak wave amplitudes at each of 8 frequencies from 16 second average of 1sample/sec values. Peak of these averages chosen from 1 minute around the time in Epoch. Converted to science units using calibration values.",
+          "Units": "dBV/m",
+          "Structure": {
+            "Size": "8",
+            "Element": [
+              {
+                "Name": "E-field VLF peak amplitude 0.4kHz",
+                "Index": "1",
+                "Units": "dBV/m",
+                "ValidMin": "-82.0",
+                "ValidMax": "-32.0",
+                "FillValue": "-99.999"
+              },
+              {
+                "Name": "E-field VLF peak amplitude 1.3kHz",
+                "Index": "2",
+                "Units": "dBV/m",
+                "ValidMin": "-82.0",
+                "ValidMax": "-32.0",
+                "FillValue": "-99.999"
+              },
+              {
+                "Name": "E-field VLF peak amplitude 2.3kHz",
+                "Index": "3",
+                "Units": "dBV/m",
+                "ValidMin": "-82.0",
+                "ValidMax": "-32.0",
+                "FillValue": "-99.999"
+              },
+              {
+                "Name": "E-field VLF peak amplitude 3.0kHz",
+                "Index": "4",
+                "Units": "dBV/m",
+                "ValidMin": "-82.0",
+                "ValidMax": "-32.0",
+                "FillValue": "-99.999"
+              },
+              {
+                "Name": "E-field VLF peak amplitude 10.5kHz",
+                "Index": "5",
+                "Units": "dBV/m",
+                "ValidMin": "-82.0",
+                "ValidMax": "-32.0",
+                "FillValue": "-99.999"
+              },
+              {
+                "Name": "E-field VLF peak amplitude 30.0kHz",
+                "Index": "6",
+                "Units": "dBV/m",
+                "ValidMin": "-82.0",
+                "ValidMax": "-32.0",
+                "FillValue": "-99.999"
+              },
+              {
+                "Name": "E-field VLF peak amplitude 100.0kHz",
+                "Index": "7",
+                "Units": "dBV/m",
+                "ValidMin": "-82.0",
+                "ValidMax": "-32.0",
+                "FillValue": "-99.999"
+              },
+              {
+                "Name": "E-field VLF peak amplitude 300.0kHz",
+                "Index": "8",
+                "Units": "dBV/m",
+                "ValidMin": "-82.0",
+                "ValidMax": "-32.0",
+                "FillValue": "-99.999"
+              }
+            ]
+          },
+          "Wave": {
+            "Qualifier": "Peak",
+            "WaveType": "PlasmaWaves",
+            "WaveQuantity": "ACElectricField",
+            "FrequencyRange": {
+              "Low": "0.37",
+              "High": "323",
+              "Units": "kHz",
+              "Bin": [
+                {
+                  "Low": "0.37",
+                  "High": "0.43"
+                },
+                {
+                  "Low": "1.2",
+                  "High": "1.4"
+                },
+                {
+                  "Low": "2.1",
+                  "High": "2.5"
+                },
+                {
+                  "Low": "2.8",
+                  "High": "3.2"
+                },
+                {
+                  "Low": "9.71",
+                  "High": "11.3"
+                },
+                {
+                  "Low": "28",
+                  "High": "32.25"
+                },
+                {
+                  "Low": "93",
+                  "High": "108"
+                },
+                {
+                  "Low": "278",
+                  "High": "323"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "Name": "E-field VLF center frequency",
+          "ParameterKey": "EVLFFrq",
+          "Description": "Electric field VLF frequency range center values for values stored in EVLFAmp and EVLFPAmp.",
+          "Units": "kHz",
+          "UnitsConversion": "1.0e3>Hz",
+          "Structure": {
+            "Size": "8",
+            "Element": [
+              {
+                "Name": "E-field VLF 0.4 kHz bin center",
+                "Index": "1",
+                "Units": "kHz",
+                "ValidMin": "0.4",
+                "ValidMax": "300.0",
+                "FillValue": "-999.9"
+              },
+              {
+                "Name": "E-field VLF 1.3 kHz bin center",
+                "Index": "2",
+                "Units": "kHz",
+                "UnitsConversion": "1.0e3>Hz",
+                "ValidMin": "0.4",
+                "ValidMax": "300.0",
+                "FillValue": "-999.9"
+              },
+              {
+                "Name": "E-field VLF 2.3 kHz bin center",
+                "Index": "3",
+                "Units": "kHz",
+                "UnitsConversion": "1.0e3>Hz",
+                "ValidMin": "0.4",
+                "ValidMax": "300.0",
+                "FillValue": "-999.9"
+              },
+              {
+                "Name": "E-field VLF 3.0 kHz bin center",
+                "Index": "4",
+                "Units": "kHz",
+                "UnitsConversion": "1.0e3>Hz",
+                "ValidMin": "0.4",
+                "ValidMax": "300.0",
+                "FillValue": "-999.9"
+              },
+              {
+                "Name": "E-field VLF 10.5 kHz bin center",
+                "Index": "5",
+                "Units": "kHz",
+                "UnitsConversion": "1.0e3>Hz",
+                "ValidMin": "0.4",
+                "ValidMax": "300.0",
+                "FillValue": "-999.9"
+              },
+              {
+                "Name": "E-field VLF 30.0 kHz bin center",
+                "Index": "6",
+                "Units": "kHz",
+                "UnitsConversion": "1.0e3>Hz",
+                "ValidMin": "0.4",
+                "ValidMax": "300.0",
+                "FillValue": "-999.9"
+              },
+              {
+                "Name": "E-field VLF 100.0kHz bin center",
+                "Index": "7",
+                "Units": "kHz",
+                "UnitsConversion": "1.0e3>Hz",
+                "ValidMin": "0.4",
+                "ValidMax": "300.0",
+                "FillValue": "-999.9"
+              },
+              {
+                "Name": "E-field VLF 300.0kHz bin center",
+                "Index": "8",
+                "Units": "kHz",
+                "UnitsConversion": "1.0e3>Hz",
+                "ValidMin": "0.4",
+                "ValidMax": "300.0",
+                "FillValue": "-999.9"
+              }
+            ]
+          },
+          "Wave": {
+            "WaveType": "PlasmaWaves",
+            "WaveQuantity": "Frequency"
+          }
+        },
+        {
+          "Name": "E-field VLF upper frequency range value",
+          "ParameterKey": "EVLFFHi",
+          "Description": "Electric field VLF frequency range maximum values for values stored in EVLFAmp and EVLFPAmp.",
+          "Units": "kHz",
+          "UnitsConversion": "1.0e3>Hz",
+          "Structure": {
+            "Size": "8",
+            "Element": [
+              {
+                "Name": "E-field VLF 0.4 kHz bin max",
+                "Index": "1",
+                "Units": "kHz",
+                "UnitsConversion": "1.0e3>Hz",
+                "ValidMin": "0.4",
+                "ValidMax": "300.0",
+                "FillValue": "-999.9"
+              },
+              {
+                "Name": "E-field VLF 1.3 kHz bin max",
+                "Index": "2",
+                "Units": "kHz",
+                "UnitsConversion": "1.0e3>Hz",
+                "ValidMin": "0.4",
+                "ValidMax": "300.0",
+                "FillValue": "-999.9"
+              },
+              {
+                "Name": "E-field VLF 2.3 kHz bin max",
+                "Index": "3",
+                "Units": "kHz",
+                "UnitsConversion": "1.0e3>Hz",
+                "ValidMin": "0.4",
+                "ValidMax": "300.0",
+                "FillValue": "-999.9"
+              },
+              {
+                "Name": "E-field VLF 3.0 kHz bin max",
+                "Index": "4",
+                "Units": "kHz",
+                "UnitsConversion": "1.0e3>Hz",
+                "ValidMin": "0.4",
+                "ValidMax": "300.0",
+                "FillValue": "-999.9"
+              },
+              {
+                "Name": "E-field VLF 10.5 kHz bin max",
+                "Index": "5",
+                "Units": "kHz",
+                "UnitsConversion": "1.0e3>Hz",
+                "ValidMin": "0.4",
+                "ValidMax": "300.0",
+                "FillValue": "-999.9"
+              },
+              {
+                "Name": "E-field VLF 30.0 kHz bin max",
+                "Index": "6",
+                "Units": "kHz",
+                "UnitsConversion": "1.0e3>Hz",
+                "ValidMin": "0.4",
+                "ValidMax": "300.0",
+                "FillValue": "-999.9"
+              },
+              {
+                "Name": "E-field VLF 100.0kHz bin max",
+                "Index": "7",
+                "Units": "kHz",
+                "UnitsConversion": "1.0e3>Hz",
+                "ValidMin": "0.4",
+                "ValidMax": "300.0",
+                "FillValue": "-999.9"
+              },
+              {
+                "Name": "E-field VLF 300.0kHz bin max",
+                "Index": "8",
+                "Units": "kHz",
+                "UnitsConversion": "1.0e3>Hz",
+                "ValidMin": "0.4",
+                "ValidMax": "300.0",
+                "FillValue": "-999.9"
+              }
+            ]
+          },
+          "Wave": {
+            "WaveType": "PlasmaWaves",
+            "WaveQuantity": "Frequency"
+          }
+        },
+        {
+          "Name": "E-field VLF lower frequency range value",
+          "ParameterKey": "EVLFFLo",
+          "Description": "Electric field VLF frequency range minimum values for values stored in EVLFAmp and EVLFPAmp.",
+          "Units": "kHz",
+          "UnitsConversion": "1.0e3>Hz",
+          "Structure": {
+            "Size": "8",
+            "Element": [
+              {
+                "Name": "E-field VLF 0.4 kHz bin min",
+                "Index": "1",
+                "Units": "kHz",
+                "UnitsConversion": "1.0e3>Hz",
+                "ValidMin": "0.4",
+                "ValidMax": "300.0",
+                "FillValue": "-999.9"
+              },
+              {
+                "Name": "E-field VLF 1.3 kHz bin min",
+                "Index": "2",
+                "Units": "kHz",
+                "UnitsConversion": "1.0e3>Hz",
+                "ValidMin": "0.4",
+                "ValidMax": "300.0",
+                "FillValue": "-999.9"
+              },
+              {
+                "Name": "E-field VLF 2.3 kHz bin min",
+                "Index": "3",
+                "Units": "kHz",
+                "UnitsConversion": "1.0e3>Hz",
+                "ValidMin": "0.4",
+                "ValidMax": "300.0",
+                "FillValue": "-999.9"
+              },
+              {
+                "Name": "E-field VLF 3.0 kHz bin min",
+                "Index": "4",
+                "Units": "kHz",
+                "UnitsConversion": "1.0e3>Hz",
+                "ValidMin": "0.4",
+                "ValidMax": "300.0",
+                "FillValue": "-999.9"
+              },
+              {
+                "Name": "E-field VLF 10.5 kHz bin min",
+                "Index": "5",
+                "Units": "kHz",
+                "UnitsConversion": "1.0e3>Hz",
+                "ValidMin": "0.4",
+                "ValidMax": "300.0",
+                "FillValue": "-999.9"
+              },
+              {
+                "Name": "E-field VLF 30.0 kHz bin min",
+                "Index": "6",
+                "Units": "kHz",
+                "UnitsConversion": "1.0e3>Hz",
+                "ValidMin": "0.4",
+                "ValidMax": "300.0",
+                "FillValue": "-999.9"
+              },
+              {
+                "Name": "E-field VLF 100.0kHz bin min",
+                "Index": "7",
+                "Units": "kHz",
+                "UnitsConversion": "1.0e3>Hz",
+                "ValidMin": "0.4",
+                "ValidMax": "300.0",
+                "FillValue": "-999.9"
+              },
+              {
+                "Name": "E-field VLF 300.0kHz bin min",
+                "Index": "8",
+                "Units": "kHz",
+                "UnitsConversion": "1.0e3>Hz",
+                "ValidMin": "0.4",
+                "ValidMax": "300.0",
+                "FillValue": "-999.9"
+              }
+            ]
+          },
+          "Wave": {
+            "WaveType": "PlasmaWaves",
+            "WaveQuantity": "Frequency"
+          }
+        },
+        {
+          "Name": "B-field VLF wave amplitude",
+          "ParameterKey": "BVLFAmp",
+          "Description": "Magnetic field VLF wave amplitudes at 4 frequencies - From  SC1-8A data averaged over 16 second period at 1sample/sec. Converted to science units using calibration data  Values within 30 seconds of time in Epoch interpolated to Epoch using IDL function NR_SPLINE.",
+          "Units": "dBnT",
+          "Structure": {
+            "Size": "4",
+            "Element": [
+              {
+                "Name": "B-field VLF amplitude 0.4kHz",
+                "Index": "1",
+                "Units": "dBnT",
+                "ValidMin": "-80.0",
+                "ValidMax": "-30.0",
+                "FillValue": "-99.999"
+              },
+              {
+                "Name": "B-field VLF amplitude 1.3kHz",
+                "Index": "2",
+                "Units": "dBnT",
+                "ValidMin": "-80.0",
+                "ValidMax": "-30.0",
+                "FillValue": "-99.999"
+              },
+              {
+                "Name": "B-field VLF amplitude 2.3kHz",
+                "Index": "3",
+                "Units": "dBnT",
+                "ValidMin": "-80.0",
+                "ValidMax": "-30.0",
+                "FillValue": "-99.999"
+              },
+              {
+                "Name": "B-field VLF amplitude 3.0kHz",
+                "Index": "4",
+                "Units": "dBnT",
+                "ValidMin": "-80.0",
+                "ValidMax": "-30.0",
+                "FillValue": "-99.999"
+              }
+            ]
+          },
+          "Wave": {
+            "Qualifier": "Average",
+            "WaveType": "PlasmaWaves",
+            "WaveQuantity": "ACMagneticField",
+            "FrequencyRange": {
+              "Low": "0.37",
+              "High": "3.2",
+              "Units": "kHz",
+              "Bin": [
+                {
+                  "Low": "0.37",
+                  "High": "0.43"
+                },
+                {
+                  "Low": "1.2",
+                  "High": "1.4"
+                },
+                {
+                  "Low": "2.1",
+                  "High": "2.5"
+                },
+                {
+                  "Low": "2.8",
+                  "High": "3.2"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "Name": "Peak B-field VLF peak wave amplitude ",
+          "ParameterKey": "BVLFPAmp",
+          "Description": "Magnetic field VLF peak wave amplitudes at each of 4 frequencies from 16 second average of 1sample/sec values. Peak of these averages chosen from 1 minute around the time in Epoch. Converted to science units using calibration values.",
+          "Units": "dBnT",
+          "Structure": {
+            "Size": "4",
+            "Element": [
+              {
+                "Name": "B-field VLF peak amplitude 0.4kHz",
+                "Index": "1",
+                "Units": "dBnT",
+                "ValidMin": "-80.0",
+                "ValidMax": "-30.0",
+                "FillValue": "-99.999"
+              },
+              {
+                "Name": "B-field VLF peak amplitude 1.3kHz",
+                "Index": "2",
+                "Units": "dBnT",
+                "ValidMin": "-80.0",
+                "ValidMax": "-30.0",
+                "FillValue": "-99.999"
+              },
+              {
+                "Name": "B-field VLF peak amplitude 2.3kHz",
+                "Index": "3",
+                "Units": "dBnT",
+                "ValidMin": "-80.0",
+                "ValidMax": "-30.0",
+                "FillValue": "-99.999"
+              },
+              {
+                "Name": "B-field VLF peak amplitude 3.0kHz",
+                "Index": "4",
+                "Units": "dBnT",
+                "ValidMin": "-80.0",
+                "ValidMax": "-30.0",
+                "FillValue": "-99.999"
+              }
+            ]
+          },
+          "Wave": {
+            "Qualifier": "Peak",
+            "WaveType": "PlasmaWaves",
+            "WaveQuantity": "ACMagneticField",
+            "FrequencyRange": {
+              "Low": "0.37",
+              "High": "3.2",
+              "Units": "kHz",
+              "Bin": [
+                {
+                  "Low": "0.37",
+                  "High": "0.43"
+                },
+                {
+                  "Low": "1.2",
+                  "High": "1.4"
+                },
+                {
+                  "Low": "2.1",
+                  "High": "2.5"
+                },
+                {
+                  "Low": "2.8",
+                  "High": "3.2"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "Name": "B-field VLF center frequency",
+          "ParameterKey": "BVLFFrq",
+          "Description": "Magnetic field VLF frequency range center values for values stored in BVLFAmp and BVLFPAmp.",
+          "Units": "kHz",
+          "Structure": {
+            "Size": "4",
+            "Element": [
+              {
+                "Name": "B-field VLF 0.4 kHz bin center",
+                "Index": "1",
+                "Units": "kHz",
+                "UnitsConversion": "1.0e3>Hz",
+                "ValidMin": "0.4",
+                "ValidMax": "300.0",
+                "FillValue": "-999.9"
+              },
+              {
+                "Name": "B-field VLF 1.3 kHz bin center",
+                "Index": "2",
+                "Units": "kHz",
+                "UnitsConversion": "1.0e3>Hz",
+                "ValidMin": "0.4",
+                "ValidMax": "300.0",
+                "FillValue": "-999.9"
+              },
+              {
+                "Name": "B-field VLF 2.3 kHz bin center",
+                "Index": "3",
+                "Units": "kHz",
+                "UnitsConversion": "1.0e3>Hz",
+                "ValidMin": "0.4",
+                "ValidMax": "300.0",
+                "FillValue": "-999.9"
+              },
+              {
+                "Name": "B-field VLF 3.0 kHz bin center",
+                "Index": "4",
+                "Units": "kHz",
+                "UnitsConversion": "1.0e3>Hz",
+                "ValidMin": "0.4",
+                "ValidMax": "300.0",
+                "FillValue": "-999.9"
+              }
+            ]
+          },
+          "Wave": {
+            "WaveType": "PlasmaWaves",
+            "WaveQuantity": "Frequency"
+          }
+        },
+        {
+          "Name": "B-field VLF upper frequency range value",
+          "ParameterKey": "BVLFFHi",
+          "Description": "Magnetic field VLF frequency range maximum values for values stored in BVLFAmp and BVLFPAmp.",
+          "Units": "kHz",
+          "UnitsConversion": "1.0e3>Hz",
+          "Structure": {
+            "Size": "4",
+            "Element": [
+              {
+                "Name": "B-field VLF 0.4 kHz bin max",
+                "Index": "1",
+                "Units": "kHz",
+                "UnitsConversion": "1.0e3>Hz",
+                "ValidMin": "0.43",
+                "ValidMax": "3.2",
+                "FillValue": "-9.99"
+              },
+              {
+                "Name": "B-field VLF 1.3 kHz bin max",
+                "Index": "2",
+                "Units": "kHz",
+                "UnitsConversion": "1.0e3>Hz",
+                "ValidMin": "0.43",
+                "ValidMax": "3.2",
+                "FillValue": "-9.99"
+              },
+              {
+                "Name": "B-field VLF 2.3 kHz bin max",
+                "Index": "3",
+                "Units": "kHz",
+                "UnitsConversion": "1.0e3>Hz",
+                "ValidMin": "0.43",
+                "ValidMax": "3.2",
+                "FillValue": "-9.99"
+              },
+              {
+                "Name": "B-field VLF 3.0 kHz bin max",
+                "Index": "4",
+                "Units": "kHz",
+                "UnitsConversion": "1.0e3>Hz",
+                "ValidMin": "0.43",
+                "ValidMax": "3.2",
+                "FillValue": "-9.99"
+              }
+            ]
+          },
+          "Wave": {
+            "WaveType": "PlasmaWaves",
+            "WaveQuantity": "Frequency"
+          }
+        },
+        {
+          "Name": "B-field VLF lower frequency range value",
+          "ParameterKey": "BVLFFLo",
+          "Description": "Magnetic field VLF frequency range minimum values for values stored in BVLFAmp and BVLFPAmp.",
+          "Units": "kHz",
+          "UnitsConversion": "1.0e3>Hz",
+          "Structure": {
+            "Size": "4",
+            "Element": [
+              {
+                "Name": "B-field VLF 0.4 kHz bin min",
+                "Index": "1",
+                "Units": "kHz",
+                "UnitsConversion": "1.0e3>Hz",
+                "ValidMin": "0.37",
+                "ValidMax": "2.8",
+                "FillValue": "-9.99"
+              },
+              {
+                "Name": "B-field VLF 1.3 kHz bin min",
+                "Index": "2",
+                "Units": "kHz",
+                "UnitsConversion": "1.0e3>Hz",
+                "ValidMin": "0.37",
+                "ValidMax": "2.8",
+                "FillValue": "-9.99"
+              },
+              {
+                "Name": "B-field VLF 2.3 kHz bin min",
+                "Index": "3",
+                "Units": "kHz",
+                "UnitsConversion": "1.0e3>Hz",
+                "ValidMin": "0.37",
+                "ValidMax": "2.8",
+                "FillValue": "-9.99"
+              },
+              {
+                "Name": "B-field VLF 3.0 kHz bin min",
+                "Index": "4",
+                "Units": "kHz",
+                "UnitsConversion": "1.0e3>Hz",
+                "ValidMin": "0.37",
+                "ValidMax": "2.8",
+                "FillValue": "-9.99"
+              }
+            ]
+          },
+          "Wave": {
+            "WaveType": "PlasmaWaves",
+            "WaveQuantity": "Frequency"
+          }
+        },
+        {
+          "Name": "Common mode S/C potential, +/-15 volts",
+          "ParameterKey": "CM1SCPot",
+          "Description": "Common mode S/C potential, +/-15 volts - From SC10. Averaged over 1min from 2sample/sec data.",
+          "Units": "V",
+          "ValidMin": "-15.0",
+          "ValidMax": "15.0",
+          "FillValue": "-99.999",
+          "Field": {
+            "FieldQuantity": "Potential"
+          }
+        },
+        {
+          "Name": "Common mode S/C potential, +/-300 volts",
+          "ParameterKey": "CM2SCPot",
+          "Description": "Common mode S/C potential, +/-300 volts - From SC10. Averaged over 1min from 2sample/sec data.",
+          "Units": "V",
+          "ValidMin": "-300.0",
+          "ValidMax": "300.0",
+          "FillValue": "-999.99",
+          "Field": {
+            "FieldQuantity": "Potential"
+          }
+        },
+        {
+          "Name": "Common mode S/C potential, +/-5000 volts",
+          "ParameterKey": "CM3SCPot",
+          "Description": "Common mode S/C potential, +/-5000 volts - From SC10. Averaged over 1min from 2sample/sec data.",
+          "Units": "V",
+          "ValidMin": "-5000.0",
+          "ValidMax": "5000.0",
+          "FillValue": "-9999.9",
+          "Field": {
+            "FieldQuantity": "Potential"
+          }
+        },
+        {
+          "Name": "DC E-field magnitude low gain",
+          "ParameterKey": "EDCLo",
+          "Description": "DC Electric field magnitude low gain range (gain = 0.025) - From SC10. Averaged from 2 samples/sec.",
+          "Units": "mV/m",
+          "UnitsConversion": "1.0e-3>V/m",
+          "ValidMin": "-3000.0",
+          "ValidMax": "3000.0",
+          "FillValue": "-9999.9",
+          "Field": {
+            "Qualifier": "Magnitude",
+            "FieldQuantity": "Electric"
+          }
+        },
+        {
+          "Name": "RMS E-field amplitude",
+          "ParameterKey": "EAC",
+          "Description": "DC Electric field RMS magnitude of AC E-field (gain = 2.5) - from SC10. 1 minute RMS of 2 samples/sec data, less average over that minute.",
+          "Units": "V",
+          "ValidMin": "0.0",
+          "ValidMax": "15.0",
+          "FillValue": "-99.999",
+          "Field": {
+            "Qualifier": "Magnitude",
+            "FieldQuantity": "Electric"
+          }
+        },
+        {
+          "Name": "DC E-field magnitude high gain",
+          "ParameterKey": "EDCHi",
+          "Description": "DC Electric field magnitude high gain range (gain = 0.25) - From SC10. Averaged from 2 samples/sec.",
+          "Units": "mV/m",
+          "UnitsConversion": "1.0e-3>V/m",
+          "ValidMin": "-150.0",
+          "ValidMax": "150.0",
+          "FillValue": "-999.99",
+          "Field": {
+            "Qualifier": "Magnitude",
+            "FieldQuantity": "Electric"
+          }
+        },
+        {
+          "Name": "E-field ELF wave amplitude",
+          "ParameterKey": "EELFAmp",
+          "Description": "Average Electric field ELF wave amplitudes in 4 frequency ranges - From SC10. 1min average of 1sample/sec.",
+          "Caveats": "Stored as voltage from telemetry, not calibrated to physical units.",
+          "Units": "V",
+          "Structure": {
+            "Size": "4",
+            "Element": [
+              {
+                "Name": "E-field ELF wave amplitude 0.1-1.kHz",
+                "Index": "1",
+                "Units": "V",
+                "ValidMin": "0.0",
+                "ValidMax": "5.0",
+                "FillValue": "-9.9999"
+              },
+              {
+                "Name": "E-field ELF wave amplitude 1.0-2.0Hz",
+                "Index": "2",
+                "Units": "V",
+                "ValidMin": "0.0",
+                "ValidMax": "5.0",
+                "FillValue": "-9.9999"
+              },
+              {
+                "Name": "E-field ELF wave amplitude 2.0-20.0Hz",
+                "Index": "3",
+                "Units": "V",
+                "ValidMin": "0.0",
+                "ValidMax": "5.0",
+                "FillValue": "-9.9999"
+              },
+              {
+                "Name": "E-field ELF wave amplitude 20.0-200.0Hz",
+                "Index": "4",
+                "Units": "V",
+                "ValidMin": "0.0",
+                "ValidMax": "5.0",
+                "FillValue": "-9.9999"
+              }
+            ]
+          },
+          "Wave": {
+            "Qualifier": "Average",
+            "WaveType": "PlasmaWaves",
+            "WaveQuantity": "ACElectricField",
+            "FrequencyRange": {
+              "Low": "0.1",
+              "High": "200.0",
+              "Units": "Hz",
+              "Bin": [
+                {
+                  "Low": "0.1",
+                  "High": "1.0"
+                },
+                {
+                  "Low": "1.0",
+                  "High": "2.0"
+                },
+                {
+                  "Low": "2.0",
+                  "High": "20.0"
+                },
+                {
+                  "Low": "20.0",
+                  "High": "200.0"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "Name": "Peak E-field ELF wave amplitude",
+          "ParameterKey": "EELFPAmp",
+          "Description": "Peak Electric field wave amplitudes in 4 ELF frequency ranges - From SC10. 1min maximum of 1sample/sec.",
+          "Caveats": "Stored as voltage from telemetry, not calibrated to physical units.",
+          "Units": "V",
+          "Structure": {
+            "Size": "4",
+            "Element": [
+              {
+                "Name": "Peak E-field ELF wave amplitude 0.1-1.0Hz",
+                "Index": "1",
+                "Units": "V",
+                "ValidMin": "0.0",
+                "ValidMax": "5.0",
+                "FillValue": "-9.9999"
+              },
+              {
+                "Name": "Peak E-field ELF wave amplitude 1.0-2.0Hz",
+                "Index": "2",
+                "Units": "V",
+                "ValidMin": "0.0",
+                "ValidMax": "5.0",
+                "FillValue": "-9.9999"
+              },
+              {
+                "Name": "Peak E-field ELF wave amplitude 2.0-20.0Hz",
+                "Index": "3",
+                "Units": "V",
+                "ValidMin": "0.0",
+                "ValidMax": "5.0",
+                "FillValue": "-9.9999"
+              },
+              {
+                "Name": "Peak E-field ELF wave amplitude 20.0-200.0Hz",
+                "Index": "4",
+                "Units": "V",
+                "ValidMin": "0.0",
+                "ValidMax": "5.0",
+                "FillValue": "-9.9999"
+              }
+            ]
+          },
+          "Wave": {
+            "Qualifier": "Peak",
+            "WaveType": "PlasmaWaves",
+            "WaveQuantity": "ACElectricField",
+            "FrequencyRange": {
+              "Low": "0.1",
+              "High": "200.0",
+              "Units": "Hz",
+              "Bin": [
+                {
+                  "Low": "0.1",
+                  "High": "1.0"
+                },
+                {
+                  "Low": "1.0",
+                  "High": "2.0"
+                },
+                {
+                  "Low": "2.0",
+                  "High": "20.0"
+                },
+                {
+                  "Low": "20.0",
+                  "High": "200.0"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "Name": "E-field ELF upper frequency range value",
+          "ParameterKey": "EELFFHi",
+          "Description": "Maximum frequency values for Electric field ELF frequency range(s) - for values stored in EELFAmp and EELFPAmp.",
+          "Units": "Hz",
+          "Structure": {
+            "Size": "4",
+            "Element": [
+              {
+                "Name": "E-field ELF 0.1-1.0 Hz bin max",
+                "Index": "1",
+                "Units": "Hz",
+                "ValidMin": "1.0",
+                "ValidMax": "200.0",
+                "FillValue": "-999.9"
+              },
+              {
+                "Name": "E-field ELF 1.0-2.0 Hz bin max",
+                "Index": "2",
+                "Units": "Hz",
+                "ValidMin": "1.0",
+                "ValidMax": "200.0",
+                "FillValue": "-999.9"
+              },
+              {
+                "Name": "E-field ELF 2.0-20.0 Hz bin max",
+                "Index": "3",
+                "Units": "Hz",
+                "ValidMin": "1.0",
+                "ValidMax": "200.0",
+                "FillValue": "-999.9"
+              },
+              {
+                "Name": "E-field ELF 20.0-200.0 Hz bin max",
+                "Index": "4",
+                "Units": "Hz",
+                "ValidMin": "1.0",
+                "ValidMax": "200.0",
+                "FillValue": "-999.9"
+              }
+            ]
+          },
+          "Wave": {
+            "WaveType": "PlasmaWaves",
+            "WaveQuantity": "Frequency"
+          }
+        },
+        {
+          "Name": "E-field ELF lower frquency range value",
+          "ParameterKey": "EELFFLo",
+          "Description": "Minimum frequency values for Electric field ELF frequency range(s) - for values stored in EELFAmp and EELFPAmp.",
+          "Units": "Hz",
+          "Structure": {
+            "Size": "4",
+            "Element": [
+              {
+                "Name": "E-field ELF 0.1-1.0 Hz bin min",
+                "Index": "1",
+                "Units": "Hz",
+                "ValidMin": "1.0",
+                "ValidMax": "200.0",
+                "FillValue": "-999.9"
+              },
+              {
+                "Name": "E-field ELF 1.0-2.0 Hz bin min",
+                "Index": "2",
+                "Units": "Hz",
+                "ValidMin": "1.0",
+                "ValidMax": "200.0",
+                "FillValue": "-999.9"
+              },
+              {
+                "Name": "E-field ELF 2.0-20.0 Hz bin min",
+                "Index": "3",
+                "Units": "Hz",
+                "ValidMin": "1.0",
+                "ValidMax": "200.0",
+                "FillValue": "-999.9"
+              },
+              {
+                "Name": "E-field ELF 20.0-200.0 Hz bin min",
+                "Index": "4",
+                "Units": "Hz",
+                "ValidMin": "1.0",
+                "ValidMax": "200.0",
+                "FillValue": "-999.9"
+              }
+            ]
+          },
+          "Wave": {
+            "WaveType": "PlasmaWaves",
+            "WaveQuantity": "Frequency"
+          }
+        },
+        {
+          "Name": "B-field ELF wave amplitude",
+          "ParameterKey": "BELFAmp",
+          "Description": "Average Magnetic field wave amplitudes in 4 ELF frequency ranges - From SC10. 1min average of 1sample/sec.",
+          "Caveats": "Stored as voltage from telemetry, not calibrated to physical units.",
+          "Units": "V",
+          "Structure": {
+            "Size": "4",
+            "Element": [
+              {
+                "Name": "B-field ELF wave amplitude 0.1-1.kHz",
+                "Index": "1",
+                "Units": "V",
+                "ValidMin": "0.0",
+                "ValidMax": "5.0",
+                "FillValue": "-9.9999"
+              },
+              {
+                "Name": "B-field ELF wave amplitude 1.0-2.0Hz",
+                "Index": "2",
+                "Units": "V",
+                "ValidMin": "0.0",
+                "ValidMax": "5.0",
+                "FillValue": "-9.9999"
+              },
+              {
+                "Name": "B-field ELF wave amplitude 2.0-20.0Hz",
+                "Index": "3",
+                "Units": "V",
+                "ValidMin": "0.0",
+                "ValidMax": "5.0",
+                "FillValue": "-9.9999"
+              },
+              {
+                "Name": "B-field ELF wave amplitude 20.0-200.0Hz",
+                "Index": "4",
+                "Units": "V",
+                "ValidMin": "0.0",
+                "ValidMax": "5.0",
+                "FillValue": "-9.9999"
+              }
+            ]
+          },
+          "Wave": {
+            "Qualifier": "Average",
+            "WaveType": "PlasmaWaves",
+            "WaveQuantity": "ACMagneticField",
+            "FrequencyRange": {
+              "Low": "0.1",
+              "High": "200.0",
+              "Units": "Hz",
+              "Bin": [
+                {
+                  "Low": "0.1",
+                  "High": "1.0"
+                },
+                {
+                  "Low": "1.0",
+                  "High": "2.0"
+                },
+                {
+                  "Low": "2.0",
+                  "High": "20.0"
+                },
+                {
+                  "Low": "20.0",
+                  "High": "200.0"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "Name": "Peak B-field ELF wave amplitude",
+          "ParameterKey": "BELFPAmp",
+          "Description": "Peak Magnetic field wave amplitudes in 4 ELF frequency ranges - From SC10. 1min maximum of 1sample/sec.",
+          "Caveats": "Stored as voltage from telemetry, not calibrated to physical units.",
+          "Units": "V",
+          "Structure": {
+            "Size": "4",
+            "Element": [
+              {
+                "Name": "Peak B-field ELF wave amplitude 0.1-1.kHz",
+                "Index": "1",
+                "Units": "V",
+                "ValidMin": "0.0",
+                "ValidMax": "5.0",
+                "FillValue": "-9.9999"
+              },
+              {
+                "Name": "Peak B-field ELF wave amplitude 1.0-2.0Hz",
+                "Index": "2",
+                "Units": "V",
+                "ValidMin": "0.0",
+                "ValidMax": "5.0",
+                "FillValue": "-9.9999"
+              },
+              {
+                "Name": "Peak B-field ELF wave amplitude 2.0-20.0Hz",
+                "Index": "3",
+                "Units": "V",
+                "ValidMin": "0.0",
+                "ValidMax": "5.0",
+                "FillValue": "-9.9999"
+              },
+              {
+                "Name": "Peak B-field ELF wave amplitude 20.0-200.0Hz",
+                "Index": "4",
+                "Units": "V",
+                "ValidMin": "0.0",
+                "ValidMax": "5.0",
+                "FillValue": "-9.9999"
+              }
+            ]
+          },
+          "Wave": {
+            "Qualifier": "Average",
+            "WaveType": "PlasmaWaves",
+            "WaveQuantity": "ACMagneticField",
+            "FrequencyRange": {
+              "Low": "0.1",
+              "High": "200.0",
+              "Units": "Hz",
+              "Bin": [
+                {
+                  "Low": "0.1",
+                  "High": "1.0"
+                },
+                {
+                  "Low": "1.0",
+                  "High": "2.0"
+                },
+                {
+                  "Low": "2.0",
+                  "High": "20.0"
+                },
+                {
+                  "Low": "20.0",
+                  "High": "200.0"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "Name": "B-field ELF upper frequency range value",
+          "ParameterKey": "BELFFHi",
+          "Description": "Maximum frequency values for Magnetic field ELF frequency range(s) - for values stored in BELFAmp and BELFPAmp.",
+          "Units": "Hz",
+          "Structure": {
+            "Size": "4",
+            "Element": [
+              {
+                "Name": "B-field ELF 0.1-1.0 Hz bin max",
+                "Index": "1",
+                "Units": "Hz",
+                "ValidMin": "1.0",
+                "ValidMax": "200.0",
+                "FillValue": "-999.9"
+              },
+              {
+                "Name": "B-field ELF 1.0-2.0 Hz bin max",
+                "Index": "2",
+                "Units": "Hz",
+                "ValidMin": "1.0",
+                "ValidMax": "200.0",
+                "FillValue": "-999.9"
+              },
+              {
+                "Name": "B-field ELF 2.0-20.0 Hz bin max",
+                "Index": "3",
+                "Units": "Hz",
+                "ValidMin": "1.0",
+                "ValidMax": "200.0",
+                "FillValue": "-999.9"
+              },
+              {
+                "Name": "B-field ELF 20.0-200.0 Hz bin max",
+                "Index": "4",
+                "Units": "Hz",
+                "ValidMin": "1.0",
+                "ValidMax": "200.0",
+                "FillValue": "-999.9"
+              }
+            ]
+          },
+          "Wave": {
+            "WaveType": "PlasmaWaves",
+            "WaveQuantity": "Frequency"
+          }
+        },
+        {
+          "Name": "B-field ELF lower frequency range value",
+          "ParameterKey": "BELFFLo",
+          "Description": "Minimum frequency values for Magnetic field ELF frequency range(s) - for values stored in BELFAmp and BELFPAmp.",
+          "Units": "Hz",
+          "Structure": {
+            "Size": "4",
+            "Element": [
+              {
+                "Name": "B-field ELF 0.1-1.0 Hz bin min",
+                "Index": "1",
+                "Units": "Hz",
+                "ValidMin": "1.0",
+                "ValidMax": "200.0",
+                "FillValue": "-999.9"
+              },
+              {
+                "Name": "B-field ELF 1.0-2.0 Hz bin min",
+                "Index": "2",
+                "Units": "Hz",
+                "ValidMin": "1.0",
+                "ValidMax": "200.0",
+                "FillValue": "-999.9"
+              },
+              {
+                "Name": "B-field ELF 2.0-20.0 Hz bin min",
+                "Index": "3",
+                "Units": "Hz",
+                "ValidMin": "1.0",
+                "ValidMax": "200.0",
+                "FillValue": "-999.9"
+              },
+              {
+                "Name": "B-field ELF 20.0-200.0 Hz bin min",
+                "Index": "4",
+                "Units": "Hz",
+                "ValidMin": "1.0",
+                "ValidMax": "200.0",
+                "FillValue": "-999.9"
+              }
+            ]
+          },
+          "Wave": {
+            "WaveType": "PlasmaWaves",
+            "WaveQuantity": "Frequency"
+          }
+        },
+        {
+          "Name": "Differential electron flux perpendicular to B",
+          "ParameterKey": "EPpDfFlx",
+          "Description": "Differential electron number flux perpendicular to B in 10 energy ranges - Calculated pitch angles are 90 +/- 20 deg to the magnetic field - Data acquired by SC2-3  (mounted on the satellite body) using program #1 energy steps (7 steps from .20 - 20keV) and SC3 at energies 57, 98 and 140keV. Energy bins assume deltaE/E=0.07 for SC2 and 0.1 for SC3 (programmable).",
+          "Units": "1/(cm^2 s sr keV)",
+          "UnitsConversion": "6.24150974e19>1/(m^2 s sr J)",
+          "Structure": {
+            "Size": "10",
+            "Element": [
+              {
+                "Name": "Differential electron number flux perpendicular to B 187eV",
+                "Index": "1",
+                "Units": "1/(cm^2 s sr keV)",
+                "UnitsConversion": "6.24150974e19>1/(m^2 s sr J)",
+                "ValidMin": "0.0",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "Differential electron number flux perpendicular to B 446eV",
+                "Index": "2",
+                "Units": "1/(cm^2 s sr keV)",
+                "UnitsConversion": "6.24150974e19>1/(m^2 s sr J)",
+                "ValidMin": "0.0",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "Differential electron number flux perpendicular to B 1090eV",
+                "Index": "3",
+                "Units": "1/(cm^2 s sr keV)",
+                "UnitsConversion": "6.24150974e19>1/(m^2 s sr J)",
+                "ValidMin": "0.0",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "Differential electron number flux perpendicular to B 2580eV",
+                "Index": "4",
+                "Units": "1/(cm^2 s sr keV)",
+                "UnitsConversion": "6.24150974e19>1/(m^2 s sr J)",
+                "ValidMin": "0.0",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "Differential electron number flux perpendicular to B 4520eV",
+                "Index": "5",
+                "Units": "1/(cm^2 s sr keV)",
+                "UnitsConversion": "6.24150974e19>1/(m^2 s sr J)",
+                "ValidMin": "0.0",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "Differential electron number flux perpendicular to B 10950 eV",
+                "Index": "6",
+                "Units": "1/(cm^2 s sr keV)",
+                "UnitsConversion": "6.24150974e19>1/(m^2 s sr J)",
+                "ValidMin": "0.0",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "Differential electron number flux perpendicular to B 19.4 keV",
+                "Index": "7",
+                "Units": "1/(cm^2 s sr keV)",
+                "UnitsConversion": "6.24150974e19>1/(m^2 s sr J)",
+                "ValidMin": "0.0",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "Differential electron number flux perpendicular to B 57keV",
+                "Index": "8",
+                "Units": "1/(cm^2 s sr keV)",
+                "UnitsConversion": "6.24150974e19>1/(m^2 s sr J)",
+                "ValidMin": "0.0",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "Differential electron number flux perpendicular to B 98keV",
+                "Index": "9",
+                "Units": "1/(cm^2 s sr keV)",
+                "UnitsConversion": "6.24150974e19>1/(m^2 s sr J)",
+                "ValidMin": "0.0",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "Differential electron number flux perpendicular to B 140keV",
+                "Index": "10",
+                "Units": "1/(cm^2 s sr keV)",
+                "UnitsConversion": "6.24150974e19>1/(m^2 s sr J)",
+                "ValidMin": "0.0",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              }
+            ]
+          },
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": [
+              "Differential",
+              "Perpendicular"
+            ],
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "180.5",
+              "High": "147000",
+              "Units": "eV",
+              "Bin": [
+                {
+                  "Low": "180.5",
+                  "High": "193.5"
+                },
+                {
+                  "Low": "430.4",
+                  "High": "461.6"
+                },
+                {
+                  "Low": "1052",
+                  "High": "1128"
+                },
+                {
+                  "Low": "2490",
+                  "High": "2670"
+                },
+                {
+                  "Low": "4362",
+                  "High": "4678"
+                },
+                {
+                  "Low": "10570",
+                  "High": "11330"
+                },
+                {
+                  "Low": "18720",
+                  "High": "20080"
+                },
+                {
+                  "Low": "54150",
+                  "High": "59850"
+                },
+                {
+                  "Low": "93100",
+                  "High": "102900"
+                },
+                {
+                  "Low": "133000",
+                  "High": "147000"
+                }
+              ]
+            },
+            "PolarAngleRange": {
+              "Low": "70",
+              "High": "110",
+              "Units": "degrees"
+            }
+          }
+        },
+        {
+          "Name": "E-perp differential flux fractional error",
+          "ParameterKey": "EEPpDfFlx",
+          "Description": "E-perp differential flux fractional error - 10 count rate errors of values stored in EPpDfFlx = 1 / SQRT( SUM( counts ) ).",
+          "Units": "unitless",
+          "Structure": {
+            "Size": "10",
+            "Element": [
+              {
+                "Name": "E-perp differential flux fractional error 187eV",
+                "Index": "1",
+                "Units": "unitless",
+                "ValidMin": "0.0",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "E-perp differential flux fractional error 446eV",
+                "Index": "2",
+                "Units": "unitless",
+                "ValidMin": "0.0",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "E-perp differential flux fractional error 1090eV",
+                "Index": "3",
+                "Units": "unitless",
+                "ValidMin": "0.0",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "E-perp differential flux fractional error 2580eV",
+                "Index": "4",
+                "Units": "unitless",
+                "ValidMin": "0.0",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "E-perp differential flux fractional error 4520eV",
+                "Index": "5",
+                "Units": "unitless",
+                "ValidMin": "0.0",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "E-perp differential flux fractional error 10950eV",
+                "Index": "6",
+                "Units": "unitless",
+                "ValidMin": "0.0",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "E-perp differential flux fractional error 19.4keV",
+                "Index": "7",
+                "Units": "unitless",
+                "ValidMin": "0.0",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "E-perp differential flux fractional error 57keV",
+                "Index": "8",
+                "Units": "unitless",
+                "ValidMin": "0.0",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "E-perp differential flux fractional error 98keV",
+                "Index": "9",
+                "Units": "unitless",
+                "ValidMin": "0.0",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "E-perp differential flux fractional error 140keV",
+                "Index": "10",
+                "Units": "unitless",
+                "ValidMin": "0.0",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              }
+            ]
+          },
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": [
+              "Uncertainty",
+              "Differential",
+              "Perpendicular"
+            ],
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "180.5",
+              "High": "147000",
+              "Units": "eV",
+              "Bin": [
+                {
+                  "Low": "180.5",
+                  "High": "193.5"
+                },
+                {
+                  "Low": "430.4",
+                  "High": "461.6"
+                },
+                {
+                  "Low": "1052",
+                  "High": "1128"
+                },
+                {
+                  "Low": "2490",
+                  "High": "2670"
+                },
+                {
+                  "Low": "4362",
+                  "High": "4678"
+                },
+                {
+                  "Low": "10570",
+                  "High": "11330"
+                },
+                {
+                  "Low": "18720",
+                  "High": "20080"
+                },
+                {
+                  "Low": "54150",
+                  "High": "59850"
+                },
+                {
+                  "Low": "93100",
+                  "High": "102900"
+                },
+                {
+                  "Low": "133000",
+                  "High": "147000"
+                }
+              ]
+            },
+            "PolarAngleRange": {
+              "Low": "70",
+              "High": "110",
+              "Units": "degrees"
+            }
+          }
+        },
+        {
+          "Name": "Differential electron flux parallel to B",
+          "ParameterKey": "EPlDfFlx",
+          "Description": "Differential electron number flux parallel to B in 10 energy ranges - Calculated pitch angles are 0 +/- 30 deg or 180 +/- 30 deg to the magnetic field - Data acquired by SC2-3 using program #1 energy steps (7 steps from .20 - 20keV) and SC3 at energies 57, 98 and 140keV.",
+          "Units": "electrons/(cm^2 sec str keV)",
+          "Structure": {
+            "Size": "10",
+            "Element": [
+              {
+                "Name": "Differential electron number flux parallel to B 187eV",
+                "Index": "1",
+                "Units": "1/(cm^2 s sr keV)",
+                "UnitsConversion": "6.24150974e19>1/(m^2 s sr J)",
+                "ValidMin": "0.0",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "Differential electron number flux parallel to B 446eV",
+                "Index": "2",
+                "Units": "1/(cm^2 s sr keV)",
+                "UnitsConversion": "6.24150974e19>1/(m^2 s sr J)",
+                "ValidMin": "0.0",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "Differential electron number flux parallel to B 1090eV",
+                "Index": "3",
+                "Units": "1/(cm^2 s sr keV)",
+                "UnitsConversion": "6.24150974e19>1/(m^2 s sr J)",
+                "ValidMin": "0.0",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "Differential electron number flux parallel to B 2580eV",
+                "Index": "4",
+                "Units": "1/(cm^2 s sr keV)",
+                "UnitsConversion": "6.24150974e19>1/(m^2 s sr J)",
+                "ValidMin": "0.0",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "Differential electron number flux parallel to B 4520eV",
+                "Index": "5",
+                "Units": "1/(cm^2 s sr keV)",
+                "UnitsConversion": "6.24150974e19>1/(m^2 s sr J)",
+                "ValidMin": "0.0",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "Differential electron number flux parallel to B 10950 eV",
+                "Index": "6",
+                "Units": "1/(cm^2 s sr keV)",
+                "UnitsConversion": "6.24150974e19>1/(m^2 s sr J)",
+                "ValidMin": "0.0",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "Differential electron number flux parallel to B 19.4 keV",
+                "Index": "7",
+                "Units": "1/(cm^2 s sr keV)",
+                "UnitsConversion": "6.24150974e19>1/(m^2 s sr J)",
+                "ValidMin": "0.0",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "Differential electron number flux parallel to B 57keV",
+                "Index": "8",
+                "Units": "1/(cm^2 s sr keV)",
+                "UnitsConversion": "6.24150974e19>1/(m^2 s sr J)",
+                "ValidMin": "0.0",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "Differential electron number flux parallel to B 98keV",
+                "Index": "9",
+                "Units": "1/(cm^2 s sr keV)",
+                "UnitsConversion": "6.24150974e19>1/(m^2 s sr J)",
+                "ValidMin": "0.0",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "Differential electron number flux parallel to B 140keV",
+                "Index": "10",
+                "Units": "1/(cm^2 s sr keV)",
+                "UnitsConversion": "6.24150974e19>1/(m^2 s sr J)",
+                "ValidMin": "0.0",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              }
+            ]
+          },
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": [
+              "Differential",
+              "FieldAligned"
+            ],
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "180.5",
+              "High": "147000",
+              "Units": "eV",
+              "Bin": [
+                {
+                  "Low": "180.5",
+                  "High": "193.5"
+                },
+                {
+                  "Low": "430.4",
+                  "High": "461.6"
+                },
+                {
+                  "Low": "1052",
+                  "High": "1128"
+                },
+                {
+                  "Low": "2490",
+                  "High": "2670"
+                },
+                {
+                  "Low": "4362",
+                  "High": "4678"
+                },
+                {
+                  "Low": "10570",
+                  "High": "11330"
+                },
+                {
+                  "Low": "18720",
+                  "High": "20080"
+                },
+                {
+                  "Low": "54150",
+                  "High": "59850"
+                },
+                {
+                  "Low": "93100",
+                  "High": "102900"
+                },
+                {
+                  "Low": "133000",
+                  "High": "147000"
+                }
+              ]
+            },
+            "PolarAngleRange": {
+              "Low": "0",
+              "High": "180",
+              "Units": "degrees",
+              "Bin": [
+                {
+                  "BandName": "Parallel",
+                  "Low": "0",
+                  "High": "30"
+                },
+                {
+                  "BandName": "Antiparallel",
+                  "Low": "150",
+                  "High": "180"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "Name": "E-parl differential flux fractional error",
+          "ParameterKey": "EEPlDfFlx",
+          "Description": "E-parl differential flux fractional error - 10 count rate errors of values stored in EPlDfFlx = 1 / SQRT( SUM( counts ) ).",
+          "Units": "unitless",
+          "Structure": {
+            "Size": "10",
+            "Element": [
+              {
+                "Name": "E-parl differential flux fractional error 187eV",
+                "Index": "1",
+                "Units": "unitless",
+                "ValidMin": "0.0",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "E-parl differential flux fractional error 446eV",
+                "Index": "2",
+                "Units": "unitless",
+                "ValidMin": "0.0",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "E-parl differential flux fractional error 1090eV",
+                "Index": "3",
+                "Units": "unitless",
+                "ValidMin": "0.0",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "E-parl differential flux fractional error 2580eV",
+                "Index": "4",
+                "Units": "unitless",
+                "ValidMin": "0.0",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "E-parl differential flux fractional error 4520eV",
+                "Index": "5",
+                "Units": "unitless",
+                "ValidMin": "0.0",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "E-parl differential flux fractional error 10950eV",
+                "Index": "6",
+                "Units": "unitless",
+                "ValidMin": "0.0",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "E-parl differential flux fractional error 19.4keV",
+                "Index": "7",
+                "Units": "unitless",
+                "ValidMin": "0.0",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "E-parl differential flux fractional error 57keV",
+                "Index": "8",
+                "Units": "unitless",
+                "ValidMin": "0.0",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "E-parl differential flux fractional error 98keV",
+                "Index": "9",
+                "Units": "unitless",
+                "ValidMin": "0.0",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "E-parl differential flux fractional error 140keV",
+                "Index": "10",
+                "Units": "unitless",
+                "ValidMin": "0.0",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              }
+            ]
+          },
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": [
+              "Uncertainty",
+              "Differential",
+              "FieldAligned"
+            ],
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "180.5",
+              "High": "147000",
+              "Units": "eV",
+              "Bin": [
+                {
+                  "Low": "180.5",
+                  "High": "193.5"
+                },
+                {
+                  "Low": "430.4",
+                  "High": "461.6"
+                },
+                {
+                  "Low": "1052",
+                  "High": "1128"
+                },
+                {
+                  "Low": "2490",
+                  "High": "2670"
+                },
+                {
+                  "Low": "4362",
+                  "High": "4678"
+                },
+                {
+                  "Low": "10570",
+                  "High": "11330"
+                },
+                {
+                  "Low": "18720",
+                  "High": "20080"
+                },
+                {
+                  "Low": "54150",
+                  "High": "59850"
+                },
+                {
+                  "Low": "93100",
+                  "High": "102900"
+                },
+                {
+                  "Low": "133000",
+                  "High": "147000"
+                }
+              ]
+            },
+            "PolarAngleRange": {
+              "Low": "0",
+              "High": "180",
+              "Units": "degrees",
+              "Bin": [
+                {
+                  "BandName": "Parallel",
+                  "Low": "0",
+                  "High": "30"
+                },
+                {
+                  "BandName": "Antiparallel",
+                  "Low": "150",
+                  "High": "180"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "Name": "Differential electron flux center energy",
+          "ParameterKey": "EDfFlxEn",
+          "Description": "Differential electron flux center energy - 10 reference energies associated with variables EPpDfFlx, EEPpDfFlx, EPlDfFlx and EEPlDfFlx.",
+          "Units": "eV",
+          "Structure": {
+            "Size": "10",
+            "Element": [
+              {
+                "Name": "Electron flux 187eV bin",
+                "Index": "1",
+                "Units": "eV",
+                "ValidMin": "187.0",
+                "ValidMax": "140000.0",
+                "FillValue": "-999999.0"
+              },
+              {
+                "Name": "Electron flux 446eV bin",
+                "Index": "2",
+                "Units": "eV",
+                "ValidMin": "187.0",
+                "ValidMax": "140000.0",
+                "FillValue": "-999999.0"
+              },
+              {
+                "Name": "Electron flux 1090eV bin",
+                "Index": "3",
+                "Units": "eV",
+                "ValidMin": "187.0",
+                "ValidMax": "140000.0",
+                "FillValue": "-999999.0"
+              },
+              {
+                "Name": "Electron flux 2580eV bin",
+                "Index": "4",
+                "Units": "eV",
+                "ValidMin": "187.0",
+                "ValidMax": "140000.0",
+                "FillValue": "-999999.0"
+              },
+              {
+                "Name": "Electron flux 4520eV bin",
+                "Index": "5",
+                "Units": "eV",
+                "ValidMin": "187.0",
+                "ValidMax": "140000.0",
+                "FillValue": "-999999.0"
+              },
+              {
+                "Name": "Electron flux 10950eV bin",
+                "Index": "6",
+                "Units": "eV",
+                "ValidMin": "187.0",
+                "ValidMax": "140000.0",
+                "FillValue": "-999999.0"
+              },
+              {
+                "Name": "Electron flux 19.4keV bin",
+                "Index": "7",
+                "Units": "eV",
+                "ValidMin": "187.0",
+                "ValidMax": "140000.0",
+                "FillValue": "-999999.0"
+              },
+              {
+                "Name": "Electron flux 57keV bin",
+                "Index": "8",
+                "Units": "eV",
+                "ValidMin": "187.0",
+                "ValidMax": "140000.0",
+                "FillValue": "-999999.0"
+              },
+              {
+                "Name": "Electron flux 98keV bin",
+                "Index": "9",
+                "Units": "eV",
+                "ValidMin": "187.0",
+                "ValidMax": "140000.0",
+                "FillValue": "-999999.0"
+              },
+              {
+                "Name": "Electron flux 140keV bin",
+                "Index": "10",
+                "Units": "eV",
+                "ValidMin": "187.0",
+                "ValidMax": "140000.0",
+                "FillValue": "-999999.0"
+              }
+            ]
+          },
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "Energy"
+          }
+        },
+        {
+          "Name": "Electron energy flux perpendicular to B",
+          "ParameterKey": "EPpEnFlx",
+          "Description": "Electron energy flux perpendicular to B over .20-20keV energy range - uses 60 second average differential energy fluxes from SC2-3 step program #1 (energies defined by variable EDfFlxEn) and programs #2 and #3 if available - otherwise interpolations to those energies are done using IDL function NR_SPLINE.",
+          "Units": "keV/(cm^2 s sr)",
+          "UnitsConversion": "1.60217646e-12>J/(m^2 s sr)",
+          "ValidMin": "0.0",
+          "ValidMax": "1.0E10",
+          "FillValue": "-1.0E31",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": [
+              "Integral",
+              "Perpendicular"
+            ],
+            "ParticleQuantity": "EnergyFlux",
+            "EnergyRange": {
+              "Low": "200",
+              "High": "20000",
+              "Units": "eV"
+            },
+            "PolarAngleRange": {
+              "Low": "70",
+              "High": "110",
+              "Units": "degrees"
+            }
+          }
+        },
+        {
+          "Name": "Electron number flux perpendicular to B",
+          "ParameterKey": "EPpNmFlx",
+          "Description": "Electron number flux perpendicular to B over .20-20keV energy range - uses 60 second average differential fluxes from SC2-3 step program #1 (energies defined by variable EDfFlxEn) and programs #2 and #3 if available - otherwise interpolations to those energies are done using IDL function NR_SPLINE.",
+          "Units": "1/(cm^2 s sr)",
+          "UnitsConversion": "1.0e4>1/(m^2 s sr)",
+          "ValidMin": "0.0",
+          "ValidMax": "1.0E10",
+          "FillValue": "-1.0E31",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": [
+              "Integral",
+              "Perpendicular"
+            ],
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "200",
+              "High": "20000",
+              "Units": "eV"
+            },
+            "PolarAngleRange": {
+              "Low": "70",
+              "High": "110",
+              "Units": "degrees"
+            }
+          }
+        },
+        {
+          "Name": "Electron energy flux parallel to B",
+          "ParameterKey": "EPlEnFlx",
+          "Description": "Electron energy flux parallel to B over .20-20keV energy range - uses 60 second average differential energy fluxes from SC2-3 step program #1 (energies defined by variable EDfFlxEn) and programs #2 and #3 if available - otherwise interpolations to those energies are done using IDL function NR_SPLINE.",
+          "Units": "keV/(cm^2 s sr)",
+          "UnitsConversion": "1.60217646e-12>J/(m^2 s sr)",
+          "ValidMin": "0.0",
+          "ValidMax": "1.0E10",
+          "FillValue": "-1.0E31",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": [
+              "Integral",
+              "FieldAligned"
+            ],
+            "ParticleQuantity": "EnergyFlux",
+            "EnergyRange": {
+              "Low": "200",
+              "High": "20000",
+              "Units": "eV"
+            },
+            "PolarAngleRange": {
+              "Low": "0",
+              "High": "180",
+              "Units": "degrees",
+              "Bin": [
+                {
+                  "BandName": "Parallel",
+                  "Low": "0",
+                  "High": "30"
+                },
+                {
+                  "BandName": "Antiparallel",
+                  "Low": "150",
+                  "High": "180"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "Name": "Electron number flux parallel to B",
+          "ParameterKey": "EPlNmFlx",
+          "Description": "Electron number flux parallel to B over .20-20keV energy range - uses 60 second average differential fluxes from SC2-3 step program #1 (energies defined by variable EDfFlxEn) and programs #2 and #3 if available - otherwise interpolations to those energies are done using IDL function NR_SPLI      .",
+          "Units": "1/(cm^2 s sr)",
+          "UnitsConversion": "1.0e4>1/(m^2 s sr)",
+          "ValidMin": "0.0",
+          "ValidMax": "1.0E10",
+          "FillValue": "-1.0E31",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": [
+              "Integral",
+              "FieldAligned"
+            ],
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "200",
+              "High": "20000",
+              "Units": "eV"
+            },
+            "PolarAngleRange": {
+              "Low": "0",
+              "High": "180",
+              "Units": "degrees",
+              "Bin": [
+                {
+                  "BandName": "Parallel",
+                  "Low": "0",
+                  "High": "30"
+                },
+                {
+                  "BandName": "Antiparallel",
+                  "Low": "150",
+                  "High": "180"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "Name": "Differential proton flux perpendicular to B",
+          "ParameterKey": "PPpDfFlx",
+          "Description": "Differential proton number flux perpendicular to B in 10 energy ranges - Calculated pitch angles are 90 +/- 20 deg (SC2-3) and 90 +/- 10 deg (SC2-6) to the Magnetic field - Data acquired by SC2-3 using program #1 energy steps (7 steps from .15 - 15keV) and SC2-6 at energies 36, 71 and 133keV. Energy bins assume deltaE/E=0.1.",
+          "Units": "1/(cm^2 s sr keV)",
+          "UnitsConversion": "6.24150974e19>1/(m^2 s sr J)",
+          "Structure": {
+            "Size": "10",
+            "Element": [
+              {
+                "Name": "Differential proton number flux perpendicular to B 154eV",
+                "Index": "1",
+                "Units": "1/(cm^2 s sr keV)",
+                "UnitsConversion": "6.24150974e19>1/(m^2 s sr J)",
+                "ValidMin": "0.0",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "Differential proton number flux perpendicular to B 360eV",
+                "Index": "2",
+                "Units": "1/(cm^2 s sr keV)",
+                "UnitsConversion": "6.24150974e19>1/(m^2 s sr J)",
+                "ValidMin": "0.0",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "Differential proton number flux perpendicular to B 880eV",
+                "Index": "3",
+                "Units": "1/(cm^2 s sr keV)",
+                "UnitsConversion": "6.24150974e19>1/(m^2 s sr J)",
+                "ValidMin": "0.0",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "Differential proton number flux perpendicular to B 2060eV",
+                "Index": "4",
+                "Units": "1/(cm^2 s sr keV)",
+                "UnitsConversion": "6.24150974e19>1/(m^2 s sr J)",
+                "ValidMin": "0.0",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "Differential proton number flux perpendicular to B 3.6keV",
+                "Index": "5",
+                "Units": "1/(cm^2 s sr keV)",
+                "UnitsConversion": "6.24150974e19>1/(m^2 s sr J)",
+                "ValidMin": "0.0",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "Differential proton number flux perpendicular to B 8.8keV",
+                "Index": "6",
+                "Units": "1/(cm^2 s sr keV)",
+                "UnitsConversion": "6.24150974e19>1/(m^2 s sr J)",
+                "ValidMin": "0.0",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "Differential proton number flux perpendicular to B 15.6keV",
+                "Index": "7",
+                "Units": "1/(cm^2 s sr keV)",
+                "UnitsConversion": "6.24150974e19>1/(m^2 s sr J)",
+                "ValidMin": "0.0",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "Differential proton number flux perpendicular to B 36keV",
+                "Index": "8",
+                "Units": "1/(cm^2 s sr keV)",
+                "UnitsConversion": "6.24150974e19>1/(m^2 s sr J)",
+                "ValidMin": "0.0",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "Differential proton number flux perpendicular to B 71keV",
+                "Index": "9",
+                "Units": "1/(cm^2 s sr keV)",
+                "UnitsConversion": "6.24150974e19>1/(m^2 s sr J)",
+                "ValidMin": "0.0",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "Differential proton number flux perpendicular to B 133keV",
+                "Index": "10",
+                "Units": "1/(cm^2 s sr keV)",
+                "UnitsConversion": "6.24150974e19>1/(m^2 s sr J)",
+                "ValidMin": "0.0",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              }
+            ]
+          },
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": [
+              "Differential",
+              "Perpendicular"
+            ],
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "146.3",
+              "High": "139600",
+              "Units": "eV",
+              "Bin": [
+                {
+                  "Low": "146.3",
+                  "High": "161.7"
+                },
+                {
+                  "Low": "342",
+                  "High": "378"
+                },
+                {
+                  "Low": "836",
+                  "High": "924"
+                },
+                {
+                  "Low": "1957",
+                  "High": "2163"
+                },
+                {
+                  "Low": "3420",
+                  "High": "3780"
+                },
+                {
+                  "Low": "8360",
+                  "High": "9240"
+                },
+                {
+                  "Low": "14820",
+                  "High": "16380"
+                },
+                {
+                  "Low": "34200",
+                  "High": "37800"
+                },
+                {
+                  "Low": "67450",
+                  "High": "74550"
+                },
+                {
+                  "Low": "126350",
+                  "High": "139650"
+                }
+              ]
+            },
+            "PolarAngleRange": {
+              "Low": "70",
+              "High": "110",
+              "Units": "degrees"
+            }
+          }
+        },
+        {
+          "Name": "P-perp differential flux fractional error",
+          "ParameterKey": "EPPpDfFlx",
+          "Description": "P-perp differential flux fractional error - 8 count rate errors of values stored in PPpDfFlx = 1 / SQRT( SUM( counts ) ).",
+          "Units": "unitless",
+          "Structure": {
+            "Size": "10",
+            "Element": [
+              {
+                "Name": "P-perp differential flux fractional error 154eV",
+                "Index": "1",
+                "Units": "unitless",
+                "ValidMin": "0.0",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "P-perp differential flux fractional error 360eV",
+                "Index": "2",
+                "Units": "unitless",
+                "ValidMin": "0.0",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "P-perp differential flux fractional error 880eV",
+                "Index": "3",
+                "Units": "unitless",
+                "ValidMin": "0.0",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "P-perp differential flux fractional error 2060eV",
+                "Index": "4",
+                "Units": "unitless",
+                "ValidMin": "0.0",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "P-perp differential flux fractional error 3.6keV",
+                "Index": "5",
+                "Units": "unitless",
+                "ValidMin": "0.0",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "P-perp differential flux fractional error 8.8keV",
+                "Index": "6",
+                "Units": "unitless",
+                "ValidMin": "0.0",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "P-perp differential flux fractional error 15.6keV",
+                "Index": "7",
+                "Units": "unitless",
+                "ValidMin": "0.0",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "P-perp differential flux fractional error 36keV",
+                "Index": "8",
+                "Units": "unitless",
+                "ValidMin": "0.0",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "P-perp differential flux fractional error 71keV",
+                "Index": "9",
+                "Units": "unitless",
+                "ValidMin": "0.0",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "P-perp differential flux fractional error 133keV",
+                "Index": "10",
+                "Units": "unitless",
+                "ValidMin": "0.0",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              }
+            ]
+          },
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": [
+              "Uncertainty",
+              "Differential",
+              "Perpendicular"
+            ],
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "146.3",
+              "High": "139600",
+              "Units": "eV",
+              "Bin": [
+                {
+                  "Low": "146.3",
+                  "High": "161.7"
+                },
+                {
+                  "Low": "342",
+                  "High": "378"
+                },
+                {
+                  "Low": "836",
+                  "High": "924"
+                },
+                {
+                  "Low": "1957",
+                  "High": "2163"
+                },
+                {
+                  "Low": "3420",
+                  "High": "3780"
+                },
+                {
+                  "Low": "8360",
+                  "High": "9240"
+                },
+                {
+                  "Low": "14820",
+                  "High": "16380"
+                },
+                {
+                  "Low": "34200",
+                  "High": "37800"
+                },
+                {
+                  "Low": "67450",
+                  "High": "74550"
+                },
+                {
+                  "Low": "126350",
+                  "High": "139650"
+                }
+              ]
+            },
+            "PolarAngleRange": {
+              "Low": "70",
+              "High": "110",
+              "Units": "degrees"
+            }
+          }
+        },
+        {
+          "Name": "Differential proton flux parallel to B",
+          "ParameterKey": "PPlDfFlx",
+          "Description": "Differential proton number flux parallel to B in 8 energy ranges - Calculated pitch angles are 0 +/- 30 deg or 180 +/- 30 deg to the magnetic field - Data acquired by SC2-3 using program #1 energy steps (7 steps from .15 - 15keV) and SC2-6 at energies 36, 71 and 133keV.",
+          "Units": "1/(cm^2 s sr keV)",
+          "UnitsConversion": "6.24150974e19>1/(m^2 s sr J)",
+          "Structure": {
+            "Size": "10",
+            "Element": [
+              {
+                "Name": "Differential proton number flux parallel to B 154eV",
+                "Index": "1",
+                "Units": "1/(cm^2 s sr keV)",
+                "UnitsConversion": "6.24150974e19>1/(m^2 s sr J)",
+                "ValidMin": "0.0",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "Differential proton number flux parallel to B 360eV",
+                "Index": "2",
+                "Units": "1/(cm^2 s sr keV)",
+                "UnitsConversion": "6.24150974e19>1/(m^2 s sr J)",
+                "ValidMin": "0.0",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "Differential proton number flux parallel to B 880eV",
+                "Index": "3",
+                "Units": "1/(cm^2 s sr keV)",
+                "UnitsConversion": "6.24150974e19>1/(m^2 s sr J)",
+                "ValidMin": "0.0",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "Differential proton number flux parallel to B 2060eV",
+                "Index": "4",
+                "Units": "1/(cm^2 s sr keV)",
+                "UnitsConversion": "6.24150974e19>1/(m^2 s sr J)",
+                "ValidMin": "0.0",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "Differential proton number flux parallel to B 3.6keV",
+                "Index": "5",
+                "Units": "1/(cm^2 s sr keV)",
+                "UnitsConversion": "6.24150974e19>1/(m^2 s sr J)",
+                "ValidMin": "0.0",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "Differential proton number flux parallel to B 8.8keV",
+                "Index": "6",
+                "Units": "1/(cm^2 s sr keV)",
+                "UnitsConversion": "6.24150974e19>1/(m^2 s sr J)",
+                "ValidMin": "0.0",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "Differential proton number flux parallel to B 15.6keV",
+                "Index": "7",
+                "Units": "1/(cm^2 s sr keV)",
+                "UnitsConversion": "6.24150974e19>1/(m^2 s sr J)",
+                "ValidMin": "0.0",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "Differential proton number flux parallel to B 36keV",
+                "Index": "8",
+                "Units": "1/(cm^2 s sr keV)",
+                "UnitsConversion": "6.24150974e19>1/(m^2 s sr J)",
+                "ValidMin": "0.0",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "Differential proton number flux parallel to B 71keV",
+                "Index": "9",
+                "Units": "1/(cm^2 s sr keV)",
+                "UnitsConversion": "6.24150974e19>1/(m^2 s sr J)",
+                "ValidMin": "0.0",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "Differential proton number flux parallel to B 133keV",
+                "Index": "10",
+                "Units": "1/(cm^2 s sr keV)",
+                "UnitsConversion": "6.24150974e19>1/(m^2 s sr J)",
+                "ValidMin": "0.0",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              }
+            ]
+          },
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": [
+              "Differential",
+              "FieldAligned"
+            ],
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "146.3",
+              "High": "139600",
+              "Units": "eV",
+              "Bin": [
+                {
+                  "Low": "146.3",
+                  "High": "161.7"
+                },
+                {
+                  "Low": "342",
+                  "High": "378"
+                },
+                {
+                  "Low": "836",
+                  "High": "924"
+                },
+                {
+                  "Low": "1957",
+                  "High": "2163"
+                },
+                {
+                  "Low": "3420",
+                  "High": "3780"
+                },
+                {
+                  "Low": "8360",
+                  "High": "9240"
+                },
+                {
+                  "Low": "14820",
+                  "High": "16380"
+                },
+                {
+                  "Low": "34200",
+                  "High": "37800"
+                },
+                {
+                  "Low": "67450",
+                  "High": "74550"
+                },
+                {
+                  "Low": "126350",
+                  "High": "139650"
+                }
+              ]
+            },
+            "PolarAngleRange": {
+              "Low": "0",
+              "High": "180",
+              "Units": "degrees",
+              "Bin": [
+                {
+                  "BandName": "Parallel",
+                  "Low": "0",
+                  "High": "30"
+                },
+                {
+                  "BandName": "Antiparallel",
+                  "Low": "150",
+                  "High": "180"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "Name": "P-parl differential flux fractional error",
+          "ParameterKey": "EPPlDfFlx",
+          "Description": "P-parl differential flux fractional error - 10 count rate errors of values stored in PPlDfFlx = 1 / SQRT( SUM( counts ) ).",
+          "Units": "unitless",
+          "Structure": {
+            "Size": "10",
+            "Element": [
+              {
+                "Name": "P-parl differential flux fractional error 154eV",
+                "Index": "1",
+                "Units": "unitless",
+                "ValidMin": "0.0",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "P-parl differential flux fractional error 360eV",
+                "Index": "2",
+                "Units": "unitless",
+                "ValidMin": "0.0",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "P-parl differential flux fractional error 880eV",
+                "Index": "3",
+                "Units": "unitless",
+                "ValidMin": "0.0",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "P-parl differential flux fractional error 2060eV",
+                "Index": "4",
+                "Units": "unitless",
+                "ValidMin": "0.0",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "P-parl differential flux fractional error 3.6keV",
+                "Index": "5",
+                "Units": "unitless",
+                "ValidMin": "0.0",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "P-parl differential flux fractional error 8.8keV",
+                "Index": "6",
+                "Units": "unitless",
+                "ValidMin": "0.0",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "P-parl differential flux fractional error 15.6keV",
+                "Index": "7",
+                "Units": "unitless",
+                "ValidMin": "0.0",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "P-parl differential flux fractional error 36keV",
+                "Index": "8",
+                "Units": "unitless",
+                "ValidMin": "0.0",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "P-parl differential flux fractional error 71keV",
+                "Index": "9",
+                "Units": "unitless",
+                "ValidMin": "0.0",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "P-parl differential flux fractional error 133keV",
+                "Index": "10",
+                "Units": "unitless",
+                "ValidMin": "0.0",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              }
+            ]
+          },
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": [
+              "Uncertainty",
+              "Differential",
+              "FieldAligned"
+            ],
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "146.3",
+              "High": "139600",
+              "Units": "eV",
+              "Bin": [
+                {
+                  "Low": "146.3",
+                  "High": "161.7"
+                },
+                {
+                  "Low": "342",
+                  "High": "378"
+                },
+                {
+                  "Low": "836",
+                  "High": "924"
+                },
+                {
+                  "Low": "1957",
+                  "High": "2163"
+                },
+                {
+                  "Low": "3420",
+                  "High": "3780"
+                },
+                {
+                  "Low": "8360",
+                  "High": "9240"
+                },
+                {
+                  "Low": "14820",
+                  "High": "16380"
+                },
+                {
+                  "Low": "34200",
+                  "High": "37800"
+                },
+                {
+                  "Low": "67450",
+                  "High": "74550"
+                },
+                {
+                  "Low": "126350",
+                  "High": "139650"
+                }
+              ]
+            },
+            "PolarAngleRange": {
+              "Low": "0",
+              "High": "180",
+              "Units": "degrees",
+              "Bin": [
+                {
+                  "BandName": "Parallel",
+                  "Low": "0",
+                  "High": "30"
+                },
+                {
+                  "BandName": "Antiparallel",
+                  "Low": "150",
+                  "High": "180"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "Name": "Differential proton flux center energy",
+          "ParameterKey": "PDfFlxEn",
+          "Description": "Differential proton flux center energy - 10 reference energies associated with variables PPpDfFlx, PEPpDfFlx, PPlDfFlx and PEPlDfFlx.",
+          "Units": "eV",
+          "Structure": {
+            "Size": "10",
+            "Element": [
+              {
+                "Name": "Proton flux 154ev bin",
+                "Index": "1",
+                "Units": "eV",
+                "ValidMin": "154.0",
+                "ValidMax": "133000.0",
+                "FillValue": "-999999.0"
+              },
+              {
+                "Name": "Proton flux 360ev bin",
+                "Index": "2",
+                "Units": "eV",
+                "ValidMin": "154.0",
+                "ValidMax": "133000.0",
+                "FillValue": "-999999.0"
+              },
+              {
+                "Name": "Proton flux 880ev bin",
+                "Index": "3",
+                "Units": "eV",
+                "ValidMin": "154.0",
+                "ValidMax": "133000.0",
+                "FillValue": "-999999.0"
+              },
+              {
+                "Name": "Proton flux 2060ev bin",
+                "Index": "4",
+                "Units": "eV",
+                "ValidMin": "154.0",
+                "ValidMax": "133000.0",
+                "FillValue": "-999999.0"
+              },
+              {
+                "Name": "Proton flux 3.6kev bin",
+                "Index": "5",
+                "Units": "eV",
+                "ValidMin": "154.0",
+                "ValidMax": "133000.0",
+                "FillValue": "-999999.0"
+              },
+              {
+                "Name": "Proton flux 8.8kev bin",
+                "Index": "6",
+                "Units": "eV",
+                "ValidMin": "154.0",
+                "ValidMax": "133000.0",
+                "FillValue": "-999999.0"
+              },
+              {
+                "Name": "Proton flux 15.6kev bin",
+                "Index": "7",
+                "Units": "eV",
+                "ValidMin": "154.0",
+                "ValidMax": "133000.0",
+                "FillValue": "-999999.0"
+              },
+              {
+                "Name": "Proton flux 36kev bin",
+                "Index": "8",
+                "Units": "eV",
+                "ValidMin": "154.0",
+                "ValidMax": "133000.0",
+                "FillValue": "-999999.0"
+              },
+              {
+                "Name": "Proton flux 71kev bin",
+                "Index": "9",
+                "Units": "eV",
+                "ValidMin": "154.0",
+                "ValidMax": "133000.0",
+                "FillValue": "-999999.0"
+              },
+              {
+                "Name": "Proton flux 133kev bin",
+                "Index": "10",
+                "Units": "eV",
+                "ValidMin": "154.0",
+                "ValidMax": "133000.0",
+                "FillValue": "-999999.0"
+              }
+            ]
+          },
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "Energy"
+          }
+        },
+        {
+          "Name": "Proton energy flux perpendicular to B",
+          "ParameterKey": "PPpEnFlx",
+          "Description": "Proton energy flux perpendicular to B over .15-15keV energy range - uses 60 second average differential energy fluxes from SC2-3 step program #1 (energies defined by variable PDfFlxEn) and programs #2 and #3 if available - otherwise interpolations to those energies are done using IDL function NR_SPLINE.",
+          "Units": "keV/(cm^2 s sr)",
+          "UnitsConversion": "1.60217646e-12>J/(m^2 s sr)",
+          "ValidMin": "0.0",
+          "ValidMax": "1.0E10",
+          "FillValue": "-1.0E31",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": [
+              "Integral",
+              "Perpendicular"
+            ],
+            "ParticleQuantity": "EnergyFlux",
+            "EnergyRange": {
+              "Low": "150",
+              "High": "15000",
+              "Units": "eV"
+            },
+            "PolarAngleRange": {
+              "Low": "70",
+              "High": "110",
+              "Units": "degrees"
+            }
+          }
+        },
+        {
+          "Name": "Proton number flux perpendicular to B",
+          "ParameterKey": "PPpNmFlx",
+          "Description": "Proton number flux perpendicular to B over .15-15keV energy range - uses 60 second average differential fluxes from SC2-3 step program #1 (energies defined by variable PDfFlxEn) and programs #2 and #3 if available - otherwise interpolations to those energies are done using IDL function NR_SPLINE.",
+          "Units": "1/(cm^2 s sr)",
+          "UnitsConversion": "1.0e4>1/(m^2 s sr)",
+          "ValidMin": "0.0",
+          "ValidMax": "1.0E10",
+          "FillValue": "-1.0E31",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": [
+              "Integral",
+              "Perpendicular"
+            ],
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "150",
+              "High": "15000",
+              "Units": "eV"
+            },
+            "PolarAngleRange": {
+              "Low": "70",
+              "High": "110",
+              "Units": "degrees"
+            }
+          }
+        },
+        {
+          "Name": "Proton energy flux parallel to B ",
+          "ParameterKey": "PPlEnFlx",
+          "Description": "Proton energy flux parallel to B over .15-15keV energy range - uses 60 second average differential energy fluxes from SC2-3 step program #1 (energies defined by variable PDfFlxEn) and programs #2 and #3 if available - otherwise interpolations to those energies are done using IDL function NR_SPLINE.",
+          "Units": "keV/(cm^2 s sr)",
+          "ValidMin": "0.0",
+          "ValidMax": "1.0E10",
+          "FillValue": "-1.0E31",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": [
+              "Integral",
+              "FieldAligned"
+            ],
+            "ParticleQuantity": "EnergyFlux",
+            "EnergyRange": {
+              "Low": "150",
+              "High": "15000",
+              "Units": "eV"
+            },
+            "PolarAngleRange": {
+              "Low": "0",
+              "High": "180",
+              "Units": "degrees",
+              "Bin": [
+                {
+                  "BandName": "Parallel",
+                  "Low": "0",
+                  "High": "30"
+                },
+                {
+                  "BandName": "Antiparallel",
+                  "Low": "150",
+                  "High": "180"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "Name": "Proton number flux perpendicular to B",
+          "ParameterKey": "PPlNmFlx",
+          "Description": "Proton number flux paralel to B over .15-15keV energy range - uses 60 second average differential fluxes from SC2-3 step program #1 (energies defined by variable PDfFlxEn) and programs #2 and #3 if available - otherwise interpolations to those energies are done using IDL function NR_SPLINE.",
+          "Units": "1/(cm^2 s sr)",
+          "UnitsConversion": "1.0e4>1/(m^2 s sr)",
+          "ValidMin": "0.0",
+          "ValidMax": "1.0E10",
+          "FillValue": "-1.0E31",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": [
+              "Integral",
+              "Perpendicular"
+            ],
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "150",
+              "High": "15000",
+              "Units": "eV"
+            },
+            "PolarAngleRange": {
+              "Low": "70",
+              "High": "110",
+              "Units": "degrees"
+            }
+          }
+        },
+        {
+          "Name": "Electron density (.1-20keV)",
+          "ParameterKey": "EDensity",
+          "Description": "Electron density in energy range .1-20keV - From SC2-3 using average differential number fluxes in the time interval from step program #1 (see EDfFlxEn) and step programs #2 and/or #3 to create the integration energy range 87eV to 19.4keV. Trapezoid integration, pitch angles 90°±20°.",
+          "Units": "cm^-3",
+          "UnitsConversion": "1e6>m^-3",
+          "ValidMin": "0.0",
+          "ValidMax": "100.0",
+          "FillValue": "-999.9999",
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "NumberDensity",
+            "EnergyRange": {
+              "Low": ".1",
+              "High": "20",
+              "Units": "keV"
+            }
+          }
+        },
+        {
+          "Name": "Electron (.1-20keV) drift velocity perpendicular to B",
+          "ParameterKey": "EPpDrfVel",
+          "Description": "Electron drift velocity perpendicular to B of electrons in the energy range .1-20keV and having a pitch angle of 90 +/- 20 deg to the magnetic field - (see EDensity for description of source. Trapezoid integration.",
+          "Units": "km/s",
+          "UnitsConversion": "1e3>m/s",
+          "ValidMin": "-1.0E10",
+          "ValidMax": "1.0E10",
+          "FillValue": "-1.0E31",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": "Perpendicular",
+            "ParticleQuantity": "FlowSpeed",
+            "EnergyRange": {
+              "Low": ".1",
+              "High": "20",
+              "Units": "keV"
+            },
+            "PolarAngleRange": {
+              "Low": "70",
+              "High": "110",
+              "Units": "degrees"
+            }
+          }
+        },
+        {
+          "Name": "Electron pressure (.1-20keV)",
+          "ParameterKey": "EPress",
+          "Description": "Electron pressure in range .1-20keV of electrons in the energy range .04-20keV and having a pitch angle of 90 +/- 20 deg to the magnetic field - (see EDensity for description of source.) Trapezoid integration.",
+          "Units": "ndyne/cm^2",
+          "UnitsConversion": "1e-10>Pa",
+          "ValidMin": "0.0",
+          "ValidMax": "1.0E10",
+          "FillValue": "-1.0E31",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": "Perpendicular",
+            "ParticleQuantity": "Pressure",
+            "EnergyRange": {
+              "Low": ".1",
+              "High": "20",
+              "Units": "keV"
+            },
+            "PolarAngleRange": {
+              "Low": "70",
+              "High": "110",
+              "Units": "degrees"
+            }
+          }
+        },
+        {
+          "Name": "Electron average energy (.1-20keV)",
+          "ParameterKey": "EAveEn",
+          "Description": "Electron average energy Calculated from differential number flux values derived from SC2-3 energy step programs #1 and from programs #2 and/or #3 - same source as for EDensity. Trapezoid integration, pitch angles 90°±20°.",
+          "Units": "keV",
+          "UnitsConversion": "1.60217646e-12>J/(m^2 s sr)",
+          "ValidMin": "0.0",
+          "ValidMax": "20.0",
+          "FillValue": "-99.99999",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": "Average",
+            "ParticleQuantity": "Energy",
+            "EnergyRange": {
+              "Low": ".1",
+              "High": "20",
+              "Units": "keV"
+            }
+          }
+        },
+        {
+          "Name": "Proton density (.1-133keV)",
+          "ParameterKey": "PDensity",
+          "Description": "Proton density in energy range .1-133keV - From SC2-3 step program #1 (see PDfFlxEn) and#2 and/or #3 (integration range SC2-3 is .1 - 15.6keV) and from SC2-6 36, 71 and 133keV channel data if available.  Integration is done over just the SC2-3 range (.1-15.6keV) if SC2-6 133keV data is not available - see character 8 in variable Status%SC_SP. Trapezoid integration, pitch angles 90°±20°.",
+          "Units": "cm^-3",
+          "UnitsConversion": "1e6>m^-3",
+          "ValidMin": "0.0",
+          "ValidMax": "100.0",
+          "FillValue": "-999.9999",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "NumberDensity",
+            "EnergyRange": {
+              "Low": ".1",
+              "High": "133",
+              "Units": "keV"
+            }
+          }
+        },
+        {
+          "Name": "Proton (.1-15keV) drift velocity perpendicular to B",
+          "ParameterKey": "PPpDrfVel",
+          "Description": "Proton drift velocity perpendicular to B of electrons in the energy range .1-15.6keV and having a pitch angle of 90 +/- 20 deg to the magnetic field - (see PDensity for description of source.) Trapezoid integration.",
+          "Units": "km/s",
+          "UnitsConversion": "1e3>m/s",
+          "ValidMin": "-1.0E10",
+          "ValidMax": "1.0E10",
+          "FillValue": "-1.0E31",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": "Perpendicular",
+            "ParticleQuantity": "FlowSpeed",
+            "EnergyRange": {
+              "Low": ".1",
+              "High": "15.6",
+              "Units": "keV"
+            },
+            "PolarAngleRange": {
+              "Low": "70",
+              "High": "110",
+              "Units": "degrees"
+            }
+          }
+        },
+        {
+          "Name": "Proton pressure (.1-133keV)",
+          "ParameterKey": "PPress",
+          "Description": "Proton pressure in energy range .1-133keV (or .1-15.6keV if SC2-6 133keV data is not available - check character 8 of variable Status%SC_SP) of protons in the time interval and having a pitch angle of 90 +/- 20 deg ( 90 +/- 10 deg for SC2-6 data) to the magnetic field - (see PDensity for description of source. Trapezoid integration.",
+          "Units": "ndyne/cm^2",
+          "UnitsConversion": "1e-10>Pa",
+          "ValidMin": "0.0",
+          "ValidMax": "1.0E10",
+          "FillValue": "-1.0E31",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": "Perpendicular",
+            "ParticleQuantity": "Pressure",
+            "EnergyRange": {
+              "Low": ".1",
+              "High": "133",
+              "Units": "keV"
+            },
+            "PolarAngleRange": {
+              "Low": "70",
+              "High": "110",
+              "Units": "degrees"
+            }
+          }
+        },
+        {
+          "Name": "Proton average energy (.1-133keV)",
+          "ParameterKey": "PAveEn",
+          "Description": "Proton average energy in energy range .1-133keV (or .1-15.6keV if SC2-6 133keV data is not available check character 8 of variable Status%SC_SP) - same source as for PDensity. Trapezoid integration, pitch angles 90°±20°.",
+          "Units": "keV",
+          "UnitsConversion": "1.60217646e-12>J/(m^2 s sr)",
+          "ValidMin": "0.0",
+          "ValidMax": "20.0",
+          "FillValue": "-99.99999",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": "Average",
+            "ParticleQuantity": "Energy",
+            "EnergyRange": {
+              "Low": ".1",
+              "High": "133",
+              "Units": "keV"
+            }
+          }
+        },
+        {
+          "Name": "S/C geographic longitude",
+          "ParameterKey": "SCGeoLon",
+          "Description": "Spacecraft Geographic Longitude (0-360 deg E.) - Interpolated at interval midpoint time EPOCH using Ephemeris data.",
+          "Units": "degrees",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "GEO"
+          },
+          "ValidMin": "0.0",
+          "ValidMax": "360.0",
+          "FillValue": "-999.99",
+          "Support": {
+            "Qualifier": "DirectionAngle.AzimuthAngle",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "S/C geographic latitude",
+          "ParameterKey": "SCGeoLat",
+          "Description": "Spacecraft Geographic Latitude (+/- 90 deg - Interpolated at interval midpoint time EPOCH using Ephemeris data.",
+          "Units": "degrees",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "GEO"
+          },
+          "ValidMin": "-90.0",
+          "ValidMax": "90.0",
+          "FillValue": "-99.99",
+          "Support": {
+            "Qualifier": "DirectionAngle",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "S/C geocentric radius",
+          "ParameterKey": "SCGeoRad",
+          "Description": "Spacecraft Geocentric Radius (km) - Interpolated at interval midpoint time EPOCH using Ephemeris data.",
+          "Units": "km",
+          "UnitsConversion": "1e3>m",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "GEO"
+          },
+          "ValidMin": "0.0",
+          "ValidMax": "1000000.0",
+          "FillValue": "-99999.9",
+          "Support": {
+            "Qualifier": "Magnitude",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "S/C position  (ECI coordinates)",
+          "ParameterKey": "SCECIPos",
+          "Description": "Spacecraft location x-, y- and z-position (km) in ECI  coordinate system - Interpolated at interval midpoint time EPOCH using Ephemeris data.",
+          "Units": "km",
+          "UnitsConversion": "1e3>m",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GEI"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "x (ECI)",
+                "Qualifier": "Component.I",
+                "Index": "1",
+                "Units": "km",
+                "UnitsConversion": "1e3>m",
+                "ValidMin": "-1.0E10",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "y (ECI)",
+                "Qualifier": "Component.J",
+                "Index": "2",
+                "Units": "km",
+                "UnitsConversion": "1e3>m",
+                "ValidMin": "-1.0E10",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "z (ECI)",
+                "Qualifier": "Component.K",
+                "Index": "3",
+                "Units": "km",
+                "UnitsConversion": "1e3>m",
+                "ValidMin": "-1.0E10",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              }
+            ]
+          },
+          "Support": {
+            "Qualifier": "Vector",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "S/C velocity (ECI coordinates)",
+          "ParameterKey": "SCECIVel",
+          "Description": "Spacecraft x-, y- and z- velocity (km/s) in ECI coordinate system - Interpolated at interval midpoint time EPOCH using Ephemeris data.",
+          "Units": "km/s",
+          "UnitsConversion": "1e3>m/s",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GEI"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "vx (ECI)",
+                "Qualifier": "Component.I",
+                "Index": "1",
+                "Units": "km/s",
+                "UnitsConversion": "1e3>m/s",
+                "ValidMin": "-1.0E10",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "vy (ECI)",
+                "Qualifier": "Component.J",
+                "Index": "2",
+                "Units": "km/s",
+                "UnitsConversion": "1e3>m/s",
+                "ValidMin": "-1.0E10",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "vz (ECI)",
+                "Qualifier": "Component.K",
+                "Index": "3",
+                "Units": "km/s",
+                "UnitsConversion": "1e3>m/s",
+                "ValidMin": "-1.0E10",
+                "ValidMax": "1.0E10",
+                "FillValue": "-1.0E31"
+              }
+            ]
+          },
+          "Support": {
+            "Qualifier": "Vector",
+            "SupportQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "Magnetic local time at equator",
+          "ParameterKey": "MLT",
+          "Description": "Magnetic local time at equator (hrs) - Interpolated at interval midpoint time EPOCH using Ephemeris data.",
+          "Units": "hours",
+          "UnitsConversion": "15>degrees",
+          "ValidMin": "0.0",
+          "ValidMax": "24.0",
+          "FillValue": "-99.999",
+          "Support": {
+            "Qualifier": "DirectionAngle.AzimuthAngle",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Magnetic latitude",
+          "ParameterKey": "MagLat",
+          "Description": "Magnetic latitude (degs) - Interpolated at interval midpoint time EPOCH using Ephemeris data.",
+          "Units": "degrees",
+          "ValidMin": "-90.0",
+          "ValidMax": "90.0",
+          "FillValue": "-99.99",
+          "Support": {
+            "Qualifier": "DirectionAngle",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "L - shell",
+          "ParameterKey": "LShell",
+          "Description": "L-shell value Interpolated at interval midpoint time EPOCH using Ephemeris data.",
+          "Units": "unitless",
+          "ValidMin": "0.0",
+          "ValidMax": "1000.0",
+          "FillValue": "-999.99",
+          "Support": {
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "B equator model",
+          "ParameterKey": "BEqModl",
+          "Description": "B equator from IGRF 1965.0 / Olsen-Pfitzer model - Interpolated at interval midpoint time EPOCH using Ephemeris data.",
+          "Units": "nT",
+          "UnitsConversion": "1e-9>T",
+          "ValidMin": "-500.0",
+          "ValidMax": "500.0",
+          "FillValue": "-999.99",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Angle between B-field and S/C spin axis",
+          "ParameterKey": "BF2Spin",
+          "Description": "Angle between B-field and S/C spin axis using Model B-field and S/C attitude data interpolated to the midpoint time EPOCH using Ephemeris data.",
+          "Units": "degrees",
+          "ValidMin": "-90.0",
+          "ValidMax": "90.0",
+          "FillValue": "-999.99",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Model mag. field coordinates",
+          "ParameterKey": "BModl",
+          "Description": "Bx, By and Bz from IGRF 1965.0 / Olsen-Pfitzer model - Interpolated at interval midpoint time EPOCH using Ephemeris data.",
+          "Units": "nT",
+          "UnitsConversion": "1e-9>T",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GSM"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "Bx (model)",
+                "Qualifier": "Component.I",
+                "Index": "1",
+                "Units": "nT",
+                "UnitsConversion": "1e-9>T",
+                "ValidMin": "-500.0",
+                "ValidMax": "500.0",
+                "FillValue": "-999.99"
+              },
+              {
+                "Name": "By (model)",
+                "Qualifier": "Component.J",
+                "Index": "2",
+                "Units": "nT",
+                "UnitsConversion": "1e-9>T",
+                "ValidMin": "-500.0",
+                "ValidMax": "500.0",
+                "FillValue": "-999.99"
+              },
+              {
+                "Name": "Bz (model)",
+                "Qualifier": "Component.K",
+                "Index": "3",
+                "Units": "nT",
+                "UnitsConversion": "1e-9>T",
+                "ValidMin": "-500.0",
+                "ValidMax": "500.0",
+                "FillValue": "-999.99"
+              }
+            ]
+          },
+          "Support": {
+            "Qualifier": "Vector",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Ion/Electron gun operation flag",
+          "ParameterKey": "GunStat",
+          "Description": "Ion/Electron gun operation flag:\n      \n      * bit 0 (electron gun) 0/1 => OFF/ON,\n      * bit 1 (ion gun) 0/1 => OFF/ON.",
+          "Units": "unitless",
+          "ValidMin": "-128.0",
+          "ValidMax": "127.0",
+          "FillValue": "-128.0",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Variable quality indicator",
+          "ParameterKey": "Status%SC_SP",
+          "Description": "Variable quality indicator - see global attribute Status_key:\n      \n    * Status[0]\n    - '0'=Bad data\n    - '1'=Use with caution\n    - '2'=OK\n    - 'F'=Not Supplied\n    - '4'=Attitude partly non-fitted\n    - '5'=Attitude all non-fitted\n    - '6'=No Attitude data available\n    * Status[1]\n    - 'O'=B-field - OK\n    - 'C'=B-field - Use with caution\n    - 'M'=B-field - Not Supplied\n    - 'B'=B-field - Bad data\n    - '4'=Attitude partly non-fitted\n    - '5'=Attitude all non-fitted\n    - '6'=No Attitude data available\n    * Status[2]\n    - 'O'=VLF - OK - Normal ant. switching\n    - 'C'=VLF - Caution - missing E or M\n    - 'M'=VLF - Not Supplied \n    - 'B'=VLF - Bad data\n    - '1'=VLF - E-normal; M-abnormal\n    - '2'=VLF - E-abnormal; M-normal\n    - '3'=VLF - E-abnormal; M-abnormal\n    * Status[3]\n    - 'O'=SC Common - OK\n    - 'C'=SC Common - Use with caution\n    - 'M'=SC Common - Not Supplied\n    - 'B'=SC Common - Bad data\n    * Status[4]\n    - 'O'=ELF - OK\n    - 'C'=ELF - Use with caution\n    - 'M'=ELF - Not Supplied\n    - 'B'=ELF - Bad Data\n    * Status[5]\n    - 'O'=E-Flux - OK\n    - 'C'=E-Flux - Use with caution\n    - 'M'=E-Flux - Not Supplied\n    - 'B'=E-Flux - Bad data\n    * Status[6]\n    - 'O'=E-Moment - OK\n    - 'C'=E-Moment - Use with caution\n    - 'M'=E-Moment - Not Supplied\n    - 'B'=E-Moment - Bad data\n    * Status[7]\n    - 'O'=P-Flux - OK\n    - 'C'=P-Flux - Use with caution\n    - 'M'=P-Flux - Not Supplied\n    - 'B'=P-Flux - Bad data\n    - '4'=Attitude partly non-fitted\n    - '5'=Attitude all non-fitted\n    - '6'=No Attitude data available\n    * Status[8]\n    - 'O'=P-Moment - OK\n    - 'C'=P-Moment - Use with caution\n    - 'M'=P-Moment - Not Supplied\n    - 'B'=P-Moment - Bad data\n    - '1'=P-Moment - Uses flux LE 71.0 keV\n    - '4'=Attitude partly non-fitted\n    - '5'=Attitude all non-fitted\n    - '6'=No Attitude data available\n    * Status[9]\n    - 'O'=Ephemeris - OK\n    - 'C'=Ephemeris - Use with caution\n    - 'M'=Ephemeris - Not Supplied\n    - 'B'=Ephemeris - Bad data\n    * Status[10]\n    - 'O'=Gun - OK\n    - 'C'=Gun - Use with caution\n    - 'M'=Gun - Not Supplied\n    - 'B'=Gun - Bad data",
+          "FillValue": "FFFFFFFFFFF",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        }
+      ]
+    }
+  }
+}

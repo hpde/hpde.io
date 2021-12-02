@@ -1,0 +1,80 @@
+{
+  "Spase": {
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_2_1.xsd",
+    "Version": "2.2.1",
+    "NumericalData": {
+      "ResourceID": "\n\t spase://SMWG/NumericalData/POLAR/EFI/EField_EDot0_GSE_Spin\n      ",
+      "ResourceHeader": {
+        "ResourceName": "\n\t    PolarEFI_SpinResolution_GSE_ElectricField_EDot0\n         ",
+        "ReleaseDate": "\n\t    2012-03-05T00:00:00\n         ",
+        "Description": "\n\t    Electric field in GSE coordinates (E_Dot0\n\t    version), one vector per spin, computed by a\n\t    spin-fit algorithm using the realtime\n\t    electric field measurements.\n         ",
+        "Acknowledgement": "\n\t    The user will acknowledge, in any publication\n\t    which uses POLAR EFI data, the instrument PI.\n         ",
+        "Contact": [
+          {
+            "PersonID": "\n\t\tspase://SMWG/Person/Forrest.S.Mozer\n\t    ",
+            "Role": "PrincipalInvestigator"
+          },
+          {
+            "PersonID": "\n\t\tspase://SMWG/Person/Jack.B.Vernetti\n\t    ",
+            "Role": "MetadataContact"
+          }
+        ]
+      },
+      "AccessInformation": {
+        "RepositoryID": "\n\t    spase://SMWG/Repository/UCB/POLAR/EFI\n\t ",
+        "Availability": "Online",
+        "AccessRights": "Open",
+        "AccessURL": {
+          "URL": "http://polarefi.ssl.berkeley.edu/PolarEFI",
+          "Description": "\n\t       This URL is the root location of the POLAR EFI\n\t       archive.  It consists of Yearly subdirectories:\n\t          \"1996\", \"1997\", ..., \"2008\"\n\t       each of which consists of Monthly subdirectories:\n\t          \"01\", \"02\", ..., \"12\"\n\t       The archive files for a given date are located\n\t       in the corresponding YY/MM subdirectory.\n\t    ",
+          "Language": "en"
+        },
+        "Format": "CDF",
+        "Encoding": "None",
+        "Acknowledgement": "\n\t    The user will acknowledge, in any publication\n\t    which uses POLAR EFI data, the instrument PI.\n         "
+      },
+      "InstrumentID": "\n         spase://SMWG/Instrument/POLAR/EFI\n      ",
+      "MeasurementType": "ElectricField",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "\n\t       1996-03-16T00:00:00\n            ",
+          "StopDate": "\n\t       2008-04-12T24:00:00\n            "
+        },
+        "Cadence": "PT6S"
+      },
+      "Parameter": [
+        {
+          "Name": "Time",
+          "ParameterKey": "TIME_TAG",
+          "Description": "\n\t    Data point time-tags which are double precision\n\t    floating point numbers which represent the number\n\t    of seconds, UTC, from midnight of the day\n\t    represented by the file.\n\t ",
+          "Cadence": "PT6S",
+          "Units": "seconds",
+          "ValidMin": "0.0",
+          "ValidMax": "86460.0",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "ElectricFieldVector",
+          "ParameterKey": "DATA_VALUES",
+          "Description": "\n\t    Data point vector values which are a\n\t    triplet of single precision floating point\n\t    numbers which represent the X,Y,Z components\n\t    of the electric field.  These vectors are\n\t    in one-to-one correspondence with the\n\t    values in the TIME_TAG parameter.\n\t    This data is computed by a ground spin-fit\n\t    algorithm on the realtime electric field\n\t    and represents one point every spin.\n\t ",
+          "Cadence": "PT6S",
+          "Units": "mV/m",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GSE"
+          },
+          "ValidMin": "-2000.0",
+          "ValidMax": "2000.0",
+          "Field": {
+            "Qualifier": "Vector",
+            "FieldQuantity": "Electric"
+          }
+        }
+      ]
+    }
+  }
+}

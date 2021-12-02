@@ -1,0 +1,119 @@
+<?xml version="1.0"?>
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_2_9.xsd">
+  <Version>2.3.0</Version>
+  <NumericalData>
+    <ResourceID>spase://VSPO/NumericalData/Voyager1/MAG/Saturn/HG/PT48S</ResourceID>
+    <ResourceHeader>
+      <ResourceName>Voyager 1 Saturn Magnetic Field in Heliographic RTN Coordinates, Resampled, Version 1.0, 48 s Data</ResourceName>
+      <ReleaseDate>2018-11-27T18:09:04Z</ReleaseDate>
+      <Description>* Data Set Overview
+* =================
+
+This Data Set includes calibrated Magnetic Field Data acquired by the Voyager 1 Low Field Magnetometer (LFM) during the Saturn Encounter. Coverage begins in the Solar Wind inbound to Saturn and continues past the last outbound Bowshock Crossing. The Data are in Heliographic (RTN) Coordinates and have been averaged from the 9.6 s Summary Rate to a 48 s Sample Rate. All Magnetic Field Measurements are given in nT. The Magnetic Field Data are calibrated (see the Calibration Description included in the Voyager 1 Magnetometer Instrument Catalog File for Details).
+
+* Parameters
+* ==========
+
+The full LFM Instrument Sample Rate is one Sample per 0.06 s. Full Telemetry Resolution "Detail" Data must be obtained from the Instrument Team. For this Data Set, the Data have been resampled to 48 s from 9.6 s Averages. The 9.6 s Data were resampled from 1.92 s Averages which were in turn resampled from the Detail Data.
+
+The LFM has eight Dynamic Ranges. The Instrument is designed to switch between Dynamic Ranges automatically depending on the observed Magnetic Field Magnitude and Fluctuations. Instrument Digitization Uncertainty depends on the Dynamic Range as indicated in the following Table from (Behannon et al., 1977).
+
+* LFM Dynamic Ranges and Quantization Uncertainty
+* ===============================================
+
++----------------------------------------------+
+| Range Num | Range (nT)   | Quantization (nT) |
+------------------------------------------------
+| 1         | &#xB1;8.8         | &#xB1;0.0022           |
+| 2         | &#xB1;26          | &#xB1;0.0063           |
+| 3         | &#xB1;79          | &#xB1;0.019            |
+| 4         | &#xB1;240         | &#xB1;0.059            |
+| 5         | &#xB1;710         | &#xB1;0.173            |
+| 6         | &#xB1;2,100       | &#xB1;0.513            |
+| 7         | &#xB1;6,400       | &#xB1;1.56             |
+| 8         | &#xB1;50,000      | &#xB1;12.2             |
++----------------------------------------------+
+
+* Processing
+* ==========
+
+Voyager EDRs undergo the following Processing in order to produce these 48 s averaged Summary Data:
+
+* Read EDR
+* Unpack Header Block (Receiver ID, Spacecraft ID, Telemetry Mode, FDS Counts, Data Flags)
+* Convert selected Time Tags to Integer Time (YY/DDD/HH:MM:SS.FFF)
+* Unpack Sub-header Block (MAG Status Words, Plasma Data)
+* Unpack Science Block (MAG Counts)
+* Convert Counts to nT
+* Apply Sensor and Boom Alignment Matrices
+* Rotate (optional) 1.92 s Averages while averaging Detail Data in nT to create 1.92 s Averages
+* Average 1.92 s Data to 9.6 s, then 9.6 s Data to 48 s
+* Write Summary Record
+
+Counts are measured onboard using 12-bit Words that may represent Values ranging from 0 to 4096. Integer Counts are converted to Magnetic Field Units (nT) by subtracting a Zero Offset from the measured MAG Value and multiplying this Difference by the Sensitivity of the Instrument.
+
+* Data
+* ====
+
+The Data Files are given in ASCII, Fixed Field Width, Comma-delimited Tables. The Record Structure is described in the following Table:
+
+* Resampled Magnetic Field Data in Heliographic (RTN) Coordinates
+* ===============================================================
+
++------------------------------------------------------------------------------------------------------------+
+| Column   | Type | Description                                                                              |
+--------------------------------------------------------------------------------------------------------------
+| Time     | a23  | Spacecraft Event Time (UT) of the Sample in the Format: YYYY-MM-DDTHH:MM:SS.SSS          |
+| sclk     | a12  | Spacecraft Clock in the Format: MOD65536:MOD60:FDS-LINE                                  |
+| mag_id   | i1   | Magnetometer ID (1=LFM, 2=HFM)                                                           |
+| Br       | f9.3 | Average of Detail Magnetic Field R Component in nT                                       |
+| Bt       | f9.3 | Average of Detail Magnetic Field T Component in nT                                       |
+| Bn       | f9.3 | Average of Detail Magnetic Field N Component in nT                                       |
+| Bmag     | f9.3 | Magnitude of the averaged Magnetic Field Components in nT                                |
+| avg_Bmag | f9.3 | Average of the Magnetic Field Magnitude over the Averaging Interval in nT                |
+| Delta    | f7.3 | Spacecraft centered Heliographic Magnetic Field Latitude in Degrees: Delta=asin(Bn/Bmag) |
+| Lambda   | f7.3 | Spacecraft centered Heliographic Magnetic Field Longitude in Degrees: Lambda=atan(Bt/Br) |
+| rms_Br   | f8.3 | Root-mean-square Deviation of Br over the Averagi                                        |
++------------------------------------------------------------------------------------------------------------+</Description>
+      <Contact>
+        <PersonID>spase://SMWG/Person/Todd.A.King</PersonID>
+        <Role>MetadataContact</Role>
+      </Contact>
+      <Contact>
+        <PersonID>spase://SMWG/Person/Lee.Frost.Bargatze</PersonID>
+        <Role>MetadataContact</Role>
+      </Contact>
+      <InformationURL>
+        <Name>VG1-S-MAG-4-SUMM-HGCOORDS-48.0SEC-V1.0</Name>
+        <URL>https://pds-ppi.igpp.ucla.edu/data/VG1-S-MAG-4-SUMM-HGCOORDS-48.0SEC-V1.0/AAREADME.TXT</URL>
+        <Description>The Document describing the Contents of the Collection.</Description>
+        <Language>En</Language>
+      </InformationURL>
+      <PriorID>spase://VMO/NumericalData/Voyager1/MAG/Saturn/PT48.0S</PriorID>
+    </ResourceHeader>
+    <AccessInformation>
+      <RepositoryID>spase://SMWG/Repository/PDS/PPI</RepositoryID>
+      <Availability>Online</Availability>
+      <AccessRights>Open</AccessRights>
+      <AccessURL>
+        <Name>PDS/PPI</Name>
+        <URL>https://pds-ppi.igpp.ucla.edu/search/view/?f=yes&amp;id=pds://PPI/VG1-S-MAG-4-SUMM-HGCOORDS-48.0SEC-V1.0</URL>
+        <ProductKey>VG1-S-MAG-4-SUMM-HGCOORDS-48.0SEC-V1.0</ProductKey>
+        <Description>This Collection is archived with NASA Planetary Data System.</Description>
+        <Language>En</Language>
+      </AccessURL>
+      <Format>Text.ASCII</Format>
+      <Acknowledgement>NASA Planetary Plasma Interactions (PPI) Node of the Planetary Data System (PDS) and the Principal Investigator for the Data.</Acknowledgement>
+    </AccessInformation>
+    <InstrumentID>spase://SMWG/Instrument/Voyager1/MAG</InstrumentID>
+    <MeasurementType>MagneticField</MeasurementType>
+    <TemporalDescription>
+      <TimeSpan>
+        <StartDate>1980-11-10T00:00:34.92</StartDate>
+        <StopDate>1980-11-20T23:59:47.06</StopDate>
+      </TimeSpan>
+      <Cadence>PT48S</Cadence>
+    </TemporalDescription>
+    <ObservedRegion>Saturn</ObservedRegion>
+  </NumericalData>
+</Spase>

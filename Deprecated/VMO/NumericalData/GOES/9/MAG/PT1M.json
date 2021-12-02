@@ -1,0 +1,372 @@
+{
+  "Spase": {
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_0_1.xsd",
+    "Version": "2.0.1",
+    "NumericalData": {
+      "ResourceID": "spase://VMO/NumericalData/GOES/9/MAG/PT1M",
+      "ResourceHeader": {
+        "ResourceName": "GOES 9 Magnetometer 1-Minute Data",
+        "ReleaseDate": "2011-07-19T21:41:00Z",
+        "Description": "The NOAA Geostationary Operational Environment Satellite (GOES) key parameters.  This data is a subset of the data available \n          from the GOES Space Environment Monitor (SEM) instruments.  It contains vector magnetic field in three coordinate systems:\n\n          * (1) Spacecraft P,E,N\n          * (2) GSM x,y,z and\n          * (3) GSE x,y,z.\n\n          Spacecraft magnetic field is defined as:\n\n          * P - perpendicular to the spacecraft orbital plane or parallel to the Earth's spin axis in the case of a zero degree inclination orbit;\n          * E - perpendicular to P and directed earhtwards; and\n          * N - perpendicular to both P and E and directed eastwards.\n      ",
+        "Acknowledgement": "Users should acknowledge the CDAWeb for providing access to the data as well as the PI H. Singer and originating institution\n      NOAA Space Environment Center",
+        "Contact": {
+          "PersonID": "spase://SMWG/Person/Howard.J.Singer",
+          "Role": "PrincipalInvestigator"
+        },
+        "InformationURL": {
+          "Name": "Geostationary Satellite Server",
+          "URL": "http://www.goes.noaa.gov/",
+          "Description": "A web site hosted by NOAA with information and links to the GOES spacecraft and data"
+        },
+        "PriorID": "spase://VMO/NumericalData/GOES9/MAG/PT1M"
+      },
+      "AccessInformation": {
+        "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF/CDAWeb",
+        "Availability": "Online",
+        "AccessRights": "Open",
+        "AccessURL": {
+          "Name": "1-minute GOES 9 MAG data at CDAWeb",
+          "URL": "ftp://cdaweb.gsfc.nasa.gov/pub/data/goes/goes09/mag_k0",
+          "Description": "An ftp repository hosting 1-minute GOES 9 MAG data"
+        },
+        "Format": "CDF",
+        "Encoding": "None"
+      },
+      "ProviderResourceName": "GOES_9",
+      "ProviderProcessingLevel": "Level 2",
+      "ProviderVersion": "4",
+      "InstrumentID": [
+        "spase://SMWG/Instrument/GOES/9/MAG",
+        "spase://SMWG/Instrument/GOES/9/Ephemeris"
+      ],
+      "MeasurementType": [
+        "MagneticField",
+        "Ephemeris"
+      ],
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "1995-12-01T00:00:30",
+          "StopDate": "1998-07-27T23:59:30"
+        },
+        "Cadence": "PT1M"
+      },
+      "ObservedRegion": "Earth.Magnetosphere",
+      "Keyword": "Magnetic field",
+      "Parameter": [
+        {
+          "Name": "Epoch",
+          "ParameterKey": "Epoch",
+          "Description": "Epoch of the data point",
+          "Cadence": "PT1M",
+          "Units": "Milliseconds",
+          "Structure": "\n      ",
+          "ValidMin": "01-Jan-1977 00:00:00.000",
+          "ValidMax": "31-Dec-2010 00:00:00.000",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Time PB5",
+          "ParameterKey": "Time_PB5",
+          "Description": "Time array in the form [year, day of year, millisecond]",
+          "Cadence": "PT1M",
+          "Structure": "\n      ",
+          "ValidMin": "01-Jan-1977 00:00:00.000",
+          "ValidMax": "31-Dec-2010 00:00:00.000",
+          "FillValue": "-2147483648",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Magnetic Field Vector GSE",
+          "ParameterKey": "B_GSE_c",
+          "Description": "Magnetic Field vector in GSE coordinates",
+          "Cadence": "PT1M",
+          "Units": "nT",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GSE"
+          },
+          "Structure": {
+            "Element": [
+              {
+                "Name": "Xgse",
+                "Qualifier": "Component.I",
+                "Index": "1"
+              },
+              {
+                "Name": "Ygse",
+                "Qualifier": "Component.J",
+                "Index": "2"
+              },
+              {
+                "Name": "Zgse",
+                "Qualifier": "Component.K",
+                "Index": "3"
+              }
+            ]
+          },
+          "ValidMin": "-600.00",
+          "ValidMax": "600.00",
+          "FillValue": "-1.0e+31",
+          "Field": {
+            "Qualifier": "Vector",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "Magnetic Field vector GSM",
+          "ParameterKey": "B_GSM_c",
+          "Description": "Magnetic Field vector in GSM coordinates",
+          "Cadence": "PT1M",
+          "Units": "nT",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GSM"
+          },
+          "Structure": {
+            "Element": [
+              {
+                "Name": "Xgsm",
+                "Qualifier": "Component.I",
+                "Index": "1"
+              },
+              {
+                "Name": "Ygsm",
+                "Qualifier": "Component.J",
+                "Index": "2"
+              },
+              {
+                "Name": "Zgsm",
+                "Qualifier": "Component.K",
+                "Index": "3"
+              }
+            ]
+          },
+          "ValidMin": "-600.0",
+          "ValidMax": "600.0",
+          "FillValue": "-1.0e+31",
+          "Field": {
+            "Qualifier": "Vector",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "Magnetic Field vector spacecraft coordinates",
+          "ParameterKey": "B_lcl_c",
+          "Description": "Magnetic Field vector in spacecraft coordinates. Spacecraft magnetic field (P,E,N) is defined as:\n\n          * P - perpendicular to the spacecraft orbital plane or parallel to the Earth's spin axis in the case of a zero degree inclination orbit;\n          * E - perpendicular to P and directed earhtwards; and\n          * N - perpendicular to both P and E and directed eastwards.\n      ",
+          "Cadence": "PT1M",
+          "Units": "nT",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "SpacecraftOrbitPlane"
+          },
+          "Structure": {
+            "Element": [
+              {
+                "Name": "P",
+                "Qualifier": "Component.I",
+                "Index": "1"
+              },
+              {
+                "Name": "E",
+                "Qualifier": "Component.J",
+                "Index": "2"
+              },
+              {
+                "Name": "N",
+                "Qualifier": "Component.K",
+                "Index": "3"
+              }
+            ]
+          },
+          "ValidMin": "-600.0",
+          "ValidMax": "600.0",
+          "FillValue": "-1.0e+31",
+          "Field": {
+            "Qualifier": "Vector",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "Spacecraft Position Geographic",
+          "ParameterKey": "SC_pos_ll",
+          "Description": "Spacecraft position in Geographic coordinates",
+          "Cadence": "PT1M",
+          "Units": "[degrees,degrees,km]",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "GEO"
+          },
+          "Structure": {
+            "Element": [
+              {
+                "Name": "Latitude",
+                "Qualifier": "DirectionAngle.ElevationAngle",
+                "Index": "1",
+                "Units": "degrees",
+                "ValidMin": "-90",
+                "ValidMax": "90"
+              },
+              {
+                "Name": "Longitude",
+                "Qualifier": "DirectionAngle.AzimuthAngle",
+                "Index": "2",
+                "Units": "degrees",
+                "ValidMin": "0",
+                "ValidMax": "360"
+              },
+              {
+                "Name": "Radius",
+                "Qualifier": "Magnitude",
+                "Index": "3",
+                "Units": "km",
+                "ValidMin": "50",
+                "ValidMax": "50000"
+              }
+            ]
+          },
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Spacecraft position GEO",
+          "ParameterKey": "SC_pos_eo",
+          "Description": "Spacecraft position in GEO coordinates",
+          "Cadence": "PT1M",
+          "Units": "km",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GEO"
+          },
+          "Structure": {
+            "Element": [
+              {
+                "Name": "X GEO",
+                "Qualifier": "Component.I",
+                "Index": "1"
+              },
+              {
+                "Name": "Y GEO",
+                "Qualifier": "Component.J",
+                "Index": "2"
+              },
+              {
+                "Name": "Z GEO",
+                "Qualifier": "Component.K",
+                "Index": "3"
+              }
+            ]
+          },
+          "ValidMin": "-5000.0",
+          "ValidMax": "5000.0",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Spacecraft Position GSE",
+          "ParameterKey": "SC_pos_se",
+          "Description": "Spacecraft position in GSE coordinates",
+          "Cadence": "PT1M",
+          "Units": "km",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GSE"
+          },
+          "Structure": {
+            "Element": [
+              {
+                "Name": "GSE X",
+                "Index": "1"
+              },
+              {
+                "Name": "GSE Y",
+                "Index": "2"
+              },
+              {
+                "Name": "GSE Z",
+                "Index": "3"
+              }
+            ]
+          },
+          "ValidMin": "-5000.0",
+          "ValidMax": "5000.0",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Spacecraft position GSM",
+          "ParameterKey": "SC_pos_sm",
+          "Description": "Spacecraft position in GSM coordinates",
+          "Cadence": "PT1M",
+          "Units": "km",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GSM"
+          },
+          "Structure": {
+            "Element": [
+              {
+                "Name": "X GSM",
+                "Index": "1"
+              },
+              {
+                "Name": "Y GSM",
+                "Index": "2"
+              },
+              {
+                "Name": "Z GSM",
+                "Qualifier": "Component.K",
+                "Index": "3"
+              }
+            ]
+          },
+          "ValidMin": "-5000.0",
+          "ValidMax": "5000.0",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "MGF Instrument Status",
+          "ParameterKey": "MGF_stat",
+          "Description": "Status of the magnetic field instrument:\n\n         * 0 = ok,\n         * 1 = minor problem,\n         * 2 = major problem,\n         * 3 = missing data.\n      ",
+          "Cadence": "PT1M",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Mag post-gap flag",
+          "ParameterKey": "B_flag",
+          "Description": "Magnetic field data flag:\n\n          * 0 = no gap,\n          * 1 = data not available\n      ",
+          "Cadence": "PT1M",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Spacecraft post-gap flag",
+          "ParameterKey": "SC_flag",
+          "Description": "Spacecraft location data flag:\n          * 0 = no gap,\n          * 1 = data not available\n      ",
+          "Cadence": "PT1M",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        }
+      ]
+    }
+  }
+}

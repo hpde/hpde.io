@@ -1,0 +1,214 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "Version": "2.2.4",
+    "NumericalData": {
+      "ResourceID": "spase://VMO/NumericalData/Geotail/CPI/UIOWA_HPA_PT64S",
+      "ResourceHeader": {
+        "ResourceName": "Geotail Comprehensive Plasma Instrumentation (CPI) Hot Plasma Analyzer high Res data at 64 s resolution in GSE Coordinates",
+        "AlternateName": "CPI HPA data",
+        "ReleaseDate": "2016-03-09T00:00:00",
+        "Description": "Geotail Comprehensive Plasma Instrumentation (CPI) Hot Plasma Analyzer data in GSE coordinates. This data set consists of plasma flow vectors, density, and temperature data. ",
+        "Acknowledgement": "William R. Paterson; Institute of Space and Aeronautical Science, Univerity of Tokyo; National Aeronautics and Space Administration",
+        "Contact": [
+          {
+            "PersonID": "spase://SMWG/Person/Louis.A.Frank",
+            "Role": "PrincipalInvestigator"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Kent.L.Ackerson",
+            "Role": "GeneralContact"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/James.M.Weygand",
+            "Role": "MetadataContact"
+          }
+        ],
+        "InformationURL": [
+          {
+            "Name": "CPI instrument description",
+            "URL": "http://www-spof.gsfc.nasa.gov/istp/geotail/geotail_inst.html",
+            "Description": "CPI instrument description"
+          },
+          {
+            "Name": "CPI instrument description",
+            "URL": "http://www-pi.physics.uiowa.edu/cpi/",
+            "Description": "CPI instrument description and data"
+          }
+        ]
+      },
+      "AccessInformation": {
+        "RepositoryID": "spase://SMWG/Repository/UIOWA_CPI_SWA",
+        "Availability": "Online",
+        "AccessRights": "Open",
+        "AccessURL": {
+          "Name": "Geotail CPI HPA Data Archive",
+          "URL": "http://www-pi.physics.uiowa.edu/cpi/"
+        },
+        "Format": "Text",
+        "Encoding": "ASCII"
+      },
+      "ProcessingLevel": "Calibrated",
+      "ProviderResourceName": "Geotail Comprehensive Plasma Instrumentation data",
+      "ProviderProcessingLevel": "Level-2",
+      "ProviderVersion": "",
+      "InstrumentID": "spase://SMWG/Instrument/Geotail/CPI/HPA",
+      "MeasurementType": "ThermalPlasma",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "1992-10-06T00:00:00",
+          "StopDate": "2009-12-27T00:00:00",
+          "Note": "Time format in data files is: MM/DD/YY HHMM:SS.. Mission has not yet ended."
+        }
+      },
+      "ObservedRegion": [
+        "Earth.Magnetosheath",
+        "Earth.Magnetosphere",
+        "Heliosphere.NearEarth"
+      ],
+      "Caveats": "The temporal resolution of the data appears to vary over time.",
+      "Keyword": [
+        "solar wind",
+        "magnetotail",
+        "bow shock",
+        "magnetopause",
+        "plasma data",
+        "CPI",
+        "Geotail"
+      ],
+      "Parameter": [
+        {
+          "Name": "Universal Time",
+          "ParameterKey": "Time",
+          "Description": "Interpolated universal time columns from left to right are: day month year hour minute sec in the format of date and time is MM/DD/YY HHMM:SS.",
+          "Cadence": "PT64S",
+          "Structure": {
+            "Size": "5",
+            "Description": "Universal Time expressed using a 5-column day, month, year, hour, minute, second representation",
+            "Element": [
+              {
+                "Name": "Month",
+                "Index": "1",
+                "ParameterKey": "Column_1",
+                "Units": "months"
+              },
+              {
+                "Name": "Day of Month",
+                "Index": "2",
+                "ParameterKey": "Column_2",
+                "Units": "days"
+              },
+              {
+                "Name": "Year",
+                "Index": "3",
+                "ParameterKey": "Column_3",
+                "Units": "years"
+              },
+              {
+                "Name": "HourMinute",
+                "Index": "4",
+                "ParameterKey": "Column_4"
+              },
+              {
+                "Name": "Seconds",
+                "Index": "5",
+                "ParameterKey": "Column_5",
+                "Units": "msec"
+              }
+            ]
+          },
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Geotail CPI HPA ion Density",
+          "ParameterKey": "Column_6",
+          "Description": "Ion density for Geotail CPI in units of number per cubic centimeter.",
+          "Caveats": "Temporal resolution changes throughout mission.",
+          "Cadence": "PT64S",
+          "Units": "#/cm^-3",
+          "Particle": {
+            "ParticleType": "Ion",
+            "ParticleQuantity": "NumberDensity"
+          }
+        },
+        {
+          "Name": "Geotail CPI Ion Temperature",
+          "ParameterKey": "Column_7",
+          "Description": "Geotail CPI ion temperature in units of Kelvin.",
+          "Caveats": "Be sure you understand the instrument. Temporal resolution changes throughout mission.",
+          "Cadence": "PT64S",
+          "Units": "K",
+          "Particle": {
+            "ParticleType": "Ion",
+            "ParticleQuantity": "Temperature"
+          }
+        },
+        {
+          "Name": "Geotail CPI Velocity Vector Interpolated  in GSE Coordinates",
+          "ParameterKey": "Column_8-Column_10",
+          "Description": "Flow vector for Geotail CPI in GSE coordinates in units of km/s.",
+          "Caveats": "Be sure you understand the instrument. Temporal resolution changes throughout mission.",
+          "Cadence": "PT64S",
+          "Units": "km/s",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GSE"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "Vx",
+                "Index": "1",
+                "ParameterKey": "Column_8",
+                "Units": "km/s"
+              },
+              {
+                "Name": "Vy",
+                "Index": "2",
+                "ParameterKey": "Column_9",
+                "Units": "km/s"
+              },
+              {
+                "Name": "Vz",
+                "Index": "3",
+                "ParameterKey": "Column_10",
+                "Units": "km/s"
+              }
+            ]
+          },
+          "Particle": {
+            "ParticleType": "Ion",
+            "ParticleQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "Geotail CPI Electron Density",
+          "ParameterKey": "Column_11",
+          "Description": "Electron density for Geotail CPI in units of number per cubic centimeter.",
+          "Caveats": "Temporal resolution changes throughout mission.",
+          "Cadence": "PT64S",
+          "Units": "#/cm^-3",
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "NumberDensity"
+          }
+        },
+        {
+          "Name": "Geotail CPI Electron Temperature",
+          "ParameterKey": "Column_12",
+          "Description": "Geotail CPI thermal speed in units of Kelvin.",
+          "Caveats": "Be sure you understand the instrument. Temporal resolution changes throughout mission.",
+          "Cadence": "PT64S",
+          "Units": "K",
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "Temperature"
+          }
+        }
+      ]
+    }
+  }
+}

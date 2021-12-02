@@ -1,0 +1,147 @@
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema file:/C:/Projects/Voyager/spase-2_2_2.xsd">
+<Version>2.2.2</Version>
+<NumericalData>
+               <ResourceID>spase://VMO/NumericalData/Voyager1/PWS/Saturn/PT4.0S</ResourceID>
+               <ResourceHeader>
+                      <ResourceName>Voyager 1 Saturn PWS Edited Spectrum Analyzer 4.0-s V1.0</ResourceName>
+                     <ReleaseDate>2017-01-19T10:00:00.00</ReleaseDate>
+                      <Description>                                        
+                                                                              
+      Data Set Overview                                                       
+      =================                                                       
+                                                                              
+      Data Set Description                                                    
+      --------------------                                                    
+      This data set consists of 4-second edited, wave electric                
+      field intensities from the Voyager 1 Plasma Wave Receiver               
+      spectrum analyzer obtained in the vicinity of the Jovian                
+      magnetosphere. For each 4-second interval, a field strength             
+      is determined for each of the 16 spectrum analyzer channels             
+      whose center frequencies range from 10 Hertz to 56.2                    
+      kiloHertz and which are logarithmically spaced in                       
+      frequency, four channels per decade. The time associated                
+      with each set of intensities (16 channels) is the time of               
+      the beginning of the scan. During data gaps where complete              
+      4-second spectra are missing, no entries exist in the file,             
+      that is, the gaps are not zero-filled or tagged in any                  
+      other way. When one or more channels are missing within a               
+      scan, the missing measurements are zero-filled. Data are                
+      edited but not calibrated. The data numbers in this data                
+      set can be plotted in raw form for event searches and                   
+      simple trend analysis since they are roughly proportional               
+      to the log of the electric field strength. Calibration                  
+      procedures and tables are provided for use with this data               
+      set; the use of these is described below.                               
+                                                                              
+      Use of Voyager PWS Calibration Tables                                   
+                                                                              
+      The Voyager PWS calibration table is given in an ASCII text             
+      file named SA_CL.TAB (for Voyager-1). This provides                     
+      information to convert the uncalibrated &apos;data number&apos; output            
+      of the PWS 16-channel spectrum analyzer to calibrated antenna           
+      voltages for each frequency channel. Following is a brief               
+      description of these files and a tutorial in their                      
+      application.                                                            
+                                                                              
+      Descriptive headers have been removed from the calibration              
+      table file. The columns included are IDN, ICHAN01, ICHAN02,             
+      ICHAN03, ICHAN04, ICHAN05, ICHAN06, ... ICHAN16.                        
+                                                                              
+      The first column lists an uncalibrated data number followed by          
+      the corresponding value in calibrated volts for each of the 16          
+      frequency channels of the PWS spectrum analyzer. Each line              
+      contains calibrations for successive data number values                 
+      ranging from 0 through 255. (Data number 0 actually represents          
+      the lack of data since the baseline noise values for each               
+      channel are all above that.)                                            
+                                                                              
+      A data analysis program may load the appropriate table into a           
+      data structure and thus provide a simple look-up scheme to              
+      obtain the appropriate voltage for a given data number and              
+      frequency channel. For example, the following VAX FORTRAN code          
+      may be used to load a calibration array for Voyager 1 PWS:              
+                                                                              
+        real*4 cal (16,0:255)                                                 
+        open ( unit=10, file=&apos;SA_CL.TAB&apos;, status=&apos;old&apos; )                      
+                                                                              
+        do i=0,255                                                            
+          read (10,*) idn, (cal(ichan,i),ichan=1,16)                          
+        end do                                                                
+        close (10)                                                            
+                                                                              
+      Then, given an uncalibrated data value idn for the frequency            
+      channel ichan, the corresponding calibrated antenna voltage             
+      would be given by the following array reference:                        
+                                                                              
+        volts = cal (ichan, idn)                                              
+                                                                              
+      This may be converted to a wave electric field amplitude by             
+      dividing by the effective antenna length in meters, 7.07 m.             
+      That is:                                                                
+                                                                              
+        efield = cal(ichan, idn) / 7.07                                       
+                                                                              
+      Spectral density units may be obtained by dividing the square           
+      of the electric field value by the nominal frequency bandwidth          
+      of the corresponding spectrum analyzer channel.                         
+                                                                              
+        specdens = (cal(ichan,idn)/7.07)**2 / bandwidth(ichan)                
+                                                                              
+      Finally, power flux may be obtained by dividing the spectral            
+      density by the impedance of free space in ohms:                         
+                                                                              
+        pwrflux = ((cal(ichan,idn)/7.07)**2/bandwidth(ichan))/376.73          
+                                                                              
+      Of course, for a particular application, it may be more                 
+      efficient to apply the above conversions to the calibration             
+      table directly.                                                         
+                                                                              
+      The center frequencies and bandwidths of each PWS spectrum              
+      analyzer channel for the Voyager 1 PWS are given below:                 
+                                                                              
+      VOYAGER 1 PWS SPECTRUM ANALYZER                                         
+                                                                              
+      Voyager-1                                                               
+      Channel    Center Frequency      Bandwidth                              
+                                                                              
+      1             10.0 Hz             2.16  Hz                              
+      2             17.8 Hz             3.58  Hz                              
+      3             31.1 Hz             4.50  Hz                              
+      4             56.2 Hz            10.7   Hz                      </Description>
+                      <Contact>
+                             <PersonID>spase://SMWG/Person/Todd.A.King</PersonID>
+                             <Role>MetadataContact</Role>
+                     </Contact>
+                      <InformationURL>
+                             <Name>VG1-S-PWS-2-RDR-SA-4.0SEC-V1.0</Name>
+                             <URL>http://pds-ppi.igpp.ucla.edu/data/VG1-S-PWS-2-RDR-SA-4.0SEC-V1.0/AAREADME.TXT</URL>
+                             <Description>The document describing the contents of the collection.</Description>
+                             <Language>En</Language>
+                     </InformationURL>
+              </ResourceHeader>
+               <AccessInformation>
+                      <RepositoryID>spase://SMWG/Repository/PDS/PPI</RepositoryID>
+                      <Availability>Online</Availability>
+                      <AccessRights>Open</AccessRights>
+                      <AccessURL>
+                             <Name>PDS/PPI</Name>
+                             <URL>http://pds-ppi.igpp.ucla.edu/search/view/?f=yes&amp;id=pds://PPI/VG1-S-PWS-2-RDR-SA-4.0SEC-V1.0</URL>
+                             <ProductKey>VG1-S-PWS-2-RDR-SA-4.0SEC-V1.0</ProductKey>
+                             <Description>This collection is archived with NASA&apos;s Planetary Data System.</Description>
+                             <Language>En</Language>
+                     </AccessURL>
+                      <Format>Text.ASCII</Format>
+                      <Acknowledgement>NASA&apos;s Planetary Plasma Interactions (PPI) Node of the Planetary Data System (PDS) and the P.I. for the data.</Acknowledgement>
+              </AccessInformation>
+               <InstrumentID>spase://SMWG/Instrument/Voyager1/PWS</InstrumentID>
+               <MeasurementType>Waves.Passive</MeasurementType>
+               <TemporalDescription>
+                      <TimeSpan>
+                             <StartDate>1981-08-24T00:00:47.53</StartDate>
+                             <StopDate>1981-08-31T23:56:46.84</StopDate>
+                     </TimeSpan>
+                      <Cadence>PT4.0S</Cadence>
+              </TemporalDescription>
+               <ObservedRegion>Saturn</ObservedRegion>
+       </NumericalData>
+</Spase>

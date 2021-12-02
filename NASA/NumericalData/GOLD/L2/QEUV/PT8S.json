@@ -1,0 +1,545 @@
+{
+  "Spase": {
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_3_1.xsd",
+    "Version": "2.3.1",
+    "NumericalData": {
+      "ResourceID": "spase://NASA/NumericalData/GOLD/L2/QEUV/PT8S",
+      "ResourceHeader": {
+        "ResourceName": "Gold Level L2 Solar EUV proxy",
+        "ReleaseDate": "2020-09-14T16:47:17Z",
+        "Description": "The GOLD solar irradiance proxy (QEUV) is a proxy for the integrated solar EUV \n\t  irradiance below 45 nm, which can be derived directly from far ultraviolet (FUV) radiance \n\t  measurements. QEUV is a dayside disk data product, derived from the GOLD DAY measurement mode.\n\t  \n\t  Algorithm heritage\n\t  The disk QEUV retrieval algorithm was originally developed for use with GUVI and SSUSI images \n\t  (Strickland et al., [1995]).  The GOLD implementation of this algorithm takes advantage of GOLD’s \n\t  ability to transmit the full spectrum to maximize the signal-to-noise ratio and eliminate atomic \n\t  emission lines that contaminate the N2 LBH bands (e.g., N I 149.3 nm). This algorithm has been \n\t  extensively documented and applied (e.g., Strickland et al. [2004]; Evans et al., [1995]). The \n\t  associated GOLD Level 2 data product is called QEUV.\n\t  \n\t  References\n\t  -Evans, J. S., D. J. Strickland and R. E. Huffman (1995), Satellite remote sensing of thermospheric \n\t   O/N2 and solar EUV: 2. Data analysis, J. Geophys. Res., Vol. 100, NO. A7, pages 12,227-12,233.\n      -Strickland, D. J., J. S. Evans, and L. J. Paxton (1995), Satellite remote sensing of thermospheric  \n\t   O/N2 and solar EUV: 1. Theory, J. Geophys. Res., 110, A7, pages 12,217-12,226.\n      -Strickland, D. J., J. L. Lean, R. R. Meier, A. B. Christensen, L. J. Paxton, D. Morrison, J. D. \n\t   Craven, R. L. Walterscheid, D. L. Judge, and D. R. McMullin, (2004), Solar EUV irradiance variability \n\t   derived from terrestrial far ultraviolet dayglow observations, Vol. 31, L03801, doi:10.1029/2003GL018415.\n\t  ",
+        "Acknowledgement": "National Aeronautics and Space Administration; Dr. Richard Eastes",
+        "Contact": [
+          {
+            "PersonID": "spase://SMWG/Person/Richard.Eastes",
+            "Role": "PrincipalInvestigator"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/James.M.Weygand",
+            "Role": "MetadataContact"
+          }
+        ],
+        "InformationURL": [
+          {
+            "Name": "GOLD Homepage web page",
+            "URL": "https://gold.cs.ucf.edu/",
+            "Description": "GOLD web page with news and other information."
+          },
+          {
+            "Name": "GOLD Missions Space Science Reviews Article",
+            "URL": "https://doi.org/10.1007/s11214-017-0392-2",
+            "Description": "Eastes, R.W., McClintock, W.E., Burns, A.G. et al. Space Sci. Rev. (2017) vol. 212, pp.383."
+          }
+        ],
+        "PriorID": [
+          "spase://VSPO/NumericalData/GOLD/L2/QEUV/PT8S",
+          "spase://NASA/NumericalData/SES-14/GOLD/L2/QEUV/PT8S"
+        ]
+      },
+      "AccessInformation": {
+        "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+        "Availability": "Online",
+        "AccessRights": "Open",
+        "AccessURL": [
+          {
+            "Name": "FTPS from SPDF (not with most browsers)",
+            "URL": "ftps://spdf.gsfc.nasa.gov/pub/data/gold/level2/",
+            "Description": "FTPS access to Gold Level L2 data"
+          },
+          {
+            "Name": "HTTPS from SPDF",
+            "URL": "https://spdf.gsfc.nasa.gov/pub/data/gold/level2/",
+            "Description": "HTTPS access to Gold Level L2 data"
+          }
+        ],
+        "Format": "NetCDF",
+        "Acknowledgement": "Space Physics Data Facility of the NASA Goddard Space Flight Center; Robert E McGuire"
+      },
+      "ProcessingLevel": "Calibrated",
+      "ProviderName": "GOLD",
+      "ProviderResourceName": "Gold Level L2 Solar EUV proxy",
+      "ProviderProcessingLevel": "Level 2",
+      "ProviderVersion": "1",
+      "InstrumentID": "spase://SMWG/Instrument/GOLD",
+      "MeasurementType": "ImageIntensity",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "2018-10-05T00:00:00",
+          "RelativeStopDate": "P1D"
+        },
+        "Cadence": "PT8S"
+      },
+      "ObservedRegion": "Earth.NearSurface.Ionosphere",
+      "Keyword": [
+        "Solar EUV proxy",
+        "GOLD",
+        "SES-14"
+      ],
+      "Parameter": [
+        {
+          "Name": "Random Uncertainty in N2 LBH brightness",
+          "ParameterKey": "n2_lbh_unc_ran",
+          "Description": "Random uncertainty in N2 LBH brightness.",
+          "Cadence": "PT8S",
+          "Units": "Rayleighs",
+          "Structure": {
+            "Size": "92 40"
+          },
+          "ValidMin": "0",
+          "ValidMax": "100000",
+          "FillValue": "9.9692e+36",
+          "Support": {
+            "Qualifier": "Uncertainty",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Random Uncertainty in in retrieved QEUV",
+          "ParameterKey": "qeuv_unc_ran",
+          "Description": "Random uncertainty in retrieved QEUV.",
+          "Cadence": "PT8S",
+          "Units": "erg/cm2/s",
+          "Structure": {
+            "Size": "92 40"
+          },
+          "ValidMin": "0",
+          "ValidMax": "10",
+          "FillValue": "9.9692e+36",
+          "Support": {
+            "Qualifier": "Uncertainty",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "DEUV Lookup Table",
+          "ParameterKey": "qeuv_lookup_table",
+          "Description": "QEUV lookup table filename.",
+          "Cadence": "PT8S",
+          "Structure": {
+            "Size": "50 40"
+          },
+          "FillValue": " ",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "O/N2 Ratio Quality Flag",
+          "ParameterKey": "on2_dqi",
+          "Description": "ON2 data quality index.",
+          "Cadence": "PT8S",
+          "Structure": {
+            "Size": "92 40"
+          },
+          "ValidMin": "0",
+          "ValidMax": "2147483647",
+          "FillValue": "-2147483647",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Retrieved O/N2 column density ratio",
+          "ParameterKey": "on2",
+          "Description": "Retrieved O/N2 column density ratio used in QEUV retrieval.",
+          "Cadence": "PT8S",
+          "Structure": {
+            "Size": "92 40"
+          },
+          "ValidMin": "0",
+          "ValidMax": "5",
+          "FillValue": "9.9692e+36",
+          "Mixed": {
+            "MixedQuantity": "Other",
+            "Qualifier": "Ratio"
+          }
+        },
+        {
+          "Name": "Random Uncertainty in Oxygen 135.6 nm Brightness",
+          "ParameterKey": "oi_1356_unc_ran",
+          "Description": "Random uncertainty in oxygen 135.6 nm brightness.",
+          "Cadence": "PT8S",
+          "Units": "Rayleighs",
+          "Structure": {
+            "Size": "92 40"
+          },
+          "ValidMin": "0",
+          "ValidMax": "100000",
+          "FillValue": "9.9692e+36",
+          "Wave": {
+            "WaveType": "Photon",
+            "Qualifier": "Uncertainty",
+            "WaveQuantity": "Intensity"
+          }
+        },
+        {
+          "Name": "Systematic Uncertainty in in retrieved QEUV",
+          "ParameterKey": "qeuv_unc_ran",
+          "Description": "Systematic uncertainty in retrieved QEUV.",
+          "Cadence": "PT8S",
+          "Units": "erg/cm2/s",
+          "Structure": {
+            "Size": "92 40"
+          },
+          "ValidMin": "0",
+          "ValidMax": "10",
+          "FillValue": "9.9692e+36",
+          "Support": {
+            "Qualifier": "Uncertainty",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Scan Start Time",
+          "ParameterKey": "scan_start_time",
+          "Description": "UTC start time of scan, e.g., \"2017-06-21T23:46:38.015Z\".",
+          "Cadence": "PT8S",
+          "Structure": {
+            "Size": "50 40"
+          },
+          "FillValue": "' '",
+          "Support": {
+            "Qualifier": "Magnitude",
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Retrieved QEUV Value",
+          "ParameterKey": "qeuv",
+          "Description": "Retrieved QEUV value.",
+          "Cadence": "PT8S",
+          "Units": "erg/cm2/s",
+          "Structure": {
+            "Size": "92 40"
+          },
+          "ValidMin": "0",
+          "ValidMax": "10",
+          "FillValue": "9.9692e+36",
+          "Support": {
+            "Qualifier": "Uncertainty",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Solar Zenith Angle",
+          "ParameterKey": "solar_zenith_angle",
+          "Description": "Solar zenith angle at tangent point.",
+          "Cadence": "PT8S",
+          "Units": "degrees",
+          "Structure": {
+            "Size": "92 40"
+          },
+          "ValidMin": "0",
+          "ValidMax": "180",
+          "FillValue": "9.9692e+36",
+          "Support": {
+            "Qualifier": "Direction",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Systematic Uncertainty in O/N2 Ratio",
+          "ParameterKey": "on2_unc_sys",
+          "Description": "Systematic uncertainty in ON2.",
+          "Cadence": "PT8S",
+          "Structure": {
+            "Size": "92 40"
+          },
+          "ValidMin": "0",
+          "ValidMax": "5",
+          "FillValue": "9.9692e+36",
+          "Support": {
+            "Qualifier": "Uncertainty",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Model Uncertainty in O/N2 Ratio",
+          "ParameterKey": "on2_unc_mod",
+          "Description": "Model uncertainty in retrieved O/N2 ratio.",
+          "Cadence": "PT8S",
+          "Structure": {
+            "Size": "92 40"
+          },
+          "ValidMin": "0",
+          "ValidMax": "5",
+          "FillValue": "9.9692e+36",
+          "Support": {
+            "Qualifier": "Uncertainty",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Systematic Uncertainty in N2 LBH brightness",
+          "ParameterKey": "n2_lbh_unc_sys",
+          "Description": "Systematic uncertainty in N2 LBH brightness.",
+          "Cadence": "PT8S",
+          "Units": "Rayleighs",
+          "Structure": {
+            "Size": "92 40"
+          },
+          "ValidMin": "0",
+          "ValidMax": "100000",
+          "FillValue": "9.9692e+36",
+          "Support": {
+            "Qualifier": "Uncertainty",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "UTC time",
+          "ParameterKey": "time_utc",
+          "Description": "UTC date/time string: \"2017-06-21T23:46:38.015Z\".",
+          "Cadence": "PT8S",
+          "Structure": {
+            "Size": "50 92 40"
+          },
+          "FillValue": "' '",
+          "Support": {
+            "Qualifier": "Magnitude",
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "L1C File Name",
+          "ParameterKey": "input_l1c_file",
+          "Description": "L1C file name for each occultation.",
+          "Cadence": "PT8S",
+          "Structure": {
+            "Size": "50 40"
+          },
+          "FillValue": "' '",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "N2 LBH brightness",
+          "ParameterKey": "radiance_n2_lbh",
+          "Description": "N2 LBH brightness used in retrieval.",
+          "Cadence": "PT8S",
+          "Units": "nm",
+          "Structure": {
+            "Size": "92 40"
+          },
+          "ValidMin": "0",
+          "ValidMax": "100000",
+          "FillValue": "9.9692e+36",
+          "Wave": {
+            "WaveType": "Photon",
+            "Qualifier": "Scalar",
+            "WaveQuantity": "Intensity"
+          }
+        },
+        {
+          "Name": "QEUV data Quality Flag",
+          "ParameterKey": "qeuv_dqi",
+          "Description": "QEUV data quality index per pixel. 0 No known data quality issues. 1 Invalid wavelength mask. 2 No valid input. 4 No valid output. 8 Insufficient latitude coverage. 16 Invalid lookup table. Pixel Level",
+          "Cadence": "PT8S",
+          "Structure": {
+            "Size": "92 40"
+          },
+          "ValidMin": "0",
+          "ValidMax": "2147483647",
+          "FillValue": "-2147483647",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Hemisphere Scanned",
+          "ParameterKey": "hemisphere",
+          "Description": "Hemisphere scanned (‘N’ or ‘S’).",
+          "Cadence": "PT8S",
+          "Structure": {
+            "Size": "50 40"
+          },
+          "FillValue": "' '",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Mask Defining OI 1356 Bandpass ",
+          "ParameterKey": "mask_oi_1356",
+          "Description": "Wavelength mask defining OI 1356 bandpass used in retrieval.",
+          "Cadence": "PT8S",
+          "Structure": {
+            "Size": "4001"
+          },
+          "ValidMin": "0",
+          "ValidMax": "1",
+          "FillValue": "-2147483647",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "GOLD channel",
+          "ParameterKey": "channel",
+          "Description": "GOLD channel (‘A’ or ‘B’).",
+          "Cadence": "PT8S",
+          "Structure": {
+            "Size": "50 40"
+          },
+          "FillValue": " ",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Random Uncertainty in O/N2 Ratio",
+          "ParameterKey": "on2_unc_ran",
+          "Description": "Random uncertainty in retrieved O/N2 ratio.",
+          "Cadence": "PT8S",
+          "Structure": {
+            "Size": "92 40"
+          },
+          "ValidMin": "0",
+          "ValidMax": "5",
+          "FillValue": "9.9692e+36",
+          "Support": {
+            "Qualifier": "Uncertainty",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Overall Quality Flag",
+          "ParameterKey": "dqi",
+          "Description": "NMAX data quality index (see table below).",
+          "Cadence": "PT8S",
+          "Structure": {
+            "Size": "40"
+          },
+          "ValidMin": "0",
+          "ValidMax": "2147483647",
+          "FillValue": "-2147483647",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Model Uncertainty in in retrieved QEUV",
+          "ParameterKey": "qeuv_unc_ran",
+          "Description": "Model uncertainty in retrieved QEUV.",
+          "Cadence": "PT8S",
+          "Units": "erg/cm2/s",
+          "Structure": {
+            "Size": "92 40"
+          },
+          "ValidMin": "0",
+          "ValidMax": "10",
+          "FillValue": "9.9692e+36",
+          "Support": {
+            "Qualifier": "Uncertainty",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Mask Defining LBH Bandpass ",
+          "ParameterKey": "mask_n2_lbh",
+          "Description": "Wavelength mask defining LBH bandpass used in retrieval.",
+          "Cadence": "PT8S",
+          "Structure": {
+            "Size": "4001"
+          },
+          "ValidMin": "0",
+          "ValidMax": "1",
+          "FillValue": "-2147483647",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Pixel Emission Angle",
+          "ParameterKey": "emission_angle",
+          "Description": "Emission angle (relative to zenith).",
+          "Cadence": "PT8S",
+          "Units": "degrees",
+          "Structure": {
+            "Size": "92 40"
+          },
+          "ValidMin": "0",
+          "ValidMax": "90",
+          "FillValue": "9.9692e+36",
+          "Support": {
+            "Qualifier": "Direction",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "O/N2 Filename Lookup Table",
+          "ParameterKey": "on2_lookup_table",
+          "Description": "ON2 lookup table filename.",
+          "Cadence": "PT8S",
+          "Structure": {
+            "Size": "50 40"
+          },
+          "FillValue": " ",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Scan Stop Time",
+          "ParameterKey": "scan_stop_time",
+          "Description": "UTC stop time of scan, e.g., \"2017-06-21T23:46:38.015Z\".",
+          "Cadence": "PT8S",
+          "Units": "date/time",
+          "Structure": {
+            "Size": "50 40"
+          },
+          "FillValue": "' '",
+          "Support": {
+            "Qualifier": "Magnitude",
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Systematic Uncertainty in Oxygen 135.6 nm Brightness",
+          "ParameterKey": "oi_1356_unc_sys",
+          "Description": "Systematic uncertainty in oxygen 135.6 nm brightness.",
+          "Cadence": "PT8S",
+          "Units": "Rayleighs",
+          "Structure": {
+            "Size": "92 40"
+          },
+          "ValidMin": "0",
+          "ValidMax": "100000",
+          "FillValue": "9.9692e+36",
+          "Wave": {
+            "WaveType": "Photon",
+            "Qualifier": "Uncertainty",
+            "WaveQuantity": "Intensity"
+          }
+        },
+        {
+          "Name": "Mask Wavelength",
+          "ParameterKey": "mask_wavelength",
+          "Description": "Wavelength grid for 1356 mask.",
+          "Cadence": "PT8S",
+          "Units": "nm",
+          "Structure": {
+            "Size": "4001"
+          },
+          "ValidMin": "130",
+          "ValidMax": "170",
+          "FillValue": "9.9692e+36",
+          "Wave": {
+            "WaveType": "Photon",
+            "Qualifier": "Scalar",
+            "WaveQuantity": "Wavelength"
+          }
+        }
+      ]
+    }
+  }
+}

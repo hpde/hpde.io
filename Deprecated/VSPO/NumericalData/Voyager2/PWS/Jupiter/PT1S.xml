@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_2_9.xsd">
+  <Version>2.3.0</Version>
+  <NumericalData>
+    <ResourceID>spase://VSPO/NumericalData/Voyager2/PWS/Jupiter/PT1S</ResourceID>
+    <ResourceHeader>
+      <ResourceName>Voyager 2 Jupiter Plasma Wave Spectrometer (PWS) Densities, Version 1.0, 1 s Data</ResourceName>
+      <ReleaseDate>2018-11-27T18:09:04Z</ReleaseDate>
+      <Description>* Data Set Overview
+* =================
+
+This Data Set consists of ASCII formatted Plasma Wave Frequency and Electron Plasma Density Measurements as measured by the Plasma Waves Science Instrument and calculated from the Equations of Cold Plasma Theory. These Frequency Measurements were taken from Voyager 2 Electric Field Waveform Samples from the Voyager 2 Plasma Wave Science (PWS) Waveform Receiver obtained during its Jupiter Flyby. The Data Set includes select Measurements from Spacecraft Event Time (SCET) 1979-07-04T23:44:47.500Z to 1979-07-11T23:58:22.500Z. The Data are separated into Day Files and the individual Data Points are taken every second. As will be explained in more detail below, the Frequency Measurements and therefore the Density Measurements in this Data Set are measured from high-resolution Wideband Plasma Wave Spectra. To learn more about these Spectra and their specific submitted Volumes, see the Related PDS Products Section in the AAREADME Files found in the root Directory of this Volume.
+
+* Parameters
+* ==========
+
+While the Data essential to this Volume are the Electron Plasma Densities, there are a Number of other Plasma Parameters included with this Data. The Data Set consists of ASCII Files with one Record per Time Step, occurring in 1 s Increments. Each Record includes the Time, Magnetic Field Strength (obtained from the Voyager 2 Magnetometer), the Electron Cyclotron Frequency (if available), the Frequency of the Cutoff or Resonance measured, a Code indicating the Name of the Frequency measured, the calculated Electron Density, and a Set of Position Coordinates for the Spacecraft at the Time of the Observation. Also included in each Record are the Electron Plasma Frequency fpe, Extraordinary Mode Cutoff Frequency fR=0, Ordinary Mode Cutoff Frequency fL=0, Upper Hybrid Resonance Frequency fUH, and a Quality Index. One of these four Frequencies is just a Copy of the measured Cutoff or Resonance Frequency while the remaining Frequencies are calculated using the Magnetic Field Data and the Equations of Cold Plasma Theory. Different Files are used for each Day.
+
+* Processing
+* ==========
+
+The ASCII Density Data Files produced in this Volume were derived from measuring the Characteristic Frequencies from the local Plasma. The Density was calculated from these Data, along with Cyclotron Frequency Data derived from Magnetic Field Data, using the Equations of Cold Plasma Theory.
+
+In order to measure these Characteristic Frequencies, this Work utilizes a new Program that allows the Operator to highlight the general Vicinity of the Cutoff or Resonance on a Frequency-Time Spectrogram. Then, an Algorithm finds the Cutoff or Resonance in the Region and records the Frequency at 1 s Intervals. Hence, the automated Procedure has a high Temporal Resolution (1 s) and requires a relatively low Level of both Manual Effort and subjective Judgment by the Operator.
+
+There are two different Algorithms used: one for Cutoff Detection and one for Resonance or Peak Detection. The Cutoff Detection Algorithm is controlled by a small Number of Parameters that can be set by the Operator. The first Parameter is the Cutoff Level. In determining possible Cutoff Candidates, the Algorithm scans the Region highlighted by the Operator and records two separate Points, one above the Cutoff Level and one below. The closer the two Points are, temporally, the steeper the Slope will be. Therefore, the Operator can change the Location of the Cutoff Level to manipulate where the Algorithm looks for Cutoffs within the highlighted Region of Interest. The next Parameter is the Slope Magnitude, which designates the minimum Magnitude of the Finite Difference Slope where the Cutoff must reside. The Operator may raise the Slope Level in order to scan only for sharp Cutoffs, or lower it in order to accommodate less steep Slopes, depending on the Quality of the Spectrum Data. When there is more than one possible Cutoff, the Detection Program will display them as Cutoff Candidates. The Cutoff Level, Slope Magnitude and Cutoff Candidates are displayed by the Program for viewing by the Operator. While the Algorithm chooses the lowest Frequency Cutoff by default, the Operator may override the Algorithm and choose any of the possible Cutoffs to be recorded.
+
+While most of the Characteristic Frequencies are, by definition, the Cutoff of Propagating Wave Modes, there are certain Circumstances when the Characteristic Frequency is denoted as the Peak of a Wave Mode in the Spectrum. Because of this, there is an Algorithm specifically for Resonance or Peak Detection. Many Spectra of interest to this Study include Z-mode Radiation, which has a low-frequency Cutoff at fL=0. It has been demonstrated (Barbosa et al., 1990b) that taking the peak of the Z-mode as fL=0 yields the highest Consistency in the Determination of fpe. Hence, when the Z-mode is enhanced, we utilize the Peak Detection Algorithm to identify fL=0 from which fpe and the Electron Density can be derived. This Algorithm can also be used to determine fUH when an Enhancement at that Frequency is present in the Spectrum. In order to measure this Resonance or Spectral Peak, the Peak Detection Algorithm fits a Gaussian Curve to the highest Peak within the Region specified by the Program Operator. The Algorithm then records the Frequency of the Peak of the Gaussian as the Peak Frequency in the Spectrum. The Algorithm displays the Spectrum and a darker Line which is the Gaussian. Because there may be Noise which exhibits a large Peak in the highlighted Spectrum, the Spectrum is displayed along with the Gaussian Curve and a vertical Line designating where the Peak was measured. The Operator always has the Ability to manually change the Location of the Peak and alter the Measurement in such Cases.
+
+While the Operator utilizes a Color Spectrogram to guide the Cutoff and Peak Detectors, we emphasize that this is only used as a means of identifying the appropriate Range in Frequency for the Algorithm to Search. The direct use of Color Spectrograms tends to mislead an Operator to perceive a Cutoff that is not equivalent to the Cutoff in the actual Power Spectrum (Barbosa et al., 1990b). Because this may lead to a Systematic Error in the Data, the Algorithm utilizes the Spectrum itself, and does not depend on a Color Scale to determine the Characteristic Frequencies. This should reduce Systematic Error and lead to more accurate Results.
+
+* Data Coverage
+* =============
+
+This Data Set does not provide complete Coverage of the Time Intervals when Voyager 2 was within the Magnetosphere of Jupiter. Two Criteria were necessary in order for Density Measurements to be obtained. First, Wideband Waveform Data must exist. These Data are Waveforms sampled at 4-bit resolution and have a Frequency Range from 40 Hz to 12 kHz. 1600 Samples are collected for 55.56 ms at a Rate of 28,800 samples per second, and are then followed by a 4.44 ms Gap. These 60 ms Intervals make up one Line of Waveform Samples. The Spectrograms then consist of 48 s 'frames' consisting of up to 800 Lines or 48 s each. Because these Data compete with Voyager Imaging Data for the Downlink Resource, Data is available only a Fraction of the Time. Plasma Wave Spectra Data can be either continuous, periodic (such as one 48 s Frame out of every four such Frames), or simply present sporadically. Second, spectral Features which exhibit a c</Description>
+      <Contact>
+        <PersonID>spase://SMWG/Person/Todd.A.King</PersonID>
+        <Role>MetadataContact</Role>
+      </Contact>
+      <Contact>
+        <PersonID>spase://SMWG/Person/Lee.Frost.Bargatze</PersonID>
+        <Role>MetadataContact</Role>
+      </Contact>
+      <InformationURL>
+        <Name>VG2-J-PWS-5-DDR-PLASMA-DENSITY-1S-V1.0</Name>
+        <URL>https://pds-ppi.igpp.ucla.edu/data/VG2-J-PWS-5-DDR-PLASMA-DENSITY-1S-V1.0/AAREADME.TXT</URL>
+        <Description>The Document describing the Contents of the Collection.</Description>
+        <Language>En</Language>
+      </InformationURL>
+      <PriorID>spase://VMO/NumericalData/Voyager2/PWS/Jupiter/PT1S</PriorID>
+    </ResourceHeader>
+    <AccessInformation>
+      <RepositoryID>spase://SMWG/Repository/PDS/PPI</RepositoryID>
+      <Availability>Online</Availability>
+      <AccessRights>Open</AccessRights>
+      <AccessURL>
+        <Name>PDS/PPI</Name>
+        <URL>https://pds-ppi.igpp.ucla.edu/search/view/?f=yes&amp;id=pds://PPI/VG2-J-PWS-5-DDR-PLASMA-DENSITY-1S-V1.0</URL>
+        <ProductKey>VG2-J-PWS-5-DDR-PLASMA-DENSITY-1S-V1.0</ProductKey>
+        <Description>This Collection is archived with NASA Planetary Data System.</Description>
+        <Language>En</Language>
+      </AccessURL>
+      <Format>Text.ASCII</Format>
+      <Acknowledgement>NASA Planetary Plasma Interactions (PPI) Node of the Planetary Data System (PDS) and the Principal Investigator for the Data.</Acknowledgement>
+    </AccessInformation>
+    <InstrumentID>spase://SMWG/Instrument/Voyager2/PWS</InstrumentID>
+    <MeasurementType>Waves.Passive</MeasurementType>
+    <TemporalDescription>
+      <TimeSpan>
+        <StartDate>1979-07-04T23:44:47.50</StartDate>
+        <StopDate>1979-07-11T23:58:22.50</StopDate>
+      </TimeSpan>
+      <Cadence>PT1S</Cadence>
+    </TemporalDescription>
+    <ObservedRegion>Jupiter</ObservedRegion>
+  </NumericalData>
+</Spase>

@@ -1,0 +1,224 @@
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema file:/C:/Projects/Voyager/spase-2_2_2.xsd">
+<Version>2.2.2</Version>
+<NumericalData>
+               <ResourceID>spase://VMO/NumericalData/Voyager2/PWS/Jupiter/PT1H</ResourceID>
+               <ResourceHeader>
+                      <ResourceName>VG2 J/S/U/N/SS PWS RESAMP SPECTRUM ANALYZER HOUR AVG V1.0</ResourceName>
+                      <ReleaseDate>2014-12-01T10:16:15.22</ReleaseDate>
+                      <Description>
+
+  Data Set Overview
+  =================
+    This data set consists of electric field spectrum analyzer data from
+    the Voyager 2 Plasma Wave Subsystem obtained during the entire
+    mission.  Data after 2013-12-31 will be added to the archive on          
+    subsequent volumes.  The data set encompasses all spectrum analyzer      
+    observations obtained in the cruise mission phases before, between,
+    and after the Jupiter and Saturn encounter phases as well as those
+    obtained during the two encounter phases.
+
+    The Voyager 2 spacecraft travels from Earth to beyond 75 AU over the
+    course of this data set.  To provide some guidance on when some key
+    events occurred during the mission, the following table is provided.
+
+    Date         Event
+    1977-08-20   Launch
+    1979-07-02   First inbound bow shock crossing at Jupiter
+    1979-08-03   Last outbound bow shock crossing at Jupiter
+    1981-08-24   First inbound bow shock crossing at Saturn
+    1981-08-31   Last outbound bow shock crossing at Saturn
+    1982-04-26   10 AU
+    1983-08-30   Onset of first major LF heliospheric radio event
+    1986-01-24   First inbound bow shock crossing at Uranus
+    1986-01-29   Last outbound bow shock crossing at Uranus
+    1986-05-26   20 AU
+    1989-08-07   30 AU
+    1989-08-24   First inbound bow shock crossing at Neptune
+    1989-08-28   Last outbound bow shock crossing at Neptune
+    1992-07-06   Onset of second major LF heliospheric radio event
+    1993-05-08   40 AU
+    1996-10-10   50 AU
+    2000-01-27   60 AU
+    2002-11-01   Onset of third major LF heliospheric radio event
+    2003-04-21   70 AU
+    2006-07-01   80 AU
+    2009-09-03   90 AU
+    2012-11-04   100 AU
+
+
+  Data Sampling
+  =============
+    This data set consists of average and peak wave electric field
+    intensities accumulated over 1-hour intervals from the Voyager 2
+    Plasma Wave Receiver spectrum analyzer obtained during the entire
+    mission.  For each 1-hour time interval squares of the calibrated
+    electric field measurements obtained during each hour-long interval
+    in each of the 16 spectrum analyzer channels are summed and then
+    divided by the number of measurements.  The square root of the
+    resulting value is obtained and stored as the average electric field
+    strength for the respective channel.  During the same hour-long
+    interval, the maximum electric field strength acquired in each of
+    the 16 channels is also recorded and stored as the peak electric
+    field strength for the respective channel.  Hence, for each hour, an
+    average and peak electric field spectrum from 10 Hz to 56.2 kHz is
+    obtained.  The 16 spectrum analyzer channels have center frequencies
+    that range from 10 Hertz to 56.2 kiloHertz and are logarithmically
+    spaced in frequency, four channels per decade.  The time associated
+    with each peak and average spectrum is the time of the beginning of
+    the averaging interval.  Given variations in the sweep rate of the
+    instrument (from a minimum of 4 seconds/sweep to a maximum of 96
+    seconds/sweep) the maximum number of samples in an hour-long
+    interval can range from 900 to 38.  Data gaps within the interval
+    can further reduce the number of samples.
+
+    During data gaps where complete spectra are missing, no entries
+    exist in the file, that is, the gaps are not zero-filled or tagged
+    in any other way.
+
+
+  Data Processing
+  ===============
+    The spectrum analyzer data are a continuous (where data are
+    available) low resolution data set which provides wave intensity as
+    a function of frequency (16 log-spaced channels) and time (one
+    spectrum per time intervals ranging from 4 seconds to 96 seconds in
+    the full-resolution data set, depending on telemetry mode.) This
+    data set includes one-hour average and peak values for each channel.
+    The data are typically plotted as amplitude vs. time for one or more
+    of the channels in a strip-chart like display, or can be displayed
+    as a frequency-time spectrogram using a gray- or color-bar to
+    indicate amplitude.  With only sixteen channels, it is usually best
+    to stretch the frequency axis by interpolating from one frequency
+    channel to the next either linearly or with a spline fit.  One must
+    be aware if the frequency axis is stretched that more resolution may
+    be implied than is really present.
+
+    The measurements provided in the average and peak electric field
+    spectra included in this data set are in units of electric field
+    (volts/meter).
+
+    Spectral density units may be obtained by dividing the square of the
+    electric field value by the nominal frequency bandwidth of the
+    corresponding spectrum analyzer channel.
+
+      specdens = (efield(ichan))**2 / bandwidth(ichan)
+
+    Finally, power flux may be obtained by dividing the spectral density
+    by the impedance of free space in ohms:
+
+      pwrflux = (efield(ichan))**2 / bandwidth(ichan) / 376.73
+
+    The center frequencies and bandwidths of each PWS spectrum analyzer
+    channel for each Voyager spacecraft are given below:
+
+      VOYAGER 2 PWS SPECTRUM ANALYZER
+      Voyager-2
+      Channel    Center Frequency      Bandwidth
+          1          10.0  Hz           2.16 Hz
+          2          17.8  Hz           3.58 Hz
+          3          31.1  Hz           4.50 Hz
+          4          56.2  Hz          10.7  Hz
+          5         100.   Hz          13.8  Hz
+          6         178.   Hz          28.8  Hz
+          7         311.   Hz          39.8  Hz
+          8         562.   Hz          75.9  Hz
+          9           1.00 kHz         75.9  Hz
+         10           1.78 kHz        151.   Hz
+         11           3.11 kHz        324.   Hz
+         12           5.62 kHz        513.   Hz
+         13          10.0  kHz        832.   Hz
+         14          17.8  kHz       1260    Hz
+         15          31.1  kHz       2400    Hz
+         16          56.2  kHz       3800    Hz
+
+
+    A failure in the Voyager 2 Flight Data System which occurred about 3
+    months after launch has adversely affected the calibration of PWS
+    channels 9 through 16.  An algorithm has been devised to partially
+    correct for this failure, and has proven useful for Voyager 2
+    Jupiter, Saturn, Uranus, and Neptune encounters, but is not valid
+    for Earth-Jupiter cruise and may be modified in the future.  The
+    following implementation of this correction algorithm in FORTRAN
+    assumes that uncalibrated data numbers are stored in a 16-element
+    integer array, idn, with the array index equal to the PWS channel
+    number:
+
+      c     &apos;the old noise level&apos; for vg2 pws
+
+            real tonl(9:16) /2.0, 1.0, -1.0, -2.0, -3.0, 1.0, 2.0, 1.0/
+
+            do ichan = 9, 16
+              if (idn(ichan) .gt. 0) then
+                if (idn(ichan) .lt. 64) idn(ichan) = 64
+                if (idn(ichan) .le. 72) then
+                  idn(ichan) = int (tonl(ichan) - 530.4 +
+           &amp;                   8.6 * float (idn(ichan)))
+                else
+                  idn(ichan) = int (tonl(ichan) + 20.113 +
+           &amp;                   0.99 * float (idn(ichan)))
+                end if
+              end if
+            end do
+
+    This correction has been applied to the appropriate data in this
+    data set.
+
+    Additional information about this data set and the instrument which
+    produced it can be found elsewhere in this catalog.  A complete
+    instrument description can be found in [SCARF&amp;GURNETT1977].
+
+
+  Data
+  ====
+    The average and peak spectrum analyzer data are a continuous (where
+    data are available) low resolution data set which provides wave
+    intensity as a function of frequency (16 log-spaced channels) and
+    time (one spectrum per hour).  Each sample is a floating point
+    electric field strength in units of volts/meter.
+
+
+  Ancillary Data
+  ==============
+    None
+
+
+  Coordinates
+  ===========
+    The electric dipole antenna detects electric fields </Description>
+                      <Contact>
+                             <PersonID>spase://SMWG/Person/Todd.A.King</PersonID>
+                             <Role>MetadataContact</Role>
+                     </Contact>
+                      <InformationURL>
+                             <Name>VG2-J/S/U/N/SS-PWS-4-SUMM-SA1HOUR-V1.0</Name>
+                             <URL>http://pds-ppi.igpp.ucla.edu/data/VG2-J-S-U-N-SS-PWS-4-SUMM-SA1HOUR-V1.0/AAREADME.TXT</URL>
+                             <Description>The document describing the contents of the collection.</Description>
+                             <Language>En</Language>
+                     </InformationURL>
+              </ResourceHeader>
+               <AccessInformation>
+                      <RepositoryID>spase://SMWG/Repository/PDS/PPI</RepositoryID>
+                      <Availability>Online</Availability>
+                      <AccessRights>Open</AccessRights>
+                      <AccessURL>
+                             <Name>PDS/PPI</Name>
+                             <URL>http://pds-ppi.igpp.ucla.edu/search/view/?id=pds://PPI/VG2-J_S_U_N_SS-PWS-4-SUMM-SA1HOUR-V1.0</URL>
+                             <ProductKey>VG2-J/S/U/N/SS-PWS-4-SUMM-SA1HOUR-V1.0</ProductKey>
+                             <Description>This collection is archived with NASA&apos;s Planetary Data System.</Description>
+                             <Language>En</Language>
+                     </AccessURL>
+                      <Format>Text.ASCII</Format>
+                      <Acknowledgement>NASA&apos;s Planetary Plasma Interactions (PPI) Node of the Planetary Data System (PDS) and the P.I. for the data.</Acknowledgement>
+              </AccessInformation>
+               <InstrumentID>spase://SMWG/Instrument/Voyager2/PWS</InstrumentID>
+               <MeasurementType>Waves.Passive</MeasurementType>
+               <TemporalDescription>
+                      <TimeSpan>
+                             <StartDate>1977-08-20T07:00:00.00</StartDate>
+                             <StopDate>2014-01-01T00:00:00.00</StopDate>
+                     </TimeSpan>
+                      <Cadence>PT1H</Cadence>
+              </TemporalDescription>
+               <ObservedRegion>Jupiter</ObservedRegion>
+       </NumericalData>
+</Spase>

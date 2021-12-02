@@ -1,0 +1,3845 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_3_1.xsd">
+   <Version>2.3.1</Version>
+   <NumericalData>
+      <ResourceID>spase://VSPO/NumericalData/ParkerSolarProbe/SWEAP/SPC/Level3/SolarWindMomentsFits/PT0.2185S</ResourceID>
+      <ResourceHeader>
+         <ResourceName>PSP Solar Wind Electrons Alphas and Protons (SWEAP) SPC Ion Number Density, Velocity, and Thermal Speed Momemts and Fits, Level 3 (L3), 0.2185 s Data</ResourceName>
+         <ReleaseDate>2020-07-03T23:28:58Z</ReleaseDate>
+         <Description>SPC Level 3 Ion Data
+--------------------
+
+File Naming Format: psp_swp_spc_l3i_YYYYMMDD_v01.cdf
+
+This data product contains derived measurements of ion properties in the solar wind, including those for density, temperature, and velocity. These are determined both by a direct computation of the velocity moments of the reduced distribution function and by attempting to fit the primary peak in the ion I(V) curve with a Maxwellian model. These measurements correspond one to one with spectra in the psp_swp_spc_l2i file for the same date. It may be convenient for some applications to cross-reference the two. For example, the corresponding l3i file contains ephemeris and data quality flag information that may be useful for an investigator who is concerned only with l2i type measurements.
+
+Conditions that impact measurement quality are documented in the DQF variable, which contains a 32 element flag array for each measurement time. Each element of the array is reserved to signify a specific condition. These conditions are described in the DQF_FLAGNAMES variable. In this version, for example, DQF_FLAGNAMES.DAT[23] is set to &quot;spacecraft maneuver&quot;. If measurement &quot;i&quot; was made during a spacecraft maneuver, it is thus flagged with DQF.DAT[23,i] = 1.
+
+In Version 01, measurements are not provided, i.e. variables are set to fill, during spacecraft maneuvers, under conditions of low signal-to-noise, and during certain observed transients. Such conditions are rare during encounters, but increasingly frequent in interplanetary cruise. These conditions are documented in the DQF variable. Remarks are also provided in the &quot;SPC Reduced Data Quality Periods&quot; table. In Version 01, the solar wind alpha particle component is not measured. Thus, variables are set equal to fill values.
+
+SPC Encounter 1 Remarks
+-----------------------
+
+Data quality is very good for the duration of the encounter. The solar wind flow was within the optimal field of view for the SPC instrument for nearly the entire encounter. See the data flags for specific exceptions. As with all encounters, signal-to-noise is higher during ingress than egress, which is reflected in the typically smaller uncertainties and less frequent &quot;primary peak low signal&quot; flag events.
+
+SPC Cruise Phase Remarks
+------------------------
+
+Measurements recorded during cruise phase are not all transmitted to Earth. The typical return is one spectrum out of every 32.
+
+SPC Encounter 2 Remarks
+-----------------------
+
+Due to an erroneous setting in the operating mode for this encounter, ion full scan spectra and certain spectra immediately following ion full scans are of reduced quality. In the affected full scan spectra, the energy steps over an initial portion of the measurement spectra have zero width, i.e. the Level 2 ion variables MV_LO.DAT = MV_HI.DAT, and the corresponding measurements are purely noise. In some cases, this results in a poor determination of the proton &quot;primary peak&quot; energy, which renders additional subsequent full scans that follow subject to the same incompleteness. In other cases, the energy range for the subsequent &quot;ion peak tracking mode&quot; scan is not ideal. The affected Level 3 ion measurements have been flagged with DQF.DAT[22]=1, which stands for &quot;energy ranging/peak tracking error&quot; and/or set to fill. The operating mode has been revised such that future encounters will not be so affected.
+
+Parker Solar Probe SWEAP Rules of the Road
+------------------------------------------
+
+As part of the development of collaboration with the broader Heliophysics community, the mission has drafted a &quot;Rules of the Road&quot; to govern how PSP instrument data are to be used.
+
+* 1) Users should consult with the PI to discuss the appropriate use of instrument data or model results and to ensure that the users are accessing the most recently available versions of the data and of the analysis routines. Instrument team Science Operations Centers, SOCs, and/or Virtual Observatories, VOs, should facilitate this process serving as the contact point between PI and users in most cases.
+
+* 2) Users should heed the caveats of investigators to the interpretations and limitations of data or model results. Investigators supplying data or models may insist that such caveats be published. Data and model version numbers should also be specified.
+
+* 3) Browse products, Quicklook, and Planning data are not intended for science analysis or publication and should not be used for those purposes without consent of the PI.
+
+* 4) Users should acknowledge the sources of data used in all publications, presentations, and reports: &quot;We acknowledge the NASA Parker Solar Probe Mission and the SWEAP team led by J. Kasper for use of data.&quot;.
+
+* 5) Users are encouraged to provide the PI a copy of each manuscript that uses the PI data prior to submission of that manuscript for consideration of publication. On publication, the citation should be transmitted to the PI and any other providers of data.</Description>
+         <Acknowledgement>Please acknowledge the Principal Investigator J.C. Kasper for use of the Data. 
+
+NASA open data policy applies. Consultation with the instrument team is strongly recommended.</Acknowledgement>
+         <Contact>
+            <PersonID>spase://SMWG/Person/Justin.C.Kasper</PersonID>
+            <Role>PrincipalInvestigator</Role>
+         </Contact>
+         <Contact>
+            <PersonID>spase://SMWG/Person/Robert.M.Candey</PersonID>
+            <Role>MetadataContact</Role>
+         </Contact>
+         <Contact>
+            <PersonID>spase://SMWG/Person/Lee.Frost.Bargatze</PersonID>
+            <Role>MetadataContact</Role>
+         </Contact>
+         <InformationURL>
+            <Name>PSP SWEAP Instrument Suite, Space Science Review Publication</Name>
+            <URL>https://doi.org/10.1007/s11214-015-0206-3</URL>
+            <Description>Parker Solar Probe, PSP, SWEAP Instrument Suite Description: Kasper, J.C., Abiad, R., Austin, G. et al., Solar Wind Electrons Alphas and Protons (SWEAP) Investigation: Design of the Solar Wind and Coronal Plasma Instrument Suite for Solar Probe Plus, Space Scii. Rev., 204, 131–186 (2016)</Description>
+         </InformationURL>
+         <InformationURL>
+            <Name>PSP SWEAP home page, SAO</Name>
+            <URL>http://sweap.cfa.harvard.edu</URL>
+            <Description>Parker Solar Probe, PSP, SWEAP home page, Smithsonian Astrophysical Observatory</Description>
+         </InformationURL>
+         <InformationURL>
+            <Name>PSP SWEAP Data Access web site, SAO</Name>
+            <URL>http://sweap.cfa.harvard.edu/Data.html</URL>
+            <Description>Parker Solar Probe, PSP, SWEAP Data Access web site, Smithsonian Astrophysical Observatory</Description>
+         </InformationURL>
+      </ResourceHeader>
+      <AccessInformation>
+         <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF</RepositoryID>
+         <Availability>Online</Availability>
+         <AccessRights>Open</AccessRights>
+         <AccessURL>
+            <Name>FTPS from SPDF (not with most browsers)</Name>
+            <URL>ftps://spdf.gsfc.nasa.gov/pub/data/psp/sweap/spc/l3/l3i/</URL>
+            <Description>Access to Data in CDF Format via ftp from SPDF</Description>
+         </AccessURL>
+         <AccessURL>
+            <Name>HTTPS from SPDF</Name>
+            <URL>https://spdf.gsfc.nasa.gov/pub/data/psp/sweap/spc/l3/l3i/</URL>
+            <Description>Access to Data in CDF Format via http from SPDF</Description>
+         </AccessURL>
+         <AccessURL>
+            <Name>CDAWeb</Name>
+            <URL>https://cdaweb.sci.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=PSP_SWP_SPC_L3I&amp;index=sp_phys</URL>
+            <ProductKey>PSP_SWP_SPC_L3I</ProductKey>
+            <Description>Access to ASCII, CDF, and Plots via NASA/GSFC CDAWeb</Description>
+         </AccessURL>
+         <Format>CDF</Format>
+         <Encoding>None</Encoding>
+         <Acknowledgement>Please acknowledge the Principal Investigator J.C. Kasper. Please acknowledge the Data Providers and CDAWeb when using these Data.</Acknowledgement>
+      </AccessInformation>
+      <ProcessingLevel>Calibrated</ProcessingLevel>
+      <InstrumentID>spase://SMWG/Instrument/ParkerSolarProbe/Ephemeris</InstrumentID>
+      <InstrumentID>spase://SMWG/Instrument/ParkerSolarProbe/SWEAP/SPC</InstrumentID>
+      <MeasurementType>Ephemeris</MeasurementType>
+      <MeasurementType>ThermalPlasma</MeasurementType>
+      <TemporalDescription>
+         <TimeSpan>
+            <StartDate>2018-10-06T00:00:00.000</StartDate>
+            <RelativeStopDate>-P6M</RelativeStopDate>
+         </TimeSpan>
+         <Cadence>PT0.2185S</Cadence>
+      </TemporalDescription>
+      <ObservedRegion>Heliosphere</ObservedRegion>
+      <ObservedRegion>Heliosphere.Inner</ObservedRegion>
+      <ObservedRegion>Heliosphere.NearEarth</ObservedRegion>
+      <ObservedRegion>Sun.Corona</ObservedRegion>
+      <Parameter>
+         <Name>Epoch Time, TT2000, Midpoint of Integration</Name>
+         <ParameterKey>Epoch</ParameterKey>
+         <Description>Epoch Time Tags, TT2000, Nanoseconds since J2000 at Midpoint of the Integration</Description>
+         <Caveats>Warning: the Epoch time typically has an irregular cadence owing to frequent changes in the operating mode. TT2000 is measured in nanoseconds from J2000 with leap seconds included. Please refer to CDF TT2000 documentation with regards to this convention. This time corresponds to the first measurement of the spectrum. In accordance with SPDF standards, this epoch is interpreted a CDF_TT2000 time. It is acknowledged here that this epoch is not strictly equal to &quot;terrestrial time&quot; as it is defined in the CDF_TT2000 documentation nor is the calendar date interpreted by CDF_T2000 operation performed on this epoch strictly equal to Coordinated Universal Time, UTC This Parameter exhibits an increasing Monotonic Progression.</Caveats>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>ns</Units>
+         <UnitsConversion>1.0e-9&gt;s</UnitsConversion>
+         <RenderingHints>
+            <AxisLabel>Epoch</AxisLabel>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <ValidMin>1990-01-01T00:00:00.000000000</ValidMin>
+         <ValidMax>2029-12-31T23:59:58.999000000</ValidMax>
+         <FillValue>9999-12-31T23:59:59.999999999</FillValue>
+         <Support>
+            <SupportQuantity>Temporal</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Solar Probe Cup Data Quality Flag</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>DQF</ParameterKey>
+         <Description>Solar Probe Cup, SPC, Data Quality Flag: an array of SPC data quality indicators</Description>
+         <Caveats>Genaral Flag Values: 0=Good/Nominal/Exceptional conditions absent/etc., &gt;1=Bad/Problematic/Exceptional conditions present/etc., -1=Status not determined (&quot;don't know&quot;), &lt;-1=Status does not matter (&quot;don&apos;t care&quot;).</Caveats>
+         <Cadence>PT0.2185S</Cadence>
+         <RenderingHints>
+            <AxisLabel>DQF</AxisLabel>
+            <ValueFormat>I3</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <Structure>
+            <Size>32</Size>
+            <Element>
+               <Name>Element 1</Name>
+               <Index>1</Index>
+               <RenderingHints>
+                  <AxisLabel>1</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>Element 2</Name>
+               <Index>2</Index>
+               <RenderingHints>
+                  <AxisLabel>2</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>Element 3</Name>
+               <Index>3</Index>
+               <RenderingHints>
+                  <AxisLabel>3</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>Element 4</Name>
+               <Index>4</Index>
+               <RenderingHints>
+                  <AxisLabel>4</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>Element 5</Name>
+               <Index>5</Index>
+               <RenderingHints>
+                  <AxisLabel>5</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>Element 6</Name>
+               <Index>6</Index>
+               <RenderingHints>
+                  <AxisLabel>6</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>Element 7</Name>
+               <Index>7</Index>
+               <RenderingHints>
+                  <AxisLabel>7</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>Element 8</Name>
+               <Index>8</Index>
+               <RenderingHints>
+                  <AxisLabel>8</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>Element 9</Name>
+               <Index>9</Index>
+               <RenderingHints>
+                  <AxisLabel>9</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>Element 10</Name>
+               <Index>10</Index>
+               <RenderingHints>
+                  <AxisLabel>10</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>Element 11</Name>
+               <Index>11</Index>
+               <RenderingHints>
+                  <AxisLabel>11</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>Element 12</Name>
+               <Index>12</Index>
+               <RenderingHints>
+                  <AxisLabel>12</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>Element 13</Name>
+               <Index>13</Index>
+               <RenderingHints>
+                  <AxisLabel>13</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>Element 14</Name>
+               <Index>14</Index>
+               <RenderingHints>
+                  <AxisLabel>14</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>Element 15</Name>
+               <Index>15</Index>
+               <RenderingHints>
+                  <AxisLabel>15</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>Element 16</Name>
+               <Index>16</Index>
+               <RenderingHints>
+                  <AxisLabel>16</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>Element 17</Name>
+               <Index>17</Index>
+               <RenderingHints>
+                  <AxisLabel>17</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>Element 18</Name>
+               <Index>18</Index>
+               <RenderingHints>
+                  <AxisLabel>18</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>Element 19</Name>
+               <Index>19</Index>
+               <RenderingHints>
+                  <AxisLabel>19</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>Element 20</Name>
+               <Index>20</Index>
+               <RenderingHints>
+                  <AxisLabel>20</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>Element 21</Name>
+               <Index>21</Index>
+               <RenderingHints>
+                  <AxisLabel>21</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>Element 22</Name>
+               <Index>22</Index>
+               <RenderingHints>
+                  <AxisLabel>22</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>Element 23</Name>
+               <Index>23</Index>
+               <RenderingHints>
+                  <AxisLabel>23</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>Element 24</Name>
+               <Index>24</Index>
+               <RenderingHints>
+                  <AxisLabel>24</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>Element 25</Name>
+               <Index>25</Index>
+               <RenderingHints>
+                  <AxisLabel>25</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>Element 26</Name>
+               <Index>26</Index>
+               <RenderingHints>
+                  <AxisLabel>26</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>Element 27</Name>
+               <Index>27</Index>
+               <RenderingHints>
+                  <AxisLabel>27</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>Element 28</Name>
+               <Index>28</Index>
+               <RenderingHints>
+                  <AxisLabel>28</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>Element 29</Name>
+               <Index>29</Index>
+               <RenderingHints>
+                  <AxisLabel>29</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>Element 30</Name>
+               <Index>30</Index>
+               <RenderingHints>
+                  <AxisLabel>30</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>Element 31</Name>
+               <Index>31</Index>
+               <RenderingHints>
+                  <AxisLabel>31</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>Element 32</Name>
+               <Index>32</Index>
+               <RenderingHints>
+                  <AxisLabel>32</AxisLabel>
+               </RenderingHints>
+            </Element>
+         </Structure>
+         <ValidMin>-2</ValidMin>
+         <ValidMax>127</ValidMax>
+         <FillValue>-128</FillValue>
+         <Support>
+            <Qualifier>Array</Qualifier>
+            <SupportQuantity>Velocity</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Solar Probe Cup General Quality Flag</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>general_flag</ParameterKey>
+         <Description>Solar Probe Cup, SCP, General Quality Flag: This flag documents all exceptional conditions that can affect normal data analysis of SPC observations. All flag values equal to zero signify good data with no exceptional conditions present.</Description>
+         <Caveats>Genaral Flag Values: 0=Good/Nominal/Exceptional conditions absent/etc., &gt;1=Bad/Problematic/Exceptional conditions present/etc., -1=Status not determined (&quot;don't know&quot;), &lt;-1=Status does not matter (&quot;don&apos;t care&quot;). The General Flag can be found in all of the l3i files.</Caveats>
+         <Cadence>PT0.2185S</Cadence>
+         <RenderingHints>
+            <AxisLabel>general flag</AxisLabel>
+            <ValueFormat>I3</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <ValidMin>-2</ValidMin>
+         <ValidMax>127</ValidMax>
+         <FillValue>-128</FillValue>
+         <Support>
+            <Qualifier>Scalar</Qualifier>
+            <SupportQuantity>Velocity</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Proton Velocity moment estimate, in the Spacecraft frame, good Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>vp_moment_SC_gd</ParameterKey>
+         <Description>Proton, p, Velocity, V estimate, from the first moment of the reduced distribution function, in the Spacecraft, Spacecraft frame, only good data qualities</Description>
+         <Caveats>This parameter is virtual. It is calculated by calling the function APPLY_FILTER_FLAG with the following input parameters: vp_moment_SC, general_flag.</Caveats>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>km/s</Units>
+         <UnitsConversion>1.0e3&gt;m/s</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <Structure>
+            <Size>3</Size>
+            <Element>
+               <Name>vp_moment_xSC</Name>
+               <Index>1</Index>
+               <ValidMin>-1000.0</ValidMin>
+               <ValidMax>1000.0</ValidMax>
+               <RenderingHints>
+                  <AxisLabel>1</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>vp_moment_ySC</Name>
+               <Index>2</Index>
+               <ValidMin>-1000.0</ValidMin>
+               <ValidMax>1000.0</ValidMax>
+               <RenderingHints>
+                  <AxisLabel>2</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>vp_moment_zSC</Name>
+               <Index>3</Index>
+               <ValidMin>-2000.0</ValidMin>
+               <ValidMax>0.0</ValidMax>
+               <RenderingHints>
+                  <AxisLabel>3</AxisLabel>
+               </RenderingHints>
+            </Element>
+         </Structure>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <ParticleType>Proton</ParticleType>
+            <Qualifier>Vector</Qualifier>
+            <ParticleQuantity>Velocity</ParticleQuantity>
+            <AtomicNumber>1</AtomicNumber>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Proton Velocity moment estimate, upper uncertainty, in the Spacecraft frame, good Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>vp_moment_SC_deltahigh_gd</ParameterKey>
+         <Description>Proton, p, Velocity, V estimate, upper uncertainty, from the first moment of the reduced distribution function, in the Spacecraft, Spacecraft frame, only good data qualities</Description>
+         <Caveats>This parameter is virtual. It is calculated by calling the function APPLY_FILTER_FLAG with the following input parameters: vp_moment_SC_deltahigh, general_flag.</Caveats>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>km/s</Units>
+         <UnitsConversion>1.0e3&gt;m/s</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <Structure>
+            <Size>3</Size>
+            <Element>
+               <Name>vp_moment_xSC_deltahigh</Name>
+               <Index>1</Index>
+               <RenderingHints>
+                  <AxisLabel>1</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>vp_moment_ySC_deltahigh</Name>
+               <Index>2</Index>
+               <RenderingHints>
+                  <AxisLabel>2</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>vp_moment_zSC_deltahigh</Name>
+               <Index>3</Index>
+               <RenderingHints>
+                  <AxisLabel>3</AxisLabel>
+               </RenderingHints>
+            </Element>
+         </Structure>
+         <ValidMin>0.0</ValidMin>
+         <ValidMax>2000.0</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <ParticleType>Proton</ParticleType>
+            <Qualifier>Vector</Qualifier>
+            <ParticleQuantity>Velocity</ParticleQuantity>
+            <AtomicNumber>1</AtomicNumber>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Proton Velocity moment estimate, lower uncertainty, in the Spacecraft frame, good Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>vp_moment_SC_deltalow_gd</ParameterKey>
+         <Description>Proton, p, Velocity, V estimate, lower uncertainty, from the first moment of the reduced distribution function, in the Spacecraft, Spacecraft frame, only good data qualities</Description>
+         <Caveats>This parameter is virtual. It is calculated by calling the function APPLY_FILTER_FLAG with the following input parameters: vp_moment_SC_deltalow, general_flag.</Caveats>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>km/s</Units>
+         <UnitsConversion>1.0e3&gt;m/s</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <Structure>
+            <Size>3</Size>
+            <Element>
+               <Name>vp_moment_xSC_deltalow</Name>
+               <Index>1</Index>
+               <RenderingHints>
+                  <AxisLabel>1</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>vp_moment_ySC_deltalow</Name>
+               <Index>2</Index>
+               <RenderingHints>
+                  <AxisLabel>2</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>vp_moment_zSC_deltalow</Name>
+               <Index>3</Index>
+               <RenderingHints>
+                  <AxisLabel>3</AxisLabel>
+               </RenderingHints>
+            </Element>
+         </Structure>
+         <ValidMin>0.0</ValidMin>
+         <ValidMax>2000.0</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <ParticleType>Proton</ParticleType>
+            <Qualifier>Vector</Qualifier>
+            <ParticleQuantity>Velocity</ParticleQuantity>
+            <AtomicNumber>1</AtomicNumber>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Proton Velocity moment estimate, in the Radial-Tangential-Normal frame, good Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>vp_moment_RTN_gd</ParameterKey>
+         <Description>Proton, p, Velocity, V estimate, from the first moment of the reduced distribution function, in the Radial-Tangential-Normal, Radial-Tangential-Normal frame, only good data qualities</Description>
+         <Caveats>This parameter is virtual. It is calculated by calling the function APPLY_FILTER_FLAG with the following input parameters: vp_moment_RTN, general_flag.</Caveats>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>km/s</Units>
+         <UnitsConversion>1.0e3&gt;m/s</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <Structure>
+            <Size>3</Size>
+            <Element>
+               <Name>vp_moment_R</Name>
+               <Index>1</Index>
+               <ValidMin>0.0</ValidMin>
+               <ValidMax>2000.0</ValidMax>
+               <RenderingHints>
+                  <AxisLabel>1</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>vp_moment_T</Name>
+               <Index>2</Index>
+               <ValidMin>-1000.0</ValidMin>
+               <ValidMax>1000.0</ValidMax>
+               <RenderingHints>
+                  <AxisLabel>2</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>vp_moment_N</Name>
+               <Index>3</Index>
+               <ValidMin>-1000.0</ValidMin>
+               <ValidMax>1000.0</ValidMax>
+               <RenderingHints>
+                  <AxisLabel>3</AxisLabel>
+               </RenderingHints>
+            </Element>
+         </Structure>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <ParticleType>Proton</ParticleType>
+            <Qualifier>Vector</Qualifier>
+            <ParticleQuantity>Velocity</ParticleQuantity>
+            <AtomicNumber>1</AtomicNumber>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Proton Velocity moment estimate, upper uncertainty, in the Radial-Tangential-Normal frame, good Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>vp_moment_RTN_deltahigh_gd</ParameterKey>
+         <Description>Proton, p, Velocity, V estimate, upper uncertainty, from the first moment of the reduced distribution function, in the Radial-Tangential-Normal, Radial-Tangential-Normal frame, only good data qualities</Description>
+         <Caveats>This parameter is virtual. It is calculated by calling the function APPLY_FILTER_FLAG with the following input parameters: vp_moment_RTN_deltahigh, general_flag.</Caveats>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>km/s</Units>
+         <UnitsConversion>1.0e3&gt;m/s</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <Structure>
+            <Size>3</Size>
+            <Element>
+               <Name>vp_moment_R_deltahigh</Name>
+               <Index>1</Index>
+               <RenderingHints>
+                  <AxisLabel>1</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>vp_moment_T_deltahigh</Name>
+               <Index>2</Index>
+               <RenderingHints>
+                  <AxisLabel>2</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>vp_moment_N_deltahigh</Name>
+               <Index>3</Index>
+               <RenderingHints>
+                  <AxisLabel>3</AxisLabel>
+               </RenderingHints>
+            </Element>
+         </Structure>
+         <ValidMin>0.0</ValidMin>
+         <ValidMax>2000.0</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <ParticleType>Proton</ParticleType>
+            <Qualifier>Vector</Qualifier>
+            <ParticleQuantity>Velocity</ParticleQuantity>
+            <AtomicNumber>1</AtomicNumber>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Proton Velocity moment estimate, lower uncertainty, in the Radial-Tangential-Normal frame, good Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>vp_moment_RTN_deltalow_gd</ParameterKey>
+         <Description>Proton, p, Velocity, V estimate, lower uncertainty, from the first moment of the reduced distribution function, in the Radial-Tangential-Normal, Radial-Tangential-Normal frame, only good data qualities</Description>
+         <Caveats>This parameter is virtual. It is calculated by calling the function APPLY_FILTER_FLAG with the following input parameters: vp_moment_RTN_deltalow, general_flag.</Caveats>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>km/s</Units>
+         <UnitsConversion>1.0e3&gt;m/s</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <Structure>
+            <Size>3</Size>
+            <Element>
+               <Name>vp_moment_R_deltalow</Name>
+               <Index>1</Index>
+               <RenderingHints>
+                  <AxisLabel>1</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>vp_moment_T_deltalow</Name>
+               <Index>2</Index>
+               <RenderingHints>
+                  <AxisLabel>2</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>vp_moment_N_deltalow</Name>
+               <Index>3</Index>
+               <RenderingHints>
+                  <AxisLabel>3</AxisLabel>
+               </RenderingHints>
+            </Element>
+         </Structure>
+         <ValidMin>0.0</ValidMin>
+         <ValidMax>2000.0</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <ParticleType>Proton</ParticleType>
+            <Qualifier>Vector</Qualifier>
+            <ParticleQuantity>Velocity</ParticleQuantity>
+            <AtomicNumber>1</AtomicNumber>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Proton Number Density moment estimate, good Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>np_moment_gd</ParameterKey>
+         <Description>Proton, p, Number Density, n estimate, from the zeroth moment of the reduced distribution function, only good data qualities</Description>
+         <Caveats>This parameter is virtual. It is calculated by calling the function APPLY_FILTER_FLAG with the following input parameters: np_moment, general_flag.</Caveats>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>cm^-3</Units>
+         <UnitsConversion>1.0e6&gt;m^-3</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <AxisLabel>np_moment</AxisLabel>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <ValidMin>0.01</ValidMin>
+         <ValidMax>10000.0</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <ParticleType>Proton</ParticleType>
+            <Qualifier>Scalar</Qualifier>
+            <ParticleQuantity>NumberDensity</ParticleQuantity>
+            <AtomicNumber>1</AtomicNumber>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Proton Number Density moment estimate, upper uncertainty, good Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>np_moment_deltahigh_gd</ParameterKey>
+         <Description>Proton, p, Number Density, n estimate, upper uncertainty, from the zeroth moment of the reduced distribution function, only good data qualities</Description>
+         <Caveats>This parameter is virtual. It is calculated by calling the function APPLY_FILTER_FLAG with the following input parameters: np_moment_deltahigh, general_flag.</Caveats>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>cm^-3</Units>
+         <UnitsConversion>1.0e6&gt;m^-3</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <AxisLabel>np_moment_deltahigh</AxisLabel>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <ValidMin>0.001</ValidMin>
+         <ValidMax>10000.0</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <ParticleType>Proton</ParticleType>
+            <Qualifier>Scalar</Qualifier>
+            <ParticleQuantity>NumberDensity</ParticleQuantity>
+            <AtomicNumber>1</AtomicNumber>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Proton Number Density moment estimate, lower uncertainty, good Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>np_moment_deltalow_gd</ParameterKey>
+         <Description>Proton, p, Number Density, n estimate, lower uncertainty, from the zeroth moment of the reduced distribution function, only good data qualities</Description>
+         <Caveats>This parameter is virtual. It is calculated by calling the function APPLY_FILTER_FLAG with the following input parameters: np_moment_deltalow, general_flag.</Caveats>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>cm^-3</Units>
+         <UnitsConversion>1.0e6&gt;m^-3</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <AxisLabel>np_moment_deltalow</AxisLabel>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <ValidMin>0.001</ValidMin>
+         <ValidMax>10000.0</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <ParticleType>Proton</ParticleType>
+            <Qualifier>Scalar</Qualifier>
+            <ParticleQuantity>NumberDensity</ParticleQuantity>
+            <AtomicNumber>1</AtomicNumber>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Proton most probable Radial Thermal Speed moment estimate, good Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>wp_moment_gd</ParameterKey>
+         <Description>Proton, p, most probable Radial Thermal Speed, Vth estimate, from the second moment of the reduced distribution function, only good data qualities</Description>
+         <Caveats>This parameter is virtual. It is calculated by calling the function APPLY_FILTER_FLAG with the following input parameters: wp_moment, general_flag.</Caveats>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>km/s</Units>
+         <UnitsConversion>1.0e3&gt;m/s</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <AxisLabel>wp_moment</AxisLabel>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <ValidMin>1.0</ValidMin>
+         <ValidMax>1000.0</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <ParticleType>Proton</ParticleType>
+            <Qualifier>Scalar</Qualifier>
+            <ParticleQuantity>ThermalSpeed</ParticleQuantity>
+            <AtomicNumber>1</AtomicNumber>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Proton most probable Radial Thermal Speed moment estimate, upper uncertainty, good Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>wp_moment_deltahigh_gd</ParameterKey>
+         <Description>Proton, p, most probable Radial Thermal Speed, Vth estimate, upper uncertainty, from the second moment of the reduced distribution function, only good data qualities</Description>
+         <Caveats>This parameter is virtual. It is calculated by calling the function APPLY_FILTER_FLAG with the following input parameters: wp_moment_deltahigh, general_flag.</Caveats>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>km/s</Units>
+         <UnitsConversion>1.0e3&gt;m/s</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <AxisLabel>wp_moment_deltahigh</AxisLabel>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <ValidMin>0.001</ValidMin>
+         <ValidMax>10000.0</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <ParticleType>Proton</ParticleType>
+            <Qualifier>Scalar</Qualifier>
+            <ParticleQuantity>ThermalSpeed</ParticleQuantity>
+            <AtomicNumber>1</AtomicNumber>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Proton most probable Radial Thermal Speed moment estimate, lower uncertainty, good Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>wp_moment_deltalow_gd</ParameterKey>
+         <Description>Proton, p, most probable Radial Thermal Speed, Vth estimate, lower uncertainty, from the second moment of the reduced distribution function, only good data qualities</Description>
+         <Caveats>This parameter is virtual. It is calculated by calling the function APPLY_FILTER_FLAG with the following input parameters: wp_moment_deltalow, general_flag.</Caveats>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>km/s</Units>
+         <UnitsConversion>1.0e3&gt;m/s</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <AxisLabel>wp_moment_deltalow</AxisLabel>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <ValidMin>0.001</ValidMin>
+         <ValidMax>10000.0</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <ParticleType>Proton</ParticleType>
+            <Qualifier>Scalar</Qualifier>
+            <ParticleQuantity>ThermalSpeed</ParticleQuantity>
+            <AtomicNumber>1</AtomicNumber>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Primary Proton Population Velocity estimate, in the Spacecraft frame, good Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>vp1_fit_SC_gd</ParameterKey>
+         <Description>Primary Proton Population, p, Velocity, V estimate, from 1-dimensional Maxwellian fitting, in the Spacecraft, Spacecraft frame, only good data qualities</Description>
+         <Caveats>This parameter is virtual. It is calculated by calling the function APPLY_FILTER_FLAG with the following input parameters: vp1_fit_SC, general_flag.</Caveats>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>km/s</Units>
+         <UnitsConversion>1.0e3&gt;m/s</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <Structure>
+            <Size>3</Size>
+            <Element>
+               <Name>vp1_fit_xSC</Name>
+               <Index>1</Index>
+               <ValidMin>-1000.0</ValidMin>
+               <ValidMax>1000.0</ValidMax>
+               <RenderingHints>
+                  <AxisLabel>1</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>vp1_fit_ySC</Name>
+               <Index>2</Index>
+               <ValidMin>-1000.0</ValidMin>
+               <ValidMax>1000.0</ValidMax>
+               <RenderingHints>
+                  <AxisLabel>2</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>vp1_fit_zSC</Name>
+               <Index>3</Index>
+               <ValidMin>-2000.0</ValidMin>
+               <ValidMax>0.0</ValidMax>
+               <RenderingHints>
+                  <AxisLabel>3</AxisLabel>
+               </RenderingHints>
+            </Element>
+         </Structure>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <ParticleType>Proton</ParticleType>
+            <Qualifier>Vector</Qualifier>
+            <ParticleQuantity>Velocity</ParticleQuantity>
+            <AtomicNumber>1</AtomicNumber>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Primary Proton Population Velocity estimate, uncertainty, all Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>vp1_fit_SC_uncertainty_gd</ParameterKey>
+         <Description>Primary Proton Population, p, Velocity, V estimate, one sigma error uncertainty, from 1-dimensional Maxwellian fitting, all data qualities</Description>
+         <Caveats>This parameter is virtual. It is calculated by calling the function APPLY_FILTER_FLAG with the following input parameters: vp1_fit_SC_uncertainty, general_flag.</Caveats>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>km/s</Units>
+         <UnitsConversion>1.0e3&gt;m/s</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <Structure>
+            <Size>3</Size>
+            <Element>
+               <Name>vp1_fit_xSC_uncertainty</Name>
+               <Index>1</Index>
+               <RenderingHints>
+                  <AxisLabel>1</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>vp1_fit_ySC_uncertainty</Name>
+               <Index>2</Index>
+               <RenderingHints>
+                  <AxisLabel>2</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>vp1_fit_zSC_uncertainty</Name>
+               <Index>3</Index>
+               <RenderingHints>
+                  <AxisLabel>3</AxisLabel>
+               </RenderingHints>
+            </Element>
+         </Structure>
+         <ValidMin>0.0</ValidMin>
+         <ValidMax>2000.0</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <ParticleType>Proton</ParticleType>
+            <Qualifier>Vector</Qualifier>
+            <ParticleQuantity>Velocity</ParticleQuantity>
+            <AtomicNumber>1</AtomicNumber>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Primary Proton Population Velocity estimate, in the Radial-Tangential-Normal frame, good Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>vp1_fit_RTN_gd</ParameterKey>
+         <Description>Primary Proton Population, p, Velocity, V estimate, from 1-dimensional Maxwellian fitting, in the Radial-Tangential-Normal, Radial-Tangential-Normal frame, only good data qualities</Description>
+         <Caveats>This parameter is virtual. It is calculated by calling the function APPLY_FILTER_FLAG with the following input parameters: vp1_fit_RTN, general_flag.</Caveats>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>km/s</Units>
+         <UnitsConversion>1.0e3&gt;m/s</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <Structure>
+            <Size>3</Size>
+            <Element>
+               <Name>vp1_fit_R</Name>
+               <Index>1</Index>
+               <ValidMin>0.0</ValidMin>
+               <ValidMax>2000.0</ValidMax>
+               <RenderingHints>
+                  <AxisLabel>1</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>vp1_fit_T</Name>
+               <Index>2</Index>
+               <ValidMin>-1000.0</ValidMin>
+               <ValidMax>1000.0</ValidMax>
+               <RenderingHints>
+                  <AxisLabel>2</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>vp1_fit_N</Name>
+               <Index>3</Index>
+               <ValidMin>-1000.0</ValidMin>
+               <ValidMax>1000.0</ValidMax>
+               <RenderingHints>
+                  <AxisLabel>3</AxisLabel>
+               </RenderingHints>
+            </Element>
+         </Structure>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <ParticleType>Proton</ParticleType>
+            <Qualifier>Vector</Qualifier>
+            <ParticleQuantity>Velocity</ParticleQuantity>
+            <AtomicNumber>1</AtomicNumber>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Primary Proton Population Velocity estimate, uncertainty, all Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>vp1_fit_RTN_uncertainty_gd</ParameterKey>
+         <Description>Primary Proton Population, p, Velocity, V estimate, one sigma error uncertainty, from 1-dimensional Maxwellian fitting, all data qualities</Description>
+         <Caveats>This parameter is virtual. It is calculated by calling the function APPLY_FILTER_FLAG with the following input parameters: vp1_fit_RTN_uncertainty, general_flag.</Caveats>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>km/s</Units>
+         <UnitsConversion>1.0e3&gt;m/s</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <Structure>
+            <Size>3</Size>
+            <Element>
+               <Name>vp1_fit_R_uncertainty</Name>
+               <Index>1</Index>
+               <RenderingHints>
+                  <AxisLabel>1</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>vp1_fit_T_uncertainty</Name>
+               <Index>2</Index>
+               <RenderingHints>
+                  <AxisLabel>2</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>vp1_fit_N_uncertainty</Name>
+               <Index>3</Index>
+               <RenderingHints>
+                  <AxisLabel>3</AxisLabel>
+               </RenderingHints>
+            </Element>
+         </Structure>
+         <ValidMin>0.0</ValidMin>
+         <ValidMax>2000.0</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <ParticleType>Proton</ParticleType>
+            <Qualifier>Vector</Qualifier>
+            <ParticleQuantity>Velocity</ParticleQuantity>
+            <AtomicNumber>1</AtomicNumber>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Primary Proton Population Number Density estimate, good Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>np1_fit_gd</ParameterKey>
+         <Description>Primary Proton Population, p, Number Density, n estimate, from 1-dimensional Maxwellian fitting, only good data qualities</Description>
+         <Caveats>This parameter is virtual. It is calculated by calling the function APPLY_FILTER_FLAG with the following input parameters: np1_fit, general_flag.</Caveats>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>cm^-3</Units>
+         <UnitsConversion>1.0e6&gt;m^-3</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <AxisLabel>np1_fit</AxisLabel>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <ValidMin>0.01</ValidMin>
+         <ValidMax>10000.0</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <ParticleType>Proton</ParticleType>
+            <Qualifier>Scalar</Qualifier>
+            <ParticleQuantity>NumberDensity</ParticleQuantity>
+            <AtomicNumber>1</AtomicNumber>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Primary Proton Population Number Density estimate, all Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>np1_fit_uncertainty_gd</ParameterKey>
+         <Description>Primary Proton Population, p, Number Density, n estimate, from 1-dimensional Maxwellian fitting, all data qualities</Description>
+         <Caveats>This parameter is virtual. It is calculated by calling the function APPLY_FILTER_FLAG with the following input parameters: np1_fit_uncertainty, general_flag.</Caveats>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>cm^-3</Units>
+         <UnitsConversion>1.0e6&gt;m^-3</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <AxisLabel>np1_fit_uncertainty</AxisLabel>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <ValidMin>0.001</ValidMin>
+         <ValidMax>10000.0</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <ParticleType>Proton</ParticleType>
+            <Qualifier>Scalar</Qualifier>
+            <ParticleQuantity>NumberDensity</ParticleQuantity>
+            <AtomicNumber>1</AtomicNumber>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Primary Proton Population most probable Radial Thermal Speed estimate, good Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>wp1_fit_gd</ParameterKey>
+         <Description>Primary Proton Population, p, most probable Radial Thermal Speed, Vth estimate, from 1-dimensional Maxwellian fitting, only good data qualities</Description>
+         <Caveats>This parameter is virtual. It is calculated by calling the function APPLY_FILTER_FLAG with the following input parameters: wp1_fit, general_flag.</Caveats>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>km/s</Units>
+         <UnitsConversion>1.0e3&gt;m/s</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <AxisLabel>wp1_fit</AxisLabel>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <ValidMin>1.0</ValidMin>
+         <ValidMax>1000.0</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <ParticleType>Proton</ParticleType>
+            <Qualifier>Scalar</Qualifier>
+            <ParticleQuantity>ThermalSpeed</ParticleQuantity>
+            <AtomicNumber>1</AtomicNumber>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Primary Proton Population most probable Radial Thermal Speed estimate, all Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>wp1_fit_uncertainty_gd</ParameterKey>
+         <Description>Primary Proton Population, p, most probable Radial Thermal Speed, Vth estimate, from 1-dimensional Maxwellian fitting, all data qualities</Description>
+         <Caveats>This parameter is virtual. It is calculated by calling the function APPLY_FILTER_FLAG with the following input parameters: wp1_fit_uncertainty, general_flag.</Caveats>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>km/s</Units>
+         <UnitsConversion>1.0e3&gt;m/s</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <AxisLabel>wp1_fit_uncertainty</AxisLabel>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <ValidMin>0.001</ValidMin>
+         <ValidMax>10000.0</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <ParticleType>Proton</ParticleType>
+            <Qualifier>Scalar</Qualifier>
+            <ParticleQuantity>ThermalSpeed</ParticleQuantity>
+            <AtomicNumber>1</AtomicNumber>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Proton Velocity estimate, in the Spacecraft frame, good Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>vp_fit_SC_gd</ParameterKey>
+         <Description>Proton, p, Velocity, V estimate, from 1-dimensional Maxwellian fitting, in the Spacecraft, Spacecraft frame, only good data qualities</Description>
+         <Caveats>This parameter is virtual. It is calculated by calling the function APPLY_FILTER_FLAG with the following input parameters: vp_fit_SC, general_flag.</Caveats>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>km/s</Units>
+         <UnitsConversion>1.0e3&gt;m/s</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <Structure>
+            <Size>3</Size>
+            <Element>
+               <Name>vp_fit_xSC</Name>
+               <Index>1</Index>
+               <ValidMin>-1000.0</ValidMin>
+               <ValidMax>1000.0</ValidMax>
+               <RenderingHints>
+                  <AxisLabel>1</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>vp_fit_ySC</Name>
+               <Index>2</Index>
+               <ValidMin>-1000.0</ValidMin>
+               <ValidMax>1000.0</ValidMax>
+               <RenderingHints>
+                  <AxisLabel>2</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>vp_fit_zSC</Name>
+               <Index>3</Index>
+               <ValidMin>-2000.0</ValidMin>
+               <ValidMax>0.0</ValidMax>
+               <RenderingHints>
+                  <AxisLabel>3</AxisLabel>
+               </RenderingHints>
+            </Element>
+         </Structure>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <ParticleType>Proton</ParticleType>
+            <Qualifier>Vector</Qualifier>
+            <ParticleQuantity>Velocity</ParticleQuantity>
+            <AtomicNumber>1</AtomicNumber>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Proton Velocity estimate, uncertainty, all Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>vp_fit_SC_uncertainty_gd</ParameterKey>
+         <Description>Proton, p, Velocity, V estimate, one sigma error uncertainty, from 1-dimensional Maxwellian fitting, all data qualities</Description>
+         <Caveats>This parameter is virtual. It is calculated by calling the function APPLY_FILTER_FLAG with the following input parameters: vp_fit_SC_uncertainty, general_flag.</Caveats>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>km/s</Units>
+         <UnitsConversion>1.0e3&gt;m/s</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <Structure>
+            <Size>3</Size>
+            <Element>
+               <Name>vp_fit_xSC_uncertainty</Name>
+               <Index>1</Index>
+               <RenderingHints>
+                  <AxisLabel>1</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>vp_fit_ySC_uncertainty</Name>
+               <Index>2</Index>
+               <RenderingHints>
+                  <AxisLabel>2</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>vp_fit_zSC_uncertainty</Name>
+               <Index>3</Index>
+               <RenderingHints>
+                  <AxisLabel>3</AxisLabel>
+               </RenderingHints>
+            </Element>
+         </Structure>
+         <ValidMin>0.0</ValidMin>
+         <ValidMax>2000.0</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <ParticleType>Proton</ParticleType>
+            <Qualifier>Vector</Qualifier>
+            <ParticleQuantity>Velocity</ParticleQuantity>
+            <AtomicNumber>1</AtomicNumber>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Proton Velocity estimate, in the Radial-Tangential-Normal frame, good Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>vp_fit_RTN_gd</ParameterKey>
+         <Description>Proton, p, Velocity, V estimate, from 1-dimensional Maxwellian fitting, in the Radial-Tangential-Normal, Radial-Tangential-Normal frame, only good data qualities</Description>
+         <Caveats>This parameter is virtual. It is calculated by calling the function APPLY_FILTER_FLAG with the following input parameters: vp_fit_RTN, general_flag.</Caveats>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>km/s</Units>
+         <UnitsConversion>1.0e3&gt;m/s</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <Structure>
+            <Size>3</Size>
+            <Element>
+               <Name>vp_fit_R</Name>
+               <Index>1</Index>
+               <ValidMin>0.0</ValidMin>
+               <ValidMax>2000.0</ValidMax>
+               <RenderingHints>
+                  <AxisLabel>1</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>vp_fit_T</Name>
+               <Index>2</Index>
+               <ValidMin>-1000.0</ValidMin>
+               <ValidMax>1000.0</ValidMax>
+               <RenderingHints>
+                  <AxisLabel>2</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>vp_fit_N</Name>
+               <Index>3</Index>
+               <ValidMin>-1000.0</ValidMin>
+               <ValidMax>1000.0</ValidMax>
+               <RenderingHints>
+                  <AxisLabel>3</AxisLabel>
+               </RenderingHints>
+            </Element>
+         </Structure>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <ParticleType>Proton</ParticleType>
+            <Qualifier>Vector</Qualifier>
+            <ParticleQuantity>Velocity</ParticleQuantity>
+            <AtomicNumber>1</AtomicNumber>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Proton Velocity estimate, uncertainty, all Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>vp_fit_RTN_uncertainty_gd</ParameterKey>
+         <Description>Proton, p, Velocity, V estimate, one sigma error uncertainty, from 1-dimensional Maxwellian fitting, all data qualities</Description>
+         <Caveats>This parameter is virtual. It is calculated by calling the function APPLY_FILTER_FLAG with the following input parameters: vp_fit_RTN_uncertainty, general_flag.</Caveats>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>km/s</Units>
+         <UnitsConversion>1.0e3&gt;m/s</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <Structure>
+            <Size>3</Size>
+            <Element>
+               <Name>vp_fit_R_uncertainty</Name>
+               <Index>1</Index>
+               <RenderingHints>
+                  <AxisLabel>1</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>vp_fit_T_uncertainty</Name>
+               <Index>2</Index>
+               <RenderingHints>
+                  <AxisLabel>2</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>vp_fit_N_uncertainty</Name>
+               <Index>3</Index>
+               <RenderingHints>
+                  <AxisLabel>3</AxisLabel>
+               </RenderingHints>
+            </Element>
+         </Structure>
+         <ValidMin>0.0</ValidMin>
+         <ValidMax>2000.0</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <ParticleType>Proton</ParticleType>
+            <Qualifier>Vector</Qualifier>
+            <ParticleQuantity>Velocity</ParticleQuantity>
+            <AtomicNumber>1</AtomicNumber>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Proton Number Density estimate, good Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>np_fit_gd</ParameterKey>
+         <Description>Proton, p, Number Density, n estimate, from 1-dimensional Maxwellian fitting, only good data qualities</Description>
+         <Caveats>This parameter is virtual. It is calculated by calling the function APPLY_FILTER_FLAG with the following input parameters: np_fit, general_flag.</Caveats>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>cm^-3</Units>
+         <UnitsConversion>1.0e6&gt;m^-3</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <AxisLabel>np_fit</AxisLabel>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <ValidMin>0.01</ValidMin>
+         <ValidMax>10000.0</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <ParticleType>Proton</ParticleType>
+            <Qualifier>Scalar</Qualifier>
+            <ParticleQuantity>NumberDensity</ParticleQuantity>
+            <AtomicNumber>1</AtomicNumber>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Proton Number Density estimate, all Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>np_fit_uncertainty_gd</ParameterKey>
+         <Description>Proton, p, Number Density, n estimate, from 1-dimensional Maxwellian fitting, all data qualities</Description>
+         <Caveats>This parameter is virtual. It is calculated by calling the function APPLY_FILTER_FLAG with the following input parameters: np_fit_uncertainty, general_flag.</Caveats>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>cm^-3</Units>
+         <UnitsConversion>1.0e6&gt;m^-3</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <AxisLabel>np_fit_uncertainty</AxisLabel>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <ValidMin>0.001</ValidMin>
+         <ValidMax>10000.0</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <ParticleType>Proton</ParticleType>
+            <Qualifier>Scalar</Qualifier>
+            <ParticleQuantity>NumberDensity</ParticleQuantity>
+            <AtomicNumber>1</AtomicNumber>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Proton most probable Radial Thermal Speed estimate, good Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>wp_fit_gd</ParameterKey>
+         <Description>Proton, p, most probable Radial Thermal Speed, Vth estimate, from 1-dimensional Maxwellian fitting, only good data qualities</Description>
+         <Caveats>This parameter is virtual. It is calculated by calling the function APPLY_FILTER_FLAG with the following input parameters: wp_fit, general_flag.</Caveats>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>km/s</Units>
+         <UnitsConversion>1.0e3&gt;m/s</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <AxisLabel>wp_fit</AxisLabel>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <ValidMin>1.0</ValidMin>
+         <ValidMax>1000.0</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <ParticleType>Proton</ParticleType>
+            <Qualifier>Scalar</Qualifier>
+            <ParticleQuantity>ThermalSpeed</ParticleQuantity>
+            <AtomicNumber>1</AtomicNumber>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Proton most probable Radial Thermal Speed estimate, all Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>wp_fit_uncertainty_gd</ParameterKey>
+         <Description>Proton, p, most probable Radial Thermal Speed, Vth estimate, from 1-dimensional Maxwellian fitting, all data qualities</Description>
+         <Caveats>This parameter is virtual. It is calculated by calling the function APPLY_FILTER_FLAG with the following input parameters: wp_fit_uncertainty, general_flag.</Caveats>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>km/s</Units>
+         <UnitsConversion>1.0e3&gt;m/s</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <AxisLabel>wp_fit_uncertainty</AxisLabel>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <ValidMin>0.001</ValidMin>
+         <ValidMax>10000.0</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <ParticleType>Proton</ParticleType>
+            <Qualifier>Scalar</Qualifier>
+            <ParticleQuantity>ThermalSpeed</ParticleQuantity>
+            <AtomicNumber>1</AtomicNumber>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Alpha Particle Velocity estimate, in the Spacecraft frame, good Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>va_fit_SC_gd</ParameterKey>
+         <Description>Alpha Particle, He++, Velocity, V estimate, from 1-dimensional Maxwellian fitting, in the Spacecraft, Spacecraft frame, only good data qualities</Description>
+         <Caveats>This parameter is virtual. It is calculated by calling the function APPLY_FILTER_FLAG with the following input parameters: va_fit_SC, general_flag.</Caveats>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>km/s</Units>
+         <UnitsConversion>1.0e3&gt;m/s</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <Structure>
+            <Size>3</Size>
+            <Element>
+               <Name>va_fit_xSC</Name>
+               <Index>1</Index>
+               <ValidMin>-1000.0</ValidMin>
+               <ValidMax>1000.0</ValidMax>
+               <RenderingHints>
+                  <AxisLabel>1</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>va_fit_ySC</Name>
+               <Index>2</Index>
+               <ValidMin>-1000.0</ValidMin>
+               <ValidMax>1000.0</ValidMax>
+               <RenderingHints>
+                  <AxisLabel>2</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>va_fit_zSC</Name>
+               <Index>3</Index>
+               <ValidMin>-2000.0</ValidMin>
+               <ValidMax>0.0</ValidMax>
+               <RenderingHints>
+                  <AxisLabel>3</AxisLabel>
+               </RenderingHints>
+            </Element>
+         </Structure>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <Qualifier>Vector</Qualifier>
+            <ParticleQuantity>Velocity</ParticleQuantity>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Alpha Particle Velocity estimate, uncertainty, all Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>va_fit_SC_uncertainty_gd</ParameterKey>
+         <Description>Alpha Particle, He++, Velocity, V estimate, one sigma error uncertainty, from 1-dimensional Maxwellian fitting, all data qualities</Description>
+         <Caveats>This parameter is virtual. It is calculated by calling the function APPLY_FILTER_FLAG with the following input parameters: va_fit_SC_uncertainty, general_flag.</Caveats>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>km/s</Units>
+         <UnitsConversion>1.0e3&gt;m/s</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <Structure>
+            <Size>3</Size>
+            <Element>
+               <Name>va_fit_xSC_uncertainty</Name>
+               <Index>1</Index>
+               <RenderingHints>
+                  <AxisLabel>1</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>va_fit_ySC_uncertainty</Name>
+               <Index>2</Index>
+               <RenderingHints>
+                  <AxisLabel>2</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>va_fit_zSC_uncertainty</Name>
+               <Index>3</Index>
+               <RenderingHints>
+                  <AxisLabel>3</AxisLabel>
+               </RenderingHints>
+            </Element>
+         </Structure>
+         <ValidMin>0.0</ValidMin>
+         <ValidMax>2000.0</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <Qualifier>Vector</Qualifier>
+            <ParticleQuantity>Velocity</ParticleQuantity>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Alpha Particle Velocity estimate, in the Radial-Tangential-Normal frame, good Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>va_fit_RTN_gd</ParameterKey>
+         <Description>Alpha Particle, He++, Velocity, V estimate, from 1-dimensional Maxwellian fitting, in the Radial-Tangential-Normal, Radial-Tangential-Normal frame, only good data qualities</Description>
+         <Caveats>This parameter is virtual. It is calculated by calling the function APPLY_FILTER_FLAG with the following input parameters: va_fit_RTN, general_flag.</Caveats>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>km/s</Units>
+         <UnitsConversion>1.0e3&gt;m/s</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <Structure>
+            <Size>3</Size>
+            <Element>
+               <Name>va_fit_R</Name>
+               <Index>1</Index>
+               <ValidMin>0.0</ValidMin>
+               <ValidMax>2000.0</ValidMax>
+               <RenderingHints>
+                  <AxisLabel>1</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>va_fit_T</Name>
+               <Index>2</Index>
+               <ValidMin>-1000.0</ValidMin>
+               <ValidMax>1000.0</ValidMax>
+               <RenderingHints>
+                  <AxisLabel>2</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>va_fit_N</Name>
+               <Index>3</Index>
+               <ValidMin>-1000.0</ValidMin>
+               <ValidMax>1000.0</ValidMax>
+               <RenderingHints>
+                  <AxisLabel>3</AxisLabel>
+               </RenderingHints>
+            </Element>
+         </Structure>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <Qualifier>Vector</Qualifier>
+            <ParticleQuantity>Velocity</ParticleQuantity>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Alpha Particle Velocity estimate, uncertainty, all Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>va_fit_RTN_uncertainty_gd</ParameterKey>
+         <Description>Alpha Particle, He++, Velocity, V estimate, one sigma error uncertainty, from 1-dimensional Maxwellian fitting, all data qualities</Description>
+         <Caveats>This parameter is virtual. It is calculated by calling the function APPLY_FILTER_FLAG with the following input parameters: va_fit_RTN_uncertainty, general_flag.</Caveats>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>km/s</Units>
+         <UnitsConversion>1.0e3&gt;m/s</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <Structure>
+            <Size>3</Size>
+            <Element>
+               <Name>va_fit_R_uncertainty</Name>
+               <Index>1</Index>
+               <RenderingHints>
+                  <AxisLabel>1</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>va_fit_T_uncertainty</Name>
+               <Index>2</Index>
+               <RenderingHints>
+                  <AxisLabel>2</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>va_fit_N_uncertainty</Name>
+               <Index>3</Index>
+               <RenderingHints>
+                  <AxisLabel>3</AxisLabel>
+               </RenderingHints>
+            </Element>
+         </Structure>
+         <ValidMin>0.0</ValidMin>
+         <ValidMax>2000.0</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <Qualifier>Vector</Qualifier>
+            <ParticleQuantity>Velocity</ParticleQuantity>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Alpha Particle Number Density estimate, good Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>na_fit_gd</ParameterKey>
+         <Description>Alpha Particle, He++, Number Density, n estimate, from 1-dimensional Maxwellian fitting, only good data qualities</Description>
+         <Caveats>This parameter is virtual. It is calculated by calling the function APPLY_FILTER_FLAG with the following input parameters: na_fit, general_flag.</Caveats>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>cm^-3</Units>
+         <UnitsConversion>1.0e6&gt;m^-3</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <AxisLabel>na_fit</AxisLabel>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <ValidMin>0.01</ValidMin>
+         <ValidMax>10000.0</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <Qualifier>Scalar</Qualifier>
+            <ParticleQuantity>NumberDensity</ParticleQuantity>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Alpha Particle Number Density estimate, all Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>na_fit_uncertainty_gd</ParameterKey>
+         <Description>Alpha Particle, He++, Number Density, n estimate, from 1-dimensional Maxwellian fitting, all data qualities</Description>
+         <Caveats>This parameter is virtual. It is calculated by calling the function APPLY_FILTER_FLAG with the following input parameters: na_fit_uncertainty, general_flag.</Caveats>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>cm^-3</Units>
+         <UnitsConversion>1.0e6&gt;m^-3</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <AxisLabel>na_fit_uncertainty</AxisLabel>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <ValidMin>0.001</ValidMin>
+         <ValidMax>10000.0</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <Qualifier>Scalar</Qualifier>
+            <ParticleQuantity>NumberDensity</ParticleQuantity>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Alpha Particle most probable Radial Thermal Speed estimate, good Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>wa_fit_gd</ParameterKey>
+         <Description>Alpha Particle, He++, most probable Radial Thermal Speed, Vth estimate, from 1-dimensional Maxwellian fitting, only good data qualities</Description>
+         <Caveats>This parameter is virtual. It is calculated by calling the function APPLY_FILTER_FLAG with the following input parameters: wa_fit, general_flag.</Caveats>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>km/s</Units>
+         <UnitsConversion>1.0e3&gt;m/s</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <AxisLabel>wa_fit</AxisLabel>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <ValidMin>1.0</ValidMin>
+         <ValidMax>1000.0</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <Qualifier>Scalar</Qualifier>
+            <ParticleQuantity>ThermalSpeed</ParticleQuantity>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Alpha Particle most probable Radial Thermal Speed estimate, all Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>wa_fit_uncertainty_gd</ParameterKey>
+         <Description>Alpha Particle, He++, most probable Radial Thermal Speed, Vth estimate, from 1-dimensional Maxwellian fitting, all data qualities</Description>
+         <Caveats>This parameter is virtual. It is calculated by calling the function APPLY_FILTER_FLAG with the following input parameters: wa_fit_uncertainty, general_flag.</Caveats>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>km/s</Units>
+         <UnitsConversion>1.0e3&gt;m/s</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <AxisLabel>wa_fit_uncertainty</AxisLabel>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <ValidMin>0.001</ValidMin>
+         <ValidMax>10000.0</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <Qualifier>Scalar</Qualifier>
+            <ParticleQuantity>ThermalSpeed</ParticleQuantity>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Population 3 Velocity estimate, in the Spacecraft frame, good Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>v3_fit_SC_gd</ParameterKey>
+         <Description>Population 3, Velocity, V estimate, from 1-dimensional Maxwellian fitting, in the Spacecraft, Spacecraft frame, only good data qualities</Description>
+         <Caveats>This parameter is virtual. It is calculated by calling the function APPLY_FILTER_FLAG with the following input parameters: v3_fit_SC, general_flag.</Caveats>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>km/s</Units>
+         <UnitsConversion>1.0e3&gt;m/s</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <Structure>
+            <Size>3</Size>
+            <Element>
+               <Name>v3_fit_xSC</Name>
+               <Index>1</Index>
+               <ValidMin>-1000.0</ValidMin>
+               <ValidMax>1000.0</ValidMax>
+               <RenderingHints>
+                  <AxisLabel>1</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>v3_fit_ySC</Name>
+               <Index>2</Index>
+               <ValidMin>-1000.0</ValidMin>
+               <ValidMax>1000.0</ValidMax>
+               <RenderingHints>
+                  <AxisLabel>2</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>v3_fit_zSC</Name>
+               <Index>3</Index>
+               <ValidMin>-2000.0</ValidMin>
+               <ValidMax>0.0</ValidMax>
+               <RenderingHints>
+                  <AxisLabel>3</AxisLabel>
+               </RenderingHints>
+            </Element>
+         </Structure>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <ParticleType>Ion</ParticleType>
+            <Qualifier>Vector</Qualifier>
+            <ParticleQuantity>Velocity</ParticleQuantity>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Population 3 Velocity estimate, uncertainty, all Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>v3_fit_SC_uncertainty_gd</ParameterKey>
+         <Description>Population 3, Velocity, V estimate, one sigma error uncertainty, from 1-dimensional Maxwellian fitting, all data qualities</Description>
+         <Caveats>This parameter is virtual. It is calculated by calling the function APPLY_FILTER_FLAG with the following input parameters: v3_fit_SC_uncertainty, general_flag.</Caveats>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>km/s</Units>
+         <UnitsConversion>1.0e3&gt;m/s</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <Structure>
+            <Size>3</Size>
+            <Element>
+               <Name>v3_fit_xSC_uncertainty</Name>
+               <Index>1</Index>
+               <RenderingHints>
+                  <AxisLabel>1</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>v3_fit_ySC_uncertainty</Name>
+               <Index>2</Index>
+               <RenderingHints>
+                  <AxisLabel>2</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>v3_fit_zSC_uncertainty</Name>
+               <Index>3</Index>
+               <RenderingHints>
+                  <AxisLabel>3</AxisLabel>
+               </RenderingHints>
+            </Element>
+         </Structure>
+         <ValidMin>0.0</ValidMin>
+         <ValidMax>2000.0</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <ParticleType>Ion</ParticleType>
+            <Qualifier>Vector</Qualifier>
+            <ParticleQuantity>Velocity</ParticleQuantity>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Population 3 Velocity estimate, in the Radial-Tangential-Normal frame, good Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>v3_fit_RTN_gd</ParameterKey>
+         <Description>Population 3, Velocity, V estimate, from 1-dimensional Maxwellian fitting, in the Radial-Tangential-Normal, Radial-Tangential-Normal frame, only good data qualities</Description>
+         <Caveats>This parameter is virtual. It is calculated by calling the function APPLY_FILTER_FLAG with the following input parameters: v3_fit_RTN, general_flag.</Caveats>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>km/s</Units>
+         <UnitsConversion>1.0e3&gt;m/s</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <Structure>
+            <Size>3</Size>
+            <Element>
+               <Name>v3_fit_R</Name>
+               <Index>1</Index>
+               <ValidMin>0.0</ValidMin>
+               <ValidMax>2000.0</ValidMax>
+               <RenderingHints>
+                  <AxisLabel>1</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>v3_fit_T</Name>
+               <Index>2</Index>
+               <ValidMin>-1000.0</ValidMin>
+               <ValidMax>1000.0</ValidMax>
+               <RenderingHints>
+                  <AxisLabel>2</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>v3_fit_N</Name>
+               <Index>3</Index>
+               <ValidMin>-1000.0</ValidMin>
+               <ValidMax>1000.0</ValidMax>
+               <RenderingHints>
+                  <AxisLabel>3</AxisLabel>
+               </RenderingHints>
+            </Element>
+         </Structure>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <ParticleType>Ion</ParticleType>
+            <Qualifier>Vector</Qualifier>
+            <ParticleQuantity>Velocity</ParticleQuantity>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Population 3 Velocity estimate, uncertainty, all Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>v3_fit_RTN_uncertainty_gd</ParameterKey>
+         <Description>Population 3, Velocity, V estimate, one sigma error uncertainty, from 1-dimensional Maxwellian fitting, all data qualities</Description>
+         <Caveats>This parameter is virtual. It is calculated by calling the function APPLY_FILTER_FLAG with the following input parameters: v3_fit_RTN_uncertainty, general_flag.</Caveats>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>km/s</Units>
+         <UnitsConversion>1.0e3&gt;m/s</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <Structure>
+            <Size>3</Size>
+            <Element>
+               <Name>v3_fit_R_uncertainty</Name>
+               <Index>1</Index>
+               <RenderingHints>
+                  <AxisLabel>1</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>v3_fit_T_uncertainty</Name>
+               <Index>2</Index>
+               <RenderingHints>
+                  <AxisLabel>2</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>v3_fit_N_uncertainty</Name>
+               <Index>3</Index>
+               <RenderingHints>
+                  <AxisLabel>3</AxisLabel>
+               </RenderingHints>
+            </Element>
+         </Structure>
+         <ValidMin>0.0</ValidMin>
+         <ValidMax>2000.0</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <ParticleType>Ion</ParticleType>
+            <Qualifier>Vector</Qualifier>
+            <ParticleQuantity>Velocity</ParticleQuantity>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Population 3 Number Density estimate, good Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>n3_fit_gd</ParameterKey>
+         <Description>Population 3, Number Density, n estimate, from 1-dimensional Maxwellian fitting, only good data qualities</Description>
+         <Caveats>This parameter is virtual. It is calculated by calling the function APPLY_FILTER_FLAG with the following input parameters: n3_fit, general_flag.</Caveats>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>cm^-3</Units>
+         <UnitsConversion>1.0e6&gt;m^-3</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <AxisLabel>n3_fit</AxisLabel>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <ValidMin>0.01</ValidMin>
+         <ValidMax>10000.0</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <ParticleType>Ion</ParticleType>
+            <Qualifier>Scalar</Qualifier>
+            <ParticleQuantity>NumberDensity</ParticleQuantity>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Population 3 Number Density estimate, all Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>n3_fit_uncertainty_gd</ParameterKey>
+         <Description>Population 3, Number Density, n estimate, from 1-dimensional Maxwellian fitting, all data qualities</Description>
+         <Caveats>This parameter is virtual. It is calculated by calling the function APPLY_FILTER_FLAG with the following input parameters: n3_fit_uncertainty, general_flag.</Caveats>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>cm^-3</Units>
+         <UnitsConversion>1.0e6&gt;m^-3</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <AxisLabel>n3_fit_uncertainty</AxisLabel>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <ValidMin>0.001</ValidMin>
+         <ValidMax>10000.0</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <ParticleType>Ion</ParticleType>
+            <Qualifier>Scalar</Qualifier>
+            <ParticleQuantity>NumberDensity</ParticleQuantity>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Population 3 most probable Radial Thermal Speed estimate, good Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>w3_fit_gd</ParameterKey>
+         <Description>Population 3, most probable Radial Thermal Speed, Vth estimate, from 1-dimensional Maxwellian fitting, only good data qualities</Description>
+         <Caveats>This parameter is virtual. It is calculated by calling the function APPLY_FILTER_FLAG with the following input parameters: w3_fit, general_flag.</Caveats>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>km/s</Units>
+         <UnitsConversion>1.0e3&gt;m/s</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <AxisLabel>w3_fit</AxisLabel>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <ValidMin>1.0</ValidMin>
+         <ValidMax>1000.0</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <ParticleType>Ion</ParticleType>
+            <Qualifier>Scalar</Qualifier>
+            <ParticleQuantity>ThermalSpeed</ParticleQuantity>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Population 3 most probable Radial Thermal Speed estimate, all Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>w3_fit_uncertainty_gd</ParameterKey>
+         <Description>Population 3, most probable Radial Thermal Speed, Vth estimate, from 1-dimensional Maxwellian fitting, all data qualities</Description>
+         <Caveats>This parameter is virtual. It is calculated by calling the function APPLY_FILTER_FLAG with the following input parameters: w3_fit_uncertainty, general_flag.</Caveats>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>km/s</Units>
+         <UnitsConversion>1.0e3&gt;m/s</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <AxisLabel>w3_fit_uncertainty</AxisLabel>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <ValidMin>0.001</ValidMin>
+         <ValidMax>10000.0</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <ParticleType>Ion</ParticleType>
+            <Qualifier>Scalar</Qualifier>
+            <ParticleQuantity>ThermalSpeed</ParticleQuantity>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Population 3 Identifier, good Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>pop3_mtoq_gd</ParameterKey>
+         <Description>Population 3 Identifier, the third population fit, that is, in addition to primary Proton and Alpha peaks, only good data qualities</Description>
+         <Caveats>This parameter is virtual. It is calculated by calling the function APPLY_FILTER_FLAG with the following input parameters: pop3_mtoq, general_flag.</Caveats>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>u/e</Units>
+         <RenderingHints>
+            <AxisLabel>m-to-q</AxisLabel>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <ValidMin>1.0</ValidMin>
+         <ValidMax>1000.0</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <ParticleType>Ion</ParticleType>
+            <Qualifier>Scalar</Qualifier>
+            <ParticleQuantity>Mass</ParticleQuantity>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Spacecraft Position, Heliocentric Inertial coordinates, cartesian</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>sc_pos_HCI</ParameterKey>
+         <Description>Spacecraft Position, Heliocentric Inertial, HCI, coordinates, cartesian</Description>
+         <Caveats>HCI coordinates are also called Ecliptic J2000. The Z-axis is the solar north rotational axis and the X-axis is the solar ascending node on the J2000 ecliptic.</Caveats>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>km</Units>
+         <UnitsConversion>1.0e3&gt;m</UnitsConversion>
+         <CoordinateSystem>
+            <CoordinateRepresentation>Spherical</CoordinateRepresentation>
+            <CoordinateSystemName>SC</CoordinateSystemName>
+         </CoordinateSystem>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <Structure>
+            <Size>3</Size>
+            <Element>
+               <Name>x_HCI</Name>
+               <Index>1</Index>
+               <RenderingHints>
+                  <AxisLabel>1</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>y_HCI</Name>
+               <Index>2</Index>
+               <RenderingHints>
+                  <AxisLabel>2</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>z_HCI</Name>
+               <Index>3</Index>
+               <RenderingHints>
+                  <AxisLabel>3</AxisLabel>
+               </RenderingHints>
+            </Element>
+         </Structure>
+         <ValidMin>-3.0e+08</ValidMin>
+         <ValidMax>3.0e+08</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Support>
+            <Qualifier>Vector</Qualifier>
+            <SupportQuantity>Velocity</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Spacecraft Velocity, Heliocentric Inertial coordinates, cartesian</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>sc_vel_HCI</ParameterKey>
+         <Description>Spacecraft Velocity, Heliocentric Inertial, HCI, coordinates, cartesian</Description>
+         <Caveats>HCI coordinates are also called Ecliptic J2000. The Z-axis is the solar north rotational axis and the X-axis is the solar ascending node on the J2000 ecliptic.</Caveats>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>km/s</Units>
+         <UnitsConversion>1.0e3&gt;m/s</UnitsConversion>
+         <CoordinateSystem>
+            <CoordinateRepresentation>Spherical</CoordinateRepresentation>
+            <CoordinateSystemName>SC</CoordinateSystemName>
+         </CoordinateSystem>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <Structure>
+            <Size>3</Size>
+            <Element>
+               <Name>Vx_HCI</Name>
+               <Index>1</Index>
+               <RenderingHints>
+                  <AxisLabel>1</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>Vy_HCI</Name>
+               <Index>2</Index>
+               <RenderingHints>
+                  <AxisLabel>2</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>Vz_HCI</Name>
+               <Index>3</Index>
+               <RenderingHints>
+                  <AxisLabel>3</AxisLabel>
+               </RenderingHints>
+            </Element>
+         </Structure>
+         <ValidMin>-300.0</ValidMin>
+         <ValidMax>300.0</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Support>
+            <Qualifier>Vector</Qualifier>
+            <SupportQuantity>Velocity</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Spacecraft Position, Latitude, Carrington coordinates, spherical</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>carr_latitude</ParameterKey>
+         <Description>Spacecraft Position, Latitude, Carrington coordinates, spherical</Description>
+         <Caveats>Measured from the Solar Solar Equator</Caveats>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>&#176;</Units>
+         <UnitsConversion>0.0174532925&gt;rad</UnitsConversion>
+         <CoordinateSystem>
+            <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+            <CoordinateSystemName>Carrington</CoordinateSystemName>
+         </CoordinateSystem>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <AxisLabel>latitude</AxisLabel>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <ValidMin>-90.0</ValidMin>
+         <ValidMax>90.0</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Support>
+            <Qualifier>DirectionAngle.ElevationAngle</Qualifier>
+            <Qualifier>Magnitude</Qualifier>
+            <SupportQuantity>Positional</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Spacecraft Position, Longitude, Carrington coordinates, spherical</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>carr_longitude</ParameterKey>
+         <Description>Spacecraft Position, Longitude, Carrington coordinates, spherical</Description>
+         <Caveats>Measured from the Solar Prime Meridian</Caveats>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>&#176;</Units>
+         <UnitsConversion>0.0174532925&gt;rad</UnitsConversion>
+         <CoordinateSystem>
+            <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+            <CoordinateSystemName>Carrington</CoordinateSystemName>
+         </CoordinateSystem>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <AxisLabel>longitude</AxisLabel>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <ValidMin>-180.0</ValidMin>
+         <ValidMax>180.0</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Support>
+            <Qualifier>DirectionAngle.AzimuthAngle</Qualifier>
+            <Qualifier>Magnitude</Qualifier>
+            <SupportQuantity>Positional</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Proton Velocity moment estimate, in the Spacecraft frame, all Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>vp_moment_SC</ParameterKey>
+         <Description>Proton, p, Velocity, V estimate, from the first moment of the reduced distribution function, in the Spacecraft, Spacecraft frame, all data qualities</Description>
+         <Caveats>The mission elapsed time string is constructed as met_seconds+':'+met_subseconds_base50000, where: met_seconds is the CCSDS_MET value cast as an integer string with no whitespace and met_subseconds_base50000 is an &quot;I05&quot; format integer string formed by converting the xxx_SUBSEC value to units of 1/50000 second. For example, if the xxx_SUBSEC value is recorded in parts per 65536 o second, the correct procedure would be to round 50000*(xxx_SUBSEC/65536) to the nearest integer and cast a string by using the &quot;I05&quot; format. Here, CCSDS_MET is the mission elapsed time, in seconds, from the PSP Epoch, which is defined to be January 1, 2010, 12:00:00 UTC and xxx_SUBSEC is the elapsed time in fractional seconds since the last tick of MET typically in units of 2^-16 seconds.</Caveats>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>km/s</Units>
+         <UnitsConversion>1.0e3&gt;m/s</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <Structure>
+            <Size>3</Size>
+            <Element>
+               <Name>vp_moment_xSC</Name>
+               <Index>1</Index>
+               <ValidMin>-1000.0</ValidMin>
+               <ValidMax>1000.0</ValidMax>
+               <RenderingHints>
+                  <AxisLabel>1</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>vp_moment_ySC</Name>
+               <Index>2</Index>
+               <ValidMin>-1000.0</ValidMin>
+               <ValidMax>1000.0</ValidMax>
+               <RenderingHints>
+                  <AxisLabel>2</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>vp_moment_zSC</Name>
+               <Index>3</Index>
+               <ValidMin>-2000.0</ValidMin>
+               <ValidMax>0.0</ValidMax>
+               <RenderingHints>
+                  <AxisLabel>3</AxisLabel>
+               </RenderingHints>
+            </Element>
+         </Structure>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <ParticleType>Proton</ParticleType>
+            <Qualifier>Vector</Qualifier>
+            <ParticleQuantity>Velocity</ParticleQuantity>
+            <AtomicNumber>1</AtomicNumber>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Proton Velocity moment estimate, upper uncertainty, in the Spacecraft frame, all Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>vp_moment_SC_deltahigh</ParameterKey>
+         <Description>Proton, p, Velocity, V estimate, upper uncertainty, from the first moment of the reduced distribution function, in the Spacecraft, Spacecraft frame, all data qualities</Description>
+         <Caveats>The mission elapsed time string is constructed as met_seconds+':'+met_subseconds_base50000, where: met_seconds is the CCSDS_MET value cast as an integer string with no whitespace and met_subseconds_base50000 is an &quot;I05&quot; format integer string formed by converting the xxx_SUBSEC value to units of 1/50000 second. For example, if the xxx_SUBSEC value is recorded in parts per 65536 o second, the correct procedure would be to round 50000*(xxx_SUBSEC/65536) to the nearest integer and cast a string by using the &quot;I05&quot; format. Here, CCSDS_MET is the mission elapsed time, in seconds, from the PSP Epoch, which is defined to be January 1, 2010, 12:00:00 UTC and xxx_SUBSEC is the elapsed time in fractional seconds since the last tick of MET typically in units of 2^-16 seconds.</Caveats>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>km/s</Units>
+         <UnitsConversion>1.0e3&gt;m/s</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <Structure>
+            <Size>3</Size>
+            <Element>
+               <Name>vp_moment_xSC_deltahigh</Name>
+               <Index>1</Index>
+               <RenderingHints>
+                  <AxisLabel>1</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>vp_moment_ySC_deltahigh</Name>
+               <Index>2</Index>
+               <RenderingHints>
+                  <AxisLabel>2</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>vp_moment_zSC_deltahigh</Name>
+               <Index>3</Index>
+               <RenderingHints>
+                  <AxisLabel>3</AxisLabel>
+               </RenderingHints>
+            </Element>
+         </Structure>
+         <ValidMin>0.0</ValidMin>
+         <ValidMax>2000.0</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <ParticleType>Proton</ParticleType>
+            <Qualifier>Vector</Qualifier>
+            <ParticleQuantity>Velocity</ParticleQuantity>
+            <AtomicNumber>1</AtomicNumber>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Proton Velocity moment estimate, lower uncertainty, in the Spacecraft frame, all Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>vp_moment_SC_deltalow</ParameterKey>
+         <Description>Proton, p, Velocity, V estimate, lower uncertainty, from the first moment of the reduced distribution function, in the Spacecraft, Spacecraft frame, all data qualities</Description>
+         <Caveats>The mission elapsed time string is constructed as met_seconds+':'+met_subseconds_base50000, where: met_seconds is the CCSDS_MET value cast as an integer string with no whitespace and met_subseconds_base50000 is an &quot;I05&quot; format integer string formed by converting the xxx_SUBSEC value to units of 1/50000 second. For example, if the xxx_SUBSEC value is recorded in parts per 65536 o second, the correct procedure would be to round 50000*(xxx_SUBSEC/65536) to the nearest integer and cast a string by using the &quot;I05&quot; format. Here, CCSDS_MET is the mission elapsed time, in seconds, from the PSP Epoch, which is defined to be January 1, 2010, 12:00:00 UTC and xxx_SUBSEC is the elapsed time in fractional seconds since the last tick of MET typically in units of 2^-16 seconds.</Caveats>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>km/s</Units>
+         <UnitsConversion>1.0e3&gt;m/s</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <Structure>
+            <Size>3</Size>
+            <Element>
+               <Name>vp_moment_xSC_deltalow</Name>
+               <Index>1</Index>
+               <RenderingHints>
+                  <AxisLabel>1</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>vp_moment_ySC_deltalow</Name>
+               <Index>2</Index>
+               <RenderingHints>
+                  <AxisLabel>2</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>vp_moment_zSC_deltalow</Name>
+               <Index>3</Index>
+               <RenderingHints>
+                  <AxisLabel>3</AxisLabel>
+               </RenderingHints>
+            </Element>
+         </Structure>
+         <ValidMin>0.0</ValidMin>
+         <ValidMax>2000.0</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <ParticleType>Proton</ParticleType>
+            <Qualifier>Vector</Qualifier>
+            <ParticleQuantity>Velocity</ParticleQuantity>
+            <AtomicNumber>1</AtomicNumber>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Proton Velocity moment estimate, in the Radial-Tangential-Normal frame, all Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>vp_moment_RTN</ParameterKey>
+         <Description>Proton, p, Velocity, V estimate, from the first moment of the reduced distribution function, in the Radial-Tangential-Normal, Radial-Tangential-Normal frame, all data qualities</Description>
+         <Caveats>The mission elapsed time string is constructed as met_seconds+':'+met_subseconds_base50000, where: met_seconds is the CCSDS_MET value cast as an integer string with no whitespace and met_subseconds_base50000 is an &quot;I05&quot; format integer string formed by converting the xxx_SUBSEC value to units of 1/50000 second. For example, if the xxx_SUBSEC value is recorded in parts per 65536 o second, the correct procedure would be to round 50000*(xxx_SUBSEC/65536) to the nearest integer and cast a string by using the &quot;I05&quot; format. Here, CCSDS_MET is the mission elapsed time, in seconds, from the PSP Epoch, which is defined to be January 1, 2010, 12:00:00 UTC and xxx_SUBSEC is the elapsed time in fractional seconds since the last tick of MET typically in units of 2^-16 seconds.</Caveats>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>km/s</Units>
+         <UnitsConversion>1.0e3&gt;m/s</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <Structure>
+            <Size>3</Size>
+            <Element>
+               <Name>vp_moment_R</Name>
+               <Index>1</Index>
+               <ValidMin>0.0</ValidMin>
+               <ValidMax>2000.0</ValidMax>
+               <RenderingHints>
+                  <AxisLabel>1</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>vp_moment_T</Name>
+               <Index>2</Index>
+               <ValidMin>-1000.0</ValidMin>
+               <ValidMax>1000.0</ValidMax>
+               <RenderingHints>
+                  <AxisLabel>2</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>vp_moment_N</Name>
+               <Index>3</Index>
+               <ValidMin>-1000.0</ValidMin>
+               <ValidMax>1000.0</ValidMax>
+               <RenderingHints>
+                  <AxisLabel>3</AxisLabel>
+               </RenderingHints>
+            </Element>
+         </Structure>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <ParticleType>Proton</ParticleType>
+            <Qualifier>Vector</Qualifier>
+            <ParticleQuantity>Velocity</ParticleQuantity>
+            <AtomicNumber>1</AtomicNumber>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Proton Velocity moment estimate, upper uncertainty, in the Radial-Tangential-Normal frame, all Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>vp_moment_RTN_deltahigh</ParameterKey>
+         <Description>Proton, p, Velocity, V estimate, upper uncertainty, from the first moment of the reduced distribution function, in the Radial-Tangential-Normal, Radial-Tangential-Normal frame, all data qualities</Description>
+         <Caveats>The mission elapsed time string is constructed as met_seconds+':'+met_subseconds_base50000, where: met_seconds is the CCSDS_MET value cast as an integer string with no whitespace and met_subseconds_base50000 is an &quot;I05&quot; format integer string formed by converting the xxx_SUBSEC value to units of 1/50000 second. For example, if the xxx_SUBSEC value is recorded in parts per 65536 o second, the correct procedure would be to round 50000*(xxx_SUBSEC/65536) to the nearest integer and cast a string by using the &quot;I05&quot; format. Here, CCSDS_MET is the mission elapsed time, in seconds, from the PSP Epoch, which is defined to be January 1, 2010, 12:00:00 UTC and xxx_SUBSEC is the elapsed time in fractional seconds since the last tick of MET typically in units of 2^-16 seconds.</Caveats>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>km/s</Units>
+         <UnitsConversion>1.0e3&gt;m/s</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <Structure>
+            <Size>3</Size>
+            <Element>
+               <Name>vp_moment_R_deltahigh</Name>
+               <Index>1</Index>
+               <RenderingHints>
+                  <AxisLabel>1</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>vp_moment_T_deltahigh</Name>
+               <Index>2</Index>
+               <RenderingHints>
+                  <AxisLabel>2</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>vp_moment_N_deltahigh</Name>
+               <Index>3</Index>
+               <RenderingHints>
+                  <AxisLabel>3</AxisLabel>
+               </RenderingHints>
+            </Element>
+         </Structure>
+         <ValidMin>0.0</ValidMin>
+         <ValidMax>2000.0</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <ParticleType>Proton</ParticleType>
+            <Qualifier>Vector</Qualifier>
+            <ParticleQuantity>Velocity</ParticleQuantity>
+            <AtomicNumber>1</AtomicNumber>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Proton Velocity moment estimate, lower uncertainty, in the Radial-Tangential-Normal frame, all Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>vp_moment_RTN_deltalow</ParameterKey>
+         <Description>Proton, p, Velocity, V estimate, lower uncertainty, from the first moment of the reduced distribution function, in the Radial-Tangential-Normal, Radial-Tangential-Normal frame, all data qualities</Description>
+         <Caveats>The mission elapsed time string is constructed as met_seconds+':'+met_subseconds_base50000, where: met_seconds is the CCSDS_MET value cast as an integer string with no whitespace and met_subseconds_base50000 is an &quot;I05&quot; format integer string formed by converting the xxx_SUBSEC value to units of 1/50000 second. For example, if the xxx_SUBSEC value is recorded in parts per 65536 o second, the correct procedure would be to round 50000*(xxx_SUBSEC/65536) to the nearest integer and cast a string by using the &quot;I05&quot; format. Here, CCSDS_MET is the mission elapsed time, in seconds, from the PSP Epoch, which is defined to be January 1, 2010, 12:00:00 UTC and xxx_SUBSEC is the elapsed time in fractional seconds since the last tick of MET typically in units of 2^-16 seconds.</Caveats>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>km/s</Units>
+         <UnitsConversion>1.0e3&gt;m/s</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <Structure>
+            <Size>3</Size>
+            <Element>
+               <Name>vp_moment_R_deltalow</Name>
+               <Index>1</Index>
+               <RenderingHints>
+                  <AxisLabel>1</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>vp_moment_T_deltalow</Name>
+               <Index>2</Index>
+               <RenderingHints>
+                  <AxisLabel>2</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>vp_moment_N_deltalow</Name>
+               <Index>3</Index>
+               <RenderingHints>
+                  <AxisLabel>3</AxisLabel>
+               </RenderingHints>
+            </Element>
+         </Structure>
+         <ValidMin>0.0</ValidMin>
+         <ValidMax>2000.0</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <ParticleType>Proton</ParticleType>
+            <Qualifier>Vector</Qualifier>
+            <ParticleQuantity>Velocity</ParticleQuantity>
+            <AtomicNumber>1</AtomicNumber>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Proton Number Density moment estimate, all Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>np_moment</ParameterKey>
+         <Description>Proton, p, Number Density, n estimate, from the zeroth moment of the reduced distribution function, all data qualities</Description>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>cm^-3</Units>
+         <UnitsConversion>1.0e6&gt;m^-3</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <AxisLabel>np_moment</AxisLabel>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <ValidMin>0.01</ValidMin>
+         <ValidMax>10000.0</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <ParticleType>Proton</ParticleType>
+            <Qualifier>Scalar</Qualifier>
+            <ParticleQuantity>NumberDensity</ParticleQuantity>
+            <AtomicNumber>1</AtomicNumber>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Proton Number Density moment estimate, upper uncertainty, all Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>np_moment_deltahigh</ParameterKey>
+         <Description>Proton, p, Number Density, n estimate, upper uncertainty, from the zeroth moment of the reduced distribution function, all data qualities</Description>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>cm^-3</Units>
+         <UnitsConversion>1.0e6&gt;m^-3</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <AxisLabel>np_moment_deltahigh</AxisLabel>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <ValidMin>0.001</ValidMin>
+         <ValidMax>10000.0</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <ParticleType>Proton</ParticleType>
+            <Qualifier>Scalar</Qualifier>
+            <ParticleQuantity>NumberDensity</ParticleQuantity>
+            <AtomicNumber>1</AtomicNumber>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Proton Number Density moment estimate, lower uncertainty, all Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>np_moment_deltalow</ParameterKey>
+         <Description>Proton, p, Number Density, n estimate, lower uncertainty, from the zeroth moment of the reduced distribution function, all data qualities</Description>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>cm^-3</Units>
+         <UnitsConversion>1.0e6&gt;m^-3</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <AxisLabel>np_moment_deltalow</AxisLabel>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <ValidMin>0.001</ValidMin>
+         <ValidMax>10000.0</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <ParticleType>Proton</ParticleType>
+            <Qualifier>Scalar</Qualifier>
+            <ParticleQuantity>NumberDensity</ParticleQuantity>
+            <AtomicNumber>1</AtomicNumber>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Proton most probable Radial Thermal Speed moment estimate, all Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>wp_moment</ParameterKey>
+         <Description>Proton, p, most probable Radial Thermal Speed, Vth estimate, from the second moment of the reduced distribution function, all data qualities</Description>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>km/s</Units>
+         <UnitsConversion>1.0e3&gt;m/s</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <AxisLabel>wp_moment</AxisLabel>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <ValidMin>1.0</ValidMin>
+         <ValidMax>1000.0</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <ParticleType>Proton</ParticleType>
+            <Qualifier>Scalar</Qualifier>
+            <ParticleQuantity>ThermalSpeed</ParticleQuantity>
+            <AtomicNumber>1</AtomicNumber>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Proton most probable Radial Thermal Speed moment estimate, upper uncertainty, all Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>wp_moment_deltahigh</ParameterKey>
+         <Description>Proton, p, most probable Radial Thermal Speed, Vth estimate, upper uncertainty, from the second moment of the reduced distribution function, all data qualities</Description>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>km/s</Units>
+         <UnitsConversion>1.0e3&gt;m/s</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <AxisLabel>wp_moment_deltahigh</AxisLabel>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <ValidMin>0.001</ValidMin>
+         <ValidMax>10000.0</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <ParticleType>Proton</ParticleType>
+            <Qualifier>Scalar</Qualifier>
+            <ParticleQuantity>ThermalSpeed</ParticleQuantity>
+            <AtomicNumber>1</AtomicNumber>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Proton most probable Radial Thermal Speed moment estimate, lower uncertainty, all Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>wp_moment_deltalow</ParameterKey>
+         <Description>Proton, p, most probable Radial Thermal Speed, Vth estimate, lower uncertainty, from the second moment of the reduced distribution function, all data qualities</Description>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>km/s</Units>
+         <UnitsConversion>1.0e3&gt;m/s</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <AxisLabel>wp_moment_deltalow</AxisLabel>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <ValidMin>0.001</ValidMin>
+         <ValidMax>10000.0</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <ParticleType>Proton</ParticleType>
+            <Qualifier>Scalar</Qualifier>
+            <ParticleQuantity>ThermalSpeed</ParticleQuantity>
+            <AtomicNumber>1</AtomicNumber>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Primary Proton Population Velocity estimate, in the Spacecraft frame, all Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>vp1_fit_SC</ParameterKey>
+         <Description>Primary Proton Population, p, Velocity, V estimate, from 1-dimensional Maxwellian fitting, in the Spacecraft, Spacecraft frame, all data qualities</Description>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>km/s</Units>
+         <UnitsConversion>1.0e3&gt;m/s</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <Structure>
+            <Size>3</Size>
+            <Element>
+               <Name>vp1_fit_xSC</Name>
+               <Index>1</Index>
+               <ValidMin>-1000.0</ValidMin>
+               <ValidMax>1000.0</ValidMax>
+               <RenderingHints>
+                  <AxisLabel>1</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>vp1_fit_ySC</Name>
+               <Index>2</Index>
+               <ValidMin>-1000.0</ValidMin>
+               <ValidMax>1000.0</ValidMax>
+               <RenderingHints>
+                  <AxisLabel>2</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>vp1_fit_zSC</Name>
+               <Index>3</Index>
+               <ValidMin>-2000.0</ValidMin>
+               <ValidMax>0.0</ValidMax>
+               <RenderingHints>
+                  <AxisLabel>3</AxisLabel>
+               </RenderingHints>
+            </Element>
+         </Structure>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <ParticleType>Proton</ParticleType>
+            <Qualifier>Vector</Qualifier>
+            <ParticleQuantity>Velocity</ParticleQuantity>
+            <AtomicNumber>1</AtomicNumber>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Primary Proton Population Velocity estimate, uncertainty, all Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>vp1_fit_SC_uncertainty</ParameterKey>
+         <Description>Primary Proton Population, p, Velocity, V estimate, one sigma error uncertainty, from 1-dimensional Maxwellian fitting, all data qualities</Description>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>km/s</Units>
+         <UnitsConversion>1.0e3&gt;m/s</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <Structure>
+            <Size>3</Size>
+            <Element>
+               <Name>vp1_fit_xSC_uncertainty</Name>
+               <Index>1</Index>
+               <RenderingHints>
+                  <AxisLabel>1</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>vp1_fit_ySC_uncertainty</Name>
+               <Index>2</Index>
+               <RenderingHints>
+                  <AxisLabel>2</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>vp1_fit_zSC_uncertainty</Name>
+               <Index>3</Index>
+               <RenderingHints>
+                  <AxisLabel>3</AxisLabel>
+               </RenderingHints>
+            </Element>
+         </Structure>
+         <ValidMin>0.0</ValidMin>
+         <ValidMax>2000.0</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <ParticleType>Proton</ParticleType>
+            <Qualifier>Vector</Qualifier>
+            <ParticleQuantity>Velocity</ParticleQuantity>
+            <AtomicNumber>1</AtomicNumber>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Primary Proton Population Velocity estimate, in the Radial-Tangential-Normal frame, all Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>vp1_fit_RTN</ParameterKey>
+         <Description>Primary Proton Population, p, Velocity, V estimate, from 1-dimensional Maxwellian fitting, in the Radial-Tangential-Normal, Radial-Tangential-Normal frame, all data qualities</Description>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>km/s</Units>
+         <UnitsConversion>1.0e3&gt;m/s</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <Structure>
+            <Size>3</Size>
+            <Element>
+               <Name>vp1_fit_R</Name>
+               <Index>1</Index>
+               <ValidMin>0.0</ValidMin>
+               <ValidMax>2000.0</ValidMax>
+               <RenderingHints>
+                  <AxisLabel>1</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>vp1_fit_T</Name>
+               <Index>2</Index>
+               <ValidMin>-1000.0</ValidMin>
+               <ValidMax>1000.0</ValidMax>
+               <RenderingHints>
+                  <AxisLabel>2</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>vp1_fit_N</Name>
+               <Index>3</Index>
+               <ValidMin>-1000.0</ValidMin>
+               <ValidMax>1000.0</ValidMax>
+               <RenderingHints>
+                  <AxisLabel>3</AxisLabel>
+               </RenderingHints>
+            </Element>
+         </Structure>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <ParticleType>Proton</ParticleType>
+            <Qualifier>Vector</Qualifier>
+            <ParticleQuantity>Velocity</ParticleQuantity>
+            <AtomicNumber>1</AtomicNumber>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Primary Proton Population Velocity estimate, uncertainty, all Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>vp1_fit_RTN_uncertainty</ParameterKey>
+         <Description>Primary Proton Population, p, Velocity, V estimate, one sigma error uncertainty, from 1-dimensional Maxwellian fitting, all data qualities</Description>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>km/s</Units>
+         <UnitsConversion>1.0e3&gt;m/s</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <Structure>
+            <Size>3</Size>
+            <Element>
+               <Name>vp1_fit_R_uncertainty</Name>
+               <Index>1</Index>
+               <RenderingHints>
+                  <AxisLabel>1</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>vp1_fit_T_uncertainty</Name>
+               <Index>2</Index>
+               <RenderingHints>
+                  <AxisLabel>2</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>vp1_fit_N_uncertainty</Name>
+               <Index>3</Index>
+               <RenderingHints>
+                  <AxisLabel>3</AxisLabel>
+               </RenderingHints>
+            </Element>
+         </Structure>
+         <ValidMin>0.0</ValidMin>
+         <ValidMax>2000.0</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <ParticleType>Proton</ParticleType>
+            <Qualifier>Vector</Qualifier>
+            <ParticleQuantity>Velocity</ParticleQuantity>
+            <AtomicNumber>1</AtomicNumber>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Primary Proton Population Number Density estimate, all Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>np1_fit</ParameterKey>
+         <Description>Primary Proton Population, p, Number Density, n estimate, from 1-dimensional Maxwellian fitting, all data qualities</Description>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>cm^-3</Units>
+         <UnitsConversion>1.0e6&gt;m^-3</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <AxisLabel>np1_fit</AxisLabel>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <ValidMin>0.01</ValidMin>
+         <ValidMax>10000.0</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <ParticleType>Proton</ParticleType>
+            <Qualifier>Scalar</Qualifier>
+            <ParticleQuantity>NumberDensity</ParticleQuantity>
+            <AtomicNumber>1</AtomicNumber>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Primary Proton Population Number Density estimate, all Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>np1_fit_uncertainty</ParameterKey>
+         <Description>Primary Proton Population, p, Number Density, n estimate, from 1-dimensional Maxwellian fitting, all data qualities</Description>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>cm^-3</Units>
+         <UnitsConversion>1.0e6&gt;m^-3</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <AxisLabel>np1_fit_uncertainty</AxisLabel>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <ValidMin>0.001</ValidMin>
+         <ValidMax>10000.0</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <ParticleType>Proton</ParticleType>
+            <Qualifier>Scalar</Qualifier>
+            <ParticleQuantity>NumberDensity</ParticleQuantity>
+            <AtomicNumber>1</AtomicNumber>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Primary Proton Population most probable Radial Thermal Speed estimate, all Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>wp1_fit</ParameterKey>
+         <Description>Primary Proton Population, p, most probable Radial Thermal Speed, Vth estimate, from 1-dimensional Maxwellian fitting, all data qualities</Description>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>km/s</Units>
+         <UnitsConversion>1.0e3&gt;m/s</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <AxisLabel>wp1_fit</AxisLabel>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <ValidMin>1.0</ValidMin>
+         <ValidMax>1000.0</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <ParticleType>Proton</ParticleType>
+            <Qualifier>Scalar</Qualifier>
+            <ParticleQuantity>ThermalSpeed</ParticleQuantity>
+            <AtomicNumber>1</AtomicNumber>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Primary Proton Population most probable Radial Thermal Speed estimate, all Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>wp1_fit_uncertainty</ParameterKey>
+         <Description>Primary Proton Population, p, most probable Radial Thermal Speed, Vth estimate, from 1-dimensional Maxwellian fitting, all data qualities</Description>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>km/s</Units>
+         <UnitsConversion>1.0e3&gt;m/s</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <AxisLabel>wp1_fit_uncertainty</AxisLabel>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <ValidMin>0.001</ValidMin>
+         <ValidMax>10000.0</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <ParticleType>Proton</ParticleType>
+            <Qualifier>Scalar</Qualifier>
+            <ParticleQuantity>ThermalSpeed</ParticleQuantity>
+            <AtomicNumber>1</AtomicNumber>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Proton Velocity estimate, in the Spacecraft frame, all Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>vp_fit_SC</ParameterKey>
+         <Description>Proton, p, Velocity, V estimate, from 1-dimensional Maxwellian fitting, in the Spacecraft, Spacecraft frame, all data qualities</Description>
+         <Caveats>The mission elapsed time string is constructed as met_seconds+':'+met_subseconds_base50000, where: met_seconds is the CCSDS_MET value cast as an integer string with no whitespace and met_subseconds_base50000 is an &quot;I05&quot; format integer string formed by converting the xxx_SUBSEC value to units of 1/50000 second. For example, if the xxx_SUBSEC value is recorded in parts per 65536 o second, the correct procedure would be to round 50000*(xxx_SUBSEC/65536) to the nearest integer and cast a string by using the &quot;I05&quot; format. Here, CCSDS_MET is the mission elapsed time, in seconds, from the PSP Epoch, which is defined to be January 1, 2010, 12:00:00 UTC and xxx_SUBSEC is the elapsed time in fractional seconds since the last tick of MET typically in units of 2^-16 seconds.</Caveats>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>km/s</Units>
+         <UnitsConversion>1.0e3&gt;m/s</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <Structure>
+            <Size>3</Size>
+            <Element>
+               <Name>vp_fit_xSC</Name>
+               <Index>1</Index>
+               <ValidMin>-1000.0</ValidMin>
+               <ValidMax>1000.0</ValidMax>
+               <RenderingHints>
+                  <AxisLabel>1</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>vp_fit_ySC</Name>
+               <Index>2</Index>
+               <ValidMin>-1000.0</ValidMin>
+               <ValidMax>1000.0</ValidMax>
+               <RenderingHints>
+                  <AxisLabel>2</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>vp_fit_zSC</Name>
+               <Index>3</Index>
+               <ValidMin>-2000.0</ValidMin>
+               <ValidMax>0.0</ValidMax>
+               <RenderingHints>
+                  <AxisLabel>3</AxisLabel>
+               </RenderingHints>
+            </Element>
+         </Structure>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <ParticleType>Proton</ParticleType>
+            <Qualifier>Vector</Qualifier>
+            <ParticleQuantity>Velocity</ParticleQuantity>
+            <AtomicNumber>1</AtomicNumber>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Proton Velocity estimate, uncertainty, all Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>vp_fit_SC_uncertainty</ParameterKey>
+         <Description>Proton, p, Velocity, V estimate, one sigma error uncertainty, from 1-dimensional Maxwellian fitting, all data qualities</Description>
+         <Caveats>The mission elapsed time string is constructed as met_seconds+':'+met_subseconds_base50000, where: met_seconds is the CCSDS_MET value cast as an integer string with no whitespace and met_subseconds_base50000 is an &quot;I05&quot; format integer string formed by converting the xxx_SUBSEC value to units of 1/50000 second. For example, if the xxx_SUBSEC value is recorded in parts per 65536 o second, the correct procedure would be to round 50000*(xxx_SUBSEC/65536) to the nearest integer and cast a string by using the &quot;I05&quot; format. Here, CCSDS_MET is the mission elapsed time, in seconds, from the PSP Epoch, which is defined to be January 1, 2010, 12:00:00 UTC and xxx_SUBSEC is the elapsed time in fractional seconds since the last tick of MET typically in units of 2^-16 seconds.</Caveats>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>km/s</Units>
+         <UnitsConversion>1.0e3&gt;m/s</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <Structure>
+            <Size>3</Size>
+            <Element>
+               <Name>vp_fit_xSC_uncertainty</Name>
+               <Index>1</Index>
+               <RenderingHints>
+                  <AxisLabel>1</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>vp_fit_ySC_uncertainty</Name>
+               <Index>2</Index>
+               <RenderingHints>
+                  <AxisLabel>2</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>vp_fit_zSC_uncertainty</Name>
+               <Index>3</Index>
+               <RenderingHints>
+                  <AxisLabel>3</AxisLabel>
+               </RenderingHints>
+            </Element>
+         </Structure>
+         <ValidMin>0.0</ValidMin>
+         <ValidMax>2000.0</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <ParticleType>Proton</ParticleType>
+            <Qualifier>Vector</Qualifier>
+            <ParticleQuantity>Velocity</ParticleQuantity>
+            <AtomicNumber>1</AtomicNumber>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Proton Velocity estimate, in the Radial-Tangential-Normal frame, all Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>vp_fit_RTN</ParameterKey>
+         <Description>Proton, p, Velocity, V estimate, from 1-dimensional Maxwellian fitting, in the Radial-Tangential-Normal, Radial-Tangential-Normal frame, all data qualities</Description>
+         <Caveats>The mission elapsed time string is constructed as met_seconds+':'+met_subseconds_base50000, where: met_seconds is the CCSDS_MET value cast as an integer string with no whitespace and met_subseconds_base50000 is an &quot;I05&quot; format integer string formed by converting the xxx_SUBSEC value to units of 1/50000 second. For example, if the xxx_SUBSEC value is recorded in parts per 65536 o second, the correct procedure would be to round 50000*(xxx_SUBSEC/65536) to the nearest integer and cast a string by using the &quot;I05&quot; format. Here, CCSDS_MET is the mission elapsed time, in seconds, from the PSP Epoch, which is defined to be January 1, 2010, 12:00:00 UTC and xxx_SUBSEC is the elapsed time in fractional seconds since the last tick of MET typically in units of 2^-16 seconds.</Caveats>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>km/s</Units>
+         <UnitsConversion>1.0e3&gt;m/s</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <Structure>
+            <Size>3</Size>
+            <Element>
+               <Name>vp_fit_R</Name>
+               <Index>1</Index>
+               <ValidMin>0.0</ValidMin>
+               <ValidMax>2000.0</ValidMax>
+               <RenderingHints>
+                  <AxisLabel>1</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>vp_fit_T</Name>
+               <Index>2</Index>
+               <ValidMin>-1000.0</ValidMin>
+               <ValidMax>1000.0</ValidMax>
+               <RenderingHints>
+                  <AxisLabel>2</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>vp_fit_N</Name>
+               <Index>3</Index>
+               <ValidMin>-1000.0</ValidMin>
+               <ValidMax>1000.0</ValidMax>
+               <RenderingHints>
+                  <AxisLabel>3</AxisLabel>
+               </RenderingHints>
+            </Element>
+         </Structure>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <ParticleType>Proton</ParticleType>
+            <Qualifier>Vector</Qualifier>
+            <ParticleQuantity>Velocity</ParticleQuantity>
+            <AtomicNumber>1</AtomicNumber>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Proton Velocity estimate, uncertainty, all Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>vp_fit_RTN_uncertainty</ParameterKey>
+         <Description>Proton, p, Velocity, V estimate, one sigma error uncertainty, from 1-dimensional Maxwellian fitting, all data qualities</Description>
+         <Caveats>The mission elapsed time string is constructed as met_seconds+':'+met_subseconds_base50000, where: met_seconds is the CCSDS_MET value cast as an integer string with no whitespace and met_subseconds_base50000 is an &quot;I05&quot; format integer string formed by converting the xxx_SUBSEC value to units of 1/50000 second. For example, if the xxx_SUBSEC value is recorded in parts per 65536 o second, the correct procedure would be to round 50000*(xxx_SUBSEC/65536) to the nearest integer and cast a string by using the &quot;I05&quot; format. Here, CCSDS_MET is the mission elapsed time, in seconds, from the PSP Epoch, which is defined to be January 1, 2010, 12:00:00 UTC and xxx_SUBSEC is the elapsed time in fractional seconds since the last tick of MET typically in units of 2^-16 seconds.</Caveats>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>km/s</Units>
+         <UnitsConversion>1.0e3&gt;m/s</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <Structure>
+            <Size>3</Size>
+            <Element>
+               <Name>vp_fit_R_uncertainty</Name>
+               <Index>1</Index>
+               <RenderingHints>
+                  <AxisLabel>1</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>vp_fit_T_uncertainty</Name>
+               <Index>2</Index>
+               <RenderingHints>
+                  <AxisLabel>2</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>vp_fit_N_uncertainty</Name>
+               <Index>3</Index>
+               <RenderingHints>
+                  <AxisLabel>3</AxisLabel>
+               </RenderingHints>
+            </Element>
+         </Structure>
+         <ValidMin>0.0</ValidMin>
+         <ValidMax>2000.0</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <ParticleType>Proton</ParticleType>
+            <Qualifier>Vector</Qualifier>
+            <ParticleQuantity>Velocity</ParticleQuantity>
+            <AtomicNumber>1</AtomicNumber>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Proton Number Density estimate, all Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>np_fit</ParameterKey>
+         <Description>Proton, p, Number Density, n estimate, from 1-dimensional Maxwellian fitting, all data qualities</Description>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>cm^-3</Units>
+         <UnitsConversion>1.0e6&gt;m^-3</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <AxisLabel>np_fit</AxisLabel>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <ValidMin>0.01</ValidMin>
+         <ValidMax>10000.0</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <ParticleType>Proton</ParticleType>
+            <Qualifier>Scalar</Qualifier>
+            <ParticleQuantity>NumberDensity</ParticleQuantity>
+            <AtomicNumber>1</AtomicNumber>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Proton Number Density estimate, all Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>np_fit_uncertainty</ParameterKey>
+         <Description>Proton, p, Number Density, n estimate, from 1-dimensional Maxwellian fitting, all data qualities</Description>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>cm^-3</Units>
+         <UnitsConversion>1.0e6&gt;m^-3</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <AxisLabel>np_fit_uncertainty</AxisLabel>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <ValidMin>0.001</ValidMin>
+         <ValidMax>10000.0</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <ParticleType>Proton</ParticleType>
+            <Qualifier>Scalar</Qualifier>
+            <ParticleQuantity>NumberDensity</ParticleQuantity>
+            <AtomicNumber>1</AtomicNumber>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Proton most probable Radial Thermal Speed estimate, all Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>wp_fit</ParameterKey>
+         <Description>Proton, p, most probable Radial Thermal Speed, Vth estimate, from 1-dimensional Maxwellian fitting, all data qualities</Description>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>km/s</Units>
+         <UnitsConversion>1.0e3&gt;m/s</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <AxisLabel>wp_fit</AxisLabel>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <ValidMin>1.0</ValidMin>
+         <ValidMax>1000.0</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <ParticleType>Proton</ParticleType>
+            <Qualifier>Scalar</Qualifier>
+            <ParticleQuantity>ThermalSpeed</ParticleQuantity>
+            <AtomicNumber>1</AtomicNumber>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Proton most probable Radial Thermal Speed estimate, all Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>wp_fit_uncertainty</ParameterKey>
+         <Description>Proton, p, most probable Radial Thermal Speed, Vth estimate, from 1-dimensional Maxwellian fitting, all data qualities</Description>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>km/s</Units>
+         <UnitsConversion>1.0e3&gt;m/s</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <AxisLabel>wp_fit_uncertainty</AxisLabel>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <ValidMin>0.001</ValidMin>
+         <ValidMax>10000.0</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <ParticleType>Proton</ParticleType>
+            <Qualifier>Scalar</Qualifier>
+            <ParticleQuantity>ThermalSpeed</ParticleQuantity>
+            <AtomicNumber>1</AtomicNumber>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Alpha Particle Velocity estimate, in the Spacecraft frame, all Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>va_fit_SC</ParameterKey>
+         <Description>Alpha Particle, He++, Velocity, V estimate, from 1-dimensional Maxwellian fitting, in the Spacecraft, Spacecraft frame, all data qualities</Description>
+         <Caveats>The mission elapsed time string is constructed as met_seconds+':'+met_subseconds_base50000, where: met_seconds is the CCSDS_MET value cast as an integer string with no whitespace and met_subseconds_base50000 is an &quot;I05&quot; format integer string formed by converting the xxx_SUBSEC value to units of 1/50000 second. For example, if the xxx_SUBSEC value is recorded in parts per 65536 o second, the correct procedure would be to round 50000*(xxx_SUBSEC/65536) to the nearest integer and cast a string by using the &quot;I05&quot; format. Here, CCSDS_MET is the mission elapsed time, in seconds, from the PSP Epoch, which is defined to be January 1, 2010, 12:00:00 UTC and xxx_SUBSEC is the elapsed time in fractional seconds since the last tick of MET typically in units of 2^-16 seconds.</Caveats>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>km/s</Units>
+         <UnitsConversion>1.0e3&gt;m/s</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <Structure>
+            <Size>3</Size>
+            <Element>
+               <Name>va_fit_xSC</Name>
+               <Index>1</Index>
+               <ValidMin>-1000.0</ValidMin>
+               <ValidMax>1000.0</ValidMax>
+               <RenderingHints>
+                  <AxisLabel>1</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>va_fit_ySC</Name>
+               <Index>2</Index>
+               <ValidMin>-1000.0</ValidMin>
+               <ValidMax>1000.0</ValidMax>
+               <RenderingHints>
+                  <AxisLabel>2</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>va_fit_zSC</Name>
+               <Index>3</Index>
+               <ValidMin>-2000.0</ValidMin>
+               <ValidMax>0.0</ValidMax>
+               <RenderingHints>
+                  <AxisLabel>3</AxisLabel>
+               </RenderingHints>
+            </Element>
+         </Structure>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <Qualifier>Vector</Qualifier>
+            <ParticleQuantity>Velocity</ParticleQuantity>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Alpha Particle Velocity estimate, uncertainty, all Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>va_fit_SC_uncertainty</ParameterKey>
+         <Description>Alpha Particle, He++, Velocity, V estimate, one sigma error uncertainty, from 1-dimensional Maxwellian fitting, all data qualities</Description>
+         <Caveats>The mission elapsed time string is constructed as met_seconds+':'+met_subseconds_base50000, where: met_seconds is the CCSDS_MET value cast as an integer string with no whitespace and met_subseconds_base50000 is an &quot;I05&quot; format integer string formed by converting the xxx_SUBSEC value to units of 1/50000 second. For example, if the xxx_SUBSEC value is recorded in parts per 65536 o second, the correct procedure would be to round 50000*(xxx_SUBSEC/65536) to the nearest integer and cast a string by using the &quot;I05&quot; format. Here, CCSDS_MET is the mission elapsed time, in seconds, from the PSP Epoch, which is defined to be January 1, 2010, 12:00:00 UTC and xxx_SUBSEC is the elapsed time in fractional seconds since the last tick of MET typically in units of 2^-16 seconds.</Caveats>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>km/s</Units>
+         <UnitsConversion>1.0e3&gt;m/s</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <Structure>
+            <Size>3</Size>
+            <Element>
+               <Name>va_fit_xSC_uncertainty</Name>
+               <Index>1</Index>
+               <RenderingHints>
+                  <AxisLabel>1</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>va_fit_ySC_uncertainty</Name>
+               <Index>2</Index>
+               <RenderingHints>
+                  <AxisLabel>2</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>va_fit_zSC_uncertainty</Name>
+               <Index>3</Index>
+               <RenderingHints>
+                  <AxisLabel>3</AxisLabel>
+               </RenderingHints>
+            </Element>
+         </Structure>
+         <ValidMin>0.0</ValidMin>
+         <ValidMax>2000.0</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <Qualifier>Vector</Qualifier>
+            <ParticleQuantity>Velocity</ParticleQuantity>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Alpha Particle Velocity estimate, in the Radial-Tangential-Normal frame, all Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>va_fit_RTN</ParameterKey>
+         <Description>Alpha Particle, He++, Velocity, V estimate, from 1-dimensional Maxwellian fitting, in the Radial-Tangential-Normal, Radial-Tangential-Normal frame, all data qualities</Description>
+         <Caveats>The mission elapsed time string is constructed as met_seconds+':'+met_subseconds_base50000, where: met_seconds is the CCSDS_MET value cast as an integer string with no whitespace and met_subseconds_base50000 is an &quot;I05&quot; format integer string formed by converting the xxx_SUBSEC value to units of 1/50000 second. For example, if the xxx_SUBSEC value is recorded in parts per 65536 o second, the correct procedure would be to round 50000*(xxx_SUBSEC/65536) to the nearest integer and cast a string by using the &quot;I05&quot; format. Here, CCSDS_MET is the mission elapsed time, in seconds, from the PSP Epoch, which is defined to be January 1, 2010, 12:00:00 UTC and xxx_SUBSEC is the elapsed time in fractional seconds since the last tick of MET typically in units of 2^-16 seconds.</Caveats>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>km/s</Units>
+         <UnitsConversion>1.0e3&gt;m/s</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <Structure>
+            <Size>3</Size>
+            <Element>
+               <Name>va_fit_R</Name>
+               <Index>1</Index>
+               <ValidMin>0.0</ValidMin>
+               <ValidMax>2000.0</ValidMax>
+               <RenderingHints>
+                  <AxisLabel>1</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>va_fit_T</Name>
+               <Index>2</Index>
+               <ValidMin>-1000.0</ValidMin>
+               <ValidMax>1000.0</ValidMax>
+               <RenderingHints>
+                  <AxisLabel>2</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>va_fit_N</Name>
+               <Index>3</Index>
+               <ValidMin>-1000.0</ValidMin>
+               <ValidMax>1000.0</ValidMax>
+               <RenderingHints>
+                  <AxisLabel>3</AxisLabel>
+               </RenderingHints>
+            </Element>
+         </Structure>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <Qualifier>Vector</Qualifier>
+            <ParticleQuantity>Velocity</ParticleQuantity>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Alpha Particle Velocity estimate, uncertainty, all Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>va_fit_RTN_uncertainty</ParameterKey>
+         <Description>Alpha Particle, He++, Velocity, V estimate, one sigma error uncertainty, from 1-dimensional Maxwellian fitting, all data qualities</Description>
+         <Caveats>The mission elapsed time string is constructed as met_seconds+':'+met_subseconds_base50000, where: met_seconds is the CCSDS_MET value cast as an integer string with no whitespace and met_subseconds_base50000 is an &quot;I05&quot; format integer string formed by converting the xxx_SUBSEC value to units of 1/50000 second. For example, if the xxx_SUBSEC value is recorded in parts per 65536 o second, the correct procedure would be to round 50000*(xxx_SUBSEC/65536) to the nearest integer and cast a string by using the &quot;I05&quot; format. Here, CCSDS_MET is the mission elapsed time, in seconds, from the PSP Epoch, which is defined to be January 1, 2010, 12:00:00 UTC and xxx_SUBSEC is the elapsed time in fractional seconds since the last tick of MET typically in units of 2^-16 seconds.</Caveats>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>km/s</Units>
+         <UnitsConversion>1.0e3&gt;m/s</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <Structure>
+            <Size>3</Size>
+            <Element>
+               <Name>va_fit_R_uncertainty</Name>
+               <Index>1</Index>
+               <RenderingHints>
+                  <AxisLabel>1</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>va_fit_T_uncertainty</Name>
+               <Index>2</Index>
+               <RenderingHints>
+                  <AxisLabel>2</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>va_fit_N_uncertainty</Name>
+               <Index>3</Index>
+               <RenderingHints>
+                  <AxisLabel>3</AxisLabel>
+               </RenderingHints>
+            </Element>
+         </Structure>
+         <ValidMin>0.0</ValidMin>
+         <ValidMax>2000.0</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <Qualifier>Vector</Qualifier>
+            <ParticleQuantity>Velocity</ParticleQuantity>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Alpha Particle Number Density estimate, all Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>na_fit</ParameterKey>
+         <Description>Alpha Particle, He++, Number Density, n estimate, from 1-dimensional Maxwellian fitting, all data qualities</Description>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>cm^-3</Units>
+         <UnitsConversion>1.0e6&gt;m^-3</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <AxisLabel>na_fit</AxisLabel>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <ValidMin>0.01</ValidMin>
+         <ValidMax>10000.0</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <Qualifier>Scalar</Qualifier>
+            <ParticleQuantity>NumberDensity</ParticleQuantity>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Alpha Particle Number Density estimate, all Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>na_fit_uncertainty</ParameterKey>
+         <Description>Alpha Particle, He++, Number Density, n estimate, from 1-dimensional Maxwellian fitting, all data qualities</Description>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>cm^-3</Units>
+         <UnitsConversion>1.0e6&gt;m^-3</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <AxisLabel>na_fit_uncertainty</AxisLabel>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <ValidMin>0.001</ValidMin>
+         <ValidMax>10000.0</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <Qualifier>Scalar</Qualifier>
+            <ParticleQuantity>NumberDensity</ParticleQuantity>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Alpha Particle most probable Radial Thermal Speed estimate, all Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>wa_fit</ParameterKey>
+         <Description>Alpha Particle, He++, most probable Radial Thermal Speed, Vth estimate, from 1-dimensional Maxwellian fitting, all data qualities</Description>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>km/s</Units>
+         <UnitsConversion>1.0e3&gt;m/s</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <AxisLabel>wa_fit</AxisLabel>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <ValidMin>1.0</ValidMin>
+         <ValidMax>1000.0</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <Qualifier>Scalar</Qualifier>
+            <ParticleQuantity>ThermalSpeed</ParticleQuantity>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Alpha Particle most probable Radial Thermal Speed estimate, all Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>wa_fit_uncertainty</ParameterKey>
+         <Description>Alpha Particle, He++, most probable Radial Thermal Speed, Vth estimate, from 1-dimensional Maxwellian fitting, all data qualities</Description>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>km/s</Units>
+         <UnitsConversion>1.0e3&gt;m/s</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <AxisLabel>wa_fit_uncertainty</AxisLabel>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <ValidMin>0.001</ValidMin>
+         <ValidMax>10000.0</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <Qualifier>Scalar</Qualifier>
+            <ParticleQuantity>ThermalSpeed</ParticleQuantity>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Population 3 Velocity estimate, in the Spacecraft frame, all Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>v3_fit_SC</ParameterKey>
+         <Description>Population 3, Velocity, V estimate, from 1-dimensional Maxwellian fitting, in the Spacecraft, Spacecraft frame, all data qualities</Description>
+         <Caveats>The mission elapsed time string is constructed as met_seconds+':'+met_subseconds_base50000, where: met_seconds is the CCSDS_MET value cast as an integer string with no whitespace and met_subseconds_base50000 is an &quot;I05&quot; format integer string formed by converting the xxx_SUBSEC value to units of 1/50000 second. For example, if the xxx_SUBSEC value is recorded in parts per 65536 o second, the correct procedure would be to round 50000*(xxx_SUBSEC/65536) to the nearest integer and cast a string by using the &quot;I05&quot; format. Here, CCSDS_MET is the mission elapsed time, in seconds, from the PSP Epoch, which is defined to be January 1, 2010, 12:00:00 UTC and xxx_SUBSEC is the elapsed time in fractional seconds since the last tick of MET typically in units of 2^-16 seconds.</Caveats>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>km/s</Units>
+         <UnitsConversion>1.0e3&gt;m/s</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <Structure>
+            <Size>3</Size>
+            <Element>
+               <Name>v3_fit_xSC</Name>
+               <Index>1</Index>
+               <ValidMin>-1000.0</ValidMin>
+               <ValidMax>1000.0</ValidMax>
+               <RenderingHints>
+                  <AxisLabel>1</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>v3_fit_ySC</Name>
+               <Index>2</Index>
+               <ValidMin>-1000.0</ValidMin>
+               <ValidMax>1000.0</ValidMax>
+               <RenderingHints>
+                  <AxisLabel>2</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>v3_fit_zSC</Name>
+               <Index>3</Index>
+               <ValidMin>-2000.0</ValidMin>
+               <ValidMax>0.0</ValidMax>
+               <RenderingHints>
+                  <AxisLabel>3</AxisLabel>
+               </RenderingHints>
+            </Element>
+         </Structure>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <ParticleType>Ion</ParticleType>
+            <Qualifier>Vector</Qualifier>
+            <ParticleQuantity>Velocity</ParticleQuantity>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Population 3 Velocity estimate, uncertainty, all Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>v3_fit_SC_uncertainty</ParameterKey>
+         <Description>Population 3, Velocity, V estimate, one sigma error uncertainty, from 1-dimensional Maxwellian fitting, all data qualities</Description>
+         <Caveats>The mission elapsed time string is constructed as met_seconds+':'+met_subseconds_base50000, where: met_seconds is the CCSDS_MET value cast as an integer string with no whitespace and met_subseconds_base50000 is an &quot;I05&quot; format integer string formed by converting the xxx_SUBSEC value to units of 1/50000 second. For example, if the xxx_SUBSEC value is recorded in parts per 65536 o second, the correct procedure would be to round 50000*(xxx_SUBSEC/65536) to the nearest integer and cast a string by using the &quot;I05&quot; format. Here, CCSDS_MET is the mission elapsed time, in seconds, from the PSP Epoch, which is defined to be January 1, 2010, 12:00:00 UTC and xxx_SUBSEC is the elapsed time in fractional seconds since the last tick of MET typically in units of 2^-16 seconds.</Caveats>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>km/s</Units>
+         <UnitsConversion>1.0e3&gt;m/s</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <Structure>
+            <Size>3</Size>
+            <Element>
+               <Name>v3_fit_xSC_uncertainty</Name>
+               <Index>1</Index>
+               <RenderingHints>
+                  <AxisLabel>1</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>v3_fit_ySC_uncertainty</Name>
+               <Index>2</Index>
+               <RenderingHints>
+                  <AxisLabel>2</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>v3_fit_zSC_uncertainty</Name>
+               <Index>3</Index>
+               <RenderingHints>
+                  <AxisLabel>3</AxisLabel>
+               </RenderingHints>
+            </Element>
+         </Structure>
+         <ValidMin>0.0</ValidMin>
+         <ValidMax>2000.0</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <ParticleType>Ion</ParticleType>
+            <Qualifier>Vector</Qualifier>
+            <ParticleQuantity>Velocity</ParticleQuantity>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Population 3 Velocity estimate, in the Radial-Tangential-Normal frame, all Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>v3_fit_RTN</ParameterKey>
+         <Description>Population 3, Velocity, V estimate, from 1-dimensional Maxwellian fitting, in the Radial-Tangential-Normal, Radial-Tangential-Normal frame, all data qualities</Description>
+         <Caveats>The mission elapsed time string is constructed as met_seconds+':'+met_subseconds_base50000, where: met_seconds is the CCSDS_MET value cast as an integer string with no whitespace and met_subseconds_base50000 is an &quot;I05&quot; format integer string formed by converting the xxx_SUBSEC value to units of 1/50000 second. For example, if the xxx_SUBSEC value is recorded in parts per 65536 o second, the correct procedure would be to round 50000*(xxx_SUBSEC/65536) to the nearest integer and cast a string by using the &quot;I05&quot; format. Here, CCSDS_MET is the mission elapsed time, in seconds, from the PSP Epoch, which is defined to be January 1, 2010, 12:00:00 UTC and xxx_SUBSEC is the elapsed time in fractional seconds since the last tick of MET typically in units of 2^-16 seconds.</Caveats>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>km/s</Units>
+         <UnitsConversion>1.0e3&gt;m/s</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <Structure>
+            <Size>3</Size>
+            <Element>
+               <Name>v3_fit_R</Name>
+               <Index>1</Index>
+               <ValidMin>0.0</ValidMin>
+               <ValidMax>2000.0</ValidMax>
+               <RenderingHints>
+                  <AxisLabel>1</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>v3_fit_T</Name>
+               <Index>2</Index>
+               <ValidMin>-1000.0</ValidMin>
+               <ValidMax>1000.0</ValidMax>
+               <RenderingHints>
+                  <AxisLabel>2</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>v3_fit_N</Name>
+               <Index>3</Index>
+               <ValidMin>-1000.0</ValidMin>
+               <ValidMax>1000.0</ValidMax>
+               <RenderingHints>
+                  <AxisLabel>3</AxisLabel>
+               </RenderingHints>
+            </Element>
+         </Structure>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <ParticleType>Ion</ParticleType>
+            <Qualifier>Vector</Qualifier>
+            <ParticleQuantity>Velocity</ParticleQuantity>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Population 3 Velocity estimate, uncertainty, all Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>v3_fit_RTN_uncertainty</ParameterKey>
+         <Description>Population 3, Velocity, V estimate, one sigma error uncertainty, from 1-dimensional Maxwellian fitting, all data qualities</Description>
+         <Caveats>The mission elapsed time string is constructed as met_seconds+':'+met_subseconds_base50000, where: met_seconds is the CCSDS_MET value cast as an integer string with no whitespace and met_subseconds_base50000 is an &quot;I05&quot; format integer string formed by converting the xxx_SUBSEC value to units of 1/50000 second. For example, if the xxx_SUBSEC value is recorded in parts per 65536 o second, the correct procedure would be to round 50000*(xxx_SUBSEC/65536) to the nearest integer and cast a string by using the &quot;I05&quot; format. Here, CCSDS_MET is the mission elapsed time, in seconds, from the PSP Epoch, which is defined to be January 1, 2010, 12:00:00 UTC and xxx_SUBSEC is the elapsed time in fractional seconds since the last tick of MET typically in units of 2^-16 seconds.</Caveats>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>km/s</Units>
+         <UnitsConversion>1.0e3&gt;m/s</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <Structure>
+            <Size>3</Size>
+            <Element>
+               <Name>v3_fit_R_uncertainty</Name>
+               <Index>1</Index>
+               <RenderingHints>
+                  <AxisLabel>1</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>v3_fit_T_uncertainty</Name>
+               <Index>2</Index>
+               <RenderingHints>
+                  <AxisLabel>2</AxisLabel>
+               </RenderingHints>
+            </Element>
+            <Element>
+               <Name>v3_fit_N_uncertainty</Name>
+               <Index>3</Index>
+               <RenderingHints>
+                  <AxisLabel>3</AxisLabel>
+               </RenderingHints>
+            </Element>
+         </Structure>
+         <ValidMin>0.0</ValidMin>
+         <ValidMax>2000.0</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <ParticleType>Ion</ParticleType>
+            <Qualifier>Vector</Qualifier>
+            <ParticleQuantity>Velocity</ParticleQuantity>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Population 3 Number Density estimate, all Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>n3_fit</ParameterKey>
+         <Description>Population 3, Number Density, n estimate, from 1-dimensional Maxwellian fitting, all data qualities</Description>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>cm^-3</Units>
+         <UnitsConversion>1.0e6&gt;m^-3</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <AxisLabel>n3_fit</AxisLabel>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <ValidMin>0.01</ValidMin>
+         <ValidMax>10000.0</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <ParticleType>Ion</ParticleType>
+            <Qualifier>Scalar</Qualifier>
+            <ParticleQuantity>NumberDensity</ParticleQuantity>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Population 3 Number Density estimate, all Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>n3_fit_uncertainty</ParameterKey>
+         <Description>Population 3, Number Density, n estimate, from 1-dimensional Maxwellian fitting, all data qualities</Description>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>cm^-3</Units>
+         <UnitsConversion>1.0e6&gt;m^-3</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <AxisLabel>n3_fit_uncertainty</AxisLabel>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <ValidMin>0.001</ValidMin>
+         <ValidMax>10000.0</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <ParticleType>Ion</ParticleType>
+            <Qualifier>Scalar</Qualifier>
+            <ParticleQuantity>NumberDensity</ParticleQuantity>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Population 3 most probable Radial Thermal Speed estimate, all Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>w3_fit</ParameterKey>
+         <Description>Population 3, most probable Radial Thermal Speed, Vth estimate, from 1-dimensional Maxwellian fitting, all data qualities</Description>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>km/s</Units>
+         <UnitsConversion>1.0e3&gt;m/s</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <AxisLabel>w3_fit</AxisLabel>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <ValidMin>1.0</ValidMin>
+         <ValidMax>1000.0</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <ParticleType>Ion</ParticleType>
+            <Qualifier>Scalar</Qualifier>
+            <ParticleQuantity>ThermalSpeed</ParticleQuantity>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Population 3 most probable Radial Thermal Speed estimate, all Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>w3_fit_uncertainty</ParameterKey>
+         <Description>Population 3, most probable Radial Thermal Speed, Vth estimate, from 1-dimensional Maxwellian fitting, all data qualities</Description>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>km/s</Units>
+         <UnitsConversion>1.0e3&gt;m/s</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <AxisLabel>w3_fit_uncertainty</AxisLabel>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <ValidMin>0.001</ValidMin>
+         <ValidMax>10000.0</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <ParticleType>Ion</ParticleType>
+            <Qualifier>Scalar</Qualifier>
+            <ParticleQuantity>ThermalSpeed</ParticleQuantity>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Population 3 Identifier, all Qs</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>pop3_mtoq</ParameterKey>
+         <Description>Population 3 Identifier, the third population fit, that is, in addition to primary Proton and Alpha peaks, all data qualities</Description>
+         <Caveats>When the n3_fit, w3_fit, and/or v3_fit variables are valid, they indicate tha third ion population has been measured in addition to the primary proton and alpha particle populations. This variable indicates the estimated mass-per-charge for that population, in fundamental units, i.e. protons=1/1=1, alphas=4/2=2, O6=16/6=2.67. Populatio most typically characterize proton shoulder or beam with mass-per-charge equal to one.</Caveats>
+         <Cadence>PT0.2185S</Cadence>
+         <Units>u/e</Units>
+         <RenderingHints>
+            <AxisLabel>m-to-q</AxisLabel>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <ValidMin>1.0</ValidMin>
+         <ValidMax>1000.0</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <ParticleType>Ion</ParticleType>
+            <Qualifier>Scalar</Qualifier>
+            <ParticleQuantity>Mass</ParticleQuantity>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Data Quality Flag, Flag Names</Name>
+         <ParameterKey>DQF_flagnames</ParameterKey>
+         <Description>Data Quality Flag: The names of the data quality array fields.</Description>
+         <Caveats>The zeroth flag array element is the standardized global quality flag signifying whether the data are suitable for use without caveate. Refer to the Solar Probe Cup, SPC, Science Data Center documentation for descriptions of other elements and value definitions.</Caveats>
+         <Cadence>PT0.2185S</Cadence>
+         <RenderingHints>
+            <AxisLabel>none</AxisLabel>
+            <ValueFormat>A11</ValueFormat>
+         </RenderingHints>
+         <Structure>
+            <Size>32</Size>
+         </Structure>
+         <ValidMin>UNKNOWN_VALID_MIN</ValidMin>
+         <ValidMax>UNKNOWN_VALID_MAX</ValidMax>
+         <Support>
+            <Qualifier>Array</Qualifier>
+            <SupportQuantity>Other</SupportQuantity>
+         </Support>
+      </Parameter>
+   </NumericalData>
+</Spase>

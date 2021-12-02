@@ -1,0 +1,154 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_2_9.xsd",
+    "Version": "2.2.9",
+    "NumericalData": {
+      "ResourceID": "spase://NASA/NumericalData/Explorer35/FaradayCup/PT3M",
+      "ResourceHeader": {
+        "ResourceName": "Explorer 35 3-min solar wind plasma data",
+        "ReleaseDate": "2021-03-11T18:39:11Z",
+        "Description": "This data set has 3-min resolution solar wind plasma parameters (flow speed and direction angles, ion thermal speed and density) from the MIT Faraday Cup on selenocentric Explorer 35 (AIMP 2, IMP E) spacecraft. There are geocentric and selenocentric spacecraft position data in the data records. The data are in annual ASCII files.",
+        "Acknowledgement": "To the MIT plasma team and to the Space Physics Data Facility at Goddard",
+        "Contact": {
+          "PersonID": "spase://SMWG/Person/Alan.J.Lazarus",
+          "Role": "GeneralContact"
+        },
+        "InformationURL": [
+          {
+            "Name": "NSSDC Master Catalog",
+            "URL": "https://nssdc.gsfc.nasa.gov/nmc/experiment/display.action?id=1967-070A-06",
+            "Description": "This reference contains a citation to a descriptive 1967 J.Geophys.Res. paper by the MIT team."
+          },
+          {
+            "Name": "NSSDC Data Set Catalog",
+            "URL": "https://spdf.gsfc.nasa.gov/pub/documents/old/documentation_from_nssdc/dataset_catalogs/DSC_0168.pdf"
+          }
+        ],
+        "PriorID": [
+          "spase://VHO/NumericalData/Explorer35/FaradayCup/PT3M",
+          "spase://VSPO/NumericalData/Explorer35/FaradayCup/PT3M"
+        ]
+      },
+      "AccessInformation": {
+        "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+        "Availability": "Online",
+        "AccessRights": "Open",
+        "AccessURL": [
+          {
+            "Name": "FTPS from SPDF (not with most browsers)",
+            "URL": "ftps://spdf.gsfc.nasa.gov/pub/data/explorer/explorer35/plasma_probe/3-min_interplanetary_plasma_param/"
+          },
+          {
+            "Name": "HTTPS from SPDF",
+            "URL": "https://spdf.gsfc.nasa.gov/pub/data/explorer/explorer35/plasma_probe/3-min_interplanetary_plasma_param/",
+            "Description": "In CDF via HTTP from SPDF"
+          }
+        ],
+        "Format": "Text",
+        "DataExtent": {
+          "Quantity": "11",
+          "Units": "MB"
+        },
+        "Acknowledgement": "The MIT Plasma Team and NSSDC"
+      },
+      "ProcessingLevel": "Calibrated",
+      "InstrumentID": "spase://SMWG/Instrument/Explorer35/FaradayCup",
+      "MeasurementType": "ThermalPlasma",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "1967-07-25T00:00:00",
+          "StopDate": "1968-07-03T00:00:00"
+        },
+        "Cadence": "PT3M"
+      },
+      "ObservedRegion": "Heliosphere.NearEarth",
+      "Parameter": [
+        {
+          "Name": "Ion density",
+          "ParameterKey": "Column_7",
+          "Cadence": "PT3M",
+          "Units": "1/cm**3",
+          "Particle": {
+            "ParticleType": "Ion",
+            "ParticleQuantity": "NumberDensity"
+          }
+        },
+        {
+          "Name": "Thermal speed",
+          "ParameterKey": "Column_11",
+          "Cadence": "PT3M",
+          "Units": "km/s",
+          "Particle": {
+            "ParticleType": "Ion",
+            "ParticleQuantity": "ThermalSpeed"
+          }
+        },
+        {
+          "Name": "Flow speed",
+          "ParameterKey": "Column_16",
+          "Description": "Made from aberration-corrected flow velocity",
+          "Cadence": "PT3M",
+          "Units": "km/s",
+          "Particle": {
+            "ParticleType": "Ion",
+            "ParticleQuantity": "FlowSpeed"
+          }
+        },
+        {
+          "Name": "Flow direction angles",
+          "Description": "Both aberrated (columns 9 and 10) and unaberrated (columns 14 and 15) flow directions are given, first longitude then latitude.",
+          "Cadence": "PT3M",
+          "Units": "deg",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "GSE"
+          },
+          "Structure": {
+            "Size": "2 2",
+            "Description": "flow latitude and longitude angles, aberrated and unaberrated"
+          },
+          "Particle": {
+            "ParticleType": "Ion",
+            "ParticleQuantity": "ArrivalDirection"
+          }
+        },
+        {
+          "Name": "Spacecraft Position Vector, GSE",
+          "Description": "Geocentric X,Y,Z components of spacecraft position vector, in Earth radii, in columns 19-21.",
+          "Cadence": "PT3M",
+          "Units": "Re",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GSE"
+          },
+          "Structure": {
+            "Size": "3",
+            "Description": "GSE X,Y,Z components of position vector"
+          },
+          "Support": {
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Spacecraft Position Vector, SSE",
+          "Description": "Selenocentric Solar Ecliptic X,Y,Z components of spacecraft position vector, in lunar radii, in columns 22-24. One lunar radius is 0.273 of an Earth radius.",
+          "Cadence": "PT3M",
+          "Units": "Re",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "SSE"
+          },
+          "Structure": {
+            "Size": "3",
+            "Description": "SSE X,Y,Z components of position vector"
+          },
+          "Support": {
+            "SupportQuantity": "Positional"
+          }
+        }
+      ]
+    }
+  }
+}

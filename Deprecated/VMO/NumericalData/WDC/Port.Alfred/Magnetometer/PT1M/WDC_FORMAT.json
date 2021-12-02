@@ -1,0 +1,237 @@
+{
+  "Spase": {
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_2_2.xsd",
+    "Version": "2.2.2",
+    "NumericalData": {
+      "ResourceID": "spase://VMO/NumericalData/WDC/Port.Alfred/Magnetometer/PT1M/WDC_FORMAT",
+      "ResourceHeader": {
+        "ResourceName": "Port Alfred Magnetometer 1-min Data in WDC Format",
+        "ReleaseDate": "2012-05-02T12:34:56.789",
+        "Description": "Port Alfred Magnetometer data, 1-min time resoluion, in WDC format. Magnetic Field Vector Element List: DHXYZF. Note that the list of magnetic field elements that appear in the data set may change over the course of time. For instance, many stations have shifted from DHZ to the XYZ representation of the magnetic field. The time history listed below summarizes changes in element content. A description of the WDC Data Exchange Format for 1-min magnetic field data is included at the end of this data product description.",
+        "Acknowledgement": "Please acknowledge: Ecole et Observatoire des Sciences de la Terre (EOST) for providing the data observations, and the British Geological Survey, World Data Center for Geomagnetism, Edinburgh for providing access to the data.",
+        "Contact": [
+          {
+            "PersonID": "spase://SMWG/Person/Aude.Chambodut",
+            "Role": [
+              "GeneralContact",
+              "DataProducer"
+            ]
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Armelle.Bernard",
+            "Role": [
+              "GeneralContact",
+              "DataProducer"
+            ]
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Lee.Frost.Bargatze",
+            "Role": [
+              "MetadataContact",
+              "TechnicalContact"
+            ]
+          }
+        ],
+        "InformationURL": {
+          "Name": "The Geomagnetic Data Master Catalog at the WDC for Geomagnetism, Edinburgh",
+          "URL": "http://www.wdc.bgs.ac.uk/catalog/intro.html",
+          "Description": "Web site for access to magnetometer data hosted by the World Data Center for Geomagnetism, Edinburgh"
+        },
+        "PriorID": "spase://VMO/NumericalData/WDC/Port.Alfred/Magnetometer/PT1M"
+      },
+      "AccessInformation": {
+        "RepositoryID": "spase://SMWG/Repository/UCLA/VMO",
+        "Availability": "Online",
+        "AccessRights": "Open",
+        "AccessURL": {
+          "Name": "The WDC Geomagnetic Data Master Catalog Repository",
+          "URL": "ftp://ftp.nmh.ac.uk/wdc/obsdata/1minval",
+          "Description": "The Geomagnetic Data Master Catalog hosted by the British Geological Survey, World Data Center for Geomagnetism, Edinburgh."
+        },
+        "Format": "Text",
+        "Encoding": "ZIP",
+        "DataExtent": {
+          "Quantity": "1196352",
+          "Units": "bytes",
+          "Per": "P1M"
+        },
+        "Acknowledgement": "Please thank the British Geological Survey, World Data Center, Edinburgh for use of data from the WDC Geomagnetic Data Master Catalog."
+      },
+      "ProcessingLevel": "Calibrated",
+      "InstrumentID": "spase://SMWG/Instrument/Ground/Port.Alfred/Magnetometer",
+      "MeasurementType": "MagneticField",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "1974-01-01T00:00:00.000",
+          "StopDate": "2009-12-31T23:59:00.000",
+          "Note": "Some data gaps may be present. If a gap is present at the beginning or end of the file, the time span start and stop dates could be inaccurate as they are assigned assuming an absence of such gaps."
+        },
+        "Cadence": "PT1M"
+      },
+      "ObservedRegion": "Earth.Surface",
+      "Keyword": [
+        "ground station",
+        "magnetometer",
+        "magnetic field",
+        "magnetogram",
+        "Port Alfred",
+        "WDC Station Code: CZT",
+        "1-minute",
+        "WDC Format"
+      ],
+      "Parameter": [
+        {
+          "Name": "Universal Time",
+          "ParameterKey": "Time",
+          "Description": "Time is expressed using a five column format with the following order: year, month, day, hour, and minute, each stored in interger format. The time columns are the first five columns (1,2,3,4,5) in the flat file.",
+          "Cadence": "PT1M",
+          "Structure": {
+            "Size": "5",
+            "Description": "Universal Time expressed using a 5-column year, month, day, hour, minute representation",
+            "Element": [
+              {
+                "Name": "Year",
+                "Index": "1"
+              },
+              {
+                "Name": "Month",
+                "Index": "2"
+              },
+              {
+                "Name": "Day",
+                "Index": "3"
+              },
+              {
+                "Name": "Hour",
+                "Index": "4"
+              },
+              {
+                "Name": "Minute",
+                "Index": "5"
+              }
+            ]
+          },
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Magnetic Field Declination",
+          "ParameterKey": "D",
+          "Description": "Port Alfred Magnetic Field Vector Declination Angle",
+          "Cadence": "PT1M",
+          "Units": "Degree",
+          "UnitsConversion": "2*pi > Radian",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cylindrical",
+            "CoordinateSystemName": "CGM"
+          },
+          "ValidMin": "-180.0",
+          "ValidMax": "180.0",
+          "FillValue": "999999",
+          "Field": {
+            "Qualifier": "DirectionAngle.AzimuthAngle",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "Horzontal Magnetic Field Magnitude",
+          "ParameterKey": "H",
+          "Description": "Port Alfred Horzontal Magnetic Field Magnitude",
+          "Cadence": "PT1M",
+          "Units": "nT",
+          "UnitsConversion": "10^9 >T",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cylindrical",
+            "CoordinateSystemName": "CGM"
+          },
+          "ValidMin": "0",
+          "ValidMax": "70000",
+          "FillValue": "999999",
+          "Field": {
+            "Qualifier": "Projection.IJ",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "North-South Horizontal Magnetic Field Component",
+          "ParameterKey": "X",
+          "Description": "Port Alfred North-South Horizontal Magnetic Field Component, positive Northward",
+          "Cadence": "PT1M",
+          "Units": "nT",
+          "UnitsConversion": "10^9 >T",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "CGM"
+          },
+          "ValidMin": "-70000",
+          "ValidMax": "70000",
+          "FillValue": "999999",
+          "Field": {
+            "Qualifier": "Component.I",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "East-West Horizontal Magnetic Field Component",
+          "ParameterKey": "Y",
+          "Description": "Port Alfred East-West Horizontal Magnetic Field Component, positive Eastward",
+          "Cadence": "PT1M",
+          "Units": "nT",
+          "UnitsConversion": "10^9 >T",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "CGM"
+          },
+          "ValidMin": "-70000",
+          "ValidMax": "70000",
+          "FillValue": "999999",
+          "Field": {
+            "Qualifier": "Component.J",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "Vertical Magnetic Field Component",
+          "ParameterKey": "Z",
+          "Description": "Port Alfred Vertical Magnetic Field Component, positive upward in the Southern hemisphere, positive downward in the Northern hemisphere",
+          "Cadence": "PT1M",
+          "Units": "nT",
+          "UnitsConversion": "10^9 >T",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "CGM"
+          },
+          "ValidMin": "-70000",
+          "ValidMax": "70000",
+          "FillValue": "999999",
+          "Field": {
+            "Qualifier": "Component.K",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "Magnetic Field Magnitude",
+          "ParameterKey": "F",
+          "Description": "Port Alfred Magnetic Field Magnitude",
+          "Cadence": "PT1M",
+          "Units": "nT",
+          "UnitsConversion": "10^9 >T",
+          "ValidMin": "0",
+          "ValidMax": "70000",
+          "FillValue": "999999",
+          "Field": {
+            "Qualifier": "Magnitude",
+            "FieldQuantity": "Magnetic"
+          }
+        }
+      ],
+      "Extension": {
+        "DataCoverage": "\n            CZT 1974 D H Z F\n            CZT 1975 D H Z F\n            CZT 1976 D H Z F\n            CZT 1977 D H Z F\n            CZT 1978 D H Z F\n            CZT 1979 D H Z F\n            CZT 1980 D H Z F\n            CZT 1981 D H Z F\n            CZT 1982 D H Z F\n            CZT 1983 D H Z F\n            CZT 1984 D H Z F\n            CZT 1985 D H Z F\n            CZT 1986 D H Z F\n            CZT 1987 D H Z F\n            CZT 1988 D H Z F\n            CZT 1989 D H Z F\n            CZT 1990 D H Z F\n            CZT 1991 X Y Z F\n            CZT 1992 X Y Z F\n            CZT 1993 X Y Z F\n            CZT 1994 X Y Z F\n            CZT 1995 X Y Z F\n            CZT 1996 X Y Z F\n            CZT 1997 X Y Z F\n            CZT 1998 X Y Z F\n            CZT 1999 X Y Z F\n            CZT 2000 X Y Z F\n            CZT 2001 X Y Z F\n            CZT 2002 X Y Z F\n            CZT 2003 X Y Z F\n            CZT 2004 X Y Z F\n            CZT 2005 X Y Z F\n            CZT 2006 X Y Z F\n            CZT 2007 X Y Z F\n            CZT 2008 X Y Z F\n            CZT 2009 X Y Z F\n         ",
+        "WDC_Format": "\n            Digital WDC Exchange Format for Observatory 1-minute Values\n            Magnetic data organized in 1-month files, with the information coded in ASCII.\n            Columns   Format   Description\n            1-6       I6       Observatory North Polar distance\n            0 to 180 from the north geographic pole in thousandths of a degree. Decimal\n            point is implied between positions 3 and 4.\n            7-12      I6       Observatory Geographic longitude\n            0 to 360 measured east from Greenwich in thousandths of a degree. Decimal\n            point is implied between positions 9 and 10.\n            13-14     I2       Year\n            Last 2 digits, 1996 = 96. See also column 26.\n            15-16     I2       Month (01-12)\n            17-18     I2       Day of month (01-31)\n            19        Al       Element (D, I, H, X, Y, Z, or F)\n            20-21     I2       Hour of day (00-23)\n            22-24     A3       Observatory\n            3-letter code.\n            25        A1       Arbitrary\n            26        I1       Century digit\n            Year = 2014, Century digit = 0.\n            Year = 1889, Century digit = 8.\n            Year = 1996, Century digit = 9 or a blank space for backwards compatibility.\n            27        A1       Preliminary or Definitive data\n            Preliminary = P , Definitive = D\n            28-34     A7       Blanks\n            35-394    60I6     60 6-digit 1-minute values for the given element for that data hour.  The values\n            are in tenth-minutes for D and I, and in nanoTeslas for the intensity elements.\n            395-400   I6       Hourly Mean\n            The average of the preceeding 60 1-minute values.\n            401-402            Record end marker\n            Two chars \"cr\"= 13 and \"nl\"= 10.\n            Each element value and the hourly mean is given in a 6-digit field including a minus sign for\n            negative values.\n            Missing data value spaces are padded with 999999.\n            The records are sorted according to observatory code, year, month, day, element.\n            For the intensity elements:  hourly value (nanoTeslas) = tab.base*100 + tab.value\n            For the angles D and I:      hourly value (Degrees) = tab.base + tab.value/600\n         "
+      }
+    }
+  }
+}

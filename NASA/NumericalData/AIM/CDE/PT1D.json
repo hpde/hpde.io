@@ -1,0 +1,442 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema  http://www.spase-group.org/data/schema/spase-2_3_1.xsd",
+    "Version": "2.3.1",
+    "NumericalData": {
+      "ResourceID": "spase://NASA/NumericalData/AIM/CDE/PT1D",
+      "ResourceHeader": {
+        "ResourceName": "AIM/CDE dust grain impact data",
+        "ReleaseDate": "2020-12-05T20:54:15Z",
+        "Description": "AIM/CDE (Cosmic Dust Experiment) data are available\nas Levels 1 and 2 daily netCDF files.  L1 data contains, for each dust \ngrain impact, a time tag, pulse height data, a number of electrons released \nby the impact, and engineering and housekeeping data.  L2 data adds the mass \nof the impacting particle and spacecraft location at time of impact.  \nFuture L3 and L4 products will add total mass impacting per orbit and \nimpact rates (L3) and mass correlation with CIPS total particle mass and \nPolar Mesospheric Cloud brightness.\n",
+        "Acknowledgement": "National Aeronautics and Space Administration; Laboratory for Atmospheric and Space Physics (LASP) of Colorado University; Dr. Mihaly Horanyi; Dr. James M. Russell, III",
+        "Contact": {
+          "PersonID": "spase://SMWG/Person/Mihaly.Horanyi",
+          "Role": "GeneralContact"
+        },
+        "InformationURL": [
+          {
+            "Name": "Documentation directory on the SPDF server",
+            "URL": "https://spdf.gsfc.nasa.gov/pub/data/aim/cde/documentation/"
+          },
+          {
+            "Name": "info interface page at Hampton U.",
+            "URL": "http://aim.hamptonu.edu/library/documentation/instruments/cde/cde_docs.html"
+          }
+        ],
+        "PriorID": [
+          "spase://VSPO/NumericalData/AIM/CDE/L1_L2_Data",
+          "spase://VSPO/NumericalData/AIM/CDE/PT1D"
+        ]
+      },
+      "AccessInformation": [
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": [
+            {
+              "Name": "FTPS from SPDF (not with most browsers)",
+              "URL": "ftps://spdf.gsfc.nasa.gov/pub/data/aim/cde/data/",
+              "Description": "In CDF via FTP from CDAWeb"
+            },
+            {
+              "Name": "HTTPS from SPDF",
+              "URL": "https://spdf.gsfc.nasa.gov/pub/data/aim/cde/data/",
+              "Description": "In CDF via HTTP from CDAWeb"
+            }
+          ],
+          "Format": "NetCDF",
+          "Encoding": "None"
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/UCOLO",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "Data interface page at Hampton U.",
+            "URL": "http://aim.hamptonu.edu/sds/cal_index_aim.php?instrument=cde",
+            "Description": "For levels 1 and 2 only"
+          },
+          "Format": "NetCDF"
+        }
+      ],
+      "InstrumentID": "spase://SMWG/Instrument/AIM/CDE",
+      "MeasurementType": "Dust",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "2007-06-01T00:00:00",
+          "RelativeStopDate": "-P10M"
+        }
+      },
+      "ObservedRegion": "Earth.NearSurface",
+      "Parameter": [
+        {
+          "Name": "Mass Treshold",
+          "ParameterKey": "MASS_DATA.MASS_THRESH",
+          "Description": "Threshold in grams.",
+          "Units": "grams",
+          "Structure": {
+            "Size": "15752"
+          },
+          "Particle": {
+            "ParticleType": "Dust",
+            "Qualifier": "Minimum",
+            "ParticleQuantity": "Mass"
+          }
+        },
+        {
+          "Name": "GPS Time",
+          "ParameterKey": "MASS_DATA.TIME",
+          "Description": "GPS time tag. Time of event in gps.",
+          "Units": "gps",
+          "Structure": {
+            "Size": "15752"
+          },
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Channel",
+          "ParameterKey": "MASS_DATA.CHANNEL",
+          "Description": "ID of the channel",
+          "Structure": {
+            "Size": "15752"
+          },
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "InstrumentMode"
+          }
+        },
+        {
+          "Name": "Charge",
+          "ParameterKey": "MASS_DATA.CHARGE",
+          "Description": "Charge generated from each event",
+          "Units": "Number of electrons",
+          "Structure": {
+            "Size": "15752"
+          },
+          "Particle": {
+            "ParticleType": "Dust",
+            "Qualifier": "Magnitude",
+            "ParticleQuantity": "ChargeState"
+          }
+        },
+        {
+          "Name": "Mass of the Particle",
+          "ParameterKey": "MASS_DATA.MASS",
+          "Description": "Mass of a particle that would cause this event.",
+          "Units": "grams",
+          "Structure": {
+            "Size": "15752"
+          },
+          "Particle": {
+            "ParticleType": "Dust",
+            "Qualifier": "Magnitude",
+            "ParticleQuantity": "Mass"
+          }
+        },
+        {
+          "Name": "Sigma Plus for Mass",
+          "ParameterKey": "MASS_DATA.M_SIGPLUS",
+          "Description": "Plus sigma for mass generated",
+          "Units": "grams",
+          "Structure": {
+            "Size": "15752"
+          },
+          "Particle": {
+            "ParticleType": "Dust",
+            "Qualifier": "Uncertainty",
+            "ParticleQuantity": "Mass"
+          }
+        },
+        {
+          "Name": "Sigma Minus for Mass",
+          "ParameterKey": "MASS_DATA.M_SIGMINUS",
+          "Description": "Minus sigma for mass generated",
+          "Units": "grams",
+          "Structure": {
+            "Size": "15752"
+          },
+          "Particle": {
+            "ParticleType": "Dust",
+            "Qualifier": "Uncertainty",
+            "ParticleQuantity": "Mass"
+          }
+        },
+        {
+          "Name": "Position Information",
+          "ParameterKey": "MASS_DATA.POSITION",
+          "Structure": {
+            "Size": "15752 5",
+            "Description": "Positional Information",
+            "Element": [
+              {
+                "Name": "Latitude?",
+                "Qualifier": "DirectionAngle.ElevationAngle",
+                "Index": "1",
+                "Units": "radians?"
+              },
+              {
+                "Name": "Longitude",
+                "Qualifier": "DirectionAngle.AzimuthAngle",
+                "Index": "2",
+                "Units": "radians?"
+              },
+              {
+                "Name": "Altitude",
+                "Qualifier": "Magnitude",
+                "Index": "3",
+                "Units": "km"
+              },
+              {
+                "Name": "CDE defined coordinate system with 0-360 degrees of latitude",
+                "Qualifier": "DirectionAngle",
+                "Index": "4",
+                "Units": "degrees",
+                "ValidMin": "0",
+                "ValidMax": "360"
+              },
+              {
+                "Name": "glongitude?",
+                "Qualifier": "DirectionAngle.AzimuthAngle",
+                "Index": "5",
+                "Units": "degrees"
+              }
+            ]
+          },
+          "Support": {
+            "Qualifier": "Directional",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Orbit Number",
+          "ParameterKey": "MASS_DATA.ORBITNUM",
+          "Description": "Orbit number during which the event occurred.",
+          "Structure": {
+            "Size": "15752"
+          },
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Science Quality Flag",
+          "ParameterKey": "QUAL_DATA.SCIENCE_FLAG",
+          "Description": "SCIENCE indicates if the data number was interpolated outside of the bounds calibrated on the ground (approximately 63000-8000).",
+          "Structure": {
+            "Size": "15752 10"
+          },
+          "Support": {
+            "SupportQuantity": "DataQuality"
+          }
+        },
+        {
+          "Name": "Coincident Flag",
+          "ParameterKey": "QUAL_DATA.COINCIDENT_FLAG",
+          "Description": "COINCIDENT returns 'COIN' or 'OK' for if another impact shares a timetag with the respective measurement.",
+          "Structure": {
+            "Size": "15752 10"
+          },
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "ANA A Temperature Flag",
+          "ParameterKey": "QUAL_DATA.ANA_A_TEMP_FLAG",
+          "Description": "Temp refers to the safety limits on the electronic box components. Allowed values are 'OVER', 'OK', 'LOW', or 'NO_DATA.' Limits are: low:-7.1 degC high: 49.9 degC.",
+          "Structure": {
+            "Size": "15752 10"
+          },
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "ANA B Temperature Flag",
+          "ParameterKey": "QUAL_DATA.ANA_B_TEMP_FLAG",
+          "Description": "Temp refers to the safety limits on the electronic box components. Allowed values are 'OVER', 'OK', 'LOW', or 'NO_DATA.' Limits are: low:-7.1 degC high: 49.9 degC.",
+          "Structure": {
+            "Size": "15752 10"
+          },
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "DCDC Converter Temperature Flag",
+          "ParameterKey": "QUAL_DATA.DCDC_TEMP_FLAG",
+          "Description": "Temp refers to the safety limits on the electronic box components. Allowed values are 'OVER', 'OK', 'LOW', or 'NO_DATA.' Limits are: low:-30 degC high: 50 degC.",
+          "Structure": {
+            "Size": "15752 10"
+          },
+          "ValidMin": "-30 C",
+          "ValidMax": "50 C",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Field Programmable Gate Array Temperature Flag",
+          "ParameterKey": "QUAL_DATA.FPGA_TEMP_FLAG",
+          "Description": "Temp refers to the safety limits on the electronic box components. Allowed values are 'OVER', 'OK', 'LOW', or 'NO_DATA.' Limits are: low:-30 degC high: 50 degC.",
+          "Structure": {
+            "Size": "15752 10"
+          },
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "PNL A Temperature Flag",
+          "ParameterKey": "QUAL_DATA.PNL_A_TEMP_FLAG",
+          "Description": "Temp refers to the safety limits on the electronic box components. Allowed values are 'OVER', 'OK', 'LOW', or 'NO_DATA.' Limits are: low:-120 degC high: 80 degC.",
+          "Structure": {
+            "Size": "15752 10"
+          },
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "PNL B Temperature Flag",
+          "ParameterKey": "QUAL_DATA.PNL_B_TEMP_FLAG",
+          "Description": "Temp refers to the safety limits on the electronic box components. Allowed values are 'OVER', 'OK', 'LOW', or 'NO_DATA.' Limits are: low:-120 degC high: 80 degC.",
+          "Structure": {
+            "Size": "15752 10"
+          },
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "PNL C Temperature Flag",
+          "ParameterKey": "QUAL_DATA.PNL_C_TEMP_FLAG",
+          "Description": "Temp refers to the safety limits on the electronic box components. Allowed values are 'OVER', 'OK', 'LOW', or 'NO_DATA.' Limits are: low:-120 degC high: 80 degC.",
+          "Structure": {
+            "Size": "15752 10"
+          },
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "PNL D Temperature Flag",
+          "ParameterKey": "QUAL_DATA.PNL_D_TEMP_FLAG",
+          "Description": "Temp refers to the safety limits on the electronic box components. Allowed values are 'OVER', 'OK', 'LOW', or 'NO_DATA.' Limits are: low:-120 degC high: 80 degC.",
+          "Structure": {
+            "Size": "15752 10"
+          },
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "P5 Volt Flag",
+          "ParameterKey": "QUAL_DATA.P5_VOLT_FLAG",
+          "Description": "Volt refers to the safety limits on the electronic box components. Allowed values are 'OVER', 'OK', 'LOW', or 'NO_DATA.' Limits are: low:4.9 high: 5 V.",
+          "Structure": {
+            "Size": "15752 10"
+          },
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "M5 Volt Flag",
+          "ParameterKey": "QUAL_DATA.M5_VOLT_FLAG",
+          "Description": "Volt refers to the safety limits on the electronic box components. Allowed values are 'OVER', 'OK', 'LOW', or 'NO_DATA.' Limits are: low:-5.4 high: -5.1 V.",
+          "Structure": {
+            "Size": "15752 10"
+          },
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Box Temperature Flag",
+          "ParameterKey": "QUAL_DATA.SC_BOX_TEMP_FLAG",
+          "Description": "Temp refers to the safety limits on the electronic box components. Allowed values are 'OVER', 'OK', 'LOW', or 'NO_DATA.' Limits are: low:-30 degC high: 50 degC.",
+          "Structure": {
+            "Size": "15752 10"
+          },
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "PNL temperature Flag",
+          "ParameterKey": "QUAL_DATA.SC_PNL_TEMP_FLAG",
+          "Description": "Temp refers to the safety limits on the electronic box components. Allowed values are 'OVER', 'OK', 'LOW', or 'NO_DATA.' Limits are: low:-120 degC high: 80 degC.",
+          "Structure": {
+            "Size": "15752 10"
+          },
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Volt Flag",
+          "ParameterKey": "QUAL_DATA.SC_VOLT_FLAG",
+          "Description": "Volt refers to the safety limits on the electronic box components. Allowed values are 'OVER', 'OK', 'LOW', or 'NO_DATA.' Limits are: low: 36 V high: 36 V.",
+          "Structure": {
+            "Size": "15752 10"
+          },
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Current Flag",
+          "ParameterKey": "QUAL_DATA.SC_CURR_FLAG",
+          "Description": "Current refers to the safety limits on the electronic box components. Allowed values are 'OVER', 'OK', 'LOW', or 'NO_DATA.' Limits are: low: 120 mA high: 180 mA.",
+          "Structure": {
+            "Size": "15752 10"
+          },
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Truster Flag",
+          "ParameterKey": "QUAL_DATA.THRUSTER_FLAG",
+          "Description": "THRUSTER returns 'TF' or 'OK' for if a thruster firing occurred within 1 second of the respective measurement.",
+          "Structure": {
+            "Size": "15752 10"
+          },
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Flag",
+          "ParameterKey": "QUAL_DATA.PART_ANG_FLAG",
+          "Description": "PART_ANG quality flags return 'OVER', 'OK', or 'INVALID' for the angle limit of pi/4. PART_ANG is the angle of the particle's trajectory for a 1 micron particle with respect to zenith using a beta of 0.3 where beta is the ratio of radiation to gravitational force.",
+          "Structure": {
+            "Size": "15752 10"
+          },
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Ram Angle Flag",
+          "ParameterKey": "QUAL_DATA.RAM_ANG_FLAG",
+          "Description": "RAM_ANG quality flags return 'OVER', 'OK', or 'INVALID' for the angle limit of pi/4. RAM_ANG is the angle of the instrument's boresight with respect to the spacecraft's velocity.",
+          "Structure": {
+            "Size": "15752 10"
+          },
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        }
+      ]
+    }
+  }
+}

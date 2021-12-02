@@ -1,0 +1,804 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_3_1.xsd">
+   <Version>2.3.1</Version>
+   <NumericalData>
+      <ResourceID>spase://VSPO/NumericalData/ParkerSolarProbe/SWEAP/SPAN-B/Level2/ProtonAlphaFullSpectra/PT1.74S</ResourceID>
+      <ResourceHeader>
+         <ResourceName>PSP Solar Wind Electrons Alphas and Protons (SWEAP) SPAN-B Electron Energy Spectra, Level 2 (L2), 1.74 s Data</ResourceName>
+         <ReleaseDate>2020-07-03T23:28:58Z</ReleaseDate>
+         <Description>SPAN-E Level 2 ELectron Energy Spectra Data
+-------------------------------------------
+
+File Naming Format: psp_swp_spb_sf1_L2_32E_YYYYMMDD_v01.cdf
+
+The SF1 product is an energy spectrum produced on the spacecraft by summing over the Theta and Phi directions. The units are differential energy flux and eV. The sample filename above includes 32 Energies.
+
+The larger Theta angles (deflection angles) are artificially enhanced in the &quot;sf1&quot; energy spectra data products due to the method of spectra production on the SPAN-E instrument (straight summing). Thus, SF1 energy spectra are not recommended for rigid statistical analysis.
+
+Parker Solar Probe SWEAP Solar Probe Analyzer, SPAN, Electron Data Release Notes
+--------------------------------------------------------------------------------
+
+November 19, 2019 Initial Data Release
+--------------------------------------
+
+Overview of Measurements
+------------------------
+
+The SWEAP team is pleased to release the data from Encounter 1 and Encounter 2. The files contain data from the time range October 31, 2018 - June 18, 2019.
+
+The prime mission of Parker Solar Probe is to take data when within 0.25 AU of the Sun during its orbit. However, there has been some extended campaign measurements outside of this distance. The data are available for those days that are within 0.25 AU as well as those days when the instruments were operational outside of 0.25 AU.
+
+Each SWEAP data file includes a set of a particular type of measurements over a single observing day. Measurements are provided in Common Data Format (CDF), a self-documenting data framework for which convenient open source tools exist across most scientific computing platforms. Users are strongly encouraged to consult the global metadata in each file, and the metadata that are linked to each variable. The metadata includes comprehensive listings of relevant information, including units, coordinate systems, qualitative descriptions, measurement uncertainties, methodologies, links to further documentation, and so forth.
+
+SPAN-E Level 2 Version 01 Release Notes
+---------------------------------------
+
+The SPAN-Ae and SPAN-B instruments together have fields of view covering &gt;90% of the sky; major obstructions to the FOV include the spacecraft heat shield and other intrusions by spacecraft components. Each individual SPAN-E has FOV of &#177;60&#176; in Theta and 240&#176; in Phi. The rotation matrices to convert into the spacecraft frame can be found in the individual CDF files, or in the instrument paper.
+
+This data set covers all periods for which the instrument was turned on and taking data in the solar wind in ion mode. This includes maneuvers affecting the spacecraft attitude and orientation. Measurements taken by SPAN-B when the spacecraft is pointed away from the sun are taken in sunlight.
+
+The data quality flags for the SPAN data can be found in the CDF files as: QUALITY_FLAG (0=good, 1=bad)
+
+General Remarks for Version 01 Data
+-----------------------------------
+
+Users interested in field-aligned electrons should take care regarding potential blockages from the heat shield when B is near radial, especially in SPAN-Ae. Artificial reductions in strahl width can result.
+
+Due to the relatively high electron temperature in the inner heliosphere, many secondary electrons are generated from spacecraft and instrument surfaces. As a result, electron measurements in this release below 30 eV are not advised for scientific analysis.
+
+The fields of view in SPAN-Ae and SPAN-B have many intrusions by the spacecraft, and erroneous pixels discovered in analysis, in particular near the edges of the FOV, should be viewed with skepticism. Details on FOV intrusion are found in the instrument paper, forthcoming, or by contacting the SPAN-E instrument scientist.
+
+The instrument mechanical attentuators are engaged during the eight days around perihelia 1 and perihelia 2, which results in a factor of about 10 reduction of the total electron flux into the instrument. During these eight days, halo electron measurements are artificially enhanced in the L2 products as a result of the reduced instrument geometric factor and subsequent ground corrections.
+
+A general note for Encounter 1 and Encounter 2 data: a miscalculation in the deflection tables loaded to both SPAN-Ae and SPAN-B resulted in over-deflection of the outermost Theta angles during these encounters. As such, pixels at large Thetas should be ignored. This error was corrected by a table upload prior to Encounter 3.
+
+Lastly, when viewing time gaps in the SPAN-E measurements, be advised that the first data point produced by the instrument after a power-on is the maximum value permitted by internal instrument counters. Therefore, the first data point after powerup is erroneous and should be discarded, as indicated by quality flags.
+
+SPAN-E Encounter 1 Remarks
+--------------------------
+
+SPAN-E operated nominally for the majority of the first encounter. Exceptions to this include: a few instances of corrupted, higher-energy sweep tables, and an instrument commanding error for the two hours surrounding perihelion 1. These and other instrument diagnostic tests are indicated with the QUALITY_FLAG variable in the CDFs.
+
+The mechanical attentuator was engaged for the 8 days around perihelion 1: as a result the microchannel plate, MCP, noise due to thermal effects and cosmic rays are artificially enhanced and are particularly obvious at higher energies. Exercise caution with this data release if looking for halo electrons when the mechanical attenuator is engaged.
+
+SPAN-E Cruise Phase Remarks
+---------------------------
+
+The cruise mode rates of SPAN-E are greatly reduced compared to the encounter mode rates. When the PSP spacecraft is in a communications slew, the SPAN-B instrument occasionally reaches its maximum allowable operating temperature and is powered off by SWEM.
+
+Timing for the SF1 products in cruise phase is not corrected in v01, and thus it is not advised to use the data at this time for scientific analysis. The typical return of SF0 products is one spectrum out of every 32 survey spectra is returned every 15 minutes or so. One out of every four 27.75 s SF1 spectra is produced every 111 s.
+
+SPAN-E Encounter 2 Remarks
+--------------------------
+
+SPAN-E operated nominally for the majority of the second encounter. Exceptions include instrument diagnostic and health checks and a few instances of corrupted high-energy sweep tables. These tests and corrupted table loads are indicated with the QUALITY_FLAG parameter.
+
+The mechanical attentuator was engaged for the 8 days around perihelion 2: as a result the MCP noise due to thermal effects and cosmic rays are artificially enhanced and are particularly obvious at higher energies. Exercise caution in this data release if looking for halo electrons when the mechanical attenuator is engaged.
+
+Parker Solar Probe SWEAP Rules of the Road
+------------------------------------------
+
+As part of the development of collaboration with the broader Heliophysics community, the mission has drafted a &quot;Rules of the Road&quot; to govern how PSP instrument data are to be used.
+
+* 1) Users should consult with the PI to discuss the appropriate use of instrument data or model results and to ensure that the users are accessing the most recently available versions of the data and of the analysis routines. Instrument team Science Operations Centers, SOCs, and/or Virtual Observatories, VOs, should facilitate this process serving as the contact point between PI and users in most cases.
+
+* 2) Users should heed the caveats of investigators to the interpretations and limitations of data or model results. Investigators supplying data or models may insist that such caveats be published. Data and model version numbers should also be specified.
+
+* 3) Browse products, Quicklook, and Planning data are not intended for science analysis or publication and should not be used for those purposes without consent of the PI.
+
+* 4) Users should acknowledge the sources of data used in all publications, presentations, and reports: &quot;We acknowledge the NASA Parker Solar Probe Mission and the SWEAP team led by J. Kasper for use of data.&quot;.
+
+* 5) Users are encouraged to provide the PI a copy of each manuscript that uses the PI data prior to submission of that manuscript for consideration of publication. On publication, the citation should be transmitted to the PI and any other providers of data.</Description>
+         <Acknowledgement>Please acknowledge the Principal Investigator J.C. Kasper for use of the Data</Acknowledgement>
+         <Contact>
+            <PersonID>spase://SMWG/Person/Justin.C.Kasper</PersonID>
+            <Role>PrincipalInvestigator</Role>
+         </Contact>
+         <Contact>
+            <PersonID>spase://SMWG/Person/Robert.M.Candey</PersonID>
+            <Role>MetadataContact</Role>
+         </Contact>
+         <Contact>
+            <PersonID>spase://SMWG/Person/Lee.Frost.Bargatze</PersonID>
+            <Role>MetadataContact</Role>
+         </Contact>
+         <InformationURL>
+            <Name>PSP SWEAP Instrument Suite, Space Science Review Publication</Name>
+            <URL>https://doi.org/10.1007/s11214-015-0206-3</URL>
+            <Description>Parker Solar Probe, PSP, SWEAP Instrument Suite Description: Kasper, J.C., Abiad, R., Austin, G. et al., Solar Wind Electrons Alphas and Protons (SWEAP) Investigation: Design of the Solar Wind and Coronal Plasma Instrument Suite for Solar Probe Plus, Space Scii. Rev., 204, 131–186 (2016)</Description>
+         </InformationURL>
+         <InformationURL>
+            <Name>PSP SWEAP home page, SAO</Name>
+            <URL>http://sweap.cfa.harvard.edu</URL>
+            <Description>Parker Solar Probe, PSP, SWEAP home page, Smithsonian Astrophysical Observatory</Description>
+         </InformationURL>
+         <InformationURL>
+            <Name>PSP SWEAP Data Access web site, SAO</Name>
+            <URL>http://sweap.cfa.harvard.edu/Data.html</URL>
+            <Description>Parker Solar Probe, PSP, SWEAP Data Access web site, Smithsonian Astrophysical Observatory</Description>
+         </InformationURL>
+      </ResourceHeader>
+      <AccessInformation>
+         <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF</RepositoryID>
+         <Availability>Online</Availability>
+         <AccessRights>Open</AccessRights>
+         <AccessURL>
+            <Name>FTPS from SPDF (not with most browsers)</Name>
+            <URL>ftps://spdf.gsfc.nasa.gov/pub/data/psp/sweap/spe/l2/spb_sf1_32e/</URL>
+            <Description>Access to Data in CDF Format via ftp from SPDF</Description>
+         </AccessURL>
+         <AccessURL>
+            <Name>HTTPS from SPDF</Name>
+            <URL>https://spdf.gsfc.nasa.gov/pub/data/psp/sweap/spe/l2/spb_sf1_32e/</URL>
+            <Description>Access to Data in CDF Format via http from SPDF</Description>
+         </AccessURL>
+         <AccessURL>
+            <Name>CDAWeb</Name>
+            <URL>https://cdaweb.sci.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=PSP_SWP_SPB_SF1_L2_32E&amp;index=sp_phys</URL>
+            <ProductKey>PSP_SWP_SPB_SF1_L2_32E</ProductKey>
+            <Description>Access to ASCII, CDF, and Plots via NASA/GSFC CDAWeb</Description>
+         </AccessURL>
+         <Format>CDF</Format>
+         <Encoding>None</Encoding>
+         <Acknowledgement>Please acknowledge the Principal Investigator J.C. Kasper. Please acknowledge the Data Providers and CDAWeb when using these Data.</Acknowledgement>
+      </AccessInformation>
+      <ProcessingLevel>Calibrated</ProcessingLevel>
+      <InstrumentID>spase://SMWG/Instrument/ParkerSolarProbe/SWEAP/SPAN-B</InstrumentID>
+      <MeasurementType>InstrumentStatus</MeasurementType>
+      <MeasurementType>ThermalPlasma</MeasurementType>
+      <TemporalDescription>
+         <TimeSpan>
+            <StartDate>2018-10-06T00:00:00.000</StartDate>
+            <RelativeStopDate>-P6M</RelativeStopDate>
+         </TimeSpan>
+         <Cadence>PT1.74S</Cadence>
+      </TemporalDescription>
+      <ObservedRegion>Heliosphere</ObservedRegion>
+      <ObservedRegion>Heliosphere.Inner</ObservedRegion>
+      <ObservedRegion>Heliosphere.NearEarth</ObservedRegion>
+      <ObservedRegion>Sun.Corona</ObservedRegion>
+      <Parameter>
+         <Name>Epoch Time, TT2000, Midpoint of Integration</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>Epoch</ParameterKey>
+         <Description>Epoch Time Tags, TT2000, Nanoseconds since J2000 at Midpoint of the Integration</Description>
+         <Caveats>Warning: the Epoch time typically has an irregular cadence owing to frequent changes in the operating mode. TT2000 is measured in nanoseconds from J2000 with leap seconds included. Please refer to CDF TT2000 documentation with regards to this convention. This time corresponds to the first measurement of the spectrum. In accordance with SPDF standards, this epoch is interpreted a CDF_TT2000 time. It is acknowledged here that this epoch is not strictly equal to &quot;terrestrial time&quot; as it is defined in the CDF_TT2000 documentation nor is the calendar date interpreted by CDF_T2000 operation performed on this epoch strictly equal to Coordinated Universal Time, UTC This Parameter exhibits an increasing Monotonic Progression.</Caveats>
+         <Cadence>PT1.74S</Cadence>
+         <Units>ns</Units>
+         <UnitsConversion>1.0e-9&gt;s</UnitsConversion>
+         <RenderingHints>
+            <AxisLabel>Epoch</AxisLabel>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <ValidMin>01-Jan-1990 00:00:00.000000000</ValidMin>
+         <ValidMax>31-Dec-2029 23:59:58.999000000</ValidMax>
+         <FillValue>25-Jan-2073 11:55:40.029759487</FillValue>
+         <Support>
+            <SupportQuantity>Temporal</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Time</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>TIME</ParameterKey>
+         <Description>Time</Description>
+         <Caveats>This Parameter exhibits an increasing Monotonic Progression</Caveats>
+         <Cadence>PT1.74S</Cadence>
+         <Units>s</Units>
+         <RenderingHints>
+            <AxisLabel>Unix Time</AxisLabel>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <ValidMin>1.2623e+09</ValidMin>
+         <ValidMax>1.89346e+09</ValidMax>
+         <FillValue>nan</FillValue>
+         <Support>
+            <Qualifier>Scalar</Qualifier>
+            <SupportQuantity>Temporal</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Parker Solar Probe, Mission Elapsed Time</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>MET</ParameterKey>
+         <Description>Parker Solar Probe, PSP, Mission Elapsed Time, MET, in string format</Description>
+         <Caveats>The mission elapsed time string is constructed as met_seconds+':'+met_subseconds_base50000, where: met_seconds is the CCSDS_MET value cast as an integer string with no whitespace and met_subseconds_base50000 is an &quot;I05&quot; format integer string formed by converting the xxx_SUBSEC value to units of 1/50000 second. For example, if the xxx_SUBSEC value is recorded in parts per 65536 o second, the correct procedure would be to round 50000*(xxx_SUBSEC/65536) to the nearest integer and cast a string by using the &quot;I05&quot; format. Here, CCSDS_MET is the mission elapsed time, in seconds, from the PSP Epoch, which is defined to be January 1, 2010, 12:00:00 UTC and xxx_SUBSEC is the elapsed time in fractional seconds since the last tick of MET typically in units of 2^-16 seconds.</Caveats>
+         <Cadence>PT1.74S</Cadence>
+         <RenderingHints>
+            <AxisLabel>MET</AxisLabel>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <ValidMin>-1.0e+30</ValidMin>
+         <ValidMax>1.0e+30</ValidMax>
+         <FillValue>nan</FillValue>
+         <Support>
+            <Qualifier>Scalar</Qualifier>
+            <SupportQuantity>Temporal</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Application ID</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>APID</ParameterKey>
+         <Description>Application Identifier, APID</Description>
+         <Cadence>PT1.74S</Cadence>
+         <RenderingHints>
+            <AxisLabel>APID</AxisLabel>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <ValidMin>-1.0e+30</ValidMin>
+         <ValidMax>1.0e+30</ValidMax>
+         <FillValue>nan</FillValue>
+         <Support>
+            <Qualifier>Scalar</Qualifier>
+            <SupportQuantity>InstrumentMode</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Sequence Number</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>SEQN</ParameterKey>
+         <Description>Sequence Number</Description>
+         <Cadence>PT1.74S</Cadence>
+         <RenderingHints>
+            <AxisLabel>SEQN</AxisLabel>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <ValidMin>-1.0e+30</ValidMin>
+         <ValidMax>1.0e+30</ValidMax>
+         <FillValue>nan</FillValue>
+         <Support>
+            <Qualifier>Scalar</Qualifier>
+            <SupportQuantity>Other</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Sequence Number Delta</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>SEQN_DELTA</ParameterKey>
+         <Description>Sequence Number Delta</Description>
+         <Cadence>PT1.74S</Cadence>
+         <RenderingHints>
+            <AxisLabel>SEQN_DELTA</AxisLabel>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <ValidMin>-1.0e+30</ValidMin>
+         <ValidMax>1.0e+30</ValidMax>
+         <FillValue>nan</FillValue>
+         <Support>
+            <Qualifier>Scalar</Qualifier>
+            <SupportQuantity>Other</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Sequence Group</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>SEQ_GROUP</ParameterKey>
+         <Description>Sequence Group</Description>
+         <Cadence>PT1.74S</Cadence>
+         <RenderingHints>
+            <AxisLabel>SEQ_GROUP</AxisLabel>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <ValidMin>-1.0e+30</ValidMin>
+         <ValidMax>1.0e+30</ValidMax>
+         <FillValue>nan</FillValue>
+         <Support>
+            <Qualifier>Scalar</Qualifier>
+            <SupportQuantity>Other</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Packet Size</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>PKT_SIZE</ParameterKey>
+         <Description>Packet Size</Description>
+         <Cadence>PT1.74S</Cadence>
+         <RenderingHints>
+            <AxisLabel>PKT_SIZE</AxisLabel>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <ValidMin>-1.0e+30</ValidMin>
+         <ValidMax>1.0e+30</ValidMax>
+         <FillValue>nan</FillValue>
+         <Support>
+            <Qualifier>Scalar</Qualifier>
+            <SupportQuantity>Other</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Source</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>SOURCE</ParameterKey>
+         <Description>Source</Description>
+         <Cadence>PT1.74S</Cadence>
+         <RenderingHints>
+            <AxisLabel>SOURCE</AxisLabel>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <ValidMin>-1.0e+30</ValidMin>
+         <ValidMax>1.0e+30</ValidMax>
+         <FillValue>nan</FillValue>
+         <Support>
+            <Qualifier>Scalar</Qualifier>
+            <SupportQuantity>Other</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Source Hash Value</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>SOURCE_HASH</ParameterKey>
+         <Description>Source Hash Value</Description>
+         <Cadence>PT1.74S</Cadence>
+         <RenderingHints>
+            <AxisLabel>SOURCE_HASH</AxisLabel>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <ValidMin>-1.0e+30</ValidMin>
+         <ValidMax>1.0e+30</ValidMax>
+         <FillValue>nan</FillValue>
+         <Support>
+            <Qualifier>Scalar</Qualifier>
+            <SupportQuantity>Other</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Compression Ratio</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>COMPR_RATIO</ParameterKey>
+         <Description>Compression Ratio</Description>
+         <Cadence>PT1.74S</Cadence>
+         <RenderingHints>
+            <AxisLabel>COMPR_RATIO</AxisLabel>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <ValidMin>-1.0e+30</ValidMin>
+         <ValidMax>1.0e+30</ValidMax>
+         <FillValue>nan</FillValue>
+         <Support>
+            <Qualifier>Scalar</Qualifier>
+            <SupportQuantity>Other</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Number of Data Points</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>NDAT</ParameterKey>
+         <Description>Number of Data Points</Description>
+         <Cadence>PT1.74S</Cadence>
+         <RenderingHints>
+            <AxisLabel>NDAT</AxisLabel>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <ValidMin>-1.0e+30</ValidMin>
+         <ValidMax>1.0e+30</ValidMax>
+         <FillValue>nan</FillValue>
+         <Support>
+            <Qualifier>Scalar</Qualifier>
+            <SupportQuantity>Other</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Data Size</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>DATASIZE</ParameterKey>
+         <Description>Data Size</Description>
+         <Cadence>PT1.74S</Cadence>
+         <RenderingHints>
+            <AxisLabel>DATASIZE</AxisLabel>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <ValidMin>-1.0e+30</ValidMin>
+         <ValidMax>1.0e+30</ValidMax>
+         <FillValue>nan</FillValue>
+         <Support>
+            <Qualifier>Scalar</Qualifier>
+            <SupportQuantity>Other</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>SMP Bits</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>SMP_BITS</ParameterKey>
+         <Description>SMP Bits</Description>
+         <Cadence>PT1.74S</Cadence>
+         <RenderingHints>
+            <AxisLabel>SMP_BITS</AxisLabel>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <ValidMin>-1.0e+30</ValidMin>
+         <ValidMax>1.0e+30</ValidMax>
+         <FillValue>nan</FillValue>
+         <Support>
+            <Qualifier>Scalar</Qualifier>
+            <SupportQuantity>Other</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>LTCS NNNN Bits</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>LTCSNNNN_BITS</ParameterKey>
+         <Description>LTCS NNNN Bits</Description>
+         <Cadence>PT1.74S</Cadence>
+         <RenderingHints>
+            <AxisLabel>LTCSNNNN_BITS</AxisLabel>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <ValidMin>-1.0e+30</ValidMin>
+         <ValidMax>1.0e+30</ValidMax>
+         <FillValue>nan</FillValue>
+         <Support>
+            <Qualifier>Scalar</Qualifier>
+            <SupportQuantity>Other</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>ARCH Bits</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>ARCH_BITS</ParameterKey>
+         <Description>ARCH Bits</Description>
+         <Cadence>PT1.74S</Cadence>
+         <RenderingHints>
+            <AxisLabel>ARCH_BITS</AxisLabel>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <ValidMin>-1.0e+30</ValidMin>
+         <ValidMax>1.0e+30</ValidMax>
+         <FillValue>nan</FillValue>
+         <Support>
+            <Qualifier>Scalar</Qualifier>
+            <SupportQuantity>Other</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Mode 1</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>MODE1</ParameterKey>
+         <Description>Mode Number 1</Description>
+         <Cadence>PT1.74S</Cadence>
+         <RenderingHints>
+            <AxisLabel>MODE1</AxisLabel>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <ValidMin>-1.0e+30</ValidMin>
+         <ValidMax>1.0e+30</ValidMax>
+         <FillValue>nan</FillValue>
+         <Support>
+            <Qualifier>Scalar</Qualifier>
+            <SupportQuantity>InstrumentMode</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>ARCH SUM</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>ARCH_SUM</ParameterKey>
+         <Description>ARCH SUM</Description>
+         <Cadence>PT1.74S</Cadence>
+         <RenderingHints>
+            <AxisLabel>ARCH_SUM</AxisLabel>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <ValidMin>-1.0e+30</ValidMin>
+         <ValidMax>1.0e+30</ValidMax>
+         <FillValue>nan</FillValue>
+         <Support>
+            <Qualifier>Scalar</Qualifier>
+            <SupportQuantity>Other</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>ARCH SMP Data Quality Flag</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>ARCH_SMP_FLAG</ParameterKey>
+         <Description>ARCH SMP Data Quality Flag</Description>
+         <Cadence>PT1.74S</Cadence>
+         <RenderingHints>
+            <AxisLabel>ARCH_SMP_FLAG</AxisLabel>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <ValidMin>-1.0e+30</ValidMin>
+         <ValidMax>1.0e+30</ValidMax>
+         <FillValue>nan</FillValue>
+         <Support>
+            <Qualifier>Scalar</Qualifier>
+            <SupportQuantity>InstrumentMode</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Total Accumulation Period</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>TOT_ACCUM_PERIOD</ParameterKey>
+         <Description>Total Accumulation Period</Description>
+         <Cadence>PT1.74S</Cadence>
+         <RenderingHints>
+            <AxisLabel>TOT_ACCUM_PERIOD</AxisLabel>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <ValidMin>-1.0e+30</ValidMin>
+         <ValidMax>1.0e+30</ValidMax>
+         <FillValue>nan</FillValue>
+         <Support>
+            <Qualifier>Scalar</Qualifier>
+            <SupportQuantity>Temporal</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Number of Accumulations</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>NUM_ACCUM</ParameterKey>
+         <Description>Number of Accumulations</Description>
+         <Cadence>PT1.74S</Cadence>
+         <RenderingHints>
+            <AxisLabel>NUM_ACCUM</AxisLabel>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <ValidMin>-1.0e+30</ValidMin>
+         <ValidMax>1.0e+30</ValidMax>
+         <FillValue>nan</FillValue>
+         <Support>
+            <Qualifier>Scalar</Qualifier>
+            <SupportQuantity>Other</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Mode 2, ORI</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>MODE2_ORI</ParameterKey>
+         <Description>Mode Number 2, ORI</Description>
+         <Cadence>PT1.74S</Cadence>
+         <RenderingHints>
+            <AxisLabel>MODE2_ORI</AxisLabel>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <ValidMin>-1.0e+30</ValidMin>
+         <ValidMax>1.0e+30</ValidMax>
+         <FillValue>nan</FillValue>
+         <Support>
+            <Qualifier>Scalar</Qualifier>
+            <SupportQuantity>InstrumentMode</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Mode 2</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>MODE2</ParameterKey>
+         <Description>Mode Number 2</Description>
+         <Cadence>PT1.74S</Cadence>
+         <RenderingHints>
+            <AxisLabel>MODE2</AxisLabel>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <ValidMin>-1.0e+30</ValidMin>
+         <ValidMax>1.0e+30</ValidMax>
+         <FillValue>nan</FillValue>
+         <Support>
+            <Qualifier>Scalar</Qualifier>
+            <SupportQuantity>InstrumentMode</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>F0</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>F0</ParameterKey>
+         <Description>F0</Description>
+         <Cadence>PT1.74S</Cadence>
+         <RenderingHints>
+            <AxisLabel>F0</AxisLabel>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <ValidMin>-1.0e+30</ValidMin>
+         <ValidMax>1.0e+30</ValidMax>
+         <FillValue>nan</FillValue>
+         <Support>
+            <Qualifier>Scalar</Qualifier>
+            <SupportQuantity>Other</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Status Bits</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>STATUS_BITS</ParameterKey>
+         <Description>Status Bits</Description>
+         <Cadence>PT1.74S</Cadence>
+         <RenderingHints>
+            <AxisLabel>STATUS_BITS</AxisLabel>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <ValidMin>-1.0e+30</ValidMin>
+         <ValidMax>1.0e+30</ValidMax>
+         <FillValue>nan</FillValue>
+         <Support>
+            <Qualifier>Scalar</Qualifier>
+            <SupportQuantity>Other</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Peak Bin</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>PEAK_BIN</ParameterKey>
+         <Description>Peak Bin</Description>
+         <Cadence>PT1.74S</Cadence>
+         <RenderingHints>
+            <AxisLabel>PEAK_BIN</AxisLabel>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <ValidMin>-1.0e+30</ValidMin>
+         <ValidMax>1.0e+30</ValidMax>
+         <FillValue>nan</FillValue>
+         <Support>
+            <Qualifier>Scalar</Qualifier>
+            <SupportQuantity>Other</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Product Bits</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>PRODUCT_BITS</ParameterKey>
+         <Description>Product Bits</Description>
+         <Cadence>PT1.74S</Cadence>
+         <RenderingHints>
+            <AxisLabel>PRODUCT_BITS</AxisLabel>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <ValidMin>-1.0e+30</ValidMin>
+         <ValidMax>1.0e+30</ValidMax>
+         <FillValue>nan</FillValue>
+         <Support>
+            <Qualifier>Scalar</Qualifier>
+            <SupportQuantity>Other</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Particle Counts</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>CNTS</ParameterKey>
+         <Description>Particle Counts</Description>
+         <Cadence>PT1.74S</Cadence>
+         <RenderingHints>
+            <AxisLabel>CNTS</AxisLabel>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <ValidMin>-1.0e+30</ValidMin>
+         <ValidMax>1.0e+30</ValidMax>
+         <FillValue>nan</FillValue>
+         <Particle>
+            <ParticleType>Electron</ParticleType>
+            <Qualifier>Scalar</Qualifier>
+            <ParticleQuantity>Counts</ParticleQuantity>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Data</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>DATA</ParameterKey>
+         <Description>Data</Description>
+         <Cadence>PT1.74S</Cadence>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <AxisLabel>DATA</AxisLabel>
+            <ValueFormat>E10.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <Structure>
+            <Size>32</Size>
+         </Structure>
+         <ValidMin>-1.0e+30</ValidMin>
+         <ValidMax>1.0e+30</ValidMax>
+         <FillValue>nan</FillValue>
+         <Support>
+            <Qualifier>Array</Qualifier>
+            <SupportQuantity>Other</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Gap</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>GAP</ParameterKey>
+         <Description>Gap</Description>
+         <Cadence>PT1.74S</Cadence>
+         <RenderingHints>
+            <AxisLabel>GAP</AxisLabel>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <ValidMin>-1.0e+30</ValidMin>
+         <ValidMax>1.0e+30</ValidMax>
+         <FillValue>nan</FillValue>
+         <Support>
+            <Qualifier>Scalar</Qualifier>
+            <SupportQuantity>Other</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Differential Energy Flux</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>EFLUX</ParameterKey>
+         <Description>Differential Energy Flux</Description>
+         <Cadence>PT1.74S</Cadence>
+         <Units>eV/(cm^2 s sr eV)</Units>
+         <UnitsConversion>1.0e4&gt;J/(m^2 s sr J)</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>Spectrogram</DisplayType>
+            <AxisLabel>Diff Energy Flux</AxisLabel>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LogScale</ScaleType>
+         </RenderingHints>
+         <Structure>
+            <Size>32</Size>
+         </Structure>
+         <ValidMin>0.001</ValidMin>
+         <ValidMax>1.0e+12</ValidMax>
+         <FillValue>nan</FillValue>
+         <Particle>
+            <ParticleType>Electron</ParticleType>
+            <Qualifier>Array</Qualifier>
+            <ParticleQuantity>NumberFlux</ParticleQuantity>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Particle Energy</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>ENERGY</ParameterKey>
+         <Description>Particle Energy</Description>
+         <Cadence>PT1.74S</Cadence>
+         <Units>eV</Units>
+         <UnitsConversion>1.602176565e-19&gt;J</UnitsConversion>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <AxisLabel>Energy</AxisLabel>
+            <ValueFormat>E12.2</ValueFormat>
+            <ScaleType>LogScale</ScaleType>
+         </RenderingHints>
+         <Structure>
+            <Size>32</Size>
+         </Structure>
+         <ValidMin>1</ValidMin>
+         <ValidMax>100000.0</ValidMax>
+         <FillValue>nan</FillValue>
+         <Particle>
+            <ParticleType>Electron</ParticleType>
+            <Qualifier>Array</Qualifier>
+            <ParticleQuantity>Energy</ParticleQuantity>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Quality Flag</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>QUALITY_FLAG</ParameterKey>
+         <Description>Quality Flag</Description>
+         <Cadence>PT1.74S</Cadence>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <AxisLabel>QUALITY_FLAG</AxisLabel>
+            <ValueFormat>I10</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <ValidMax>256</ValidMax>
+         <FillValue>-1</FillValue>
+         <Support>
+            <Qualifier>Scalar</Qualifier>
+            <SupportQuantity>Velocity</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Rotation Matrix, Spacecraft Instrument</Name>
+         <Set>Time Series defined by using: EPOCH</Set>
+         <ParameterKey>ROTMAT_SC_INST</ParameterKey>
+         <Description>Rotation Matrix, Spacecraft Instrument</Description>
+         <Cadence>PT1.74S</Cadence>
+         <RenderingHints>
+            <DisplayType>TimeSeries</DisplayType>
+            <AxisLabel>ROTMAT_SC_INST</AxisLabel>
+            <ValueFormat>E10.2</ValueFormat>
+            <ScaleType>LinearScale</ScaleType>
+         </RenderingHints>
+         <Structure>
+            <Size>3 3</Size>
+         </Structure>
+         <FillValue>nan</FillValue>
+         <Support>
+            <Qualifier>Array</Qualifier>
+            <SupportQuantity>Other</SupportQuantity>
+         </Support>
+      </Parameter>
+   </NumericalData>
+</Spase>

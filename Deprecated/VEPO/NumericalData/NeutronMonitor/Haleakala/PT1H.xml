@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <Spase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns="http://www.spase-group.org/data/schema" 
+    xsi:schemaLocation="http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_0_0.xsd">
+   <Version>2.0.0</Version>
+   <NumericalData>
+     <ResourceID>spase://VEPO/NumericalData/NeutronMonitor/Haleakala/PT1H</ResourceID>
+     <ResourceHeader>
+       <ResourceName>
+         Hourly Cosmic Ray Intensities from the Haleakala Neutron Monitor
+       </ResourceName>
+       <AlternateName>
+         Haleakala Hourly Counting Rates
+       </AlternateName>
+       <ReleaseDate>
+         2009-03-19T00:00:00.000
+       </ReleaseDate>
+       <Description>
+         Hourly averages of relativistic cosmic ray intensities from the Haleakala Neutron Monitor
+       </Description>
+       <Acknowledgement>
+         Please acknowledge the Principal Investigator  (Dr. Clifford Lopate)
+       </Acknowledgement>
+       <Contact>
+         <PersonID>
+           spase://SMWG/Person/Clifford.Lopate
+         </PersonID>
+         <Role>PrincipalInvestigator</Role>
+         <Role>DataProducer</Role>
+       </Contact>
+       <InformationURL>
+         <Name>
+           General ReadMe file for data from the Climax, Haleakala, and Haleakala Neutron Monitors
+         </Name>
+           <URL>ftp://ulysses.sr.unh.edu/NeutronMonitor/00General.ReadMe.txt</URL>
+         <Description>
+           This ReadMe file provides basic information about the neutron monitors at Climax,
+           Haleakala, and, for data before 1992, Haleakala, including geomagnetic cutoffs and 
+           configurations of the monitors at each site.
+         </Description>
+       </InformationURL>
+       <InformationURL>
+         <Name>
+           ReadMe file for hourly average files for the Haleakala, Peru Neutron Monitor
+         </Name>
+           <URL>ftp://ulysses.sr.unh.edu/NeutronMonitor/HourlyHaleakala/00HaleakalaHourly.ReadMe.txt</URL>
+         <Description>
+           This ReadMe file provides specific information about the neutron monitor at Haleakala, 
+           Peru, and a description of the format of the data files
+         </Description>
+       </InformationURL>
+       <InformationURL>
+         <Name>
+           ReadMe for hourly averages from the Huancayo, Peru and Haleakala, HI Neutron Monitors 
+         </Name>
+           <URL>ftp://ulysses.sr.unh.edu/NeutronMonitor/HourlyHaleakala/00HaleakalaHuancayoNormtxt</URL>
+         <Description>
+           This ReadMe file provides specific information about the correction for drift in
+           the geomagnetic cutoff at Haleakala as a result of secular changesin the geomagnetic
+           field and also discusses internormalization of the Haleakala and Haleakala neutron
+           monitors.
+         </Description>
+       </InformationURL>
+     </ResourceHeader>
+     <AccessInformation>
+       <RepositoryID>spase://SMWG/Repository/UNH</RepositoryID>
+       <Availability>Online</Availability>
+       <AccessRights>Open</AccessRights>
+       <AccessURL>
+         <Name>
+           Haleakala hourly intensities
+         </Name>
+           <URL>ftp://ulysses.sr.unh.edu/NeutronMonitor/HourlyHaleakala/</URL>
+         <Description>
+           Parent directory containing compressed yearly files with naming convention 
+           "File: HaleakalaYYYY" containing hourly averaged Haleakala neutron monitor intensity 
+           measurements for YYYY = 1953 through 1992.
+         </Description>
+       </AccessURL>
+       <Format>Text</Format>
+       <Acknowledgement>C. Lopate, University of New Hampshire</Acknowledgement>
+     </AccessInformation>
+     <InstrumentID>spase://SMWG/Instrument/NeutronMonitor/Haleakala</InstrumentID>
+     <MeasurementType>EnergeticParticles</MeasurementType>
+     <TemporalDescription>
+       <TimeSpan>
+         <StartDate>1953-01-01T00:00:00.000</StartDate>
+         <StopDate>1992-12-31T23:59:59.000</StopDate>
+       </TimeSpan>
+       <Cadence>PT1H</Cadence>
+     </TemporalDescription>
+     <ObservedRegion>Heliosphere.NearEarth</ObservedRegion>
+     <Parameter>
+       <Name>Interval Start Time</Name>
+       <ParameterKey>Columns 1-3</ParameterKey>
+       <Description>
+          Nominal Start Time for the average given as 
+          MM/DD/YYYY HH SSSSSSSSSS 
+          where MM         = month of year (01-12)
+                DD         = Day of Month (01-31)
+                YYYY       = Gregorian Year AD
+                HH         = Hour of Day (00-23)
+                SSSSSSSSSS = Seconds since 00:00:00 Jan. 01, 1904
+       </Description>
+       <Cadence>PT1H</Cadence>
+       <Support>
+         <SupportQuantity>Temporal</SupportQuantity>
+       </Support>
+     </Parameter>
+     <Parameter>
+       <Name>Haleakala IGY Monitor Hourly Data</Name>
+       <ParameterKey>Column 4</ParameterKey>
+       <Description>
+          Haleakala IGY Monitor pressure corrected counts per hour, prescaled by 100
+          Periods with no data are indicated by -1
+       </Description>
+       <Caveats>
+          For true counts per hour, the value given must be multiplied by 100.
+       </Caveats>
+       <Cadence>PT1H</Cadence>
+       <Units>(counts/hr)</Units>
+       <ValidMin>0</ValidMin>
+       <ValidMax>100000</ValidMax>
+       <FillValue>-1</FillValue>
+         <Particle>
+           <ParticleType>Proton</ParticleType>
+           <Qualifier>Integral</Qualifier>
+           <ParticleQuantity>Counts</ParticleQuantity>
+           <EnergyRange>
+             <Low>12.92</Low>
+             <High>1.0E6</High>
+             <Units>GV</Units>
+           </EnergyRange>
+         </Particle>
+     </Parameter>
+     <Parameter>
+       <Name>Haleakala SuperMonitor Hourly Data</Name>
+       <ParameterKey>Column 5</ParameterKey>
+       <Description>
+          Haleakala SuperMonitor pressure-corrected counts per hour, prescaled by 100
+          Periods with no data are indicated by -1
+       </Description>
+       <Caveats>
+          For true counts per hour, the value given must be multiplied by 100.
+       </Caveats>
+       <Cadence>PT1H</Cadence>
+       <Units>(counts/hr)</Units>
+       <ValidMin>0</ValidMin>
+       <ValidMax>1000000</ValidMax>
+       <FillValue>-1</FillValue>
+         <Particle>
+           <ParticleType>Proton</ParticleType>
+           <Qualifier>Integral</Qualifier>
+           <ParticleQuantity>Counts</ParticleQuantity>
+           <EnergyRange>
+             <Low>12.92</Low>
+             <High>1.0E6</High>
+             <Units>GV</Units>
+           </EnergyRange>
+         </Particle>
+     </Parameter>
+   </NumericalData>
+</Spase>

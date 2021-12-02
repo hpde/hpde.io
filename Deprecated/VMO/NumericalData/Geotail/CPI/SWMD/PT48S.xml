@@ -1,0 +1,231 @@
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_2_3.xsd">
+    <Version>2.2.3</Version>
+    <NumericalData>
+        <ResourceID>spase://VMO/NumericalData/Geotail/CPI/SWMD/PT48S</ResourceID>
+        <ResourceHeader>
+            <ResourceName>Geotail CPI Definitive Solar Wind Moments and three-dimensional velocity distribution function</ResourceName>
+            <ReleaseDate>2015-04-14T00:00:00Z</ReleaseDate>
+            <Description>Geotail Comprehensive Plasma Inst (CPI), Definitive Solar Wind Analyzer (SWA) Moments and Distribution function.
+</Description>
+            <Acknowledgement>Principle Investigator Louis.A.Frank,the radio and plasma wave research group at The University of Iowa, and the Space Physics Data Facility (SPDF)/NASA GSFC</Acknowledgement>
+            <Contact>
+                <PersonID>spase://SMWG/Person/Louis.A.Frank</PersonID>
+                <Role>PrincipalInvestigator</Role>
+            </Contact>
+            <Contact>
+                <PersonID>spase://SMWG/Person/Kent.L.Ackerson</PersonID>
+                <Role>DataProducer</Role>
+            </Contact>
+            <Contact>
+                <PersonID>spase://SMWG/Person/Robert.E.McGuire</PersonID>
+                <Role>GeneralContact</Role>
+            </Contact>
+            <InformationURL>
+                <Name>CPI Survey Plots</Name>
+                <URL>http://www-pi.physics.uiowa.edu/cpi</URL>
+                <Description>Geotail CPI description and survey plots.</Description>
+            </InformationURL>
+            <Association>
+                <AssociationID>spase://VMO/NumericalData/Geotail/CPI/SWA_PT48S</AssociationID>
+                <AssociationType>RevisionOf</AssociationType>
+                <Note>Includes the underlying distribution function (flux as a function of energy and 3D direction) from which the moments are then derived.</Note>
+            </Association>
+        </ResourceHeader>
+        <AccessInformation>
+            <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF</RepositoryID>
+            <Availability>Online</Availability>
+            <AccessRights>Open</AccessRights>
+            <AccessURL>
+                <Name>FTP access to files at SPDF</Name>
+                <URL>ftp://spdf.gsfc.nasa.gov/pub/data/geotail/cpi/cpi_swa/</URL>
+                <Description>In CDF via ftp from CDAWeb</Description>
+            </AccessURL>
+            <AccessURL>
+                <Name>HTTP access to files at SPDF</Name>
+                <URL>http://spdf.gsfc.nasa.gov/pub/data/geotail/cpi/cpi_swa/</URL>
+                <Description>In CDF via HTTP from SPDF</Description>
+            </AccessURL>
+            <Format>CDF</Format>
+            <Acknowledgement>Please acknowledge the CDAWeb team at GSFC/SPDF.</Acknowledgement>
+        </AccessInformation>
+        <AccessInformation>
+            <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF</RepositoryID>
+            <Availability>Online</Availability>
+            <AccessRights>Open</AccessRights>
+            <AccessURL>
+                <Name>CDAWeb</Name>
+                <URL>http://cdaweb.gsfc.nasa.gov/</URL>
+                <ProductKey>GE_SW_CPI</ProductKey>
+            </AccessURL>
+            <Format>Text</Format>
+        </AccessInformation>
+        <InstrumentID>spase://SMWG/Instrument/Geotail/CPI/SWA</InstrumentID>
+        <MeasurementType>ThermalPlasma</MeasurementType>
+        <MeasurementType>IonComposition</MeasurementType>
+        <TemporalDescription>
+            <TimeSpan>
+                <StartDate>1992-10-06T00:00:55.000Z</StartDate>
+                <StopDate>1994-10-01T00:00:00.000Z</StopDate>
+            </TimeSpan>
+            <Cadence>PT48S</Cadence>
+        </TemporalDescription>
+        <ObservedRegion>Heliosphere.NearEarth</ObservedRegion>
+        <ObservedRegion>Earth.Magnetosheath</ObservedRegion>
+        <Parameter>
+            <Name>Time</Name>
+            <ParameterKey>Epoch</ParameterKey>
+            <Description>Time in milliseconds, centered, since CDF Epoch</Description>
+            <Units>ms</Units>
+            <UnitsConversion>1e-3&gt;s</UnitsConversion>
+            <ValidMin>08-Sep-1992 00:00:00.000</ValidMin>
+            <ValidMax>31-Dec-2020 20:00:00.000</ValidMax>
+            <FillValue>-1.0E31</FillValue>
+            <Support>
+                <SupportQuantity>Temporal</SupportQuantity>
+            </Support>
+        </Parameter>
+        <Parameter>
+            <Name>Velocity</Name>
+            <ParameterKey>Velocity</ParameterKey>
+            <Description>Ion Bulk Flow Speed(H only when in solar wind)</Description>
+            <Units>km/s</Units>
+            <UnitsConversion>1e3&gt;m/s</UnitsConversion>
+            <ValidMin>0</ValidMin>
+            <ValidMax>1000000</ValidMax>
+            <Particle>
+                <ParticleType>Proton</ParticleType>
+                <ParticleType>AlphaParticle</ParticleType>
+                <ParticleType>Ion</ParticleType>
+                <Qualifier>Moment</Qualifier>
+                <Qualifier>Scalar</Qualifier>
+                <ParticleQuantity>FlowSpeed</ParticleQuantity>
+            </Particle>
+        </Parameter>
+        <Parameter>
+            <Name>SW Polar Angle</Name>
+            <ParameterKey>PolarAngle</ParameterKey>
+            <Description>Ion Bulk Flow Polar angle Theta in degrees (0 toward North Ecliptic Pole, H only when in solar wind)</Description>
+            <Units>Degrees</Units>
+            <ValidMin>0</ValidMin>
+            <ValidMax>180</ValidMax>
+            <Particle>
+                <ParticleType>Ion</ParticleType>
+                <ParticleType>Proton</ParticleType>
+                <ParticleType>AlphaParticle</ParticleType>
+                <Qualifier>DirectionAngle.PolarAngle</Qualifier>
+                <Qualifier>Scalar</Qualifier>
+                <ParticleQuantity>ArrivalDirection</ParticleQuantity>
+            </Particle>
+        </Parameter>
+        <Parameter>
+            <Name>Azimuthal</Name>
+            <ParameterKey>Azimuthal</ParameterKey>
+            <Description>Ion Bulk Flow Azimuthal sector angle Phi in degrees (0 toward Sun, 90 toward Dusk, H only when in solar wind)</Description>
+            <Units>Degrees</Units>
+            <ValidMin>-90</ValidMin>
+            <ValidMax>90</ValidMax>
+            <Particle>
+                <ParticleType>Ion</ParticleType>
+                <ParticleType>Proton</ParticleType>
+                <ParticleType>AlphaParticle</ParticleType>
+                <Qualifier>DirectionAngle.AzimuthAngle</Qualifier>
+                <Qualifier>Scalar</Qualifier>
+                <ParticleQuantity>ArrivalDirection</ParticleQuantity>
+            </Particle>
+        </Parameter>
+        <Parameter>
+            <Name>Temperature</Name>
+            <ParameterKey>Temperature</ParameterKey>
+            <Description>Hydrogen Temperature</Description>
+            <Units>Kelvin</Units>
+            <ValidMin>0.0</ValidMin>
+            <ValidMax>1.0E8</ValidMax>
+            <FillValue>-1.0E31</FillValue>
+            <Particle>
+                <ParticleType>Proton</ParticleType>
+                <Qualifier>Moment</Qualifier>
+                <Qualifier>Scalar</Qualifier>
+                <ParticleQuantity>Temperature</ParticleQuantity>
+            </Particle>
+        </Parameter>
+        <Parameter>
+            <Name>Density</Name>
+            <ParameterKey>Density</ParameterKey>
+            <Description>Hydrogen Number Density</Description>
+            <Units>cm^-3</Units>
+            <Particle>
+                <ParticleType>Proton</ParticleType>
+                <Qualifier>Moment</Qualifier>
+                <Qualifier>Scalar</Qualifier>
+                <ParticleQuantity>NumberDensity</ParticleQuantity>
+            </Particle>
+        </Parameter>
+        <Parameter>
+            <Name>xgse</Name>
+            <ParameterKey>xgse</ParameterKey>
+            <Description>The X component of spacecraft location in GSE, in Re (Re=6378 km)</Description>
+            <Units>Re</Units>
+            <UnitsConversion>6.378e6&gt;m</UnitsConversion>
+            <CoordinateSystem>
+                <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+                <CoordinateSystemName>GSE</CoordinateSystemName>
+            </CoordinateSystem>
+            <Support>
+                <SupportQuantity>Positional</SupportQuantity>
+            </Support>
+        </Parameter>
+        <Parameter>
+            <Name>ygse</Name>
+            <ParameterKey>xgse</ParameterKey>
+            <Description>The Y component of spacecraft location in GSE, in Re (Re=6378 km)</Description>
+            <Units>Re</Units>
+            <UnitsConversion>6.378e6&gt;m</UnitsConversion>
+            <CoordinateSystem>
+                <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+                <CoordinateSystemName>GSE</CoordinateSystemName>
+            </CoordinateSystem>
+            <Support>
+                <SupportQuantity>Positional</SupportQuantity>
+            </Support>
+        </Parameter>
+        <Parameter>
+            <Name>zgse</Name>
+            <ParameterKey>xgse</ParameterKey>
+            <Description>The Z component of spacecraft location in GSE, in Re (Re=6378 km)</Description>
+            <Units>Re</Units>
+            <UnitsConversion>6.378e6&gt;m</UnitsConversion>
+            <CoordinateSystem>
+                <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+                <CoordinateSystemName>GSE</CoordinateSystemName>
+            </CoordinateSystem>
+            <Support>
+                <SupportQuantity>Positional</SupportQuantity>
+            </Support>
+        </Parameter>
+        <Parameter>
+            <Name>quality flag</Name>
+            <ParameterKey>quality</ParameterKey>
+            <Description>quality flag indicating the quality of the data(0=OK)</Description>
+            <Support>
+                <SupportQuantity>Other</SupportQuantity>
+            </Support>
+        </Parameter>
+        <Parameter>
+            <Name>Ion Flux</Name>
+            <ParameterKey>flux</ParameterKey>
+            <Description>3 dimensional ion flux array.  The first dimension corresponds to the 12 DETECTORS_ANGLES (degrees): [       62.5000       67.5000       72.5000       77.5000       82.5000       87.5000       92.5000       97.5000       102.500       107.500       112.500       117.500]
+the second to the 64 SPEEDSKMS (km/sec): [       166.000       171.000       177.000       182.000       188.000       194.000       200.000       206.000       212.000       219.000       226.000       233.000       240.000       248.000       255.000       263.000       271.000       280.000       288.000       297.000       307.000       316.000       326.000       336.000       347.000       357.000       369.000       380.000       392.000       404.000       417.000       429.000       443.000       457.000       471.000       485.000       500.000       516.000       532.000       549.000       566.000       583.000       601.000       620.000       639.000       659.000       680.000       701.000       723.000       745.000       768.000       792.000       817.000       842.000       868.000       895.000       923.000       952.000       981.000       1012.00       1043.00       1076.00       1109.00       1144.00]
+and the third to the 21 PHIVALUES (degrees): [       114.500       120.736       126.972       137.000       143.236       149.472       159.500       165.736       171.972       182.000       188.236       194.472       204.500       210.736       216.972       227.000       233.236       239.472       249.500       255.736       261.972] </Description>
+            <Units>cm^-6_sec^3</Units>
+            <Structure>
+                <Size>12 64 21</Size>
+            </Structure>
+            <Particle>
+                <ParticleType>Proton</ParticleType>
+                <ParticleType>AlphaParticle</ParticleType>
+                <ParticleType>Ion</ParticleType>
+                <ParticleQuantity>NumberFlux</ParticleQuantity>
+            </Particle>
+        </Parameter>
+    </NumericalData>
+</Spase>

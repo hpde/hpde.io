@@ -1,0 +1,262 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_3_1.xsd",
+    "Version": "2.3.1",
+    "NumericalData": {
+      "ResourceID": "spase://NOAA/NumericalData/GOES/14/EPS/HEPAD/S15/PT1M",
+      "ResourceHeader": {
+        "ResourceName": "GOES 14 High Energy Proton and Alpha Detector (HEPAD) AP data at 1 min Time Resolution in Spacecraft Coordinates",
+        "AlternateName": "GOES 14 HEPAD S15 data",
+        "ReleaseDate": "2020-05-04T13:45:15Z",
+        "Description": "The GOES 13 High Energy Proton and Alpha Detector (HEPAD) provides flux measurements of high energy proton and alpha particles. For more information, please see Onsager et al. 1996, Operational uses of the GOES energetic particle detectors, in GOES 8 and Beyond, Proc. SPIE, Vol. 2812, edited by E. R. Washwell, pp. 281-290, Bellingham, WA. These data files contain mainly information on the number of particles per average and count rates for the HEPAD sensor. Data files contain long descriptive header.",
+        "Acknowledgement": "NASA Office of Space Science Applications (United States), NOAA National Environmental Satellite Service (United States), Terry G. Onsager",
+        "Contact": [
+          {
+            "PersonID": "spase://SMWG/Person/Terry.Onsager",
+            "Role": "PrincipalInvestigator"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/James.M.Weygand",
+            "Role": "MetadataContact"
+          }
+        ],
+        "InformationURL": {
+          "Name": "GOES N, O, and P Brochure",
+          "URL": "https://www.nasa.gov/pdf/112855main_GOESNOPWeb1.pdf",
+          "Description": "Information about the magnetometers onboard GOES 14",
+          "Language": "en"
+        },
+        "PriorID": [
+          "spase://VMO/NumericalData/GOES/14/EPEAD/hepad_s15_PT1M",
+          "spase://VMO/NumericalData/GOES/14/EPS/hepad_s15_PT1M",
+          "spase://VSPO/NumericalData/GOES/14/EPS/HEPAD/S15/PT1M"
+        ]
+      },
+      "AccessInformation": {
+        "RepositoryID": "spase://SMWG/Repository/NOAA/SEC",
+        "Availability": "Online",
+        "AccessRights": "Open",
+        "AccessURL": {
+          "Name": "Direct access to the GOES 14 High Energy Proton and Alpha Detector (HEPAD) Data",
+          "URL": "https://satdat.ngdc.noaa.gov/sem/goes/data/avg/",
+          "Description": "Direct link to the GOES 14 High Energy Proton and Alpha Detector (HEPAD) data in CSV format as well as the energetic particle data from other GOES spacecraft. The data are sorted by year, month, spacecraft, and file type. The file names indicates the data type, spacecraft number, year, month, and resolution. For example, g14_hepad_s15_1m_20100501_20100531.csv, indicates GOES 14 magnetometer data at 1 min time resolution from 2010-05-01 to 2010-05-31."
+        },
+        "Format": "Text.ASCII",
+        "Encoding": "None",
+        "Acknowledgement": "NASA, NOAA, Terry G. Onsager"
+      },
+      "ProcessingLevel": "Calibrated",
+      "ProviderResourceName": "NOAA GOES 14 HEPAD",
+      "ProviderProcessingLevel": "Level-2",
+      "InstrumentID": "spase://SMWG/Instrument/GOES/14/EPS",
+      "MeasurementType": "EnergeticParticles",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "2012-10-01T00:00:00",
+          "StopDate": "2012-11-30T23:59:00",
+          "Note": "Time format in data files is year-month-day hour:minute:seconds. Data file may fill out the first month and last month with flags."
+        },
+        "Cadence": "PT1M"
+      },
+      "Caveats": "Flags=-99999.0",
+      "Keyword": [
+        "1 min",
+        "geosynchronous",
+        "GOES",
+        "High Energy Proton and Alpha Detector"
+      ],
+      "Parameter": [
+        {
+          "Name": "Seconds of the Month",
+          "ParameterKey": "Time",
+          "Description": "Time format in data files is year-month-day hour:minute:seconds",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Quality flag for all particles >110 keV that deposit energy the D1 silicon slab",
+          "ParameterKey": "S1_QUAL_FLAG",
+          "Description": "Quality flag non-zero value indicates data quality issue",
+          "ValidMin": "0",
+          "ValidMax": "4294967295",
+          "FillValue": "99999",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Number of >110 keV particles per average",
+          "ParameterKey": "S1_NUM_PTS",
+          "Description": "Data points per average",
+          "ValidMin": "0",
+          "ValidMax": "75",
+          "FillValue": "0",
+          "Particle": {
+            "ParticleType": "Ion",
+            "ParticleQuantity": "Counts"
+          }
+        },
+        {
+          "Name": "Count rate of all particles >110 keV that deposit energy in the D1 silicon slab",
+          "ParameterKey": "S1_COUNT_RATE",
+          "Description": "Counts/s from all particles that deposit >110 keV in the D1 silicon slab",
+          "Units": "s^-1",
+          "ValidMin": "0.1",
+          "ValidMax": "1.0e4",
+          "FillValue": "-99999",
+          "Particle": {
+            "ParticleType": "Ion",
+            "ParticleQuantity": "CountRate"
+          }
+        },
+        {
+          "Name": "Quality flag for all particles >110 keV that deposit energy in the D2 silicon slab",
+          "ParameterKey": "S2_QUAL_FLAG",
+          "Description": "Quality flag non-zero value indicates data quality issue",
+          "ValidMin": "0",
+          "ValidMax": "4294967295",
+          "FillValue": "99999",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Number of >110 keV particles per average",
+          "ParameterKey": "S2_NUM_PTS",
+          "Description": "Data points per average",
+          "ValidMin": "0",
+          "ValidMax": "75",
+          "FillValue": "0",
+          "Particle": {
+            "ParticleType": "Ion",
+            "ParticleQuantity": "Counts"
+          }
+        },
+        {
+          "Name": "Count rate of all particles that deposit energy in the D2 silicon slab",
+          "ParameterKey": "S2_COUNT_RATE",
+          "Description": "Counts/s from all particles that deposit >110 keV in the D2 silicon slab",
+          "Units": "s^-1",
+          "ValidMin": "0.1",
+          "ValidMax": "1.0e4",
+          "FillValue": "-99999",
+          "Particle": {
+            "ParticleType": "Ion",
+            "ParticleQuantity": "CountRate"
+          }
+        },
+        {
+          "Name": "Quality flag for all particles that deposit energy in the photomultiplier tube",
+          "ParameterKey": "S3_QUAL_FLAG",
+          "Description": "Quality flag non-zero value indicates data quality issue",
+          "ValidMin": "0",
+          "ValidMax": "4294967295",
+          "FillValue": "99999",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Number of particles per average",
+          "ParameterKey": "S3_NUM_PTS",
+          "Description": "Data points per average",
+          "ValidMin": "0",
+          "ValidMax": "75",
+          "FillValue": "0",
+          "Particle": {
+            "ParticleType": "Ion",
+            "ParticleQuantity": "Counts"
+          }
+        },
+        {
+          "Name": "Count rate of all particles that deposit energy in the photomultiplier tube",
+          "ParameterKey": "S3_COUNT_RATE",
+          "Description": "Counts/s from all particles that create >13.5 keV photoelectrons in the photomultiplier tube",
+          "Units": "s^-1",
+          "ValidMin": "0.1",
+          "ValidMax": "1.0e4",
+          "FillValue": "-99999",
+          "Particle": {
+            "ParticleType": "Ion",
+            "ParticleQuantity": "CountRate"
+          }
+        },
+        {
+          "Name": "Quality flag for all particles that deposit energy in the photomultiplier tube",
+          "ParameterKey": "S4_QUAL_FLAG",
+          "Description": "Quality flag non-zero value indicates data quality issue",
+          "ValidMin": "0",
+          "ValidMax": "4294967295",
+          "FillValue": "99999",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Number of particles per average",
+          "ParameterKey": "S4_NUM_PTS",
+          "Description": "Data points per average",
+          "ValidMin": "0",
+          "ValidMax": "75",
+          "FillValue": "0",
+          "Particle": {
+            "ParticleType": "Ion",
+            "ParticleQuantity": "Counts"
+          }
+        },
+        {
+          "Name": "Count rate of all particles that deposit energy in the photomultiplier tube",
+          "ParameterKey": "S4_COUNT_RATE",
+          "Description": "Counts/s from all particles that create >69 keV photoelectrons in the photomultiplier tube",
+          "Units": "s^-1",
+          "ValidMin": "0.1",
+          "ValidMax": "1.0e4",
+          "FillValue": "-99999",
+          "Particle": {
+            "ParticleType": "Ion",
+            "ParticleQuantity": "CountRate"
+          }
+        },
+        {
+          "Name": "Quality flag for all particles >110 keV that deposit energy in both the D1 and D2 silicon slabs",
+          "ParameterKey": "S5_QUAL_FLAG",
+          "Description": "Quality flag non-zero value indicates data quality issue",
+          "ValidMin": "0",
+          "ValidMax": "4294967295",
+          "FillValue": "99999",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Number of particles >110 keV per average",
+          "ParameterKey": "S5_NUM_PTS",
+          "Description": "Data points per average",
+          "ValidMin": "0",
+          "ValidMax": "75",
+          "FillValue": "0",
+          "Particle": {
+            "ParticleType": "Ion",
+            "ParticleQuantity": "Counts"
+          }
+        },
+        {
+          "Name": "Count rate of all particles >110 keV that deposit energy in both the D1 and D2 silicon slabs",
+          "ParameterKey": "S5_COUNT_RATE",
+          "Description": "Counts/s from all particles that deposit >110 keV in both the D1 and D2 silicon slabs",
+          "Units": "s^-1",
+          "ValidMin": "0.1",
+          "ValidMax": "1.0e4",
+          "FillValue": "-99999",
+          "Particle": {
+            "ParticleType": "Ion",
+            "ParticleQuantity": "CountRate"
+          }
+        }
+      ]
+    }
+  }
+}
