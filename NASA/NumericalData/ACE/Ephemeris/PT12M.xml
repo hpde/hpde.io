@@ -1,176 +1,200 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema  https://www.spase-group.org/data/schema/spase-2_3_2.xsd">
-  <Version>2.3.2</Version>
-  <NumericalData>
-    <ResourceID>spase://NASA/NumericalData/ACE/Ephemeris/PT12M</ResourceID>
-    <ResourceHeader>
-      <ResourceName>ACE GSE 12-min Position Data</ResourceName>
-      <ReleaseDate>2021-04-27T15:38:11Z</ReleaseDate>
-      <Description>ACE satellite positions.</Description>
-      <Contact>
-        <!-- Jan Merka -->
-        <PersonID>spase://SMWG/Person/Jan.Merka</PersonID>
-        <Role>MetadataContact</Role>
-      </Contact>
-      <Contact>
-        <PersonID>spase://SMWG/Person/Robert.E.McGuire</PersonID>
-        <Role>GeneralContact</Role>
-      </Contact>
-      <PriorID>spase://VHO/NumericalData/ACE/Ephemeris/PT12M</PriorID>
-      <PriorID>spase://VSPO/NumericalData/ACE/Ephemeris/PT12M</PriorID>
-    </ResourceHeader>
-    <AccessInformation>
-      <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF</RepositoryID>
-      <Availability>Online</Availability>
-      <AccessRights>Open</AccessRights>
-      <AccessURL>
-        <Name>FTPS from SPDF (not with most browsers)</Name>
-        <URL>ftps://spdf.gsfc.nasa.gov/pub/data/ace/orbit/level_2_cdaweb/or_ssc/</URL>
-      </AccessURL>
-      <AccessURL>
-        <Name>HTTPS from SPDF</Name>
-        <URL>https://spdf.gsfc.nasa.gov/pub/data/ace/orbit/level_2_cdaweb/or_ssc/</URL>
-        <Description>In CDF via HTTP from CDAWeb</Description>
-      </AccessURL>
-      <AccessURL>
-        <Name>CDAWeb</Name>
-        <URL>https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=AC_OR_SSC&amp;index=sp_phys</URL>
-        <ProductKey>AC_OR_SSC</ProductKey>
-      </AccessURL>
-      <AccessURL>
-        <Name>SSCWeb</Name>
-        <URL>https://sscweb.gsfc.nasa.gov/cgi-bin/Locator.cgi</URL>
-        <ProductKey>ace</ProductKey>
-      </AccessURL>
-      <Format>CDF</Format>
-    </AccessInformation>
-    <AccessInformation>
-      <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF</RepositoryID>
-      <Availability>Online</Availability>
-      <AccessRights>Open</AccessRights>
-      <AccessURL>
-        <Name>CDAWeb HAPI Server</Name>
-        <URL>https://cdaweb.gsfc.nasa.gov/hapi</URL>
-        <Style>HAPI</Style>
-        <ProductKey>AC_OR_SSC</ProductKey>
-        <Description>Web Service to this product using the HAPI interface.</Description>
-      </AccessURL>
-      <Format>CSV</Format>
-    </AccessInformation>
-    <InstrumentID>spase://SMWG/Instrument/ACE/Ephemeris</InstrumentID>
-    <MeasurementType>Ephemeris</MeasurementType>
-    <TemporalDescription>
-      <TimeSpan>
-        <StartDate>1997-08-26T00:00:00Z</StartDate>
-        <RelativeStopDate>-P7D</RelativeStopDate>
-      </TimeSpan>
-      <Cadence>PT12M</Cadence>
-    </TemporalDescription>
-    <Parameter>
-      <Name>Epoch Time</Name>
-      <ParameterKey>Epoch</ParameterKey>
-      <Description>Number of milliseconds since the CDF epoch</Description>
-      <Units>ms</Units>
-      <UnitsConversion>1e-3&gt;s</UnitsConversion>
-      <ValidMin>01-Jan-1956 00:00:00.000</ValidMin>
-      <ValidMax>01-Jan-2083 00:00:00.000</ValidMax>
-      <FillValue>-1.0E31</FillValue>
-      <Support>
-        <SupportQuantity>Temporal</SupportQuantity>
-      </Support>
-    </Parameter>
-    <Parameter>
-      <Name>GSE latitude</Name>
-      <ParameterKey>GSE_LAT</ParameterKey>
-      <Description>Latitude of the spacecraft position in GSE</Description>
-      <Units>Deg</Units>
-      <CoordinateSystem>
-        <CoordinateRepresentation>Spherical</CoordinateRepresentation>
-        <CoordinateSystemName>GSE</CoordinateSystemName>
-      </CoordinateSystem>
-      <ValidMin>-90.0</ValidMin>
-      <ValidMax>90.0</ValidMax>
-      <FillValue>-1.0E31</FillValue>
-      <Support>
-        <Qualifier>DirectionAngle.ElevationAngle</Qualifier>
-        <SupportQuantity>Positional</SupportQuantity>
-      </Support>
-    </Parameter>
-    <Parameter>
-      <Name>GSE longitude</Name>
-      <ParameterKey>GSE_LON</ParameterKey>
-      <Description>Longitude of the spacecraft position in GSE</Description>
-      <Units>Deg</Units>
-      <CoordinateSystem>
-        <CoordinateRepresentation>Spherical</CoordinateRepresentation>
-        <CoordinateSystemName>GSE</CoordinateSystemName>
-      </CoordinateSystem>
-      <ValidMin>-180.0</ValidMin>
-      <ValidMax>180.0</ValidMax>
-      <FillValue>-1.0E31</FillValue>
-      <Support>
-        <Qualifier>DirectionAngle.AzimuthAngle</Qualifier>
-        <SupportQuantity>Positional</SupportQuantity>
-      </Support>
-    </Parameter>
-    <Parameter>
-      <Name>GSE radial distance</Name>
-      <ParameterKey>RADIUS</ParameterKey>
-      <Description>Radial distance of the spacecraft in GSE</Description>
-      <Units>km</Units>
-      <UnitsConversion>1e3&gt;m</UnitsConversion>
-      <CoordinateSystem>
-        <CoordinateRepresentation>Spherical</CoordinateRepresentation>
-        <CoordinateSystemName>GSE</CoordinateSystemName>
-      </CoordinateSystem>
-      <ValidMin>0.0</ValidMin>
-      <ValidMax>1594535.0</ValidMax>
-      <FillValue>-1.0E31</FillValue>
-      <Support>
-        <Qualifier>Magnitude</Qualifier>
-        <SupportQuantity>Positional</SupportQuantity>
-      </Support>
-    </Parameter>
-    <Parameter>
-      <Name>GSE position</Name>
-      <ParameterKey>XYZ_GSE</ParameterKey>
-      <Description>Spacecraft position in GSE</Description>
-      <Units>km</Units>
-      <UnitsConversion>1e3&gt;m</UnitsConversion>
-      <CoordinateSystem>
-        <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
-        <CoordinateSystemName>GSE</CoordinateSystemName>
-      </CoordinateSystem>
-      <Structure>
-        <Size>3</Size>
-        <Element>
-          <Name>x</Name>
-          <Qualifier>Component.I</Qualifier>
-          <Index>1</Index>
-          <ValidMin>-1594535.0</ValidMin>
-          <ValidMax>1594535.0</ValidMax>
-          <FillValue>-1.0E31</FillValue>
-        </Element>
-        <Element>
-          <Name>y</Name>
-          <Qualifier>Component.J</Qualifier>
-          <Index>2</Index>
-          <ValidMin>-1594535.0</ValidMin>
-          <ValidMax>1594535.0</ValidMax>
-          <FillValue>-1.0E31</FillValue>
-        </Element>
-        <Element>
-          <Name>z</Name>
-          <Qualifier>Component.K</Qualifier>
-          <Index>3</Index>
-          <ValidMin>-1594535.0</ValidMin>
-          <ValidMax>1594535.0</ValidMax>
-          <FillValue>-1.0E31</FillValue>
-        </Element>
-      </Structure>
-      <Support>
-        <SupportQuantity>Positional</SupportQuantity>
-      </Support>
-    </Parameter>
-  </NumericalData>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_4_1.xsd">
+   <Version>2.4.1</Version>
+   <NumericalData>
+      <ResourceID>spase://NASA/NumericalData/ACE/Ephemeris/PT12M</ResourceID>
+      <ResourceHeader>
+         <ResourceName>ACE GSE 12-min Position Data</ResourceName>
+         <DOI>https://doi.org/10.48322/by5e-zs07</DOI>
+         <ReleaseDate>2022-08-19T12:34:56.789</ReleaseDate>
+         <RevisionHistory>
+            <RevisionEvent>
+               <ReleaseDate>2021-04-27T15:38:11</ReleaseDate>
+               <Note>Only known prior ReleaseDate of the metadata</Note>
+            </RevisionEvent>
+            <RevisionEvent>
+               <ReleaseDate>2022-08-19T12:34:56.789</ReleaseDate>
+               <Note>Added DOI and PublicationInfo minted by JMW on 20220808, updated the RepositoryID, updated the SPDF MetadataContact Person to Robert M. Candey, metadata updated to SPASE 2.4.1, reviewed by LFB 20220819</Note>
+            </RevisionEvent>
+         </RevisionHistory>
+         <Description>ACE satellite positions.</Description>
+         <PublicationInfo>
+            <Authors>ACE flight operations team (FOT), and R. Candey</Authors>
+            <PublicationDate>2022-01-01T00:00:00</PublicationDate>
+            <PublishedBy>NASA Space Physics Data Facility</PublishedBy>
+         </PublicationInfo>
+         <Contact>
+            <!-- Jan Merka -->
+            <PersonID>spase://SMWG/Person/Jan.Merka</PersonID>
+            <Role>MetadataContact</Role>
+         </Contact>
+         <Contact>
+            <PersonID>spase://SMWG/Person/Robert.M.Candey</PersonID>
+            <Role>GeneralContact</Role>
+         </Contact>
+         <Contact>
+            <PersonID>spase://SMWG/Person/James.M.Weygand</PersonID>
+            <Role>MetadataContact</Role>
+         </Contact>
+         <Contact>
+            <PersonID>spase://SMWG/Person/Lee.Frost.Bargatze</PersonID>
+            <Role>MetadataContact</Role>
+         </Contact>
+         <PriorID>spase://VHO/NumericalData/ACE/Ephemeris/PT12M</PriorID>
+         <PriorID>spase://VSPO/NumericalData/ACE/Ephemeris/PT12M</PriorID>
+      </ResourceHeader>
+      <AccessInformation>
+         <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF/CDAWeb</RepositoryID>
+         <Availability>Online</Availability>
+         <AccessRights>Open</AccessRights>
+         <AccessURL>
+            <Name>FTPS from SPDF (not with most browsers)</Name>
+            <URL>ftps://spdf.gsfc.nasa.gov/pub/data/ace/orbit/level_2_cdaweb/or_ssc/</URL>
+         </AccessURL>
+         <AccessURL>
+            <Name>HTTPS from SPDF</Name>
+            <URL>https://spdf.gsfc.nasa.gov/pub/data/ace/orbit/level_2_cdaweb/or_ssc/</URL>
+            <Description>In CDF via HTTP from CDAWeb</Description>
+         </AccessURL>
+         <AccessURL>
+            <Name>CDAWeb</Name>
+            <URL>https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=AC_OR_SSC&amp;index=sp_phys</URL>
+            <ProductKey>AC_OR_SSC</ProductKey>
+         </AccessURL>
+         <AccessURL>
+            <Name>SSCWeb</Name>
+            <URL>https://sscweb.gsfc.nasa.gov/cgi-bin/Locator.cgi</URL>
+            <ProductKey>ace</ProductKey>
+         </AccessURL>
+         <Format>CDF</Format>
+      </AccessInformation>
+      <AccessInformation>
+         <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF/CDAWeb</RepositoryID>
+         <Availability>Online</Availability>
+         <AccessRights>Open</AccessRights>
+         <AccessURL>
+            <Name>CDAWeb HAPI Server</Name>
+            <URL>https://cdaweb.gsfc.nasa.gov/hapi</URL>
+            <Style>HAPI</Style>
+            <ProductKey>AC_OR_SSC</ProductKey>
+            <Description>Web Service to this product using the HAPI interface.</Description>
+         </AccessURL>
+         <Format>CSV</Format>
+      </AccessInformation>
+      <InstrumentID>spase://SMWG/Instrument/ACE/Ephemeris</InstrumentID>
+      <MeasurementType>Ephemeris</MeasurementType>
+      <TemporalDescription>
+         <TimeSpan>
+            <StartDate>1997-08-26T00:00:00Z</StartDate>
+            <RelativeStopDate>-P7D</RelativeStopDate>
+         </TimeSpan>
+         <Cadence>PT12M</Cadence>
+      </TemporalDescription>
+      <Parameter>
+         <Name>Epoch Time</Name>
+         <ParameterKey>Epoch</ParameterKey>
+         <Description>Number of milliseconds since the CDF epoch</Description>
+         <Units>ms</Units>
+         <UnitsConversion>1e-3&gt;s</UnitsConversion>
+         <ValidMin>01-Jan-1956 00:00:00.000</ValidMin>
+         <ValidMax>01-Jan-2083 00:00:00.000</ValidMax>
+         <FillValue>-1.0E31</FillValue>
+         <Support>
+            <SupportQuantity>Temporal</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>GSE latitude</Name>
+         <ParameterKey>GSE_LAT</ParameterKey>
+         <Description>Latitude of the spacecraft position in GSE</Description>
+         <Units>Deg</Units>
+         <CoordinateSystem>
+            <CoordinateRepresentation>Spherical</CoordinateRepresentation>
+            <CoordinateSystemName>GSE</CoordinateSystemName>
+         </CoordinateSystem>
+         <ValidMin>-90.0</ValidMin>
+         <ValidMax>90.0</ValidMax>
+         <FillValue>-1.0E31</FillValue>
+         <Support>
+            <Qualifier>DirectionAngle.ElevationAngle</Qualifier>
+            <SupportQuantity>Positional</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>GSE longitude</Name>
+         <ParameterKey>GSE_LON</ParameterKey>
+         <Description>Longitude of the spacecraft position in GSE</Description>
+         <Units>Deg</Units>
+         <CoordinateSystem>
+            <CoordinateRepresentation>Spherical</CoordinateRepresentation>
+            <CoordinateSystemName>GSE</CoordinateSystemName>
+         </CoordinateSystem>
+         <ValidMin>-180.0</ValidMin>
+         <ValidMax>180.0</ValidMax>
+         <FillValue>-1.0E31</FillValue>
+         <Support>
+            <Qualifier>DirectionAngle.AzimuthAngle</Qualifier>
+            <SupportQuantity>Positional</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>GSE radial distance</Name>
+         <ParameterKey>RADIUS</ParameterKey>
+         <Description>Radial distance of the spacecraft in GSE</Description>
+         <Units>km</Units>
+         <UnitsConversion>1e3&gt;m</UnitsConversion>
+         <CoordinateSystem>
+            <CoordinateRepresentation>Spherical</CoordinateRepresentation>
+            <CoordinateSystemName>GSE</CoordinateSystemName>
+         </CoordinateSystem>
+         <ValidMin>0.0</ValidMin>
+         <ValidMax>1594535.0</ValidMax>
+         <FillValue>-1.0E31</FillValue>
+         <Support>
+            <Qualifier>Magnitude</Qualifier>
+            <SupportQuantity>Positional</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>GSE position</Name>
+         <ParameterKey>XYZ_GSE</ParameterKey>
+         <Description>Spacecraft position in GSE</Description>
+         <Units>km</Units>
+         <UnitsConversion>1e3&gt;m</UnitsConversion>
+         <CoordinateSystem>
+            <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+            <CoordinateSystemName>GSE</CoordinateSystemName>
+         </CoordinateSystem>
+         <Structure>
+            <Size>3</Size>
+            <Element>
+               <Name>x</Name>
+               <Qualifier>Component.I</Qualifier>
+               <Index>1</Index>
+               <ValidMin>-1594535.0</ValidMin>
+               <ValidMax>1594535.0</ValidMax>
+               <FillValue>-1.0E31</FillValue>
+            </Element>
+            <Element>
+               <Name>y</Name>
+               <Qualifier>Component.J</Qualifier>
+               <Index>2</Index>
+               <ValidMin>-1594535.0</ValidMin>
+               <ValidMax>1594535.0</ValidMax>
+               <FillValue>-1.0E31</FillValue>
+            </Element>
+            <Element>
+               <Name>z</Name>
+               <Qualifier>Component.K</Qualifier>
+               <Index>3</Index>
+               <ValidMin>-1594535.0</ValidMin>
+               <ValidMax>1594535.0</ValidMax>
+               <FillValue>-1.0E31</FillValue>
+            </Element>
+         </Structure>
+         <Support>
+            <SupportQuantity>Positional</SupportQuantity>
+         </Support>
+      </Parameter>
+   </NumericalData>
 </Spase>
