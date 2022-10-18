@@ -1,0 +1,168 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema https://www.spase-group.org/data/schema/spase-2_4_0.xsd",
+    "Version": "2.4.0",
+    "Catalog": {
+      "ResourceID": "spase://NSF/Catalog/MLSO/KCOR/AutomatedEventList",
+      "ResourceHeader": {
+        "ResourceName": "MLSO K-Cor Automated CME Catalog",
+        "ReleaseDate": "2022-05-04T12:34:56",
+        "RevisionHistory": {
+          "RevisionEvent": {
+            "ReleaseDate": "2022-05-04T12:34:56",
+            "Note": "Initial SPASE XML resource description submission. Metadata submitted by J. Burkepile on 2022-05-04. Reviewed by LFB"
+          }
+        },
+        "Description": "MLSO K-Cor Automated CME Catalog",
+        "Acknowledgement": "When any of this data is used, please cite one of the following publications:\n\n* https://agupubs.onlinelibrary.wiley.com/doi/full/10.1002/2017SW001694\n* https://agupubs.onlinelibrary.wiley.com/doi/10.1002/2016SW001545\n\nAnd use text in your acknowledgement: \"Courtesy of the Mauna Loa Solar Observatory, operated by the High Altitude Observatory, as part of the National Center for Atmospheric Research (NCAR). NCAR is supported by the National Science Foundation. (http://www2.ucar.edu/terms-of-use)\"",
+        "Funding": {
+          "Agency": "NSF",
+          "Project": "MLSO K-Coronagraph"
+        },
+        "Contact": [
+          {
+            "PersonID": "spase://SMWG/Person/Joan.Burkepile",
+            "Role": [
+              "PrincipalInvestigator",
+              "ProjectScientist"
+            ],
+            "StartDate": "2013-09-30T00:00:00"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Michael.Galloy",
+            "Role": [
+              "DataProducer",
+              "Developer",
+              "ArchiveSpecialist",
+              "MetadataContact"
+            ],
+            "StartDate": "2015-02-23T00:00:00"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/William.T.Thompson",
+            "Role": "Developer"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Lee.Frost.Bargatze",
+            "Role": "MetadataContact"
+          }
+        ],
+        "InformationURL": {
+          "Name": "Automatic Near-Real-Time Detection of CMEs in Mauna Loa K-Cor Coronagraph Images",
+          "URL": "https://doi.org/10.1002/2017SW001694",
+          "Description": "The paper describes the algorithm",
+          "Language": "en"
+        }
+      },
+      "AccessInformation": {
+        "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/CCMC",
+        "Availability": "Online",
+        "AccessRights": "Open",
+        "AccessURL": {
+          "Name": "CCMC iSWA",
+          "URL": "https://iswa.ccmc.gsfc.nasa.gov/iswa_data_tree/model/heliosphere/sep_scoreboard/",
+          "Style": "Listing",
+          "Description": "The automated CME detection catalog is provided in JSON format for the CCMC SEP Scoreboard and it is archived and available via CCMC's iSWA.",
+          "Language": "en"
+        },
+        "Format": "JSON",
+        "Acknowledgement": "When any of this data is used, please cite one of the following publications:\n\n* https://agupubs.onlinelibrary.wiley.com/doi/full/10.1002/2017SW001694\n* https://agupubs.onlinelibrary.wiley.com/doi/10.1002/2016SW001545\n\nAnd use text in your acknowledgement: \"Courtesy of the Mauna Loa Solar Observatory, operated by the High Altitude Observatory, as part of the National Center for Atmospheric Research (NCAR). NCAR is supported by the National Science Foundation. (http://www2.ucar.edu/terms-of-use)\""
+      },
+      "InstrumentID": "spase://NSF/Instrument/Ground/MLSO/K-Cor",
+      "PhenomenonType": "CoronalMassEjection",
+      "TimeSpan": {
+        "StartDate": "2017-01-01T00:00:00",
+        "RelativeStopDate": "-P15M"
+      },
+      "Caveats": "This CME list is automatically generated. The detection algorithm is not perfect so there are sometimes false detections. Additionally, the signal to noise in the data varies with sky conditions which impacts the quality of detections. The observers will issue retractions for most false detections. We ask you to use caution when using the data for statistical purposes.",
+      "InputResourceID": "spase://NSF/NumericalData/MLSO/KCOR/ProlarizedBrightness/FITS/PT15S",
+      "Parameter": [
+        {
+          "Name": "Alert type",
+          "Description": "Initial alert, summary alert, or alert retraction.",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Initial Alert Time",
+          "Description": "The initial time that the CME was first detected by the automated algorithm.",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "End Time",
+          "Description": "For summary alerts only, the last time the CME was automatically detected in the data.",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "CME Position Angle",
+          "Description": "Position angle/location of the CME",
+          "Units": "degrees",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "HPC"
+          },
+          "Support": {
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "CME Speed",
+          "Description": "Plane-of-sky CME speed determined from a differential linear fit to the automatically detected height-time.",
+          "Units": "km/s",
+          "Support": {
+            "SupportQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "Time at height height",
+          "Description": "The last CME plane-of-sky height that was automatically detected before the initial alert time. Pairs with time at height time.",
+          "Support": {
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Time at height time",
+          "Description": "The timestamp of the data in which the last CME plane-of-sky height was automatically detected before the initial alert time. Paired with time at height height.",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Alert issue time",
+          "Description": "The alert issue time for the alert types of initial, summary (final), or retraction for the automatic CME detection.",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "All Clear Boolean",
+          "Description": "The all clear boolean is set to false when a CME is automatically detected at the alert issue time.",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Comment",
+          "Description": "Observer comments provided for the retraction alert type.",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Instrument",
+          "Description": "Name of coronagraph instrument used by the automatic detection algorithm.",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        }
+      ]
+    }
+  }
+}
