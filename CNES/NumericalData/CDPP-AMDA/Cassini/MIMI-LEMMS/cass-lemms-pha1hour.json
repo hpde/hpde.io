@@ -1,0 +1,112 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2.4.1.xsd",
+    "Version": "2.4.1",
+    "NumericalData": {
+      "ResourceID": "spase://CNES/NumericalData/CDPP-AMDA/Cassini/MIMI-LEMMS/cass-lemms-pha1hour",
+      "ResourceHeader": {
+        "ResourceName": "1 hour",
+        "AlternateName": "One hour average particle intensity from PHA",
+        "ReleaseDate": "2021-10-11T08:45:27Z",
+        "Description": "One hour average particle intensity data for PHA (Pulse Height Analysis) ion and electron channels.\n            There are three types of channels included in these averages: the A channels, the E channels and the F1 channels. The A channels measure ions,\n mostly protons. The E and F1 channels measure electrons. For the A channels, channel indices 8 through 62 are present\n    (energies of 26-758 keV). For the E channels, indices 15 to 62 (20-410\n    keV), and for F1, 26 through 59 (206-1717 keV).",
+        "Contact": {
+          "PersonID": "spase://SMWG/Person/Jon.Vandegriff",
+          "Role": "DataProducer"
+        },
+        "Association": {
+          "AssociationID": "cass-lemms-pha",
+          "AssociationType": "PartOf",
+          "Note": "flux from PHA data"
+        }
+      },
+      "AccessInformation": [
+        {
+          "RepositoryID": "spase://SMWG/Repository/CDPP/AMDA",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDPP/AMDA HAPI Server",
+            "URL": "http://amda.irap.omp.eu/service/hapi",
+            "Style": "HAPI",
+            "Description": "Web Service to this product using the HAPI interface."
+          },
+          "Format": "CSV",
+          "Acknowledgement": "Thank you for acknowledging the use of AMDA in publications with wording like \"Data analysis was performed with the AMDA science analysis system provided by the Centre de Données de la Physique des Plasmas (CDPP) supported by CNRS, CNES, Observatoire de Paris and Université Paul Sabatier, Toulouse\".. See the Rules of the road at http://amda.cdpp.eu/help/policy.html. Please acknowledge the Data Providers."
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/CDPP/AMDA",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDPP/AMDA Web application",
+            "URL": "http://amda.cdpp.eu",
+            "Description": "Access to Data via CDPP/AMDA Web application."
+          },
+          "Format": [
+            "CSV",
+            "VOTable",
+            "CDF",
+            "PNG"
+          ],
+          "Acknowledgement": "Thank you for acknowledging the use of AMDA in publications with wording like \"Data analysis was performed with the AMDA science analysis system provided by the Centre de Données de la Physique des Plasmas (CDPP) supported by CNRS, CNES, Observatoire de Paris and Université Paul Sabatier, Toulouse\".. See the Rules of the road at http://amda.cdpp.eu/help/policy.html. Please acknowledge the Data Providers."
+        }
+      ],
+      "ProviderName": "PDS",
+      "ProviderResourceName": "CO-S-MIMI-4-LEMMS-CALIB-V1.0/LPHAAVG0_1HR",
+      "InstrumentID": "spase://CNES/Instrument/CDPP-AMDA/Cassini/MIMI-LEMMS",
+      "MeasurementType": "EnergeticParticles",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "2004-01-01T00:30:00Z",
+          "StopDate": "2017-09-15T23:30:00Z"
+        },
+        "Cadence": "PT1H"
+      },
+      "ObservedRegion": "Saturn",
+      "Caveats": "The data is background subtracted, and thus occasionally there will be negative values when the count rate falls below the background level.\n        Also, the uncertainties are based on the counting statistics, and thus\n    because of the background subtraction, the uncertainties can be larger\n    than the data value.\n        ",
+      "Parameter": [
+        {
+          "Name": "ions A",
+          "ParameterKey": "cass_lemms_pha1houra",
+          "UCD": "phot.count;phys.atmol.ionStage",
+          "Units": "cm-2.sr-1.s-1.keV-1",
+          "RenderingHints": {
+            "DisplayType": "Spectrogram"
+          },
+          "Particle": {
+            "ParticleType": "Ion",
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "electrons E",
+          "ParameterKey": "cass_lemms_pha1houre",
+          "UCD": "phys.electron",
+          "Units": "cm-2.sr-1.s-1.keV-1",
+          "RenderingHints": {
+            "DisplayType": "Spectrogram"
+          },
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "electrons F1",
+          "ParameterKey": "cass_lemms_pha1hourf1",
+          "UCD": "phys.electron",
+          "Units": "cm-2.sr-1.s-1.keV-1",
+          "RenderingHints": {
+            "DisplayType": "Spectrogram"
+          },
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "NumberFlux"
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,225 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2.4.1.xsd",
+    "Version": "2.4.1",
+    "NumericalData": {
+      "ResourceID": "spase://CNES/NumericalData/CDPP-AMDA/Cassini/MAG/cass-mag-jup",
+      "ResourceHeader": {
+        "ResourceName": "flyby jupiter",
+        "AlternateName": "high resolution MAG data during Jupiter flyby",
+        "ReleaseDate": "2019-08-23T10:50:36Z",
+        "Description": "High-resolution magnetic field data from the Cassini magnetometer during the Jupiter flyby obtained from NASA/PDS plasma node\n             * J3 - J3 (IAU_JUPITER) is a Jovicentric cartesian coordinate system consistent with the IAU 1997 definition of the System 3 prime meridian. It consists of X (in Jovian equatorial plane, along S3 1997 prime meridian), Y (completes right handed set), and Z (parallel to the Jovian spin axis).       \n             * JMXYZ - JMAG XYZ is a  Jovicentric cartesian coordinate system which consists of X (in the plane containing Z and the S3 1997 Prime Meridian), Y (completes right handed set), and Z (the Jupiter dipole).   \n              * RTN - RTN coordinates consist of R (radial component, Sun to the spacecraft), T (tangential component, parallel to the Solar Equatorial plane and perpendicular to R), and N (normal component, completes right handed set).  \n            ",
+        "Contact": [
+          {
+            "PersonID": "spase://CNES/Person/CDPP-AMDA/Michele.Dougherty",
+            "Role": "PrincipalInvestigator"
+          },
+          {
+            "PersonID": "spase://CNES/Person/CDPP-AMDA/Steve.Kellock",
+            "Role": "DataProducer"
+          }
+        ]
+      },
+      "AccessInformation": [
+        {
+          "RepositoryID": "spase://SMWG/Repository/CDPP/AMDA",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDPP/AMDA HAPI Server",
+            "URL": "http://amda.irap.omp.eu/service/hapi",
+            "Style": "HAPI",
+            "Description": "Web Service to this product using the HAPI interface."
+          },
+          "Format": "CSV",
+          "Acknowledgement": "Thank you for acknowledging the use of AMDA in publications with wording like \"Data analysis was performed with the AMDA science analysis system provided by the Centre de Données de la Physique des Plasmas (CDPP) supported by CNRS, CNES, Observatoire de Paris and Université Paul Sabatier, Toulouse\".. See the Rules of the road at http://amda.cdpp.eu/help/policy.html. Please acknowledge the Data Providers."
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/CDPP/AMDA",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDPP/AMDA Web application",
+            "URL": "http://amda.cdpp.eu",
+            "Description": "Access to Data via CDPP/AMDA Web application."
+          },
+          "Format": [
+            "CSV",
+            "VOTable",
+            "CDF",
+            "PNG"
+          ],
+          "Acknowledgement": "Thank you for acknowledging the use of AMDA in publications with wording like \"Data analysis was performed with the AMDA science analysis system provided by the Centre de Données de la Physique des Plasmas (CDPP) supported by CNRS, CNES, Observatoire de Paris and Université Paul Sabatier, Toulouse\".. See the Rules of the road at http://amda.cdpp.eu/help/policy.html. Please acknowledge the Data Providers."
+        }
+      ],
+      "ProviderName": "PDS",
+      "ProviderResourceName": "CO-E_SW_J_S-MAG-3-RDR-FULL-RES-V2.0",
+      "InstrumentID": "spase://CNES/Instrument/CDPP-AMDA/Cassini/MAG",
+      "MeasurementType": "MagneticField",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "2001-01-01T02:26:04Z",
+          "StopDate": "2001-03-02T06:32:37Z"
+        },
+        "CadenceMin": "PT0.031S",
+        "CadenceMax": "PT8S"
+      },
+      "ObservedRegion": "Jupiter",
+      "Caveats": "These data contain persistent noise signals at 0.2, 8, 16 Hz, and associated  \nharmonics. This noise was not observed during ground testing of the           \ninstruments and is anticipated to be interference arising from the spacecraft.\nRemoval of these signals is at the user's discretion.",
+      "Parameter": [
+        {
+          "Name": "b_j3",
+          "ParameterKey": "cass_bj3_jup",
+          "Description": "Magnetic field vector components in Jup_IAU coordinates ",
+          "UCD": "phys.magField",
+          "Units": "nT",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "bx",
+                "Index": "1",
+                "ParameterKey": "cass_bj3_jup(0)"
+              },
+              {
+                "Name": "by",
+                "Index": "2",
+                "ParameterKey": "cass_bj3_jup(1)"
+              },
+              {
+                "Name": "bz",
+                "Index": "3",
+                "ParameterKey": "cass_bj3_jup(2)"
+              }
+            ]
+          },
+          "Field": {
+            "Qualifier": "Vector",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "b_jm",
+          "ParameterKey": "cass_bjm_jup",
+          "Description": "Magnetic field vector components in JMAG coordinates ",
+          "UCD": "phys.magField",
+          "Units": "nT",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "bx",
+                "Index": "1",
+                "ParameterKey": "cass_bjm_jup(0)"
+              },
+              {
+                "Name": "by",
+                "Index": "2",
+                "ParameterKey": "cass_bjm_jup(1)"
+              },
+              {
+                "Name": "bz",
+                "Index": "3",
+                "ParameterKey": "cass_bjm_jup(2)"
+              }
+            ]
+          },
+          "Field": {
+            "Qualifier": "Vector",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "b_rtn",
+          "ParameterKey": "cass_b_jup",
+          "Description": "Magnetic field vector components in RTN coordinates ",
+          "UCD": "phys.magField",
+          "Units": "nT",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "br",
+                "Index": "1",
+                "ParameterKey": "cass_b_jup(0)"
+              },
+              {
+                "Name": "bt",
+                "Index": "2",
+                "ParameterKey": "cass_b_jup(1)"
+              },
+              {
+                "Name": "bn",
+                "Index": "3",
+                "ParameterKey": "cass_b_jup(2)"
+              }
+            ]
+          },
+          "Field": {
+            "Qualifier": "Vector",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "|b|",
+          "ParameterKey": "cass_bmag_jup",
+          "Description": "Magnetic field vector magnitude",
+          "UCD": "phys.magField",
+          "Units": "nT",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Field": {
+            "Qualifier": "Magnitude",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "phi",
+          "ParameterKey": "cass_b_jup_phi",
+          "Description": "Magnetic field phi angle",
+          "UCD": "phys.magField",
+          "Units": "degrees",
+          "UnitsConversion": "1e-9&gt;T",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Structure": {
+            "Size": "1"
+          },
+          "Field": {
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "theta",
+          "ParameterKey": "cass_b_jup_theta",
+          "Description": "Magnetic field theta angle",
+          "UCD": "phys.magField",
+          "Units": "degrees",
+          "UnitsConversion": "1e-9&gt;T",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Structure": {
+            "Size": "1"
+          },
+          "Field": {
+            "FieldQuantity": "Magnetic"
+          }
+        }
+      ]
+    }
+  }
+}

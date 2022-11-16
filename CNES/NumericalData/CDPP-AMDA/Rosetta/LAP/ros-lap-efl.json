@@ -1,0 +1,128 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2.4.1.xsd",
+    "Version": "2.4.1",
+    "NumericalData": {
+      "ResourceID": "spase://CNES/NumericalData/CDPP-AMDA/Rosetta/LAP/ros-lap-efl",
+      "ResourceHeader": {
+        "ResourceName": "e-field component (EFL)",
+        "AlternateName": "Electric field component, calculated on ground by\ntaking the difference between floating probe measurements on both probes and\ndividing by distance",
+        "ReleaseDate": "2019-09-02T09:02:22Z",
+        "Description": "\nThe two LAP probes could be used to measure the component of the electric field along their \nseparation vector, by measuring the voltage of them, taking the difference and dividing by the \nseparation distance (5.0 m). Each probe could be fed by a bias current as is typically done on \nelectric field instruments in tenuous plasmas, or be disconnected from the bias circuitry to \nensure a good zero bias current (floating probes) as is typically done on sounding rockets.  \nBias currents were used in the early part of the mission, but when the comet ionosphere \ndeveloped, the floating mode was found to give much more consistent data. Only data from \nthe floating mode have been used for providing E-field data, and only when both probes are \nsunlit.\n\nPositive value refers to electric field  pointing in the direction from probe 1 to probe 2.\n \nThe booms are not equal in length (2.24 and 1.62 m) and mounted on a big spacecraft (solar \npanel wingspan 32 m), so one cannot expect LAP to provide a useful DC electric field estimate. \nA moving average of the E-field over 32 s is therefore subtracted from the data in the EFL files. \nThe effective bandwidth of the data therefore is about 0.03 Hz to 20 Hz, the upper \nlimit set by the analog anti-aliasing filters. Note that the filtering may distort the lowest \nfrequencies. \n\nThere are no external comparison data for assessing the absolute accuracy of the LAP E-field \nmeasurements. The data themselves look very clean and well behaved [Karlsson et al., 2017; \nAndré et al, 2017], with very little of common mode signal remaining, despite the s/c poten tial \nbeing both high and highly variable. The technique with floating probes is proven on numerous \nsounding rockets in the terrestrial ionosphere [Maynard, 1998].\n\nThis is a preliminary data set which will be replaced by another in a few months.\n",
+        "Contact": [
+          {
+            "PersonID": "spase://CNES/Person/CDPP-AMDA/Anders.Eriksson",
+            "Role": "PrincipalInvestigator"
+          },
+          {
+            "PersonID": "spase://CNES/Person/CDPP-AMDA/Erik.Johansson",
+            "Role": "DataProducer"
+          }
+        ],
+        "InformationURL": [
+          {
+            "Name": "RPC User Guide",
+            "URL": "http://amda.irap.omp.eu/help/parameters/RPC_USER_GUIDE.PDF"
+          },
+          {
+            "Name": "RPC LAP User Guide",
+            "URL": "http://amda.irap.omp.eu/help/parameters/RO-IRFU-LAP-UG.PDF"
+          },
+          {
+            "Name": "RPC-LAP to Planetary Science Archive Interface Control Document",
+            "URL": "http://amda.irap.omp.eu/help/parameters/RO-IRFU-LAP-EAICD.PDF"
+          },
+          {
+            "Name": "RPC-LAP Report on cross-calibration of LAP data to measurements by other RPC instruments",
+            "URL": "http://amda.irap.omp.eu/help/parameters/RO-IRFU-LAP-XCAL_1_0_PDF_A-1b.PDF"
+          }
+        ]
+      },
+      "AccessInformation": [
+        {
+          "RepositoryID": "spase://SMWG/Repository/CDPP/AMDA",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDPP/AMDA HAPI Server",
+            "URL": "http://amda.irap.omp.eu/service/hapi",
+            "Style": "HAPI",
+            "Description": "Web Service to this product using the HAPI interface."
+          },
+          "Format": "CSV",
+          "Acknowledgement": "Thank you for acknowledging the use of AMDA in publications with wording like \"Data analysis was performed with the AMDA science analysis system provided by the Centre de Données de la Physique des Plasmas (CDPP) supported by CNRS, CNES, Observatoire de Paris and Université Paul Sabatier, Toulouse\".. See the Rules of the road at http://amda.cdpp.eu/help/policy.html. Please acknowledge the Data Providers."
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/CDPP/AMDA",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDPP/AMDA Web application",
+            "URL": "http://amda.cdpp.eu",
+            "Description": "Access to Data via CDPP/AMDA Web application."
+          },
+          "Format": [
+            "CSV",
+            "VOTable",
+            "CDF",
+            "PNG"
+          ],
+          "Acknowledgement": "Thank you for acknowledging the use of AMDA in publications with wording like \"Data analysis was performed with the AMDA science analysis system provided by the Centre de Données de la Physique des Plasmas (CDPP) supported by CNRS, CNES, Observatoire de Paris and Université Paul Sabatier, Toulouse\".. See the Rules of the road at http://amda.cdpp.eu/help/policy.html. Please acknowledge the Data Providers."
+        }
+      ],
+      "ProviderName": "PSA",
+      "ProviderResourceName": "RO-C-RPCLAP-5-xxx-DERIV2-V1.0",
+      "InstrumentID": "spase://CNES/Instrument/CDPP-AMDA/Rosetta/LAP",
+      "MeasurementType": "ThermalPlasma",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "2015-05-20T15:17:20Z",
+          "StopDate": "2016-09-30T10:30:20Z"
+        },
+        "CadenceMin": "PT0.05S",
+        "CadenceMax": "PT35S"
+      },
+      "Caveats": "Sampling config : Value | Averaged Samples | DownSampling Rate\n           *   0  |   1    |   1\n           *   1  |   2    |   1 \n           *   2  |   2    |   2\n           *   3  |   4    |   4\n           *   4  |  64    |   4\n           *   5  |  32    |  32        \n           *   6  |  64    |  32\n           *   7  |  64    |  64\n           *   8  | 128    | 128\n           *   9  | 256    | 256\n           \n           Quality Flag : \n           \n           A quality flag is a (base 10) integer that is constructed in the two steps below:\n           * Add together the constants associated with the relevant quality-related effects listed below. Note that these constants are chosen such that every digit represents up to three true/false values for the presence/absence of three specific separate quality-related effects.\n           * Should the three quality-related effects be irrelevant for the given data product, then that digit is replaced by the digit “9”.\n           \n           Quality flag event description :\n           * +1 - Low quality sweep analysis model fit\n           * +2 - One of two meanings: (1) Low sample size; an average is based on fewer data points than nominal (due to filtering or otherwise) and applies to sweep steps and downsampled time series. (2) zero-padding; zeros replace lost samples for the purpose of calculating PSD.\n           * +10 - One of two meanings: (1) Sweep data product and data products based on sweeps: SAA rotation of more than 0.05° during sweep. (2) Downsampled time series data product: Bias change within the 32 s downsampling period.\n           * +20 - Probe in partial or full shadow\n           * +100 - Rosetta wheel off-loading (WOL) or Orbit-control-maneuver (OCM)\n           * +200 - One of two meanings: (1) For LAP1: LDL disturbance (LAP2 in LDL mode); (2) For LAP2: Contamination signature possibly present\n           * +400 - Saturation\n           \n           Example: suppose that one encounters the quality flag “109”. 109 = 100 + 9 means (1) that there is an ongoing wheel off-loading (+100), and (2) that the quality-related effects associated with +1 and +2 cannot occur even in principle for the kind of data that one is looking at.                               \n        ",
+      "Parameter": [
+        {
+          "Name": "e-field comp",
+          "ParameterKey": "ros_lap_efl",
+          "Description": "Electric field component, calculated on ground by \n                taking the difference between floating probe measurements on both probes and \n                dividing by distance, (V_P2-V_P1)/L. Positive value refers to electric field \n                pointing in the direction from probe 1 to probe 2.",
+          "Units": "mV/m",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "FillValue": "-1.e+09",
+          "Field": {
+            "Qualifier": "Scalar",
+            "FieldQuantity": "Electric"
+          }
+        },
+        {
+          "Name": "sampling conf",
+          "ParameterKey": "ros_lap_efl_s",
+          "Description": "Number that describes the exact combination of onboard s/w averaging and downsampling. The exact values are pointers into a table \nthat describes both the number of samples that are averaged over and the downsampling rate",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "quality flag",
+          "ParameterKey": "ros_lap_efl_f",
+          "Description": "Quality flag constructed as the sum of multiple terms, depending on what quality related effects are present. Each digit is either in \nthe range 0 (best) to 7 (worst), or 9 (not used).",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        }
+      ]
+    }
+  }
+}

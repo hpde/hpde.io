@@ -1,0 +1,143 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2.4.1.xsd",
+    "Version": "2.4.1",
+    "NumericalData": {
+      "ResourceID": "spase://CNES/NumericalData/CDPP-AMDA/PSP/psp-fld-qfl",
+      "ResourceHeader": {
+        "ResourceName": "quality flag",
+        "AlternateName": "PSP FIELDS Quality flags",
+        "ReleaseDate": "2022-09-07T05:38:58Z",
+        "Description": " \n             The quality flags is a bitwise variable, meaning that multiple flags can be set for a single time, by adding flag values. Current flagged values are: \n             * 1: FIELDS antenna bias sweep, \n             * 2: PSP thruster firing, \n             * 4: SCM Calibration, \n             * 8: PSP rotations for MAG calibration (MAG rolls), \n             * 16: FIELDS MAG calibration sequence, \n             * 32: SWEAP SPC in electron mode, \n             * 64: PSP Solar limb sensor (SLS) test. \n             * 128: PSP spacecraft is off umbra pointing (heat shield not pointed sunward). \n             * 0: A value of zero corresponds to no set flags\n             The data is available both in the form of an integer and as a vector of 8 components corresponding to the flagging of each scenarii.\n         ",
+        "Acknowledgement": "\n         ",
+        "Contact": {
+          "PersonID": "spase://SMWG/Person/Stuart.D.Bale",
+          "Role": "PrincipalInvestigator"
+        },
+        "InformationURL": {
+          "Name": "FIELDS data release information",
+          "URL": "http://fields.ssl.berkeley.edu/data/",
+          "Description": "\n              Relevant information to the data released for the FIELDS instrument on the Parker Solar Probe\n           "
+        }
+      },
+      "AccessInformation": [
+        {
+          "RepositoryID": "spase://SMWG/Repository/CDPP/AMDA",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDPP/AMDA HAPI Server",
+            "URL": "http://amda.irap.omp.eu/service/hapi",
+            "Style": "HAPI",
+            "Description": "Web Service to this product using the HAPI interface."
+          },
+          "Format": "CSV",
+          "Acknowledgement": "Thank you for acknowledging the use of AMDA in publications with wording like \"Data analysis was performed with the AMDA science analysis system provided by the Centre de Données de la Physique des Plasmas (CDPP) supported by CNRS, CNES, Observatoire de Paris and Université Paul Sabatier, Toulouse\".. See the Rules of the road at http://amda.cdpp.eu/help/policy.html. Please acknowledge the Data Providers."
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/CDPP/AMDA",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDPP/AMDA Web application",
+            "URL": "http://amda.cdpp.eu",
+            "Description": "Access to Data via CDPP/AMDA Web application."
+          },
+          "Format": [
+            "CSV",
+            "VOTable",
+            "CDF",
+            "PNG"
+          ],
+          "Acknowledgement": "Thank you for acknowledging the use of AMDA in publications with wording like \"Data analysis was performed with the AMDA science analysis system provided by the Centre de Données de la Physique des Plasmas (CDPP) supported by CNRS, CNES, Observatoire de Paris and Université Paul Sabatier, Toulouse\".. See the Rules of the road at http://amda.cdpp.eu/help/policy.html. Please acknowledge the Data Providers."
+        }
+      ],
+      "ProviderName": "SPDF",
+      "ProviderResourceName": "psp/fields/l2/mag_rtn_1min/",
+      "InstrumentID": "spase://CNES/Instrument/CDPP-AMDA/PSP/MAG",
+      "MeasurementType": "InstrumentStatus",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "2018-10-02T03:48:30Z",
+          "StopDate": "2022-03-31T23:59:30Z"
+        },
+        "Cadence": "PT60S"
+      },
+      "ObservedRegion": "Heliosphere.Inner",
+      "Parameter": [
+        {
+          "Name": "q value",
+          "ParameterKey": "psp_fld_qfl",
+          "Description": "\n             Bitwise variable quality\n         ",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Structure": {
+            "Size": "1"
+          },
+          "Support": {
+            "SupportQuantity": "InstrumentMode"
+          }
+        },
+        {
+          "Name": "q vector",
+          "ParameterKey": "psp_fld_qflbin",
+          "Description": "\n              Quality flags described as a vector. Each component corresponds to a flag value\n          ",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Structure": {
+            "Size": "8",
+            "Element": [
+              {
+                "Name": "antenna sweep",
+                "Index": "1",
+                "ParameterKey": "psp_fld_qflbin(0)"
+              },
+              {
+                "Name": "thruster firing",
+                "Index": "2",
+                "ParameterKey": "psp_fld_qflbin(1)"
+              },
+              {
+                "Name": "SCM calibr.",
+                "Index": "3",
+                "ParameterKey": "psp_fld_qflbin(2)"
+              },
+              {
+                "Name": "PSP rotations",
+                "Index": "4",
+                "ParameterKey": "psp_fld_qflbin(3)"
+              },
+              {
+                "Name": "MAG calibr. seq.",
+                "Index": "5",
+                "ParameterKey": "psp_fld_qflbin(4)"
+              },
+              {
+                "Name": "SWP cup e- mode",
+                "Index": "6",
+                "ParameterKey": "psp_fld_qflbin(5)"
+              },
+              {
+                "Name": "SLS test",
+                "Index": "7",
+                "ParameterKey": "psp_fld_qflbin(6)"
+              },
+              {
+                "Name": "off umbra",
+                "Index": "8",
+                "ParameterKey": "psp_fld_qflbin(7)"
+              }
+            ]
+          },
+          "Support": {
+            "SupportQuantity": "InstrumentMode"
+          }
+        }
+      ]
+    }
+  }
+}

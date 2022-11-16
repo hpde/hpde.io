@@ -1,0 +1,102 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2.4.1.xsd",
+    "Version": "2.4.1",
+    "NumericalData": {
+      "ResourceID": "spase://CNES/NumericalData/CDPP-AMDA/MEX/MARSIS/mex-marsis-ele",
+      "ResourceHeader": {
+        "ResourceName": "total electron content",
+        "ReleaseDate": "2016-01-27T12:27:11Z",
+        "Description": "The level 5 TEC data are derived following a method described in \n             details by Mouginot et al. Planetary Space Science, V56, 2008. \n             The correction method consists in finding the three parameters [ a1 ; a2 ; a3 ] \n             defining the signal distortion phase Δφ induced by the ionosphere. \n             In the time domain, the ionosphere distortion generates a delay and a spreading \n             of the radar pulse. It is clearly visible on MARSIS radargram without correction. \n             A by-product of the ionospheric correction is the TEC, that can be easily obtained\n             from the [ a1 ; a2 ; a3 ] parameters. [ a1 ; a2 ; a3 ] are \n             investigated in ordrer to get Δφ with the best SNR As initial conditions for this\n             optimization, we use the parameters fitting with a simplified Gaussian \n             density-profile of the ionosphere.\nThen the optimization is done by using the following constraints:\n * A constraint on the vertical position of the surface echo estimated with the digital elevation model MOLA.\n * A constraint on the SNR. The signal amplitude must be maximal after correction.\n",
+        "Contact": [
+          {
+            "PersonID": "spase://CNES/Person/CDPP-AMDA/W.Kofman",
+            "Role": "DataProducer"
+          },
+          {
+            "PersonID": "spase://CNES/Person/CDPP-AMDA/C.Grima",
+            "Role": "DataProducer"
+          }
+        ],
+        "InformationURL": {
+          "Name": "MARSIS TEC documentation",
+          "URL": "ftp://psa.esac.esa.int/pub/mirror/MARS-EXPRESS/MARSIS/MEX-M-MARSIS-5-DDR-SS-TEC-V1.0/DOCUMENT/MARSIS_EAICD_TEC.PDF"
+        }
+      },
+      "AccessInformation": [
+        {
+          "RepositoryID": "spase://SMWG/Repository/CDPP/AMDA",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDPP/AMDA HAPI Server",
+            "URL": "http://amda.irap.omp.eu/service/hapi",
+            "Style": "HAPI",
+            "Description": "Web Service to this product using the HAPI interface."
+          },
+          "Format": "CSV",
+          "Acknowledgement": "Thank you for acknowledging the use of AMDA in publications with wording like \"Data analysis was performed with the AMDA science analysis system provided by the Centre de Données de la Physique des Plasmas (CDPP) supported by CNRS, CNES, Observatoire de Paris and Université Paul Sabatier, Toulouse\".. See the Rules of the road at http://amda.cdpp.eu/help/policy.html. Please acknowledge the Data Providers."
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/CDPP/AMDA",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDPP/AMDA Web application",
+            "URL": "http://amda.cdpp.eu",
+            "Description": "Access to Data via CDPP/AMDA Web application."
+          },
+          "Format": [
+            "CSV",
+            "VOTable",
+            "CDF",
+            "PNG"
+          ],
+          "Acknowledgement": "Thank you for acknowledging the use of AMDA in publications with wording like \"Data analysis was performed with the AMDA science analysis system provided by the Centre de Données de la Physique des Plasmas (CDPP) supported by CNRS, CNES, Observatoire de Paris and Université Paul Sabatier, Toulouse\".. See the Rules of the road at http://amda.cdpp.eu/help/policy.html. Please acknowledge the Data Providers."
+        }
+      ],
+      "ProviderName": "PSA",
+      "ProviderResourceName": "MEX-M-MARSIS-5-DDR-SS-TEC-[EXT1]-V1.0",
+      "ProviderProcessingLevel": "L5",
+      "InstrumentID": "spase://CNES/Instrument/CDPP-AMDA/MEX/MARSIS",
+      "MeasurementType": "Waves",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "2005-06-19T04:03:28Z",
+          "StopDate": "2007-09-30T23:41:11Z"
+        },
+        "CadenceMin": "PT1S",
+        "CadenceMax": "PT10S"
+      },
+      "ObservedRegion": "Mars",
+      "Caveats": "Data Quality Description :\n              * -1: percentage of low SNR data not available\n              * 0: no low SNR data                         \n              * 1: less than 25% low SNR data               \n              * 2: less than 50% low SNR data              \n              * 3: less than 75% low SNR data               \n              * 4: more than 75% low SNR data       \n        ",
+      "Parameter": [
+        {
+          "Name": "tec",
+          "ParameterKey": "mex_marsis_tec",
+          "Description": "Total electron content derived from the ionosphere        \n                   distortion correction",
+          "UCD": "phys.density;phys.electron",
+          "Units": "m-2",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "quality flag",
+          "ParameterKey": "mex_marsis_tecflag",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        }
+      ]
+    }
+  }
+}

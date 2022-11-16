@@ -1,0 +1,113 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2.4.1.xsd",
+    "Version": "2.4.1",
+    "NumericalData": {
+      "ResourceID": "spase://CNES/NumericalData/CDPP-AMDA/THEMIS/C/ESA/thc-peem-all",
+      "ResourceHeader": {
+        "ResourceName": "electron onboard moments",
+        "ReleaseDate": "2022-09-29T02:01:35Z",
+        "Description": "ToDo",
+        "Contact": {
+          "PersonID": "spase://SMWG/Person/Vassilis.Angelopoulos",
+          "Role": "PrincipalInvestigator"
+        }
+      },
+      "AccessInformation": [
+        {
+          "RepositoryID": "spase://SMWG/Repository/CDPP/AMDA",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDPP/AMDA HAPI Server",
+            "URL": "http://amda.irap.omp.eu/service/hapi",
+            "Style": "HAPI",
+            "Description": "Web Service to this product using the HAPI interface."
+          },
+          "Format": "CSV",
+          "Acknowledgement": "Thank you for acknowledging the use of AMDA in publications with wording like \"Data analysis was performed with the AMDA science analysis system provided by the Centre de Données de la Physique des Plasmas (CDPP) supported by CNRS, CNES, Observatoire de Paris and Université Paul Sabatier, Toulouse\".. See the Rules of the road at http://amda.cdpp.eu/help/policy.html. Please acknowledge the Data Providers."
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/CDPP/AMDA",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDPP/AMDA Web application",
+            "URL": "http://amda.cdpp.eu",
+            "Description": "Access to Data via CDPP/AMDA Web application."
+          },
+          "Format": [
+            "CSV",
+            "VOTable",
+            "CDF",
+            "PNG"
+          ],
+          "Acknowledgement": "Thank you for acknowledging the use of AMDA in publications with wording like \"Data analysis was performed with the AMDA science analysis system provided by the Centre de Données de la Physique des Plasmas (CDPP) supported by CNRS, CNES, Observatoire de Paris and Université Paul Sabatier, Toulouse\".. See the Rules of the road at http://amda.cdpp.eu/help/policy.html. Please acknowledge the Data Providers."
+        }
+      ],
+      "ProviderName": "IRAP_THEMIS",
+      "InstrumentID": "spase://CNES/Instrument/CDPP-AMDA/THEMIS/C/ESA",
+      "MeasurementType": "ThermalPlasma",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "2007-08-10T00:00:32Z",
+          "StopDate": "2022-09-26T04:11:22Z"
+        },
+        "Cadence": "PT3S"
+      },
+      "ObservedRegion": "Earth.Magnetosphere",
+      "Parameter": [
+        {
+          "Name": "density",
+          "ParameterKey": "thc_n_peem",
+          "Description": "Electron Density",
+          "UCD": "phys.density;phys.electron",
+          "Units": "cm-3",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "NumberDensity"
+          }
+        },
+        {
+          "Name": "temperature",
+          "ParameterKey": "thc_t_peem",
+          "Description": "Temperature",
+          "UCD": "phys.temperature;phys.electron",
+          "Units": "eV",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "t_para",
+                "Index": "1",
+                "ParameterKey": "thc_t_peem(2)"
+              },
+              {
+                "Name": "t_perp1",
+                "Index": "2",
+                "ParameterKey": "thc_t_peem(0)"
+              },
+              {
+                "Name": "t_perp2",
+                "Index": "3",
+                "ParameterKey": "thc_t_peem(1)"
+              }
+            ]
+          },
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "Temperature"
+          }
+        }
+      ]
+    }
+  }
+}

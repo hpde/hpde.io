@@ -1,0 +1,185 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2.4.1.xsd",
+    "Version": "2.4.1",
+    "NumericalData": {
+      "ResourceID": "spase://CNES/NumericalData/CDPP-AMDA/Solar_Orbiter/PAS/so-pas-mom",
+      "ResourceHeader": {
+        "ResourceName": "onboard moments",
+        "ReleaseDate": "2022-09-23T03:18:16Z",
+        "Description": "ToDo",
+        "Contact": [
+          {
+            "PersonID": "spase://SMWG/Person/Philippe.Louarn",
+            "Role": "PrincipalInvestigator"
+          },
+          {
+            "PersonID": "spase://CNES/Person/CDPP-AMDA/Andrei.Fedorov",
+            "Role": "PrincipalInvestigator"
+          }
+        ],
+        "Association": {
+          "AssociationID": "solo-pas-l1",
+          "AssociationType": "PartOf",
+          "Note": "L1"
+        }
+      },
+      "AccessInformation": [
+        {
+          "RepositoryID": "spase://SMWG/Repository/CDPP/AMDA",
+          "Availability": "Online",
+          "AccessRights": "PartiallyRestricted",
+          "AccessURL": {
+            "Name": "CDPP/AMDA HAPI Server",
+            "URL": "http://amda.irap.omp.eu/service/hapi",
+            "Style": "HAPI",
+            "Description": "Web Service to this product using the HAPI interface."
+          },
+          "Format": "CSV",
+          "Acknowledgement": "Thank you for acknowledging the use of AMDA in publications with wording like \"Data analysis was performed with the AMDA science analysis system provided by the Centre de Données de la Physique des Plasmas (CDPP) supported by CNRS, CNES, Observatoire de Paris and Université Paul Sabatier, Toulouse\".. See the Rules of the road at http://amda.cdpp.eu/help/policy.html. Please acknowledge the Data Providers."
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/CDPP/AMDA",
+          "Availability": "Online",
+          "AccessRights": "PartiallyRestricted",
+          "AccessURL": {
+            "Name": "CDPP/AMDA Web application",
+            "URL": "http://amda.cdpp.eu",
+            "Description": "Access to Data via CDPP/AMDA Web application."
+          },
+          "Format": [
+            "CSV",
+            "VOTable",
+            "CDF",
+            "PNG"
+          ],
+          "Acknowledgement": "Thank you for acknowledging the use of AMDA in publications with wording like \"Data analysis was performed with the AMDA science analysis system provided by the Centre de Données de la Physique des Plasmas (CDPP) supported by CNRS, CNES, Observatoire de Paris and Université Paul Sabatier, Toulouse\".. See the Rules of the road at http://amda.cdpp.eu/help/policy.html. Please acknowledge the Data Providers."
+        }
+      ],
+      "ProviderName": "IRAP",
+      "InstrumentID": "spase://CNES/Instrument/CDPP-AMDA/Solar_Orbiter/PAS",
+      "MeasurementType": "ThermalPlasma",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "2012-06-18T15:58:30Z",
+          "StopDate": "2022-09-22T20:56:03Z"
+        },
+        "CadenceMin": "PT0.25S",
+        "CadenceMax": "PT10S"
+      },
+      "ObservedRegion": "Heliosphere.Inner",
+      "Parameter": [
+        {
+          "Name": "density",
+          "ParameterKey": "pas_mom_n",
+          "Units": "cm**-3",
+          "Particle": {
+            "ParticleQuantity": "NumberDensity"
+          }
+        },
+        {
+          "Name": "v_s/c",
+          "ParameterKey": "pas_mom_v",
+          "Units": "km/s",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "vx",
+                "Qualifier": "Component.I",
+                "Index": "1",
+                "ParameterKey": "pas_mom_v(0)"
+              },
+              {
+                "Name": "vy",
+                "Qualifier": "Component.J",
+                "Index": "2",
+                "ParameterKey": "pas_mom_v(1)"
+              },
+              {
+                "Name": "vz",
+                "Qualifier": "Component.K",
+                "Index": "3",
+                "ParameterKey": "pas_mom_v(2)"
+              }
+            ]
+          },
+          "Particle": {
+            "ParticleQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "|v_s/c|",
+          "ParameterKey": "pas_mom_v_tot",
+          "Description": "Velocity magnitude",
+          "Units": "km/s",
+          "Particle": {
+            "ParticleQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "temperature",
+          "ParameterKey": "pas_mom_t",
+          "Units": "eV",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Particle": {
+            "ParticleQuantity": "Temperature"
+          }
+        },
+        {
+          "Name": "pressure_s/c",
+          "ParameterKey": "pas_mom_press",
+          "Units": "J*cm**-3",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Structure": {
+            "Size": "6",
+            "Element": [
+              {
+                "Name": "press_xx",
+                "Index": "1",
+                "ParameterKey": "pas_mom_press(0)"
+              },
+              {
+                "Name": "press_yy",
+                "Index": "2",
+                "ParameterKey": "pas_mom_press(1)"
+              },
+              {
+                "Name": "press_zz",
+                "Index": "3",
+                "ParameterKey": "pas_mom_press(2)"
+              },
+              {
+                "Name": "press_xy",
+                "Index": "4",
+                "ParameterKey": "pas_mom_press(3)"
+              },
+              {
+                "Name": "press_xz",
+                "Index": "5",
+                "ParameterKey": "pas_mom_press(4)"
+              },
+              {
+                "Name": "press_yz",
+                "Index": "6",
+                "ParameterKey": "pas_mom_press(5)"
+              }
+            ]
+          },
+          "Particle": {
+            "ParticleQuantity": "Pressure"
+          }
+        }
+      ]
+    }
+  }
+}

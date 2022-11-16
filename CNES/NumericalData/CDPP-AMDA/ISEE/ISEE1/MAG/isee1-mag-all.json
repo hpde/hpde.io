@@ -1,0 +1,175 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2.4.1.xsd",
+    "Version": "2.4.1",
+    "NumericalData": {
+      "ResourceID": "spase://CNES/NumericalData/CDPP-AMDA/ISEE/ISEE1/MAG/isee1-mag-all",
+      "ResourceHeader": {
+        "ResourceName": "key parameters",
+        "ReleaseDate": "2012-03-06T16:44:28Z",
+        "Description": "This data set contains magnetic field component\nand magnitude averages every minute, with components given in spacecraft, \nGSE and GSM coordinates.  Standard deviations in the averages are given,\nas are differences between the averages and model field vectors.\nGeocentric (GSE and GSM) spacecraft position information is given,\nas is ISEE1-ISEE2 separation vector information.  ISEE 1 spin vector\ndirection and ISEE 1 velocity vector information, relative to the \nEarth and to ISEE 2, are given.  Miscellaneous other parameters are \nalso given.  Data are accessible as plots, lists and files from \nCDAWeb, and as CDF files from CDAWeb's ftp area.",
+        "Acknowledgement": "ISEE Magnetometer Team at UCLA/IGPP and the \nCDAWeb team at NASA/GSFC",
+        "Contact": {
+          "PersonID": "spase://SMWG/Person/Elena.Budnik",
+          "Role": "TechnicalContact"
+        },
+        "InformationURL": {
+          "Name": "UCLA-IGPP ISEE Magnetometer Interactive Data Server",
+          "URL": "http://www-ssc.igpp.ucla.edu/forms/isee",
+          "Description": "Data at 60-s and 4-s resolution are available for the entire ISEE mission (October 22, 1977 through  September 25, 1987) and can be displayed either as a plot or an ASCII listing. The ISEE-1 and -2 magnetometer data server is provided by the Institute of Geophysics and Planetary Physics (IGPP) at UCLA, through a grant to Robert J. Strangeway from the NASA Space Physics Data System (SPDS)."
+        }
+      },
+      "AccessInformation": [
+        {
+          "RepositoryID": "spase://SMWG/Repository/CDPP/AMDA",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDPP/AMDA HAPI Server",
+            "URL": "http://amda.irap.omp.eu/service/hapi",
+            "Style": "HAPI",
+            "Description": "Web Service to this product using the HAPI interface."
+          },
+          "Format": "CSV",
+          "Acknowledgement": "Thank you for acknowledging the use of AMDA in publications with wording like \"Data analysis was performed with the AMDA science analysis system provided by the Centre de Données de la Physique des Plasmas (CDPP) supported by CNRS, CNES, Observatoire de Paris and Université Paul Sabatier, Toulouse\".. See the Rules of the road at http://amda.cdpp.eu/help/policy.html. Please acknowledge the Data Providers."
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/CDPP/AMDA",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDPP/AMDA Web application",
+            "URL": "http://amda.cdpp.eu",
+            "Description": "Access to Data via CDPP/AMDA Web application."
+          },
+          "Format": [
+            "CSV",
+            "VOTable",
+            "CDF",
+            "PNG"
+          ],
+          "Acknowledgement": "Thank you for acknowledging the use of AMDA in publications with wording like \"Data analysis was performed with the AMDA science analysis system provided by the Centre de Données de la Physique des Plasmas (CDPP) supported by CNRS, CNES, Observatoire de Paris and Université Paul Sabatier, Toulouse\".. See the Rules of the road at http://amda.cdpp.eu/help/policy.html. Please acknowledge the Data Providers."
+        }
+      ],
+      "ProcessingLevel": "Calibrated",
+      "ProviderName": "NSSDC",
+      "InstrumentID": "spase://CNES/Instrument/CDPP-AMDA/ISEE1/MAG",
+      "MeasurementType": "MagneticField",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "1977-10-22T14:49:00Z",
+          "StopDate": "1987-09-26T05:59:00Z"
+        },
+        "Cadence": "PT1M"
+      },
+      "ObservedRegion": [
+        "Earth.Magnetosphere",
+        "Earth.Magnetosheath",
+        "Heliosphere.NearEarth"
+      ],
+      "Parameter": [
+        {
+          "Name": "b_gsm",
+          "ParameterKey": "b_isee1",
+          "Description": "Triaxial magnetic field vector in GSM coordinates",
+          "UCD": "phys.magField",
+          "Cadence": "PT1M",
+          "Units": "nT",
+          "UnitsConversion": "1.0E-9>T",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GSM"
+          },
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Structure": {
+            "Size": "3",
+            "Description": "The three elements are BX, BY, BZ",
+            "Element": [
+              {
+                "Name": "bx",
+                "Index": "1",
+                "ParameterKey": "b_isee1(0)"
+              },
+              {
+                "Name": "by",
+                "Index": "2",
+                "ParameterKey": "b_isee1(1)"
+              },
+              {
+                "Name": "bz",
+                "Index": "3",
+                "ParameterKey": "b_isee1(2)"
+              }
+            ]
+          },
+          "Field": {
+            "Qualifier": "Vector",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "b_gse",
+          "ParameterKey": "b_isee1_gse",
+          "Description": "Triaxial magnetic field vector in GSM coordinates",
+          "UCD": "phys.magField",
+          "Cadence": "PT1M",
+          "Units": "nT",
+          "UnitsConversion": "1.0E-9>T",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GSE"
+          },
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Structure": {
+            "Size": "3",
+            "Description": "The three elements are BX, BY, BZ",
+            "Element": [
+              {
+                "Name": "bx",
+                "Index": "1",
+                "ParameterKey": "b_isee1_gse(0)"
+              },
+              {
+                "Name": "by",
+                "Index": "2",
+                "ParameterKey": "b_isee1_gse(1)"
+              },
+              {
+                "Name": "bz",
+                "Index": "3",
+                "ParameterKey": "b_isee1_gse(2)"
+              }
+            ]
+          },
+          "Field": {
+            "Qualifier": "Vector",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "|b|",
+          "ParameterKey": "isee1_mag_all_bt",
+          "Description": "Magnetic field magnitude",
+          "UCD": "phys.magField",
+          "Units": "nT",
+          "UnitsConversion": "1e-9&gt;T",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Structure": {
+            "Size": "1"
+          },
+          "Field": {
+            "FieldQuantity": "Magnetic"
+          }
+        }
+      ]
+    }
+  }
+}

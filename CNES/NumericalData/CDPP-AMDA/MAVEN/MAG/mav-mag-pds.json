@@ -1,0 +1,142 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2.4.1.xsd",
+    "Version": "2.4.1",
+    "NumericalData": {
+      "ResourceID": "spase://CNES/NumericalData/CDPP-AMDA/MAVEN/MAG/mav-mag-pds",
+      "ResourceHeader": {
+        "ResourceName": "0.03 sec",
+        "ReleaseDate": "2022-06-02T02:48:21Z",
+        "Description": " * Calibrated science vector magnetic-field data in Planetocentric coordinates (IAU Mars) vs. time (LID = urn:nasa:pds:maven.mag.calibrated:data.pc) \n           * Calibrated science vector magnetic-field  in Sun-State (MSO) coordinates vs. time (LID = urn:nasa:pds:maven.mag.calibrated:data.ss)\n         ",
+        "Acknowledgement": "Principal Investigator : John E.P. Connerney, NASA GODDARD, Greenbelt",
+        "Contact": {
+          "PersonID": "spase://SMWG/Person/John.E.P.Connerney",
+          "Role": "PrincipalInvestigator"
+        },
+        "InformationURL": {
+          "Name": "MAG web page, Summary sheet ",
+          "URL": "http://lasp.colorado.edu/home/maven/science/instrument-package/mag/"
+        }
+      },
+      "AccessInformation": [
+        {
+          "RepositoryID": "spase://SMWG/Repository/CDPP/AMDA",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDPP/AMDA HAPI Server",
+            "URL": "http://amda.irap.omp.eu/service/hapi",
+            "Style": "HAPI",
+            "Description": "Web Service to this product using the HAPI interface."
+          },
+          "Format": "CSV",
+          "Acknowledgement": "Thank you for acknowledging the use of AMDA in publications with wording like \"Data analysis was performed with the AMDA science analysis system provided by the Centre de Données de la Physique des Plasmas (CDPP) supported by CNRS, CNES, Observatoire de Paris and Université Paul Sabatier, Toulouse\".. See the Rules of the road at http://amda.cdpp.eu/help/policy.html. Please acknowledge the Data Providers."
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/CDPP/AMDA",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDPP/AMDA Web application",
+            "URL": "http://amda.cdpp.eu",
+            "Description": "Access to Data via CDPP/AMDA Web application."
+          },
+          "Format": [
+            "CSV",
+            "VOTable",
+            "CDF",
+            "PNG"
+          ],
+          "Acknowledgement": "Thank you for acknowledging the use of AMDA in publications with wording like \"Data analysis was performed with the AMDA science analysis system provided by the Centre de Données de la Physique des Plasmas (CDPP) supported by CNRS, CNES, Observatoire de Paris and Université Paul Sabatier, Toulouse\".. See the Rules of the road at http://amda.cdpp.eu/help/policy.html. Please acknowledge the Data Providers."
+        }
+      ],
+      "ProviderName": "PDS",
+      "ProviderResourceName": "maven-mag-calibrated/pc[ss]/highres",
+      "InstrumentID": "spase://CNES/Instrument/CDPP-AMDA/MAVEN/MAG",
+      "MeasurementType": "MagneticField",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "2014-10-10T00:00:00Z",
+          "StopDate": "2022-02-22T15:18:26Z"
+        },
+        "Cadence": "PT0.031S"
+      },
+      "ObservedRegion": "Mars",
+      "Caveats": "MAG data products are provided in several useful coordinate systems and at the highest time resolution\navailable. The MAG observations contain some known artifacts that you may encounter in your use of the\ndata that you should be aware of. These are related to several different sources on the spacecraft that have\nbeen, and continue to be, under investigation. This message is dated April 10, 2015, and it represents\nour current (and evolving) understanding of the status of the spacecraft and its influence on MAG\ndata. These include: \n* rapid magnetic field variations of ~6 nT in magnitude (in spacecraft payload coordinate axes y and z) associated with infrequent thruster firings (every few days) that are employed in trajectory correction maneuvers (TCM). These are relatively easy to identify.\n* variations (in spacecraft payload coordinate axes y and z) of ~1 nT in magnitude associated with solar array currents in circuits at the outer edge of the solar arrays, near the magnetometer sensor. MAG processing mitigates these signatures where spacecraft engineering telemetry is available at high time resolution. The necessary spacecraft engineering data was made available after Jan 9, 2015, following in-flight spacecraft testing to isolate the problem. Prior to this time, we use a coarse indication of solar array currents to correct the data, and this correction will be out of time step with the actual needed correction  part of the time. Corrections applied are listed on each record along with the corrected data. These variations may appear as step functions, e.g., when the spacecraft enters eclipse, or slow variations as the spacecraft attitude with respect to the sun varies. They were identified in the quiet, weak field environment of cruise and when illumination on the solar arrays was more intense than experienced in cruise.\n* multiple sinewave variations usually of ~0.1 nT in magnitude, that track the frequency of operation of the four Reaction Wheel Assemblies (RWAs). The magnitude of these variations has been observed to increase substantially when the RWAs are operated at very low frequencies; at such times they may appear prominently in spectra of MAG observations.\n* the \"static\" or slowly-varying spacecraft field has been estimated using spacecraft roll maneuvers that are scheduled to occur approximately every 2 months. The MAVEN static sc field specification was NTE 2 nT. The MAG data processed for December 2014 use an estimate of the spacecraft field obtained from the day 353 2014 magroll maneuvers, the only set performed subsequent to deployment of the APP after insertion into Mars orbit. We have yet to verify if this sc field estimate remains relatively constant or if it varies over the interval between magroll maneuvers. Investigation of the time variability of this part of the sc field is expected shortly.\n      ",
+      "Parameter": [
+        {
+          "Name": "b_mso",
+          "ParameterKey": "mavb_mso",
+          "UCD": "phys.magField",
+          "Units": "nT",
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "bx",
+                "Index": "1",
+                "ParameterKey": "mavb_mso(0)"
+              },
+              {
+                "Name": "by",
+                "Index": "2",
+                "ParameterKey": "mavb_mso(1)"
+              },
+              {
+                "Name": "bz",
+                "Index": "3",
+                "ParameterKey": "mavb_mso(2)"
+              }
+            ]
+          },
+          "Field": {
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "b_iau_mars",
+          "ParameterKey": "mavb_iau",
+          "UCD": "phys.magField",
+          "Units": "nT",
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "bx",
+                "Qualifier": "Component",
+                "Index": "1",
+                "ParameterKey": "mavb_iau(0)"
+              },
+              {
+                "Name": "by",
+                "Qualifier": "Component",
+                "Index": "2",
+                "ParameterKey": "mavb_iau(1)"
+              },
+              {
+                "Name": "bz",
+                "Qualifier": "Component",
+                "Index": "3",
+                "ParameterKey": "mavb_iau(2)"
+              }
+            ]
+          },
+          "Field": {
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "|b|",
+          "ParameterKey": "mavb_tot",
+          "UCD": "phys.magField",
+          "Units": "nT",
+          "Field": {
+            "FieldQuantity": "Magnetic"
+          }
+        }
+      ]
+    }
+  }
+}

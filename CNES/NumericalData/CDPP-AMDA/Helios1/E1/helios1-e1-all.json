@@ -1,0 +1,161 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2.4.1.xsd",
+    "Version": "2.4.1",
+    "NumericalData": {
+      "ResourceID": "spase://CNES/NumericalData/CDPP-AMDA/Helios1/E1/helios1-e1-all",
+      "ResourceHeader": {
+        "ResourceName": "corefit : protons",
+        "AlternateName": "Helios corefit data product",
+        "ReleaseDate": "2018-11-06T18:11:24Z",
+        "Description": "Corefit data set  contains \nestimates of number density, velocity, and temperatures of the proton core population in the \nsolar wind created from systematic ﬁtting of all the original Helios 3D distribution functions.\n",
+        "Acknowledgement": "Please acknowledge Helios E1 team and David Stansby in any publication",
+        "Contact": {
+          "PersonID": "spase://CNES/Person/CDPP-AMDA/David.Stansby",
+          "Role": "DataProducer"
+        }
+      },
+      "AccessInformation": [
+        {
+          "RepositoryID": "spase://SMWG/Repository/CDPP/AMDA",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDPP/AMDA HAPI Server",
+            "URL": "http://amda.irap.omp.eu/service/hapi",
+            "Style": "HAPI",
+            "Description": "Web Service to this product using the HAPI interface."
+          },
+          "Format": "CSV",
+          "Acknowledgement": "Thank you for acknowledging the use of AMDA in publications with wording like \"Data analysis was performed with the AMDA science analysis system provided by the Centre de Données de la Physique des Plasmas (CDPP) supported by CNRS, CNES, Observatoire de Paris and Université Paul Sabatier, Toulouse\".. See the Rules of the road at http://amda.cdpp.eu/help/policy.html. Please acknowledge the Data Providers."
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/CDPP/AMDA",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDPP/AMDA Web application",
+            "URL": "http://amda.cdpp.eu",
+            "Description": "Access to Data via CDPP/AMDA Web application."
+          },
+          "Format": [
+            "CSV",
+            "VOTable",
+            "CDF",
+            "PNG"
+          ],
+          "Acknowledgement": "Thank you for acknowledging the use of AMDA in publications with wording like \"Data analysis was performed with the AMDA science analysis system provided by the Centre de Données de la Physique des Plasmas (CDPP) supported by CNRS, CNES, Observatoire de Paris and Université Paul Sabatier, Toulouse\".. See the Rules of the road at http://amda.cdpp.eu/help/policy.html. Please acknowledge the Data Providers."
+        }
+      ],
+      "ProviderName": "Helios Data Archive",
+      "ProviderResourceName": "Helios corefit data product",
+      "InstrumentID": "spase://CNES/Instrument/CDPP-AMDA/Helios1/E1",
+      "MeasurementType": "ThermalPlasma",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "1974-12-12T01:38:10Z",
+          "StopDate": "1984-08-15T23:33:14Z"
+        },
+        "CadenceMin": "PT40S",
+        "CadenceMax": "PT300S"
+      },
+      "ObservedRegion": "Heliosphere",
+      "Caveats": "Status (fitting status flag) takes the following values: \n         * 1: successful ﬁt; \n         * 2: successful ﬁt, magnetic ﬁeld varies too much for reliable number densities and temperatures; \n         * 3: successful ﬁt, no magnetic ﬁeld data available; \n         * 4: failed ﬁt\n         \nIon instrument ﬂag takes the following values: \n* 1: I1a ion instrument data; \n* 2: I3 ion instrument data\n",
+      "Parameter": [
+        {
+          "Name": "status",
+          "ParameterKey": "helios1_e1_flag",
+          "FillValue": "-1",
+          "Support": {
+            "SupportQuantity": "DataQuality"
+          }
+        },
+        {
+          "Name": "ion_instr",
+          "ParameterKey": "helios1_e1_instr",
+          "FillValue": "-1",
+          "Support": {
+            "SupportQuantity": "InstrumentMode"
+          }
+        },
+        {
+          "Name": "density",
+          "ParameterKey": "helios1_e1_np",
+          "Units": "cm^-3",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "NumberDensity"
+          }
+        },
+        {
+          "Name": "t_para",
+          "ParameterKey": "helios1_e1_t_para",
+          "Units": "eV",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "Temperature"
+          }
+        },
+        {
+          "Name": "t_perp",
+          "ParameterKey": "helios1_e1_t_perp",
+          "Units": "eV",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "Temperature"
+          }
+        },
+        {
+          "Name": "v_thermal_para",
+          "ParameterKey": "helios1_e1_vth_para",
+          "Units": "km/s",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "v_thermal_perp",
+          "ParameterKey": "helios1_e1_vth_perp",
+          "Units": "km/s",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "v_rtn",
+          "ParameterKey": "helios1_e1_vp",
+          "Units": "km/s",
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "vr",
+                "Index": "1",
+                "ParameterKey": "helios1_e1_vp(0)"
+              },
+              {
+                "Name": "vt",
+                "Index": "2",
+                "ParameterKey": "helios1_e1_vp(1)"
+              },
+              {
+                "Name": "vn",
+                "Index": "3",
+                "ParameterKey": "helios1_e1_vp(2)"
+              }
+            ]
+          },
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": "Average",
+            "ParticleQuantity": "FlowSpeed"
+          }
+        }
+      ]
+    }
+  }
+}

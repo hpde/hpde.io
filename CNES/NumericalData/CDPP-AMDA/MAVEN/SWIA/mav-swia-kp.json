@@ -1,0 +1,164 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2.4.1.xsd",
+    "Version": "2.4.1",
+    "NumericalData": {
+      "ResourceID": "spase://CNES/NumericalData/CDPP-AMDA/MAVEN/SWIA/mav-swia-kp",
+      "ResourceHeader": {
+        "ResourceName": "ions : key parameters",
+        "AlternateName": "SWIA : ions considered as protons : key parameters",
+        "ReleaseDate": "2022-07-02T06:08:48Z",
+        "Description": "Data follow a 4-second cadence when MAVEN is at an altitude of less than 500 km, otherwise the time cadence is 8 seconds.     \n          The in situ key parameters contain 235 parameters selected by the instrument leads and other MAVEN scientists. These data consist of values derived from L2 data provided by the in situ instruments.",
+        "Acknowledgement": " Principal Investigator : Jasper Halekas, Univ. Iowa, Iowa City",
+        "Contact": [
+          {
+            "PersonID": "spase://CNES/Person/CDPP-AMDA/Jasper.S.Halekas",
+            "Role": "PrincipalInvestigator"
+          },
+          {
+            "PersonID": "spase://CNES/Person/CDPP-AMDA/P.Dunn",
+            "Role": "DataProducer"
+          }
+        ],
+        "InformationURL": {
+          "Name": "SWIA web page, Summary sheet ",
+          "URL": "http://lasp.colorado.edu/home/maven/science/instrument-package/swia/",
+          "Description": "             \n           "
+        }
+      },
+      "AccessInformation": [
+        {
+          "RepositoryID": "spase://SMWG/Repository/CDPP/AMDA",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDPP/AMDA HAPI Server",
+            "URL": "http://amda.irap.omp.eu/service/hapi",
+            "Style": "HAPI",
+            "Description": "Web Service to this product using the HAPI interface."
+          },
+          "Format": "CSV",
+          "Acknowledgement": "Thank you for acknowledging the use of AMDA in publications with wording like \"Data analysis was performed with the AMDA science analysis system provided by the Centre de Données de la Physique des Plasmas (CDPP) supported by CNRS, CNES, Observatoire de Paris and Université Paul Sabatier, Toulouse\".. See the Rules of the road at http://amda.cdpp.eu/help/policy.html. Please acknowledge the Data Providers."
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/CDPP/AMDA",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDPP/AMDA Web application",
+            "URL": "http://amda.cdpp.eu",
+            "Description": "Access to Data via CDPP/AMDA Web application."
+          },
+          "Format": [
+            "CSV",
+            "VOTable",
+            "CDF",
+            "PNG"
+          ],
+          "Acknowledgement": "Thank you for acknowledging the use of AMDA in publications with wording like \"Data analysis was performed with the AMDA science analysis system provided by the Centre de Données de la Physique des Plasmas (CDPP) supported by CNRS, CNES, Observatoire de Paris and Université Paul Sabatier, Toulouse\".. See the Rules of the road at http://amda.cdpp.eu/help/policy.html. Please acknowledge the Data Providers."
+        }
+      ],
+      "ProviderName": "PDS",
+      "ProviderResourceName": "/maven-insitu-calibrated",
+      "InstrumentID": "spase://CNES/Instrument/CDPP-AMDA/MAVEN/SWIA",
+      "MeasurementType": "ThermalPlasma",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "2014-10-06T00:00:08Z",
+          "StopDate": "2021-11-14T23:59:52Z"
+        },
+        "CadenceMin": "PT4S",
+        "CadenceMax": "PT8S"
+      },
+      "ObservedRegion": "Mars",
+      "Caveats": "Quality flag (0 = bad, 1 = good) indicats whether the distribution is well-measured and decommutation parameters are definite.                       \n        All SWIA Key Parameters are derived from onboard-computed moments. These moments are computed under the assumption that all ions are protons, and that the entire distribution is within the field of view and the energy range of the instrument.\nThe quality flag in the KP files attempts to identify and flag those cases where a significant portion of the distribution is outside of SWIA's field of view and/or outside of the energy range of the instrument, but the computation of the quality flag is not infallible and there may still be cases where part of the distribution is missing. Meanwhile, there is no quality flag or correction for multi-ion issues.\nThus, SWIA key parameter data taken inside the induced magnetospheric boundary should typically not be used for quantitative purposes. Even in the solar wind, which is ~94-97% protons, there are some values which cannot be used quantitatively, since the moments are computed over a distribution which includes not only the protons, but also ~3-6% alpha particles with twice the energy per charge. This has only a few percent effect on the density and velocity moments, so these values can safely be relied on, but even a small alpha population leads to an artificially large temperature moment (particularly the component aligned with the flow, which is often 2x or more higher than the true value).\nThus, the SWIA temperature moments cannot typically be used for quantitative purposes [for qualitative purposes they may be okay in the solar wind and magnetosheath].\nThose wishing to look quantitatively at solar wind temperature should use the SWIA Level 2 3-d Fine data and use appropriate routines to separately compute proton and alpha temperature.\n      ",
+      "Parameter": [
+        {
+          "Name": "density",
+          "ParameterKey": "mav_swiakp_n",
+          "Description": "Total ion density from SWIA onboard moment calculation, assuming 100% protons",
+          "UCD": "phys.density;phys.atmol.ionStage",
+          "Units": "cm-3",
+          "Particle": {
+            "ParticleType": "Ion",
+            "ParticleQuantity": "NumberDensity"
+          }
+        },
+        {
+          "Name": "moments quality",
+          "ParameterKey": "mav_swiakp_qual",
+          "Description": "Quality flag (0 = bad, 1 = good) indicating whether the distribution is well-measured and decommutation parameters are definite",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "v_mso",
+          "ParameterKey": "mav_swiakp_vmso",
+          "Description": "Bulk ion flow velocity from SWIA onboard moment calculation, assuming 100% protons",
+          "UCD": "phys.veloc;phys.atmol.ionStage",
+          "Units": "km/s",
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "vx",
+                "Index": "1",
+                "ParameterKey": "mav_swiakp_vmso(0)"
+              },
+              {
+                "Name": "vy",
+                "Index": "2",
+                "ParameterKey": "mav_swiakp_vmso(1)"
+              },
+              {
+                "Name": "vz",
+                "Index": "3",
+                "ParameterKey": "mav_swiakp_vmso(2)"
+              }
+            ]
+          },
+          "Particle": {
+            "ParticleType": "Ion",
+            "ParticleQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "|v|",
+          "ParameterKey": "mav_swiakp_vtot",
+          "Description": "Bulk ion flow velocity magnitude from SWIA onboard moment calculation, assuming 100% protons",
+          "UCD": "phys.veloc;phys.atmol.ionStage",
+          "Units": "km/s",
+          "Particle": {
+            "ParticleType": "Ion",
+            "ParticleQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "temperature",
+          "ParameterKey": "mav_swiakp_t",
+          "Description": " Scalar ion temperature from SWIA onboard moment calculation, assuming 100% protons",
+          "UCD": "phys.temperature;phys.atmol.Ionstage",
+          "Units": "eV",
+          "Particle": {
+            "ParticleType": "Ion",
+            "ParticleQuantity": "Temperature"
+          }
+        },
+        {
+          "Name": "dynamic pressure",
+          "ParameterKey": "mav_swiakp_pdyn",
+          "Description": "Ion dynamic pressure computed on the SWIA ground from density and velocity moments, assuming 100% protons",
+          "UCD": "phys.temperature;phys.atmol.Ionstage",
+          "Units": "nPa",
+          "Particle": {
+            "ParticleType": "Ion",
+            "ParticleQuantity": "Pressure"
+          }
+        }
+      ]
+    }
+  }
+}

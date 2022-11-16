@@ -1,0 +1,216 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2.4.1.xsd",
+    "Version": "2.4.1",
+    "NumericalData": {
+      "ResourceID": "spase://CNES/NumericalData/CDPP-AMDA/Galileo/EPD/gll-epd-amalele",
+      "ResourceHeader": {
+        "ResourceName": "flyby amalthea",
+        "AlternateName": "flyby amalthea : electrons",
+        "ReleaseDate": "2019-03-25T09:18:35Z",
+        "Description": "\n               Energetic electron count rates and fluxes measured by the EPD instrument \n               onboard Galileo in the Record acquisition mode. In this mode, the count rates are \n               accumulated during around 1.25 second. The full opening angle of the EPD telescopes \n               are relatively narrow, between 15° and 18°, and the acquisition period is very short compared \n               to the rotational spin period of Galileo. Counts and fluxes obtained with the Record \n               acquisition mode can therefore be considered as directional flux measurements. \n               The local and equatorial pitch angles that are given are for the particles observed by the \n               center of the telescope viewing cones. The motor that rotates the EPD telescopes around an \n               axis perpendicular to the spin axis of Galileo can have eight different step positions, \n               from 0 to 7. \n               \nData are extracted from the text file named 'galileo_epd_calibrated_low_res_v18.txt' \nproduced and provided by JHU/APL and publicly available at \nhttp://sd-www.jhuapl.edu/Galileo_EPD/latest_calibrated_data/. \nIt is highly recommended to read the 'readme_v19.docx' document also available at the previous \nlink before using this dataset. It is also recommended to contact Peter Kollmann (JHU/APL), \nas some measurement channels are highly contaminated or saturated. All unreliable measurements \nare set to NaN. Energies, species and charge states observed by each measurement channel are \ndiscussed in detail in Kollmann et al. [2018, JGR].\n            ",
+        "Contact": [
+          {
+            "PersonID": "spase://SMWG/Person/Donald.J.Williams",
+            "Role": "PrincipalInvestigator"
+          },
+          {
+            "PersonID": "spase://CNES/Person/CDPP-AMDA/Peter.Kollmann",
+            "Role": "DataProducer"
+          },
+          {
+            "PersonID": "spase://CNES/Person/CDPP-AMDA/Quentin.Nenon",
+            "Role": "DataProducer"
+          },
+          {
+            "PersonID": "spase://CNES/Person/CDPP-AMDA/Christopher.Paranicas",
+            "Role": "CoInvestigator"
+          },
+          {
+            "PersonID": "spase://CNES/Person/CDPP-AMDA/Norbert.Krupp",
+            "Role": "CoInvestigator"
+          }
+        ],
+        "Association": {
+          "AssociationID": "gll-epd-record-el",
+          "AssociationType": "PartOf",
+          "Note": "record mode : electron channels"
+        }
+      },
+      "AccessInformation": [
+        {
+          "RepositoryID": "spase://SMWG/Repository/CDPP/AMDA",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDPP/AMDA HAPI Server",
+            "URL": "http://amda.irap.omp.eu/service/hapi",
+            "Style": "HAPI",
+            "Description": "Web Service to this product using the HAPI interface."
+          },
+          "Format": "CSV",
+          "Acknowledgement": "Thank you for acknowledging the use of AMDA in publications with wording like \"Data analysis was performed with the AMDA science analysis system provided by the Centre de Données de la Physique des Plasmas (CDPP) supported by CNRS, CNES, Observatoire de Paris and Université Paul Sabatier, Toulouse\".. See the Rules of the road at http://amda.cdpp.eu/help/policy.html. Please acknowledge the Data Providers."
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/CDPP/AMDA",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDPP/AMDA Web application",
+            "URL": "http://amda.cdpp.eu",
+            "Description": "Access to Data via CDPP/AMDA Web application."
+          },
+          "Format": [
+            "CSV",
+            "VOTable",
+            "CDF",
+            "PNG"
+          ],
+          "Acknowledgement": "Thank you for acknowledging the use of AMDA in publications with wording like \"Data analysis was performed with the AMDA science analysis system provided by the Centre de Données de la Physique des Plasmas (CDPP) supported by CNRS, CNES, Observatoire de Paris and Université Paul Sabatier, Toulouse\".. See the Rules of the road at http://amda.cdpp.eu/help/policy.html. Please acknowledge the Data Providers."
+        }
+      ],
+      "ProviderName": "JHU/APL",
+      "InstrumentID": "spase://CNES/Instrument/CDPP-AMDA/Galileo/EPD",
+      "MeasurementType": "EnergeticParticles",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "2002-11-05T02:44:40Z",
+          "StopDate": "2002-11-05T06:35:08Z"
+        },
+        "CadenceMin": "PT1S",
+        "CadenceMax": "PT2S"
+      },
+      "ObservedRegion": "Jupiter",
+      "Caveats": "Electron channels :\n            * B1 :  ≥  36.2 MeV\n            * DC0 : ≥  14 MeV \n            * DC1 :  ≥  30 MeV\n            * DC2 : ≥  1.8 MeV\n            * DC3 :  ≥  10.8 MeV\n            * E[0-3] : 15 - 93 keV\n            * F[0-3] : 93 - 884 keV\n        ",
+      "Parameter": [
+        {
+          "Name": "L-shell",
+          "ParameterKey": "gll_epd_l_amel",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "local pitch angle",
+          "ParameterKey": "gll_epd_paloc_amel",
+          "Units": "degree",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "motor position",
+          "ParameterKey": "gll_epd_motor_amel",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "e- : E[0-3] : cnts",
+          "ParameterKey": "gll_epd_am_ecnts",
+          "Units": "s**-1",
+          "RenderingHints": {
+            "DisplayType": "Spectrogram"
+          },
+          "Structure": {
+            "Size": "4"
+          },
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "CountRate"
+          }
+        },
+        {
+          "Name": "e- : E[0-3]  : flux",
+          "ParameterKey": "gll_epd_am_eflux",
+          "Units": "cm**-2.s**-1.sr**-1.keV**-1",
+          "RenderingHints": {
+            "DisplayType": "Spectrogram"
+          },
+          "Structure": {
+            "Size": "4"
+          },
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "e- : F[0-3] : cnts",
+          "ParameterKey": "gll_epd_am_fcnts",
+          "Units": "s**-1",
+          "RenderingHints": {
+            "DisplayType": "Spectrogram"
+          },
+          "Structure": {
+            "Size": "4"
+          },
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "CountRate"
+          }
+        },
+        {
+          "Name": "e- : B1  : cnts",
+          "ParameterKey": "gll_epd_amel_bcnts",
+          "Units": "s**-1",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "CountRate"
+          }
+        },
+        {
+          "Name": "e- : DC[0-3]  : cnts",
+          "ParameterKey": "gll_epd_am_dccnts",
+          "Units": "s**-1",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Structure": {
+            "Size": "4",
+            "Element": [
+              {
+                "Name": "DC0 : > 14 MeV",
+                "Index": "1",
+                "ParameterKey": "gll_epd_am_dccnts(0)"
+              },
+              {
+                "Name": "DC1 : > 30 MeV",
+                "Index": "2",
+                "ParameterKey": "gll_epd_am_dccnts(1)"
+              },
+              {
+                "Name": "DC2 : > 1.8 MeV",
+                "Index": "3",
+                "ParameterKey": "gll_epd_am_dccnts(2)"
+              },
+              {
+                "Name": "DC3 : > 10.8 MeV",
+                "Index": "3",
+                "ParameterKey": "gll_epd_am_dccnts(3)"
+              }
+            ]
+          },
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "CountRate"
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,354 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2.4.1.xsd",
+    "Version": "2.4.1",
+    "NumericalData": {
+      "ResourceID": "spase://CNES/NumericalData/CDPP-AMDA/MEX/IMA/mex-ima-param",
+      "ResourceHeader": {
+        "ResourceName": "ima moments",
+        "ReleaseDate": "2021-10-18T16:48:46Z",
+        "Description": "IMA ion moments are calculated in IRAP using Andrei Fedorov procedure",
+        "Contact": [
+          {
+            "PersonID": "spase://CNES/Person/CDPP-AMDA/Andrei.Fedorov",
+            "Role": "GeneralContact"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Elena.Budnik",
+            "Role": "TechnicalContact"
+          }
+        ]
+      },
+      "AccessInformation": [
+        {
+          "RepositoryID": "spase://SMWG/Repository/CDPP/AMDA",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDPP/AMDA HAPI Server",
+            "URL": "http://amda.irap.omp.eu/service/hapi",
+            "Style": "HAPI",
+            "Description": "Web Service to this product using the HAPI interface."
+          },
+          "Format": "CSV",
+          "Acknowledgement": "Thank you for acknowledging the use of AMDA in publications with wording like \"Data analysis was performed with the AMDA science analysis system provided by the Centre de Données de la Physique des Plasmas (CDPP) supported by CNRS, CNES, Observatoire de Paris and Université Paul Sabatier, Toulouse\".. See the Rules of the road at http://amda.cdpp.eu/help/policy.html. Please acknowledge the Data Providers."
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/CDPP/AMDA",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDPP/AMDA Web application",
+            "URL": "http://amda.cdpp.eu",
+            "Description": "Access to Data via CDPP/AMDA Web application."
+          },
+          "Format": [
+            "CSV",
+            "VOTable",
+            "CDF",
+            "PNG"
+          ],
+          "Acknowledgement": "Thank you for acknowledging the use of AMDA in publications with wording like \"Data analysis was performed with the AMDA science analysis system provided by the Centre de Données de la Physique des Plasmas (CDPP) supported by CNRS, CNES, Observatoire de Paris and Université Paul Sabatier, Toulouse\".. See the Rules of the road at http://amda.cdpp.eu/help/policy.html. Please acknowledge the Data Providers."
+        }
+      ],
+      "ProviderName": "IRAP",
+      "InstrumentID": "spase://CNES/Instrument/CDPP-AMDA/MEX/IMA",
+      "MeasurementType": "ThermalPlasma",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "2004-01-23T04:20:49Z",
+          "StopDate": "2021-09-22T20:06:50Z"
+        },
+        "Cadence": "PT192S"
+      },
+      "ObservedRegion": "Mars",
+      "Caveats": "Data gap 2015-05-24 - 2015-07-01",
+      "Parameter": [
+        {
+          "Name": "h+: density",
+          "ParameterKey": "mex_h_dens",
+          "Description": "Proton density",
+          "UCD": "phys.density;phys.atmol.ionStage",
+          "Units": "cm-3",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "NumberDensity"
+          }
+        },
+        {
+          "Name": "h+: v_mso",
+          "ParameterKey": "mex_h_vel",
+          "Description": "Proton bulk velocity components in MSO coordinates",
+          "UCD": "phys.veloc;phys.atmol.ionStage",
+          "Units": "km/s",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "vx",
+                "Index": "1",
+                "ParameterKey": "mex_h_vel(0)"
+              },
+              {
+                "Name": "vy",
+                "Index": "2",
+                "ParameterKey": "mex_h_vel(1)"
+              },
+              {
+                "Name": "vz",
+                "Index": "3",
+                "ParameterKey": "mex_h_vel(2)"
+              }
+            ]
+          },
+          "FillValue": "0",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "h+: |v|",
+          "ParameterKey": "mex_h_vtot",
+          "Description": "Proton bulk velocity",
+          "UCD": "phys.veloc;phys.atmol.ionStage",
+          "Units": "km/s",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "FillValue": "0",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "h+: temperature",
+          "ParameterKey": "mex_h_temp",
+          "Description": "Proton temperature",
+          "UCD": "phys.temperature;phys.atmol.ionStage",
+          "Units": "eV",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "Temperature"
+          }
+        },
+        {
+          "Name": "h+: moments quality",
+          "ParameterKey": "mex_h_qual",
+          "Description": "Proton moment quality flag",
+          "UCD": "meta.code.qual;phys.atmol.ionStage",
+          "Units": "0-1",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "o+: density",
+          "ParameterKey": "mex_o_dens",
+          "Description": "O+ ion density",
+          "UCD": "phys.density;phys.atmol.ionStage",
+          "Units": "cm-3",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Particle": {
+            "ParticleType": "Ion",
+            "ParticleQuantity": "NumberDensity"
+          }
+        },
+        {
+          "Name": "o+: v_mso",
+          "ParameterKey": "mex_o_vel",
+          "Description": "O+ ion bulk velocity components in MSO coordinates",
+          "UCD": "phys.veloc;phys.atmol.ionStage",
+          "Units": "km/s",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "vx",
+                "Index": "1",
+                "ParameterKey": "mex_o_vel(0)"
+              },
+              {
+                "Name": "vy",
+                "Index": "2",
+                "ParameterKey": "mex_o_vel(1)"
+              },
+              {
+                "Name": "vz",
+                "Index": "3",
+                "ParameterKey": "mex_o_vel(2)"
+              }
+            ]
+          },
+          "FillValue": "0",
+          "Particle": {
+            "ParticleType": "Ion",
+            "ParticleQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "o+: |v|",
+          "ParameterKey": "mex_o_vtot",
+          "Description": "O+ Ions bulk velocity",
+          "UCD": "phys.veloc;phys.atmol.ionStage",
+          "Units": "km/s",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "FillValue": "0",
+          "Particle": {
+            "ParticleType": "Ion",
+            "ParticleQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "o+: temperature",
+          "ParameterKey": "mex_o_temp",
+          "Description": "O+ ion temperature",
+          "UCD": "phys.temperature;phys.atmol.ionStage",
+          "Units": "eV",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Particle": {
+            "ParticleType": "Ion",
+            "ParticleQuantity": "Temperature"
+          }
+        },
+        {
+          "Name": "o+: moments quality",
+          "ParameterKey": "mex_o_qual",
+          "Description": "O+ ion moment quality flag",
+          "UCD": "meta.code.qual;phys.atmol.ionStage",
+          "Units": "0-1",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "o2+: density",
+          "ParameterKey": "mex_o2_dens",
+          "Description": "O2+ ion density",
+          "UCD": "phys.density;phys.atmol.ionStage",
+          "Units": "cm-3",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Particle": {
+            "ParticleType": "Ion",
+            "ParticleQuantity": "NumberDensity"
+          }
+        },
+        {
+          "Name": "o2+: v_mso",
+          "ParameterKey": "mex_o2_vel",
+          "Description": "O2+ ion bulk velocity components in MSO coordinates",
+          "UCD": "phys.veloc;phys.atmol.ionStage",
+          "Units": "km/s",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "vx",
+                "Index": "1",
+                "ParameterKey": "mex_o2_vel(0)"
+              },
+              {
+                "Name": "vy",
+                "Index": "2",
+                "ParameterKey": "mex_o2_vel(1)"
+              },
+              {
+                "Name": "vz",
+                "Index": "3",
+                "ParameterKey": "mex_o2_vel(2)"
+              }
+            ]
+          },
+          "FillValue": "0",
+          "Particle": {
+            "ParticleType": "Ion",
+            "ParticleQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "o2+: |v|",
+          "ParameterKey": "mex_o2_vtot",
+          "Description": "O2+ Ions bulk velocity",
+          "UCD": "phys.veloc;phys.atmol.ionStage",
+          "Units": "km/s",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "FillValue": "0",
+          "Particle": {
+            "ParticleType": "Ion",
+            "ParticleQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "o2+: temperature",
+          "ParameterKey": "mex_o2_temp",
+          "Description": "O2+ ion temperature",
+          "UCD": "phys.temperature;phys.atmol.ionStage",
+          "Units": "eV",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Particle": {
+            "ParticleType": "Ion",
+            "ParticleQuantity": "Temperature"
+          }
+        },
+        {
+          "Name": "o2+: moments quality",
+          "ParameterKey": "mex_o2_qual",
+          "Description": "O2+ ion moment quality flag",
+          "UCD": "meta.code.qual;phys.atmol.ionStage",
+          "Units": "0-1",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "scan flag",
+          "ParameterKey": "mex_scan",
+          "Description": "Scan quality flag",
+          "UCD": "meta.code.qual",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        }
+      ]
+    }
+  }
+}

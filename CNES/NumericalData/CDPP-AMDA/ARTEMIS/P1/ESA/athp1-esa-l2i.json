@@ -1,0 +1,218 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2.4.1.xsd",
+    "Version": "2.4.1",
+    "NumericalData": {
+      "ResourceID": "spase://CNES/NumericalData/CDPP-AMDA/ARTEMIS/P1/ESA/athp1-esa-l2i",
+      "ResourceHeader": {
+        "ResourceName": "ion full mode",
+        "ReleaseDate": "2022-09-29T02:00:17Z",
+        "Description": "\"Full Mode\" is a low-time-resolution data product useful for large-scale surveys of THEMIS data. It generally maintains the \"full\" 32 energies sampled, and have an 88 solid-angle map. Full distribution data are 1-spin snapshots of the plasma with a measurement cadence of either 32 spins (in \"Fast-Survey Spacecraft Mode\") or 128 spins (\"Slow-Survey Spacecraft Mode\").>",
+        "Contact": [
+          {
+            "PersonID": "spase://SMWG/Person/Charles.W.Carlson",
+            "Role": "CoInvestigator"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/James.P.McFadden",
+            "Role": "CoInvestigator"
+          }
+        ],
+        "PriorID": "thb-esa-l2i"
+      },
+      "AccessInformation": [
+        {
+          "RepositoryID": "spase://SMWG/Repository/CDPP/AMDA",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDPP/AMDA HAPI Server",
+            "URL": "http://amda.irap.omp.eu/service/hapi",
+            "Style": "HAPI",
+            "Description": "Web Service to this product using the HAPI interface."
+          },
+          "Format": "CSV",
+          "Acknowledgement": "Thank you for acknowledging the use of AMDA in publications with wording like \"Data analysis was performed with the AMDA science analysis system provided by the Centre de Données de la Physique des Plasmas (CDPP) supported by CNRS, CNES, Observatoire de Paris and Université Paul Sabatier, Toulouse\".. See the Rules of the road at http://amda.cdpp.eu/help/policy.html. Please acknowledge the Data Providers."
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/CDPP/AMDA",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDPP/AMDA Web application",
+            "URL": "http://amda.cdpp.eu",
+            "Description": "Access to Data via CDPP/AMDA Web application."
+          },
+          "Format": [
+            "CSV",
+            "VOTable",
+            "CDF",
+            "PNG"
+          ],
+          "Acknowledgement": "Thank you for acknowledging the use of AMDA in publications with wording like \"Data analysis was performed with the AMDA science analysis system provided by the Centre de Données de la Physique des Plasmas (CDPP) supported by CNRS, CNES, Observatoire de Paris and Université Paul Sabatier, Toulouse\".. See the Rules of the road at http://amda.cdpp.eu/help/policy.html. Please acknowledge the Data Providers."
+        }
+      ],
+      "ProviderName": "IRAP_THEMIS",
+      "InstrumentID": "spase://CNES/Instrument/CDPP-AMDA/ARTEMIS/P1/ESA",
+      "MeasurementType": "ThermalPlasma",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "2011-06-29T00:00:00Z",
+          "StopDate": "2022-09-26T20:59:44Z"
+        },
+        "CadenceMin": "PT96.27S",
+        "CadenceMax": "PT551.0S"
+      },
+      "ObservedRegion": "Earth.Magnetosphere",
+      "Parameter": [
+        {
+          "Name": "ion v_gse",
+          "ParameterKey": "athp1_v_i",
+          "UCD": "phys.veloc;phys.atmol.ionStage",
+          "Units": "km/s",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GSE"
+          },
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "vx",
+                "Index": "1",
+                "ParameterKey": "athp1_v_i(0)"
+              },
+              {
+                "Name": "vy",
+                "Index": "2",
+                "ParameterKey": "athp1_v_i(1)"
+              },
+              {
+                "Name": "vz",
+                "Index": "3",
+                "ParameterKey": "athp1_v_i(2)"
+              }
+            ]
+          },
+          "Particle": {
+            "ParticleType": "Ion",
+            "ParticleQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "ion v_lse",
+          "ParameterKey": "athp1_v_i_lse",
+          "UCD": "phys.veloc;phys.atmol.ionStage",
+          "Units": "km/s",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "vx",
+                "Index": "1",
+                "ParameterKey": "athp1_v_i_lse(0)"
+              },
+              {
+                "Name": "vy",
+                "Index": "2",
+                "ParameterKey": "athp1_v_i_lse(1)"
+              },
+              {
+                "Name": "vz",
+                "Index": "3",
+                "ParameterKey": "athp1_v_i_lse(2)"
+              }
+            ]
+          },
+          "Particle": {
+            "ParticleType": "Ion",
+            "ParticleQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "ion |v|",
+          "ParameterKey": "athp1_v_i_tot",
+          "Description": "Module of Velocity",
+          "UCD": "phys.veloc;phys.atmol.ionStage",
+          "Units": "km/s",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Particle": {
+            "ParticleType": "Ion",
+            "ParticleQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "ion density",
+          "ParameterKey": "athp1_n_i",
+          "Description": "Ion Density",
+          "UCD": "phys.density;phys.atmol.ionStage",
+          "Units": "cm-3",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Particle": {
+            "ParticleType": "Ion",
+            "ParticleQuantity": "NumberDensity"
+          }
+        },
+        {
+          "Name": "ion temperature",
+          "ParameterKey": "athp1_t_i",
+          "Description": "Temperature",
+          "UCD": "phys.temperature;phys.atmol.ionStage",
+          "Units": "eV",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "t_para",
+                "Index": "1",
+                "ParameterKey": "athp1_t_i(2)"
+              },
+              {
+                "Name": "t_perp1",
+                "Index": "2",
+                "ParameterKey": "athp1_t_i(0)"
+              },
+              {
+                "Name": "t_perp2",
+                "Index": "3",
+                "ParameterKey": "athp1_t_i(1)"
+              }
+            ]
+          },
+          "Particle": {
+            "ParticleType": "Ion",
+            "ParticleQuantity": "Temperature"
+          }
+        },
+        {
+          "Name": "ion eflux",
+          "ParameterKey": "athp1_ion_sp",
+          "UCD": "phys.flux.density;phys.energy;phys.atmol.ionStage",
+          "Units": "eV/cm^2-s-sr-eV",
+          "RenderingHints": {
+            "DisplayType": "Spectrogram"
+          },
+          "Particle": {
+            "ParticleType": "Ion",
+            "ParticleQuantity": "EnergyFlux"
+          }
+        }
+      ]
+    }
+  }
+}

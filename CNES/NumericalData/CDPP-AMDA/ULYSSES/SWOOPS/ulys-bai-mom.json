@@ -1,0 +1,174 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2.4.1.xsd",
+    "Version": "2.4.1",
+    "NumericalData": {
+      "ResourceID": "spase://CNES/NumericalData/CDPP-AMDA/ULYSSES/SWOOPS/ulys-bai-mom",
+      "ResourceHeader": {
+        "ResourceName": "sw ions",
+        "ReleaseDate": "2012-03-06T21:18:14Z",
+        "Description": "The proton temperature has been estimated in two different ways, one of which will sometimes lead to an overestimate of the temperature and one of which will sometimes lead to an underestimate. T-large is the integral of the distribution in three-dimensional velocity space over all energy channels and angle bins that are statistically above noise. The criterion for noise determination is based upon the estimation of the total contribution from a shell that is spherically symmetric in velocity space. T-large has the drawback that at times when the solar wind is cold the angular responses of the instrument channels are as wide or wider than the beam, and the temperature is overestimated. T-small is estimated by summing over angle the observations at a fixed energy. The moments of the resulting one dimensional plasma spectrum are then summed and the resulting RR (radial) component of the temperature tensor is used as the estimate of proton temperature. Additionally, to avoid contamination from alpha particles, no channels further in velocity space from the proton peak than the minimum in flux between the proton and alpha particles peaks are used in the T-small estimate. T-large and T-small will generally bracket the true temperature. However, for very cold plasma, T-small may not be a true minimum.\n             ",
+        "Contact": {
+          "PersonID": "spase://SMWG/Person/Elena.Budnik",
+          "Role": "GeneralContact"
+        },
+        "InformationURL": [
+          {
+            "Name": "Readme file at SPDF",
+            "URL": "ftp://spdf.gsfc.nasa.gov/pub/data/ulysses/merged/ulymgd.txt"
+          },
+          {
+            "Name": "SWOOPS data users' guide",
+            "URL": "ftp://spdf.gsfc.nasa.gov/pub/data/ulysses/plasma/swoops/ion/swoops_ion_users_guide_update_20030214.txt"
+          }
+        ]
+      },
+      "AccessInformation": [
+        {
+          "RepositoryID": "spase://SMWG/Repository/CDPP/AMDA",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDPP/AMDA HAPI Server",
+            "URL": "http://amda.irap.omp.eu/service/hapi",
+            "Style": "HAPI",
+            "Description": "Web Service to this product using the HAPI interface."
+          },
+          "Format": "CSV",
+          "Acknowledgement": "Thank you for acknowledging the use of AMDA in publications with wording like \"Data analysis was performed with the AMDA science analysis system provided by the Centre de Données de la Physique des Plasmas (CDPP) supported by CNRS, CNES, Observatoire de Paris and Université Paul Sabatier, Toulouse\".. See the Rules of the road at http://amda.cdpp.eu/help/policy.html. Please acknowledge the Data Providers."
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/CDPP/AMDA",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDPP/AMDA Web application",
+            "URL": "http://amda.cdpp.eu",
+            "Description": "Access to Data via CDPP/AMDA Web application."
+          },
+          "Format": [
+            "CSV",
+            "VOTable",
+            "CDF",
+            "PNG"
+          ],
+          "Acknowledgement": "Thank you for acknowledging the use of AMDA in publications with wording like \"Data analysis was performed with the AMDA science analysis system provided by the Centre de Données de la Physique des Plasmas (CDPP) supported by CNRS, CNES, Observatoire de Paris and Université Paul Sabatier, Toulouse\".. See the Rules of the road at http://amda.cdpp.eu/help/policy.html. Please acknowledge the Data Providers."
+        }
+      ],
+      "ProviderName": "CDAWeb",
+      "ProviderResourceName": "UY_M0_BAI",
+      "InstrumentID": "spase://CNES/Instrument/CDPP-AMDA/Ulysses/SWOOPS",
+      "MeasurementType": "ThermalPlasma",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "1990-11-18T00:33:48Z",
+          "StopDate": "2009-06-30T15:54:12Z"
+        },
+        "CadenceMin": "PT4M",
+        "CadenceMax": "PT8M"
+      },
+      "ObservedRegion": "Heliosphere",
+      "Parameter": [
+        {
+          "Name": "density h+",
+          "ParameterKey": "n_p_ulys",
+          "Description": "Solar wind proton plasma density",
+          "UCD": "phys.density;phys.atmol.ionStage",
+          "Units": "cm-3",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "NumberDensity"
+          }
+        },
+        {
+          "Name": "density he++",
+          "ParameterKey": "n_a_ulys",
+          "Description": "Solar wind alpha particle plasma density",
+          "UCD": "phys.density;phys.atmol.ionStage",
+          "Units": "cm-3",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Particle": {
+            "ParticleType": "AlphaParticle",
+            "Qualifier": "Average",
+            "ParticleQuantity": "NumberDensity"
+          }
+        },
+        {
+          "Name": "v_rtn",
+          "ParameterKey": "v_ulys_rtn",
+          "Description": "Hourly averaged solar wind plasma flow speed",
+          "UCD": "phys.veloc;phys.atmol.ionStage",
+          "Units": "km/s",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "RTN"
+          },
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "vr",
+                "Index": "1",
+                "ParameterKey": "v_ulys_rtn(0)"
+              },
+              {
+                "Name": "vt",
+                "Index": "2",
+                "ParameterKey": "v_ulys_rtn(1)"
+              },
+              {
+                "Name": "vn",
+                "Index": "3",
+                "ParameterKey": "v_ulys_rtn(2)"
+              }
+            ]
+          },
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": "Average",
+            "ParticleQuantity": "FlowSpeed"
+          }
+        },
+        {
+          "Name": "temperature h+",
+          "ParameterKey": "tp_ulys",
+          "Description": "solar wind plasma temperature",
+          "UCD": "phys.temperature;phys.atmol.ionStage",
+          "Units": "eV",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Structure": {
+            "Size": "2",
+            "Element": [
+              {
+                "Name": "t_large",
+                "Index": "1",
+                "ParameterKey": "tp_ulys(0)"
+              },
+              {
+                "Name": "t_small",
+                "Index": "2",
+                "ParameterKey": "tp_ulys(1)"
+              }
+            ]
+          },
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "Temperature"
+          }
+        }
+      ]
+    }
+  }
+}

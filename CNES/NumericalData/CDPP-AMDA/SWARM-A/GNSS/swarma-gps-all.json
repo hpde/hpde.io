@@ -1,0 +1,131 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2.4.1.xsd",
+    "Version": "2.4.1",
+    "NumericalData": {
+      "ResourceID": "spase://CNES/NumericalData/CDPP-AMDA/SWARM-A/GNSS/swarma-gps-all",
+      "ResourceHeader": {
+        "ResourceName": "tec",
+        "AlternateName": "total electron content",
+        "ReleaseDate": "2022-02-28T09:33:00Z",
+        "Description": "The signals transmitted by the Global Navigation Satellite System (GNSS) satellites are delayed \nby ionospheric/plasmaspheric electrons before reaching the Swarm GNSS antenna. From the \nGNSS signal delay we can estimate slant total electron content (STEC), which is deﬁned as \n‘integrated’ electron density along the line of sight from Swarm to GNSS satellites.",
+        "Contact": {
+          "PersonID": "spase://CNES/Person/CDPP-AMDA/R.Haagmans",
+          "Role": "ProjectScientist"
+        },
+        "InformationURL": {
+          "Name": "TEC dataset description",
+          "URL": "https://earth.esa.int/web/guest/document-library/browse-document-library/-/article/swarm-level-2-tec-product-description"
+        }
+      },
+      "AccessInformation": [
+        {
+          "RepositoryID": "spase://SMWG/Repository/CDPP/AMDA",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDPP/AMDA HAPI Server",
+            "URL": "http://amda.irap.omp.eu/service/hapi",
+            "Style": "HAPI",
+            "Description": "Web Service to this product using the HAPI interface."
+          },
+          "Format": "CSV",
+          "Acknowledgement": "Thank you for acknowledging the use of AMDA in publications with wording like \"Data analysis was performed with the AMDA science analysis system provided by the Centre de Données de la Physique des Plasmas (CDPP) supported by CNRS, CNES, Observatoire de Paris and Université Paul Sabatier, Toulouse\".. See the Rules of the road at http://amda.cdpp.eu/help/policy.html. Please acknowledge the Data Providers."
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/CDPP/AMDA",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDPP/AMDA Web application",
+            "URL": "http://amda.cdpp.eu",
+            "Description": "Access to Data via CDPP/AMDA Web application."
+          },
+          "Format": [
+            "CSV",
+            "VOTable",
+            "CDF",
+            "PNG"
+          ],
+          "Acknowledgement": "Thank you for acknowledging the use of AMDA in publications with wording like \"Data analysis was performed with the AMDA science analysis system provided by the Centre de Données de la Physique des Plasmas (CDPP) supported by CNRS, CNES, Observatoire de Paris and Université Paul Sabatier, Toulouse\".. See the Rules of the road at http://amda.cdpp.eu/help/policy.html. Please acknowledge the Data Providers."
+        }
+      ],
+      "ProviderName": "ftp://swarm-diss.eo.esa.int",
+      "ProviderResourceName": "Level2daily/Entire_mission_data/TEC",
+      "InstrumentID": "spase://CNES/Instrument/CDPP-AMDA/SWARM-A/GNSS",
+      "MeasurementType": "Waves",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "2013-11-25T10:59:54Z",
+          "StopDate": "2022-02-17T23:59:59Z"
+        },
+        "Cadence": "PT1S"
+      },
+      "ObservedRegion": "Earth.Magnetosphere",
+      "Caveats": "It is recommended to use absolute VTEC data with corresponding elevation angles of the GPS \nrays of at least 50◦ . The recommendation is given since the uncertainty of the mapping function increases with decreasing elevation angle. \nNote that AMDA keeps STEC / VTEC data for the highest elevation angle only.\n",
+      "Parameter": [
+        {
+          "Name": "stec",
+          "ParameterKey": "swa_stec",
+          "Description": "Absolute slant TEC from largest elevation GNSS satellite",
+          "Units": "TECU",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "vtec",
+          "ParameterKey": "swa_vtec",
+          "Description": "Absolute vertical TEC from largest elevation GNSS satellite",
+          "Units": "TECU",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "relative stec",
+          "ParameterKey": "swa_stec_rel",
+          "Description": "Relative slant TEC",
+          "Units": "TECU",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "gps elevation angle",
+          "ParameterKey": "swa_gps_elev",
+          "Description": "gps elevation angle",
+          "Units": "deg",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "gps number",
+          "ParameterKey": "swa_gps_number",
+          "Description": "gps number",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        }
+      ]
+    }
+  }
+}

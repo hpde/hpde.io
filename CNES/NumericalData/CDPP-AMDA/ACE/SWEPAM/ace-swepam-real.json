@@ -1,0 +1,139 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2.4.1.xsd",
+    "Version": "2.4.1",
+    "NumericalData": {
+      "ResourceID": "spase://CNES/NumericalData/CDPP-AMDA/ACE/SWEPAM/ace-swepam-real",
+      "ResourceHeader": {
+        "ResourceName": "sw : real time",
+        "AlternateName": "Solar wind 60-sec real time data",
+        "ReleaseDate": "2022-09-29T03:02:20Z",
+        "Description": "\n         The ram pressure is calculated using P=rho*Np*Vp², where rho=1.672622*(1+4*(1/(1-He++_ratio)-1)). \n         We use rho=2 here, which corresponds to a ratio of He++ between 4% and 5%.\n      ",
+        "Acknowledgement": "Please acknowledge the ACE/SWEPAM instrument team and the ACE Science Center. \n      The following would be an appropriate acknowledgement: “We thank the ACE SWEPAM instrument team and the ACE Science Center for providing the ACE data.”  We would appreciate preprints/reprints of your papers when they become available. \n      ",
+        "Contact": [
+          {
+            "PersonID": "spase://SMWG/Person/David.J.McComas",
+            "Role": "CoInvestigator"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Ruth.Skoug",
+            "Role": "TechnicalContact"
+          }
+        ],
+        "InformationURL": {
+          "URL": "http://www.srl.caltech.edu/ACE/ASC/level2/acknowledgements.html"
+        }
+      },
+      "AccessInformation": [
+        {
+          "RepositoryID": "spase://SMWG/Repository/CDPP/AMDA",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDPP/AMDA HAPI Server",
+            "URL": "http://amda.irap.omp.eu/service/hapi",
+            "Style": "HAPI",
+            "Description": "Web Service to this product using the HAPI interface."
+          },
+          "Format": "CSV",
+          "Acknowledgement": "Thank you for acknowledging the use of AMDA in publications with wording like \"Data analysis was performed with the AMDA science analysis system provided by the Centre de Données de la Physique des Plasmas (CDPP) supported by CNRS, CNES, Observatoire de Paris and Université Paul Sabatier, Toulouse\".. See the Rules of the road at http://amda.cdpp.eu/help/policy.html. Please acknowledge the Data Providers."
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/CDPP/AMDA",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDPP/AMDA Web application",
+            "URL": "http://amda.cdpp.eu",
+            "Description": "Access to Data via CDPP/AMDA Web application."
+          },
+          "Format": [
+            "CSV",
+            "VOTable",
+            "CDF",
+            "PNG"
+          ],
+          "Acknowledgement": "Thank you for acknowledging the use of AMDA in publications with wording like \"Data analysis was performed with the AMDA science analysis system provided by the Centre de Données de la Physique des Plasmas (CDPP) supported by CNRS, CNES, Observatoire de Paris and Université Paul Sabatier, Toulouse\".. See the Rules of the road at http://amda.cdpp.eu/help/policy.html. Please acknowledge the Data Providers."
+        }
+      ],
+      "ProviderName": "NOAA",
+      "InstrumentID": "spase://CNES/Instrument/CDPP-AMDA/ACE/SWEPAM",
+      "MeasurementType": "ThermalPlasma",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "2022-06-28T00:00:00Z",
+          "StopDate": "2022-09-29T01:59:59Z"
+        },
+        "Cadence": "PT60S"
+      },
+      "ObservedRegion": [
+        "Heliosphere",
+        "Heliosphere.NearEarth"
+      ],
+      "Parameter": [
+        {
+          "Name": "density",
+          "ParameterKey": "sw_n_real",
+          "UCD": "phys.density;phys.atmol.ionStage",
+          "Units": "cm^-3",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Particle": {
+            "ParticleType": "Ion",
+            "Qualifier": "Moment",
+            "ParticleQuantity": "NumberDensity"
+          }
+        },
+        {
+          "Name": "v_bulk",
+          "ParameterKey": "sw_v_real",
+          "Description": "Solar Wind Bulk Speed",
+          "UCD": "phys.veloc;phys.atmol.ionStage",
+          "Units": "km/s",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Particle": {
+            "ParticleType": "Ion",
+            "Qualifier": [
+              "Moment",
+              "Scalar"
+            ],
+            "ParticleQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "temperature",
+          "ParameterKey": "sw_t_real",
+          "UCD": "phys.temperature;phys.atmol.ionStage",
+          "Units": "eV",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Particle": {
+            "ParticleType": "Ion",
+            "Qualifier": "Moment",
+            "ParticleQuantity": "Temperature"
+          }
+        },
+        {
+          "Name": "ram pressure",
+          "ParameterKey": "sw_pdyn_real",
+          "Description": "P = 2*10e-6 * Np * Vp^2",
+          "UCD": "phys.pressure;phys.atmol.ionStage",
+          "Units": "nPa",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Particle": {
+            "ParticleType": "Ion",
+            "ParticleQuantity": "Pressure"
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,624 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2.4.1.xsd",
+    "Version": "2.4.1",
+    "NumericalData": {
+      "ResourceID": "spase://CNES/NumericalData/CDPP-AMDA/PSP/SPC/psp-spc-fit",
+      "ResourceHeader": {
+        "ResourceName": "fits",
+        "AlternateName": "SWEAP Level 3 fits",
+        "ReleaseDate": "2022-09-07T08:44:39Z",
+        "Description": "\n             This data product contains derived measurements of ion properties in the solar wind, including \n             density, temperature, velocity vector. The velocity, temperature, and density of the solar wind proton \n             population are estimated by fitting each spectrum to a single Maxwellian or a set of Maxwellian ion \n             populations. \n             \n             * p1 \n             fit to the “primary” proton peak. This is the peak or largest amplitude observed in a \n             given l2i spectrum. A locus of measurements is selected that includes the absolute \n             maximum and at least the 1/e folding, if possible, on either side for this fit. \n             * a \n             fit to the “primary” alpha particle (He++) peak, if resolved. For l3i measurements, this is \n             “guessed” by searching for a secondary peak in each l2i spectrum in the neighborhood \n             of twice the p1 peak energy. \n             * 3 \n             if an additional high signal-to-noise feature is present in the l2i spectrum, typically due \n             to a proton beam or shoulder but also potentially due to a cold minor ion population, a fit \n             is attempted to the p1-subtracted residuals on this neighborhood. The POP3_MTOQ \n             variable is used to indicate the species. \n             * p_tot \n             if p1 and 3 are successfully fit, and the 3 population is determined to be protons, this \n             signifies the total proton parameters (np =total proton density, vp = center of mass \n             velocity, wp = effective thermal velocity, accounting for both populations and their relative \n             drift).\n             \n         ",
+        "Acknowledgement": "\n             Please acknowledge the NASA Parker Solar Probe Mission and SWEAP team \n             led by Justin Kasper for use of data.\n         ",
+        "Contact": [
+          {
+            "PersonID": "spase://SMWG/Person/Justin.C.Kasper",
+            "Role": "PrincipalInvestigator"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Anthony.W.Case",
+            "Role": "CoInvestigator"
+          }
+        ],
+        "InformationURL": {
+          "Name": "User Guide",
+          "URL": "https://spdf.sci.gsfc.nasa.gov/pub/data/psp/sweap/sweap_data_user_guide.pdf",
+          "Description": "\n               User Guide for Parker Solar Probe SWEAP-SPC Investigation Data Products\n           "
+        }
+      },
+      "AccessInformation": [
+        {
+          "RepositoryID": "spase://SMWG/Repository/CDPP/AMDA",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDPP/AMDA HAPI Server",
+            "URL": "http://amda.irap.omp.eu/service/hapi",
+            "Style": "HAPI",
+            "Description": "Web Service to this product using the HAPI interface."
+          },
+          "Format": "CSV",
+          "Acknowledgement": "Thank you for acknowledging the use of AMDA in publications with wording like \"Data analysis was performed with the AMDA science analysis system provided by the Centre de Données de la Physique des Plasmas (CDPP) supported by CNRS, CNES, Observatoire de Paris and Université Paul Sabatier, Toulouse\".. See the Rules of the road at http://amda.cdpp.eu/help/policy.html. Please acknowledge the Data Providers."
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/CDPP/AMDA",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDPP/AMDA Web application",
+            "URL": "http://amda.cdpp.eu",
+            "Description": "Access to Data via CDPP/AMDA Web application."
+          },
+          "Format": [
+            "CSV",
+            "VOTable",
+            "CDF",
+            "PNG"
+          ],
+          "Acknowledgement": "Thank you for acknowledging the use of AMDA in publications with wording like \"Data analysis was performed with the AMDA science analysis system provided by the Centre de Données de la Physique des Plasmas (CDPP) supported by CNRS, CNES, Observatoire de Paris and Université Paul Sabatier, Toulouse\".. See the Rules of the road at http://amda.cdpp.eu/help/policy.html. Please acknowledge the Data Providers."
+        }
+      ],
+      "ProviderName": "SPDF",
+      "ProviderResourceName": "psp/sweap/spc/l3/l3i/",
+      "InstrumentID": "spase://CNES/Instrument/CDPP-AMDA/PSP/SPC",
+      "MeasurementType": "Spectrum",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "2018-10-30T23:59:59Z",
+          "StopDate": "2022-04-29T10:08:23Z"
+        },
+        "CadenceMin": "PT0.2S",
+        "CadenceMax": "PT30S"
+      },
+      "ObservedRegion": [
+        "Heliosphere.Inner",
+        "Sun.Corona"
+      ],
+      "Parameter": [
+        {
+          "Name": "np1",
+          "ParameterKey": "psp_spc_np1",
+          "Description": "\n             Number density, fitted to the “primary” proton peak\n         ",
+          "Units": "cm-3",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "NumberDensity"
+          }
+        },
+        {
+          "Name": "np1_uncertainty",
+          "ParameterKey": "psp_spc_dnp1",
+          "Description": "\n               Estimated uncertainty on the number density, fitted to the “primary” proton peak\n           ",
+          "Units": "cm-3",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "NumberDensity"
+          }
+        },
+        {
+          "Name": "wp1",
+          "ParameterKey": "psp_spc_wp1",
+          "Description": "\n               Thermal velocity = sqrt(2kT/m), fitted to the “primary” proton peak\n           ",
+          "Units": "km/s",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "wp1_uncertainty",
+          "ParameterKey": "psp_spc_dwp1",
+          "Description": "\n               Estimated uncertainty on the thermal velocity, fitted to the “primary” proton peak\n           ",
+          "Units": "km/s",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "vp1_rtn",
+          "ParameterKey": "psp_spc_vp1",
+          "Description": "\n               Velocity vector, estimated from the radial thermal velocity fit p1 and flow angle\n           ",
+          "Units": "km/s",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "vp1r",
+                "Qualifier": "Component.I",
+                "Index": "1",
+                "ParameterKey": "psp_spc_vp1(0)"
+              },
+              {
+                "Name": "vp1t",
+                "Qualifier": "Component.J",
+                "Index": "2",
+                "ParameterKey": "psp_spc_vp1(1)"
+              },
+              {
+                "Name": "vp1n",
+                "Qualifier": "Component.K",
+                "Index": "3",
+                "ParameterKey": "psp_spc_vp1(2)"
+              }
+            ]
+          },
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "vp1_uncertainty",
+          "ParameterKey": "psp_spc_dvp1",
+          "Description": "\n               Velocity vector component upper uncertainties\n           ",
+          "Units": "km/s",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "dvp1r",
+                "Qualifier": "Component.I",
+                "Index": "1",
+                "ParameterKey": "psp_spc_dvp1(0)"
+              },
+              {
+                "Name": "dvp1t",
+                "Qualifier": "Component.J",
+                "Index": "2",
+                "ParameterKey": "psp_spc_dvp1(1)"
+              },
+              {
+                "Name": "dvp1n",
+                "Qualifier": "Component.K",
+                "Index": "3",
+                "ParameterKey": "psp_spc_dvp1(2)"
+              }
+            ]
+          },
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "|vp1|",
+          "ParameterKey": "psp_spc_vp1_nrm",
+          "Description": "\n               Velociy vector magnitude\n           ",
+          "Units": "km/s",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "na",
+          "ParameterKey": "psp_spc_na",
+          "Description": "\n               Number density, fitted to the “primary” alpha particle (He++) peak, if resolved\n           ",
+          "Units": "cm-3",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "NumberDensity"
+          }
+        },
+        {
+          "Name": "na_uncertainty",
+          "ParameterKey": "psp_spc_dna",
+          "Description": "\n               Estimated uncertainty on the number density, fitted to the “primary” alpha particle (He++) peak, if resolved\n           ",
+          "Units": "cm-3",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "NumberDensity"
+          }
+        },
+        {
+          "Name": "wa",
+          "ParameterKey": "psp_spc_wa",
+          "Description": "\n               Thermal velocity = sqrt(2kT/m), fitted to the “primary” alpha particle (He++) peak, if resolved\n           ",
+          "Units": "km/s",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "wa_uncertainty",
+          "ParameterKey": "psp_spc_dwa",
+          "Description": "\n               Estimated uncertainty on the thermal velocity, fitted to the “primary” alpha particle (He++) peak, if resolved\n           ",
+          "Units": "km/s",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "va_rtn",
+          "ParameterKey": "psp_spc_va",
+          "Description": "\n               Velocity vector, estimated from the radial thermal velocity fit and flow angle\n           ",
+          "Units": "km/s",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "var",
+                "Qualifier": "Component.I",
+                "Index": "1",
+                "ParameterKey": "psp_spc_va(0)"
+              },
+              {
+                "Name": "vat",
+                "Qualifier": "Component.J",
+                "Index": "2",
+                "ParameterKey": "psp_spc_va(1)"
+              },
+              {
+                "Name": "van",
+                "Qualifier": "Component.K",
+                "Index": "3",
+                "ParameterKey": "psp_spc_va(2)"
+              }
+            ]
+          },
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "va_uncertainty",
+          "ParameterKey": "psp_spc_dva",
+          "Description": "\n               Velocity vector component uncertainties\n           ",
+          "Units": "km/s",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "dvar",
+                "Qualifier": "Component.I",
+                "Index": "1",
+                "ParameterKey": "psp_spc_dva(0)"
+              },
+              {
+                "Name": "dvat",
+                "Qualifier": "Component.J",
+                "Index": "2",
+                "ParameterKey": "psp_spc_dva(1)"
+              },
+              {
+                "Name": "dvan",
+                "Qualifier": "Component.K",
+                "Index": "3",
+                "ParameterKey": "psp_spc_dva(2)"
+              }
+            ]
+          },
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "|va|",
+          "ParameterKey": "psp_spc_va_nrm",
+          "Description": "\n               Velociy vector magnitude\n           ",
+          "Units": "km/s",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "n3",
+          "ParameterKey": "psp_spc_n3",
+          "Description": "\n               Number density, fitted to the p1 substracted residuals\n           ",
+          "Units": "cm-3",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Particle": {
+            "ParticleQuantity": "NumberDensity"
+          }
+        },
+        {
+          "Name": "n3_uncertainty",
+          "ParameterKey": "psp_spc_dn3",
+          "Description": "\n               Estimated uncertainty on the number density, fitted to the p1 substracted residuals\n           ",
+          "Units": "cm-3",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Particle": {
+            "ParticleQuantity": "NumberDensity"
+          }
+        },
+        {
+          "Name": "w3",
+          "ParameterKey": "psp_spc_w3",
+          "Description": "\n               Thermal velocity = sqrt(2kT/m), fitted to the p1 substracted residuals\n           ",
+          "Units": "km/s",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Particle": {
+            "ParticleQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "w3_uncertainty",
+          "ParameterKey": "psp_spc_dw3",
+          "Description": "\n               Estimated uncertainty on the thermal velocity, fitted to the p1 substracted residuals\n           ",
+          "Units": "km/s",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Particle": {
+            "ParticleQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "v3_rtn",
+          "ParameterKey": "psp_spc_v3",
+          "Description": "\n               Velocity vector, estimated from the radial thermal velocity fit and flow angle\n           ",
+          "Units": "km/s",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "v3r",
+                "Qualifier": "Component.I",
+                "Index": "1",
+                "ParameterKey": "psp_spc_v3(0)"
+              },
+              {
+                "Name": "v3t",
+                "Qualifier": "Component.J",
+                "Index": "2",
+                "ParameterKey": "psp_spc_v3(1)"
+              },
+              {
+                "Name": "v3n",
+                "Qualifier": "Component.K",
+                "Index": "3",
+                "ParameterKey": "psp_spc_v3(2)"
+              }
+            ]
+          },
+          "Particle": {
+            "ParticleQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "v3_uncertainty",
+          "ParameterKey": "psp_spc_dv3",
+          "Description": "\n               Velocity vector component uncertainties\n           ",
+          "Units": "km/s",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "dv3r",
+                "Qualifier": "Component.I",
+                "Index": "1",
+                "ParameterKey": "psp_spc_dv3(0)"
+              },
+              {
+                "Name": "dv3t",
+                "Qualifier": "Component.J",
+                "Index": "2",
+                "ParameterKey": "psp_spc_dv3(1)"
+              },
+              {
+                "Name": "dv3n",
+                "Qualifier": "Component.K",
+                "Index": "3",
+                "ParameterKey": "psp_spc_dv3(2)"
+              }
+            ]
+          },
+          "Particle": {
+            "ParticleQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "|v3|",
+          "ParameterKey": "psp_spc_v3_nrm",
+          "Description": "\n               Velociy vector magnitude\n           ",
+          "Units": "km/s",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Particle": {
+            "ParticleQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "np_tot",
+          "ParameterKey": "psp_spc_np_tot",
+          "Description": "\n               If p1 and 3 are successfully fitted, total proton density\n           ",
+          "Units": "cm-3",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "NumberDensity"
+          }
+        },
+        {
+          "Name": "np_tot_uncertainty",
+          "ParameterKey": "psp_spc_dnp_tot",
+          "Description": "\n               Estimated uncertainty on the number density\n           ",
+          "Units": "cm-3",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "NumberDensity"
+          }
+        },
+        {
+          "Name": "wp_tot",
+          "ParameterKey": "psp_spc_wp_tot",
+          "Description": "\n               If p1 and 3 are successfully fitted, effective thermal velocity\n           ",
+          "Units": "km/s",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "wp_tot_uncertainty",
+          "ParameterKey": "psp_spc_dwp_tot",
+          "Description": "\n               Estimated uncertainty on the thermal velocity\n           ",
+          "Units": "km/s",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "vp_tot_rtn",
+          "ParameterKey": "psp_spc_vp_tot",
+          "Description": "\n               If p1 and 3 are successfully fitted, center of mass velocity vector\n           ",
+          "Units": "km/s",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "vp_totr",
+                "Qualifier": "Component.I",
+                "Index": "1",
+                "ParameterKey": "psp_spc_vp_tot(0)"
+              },
+              {
+                "Name": "vp_tott",
+                "Qualifier": "Component.J",
+                "Index": "2",
+                "ParameterKey": "psp_spc_vp_tot(1)"
+              },
+              {
+                "Name": "vp_totn",
+                "Qualifier": "Component.K",
+                "Index": "3",
+                "ParameterKey": "psp_spc_vp_tot(2)"
+              }
+            ]
+          },
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "vp_tot_uncertainty",
+          "ParameterKey": "psp_spc_dvp_tot",
+          "Description": "\n               Velocity vector component uncertainties\n           ",
+          "Units": "km/s",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "dvp_totr",
+                "Qualifier": "Component.I",
+                "Index": "1",
+                "ParameterKey": "psp_spc_dvp_tot(0)"
+              },
+              {
+                "Name": "dvp_tott",
+                "Qualifier": "Component.J",
+                "Index": "2",
+                "ParameterKey": "psp_spc_dvp_tot(1)"
+              },
+              {
+                "Name": "dvp_totn",
+                "Qualifier": "Component.K",
+                "Index": "3",
+                "ParameterKey": "psp_spc_dvp_tot(2)"
+              }
+            ]
+          },
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "|vp_tot|",
+          "ParameterKey": "psp_spc_vp_tot_nrm",
+          "Description": "\n               Velociy vector magnitude\n           ",
+          "Units": "km/s",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "Velocity"
+          }
+        }
+      ]
+    }
+  }
+}
