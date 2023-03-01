@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_4_1.xsd">
-   <Version>2.4.1</Version>
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2-5-0.xsd">
+   <Version>2.5.0</Version>
    <NumericalData>
       <ResourceID>spase://NASA/NumericalData/MMS/2/EnergeticParticleDetector/EIS/Survey/Level2/EnergyByTimeOfFlight/PT2.42S</ResourceID>
       <ResourceHeader>
-         <ResourceName>MMS 2 Energetic Particle Detector, Energetic Ion Spectrometer (EPD-EIS) Energy by Time of Flight, Level 2, Quick-Look Survey</ResourceName>
+         <ResourceName>MMS 2 Energetic Particle Detector, Energetic Ion Spectrometer (EPD-EIS) Energy by Time of Flight, Level 2 (L2), Survey Mode, 2.42 s Data</ResourceName>
+         <AlternateName>MMS2_EPD-EIS_SRVY_L2_EXTOF</AlternateName>
          <DOI>https://doi.org/10.48322/n2at-sb97</DOI>
-         <ReleaseDate>2022-08-04T12:34:56.789</ReleaseDate>
+         <ReleaseDate>2023-02-28T12:34:56.789</ReleaseDate>
          <RevisionHistory>
             <RevisionEvent>
                <ReleaseDate>2021-04-27T15:38:11</ReleaseDate>
@@ -16,17 +17,36 @@
                <ReleaseDate>2022-08-04T12:34:56.789</ReleaseDate>
                <Note>Added DOI and PublicationInfo minted by LFB, updated the RepositoryID, updated the SPDF MetadataContact Person to Robert M. Candey, metadata updated to SPASE 2.4.1, reviewed by LFB 20220803</Note>
             </RevisionEvent>
+            <RevisionEvent>
+               <ReleaseDate>2023-02-28T12:34:56.789</ReleaseDate>
+               <Note>Standardized the ResourceName Format, Set AlternateName equal to the ProductKey, Revised the Acknowledgement, PublicationInfo Authors, and Contact Person list per request of the MMS EPD team, metadata updated to SPASE 2.5.0, reviewed by LFB 20230228</Note>
+            </RevisionEvent>
          </RevisionHistory>
          <Description>Energetic Particle Detector (EPD), Energetic Ion Spectrometer (EIS) Energy by Time of Flight, Level 2, Quick-Look Survey, 2.42 s Data. The EIS provides ion composition measurements (protons versus oxygen ions) and angular distributions over the energy range from approximately 45 to 500 keV.</Description>
-         <Acknowledgement>B. Mauk</Acknowledgement>
+         <Acknowledgement>Please acknowledge I.J. Cohen, B.H. Mauk, and J.L. Burch for use of these data</Acknowledgement>
          <PublicationInfo>
-            <Authors>B.H. Mauk</Authors>
+            <Authors>Cohen, Ian, J.; Mauk, Barry, H.; Burch, James, L.</Authors>
             <PublicationDate>2022-01-01T00:00:00</PublicationDate>
             <PublishedBy>NASA Space Physics Data Facility</PublishedBy>
          </PublicationInfo>
          <Contact>
+            <PersonID>spase://SMWG/Person/Ian.J.Cohen</PersonID>
+            <Role>InstrumentLead</Role>
+            <Role>CoInvestigator</Role>
+         </Contact>
+         <Contact>
             <PersonID>spase://SMWG/Person/Barry.H.Mauk</PersonID>
-            <Role>PrincipalInvestigator</Role>
+            <Role>InstrumentLead</Role>
+            <Role>CoInvestigator</Role>
+            <Note>Retired</Note>
+         </Contact>
+         <Contact>
+            <PersonID>spase://SMWG/Person/James.L.Burch</PersonID>
+            <Role>MissionPrincipalInvestigator</Role>
+         </Contact>
+         <Contact>
+            <PersonID>spase://SMWG/Person/MMS_SDC_POC</PersonID>
+            <Role>HostContact</Role>
          </Contact>
          <Contact>
             <PersonID>spase://SMWG/Person/Robert.M.Candey</PersonID>
@@ -49,18 +69,36 @@
          <PriorID>spase://VSPO/NumericalData/MMS/2/EnergeticParticleDetector/EIS/Survey/Level2/EnergyByTimeOfFlight/PT2.42S</PriorID>
       </ResourceHeader>
       <AccessInformation>
-         <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF/CDAWEB</RepositoryID>
+         <RepositoryID>spase://SMWG/Repository/UCOLO/LASP/MMS_SDC</RepositoryID>
+         <Availability>Online</Availability>
+         <AccessRights>Open</AccessRights>
+         <AccessURL>
+            <Name>FTPS from the MMS SDC (not with most browsers)</Name>
+            <URL>ftps://lasp.colorado.edu/mms/sdc/public/data/mms2/epd-eis/srvy/l2/extof/</URL>
+            <Description>In CDF via ftp from the MMS Science Data Center</Description>
+         </AccessURL>
+         <AccessURL>
+            <Name>HTTPS from the MMS SDC</Name>
+            <URL>https://lasp.colorado.edu/mms/sdc/public/data/mms2/epd-eis/srvy/l2/extof/</URL>
+            <Description>In CDF via http from the MMS Science Data Center</Description>
+         </AccessURL>
+         <Format>CDF</Format>
+         <Encoding>None</Encoding>
+         <Acknowledgement>Please acknowledge I.J. Cohen, B.H. Mauk, and J.L. Burch. Also please acknowledge the data providers and CDAWeb when using these data.</Acknowledgement>
+      </AccessInformation>
+      <AccessInformation>
+         <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF/CDAWeb</RepositoryID>
          <Availability>Online</Availability>
          <AccessRights>Open</AccessRights>
          <AccessURL>
             <Name>FTPS from SPDF (not with most browsers)</Name>
             <URL>ftps://spdf.gsfc.nasa.gov/pub/data/mms/mms2/epd-eis/srvy/l2/extof/</URL>
-            <Description>In CDF via ftp from SPDF.</Description>
+            <Description>In CDF via ftp from SPDF</Description>
          </AccessURL>
          <AccessURL>
             <Name>HTTPS from SPDF</Name>
             <URL>https://spdf.gsfc.nasa.gov/pub/data/mms/mms2/epd-eis/srvy/l2/extof/</URL>
-            <Description>In CDF via http from SPDF.</Description>
+            <Description>In CDF via http from SPDF</Description>
          </AccessURL>
          <AccessURL>
             <Name>CDAWeb</Name>
@@ -70,10 +108,10 @@
          </AccessURL>
          <Format>CDF</Format>
          <Encoding>None</Encoding>
-         <Acknowledgement>B. Mauk. Please acknowledge the data providers and CDAWeb when using these data.</Acknowledgement>
+         <Acknowledgement>Please acknowledge I.J. Cohen, B.H. Mauk, and J.L. Burch. Also please acknowledge the data providers and CDAWeb when using these data.</Acknowledgement>
       </AccessInformation>
       <AccessInformation>
-         <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF/CDAWEB</RepositoryID>
+         <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF/CDAWeb</RepositoryID>
          <Availability>Online</Availability>
          <AccessRights>Open</AccessRights>
          <AccessURL>
@@ -81,10 +119,10 @@
             <URL>https://cdaweb.gsfc.nasa.gov/hapi</URL>
             <Style>HAPI</Style>
             <ProductKey>MMS2_EPD-EIS_SRVY_L2_EXTOF</ProductKey>
-            <Description>Web Service to this product using the HAPI interface.</Description>
+            <Description>Web Service to this product using the HAPI interface</Description>
          </AccessURL>
          <Format>CSV</Format>
-         <Acknowledgement>B. Mauk. Please acknowledge the data providers and CDAWeb when using these data.</Acknowledgement>
+         <Acknowledgement>Please acknowledge I.J. Cohen, B.H. Mauk, and J.L. Burch. Also please acknowledge the data providers and CDAWeb when using these data.</Acknowledgement>
       </AccessInformation>
       <ProcessingLevel>Calibrated</ProcessingLevel>
       <InstrumentID>spase://SMWG/Instrument/MMS/2/EnergeticParticleDetector/EIS</InstrumentID>

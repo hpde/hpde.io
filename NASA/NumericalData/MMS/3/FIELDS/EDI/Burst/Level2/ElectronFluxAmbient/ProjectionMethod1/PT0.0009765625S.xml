@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_4_1.xsd">
-   <Version>2.4.1</Version>
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2-5-0.xsd">
+   <Version>2.5.0</Version>
    <NumericalData>
       <ResourceID>spase://NASA/NumericalData/MMS/3/FIELDS/EDI/Burst/Level2/ElectronFluxAmbient/ProjectionMethod1/PT0.0009765625S</ResourceID>
       <ResourceHeader>
-         <ResourceName>MMS 3 Electron Drift Instrument (EDI) Ambient Electron Flux, Projection Method 1 (PM1), Level 2, Burst Survey</ResourceName>
+         <ResourceName>MMS 3 Electron Drift Instrument (EDI) Ambient Electron Flux, Projection Method 1 (PM1), Level 2 (L2), Burst Mode, 0.9765625 ms Data</ResourceName>
+         <AlternateName>MMS3_EDI_BRST_L2_AMB</AlternateName>
          <DOI>https://doi.org/10.48322/12xy-an19</DOI>
-         <ReleaseDate>2022-08-04T12:34:56.789</ReleaseDate>
+         <ReleaseDate>2023-02-28T12:34:56.789</ReleaseDate>
          <RevisionHistory>
             <RevisionEvent>
                <ReleaseDate>2021-04-27T15:38:11</ReleaseDate>
@@ -16,25 +17,35 @@
                <ReleaseDate>2022-08-04T12:34:56.789</ReleaseDate>
                <Note>Added DOI and PublicationInfo minted by LFB, updated the RepositoryID, updated the SPDF MetadataContact Person to Robert M. Candey, metadata updated to SPASE 2.4.1, reviewed by LFB 20220803</Note>
             </RevisionEvent>
+            <RevisionEvent>
+               <ReleaseDate>2023-02-28T12:34:56.789</ReleaseDate>
+               <Note>Standardized the ResourceName Format, Set AlternateName equal to the ProductKey, Revised the Acknowledgement, PublicationInfo Authors, and Contact Person list per request of the MMS EDI team, metadata updated to SPASE 2.5.0, reviewed by LFB 20230228</Note>
+            </RevisionEvent>
          </RevisionHistory>
          <Description>Electron Drift Instrument (EDI) Ambient Burst Survey, Level 2, 0.0009765625 s Data (1024 samples/s). EDI has two scientific data acquisition modes, called electric field mode and ambient mode. In electric field mode, two coded electron beams are emitted such that they return to the detectors after one or more gyrations in the ambient magnetic and electric field. The firing directions and times-of-flight allow the derivation of the drift velocity and electric field. In ambient mode, the electron beams are not used. The detectors with their large geometric factors and their ability to adjust the field of view quickly allow continuous sampling of ambient electrons at a selected pitch angle and fixed but selectable energy. To find the beam directions that will hit the detector, EDI sweeps each beam in the plane perpendicular to B at a fixed angular rate of 0.22 °/ms until a signal has been acquired by the detector. Once signal has been acquired, the beams are swept back and forth to stay on target. Beam detection is not determined from the changes in the count-rates directly, but from the square of the beam counts divided by the background counts from ambient electrons, i.e., from the square of the instantaneous signal-to-noise ratio (SNR). This quantity is computed from data provided by the correlator in the Gun-Detector Electronics that also generates the coding pattern imposed on the outgoing beams. If the squared SNR ratio exceeds a threshold, this is taken as evidence that the beam is returning to the detector. The thresholds for SNR are chosen dependent on background fluxes. They represent a compromise between getting false hits (induced by strong variations in background electron fluxes) and missing true beam hits. The basic software loop that controls EDI operations is executed every 2 ms. As the times when the beams hit their detectors are neither synchronized with the telemetry nor equidistant, EDI data have no fixed time-resolution. Data are reported in telemetry slots. In Survey, using the standard packing mode 0, there are eight telemetry slots per second and Gyn Detector Unit (GDU). The last beam detected during the previous slot will be reported in the current slot. If no beam has been detected, the data quality will be set to zero. In Burst telemetry there are 128 slots per second and GDU. The data in each slot consists of information regarding the beam firing directions (stored in the form of analytic gun deflection voltages), times-of-flight (if successfully measured), quality indicators, time stamps of the beam hits, and some auxiliary correlator-related information. Whenever EDI is not in electron drift mode, it uses its ambient electron mode. The mode has the capability to sample at either 90 degrees pitch angle or at 0/180 degrees (field aligned), or to alternate between 90 degrees and field aligned with selectable dwell times. While all options have been demonstrated during the commissioning phase, only the field aligned mode has been used in the routine operations phase. The choices for energy are 250 eV, 500 eV, and 1 keV. The two detectors, which are facing opposite hemispheres, are looking strictly into opposite directions, so while one detector is looking along B the other is looking antiparallel to B (corresponding to pitch angles of 180 and 0 degrees, respectively). The two detectors switch roles every half spin of the spacecraft as the tip of the magnetic field vector spins outside the field of view of one detector and into the field of view of the other detector. Up until January 4, 2016 the anodes were chosen such that the magnetic field vector projected into the plane of the micro-channel plate entry surface was best aligned with the center of the four anodes ( that is, with the gap between the inner two of the four anodes). Data taken in this configuration are using the term &quot;amb&quot; in the data product names. In the burst data where four channels (corresponding to the four adjacent sensor anode pads) are sampled per GDU, the average (or sum) of the center two channels (channels 2 and 3) represents best the pitch angle of 0 degrees (or 180 degrees). The EDI instrument paper can be found at: http://link.springer.com/article/10.1007%2Fs11214-015-0182-7. The EDI instrument data products guide can be found at https://lasp.colorado.edu/mms/sdc/public/datasets/fields/.</Description>
-         <Acknowledgement>J. Burch, R. Torbert, H. Vaith</Acknowledgement>
+         <Acknowledgement>Please acknowledge R.B. Torbert, M.R. Argall, and J.L. Burch for use of these data</Acknowledgement>
          <PublicationInfo>
-            <Authors>Vaith, H.E., Burch, J.L., and R.B. Torbert</Authors>
+            <Authors>Torbert, Roy, B.; Argall, Matthew, R.; Burch, James, L.</Authors>
             <PublicationDate>2022-01-01T00:00:00</PublicationDate>
             <PublishedBy>NASA Space Physics Data Facility</PublishedBy>
          </PublicationInfo>
          <Contact>
-            <PersonID>spase://SMWG/Person/James.L.Burch</PersonID>
-            <Role>PrincipalInvestigator</Role>
-         </Contact>
-         <Contact>
             <PersonID>spase://SMWG/Person/Roy.B.Torbert</PersonID>
-            <Role>PrincipalInvestigator</Role>
+            <Role>InstrumentLead</Role>
+            <Role>CoInvestigator</Role>
          </Contact>
          <Contact>
-            <PersonID>spase://SMWG/Person/Hans.E.Vaith</PersonID>
-            <Role>PrincipalInvestigator</Role>
+            <PersonID>spase://SMWG/Person/Matthew.R.Argall</PersonID>
+            <Role>Developer</Role>
+            <Note>GroundSoftwareDeveloper</Note>
+         </Contact>
+         <Contact>
+            <PersonID>spase://SMWG/Person/James.L.Burch</PersonID>
+            <Role>MissionPrincipalInvestigator</Role>
+         </Contact>
+         <Contact>
+            <PersonID>spase://SMWG/Person/MMS_SDC_POC</PersonID>
+            <Role>HostContact</Role>
          </Contact>
          <Contact>
             <PersonID>spase://SMWG/Person/Robert.M.Candey</PersonID>
@@ -62,18 +73,36 @@
          <PriorID>spase://VSPO/NumericalData/MMS/3/FIELDS/EDI/Burst/Level2/ElectronFluxAmbient/ProjectionMethod1/PT0.0009765625S</PriorID>
       </ResourceHeader>
       <AccessInformation>
-         <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF/CDAWEB</RepositoryID>
+         <RepositoryID>spase://SMWG/Repository/UCOLO/LASP/MMS_SDC</RepositoryID>
+         <Availability>Online</Availability>
+         <AccessRights>Open</AccessRights>
+         <AccessURL>
+            <Name>FTPS from the MMS SDC (not with most browsers)</Name>
+            <URL>ftps://lasp.colorado.edu/mms/sdc/public/data/mms3/edi/brst/l2/amb/</URL>
+            <Description>In CDF via ftp from the MMS Science Data Center</Description>
+         </AccessURL>
+         <AccessURL>
+            <Name>HTTPS from the MMS SDC</Name>
+            <URL>https://lasp.colorado.edu/mms/sdc/public/data/mms3/edi/brst/l2/amb/</URL>
+            <Description>In CDF via http from the MMS Science Data Center</Description>
+         </AccessURL>
+         <Format>CDF</Format>
+         <Encoding>None</Encoding>
+         <Acknowledgement>Please acknowledge R.B. Torbert, M.R. Argall, and J.L. Burch. Also please acknowledge the data providers and CDAWeb when using these data.</Acknowledgement>
+      </AccessInformation>
+      <AccessInformation>
+         <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF/CDAWeb</RepositoryID>
          <Availability>Online</Availability>
          <AccessRights>Open</AccessRights>
          <AccessURL>
             <Name>FTPS from SPDF (not with most browsers)</Name>
             <URL>ftps://spdf.gsfc.nasa.gov/pub/data/mms/mms3/edi/brst/l2/amb/</URL>
-            <Description>In CDF via ftp from SPDF.</Description>
+            <Description>In CDF via ftp from SPDF</Description>
          </AccessURL>
          <AccessURL>
             <Name>HTTPS from SPDF</Name>
             <URL>https://spdf.gsfc.nasa.gov/pub/data/mms/mms3/edi/brst/l2/amb/</URL>
-            <Description>In CDF via http from SPDF.</Description>
+            <Description>In CDF via http from SPDF</Description>
          </AccessURL>
          <AccessURL>
             <Name>CDAWeb</Name>
@@ -83,22 +112,21 @@
          </AccessURL>
          <Format>CDF</Format>
          <Encoding>None</Encoding>
-         <Acknowledgement>J. Burch, R. Torbert, H. Vaith. Please acknowledge the data providers and CDAWeb when using these data.</Acknowledgement>
+         <Acknowledgement>Please acknowledge R.B. Torbert, M.R. Argall, and J.L. Burch. Also please acknowledge the data providers and CDAWeb when using these data.</Acknowledgement>
       </AccessInformation>
       <AccessInformation>
-         <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF/CDAWEB</RepositoryID>
+         <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF/CDAWeb</RepositoryID>
          <Availability>Online</Availability>
          <AccessRights>Open</AccessRights>
          <AccessURL>
             <Name>CDAWeb HAPI Server</Name>
             <URL>https://cdaweb.gsfc.nasa.gov/hapi</URL>
             <Style>HAPI</Style>
-            <ProductKey>MMS3_EDI_BRST_L2_AMB@0</ProductKey>
-            <ProductKey>MMS3_EDI_BRST_L2_AMB@1</ProductKey>
-            <Description>Web Service to this product using the HAPI interface.</Description>
+            <ProductKey>MMS3_EDI_BRST_L2_AMB</ProductKey>
+            <Description>Web Service to this product using the HAPI interface</Description>
          </AccessURL>
          <Format>CSV</Format>
-         <Acknowledgement>J. Burch, R. Torbert, H. Vaith. Please acknowledge the data providers and CDAWeb when using these data.</Acknowledgement>
+         <Acknowledgement>Please acknowledge R.B. Torbert, M.R. Argall, and J.L. Burch. Also please acknowledge the data providers and CDAWeb when using these data.</Acknowledgement>
       </AccessInformation>
       <ProcessingLevel>Calibrated</ProcessingLevel>
       <InstrumentID>spase://SMWG/Instrument/MMS/3/FIELDS/EDI</InstrumentID>

@@ -2,14 +2,15 @@
   "Spase": {
     "xmlns": "http://www.spase-group.org/data/schema",
     "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
-    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_4_1.xsd",
-    "Version": "2.4.1",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2-5-0.xsd",
+    "Version": "2.5.0",
     "NumericalData": {
       "ResourceID": "spase://NASA/NumericalData/MMS/4/HotPlasmaCompositionAnalyzer/Survey/Level2/TimeOfFlight/Counts/PT0.625S",
       "ResourceHeader": {
-        "ResourceName": "MMS 4 Hot Plasma Composition Analyzer (HPCA) Time of Flight, TOF, Counts, Quick-Look Survey, Level 2 (L2), PT0.625S Data",
+        "ResourceName": "MMS 4 Hot Plasma Composition Analyzer (HPCA) Time of Flight, TOF, Counts, Level 2 (L2), Survey Mode, 0.625 s Data",
+        "AlternateName": "MMS4_HPCA_SRVY_L2_TOF-COUNTS",
         "DOI": "https://doi.org/10.48322/s1dx-qt59",
-        "ReleaseDate": "2022-08-04T12:34:56.789",
+        "ReleaseDate": "2023-02-28T12:34:56.789",
         "RevisionHistory": {
           "RevisionEvent": [
             {
@@ -19,24 +20,47 @@
             {
               "ReleaseDate": "2022-08-04T12:34:56.789",
               "Note": "Added DOI and PublicationInfo minted by LFB, updated the RepositoryID, updated the SPDF MetadataContact Person to Robert M. Candey, metadata updated to SPASE 2.4.1, reviewed by LFB 20220803"
+            },
+            {
+              "ReleaseDate": "2023-02-28T12:34:56.789",
+              "Note": "Standardized the ResourceName Format, Set AlternateName equal to the ProductKey, Revised the Acknowledgement, PublicationInfo Authors, and Contact Person list per request of the MMS HPCA team, metadata updated to SPASE 2.5.0, reviewed by LFB 20230228"
             }
           ]
         },
         "Description": "Hot Plasma Composition Analyzer (HPCA) Time of Flight, TOF, Counts, Level 2, Survey 10 s Data. The MMS HPCA instruments measure the energy and composition of magnetospheric plasmas in the energy range from 1 eV to 40 keV. An electrostatic energy analyzer (ESA) that is optically coupled to a carbon-foil based Time-of-Flight (TOF) section comprises each HPCA. The basic HPCA data product is an array of counts for 5 ion species, at 63 energies, for each of 16 elevation anodes. Sixteen basic products, also called azimuths, are acquired every 10 s; half a spacecraft spin period nominally has 16 azimuths. The five ion species are protons (H+), alpha particles (He++), helium ions (He+), singly charged Oxygen (O+), and background counts.",
-        "Acknowledgement": "Confer with PI for rules of acknowledgement. Determined by the Principal Investigator.",
+        "Acknowledgement": "Please acknowledge S.A. Fuselier, D.T. Young, R.G. Gomez, and J.L. Burch for use of these data",
         "PublicationInfo": {
-          "Authors": "Burch, J.L., and S.A. Fuselier",
+          "Authors": "Fuselier, Stephen, A.; Young, David, T.; Gomez, Roman, G.; Burch, James, L.",
           "PublicationDate": "2022-01-01T00:00:00",
           "PublishedBy": "NASA Space Physics Data Facility"
         },
         "Contact": [
           {
-            "PersonID": "spase://SMWG/Person/James.L.Burch",
-            "Role": "PrincipalInvestigator"
+            "PersonID": "spase://SMWG/Person/Stephen.A.Fuselier",
+            "Role": [
+              "InstrumentLead",
+              "CoInvestigator"
+            ]
           },
           {
-            "PersonID": "spase://SMWG/Person/Stephen.A.Fuselier",
-            "Role": "PrincipalInvestigator"
+            "PersonID": "spase://SMWG/Person/David.T.Young",
+            "Role": [
+              "InstrumentLead",
+              "CoInvestigator"
+            ],
+            "Note": "Retired"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Roman.G.Gomez",
+            "Role": "CoInvestigator"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/James.L.Burch",
+            "Role": "MissionPrincipalInvestigator"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/MMS_SDC_POC",
+            "Role": "HostContact"
           },
           {
             "PersonID": "spase://SMWG/Person/Robert.M.Candey",
@@ -48,6 +72,11 @@
           }
         ],
         "InformationURL": [
+          {
+            "Name": "The Magnetospheric Multiscale (MMS) Mission home page at Goddard Space Flight Center (GSFC)",
+            "URL": "https://mms.gsfc.nasa.gov/",
+            "Description": "The Magnetospheric Multiscale (MMS) Mission Home Page hosted by the Goddard Space Flight Center (GSFC)."
+          },
           {
             "Name": "MMS instruments, hosted by NASA",
             "URL": "https://www.nasa.gov/mission_pages/mms/spacecraft/mms-instruments.html",
@@ -63,33 +92,53 @@
       },
       "AccessInformation": [
         {
-          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF/CDAWEB",
+          "RepositoryID": "spase://SMWG/Repository/UCOLO/LASP/MMS_SDC",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": [
+            {
+              "Name": "FTPS from the MMS SDC (not with most browsers)",
+              "URL": "ftps://lasp.colorado.edu/mms/sdc/public/data/mms4/hpca/srvy/l2/tof-counts/",
+              "Description": "In CDF via ftp from the MMS Science Data Center"
+            },
+            {
+              "Name": "HTTPS from the MMS SDC",
+              "URL": "https://lasp.colorado.edu/mms/sdc/public/data/mms4/hpca/srvy/l2/tof-counts/",
+              "Description": "In CDF via http from the MMS Science Data Center"
+            }
+          ],
+          "Format": "CDF",
+          "Encoding": "None",
+          "Acknowledgement": "Please acknowledge S.A. Fuselier, D.T. Young, R.G. Gomez, and J.L. Burch. Also please acknowledge the data providers and CDAWeb when using these data."
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF/CDAWeb",
           "Availability": "Online",
           "AccessRights": "Open",
           "AccessURL": [
             {
               "Name": "FTPS from SPDF (not with most browsers)",
               "URL": "ftps://spdf.gsfc.nasa.gov/pub/data/mms/mms4/hpca/srvy/l2/tof-counts/",
-              "Description": "Access to Data in CDF Format via ftp from SPDF"
+              "Description": "In CDF via ftp from SPDF"
             },
             {
               "Name": "HTTPS from SPDF",
               "URL": "https://spdf.gsfc.nasa.gov/pub/data/mms/mms4/hpca/srvy/l2/tof-counts/",
-              "Description": "Access to Data in CDF Format via http from SPDF"
+              "Description": "In CDF via http from SPDF"
             },
             {
               "Name": "CDAWeb",
               "URL": "https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=MMS4_HPCA_SRVY_L2_TOF-COUNTS&index=sp_phys",
               "ProductKey": "MMS4_HPCA_SRVY_L2_TOF-COUNTS",
-              "Description": "Access to ASCII, CDF, and Plots via NASA/GSFC CDAWeb"
+              "Description": "Access to ASCII, CDF, and plots via NASA/GSFC CDAWeb"
             }
           ],
           "Format": "CDF",
           "Encoding": "None",
-          "Acknowledgement": "Please acknowledge the Principal Investigator J. Burch and S. Fuselier. Please acknowledge the Data Providers and CDAWeb when using these Data."
+          "Acknowledgement": "Please acknowledge S.A. Fuselier, D.T. Young, R.G. Gomez, and J.L. Burch. Also please acknowledge the data providers and CDAWeb when using these data."
         },
         {
-          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF/CDAWEB",
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF/CDAWeb",
           "Availability": "Online",
           "AccessRights": "Open",
           "AccessURL": {
@@ -97,10 +146,10 @@
             "URL": "https://cdaweb.gsfc.nasa.gov/hapi",
             "Style": "HAPI",
             "ProductKey": "MMS4_HPCA_SRVY_L2_TOF-COUNTS",
-            "Description": "Web Service to this product using the HAPI interface."
+            "Description": "Web Service to this product using the HAPI interface"
           },
           "Format": "CSV",
-          "Acknowledgement": "Please acknowledge the Principal Investigator J. Burch and S. Fuselier. Please acknowledge the Data Providers and CDAWeb when using these Data."
+          "Acknowledgement": "Please acknowledge S.A. Fuselier, D.T. Young, R.G. Gomez, and J.L. Burch. Also please acknowledge the data providers and CDAWeb when using these data."
         }
       ],
       "ProcessingLevel": "Calibrated",
