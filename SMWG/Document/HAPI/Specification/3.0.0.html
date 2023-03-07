@@ -274,7 +274,34 @@ a.xml-logo:hover {
    text-decoration:underline; 
 }
 
-	  </style></head><body><div><a id="top"/></div><div class="header"><div class="middle">HPDE.io</div></div><div class="page"><div class="spase"><div class="abstract"><div class="access"><p class="box-title">Data Access</p><ul class="list"><li class="list"><a target="_blank" href="https://zenodo.org/record/4757597/files/HAPI-data-access-spec-3.0.0.pdf?download=1"/></li></ul></div><div class="citation inset"><h1><a name="spase://SMWG/Document/HAPI/Specification/3.0.0">The Heliophysics Application Programmer's Interface Specification 3.0.0</a></h1><p class="author"><script>var authors='Weigel, Robert, Vandegriff, Jon, Faden, Jeremy, Roberts, D. Aaron, King, Todd, Candey, Robert, Harris, Bernard.'; var namefixed = authors.replace(/, (.)[^,; ]*/g, ", $1."); var almost = namefixed.replace(/;([^;]*)$/, ' and $1'); document.write(almost.replace(/;[ ]*/g, ", "));</script>
+	  </style></head><body><div><a id="top"/></div><div class="header"><div class="middle">HPDE.io</div></div><div class="page"><div class="spase"><div class="abstract"><div class="access"><p class="box-title">Data Access</p><ul class="list"><li class="list"><a target="_blank" href="https://zenodo.org/record/4757597/files/HAPI-data-access-spec-3.0.0.pdf?download=1"/></li></ul></div><div class="citation inset"><h1><a name="spase://SMWG/Document/HAPI/Specification/3.0.0">The Heliophysics Application Programmer's Interface Specification 3.0.0</a></h1><p class="author"><script>
+			  var authors='Weigel, Robert, Vandegriff, Jon, Faden, Jeremy, Roberts, D. Aaron, King, Todd, Candey, Robert, Harris, Bernard.'; 
+//			  var namefixed = authors.replace(/, (.)[^,; ]*/g, ", $1."); 
+//			  var almost = namefixed.replace(/;([^;]*)$/, ' and $1'); 
+//			  document.write(almost.replace(/;[ ]*/g, ", "));
+        var names = authors.split(';');
+        var fmt_names = [];		
+        var n = 0;	 
+			  names.forEach (function (name) {
+			    var this_name = '';
+			    if (n == names.length - 1) {
+			      this_name += 'and ';
+			    }
+			    // alter the current name
+			    var name_parts = name.split(',');
+			    this_name += name_parts.shift() + ', ';
+			    
+			    name_parts.forEach(function (npart) {
+            var c = npart.trim().slice(0, 1);
+			      this_name += c + '.';
+			    });
+			    
+          fmt_names.push(this_name);
+          n++;
+			  });
+			  document.write(fmt_names.join(', '));
+
+			 </script>
 			(2021). 
 			The Heliophysics Application Programmer's Interface Specification 3.0.0
 			.

@@ -276,7 +276,34 @@ a.xml-logo:hover {
    text-decoration:underline; 
 }
 
-	  </style></head><body><div><a id="top"/></div><div class="header"><div class="middle">HPDE.io</div></div><div class="page"><div class="spase"><div class="abstract"><div class="access"><p class="box-title">Data Access</p><ul class="list"><li class="list"><a target="_blank" href="ftps://spdf.gsfc.nasa.gov/pub/data/rbsp/rbspa/l3/ect/rept/sectors/rel03/">FTPS from SPDF (not with most browsers)</a></li><li class="list"><a target="_blank" href="https://spdf.gsfc.nasa.gov/pub/data/rbsp/rbspa/l3/ect/rept/sectors/rel03/">HTTPS from SPDF</a></li><li class="list"><a target="_blank" href="https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=RBSPA_REL03_ECT-REPT-SCI-L3&amp;index=sp_phys">CDAWeb</a></li><li class="list"><a target="_blank" href="https://cdaweb.gsfc.nasa.gov/hapi">HAPI: CDAWeb HAPI Server</a></li></ul></div><div class="citation inset"><h1><a name="spase://NASA/NumericalData/RBSP/A/ECT/REPT/L3/Sectors/Release03/PT4.2S">Van Allen Probe A Energetic Particle, Composition, and Thermal Plasma Suite (ECT) Relativistic Electron Proton Telescope (REPT) Pitch Angle-Resolved Electron Fluxes, 2 to 59.45 MeV, Proton Fluxes, 21.25 to 120 MeV Flux Data, Level 3, Release #3 (L3), 4.2 s Data</a></h1><p class="author"><script>var authors='D.N. Baker'; var namefixed = authors.replace(/, (.)[^,; ]*/g, ", $1."); var almost = namefixed.replace(/;([^;]*)$/, ' and $1'); document.write(almost.replace(/;[ ]*/g, ", "));</script>
+	  </style></head><body><div><a id="top"/></div><div class="header"><div class="middle">HPDE.io</div></div><div class="page"><div class="spase"><div class="abstract"><div class="access"><p class="box-title">Data Access</p><ul class="list"><li class="list"><a target="_blank" href="ftps://spdf.gsfc.nasa.gov/pub/data/rbsp/rbspa/l3/ect/rept/sectors/rel03/">FTPS from SPDF (not with most browsers)</a></li><li class="list"><a target="_blank" href="https://spdf.gsfc.nasa.gov/pub/data/rbsp/rbspa/l3/ect/rept/sectors/rel03/">HTTPS from SPDF</a></li><li class="list"><a target="_blank" href="https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=RBSPA_REL03_ECT-REPT-SCI-L3&amp;index=sp_phys">CDAWeb</a></li><li class="list"><a target="_blank" href="https://cdaweb.gsfc.nasa.gov/hapi">HAPI: CDAWeb HAPI Server</a></li></ul></div><div class="citation inset"><h1><a name="spase://NASA/NumericalData/RBSP/A/ECT/REPT/L3/Sectors/Release03/PT4.2S">Van Allen Probe A Energetic Particle, Composition, and Thermal Plasma Suite (ECT) Relativistic Electron Proton Telescope (REPT) Pitch Angle-Resolved Electron Fluxes, 2 to 59.45 MeV, Proton Fluxes, 21.25 to 120 MeV Flux Data, Level 3, Release #3 (L3), 4.2 s Data</a></h1><p class="author"><script>
+			  var authors='D.N. Baker'; 
+//			  var namefixed = authors.replace(/, (.)[^,; ]*/g, ", $1."); 
+//			  var almost = namefixed.replace(/;([^;]*)$/, ' and $1'); 
+//			  document.write(almost.replace(/;[ ]*/g, ", "));
+        var names = authors.split(';');
+        var fmt_names = [];		
+        var n = 0;	 
+			  names.forEach (function (name) {
+			    var this_name = '';
+			    if (n == names.length - 1) {
+			      this_name += 'and ';
+			    }
+			    // alter the current name
+			    var name_parts = name.split(',');
+			    this_name += name_parts.shift() + ', ';
+			    
+			    name_parts.forEach(function (npart) {
+            var c = npart.trim().slice(0, 1);
+			      this_name += c + '.';
+			    });
+			    
+          fmt_names.push(this_name);
+          n++;
+			  });
+			  document.write(fmt_names.join(', '));
+
+			 </script>
 			(2022). 
 			Van Allen Probe A Energetic Particle, Composition, and Thermal Plasma Suite (ECT) Relativistic Electron Proton Telescope (REPT) Pitch Angle-Resolved Electron Fluxes, 2 to 59.45 MeV, Proton Fluxes, 21.25 to 120 MeV Flux Data, Level 3, Release #3 (L3), 4.2 s Data
 			[Data set].

@@ -276,7 +276,34 @@ a.xml-logo:hover {
    text-decoration:underline; 
 }
 
-	  </style></head><body><div><a id="top"/></div><div class="header"><div class="middle">HPDE.io</div></div><div class="page"><div class="spase"><div class="abstract"><div class="access"><p class="box-title">Data Access</p><ul class="list"><li class="list"><a target="_blank" href="ftps://spdf.gsfc.nasa.gov/pub/data/ace/epam/level_2_cdaweb/epm_h2/">FTPS from SPDF (not with most browsers)</a></li><li class="list"><a target="_blank" href="https://spdf.gsfc.nasa.gov/pub/data/ace/epam/level_2_cdaweb/epm_h2/">HTTPS from SPDF</a></li><li class="list"><a target="_blank" href="https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=AC_H2_EPM&amp;index=sp_phys">CDAWeb</a></li><li class="list"><a target="_blank" href="https://cdaweb.gsfc.nasa.gov/hapi">HAPI: CDAWeb HAPI Server</a></li><li class="list"><a target="_blank" href="ftp://mussel.srl.caltech.edu/pub/ace/level2/epam/">ACE Science Center ftp area</a></li><li class="list"><a target="_blank" href="https://izw1.caltech.edu/ACE/ASC/level2/lvl2DATA_EPAM.html">ACE Science Center</a></li></ul></div><div class="citation inset"><h1><a name="spase://NASA/NumericalData/ACE/EPAM/L2/PT1H">ACE Electron Proton Alpha Monitor (EPAM) 1-Hour Level 2 Data</a></h1><p class="author"><script>var authors='Gold, R. E., Roelof, E. C., Krimigis, S., Haggerty, D., Armstrong, T., Manweiler, J. W., and Patterson, J. D.'; var namefixed = authors.replace(/, (.)[^,; ]*/g, ", $1."); var almost = namefixed.replace(/;([^;]*)$/, ' and $1'); document.write(almost.replace(/;[ ]*/g, ", "));</script>
+	  </style></head><body><div><a id="top"/></div><div class="header"><div class="middle">HPDE.io</div></div><div class="page"><div class="spase"><div class="abstract"><div class="access"><p class="box-title">Data Access</p><ul class="list"><li class="list"><a target="_blank" href="ftps://spdf.gsfc.nasa.gov/pub/data/ace/epam/level_2_cdaweb/epm_h2/">FTPS from SPDF (not with most browsers)</a></li><li class="list"><a target="_blank" href="https://spdf.gsfc.nasa.gov/pub/data/ace/epam/level_2_cdaweb/epm_h2/">HTTPS from SPDF</a></li><li class="list"><a target="_blank" href="https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=AC_H2_EPM&amp;index=sp_phys">CDAWeb</a></li><li class="list"><a target="_blank" href="https://cdaweb.gsfc.nasa.gov/hapi">HAPI: CDAWeb HAPI Server</a></li><li class="list"><a target="_blank" href="ftp://mussel.srl.caltech.edu/pub/ace/level2/epam/">ACE Science Center ftp area</a></li><li class="list"><a target="_blank" href="https://izw1.caltech.edu/ACE/ASC/level2/lvl2DATA_EPAM.html">ACE Science Center</a></li></ul></div><div class="citation inset"><h1><a name="spase://NASA/NumericalData/ACE/EPAM/L2/PT1H">ACE Electron Proton Alpha Monitor (EPAM) 1-Hour Level 2 Data</a></h1><p class="author"><script>
+			  var authors='Gold, R. E., Roelof, E. C., Krimigis, S., Haggerty, D., Armstrong, T., Manweiler, J. W., and Patterson, J. D.'; 
+//			  var namefixed = authors.replace(/, (.)[^,; ]*/g, ", $1."); 
+//			  var almost = namefixed.replace(/;([^;]*)$/, ' and $1'); 
+//			  document.write(almost.replace(/;[ ]*/g, ", "));
+        var names = authors.split(';');
+        var fmt_names = [];		
+        var n = 0;	 
+			  names.forEach (function (name) {
+			    var this_name = '';
+			    if (n == names.length - 1) {
+			      this_name += 'and ';
+			    }
+			    // alter the current name
+			    var name_parts = name.split(',');
+			    this_name += name_parts.shift() + ', ';
+			    
+			    name_parts.forEach(function (npart) {
+            var c = npart.trim().slice(0, 1);
+			      this_name += c + '.';
+			    });
+			    
+          fmt_names.push(this_name);
+          n++;
+			  });
+			  document.write(fmt_names.join(', '));
+
+			 </script>
 			(2022). 
 			ACE Electron Proton Alpha Monitor (EPAM) 1-Hour Level 2 Data
 			[Data set].

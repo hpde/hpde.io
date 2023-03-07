@@ -276,7 +276,34 @@ a.xml-logo:hover {
    text-decoration:underline; 
 }
 
-	  </style></head><body><div><a id="top"/></div><div class="header"><div class="middle">HPDE.io</div></div><div class="page"><div class="spase"><div class="abstract"><div class="access"><p class="box-title">Data Access</p><ul class="list"><li class="list"><a target="_blank" href="http://vmo.igpp.ucla.edu/data1/Weygand/PropagatedSolarWindGSE/weimer/Geotail/lep_lep/">IGPP UCLA Geotail LEP Data JMW Processed Archive</a></li></ul></div><div class="citation inset"><h1><a name="spase://VSPO/NumericalData/Weygand/Geotail/LEP/Propagated.LEP/GSE/PT60S">Geotail Low Energy Particle (LEP) experiment data Weimer Propagated 60 s Resolution in GSE Coordinates</a></h1><p class="author"><script>var authors='Weygand, James, M; McPherron, Robert, L'; var namefixed = authors.replace(/, (.)[^,; ]*/g, ", $1."); var almost = namefixed.replace(/;([^;]*)$/, ' and $1'); document.write(almost.replace(/;[ ]*/g, ", "));</script>
+	  </style></head><body><div><a id="top"/></div><div class="header"><div class="middle">HPDE.io</div></div><div class="page"><div class="spase"><div class="abstract"><div class="access"><p class="box-title">Data Access</p><ul class="list"><li class="list"><a target="_blank" href="http://vmo.igpp.ucla.edu/data1/Weygand/PropagatedSolarWindGSE/weimer/Geotail/lep_lep/">IGPP UCLA Geotail LEP Data JMW Processed Archive</a></li></ul></div><div class="citation inset"><h1><a name="spase://VSPO/NumericalData/Weygand/Geotail/LEP/Propagated.LEP/GSE/PT60S">Geotail Low Energy Particle (LEP) experiment data Weimer Propagated 60 s Resolution in GSE Coordinates</a></h1><p class="author"><script>
+			  var authors='Weygand, James, M; McPherron, Robert, L'; 
+//			  var namefixed = authors.replace(/, (.)[^,; ]*/g, ", $1."); 
+//			  var almost = namefixed.replace(/;([^;]*)$/, ' and $1'); 
+//			  document.write(almost.replace(/;[ ]*/g, ", "));
+        var names = authors.split(';');
+        var fmt_names = [];		
+        var n = 0;	 
+			  names.forEach (function (name) {
+			    var this_name = '';
+			    if (n == names.length - 1) {
+			      this_name += 'and ';
+			    }
+			    // alter the current name
+			    var name_parts = name.split(',');
+			    this_name += name_parts.shift() + ', ';
+			    
+			    name_parts.forEach(function (npart) {
+            var c = npart.trim().slice(0, 1);
+			      this_name += c + '.';
+			    });
+			    
+          fmt_names.push(this_name);
+          n++;
+			  });
+			  document.write(fmt_names.join(', '));
+
+			 </script>
 			(2006). 
 			Geotail Low Energy Particle (LEP) experiment data Weimer Propagated 60 s Resolution in GSE Coordinates
 			[Data set].

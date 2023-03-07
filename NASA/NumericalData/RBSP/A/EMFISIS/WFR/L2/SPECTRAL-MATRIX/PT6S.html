@@ -276,7 +276,34 @@ a.xml-logo:hover {
    text-decoration:underline; 
 }
 
-	  </style></head><body><div><a id="top"/></div><div class="header"><div class="middle">HPDE.io</div></div><div class="page"><div class="spase"><div class="abstract"><div class="access"><p class="box-title">Data Access</p><ul class="list"><li class="list"><a target="_blank" href="https://emfisis.physics.uiowa.edu/Flight/RBSP-A/L2/">EMFISIS Science at The University of Iowa Radio and Plasma Wave Group Data Repository</a></li><li class="list"><a target="_blank" href="ftps://spdf.gsfc.nasa.gov/pub/data/rbsp/rbspa/l2/emfisis/wfr/spectral-matrix/">FTPS from SPDF (not with most browsers)</a></li><li class="list"><a target="_blank" href="https://spdf.gsfc.nasa.gov/pub/data/rbsp/rbspa/l2/emfisis/wfr/spectral-matrix/">HTTPS from SPDF</a></li><li class="list"><a target="_blank" href="https://cdaweb.gsfc.nasa.gov/index.html">CDAWeb</a></li><li class="list"><a target="_blank" href="https://cdaweb.gsfc.nasa.gov/hapi">HAPI: CDAWeb HAPI Server</a></li></ul></div><div class="citation inset"><h1><a name="spase://NASA/NumericalData/RBSP/A/EMFISIS/WFR/L2/SPECTRAL-MATRIX/PT6S">Van Allen Probe A Electric and Magnetic Field Instrument Suite and Integrated Science (EMFISIS) Waveform Receiver (WFR) Cross Spectral Matrix, Level 2 (L2), 6 s Data</a></h1><p class="author"><script>var authors='Kletzing, C.A., and C.W. Smith'; var namefixed = authors.replace(/, (.)[^,; ]*/g, ", $1."); var almost = namefixed.replace(/;([^;]*)$/, ' and $1'); document.write(almost.replace(/;[ ]*/g, ", "));</script>
+	  </style></head><body><div><a id="top"/></div><div class="header"><div class="middle">HPDE.io</div></div><div class="page"><div class="spase"><div class="abstract"><div class="access"><p class="box-title">Data Access</p><ul class="list"><li class="list"><a target="_blank" href="https://emfisis.physics.uiowa.edu/Flight/RBSP-A/L2/">EMFISIS Science at The University of Iowa Radio and Plasma Wave Group Data Repository</a></li><li class="list"><a target="_blank" href="ftps://spdf.gsfc.nasa.gov/pub/data/rbsp/rbspa/l2/emfisis/wfr/spectral-matrix/">FTPS from SPDF (not with most browsers)</a></li><li class="list"><a target="_blank" href="https://spdf.gsfc.nasa.gov/pub/data/rbsp/rbspa/l2/emfisis/wfr/spectral-matrix/">HTTPS from SPDF</a></li><li class="list"><a target="_blank" href="https://cdaweb.gsfc.nasa.gov/index.html">CDAWeb</a></li><li class="list"><a target="_blank" href="https://cdaweb.gsfc.nasa.gov/hapi">HAPI: CDAWeb HAPI Server</a></li></ul></div><div class="citation inset"><h1><a name="spase://NASA/NumericalData/RBSP/A/EMFISIS/WFR/L2/SPECTRAL-MATRIX/PT6S">Van Allen Probe A Electric and Magnetic Field Instrument Suite and Integrated Science (EMFISIS) Waveform Receiver (WFR) Cross Spectral Matrix, Level 2 (L2), 6 s Data</a></h1><p class="author"><script>
+			  var authors='Kletzing, C.A., and C.W. Smith'; 
+//			  var namefixed = authors.replace(/, (.)[^,; ]*/g, ", $1."); 
+//			  var almost = namefixed.replace(/;([^;]*)$/, ' and $1'); 
+//			  document.write(almost.replace(/;[ ]*/g, ", "));
+        var names = authors.split(';');
+        var fmt_names = [];		
+        var n = 0;	 
+			  names.forEach (function (name) {
+			    var this_name = '';
+			    if (n == names.length - 1) {
+			      this_name += 'and ';
+			    }
+			    // alter the current name
+			    var name_parts = name.split(',');
+			    this_name += name_parts.shift() + ', ';
+			    
+			    name_parts.forEach(function (npart) {
+            var c = npart.trim().slice(0, 1);
+			      this_name += c + '.';
+			    });
+			    
+          fmt_names.push(this_name);
+          n++;
+			  });
+			  document.write(fmt_names.join(', '));
+
+			 </script>
 			(2022). 
 			Van Allen Probe A Electric and Magnetic Field Instrument Suite and Integrated Science (EMFISIS) Waveform Receiver (WFR) Cross Spectral Matrix, Level 2 (L2), 6 s Data
 			[Data set].

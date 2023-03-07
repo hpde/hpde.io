@@ -278,7 +278,34 @@ a.xml-logo:hover {
    text-decoration:underline; 
 }
 
-	  </style></head><body><div><a id="top"/></div><div class="header"><div class="middle">HPDE.io</div></div><div class="page"><div class="spase"><div class="abstract"><div class="access"><p class="box-title">Data Access</p><ul class="list"><li class="list"><a target="_blank" href="ftps://spdf.gsfc.nasa.gov/pub/data/barrel/l2/3e/mspc/">FTPS from SPDF (not with most browsers)</a></li><li class="list"><a target="_blank" href="https://spdf.gsfc.nasa.gov/pub/data/barrel/l2/3e/mspc/">HTTPS from SPDF</a></li><li class="list"><a target="_blank" href="https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=BAR_3E_L2_MSPC&amp;index=sp_phys">CDAWeb</a></li></ul></div><div class="citation inset"><h1><a name="spase://NASA/NumericalData/BARREL/3E/MediumSpectra/L2/PT4S">BARREL 3E X-ray Spectrometer (MSPC) Bremsstrahlung X-ray Spectrum Medium Time Resolution, Level 2, 4 s Data</a></h1><p class="author"><script>var authors='Millan, Robyn M.; Woodger, Leslie A.; McCarthy, Michael P.; Sample, John G.; Smith, David M.; and Warren Z. Rexroad'; var namefixed = authors.replace(/, (.)[^,; ]*/g, ", $1."); var almost = namefixed.replace(/;([^;]*)$/, ' and $1'); document.write(almost.replace(/;[ ]*/g, ", "));</script>
+	  </style></head><body><div><a id="top"/></div><div class="header"><div class="middle">HPDE.io</div></div><div class="page"><div class="spase"><div class="abstract"><div class="access"><p class="box-title">Data Access</p><ul class="list"><li class="list"><a target="_blank" href="ftps://spdf.gsfc.nasa.gov/pub/data/barrel/l2/3e/mspc/">FTPS from SPDF (not with most browsers)</a></li><li class="list"><a target="_blank" href="https://spdf.gsfc.nasa.gov/pub/data/barrel/l2/3e/mspc/">HTTPS from SPDF</a></li><li class="list"><a target="_blank" href="https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=BAR_3E_L2_MSPC&amp;index=sp_phys">CDAWeb</a></li></ul></div><div class="citation inset"><h1><a name="spase://NASA/NumericalData/BARREL/3E/MediumSpectra/L2/PT4S">BARREL 3E X-ray Spectrometer (MSPC) Bremsstrahlung X-ray Spectrum Medium Time Resolution, Level 2, 4 s Data</a></h1><p class="author"><script>
+			  var authors='Millan, Robyn M.; Woodger, Leslie A.; McCarthy, Michael P.; Sample, John G.; Smith, David M.; and Warren Z. Rexroad'; 
+//			  var namefixed = authors.replace(/, (.)[^,; ]*/g, ", $1."); 
+//			  var almost = namefixed.replace(/;([^;]*)$/, ' and $1'); 
+//			  document.write(almost.replace(/;[ ]*/g, ", "));
+        var names = authors.split(';');
+        var fmt_names = [];		
+        var n = 0;	 
+			  names.forEach (function (name) {
+			    var this_name = '';
+			    if (n == names.length - 1) {
+			      this_name += 'and ';
+			    }
+			    // alter the current name
+			    var name_parts = name.split(',');
+			    this_name += name_parts.shift() + ', ';
+			    
+			    name_parts.forEach(function (npart) {
+            var c = npart.trim().slice(0, 1);
+			      this_name += c + '.';
+			    });
+			    
+          fmt_names.push(this_name);
+          n++;
+			  });
+			  document.write(fmt_names.join(', '));
+
+			 </script>
 			(2021). 
 			BARREL 3E X-ray Spectrometer (MSPC) Bremsstrahlung X-ray Spectrum Medium Time Resolution, Level 2, 4 s Data
 			[Data set].

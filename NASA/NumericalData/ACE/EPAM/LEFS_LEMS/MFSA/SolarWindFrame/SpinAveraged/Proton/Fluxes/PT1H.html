@@ -276,7 +276,34 @@ a.xml-logo:hover {
    text-decoration:underline; 
 }
 
-	  </style></head><body><div><a id="top"/></div><div class="header"><div class="middle">HPDE.io</div></div><div class="page"><div class="spase"><div class="abstract"><div class="access"><p class="box-title">Data Access</p><ul class="list"><li class="list"><a target="_blank" href="http://data.ftecs.com/VHO/VEPO/ace_epam/mfsa/PT1H/">ACE EPAM Hourly-Averaged</a></li></ul></div><div class="citation inset"><h1><a name="spase://NASA/NumericalData/ACE/EPAM/LEFS_LEMS/MFSA/SolarWindFrame/SpinAveraged/Proton/Fluxes/PT1H">ACE Electron Proton Alpha Monitor (EPAM) LEFS/LEMS MFSA, Solar Wind Frame, Spin-Averaged Proton Fluxes, Hourly Averages</a></h1><p class="author"><script>var authors='Gold, R.E., Roelof, E.C., Krimigis, S., Haggerty, D., Armstrong, T.P., Manweiler, J.W., and J.D. Patterson'; var namefixed = authors.replace(/, (.)[^,; ]*/g, ", $1."); var almost = namefixed.replace(/;([^;]*)$/, ' and $1'); document.write(almost.replace(/;[ ]*/g, ", "));</script>
+	  </style></head><body><div><a id="top"/></div><div class="header"><div class="middle">HPDE.io</div></div><div class="page"><div class="spase"><div class="abstract"><div class="access"><p class="box-title">Data Access</p><ul class="list"><li class="list"><a target="_blank" href="http://data.ftecs.com/VHO/VEPO/ace_epam/mfsa/PT1H/">ACE EPAM Hourly-Averaged</a></li></ul></div><div class="citation inset"><h1><a name="spase://NASA/NumericalData/ACE/EPAM/LEFS_LEMS/MFSA/SolarWindFrame/SpinAveraged/Proton/Fluxes/PT1H">ACE Electron Proton Alpha Monitor (EPAM) LEFS/LEMS MFSA, Solar Wind Frame, Spin-Averaged Proton Fluxes, Hourly Averages</a></h1><p class="author"><script>
+			  var authors='Gold, R.E., Roelof, E.C., Krimigis, S., Haggerty, D., Armstrong, T.P., Manweiler, J.W., and J.D. Patterson'; 
+//			  var namefixed = authors.replace(/, (.)[^,; ]*/g, ", $1."); 
+//			  var almost = namefixed.replace(/;([^;]*)$/, ' and $1'); 
+//			  document.write(almost.replace(/;[ ]*/g, ", "));
+        var names = authors.split(';');
+        var fmt_names = [];		
+        var n = 0;	 
+			  names.forEach (function (name) {
+			    var this_name = '';
+			    if (n == names.length - 1) {
+			      this_name += 'and ';
+			    }
+			    // alter the current name
+			    var name_parts = name.split(',');
+			    this_name += name_parts.shift() + ', ';
+			    
+			    name_parts.forEach(function (npart) {
+            var c = npart.trim().slice(0, 1);
+			      this_name += c + '.';
+			    });
+			    
+          fmt_names.push(this_name);
+          n++;
+			  });
+			  document.write(fmt_names.join(', '));
+
+			 </script>
 			(2022). 
 			ACE Electron Proton Alpha Monitor (EPAM) LEFS/LEMS MFSA, Solar Wind Frame, Spin-Averaged Proton Fluxes, Hourly Averages
 			[Data set].
