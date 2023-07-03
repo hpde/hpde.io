@@ -6,11 +6,15 @@
     <ResourceHeader>
       <ResourceName>IMP 8 bow shock crossings</ResourceName>
 	  <DOI>https://doi.org/10.48322/753j-g416</DOI>
-      <ReleaseDate>2023-05-11T12:34:56.789Z</ReleaseDate>
+      <ReleaseDate>2023-07-03T12:34:56.789Z</ReleaseDate>
 	  <RevisionHistory>
          <RevisionEvent>
             <ReleaseDate>2023-05-11T12:34:56.789</ReleaseDate>
             <Note>Updated to SPASE Version 2.5.0 if needed, Added DOI information, JMW</Note>
+         </RevisionEvent>
+		 <RevisionEvent>
+            <ReleaseDate>2023-07-03T12:34:56.789</ReleaseDate>
+            <Note>Revised AccessURL, JMW</Note>
          </RevisionEvent>
       </RevisionHistory>
       <Description>A complete list of bow shock crossings observed by IMP 8 spacecraft. The shock crossings were manually identified in magnetic field and/or thermal plasma measurements by J. Merka, A. Szabo, K. Paularena, J. Richardson, and T. Narock.
@@ -28,35 +32,35 @@
       <Contact>
         <PersonID>spase://SMWG/Person/Jan.Merka</PersonID>
         <Role>DataProducer</Role>
-</Contact>
+      </Contact>
       <PriorID>spase://VMO/Catalog/BS_IMP8</PriorID>
       <PriorID>spase://VSPO/Catalog/BS_IMP8</PriorID>
-</ResourceHeader>
+    </ResourceHeader>
     <AccessInformation>
       <RepositoryID>spase://SMWG/Repository/NASA/GSFC/VHO-VMO</RepositoryID>
       <Availability>Online</Availability>
       <AccessRights>Open</AccessRights>
       <AccessURL>
         <Name>Download of IMP 8 bow shock crossing list</Name>
-        <URL>https://vho.nasa.gov/mission/imp8/bowshocks/</URL>
+        <URL>https://wind.nasa.gov/mission/imp8/bowshocks/</URL>
         <Description>Repository of IMP 8 bow shock crossings</Description>
-</AccessURL>
+    </AccessURL>
       <Format>Text</Format>
       <Encoding>ASCII</Encoding>
-</AccessInformation>
+    </AccessInformation>
     <InstrumentID>spase://SMWG/Instrument/IMP8/MAG</InstrumentID>
     <InstrumentID>spase://SMWG/Instrument/IMP8/PLS</InstrumentID>
     <PhenomenonType>BowShockCrossing</PhenomenonType>
     <TimeSpan>
       <StartDate>1973-10-31T07:31:00Z</StartDate>
       <StopDate>2000-06-08T16:45:00Z</StopDate>
-</TimeSpan>
+    </TimeSpan>
     <Caveats>The times are estimated to a minute (truncated).</Caveats>
     <Parameter>
       <Name>Time</Name>
       <ParameterKey>Fields 1-4</ParameterKey>
       <Description>Time of the bow shock crossing. In general, the minute given is that in/during which the crossing is observed. For "extended" crossings, the minute given is that in which the peak of the shock overshoot occurs. For records recording multiple shock crossings, the minute is the minute of the first shock crossing.
-</Description>
+    </Description>
       <Caveats>Truncated to a minute precision.</Caveats>
       <Structure>
         <Size>4</Size>
@@ -64,59 +68,59 @@
           <Name>Year</Name>
           <Index>1</Index>
           <ParameterKey>Field 1</ParameterKey>
-</Element>
+    </Element>
         <Element>
           <Name>Day of year</Name>
           <Index>2</Index>
           <ParameterKey>Field 2</ParameterKey>
-</Element>
+    </Element>
         <Element>
           <Name>Hour</Name>
           <Index>3</Index>
           <ParameterKey>Field 3</ParameterKey>
-</Element>
+    </Element>
         <Element>
           <Name>Minute</Name>
           <Index>4</Index>
           <ParameterKey>Field 4</ParameterKey>
-</Element>
-</Structure>
+    </Element>
+    </Structure>
       <Support>
         <SupportQuantity>Temporal</SupportQuantity>
-</Support>
-</Parameter>
+      </Support>
+    </Parameter>
     <Parameter>
       <Name>Orbit number</Name>
       <ParameterKey>Field 5</ParameterKey>
       <Description>Orbit number per IMP project</Description>
       <Support>
         <SupportQuantity>Other</SupportQuantity>
-</Support>
-</Parameter>
+      </Support>
+    </Parameter>
     <Parameter>
       <Name>Orbit leg</Name>
       <ParameterKey>Field 6</ParameterKey>
       <Description>0 for solarwindward orbit leg, 1 for magnetotailward orbit letg</Description>
       <Support>
         <SupportQuantity>Other</SupportQuantity>
-</Support>
-</Parameter>
+      </Support>
+    </Parameter>
     <Parameter>
       <Name>Sequence number</Name>
       <ParameterKey>Field 7</ParameterKey>
       <Description>Sequence number of the crossing for this orbit leg (1, 2, ...N; N will be an odd number except for Transdr=2 cases). For multiple-shock records (Flag2 = 6 or 7), this number increments by one for unresolvable shock periods (Flag2=6) or by the number of resolvable shocks plus the number of unresolvable-shock subintervals.</Description>
       <Support>
         <SupportQuantity>Other</SupportQuantity>
-</Support>
-</Parameter>
+      </Support>
+    </Parameter>
     <Parameter>
       <Name>Transdr</Name>
       <ParameterKey>Field 8</ParameterKey>
       <Description>Direction of crossing transition: 0 - spacecraft passing into solar wind, 1 - spacecraft passing into magnetosheath, 2 - non-resolvable shock(s), same domain (solar wind or magnetosheath) on both sides. See Timespan for duration of the crossing.</Description>
       <Support>
         <SupportQuantity>Other</SupportQuantity>
-</Support>
-</Parameter>
+      </Support>
+    </Parameter>
     <Parameter>
       <Name>Flag1</Name>
       <ParameterKey>Field 9</ParameterKey>
@@ -127,11 +131,11 @@
       4. Inferred crossing, data gap
       5. Inferred crossing, data but no likely shock visible.
       When a bow shock crossing is inferred to have happened during some time interval, the start time of the interval is given in the record. In addition, if the interval is less than 30 minutes in duration, the location of IMP 8 at the start of the interval is also given in the record. Otherwise the IMP location words have fill values in them. Note that the Timespan parameter is used to give the interval duration in such cases. In general, upstream parameter values are given as fill values for such cases. These intervals typically correspond to data gaps (Flag 1 = 4) with IMP 8 clearly in the solar wind on one side of the gap and in the magnetosheath on the other side. There are rare Flag 1 = 5 cases where IMP 8 is clearly in the solar wind on one side of the interval and in the magnetosheath on the other side and wherein there are data within the interval, yet it is impossible to discern on a finer scale when IMP 8 passed between the solar wind and the magnetosheath.
-</Description>
+      </Description>
       <Support>
         <SupportQuantity>Other</SupportQuantity>
-</Support>
-</Parameter>
+      </Support>
+    </Parameter>
     <Parameter>
       <Name>Flag2</Name>
       <ParameterKey>Field 10</ParameterKey>
@@ -147,8 +151,8 @@
         8. Multiple shocks, mixed resolvable/unresolvable, some resolvable shocks may be ambiguous. Sequence number increments by the number of resolvable shocks in the interval or one less if the ending shock is given a record of its own.</Description>
       <Support>
         <SupportQuantity>Other</SupportQuantity>
-</Support>
-</Parameter>
+      </Support>
+    </Parameter>
     <Parameter>
       <Name>Flag3</Name>
       <ParameterKey>Field 11</ParameterKey>
@@ -158,8 +162,8 @@
         3. Used for inferred crossings (Flag1 = 4)</Description>
       <Support>
         <SupportQuantity>Other</SupportQuantity>
-</Support>
-</Parameter>
+      </Support>
+    </Parameter>
     <Parameter>
       <Name>Spacecraft position in GSE</Name>
       <ParameterKey>Field 12-14</ParameterKey>
@@ -169,7 +173,7 @@
       <CoordinateSystem>
         <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
         <CoordinateSystemName>GSE</CoordinateSystemName>
-</CoordinateSystem>
+      </CoordinateSystem>
       <Structure>
         <Size>3</Size>
         <Element>
@@ -177,25 +181,25 @@
           <Qualifier>Component.I</Qualifier>
           <Index>1</Index>
           <ParameterKey>Field 12</ParameterKey>
-</Element>
+        </Element>
         <Element>
           <Name>Ygse</Name>
           <Qualifier>Component.J</Qualifier>
           <Index>2</Index>
           <ParameterKey>Field 13</ParameterKey>
-</Element>
+        </Element>
         <Element>
           <Name>Zgse</Name>
           <Qualifier>Component.K</Qualifier>
           <Index>3</Index>
           <ParameterKey>Field 14</ParameterKey>
-</Element>
-</Structure>
+        </Element>
+      </Structure>
       <FillValue>999.9</FillValue>
       <Support>
         <SupportQuantity>Positional</SupportQuantity>
-</Support>
-</Parameter>
+      </Support>
+    </Parameter>
     <Parameter>
       <Name>Spacecraft position in GSM</Name>
       <ParameterKey>Field 15-16</ParameterKey>
@@ -205,7 +209,7 @@
       <CoordinateSystem>
         <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
         <CoordinateSystemName>GSM</CoordinateSystemName>
-</CoordinateSystem>
+      </CoordinateSystem>
       <Structure>
         <Size>2</Size>
         <Element>
@@ -213,19 +217,19 @@
           <Qualifier>Component.J</Qualifier>
           <Index>1</Index>
           <ParameterKey>Field 15</ParameterKey>
-</Element>
+        </Element>
         <Element>
           <Name>Zgsm</Name>
           <Qualifier>Component.K</Qualifier>
           <Index>2</Index>
           <ParameterKey>Field 16</ParameterKey>
-</Element>
-</Structure>
+        </Element>
+      </Structure>
       <FillValue>999.9</FillValue>
       <Support>
         <SupportQuantity>Positional</SupportQuantity>
-</Support>
-</Parameter>
+      </Support>
+    </Parameter>
     <Parameter>
       <Name>B GSE</Name>
       <ParameterKey>Field 17-19</ParameterKey>
@@ -235,7 +239,7 @@
       <CoordinateSystem>
         <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
         <CoordinateSystemName>GSE</CoordinateSystemName>
-</CoordinateSystem>
+      </CoordinateSystem>
       <Structure>
         <Size>3</Size>
         <Element>
@@ -243,27 +247,27 @@
           <Qualifier>Component.I</Qualifier>
           <Index>1</Index>
           <ParameterKey>Field 17</ParameterKey>
-</Element>
+        </Element>
         <Element>
           <Name>By GSE</Name>
           <Qualifier>Component.J</Qualifier>
           <Index>2</Index>
           <ParameterKey>Field 18</ParameterKey>
-</Element>
+        </Element>
         <Element>
           <Name>Bz GSE</Name>
           <Qualifier>Component.K</Qualifier>
           <Index>3</Index>
           <ParameterKey>Field 19</ParameterKey>
-</Element>
-</Structure>
+        </Element>
+      </Structure>
       <FillValue>999.9</FillValue>
       <Field>
         <Qualifier>Vector</Qualifier>
         <Qualifier>Average</Qualifier>
         <FieldQuantity>Magnetic</FieldQuantity>
-</Field>
-</Parameter>
+      </Field>
+    </Parameter>
     <Parameter>
       <Name>B GSM</Name>
       <ParameterKey>Field 20-21</ParameterKey>
@@ -273,7 +277,7 @@
       <CoordinateSystem>
         <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
         <CoordinateSystemName>GSM</CoordinateSystemName>
-</CoordinateSystem>
+      </CoordinateSystem>
       <Structure>
         <Size>2</Size>
         <Element>
@@ -281,22 +285,22 @@
           <Qualifier>Component.J</Qualifier>
           <Index>1</Index>
           <ParameterKey>Field 20</ParameterKey>
-</Element>
+        </Element>
         <Element>
           <Name>Bz GSE</Name>
           <Qualifier>Component.K</Qualifier>
           <Index>2</Index>
           <ParameterKey>Field 21</ParameterKey>
-</Element>
-</Structure>
+        </Element>
+      </Structure>
       <FillValue>999.9</FillValue>
       <Field>
         <Qualifier>Component.J</Qualifier>
         <Qualifier>Component.K</Qualifier>
         <Qualifier>Average</Qualifier>
         <FieldQuantity>Magnetic</FieldQuantity>
-</Field>
-</Parameter>
+      </Field>
+    </Parameter>
     <Parameter>
       <Name>V GSE</Name>
       <ParameterKey>Field 22-24</ParameterKey>
@@ -307,7 +311,7 @@
       <CoordinateSystem>
         <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
         <CoordinateSystemName>GSE</CoordinateSystemName>
-</CoordinateSystem>
+      </CoordinateSystem>
       <Structure>
         <Size>3</Size>
         <Element>
@@ -315,27 +319,27 @@
           <Qualifier>Component.I</Qualifier>
           <Index>1</Index>
           <ParameterKey>Field 22</ParameterKey>
-</Element>
+        </Element>
         <Element>
           <Name>-Vy GSE</Name>
           <Qualifier>Component.J</Qualifier>
           <Index>2</Index>
           <ParameterKey>Field 23</ParameterKey>
-</Element>
+        </Element>
         <Element>
           <Name>-Vz GSE</Name>
           <Qualifier>Component.K</Qualifier>
           <Index>3</Index>
           <ParameterKey>Field 24</ParameterKey>
-</Element>
-</Structure>
+        </Element>
+      </Structure>
       <FillValue>9999.9</FillValue>
       <Particle>
         <ParticleType>Proton</ParticleType>
         <Qualifier>Average</Qualifier>
         <ParticleQuantity>Velocity</ParticleQuantity>
-</Particle>
-</Parameter>
+      </Particle>
+    </Parameter>
     <Parameter>
       <Name>Nu</Name>
       <ParameterKey>Field 25</ParameterKey>
@@ -347,8 +351,8 @@
         <ParticleType>Proton</ParticleType>
         <Qualifier>Average</Qualifier>
         <ParticleQuantity>NumberDensity</ParticleQuantity>
-</Particle>
-</Parameter>
+      </Particle>
+    </Parameter>
     <Parameter>
       <Name>Nd</Name>
       <ParameterKey>Field 26</ParameterKey>
@@ -360,8 +364,8 @@
         <ParticleType>Proton</ParticleType>
         <Qualifier>Average</Qualifier>
         <ParticleQuantity>NumberDensity</ParticleQuantity>
-</Particle>
-</Parameter>
+      </Particle>
+    </Parameter>
     <Parameter>
       <Name>T</Name>
       <ParameterKey>Field 27</ParameterKey>
@@ -372,8 +376,8 @@
         <ParticleType>Proton</ParticleType>
         <Qualifier>Average</Qualifier>
         <ParticleQuantity>Temperature</ParticleQuantity>
-</Particle>
-</Parameter>
+      </Particle>
+    </Parameter>
     <Parameter>
       <Name>Time span</Name>
       <ParameterKey>Field 28</ParameterKey>
@@ -383,8 +387,8 @@
       <FillValue>9999</FillValue>
       <Support>
         <SupportQuantity>Temporal</SupportQuantity>
-</Support>
-</Parameter>
+      </Support>
+    </Parameter>
     <Parameter>
       <Name>Btot</Name>
       <ParameterKey>Field 29</ParameterKey>
@@ -396,8 +400,8 @@
         <Qualifier>Magnitude</Qualifier>
         <Qualifier>Average</Qualifier>
         <FieldQuantity>Magnetic</FieldQuantity>
-</Field>
-</Parameter>
+      </Field>
+    </Parameter>
     <Parameter>
       <Name>Vtot</Name>
       <ParameterKey>Field 30</ParameterKey>
@@ -409,8 +413,8 @@
         <ParticleType>Proton</ParticleType>
         <Qualifier>Average</Qualifier>
         <ParticleQuantity>FlowSpeed</ParticleQuantity>
-</Particle>
-</Parameter>
+      </Particle>
+    </Parameter>
     <Parameter>
       <Name>Vs</Name>
       <ParameterKey>Field 31</ParameterKey>
@@ -422,8 +426,8 @@
         <ParticleType>Proton</ParticleType>
         <Qualifier>Average</Qualifier>
         <ParticleQuantity>SoundSpeed</ParticleQuantity>
-</Particle>
-</Parameter>
+      </Particle>
+    </Parameter>
     <Parameter>
       <Name>Va</Name>
       <ParameterKey>Field 32</ParameterKey>
@@ -434,8 +438,8 @@
       <Support>
         <Qualifier>Average</Qualifier>
         <SupportQuantity>Other</SupportQuantity>
-</Support>
-</Parameter>
+      </Support>
+    </Parameter>
     <Parameter>
       <Name>Vms</Name>
       <ParameterKey>Field 33</ParameterKey>
@@ -446,8 +450,8 @@
       <Support>
         <Qualifier>Average</Qualifier>
         <SupportQuantity>Other</SupportQuantity>
-</Support>
-</Parameter>
+      </Support>
+    </Parameter>
     <Parameter>
       <Name>Ms</Name>
       <ParameterKey>Field 34</ParameterKey>
@@ -457,8 +461,8 @@
         <ParticleType>Proton</ParticleType>
         <Qualifier>Average</Qualifier>
         <ParticleQuantity>SonicMachNumber</ParticleQuantity>
-</Particle>
-</Parameter>
+      </Particle>
+    </Parameter>
     <Parameter>
       <Name>Ma</Name>
       <ParameterKey>Field 34</ParameterKey>
@@ -467,8 +471,8 @@
       <Support>
         <Qualifier>Average</Qualifier>
         <SupportQuantity>Other</SupportQuantity>
-</Support>
-</Parameter>
+      </Support>
+    </Parameter>
     <Parameter>
       <Name>Mms</Name>
       <ParameterKey>Field 35</ParameterKey>
@@ -477,8 +481,8 @@
       <Support>
         <Qualifier>Average</Qualifier>
         <SupportQuantity>Other</SupportQuantity>
-</Support>
-</Parameter>
+      </Support>
+    </Parameter>
     <Parameter>
       <Name>Beta</Name>
       <ParameterKey>Field 36</ParameterKey>
@@ -487,8 +491,8 @@
       <Support>
         <Qualifier>Average</Qualifier>
         <SupportQuantity>Other</SupportQuantity>
-</Support>
-</Parameter>
+      </Support>
+    </Parameter>
     <Parameter>
       <Name>Psw</Name>
       <ParameterKey>Field 37</ParameterKey>
@@ -500,8 +504,8 @@
         <ParticleType>Proton</ParticleType>
         <Qualifier>Average</Qualifier>
         <ParticleQuantity>Pressure</ParticleQuantity>
-</Particle>
-</Parameter>
+      </Particle>
+    </Parameter>
     <Parameter>
       <Name>Str</Name>
       <ParameterKey>Field 38</ParameterKey>
@@ -509,8 +513,8 @@
       <FillValue>9.9</FillValue>
       <Support>
         <SupportQuantity>Other</SupportQuantity>
-</Support>
-</Parameter>
+      </Support>
+    </Parameter>
     <Parameter>
       <Name>IMF cone</Name>
       <ParameterKey>Field 39</ParameterKey>
@@ -519,14 +523,14 @@
       <CoordinateSystem>
         <CoordinateRepresentation>Spherical</CoordinateRepresentation>
         <CoordinateSystemName>GSM</CoordinateSystemName>
-</CoordinateSystem>
+      </CoordinateSystem>
       <FillValue>999</FillValue>
       <Field>
         <Qualifier>DirectionAngle</Qualifier>
         <Qualifier>Average</Qualifier>
         <FieldQuantity>Magnetic</FieldQuantity>
-</Field>
-</Parameter>
+      </Field>
+    </Parameter>
     <Parameter>
       <Name>IMF clock</Name>
       <ParameterKey>Field 40</ParameterKey>
@@ -535,13 +539,13 @@
       <CoordinateSystem>
         <CoordinateRepresentation>Spherical</CoordinateRepresentation>
         <CoordinateSystemName>GSM</CoordinateSystemName>
-</CoordinateSystem>
+      </CoordinateSystem>
       <FillValue>999</FillValue>
       <Field>
         <Qualifier>DirectionAngle</Qualifier>
         <Qualifier>Average</Qualifier>
         <FieldQuantity>Magnetic</FieldQuantity>
-</Field>
-</Parameter>
-</Catalog>
+      </Field>
+    </Parameter>
+  </Catalog>
 </Spase>
