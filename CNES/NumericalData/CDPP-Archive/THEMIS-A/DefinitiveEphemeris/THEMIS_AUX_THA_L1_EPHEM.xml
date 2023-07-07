@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_4_0.xsd">
+  <Version>2.4.0</Version>
+  <NumericalData>
+    <ResourceID>spase://CNES/NumericalData/CDPP-Archive/THEMIS-A/DefinitiveEphemeris/THEMIS_AUX_THA_L1_EPHEM</ResourceID>
+    <ResourceHeader>
+      <ResourceName>THEMIS-A definitive ephemeris</ResourceName>
+      <DOI>https://doi.org/10.24400/802406/j8w8-wwzn</DOI>
+      <ReleaseDate>2022-01-21T08:24:17Z</ReleaseDate>
+      <Description>This dataset contains THEMIS-A  position, velocity, attitude and sun pulse data.
+The data are definitive  with added science attitude determination using perigee data post-processing.</Description>
+      <Contact>
+        <PersonID>spase://CNES/Person/CDPP-Archive/Vassilis.Angelopoulos</PersonID>
+        <Role>PrincipalInvestigator</Role>
+      </Contact>
+      <Contact>
+        <PersonID>spase://CNES/Person/CDPP-Archive/CDPP.general.contact</PersonID>
+        <Role>GeneralContact</Role>
+      </Contact>
+    </ResourceHeader>
+    <AccessInformation>
+      <RepositoryID>spase://CNES/Repository/CDPP-Archive/REGARDS-CDPP</RepositoryID>
+      <Availability>Online</Availability>
+      <AccessURL>
+        <Name>REGARDS</Name>
+        <URL>https://cdpp-archive.cnes.fr</URL>
+      </AccessURL>
+      <Format>CDF</Format>
+    </AccessInformation>
+    <ProcessingLevel>Uncalibrated</ProcessingLevel>
+    <InstrumentID>spase://CNES/Instrument/CDPP-Archive/THEMIS-A/Ephemeris</InstrumentID>
+    <MeasurementType>Ephemeris</MeasurementType>
+    <TemporalDescription>
+      <TimeSpan>
+        <StartDate>2007-02-28T00:00:00Z</StartDate>
+        <StopDate>2013-02-20T00:00:00Z</StopDate>
+      </TimeSpan>
+    </TemporalDescription>
+    <ObservedRegion>Heliosphere.NearEarth</ObservedRegion>
+    <ObservedRegion>Earth.Magnetosphere.Magnetotail</ObservedRegion>
+    <ObservedRegion>Earth.Magnetosphere.Main</ObservedRegion>
+    <ObservedRegion>Earth.Magnetosheath</ObservedRegion>
+    <Parameter>
+      <Name>THEMIS-A position vector in GEI coordinates</Name>
+      <Description>THEMIS-A position vector (km) in GEI coordinates</Description>
+      <Units>km</Units>
+      <CoordinateSystem>
+        <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+        <CoordinateSystemName>GEI</CoordinateSystemName>
+      </CoordinateSystem>
+      <Support>
+        <Qualifier>Vector</Qualifier>
+        <SupportQuantity>Positional</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>THEMIS-A velocity vector  in GEI coordinates</Name>
+      <Description>THEMIS-A velocity vector (km/s) in GEI coordinates</Description>
+      <Units>km/s</Units>
+      <UnitsConversion>1e3&gt;m/s</UnitsConversion>
+      <CoordinateSystem>
+        <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+        <CoordinateSystemName>GEI</CoordinateSystemName>
+      </CoordinateSystem>
+      <Support>
+        <Qualifier>Vector</Qualifier>
+        <SupportQuantity>Velocity</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>THEMIS-A Maneuver Flag</Name>
+      <Description>THEMIS-A maneuver status code (XYYZZZ). Values indicate if/what maneuver is being performed.  Spacecraft data will be unreliable during maneuvers.
+      * Unpowered flight (Coast):
+          - X=0, Y=00, Z=000            
+      * Sequence Code X:
+          - 0= No Segmentation
+          - 1= Segmented Maneuver
+      * Type Code YY:
+          - 0= No Maneuver
+          - 1= Axial-thrust Maneuver
+          - 2= Side-thrust Maneuver
+          - 3= Beta-thrust Maneuver
+          - 4= Attitude Precession
+          - 5= Spin-Rate Change
+      * Sequence Number ZZZ:
+          - 001-999= Maneuver Sequence Number</Description>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>THEMIS-A RoI</Name>
+      <Description>Region of interest. Different bits of this parameter give a general indication of the region that the spacecraft is in.  The first 18 bits are significant.  An active bit indicates the spacecraft is in a given region.  Multiple bits may be set simultaneously. The value of the bit is in parentheses in the following table.
+
+          +---------------------------------------------------+
+          | Bit 1(1)      | Earth Shadow                      |
+          | Bit 2(2)      | Lunar Shadow                      |
+          | Bit 3(4)      | Atmospheric absorbtion zone       |
+          | Bit 4(8)      | South Atlantic Anomaly            |
+          | Bit 5(16)     | Northern Auroral Zone             |
+          | Bit 6(32)     | Southern Auroral Zone             |
+          | Bit 7(64)     | Perigee Passage                   |
+          | Bit 8(128)    | Inner &amp; Outer Radiation Belts |
+          | Bit 9(256)    | Deep Plasma Sphere                |
+          | Bit 10(512)   | Foreshock Solar Wind              |
+          | Bit 11(1024)  | Solar Wind Beam                   |
+          | Bit 12(2048)  | High Magnetic Field               |
+          | Bit 13(4096)  | Average Plasma Sheet              |
+          | Bit 14(8192)  | Bowshock Crossing                 |
+          | Bit 15(16384) | Magnetopause Crossing             |
+          | Bit 16(32768) | Ground Based Observatories        |
+          | Bit 17(65536) | 2-Day Conjunctions                |
+          | Bit 18(131072)| 4-Day Conjunctions                |
+          +---------------------------------------------------+</Description>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>THEMIS-A spin axis right ascension</Name>
+      <Description>THEMIS-A spin axis right ascension in GEI coordinates.</Description>
+      <Units>deg</Units>
+      <CoordinateSystem>
+        <CoordinateRepresentation>Spherical</CoordinateRepresentation>
+        <CoordinateSystemName>GEI</CoordinateSystemName>
+      </CoordinateSystem>
+      <Support>
+        <Qualifier>DirectionAngle.AzimuthAngle</Qualifier>
+        <SupportQuantity>Positional</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>THEMIS-A spin axis declination in GEI coordinates</Name>
+      <Description>THEMIS-A spin axis declination in GEI coordinates</Description>
+      <Units>deg</Units>
+      <CoordinateSystem>
+        <CoordinateRepresentation>Spherical</CoordinateRepresentation>
+        <CoordinateSystemName>GEI</CoordinateSystemName>
+      </CoordinateSystem>
+      <Support>
+        <Qualifier>DirectionAngle.ElevationAngle</Qualifier>
+        <SupportQuantity>Positional</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>THEMIS-A spin axis azimuth, Euler alpha, in Probe Geometric (SPG) coordinates</Name>
+      <Description>THEMIS-A spin axis azimuth, Euler alpha, in Probe Geometric (SPG) coordinates</Description>
+      <Units>deg</Units>
+      <CoordinateSystem>
+        <CoordinateRepresentation>Spherical</CoordinateRepresentation>
+        <CoordinateSystemName>SC</CoordinateSystemName>
+      </CoordinateSystem>
+      <Support>
+        <Qualifier>DirectionAngle.AzimuthAngle</Qualifier>
+        <SupportQuantity>Positional</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>THEMIS-A spin axis colatitude, Euler beta, in Probe Geometric (SPG) coordinates</Name>
+      <Description>THEMIS-A spin axis colatitude, Euler beta, in Probe Geometric (SPG) coordinates</Description>
+      <Units>deg</Units>
+      <CoordinateSystem>
+        <CoordinateRepresentation>Spherical</CoordinateRepresentation>
+        <CoordinateSystemName>SC</CoordinateSystemName>
+      </CoordinateSystem>
+      <Support>
+        <Qualifier>DirectionAngle.PolarAngle</Qualifier>
+        <SupportQuantity>Positional</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>THEMIS-A spin period, regularized and boxcar averaged</Name>
+      <Description>THEMIS-A spin period, regularized and boxcar averaged</Description>
+      <Units>s</Units>
+      <Support>
+        <SupportQuantity>Temporal</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>THEMIS-A angle rotated since the sun sensor registered the sun pulse, regularized and boxcar averaged.</Name>
+      <Description>THEMIS-A angle rotated since the sun sensor registered the sun pulse, regularized and boxcar averaged.</Description>
+      <Units>deg</Units>
+      <Support>
+        <Qualifier>PhaseAngle</Qualifier>
+        <SupportQuantity>Positional</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>THEMIS-A Initial Spin Period for segment</Name>
+      <Description>THEMIS-A Initial Spin Period for segment</Description>
+      <Units>s</Units>
+      <Support>
+        <SupportQuantity>Temporal</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>THEMIS-A Drift term for spin rate</Name>
+      <Description>Drift term for spin rate</Description>
+	  <Caveats>Applies to angular velocity (deg/sec), not spin period.</Caveats>
+      <Units>deg/s^2</Units>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>THEMIS-A Spin Correction</Name>
+      <Description>THEMIS-A Spin phase correction from definitive position and field model calculated at 1 minute intervals</Description>
+      <Units>deg</Units>
+      <Support>
+        <Qualifier>DirectionAngle</Qualifier>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>THEMIS-A  Spin axis right ascension</Name>
+      <Description>Spin axis right ascension correction from definitive position and field model</Description>
+      <Units>deg</Units>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>THEMIS-A Spin axis declination</Name>
+      <Description>Spin axis declination correction from definitive position and field model</Description>
+      <Units>deg</Units>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>THEMIS-A Maximum absolute phase error</Name>
+      <Description>Maximum absolute phase error between model and non-outlier sun crossing time</Description>
+	  <Caveats>Errors due to recognized BAU timing errors do not contribute to this quantity</Caveats>
+      <Support>
+        <Qualifier>Uncertainty</Qualifier>
+        <SupportQuantity>Temporal</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>THEMIS-A Number of spins contained in this segment</Name>
+      <Description>THEMIS-A Number of spins contained in this segment</Description>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>THEMIS-A Pulse Gap</Name>
+      <Description>Duration, in seconds, of longest gap between sun pulses in this segment. Long gaps (60 sec or more) will generally indicate shadow periods.</Description>
+      <Units>s</Units>
+      <Support>
+        <SupportQuantity>Temporal</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>THEMIS-A Position (GSE)</Name>
+      <Description>Spacecraft position vector (km) in GSE coordinates</Description>
+      <Units>km</Units>
+      <UnitsConversion>1e3&gt;m</UnitsConversion>
+      <CoordinateSystem>
+        <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+        <CoordinateSystemName>GSE</CoordinateSystemName>
+      </CoordinateSystem>
+      <Support>
+        <Qualifier>Vector</Qualifier>
+        <SupportQuantity>Positional</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>THEMIS-A Position (GSM)</Name>
+      <Description>Spacecraft position vector (km) in GSM coordinates</Description>
+      <Units>km</Units>
+      <UnitsConversion>1e3&gt;m</UnitsConversion>
+      <CoordinateSystem>
+        <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+        <CoordinateSystemName>GSM</CoordinateSystemName>
+      </CoordinateSystem>
+      <Support>
+        <Qualifier>Vector</Qualifier>
+        <SupportQuantity>Positional</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>THEMIS-A Velocity (GSE)</Name>
+      <Description>Spacecraft velocity (km/s) in GSE coordinates</Description>
+      <Units>km/s</Units>
+      <UnitsConversion>1e3&gt;m/s</UnitsConversion>
+      <CoordinateSystem>
+        <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+        <CoordinateSystemName>GSE</CoordinateSystemName>
+      </CoordinateSystem>
+      <Support>
+        <Qualifier>Vector</Qualifier>
+        <SupportQuantity>Velocity</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>THEMIS-A Velocity (GSM)</Name>
+      <Description>Spacecraft velocity (km/s) in GSM coordinates</Description>
+      <Units>km/s</Units>
+      <UnitsConversion>1e3&gt;m/s</UnitsConversion>
+      <CoordinateSystem>
+        <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+        <CoordinateSystemName>GSM</CoordinateSystemName>
+      </CoordinateSystem>
+      <Support>
+        <Qualifier>Vector</Qualifier>
+        <SupportQuantity>Velocity</SupportQuantity>
+      </Support>
+    </Parameter>
+  </NumericalData>
+</Spase>
