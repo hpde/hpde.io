@@ -3,15 +3,27 @@
     "xmlns": "http://www.spase-group.org/data/schema",
     "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
     "xsi:schemaLocation": "http://www.spase-group.org/data/schema  http://spase-group.org/data/schema/spase-2.3.2.xsd",
-    "Version": "2.3.2",
+    "Version": "2.5.0",
     "NumericalData": {
       "ResourceID": "spase://NASA/NumericalData/ICON/MIGHTI/L2/B/Temperature/PT30S",
       "ResourceHeader": {
         "ResourceName": "ICON Michelson Interferometer for Global High-resolution Thermospheric Imaging Viewing Direction B Temperature",
         "AlternateName": "MIGHTI B Temperature",
-        "ReleaseDate": "2021-01-01T00:00:00Z",
+        "DOI": "https://doi.org/10.48322/zrhc-pb76",
+        "ReleaseDate": "2023-08-01T00:00:00Z",
+        "RevisionHistory": {
+          "RevisionEvent": {
+            "ReleaseDate": "2023-08-01T00:00:00Z",
+            "Note": "Added DOI and PublicationInfo minted by JMW on 20230801. Updated SPASE version."
+          }
+        },
         "Description": "MIGHTI samples the O2 A band spectral region at five different wavelengths in order to both measure the shape of the band and to specify a background radiance that is subtracted from the signal. The wavelengths of the filter passbands are selected to maximize the sensitivity to lower thermospheric temperature variations. The temperature measurement is accomplished by a multichannel photometric measurement of the spectral shape of the molecular oxygen A-band around 762 nm wavelength. For each field of view, the signals of the two oxygen lines and the A-band are detected on different regions of a single, cooled, frame transfer charge coupled device (CCD) detector. Two filter channels sample either end of the band to define a background (754.1 nm and 780.1 nm) and three more sample its shape (760.0 nm, 762.8 nm and 765.2 nm). Using three filters that sample the band shape allows the simultaneous retrieval of the atmospheric temperature and common shifts in the center wavelengths of the pass bands due to thermal drifts of the filters. On-board calibration sources are used to periodically quantify thermal drifts, simultaneously with observing the atmosphere.",
-        "Acknowledgement": "National Aeronautics and Space Administration; Dr. Christoph Englert; Dr. Thomas Immel; See http://icon.ssl.berkeley.edu/Data ",
+        "Acknowledgement": "National Aeronautics and Space Administration; Dr. Brian J. Harding; Dr. Thomas Immel",
+        "PublicationInfo": {
+          "Authors": "Harding, B. J.",
+          "PublicationDate": "2023-01-01T00:00:00",
+          "PublishedBy": "NASA Space Physics Data Facility"
+        },
         "Funding": {
           "Agency": "National Aeronautics and Space Administration",
           "Project": "Explorers Program",
@@ -34,24 +46,30 @@
           }
         ]
       },
-      "AccessInformation": {
-        "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
-        "Availability": "Online",
-        "AccessRights": "Open",
-        "AccessURL": [
-          {
-            "Name": "FTPS from SPDF (not with most browsers)",
-            "URL": "ftps://spdf.gsfc.nasa.gov/pub/data/icon/l2/",
+      "AccessInformation": [
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/CDAW",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "HTTPS from CDAWeb",
+            "URL": "https://cdaweb.gsfc.nasa.gov/pub/data/icon/l2/",
             "Description": "FTPS access to ICON data via ftps at the Space Physics Data Facility (SPDF)"
           },
-          {
+          "Format": "NetCDF"
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
             "Name": "HTTPS from SPDF",
             "URL": "https://spdf.gsfc.nasa.gov/pub/data/icon/l2/",
             "Description": "HTTPS access to ICON data at the Space Physics Data Facility (SPDF)"
-          }
-        ],
-        "Format": "NetCDF"
-      },
+          },
+          "Format": "NetCDF"
+        }
+      ],
       "ProcessingLevel": "Calibrated",
       "ProviderName": "ICON MIGHTI team",
       "InstrumentID": "spase://SMWG/Instrument/ICON/MIGHTI",

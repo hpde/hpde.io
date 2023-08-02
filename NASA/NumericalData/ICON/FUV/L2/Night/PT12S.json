@@ -3,15 +3,27 @@
     "xmlns": "http://www.spase-group.org/data/schema",
     "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
     "xsi:schemaLocation": "http://www.spase-group.org/data/schema  http://spase-group.org/data/schema/spase-2.3.2.xsd",
-    "Version": "2.3.2",
+    "Version": "2.5.0",
     "NumericalData": {
       "ResourceID": "spase://NASA/NumericalData/ICON/FUV/L2/Night/PT12S",
       "ResourceHeader": {
         "ResourceName": "ICON The Far Ultra Violet Imaging Spectrograph Nightside Images ",
         "AlternateName": "FUV Nightside Images",
-        "ReleaseDate": "2021-01-01T00:00:00Z",
+        "DOI": "https://doi.org/10.48322/4vx2-1c67",
+        "ReleaseDate": "2023-08-01T00:00:00Z",
+        "RevisionHistory": {
+          "RevisionEvent": {
+            "ReleaseDate": "2023-08-01T00:00:00Z",
+            "Note": "Added DOI and PublicationInfo minted by JMW on 20230801. Updated SPASE version."
+          }
+        },
         "Description": "The FUV instrument takes 2D images of the Earth’s horizon in the Far ultraviolet. The imager is pointing approximately 90 degrees to the spacecraft motion, similar to looking out of the side window of a car as it drives down the road. Onboard electronics read the image 8 times per second and perform Time Delay Integration (TDI) to remove the motion-blur from the images. A turret is used to steer the field of view of the instrument left to right to ensure it always looks along the magnetic meridian (towards the magnetic pole).",
-        "Acknowledgement": "National Aeronautics and Space Administration; Dr. Stephen Mende",
+        "Acknowledgement": "National Aeronautics and Space Administration; Dr. Farzad Kamalabadi; Dr. Thomas Immel",
+        "PublicationInfo": {
+          "Authors": "Kamalabadi, F.",
+          "PublicationDate": "2023-01-01T00:00:00",
+          "PublishedBy": "NASA Space Physics Data Facility"
+        },
         "Funding": {
           "Agency": "National Aeronautics and Space Administration",
           "Project": "Explorers Program",
@@ -34,24 +46,30 @@
           }
         ]
       },
-      "AccessInformation": {
-        "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
-        "Availability": "Online",
-        "AccessRights": "Open",
-        "AccessURL": [
-          {
-            "Name": "FTPS from SPDF (not with most browsers)",
-            "URL": "ftps://spdf.gsfc.nasa.gov/pub/data/icon/l2/",
+      "AccessInformation": [
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/CDAW",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "HTTPS from CDAWeb",
+            "URL": "https://cdaweb.gsfc.nasa.gov/pub/data/icon/l2/",
             "Description": "FTPS access to ICON data via ftps at the Space Physics Data Facility (SPDF)"
           },
-          {
+          "Format": "NetCDF"
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
             "Name": "HTTPS from SPDF",
             "URL": "https://spdf.gsfc.nasa.gov/pub/data/icon/l2/",
-            "Description": "HTTPS ccess to ICON data at the Space Physics Data Facility (SPDF)"
-          }
-        ],
-        "Format": "NetCDF"
-      },
+            "Description": "HTTPS access to ICON data at the Space Physics Data Facility (SPDF)"
+          },
+          "Format": "NetCDF"
+        }
+      ],
       "ProcessingLevel": "Calibrated",
       "ProviderName": "ICON FUV team",
       "InstrumentID": "spase://SMWG/Instrument/ICON/FUV",

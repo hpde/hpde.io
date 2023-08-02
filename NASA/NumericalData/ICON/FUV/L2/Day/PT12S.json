@@ -3,15 +3,27 @@
     "xmlns": "http://www.spase-group.org/data/schema",
     "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
     "xsi:schemaLocation": "http://www.spase-group.org/data/schema  http://spase-group.org/data/schema/spase-2.3.2.xsd",
-    "Version": "2.3.2",
+    "Version": "2.5.0",
     "NumericalData": {
       "ResourceID": "spase://NASA/NumericalData/ICON/FUV/L2/Day/PT12S",
       "ResourceHeader": {
         "ResourceName": "ICON The Far Ultra Violet Imaging Spectrograph Dayside Images ",
         "AlternateName": "FUV Dayside Images",
-        "ReleaseDate": "2021-01-01T00:00:00Z",
-        "Description": "The FUV instrument takes 2D images of the Earth’s horizon in the Far ultraviolet. The imager is pointing approximately 90 degrees to the spacecraft motion, similar to looking out of the side window of a car as it drives down the road. Onboard electronics read the image 8 times per second and perform Time Delay Integration (TDI) to remove the motion-blur from the images. A turret is used to steer the field of view of the instrument left to right to ensure it always looks along the magnetic meridian (towards the magnetic pole).\n\t  \n\t  This describes the data product for ICON FUV Daytime O/N2 (DP 2.4). The ratio of oxygen to nitrogen in the thermosphere is obtained from the two channels of ICON FUV instrument data in, through an inversion process described in https://doi.org/10.1007/s11214-018-0477-6.  The L2 FUV Daytime files are produced from the L1 FUV files.",
-        "Acknowledgement": "National Aeronautics and Space Administration; Dr. Stephen Mende",
+        "DOI": "https://doi.org/10.48322/w3qs-ed95",
+        "ReleaseDate": "2023-08-01T00:00:00Z",
+        "RevisionHistory": {
+          "RevisionEvent": {
+            "ReleaseDate": "2023-08-01T00:00:00Z",
+            "Note": "Added DOI and PublicationInfo minted by JMW on 20230801. Updated SPASE version."
+          }
+        },
+        "Description": "The FUV instrument takes 2D images of the Earth’s horizon in the Far ultraviolet. The imager is pointing approximately 90 degrees to the spacecraft motion, similar to looking out of the side window of a car as it drives down the road. Onboard electronics read the image 8 times per second and perform Time Delay Integration (TDI) to remove the motion-blur from the images. A turret is used to steer the field of view of the instrument left to right to ensure it always looks along the magnetic meridian (towards the magnetic pole).\r\n\t  \r\n\t  This describes the data product for ICON FUV Daytime O/N2 (DP 2.4). The ratio of oxygen to nitrogen in the thermosphere is obtained from the two channels of ICON FUV instrument data in, through an inversion process described in https://doi.org/10.1007/s11214-018-0477-6.  The L2 FUV Daytime files are produced from the L1 FUV files.",
+        "Acknowledgement": "National Aeronautics and Space Administration; Dr. Andrew W. Stephan; Dr. Thomas Immel",
+        "PublicationInfo": {
+          "Authors": "Stephan, A. W.",
+          "PublicationDate": "2023-01-01T00:00:00",
+          "PublishedBy": "NASA Space Physics Data Facility"
+        },
         "Funding": {
           "Agency": "National Aeronautics and Space Administration",
           "Project": "Explorers Program",
@@ -34,24 +46,30 @@
           }
         ]
       },
-      "AccessInformation": {
-        "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
-        "Availability": "Online",
-        "AccessRights": "Open",
-        "AccessURL": [
-          {
-            "Name": "FTPS from SPDF (not with most browsers)",
-            "URL": "ftps://spdf.gsfc.nasa.gov/pub/data/icon/l2/",
+      "AccessInformation": [
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/CDAW",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "HTTPS from CDAWeb",
+            "URL": "https://cdaweb.gsfc.nasa.gov/pub/data/icon/l2/",
             "Description": "FTPS access to ICON data via ftps at the Space Physics Data Facility (SPDF)"
           },
-          {
+          "Format": "NetCDF"
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
             "Name": "HTTPS from SPDF",
             "URL": "https://spdf.gsfc.nasa.gov/pub/data/icon/l2/",
             "Description": "HTTPS access to ICON data at the Space Physics Data Facility (SPDF)"
-          }
-        ],
-        "Format": "NetCDF"
-      },
+          },
+          "Format": "NetCDF"
+        }
+      ],
       "ProcessingLevel": "Calibrated",
       "ProviderName": "ICON FUV team",
       "InstrumentID": "spase://SMWG/Instrument/ICON/FUV",
@@ -282,7 +300,7 @@
         {
           "Name": "Data Collection Mode",
           "ParameterKey": "ICON_L24_Instrument_Mode_Flag",
-          "Description": "Data collection mode of FUV instrument\n        1 = Dayside science\n        2 = Nightside science\n        3 = Calibration\n        4 = Nadir\n        5 = Conjugate\n        6 = Stars\n        7 = Ram\n        8 = Off Target\n        9 = Engineering\n       13 = Unknown.",
+          "Description": "Data collection mode of FUV instrument\r\n        1 = Dayside science\r\n        2 = Nightside science\r\n        3 = Calibration\r\n        4 = Nadir\r\n        5 = Conjugate\r\n        6 = Stars\r\n        7 = Ram\r\n        8 = Off Target\r\n        9 = Engineering\r\n       13 = Unknown.",
           "Cadence": "PT12S",
           "ValidMin": "0",
           "ValidMax": "127",
@@ -310,7 +328,7 @@
         {
           "Name": "Quality Flag of Profiles",
           "ParameterKey": "ICON_L24_Level_1_Quality_Flag",
-          "Description": "QUALITY_FLAG is an indicator of data quality = \n        0 = No errors or quality conditions, LVLH \n        1 = No errors or quality conditions, R-LVLH \n        2 = Lunar calibration \n        3 = Insufficient high voltage \n        4 = Nadir calibration \n        5 = Zero wind calibration \n        6 = Bad pointing \n        7 = S/C attitude slew \n        8 = Conjugate observation \n        9 = Stellar calibration \n       10 = Unreliable background subtracted \n       17 = unspecified error condition.",
+          "Description": "QUALITY_FLAG is an indicator of data quality = \r\n        0 = No errors or quality conditions, LVLH \r\n        1 = No errors or quality conditions, R-LVLH \r\n        2 = Lunar calibration \r\n        3 = Insufficient high voltage \r\n        4 = Nadir calibration \r\n        5 = Zero wind calibration \r\n        6 = Bad pointing \r\n        7 = S/C attitude slew \r\n        8 = Conjugate observation \r\n        9 = Stellar calibration \r\n       10 = Unreliable background subtracted \r\n       17 = unspecified error condition.",
           "Cadence": "PT12S",
           "Units": "N/A",
           "ValidMin": "0",
