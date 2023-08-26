@@ -2,13 +2,25 @@
   "Spase": {
     "xmlns": "http://www.spase-group.org/data/schema",
     "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
-    "xsi:schemaLocation": "http://www.spase-group.org/data/schema  https://www.spase-group.org/data/schema/spase-2_3_2.xsd",
-    "Version": "2.3.2",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema https://www.spase-group.org/data/schema/spase-2_6_0.xsd",
+    "Version": "2.6.0",
     "NumericalData": {
       "ResourceID": "spase://NASA/NumericalData/THEMIS/Ground/Inukjuak/Magnetometer/PT0.5S",
       "ResourceHeader": {
         "ResourceName": "Inukjuak (INUK) Ground-based Vector Magnetic Field (L2) 0.5 s Data",
-        "ReleaseDate": "2021-04-27T15:38:11Z",
+        "ReleaseDate": "2023-08-26T12:34:56.789",
+        "RevisionHistory": {
+          "RevisionEvent": [
+            {
+              "ReleaseDate": "2021-04-27T15:38:11",
+              "Note": "Only known prior ReleaseDate of the metadata"
+            },
+            {
+              "ReleaseDate": "2023-08-26T12:34:56.789",
+              "Note": "Added Missing PriorID, update protocol of http://sprg.ssl.berkeley.edu/themis/ and http://autumn.athabascau.ca/ InformationURL URLs to https, metadata updated to SPASE 2.6.0, reviewed by LFB 20230826"
+            }
+          ]
+        },
         "Description": "Inukjuak, QC, Ground-based Vector Magnetic Field Level 2 Data, 0.5 s Time Resolution, Station Code: (INUK), Station Location: (GEO Latitude 58.5, Longitude 281.9), AUTUMNX Network",
         "Acknowledgement": "Please acknowledge M. Connors, I. Schofield, (Athabasca University)",
         "Contact": [
@@ -32,18 +44,19 @@
         "InformationURL": [
           {
             "Name": "THEMIS Ground-based Observatory (GBO) Magnetic Field Data Portal",
-            "URL": "http://sprg.ssl.berkeley.edu/themis/",
+            "URL": "https://sprg.ssl.berkeley.edu/themis/",
             "Description": "THEMIS Ground-based Observatory (GBO) MAGnetometers (GMAGs)"
           },
           {
             "Name": "AUTUMNX Mag data portal",
-            "URL": "http://autumn.athabascau.ca/",
-            "Description": "Calibration files at http://autumn.athabascau.ca/themis.gbo.mag.calibration"
+            "URL": "https://autumn.athabascau.ca/",
+            "Description": "Calibration files at https://autumn.athabascau.ca/themis.gbo.mag.calibration"
           }
         ],
         "PriorID": [
           "spase://VSPO/NumericalData/THEMIS/Ground/Inujuak/Magnetometer/PT0.5S",
-          "spase://VSPO/NumericalData/THEMIS/Ground/Inukjuak/Magnetometer/PT0.5S"
+          "spase://VSPO/NumericalData/THEMIS/Ground/Inukjuak/Magnetometer/PT0.5S",
+          "spase://NASA/NumericalData/THEMIS/Ground/Inujuak/Magnetometer/PT0.5S"
         ]
       },
       "AccessInformation": [
@@ -159,7 +172,7 @@
           "Set": "Time series defined by using: thg_mag_inuk_epoch",
           "ParameterKey": "thg_magh_inuk",
           "Description": "---> H - Local magnetic North component of B",
-          "Caveats": "This parameter is virtual.  It is calculated by calling the function MAKE_STACK_ARRAY with the following input parameters:  thg_mag_inuk.",
+          "Caveats": "This parameter is virtual. It is calculated by calling the function MAKE_STACK_ARRAY with the following input parameters: thg_mag_inuk.",
           "Cadence": "PT0.5S",
           "Units": "nT",
           "UnitsConversion": "1e-9>T",
@@ -182,7 +195,7 @@
           "Set": "Time series defined by using: thg_mag_inuk_epoch",
           "ParameterKey": "thg_magd_inuk",
           "Description": "---> E - Local magnetic East component of B",
-          "Caveats": "This parameter is virtual.  It is calculated by calling the function MAKE_STACK_ARRAY with the following input parameters:  thg_mag_inuk.",
+          "Caveats": "This parameter is virtual. It is calculated by calling the function MAKE_STACK_ARRAY with the following input parameters: thg_mag_inuk.",
           "Cadence": "PT0.5S",
           "Units": "nT",
           "UnitsConversion": "1e-9>T",
@@ -205,7 +218,7 @@
           "Set": "Time series defined by using: thg_mag_inuk_epoch",
           "ParameterKey": "thg_magz_inuk",
           "Description": "---> Z - Local vertical down component of B",
-          "Caveats": "This parameter is virtual.  It is calculated by calling the function MAKE_STACK_ARRAY with the following input parameters:  thg_mag_inuk.",
+          "Caveats": "This parameter is virtual. It is calculated by calling the function MAKE_STACK_ARRAY with the following input parameters: thg_mag_inuk.",
           "Cadence": "PT0.5S",
           "Units": "nT",
           "UnitsConversion": "1e-9>T",
@@ -286,7 +299,7 @@
           "Name": "thg_mag_inuk_epoch",
           "ParameterKey": "thg_mag_inuk_epoch",
           "Description": "thg_mag_inuk_epoch",
-          "Caveats": "This parameter is virtual.  It is calculated by calling the function COMP_THEMIS_EPOCH with the following input parameters:  thg_mag_inuk_epoch0, thg_mag_inuk_time.",
+          "Caveats": "This parameter is virtual. It is calculated by calling the function COMP_THEMIS_EPOCH with the following input parameters: thg_mag_inuk_epoch0, thg_mag_inuk_time.",
           "Cadence": "PT0.5S",
           "RenderingHints": {
             "AxisLabel": "UT"
