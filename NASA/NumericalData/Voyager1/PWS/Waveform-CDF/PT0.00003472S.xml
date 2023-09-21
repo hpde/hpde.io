@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_4_1.xsd">
-   <Version>2.4.1</Version>
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_6_0.xsd">
+   <Version>2.6.0</Version>
    <NumericalData>
       <ResourceID>spase://NASA/NumericalData/Voyager1/PWS/Waveform-CDF/PT0.00003472S</ResourceID>
       <ResourceHeader>
@@ -11,6 +11,10 @@
             <RevisionEvent>
                <ReleaseDate>2022-09-29T12:34:56.789</ReleaseDate>
                <Note>Initial release of metadata submitted by LJG on 20220721, added Acknowledgement, PublicationInformation, and updated two AccessURL URLs, reviewed by LFB 20220929</Note>
+            </RevisionEvent>
+            <RevisionEvent>
+               <ReleaseDate>2023-09-21T12:34:56.789</ReleaseDate>
+               <Note>Updated AccessInformation for CDAWeb, added AccessInformation for HAPI, versioned up to SPASE 2.6.0, LFB 20230921</Note>
             </RevisionEvent>
          </RevisionHistory>
          <Description>The Voyager 1 Plasma Wave Subsystem (PWS) electric field waveform data set contains all available uncalibrated full resolution 4-bit measurements for the entire mission. The PWS waveform receiver samples the voltage on the 10 m electric antennas at the rate of 28800 samples per second through a 40 Hz to 12 kHz bandpass filter, utilizing an automatic gain control. However, gain information is not returned in telemetry so absolute calibration cannot be done directly. The waveform may be used to identify features such as dust impacts in the time domain or a power spectrum may be derived to show relative amplitudes of spectral elements in the frequency domain.</Description>
@@ -57,10 +61,41 @@
       </AccessInformation>
       <AccessInformation>
          <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF/CDAWeb</RepositoryID>
+         <Availability>Online</Availability>
+         <AccessRights>Open</AccessRights>
          <AccessURL>
+            <Name>FTPS from SPDF (not with most browsers)</Name>
+            <URL>ftps://spdf.gsfc.nasa.gov/pub/data/voyager/voyager1/wave_spectra_pws/waveform_cdf/</URL>
+            <Description>In CDF via ftp from SPDF</Description>
+         </AccessURL>
+         <AccessURL>
+            <Name>HTTPS from SPDF</Name>
             <URL>https://spdf.gsfc.nasa.gov/pub/data/voyager/voyager1/wave_spectra_pws/waveform_cdf/</URL>
+            <Description>In CDF via http from SPDF</Description>
+         </AccessURL>
+         <AccessURL>
+            <Name>CDAWeb</Name>
+            <URL>https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=VG1_PWS_WF&amp;index=sp_phys</URL>
+            <ProductKey>VG1_PWS_WF</ProductKey>
+            <Description>Access to ASCII, CDF, and plots via NASA/GSFC CDAWeb</Description>
          </AccessURL>
          <Format>CDF</Format>
+         <Encoding>None</Encoding>
+         <Acknowledgement>Please acknowledge W.S. Kurth, L.J. Granroth, and C.W. Piker. Also please acknowledge the data providers and CDAWeb when using these data.</Acknowledgement>
+      </AccessInformation>
+      <AccessInformation>
+         <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF/CDAWeb</RepositoryID>
+         <Availability>Online</Availability>
+         <AccessRights>Open</AccessRights>
+         <AccessURL>
+            <Name>CDAWeb HAPI Server</Name>
+            <URL>https://cdaweb.gsfc.nasa.gov/hapi</URL>
+            <Style>HAPI</Style>
+            <ProductKey>VG1_PWS_WF</ProductKey>
+            <Description>Web Service to this product using the HAPI interface</Description>
+         </AccessURL>
+         <Format>CSV</Format>
+         <Acknowledgement>Please acknowledge W.S. Kurth, L.J. Granroth, and C.W. Piker. Also please acknowledge the data providers and CDAWeb when using these data.</Acknowledgement>
       </AccessInformation>
       <ProcessingLevel>Uncalibrated</ProcessingLevel>
       <InstrumentID>spase://SMWG/Instrument/Voyager1/PWS</InstrumentID>
