@@ -10,7 +10,7 @@
         "ResourceName": "International Monitor for Auroral Geomagnetic Effects (IMAGE) Finnish Meterological Institute 10 s Ground Magnetometer Data",
         "AlternateName": "IMAGE FMI 10 s Ground Magnetometer Data",
         "DOI": "https://doi.org/10.48322/29rq-g929",
-        "ReleaseDate": "2023-09-19T12:34:56.789",
+        "ReleaseDate": "2023-09-26T12:34:56.789",
         "RevisionHistory": {
           "RevisionEvent": [
             {
@@ -20,10 +20,14 @@
             {
               "ReleaseDate": "2023-09-19T12:34:56.789",
               "Note": "Added DOI. JMW"
+            },
+            {
+              "ReleaseDate": "2023-09-26T12:34:56.789",
+              "Note": "Corrections made to metadata. JMW"
             }
           ]
         },
-        "Description": "The International Monitor for Auroral Geomagnetic Effects (IMAGE) consists of 52 magnetometer stations maintained by 10 institutes from Finland, Germany, Norway, Poland, Russia, Sweden, Denmark, and Iceland. The prime objectives of IMAGE are to study auroral electrojets and moving two-dimensional current systems. The long profile covering geographic latitudes from 51 to 82 degrees is especially favorable for electrojet studies. Together with other ground-based recordings (by radars, riometers, all-sky cameras) and satellite observations, IMAGE is an essential part in the investigations of high-latitude magnetospheric-ionospheric physics. Together with its predecessor, the EISCAT magnetometer cross started in 1982, IMAGE also provides high-quality data useful for studies of geomagnetic induction and long-term geomagnetic activity in the auroral region.\r\n\t\t \r\n\t\t The Finnish Meterological Institute operates the following stations: ALT, KEV, MAS, KIL, KAU, IVA, MUO, PEL, RAN, OUJ, MEK, HAN, NUR, and TAR.\r\n\t\t ",
+        "Description": "The International Monitor for Auroral Geomagnetic Effects (IMAGE) consists of 52 magnetometer stations maintained by 10 institutes from Finland, Germany, Norway, Poland, Russia, Sweden, Denmark, and Iceland. The prime objectives of IMAGE are to study auroral electrojets and moving two-dimensional current systems. The long profile covering geographic latitudes from 51 to 82 degrees is especially favorable for electrojet studies. Together with other ground-based recordings (by radars, riometers, all-sky cameras) and satellite observations, IMAGE is an essential part in the investigations of high-latitude magnetospheric-ionospheric physics. Together with its predecessor, the EISCAT magnetometer cross started in 1982, IMAGE also provides high-quality data useful for studies of geomagnetic induction and long-term geomagnetic activity in the auroral region.\r\n\t\t \r\n\t\t The Finnish Meterological Institute operates the following stations:  KEV, MAS, KIL, IVA, MUO, PEL, RAN, OUJ, MEK, HAN, NUR, and TAR.\r\n\t\t ",
         "Acknowledgement": "Finnish Meteorological Institute (FMI), Finland",
         "PublicationInfo": {
           "Authors": "Juusola, L., Hakkinen, L., Pujunpaa, K., Viljanen, A., Ryno, J. A., Gustafsson, J., and Kellinsalmi, M.",
@@ -34,14 +38,6 @@
           {
             "PersonID": "spase://SMWG/Person/Liisa.Juusola",
             "Role": "PrincipalInvestigator"
-          },
-          {
-            "PersonID": "spase://SMWG/Person/Lasse.Hakkinen",
-            "Role": "Scientist"
-          },
-          {
-            "PersonID": "spase://SMWG/Person/Kari.Pajunpaa",
-            "Role": "Scientist"
           },
           {
             "PersonID": "spase://SMWG/Person/Ari.Viljanen",
@@ -203,7 +199,7 @@
         {
           "Name": "Interval",
           "ParameterKey": "Column 61-62",
-          "Description": "Interval between datapoints 2 characters",
+          "Description": "Interval between datapoints 2 characters [in seconds].",
           "Support": {
             "Qualifier": "Magnitude",
             "SupportQuantity": "Temporal"
@@ -237,9 +233,9 @@
           }
         },
         {
-          "Name": "Base line information and Probable base line change",
+          "Name": "Base line information.",
           "ParameterKey": "Column 70",
-          "Description": "Base line information 1 character [1 = final data, absolute base line, accuracy about 1 nT; 2 = final data but no absolute measurements; 3 = preliminary data; 4 = data relative to quiet day night values.], Probable base line change 2 characters [in 0.1 nT within one day] There 82 free spaces after this column.",
+          "Description": "Base line information 1 character [1 = final data, absolute base line, accuracy about 1 nT; 2 = final data but no absolute measurements; 3 = preliminary data; 4 = data relative to quiet day night values.], Probable base line change 2 characters [in 0.1 nT within one day].",
           "Support": {
             "Qualifier": "Scalar",
             "SupportQuantity": "Housekeeping"
@@ -2447,6 +2443,7 @@
           "Description": "Hourly mean northward magnetic field.",
           "Caveats": "This component strong depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.",
           "Units": "0.1 nT (0.1' if D)",
+          "FillValue": "000000 if not the last part of the hour",
           "Field": {
             "Qualifier": "Component.I",
             "FieldQuantity": "Magnetic"
@@ -2458,6 +2455,7 @@
           "Description": "Hourly mean  eastward magnetic field.",
           "Caveats": "This component strong depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.",
           "Units": "0.1 nT (0.1' if D)",
+          "FillValue": "000000 if not the last part of the hour",
           "Field": {
             "Qualifier": "Component.J",
             "FieldQuantity": "Magnetic"
@@ -2469,6 +2467,7 @@
           "Description": "Hourly Mean of the Z component of the magnetic field.",
           "Caveats": "This component strong depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.",
           "Units": "0.1 nT (0.1' if D)",
+          "FillValue": "000000 if not the last part of the hour",
           "Field": {
             "Qualifier": "Component.K",
             "FieldQuantity": "Magnetic"

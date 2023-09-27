@@ -7,7 +7,7 @@
          <ResourceName>International Monitor for Auroral Geomagnetic Effects (IMAGE) Finnish Meterological Institute 10 s Ground Magnetometer Data</ResourceName>
 		 <AlternateName>IMAGE FMI 10 s Ground Magnetometer Data</AlternateName>
 		 <DOI>https://doi.org/10.48322/29rq-g929</DOI>
-         <ReleaseDate>2023-09-19T12:34:56.789</ReleaseDate>
+         <ReleaseDate>2023-09-26T12:34:56.789</ReleaseDate>
          <RevisionHistory>
             <RevisionEvent>
                <ReleaseDate>2023-09-19T12:34:56.789</ReleaseDate>
@@ -17,10 +17,14 @@
                <ReleaseDate>2023-09-19T12:34:56.789</ReleaseDate>
                <Note>Added DOI. JMW</Note>
             </RevisionEvent>
+			<RevisionEvent>
+               <ReleaseDate>2023-09-26T12:34:56.789</ReleaseDate>
+               <Note>Corrections made to metadata. JMW</Note>
+            </RevisionEvent>
          </RevisionHistory>
          <Description>The International Monitor for Auroral Geomagnetic Effects (IMAGE) consists of 52 magnetometer stations maintained by 10 institutes from Finland, Germany, Norway, Poland, Russia, Sweden, Denmark, and Iceland. The prime objectives of IMAGE are to study auroral electrojets and moving two-dimensional current systems. The long profile covering geographic latitudes from 51 to 82 degrees is especially favorable for electrojet studies. Together with other ground-based recordings (by radars, riometers, all-sky cameras) and satellite observations, IMAGE is an essential part in the investigations of high-latitude magnetospheric-ionospheric physics. Together with its predecessor, the EISCAT magnetometer cross started in 1982, IMAGE also provides high-quality data useful for studies of geomagnetic induction and long-term geomagnetic activity in the auroral region.
 		 
-		 The Finnish Meterological Institute operates the following stations: ALT, KEV, MAS, KIL, KAU, IVA, MUO, PEL, RAN, OUJ, MEK, HAN, NUR, and TAR.
+		 The Finnish Meterological Institute operates the following stations:  KEV, MAS, KIL, IVA, MUO, PEL, RAN, OUJ, MEK, HAN, NUR, and TAR.
 		 </Description>
 		 <Acknowledgement>Finnish Meteorological Institute (FMI), Finland</Acknowledgement>
 		 <PublicationInfo>
@@ -32,16 +36,6 @@
 		 <!--Person metadata NOT WRITTEN-->
             <PersonID>spase://SMWG/Person/Liisa.Juusola</PersonID>
             <Role>PrincipalInvestigator</Role>
-         </Contact>
-         <Contact>
-		 <!--Person metadata written-->
-            <PersonID>spase://SMWG/Person/Lasse.Hakkinen</PersonID>
-            <Role>Scientist</Role>
-         </Contact>
-		 <Contact>
-		 <!--Person metadata EXISTS-->
-            <PersonID>spase://SMWG/Person/Kari.Pajunpaa</PersonID>
-            <Role>Scientist</Role>
          </Contact>
 		 <Contact>
 		 <!--Person metadata EXISTS-->
@@ -207,7 +201,7 @@
 	  <Parameter>
          <Name>Interval</Name>
 		 <ParameterKey>Column 61-62</ParameterKey>
-         <Description>Interval between datapoints 2 characters</Description>
+         <Description>Interval between datapoints 2 characters [in seconds].</Description>
          <Support>
             <Qualifier>Magnitude</Qualifier>
             <SupportQuantity>Temporal</SupportQuantity>
@@ -241,9 +235,9 @@
          </Support>
       </Parameter>
 	  <Parameter>
-         <Name>Base line information and Probable base line change</Name>
+         <Name>Base line information.</Name>
 		 <ParameterKey>Column 70</ParameterKey>
-         <Description>Base line information 1 character [1 = final data, absolute base line, accuracy about 1 nT; 2 = final data but no absolute measurements; 3 = preliminary data; 4 = data relative to quiet day night values.], Probable base line change 2 characters [in 0.1 nT within one day] There 82 free spaces after this column.</Description>
+         <Description>Base line information 1 character [1 = final data, absolute base line, accuracy about 1 nT; 2 = final data but no absolute measurements; 3 = preliminary data; 4 = data relative to quiet day night values.], Probable base line change 2 characters [in 0.1 nT within one day].</Description>
          <Support>
             <Qualifier>Scalar</Qualifier>
             <SupportQuantity>Housekeeping</SupportQuantity>
@@ -2451,6 +2445,7 @@
          <Description>Hourly mean northward magnetic field.</Description>
          <Caveats>This component strong depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.</Caveats>
          <Units>0.1 nT (0.1' if D)</Units>
+		 <FillValue>000000 if not the last part of the hour</FillValue>
          <Field>
             <Qualifier>Component.I</Qualifier>
             <FieldQuantity>Magnetic</FieldQuantity>
@@ -2462,6 +2457,7 @@
          <Description>Hourly mean  eastward magnetic field.</Description>
          <Caveats>This component strong depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.</Caveats>
          <Units>0.1 nT (0.1' if D)</Units>
+		 <FillValue>000000 if not the last part of the hour</FillValue>
          <Field>
             <Qualifier>Component.J</Qualifier>
             <FieldQuantity>Magnetic</FieldQuantity>
@@ -2473,6 +2469,7 @@
          <Description>Hourly Mean of the Z component of the magnetic field.</Description>
          <Caveats>This component strong depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.</Caveats>
          <Units>0.1 nT (0.1' if D)</Units>
+		 <FillValue>000000 if not the last part of the hour</FillValue>
          <Field>
             <Qualifier>Component.K</Qualifier>
             <FieldQuantity>Magnetic</FieldQuantity>
