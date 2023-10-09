@@ -2,14 +2,26 @@
   "Spase": {
     "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
     "xmlns": "http://www.spase-group.org/data/schema",
-    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_3_1.xsd",
-    "Version": "2.3.1",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_6_0.xsd",
+    "Version": "2.6.0",
     "NumericalData": {
       "ResourceID": "spase://NASA/NumericalData/GOLD/L2/NMAX/PT900S",
       "ResourceHeader": {
         "ResourceName": "Gold Level L2 Peak Electron Density",
-        "ReleaseDate": "2020-09-14T16:47:17Z",
-        "Description": "The GOLD night disk scan (NI1) measurements are used to derive the peak electron density \n\t  (NMAX, electrons/cm3) on the disk. GOLD performs NI1 scans in both hemispheres from 17:00 to 21:00 hours \n\t  spacecraft local time each night. NMAX is retrieved on a 2D rectangular (latitude vs. longitude) grid \n\t  of fixed dimensions for each scan. However, the actual latitude and longitude values in the grid vary \n\t  from scan to scan as the NI1 sequence utilizes a pattern of short (15 minute) localized scans that \n\t  progress from east to west across the disk throughout the sequence.\n\t  ",
+        "ReleaseDate": "2023-10-09T12:34:56.789",
+        "RevisionHistory": {
+          "RevisionEvent": [
+            {
+              "ReleaseDate": "2020-09-14T16:47:17",
+              "Note": "Only known prior ReleaseDate of the metadata"
+            },
+            {
+              "ReleaseDate": "2023-10-09T12:34:56.789",
+              "Note": "Added complete CDAWeb and HAPI AccessInformation, metadata versioned up to SPASE 2.6.0, LFB 20231009"
+            }
+          ]
+        },
+        "Description": "The GOLD night disk scan (NI1) measurements are used to derive the peak electron density (NMAX, electrons/cm3) on the disk. GOLD performs NI1 scans in both hemispheres from 17:00 to 21:00 hours spacecraft local time each night. NMAX is retrieved on a 2D rectangular (latitude vs. longitude) grid of fixed dimensions for each scan. However, the actual latitude and longitude values in the grid vary from scan to scan as the NI1 sequence utilizes a pattern of short (15 minute) localized scans that progress from east to west across the disk throughout the sequence.",
         "Acknowledgement": "National Aeronautics and Space Administration; Dr. Richard Eastes",
         "Contact": [
           {
@@ -25,7 +37,7 @@
           {
             "Name": "GOLD Homepage web page",
             "URL": "https://gold.cs.ucf.edu/",
-            "Description": "GOLD web page with news and other information."
+            "Description": "GOLD web page with news and other information"
           },
           {
             "Name": "GOLD Missions Space Science Reviews Article",
@@ -38,27 +50,50 @@
           "spase://NASA/NumericalData/SES-14/GOLD/L2/NMAX/PT900S"
         ]
       },
-      "AccessInformation": {
-        "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
-        "Availability": "Online",
-        "AccessRights": "Open",
-        "AccessURL": [
-          {
-            "Name": "FTPS from SPDF (not with most browsers)",
-            "URL": "ftps://spdf.gsfc.nasa.gov/pub/data/gold/level2/",
+      "AccessInformation": [
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF/CDAWeb",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": [
+            {
+              "Name": "FTPS from SPDF (not with most browsers)",
+              "URL": "ftps://spdf.gsfc.nasa.gov/pub/data/gold/level2/nmax/",
+              "ProductKey": "GOLD_L2_NMAX",
+              "Description": "In CDF via ftps from SPDF"
+            },
+            {
+              "Name": "HTTPS from SPDF",
+              "URL": "https://spdf.gsfc.nasa.gov/pub/data/gold/level2/nmax/",
+              "ProductKey": "GOLD_L2_NMAX",
+              "Description": "In CDF via https from SPDF"
+            },
+            {
+              "Name": "CDAWeb",
+              "URL": "https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=GOLD_L2_NMAX&index=sp_phys",
+              "ProductKey": "GOLD_L2_NMAX",
+              "Description": "Access to ASCII, CDF, and plots via NASA/GSFC CDAWeb"
+            }
+          ],
+          "Format": "CDF",
+          "Encoding": "None",
+          "Acknowledgement": "Space Physics Data Facility of the NASA Goddard Space Flight Center; Robert M. Candey"
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF/CDAWeb",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDAWeb HAPI Server",
+            "URL": "https://cdaweb.gsfc.nasa.gov/hapi",
+            "Style": "HAPI",
             "ProductKey": "GOLD_L2_NMAX",
-            "Description": "FTPS access to Gold Level L2 data"
+            "Description": "Web Service to this product using the HAPI interface"
           },
-          {
-            "Name": "HTTPS from SPDF",
-            "URL": "https://spdf.gsfc.nasa.gov/pub/data/gold/level2/",
-            "ProductKey": "GOLD_L2_NMAX",
-            "Description": "HTTPS access to Gold Level L2 data"
-          }
-        ],
-        "Format": "NetCDF",
-        "Acknowledgement": "Space Physics Data Facility of the NASA Goddard Space Flight Center; Robert E McGuire"
-      },
+          "Format": "CSV",
+          "Acknowledgement": "Space Physics Data Facility of the NASA Goddard Space Flight Center; Robert M. Candey"
+        }
+      ],
       "ProcessingLevel": "Calibrated",
       "ProviderName": "GOLD",
       "ProviderResourceName": "Gold Level L2 Molecular Oxygen Density Profile",
@@ -81,9 +116,9 @@
       ],
       "Parameter": [
         {
-          "Name": "Mask Defining OI 1356 Bandpass ",
+          "Name": "Mask Defining OI 1356 Bandpass",
           "ParameterKey": "mask_oi_1356",
-          "Description": "Wavelength mask defining the 135.6-nm emission passband.",
+          "Description": "Wavelength mask defining the 135.6-nm emission passband",
           "Cadence": "PT900S",
           "Structure": {
             "Size": "4001"
@@ -98,7 +133,7 @@
         {
           "Name": "Mask Wavelength",
           "ParameterKey": "mask_wavelength",
-          "Description": "Wavelength grid for 1356 mask.",
+          "Description": "Wavelength grid for 1356 mask",
           "Cadence": "PT900S",
           "Units": "nm",
           "Structure": {
@@ -116,7 +151,7 @@
         {
           "Name": "OI 1356 brightness",
           "ParameterKey": "radiance_oi_1356",
-          "Description": "Radiance in Oxygen 135.6-nm bandpass.",
+          "Description": "Radiance in Oxygen 135.6-nm bandpass",
           "Cadence": "PT900S",
           "Units": "Rayleighs/nm",
           "Structure": {
@@ -134,12 +169,11 @@
         {
           "Name": "GOLD channel",
           "ParameterKey": "channel",
-          "Description": "GOLD channel (‘A’ or ‘B’).",
+          "Description": "GOLD channel ('A' or 'B')",
           "Cadence": "PT900S",
           "Structure": {
             "Size": "50 6"
           },
-          "FillValue": " ",
           "Support": {
             "Qualifier": "Scalar",
             "SupportQuantity": "Other"
@@ -148,7 +182,7 @@
         {
           "Name": "Random Uncertainty in NMAX",
           "ParameterKey": "nmax_unc_ran",
-          "Description": "Random uncertainty in retrieved peak electron density.",
+          "Description": "Random uncertainty in retrieved peak electron density",
           "Cadence": "PT900S",
           "Units": "electrons/cm^3",
           "Structure": {
@@ -165,7 +199,7 @@
         {
           "Name": "Model Uncertainty in NMAX",
           "ParameterKey": "nmax_unc_mod",
-          "Description": "Model uncertainty in retrieved peak electron density.",
+          "Description": "Model uncertainty in retrieved peak electron density",
           "Cadence": "PT900S",
           "Units": "electrons/cm^3",
           "Structure": {
@@ -182,7 +216,7 @@
         {
           "Name": "Latitude",
           "ParameterKey": "latitude",
-          "Description": "Pixel latitude.",
+          "Description": "Pixel latitude",
           "Cadence": "PT900S",
           "Units": "degrees",
           "Structure": {
@@ -199,7 +233,7 @@
         {
           "Name": "Random Uncertainty in Oxygen 135.6 nm Brightness",
           "ParameterKey": "oi_1356_unc_ran",
-          "Description": "Random uncertainty in oxygen 135.6 nm brightness.",
+          "Description": "Random uncertainty in oxygen 135.6 nm brightness",
           "Cadence": "PT900S",
           "Units": "Rayleighs/nm",
           "Structure": {
@@ -217,7 +251,7 @@
         {
           "Name": "Counts in Oxygen Bandpass",
           "ParameterKey": "counts_oi_1356",
-          "Description": "Counts in Oxygen 135.6-nm bandpass.",
+          "Description": "Counts in Oxygen 135.6-nm bandpass",
           "Cadence": "PT900S",
           "Units": "counts",
           "Structure": {
@@ -234,7 +268,7 @@
         {
           "Name": "Overall Quality Flag",
           "ParameterKey": "dqi",
-          "Description": "NMAX data quality index (see table below).",
+          "Description": "NMAX data quality index (see table below)",
           "Cadence": "PT900S",
           "Structure": {
             "Size": "6"
@@ -250,7 +284,7 @@
         {
           "Name": "Scan Start Time",
           "ParameterKey": "scan_start_time",
-          "Description": "UTC start time of scan, e.g., \"2017-06-21T23:46:38.015Z\".",
+          "Description": "UTC start time of scan, e.g., 2017-06-21T23:46:38.015Z",
           "Cadence": "PT900S",
           "Structure": {
             "Size": "50 6"
@@ -264,7 +298,7 @@
         {
           "Name": "NMAX Quality Flag",
           "ParameterKey": "nmax_dqi",
-          "Description": "NMAX data quality index (see table below).",
+          "Description": "NMAX data quality index (see table below)",
           "Cadence": "PT900S",
           "Structure": {
             "Size": "50 100 6"
@@ -280,7 +314,7 @@
         {
           "Name": "Solar Zenith Angle at 225 km",
           "ParameterKey": "solar_zenith_angle",
-          "Description": "Solar zenith angle at 225 km tangent point.",
+          "Description": "Solar zenith angle at 225 km tangent point",
           "Cadence": "PT900S",
           "Units": "degrees",
           "Structure": {
@@ -297,7 +331,7 @@
         {
           "Name": "Longitude",
           "ParameterKey": "longitude",
-          "Description": "Pixel longitude.",
+          "Description": "Pixel longitude",
           "Cadence": "PT900S",
           "Units": "degrees",
           "Structure": {
@@ -314,7 +348,7 @@
         {
           "Name": "UTC time",
           "ParameterKey": "time_utc",
-          "Description": "UTC date/time string: \"2017-06-21T23:46:38.015Z\".",
+          "Description": "UTC date/time string: \"2017-06-21T23:46:38.015Z\"",
           "Cadence": "PT900S",
           "Structure": {
             "Size": "50 51 6"
@@ -328,7 +362,7 @@
         {
           "Name": "NMAX",
           "ParameterKey": "nmax_unc_mod",
-          "Description": "Retrieved peak electron density..",
+          "Description": "Retrieved peak electron density",
           "Cadence": "PT900S",
           "Units": "electrons/cm^3",
           "Structure": {
@@ -345,7 +379,7 @@
         {
           "Name": "L1C File Name",
           "ParameterKey": "input_l1c_file",
-          "Description": "L1C file name for each occultation.",
+          "Description": "L1C file name for each occultation",
           "Cadence": "PT900S",
           "Structure": {
             "Size": "50 6"
@@ -359,7 +393,7 @@
         {
           "Name": "Pixel Emission Angle",
           "ParameterKey": "emission_angle",
-          "Description": "Pixel emission angle (relative to zenith).",
+          "Description": "Pixel emission angle (relative to zenith)",
           "Cadence": "PT900S",
           "Units": "degrees",
           "Structure": {
@@ -376,7 +410,7 @@
         {
           "Name": "Scan Stop Time",
           "ParameterKey": "scan_stop_time",
-          "Description": "UTC stop time of scan, e.g., \"2017-06-21T23:46:38.015Z\".",
+          "Description": "UTC stop time of scan, e.g., 2017-06-21T23:46:38.015Z",
           "Cadence": "PT900S",
           "Units": "date/time",
           "Structure": {
@@ -391,7 +425,7 @@
         {
           "Name": "Systematic Uncertainty in Oxygen 135.6 nm Brightness",
           "ParameterKey": "oi_1356_unc_sys",
-          "Description": "Systematic uncertainty in oxygen 135.6 nm brightness.",
+          "Description": "Systematic uncertainty in oxygen 135.6 nm brightness",
           "Cadence": "PT900S",
           "Units": "Rayleighs",
           "Structure": {
@@ -409,7 +443,7 @@
         {
           "Name": "Hemisphere Scanned",
           "ParameterKey": "hemisphere",
-          "Description": "Hemisphere scanned (‘N’ or ‘S’).",
+          "Description": "Hemisphere scanned ('N' or 'S')",
           "Cadence": "PT900S",
           "Structure": {
             "Size": "50 6"
