@@ -2,14 +2,26 @@
   "Spase": {
     "xmlns": "http://www.spase-group.org/data/schema",
     "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
-    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_2_9.xsd",
-    "Version": "2.2.9",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_6_0.xsd",
+    "Version": "2.6.0",
     "NumericalData": {
       "ResourceID": "spase://NASA/NumericalData/SOHO/CELIAS/PT30S",
       "ResourceHeader": {
         "ResourceName": "SOHO Charge, Element, and Isotope Analysis System (CELIAS) Proton Monitor 30 Second Solar Wind data",
-        "ReleaseDate": "2020-07-07T21:15:18Z",
-        "Description": "The Proton Monitor is a solar wind Energy per Charge (E/Q) analyzer of a new design, consisting of a three-box deflection system followed by a wedge-shaped MicroChannel Plate (MCP) assembly. The data are derived from sets of 6 rates (one for each voltage step of the PM deflection system) obtained every 30 seconds. The voltage steps are spaced logarithmically (about 60% step size) from about 0.3 to 3 kV. At a given voltage step the energy per charge dynamic range is slightly more than a factor of 2. The overall geometry factor of the PM is about 1.0 x 10**-4 cm**2.",
+        "ReleaseDate": "2023-10-17T00:00:00Z",
+        "RevisionHistory": {
+          "RevisionEvent": [
+            {
+              "ReleaseDate": "2020-07-07T21:15:18Z",
+              "Note": "Only known prior ReleaseDate of the metadata"
+            },
+            {
+              "ReleaseDate": "2023-10-17T00:00:00Z",
+              "Note": "Updated URLs, minor corrections, AK 20231017"
+            }
+          ]
+        },
+        "Description": "The Proton Monitor is a solar wind Energy per Charge (E/Q) analyzer of a new design, consisting of a three-box deflection system followed by a wedge-shaped MicroChannel Plate (MCP) assembly. The data are derived from sets of 6 rates (one for each voltage step of the PM deflection system) obtained every 30 seconds. The voltage steps are spaced logarithmically (about 60% step size) from about 0.3 to 3 kV. At a given voltage step the energy per charge dynamic range is slightly more than a factor of 2. The overall geometry factor of the PM is about 1.0 x 10^-4 cm^2.",
         "Acknowledgement": "Please acknowledge the University of Maryland Space Physics Group",
         "Contact": {
           "PersonID": "spase://SMWG/Person/Fred.M.Ipavich",
@@ -17,7 +29,7 @@
         },
         "InformationURL": {
           "Name": "SOHO Celias Proton Monitor Home Page",
-          "URL": "http://umtof.umd.edu/pm/",
+          "URL": "https://space.umd.edu/pm/",
           "Description": "Site hosting instrument information, some data and plots for SOHO Celias PM"
         },
         "PriorID": [
@@ -26,12 +38,12 @@
         ]
       },
       "AccessInformation": {
-        "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/VHO-VMO",
+        "RepositoryID": "spase://SMWG/Repository/UMD",
         "Availability": "Online",
         "AccessRights": "Open",
         "AccessURL": {
-          "URL": "https://vho.nasa.gov/mission/soho/celias_pm_30sec/",
-          "Description": "CELIAS Proton Monitor repository at VHO"
+          "URL": "https://l1.umd.edu/",
+          "Description": "CELIAS Proton Monitor repository at UMD"
         },
         "Format": "Text",
         "Encoding": "ASCII"
@@ -47,7 +59,7 @@
       "TemporalDescription": {
         "TimeSpan": {
           "StartDate": "1996-01-20T20:17:30Z",
-          "RelativeStopDate": "-PT5M"
+          "RelativeStopDate": "-P5M"
         },
         "Cadence": "PT30S"
       },
@@ -140,8 +152,18 @@
           }
         },
         {
-          "Name": "GSE X",
+          "Name": "Predicted Helium speed",
           "ParameterKey": "Field 9",
+          "Description": "Predicted (not measured) Helium speed",
+          "Particle": {
+            "ParticleType": "Atom",
+            "ParticleQuantity": "FlowSpeed",
+            "AtomicNumber": "2"
+          }
+        },
+        {
+          "Name": "GSE X",
+          "ParameterKey": "Field 10",
           "Description": "GSE X Component of SOHO position vector based on predicted orbit files ( 1 Re = 6378 km )",
           "Units": "Re",
           "UnitsConversion": "6.378e6>m",
@@ -155,7 +177,7 @@
         },
         {
           "Name": "GSE Y",
-          "ParameterKey": "Field 10",
+          "ParameterKey": "Field 11",
           "Description": "GSE Y Component of SOHO position vector based on predicted orbit files ( 1 Re = 6378 km )",
           "Units": "Re",
           "UnitsConversion": "6.378e6>m",
@@ -169,7 +191,7 @@
         },
         {
           "Name": "GSE Z",
-          "ParameterKey": "Field 11",
+          "ParameterKey": "Field 12",
           "Description": "GSE Z Component of SOHO position vector based on predicted orbit files ( 1 Re = 6378 km )",
           "Units": "Re",
           "UnitsConversion": "6.378e6>m",
@@ -183,7 +205,7 @@
         },
         {
           "Name": "Heliocentric Range",
-          "ParameterKey": "Field 12",
+          "ParameterKey": "Field 13",
           "Description": "Heliocentric Range of SOHO in 10^6 km",
           "Units": "millions of km (10^6 km)",
           "UnitsConversion": "1e9>m",
@@ -193,7 +215,7 @@
         },
         {
           "Name": "Heliographic latitude",
-          "ParameterKey": "Field 13",
+          "ParameterKey": "Field 14",
           "Description": "Heliographic latitude of SOHO",
           "Units": "degrees",
           "Support": {
@@ -202,7 +224,7 @@
         },
         {
           "Name": "Heliographic longitude",
-          "ParameterKey": "Field 14",
+          "ParameterKey": "Field 15",
           "Description": "Heliographic longitude of SOHO",
           "Units": "degrees",
           "Support": {
@@ -211,7 +233,7 @@
         },
         {
           "Name": "Earth Carrington Rotation Number",
-          "ParameterKey": "Field 15",
+          "ParameterKey": "Field 16",
           "Description": "Earth Carrington Rotation Number",
           "Support": {
             "SupportQuantity": "Temporal"
