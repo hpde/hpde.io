@@ -2,18 +2,42 @@
   "Spase": {
     "xmlns": "http://www.spase-group.org/data/schema",
     "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
-    "xsi:schemaLocation": "http://www.spase-group.org/data/schema  https://www.spase-group.org/data/schema/spase-2_3_2.xsd",
-    "Version": "2.3.2",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_6_0.xsd",
+    "Version": "2.6.0",
     "NumericalData": {
       "ResourceID": "spase://NASA/NumericalData/POLAR/TIMAS/H0/PT12S",
       "ResourceHeader": {
         "ResourceName": "Polar TIMAS H0 High-resolution Level 1 Data",
-        "ReleaseDate": "2021-04-27T15:38:11Z",
-        "Description": "Mass resolved ion energy angle spectra covering nearly the full 4pi solid angle and the energy range 15 eV/q to 33 eV/q.\n            H+, O+, He+ and He++ number fluxes and statistical uncertainties processed by the TIMAS science team. Data acquired with various angular and energy resolutions are combined here. Data Quality and other indicators are provided to allow selection of high resolution data (PA_status(ion)=0 and Energy_status(ion)=0 ) and High Quality data (Quality=0). See caveats for the following variables for more detailed information: Quality, PA_status, Energy_status Bcr, Fec, Even_odd,  Energy_Range_ID and Spins.\n            Reference:E.G. Shelley et al., The Toroidal Imaging Mass-Angle Spectrograph (TIMAS) for the Polar Mission, Sp. Sci. Rev, Vol 71, pp 497-530, 1995.\n            Version 0: December, 1997\n            Version 1: July, 1998\n            Version 2: December, 2000\n            Algorithm improved to more accurately subtract backgrounds arising from spill over from H+ into He++ channel and other sources. Fill data are now inserted for limited energy and pitch angle ranges for Flux_H Flux_O Flux_He_1 and Flux_He_2 variables. The meanging of values of the of Quality variable was slightly modified.\n            Version 3: June, 2002\n            Algorithm for V_02 had an error that resulted in under estimation of fluxes in high count regions, i.e. the cusp/cleft and radiation belts. V_03 corrects this error and has been expanded to include calculation of fluxes obtained after December 8, 1998, when TIMAS had a damaging high voltage breakdown that resulted in reduced sensitivity.",
-        "Contact": {
-          "PersonID": "spase://SMWG/Person/W.K.Peterson",
-          "Role": "PrincipalInvestigator"
+        "DOI": "https://doi.org/10.48322/khhg-8859",
+        "ReleaseDate": "2023-07-30T12:34:56.789",
+        "RevisionHistory": {
+          "RevisionEvent": [
+            {
+              "ReleaseDate": "2021-04-27T15:38:11",
+              "Note": "Only known prior ReleaseDate of the metadata"
+            },
+            {
+              "ReleaseDate": "2023-07-30T12:34:56.789",
+              "Note": "Added DOI and PublicationInfo minted by LFB, metadata versioned up to SPASE 2.6.0, reviewed by LFB 20230727"
+            }
+          ]
         },
+        "Description": "Mass resolved ion energy angle spectra covering nearly the full 4pi solid angle and the energy range 15 eV/q to 33 eV/q. H+, O+, He+ and He++ number fluxes and statistical uncertainties processed by the TIMAS science team. Data acquired with various angular and energy resolutions are combined here. Data Quality and other indicators are provided to allow selection of high resolution data (PA_status(ion)=0 and Energy_status(ion)=0 ) and High Quality data (Quality=0). See caveats for the following variables for more detailed information: Quality, PA_status, Energy_status Bcr, Fec, Even_odd, Energy_Range_ID and Spins. Reference:E.G. Shelley et al., The Toroidal Imaging Mass-Angle Spectrograph (TIMAS) for the Polar Mission, Sp. Sci. Rev, Vol 71, pp 497-530, 1995. Version 0: December, 1997 Version 1: July, 1998 Version 2: December, 2000 Algorithm improved to more accurately subtract backgrounds arising from spill over from H+ into He++ channel and other sources. Fill data are now inserted for limited energy and pitch angle ranges for Flux_H Flux_O Flux_He_1 and Flux_He_2 variables. The meanging of values of the of Quality variable was slightly modified. Version 3: June, 2002 Algorithm for V_02 had an error that resulted in under estimation of fluxes in high count regions, i.e. the cusp/cleft and radiation belts. V_03 corrects this error and has been expanded to include calculation of fluxes obtained after December 8, 1998, when TIMAS had a damaging high voltage breakdown that resulted in reduced sensitivity.",
+        "PublicationInfo": {
+          "Authors": "Peterson, W., K.",
+          "PublicationDate": "2023-01-01T00:00:00",
+          "PublishedBy": "NASA Space Physics Data Facility"
+        },
+        "Contact": [
+          {
+            "PersonID": "spase://SMWG/Person/W.K.Peterson",
+            "Role": "PrincipalInvestigator"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Lee.Frost.Bargatze",
+            "Role": "MetadataContact"
+          }
+        ],
         "InformationURL": [
           {
             "Name": "TIMAS Home Page",
@@ -69,7 +93,7 @@
           "Format": "CDF"
         },
         {
-          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF/CDAWeb",
           "Availability": "Online",
           "AccessRights": "Open",
           "AccessURL": {
@@ -109,7 +133,7 @@
         "Earth.Magnetosphere.Polar",
         "Earth.Magnetosphere.RadiationBelt"
       ],
-      "Caveats": "The Epoch_xx times are the center times of the accumulation interval over which the data were acquired. Depending on instrument mode, fluxes for each major species are accumulated for 2, 4, 8, 16, or 32 spins on-board. This corresponds to 12, 24, 48, 96, or 192 second resolution. The spin accumulation indicator shows the number of spins accumulated for each major ion species for each data record.\n         Note that data with both high and medium resolution are combined in these files. This means that the energy, angle, and time resolution of some data are less than the resolution provided in the data file.\n         Early in the mission, The TIMAS high energy limit was 22 keV/e. It was changed to 33 keV/e on June 26, 1996. The Energy_Range_ID flag indicates which energy range the TIMAS instrument was in at the time of data acquisition. Even energy steps (0, 2, ...) are acquired on even spin numbers and odd energy steps (1,3, ...) are acquired on odd spin numbers. High resolution data are included from two spins. To resolve timing uncertainties the Even/Odd indicator is set to indicate which set of energy steps were acquired in the first 6 seconds of the two spin accumulation interval.\n         The quality of TIMAS data depends on the total number of counts processed by the detector. Some summary quality information is provided in the Quality Flags. The Quality Flags are derived from the fast event counter and other data sources. The TIMAS sensor responds to penetrating radiation that is particularly intense in the radiation belt part of each orbit. The Fluxes returned have been corrected for the background counting rate. Correction of TIMAS fluxes for high count rates increases the uncertainty in the flux values reported. The quality flag is provided as a convenient flag to use to select data that has been acquired in the linear response range of the instrument.\n         Depending on instrument mode, fluxes for each major species are averaged or not averaged over energy ranges on-board. The energy resolution indicator provides a summary of the energy resolution of the data in each record for each ion species.\n         Depending on instrument mode, fluxes for each major species are averaged with one of three angular resolutions on-board. The pitch angle resolution indicator provides a summary of the angular resolution of the data in each record for each ion species.\n         On December 8, 1998 the TIMAS instrument had a high voltage breakdown that resulted in a loss of sensitivity at energies above 700 eV/q and non linear response to ion fluxes at energies below 700 eV/q. After this date the TIMAS K1 data product should be used instead.",
+      "Caveats": "The Epoch_xx times are the center times of the accumulation interval over which the data were acquired. Depending on instrument mode, fluxes for each major species are accumulated for 2, 4, 8, 16, or 32 spins on-board. This corresponds to 12, 24, 48, 96, or 192 second resolution. The spin accumulation indicator shows the number of spins accumulated for each major ion species for each data record. Note that data with both high and medium resolution are combined in these files. This means that the energy, angle, and time resolution of some data are less than the resolution provided in the data file. Early in the mission, The TIMAS high energy limit was 22 keV/e. It was changed to 33 keV/e on June 26, 1996. The Energy_Range_ID flag indicates which energy range the TIMAS instrument was in at the time of data acquisition. Even energy steps (0, 2, ...) are acquired on even spin numbers and odd energy steps (1,3, ...) are acquired on odd spin numbers. High resolution data are included from two spins. To resolve timing uncertainties the Even/Odd indicator is set to indicate which set of energy steps were acquired in the first 6 seconds of the two spin accumulation interval. The quality of TIMAS data depends on the total number of counts processed by the detector. Some summary quality information is provided in the Quality Flags. The Quality Flags are derived from the fast event counter and other data sources. The TIMAS sensor responds to penetrating radiation that is particularly intense in the radiation belt part of each orbit. The Fluxes returned have been corrected for the background counting rate. Correction of TIMAS fluxes for high count rates increases the uncertainty in the flux values reported. The quality flag is provided as a convenient flag to use to select data that has been acquired in the linear response range of the instrument. Depending on instrument mode, fluxes for each major species are averaged or not averaged over energy ranges on-board. The energy resolution indicator provides a summary of the energy resolution of the data in each record for each ion species. Depending on instrument mode, fluxes for each major species are averaged with one of three angular resolutions on-board. The pitch angle resolution indicator provides a summary of the angular resolution of the data in each record for each ion species. On December 8, 1998 the TIMAS instrument had a high voltage breakdown that resulted in a loss of sensitivity at energies above 700 eV/q and non linear response to ion fluxes at energies below 700 eV/q. After this date the TIMAS K1 data product should be used instead.",
       "Keyword": [
         "Energetic Ion Mass-Energy Spectra",
         "Three dimensional Angular Response"
@@ -1590,7 +1614,7 @@
         {
           "Name": "Energy Range",
           "ParameterKey": "Energy_Range_ID",
-          "Description": "Energy Range Identification: 0: Full energy range; 1: Reduced energy range; 2: Low energy range.\n            TIMAS is operated in one of 3  energy ranges. Energy_Range_ID indicates which of the 3 instrumental energy ranges is currently active:\n            Energy_Range_ID=0: Full instrumental energy range,  valid data are in energy steps 1 through 28)\n            Energy_Range_ID=1: Reduced instrumental energy range, valid data are in energy steps 1 through 26\n            Energy_Range_ID=2: Low instrumental energy range, no valid data were acquired in this mode.\n            In the table below the lower, center, and upper energies for each of the 28 fixed energy steps are given. The upper and lower energies bound the full width at half maximum energy response of the detector.\n            Step     E_lower      E_center     E_upper\n            1        16.0          25.0            34.0\n            2        35.2          45.0            54.8\n            3        54.1          68.0            81.9\n            4        74.6          92.5           110.4\n            5       102.8         125.8           148.8\n            6       141.5         171.0           200.5\n            7       194.8         232.6           270.4\n            8       268.1         316.2           364.3\n            9       369.2         430.1           491.0\n            10       508.1        584.8           661.5\n            11       699.2        795.3           891.4\n            12       962.1       1081.5          1200.9\n            13      1323.6       1470.7          1617.8\n            14      1820.8       2000.0          2179.2\n            15      2228.5       2438.0          2647.5\n            16      2733.1       2972.0          3210.9\n            17      3358.0       3622.9          3887.8\n            18      4119.7       4416.4          4713.1\n            19      5048.3       5383.6          5718.9\n            20      6180.2       6562.7          6945.2\n            21      7560.0       8000.0          8440.0\n            22      9242.0       9752.1         10262.2\n            23     11313.3      11888.0         12462.7\n            24     13823.7      14491.6         15159.5\n            25     16894.5      17665.4         18436.3\n            26     20619.7      21534.4         22449.1\n            27     25165.3      26250.7         27336.1\n            28     30702.0      32000.0         33298.0",
+          "Description": "Energy Range Identification: 0: Full energy range; 1: Reduced energy range; 2: Low energy range. TIMAS is operated in one of 3 energy ranges. Energy_Range_ID indicates which of the 3 instrumental energy ranges is currently active: Energy_Range_ID=0: Full instrumental energy range, valid data are in energy steps 1 through 28) Energy_Range_ID=1: Reduced instrumental energy range, valid data are in energy steps 1 through 26 Energy_Range_ID=2: Low instrumental energy range, no valid data were acquired in this mode. In the table below the lower, center, and upper energies for each of the 28 fixed energy steps are given. The upper and lower energies bound the full width at half maximum energy response of the detector. Step E_lower E_center E_upper 1 16.0 25.0 34.0 2 35.2 45.0 54.8 3 54.1 68.0 81.9 4 74.6 92.5 110.4 5 102.8 125.8 148.8 6 141.5 171.0 200.5 7 194.8 232.6 270.4 8 268.1 316.2 364.3 9 369.2 430.1 491.0 10 508.1 584.8 661.5 11 699.2 795.3 891.4 12 962.1 1081.5 1200.9 13 1323.6 1470.7 1617.8 14 1820.8 2000.0 2179.2 15 2228.5 2438.0 2647.5 16 2733.1 2972.0 3210.9 17 3358.0 3622.9 3887.8 18 4119.7 4416.4 4713.1 19 5048.3 5383.6 5718.9 20 6180.2 6562.7 6945.2 21 7560.0 8000.0 8440.0 22 9242.0 9752.1 10262.2 23 11313.3 11888.0 12462.7 24 13823.7 14491.6 15159.5 25 16894.5 17665.4 18436.3 26 20619.7 21534.4 22449.1 27 25165.3 26250.7 27336.1 28 30702.0 32000.0 33298.0",
           "ValidMin": "0",
           "ValidMax": "3",
           "FillValue": "255",
@@ -1601,7 +1625,7 @@
         {
           "Name": "even_odd",
           "ParameterKey": "Even_odd",
-          "Description": "Even/Odd Spin Identification\n            0 first (even) spin with even numbered energy steps\n            1 second (odd) spin with odd numbered energy steps.",
+          "Description": "Even/Odd Spin Identification 0 first (even) spin with even numbered energy steps 1 second (odd) spin with odd numbered energy steps.",
           "Caveats": "TIMAS samples 28 energy steps over the full energy range every two spins (12 seconds). On even numbered spins the lowest energy step (centered at 25 eV/e) and alternate energy steps over the full energy range are sampled. On odd spins the second energy step (centered at 45 eV/e) and alternate energy steps to the maximum are sampled.",
           "ValidMin": "0",
           "ValidMax": "1",
@@ -1681,7 +1705,7 @@
         {
           "Name": "Energy Resolution Flags",
           "ParameterKey": "Energy_status",
-          "Description": "Energy Resolution Indicators\n            TIMAS data are available from operational  modes with full (28 bins) or moderate (7 bins) energy resolution. These data  were assembled from various data products with different energy resolution. Data are given with full 28 energy step resolution EVEN IF ONLY 7 energy step resolution data are available. This flag documents the resolution of the data included in the average.\n            Values are:\n            0    All single spin 14 energy step data.\n            1    Mostly 14 energy step data. Some 7 energy step. All one or two spin.\n            2    Mostly 7 energy step data. Some 14 energy step. All one or two spin.\n            3    All one or two spin 7 energy step data.\n            4    Mostly 14 energy step data. Some 7 energy step multispins.\n            5    Mostly one or two spin 7 energy step data. Some multispins.\n            6    Mostly multispin 7 energy step data.\n            7    All multispin 7 energy step data.\n            99   Invalid energies.\n            Some of these conditions (1,2,4,5,6) are very rare.",
+          "Description": "Energy Resolution Indicators TIMAS data are available from operational modes with full (28 bins) or moderate (7 bins) energy resolution. These data were assembled from various data products with different energy resolution. Data are given with full 28 energy step resolution EVEN IF ONLY 7 energy step resolution data are available. This flag documents the resolution of the data included in the average. Values are: 0 All single spin 14 energy step data. 1 Mostly 14 energy step data. Some 7 energy step. All one or two spin. 2 Mostly 7 energy step data. Some 14 energy step. All one or two spin. 3 All one or two spin 7 energy step data. 4 Mostly 14 energy step data. Some 7 energy step multispins. 5 Mostly one or two spin 7 energy step data. Some multispins. 6 Mostly multispin 7 energy step data. 7 All multispin 7 energy step data. 99 Invalid energies. Some of these conditions (1,2,4,5,6) are very rare.",
           "Structure": {
             "Size": "4",
             "Element": [
@@ -1713,7 +1737,7 @@
         {
           "Name": "Pitch Angle Resolution",
           "ParameterKey": "PA_status",
-          "Description": "Pitch Angle Resolution Flags\n            TIMAS data are available from operational modes with various anglular resolutions. These data were assembled from various data products with different angular resolutions. Data are given in this product with full 12 angular bin resolution EVEN IF 12 angular bin resolution is not available in the input data. This flag documents the resolution of the data included in the average.\n            Values are:\n            0    All 22 degree data.\n            1    Mostly 22 degree data.\n            2    Mostly 45 degree data.\n            3    All 45 degree data.\n            4    Smeared 22 degree data. Not spin locked.\n            5    Smeared 45 degree data. Not spin locked.\n            99   Invalid pitch angles.",
+          "Description": "Pitch Angle Resolution Flags TIMAS data are available from operational modes with various anglular resolutions. These data were assembled from various data products with different angular resolutions. Data are given in this product with full 12 angular bin resolution EVEN IF 12 angular bin resolution is not available in the input data. This flag documents the resolution of the data included in the average. Values are: 0 All 22 degree data. 1 Mostly 22 degree data. 2 Mostly 45 degree data. 3 All 45 degree data. 4 Smeared 22 degree data. Not spin locked. 5 Smeared 45 degree data. Not spin locked. 99 Invalid pitch angles.",
           "Caveats": "IMPORTANT NOTE: VALID DATA ARE INCLUDED FOR INTERVALS WITH INVALID PITCH ANGLES. When calculating the omnidirectonal flux average for intervals with invalid pitch angles the values of the pitch angles must be ignored.",
           "Structure": {
             "Size": "4",
@@ -1746,7 +1770,7 @@
         {
           "Name": "Data Quality Flags",
           "ParameterKey": "Quality",
-          "Description": "Correction of TIMAS fluxes for high count rates increases the uncertainty in the flux values reported. The quality flag is provided as a convenient flag to use to select data that has been acquired in the linear response range of the instrument. A quality flag is in the range 0-99 with the following values/meanings\n            0    OK.\n            1    Some data missing.\n            2    More than 5% data missing\n            3    Not used\n            4    Not used\n            5    Warning flags set\n            6    Not used\n            99   No valid data.\n            0-1 indicate high quality data while 2 indicates adequate quality data.",
+          "Description": "Correction of TIMAS fluxes for high count rates increases the uncertainty in the flux values reported. The quality flag is provided as a convenient flag to use to select data that has been acquired in the linear response range of the instrument. A quality flag is in the range 0-99 with the following values/meanings 0 OK. 1 Some data missing. 2 More than 5% data missing 3 Not used 4 Not used 5 Warning flags set 6 Not used 99 No valid data. 0-1 indicate high quality data while 2 indicates adequate quality data.",
           "Structure": {
             "Size": "4",
             "Element": [

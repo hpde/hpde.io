@@ -2,15 +2,33 @@
   "Spase": {
     "xmlns": "http://www.spase-group.org/data/schema",
     "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
-    "xsi:schemaLocation": "http://www.spase-group.org/data/schema  https://www.spase-group.org/data/schema/spase-2_3_2.xsd",
-    "Version": "2.3.2",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_6_0.xsd",
+    "Version": "2.6.0",
     "NumericalData": {
       "ResourceID": "spase://NASA/NumericalData/THEMIS/B/FBK/PT4S",
       "ResourceHeader": {
         "ResourceName": "THEMIS-B: Probe Electric Field Instrument and Search Coil Magnetometer Instrument, Digital Fields Board - digitally computed Filter Bank spectra and E12 peak and average in HF band (FBK).",
-        "ReleaseDate": "2021-04-27T15:38:11Z",
-        "Description": "The Filter Bank is part of the Digital fields board and provides band-pass filtering for EFI and SCM spectra as well as E12HF peak and average value calculations.  The Filter Bank provides band-pass filtering for less computationally and power intensive spectra than the FFT would provide.  The process is as follows:   Signals are fed to the Filter Bank via a low-pass FIR filter with a cut-off frequency half that of the original signal maximum.  The output is passed to the band-pass filters, is differenced from the original signal, then absolute value of the data is taken and averaged.  The output from the low-pass filter is also sent to a second FIR filter with 2:1 decimation.  This output is then fed back through the system.  The process runs through 12 cascades for input at 8,192 samples/s and 13 for input at 16,384 samples/sec (EAC input only), reducing the signal and computing power by a factor 2 at each cascade.  At each cascade a set of data is produced at a sampling frequency of 2^n from 2 Hz to the initial sampling frequency (frequency characteristics for each step are shown below in Table 1).  The average from the Filter Bank is compressed to 8 bits with a pseudo-logarithmic encoder.  The data is stored in sets of six frequency bins at 2.689 kHz, 572 Hz, 144.2 Hz, 36.2 Hz, 9.05 Hz, and 2.26 Hz.  The average of the coupled E12HF signal and it's peak value are recorded over 62.5 ms windows (i.e. a 16 Hz sampling rate).  Accumulation of values from signal 31.25 ms windows is performed externally.  The  analog signals fed into the FBK are E12DC and SCM1.  Sensor and electronics design provided by UCB (J. W. Bonnell, F. S. Mozer), Digital Fields Board provided by LASP (R. Ergun), Search coil data provided by CETP (A. Roux).\n\nTable 1:  Frequency Properties.\n\nCascade  |  Frequency content of Input Signal  |  Low-pass Filter Cutoff Frequency  |  Freuency Content of Low-pass Output Signal  |  Filter Bank Frequency Band\n\n0*    0 - 8 kHz     4 kHz     0 - 4 kHz     4 - 8 kHz\n1     0 - 4 kHz     2 kHz     0 - 2 kHz     2 - 4 kHz\n2     0 - 2 kHz     1 kHz     0 - 1 kHz     1 - 2 kHz\n3     0 - 1 kHz     512 Hz    0 - 512 Hz    512 Hz - 1 kHz\n4     0 - 512 Hz    256 Hz    0 - 256 Hz    256 - 512 Hz\n5     0 - 256 Hz    128 Hz    0 - 128 Hz    128 - 256 Hz\n6     0 - 128 Hz    64 Hz     0 - 64 Hz     64 - 128 Hz\n7     0 - 64 Hz     32 Hz     0 - 32 Hz     32 - 64 Hz\n8     0 - 32 Hz     16 Hz     0 - 16 Hz     16 - 32 Hz\n9     0 - 16 Hz     8 Hz      0 - 8 Hz      8 - 16 Hz\n10    0 - 8 Hz      4 Hz      0 - 4 Hz      4 - 8 Hz\n11    0 - 4 Hz      2 Hz      0 - 2 Hz      2 - 4 Hz\n12    0 - 2 Hz      1 Hz      0 - 1 Hz      1 - 2 Hz\n\n*Only available for 16,384 Hz sampling.",
+        "DOI": "https://doi.org/10.48322/zbwc-cf09",
+        "ReleaseDate": "2023-07-30T12:34:56.789",
+        "RevisionHistory": {
+          "RevisionEvent": [
+            {
+              "ReleaseDate": "2021-04-27T15:38:11",
+              "Note": "Only known prior ReleaseDate of the metadata"
+            },
+            {
+              "ReleaseDate": "2023-07-30T12:34:56.789",
+              "Note": "Added DOI and PublicationInfo minted by LFB, metadata versioned up to SPASE 2.6.0, reviewed by LFB 20230727"
+            }
+          ]
+        },
+        "Description": "The Filter Bank is part of the Digital fields board and provides band-pass filtering for EFI and SCM spectra as well as E12HF peak and average value calculations. The Filter Bank provides band-pass filtering for less computationally and power intensive spectra than the FFT would provide. The process is as follows: Signals are fed to the Filter Bank via a low-pass FIR filter with a cut-off frequency half that of the original signal maximum. The output is passed to the band-pass filters, is differenced from the original signal, then absolute value of the data is taken and averaged. The output from the low-pass filter is also sent to a second FIR filter with 2:1 decimation. This output is then fed back through the system. The process runs through 12 cascades for input at 8,192 samples/s and 13 for input at 16,384 samples/sec (EAC input only), reducing the signal and computing power by a factor 2 at each cascade. At each cascade a set of data is produced at a sampling frequency of 2^n from 2 Hz to the initial sampling frequency (frequency characteristics for each step are shown below in Table 1). The average from the Filter Bank is compressed to 8 bits with a pseudo-logarithmic encoder. The data is stored in sets of six frequency bins at 2.689 kHz, 572 Hz, 144.2 Hz, 36.2 Hz, 9.05 Hz, and 2.26 Hz. The average of the coupled E12HF signal and it's peak value are recorded over 62.5 ms windows (i.e. a 16 Hz sampling rate). Accumulation of values from signal 31.25 ms windows is performed externally. The analog signals fed into the FBK are E12DC and SCM1. Sensor and electronics design provided by UCB (J. W. Bonnell, F. S. Mozer), Digital Fields Board provided by LASP (R. Ergun), Search coil data provided by CETP (A. Roux). Table 1: Frequency Properties. Cascade   Frequency content of Input Signal   Low-pass Filter Cutoff Frequency   Freuency Content of Low-pass Output Signal   Filter Bank Frequency Band 0* 0 - 8 kHz 4 kHz 0 - 4 kHz 4 - 8 kHz 1 0 - 4 kHz 2 kHz 0 - 2 kHz 2 - 4 kHz 2 0 - 2 kHz 1 kHz 0 - 1 kHz 1 - 2 kHz 3 0 - 1 kHz 512 Hz 0 - 512 Hz 512 Hz - 1 kHz 4 0 - 512 Hz 256 Hz 0 - 256 Hz 256 - 512 Hz 5 0 - 256 Hz 128 Hz 0 - 128 Hz 128 - 256 Hz 6 0 - 128 Hz 64 Hz 0 - 64 Hz 64 - 128 Hz 7 0 - 64 Hz 32 Hz 0 - 32 Hz 32 - 64 Hz 8 0 - 32 Hz 16 Hz 0 - 16 Hz 16 - 32 Hz 9 0 - 16 Hz 8 Hz 0 - 8 Hz 8 - 16 Hz 10 0 - 8 Hz 4 Hz 0 - 4 Hz 4 - 8 Hz 11 0 - 4 Hz 2 Hz 0 - 2 Hz 2 - 4 Hz 12 0 - 2 Hz 1 Hz 0 - 1 Hz 1 - 2 Hz *Only available for 16,384 Hz sampling.",
         "Acknowledgement": "NASA Contract NAS5-02099",
+        "PublicationInfo": {
+          "Authors": "Angelopoulos, Vassilis; Bonnell, John, W.; Ergun, Robert, E.; Mozer, Forrest, S.; Roux, Alain",
+          "PublicationDate": "2023-01-01T00:00:00",
+          "PublishedBy": "NASA Space Physics Data Facility"
+        },
         "Contact": [
           {
             "PersonID": "spase://SMWG/Person/Vassilis.Angelopoulos",
@@ -31,6 +49,10 @@
           {
             "PersonID": "spase://SMWG/Person/Alain.Roux",
             "Role": "CoInvestigator"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Lee.Frost.Bargatze",
+            "Role": "MetadataContact"
           }
         ],
         "InformationURL": {
@@ -68,7 +90,7 @@
           "Format": "CDF"
         },
         {
-          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF/CDAWeb",
           "Availability": "Online",
           "AccessRights": "Open",
           "AccessURL": {
@@ -119,7 +141,7 @@
         {
           "Name": "thb_fbh",
           "ParameterKey": "thb_fb_hff",
-          "Description": "Peak and average values from the coupled, high-frequency signal off opposing EFI booms 1 and 2.  Booms 1 and 2 are situated in the spin plane of the spacecraft, boom 1 along the positive x-axis (SPG coordinates).",
+          "Description": "Peak and average values from the coupled, high-frequency signal off opposing EFI booms 1 and 2. Booms 1 and 2 are situated in the spin plane of the spacecraft, boom 1 along the positive x-axis (SPG coordinates).",
           "Caveats": "hf_peak and hf_avg are the peak and average values of the output of the High-Frequency Filter, a broadband filter convering the 100- to 400-kHz band used for AKR detection",
           "Units": "V",
           "Structure": {
@@ -525,7 +547,7 @@
         {
           "Name": "thb_fb_v5_time",
           "ParameterKey": "thb_fb_v5_time",
-          "Description": "thb_fb_v5_time, UTC, in seconds  since 01-Jan-1970 00:00:00",
+          "Description": "thb_fb_v5_time, UTC, in seconds since 01-Jan-1970 00:00:00",
           "Caveats": "Not including leap seconds",
           "Units": "sec",
           "ValidMin": "0.0",
@@ -822,7 +844,7 @@
           "Name": "Calibrated Spectra",
           "ParameterKey": "thb_fb_scm1",
           "Description": "Spectrogram for FBK Search Coil Magnetometer (SCM) Axis 1.",
-          "Caveats": "Average of absolute values.  SCM axes are specific to the instrument.",
+          "Caveats": "Average of absolute values. SCM axes are specific to the instrument.",
           "Units": "nT",
           "UnitsConversion": "1e-9>T",
           "Structure": {
@@ -893,7 +915,7 @@
           "Name": "Calibrated Spectra",
           "ParameterKey": "thb_fb_scm2",
           "Description": "Spectrogram for FBK Search Coil Magnetometer (SCM) Axis 2.",
-          "Caveats": "Average of absolute values.  SCM axes are specific to the instrument.",
+          "Caveats": "Average of absolute values. SCM axes are specific to the instrument.",
           "Units": "nT",
           "UnitsConversion": "1e-9>T",
           "Structure": {
@@ -964,7 +986,7 @@
           "Name": "Calibrated Spectra",
           "ParameterKey": "thb_fb_scm3",
           "Description": "Spectrogram for FBK Search Coil Magnetometer (SCM) Axis 3.",
-          "Caveats": "Average of absolute values.  SCM axes are specific to the instrument.",
+          "Caveats": "Average of absolute values. SCM axes are specific to the instrument.",
           "Units": "nT",
           "UnitsConversion": "1e-9>T",
           "Structure": {

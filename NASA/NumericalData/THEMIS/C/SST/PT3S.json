@@ -2,16 +2,34 @@
   "Spase": {
     "xmlns": "http://www.spase-group.org/data/schema",
     "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
-    "xsi:schemaLocation": "http://www.spase-group.org/data/schema  https://www.spase-group.org/data/schema/spase-2_3_2.xsd",
-    "Version": "2.3.2",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_6_0.xsd",
+    "Version": "2.6.0",
     "NumericalData": {
       "ResourceID": "spase://NASA/NumericalData/THEMIS/C/SST/PT3S",
       "ResourceHeader": {
-        "ResourceName": "THEMIS-C:  Solid State Telescope (SST): Energy flux spectrogram, electron/ion ground-calculated fluxes (30 keV - 300 keV).",
+        "ResourceName": "THEMIS-C: Solid State Telescope (SST): Energy flux spectrogram, electron/ion ground-calculated fluxes (30 keV - 300 keV).",
         "AlternateName": "THEMIS-C SST",
-        "ReleaseDate": "2021-04-27T15:38:11Z",
-        "Description": "THEMIS-C: The Solid State Telescope (SST) measures the incoming intensity (flux per solid angle) of superthermal electrons and ions.  The spacecraft is fitted with two units (heads), each SST unit has two pairs of opposing ion and electron sensors.  Each single sensor covers an angle of 36 degrees.  The units are oriented such that one pair is always centered in the rotation plane, the other oriented at a maximum angle of 54 degrees off the plane.  Each pair of units are oriented opposite each other allowing both ion and electron sensors to sweep out a maximum of 92% of the sky (45x45 degree required Elevation by Azimuth FOV, 108x22 raw) .  The ion and electron sensors primarily measure particles between 30-300 keV and 30-100 keV respectively with a maximum capability of 20-6000 keV and 25-1000 keV.  Full distribution data is measured over 128 angles and 16 energy bins, reduced distribution uses 6 angles and 16 energy bins, and burst mode data has 64 angles in 16 energy bins.  Matched and paired electron broom magnets produce quadrapole fields reducing magnetic contamination.  A mechanical attenuator is used to increase the instruments dynamical range avoiding oversaturation near the plasma sheet edge.",
+        "DOI": "https://doi.org/10.48322/hj63-0x15",
+        "ReleaseDate": "2023-07-30T12:34:56.789",
+        "RevisionHistory": {
+          "RevisionEvent": [
+            {
+              "ReleaseDate": "2021-04-27T15:38:11",
+              "Note": "Only known prior ReleaseDate of the metadata"
+            },
+            {
+              "ReleaseDate": "2023-07-30T12:34:56.789",
+              "Note": "Added DOI and PublicationInfo minted by LFB, metadata versioned up to SPASE 2.6.0, reviewed by LFB 20230727"
+            }
+          ]
+        },
+        "Description": "THEMIS-C: The Solid State Telescope (SST) measures the incoming intensity (flux per solid angle) of superthermal electrons and ions. The spacecraft is fitted with two units (heads), each SST unit has two pairs of opposing ion and electron sensors. Each single sensor covers an angle of 36 degrees. The units are oriented such that one pair is always centered in the rotation plane, the other oriented at a maximum angle of 54 degrees off the plane. Each pair of units are oriented opposite each other allowing both ion and electron sensors to sweep out a maximum of 92% of the sky (45x45 degree required Elevation by Azimuth FOV, 108x22 raw) . The ion and electron sensors primarily measure particles between 30-300 keV and 30-100 keV respectively with a maximum capability of 20-6000 keV and 25-1000 keV. Full distribution data is measured over 128 angles and 16 energy bins, reduced distribution uses 6 angles and 16 energy bins, and burst mode data has 64 angles in 16 energy bins. Matched and paired electron broom magnets produce quadrapole fields reducing magnetic contamination. A mechanical attenuator is used to increase the instruments dynamical range avoiding oversaturation near the plasma sheet edge.",
         "Acknowledgement": "NASA Contract NAS5-02099",
+        "PublicationInfo": {
+          "Authors": "Angelopoulos, Vassilis; Larson, Davin; Lin, Robert, P.",
+          "PublicationDate": "2023-01-01T00:00:00",
+          "PublishedBy": "NASA Space Physics Data Facility"
+        },
         "Contact": [
           {
             "PersonID": "spase://SMWG/Person/Vassilis.Angelopoulos",
@@ -24,6 +42,10 @@
           {
             "PersonID": "spase://SMWG/Person/Robert.P.Lin",
             "Role": "CoInvestigator"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Lee.Frost.Bargatze",
+            "Role": "MetadataContact"
           }
         ],
         "InformationURL": {
@@ -62,7 +84,7 @@
           "Encoding": "None"
         },
         {
-          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF/CDAWeb",
           "Availability": "Online",
           "AccessRights": "Open",
           "AccessURL": {
@@ -98,12 +120,12 @@
         },
         "Cadence": "PT3S"
       },
-      "Caveats": "Calibration for the SST is not complete.  Currently there are no corrections for the dead layer.  Other data products will be added later as calibration continues.  Total list of expected data types can be found on the THEMIS website.",
+      "Caveats": "Calibration for the SST is not complete. Currently there are no corrections for the dead layer. Other data products will be added later as calibration continues. Total list of expected data types can be found on the THEMIS website.",
       "Parameter": [
         {
           "Name": "SST Ion energy spectrogram",
           "ParameterKey": "thc_psif_en_eflux",
-          "Description": "SST Ion energy spectrogram in DSL (Despun Spacecraft) coordinates.  Spectrogram data is averaged over solid angle.",
+          "Description": "SST Ion energy spectrogram in DSL (Despun Spacecraft) coordinates. Spectrogram data is averaged over solid angle.",
           "Caveats": "DSL coordinates: The Z-axis points towards the spacecraft spin axis and the Y-axis is obtained from the cross product of Z and the Spacecraft-Sun direction as viewed from the probe; X completes a right handed system.",
           "Units": "eV/(cm^2*s*sr*eV)",
           "UnitsConversion": "1e4>1/(m^2*s*sr)",
@@ -370,7 +392,7 @@
           "Name": "thc_psif_en_eflux_time",
           "ParameterKey": "thc_psif_en_eflux_time",
           "Description": "thc_psif_en_eflux_time, UTC, in seconds since 01-Jan-1970 00:00:00; marks center time of data sample",
-          "Caveats": "Unleaped seconds. Sample start and end time can be calculated from  thc_peif_delta_time (sample duration).",
+          "Caveats": "Unleaped seconds. Sample start and end time can be calculated from thc_peif_delta_time (sample duration).",
           "Units": "sec",
           "ValidMin": "0.0",
           "ValidMax": "5.0E9",
@@ -405,7 +427,7 @@
         {
           "Name": "SST Electron energy spectrogram",
           "ParameterKey": "thc_psef_en_eflux",
-          "Description": "SST Electron energy spectrogram in DSL (Despun Spacecraft) coordinates.   Spectrogram data is averaged over solid angle.",
+          "Description": "SST Electron energy spectrogram in DSL (Despun Spacecraft) coordinates. Spectrogram data is averaged over solid angle.",
           "Caveats": "DSL coordinates: The Z-axis points towards the spacecraft spin axis and the Y-axis is obtained from the cross product of Z and the Spacecraft-Sun direction as viewed from the probe; X completes a right handed system.",
           "Units": "eV/(cm^2-s-sr-eV)",
           "UnitsConversion": "1e4>1/(m^2*s*sr)",
@@ -672,7 +694,7 @@
           "Name": "thc_psef_en_eflux_time",
           "ParameterKey": "thc_psef_en_eflux_time",
           "Description": "thc_psef_en_eflux_time, UTC, in seconds since 01-Jan-1970 00:00:00; marks center time of data sample",
-          "Caveats": "Unleaped seconds. Sample start and end time can be calculated from  thc_peif_delta_time (sample duration).",
+          "Caveats": "Unleaped seconds. Sample start and end time can be calculated from thc_peif_delta_time (sample duration).",
           "Units": "sec",
           "ValidMin": "0.0",
           "ValidMax": "5.0E9",
