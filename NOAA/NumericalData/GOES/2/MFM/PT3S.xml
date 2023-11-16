@@ -1,69 +1,65 @@
 <?xml version="1.0"?>
-<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_3_0.xsd">
-  <Version>2.3.0</Version>
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_6_0.xsd">
+  <Version>2.6.0</Version>
   <NumericalData>
     <ResourceID>spase://NOAA/NumericalData/GOES/2/MFM/PT3S</ResourceID>
     <ResourceHeader>
       <ResourceName>GOES 2 Magnetic Field Monitor at 3 s Time Resolution in Spacecraft Coordinates</ResourceName>
       <AlternateName>GOES 2 MFM data</AlternateName>
-      <ReleaseDate>2019-05-05T12:34:56Z</ReleaseDate>
+      <ReleaseDate>2023-11-15T12:34:56Z</ReleaseDate>
+	  <RevisionHistory>
+         <RevisionEvent>
+            <ReleaseDate>2023-11-15T10:46:37</ReleaseDate>
+            <Note>Removed bad InformationURLs. Updated AccessURL. Update Format of the data. Updated Parameters.</Note>
+         </RevisionEvent>
+	  </RevisionHistory>
       <Description>A biaxial, closed loop, fluxgate magnetometer was deployed on a boom about 0.61 m long. The magnetometer, which had one sensor aligned parallel to the spacecraft spin axis and the other perpendicular to this axis, measured the magnetic field at synchronous altitude. Each sensor had a selectable range (+50, 100, 200, or 400 nT), an offset field capability (plus or minus 1200 nT in 40 nT steps), and an inflight calibration capability.</Description>
       <Acknowledgement>NASA, NOAA, Harold Leinbach, Herbert H. Sauer, Joann Joselyn, Joseph N. Barfield, Howard J. Singer</Acknowledgement>
       <Contact>
         <PersonID>spase://SMWG/Person/Harold.Leinbach</PersonID>
         <Role>PrincipalInvestigator</Role>
-</Contact>
+      </Contact>
       <Contact>
         <PersonID>spase://SMWG/Person/Ernest.Hildner</PersonID>
         <Role>TeamMember</Role>
-</Contact>
+      </Contact>
       <Contact>
         <PersonID>spase://SMWG/Person/Joann.Joselyn</PersonID>
         <Role>TeamMember</Role>
-</Contact>
+      </Contact>
       <Contact>
         <PersonID>spase://SMWG/Person/Joseph.N.Barfield</PersonID>
         <Role>GeneralContact</Role>
-</Contact>
+      </Contact>
       <Contact>
         <PersonID>spase://SMWG/Person/Howard.J.Singer</PersonID>
         <Role>PrincipalInvestigator</Role>
-</Contact>
+      </Contact>
       <Contact>
         <PersonID>spase://SMWG/Person/James.M.Weygand</PersonID>
         <Role>MetadataContact</Role>
-</Contact>
+      </Contact>
       <InformationURL>
         <Name>GOES 2 Magnetic Field Monitor</Name>
         <URL>https://nssdc.gsfc.nasa.gov/nmc/experiment/display.action?id=1977-048A-04</URL>
         <Description>Introduction to the GOES 2 MFM instrument.</Description>
-</InformationURL>
-      <InformationURL>
-        <Name>GOES 2 Space Environment Monitor</Name>
-        <URL>https://satdat.ngdc.noaa.gov/sem/goes/goes_docs/full/readme.txt</URL>
-        <Description>Additional GOES MFM information.</Description>
-</InformationURL>
-      <InformationURL>
-        <Name>GOES 2 MFM Example ASCII file</Name>
-        <URL>https://satdat.ngdc.noaa.gov/sem/goes/software/mag.txt</URL>
-        <Description>Additional GOES MFM header information.</Description>
-</InformationURL>
+      </InformationURL>
       <PriorID>spase://VMO/NumericalData/GOES/2/MFM/PT3S</PriorID>
       <PriorID>spase://VSPO/NumericalData/GOES/2/MFM/PT3S</PriorID>
-</ResourceHeader>
+    </ResourceHeader>
     <AccessInformation>
       <RepositoryID>spase://SMWG/Repository/NOAA/SEC</RepositoryID>
       <Availability>Online</Availability>
       <AccessRights>Open</AccessRights>
       <AccessURL>
         <Name>Direct access to GOES 2 Biaxial Fluxgate Magnetometer Field Monitor (MFM) Magnetic Field Data</Name>
-        <URL>https://satdat.ngdc.noaa.gov/sem/goes/data/full/</URL>
+        <URL>https://www.ncei.noaa.gov/data/goes-space-environment-monitor/access/full/</URL>
         <Description>Direct link to the GOES 2 MFM data in CSV (text ascii) format as well as the magnetometer data from other GOES spacecraft. The data are sorted by year. The file names indicates the data type, spacecraft number, year, month, and resolution. For example, M0137607.FIT indicates magnetometer data (M) for spacecraft 1 (01) at 3 s time resolution (3) from July 1976 (7607). Note that spacecraft IDs 91 and 92 refer to SMS satellites, not GOES.</Description>
-</AccessURL>
-      <Format>Text.ASCII</Format>
+      </AccessURL>
+      <Format>CSV</Format>
       <Encoding>None</Encoding>
       <Acknowledgement>NASA, Joseph N. Barfield</Acknowledgement>
-</AccessInformation>
+    </AccessInformation>
     <ProcessingLevel>Calibrated</ProcessingLevel>
     <ProviderResourceName>NOAA GOES 2 MFM</ProviderResourceName>
     <ProviderProcessingLevel>Level-2</ProviderProcessingLevel>
@@ -74,9 +70,9 @@
         <StartDate>1977-08-01T00:00:00</StartDate>
         <StopDate>1983-05-31T00:00:00</StopDate>
         <Note>Time format in data files is year-month-day hour:minute:seconds. The year and month are derived from the file name.</Note>
-</TimeSpan>
+      </TimeSpan>
       <Cadence>PT3S</Cadence>
-</TemporalDescription>
+    </TemporalDescription>
     <Caveats>Flags=32711</Caveats>
     <Keyword>3 s</Keyword>
     <Keyword>geosynchronous</Keyword>
@@ -84,75 +80,78 @@
     <Keyword>magnetic field</Keyword>
     <Keyword>magnetometer</Keyword>
     <Parameter>
-      <Name>Seconds of the Month</Name>
-      <ParameterKey>Time</ParameterKey>
-      <Description>Time is given as year-month-day hour:minute:seconds (i.e., YYYY-MM-DD HH:MM:SS). The year and month values are derived from the file name.</Description>
-      <Support>
-        <SupportQuantity>Temporal</SupportQuantity>
-</Support>
-</Parameter>
-    <Parameter>
-      <Name>Unknown Flag</Name>
-      <ParameterKey>Unknown Flag</ParameterKey>
-      <Description>Contains '\N'.</Description>
-      <Cadence>PT3S</Cadence>
-      <Support>
-        <SupportQuantity>Other</SupportQuantity>
-</Support>
-</Parameter>
-    <Parameter>
-      <Name>Flag Word</Name>
-      <ParameterKey>Flag Word</ParameterKey>
-      <Description>The Flag Word contains packed information about the data such as the instrument command state, identification of bad data, correction of data, and archive version number. For more information go to https://satdat.ngdc.noaa.gov/sem/goes/software/mag.txt.</Description>
-      <Support>
-        <SupportQuantity>Other</SupportQuantity>
-</Support>
-</Parameter>
-    <Parameter>
-      <Name>GOES 2 MFM Magnetic Field Vector 3 s Time Resolution Data in Spacecraft Coordinates</Name>
-      <ParameterKey>Magnetic Field Vectors</ParameterKey>
-      <Description>Magnetic field vector for GOES 2 in spacecraft coordinates in units of 0.1 nT. The values must be divided by a factor of 10 to nT. HP is parallel to the satellite spin axis, which is itself: perpendicular to the orbital plane of the spacecraft. HE lies parallel: to the satellite-earth center line and points earthward. HN is: perpendicular to both HP and HE, and points westward for GOES 2.</Description>
-      <Units>nT</Units>
-      <UnitsConversion>0.1&gt;nT</UnitsConversion>
-      <CoordinateSystem>
-        <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
-        <CoordinateSystemName>SC</CoordinateSystemName>
-</CoordinateSystem>
-      <Structure>
-        <Size>3</Size>
-        <Description>HP is parallel to the satellite spin axis, which is itself: perpendicular to the orbital plane of the spacecraft. HE lies parallel: to the satellite-earth center line and points earthward. HN is: perpendicular to both HP and HE, and points westward for GOES 2.</Description>
-        <Element>
-          <Name>HP</Name>
-          <Qualifier>Component.I</Qualifier>
-          <Index>1</Index>
-          <ParameterKey>hp</ParameterKey>
-          <Units>nT</Units>
-          <UnitsConversion>0.1&gt;nT</UnitsConversion>
-          <FillValue>32711</FillValue>
-</Element>
-        <Element>
-          <Name>HE</Name>
-          <Qualifier>Component.J</Qualifier>
-          <Index>2</Index>
-          <ParameterKey>he</ParameterKey>
-          <Units>nT</Units>
-          <UnitsConversion>0.1&gt;nT</UnitsConversion>
-          <FillValue>32711</FillValue>
-</Element>
-        <Element>
-          <Name>HN</Name>
-          <Qualifier>Component.K</Qualifier>
-          <Index>3</Index>
-          <ParameterKey>hn</ParameterKey>
-          <Units>nT</Units>
-          <UnitsConversion>0.1&gt;nT</UnitsConversion>
-          <FillValue>32711</FillValue>
-</Element>
-</Structure>
-      <Field>
-        <Qualifier>Vector</Qualifier>
-        <FieldQuantity>Magnetic</FieldQuantity>
-</Field>
-</Parameter>
+	 <Name>Time</Name>
+	 <ParameterKey>time_tag</ParameterKey>
+	 <Description>Time is given as  hour:minute (i.e., HH:MM.M). The year and month values can also be derived from the file name.</Description>
+	 <Cadence>PT3S</Cadence>
+	 <Support>
+		<SupportQuantity>Temporal</SupportQuantity>
+	 </Support>
+  </Parameter>
+  <Parameter>
+	 <Name>Unknown Flag</Name>
+	 <ParameterKey>flagword</ParameterKey>
+	 <Description>Packed-binary flagword containing status information for each full-resolution measurement.</Description>
+	 <Cadence>PT3S</Cadence>
+	 <ValidMin>0</ValidMin>
+	 <ValidMax>100000</ValidMax>
+	 <FillValue>-99999</FillValue>
+	 <Support>
+		<SupportQuantity>Other</SupportQuantity>
+	 </Support>
+  </Parameter>
+  <Parameter>
+	 <Name>GOES 1 MFM Magnetic Field Vector 3 s Time Resolution Data in Spacecraft Coordinates</Name>
+	 <ParameterKey>Magnetic Field Vectors</ParameterKey>
+	 <Description>Magnetic field vector for GOES 1 in spacecraft coordinates in units of 0.1 nT. The values must be divided by a factor of 10 to nT. HP is parallel to the satellite spin axis, which is itself: perpendicular to the orbital plane of the spacecraft. HE lies parallel: to the satellite-earth center line and points earthward. HN is: perpendicular to both HP and HE, and points westward for GOES 1.</Description>
+	 <Cadence>PT3S</Cadence>
+	 <Units>nT</Units>
+	 <UnitsConversion>0.1&gt;nT</UnitsConversion>
+	 <CoordinateSystem>
+		<CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+		<CoordinateSystemName>SC</CoordinateSystemName>
+	 </CoordinateSystem>
+	 <Structure>
+		<Size>3</Size>
+		<Description>HP is parallel to the satellite spin axis, which is itself: perpendicular to the orbital plane of the spacecraft. HE lies parallel: to the satellite-earth center line and points earthward. HN is: perpendicular to both HP and HE, and points westward for GOES 1.</Description>
+		<Element>
+		   <Name>Hp flux (Northward)</Name>
+		   <Qualifier>Component.I</Qualifier>
+		   <Index>1</Index>
+		   <ParameterKey>hp</ParameterKey>
+		   <Units>nT</Units>
+		   <UnitsConversion>0.1&gt;nT</UnitsConversion>
+		   <ValidMin>-200</ValidMin>
+		   <ValidMax>+200</ValidMax>
+		   <FillValue>-99999</FillValue>
+		</Element>
+		<Element>
+		   <Name>He flux (Earthward)</Name>
+		   <Qualifier>Component.J</Qualifier>
+		   <Index>2</Index>
+		   <ParameterKey>he</ParameterKey>
+		   <Units>nT</Units>
+		   <UnitsConversion>0.1&gt;nT</UnitsConversion>
+		   <ValidMin>-200</ValidMin>
+		   <ValidMax>+200</ValidMax>
+		   <FillValue>-99999</FillValue>
+		</Element>
+		<Element>
+		   <Name>Hn flux (East)</Name>
+		   <Qualifier>Component.K</Qualifier>
+		   <Index>3</Index>
+		   <ParameterKey>hn</ParameterKey>
+		   <Units>nT</Units>
+		   <UnitsConversion>0.1&gt;nT</UnitsConversion>
+		   <ValidMin>-200</ValidMin>
+		   <ValidMax>+200</ValidMax>
+		   <FillValue>-99999</FillValue>
+		</Element>
+	 </Structure>
+	 <Field>
+		<Qualifier>Vector</Qualifier>
+		<FieldQuantity>Magnetic</FieldQuantity>
+	 </Field>
+  </Parameter>
 </NumericalData>
 </Spase>
