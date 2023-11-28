@@ -2,14 +2,20 @@
   "Spase": {
     "xmlns": "http://www.spase-group.org/data/schema",
     "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
-    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_3_0.xsd",
-    "Version": "2.3.0",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_6_0.xsd",
+    "Version": "2.6.0",
     "NumericalData": {
       "ResourceID": "spase://NOAA/NumericalData/GOES/9/MAG/NGDC/PT1M",
       "ResourceHeader": {
         "ResourceName": "GOES 9 Space Environment Monitor (SEM) Triaxial Fluxgate Magnetometer (FGM), Magnetic Field from the NGDC, Spacecraft Coordinates, 1.0 min Data",
         "AlternateName": "GOES 9 MFS data",
-        "ReleaseDate": "2019-10-11T16:15:00Z",
+        "ReleaseDate": "2023-11-27T16:15:00Z",
+        "RevisionHistory": {
+          "RevisionEvent": {
+            "ReleaseDate": "2023-11-27T10:46:37Z",
+            "Note": "Removed bad InformationURLs. Updated AccessURL. Update Format of the data. Updated Parameters."
+          }
+        },
         "Description": "The magnetic field sensor, located at a few meters away from the spacecraft was designed to provide the orthogonal components of the magnetic field: Hp was parallel to the spin axis that was held nearly parallel to the rotation axis of the Earth, He was directed toward Earth center, and Hn pointed eastward. The magnetometer had a range of ±1000 nT (without saturation) and a resolution of 0.1 nT. Data files contain long descriptive header.",
         "Acknowledgement": "NASA Office of Space Science Applications (United States), NOAA National Environmental Satellite Service (United States), Howard J. Singer",
         "Contact": [
@@ -22,11 +28,18 @@
             "Role": "MetadataContact"
           }
         ],
-        "InformationURL": {
-          "Name": "GOES 9 Space Environment Monitor",
-          "URL": "https://nssdc.gsfc.nasa.gov/nmc/experiment/display.action?id=1995-025A-03",
-          "Description": "Introduction to the GOES 9 Magnetometer."
-        },
+        "InformationURL": [
+          {
+            "Name": "GOES 9 Space Environment Monitor",
+            "URL": "https://nssdc.gsfc.nasa.gov/nmc/experiment/display.action?id=1995-025A-03",
+            "Description": "Introduction to the GOES 9 Magnetometer."
+          },
+          {
+            "Name": "GOES 9 Space Environment Monitor",
+            "URL": "https://www.ngdc.noaa.gov/stp/satellite/goes/",
+            "Description": "Additional GOES Magnetic Field Monitor information."
+          }
+        ],
         "PriorID": [
           "spase://VMO/NumericalData/GOES/8/MAG/PT60S",
           "spase://VSPO/NumericalData/GOES/9/MAG/NGDC/PT1M"
@@ -38,7 +51,7 @@
         "AccessRights": "Open",
         "AccessURL": {
           "Name": "Direct access to GOES 9 Triaxial Fluxgate Magnetometer (MAG) Magnetic Field Data",
-          "URL": "https://satdat.ngdc.noaa.gov/sem/goes/data/avg/",
+          "URL": "https://www.ncei.noaa.gov/data/goes-space-environment-monitor/access/avg/",
           "Description": "Direct link to the GOES 9 Magnetic Field Monitor data in CSV format as well as the magnetometer data from other GOES spacecraft. The data are sorted by year, month, spacecraft, and file type. The file names indicates the data type, spacecraft number, year, month, and resolution. For example, g08_magneto_1m_19950201_1995_02_28.csv, indicates GOES 8 magnetometer data at 1 min time resolution from Feb 1, 1995 to Feb 28, 1995."
         },
         "Format": "Text.ASCII",
@@ -69,9 +82,10 @@
       ],
       "Parameter": [
         {
-          "Name": "Seconds of the Month",
-          "ParameterKey": "Time",
-          "Description": "Time format in data files is year-month-day hour:minute:seconds.",
+          "Name": "Time",
+          "ParameterKey": "time_tag",
+          "Description": "Time is given as  hour:minute (i.e., HH:MM.M). The year and month values can also be derived from the file name.",
+          "Cadence": "PT3S",
           "Support": {
             "SupportQuantity": "Temporal"
           }
