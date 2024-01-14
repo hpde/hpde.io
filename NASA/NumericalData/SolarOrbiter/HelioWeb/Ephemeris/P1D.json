@@ -3,12 +3,18 @@
     "xmlns": "http://www.spase-group.org/data/schema",
     "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
     "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_3_1.xsd",
-    "Version": "2.3.1",
+    "Version": "2.6.0",
     "NumericalData": {
       "ResourceID": "spase://NASA/NumericalData/SolarOrbiter/HelioWeb/Ephemeris/P1D",
       "ResourceHeader": {
         "ResourceName": "Solar Orbiter Ephemeris, Heliocentric Trajectories, Heliographic, Heliographic Inertial, and Solar Ecliptic Coordinates, HelioWeb, Daily Data",
-        "ReleaseDate": "2021-03-29T17:14:50Z",
+        "ReleaseDate": "2024-01-08T17:14:50Z",
+        "RevisionHistory": {
+          "RevisionEvent": {
+            "ReleaseDate": "2024-01-08T00:00:00Z",
+            "Note": "Changed SOLAR-ORBITER_HELIO1DAY_POSITION to SOLO_HELIO1DAY_POSITION in AccessURL. As requested. Removed ftp link. Updated SPASE version. JMW."
+          }
+        },
         "Description": "Heliocentric trajectories for Comet Borrelly in Heliographic, HG, Heliographic Inertial, HGI, and Solar Ecliptic, SE, Coordinates\n\nThe original trajectory data are taken from http://ssd.jpl.nasa.gov/horizons.cgi where users can find many more objects. In the case of orbit data for planets, the orbit data can be used as a proxy for spacecraft ephemeris that are in orbit about the planets. On a heliospheric scale, differences between the planet orbital tarjectory and that of the spacecraft are very small. For instance, the heliocentric longitudes differ by only 0.25° for a spacecraft stationed near the L1 Lagrange point at approximately 100 Earth radii upstream of the Earth.\n\nThe production of the HG, HGI, and SE trajectory data requires a values for the \"Equinox Epoch\", which is defined as the epoch time when the direction from the Earth to the sun at the time of the vernal equinox when the sun seems to cross equatorial plane of the Earth from below. This direction is called the First Point of Aries, FPA and it is not a fixed direction but drifts by about 1.4° per century or 50.26\" per year. In addition, there are tiny irregularities in FPA drift that are on the order of 1\" per year or less. The Equinox Epoch can be determined by using a variety of methods for calculating the instantaneous FPA longitudinal direction and whether the tiny irregularities have been smoothed or averaged out. Four methods for determining the Equinox Epoch are in common usage:\n\n+---------------------------------------------------------------------+\n| Method Name  | FPA Longitude Definition                             |\n|---------------------------------------------------------------------|\n| B1950.0      | the actual FPA at 22:09 UT on December 31, 1949      |\n| J2000.0      | the smoothed FPA at 12:00 UT on January 1, 2000      |\n| True of Date | the actual FPA at 00:00 UT on the date of interest   |\n| Mean of Date | the smoothed FPA at 00:00 UT on the date of interest |\n+---------------------------------------------------------------------+\n\nThe heliocentric trajectory data included in this data product have been calculated by using the Equinox Epoch: defined via the \"Mean of Date\" method.\n\nMore precise coordinates, and some planet-centered coordinates, are found in the \"traj\" subdirectories of spacecraft specific directories at https://spdf.gsfc.nasa.gov/pub/data/ and http://ssd.jpl.nasa.gov/horizons.cgi.",
         "Acknowledgement": "Please acknowledge the Principal Investigator N.E. Papitashvili for use of the Data",
         "Contact": [
@@ -65,19 +71,14 @@
         "AccessRights": "Open",
         "AccessURL": [
           {
-            "Name": "FTPS from SPDF (not with most browsers)",
-            "URL": "ftps://spdf.gsfc.nasa.gov/pub/data/solar-orbiter/helio1day/",
-            "Description": "Access to Data in CDF Format via ftp from SPDF"
-          },
-          {
             "Name": "HTTPS from SPDF",
             "URL": "https://spdf.gsfc.nasa.gov/pub/data/solar-orbiter/helio1day/",
             "Description": "Access to Data in CDF Format via http from SPDF"
           },
           {
             "Name": "CDAWeb",
-            "URL": "https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=SOLAR-ORBITER_HELIO1DAY_POSITION&index=sp_phys",
-            "ProductKey": "SOLAR-SOLO_HELIO1DAY_POSITION",
+            "URL": "https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=SOLO_HELIO1DAY_POSITION&index=sp_phys",
+            "ProductKey": "SOLO_HELIO1DAY_POSITION",
             "Description": "Access to ASCII, CDF, and Plots via NASA/GSFC CDAWeb"
           }
         ],
