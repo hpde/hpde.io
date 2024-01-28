@@ -1,584 +1,593 @@
-<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema  http://spase-group.org/data/schema/spase-2.3.2.xsd">
-  <Version>2.5.0</Version>
-  <NumericalData>
-    <ResourceID>spase://NASA/NumericalData/ICON/MIGHTI/L2/A/Red/PT30S</ResourceID>
-    <ResourceHeader>
-      <ResourceName>ICON Michelson Interferometer for Global High-resolution Thermospheric Imaging viewing direction A </ResourceName>
-	  <AlternateName>MIGHTI A LOS Red</AlternateName>
-	  <DOI>https://doi.org/10.48322/mjdw-td24</DOI>
-      <ReleaseDate>2023-08-01T00:00:00Z</ReleaseDate>
-      <RevisionHistory>
-         <RevisionEvent>
-            <ReleaseDate>2023-08-01T00:00:00Z</ReleaseDate>
-            <Note>Added DOI and PublicationInfo minted by JMW on 20230801. Updated SPASE version.</Note>
-         </RevisionEvent>
-      </RevisionHistory>
-      <Description>The MIGHTI instrument measures the horizontal wind speed and direction (the wind vector). Each MIGHTI unit measures the wind along its line of sight. MIGHTI uses two perpendicular fields of view nominally pointing 45 degrees and 135 degrees in azimuth from the spacecraft velocity (MIGHTI A and MIGHTI B). Combining data from both units, this 90 degrees separation between their views allows the wind vector to be determined. For the wind measurements MIGHTI observes the Doppler shift of the atomic oxygen red and green lines at 630.0 nm and 557.7 nm wavelength.  The wavelength shift is measured using field-widened, temperature compensated Doppler Asymmetric Spatial Heterodyne (DASH) spectrometers, employing low order échelle gratings operating at two different orders for the different atmospheric lines. The temperature measurement is accomplished by a multichannel photometric measurement of the spectral shape of the molecular oxygen A-band around 762 nm wavelength. For each field of view, the signals of the two oxygen lines and the A-band are detected on different regions of a single, cooled, frame transfer charge coupled device (CCD) detector. On-board calibration sources are used to periodically quantify thermal drifts, simultaneously with observing the atmosphere.</Description>
-	  <Acknowledgement>National Aeronautics and Space Administration; Dr. Brian J. Harding; Dr. Thomas Immel</Acknowledgement>
-      <PublicationInfo>
-         <Authors>Harding, B. J.</Authors>
-         <PublicationDate>2023-01-01T00:00:00</PublicationDate>
-         <PublishedBy>NASA Space Physics Data Facility</PublishedBy>
-      </PublicationInfo>
-	  <Funding>
-		<Agency>National Aeronautics and Space Administration</Agency>
-		<Project>Explorers Program</Project>
-		<AwardNumber>contracts NNG12FA45C and NNG12FA42I</AwardNumber>
-	  </Funding>
-      <Contact>
-        <PersonID>spase://SMWG/Person/Brian.J.Harding</PersonID>
-        <Role>PrincipalInvestigator</Role>
-      </Contact>
-	  <InformationURL>
-        <Name>Additional information on ICON</Name>
-        <URL>https://icon.ssl.berkeley.edu/</URL>
-        <Description>ICON spacecraft Homepage.</Description>
-      </InformationURL>
-	  <InformationURL>
-        <Name>Michelson Interferometer for Global High-resolution Thermospheric Imaging (MIGHTI): instrument design and calibration</Name>
-        <URL>https://doi.org/10.1007/s11214-017-0358-4</URL>
-        <Description>Space Science Reviews, 212(1-2), pp.553-584. DOI: 10.1007/s11214-017-0358-4</Description>
-      </InformationURL>
-    </ResourceHeader>
-	<AccessInformation>
-		<RepositoryID>spase://SMWG/Repository/NASA/GSFC/CDAW</RepositoryID>
-		<Availability>Online</Availability>
-		<AccessRights>Open</AccessRights>
-		<AccessURL>
-			<Name>HTTPS from CDAWeb</Name>
-			<URL>https://cdaweb.gsfc.nasa.gov/pub/data/icon/l2/</URL>
-			<Description>FTPS access to ICON data via ftps at the Space Physics Data Facility (SPDF)</Description>
-		</AccessURL>
-		<Format>NetCDF</Format>
-	</AccessInformation>
-    <AccessInformation>
-		<RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF</RepositoryID>
-		<Availability>Online</Availability>
-		<AccessRights>Open</AccessRights>
-		<AccessURL>
-			<Name>HTTPS from SPDF</Name>
-			<URL>https://spdf.gsfc.nasa.gov/pub/data/icon/l2/</URL>
-			<Description>HTTPS access to ICON data at the Space Physics Data Facility (SPDF)</Description>
-		</AccessURL>
-		<Format>NetCDF</Format>
-	</AccessInformation>
-	<ProcessingLevel>Calibrated</ProcessingLevel>
-	<ProviderName>ICON MIGHTI team</ProviderName>
-		<InstrumentID>spase://SMWG/Instrument/ICON/MIGHTI</InstrumentID>
-	<MeasurementType>Dopplergram</MeasurementType>
-	<TemporalDescription>
-		<TimeSpan>
-			<StartDate>2019-12-06T00:00:00Z</StartDate>
-			<RelativeStopDate>-P2M</RelativeStopDate>
-		</TimeSpan>
-		<Cadence>PT30S</Cadence>
-	</TemporalDescription>
-	<ObservedRegion>Earth.NearSurface.Atmosphere</ObservedRegion>
-	<ObservedRegion>Earth.NearSurface.Ionosphere</ObservedRegion>
-	<Parameter>
-	    <Name>Epoch time</Name>
-	    <ParameterKey>Epoch</ParameterKey>
-	    <Description>Sample time, midpoint of exposure. Number of msec since Jan 1, 1970.</Description>
-	    <Cadence>PT30S</Cadence>
-	    <Units>ms</Units>
-		<ValidMin>0</ValidMin>
-		<ValidMax>31536000000000</ValidMax>
-		<FillValue>-9223372036854775806</FillValue>
-	    <Support>
-	        <Qualifier>Magnitude</Qualifier>
-	        <SupportQuantity>Temporal</SupportQuantity>
-	    </Support>
-    </Parameter>  
-	<Parameter>
-	    <Name>Time</Name>
-	    <ParameterKey>ICON_L21_Time</ParameterKey>
-	    <Description>Sample time at start, mid, stop of exposure. Number of msec since Jan 1, 1970.</Description>
-	    <Cadence>PT30S</Cadence>
-	    <Units>ms</Units>
-		<ValidMin>0</ValidMin>
-		<ValidMax>31536000000000</ValidMax>
-		<FillValue>-9223372036854775806</FillValue>
-	    <Support>
-	        <Qualifier>Magnitude</Qualifier>
-	        <SupportQuantity>Temporal</SupportQuantity>
-	    </Support>
-    </Parameter>
-	<Parameter>
-	    <Name>UTC time</Name>
-	    <ParameterKey>ICON_L21_UTC_Time</ParameterKey>
-	    <Description>Sample time, midpoint of exposure.</Description>
-	    <Cadence>PT30S</Cadence>
-	    <Units>date/time</Units>
-		<FillValue>''</FillValue>
-	    <Support>
-	        <Qualifier>Magnitude</Qualifier>
-	        <SupportQuantity>Temporal</SupportQuantity>
-	    </Support>
-    </Parameter>
-    <Parameter>
-	    <Name>Line-of-Sight Wind Values</Name>
-	    <ParameterKey>ICON_L21_Line_of_Sight_Wind</ParameterKey>
-	    <Description>Line-of-sight horizontal wind profile. A positive wind is towards MIGHTI.</Description>
-	    <Cadence>PT30S</Cadence>
-	    <Units>m/s</Units>
-		<ValidMin>-4000</ValidMin>
-		<ValidMax>4000</ValidMax>
-		<FillValue>9.969209968386869e+36</FillValue>
-	    <Particle>
-		    <ParticleType>Molecule</ParticleType>
-			<Qualifier>LineOfSight</Qualifier>
-	        <ParticleQuantity>FlowSpeed</ParticleQuantity>
-	    </Particle>
-    </Parameter>
-	<Parameter>
-	    <Name>Line-of-Sight Wind Errors</Name>
-	    <ParameterKey>ICON_L21_Line_of_Sight_Wind_Error</ParameterKey>
-	    <Description>Line-of-sight horizontal wind error profile.</Description>
-	    <Cadence>PT30S</Cadence>
-	    <Units>m/s</Units>
-		<ValidMin>0</ValidMin>
-		<ValidMax>4000</ValidMax>
-		<FillValue>9.969209968386869e+36</FillValue>
-	    <Support>
-	        <Qualifier>Uncertainty</Qualifier>
-	        <SupportQuantity>Other</SupportQuantity>
-	    </Support>
-    </Parameter>
-	<Parameter>
-	    <Name>Wind Quality Flag</Name>
-	    <ParameterKey>ICON_L21_Wind_Quality</ParameterKey>
-	    <Description>A quantification of the wind quality, from 0 (Bad) to 1 (Good).</Description>
-	    <Cadence>PT30S</Cadence>
-		<ValidMin>0</ValidMin>
-		<ValidMax>1</ValidMax>
-		<FillValue>9.969209968386869e+36</FillValue>
-	    <Support>
-	        <Qualifier>Scalar</Qualifier>
-	        <SupportQuantity>DataQuality</SupportQuantity>
-	    </Support>
-    </Parameter>
-	<Parameter>
-	    <Name>Fringe Amplitude Profile</Name>
-	    <ParameterKey>ICON_L21_Fringe_Amplitude</ParameterKey>
-	    <Description>Fringe amplitude profile.</Description>
-	    <Cadence>PT30S</Cadence>
-		<Units>arb</Units>
-		<ValidMin>-1e+30</ValidMin>
-		<ValidMax>1e+30</ValidMax>
-		<FillValue>9.969209968386869e+36</FillValue>
-	    <Support>
-	        <Qualifier>Scalar</Qualifier>
-	        <SupportQuantity>Other</SupportQuantity>
-	    </Support>
-    </Parameter>
-	<Parameter>
-	    <Name>Fringe Amplitude Error Profile</Name>
-	    <ParameterKey>ICON_L21_Fringe_Amplitude_Error</ParameterKey>
-	    <Description>Fringe amplitude error profile.</Description>
-	    <Cadence>PT30S</Cadence>
-		<Units>arb</Units>
-		<ValidMin>0</ValidMin>
-		<ValidMax>1e+30</ValidMax>
-		<FillValue>9.969209968386869e+36</FillValue>
-	    <Support>
-	        <Qualifier>Uncertainty</Qualifier>
-	        <SupportQuantity>Other</SupportQuantity>
-	    </Support>
-    </Parameter>
-	<Parameter>
-	    <Name>Relative Volume Emission Rate</Name>
-	    <ParameterKey>ICON_L21_Relative_VER</ParameterKey>
-	    <Description>Relative volume emission rate profile.</Description>
-	    <Cadence>PT30S</Cadence>
-	    <Units>ph/cm^3/s</Units>
-		<ValidMin>0</ValidMin>
-		<ValidMax>1e+30</ValidMax>
-		<FillValue>9.969209968386869e+36</FillValue>
-	    <Wave>
-		    <WaveType>Photon</WaveType>
-			<Qualifier>LineOfSight</Qualifier>
-			<WaveQuantity>VolumeEmissionRate</WaveQuantity>
-	    </Wave>
-    </Parameter>
-	<Parameter>
-	    <Name>Relative Volume Emission Rate Error</Name>
-	    <ParameterKey>ICON_L21_Relative_VER_Error</ParameterKey>
-	    <Description>Relative volume emission rate error profile.</Description>
-	    <Cadence>PT30S</Cadence>
-	    <Units>ph/cm^3/s</Units>
-		<ValidMin>0</ValidMin>
-		<ValidMax>1e+30</ValidMax>
-		<FillValue>9.969209968386869e+36</FillValue>
-	    <Support>
-	        <Qualifier>Uncertainty</Qualifier>
-	        <SupportQuantity>Other</SupportQuantity>
-	    </Support>
-    </Parameter>
-	<Parameter>
-	    <Name>Relative Volume Emission Rate Quality Flag</Name>
-	    <ParameterKey>ICON_L21_VER_Quality</ParameterKey>
-	    <Description>A quantification of the VER quality, from 0 (Bad) to 1 (Good).</Description>
-	    <Cadence>PT30S</Cadence>
-		<ValidMin>0</ValidMin>
-		<ValidMax>1</ValidMax>
-		<FillValue>9.969209968386869e+36</FillValue>
-	    <Support>
-	        <Qualifier>Scalar</Qualifier>
-	        <SupportQuantity>DataQuality</SupportQuantity>
-	    </Support>
-    </Parameter>
-	<Parameter>
-	    <Name>Altitude of Wind Sample</Name>
-	    <ParameterKey>ICON_L21_Altitude</ParameterKey>
-	    <Description>WGS84 altitude of each wind sample.</Description>
-	    <Cadence>PT30S</Cadence>
-	    <Units>km</Units>
-		<ValidMin>50</ValidMin>
-		<ValidMax>1000</ValidMax>
-		<FillValue>9.969209968386869e+36</FillValue>
-	    <Support>
-	        <Qualifier>Direction</Qualifier>
-	        <SupportQuantity>Positional</SupportQuantity>
-	    </Support>
-    </Parameter> 
-	<Parameter>
-	    <Name>Latitude of Wind Sample</Name>
-	    <ParameterKey>ICON_L21_Latitude</ParameterKey>
-	    <Description>WGS84 latitude of each wind sample.</Description>
-	    <Cadence>PT30S</Cadence>
-	    <Units>deg</Units>
-		<ValidMin>-90</ValidMin>
-		<ValidMax>90</ValidMax>
-		<FillValue>9.969209968386869e+36</FillValue>
-	    <Support>
-	        <Qualifier>Direction</Qualifier>
-	        <SupportQuantity>Positional</SupportQuantity>
-	    </Support>
-    </Parameter>
-	<Parameter>
-	    <Name>Longitude of Wind Sample</Name>
-	    <ParameterKey>ICON_L21_Longitude</ParameterKey>
-	    <Description>WGS84 longitude of each wind sample.</Description>
-	    <Cadence>PT30S</Cadence>
-	    <Units>deg</Units>
-		<ValidMin>0</ValidMin>
-		<ValidMax>360</ValidMax>
-		<FillValue>9.969209968386869e+36</FillValue>
-	    <Support>
-	        <Qualifier>Direction</Qualifier>
-	        <SupportQuantity>Positional</SupportQuantity>
-	    </Support>
-    </Parameter>
-	<Parameter>
-	    <Name>Magnetic Latitude of Wind Sample</Name>
-	    <ParameterKey>ICON_L21_Magnetic_Latitude</ParameterKey>
-	    <Description>Magnetic quasi-dipole latitude of each wind sample.</Description>
-	    <Cadence>PT30S</Cadence>
-	    <Units>deg</Units>
-		<ValidMin>-90</ValidMin>
-		<ValidMax>90</ValidMax>
-		<FillValue>9.969209968386869e+36</FillValue>
-	    <Support>
-	        <Qualifier>Direction</Qualifier>
-	        <SupportQuantity>Positional</SupportQuantity>
-	    </Support>
-    </Parameter>
-	<Parameter>
-	    <Name>Magnetic Longitude of Wind Sample</Name>
-	    <ParameterKey>ICON_L21_Magnetic_Longitude</ParameterKey>
-	    <Description>Magnetic quasi-dipole longitude of each wind sample.</Description>
-	    <Cadence>PT30S</Cadence>
-	    <Units>deg</Units>
-		<ValidMin>0</ValidMin>
-		<ValidMax>360</ValidMax>
-		<FillValue>9.969209968386869e+36</FillValue>
-	    <Support>
-	        <Qualifier>Direction</Qualifier>
-	        <SupportQuantity>Positional</SupportQuantity>
-	    </Support>
-    </Parameter>
-	<Parameter>
-	    <Name>Azimuth Angle of the Line of Sight</Name>
-	    <ParameterKey>ICON_L21_Line_of_Sight_Azimuth</ParameterKey>
-	    <Description>Azimuth angle of the line of sight at the tangent point. Deg East of North.</Description>
-	    <Cadence>PT30S</Cadence>
-	    <Units>degrees</Units>
-		<ValidMin>0</ValidMin>
-		<ValidMax>360</ValidMax>
-		<FillValue>9.969209968386869e+36</FillValue>
-	    <Support>
-	        <Qualifier>Direction</Qualifier>
-	        <SupportQuantity>Positional</SupportQuantity>
-	    </Support>
-    </Parameter>
-	<Parameter>
-	    <Name>Solar Zenith Angle of Each Wind Sample</Name>
-	    <ParameterKey>ICON_L21_Solar_Zenith_Angle</ParameterKey>
-	    <Description>Solar zenith angle of each wind sample.</Description>
-	    <Cadence>PT30S</Cadence>
-	    <Units>degrees</Units>
-		<ValidMin>0</ValidMin>
-		<ValidMax>180</ValidMax>
-		<FillValue>9.969209968386869e+36</FillValue>
-	    <Support>
-	        <Qualifier>Direction</Qualifier>
-	        <SupportQuantity>Positional</SupportQuantity>
-	    </Support>
-    </Parameter>
-	<Parameter>
-	    <Name>Local Solar Time of Each Wind Sample</Name>
-	    <ParameterKey>ICON_L21_Local_Solar_Time</ParameterKey>
-	    <Description>Local solar time of each wind sample.</Description>
-	    <Cadence>PT30S</Cadence>
-	    <Units>hours</Units>
-		<ValidMin>0</ValidMin>
-		<ValidMax>24</ValidMax>
-		<FillValue>9.969209968386869e+36</FillValue>
-	    <Support>
-	        <Qualifier>Direction</Qualifier>
-	        <SupportQuantity>Positional</SupportQuantity>
-	    </Support>
-    </Parameter>
-	<Parameter>
-	    <Name>Exposure Time</Name>
-	    <ParameterKey>ICON_L21_Exposure_Time</ParameterKey>
-	    <Description>The exposure time for each profile</Description>
-	    <Cadence>PT30S</Cadence>
-	    <Units>s</Units>
-		<ValidMin>0</ValidMin>
-		<ValidMax>120</ValidMax>
-		<FillValue>9.969209968386869e+36</FillValue>
-	    <Support>
-	        <Qualifier>Total</Qualifier>
-	        <SupportQuantity>Temporal</SupportQuantity>
-	    </Support>
-    </Parameter>  
-	<Parameter>
-	    <Name>Variance of the Phase</Name>
-	    <ParameterKey>ICON_L21_Chi2</ParameterKey>
-	    <Description>Variance of the phase in each (unwrapped) row: (std of phase)^2.</Description>
-	    <Cadence>PT30S</Cadence>
-	    <Units>rad^2</Units>
-		<ValidMin>0</ValidMin>
-		<ValidMax>1e+30</ValidMax>
-		<FillValue>9.969209968386869e+36</FillValue>
-	    <Support>
-	        <Qualifier>Variance</Qualifier>
-	        <SupportQuantity>Other</SupportQuantity>
-	    </Support>
-    </Parameter>
-	<Parameter>
-	    <Name>Velocity Vector</Name>
-	    <ParameterKey>ICON_L21_Observatory_Velocity_Vector</ParameterKey>
-	    <Description>ICON S/C velocity vector in Earth-centered, Earth-fixed coordinates.</Description>
-	    <Cadence>PT30S</Cadence>
-	    <Units>m/s</Units>
-		<ValidMin>-100000000</ValidMin>
-		<ValidMax>100000000</ValidMax>
-		<FillValue>9.969209968386869e+36</FillValue>
-	    <Particle>
-		    <ParticleType>Molecule</ParticleType>
-			<Qualifier>LineOfSight</Qualifier>
-	        <ParticleQuantity>FlowSpeed</ParticleQuantity>
-	    </Particle>
-    </Parameter>
-	<Parameter>
-	    <Name>Latitude of the ICON S/C</Name>
-	    <ParameterKey>ICON_L21_Observatory_Latitude</ParameterKey>
-	    <Description>The WGS84 latitude of the ICON S/C.</Description>
-	    <Cadence>PT30S</Cadence>
-	    <Units>deg</Units>
-		<ValidMin>-90</ValidMin>
-		<ValidMax>90</ValidMax>
-		<FillValue>9.969209968386869e+36</FillValue>
-	    <Support>
-	        <Qualifier>Direction</Qualifier>
-	        <SupportQuantity>Positional</SupportQuantity>
-	    </Support>
-    </Parameter>
-	<Parameter>
-	    <Name>Longitude of the ICON S/C</Name>
-	    <ParameterKey>ICON_L21_Observatory_Longitude</ParameterKey>
-	    <Description>The WGS84 longitude of the ICON S/C.</Description>
-	    <Cadence>PT30S</Cadence>
-	    <Units>deg</Units>
-		<ValidMin>0</ValidMin>
-		<ValidMax>360</ValidMax>
-		<FillValue>9.969209968386869e+36</FillValue>
-	    <Support>
-	        <Qualifier>Direction</Qualifier>
-	        <SupportQuantity>Positional</SupportQuantity>
-	    </Support>
-    </Parameter>
-	<Parameter>
-	    <Name>Altitude of the ICON S/C</Name>
-	    <ParameterKey>ICON_L21_Observatory_Altitude</ParameterKey>
-	    <Description>The WGS84 altitude of the ICON S/C......</Description>
-	    <Cadence>PT30S</Cadence>
-	    <Units>km</Units>
-		<ValidMin>100</ValidMin>
-		<ValidMax>2000</ValidMax>
-		<FillValue>9.969209968386869e+36</FillValue>
-	    <Support>
-	        <Qualifier>Direction</Qualifier>
-	        <SupportQuantity>Positional</SupportQuantity>
-	    </Support>
-    </Parameter> 
-	<Parameter>
-	    <Name>Line of Sight Direction of MIGHTI</Name>
-	    <ParameterKey>ICON_L21_Line_of_Sight_Vector</ParameterKey>
-	    <Description>The look direction of each MIGHTI line of sight, as a vector in ECEF.</Description>
-	    <Cadence>PT30S</Cadence>
-		<ValidMin>-1</ValidMin>
-		<ValidMax>1</ValidMax>
-		<FillValue>9.969209968386869e+36</FillValue>
-	    <Support>
-	        <Qualifier>Vector</Qualifier>
-	        <SupportQuantity>Orientation</SupportQuantity>
-	    </Support>
-    </Parameter>
-	<Parameter>
-	    <Name>Orbit Number</Name>
-	    <ParameterKey>ICON_L21_Orbit_Number</ParameterKey>
-	    <Description>Orbit Number</Description>
-	    <Cadence>PT30S</Cadence>
-		<ValidMin>0</ValidMin>
-		<ValidMax>1000000</ValidMax>
-		<FillValue>-9223372036854775806</FillValue>
-	    <Support>
-	        <Qualifier>Scalar</Qualifier>
-	        <SupportQuantity>Temporal</SupportQuantity>
-	    </Support>
-    </Parameter>
-	<Parameter>
-	    <Name>Orbit Node Flag</Name>
-	    <ParameterKey>ICON_L21_Orbit_Node</ParameterKey>
-	    <Description>Orbit Ascending/Descending Node Flag.</Description>
-	    <Cadence>PT30S</Cadence>
-		<ValidMin>0</ValidMin>
-		<ValidMax>1</ValidMax>
-		<FillValue>-127</FillValue>
-	    <Support>
-	        <Qualifier>Scalar</Qualifier>
-	        <SupportQuantity>Orientation</SupportQuantity>
-	    </Support>
-    </Parameter>
-	<Parameter>
-	    <Name>Number of Binned Raw Samples</Name>
-	    <ParameterKey>ICON_L21_Bin_Size</ParameterKey>
-	    <Description>How many raw samples were binned vertically for each reported sample.</Description>
-	    <Cadence>PT30S</Cadence>
-		<ValidMin>1</ValidMin>
-		<ValidMax>100</ValidMax>
-		<FillValue>-127</FillValue>
-	    <Support>
-	        <Qualifier>Scalar</Qualifier>
-	        <SupportQuantity>Other</SupportQuantity>
-	    </Support>
-    </Parameter>
-	<Parameter>
-	    <Name>Integration Order</Name>
-	    <ParameterKey>ICON_L21_Integration_Order</ParameterKey>
-	    <Description>Order used to discretize the integral for inversion: 0=Riemann, 1=Trapezoidal.</Description>
-	    <Cadence>PT30S</Cadence>
-		<ValidMin>0</ValidMin>
-		<ValidMax>1</ValidMax>
-		<FillValue>-127</FillValue>
-	    <Support>
-	        <Qualifier>Integral</Qualifier>
-	        <SupportQuantity>Other</SupportQuantity>
-	    </Support>
-    </Parameter>
-	<Parameter>
-	    <Name>ICON Top Layer Model</Name>
-	    <ParameterKey>ICON_L21_Top_Layer_Model</ParameterKey>
-	    <Description>How the top altitudinal layer is handled in the inversion: "exp" or "thin."</Description>
-	    <Cadence>PT30S</Cadence>
-		<FillValue>' '</FillValue>
-	    <Support>
-	        <Qualifier>Scalar</Qualifier>
-	        <SupportQuantity>Other</SupportQuantity>
-	    </Support>
-    </Parameter>
-	<Parameter>
-	    <Name>Attitude of Local Vertical Local Horizontal Normal</Name>
-	    <ParameterKey>ICON_L21_Attitude_LVLH_Normal</ParameterKey>
-	    <Description>Attitude status bit 0: local vertical local horizontal Normal.</Description>
-	    <Cadence>PT30S</Cadence>
-		<ValidMin>0</ValidMin>
-		<ValidMax>1</ValidMax>
-		<FillValue>-127</FillValue>
-	    <Support>
-	        <Qualifier>Scalar</Qualifier>
-	        <SupportQuantity>DataQuality</SupportQuantity>
-	    </Support>
-    </Parameter>
-	<Parameter>
-	    <Name>Attitude of Local Vertical Local Horizontal Reverse</Name>
-	    <ParameterKey>ICON_L21_Attitude_LVLH_Reverse</ParameterKey>
-	    <Description>Attitude status bit 1: Local Vertical Local Horizontal Reverse.</Description>
-	    <Cadence>PT30S</Cadence>
-		<ValidMin>0</ValidMin>
-		<ValidMax>1</ValidMax>
-		<FillValue>-127</FillValue>
-	    <Support>
-	        <Qualifier>Scalar</Qualifier>
-	        <SupportQuantity>DataQuality</SupportQuantity>
-	    </Support>
-    </Parameter>
-	<Parameter>
-	    <Name>Attitude of Earth Limb Pointing Status</Name>
-	    <ParameterKey>ICON_L21_Attitude_Limb_Pointing</ParameterKey>
-	    <Description>Attitude status bit 2: Earth Limb Pointing.</Description>
-	    <Cadence>PT30S</Cadence>
-		<ValidMin>0</ValidMin>
-		<ValidMax>1</ValidMax>
-		<FillValue>-127</FillValue>
-	    <Support>
-	        <Qualifier>Scalar</Qualifier>
-	        <SupportQuantity>DataQuality</SupportQuantity>
-	    </Support>
-    </Parameter>
-	<Parameter>
-	    <Name>Attitude: Conjugate Maneuver Status</Name>
-	    <ParameterKey>ICON_L21_Attitude_Conjugate_Maneuver</ParameterKey>
-	    <Description>Attitude status bit 6: Conjugate Maneuver.</Description>
-	    <Cadence>PT30S</Cadence>
-		<ValidMin>0</ValidMin>
-		<ValidMax>1</ValidMax>
-		<FillValue>-127</FillValue>
-	    <Support>
-	        <Qualifier>Scalar</Qualifier>
-	        <SupportQuantity>DataQuality</SupportQuantity>
-	    </Support>
-    </Parameter>
-	<Parameter>
-	    <Name>Attitude Quality Flag</Name>
-	    <ParameterKey>ICON_L21_Quality_Flags</ParameterKey>
-	    <Description>Attitude quality flag.</Description>
-	    <Cadence>PT30S</Cadence>
-		<ValidMin>0</ValidMin>
-		<ValidMax>1</ValidMax>
-		<FillValue>-127</FillValue>
-	    <Support>
-	        <Qualifier>Scalar</Qualifier>
-	        <SupportQuantity>DataQuality</SupportQuantity>
-	    </Support>
-    </Parameter>
-	<Parameter>
-	    <Name>Relative Volume Emission Rate (DC Value)</Name>
-	    <ParameterKey>ICON_L21_Relative_VER_DC</ParameterKey>
-	    <Description>Relative volume emission rate profile derived from DC value.</Description>
-	    <Cadence>PT30S</Cadence>
-	    <Units>ph/cm^3/s</Units>
-		<ValidMin>0</ValidMin>
-		<ValidMax>1e+30</ValidMax>
-		<FillValue>9.969209968386869e+36</FillValue>
-	    <Wave>
-		    <WaveType>Photon</WaveType>
-			<Qualifier>LineOfSight</Qualifier>
-			<WaveQuantity>VolumeEmissionRate</WaveQuantity>
-	    </Wave>
-    </Parameter>
-  </NumericalData>
+<?xml version="1.0" encoding="UTF-8"?>
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema  http://www.spase-group.org/data/schema/spase-2.6.0.xsd">
+   <Version>2.6.0</Version>
+   <NumericalData>
+      <ResourceID>spase://NASA/NumericalData/ICON/MIGHTI/L2/A/Red/PT30S</ResourceID>
+      <ResourceHeader>
+         <ResourceName>ICON Michelson Interferometer for Global High-resolution Thermospheric Imaging viewing direction A</ResourceName>
+         <AlternateName>MIGHTI A LOS Red</AlternateName>
+         <DOI>https://doi.org/10.48322/mjdw-td24</DOI>
+         <ReleaseDate>2024-01-22T00:00:00Z</ReleaseDate>
+         <RevisionHistory>
+            <RevisionEvent>
+               <ReleaseDate>2023-08-01T00:00:00Z</ReleaseDate>
+               <Note>Added DOI and PublicationInfo minted by JMW on 20230801. Updated SPASE version.</Note>
+            </RevisionEvent>
+			<RevisionEvent>
+               <ReleaseDate>2024-01-22T00:00:00Z</ReleaseDate>
+               <Note>Updated PublicationInfo Authors. JMW.</Note>
+            </RevisionEvent>
+         </RevisionHistory>
+         <Description>The MIGHTI instrument measures the horizontal wind speed and direction (the wind vector). Each MIGHTI unit measures the wind along its line of sight. MIGHTI uses two perpendicular fields of view nominally pointing 45 degrees and 135 degrees in azimuth from the spacecraft velocity (MIGHTI A and MIGHTI B). Combining data from both units, this 90 degrees separation between their views allows the wind vector to be determined. For the wind measurements MIGHTI observes the Doppler shift of the atomic oxygen red and green lines at 630.0 nm and 557.7 nm wavelength.  The wavelength shift is measured using field-widened, temperature compensated Doppler Asymmetric Spatial Heterodyne (DASH) spectrometers, employing low order échelle gratings operating at two different orders for the different atmospheric lines. The temperature measurement is accomplished by a multichannel photometric measurement of the spectral shape of the molecular oxygen A-band around 762 nm wavelength. For each field of view, the signals of the two oxygen lines and the A-band are detected on different regions of a single, cooled, frame transfer charge coupled device (CCD) detector. On-board calibration sources are used to periodically quantify thermal drifts, simultaneously with observing the atmosphere.</Description>
+         <Acknowledgement>National Aeronautics and Space Administration; Dr. Brian J. Harding; Dr. Thomas Immel</Acknowledgement>
+         <PublicationInfo>
+            <Authors>Harding, B. J.; Englert, C. R.; Harlander, J. M.; Marr, K. D.; Makela, J. M.; Brown, C. M.; England, S. L.; Immel, T. J.</Authors>
+            <PublicationDate>2023-01-01T00:00:00</PublicationDate>
+            <PublishedBy>NASA Space Physics Data Facility</PublishedBy>
+         </PublicationInfo>
+         <Funding>
+            <Agency>National Aeronautics and Space Administration</Agency>
+            <Project>Explorers Program</Project>
+            <AwardNumber>contracts NNG12FA45C and NNG12FA42I</AwardNumber>
+         </Funding>
+         <Contact>
+            <PersonID>spase://SMWG/Person/Brian.J.Harding</PersonID>
+            <Role>PrincipalInvestigator</Role>
+         </Contact>
+		 <Contact>
+            <PersonID>spase://SMWG/Person/James.M.Weygand</PersonID>
+            <Role>MetadataContact</Role>
+         </Contact>
+         <InformationURL>
+            <Name>Additional information on ICON</Name>
+            <URL>https://icon.ssl.berkeley.edu/</URL>
+            <Description>ICON spacecraft Homepage.</Description>
+         </InformationURL>
+         <InformationURL>
+            <Name>Michelson Interferometer for Global High-resolution Thermospheric Imaging (MIGHTI): instrument design and calibration</Name>
+            <URL>https://doi.org/10.1007/s11214-017-0358-4</URL>
+            <Description>Space Science Reviews, 212(1-2), pp.553-584. DOI: 10.1007/s11214-017-0358-4</Description>
+         </InformationURL>
+      </ResourceHeader>
+      <AccessInformation>
+         <RepositoryID>spase://SMWG/Repository/NASA/GSFC/CDAW</RepositoryID>
+         <Availability>Online</Availability>
+         <AccessRights>Open</AccessRights>
+         <AccessURL>
+            <Name>HTTPS from CDAWeb</Name>
+            <URL>https://cdaweb.gsfc.nasa.gov/pub/data/icon/l2/</URL>
+            <Description>FTPS access to ICON data via ftps at the Space Physics Data Facility (SPDF)</Description>
+         </AccessURL>
+         <Format>NetCDF</Format>
+      </AccessInformation>
+      <AccessInformation>
+         <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF</RepositoryID>
+         <Availability>Online</Availability>
+         <AccessRights>Open</AccessRights>
+         <AccessURL>
+            <Name>HTTPS from SPDF</Name>
+            <URL>https://spdf.gsfc.nasa.gov/pub/data/icon/l2/</URL>
+            <Description>HTTPS access to ICON data at the Space Physics Data Facility (SPDF)</Description>
+         </AccessURL>
+         <Format>NetCDF</Format>
+      </AccessInformation>
+      <ProcessingLevel>Calibrated</ProcessingLevel>
+      <ProviderName>ICON MIGHTI team</ProviderName>
+      <InstrumentID>spase://SMWG/Instrument/ICON/MIGHTI</InstrumentID>
+      <MeasurementType>Dopplergram</MeasurementType>
+      <TemporalDescription>
+         <TimeSpan>
+            <StartDate>2019-12-06T00:00:00Z</StartDate>
+            <RelativeStopDate>-P2M</RelativeStopDate>
+         </TimeSpan>
+         <Cadence>PT30S</Cadence>
+      </TemporalDescription>
+      <ObservedRegion>Earth.NearSurface.Atmosphere</ObservedRegion>
+      <ObservedRegion>Earth.NearSurface.Ionosphere</ObservedRegion>
+      <Parameter>
+         <Name>Epoch time</Name>
+         <ParameterKey>Epoch</ParameterKey>
+         <Description>Sample time, midpoint of exposure. Number of msec since Jan 1, 1970.</Description>
+         <Cadence>PT30S</Cadence>
+         <Units>ms</Units>
+         <ValidMin>0</ValidMin>
+         <ValidMax>31536000000000</ValidMax>
+         <FillValue>-9223372036854775806</FillValue>
+         <Support>
+            <Qualifier>Magnitude</Qualifier>
+            <SupportQuantity>Temporal</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Time</Name>
+         <ParameterKey>ICON_L21_Time</ParameterKey>
+         <Description>Sample time at start, mid, stop of exposure. Number of msec since Jan 1, 1970.</Description>
+         <Cadence>PT30S</Cadence>
+         <Units>ms</Units>
+         <ValidMin>0</ValidMin>
+         <ValidMax>31536000000000</ValidMax>
+         <FillValue>-9223372036854775806</FillValue>
+         <Support>
+            <Qualifier>Magnitude</Qualifier>
+            <SupportQuantity>Temporal</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>UTC time</Name>
+         <ParameterKey>ICON_L21_UTC_Time</ParameterKey>
+         <Description>Sample time, midpoint of exposure.</Description>
+         <Cadence>PT30S</Cadence>
+         <Units>date/time</Units>
+         <FillValue>&#039;&#039;</FillValue>
+         <Support>
+            <Qualifier>Magnitude</Qualifier>
+            <SupportQuantity>Temporal</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Line-of-Sight Wind Values</Name>
+         <ParameterKey>ICON_L21_Line_of_Sight_Wind</ParameterKey>
+         <Description>Line-of-sight horizontal wind profile. A positive wind is towards MIGHTI.</Description>
+         <Cadence>PT30S</Cadence>
+         <Units>m/s</Units>
+         <ValidMin>-4000</ValidMin>
+         <ValidMax>4000</ValidMax>
+         <FillValue>9.969209968386869e+36</FillValue>
+         <Particle>
+            <ParticleType>Molecule</ParticleType>
+            <Qualifier>LineOfSight</Qualifier>
+            <ParticleQuantity>FlowSpeed</ParticleQuantity>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Line-of-Sight Wind Errors</Name>
+         <ParameterKey>ICON_L21_Line_of_Sight_Wind_Error</ParameterKey>
+         <Description>Line-of-sight horizontal wind error profile.</Description>
+         <Cadence>PT30S</Cadence>
+         <Units>m/s</Units>
+         <ValidMin>0</ValidMin>
+         <ValidMax>4000</ValidMax>
+         <FillValue>9.969209968386869e+36</FillValue>
+         <Support>
+            <Qualifier>Uncertainty</Qualifier>
+            <SupportQuantity>Other</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Wind Quality Flag</Name>
+         <ParameterKey>ICON_L21_Wind_Quality</ParameterKey>
+         <Description>A quantification of the wind quality, from 0 (Bad) to 1 (Good).</Description>
+         <Cadence>PT30S</Cadence>
+         <ValidMin>0</ValidMin>
+         <ValidMax>1</ValidMax>
+         <FillValue>9.969209968386869e+36</FillValue>
+         <Support>
+            <Qualifier>Scalar</Qualifier>
+            <SupportQuantity>DataQuality</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Fringe Amplitude Profile</Name>
+         <ParameterKey>ICON_L21_Fringe_Amplitude</ParameterKey>
+         <Description>Fringe amplitude profile.</Description>
+         <Cadence>PT30S</Cadence>
+         <Units>arb</Units>
+         <ValidMin>-1e+30</ValidMin>
+         <ValidMax>1e+30</ValidMax>
+         <FillValue>9.969209968386869e+36</FillValue>
+         <Support>
+            <Qualifier>Scalar</Qualifier>
+            <SupportQuantity>Other</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Fringe Amplitude Error Profile</Name>
+         <ParameterKey>ICON_L21_Fringe_Amplitude_Error</ParameterKey>
+         <Description>Fringe amplitude error profile.</Description>
+         <Cadence>PT30S</Cadence>
+         <Units>arb</Units>
+         <ValidMin>0</ValidMin>
+         <ValidMax>1e+30</ValidMax>
+         <FillValue>9.969209968386869e+36</FillValue>
+         <Support>
+            <Qualifier>Uncertainty</Qualifier>
+            <SupportQuantity>Other</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Relative Volume Emission Rate</Name>
+         <ParameterKey>ICON_L21_Relative_VER</ParameterKey>
+         <Description>Relative volume emission rate profile.</Description>
+         <Cadence>PT30S</Cadence>
+         <Units>ph/cm^3/s</Units>
+         <ValidMin>0</ValidMin>
+         <ValidMax>1e+30</ValidMax>
+         <FillValue>9.969209968386869e+36</FillValue>
+         <Wave>
+            <WaveType>Photon</WaveType>
+            <Qualifier>LineOfSight</Qualifier>
+            <WaveQuantity>VolumeEmissionRate</WaveQuantity>
+         </Wave>
+      </Parameter>
+      <Parameter>
+         <Name>Relative Volume Emission Rate Error</Name>
+         <ParameterKey>ICON_L21_Relative_VER_Error</ParameterKey>
+         <Description>Relative volume emission rate error profile.</Description>
+         <Cadence>PT30S</Cadence>
+         <Units>ph/cm^3/s</Units>
+         <ValidMin>0</ValidMin>
+         <ValidMax>1e+30</ValidMax>
+         <FillValue>9.969209968386869e+36</FillValue>
+         <Support>
+            <Qualifier>Uncertainty</Qualifier>
+            <SupportQuantity>Other</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Relative Volume Emission Rate Quality Flag</Name>
+         <ParameterKey>ICON_L21_VER_Quality</ParameterKey>
+         <Description>A quantification of the VER quality, from 0 (Bad) to 1 (Good).</Description>
+         <Cadence>PT30S</Cadence>
+         <ValidMin>0</ValidMin>
+         <ValidMax>1</ValidMax>
+         <FillValue>9.969209968386869e+36</FillValue>
+         <Support>
+            <Qualifier>Scalar</Qualifier>
+            <SupportQuantity>DataQuality</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Altitude of Wind Sample</Name>
+         <ParameterKey>ICON_L21_Altitude</ParameterKey>
+         <Description>WGS84 altitude of each wind sample.</Description>
+         <Cadence>PT30S</Cadence>
+         <Units>km</Units>
+         <ValidMin>50</ValidMin>
+         <ValidMax>1000</ValidMax>
+         <FillValue>9.969209968386869e+36</FillValue>
+         <Support>
+            <Qualifier>Direction</Qualifier>
+            <SupportQuantity>Positional</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Latitude of Wind Sample</Name>
+         <ParameterKey>ICON_L21_Latitude</ParameterKey>
+         <Description>WGS84 latitude of each wind sample.</Description>
+         <Cadence>PT30S</Cadence>
+         <Units>deg</Units>
+         <ValidMin>-90</ValidMin>
+         <ValidMax>90</ValidMax>
+         <FillValue>9.969209968386869e+36</FillValue>
+         <Support>
+            <Qualifier>Direction</Qualifier>
+            <SupportQuantity>Positional</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Longitude of Wind Sample</Name>
+         <ParameterKey>ICON_L21_Longitude</ParameterKey>
+         <Description>WGS84 longitude of each wind sample.</Description>
+         <Cadence>PT30S</Cadence>
+         <Units>deg</Units>
+         <ValidMin>0</ValidMin>
+         <ValidMax>360</ValidMax>
+         <FillValue>9.969209968386869e+36</FillValue>
+         <Support>
+            <Qualifier>Direction</Qualifier>
+            <SupportQuantity>Positional</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Magnetic Latitude of Wind Sample</Name>
+         <ParameterKey>ICON_L21_Magnetic_Latitude</ParameterKey>
+         <Description>Magnetic quasi-dipole latitude of each wind sample.</Description>
+         <Cadence>PT30S</Cadence>
+         <Units>deg</Units>
+         <ValidMin>-90</ValidMin>
+         <ValidMax>90</ValidMax>
+         <FillValue>9.969209968386869e+36</FillValue>
+         <Support>
+            <Qualifier>Direction</Qualifier>
+            <SupportQuantity>Positional</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Magnetic Longitude of Wind Sample</Name>
+         <ParameterKey>ICON_L21_Magnetic_Longitude</ParameterKey>
+         <Description>Magnetic quasi-dipole longitude of each wind sample.</Description>
+         <Cadence>PT30S</Cadence>
+         <Units>deg</Units>
+         <ValidMin>0</ValidMin>
+         <ValidMax>360</ValidMax>
+         <FillValue>9.969209968386869e+36</FillValue>
+         <Support>
+            <Qualifier>Direction</Qualifier>
+            <SupportQuantity>Positional</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Azimuth Angle of the Line of Sight</Name>
+         <ParameterKey>ICON_L21_Line_of_Sight_Azimuth</ParameterKey>
+         <Description>Azimuth angle of the line of sight at the tangent point. Deg East of North.</Description>
+         <Cadence>PT30S</Cadence>
+         <Units>degrees</Units>
+         <ValidMin>0</ValidMin>
+         <ValidMax>360</ValidMax>
+         <FillValue>9.969209968386869e+36</FillValue>
+         <Support>
+            <Qualifier>Direction</Qualifier>
+            <SupportQuantity>Positional</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Solar Zenith Angle of Each Wind Sample</Name>
+         <ParameterKey>ICON_L21_Solar_Zenith_Angle</ParameterKey>
+         <Description>Solar zenith angle of each wind sample.</Description>
+         <Cadence>PT30S</Cadence>
+         <Units>degrees</Units>
+         <ValidMin>0</ValidMin>
+         <ValidMax>180</ValidMax>
+         <FillValue>9.969209968386869e+36</FillValue>
+         <Support>
+            <Qualifier>Direction</Qualifier>
+            <SupportQuantity>Positional</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Local Solar Time of Each Wind Sample</Name>
+         <ParameterKey>ICON_L21_Local_Solar_Time</ParameterKey>
+         <Description>Local solar time of each wind sample.</Description>
+         <Cadence>PT30S</Cadence>
+         <Units>hours</Units>
+         <ValidMin>0</ValidMin>
+         <ValidMax>24</ValidMax>
+         <FillValue>9.969209968386869e+36</FillValue>
+         <Support>
+            <Qualifier>Direction</Qualifier>
+            <SupportQuantity>Positional</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Exposure Time</Name>
+         <ParameterKey>ICON_L21_Exposure_Time</ParameterKey>
+         <Description>The exposure time for each profile</Description>
+         <Cadence>PT30S</Cadence>
+         <Units>s</Units>
+         <ValidMin>0</ValidMin>
+         <ValidMax>120</ValidMax>
+         <FillValue>9.969209968386869e+36</FillValue>
+         <Support>
+            <Qualifier>Total</Qualifier>
+            <SupportQuantity>Temporal</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Variance of the Phase</Name>
+         <ParameterKey>ICON_L21_Chi2</ParameterKey>
+         <Description>Variance of the phase in each (unwrapped) row: (std of phase)^2.</Description>
+         <Cadence>PT30S</Cadence>
+         <Units>rad^2</Units>
+         <ValidMin>0</ValidMin>
+         <ValidMax>1e+30</ValidMax>
+         <FillValue>9.969209968386869e+36</FillValue>
+         <Support>
+            <Qualifier>Variance</Qualifier>
+            <SupportQuantity>Other</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Velocity Vector</Name>
+         <ParameterKey>ICON_L21_Observatory_Velocity_Vector</ParameterKey>
+         <Description>ICON S/C velocity vector in Earth-centered, Earth-fixed coordinates.</Description>
+         <Cadence>PT30S</Cadence>
+         <Units>m/s</Units>
+         <ValidMin>-100000000</ValidMin>
+         <ValidMax>100000000</ValidMax>
+         <FillValue>9.969209968386869e+36</FillValue>
+         <Particle>
+            <ParticleType>Molecule</ParticleType>
+            <Qualifier>LineOfSight</Qualifier>
+            <ParticleQuantity>FlowSpeed</ParticleQuantity>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Latitude of the ICON S/C</Name>
+         <ParameterKey>ICON_L21_Observatory_Latitude</ParameterKey>
+         <Description>The WGS84 latitude of the ICON S/C.</Description>
+         <Cadence>PT30S</Cadence>
+         <Units>deg</Units>
+         <ValidMin>-90</ValidMin>
+         <ValidMax>90</ValidMax>
+         <FillValue>9.969209968386869e+36</FillValue>
+         <Support>
+            <Qualifier>Direction</Qualifier>
+            <SupportQuantity>Positional</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Longitude of the ICON S/C</Name>
+         <ParameterKey>ICON_L21_Observatory_Longitude</ParameterKey>
+         <Description>The WGS84 longitude of the ICON S/C.</Description>
+         <Cadence>PT30S</Cadence>
+         <Units>deg</Units>
+         <ValidMin>0</ValidMin>
+         <ValidMax>360</ValidMax>
+         <FillValue>9.969209968386869e+36</FillValue>
+         <Support>
+            <Qualifier>Direction</Qualifier>
+            <SupportQuantity>Positional</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Altitude of the ICON S/C</Name>
+         <ParameterKey>ICON_L21_Observatory_Altitude</ParameterKey>
+         <Description>The WGS84 altitude of the ICON S/C......</Description>
+         <Cadence>PT30S</Cadence>
+         <Units>km</Units>
+         <ValidMin>100</ValidMin>
+         <ValidMax>2000</ValidMax>
+         <FillValue>9.969209968386869e+36</FillValue>
+         <Support>
+            <Qualifier>Direction</Qualifier>
+            <SupportQuantity>Positional</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Line of Sight Direction of MIGHTI</Name>
+         <ParameterKey>ICON_L21_Line_of_Sight_Vector</ParameterKey>
+         <Description>The look direction of each MIGHTI line of sight, as a vector in ECEF.</Description>
+         <Cadence>PT30S</Cadence>
+         <ValidMin>-1</ValidMin>
+         <ValidMax>1</ValidMax>
+         <FillValue>9.969209968386869e+36</FillValue>
+         <Support>
+            <Qualifier>Vector</Qualifier>
+            <SupportQuantity>Orientation</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Orbit Number</Name>
+         <ParameterKey>ICON_L21_Orbit_Number</ParameterKey>
+         <Description>Orbit Number</Description>
+         <Cadence>PT30S</Cadence>
+         <ValidMin>0</ValidMin>
+         <ValidMax>1000000</ValidMax>
+         <FillValue>-9223372036854775806</FillValue>
+         <Support>
+            <Qualifier>Scalar</Qualifier>
+            <SupportQuantity>Temporal</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Orbit Node Flag</Name>
+         <ParameterKey>ICON_L21_Orbit_Node</ParameterKey>
+         <Description>Orbit Ascending/Descending Node Flag.</Description>
+         <Cadence>PT30S</Cadence>
+         <ValidMin>0</ValidMin>
+         <ValidMax>1</ValidMax>
+         <FillValue>-127</FillValue>
+         <Support>
+            <Qualifier>Scalar</Qualifier>
+            <SupportQuantity>Orientation</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Number of Binned Raw Samples</Name>
+         <ParameterKey>ICON_L21_Bin_Size</ParameterKey>
+         <Description>How many raw samples were binned vertically for each reported sample.</Description>
+         <Cadence>PT30S</Cadence>
+         <ValidMin>1</ValidMin>
+         <ValidMax>100</ValidMax>
+         <FillValue>-127</FillValue>
+         <Support>
+            <Qualifier>Scalar</Qualifier>
+            <SupportQuantity>Other</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Integration Order</Name>
+         <ParameterKey>ICON_L21_Integration_Order</ParameterKey>
+         <Description>Order used to discretize the integral for inversion: 0=Riemann, 1=Trapezoidal.</Description>
+         <Cadence>PT30S</Cadence>
+         <ValidMin>0</ValidMin>
+         <ValidMax>1</ValidMax>
+         <FillValue>-127</FillValue>
+         <Support>
+            <Qualifier>Integral</Qualifier>
+            <SupportQuantity>Other</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>ICON Top Layer Model</Name>
+         <ParameterKey>ICON_L21_Top_Layer_Model</ParameterKey>
+         <Description>How the top altitudinal layer is handled in the inversion: &quot;exp&quot; or &quot;thin.&quot;</Description>
+         <Cadence>PT30S</Cadence>
+         <FillValue>&#039; &#039;</FillValue>
+         <Support>
+            <Qualifier>Scalar</Qualifier>
+            <SupportQuantity>Other</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Attitude of Local Vertical Local Horizontal Normal</Name>
+         <ParameterKey>ICON_L21_Attitude_LVLH_Normal</ParameterKey>
+         <Description>Attitude status bit 0: local vertical local horizontal Normal.</Description>
+         <Cadence>PT30S</Cadence>
+         <ValidMin>0</ValidMin>
+         <ValidMax>1</ValidMax>
+         <FillValue>-127</FillValue>
+         <Support>
+            <Qualifier>Scalar</Qualifier>
+            <SupportQuantity>DataQuality</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Attitude of Local Vertical Local Horizontal Reverse</Name>
+         <ParameterKey>ICON_L21_Attitude_LVLH_Reverse</ParameterKey>
+         <Description>Attitude status bit 1: Local Vertical Local Horizontal Reverse.</Description>
+         <Cadence>PT30S</Cadence>
+         <ValidMin>0</ValidMin>
+         <ValidMax>1</ValidMax>
+         <FillValue>-127</FillValue>
+         <Support>
+            <Qualifier>Scalar</Qualifier>
+            <SupportQuantity>DataQuality</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Attitude of Earth Limb Pointing Status</Name>
+         <ParameterKey>ICON_L21_Attitude_Limb_Pointing</ParameterKey>
+         <Description>Attitude status bit 2: Earth Limb Pointing.</Description>
+         <Cadence>PT30S</Cadence>
+         <ValidMin>0</ValidMin>
+         <ValidMax>1</ValidMax>
+         <FillValue>-127</FillValue>
+         <Support>
+            <Qualifier>Scalar</Qualifier>
+            <SupportQuantity>DataQuality</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Attitude: Conjugate Maneuver Status</Name>
+         <ParameterKey>ICON_L21_Attitude_Conjugate_Maneuver</ParameterKey>
+         <Description>Attitude status bit 6: Conjugate Maneuver.</Description>
+         <Cadence>PT30S</Cadence>
+         <ValidMin>0</ValidMin>
+         <ValidMax>1</ValidMax>
+         <FillValue>-127</FillValue>
+         <Support>
+            <Qualifier>Scalar</Qualifier>
+            <SupportQuantity>DataQuality</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Attitude Quality Flag</Name>
+         <ParameterKey>ICON_L21_Quality_Flags</ParameterKey>
+         <Description>Attitude quality flag.</Description>
+         <Cadence>PT30S</Cadence>
+         <ValidMin>0</ValidMin>
+         <ValidMax>1</ValidMax>
+         <FillValue>-127</FillValue>
+         <Support>
+            <Qualifier>Scalar</Qualifier>
+            <SupportQuantity>DataQuality</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Relative Volume Emission Rate (DC Value)</Name>
+         <ParameterKey>ICON_L21_Relative_VER_DC</ParameterKey>
+         <Description>Relative volume emission rate profile derived from DC value.</Description>
+         <Cadence>PT30S</Cadence>
+         <Units>ph/cm^3/s</Units>
+         <ValidMin>0</ValidMin>
+         <ValidMax>1e+30</ValidMax>
+         <FillValue>9.969209968386869e+36</FillValue>
+         <Wave>
+            <WaveType>Photon</WaveType>
+            <Qualifier>LineOfSight</Qualifier>
+            <WaveQuantity>VolumeEmissionRate</WaveQuantity>
+         </Wave>
+      </Parameter>
+   </NumericalData>
 </Spase>

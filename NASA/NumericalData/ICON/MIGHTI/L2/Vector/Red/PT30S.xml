@@ -1,533 +1,537 @@
-<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema  http://spase-group.org/data/schema/spase-2.3.2.xsd">
-  <Version>2.5.0</Version>
-  <NumericalData>
-    <ResourceID>spase://NASA/NumericalData/ICON/MIGHTI/L2/Vector/Red/PT30S</ResourceID>
-    <ResourceHeader>
-      <ResourceName>ICON Michelson Interferometer for Global High-resolution Thermospheric Imaging Wind Vectors Red </ResourceName>
-	  <AlternateName>MIGHTI Wind Vectors Red</AlternateName>
-	  <DOI>https://doi.org/10.48322/pyfw-zv85</DOI>
-      <ReleaseDate>2023-08-01T00:00:00Z</ReleaseDate>
-      <RevisionHistory>
-         <RevisionEvent>
-            <ReleaseDate>2023-08-01T00:00:00Z</ReleaseDate>
-            <Note>Added DOI and PublicationInfo minted by JMW on 20230801. Updated SPASE version.</Note>
-         </RevisionEvent>
-      </RevisionHistory>
-      <Description>The MIGHTI instrument measures the horizontal wind speed and direction (the wind vector). Each MIGHTI unit measures the wind along its line of sight. MIGHTI uses two perpendicular fields of view nominally pointing 45 degrees and 135 degrees in azimuth from the spacecraft velocity (MIGHTI A and MIGHTI B). Combining data from both units, this 90 degrees separation between their views allows the wind vector to be determined. For the wind measurements MIGHTI observes the Doppler shift of the atomic oxygen red and green lines at 630.0 nm and 557.7 nm wavelength.  The wavelength shift is measured using field-widened, temperature compensated Doppler Asymmetric Spatial Heterodyne (DASH) spectrometers, employing low order échelle gratings operating at two different orders for the different atmospheric lines. The temperature measurement is accomplished by a multichannel photometric measurement of the spectral shape of the molecular oxygen A-band around 762 nm wavelength. For each field of view, the signals of the two oxygen lines and the A-band are detected on different regions of a single, cooled, frame transfer charge coupled device (CCD) detector. On-board calibration sources are used to periodically quantify thermal drifts, simultaneously with observing the atmosphere.</Description>
-	  <Acknowledgement>National Aeronautics and Space Administration; Dr. Brian J. Harding; Dr. Thomas Immel </Acknowledgement>
-      <PublicationInfo>
-         <Authors>Harding, B. J.</Authors>
-         <PublicationDate>2023-01-01T00:00:00</PublicationDate>
-         <PublishedBy>NASA Space Physics Data Facility</PublishedBy>
-      </PublicationInfo>
-	  <Funding>
-		<Agency>National Aeronautics and Space Administration</Agency>
-		<Project>Explorers Program</Project>
-		<AwardNumber>contracts NNG12FA45C and NNG12FA42I</AwardNumber>
-	  </Funding>
-      <Contact>
-        <PersonID>spase://SMWG/Person/Brian.J.Harding</PersonID>
-        <Role>PrincipalInvestigator</Role>
-      </Contact>
-	  <InformationURL>
-        <Name>Additional information on ICON</Name>
-        <URL>https://icon.ssl.berkeley.edu/</URL>
-        <Description>ICON spacecraft Homepage.</Description>
-      </InformationURL>
-	  <InformationURL>
-        <Name>Michelson Interferometer for Global High-resolution Thermospheric Imaging (MIGHTI): instrument design and calibration</Name>
-        <URL>https://doi.org/10.1007/s11214-017-0358-4</URL>
-        <Description>Space Science Reviews, 212(1-2), pp.553-584. DOI: 10.1007/s11214-017-0358-4</Description>
-      </InformationURL>
-    </ResourceHeader>
-	<AccessInformation>
-		<RepositoryID>spase://SMWG/Repository/NASA/GSFC/CDAW</RepositoryID>
-		<Availability>Online</Availability>
-		<AccessRights>Open</AccessRights>
-		<AccessURL>
-			<Name>HTTPS from CDAWeb</Name>
-			<URL>https://cdaweb.gsfc.nasa.gov/pub/data/icon/l2/</URL>
-			<Description>FTPS access to ICON data via ftps at the Space Physics Data Facility (SPDF)</Description>
-		</AccessURL>
-		<Format>NetCDF</Format>
-	</AccessInformation>
-    <AccessInformation>
-		<RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF</RepositoryID>
-		<Availability>Online</Availability>
-		<AccessRights>Open</AccessRights>
-		<AccessURL>
-			<Name>HTTPS from SPDF</Name>
-			<URL>https://spdf.gsfc.nasa.gov/pub/data/icon/l2/</URL>
-			<Description>HTTPS access to ICON data at the Space Physics Data Facility (SPDF)</Description>
-		</AccessURL>
-		<Format>NetCDF</Format>
-	</AccessInformation>
-	<ProcessingLevel>Calibrated</ProcessingLevel>
-	<ProviderName>ICON MIGHTI team</ProviderName>
-		<InstrumentID>spase://SMWG/Instrument/ICON/MIGHTI</InstrumentID>
-	<MeasurementType>Dopplergram</MeasurementType>
-	<TemporalDescription>
-		<TimeSpan>
-			<StartDate>2019-12-06T00:00:00Z</StartDate>
-			<RelativeStopDate>-P2M</RelativeStopDate>
-		</TimeSpan>
-		<Cadence>PT30S</Cadence>
-	</TemporalDescription>
-	<ObservedRegion>Earth.NearSurface.Atmosphere</ObservedRegion>
-	<ObservedRegion>Earth.NearSurface.Ionosphere</ObservedRegion>
-	
-	<Parameter>
-	    <Name>Epoch Time</Name>
-	    <ParameterKey>Epoch</ParameterKey>
-	    <Description>Sample time, midpoint of exposure. Number of msec since Jan 1, 1970.</Description>
-	    <Cadence>PT30S</Cadence>
-	    <Units>ms</Units>
-		<ValidMin>0</ValidMin>
-		<ValidMax>31536000000000</ValidMax>
-		<FillValue>-9223372036854775806</FillValue>
-	    <Support>
-	        <Qualifier>Magnitude</Qualifier>
-	        <SupportQuantity>Temporal</SupportQuantity>
-	    </Support>
-    </Parameter>  
-	<Parameter>
-	    <Name>Epoch Time: Midpoint of A and B Measurements</Name>
-	    <ParameterKey>Epoch_Full</ParameterKey>
-	    <Description>Sample time, midpoint of A and B measurements. Number of msec since Jan 1, 1970.</Description>
-	    <Cadence>PT30S</Cadence>
-	    <Units>ms</Units>
-		<ValidMin>0</ValidMin>
-		<ValidMax>31536000000000</ValidMax>
-		<FillValue>-9223372036854775806</FillValue>
-	    <Support>
-	        <Qualifier>Magnitude</Qualifier>
-	        <SupportQuantity>Temporal</SupportQuantity>
-	    </Support>
-    </Parameter>
-	<Parameter>
-	    <Name>Epoch time: Average of A and B Measurements</Name>
-	    <ParameterKey>ICON_L22_UTC_Time</ParameterKey>
-	    <Description>Sample time, average of A and B measurements.</Description>
-	    <Cadence>PT30S</Cadence>
-	    <Units>date/time</Units>
-		<FillValue>''</FillValue>
-	    <Support>
-	        <Qualifier>Magnitude</Qualifier>
-	        <SupportQuantity>Temporal</SupportQuantity>
-	    </Support>
-    </Parameter>
-	
-    <Parameter>
-	    <Name>Zonal Component of the Horizontal Wind.</Name>
-	    <ParameterKey>ICON_L22_Zonal_Wind</ParameterKey>
-	    <Description>Zonal component of the horizontal wind. Positive Eastward.</Description>
-	    <Cadence>PT30S</Cadence>
-	    <Units>m/s</Units>
-		<ValidMin>-4000</ValidMin>
-		<ValidMax>4000</ValidMax>
-		<FillValue>9.969209968386869e+36</FillValue>
-	    <Particle>
-		    <ParticleType>Molecule</ParticleType>
-			<Qualifier>LineOfSight</Qualifier>
-	        <ParticleQuantity>FlowSpeed</ParticleQuantity>
-	    </Particle>
-    </Parameter>
-	<Parameter>
-	    <Name>Meridonal Component of the Horizontal Wind.</Name>
-	    <ParameterKey>ICON_L22_Meridional_Wind</ParameterKey>
-	    <Description>Meridional component of the horizontal wind. Positive Northward.</Description>
-	    <Cadence>PT30S</Cadence>
-	    <Units>m/s</Units>
-		<ValidMin>-4000</ValidMin>
-		<ValidMax>4000</ValidMax>
-		<FillValue>9.969209968386869e+36</FillValue>
-	    <Particle>
-		    <ParticleType>Molecule</ParticleType>
-			<Qualifier>LineOfSight</Qualifier>
-	        <ParticleQuantity>FlowSpeed</ParticleQuantity>
-	    </Particle>
-    </Parameter>
-
-	<Parameter>
-	    <Name>Zonal Wind Errors</Name>
-	    <ParameterKey>ICON_L22_Zonal_Wind_Error</ParameterKey>
-	    <Description>Error in the zonal wind estimate.</Description>
-	    <Cadence>PT30S</Cadence>
-	    <Units>m/s</Units>
-		<ValidMin>0</ValidMin>
-		<ValidMax>4000</ValidMax>
-		<FillValue>9.969209968386869e+36</FillValue>
-	    <Support>
-	        <Qualifier>Uncertainty</Qualifier>
-	        <SupportQuantity>Other</SupportQuantity>
-	    </Support>
-    </Parameter>
-	<Parameter>
-	    <Name>Meridional Wind Errors</Name>
-	    <ParameterKey>ICON_L22_Meridional_Wind_Error</ParameterKey>
-	    <Description>Error in the meridional wind estimate.</Description>
-	    <Cadence>PT30S</Cadence>
-	    <Units>m/s</Units>
-		<ValidMin>0</ValidMin>
-		<ValidMax>4000</ValidMax>
-		<FillValue>9.969209968386869e+36</FillValue>
-	    <Support>
-	        <Qualifier>Uncertainty</Qualifier>
-	        <SupportQuantity>Other</SupportQuantity>
-	    </Support>
-    </Parameter>
-	<Parameter>
-	    <Name>Wind Quality Flag</Name>
-	    <ParameterKey>ICON_L22_Wind_Quality</ParameterKey>
-	    <Description>A quantification of the quality, from 0 (Bad) to 1 (Good).</Description>
-	    <Cadence>PT30S</Cadence>
-		<ValidMin>0</ValidMin>
-		<ValidMax>1</ValidMax>
-		<FillValue>9.969209968386869e+36</FillValue>
-	    <Support>
-	        <Qualifier>Scalar</Qualifier>
-	        <SupportQuantity>DataQuality</SupportQuantity>
-	    </Support>
-    </Parameter>
-	<Parameter>
-	    <Name>Fringe Amplitude</Name>
-	    <ParameterKey>ICON_L22_Fringe_Amplitude</ParameterKey>
-	    <Description>Fringe amplitude.</Description>
-	    <Cadence>PT30S</Cadence>
-		<Units>arb</Units>
-		<ValidMin>-1e+30</ValidMin>
-		<ValidMax>1e+30</ValidMax>
-		<FillValue>9.969209968386869e+36</FillValue>
-	    <Support>
-	        <Qualifier>Scalar</Qualifier>
-	        <SupportQuantity>Other</SupportQuantity>
-	    </Support>
-    </Parameter>
-	<Parameter>
-	    <Name>Fringe Amplitude Error</Name>
-	    <ParameterKey>ICON_L22_Fringe_Amplitude_Error</ParameterKey>
-	    <Description>Error in the fringe amplitude estimate.</Description>
-	    <Cadence>PT30S</Cadence>
-		<Units>arb</Units>
-		<ValidMin>0</ValidMin>
-		<ValidMax>1e+30</ValidMax>
-		<FillValue>9.969209968386869e+36</FillValue>
-	    <Support>
-	        <Qualifier>Uncertainty</Qualifier>
-	        <SupportQuantity>Other</SupportQuantity>
-	    </Support>
-    </Parameter>
-	<Parameter>
-	    <Name>Relative Volume Emission Rate</Name>
-	    <ParameterKey>ICON_L22_Relative_VER</ParameterKey>
-	    <Description>Relative volume emission rate profile.</Description>
-	    <Cadence>PT30S</Cadence>
-	    <Units>ph/cm^3/s</Units>
-		<ValidMin>0</ValidMin>
-		<ValidMax>1e+30</ValidMax>
-		<FillValue>9.969209968386869e+36</FillValue>
-	    <Wave>
-		    <WaveType>Photon</WaveType>
-			<Qualifier>LineOfSight</Qualifier>
-			<WaveQuantity>VolumeEmissionRate</WaveQuantity>
-	    </Wave>
-    </Parameter>
-	<Parameter>
-	    <Name>Relative Volume Emission Rate Error</Name>
-	    <ParameterKey>ICON_L22_Relative_VER_Error</ParameterKey>
-	    <Description>Error in VER estimate (statistical).</Description>
-	    <Cadence>PT30S</Cadence>
-	    <Units>ph/cm^3/s</Units>
-		<ValidMin>0</ValidMin>
-		<ValidMax>1e+30</ValidMax>
-		<FillValue>9.969209968386869e+36</FillValue>
-	    <Support>
-	        <Qualifier>Uncertainty</Qualifier>
-	        <SupportQuantity>Other</SupportQuantity>
-	    </Support>
-    </Parameter>
-	<Parameter>
-	    <Name>Relative Volume Emission Rate Quality Flag</Name>
-	    <ParameterKey>ICON_L22_VER_Quality</ParameterKey>
-	    <Description>A quantification of the VER quality, from 0 (Bad) to 1 (Good).</Description>
-	    <Cadence>PT30S</Cadence>
-		<ValidMin>0</ValidMin>
-		<ValidMax>1</ValidMax>
-		<FillValue>9.969209968386869e+36</FillValue>
-	    <Support>
-	        <Qualifier>Scalar</Qualifier>
-	        <SupportQuantity>DataQuality</SupportQuantity>
-	    </Support>
-    </Parameter>
-	<Parameter>
-	    <Name>Magnetic Field-Aligned Component of the Wind.</Name>
-	    <ParameterKey>ICON_L22_Magnetic_Field_Aligned_Wind</ParameterKey>
-	    <Description>Magnetic field-aligned component of the wind.</Description>
-	    <Cadence>PT30S</Cadence>
-	    <Units>m/s</Units>
-		<ValidMin>-4000</ValidMin>
-		<ValidMax>4000</ValidMax>
-		<FillValue>9.969209968386869e+36</FillValue>
-	    <Particle>
-		    <ParticleType>Molecule</ParticleType>
-			<Qualifier>LineOfSight</Qualifier>
-	        <ParticleQuantity>FlowSpeed</ParticleQuantity>
-	    </Particle>
-    </Parameter>
-	<Parameter>
-	    <Name>Magnetic Meridional Component of the Wind</Name>
-	    <ParameterKey>ICON_L22_Magnetic_Meridional_Wind</ParameterKey>
-	    <Description>Magnetic meridional component of the wind.</Description>
-	    <Cadence>PT30S</Cadence>
-	    <Units>m/s</Units>
-		<ValidMin>-4000</ValidMin>
-		<ValidMax>4000</ValidMax>
-		<FillValue>9.969209968386869e+36</FillValue>
-	    <Particle>
-		    <ParticleType>Molecule</ParticleType>
-			<Qualifier>LineOfSight</Qualifier>
-	        <ParticleQuantity>FlowSpeed</ParticleQuantity>
-	    </Particle>
-    </Parameter>
-	<Parameter>
-	    <Name>Magnetic Zonal Component of the Wind.</Name>
-	    <ParameterKey>ICON_L22_Magnetic_Zonal_Wind</ParameterKey>
-	    <Description>Magnetic zonal component of the wind.</Description>
-	    <Cadence>PT30S</Cadence>
-	    <Units>m/s</Units>
-		<ValidMin>-4000</ValidMin>
-		<ValidMax>4000</ValidMax>
-		<FillValue>9.969209968386869e+36</FillValue>
-	    <Particle>
-		    <ParticleType>Molecule</ParticleType>
-			<Qualifier>LineOfSight</Qualifier>
-	        <ParticleQuantity>FlowSpeed</ParticleQuantity>
-	    </Particle>
-    </Parameter>
-	<Parameter>
-	    <Name>Altitude of Wind Sample</Name>
-	    <ParameterKey>ICON_L22_Altitude</ParameterKey>
-	    <Description>WGS84 altitude of each wind sample.</Description>
-	    <Cadence>PT30S</Cadence>
-	    <Units>km</Units>
-		<ValidMin>50</ValidMin>
-		<ValidMax>1000</ValidMax>
-		<FillValue>9.969209968386869e+36</FillValue>
-	    <Support>
-	        <Qualifier>Direction</Qualifier>
-	        <SupportQuantity>Positional</SupportQuantity>
-	    </Support>
-    </Parameter> 
-	<Parameter>
-	    <Name>Latitude of Wind Sample</Name>
-	    <ParameterKey>ICON_L22_Latitude</ParameterKey>
-	    <Description>WGS84 latitude of each wind sample.</Description>
-	    <Cadence>PT30S</Cadence>
-	    <Units>deg</Units>
-		<ValidMin>-90</ValidMin>
-		<ValidMax>90</ValidMax>
-		<FillValue>9.969209968386869e+36</FillValue>
-	    <Support>
-	        <Qualifier>Direction</Qualifier>
-	        <SupportQuantity>Positional</SupportQuantity>
-	    </Support>
-    </Parameter>
-	<Parameter>
-	    <Name>Longitude of Wind Sample</Name>
-	    <ParameterKey>ICON_L22_Longitude</ParameterKey>
-	    <Description>WGS84 longitude of each wind sample.</Description>
-	    <Cadence>PT30S</Cadence>
-	    <Units>deg</Units>
-		<ValidMin>0</ValidMin>
-		<ValidMax>360</ValidMax>
-		<FillValue>9.969209968386869e+36</FillValue>
-	    <Support>
-	        <Qualifier>Direction</Qualifier>
-	        <SupportQuantity>Positional</SupportQuantity>
-	    </Support>
-    </Parameter>
-	<Parameter>
-	    <Name>Magnetic Latitude of Wind Sample</Name>
-	    <ParameterKey>ICON_L22_Magnetic_Latitude</ParameterKey>
-	    <Description>Magnetic quasi-dipole latitude of each wind sample.</Description>
-	    <Cadence>PT30S</Cadence>
-	    <Units>deg</Units>
-		<ValidMin>-90</ValidMin>
-		<ValidMax>90</ValidMax>
-		<FillValue>9.969209968386869e+36</FillValue>
-	    <Support>
-	        <Qualifier>Direction</Qualifier>
-	        <SupportQuantity>Positional</SupportQuantity>
-	    </Support>
-    </Parameter>
-	<Parameter>
-	    <Name>Magnetic Longitude of Wind Sample</Name>
-	    <ParameterKey>ICON_L22_Magnetic_Longitude</ParameterKey>
-	    <Description>Magnetic quasi-dipole longitude of each wind sample.</Description>
-	    <Cadence>PT30S</Cadence>
-	    <Units>deg</Units>
-		<ValidMin>0</ValidMin>
-		<ValidMax>360</ValidMax>
-		<FillValue>9.969209968386869e+36</FillValue>
-	    <Support>
-	        <Qualifier>Direction</Qualifier>
-	        <SupportQuantity>Positional</SupportQuantity>
-	    </Support>
-    </Parameter>
-	<Parameter>
-	    <Name>Solar Zenith Angle of Each Wind Sample</Name>
-	    <ParameterKey>ICON_L22_Solar_Zenith_Angle</ParameterKey>
-	    <Description>Solar zenith angle of each wind sample.</Description>
-	    <Cadence>PT30S</Cadence>
-	    <Units>degrees</Units>
-		<ValidMin>0</ValidMin>
-		<ValidMax>180</ValidMax>
-		<FillValue>9.969209968386869e+36</FillValue>
-	    <Support>
-	        <Qualifier>Direction</Qualifier>
-	        <SupportQuantity>Positional</SupportQuantity>
-	    </Support>
-    </Parameter>
-	<Parameter>
-	    <Name>Local Solar Time of Each Wind Sample</Name>
-	    <ParameterKey>ICON_L22_Local_Solar_Time</ParameterKey>
-	    <Description>Local solar time of each wind sample.</Description>
-	    <Cadence>PT30S</Cadence>
-	    <Units>hours</Units>
-		<ValidMin>0</ValidMin>
-		<ValidMax>24</ValidMax>
-		<FillValue>9.969209968386869e+36</FillValue>
-	    <Support>
-	        <Qualifier>Direction</Qualifier>
-	        <SupportQuantity>Positional</SupportQuantity>
-	    </Support>
-    </Parameter>
-	<Parameter>
-	    <Name>Difference Between MIGHTI-A and B Times</Name>
-	    <ParameterKey>ICON_L22_Time_Delta</ParameterKey>
-	    <Description>Difference between MIGHTI-A and B times contributing to each point.</Description>
-	    <Cadence>PT30S</Cadence>
-	    <Units>s</Units>
-		<ValidMin>0</ValidMin>
-		<ValidMax>120</ValidMax>
-		<FillValue>9.969209968386869e+36</FillValue>
-	    <Support>
-	        <Qualifier>Total</Qualifier>
-	        <SupportQuantity>Temporal</SupportQuantity>
-	    </Support>
-    </Parameter>  
-	
-	<Parameter>
-	    <Name>Fringe Amplitude from MIGHTI-A</Name>
-	    <ParameterKey>ICON_L22_Fringe_Amplitude_A</ParameterKey>
-	    <Description>Fringe Amplitude from MIGHTI-A.</Description>
-	    <Cadence>PT30S</Cadence>
-		<Units>arb</Units>
-		<ValidMin>-1e+30</ValidMin>
-		<ValidMax>1e+30</ValidMax>
-		<FillValue>9.969209968386869e+36</FillValue>
-	    <Support>
-	        <Qualifier>Scalar</Qualifier>
-	        <SupportQuantity>Other</SupportQuantity>
-	    </Support>
-    </Parameter>
-	<Parameter>
-	    <Name>Fringe Amplitude from MIGHTI-B</Name>
-	    <ParameterKey>ICON_L22_Fringe_Amplitude_B</ParameterKey>
-	    <Description>Fringe Amplitude from MIGHTI-B.</Description>
-	    <Cadence>PT30S</Cadence>
-		<Units>arb</Units>
-		<ValidMin>-1e+30</ValidMin>
-		<ValidMax>1e+30</ValidMax>
-		<FillValue>9.969209968386869e+36</FillValue>
-	    <Support>
-	        <Qualifier>Scalar</Qualifier>
-	        <SupportQuantity>Other</SupportQuantity>
-	    </Support>
-    </Parameter>
-	<Parameter>
-	    <Name>Relative Volume Emission Rate from MIGHTI-A</Name>
-	    <ParameterKey>ICON_L22_Relative_VER_A</ParameterKey>
-	    <Description>Relative Volume Emission Rate from MIGHTI-A.</Description>
-	    <Cadence>PT30S</Cadence>
-	    <Units>ph/cm^3/s</Units>
-		<ValidMin>-1e+30</ValidMin>
-		<ValidMax>1e+30</ValidMax>
-		<FillValue>9.969209968386869e+36</FillValue>
-	    <Wave>
-		    <WaveType>Photon</WaveType>
-			<Qualifier>LineOfSight</Qualifier>
-			<WaveQuantity>VolumeEmissionRate</WaveQuantity>
-	    </Wave>
-    </Parameter>
-	<Parameter>
-	    <Name>Relative Volume Emission Rate from MIGHTI-B</Name>
-	    <ParameterKey>ICON_L22_Relative_VER_B</ParameterKey>
-	    <Description>Relative Volume Emission Rate from MIGHTI-B.</Description>
-	    <Cadence>PT30S</Cadence>
-	    <Units>ph/cm^3/s</Units>
-		<ValidMin>-1e+30</ValidMin>
-		<ValidMax>1e+30</ValidMax>
-		<FillValue>9.969209968386869e+36</FillValue>
-	    <Wave>
-		    <WaveType>Photon</WaveType>
-			<Qualifier>LineOfSight</Qualifier>
-			<WaveQuantity>VolumeEmissionRate</WaveQuantity>
-	    </Wave>
-    </Parameter>
-	<Parameter>
-	    <Name>Volume Emission Rate Relative Differences</Name>
-	    <ParameterKey>ICON_L22_VER_Relative_Difference</ParameterKey>
-	    <Description>Difference in MIGHTI A and B's VER estimates, divided by the mean.</Description>
-	    <Cadence>PT30S</Cadence>
-		<ValidMin>0</ValidMin>
-		<ValidMax>10000000000</ValidMax>
-		<FillValue>9.969209968386869e+36</FillValue>
-	    <Wave>
-		    <WaveType>Photon</WaveType>
-			<Qualifier>LineOfSight</Qualifier>
-			<WaveQuantity>VolumeEmissionRate</WaveQuantity>
-	    </Wave>
-    </Parameter>
-	<Parameter>
-	    <Name>Orbit Number</Name>
-	    <ParameterKey>ICON_L22_Orbit_Number</ParameterKey>
-	    <Description>Orbit Number</Description>
-	    <Cadence>PT30S</Cadence>
-		<ValidMin>0</ValidMin>
-		<ValidMax>1000000</ValidMax>
-		<FillValue>9.969209968386869e+36</FillValue>
-	    <Support>
-	        <Qualifier>Scalar</Qualifier>
-	        <SupportQuantity>Temporal</SupportQuantity>
-	    </Support>
-    </Parameter>
-	<Parameter>
-	    <Name>Orbit Node Flag</Name>
-	    <ParameterKey>ICON_L22_Orbit_Node</ParameterKey>
-	    <Description>Orbit Ascending/Descending Node Flag.</Description>
-	    <Cadence>PT30S</Cadence>
-		<ValidMin>0</ValidMin>
-		<ValidMax>1</ValidMax>
-		<FillValue>-127</FillValue>
-	    <Support>
-	        <Qualifier>Scalar</Qualifier>
-	        <SupportQuantity>Orientation</SupportQuantity>
-	    </Support>
-    </Parameter>
-	<Parameter>
-	    <Name>Quality Flags</Name>
-	    <ParameterKey>ICON_L22_Quality_Flags</ParameterKey>
-	    <Description>Quality flags.</Description>
-	    <Cadence>PT30S</Cadence>
-		<ValidMin>0</ValidMin>
-		<ValidMax>1</ValidMax>
-		<FillValue>-127</FillValue>
-	    <Support>
-	        <Qualifier>Scalar</Qualifier>
-	        <SupportQuantity>DataQuality</SupportQuantity>
-	    </Support>
-    </Parameter>
-	
-  </NumericalData>
+<?xml version="1.0" encoding="UTF-8"?>
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema  http://www.spase-group.org/data/schema/spase-2.6.0.xsd">
+   <Version>2.6.0</Version>
+   <NumericalData>
+      <ResourceID>spase://NASA/NumericalData/ICON/MIGHTI/L2/Vector/Red/PT30S</ResourceID>
+      <ResourceHeader>
+         <ResourceName>ICON Michelson Interferometer for Global High-resolution Thermospheric Imaging Wind Vectors Red</ResourceName>
+         <AlternateName>MIGHTI Wind Vectors Red</AlternateName>
+         <DOI>https://doi.org/10.48322/pyfw-zv85</DOI>
+         <ReleaseDate>2024-01-22T00:00:00Z</ReleaseDate>
+         <RevisionHistory>
+            <RevisionEvent>
+               <ReleaseDate>2023-08-01T00:00:00Z</ReleaseDate>
+               <Note>Added DOI and PublicationInfo minted by JMW on 20230801. Updated SPASE version.</Note>
+            </RevisionEvent>
+			<RevisionEvent>
+               <ReleaseDate>2024-01-22T00:00:00Z</ReleaseDate>
+               <Note>Updated PublicationInfo Authors. JMW.</Note>
+            </RevisionEvent>
+         </RevisionHistory>
+         <Description>The MIGHTI instrument measures the horizontal wind speed and direction (the wind vector). Each MIGHTI unit measures the wind along its line of sight. MIGHTI uses two perpendicular fields of view nominally pointing 45 degrees and 135 degrees in azimuth from the spacecraft velocity (MIGHTI A and MIGHTI B). Combining data from both units, this 90 degrees separation between their views allows the wind vector to be determined. For the wind measurements MIGHTI observes the Doppler shift of the atomic oxygen red and green lines at 630.0 nm and 557.7 nm wavelength.  The wavelength shift is measured using field-widened, temperature compensated Doppler Asymmetric Spatial Heterodyne (DASH) spectrometers, employing low order échelle gratings operating at two different orders for the different atmospheric lines. The temperature measurement is accomplished by a multichannel photometric measurement of the spectral shape of the molecular oxygen A-band around 762 nm wavelength. For each field of view, the signals of the two oxygen lines and the A-band are detected on different regions of a single, cooled, frame transfer charge coupled device (CCD) detector. On-board calibration sources are used to periodically quantify thermal drifts, simultaneously with observing the atmosphere.</Description>
+         <Acknowledgement>National Aeronautics and Space Administration; Dr. Brian J. Harding; Dr. Thomas Immel</Acknowledgement>
+         <PublicationInfo>
+            <Authors>Harding, B. J.; Englert, C. R.; Harlander, J. M.; Marr, K. D.; Makela, J. M.; Brown, C. M.; England, S. L.; Immel, T. J.</Authors>
+            <PublicationDate>2023-01-01T00:00:00</PublicationDate>
+            <PublishedBy>NASA Space Physics Data Facility</PublishedBy>
+         </PublicationInfo>
+         <Funding>
+            <Agency>National Aeronautics and Space Administration</Agency>
+            <Project>Explorers Program</Project>
+            <AwardNumber>contracts NNG12FA45C and NNG12FA42I</AwardNumber>
+         </Funding>
+         <Contact>
+            <PersonID>spase://SMWG/Person/Brian.J.Harding</PersonID>
+            <Role>PrincipalInvestigator</Role>
+         </Contact>
+		 <Contact>
+            <PersonID>spase://SMWG/Person/James.M.Weygand</PersonID>
+            <Role>MetadataContact</Role>
+         </Contact>
+         <InformationURL>
+            <Name>Additional information on ICON</Name>
+            <URL>https://icon.ssl.berkeley.edu/</URL>
+            <Description>ICON spacecraft Homepage.</Description>
+         </InformationURL>
+         <InformationURL>
+            <Name>Michelson Interferometer for Global High-resolution Thermospheric Imaging (MIGHTI): instrument design and calibration</Name>
+            <URL>https://doi.org/10.1007/s11214-017-0358-4</URL>
+            <Description>Space Science Reviews, 212(1-2), pp.553-584. DOI: 10.1007/s11214-017-0358-4</Description>
+         </InformationURL>
+      </ResourceHeader>
+      <AccessInformation>
+         <RepositoryID>spase://SMWG/Repository/NASA/GSFC/CDAW</RepositoryID>
+         <Availability>Online</Availability>
+         <AccessRights>Open</AccessRights>
+         <AccessURL>
+            <Name>HTTPS from CDAWeb</Name>
+            <URL>https://cdaweb.gsfc.nasa.gov/pub/data/icon/l2/</URL>
+            <Description>FTPS access to ICON data via ftps at the Space Physics Data Facility (SPDF)</Description>
+         </AccessURL>
+         <Format>NetCDF</Format>
+      </AccessInformation>
+      <AccessInformation>
+         <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF</RepositoryID>
+         <Availability>Online</Availability>
+         <AccessRights>Open</AccessRights>
+         <AccessURL>
+            <Name>HTTPS from SPDF</Name>
+            <URL>https://spdf.gsfc.nasa.gov/pub/data/icon/l2/</URL>
+            <Description>HTTPS access to ICON data at the Space Physics Data Facility (SPDF)</Description>
+         </AccessURL>
+         <Format>NetCDF</Format>
+      </AccessInformation>
+      <ProcessingLevel>Calibrated</ProcessingLevel>
+      <ProviderName>ICON MIGHTI team</ProviderName>
+      <InstrumentID>spase://SMWG/Instrument/ICON/MIGHTI</InstrumentID>
+      <MeasurementType>Dopplergram</MeasurementType>
+      <TemporalDescription>
+         <TimeSpan>
+            <StartDate>2019-12-06T00:00:00Z</StartDate>
+            <RelativeStopDate>-P2M</RelativeStopDate>
+         </TimeSpan>
+         <Cadence>PT30S</Cadence>
+      </TemporalDescription>
+      <ObservedRegion>Earth.NearSurface.Atmosphere</ObservedRegion>
+      <ObservedRegion>Earth.NearSurface.Ionosphere</ObservedRegion>
+      <Parameter>
+         <Name>Epoch Time</Name>
+         <ParameterKey>Epoch</ParameterKey>
+         <Description>Sample time, midpoint of exposure. Number of msec since Jan 1, 1970.</Description>
+         <Cadence>PT30S</Cadence>
+         <Units>ms</Units>
+         <ValidMin>0</ValidMin>
+         <ValidMax>31536000000000</ValidMax>
+         <FillValue>-9223372036854775806</FillValue>
+         <Support>
+            <Qualifier>Magnitude</Qualifier>
+            <SupportQuantity>Temporal</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Epoch Time: Midpoint of A and B Measurements</Name>
+         <ParameterKey>Epoch_Full</ParameterKey>
+         <Description>Sample time, midpoint of A and B measurements. Number of msec since Jan 1, 1970.</Description>
+         <Cadence>PT30S</Cadence>
+         <Units>ms</Units>
+         <ValidMin>0</ValidMin>
+         <ValidMax>31536000000000</ValidMax>
+         <FillValue>-9223372036854775806</FillValue>
+         <Support>
+            <Qualifier>Magnitude</Qualifier>
+            <SupportQuantity>Temporal</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Epoch time: Average of A and B Measurements</Name>
+         <ParameterKey>ICON_L22_UTC_Time</ParameterKey>
+         <Description>Sample time, average of A and B measurements.</Description>
+         <Cadence>PT30S</Cadence>
+         <Units>date/time</Units>
+         <FillValue>&#039;&#039;</FillValue>
+         <Support>
+            <Qualifier>Magnitude</Qualifier>
+            <SupportQuantity>Temporal</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Zonal Component of the Horizontal Wind.</Name>
+         <ParameterKey>ICON_L22_Zonal_Wind</ParameterKey>
+         <Description>Zonal component of the horizontal wind. Positive Eastward.</Description>
+         <Cadence>PT30S</Cadence>
+         <Units>m/s</Units>
+         <ValidMin>-4000</ValidMin>
+         <ValidMax>4000</ValidMax>
+         <FillValue>9.969209968386869e+36</FillValue>
+         <Particle>
+            <ParticleType>Molecule</ParticleType>
+            <Qualifier>LineOfSight</Qualifier>
+            <ParticleQuantity>FlowSpeed</ParticleQuantity>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Meridonal Component of the Horizontal Wind.</Name>
+         <ParameterKey>ICON_L22_Meridional_Wind</ParameterKey>
+         <Description>Meridional component of the horizontal wind. Positive Northward.</Description>
+         <Cadence>PT30S</Cadence>
+         <Units>m/s</Units>
+         <ValidMin>-4000</ValidMin>
+         <ValidMax>4000</ValidMax>
+         <FillValue>9.969209968386869e+36</FillValue>
+         <Particle>
+            <ParticleType>Molecule</ParticleType>
+            <Qualifier>LineOfSight</Qualifier>
+            <ParticleQuantity>FlowSpeed</ParticleQuantity>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Zonal Wind Errors</Name>
+         <ParameterKey>ICON_L22_Zonal_Wind_Error</ParameterKey>
+         <Description>Error in the zonal wind estimate.</Description>
+         <Cadence>PT30S</Cadence>
+         <Units>m/s</Units>
+         <ValidMin>0</ValidMin>
+         <ValidMax>4000</ValidMax>
+         <FillValue>9.969209968386869e+36</FillValue>
+         <Support>
+            <Qualifier>Uncertainty</Qualifier>
+            <SupportQuantity>Other</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Meridional Wind Errors</Name>
+         <ParameterKey>ICON_L22_Meridional_Wind_Error</ParameterKey>
+         <Description>Error in the meridional wind estimate.</Description>
+         <Cadence>PT30S</Cadence>
+         <Units>m/s</Units>
+         <ValidMin>0</ValidMin>
+         <ValidMax>4000</ValidMax>
+         <FillValue>9.969209968386869e+36</FillValue>
+         <Support>
+            <Qualifier>Uncertainty</Qualifier>
+            <SupportQuantity>Other</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Wind Quality Flag</Name>
+         <ParameterKey>ICON_L22_Wind_Quality</ParameterKey>
+         <Description>A quantification of the quality, from 0 (Bad) to 1 (Good).</Description>
+         <Cadence>PT30S</Cadence>
+         <ValidMin>0</ValidMin>
+         <ValidMax>1</ValidMax>
+         <FillValue>9.969209968386869e+36</FillValue>
+         <Support>
+            <Qualifier>Scalar</Qualifier>
+            <SupportQuantity>DataQuality</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Fringe Amplitude</Name>
+         <ParameterKey>ICON_L22_Fringe_Amplitude</ParameterKey>
+         <Description>Fringe amplitude.</Description>
+         <Cadence>PT30S</Cadence>
+         <Units>arb</Units>
+         <ValidMin>-1e+30</ValidMin>
+         <ValidMax>1e+30</ValidMax>
+         <FillValue>9.969209968386869e+36</FillValue>
+         <Support>
+            <Qualifier>Scalar</Qualifier>
+            <SupportQuantity>Other</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Fringe Amplitude Error</Name>
+         <ParameterKey>ICON_L22_Fringe_Amplitude_Error</ParameterKey>
+         <Description>Error in the fringe amplitude estimate.</Description>
+         <Cadence>PT30S</Cadence>
+         <Units>arb</Units>
+         <ValidMin>0</ValidMin>
+         <ValidMax>1e+30</ValidMax>
+         <FillValue>9.969209968386869e+36</FillValue>
+         <Support>
+            <Qualifier>Uncertainty</Qualifier>
+            <SupportQuantity>Other</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Relative Volume Emission Rate</Name>
+         <ParameterKey>ICON_L22_Relative_VER</ParameterKey>
+         <Description>Relative volume emission rate profile.</Description>
+         <Cadence>PT30S</Cadence>
+         <Units>ph/cm^3/s</Units>
+         <ValidMin>0</ValidMin>
+         <ValidMax>1e+30</ValidMax>
+         <FillValue>9.969209968386869e+36</FillValue>
+         <Wave>
+            <WaveType>Photon</WaveType>
+            <Qualifier>LineOfSight</Qualifier>
+            <WaveQuantity>VolumeEmissionRate</WaveQuantity>
+         </Wave>
+      </Parameter>
+      <Parameter>
+         <Name>Relative Volume Emission Rate Error</Name>
+         <ParameterKey>ICON_L22_Relative_VER_Error</ParameterKey>
+         <Description>Error in VER estimate (statistical).</Description>
+         <Cadence>PT30S</Cadence>
+         <Units>ph/cm^3/s</Units>
+         <ValidMin>0</ValidMin>
+         <ValidMax>1e+30</ValidMax>
+         <FillValue>9.969209968386869e+36</FillValue>
+         <Support>
+            <Qualifier>Uncertainty</Qualifier>
+            <SupportQuantity>Other</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Relative Volume Emission Rate Quality Flag</Name>
+         <ParameterKey>ICON_L22_VER_Quality</ParameterKey>
+         <Description>A quantification of the VER quality, from 0 (Bad) to 1 (Good).</Description>
+         <Cadence>PT30S</Cadence>
+         <ValidMin>0</ValidMin>
+         <ValidMax>1</ValidMax>
+         <FillValue>9.969209968386869e+36</FillValue>
+         <Support>
+            <Qualifier>Scalar</Qualifier>
+            <SupportQuantity>DataQuality</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Magnetic Field-Aligned Component of the Wind.</Name>
+         <ParameterKey>ICON_L22_Magnetic_Field_Aligned_Wind</ParameterKey>
+         <Description>Magnetic field-aligned component of the wind.</Description>
+         <Cadence>PT30S</Cadence>
+         <Units>m/s</Units>
+         <ValidMin>-4000</ValidMin>
+         <ValidMax>4000</ValidMax>
+         <FillValue>9.969209968386869e+36</FillValue>
+         <Particle>
+            <ParticleType>Molecule</ParticleType>
+            <Qualifier>LineOfSight</Qualifier>
+            <ParticleQuantity>FlowSpeed</ParticleQuantity>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Magnetic Meridional Component of the Wind</Name>
+         <ParameterKey>ICON_L22_Magnetic_Meridional_Wind</ParameterKey>
+         <Description>Magnetic meridional component of the wind.</Description>
+         <Cadence>PT30S</Cadence>
+         <Units>m/s</Units>
+         <ValidMin>-4000</ValidMin>
+         <ValidMax>4000</ValidMax>
+         <FillValue>9.969209968386869e+36</FillValue>
+         <Particle>
+            <ParticleType>Molecule</ParticleType>
+            <Qualifier>LineOfSight</Qualifier>
+            <ParticleQuantity>FlowSpeed</ParticleQuantity>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Magnetic Zonal Component of the Wind.</Name>
+         <ParameterKey>ICON_L22_Magnetic_Zonal_Wind</ParameterKey>
+         <Description>Magnetic zonal component of the wind.</Description>
+         <Cadence>PT30S</Cadence>
+         <Units>m/s</Units>
+         <ValidMin>-4000</ValidMin>
+         <ValidMax>4000</ValidMax>
+         <FillValue>9.969209968386869e+36</FillValue>
+         <Particle>
+            <ParticleType>Molecule</ParticleType>
+            <Qualifier>LineOfSight</Qualifier>
+            <ParticleQuantity>FlowSpeed</ParticleQuantity>
+         </Particle>
+      </Parameter>
+      <Parameter>
+         <Name>Altitude of Wind Sample</Name>
+         <ParameterKey>ICON_L22_Altitude</ParameterKey>
+         <Description>WGS84 altitude of each wind sample.</Description>
+         <Cadence>PT30S</Cadence>
+         <Units>km</Units>
+         <ValidMin>50</ValidMin>
+         <ValidMax>1000</ValidMax>
+         <FillValue>9.969209968386869e+36</FillValue>
+         <Support>
+            <Qualifier>Direction</Qualifier>
+            <SupportQuantity>Positional</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Latitude of Wind Sample</Name>
+         <ParameterKey>ICON_L22_Latitude</ParameterKey>
+         <Description>WGS84 latitude of each wind sample.</Description>
+         <Cadence>PT30S</Cadence>
+         <Units>deg</Units>
+         <ValidMin>-90</ValidMin>
+         <ValidMax>90</ValidMax>
+         <FillValue>9.969209968386869e+36</FillValue>
+         <Support>
+            <Qualifier>Direction</Qualifier>
+            <SupportQuantity>Positional</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Longitude of Wind Sample</Name>
+         <ParameterKey>ICON_L22_Longitude</ParameterKey>
+         <Description>WGS84 longitude of each wind sample.</Description>
+         <Cadence>PT30S</Cadence>
+         <Units>deg</Units>
+         <ValidMin>0</ValidMin>
+         <ValidMax>360</ValidMax>
+         <FillValue>9.969209968386869e+36</FillValue>
+         <Support>
+            <Qualifier>Direction</Qualifier>
+            <SupportQuantity>Positional</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Magnetic Latitude of Wind Sample</Name>
+         <ParameterKey>ICON_L22_Magnetic_Latitude</ParameterKey>
+         <Description>Magnetic quasi-dipole latitude of each wind sample.</Description>
+         <Cadence>PT30S</Cadence>
+         <Units>deg</Units>
+         <ValidMin>-90</ValidMin>
+         <ValidMax>90</ValidMax>
+         <FillValue>9.969209968386869e+36</FillValue>
+         <Support>
+            <Qualifier>Direction</Qualifier>
+            <SupportQuantity>Positional</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Magnetic Longitude of Wind Sample</Name>
+         <ParameterKey>ICON_L22_Magnetic_Longitude</ParameterKey>
+         <Description>Magnetic quasi-dipole longitude of each wind sample.</Description>
+         <Cadence>PT30S</Cadence>
+         <Units>deg</Units>
+         <ValidMin>0</ValidMin>
+         <ValidMax>360</ValidMax>
+         <FillValue>9.969209968386869e+36</FillValue>
+         <Support>
+            <Qualifier>Direction</Qualifier>
+            <SupportQuantity>Positional</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Solar Zenith Angle of Each Wind Sample</Name>
+         <ParameterKey>ICON_L22_Solar_Zenith_Angle</ParameterKey>
+         <Description>Solar zenith angle of each wind sample.</Description>
+         <Cadence>PT30S</Cadence>
+         <Units>degrees</Units>
+         <ValidMin>0</ValidMin>
+         <ValidMax>180</ValidMax>
+         <FillValue>9.969209968386869e+36</FillValue>
+         <Support>
+            <Qualifier>Direction</Qualifier>
+            <SupportQuantity>Positional</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Local Solar Time of Each Wind Sample</Name>
+         <ParameterKey>ICON_L22_Local_Solar_Time</ParameterKey>
+         <Description>Local solar time of each wind sample.</Description>
+         <Cadence>PT30S</Cadence>
+         <Units>hours</Units>
+         <ValidMin>0</ValidMin>
+         <ValidMax>24</ValidMax>
+         <FillValue>9.969209968386869e+36</FillValue>
+         <Support>
+            <Qualifier>Direction</Qualifier>
+            <SupportQuantity>Positional</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Difference Between MIGHTI-A and B Times</Name>
+         <ParameterKey>ICON_L22_Time_Delta</ParameterKey>
+         <Description>Difference between MIGHTI-A and B times contributing to each point.</Description>
+         <Cadence>PT30S</Cadence>
+         <Units>s</Units>
+         <ValidMin>0</ValidMin>
+         <ValidMax>120</ValidMax>
+         <FillValue>9.969209968386869e+36</FillValue>
+         <Support>
+            <Qualifier>Total</Qualifier>
+            <SupportQuantity>Temporal</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Fringe Amplitude from MIGHTI-A</Name>
+         <ParameterKey>ICON_L22_Fringe_Amplitude_A</ParameterKey>
+         <Description>Fringe Amplitude from MIGHTI-A.</Description>
+         <Cadence>PT30S</Cadence>
+         <Units>arb</Units>
+         <ValidMin>-1e+30</ValidMin>
+         <ValidMax>1e+30</ValidMax>
+         <FillValue>9.969209968386869e+36</FillValue>
+         <Support>
+            <Qualifier>Scalar</Qualifier>
+            <SupportQuantity>Other</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Fringe Amplitude from MIGHTI-B</Name>
+         <ParameterKey>ICON_L22_Fringe_Amplitude_B</ParameterKey>
+         <Description>Fringe Amplitude from MIGHTI-B.</Description>
+         <Cadence>PT30S</Cadence>
+         <Units>arb</Units>
+         <ValidMin>-1e+30</ValidMin>
+         <ValidMax>1e+30</ValidMax>
+         <FillValue>9.969209968386869e+36</FillValue>
+         <Support>
+            <Qualifier>Scalar</Qualifier>
+            <SupportQuantity>Other</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Relative Volume Emission Rate from MIGHTI-A</Name>
+         <ParameterKey>ICON_L22_Relative_VER_A</ParameterKey>
+         <Description>Relative Volume Emission Rate from MIGHTI-A.</Description>
+         <Cadence>PT30S</Cadence>
+         <Units>ph/cm^3/s</Units>
+         <ValidMin>-1e+30</ValidMin>
+         <ValidMax>1e+30</ValidMax>
+         <FillValue>9.969209968386869e+36</FillValue>
+         <Wave>
+            <WaveType>Photon</WaveType>
+            <Qualifier>LineOfSight</Qualifier>
+            <WaveQuantity>VolumeEmissionRate</WaveQuantity>
+         </Wave>
+      </Parameter>
+      <Parameter>
+         <Name>Relative Volume Emission Rate from MIGHTI-B</Name>
+         <ParameterKey>ICON_L22_Relative_VER_B</ParameterKey>
+         <Description>Relative Volume Emission Rate from MIGHTI-B.</Description>
+         <Cadence>PT30S</Cadence>
+         <Units>ph/cm^3/s</Units>
+         <ValidMin>-1e+30</ValidMin>
+         <ValidMax>1e+30</ValidMax>
+         <FillValue>9.969209968386869e+36</FillValue>
+         <Wave>
+            <WaveType>Photon</WaveType>
+            <Qualifier>LineOfSight</Qualifier>
+            <WaveQuantity>VolumeEmissionRate</WaveQuantity>
+         </Wave>
+      </Parameter>
+      <Parameter>
+         <Name>Volume Emission Rate Relative Differences</Name>
+         <ParameterKey>ICON_L22_VER_Relative_Difference</ParameterKey>
+         <Description>Difference in MIGHTI A and B&#039;s VER estimates, divided by the mean.</Description>
+         <Cadence>PT30S</Cadence>
+         <ValidMin>0</ValidMin>
+         <ValidMax>10000000000</ValidMax>
+         <FillValue>9.969209968386869e+36</FillValue>
+         <Wave>
+            <WaveType>Photon</WaveType>
+            <Qualifier>LineOfSight</Qualifier>
+            <WaveQuantity>VolumeEmissionRate</WaveQuantity>
+         </Wave>
+      </Parameter>
+      <Parameter>
+         <Name>Orbit Number</Name>
+         <ParameterKey>ICON_L22_Orbit_Number</ParameterKey>
+         <Description>Orbit Number</Description>
+         <Cadence>PT30S</Cadence>
+         <ValidMin>0</ValidMin>
+         <ValidMax>1000000</ValidMax>
+         <FillValue>9.969209968386869e+36</FillValue>
+         <Support>
+            <Qualifier>Scalar</Qualifier>
+            <SupportQuantity>Temporal</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Orbit Node Flag</Name>
+         <ParameterKey>ICON_L22_Orbit_Node</ParameterKey>
+         <Description>Orbit Ascending/Descending Node Flag.</Description>
+         <Cadence>PT30S</Cadence>
+         <ValidMin>0</ValidMin>
+         <ValidMax>1</ValidMax>
+         <FillValue>-127</FillValue>
+         <Support>
+            <Qualifier>Scalar</Qualifier>
+            <SupportQuantity>Orientation</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Quality Flags</Name>
+         <ParameterKey>ICON_L22_Quality_Flags</ParameterKey>
+         <Description>Quality flags.</Description>
+         <Cadence>PT30S</Cadence>
+         <ValidMin>0</ValidMin>
+         <ValidMax>1</ValidMax>
+         <FillValue>-127</FillValue>
+         <Support>
+            <Qualifier>Scalar</Qualifier>
+            <SupportQuantity>DataQuality</SupportQuantity>
+         </Support>
+      </Parameter>
+   </NumericalData>
 </Spase>
