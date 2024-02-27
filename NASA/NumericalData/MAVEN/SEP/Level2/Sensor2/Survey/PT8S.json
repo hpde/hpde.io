@@ -7,14 +7,31 @@
     "NumericalData": {
       "ResourceID": "spase://NASA/NumericalData/MAVEN/SEP/Level2/Sensor2/Survey/PT8S",
       "ResourceHeader": {
-        "ResourceName": "MAVEN Solar Energetic Particle (SEP) Instrument Level 2 (L2) Sensor 2 Fully Calibrated Spectra Survey Data",
-        "ReleaseDate": "2024-01-23T12:34:56.789",
-        "Description": "The data include MAVEN Solar Energetic Particle (SEP) Instrument Sensor 2 total (integrated) and differential (as a function of 28 energy windows) ion and electron number fluxes in forward and reverse look directions with variable, but typically 8-second, time resolution.",
-        "Acknowledgement": "Please acknowledge the Principal Investigator D. Larson for use of the Data",
+        "ResourceName": "MAVEN SEP Calibrated Ion and Electron Spectra Data Collection (Sensor 2)",
+        "AlternateName": "MVN_SEP_L2_S2-CAL-SVY-FULL",
+        "DOI": "https://doi.org/10.17189/1414228",
+        "ReleaseDate": "2024-02-26T00:00:00",
+        "RevisionHistory": {
+          "RevisionEvent": {
+            "ReleaseDate": "2024-02-26T00:00:00",
+            "Note": "Draft metadata created by LFB (ADAPT code), final editing by AK"
+          }
+        },
+        "Description": "Calibrated MAVEN Solar Energetic Particle (SEP) Instrument Sensor 2 ion and electron spectra. The data include total (integrated) and differential (as a function of 28 energy windows) ion and electron number fluxes in forward and reverse look directions. Description of the SEP instrument can be found on the SEP home page https://lasp.colorado.edu/maven/science/instrument-package/sep/ and in the SEP instrument publication https://doi.org/10.1007/s11214-015-0218-z. ",
+        "Acknowledgement": "Please acknowledge the Principal Investigator D. Larson for use of these data.",
+        "PublicationInfo": {
+          "Authors": "Larson, D.",
+          "PublicationDate": "2023-01-01T00:00:00",
+          "PublishedBy": "NASA Planetary Data System"
+        },
         "Contact": [
           {
             "PersonID": "spase://SMWG/Person/Davin.Larson",
-            "Role": "PrincipalInvestigator"
+            "Role": "InstrumentLead"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Lan.Jian",
+            "Role": "MetadataContact"
           },
           {
             "PersonID": "spase://SMWG/Person/Andriy.Koval",
@@ -28,7 +45,7 @@
           },
           {
             "Name": "MAVEN home page at LASP",
-            "URL": "http://lasp.colorado.edu/home/maven/"
+            "URL": "https://lasp.colorado.edu/maven/"
           },
           {
             "Name": "MAVEN home page at NASA.gov",
@@ -38,18 +55,31 @@
       },
       "AccessInformation": [
         {
+          "RepositoryID": "spase://SMWG/Repository/PDS/PPI",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "PDS PPI",
+            "URL": "https://pds-ppi.igpp.ucla.edu/search/view/?f=yes&id=pds://PPI/maven.sep.calibrated/data/spec",
+            "Description": "Access to Data in CDF Format at the Planetary Data System, Planetary Plasma Interactions node"
+          },
+          "Format": "CDF",
+          "Encoding": "None",
+          "Acknowledgement": "Please acknowledge the Principal Investigator D. Larson"
+        },
+        {
           "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
           "Availability": "Online",
           "AccessRights": "Open",
           "AccessURL": [
             {
               "Name": "FTPS from SPDF (not with most browsers)",
-              "URL": "ftps://cdaweb.gsfc.nasa.gov/pub/data/maven/sep/l2/s2-cal-svy-full/",
+              "URL": "ftps://spdf.gsfc.nasa.gov/pub/data/maven/sep/l2/s2-cal-svy-full/",
               "Description": "Access to Data in CDF Format via ftps from SPDF"
             },
             {
               "Name": "HTTPS from SPDF",
-              "URL": "https://cdaweb.gsfc.nasa.gov/pub/data/maven/sep/l2/s2-cal-svy-full/",
+              "URL": "https://spdf.gsfc.nasa.gov/pub/data/maven/sep/l2/s2-cal-svy-full/",
               "Description": "Access to Data in CDF Format via https from SPDF"
             },
             {
@@ -61,7 +91,7 @@
           ],
           "Format": "CDF",
           "Encoding": "None",
-          "Acknowledgement": "Please acknowledge the Principal Investigator D. Larson. Please acknowledge the Data Providers and CDAWeb when using these Data."
+          "Acknowledgement": "Please acknowledge the Principal Investigator D. Larson. Please acknowledge the Data Providers and CDAWeb when using these data."
         },
         {
           "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF/CDAWeb",
@@ -84,8 +114,9 @@
       "TemporalDescription": {
         "TimeSpan": {
           "StartDate": "2014-09-22T19:34:31",
-          "StopDate": "2022-02-22T15:18:21"
+          "RelativeStopDate": "-P2Y"
         },
+        "Cadence": "PT8S",
         "CadenceMin": "PT2S",
         "CadenceMax": "PT8S"
       },
@@ -95,8 +126,9 @@
           "Name": "Unix time",
           "Set": "Time series defined by using: epoch",
           "ParameterKey": "time_unix",
-          "Description": "\"Time, middle of sample, in Unix time\"",
+          "Description": "Time, middle of sample, in Unix time",
           "Caveats": "This Parameter exhibits an increasing Monotonic Progression",
+          "Cadence": "PT8S",
           "CadenceMin": "PT2S",
           "CadenceMax": "PT8S",
           "Units": "s",
@@ -118,8 +150,9 @@
           "Name": "Epoch",
           "Set": "Time series defined by using: epoch",
           "ParameterKey": "epoch",
-          "Description": "\"Time, middle of sample, in TT2000 time base\"",
+          "Description": "Time, middle of sample, in TT2000 time base",
           "Caveats": "This Parameter exhibits an increasing Monotonic Progression",
+          "Cadence": "PT8S",
           "CadenceMin": "PT2S",
           "CadenceMax": "PT8S",
           "Units": "ns",
@@ -142,8 +175,9 @@
           "Name": "Mission Elapsed Time",
           "Set": "Time series defined by using: epoch",
           "ParameterKey": "time_met",
-          "Description": "\"Time, middle of sample, in raw mission elapsed time\"",
+          "Description": "Time, middle of sample, in raw mission elapsed time",
           "Caveats": "This Parameter exhibits an increasing Monotonic Progression",
+          "Cadence": "PT8S",
           "CadenceMin": "PT2S",
           "CadenceMax": "PT8S",
           "Units": "s",
@@ -165,8 +199,9 @@
           "Name": "Ephermeris Time",
           "Set": "Time series defined by using: epoch",
           "ParameterKey": "time_ephemeris",
-          "Description": "\"Ephermeris Time, middle of sample, compatible with spice\"",
+          "Description": "Ephermeris Time, middle of sample, compatible with spice",
           "Caveats": "This Parameter exhibits an increasing Monotonic Progression",
+          "Cadence": "PT8S",
           "CadenceMin": "PT2S",
           "CadenceMax": "PT8S",
           "Units": "s",
@@ -188,7 +223,8 @@
           "Name": "Attenuator state",
           "Set": "Time series defined by using: epoch",
           "ParameterKey": "attenuator_state",
-          "Description": "\"Attenuator state, 0=error, 1=open, 2=closed, 3=mixed\"",
+          "Description": "Attenuator state, 0=error, 1=open, 2=closed, 3=mixed",
+          "Cadence": "PT8S",
           "CadenceMin": "PT2S",
           "CadenceMax": "PT8S",
           "RenderingHints": {
@@ -202,7 +238,7 @@
           "ValidMax": "2",
           "FillValue": "65535",
           "Support": {
-            "SupportQuantity": "Other"
+            "SupportQuantity": "InstrumentMode"
           }
         },
         {
@@ -210,6 +246,7 @@
           "Set": "Time series defined by using: epoch",
           "ParameterKey": "accum_time",
           "Description": "Number of 1-second accumulations contained within this data sample.",
+          "Cadence": "PT8S",
           "CadenceMin": "PT2S",
           "CadenceMax": "PT8S",
           "RenderingHints": {
@@ -236,6 +273,7 @@
           "Set": "Time series defined by using: epoch",
           "ParameterKey": "mapid",
           "Description": "Binning Map ID number",
+          "Cadence": "PT8S",
           "CadenceMin": "PT2S",
           "CadenceMax": "PT8S",
           "RenderingHints": {
@@ -250,7 +288,7 @@
           "ValidMax": "128",
           "FillValue": "65535",
           "Support": {
-            "SupportQuantity": "Other"
+            "SupportQuantity": "InstrumentMode"
           }
         },
         {
@@ -258,6 +296,7 @@
           "Set": "Time series defined by using: epoch",
           "ParameterKey": "seq_cntr",
           "Description": "CCSDS Sequence Counter",
+          "Cadence": "PT8S",
           "CadenceMin": "PT2S",
           "CadenceMax": "PT8S",
           "RenderingHints": {
@@ -272,7 +311,7 @@
           "ValidMax": "16384",
           "FillValue": "65535",
           "Support": {
-            "SupportQuantity": "Other"
+            "SupportQuantity": "Telemetry"
           }
         },
         {
@@ -280,9 +319,11 @@
           "Set": "Time series defined by using: epoch",
           "ParameterKey": "f_ion_flux",
           "Description": "Differential ion flux in forward look direction",
+          "Cadence": "PT8S",
           "CadenceMin": "PT2S",
           "CadenceMax": "PT8S",
-          "Units": "#/cm^2/sec/ster/keV",
+          "Units": "(cm^2 s sr keV)^-1",
+          "UnitsConversion": "6.24161e-16>(m^2 s sr J)^-1",
           "RenderingHints": {
             "DisplayType": "Spectrogram",
             "AxisLabel": "f_ion_flux",
@@ -311,9 +352,11 @@
           "Set": "Time series defined by using: epoch",
           "ParameterKey": "f_ion_flux_unc",
           "Description": "Differential ion flux uncertainty in forward look direction",
+          "Cadence": "PT8S",
           "CadenceMin": "PT2S",
           "CadenceMax": "PT8S",
-          "Units": "#/cm^2/sec/ster/keV",
+          "Units": "(cm^2 s sr keV)^-1",
+          "UnitsConversion": "6.24161e-16>(m^2 s sr J)^-1",
           "RenderingHints": {
             "DisplayType": "Spectrogram",
             "AxisLabel": "f_ion_flux_unc",
@@ -343,9 +386,11 @@
           "Set": "Time series defined by using: epoch",
           "ParameterKey": "f_ion_flux_tot",
           "Description": "Total (integrated) ion flux in forward look direction",
+          "Cadence": "PT8S",
           "CadenceMin": "PT2S",
           "CadenceMax": "PT8S",
-          "Units": "#/cm^2/sec/ster",
+          "Units": "(cm^2 s sr)^-1",
+          "UnitsConversion": "1.0e4>(m^2 s sr)",
           "RenderingHints": {
             "DisplayType": "TimeSeries",
             "AxisLabel": "f_ion_flux_tot",
@@ -368,9 +413,11 @@
           "Set": "Time series defined by using: epoch",
           "ParameterKey": "f_ion_flux_tot_unc",
           "Description": "Total ion flux uncertainty in forward look direction",
+          "Cadence": "PT8S",
           "CadenceMin": "PT2S",
           "CadenceMax": "PT8S",
-          "Units": "#/cm^2/sec/ster",
+          "Units": "(cm^2 s sr)^-1",
+          "UnitsConversion": "1.0e4>(m^2 s sr)",
           "RenderingHints": {
             "DisplayType": "TimeSeries",
             "AxisLabel": "f_ion_flux_tot_unc",
@@ -396,9 +443,11 @@
           "Set": "Time series defined by using: epoch",
           "ParameterKey": "f_ion_energy",
           "Description": "Ion energy in forward look direction",
+          "Cadence": "PT8S",
           "CadenceMin": "PT2S",
           "CadenceMax": "PT8S",
           "Units": "keV",
+          "UnitsConversion": "1.602176565e-16>J",
           "RenderingHints": {
             "DisplayType": "TimeSeries",
             "AxisLabel": "f_ion_energy",
@@ -423,9 +472,11 @@
           "Set": "Time series defined by using: epoch",
           "ParameterKey": "f_ion_denergy",
           "Description": "Ion energy channel width in forward look direction",
+          "Cadence": "PT8S",
           "CadenceMin": "PT2S",
           "CadenceMax": "PT8S",
           "Units": "keV",
+          "UnitsConversion": "1.602176565e-16>J",
           "RenderingHints": {
             "DisplayType": "TimeSeries",
             "AxisLabel": "f_ion_denergy",
@@ -450,9 +501,11 @@
           "Set": "Time series defined by using: epoch",
           "ParameterKey": "f_elec_flux",
           "Description": "Differential electron flux in forward look direction",
+          "Cadence": "PT8S",
           "CadenceMin": "PT2S",
           "CadenceMax": "PT8S",
-          "Units": "#/cm^2/sec/ster/keV",
+          "Units": "(cm^2 s sr keV)^-1",
+          "UnitsConversion": "6.24161e-16>(m^2 s sr J)^-1",
           "RenderingHints": {
             "DisplayType": "Spectrogram",
             "AxisLabel": "f_elec_flux",
@@ -481,9 +534,11 @@
           "Set": "Time series defined by using: epoch",
           "ParameterKey": "f_elec_flux_unc",
           "Description": "Differential electron flux uncertainty in forward look direction",
+          "Cadence": "PT8S",
           "CadenceMin": "PT2S",
           "CadenceMax": "PT8S",
-          "Units": "#/cm^2/sec/ster/keV",
+          "Units": "(cm^2 s sr keV)^-1",
+          "UnitsConversion": "6.24161e-16>(m^2 s sr J)^-1",
           "RenderingHints": {
             "DisplayType": "Spectrogram",
             "AxisLabel": "f_elec_flux_unc",
@@ -513,9 +568,11 @@
           "Set": "Time series defined by using: epoch",
           "ParameterKey": "f_elec_flux_tot",
           "Description": "Total (integrated) electron flux in forward look direction",
+          "Cadence": "PT8S",
           "CadenceMin": "PT2S",
           "CadenceMax": "PT8S",
-          "Units": "#/cm^2/sec/ster",
+          "Units": "(cm^2 s sr)^-1",
+          "UnitsConversion": "1.0e4>(m^2 s sr)",
           "RenderingHints": {
             "DisplayType": "TimeSeries",
             "AxisLabel": "f_elec_flux_tot",
@@ -538,9 +595,11 @@
           "Set": "Time series defined by using: epoch",
           "ParameterKey": "f_elec_flux_tot_unc",
           "Description": "Total electron flux uncertainty in forward look direction",
+          "Cadence": "PT8S",
           "CadenceMin": "PT2S",
           "CadenceMax": "PT8S",
-          "Units": "#/cm^2/sec/ster",
+          "Units": "(cm^2 s sr)^-1",
+          "UnitsConversion": "1.0e4>(m^2 s sr)",
           "RenderingHints": {
             "DisplayType": "TimeSeries",
             "AxisLabel": "f_elec_flux_tot_unc",
@@ -566,9 +625,11 @@
           "Set": "Time series defined by using: epoch",
           "ParameterKey": "f_elec_energy",
           "Description": "Electron energy in forward look direction",
+          "Cadence": "PT8S",
           "CadenceMin": "PT2S",
           "CadenceMax": "PT8S",
           "Units": "keV",
+          "UnitsConversion": "1.602176565e-16>J",
           "RenderingHints": {
             "DisplayType": "TimeSeries",
             "AxisLabel": "f_elec_energy",
@@ -593,9 +654,11 @@
           "Set": "Time series defined by using: epoch",
           "ParameterKey": "f_elec_denergy",
           "Description": "Electron energy channel width in forward look direction",
+          "Cadence": "PT8S",
           "CadenceMin": "PT2S",
           "CadenceMax": "PT8S",
           "Units": "keV",
+          "UnitsConversion": "1.602176565e-16>J",
           "RenderingHints": {
             "DisplayType": "TimeSeries",
             "AxisLabel": "f_elec_denergy",
@@ -620,9 +683,11 @@
           "Set": "Time series defined by using: epoch",
           "ParameterKey": "r_ion_flux",
           "Description": "Differential ion flux in reverse look direction",
+          "Cadence": "PT8S",
           "CadenceMin": "PT2S",
           "CadenceMax": "PT8S",
-          "Units": "#/cm^2/sec/ster/keV",
+          "Units": "(cm^2 s sr keV)^-1",
+          "UnitsConversion": "6.24161e-16>(m^2 s sr J)^-1",
           "RenderingHints": {
             "DisplayType": "Spectrogram",
             "AxisLabel": "r_ion_flux",
@@ -651,9 +716,11 @@
           "Set": "Time series defined by using: epoch",
           "ParameterKey": "r_ion_flux_unc",
           "Description": "Differential ion flux uncertainty in reverse look direction",
+          "Cadence": "PT8S",
           "CadenceMin": "PT2S",
           "CadenceMax": "PT8S",
-          "Units": "#/cm^2/sec/ster/keV",
+          "Units": "(cm^2 s sr keV)^-1",
+          "UnitsConversion": "6.24161e-16>(m^2 s sr J)^-1",
           "RenderingHints": {
             "DisplayType": "Spectrogram",
             "AxisLabel": "r_ion_flux_unc",
@@ -683,9 +750,11 @@
           "Set": "Time series defined by using: epoch",
           "ParameterKey": "r_ion_flux_tot",
           "Description": "Total (integrated) ion flux in reverse look direction",
+          "Cadence": "PT8S",
           "CadenceMin": "PT2S",
           "CadenceMax": "PT8S",
-          "Units": "#/cm^2/sec/ster",
+          "Units": "(cm^2 s sr)^-1",
+          "UnitsConversion": "1.0e4>(m^2 s sr)",
           "RenderingHints": {
             "DisplayType": "TimeSeries",
             "AxisLabel": "r_ion_flux_tot",
@@ -708,9 +777,11 @@
           "Set": "Time series defined by using: epoch",
           "ParameterKey": "r_ion_flux_tot_unc",
           "Description": "Total ion flux uncertainty in reverse look direction",
+          "Cadence": "PT8S",
           "CadenceMin": "PT2S",
           "CadenceMax": "PT8S",
-          "Units": "#/cm^2/sec/ster",
+          "Units": "(cm^2 s sr)^-1",
+          "UnitsConversion": "1.0e4>(m^2 s sr)",
           "RenderingHints": {
             "DisplayType": "TimeSeries",
             "AxisLabel": "r_ion_flux_tot_unc",
@@ -736,9 +807,11 @@
           "Set": "Time series defined by using: epoch",
           "ParameterKey": "r_ion_energy",
           "Description": "Ion energy in reverse look direction",
+          "Cadence": "PT8S",
           "CadenceMin": "PT2S",
           "CadenceMax": "PT8S",
           "Units": "keV",
+          "UnitsConversion": "1.602176565e-16>J",
           "RenderingHints": {
             "DisplayType": "TimeSeries",
             "AxisLabel": "r_ion_energy",
@@ -763,9 +836,11 @@
           "Set": "Time series defined by using: epoch",
           "ParameterKey": "r_ion_denergy",
           "Description": "Ion energy channel width in reverse look direction",
+          "Cadence": "PT8S",
           "CadenceMin": "PT2S",
           "CadenceMax": "PT8S",
           "Units": "keV",
+          "UnitsConversion": "1.602176565e-16>J",
           "RenderingHints": {
             "DisplayType": "TimeSeries",
             "AxisLabel": "r_ion_denergy",
@@ -790,9 +865,11 @@
           "Set": "Time series defined by using: epoch",
           "ParameterKey": "r_elec_flux",
           "Description": "Differential electron flux in reverse look direction",
+          "Cadence": "PT8S",
           "CadenceMin": "PT2S",
           "CadenceMax": "PT8S",
-          "Units": "#/cm^2/sec/ster/keV",
+          "Units": "(cm^2 s sr keV)^-1",
+          "UnitsConversion": "6.24161e-16>(m^2 s sr J)^-1",
           "RenderingHints": {
             "DisplayType": "Spectrogram",
             "AxisLabel": "r_elec_flux",
@@ -821,9 +898,11 @@
           "Set": "Time series defined by using: epoch",
           "ParameterKey": "r_elec_flux_unc",
           "Description": "Differential electron flux uncertainty in reverse look direction",
+          "Cadence": "PT8S",
           "CadenceMin": "PT2S",
           "CadenceMax": "PT8S",
-          "Units": "#/cm^2/sec/ster/keV",
+          "Units": "(cm^2 s sr keV)^-1",
+          "UnitsConversion": "6.24161e-16>(m^2 s sr J)^-1",
           "RenderingHints": {
             "DisplayType": "Spectrogram",
             "AxisLabel": "r_elec_flux_unc",
@@ -853,9 +932,11 @@
           "Set": "Time series defined by using: epoch",
           "ParameterKey": "r_elec_flux_tot",
           "Description": "Total (integrated) electron flux in reverse look direction",
+          "Cadence": "PT8S",
           "CadenceMin": "PT2S",
           "CadenceMax": "PT8S",
-          "Units": "#/cm^2/sec/ster",
+          "Units": "(cm^2 s sr)^-1",
+          "UnitsConversion": "1.0e4>(m^2 s sr)",
           "RenderingHints": {
             "DisplayType": "TimeSeries",
             "AxisLabel": "r_elec_flux_tot",
@@ -878,9 +959,11 @@
           "Set": "Time series defined by using: epoch",
           "ParameterKey": "r_elec_flux_tot_unc",
           "Description": "Total electron flux uncertainty in reverse look direction",
+          "Cadence": "PT8S",
           "CadenceMin": "PT2S",
           "CadenceMax": "PT8S",
-          "Units": "#/cm^2/sec/ster",
+          "Units": "(cm^2 s sr)^-1",
+          "UnitsConversion": "1.0e4>(m^2 s sr)",
           "RenderingHints": {
             "DisplayType": "TimeSeries",
             "AxisLabel": "r_elec_flux_tot_unc",
@@ -906,9 +989,11 @@
           "Set": "Time series defined by using: epoch",
           "ParameterKey": "r_elec_energy",
           "Description": "Electron energy in reverse look direction",
+          "Cadence": "PT8S",
           "CadenceMin": "PT2S",
           "CadenceMax": "PT8S",
           "Units": "keV",
+          "UnitsConversion": "1.602176565e-16>J",
           "RenderingHints": {
             "DisplayType": "TimeSeries",
             "AxisLabel": "r_elec_energy",
@@ -933,9 +1018,11 @@
           "Set": "Time series defined by using: epoch",
           "ParameterKey": "r_elec_denergy",
           "Description": "Electron energy channel width in reverse look direction",
+          "Cadence": "PT8S",
           "CadenceMin": "PT2S",
           "CadenceMax": "PT8S",
           "Units": "keV",
+          "UnitsConversion": "1.602176565e-16>J",
           "RenderingHints": {
             "DisplayType": "TimeSeries",
             "AxisLabel": "r_elec_denergy",
@@ -960,9 +1047,10 @@
           "Set": "Time series defined by using: epoch",
           "ParameterKey": "a_t_rates",
           "Description": "Count Rate in THICK detectors of A Stack",
+          "Cadence": "PT8S",
           "CadenceMin": "PT2S",
           "CadenceMax": "PT8S",
-          "Units": "#/sec",
+          "Units": "s^-1",
           "RenderingHints": {
             "DisplayType": "TimeSeries",
             "AxisLabel": "a_t_rates",
@@ -986,9 +1074,10 @@
           "Set": "Time series defined by using: epoch",
           "ParameterKey": "b_t_rates",
           "Description": "Count Rate in THICK detectors of B Stack",
+          "Cadence": "PT8S",
           "CadenceMin": "PT2S",
           "CadenceMax": "PT8S",
-          "Units": "#/sec",
+          "Units": "s^-1",
           "RenderingHints": {
             "DisplayType": "TimeSeries",
             "AxisLabel": "b_t_rates",
@@ -1012,9 +1101,10 @@
           "Set": "Time series defined by using: epoch",
           "ParameterKey": "a_fto_rates",
           "Description": "Count Rate of triple coincidence in A Stack",
+          "Cadence": "PT8S",
           "CadenceMin": "PT2S",
           "CadenceMax": "PT8S",
-          "Units": "#/sec",
+          "Units": "s^-1",
           "RenderingHints": {
             "DisplayType": "TimeSeries",
             "AxisLabel": "a_fto_rates",
@@ -1038,9 +1128,10 @@
           "Set": "Time series defined by using: epoch",
           "ParameterKey": "b_fto_rates",
           "Description": "Count Rate in triple coincidence in B Stack",
+          "Cadence": "PT8S",
           "CadenceMin": "PT2S",
           "CadenceMax": "PT8S",
-          "Units": "#/sec",
+          "Units": "s^-1",
           "RenderingHints": {
             "DisplayType": "TimeSeries",
             "AxisLabel": "b_fto_rates",
@@ -1064,9 +1155,10 @@
           "Set": "Time series defined by using: epoch",
           "ParameterKey": "f_o_rate",
           "Description": "Total Count Rate in Forward Open detector",
+          "Cadence": "PT8S",
           "CadenceMin": "PT2S",
           "CadenceMax": "PT8S",
-          "Units": "#/sec",
+          "Units": "s^-1",
           "RenderingHints": {
             "DisplayType": "TimeSeries",
             "AxisLabel": "f_o_rate",
@@ -1087,9 +1179,10 @@
           "Set": "Time series defined by using: epoch",
           "ParameterKey": "f_f_rate",
           "Description": "Total Count Rate in Forward Foil detector",
+          "Cadence": "PT8S",
           "CadenceMin": "PT2S",
           "CadenceMax": "PT8S",
-          "Units": "#/sec",
+          "Units": "s^-1",
           "RenderingHints": {
             "DisplayType": "TimeSeries",
             "AxisLabel": "f_f_rate",
@@ -1110,9 +1203,10 @@
           "Set": "Time series defined by using: epoch",
           "ParameterKey": "r_o_rate",
           "Description": "Total Count Rate in Rear Open detector",
+          "Cadence": "PT8S",
           "CadenceMin": "PT2S",
           "CadenceMax": "PT8S",
-          "Units": "#/sec",
+          "Units": "s^-1",
           "RenderingHints": {
             "DisplayType": "TimeSeries",
             "AxisLabel": "r_o_rate",
@@ -1133,9 +1227,10 @@
           "Set": "Time series defined by using: epoch",
           "ParameterKey": "r_f_rate",
           "Description": "Total Count Rate in Rear Foil detector",
+          "Cadence": "PT8S",
           "CadenceMin": "PT2S",
           "CadenceMax": "PT8S",
-          "Units": "#/sec",
+          "Units": "s^-1",
           "RenderingHints": {
             "DisplayType": "TimeSeries",
             "AxisLabel": "r_f_rate",
@@ -1152,10 +1247,11 @@
           }
         },
         {
-          "Name": "quality_flag",
+          "Name": "Quality Flag",
           "Set": "Time series defined by using: epoch",
           "ParameterKey": "quality_flag",
           "Description": "Quality Flag",
+          "Cadence": "PT8S",
           "CadenceMin": "PT2S",
           "CadenceMax": "PT8S",
           "RenderingHints": {
