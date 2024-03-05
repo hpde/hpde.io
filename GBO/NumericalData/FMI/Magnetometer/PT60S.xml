@@ -6,6 +6,7 @@
       <ResourceHeader>
          <ResourceName>International Monitor for Auroral Geomagnetic Effects (IMAGE) Finnish Meterological Institute 1 min Ground Magnetometer Data</ResourceName>
 		 <AlternateName>IMAGE FMI 60 s Ground Magnetometer Data</AlternateName>
+		 <DOI>https://doi.org/10.48322/9r3x-m151</DOI>
          <ReleaseDate>2024-02-23T12:34:56.789</ReleaseDate>
          <RevisionHistory>
             <RevisionEvent>
@@ -55,7 +56,7 @@
          </Contact>
          <InformationURL>
             <Name>International Monitor for Auroral Geomagnetic Effects (IMAGE) magnetometer data in WDC format.</Name>
-            <URL>https://space.fmi.fi/image/www_old/wdc.html</URL>
+            <URL>https://space.fmi.fi/image/</URL>
             <Description>Home page for IMAGE.</Description>
             <Language>en</Language>
          </InformationURL>
@@ -77,15 +78,14 @@
             <StartDate>1982-10-01T00:00:00</StartDate>
             <RelativeStopDate>-PT600S</RelativeStopDate>
          </TimeSpan>
-         <Cadence>PT10S</Cadence>
+         <Cadence>PT60S</Cadence>
       </TemporalDescription>
       <ObservedRegion>Earth.Surface</ObservedRegion>
 	  <Parameter>
          <Name>North Polar Distance</Name>
 		 <ParameterKey>Columns 1-6</ParameterKey>
-         <Description>Distance to the geographic north pole. NPD is the observatory's North Polar Distance (0 to 180) 
-		 from the north geographic pole in thousandths of a degree and is allotted 6 characters. A decimal point is implied between 
-		 positions 3 an 4.</Description>
+         <Description>Observatory's North Polar distance. 0 to 180 degrees from the north geographic pole in 
+		 thousandths of a degree. Decimal point is implied between positions 3 and 4.</Description>
          <Support>
             <Qualifier>DirectionAngle.PolarAngle</Qualifier>
             <SupportQuantity>Positional</SupportQuantity>
@@ -93,9 +93,9 @@
       </Parameter>
 	  <Parameter>
          <Name>Geographic Longitude</Name>
-		 <ParameterKey>Columns 7-10</ParameterKey>
-         <Description>Geographic latitude (4 characters) (0 to 360) measured east from Greenwich in thousandths of a degree and 
-		 also has a 4 character field.  A decimal points is implied between positions 9 and 10.</Description>
+		 <ParameterKey>Columns 7-12</ParameterKey>
+         <Description>Observatory's Geographic longitude. 0 to 360 degrees measured east from Greenwich 
+		 in thousandths of a degree. Decimal point is implied between positions 9 and 10.</Description>
          <Support>
             <Qualifier>DirectionAngle.AzimuthAngle</Qualifier>
             <SupportQuantity>Positional</SupportQuantity>
@@ -103,7 +103,7 @@
       </Parameter>
       <Parameter>
          <Name>Year</Name>
-		 <ParameterKey>Columns 11-14</ParameterKey>
+		 <ParameterKey>Columns 13-14</ParameterKey>
          <Description>Year 4 characters</Description>
          <Support>
             <Qualifier>Magnitude</Qualifier>
@@ -128,10 +128,10 @@
             <SupportQuantity>Temporal</SupportQuantity>
          </Support>
       </Parameter>	  
-      	  <Parameter>
+      <Parameter>
          <Name>Components</Name>
 		 <ParameterKey>Column 19</ParameterKey>
-         <Description>Components 1 character [X ,Y, Z; H, D (0.1), Z; A, B, Z]. For the 10 s resolution this should always be 1.</Description>
+         <Description>Element (D,I,H,X,Y,Z, or F). 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.</Description>
          <Support>
             <Qualifier>Component</Qualifier>
             <SupportQuantity>Housekeeping</SupportQuantity>
@@ -140,46 +140,55 @@
       <Parameter>
          <Name>Hour</Name>
 		 <ParameterKey>Columns 20-21</ParameterKey>
-         <Description>Hour 2 characters [00...23 UT]</Description>
+         <Description>Hour of day (00-23).</Description>
          <Support>
             <Qualifier>Magnitude</Qualifier>
             <SupportQuantity>Temporal</SupportQuantity>
          </Support>
       </Parameter>
       <Parameter>
-         <Name>Station identification</Name>
+         <Name>Observatory</Name>
 		 <ParameterKey>Columns 22-24</ParameterKey>
-         <Description>Station identification 3 characters	[e.g. 3 numbers, 3 letters].</Description>
+         <Description>Observatory 3-letter code.</Description>
          <Support>
             <Qualifier>Group</Qualifier>
             <SupportQuantity>Housekeeping</SupportQuantity>
          </Support>
       </Parameter>	    
 	  <Parameter>
-         <Name>Unknown???</Name>
-		 <ParameterKey>Columns 25-26</ParameterKey>
-         <Description>Type of data 2 characters</Description>
-         <Support>
-            <Qualifier>Group</Qualifier>
-            <SupportQuantity>Housekeeping</SupportQuantity>
-         </Support>
-      </Parameter>  
-	  <Parameter>
-         <Name>Origin of the data</Name>
-		 <ParameterKey>Columns 27</ParameterKey>
-         <Description>The origin of the data. A = Alaska Chain. C = Canadian Standard Network. 
-		 D = Digitized from analog records. F = France  G = U.S.G.S. Network. K = AFGL Chain. 
-		 M = McClay Chain. R = Rostoker Chain. S = S.U.N.Y. Chain. T = Tiawan. U = U.C.L.A. Chain. 
-		 V = Variation. Values via SMS-GOES Satellite. W = Walker Chain.</Description>
+         <Name>Arbitrary</Name>
+		 <ParameterKey>Columns 25</ParameterKey>
+         <Description> Arbitrary.</Description>
          <Support>
             <Qualifier>Group</Qualifier>
             <SupportQuantity>Housekeeping</SupportQuantity>
          </Support>
       </Parameter>
+      <Parameter>
+         <Name>Century</Name>
+		 <ParameterKey>Columns 26</ParameterKey>
+         <Description>Century digit.
+             Year = 2014, Century digit = 0.
+             Year = 1889, Century digit = 8.
+             Year = 1996, Century digit = 9 or 'SPACE' for backwards compatibility.</Description>
+         <Support>
+            <Qualifier>Magnitude</Qualifier>
+            <SupportQuantity>Temporal</SupportQuantity>
+         </Support>
+      </Parameter>    
 	  <Parameter>
-         <Name>Free space</Name>
-		 <ParameterKey>Columns 28-35</ParameterKey>
-         <Description>Free space 8 characters.</Description>
+         <Name>Preliminary or definitive data</Name>
+		 <ParameterKey>Columns 27</ParameterKey>
+         <Description>Preliminary or Definitive data. Preliminary = P , Definitive = D.</Description>
+         <Support>
+            <Qualifier>Group</Qualifier>
+            <SupportQuantity>Housekeeping</SupportQuantity>
+         </Support>
+      </Parameter>	  
+	  <Parameter>
+         <Name>Blanks</Name>
+		 <ParameterKey>Columns 28-34</ParameterKey>
+         <Description>Blanks.</Description>
          <Support>
             <Qualifier>Total</Qualifier>
             <SupportQuantity>Other</SupportQuantity>
@@ -188,10 +197,10 @@
       <Parameter>
          <Name>Magnetic Field Component</Name>
 		 <ParameterKey>Columns 35-40 </ParameterKey>
-         <Description>Magnetic field component.</Description>
+         <Description>1st of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.</Description>
          <Caveats>This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.</Caveats>
-         <Units>0.1 nT (0.1' if D)</Units>
-         <FillValue>999999</FillValue>
+         <Units>nT for the intensity elements and tenth-minutes for D and I.</Units>
+         <FillValue>99999</FillValue>
          <Field>
             <Qualifier>Component</Qualifier>
             <FieldQuantity>Magnetic</FieldQuantity>
@@ -200,10 +209,10 @@
       <Parameter>
          <Name>Magnetic Field Component</Name>
 		 <ParameterKey>Columns 41-46 </ParameterKey>
-         <Description>Magnetic field component.</Description>
+         <Description>2nd of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.</Description>
          <Caveats>This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.</Caveats>
-         <Units>0.1 nT (0.1' if D)</Units>
-         <FillValue>999999</FillValue>
+         <Units>nT for the intensity elements and tenth-minutes for D and I.</Units>
+         <FillValue>99999</FillValue>
          <Field>
             <Qualifier>Component</Qualifier>
             <FieldQuantity>Magnetic</FieldQuantity>
@@ -212,23 +221,22 @@
       <Parameter>
          <Name>Magnetic Field Component</Name>
 		 <ParameterKey>Columns 47-52 </ParameterKey>
-         <Description>Magnetic field component.</Description>
+         <Description>3rd of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.</Description>
          <Caveats>This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.</Caveats>
-         <Units>0.1 nT (0.1' if D)</Units>
-         <FillValue>999999</FillValue>
+         <Units>nT for the intensity elements and tenth-minutes for D and I.</Units>
+         <FillValue>99999</FillValue>
          <Field>
             <Qualifier>Component</Qualifier>
             <FieldQuantity>Magnetic</FieldQuantity>
          </Field>
-      </Parameter>
-	  
+      </Parameter> 
 	  <Parameter>
          <Name>Magnetic Field Component</Name>
 		 <ParameterKey>Columns 53-58 </ParameterKey>
-         <Description>Magnetic field component.</Description>
+         <Description>4th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.</Description>
          <Caveats>This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.</Caveats>
-         <Units>0.1 nT (0.1' if D)</Units>
-         <FillValue>999999</FillValue>
+         <Units>nT for the intensity elements and tenth-minutes for D and I.</Units>
+         <FillValue>99999</FillValue>
          <Field>
             <Qualifier>Component</Qualifier>
             <FieldQuantity>Magnetic</FieldQuantity>
@@ -237,10 +245,10 @@
 	  <Parameter>
          <Name>Magnetic Field Component</Name>
 		 <ParameterKey>Columns 59-64 </ParameterKey>
-         <Description>Magnetic field component.</Description>
+         <Description>5th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.</Description>
          <Caveats>This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.</Caveats>
-         <Units>0.1 nT (0.1' if D)</Units>
-         <FillValue>999999</FillValue>
+         <Units>nT for the intensity elements and tenth-minutes for D and I.</Units>
+         <FillValue>99999</FillValue>
          <Field>
             <Qualifier>Component</Qualifier>
             <FieldQuantity>Magnetic</FieldQuantity>
@@ -249,10 +257,10 @@
 	  <Parameter>
          <Name>Magnetic Field Component</Name>
 		 <ParameterKey>Columns 65-70 </ParameterKey>
-         <Description>Magnetic field component.</Description>
+         <Description>6th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.</Description>
          <Caveats>This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.</Caveats>
-         <Units>0.1 nT (0.1' if D)</Units>
-         <FillValue>999999</FillValue>
+         <Units>nT for the intensity elements and tenth-minutes for D and I.</Units>
+         <FillValue>99999</FillValue>
          <Field>
             <Qualifier>Component</Qualifier>
             <FieldQuantity>Magnetic</FieldQuantity>
@@ -261,10 +269,10 @@
 	  <Parameter>
          <Name>Magnetic Field Component</Name>
 		 <ParameterKey>Columns 71-76 </ParameterKey>
-         <Description>Magnetic field component.</Description>
+         <Description>7th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.</Description>
          <Caveats>This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.</Caveats>
-         <Units>0.1 nT (0.1' if D)</Units>
-         <FillValue>999999</FillValue>
+         <Units>nT for the intensity elements and tenth-minutes for D and I.</Units>
+         <FillValue>99999</FillValue>
          <Field>
             <Qualifier>Component</Qualifier>
             <FieldQuantity>Magnetic</FieldQuantity>
@@ -272,11 +280,11 @@
       </Parameter>
 	  <Parameter>
          <Name>Magnetic Field Component</Name>
-		 <ParameterKey>Columns 77-82 </ParameterKey>
-         <Description>Magnetic field component.</Description>
+		 <ParameterKey>8th of Columns 77-82 </ParameterKey>
+         <Description>60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.</Description>
          <Caveats>This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.</Caveats>
-         <Units>0.1 nT (0.1' if D)</Units>
-         <FillValue>999999</FillValue>
+         <Units>nT for the intensity elements and tenth-minutes for D and I.</Units>
+         <FillValue>99999</FillValue>
          <Field>
             <Qualifier>Component</Qualifier>
             <FieldQuantity>Magnetic</FieldQuantity>
@@ -285,10 +293,10 @@
 	  <Parameter>
          <Name>Magnetic Field Component</Name>
 		 <ParameterKey>Columns 83-88 </ParameterKey>
-         <Description>Magnetic field component.</Description>
+         <Description>9th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.</Description>
          <Caveats>This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.</Caveats>
-         <Units>0.1 nT (0.1' if D)</Units>
-         <FillValue>999999</FillValue>
+         <Units>nT for the intensity elements and tenth-minutes for D and I.</Units>
+         <FillValue>99999</FillValue>
          <Field>
             <Qualifier>Component</Qualifier>
             <FieldQuantity>Magnetic</FieldQuantity>
@@ -297,10 +305,10 @@
 	  <Parameter>
          <Name>Magnetic Field Component</Name>
 		 <ParameterKey>Columns 89-94 </ParameterKey>
-         <Description>Magnetic field component.</Description>
+         <Description>10th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.</Description>
          <Caveats>This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.</Caveats>
-         <Units>0.1 nT (0.1' if D)</Units>
-         <FillValue>999999</FillValue>
+         <Units>nT for the intensity elements and tenth-minutes for D and I.</Units>
+         <FillValue>99999</FillValue>
          <Field>
             <Qualifier>Component</Qualifier>
             <FieldQuantity>Magnetic</FieldQuantity>
@@ -309,10 +317,10 @@
 	  <Parameter>
          <Name>Magnetic Field Component</Name>
 		 <ParameterKey>Columns 95-100 </ParameterKey>
-         <Description>Magnetic field component.</Description>
+         <Description>11th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.</Description>
          <Caveats>This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.</Caveats>
-         <Units>0.1 nT (0.1' if D)</Units>
-         <FillValue>999999</FillValue>
+         <Units>nT for the intensity elements and tenth-minutes for D and I.</Units>
+         <FillValue>99999</FillValue>
          <Field>
             <Qualifier>Component</Qualifier>
             <FieldQuantity>Magnetic</FieldQuantity>
@@ -321,10 +329,10 @@
 	  <Parameter>
          <Name>Magnetic Field Component</Name>
 		 <ParameterKey>Columns 101-106 </ParameterKey>
-         <Description>Magnetic field component.</Description>
+         <Description>12th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.</Description>
          <Caveats>This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.</Caveats>
-         <Units>0.1 nT (0.1' if D)</Units>
-         <FillValue>999999</FillValue>
+         <Units>nT for the intensity elements and tenth-minutes for D and I.</Units>
+         <FillValue>99999</FillValue>
          <Field>
             <Qualifier>Component</Qualifier>
             <FieldQuantity>Magnetic</FieldQuantity>
@@ -333,10 +341,10 @@
 	  <Parameter>
          <Name>Magnetic Field Component</Name>
 		 <ParameterKey>Columns 107-112 </ParameterKey>
-         <Description>Magnetic field component.</Description>
+         <Description>13th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.</Description>
          <Caveats>This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.</Caveats>
-         <Units>0.1 nT (0.1' if D)</Units>
-         <FillValue>999999</FillValue>
+         <Units>nT for the intensity elements and tenth-minutes for D and I.</Units>
+         <FillValue>99999</FillValue>
          <Field>
             <Qualifier>Component</Qualifier>
             <FieldQuantity>Magnetic</FieldQuantity>
@@ -345,10 +353,10 @@
 	  <Parameter>
          <Name>Magnetic Field Component</Name>
 		 <ParameterKey>Columns 113-118 </ParameterKey>
-         <Description>Magnetic field component.</Description>
+         <Description>14th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.</Description>
          <Caveats>This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.</Caveats>
-         <Units>0.1 nT (0.1' if D)</Units>
-         <FillValue>999999</FillValue>
+         <Units>nT for the intensity elements and tenth-minutes for D and I.</Units>
+         <FillValue>99999</FillValue>
          <Field>
             <Qualifier>Component</Qualifier>
             <FieldQuantity>Magnetic</FieldQuantity>
@@ -357,10 +365,10 @@
 	  <Parameter>
          <Name>Magnetic Field Component</Name>
 		 <ParameterKey>Columns 119-124 </ParameterKey>
-         <Description>Magnetic field component.</Description>
+         <Description>15th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.</Description>
          <Caveats>This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.</Caveats>
-         <Units>0.1 nT (0.1' if D)</Units>
-         <FillValue>999999</FillValue>
+         <Units>nT for the intensity elements and tenth-minutes for D and I.</Units>
+         <FillValue>99999</FillValue>
          <Field>
             <Qualifier>Component</Qualifier>
             <FieldQuantity>Magnetic</FieldQuantity>
@@ -369,10 +377,10 @@
 	  <Parameter>
          <Name>Magnetic Field Component</Name>
 		 <ParameterKey>Columns 125-130 </ParameterKey>
-         <Description>Magnetic field component.</Description>
+         <Description>16th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.</Description>
          <Caveats>This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.</Caveats>
-         <Units>0.1 nT (0.1' if D)</Units>
-         <FillValue>999999</FillValue>
+         <Units>nT for the intensity elements and tenth-minutes for D and I.</Units>
+         <FillValue>99999</FillValue>
          <Field>
             <Qualifier>Component</Qualifier>
             <FieldQuantity>Magnetic</FieldQuantity>
@@ -381,10 +389,10 @@
 	  <Parameter>
          <Name>Magnetic Field Component</Name>
 		 <ParameterKey>Columns 131-136 </ParameterKey>
-         <Description>Magnetic field component.</Description>
+         <Description>17th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.</Description>
          <Caveats>This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.</Caveats>
-         <Units>0.1 nT (0.1' if D)</Units>
-         <FillValue>999999</FillValue>
+         <Units>nT for the intensity elements and tenth-minutes for D and I.</Units>
+         <FillValue>99999</FillValue>
          <Field>
             <Qualifier>Component</Qualifier>
             <FieldQuantity>Magnetic</FieldQuantity>
@@ -393,10 +401,10 @@
 	  <Parameter>
          <Name>Magnetic Field Component</Name>
 		 <ParameterKey>Columns 137-142 </ParameterKey>
-         <Description>Magnetic field component.</Description>
+         <Description>18th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.</Description>
          <Caveats>This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.</Caveats>
-         <Units>0.1 nT (0.1' if D)</Units>
-         <FillValue>999999</FillValue>
+         <Units>nT for the intensity elements and tenth-minutes for D and I.</Units>
+         <FillValue>99999</FillValue>
          <Field>
             <Qualifier>Component</Qualifier>
             <FieldQuantity>Magnetic</FieldQuantity>
@@ -405,10 +413,10 @@
 	  <Parameter>
          <Name>Magnetic Field Component</Name>
 		 <ParameterKey>Columns 143-148 </ParameterKey>
-         <Description>Magnetic field component.</Description>
+         <Description>19th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.</Description>
          <Caveats>This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.</Caveats>
-         <Units>0.1 nT (0.1' if D)</Units>
-         <FillValue>999999</FillValue>
+         <Units>nT for the intensity elements and tenth-minutes for D and I.</Units>
+         <FillValue>99999</FillValue>
          <Field>
             <Qualifier>Component</Qualifier>
             <FieldQuantity>Magnetic</FieldQuantity>
@@ -417,10 +425,10 @@
 	  <Parameter>
          <Name>Magnetic Field Component</Name>
 		 <ParameterKey>Columns 149-154 </ParameterKey>
-         <Description>Magnetic field component.</Description>
+         <Description>20th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.</Description>
          <Caveats>This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.</Caveats>
-         <Units>0.1 nT (0.1' if D)</Units>
-         <FillValue>999999</FillValue>
+         <Units>nT for the intensity elements and tenth-minutes for D and I.</Units>
+         <FillValue>99999</FillValue>
          <Field>
             <Qualifier>Component</Qualifier>
             <FieldQuantity>Magnetic</FieldQuantity>
@@ -429,10 +437,10 @@
 	  <Parameter>
          <Name>Magnetic Field Component</Name>
 		 <ParameterKey>Columns 155-160 </ParameterKey>
-         <Description>Magnetic field component.</Description>
+         <Description>21st of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.</Description>
          <Caveats>This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.</Caveats>
-         <Units>0.1 nT (0.1' if D)</Units>
-         <FillValue>999999</FillValue>
+         <Units>nT for the intensity elements and tenth-minutes for D and I.</Units>
+         <FillValue>99999</FillValue>
          <Field>
             <Qualifier>Component</Qualifier>
             <FieldQuantity>Magnetic</FieldQuantity>
@@ -441,10 +449,10 @@
 	  <Parameter>
          <Name>Magnetic Field Component</Name>
 		 <ParameterKey>Columns 161-166 </ParameterKey>
-         <Description>Magnetic field component.</Description>
+         <Description>22nd of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.</Description>
          <Caveats>This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.</Caveats>
-         <Units>0.1 nT (0.1' if D)</Units>
-         <FillValue>999999</FillValue>
+         <Units>nT for the intensity elements and tenth-minutes for D and I.</Units>
+         <FillValue>99999</FillValue>
          <Field>
             <Qualifier>Component</Qualifier>
             <FieldQuantity>Magnetic</FieldQuantity>
@@ -453,10 +461,10 @@
 	  <Parameter>
          <Name>Magnetic Field Component</Name>
 		 <ParameterKey>Columns 167-172 </ParameterKey>
-         <Description>Magnetic field component.</Description>
+         <Description>23rd of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.</Description>
          <Caveats>This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.</Caveats>
-         <Units>0.1 nT (0.1' if D)</Units>
-         <FillValue>999999</FillValue>
+         <Units>nT for the intensity elements and tenth-minutes for D and I.</Units>
+         <FillValue>99999</FillValue>
          <Field>
             <Qualifier>Component</Qualifier>
             <FieldQuantity>Magnetic</FieldQuantity>
@@ -465,10 +473,10 @@
 	  <Parameter>
          <Name>Magnetic Field Component</Name>
 		 <ParameterKey>Columns 173-178 </ParameterKey>
-         <Description>Magnetic field component.</Description>
+         <Description>24th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.</Description>
          <Caveats>This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.</Caveats>
-         <Units>0.1 nT (0.1' if D)</Units>
-         <FillValue>999999</FillValue>
+         <Units>nT for the intensity elements and tenth-minutes for D and I.</Units>
+         <FillValue>99999</FillValue>
          <Field>
             <Qualifier>Component</Qualifier>
             <FieldQuantity>Magnetic</FieldQuantity>
@@ -477,10 +485,10 @@
 	  <Parameter>
          <Name>Magnetic Field Component</Name>
 		 <ParameterKey>Columns 179-184 </ParameterKey>
-         <Description>Magnetic field component.</Description>
+         <Description>25th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.</Description>
          <Caveats>This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.</Caveats>
-         <Units>0.1 nT (0.1' if D)</Units>
-         <FillValue>999999</FillValue>
+         <Units>nT for the intensity elements and tenth-minutes for D and I.</Units>
+         <FillValue>99999</FillValue>
          <Field>
             <Qualifier>Component</Qualifier>
             <FieldQuantity>Magnetic</FieldQuantity>
@@ -489,10 +497,10 @@
 	  <Parameter>
          <Name>Magnetic Field Component</Name>
 		 <ParameterKey>Columns 185-190 </ParameterKey>
-         <Description>Magnetic field component.</Description>
+         <Description>26th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.</Description>
          <Caveats>This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.</Caveats>
-         <Units>0.1 nT (0.1' if D)</Units>
-         <FillValue>999999</FillValue>
+         <Units>nT for the intensity elements and tenth-minutes for D and I.</Units>
+         <FillValue>99999</FillValue>
          <Field>
             <Qualifier>Component</Qualifier>
             <FieldQuantity>Magnetic</FieldQuantity>
@@ -501,10 +509,10 @@
 	  <Parameter>
          <Name>Magnetic Field Component</Name>
 		 <ParameterKey>Columns 191-196 </ParameterKey>
-         <Description>Magnetic field component.</Description>
+         <Description>27th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.</Description>
          <Caveats>This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.</Caveats>
-         <Units>0.1 nT (0.1' if D)</Units>
-         <FillValue>999999</FillValue>
+         <Units>nT for the intensity elements and tenth-minutes for D and I.</Units>
+         <FillValue>99999</FillValue>
          <Field>
             <Qualifier>Component</Qualifier>
             <FieldQuantity>Magnetic</FieldQuantity>
@@ -513,10 +521,10 @@
 	  <Parameter>
          <Name>Magnetic Field Component</Name>
 		 <ParameterKey>Columns 197-202 </ParameterKey>
-         <Description>Magnetic field component.</Description>
+         <Description>29th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.</Description>
          <Caveats>This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.</Caveats>
-         <Units>0.1 nT (0.1' if D)</Units>
-         <FillValue>999999</FillValue>
+         <Units>nT for the intensity elements and tenth-minutes for D and I.</Units>
+         <FillValue>99999</FillValue>
          <Field>
             <Qualifier>Component</Qualifier>
             <FieldQuantity>Magnetic</FieldQuantity>
@@ -525,10 +533,10 @@
 	  <Parameter>
          <Name>Magnetic Field Component</Name>
 		 <ParameterKey>Columns 203-208 </ParameterKey>
-         <Description>Magnetic field component.</Description>
+         <Description>30th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.</Description>
          <Caveats>This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.</Caveats>
-         <Units>0.1 nT (0.1' if D)</Units>
-         <FillValue>999999</FillValue>
+         <Units>nT for the intensity elements and tenth-minutes for D and I.</Units>
+         <FillValue>99999</FillValue>
          <Field>
             <Qualifier>Component</Qualifier>
             <FieldQuantity>Magnetic</FieldQuantity>
@@ -537,10 +545,10 @@
 	  <Parameter>
          <Name>Magnetic Field Component</Name>
 		 <ParameterKey>Columns 209-214 </ParameterKey>
-         <Description>Magnetic field component.</Description>
+         <Description>31st of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.</Description>
          <Caveats>This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.</Caveats>
-         <Units>0.1 nT (0.1' if D)</Units>
-         <FillValue>999999</FillValue>
+         <Units>nT for the intensity elements and tenth-minutes for D and I.</Units>
+         <FillValue>99999</FillValue>
          <Field>
             <Qualifier>Component</Qualifier>
             <FieldQuantity>Magnetic</FieldQuantity>
@@ -549,10 +557,10 @@
 	  <Parameter>
          <Name>Magnetic Field Component</Name>
 		 <ParameterKey>Columns 215-220 </ParameterKey>
-         <Description>Magnetic field component.</Description>
+         <Description>32nd of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.</Description>
          <Caveats>This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.</Caveats>
-         <Units>0.1 nT (0.1' if D)</Units>
-         <FillValue>999999</FillValue>
+         <Units>nT for the intensity elements and tenth-minutes for D and I.</Units>
+         <FillValue>99999</FillValue>
          <Field>
             <Qualifier>Component</Qualifier>
             <FieldQuantity>Magnetic</FieldQuantity>
@@ -561,10 +569,10 @@
 	  <Parameter>
          <Name>Magnetic Field Component</Name>
 		 <ParameterKey>Columns 221-226 </ParameterKey>
-         <Description>Magnetic field component.</Description>
+         <Description>33rd of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.</Description>
          <Caveats>This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.</Caveats>
-         <Units>0.1 nT (0.1' if D)</Units>
-         <FillValue>999999</FillValue>
+         <Units>nT for the intensity elements and tenth-minutes for D and I.</Units>
+         <FillValue>99999</FillValue>
          <Field>
             <Qualifier>Component</Qualifier>
             <FieldQuantity>Magnetic</FieldQuantity>
@@ -573,10 +581,10 @@
 	  <Parameter>
          <Name>Magnetic Field Component</Name>
 		 <ParameterKey>Columns 227-232 </ParameterKey>
-         <Description>Magnetic field component.</Description>
+         <Description>34th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.</Description>
          <Caveats>This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.</Caveats>
-         <Units>0.1 nT (0.1' if D)</Units>
-         <FillValue>999999</FillValue>
+         <Units>nT for the intensity elements and tenth-minutes for D and I.</Units>
+         <FillValue>99999</FillValue>
          <Field>
             <Qualifier>Component</Qualifier>
             <FieldQuantity>Magnetic</FieldQuantity>
@@ -585,10 +593,10 @@
 	  <Parameter>
          <Name>Magnetic Field Component</Name>
 		 <ParameterKey>Columns 233-238 </ParameterKey>
-         <Description>Magnetic field component.</Description>
+         <Description>35 of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.</Description>
          <Caveats>This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.</Caveats>
-         <Units>0.1 nT (0.1' if D)</Units>
-         <FillValue>999999</FillValue>
+         <Units>nT for the intensity elements and tenth-minutes for D and I.</Units>
+         <FillValue>99999</FillValue>
          <Field>
             <Qualifier>Component</Qualifier>
             <FieldQuantity>Magnetic</FieldQuantity>
@@ -597,10 +605,10 @@
 	  <Parameter>
          <Name>Magnetic Field Component</Name>
 		 <ParameterKey>Columns 239-244 </ParameterKey>
-         <Description>Magnetic field component.</Description>
+         <Description>36 of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.</Description>
          <Caveats>This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.</Caveats>
-         <Units>0.1 nT (0.1' if D)</Units>
-         <FillValue>999999</FillValue>
+         <Units>nT for the intensity elements and tenth-minutes for D and I.</Units>
+         <FillValue>99999</FillValue>
          <Field>
             <Qualifier>Component</Qualifier>
             <FieldQuantity>Magnetic</FieldQuantity>
@@ -609,10 +617,10 @@
 	  <Parameter>
          <Name>Magnetic Field Component</Name>
 		 <ParameterKey>Columns 245-250 </ParameterKey>
-         <Description>Magnetic field component.</Description>
+         <Description>37th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.</Description>
          <Caveats>This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.</Caveats>
-         <Units>0.1 nT (0.1' if D)</Units>
-         <FillValue>999999</FillValue>
+         <Units>nT for the intensity elements and tenth-minutes for D and I.</Units>
+         <FillValue>99999</FillValue>
          <Field>
             <Qualifier>Component</Qualifier>
             <FieldQuantity>Magnetic</FieldQuantity>
@@ -621,10 +629,10 @@
 	  <Parameter>
          <Name>Magnetic Field Component</Name>
 		 <ParameterKey>Columns 251-256 </ParameterKey>
-         <Description>Magnetic field component.</Description>
+         <Description>38th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.</Description>
          <Caveats>This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.</Caveats>
-         <Units>0.1 nT (0.1' if D)</Units>
-         <FillValue>999999</FillValue>
+         <Units>nT for the intensity elements and tenth-minutes for D and I.</Units>
+         <FillValue>99999</FillValue>
          <Field>
             <Qualifier>Component</Qualifier>
             <FieldQuantity>Magnetic</FieldQuantity>
@@ -633,10 +641,10 @@
 	  <Parameter>
          <Name>Magnetic Field Component</Name>
 		 <ParameterKey>Columns 257-262 </ParameterKey>
-         <Description>Magnetic field component.</Description>
+         <Description>39th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.</Description>
          <Caveats>This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.</Caveats>
-         <Units>0.1 nT (0.1' if D)</Units>
-         <FillValue>999999</FillValue>
+         <Units>nT for the intensity elements and tenth-minutes for D and I.</Units>
+         <FillValue>99999</FillValue>
          <Field>
             <Qualifier>Component</Qualifier>
             <FieldQuantity>Magnetic</FieldQuantity>
@@ -645,10 +653,10 @@
 	  <Parameter>
          <Name>Magnetic Field Component</Name>
 		 <ParameterKey>Columns 263-268 </ParameterKey>
-         <Description>Magnetic field component.</Description>
+         <Description>40th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.</Description>
          <Caveats>This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.</Caveats>
-         <Units>0.1 nT (0.1' if D)</Units>
-         <FillValue>999999</FillValue>
+         <Units>nT for the intensity elements and tenth-minutes for D and I.</Units>
+         <FillValue>99999</FillValue>
          <Field>
             <Qualifier>Component</Qualifier>
             <FieldQuantity>Magnetic</FieldQuantity>
@@ -657,10 +665,10 @@
 	  <Parameter>
          <Name>Magnetic Field Component</Name>
 		 <ParameterKey>Columns 269-274 </ParameterKey>
-         <Description>Magnetic field component.</Description>
+         <Description>41st of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.</Description>
          <Caveats>This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.</Caveats>
-         <Units>0.1 nT (0.1' if D)</Units>
-         <FillValue>999999</FillValue>
+         <Units>nT for the intensity elements and tenth-minutes for D and I.</Units>
+         <FillValue>99999</FillValue>
          <Field>
             <Qualifier>Component</Qualifier>
             <FieldQuantity>Magnetic</FieldQuantity>
@@ -669,10 +677,10 @@
 	  <Parameter>
          <Name>Magnetic Field Component</Name>
 		 <ParameterKey>Columns 275-280 </ParameterKey>
-         <Description>Magnetic field component.</Description>
+         <Description>42nd of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.</Description>
          <Caveats>This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.</Caveats>
-         <Units>0.1 nT (0.1' if D)</Units>
-         <FillValue>999999</FillValue>
+         <Units>nT for the intensity elements and tenth-minutes for D and I.</Units>
+         <FillValue>99999</FillValue>
          <Field>
             <Qualifier>Component</Qualifier>
             <FieldQuantity>Magnetic</FieldQuantity>
@@ -681,10 +689,10 @@
 	  <Parameter>
          <Name>Magnetic Field Component</Name>
 		 <ParameterKey>Columns 281-286 </ParameterKey>
-         <Description>Magnetic field component.</Description>
+         <Description>43rd of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.</Description>
          <Caveats>This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.</Caveats>
-         <Units>0.1 nT (0.1' if D)</Units>
-         <FillValue>999999</FillValue>
+         <Units>nT for the intensity elements and tenth-minutes for D and I.</Units>
+         <FillValue>99999</FillValue>
          <Field>
             <Qualifier>Component</Qualifier>
             <FieldQuantity>Magnetic</FieldQuantity>
@@ -693,10 +701,10 @@
 	  <Parameter>
          <Name>Magnetic Field Component</Name>
 		 <ParameterKey>Columns 287-292 </ParameterKey>
-         <Description>Magnetic field component.</Description>
+         <Description>44th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.</Description>
          <Caveats>This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.</Caveats>
-         <Units>0.1 nT (0.1' if D)</Units>
-         <FillValue>999999</FillValue>
+         <Units>nT for the intensity elements and tenth-minutes for D and I.</Units>
+         <FillValue>99999</FillValue>
          <Field>
             <Qualifier>Component</Qualifier>
             <FieldQuantity>Magnetic</FieldQuantity>
@@ -705,10 +713,10 @@
 	  <Parameter>
          <Name>Magnetic Field Component</Name>
 		 <ParameterKey>Columns 293-298 </ParameterKey>
-         <Description>Magnetic field component.</Description>
+         <Description>45th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.</Description>
          <Caveats>This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.</Caveats>
-         <Units>0.1 nT (0.1' if D)</Units>
-         <FillValue>999999</FillValue>
+         <Units>nT for the intensity elements and tenth-minutes for D and I.</Units>
+         <FillValue>99999</FillValue>
          <Field>
             <Qualifier>Component</Qualifier>
             <FieldQuantity>Magnetic</FieldQuantity>
@@ -717,10 +725,10 @@
 	  <Parameter>
          <Name>Magnetic Field Component</Name>
 		 <ParameterKey>Columns 299-304 </ParameterKey>
-         <Description>Magnetic field component.</Description>
+         <Description>46th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.</Description>
          <Caveats>This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.</Caveats>
-         <Units>0.1 nT (0.1' if D)</Units>
-         <FillValue>999999</FillValue>
+         <Units>nT for the intensity elements and tenth-minutes for D and I.</Units>
+         <FillValue>99999</FillValue>
          <Field>
             <Qualifier>Component</Qualifier>
             <FieldQuantity>Magnetic</FieldQuantity>
@@ -729,10 +737,10 @@
 	  <Parameter>
          <Name>Magnetic Field Component</Name>
 		 <ParameterKey>Columns 305-310 </ParameterKey>
-         <Description>Magnetic field component.</Description>
+         <Description>47th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.</Description>
          <Caveats>This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.</Caveats>
-         <Units>0.1 nT (0.1' if D)</Units>
-         <FillValue>999999</FillValue>
+         <Units>nT for the intensity elements and tenth-minutes for D and I.</Units>
+         <FillValue>99999</FillValue>
          <Field>
             <Qualifier>Component</Qualifier>
             <FieldQuantity>Magnetic</FieldQuantity>
@@ -741,10 +749,10 @@
 	  <Parameter>
          <Name>Magnetic Field Component</Name>
 		 <ParameterKey>Columns 311-316 </ParameterKey>
-         <Description>Magnetic field component.</Description>
+         <Description>48th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.</Description>
          <Caveats>This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.</Caveats>
-         <Units>0.1 nT (0.1' if D)</Units>
-         <FillValue>999999</FillValue>
+         <Units>nT for the intensity elements and tenth-minutes for D and I.</Units>
+         <FillValue>99999</FillValue>
          <Field>
             <Qualifier>Component</Qualifier>
             <FieldQuantity>Magnetic</FieldQuantity>
@@ -753,10 +761,10 @@
 	  <Parameter>
          <Name>Magnetic Field Component</Name>
 		 <ParameterKey>Columns 317-322 </ParameterKey>
-         <Description>Magnetic field component.</Description>
+         <Description>49th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.</Description>
          <Caveats>This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.</Caveats>
-         <Units>0.1 nT (0.1' if D)</Units>
-         <FillValue>999999</FillValue>
+         <Units>nT for the intensity elements and tenth-minutes for D and I.</Units>
+         <FillValue>99999</FillValue>
          <Field>
             <Qualifier>Component</Qualifier>
             <FieldQuantity>Magnetic</FieldQuantity>
@@ -765,10 +773,10 @@
 	  <Parameter>
          <Name>Magnetic Field Component</Name>
 		 <ParameterKey>Columns 323-328 </ParameterKey>
-         <Description>Magnetic field component.</Description>
+         <Description>50th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.</Description>
          <Caveats>This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.</Caveats>
-         <Units>0.1 nT (0.1' if D)</Units>
-         <FillValue>999999</FillValue>
+         <Units>nT for the intensity elements and tenth-minutes for D and I.</Units>
+         <FillValue>99999</FillValue>
          <Field>
             <Qualifier>Component</Qualifier>
             <FieldQuantity>Magnetic</FieldQuantity>
@@ -777,10 +785,10 @@
 	  <Parameter>
          <Name>Magnetic Field Component</Name>
 		 <ParameterKey>Columns 329-334 </ParameterKey>
-         <Description>Magnetic field component.</Description>
+         <Description>51st of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.</Description>
          <Caveats>This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.</Caveats>
-         <Units>0.1 nT (0.1' if D)</Units>
-         <FillValue>999999</FillValue>
+         <Units>nT for the intensity elements and tenth-minutes for D and I.</Units>
+         <FillValue>99999</FillValue>
          <Field>
             <Qualifier>Component</Qualifier>
             <FieldQuantity>Magnetic</FieldQuantity>
@@ -789,10 +797,10 @@
 	  <Parameter>
          <Name>Magnetic Field Component</Name>
 		 <ParameterKey>Columns 335-340 </ParameterKey>
-         <Description>Magnetic field component.</Description>
+         <Description>52nd of  60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.</Description>
          <Caveats>This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.</Caveats>
-         <Units>0.1 nT (0.1' if D)</Units>
-         <FillValue>999999</FillValue>
+         <Units>nT for the intensity elements and tenth-minutes for D and I.</Units>
+         <FillValue>99999</FillValue>
          <Field>
             <Qualifier>Component</Qualifier>
             <FieldQuantity>Magnetic</FieldQuantity>
@@ -801,10 +809,10 @@
 	  <Parameter>
          <Name>Magnetic Field Component</Name>
 		 <ParameterKey>Columns 341-346 </ParameterKey>
-         <Description>Magnetic field component.</Description>
+         <Description>53rd of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.</Description>
          <Caveats>This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.</Caveats>
-         <Units>0.1 nT (0.1' if D)</Units>
-         <FillValue>999999</FillValue>
+         <Units>nT for the intensity elements and tenth-minutes for D and I.</Units>
+         <FillValue>99999</FillValue>
          <Field>
             <Qualifier>Component</Qualifier>
             <FieldQuantity>Magnetic</FieldQuantity>
@@ -813,10 +821,10 @@
 	  <Parameter>
          <Name>Magnetic Field Component</Name>
 		 <ParameterKey>Columns 347-352 </ParameterKey>
-         <Description>Magnetic field component.</Description>
+         <Description>54th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.</Description>
          <Caveats>This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.</Caveats>
-         <Units>0.1 nT (0.1' if D)</Units>
-         <FillValue>999999</FillValue>
+         <Units>nT for the intensity elements and tenth-minutes for D and I.</Units>
+         <FillValue>99999</FillValue>
          <Field>
             <Qualifier>Component</Qualifier>
             <FieldQuantity>Magnetic</FieldQuantity>
@@ -825,10 +833,10 @@
 	  <Parameter>
          <Name>Magnetic Field Component</Name>
 		 <ParameterKey>Columns 353-358 </ParameterKey>
-         <Description>Magnetic field component.</Description>
+         <Description>55th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.</Description>
          <Caveats>This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.</Caveats>
-         <Units>0.1 nT (0.1' if D)</Units>
-         <FillValue>999999</FillValue>
+         <Units>nT for the intensity elements and tenth-minutes for D and I.</Units>
+         <FillValue>99999</FillValue>
          <Field>
             <Qualifier>Component</Qualifier>
             <FieldQuantity>Magnetic</FieldQuantity>
@@ -837,10 +845,10 @@
 	  <Parameter>
          <Name>Magnetic Field Component</Name>
 		 <ParameterKey>Columns 359-364 </ParameterKey>
-         <Description>Magnetic field component.</Description>
+         <Description>56th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.</Description>
          <Caveats>This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.</Caveats>
-         <Units>0.1 nT (0.1' if D)</Units>
-         <FillValue>999999</FillValue>
+         <Units>nT for the intensity elements and tenth-minutes for D and I.</Units>
+         <FillValue>99999</FillValue>
          <Field>
             <Qualifier>Component</Qualifier>
             <FieldQuantity>Magnetic</FieldQuantity>
@@ -849,10 +857,10 @@
 	  <Parameter>
          <Name>Magnetic Field Component</Name>
 		 <ParameterKey>Columns 365-370 </ParameterKey>
-         <Description>Magnetic field component.</Description>
+         <Description>57th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.</Description>
          <Caveats>This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.</Caveats>
-         <Units>0.1 nT (0.1' if D)</Units>
-         <FillValue>999999</FillValue>
+         <Units>nT for the intensity elements and tenth-minutes for D and I.</Units>
+         <FillValue>99999</FillValue>
          <Field>
             <Qualifier>Component</Qualifier>
             <FieldQuantity>Magnetic</FieldQuantity>
@@ -861,10 +869,10 @@
 	  <Parameter>
          <Name>Magnetic Field Component</Name>
 		 <ParameterKey>Columns 371-376 </ParameterKey>
-         <Description>Magnetic field component.</Description>
+         <Description>58th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.</Description>
          <Caveats>This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.</Caveats>
-         <Units>0.1 nT (0.1' if D)</Units>
-         <FillValue>999999</FillValue>
+         <Units>nT for the intensity elements and tenth-minutes for D and I.</Units>
+         <FillValue>99999</FillValue>
          <Field>
             <Qualifier>Component</Qualifier>
             <FieldQuantity>Magnetic</FieldQuantity>
@@ -873,10 +881,10 @@
 	  <Parameter>
          <Name>Magnetic Field Component</Name>
 		 <ParameterKey>Columns 377-382 </ParameterKey>
-         <Description>Magnetic field component.</Description>
+         <Description>59th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.</Description>
          <Caveats>This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.</Caveats>
-         <Units>0.1 nT (0.1' if D)</Units>
-         <FillValue>999999</FillValue>
+         <Units>nT for the intensity elements and tenth-minutes for D and I.</Units>
+         <FillValue>99999</FillValue>
          <Field>
             <Qualifier>Component</Qualifier>
             <FieldQuantity>Magnetic</FieldQuantity>
@@ -885,10 +893,10 @@
 	  <Parameter>
          <Name>Magnetic Field Component</Name>
 		 <ParameterKey>Columns 383-388 </ParameterKey>
-         <Description>Magnetic field component.</Description>
+         <Description>60th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.</Description>
          <Caveats>This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.</Caveats>
-         <Units>0.1 nT (0.1' if D)</Units>
-         <FillValue>999999</FillValue>
+         <Units>nT for the intensity elements and tenth-minutes for D and I.</Units>
+         <FillValue>99999</FillValue>
          <Field>
             <Qualifier>Component</Qualifier>
             <FieldQuantity>Magnetic</FieldQuantity>
@@ -897,22 +905,23 @@
 	  <Parameter>
          <Name>Magnetic Field Component</Name>
 		 <ParameterKey>Columns 389-394 </ParameterKey>
-         <Description>Magnetic field component.</Description>
+         <Description>60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.</Description>
          <Caveats>This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.</Caveats>
-         <Units>0.1 nT (0.1' if D)</Units>
-         <FillValue>999999</FillValue>
+         <Units>nT for the intensity elements and tenth-minutes for D and I.</Units>
+         <FillValue>99999</FillValue>
          <Field>
             <Qualifier>Component</Qualifier>
             <FieldQuantity>Magnetic</FieldQuantity>
          </Field>
-      </Parameter>
+      </Parameter>  
 	  <Parameter>
-         <Name>Hourly Mean Magnetic Field Component</Name>
+         <Name>Hourly Mean</Name>
 		 <ParameterKey>Columns 395-400</ParameterKey>
-         <Description>Hourly mean magnetic field component.</Description>
+         <Description>Hourly Mean. The average of the preceeding 60 1-minute values. The hourly mean is given in a 6-digit field including a minus sign for negative values.
+Units: nT for the intensity elements and tenth-minutes for D and I.</Description>
          <Caveats>This component strong depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.</Caveats>
-         <Units>0.1 nT (0.1' if D)</Units>
-		 <FillValue>999999</FillValue>
+         <Units>nT for the intensity elements and tenth-minutes for D and I.</Units>
+		 <FillValue>99999</FillValue>
          <Field>
             <Qualifier>Component</Qualifier>
             <FieldQuantity>Magnetic</FieldQuantity>

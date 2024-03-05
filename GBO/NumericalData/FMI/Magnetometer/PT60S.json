@@ -9,6 +9,7 @@
       "ResourceHeader": {
         "ResourceName": "International Monitor for Auroral Geomagnetic Effects (IMAGE) Finnish Meterological Institute 1 min Ground Magnetometer Data",
         "AlternateName": "IMAGE FMI 60 s Ground Magnetometer Data",
+        "DOI": "https://doi.org/10.48322/9r3x-m151",
         "ReleaseDate": "2024-02-23T12:34:56.789",
         "RevisionHistory": {
           "RevisionEvent": {
@@ -51,7 +52,7 @@
         ],
         "InformationURL": {
           "Name": "International Monitor for Auroral Geomagnetic Effects (IMAGE) magnetometer data in WDC format.",
-          "URL": "https://space.fmi.fi/image/www_old/wdc.html",
+          "URL": "https://space.fmi.fi/image/",
           "Description": "Home page for IMAGE.",
           "Language": "en"
         }
@@ -73,14 +74,14 @@
           "StartDate": "1982-10-01T00:00:00",
           "RelativeStopDate": "-PT600S"
         },
-        "Cadence": "PT10S"
+        "Cadence": "PT60S"
       },
       "ObservedRegion": "Earth.Surface",
       "Parameter": [
         {
           "Name": "North Polar Distance",
           "ParameterKey": "Columns 1-6",
-          "Description": "Distance to the geographic north pole. NPD is the observatory's North Polar Distance (0 to 180) \r\n\t\t from the north geographic pole in thousandths of a degree and is allotted 6 characters. A decimal point is implied between \r\n\t\t positions 3 an 4.",
+          "Description": "Observatory's North Polar distance. 0 to 180 degrees from the north geographic pole in \r\n\t\t thousandths of a degree. Decimal point is implied between positions 3 and 4.",
           "Support": {
             "Qualifier": "DirectionAngle.PolarAngle",
             "SupportQuantity": "Positional"
@@ -88,8 +89,8 @@
         },
         {
           "Name": "Geographic Longitude",
-          "ParameterKey": "Columns 7-10",
-          "Description": "Geographic latitude (4 characters) (0 to 360) measured east from Greenwich in thousandths of a degree and \r\n\t\t also has a 4 character field.  A decimal points is implied between positions 9 and 10.",
+          "ParameterKey": "Columns 7-12",
+          "Description": "Observatory's Geographic longitude. 0 to 360 degrees measured east from Greenwich \r\n\t\t in thousandths of a degree. Decimal point is implied between positions 9 and 10.",
           "Support": {
             "Qualifier": "DirectionAngle.AzimuthAngle",
             "SupportQuantity": "Positional"
@@ -97,7 +98,7 @@
         },
         {
           "Name": "Year",
-          "ParameterKey": "Columns 11-14",
+          "ParameterKey": "Columns 13-14",
           "Description": "Year 4 characters",
           "Support": {
             "Qualifier": "Magnitude",
@@ -125,7 +126,7 @@
         {
           "Name": "Components",
           "ParameterKey": "Column 19",
-          "Description": "Components 1 character [X ,Y, Z; H, D (0.1), Z; A, B, Z]. For the 10 s resolution this should always be 1.",
+          "Description": "Element (D,I,H,X,Y,Z, or F). 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.",
           "Support": {
             "Qualifier": "Component",
             "SupportQuantity": "Housekeeping"
@@ -134,43 +135,52 @@
         {
           "Name": "Hour",
           "ParameterKey": "Columns 20-21",
-          "Description": "Hour 2 characters [00...23 UT]",
+          "Description": "Hour of day (00-23).",
           "Support": {
             "Qualifier": "Magnitude",
             "SupportQuantity": "Temporal"
           }
         },
         {
-          "Name": "Station identification",
+          "Name": "Observatory",
           "ParameterKey": "Columns 22-24",
-          "Description": "Station identification 3 characters\t[e.g. 3 numbers, 3 letters].",
+          "Description": "Observatory 3-letter code.",
           "Support": {
             "Qualifier": "Group",
             "SupportQuantity": "Housekeeping"
           }
         },
         {
-          "Name": "Unknown???",
-          "ParameterKey": "Columns 25-26",
-          "Description": "Type of data 2 characters",
+          "Name": "Arbitrary",
+          "ParameterKey": "Columns 25",
+          "Description": " Arbitrary.",
           "Support": {
             "Qualifier": "Group",
             "SupportQuantity": "Housekeeping"
           }
         },
         {
-          "Name": "Origin of the data",
+          "Name": "Century",
+          "ParameterKey": "Columns 26",
+          "Description": "Century digit.\r\n             Year = 2014, Century digit = 0.\r\n             Year = 1889, Century digit = 8.\r\n             Year = 1996, Century digit = 9 or 'SPACE' for backwards compatibility.",
+          "Support": {
+            "Qualifier": "Magnitude",
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Preliminary or definitive data",
           "ParameterKey": "Columns 27",
-          "Description": "The origin of the data. A = Alaska Chain. C = Canadian Standard Network. \r\n\t\t D = Digitized from analog records. F = France  G = U.S.G.S. Network. K = AFGL Chain. \r\n\t\t M = McClay Chain. R = Rostoker Chain. S = S.U.N.Y. Chain. T = Tiawan. U = U.C.L.A. Chain. \r\n\t\t V = Variation. Values via SMS-GOES Satellite. W = Walker Chain.",
+          "Description": "Preliminary or Definitive data. Preliminary = P , Definitive = D.",
           "Support": {
             "Qualifier": "Group",
             "SupportQuantity": "Housekeeping"
           }
         },
         {
-          "Name": "Free space",
-          "ParameterKey": "Columns 28-35",
-          "Description": "Free space 8 characters.",
+          "Name": "Blanks",
+          "ParameterKey": "Columns 28-34",
+          "Description": "Blanks.",
           "Support": {
             "Qualifier": "Total",
             "SupportQuantity": "Other"
@@ -179,10 +189,10 @@
         {
           "Name": "Magnetic Field Component",
           "ParameterKey": "Columns 35-40 ",
-          "Description": "Magnetic field component.",
+          "Description": "1st of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.",
           "Caveats": "This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.",
-          "Units": "0.1 nT (0.1' if D)",
-          "FillValue": "999999",
+          "Units": "nT for the intensity elements and tenth-minutes for D and I.",
+          "FillValue": "99999",
           "Field": {
             "Qualifier": "Component",
             "FieldQuantity": "Magnetic"
@@ -191,10 +201,10 @@
         {
           "Name": "Magnetic Field Component",
           "ParameterKey": "Columns 41-46 ",
-          "Description": "Magnetic field component.",
+          "Description": "2nd of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.",
           "Caveats": "This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.",
-          "Units": "0.1 nT (0.1' if D)",
-          "FillValue": "999999",
+          "Units": "nT for the intensity elements and tenth-minutes for D and I.",
+          "FillValue": "99999",
           "Field": {
             "Qualifier": "Component",
             "FieldQuantity": "Magnetic"
@@ -203,10 +213,10 @@
         {
           "Name": "Magnetic Field Component",
           "ParameterKey": "Columns 47-52 ",
-          "Description": "Magnetic field component.",
+          "Description": "3rd of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.",
           "Caveats": "This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.",
-          "Units": "0.1 nT (0.1' if D)",
-          "FillValue": "999999",
+          "Units": "nT for the intensity elements and tenth-minutes for D and I.",
+          "FillValue": "99999",
           "Field": {
             "Qualifier": "Component",
             "FieldQuantity": "Magnetic"
@@ -215,10 +225,10 @@
         {
           "Name": "Magnetic Field Component",
           "ParameterKey": "Columns 53-58 ",
-          "Description": "Magnetic field component.",
+          "Description": "4th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.",
           "Caveats": "This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.",
-          "Units": "0.1 nT (0.1' if D)",
-          "FillValue": "999999",
+          "Units": "nT for the intensity elements and tenth-minutes for D and I.",
+          "FillValue": "99999",
           "Field": {
             "Qualifier": "Component",
             "FieldQuantity": "Magnetic"
@@ -227,10 +237,10 @@
         {
           "Name": "Magnetic Field Component",
           "ParameterKey": "Columns 59-64 ",
-          "Description": "Magnetic field component.",
+          "Description": "5th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.",
           "Caveats": "This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.",
-          "Units": "0.1 nT (0.1' if D)",
-          "FillValue": "999999",
+          "Units": "nT for the intensity elements and tenth-minutes for D and I.",
+          "FillValue": "99999",
           "Field": {
             "Qualifier": "Component",
             "FieldQuantity": "Magnetic"
@@ -239,10 +249,10 @@
         {
           "Name": "Magnetic Field Component",
           "ParameterKey": "Columns 65-70 ",
-          "Description": "Magnetic field component.",
+          "Description": "6th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.",
           "Caveats": "This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.",
-          "Units": "0.1 nT (0.1' if D)",
-          "FillValue": "999999",
+          "Units": "nT for the intensity elements and tenth-minutes for D and I.",
+          "FillValue": "99999",
           "Field": {
             "Qualifier": "Component",
             "FieldQuantity": "Magnetic"
@@ -251,10 +261,10 @@
         {
           "Name": "Magnetic Field Component",
           "ParameterKey": "Columns 71-76 ",
-          "Description": "Magnetic field component.",
+          "Description": "7th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.",
           "Caveats": "This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.",
-          "Units": "0.1 nT (0.1' if D)",
-          "FillValue": "999999",
+          "Units": "nT for the intensity elements and tenth-minutes for D and I.",
+          "FillValue": "99999",
           "Field": {
             "Qualifier": "Component",
             "FieldQuantity": "Magnetic"
@@ -262,11 +272,11 @@
         },
         {
           "Name": "Magnetic Field Component",
-          "ParameterKey": "Columns 77-82 ",
-          "Description": "Magnetic field component.",
+          "ParameterKey": "8th of Columns 77-82 ",
+          "Description": "60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.",
           "Caveats": "This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.",
-          "Units": "0.1 nT (0.1' if D)",
-          "FillValue": "999999",
+          "Units": "nT for the intensity elements and tenth-minutes for D and I.",
+          "FillValue": "99999",
           "Field": {
             "Qualifier": "Component",
             "FieldQuantity": "Magnetic"
@@ -275,10 +285,10 @@
         {
           "Name": "Magnetic Field Component",
           "ParameterKey": "Columns 83-88 ",
-          "Description": "Magnetic field component.",
+          "Description": "9th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.",
           "Caveats": "This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.",
-          "Units": "0.1 nT (0.1' if D)",
-          "FillValue": "999999",
+          "Units": "nT for the intensity elements and tenth-minutes for D and I.",
+          "FillValue": "99999",
           "Field": {
             "Qualifier": "Component",
             "FieldQuantity": "Magnetic"
@@ -287,10 +297,10 @@
         {
           "Name": "Magnetic Field Component",
           "ParameterKey": "Columns 89-94 ",
-          "Description": "Magnetic field component.",
+          "Description": "10th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.",
           "Caveats": "This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.",
-          "Units": "0.1 nT (0.1' if D)",
-          "FillValue": "999999",
+          "Units": "nT for the intensity elements and tenth-minutes for D and I.",
+          "FillValue": "99999",
           "Field": {
             "Qualifier": "Component",
             "FieldQuantity": "Magnetic"
@@ -299,10 +309,10 @@
         {
           "Name": "Magnetic Field Component",
           "ParameterKey": "Columns 95-100 ",
-          "Description": "Magnetic field component.",
+          "Description": "11th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.",
           "Caveats": "This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.",
-          "Units": "0.1 nT (0.1' if D)",
-          "FillValue": "999999",
+          "Units": "nT for the intensity elements and tenth-minutes for D and I.",
+          "FillValue": "99999",
           "Field": {
             "Qualifier": "Component",
             "FieldQuantity": "Magnetic"
@@ -311,10 +321,10 @@
         {
           "Name": "Magnetic Field Component",
           "ParameterKey": "Columns 101-106 ",
-          "Description": "Magnetic field component.",
+          "Description": "12th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.",
           "Caveats": "This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.",
-          "Units": "0.1 nT (0.1' if D)",
-          "FillValue": "999999",
+          "Units": "nT for the intensity elements and tenth-minutes for D and I.",
+          "FillValue": "99999",
           "Field": {
             "Qualifier": "Component",
             "FieldQuantity": "Magnetic"
@@ -323,10 +333,10 @@
         {
           "Name": "Magnetic Field Component",
           "ParameterKey": "Columns 107-112 ",
-          "Description": "Magnetic field component.",
+          "Description": "13th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.",
           "Caveats": "This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.",
-          "Units": "0.1 nT (0.1' if D)",
-          "FillValue": "999999",
+          "Units": "nT for the intensity elements and tenth-minutes for D and I.",
+          "FillValue": "99999",
           "Field": {
             "Qualifier": "Component",
             "FieldQuantity": "Magnetic"
@@ -335,10 +345,10 @@
         {
           "Name": "Magnetic Field Component",
           "ParameterKey": "Columns 113-118 ",
-          "Description": "Magnetic field component.",
+          "Description": "14th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.",
           "Caveats": "This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.",
-          "Units": "0.1 nT (0.1' if D)",
-          "FillValue": "999999",
+          "Units": "nT for the intensity elements and tenth-minutes for D and I.",
+          "FillValue": "99999",
           "Field": {
             "Qualifier": "Component",
             "FieldQuantity": "Magnetic"
@@ -347,10 +357,10 @@
         {
           "Name": "Magnetic Field Component",
           "ParameterKey": "Columns 119-124 ",
-          "Description": "Magnetic field component.",
+          "Description": "15th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.",
           "Caveats": "This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.",
-          "Units": "0.1 nT (0.1' if D)",
-          "FillValue": "999999",
+          "Units": "nT for the intensity elements and tenth-minutes for D and I.",
+          "FillValue": "99999",
           "Field": {
             "Qualifier": "Component",
             "FieldQuantity": "Magnetic"
@@ -359,10 +369,10 @@
         {
           "Name": "Magnetic Field Component",
           "ParameterKey": "Columns 125-130 ",
-          "Description": "Magnetic field component.",
+          "Description": "16th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.",
           "Caveats": "This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.",
-          "Units": "0.1 nT (0.1' if D)",
-          "FillValue": "999999",
+          "Units": "nT for the intensity elements and tenth-minutes for D and I.",
+          "FillValue": "99999",
           "Field": {
             "Qualifier": "Component",
             "FieldQuantity": "Magnetic"
@@ -371,10 +381,10 @@
         {
           "Name": "Magnetic Field Component",
           "ParameterKey": "Columns 131-136 ",
-          "Description": "Magnetic field component.",
+          "Description": "17th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.",
           "Caveats": "This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.",
-          "Units": "0.1 nT (0.1' if D)",
-          "FillValue": "999999",
+          "Units": "nT for the intensity elements and tenth-minutes for D and I.",
+          "FillValue": "99999",
           "Field": {
             "Qualifier": "Component",
             "FieldQuantity": "Magnetic"
@@ -383,10 +393,10 @@
         {
           "Name": "Magnetic Field Component",
           "ParameterKey": "Columns 137-142 ",
-          "Description": "Magnetic field component.",
+          "Description": "18th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.",
           "Caveats": "This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.",
-          "Units": "0.1 nT (0.1' if D)",
-          "FillValue": "999999",
+          "Units": "nT for the intensity elements and tenth-minutes for D and I.",
+          "FillValue": "99999",
           "Field": {
             "Qualifier": "Component",
             "FieldQuantity": "Magnetic"
@@ -395,10 +405,10 @@
         {
           "Name": "Magnetic Field Component",
           "ParameterKey": "Columns 143-148 ",
-          "Description": "Magnetic field component.",
+          "Description": "19th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.",
           "Caveats": "This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.",
-          "Units": "0.1 nT (0.1' if D)",
-          "FillValue": "999999",
+          "Units": "nT for the intensity elements and tenth-minutes for D and I.",
+          "FillValue": "99999",
           "Field": {
             "Qualifier": "Component",
             "FieldQuantity": "Magnetic"
@@ -407,10 +417,10 @@
         {
           "Name": "Magnetic Field Component",
           "ParameterKey": "Columns 149-154 ",
-          "Description": "Magnetic field component.",
+          "Description": "20th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.",
           "Caveats": "This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.",
-          "Units": "0.1 nT (0.1' if D)",
-          "FillValue": "999999",
+          "Units": "nT for the intensity elements and tenth-minutes for D and I.",
+          "FillValue": "99999",
           "Field": {
             "Qualifier": "Component",
             "FieldQuantity": "Magnetic"
@@ -419,10 +429,10 @@
         {
           "Name": "Magnetic Field Component",
           "ParameterKey": "Columns 155-160 ",
-          "Description": "Magnetic field component.",
+          "Description": "21st of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.",
           "Caveats": "This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.",
-          "Units": "0.1 nT (0.1' if D)",
-          "FillValue": "999999",
+          "Units": "nT for the intensity elements and tenth-minutes for D and I.",
+          "FillValue": "99999",
           "Field": {
             "Qualifier": "Component",
             "FieldQuantity": "Magnetic"
@@ -431,10 +441,10 @@
         {
           "Name": "Magnetic Field Component",
           "ParameterKey": "Columns 161-166 ",
-          "Description": "Magnetic field component.",
+          "Description": "22nd of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.",
           "Caveats": "This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.",
-          "Units": "0.1 nT (0.1' if D)",
-          "FillValue": "999999",
+          "Units": "nT for the intensity elements and tenth-minutes for D and I.",
+          "FillValue": "99999",
           "Field": {
             "Qualifier": "Component",
             "FieldQuantity": "Magnetic"
@@ -443,10 +453,10 @@
         {
           "Name": "Magnetic Field Component",
           "ParameterKey": "Columns 167-172 ",
-          "Description": "Magnetic field component.",
+          "Description": "23rd of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.",
           "Caveats": "This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.",
-          "Units": "0.1 nT (0.1' if D)",
-          "FillValue": "999999",
+          "Units": "nT for the intensity elements and tenth-minutes for D and I.",
+          "FillValue": "99999",
           "Field": {
             "Qualifier": "Component",
             "FieldQuantity": "Magnetic"
@@ -455,10 +465,10 @@
         {
           "Name": "Magnetic Field Component",
           "ParameterKey": "Columns 173-178 ",
-          "Description": "Magnetic field component.",
+          "Description": "24th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.",
           "Caveats": "This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.",
-          "Units": "0.1 nT (0.1' if D)",
-          "FillValue": "999999",
+          "Units": "nT for the intensity elements and tenth-minutes for D and I.",
+          "FillValue": "99999",
           "Field": {
             "Qualifier": "Component",
             "FieldQuantity": "Magnetic"
@@ -467,10 +477,10 @@
         {
           "Name": "Magnetic Field Component",
           "ParameterKey": "Columns 179-184 ",
-          "Description": "Magnetic field component.",
+          "Description": "25th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.",
           "Caveats": "This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.",
-          "Units": "0.1 nT (0.1' if D)",
-          "FillValue": "999999",
+          "Units": "nT for the intensity elements and tenth-minutes for D and I.",
+          "FillValue": "99999",
           "Field": {
             "Qualifier": "Component",
             "FieldQuantity": "Magnetic"
@@ -479,10 +489,10 @@
         {
           "Name": "Magnetic Field Component",
           "ParameterKey": "Columns 185-190 ",
-          "Description": "Magnetic field component.",
+          "Description": "26th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.",
           "Caveats": "This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.",
-          "Units": "0.1 nT (0.1' if D)",
-          "FillValue": "999999",
+          "Units": "nT for the intensity elements and tenth-minutes for D and I.",
+          "FillValue": "99999",
           "Field": {
             "Qualifier": "Component",
             "FieldQuantity": "Magnetic"
@@ -491,10 +501,10 @@
         {
           "Name": "Magnetic Field Component",
           "ParameterKey": "Columns 191-196 ",
-          "Description": "Magnetic field component.",
+          "Description": "27th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.",
           "Caveats": "This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.",
-          "Units": "0.1 nT (0.1' if D)",
-          "FillValue": "999999",
+          "Units": "nT for the intensity elements and tenth-minutes for D and I.",
+          "FillValue": "99999",
           "Field": {
             "Qualifier": "Component",
             "FieldQuantity": "Magnetic"
@@ -503,10 +513,10 @@
         {
           "Name": "Magnetic Field Component",
           "ParameterKey": "Columns 197-202 ",
-          "Description": "Magnetic field component.",
+          "Description": "29th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.",
           "Caveats": "This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.",
-          "Units": "0.1 nT (0.1' if D)",
-          "FillValue": "999999",
+          "Units": "nT for the intensity elements and tenth-minutes for D and I.",
+          "FillValue": "99999",
           "Field": {
             "Qualifier": "Component",
             "FieldQuantity": "Magnetic"
@@ -515,10 +525,10 @@
         {
           "Name": "Magnetic Field Component",
           "ParameterKey": "Columns 203-208 ",
-          "Description": "Magnetic field component.",
+          "Description": "30th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.",
           "Caveats": "This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.",
-          "Units": "0.1 nT (0.1' if D)",
-          "FillValue": "999999",
+          "Units": "nT for the intensity elements and tenth-minutes for D and I.",
+          "FillValue": "99999",
           "Field": {
             "Qualifier": "Component",
             "FieldQuantity": "Magnetic"
@@ -527,10 +537,10 @@
         {
           "Name": "Magnetic Field Component",
           "ParameterKey": "Columns 209-214 ",
-          "Description": "Magnetic field component.",
+          "Description": "31st of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.",
           "Caveats": "This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.",
-          "Units": "0.1 nT (0.1' if D)",
-          "FillValue": "999999",
+          "Units": "nT for the intensity elements and tenth-minutes for D and I.",
+          "FillValue": "99999",
           "Field": {
             "Qualifier": "Component",
             "FieldQuantity": "Magnetic"
@@ -539,10 +549,10 @@
         {
           "Name": "Magnetic Field Component",
           "ParameterKey": "Columns 215-220 ",
-          "Description": "Magnetic field component.",
+          "Description": "32nd of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.",
           "Caveats": "This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.",
-          "Units": "0.1 nT (0.1' if D)",
-          "FillValue": "999999",
+          "Units": "nT for the intensity elements and tenth-minutes for D and I.",
+          "FillValue": "99999",
           "Field": {
             "Qualifier": "Component",
             "FieldQuantity": "Magnetic"
@@ -551,10 +561,10 @@
         {
           "Name": "Magnetic Field Component",
           "ParameterKey": "Columns 221-226 ",
-          "Description": "Magnetic field component.",
+          "Description": "33rd of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.",
           "Caveats": "This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.",
-          "Units": "0.1 nT (0.1' if D)",
-          "FillValue": "999999",
+          "Units": "nT for the intensity elements and tenth-minutes for D and I.",
+          "FillValue": "99999",
           "Field": {
             "Qualifier": "Component",
             "FieldQuantity": "Magnetic"
@@ -563,10 +573,10 @@
         {
           "Name": "Magnetic Field Component",
           "ParameterKey": "Columns 227-232 ",
-          "Description": "Magnetic field component.",
+          "Description": "34th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.",
           "Caveats": "This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.",
-          "Units": "0.1 nT (0.1' if D)",
-          "FillValue": "999999",
+          "Units": "nT for the intensity elements and tenth-minutes for D and I.",
+          "FillValue": "99999",
           "Field": {
             "Qualifier": "Component",
             "FieldQuantity": "Magnetic"
@@ -575,10 +585,10 @@
         {
           "Name": "Magnetic Field Component",
           "ParameterKey": "Columns 233-238 ",
-          "Description": "Magnetic field component.",
+          "Description": "35 of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.",
           "Caveats": "This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.",
-          "Units": "0.1 nT (0.1' if D)",
-          "FillValue": "999999",
+          "Units": "nT for the intensity elements and tenth-minutes for D and I.",
+          "FillValue": "99999",
           "Field": {
             "Qualifier": "Component",
             "FieldQuantity": "Magnetic"
@@ -587,10 +597,10 @@
         {
           "Name": "Magnetic Field Component",
           "ParameterKey": "Columns 239-244 ",
-          "Description": "Magnetic field component.",
+          "Description": "36 of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.",
           "Caveats": "This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.",
-          "Units": "0.1 nT (0.1' if D)",
-          "FillValue": "999999",
+          "Units": "nT for the intensity elements and tenth-minutes for D and I.",
+          "FillValue": "99999",
           "Field": {
             "Qualifier": "Component",
             "FieldQuantity": "Magnetic"
@@ -599,10 +609,10 @@
         {
           "Name": "Magnetic Field Component",
           "ParameterKey": "Columns 245-250 ",
-          "Description": "Magnetic field component.",
+          "Description": "37th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.",
           "Caveats": "This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.",
-          "Units": "0.1 nT (0.1' if D)",
-          "FillValue": "999999",
+          "Units": "nT for the intensity elements and tenth-minutes for D and I.",
+          "FillValue": "99999",
           "Field": {
             "Qualifier": "Component",
             "FieldQuantity": "Magnetic"
@@ -611,10 +621,10 @@
         {
           "Name": "Magnetic Field Component",
           "ParameterKey": "Columns 251-256 ",
-          "Description": "Magnetic field component.",
+          "Description": "38th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.",
           "Caveats": "This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.",
-          "Units": "0.1 nT (0.1' if D)",
-          "FillValue": "999999",
+          "Units": "nT for the intensity elements and tenth-minutes for D and I.",
+          "FillValue": "99999",
           "Field": {
             "Qualifier": "Component",
             "FieldQuantity": "Magnetic"
@@ -623,10 +633,10 @@
         {
           "Name": "Magnetic Field Component",
           "ParameterKey": "Columns 257-262 ",
-          "Description": "Magnetic field component.",
+          "Description": "39th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.",
           "Caveats": "This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.",
-          "Units": "0.1 nT (0.1' if D)",
-          "FillValue": "999999",
+          "Units": "nT for the intensity elements and tenth-minutes for D and I.",
+          "FillValue": "99999",
           "Field": {
             "Qualifier": "Component",
             "FieldQuantity": "Magnetic"
@@ -635,10 +645,10 @@
         {
           "Name": "Magnetic Field Component",
           "ParameterKey": "Columns 263-268 ",
-          "Description": "Magnetic field component.",
+          "Description": "40th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.",
           "Caveats": "This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.",
-          "Units": "0.1 nT (0.1' if D)",
-          "FillValue": "999999",
+          "Units": "nT for the intensity elements and tenth-minutes for D and I.",
+          "FillValue": "99999",
           "Field": {
             "Qualifier": "Component",
             "FieldQuantity": "Magnetic"
@@ -647,10 +657,10 @@
         {
           "Name": "Magnetic Field Component",
           "ParameterKey": "Columns 269-274 ",
-          "Description": "Magnetic field component.",
+          "Description": "41st of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.",
           "Caveats": "This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.",
-          "Units": "0.1 nT (0.1' if D)",
-          "FillValue": "999999",
+          "Units": "nT for the intensity elements and tenth-minutes for D and I.",
+          "FillValue": "99999",
           "Field": {
             "Qualifier": "Component",
             "FieldQuantity": "Magnetic"
@@ -659,10 +669,10 @@
         {
           "Name": "Magnetic Field Component",
           "ParameterKey": "Columns 275-280 ",
-          "Description": "Magnetic field component.",
+          "Description": "42nd of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.",
           "Caveats": "This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.",
-          "Units": "0.1 nT (0.1' if D)",
-          "FillValue": "999999",
+          "Units": "nT for the intensity elements and tenth-minutes for D and I.",
+          "FillValue": "99999",
           "Field": {
             "Qualifier": "Component",
             "FieldQuantity": "Magnetic"
@@ -671,10 +681,10 @@
         {
           "Name": "Magnetic Field Component",
           "ParameterKey": "Columns 281-286 ",
-          "Description": "Magnetic field component.",
+          "Description": "43rd of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.",
           "Caveats": "This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.",
-          "Units": "0.1 nT (0.1' if D)",
-          "FillValue": "999999",
+          "Units": "nT for the intensity elements and tenth-minutes for D and I.",
+          "FillValue": "99999",
           "Field": {
             "Qualifier": "Component",
             "FieldQuantity": "Magnetic"
@@ -683,10 +693,10 @@
         {
           "Name": "Magnetic Field Component",
           "ParameterKey": "Columns 287-292 ",
-          "Description": "Magnetic field component.",
+          "Description": "44th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.",
           "Caveats": "This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.",
-          "Units": "0.1 nT (0.1' if D)",
-          "FillValue": "999999",
+          "Units": "nT for the intensity elements and tenth-minutes for D and I.",
+          "FillValue": "99999",
           "Field": {
             "Qualifier": "Component",
             "FieldQuantity": "Magnetic"
@@ -695,10 +705,10 @@
         {
           "Name": "Magnetic Field Component",
           "ParameterKey": "Columns 293-298 ",
-          "Description": "Magnetic field component.",
+          "Description": "45th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.",
           "Caveats": "This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.",
-          "Units": "0.1 nT (0.1' if D)",
-          "FillValue": "999999",
+          "Units": "nT for the intensity elements and tenth-minutes for D and I.",
+          "FillValue": "99999",
           "Field": {
             "Qualifier": "Component",
             "FieldQuantity": "Magnetic"
@@ -707,10 +717,10 @@
         {
           "Name": "Magnetic Field Component",
           "ParameterKey": "Columns 299-304 ",
-          "Description": "Magnetic field component.",
+          "Description": "46th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.",
           "Caveats": "This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.",
-          "Units": "0.1 nT (0.1' if D)",
-          "FillValue": "999999",
+          "Units": "nT for the intensity elements and tenth-minutes for D and I.",
+          "FillValue": "99999",
           "Field": {
             "Qualifier": "Component",
             "FieldQuantity": "Magnetic"
@@ -719,10 +729,10 @@
         {
           "Name": "Magnetic Field Component",
           "ParameterKey": "Columns 305-310 ",
-          "Description": "Magnetic field component.",
+          "Description": "47th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.",
           "Caveats": "This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.",
-          "Units": "0.1 nT (0.1' if D)",
-          "FillValue": "999999",
+          "Units": "nT for the intensity elements and tenth-minutes for D and I.",
+          "FillValue": "99999",
           "Field": {
             "Qualifier": "Component",
             "FieldQuantity": "Magnetic"
@@ -731,10 +741,10 @@
         {
           "Name": "Magnetic Field Component",
           "ParameterKey": "Columns 311-316 ",
-          "Description": "Magnetic field component.",
+          "Description": "48th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.",
           "Caveats": "This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.",
-          "Units": "0.1 nT (0.1' if D)",
-          "FillValue": "999999",
+          "Units": "nT for the intensity elements and tenth-minutes for D and I.",
+          "FillValue": "99999",
           "Field": {
             "Qualifier": "Component",
             "FieldQuantity": "Magnetic"
@@ -743,10 +753,10 @@
         {
           "Name": "Magnetic Field Component",
           "ParameterKey": "Columns 317-322 ",
-          "Description": "Magnetic field component.",
+          "Description": "49th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.",
           "Caveats": "This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.",
-          "Units": "0.1 nT (0.1' if D)",
-          "FillValue": "999999",
+          "Units": "nT for the intensity elements and tenth-minutes for D and I.",
+          "FillValue": "99999",
           "Field": {
             "Qualifier": "Component",
             "FieldQuantity": "Magnetic"
@@ -755,10 +765,10 @@
         {
           "Name": "Magnetic Field Component",
           "ParameterKey": "Columns 323-328 ",
-          "Description": "Magnetic field component.",
+          "Description": "50th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.",
           "Caveats": "This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.",
-          "Units": "0.1 nT (0.1' if D)",
-          "FillValue": "999999",
+          "Units": "nT for the intensity elements and tenth-minutes for D and I.",
+          "FillValue": "99999",
           "Field": {
             "Qualifier": "Component",
             "FieldQuantity": "Magnetic"
@@ -767,10 +777,10 @@
         {
           "Name": "Magnetic Field Component",
           "ParameterKey": "Columns 329-334 ",
-          "Description": "Magnetic field component.",
+          "Description": "51st of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.",
           "Caveats": "This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.",
-          "Units": "0.1 nT (0.1' if D)",
-          "FillValue": "999999",
+          "Units": "nT for the intensity elements and tenth-minutes for D and I.",
+          "FillValue": "99999",
           "Field": {
             "Qualifier": "Component",
             "FieldQuantity": "Magnetic"
@@ -779,10 +789,10 @@
         {
           "Name": "Magnetic Field Component",
           "ParameterKey": "Columns 335-340 ",
-          "Description": "Magnetic field component.",
+          "Description": "52nd of  60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.",
           "Caveats": "This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.",
-          "Units": "0.1 nT (0.1' if D)",
-          "FillValue": "999999",
+          "Units": "nT for the intensity elements and tenth-minutes for D and I.",
+          "FillValue": "99999",
           "Field": {
             "Qualifier": "Component",
             "FieldQuantity": "Magnetic"
@@ -791,10 +801,10 @@
         {
           "Name": "Magnetic Field Component",
           "ParameterKey": "Columns 341-346 ",
-          "Description": "Magnetic field component.",
+          "Description": "53rd of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.",
           "Caveats": "This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.",
-          "Units": "0.1 nT (0.1' if D)",
-          "FillValue": "999999",
+          "Units": "nT for the intensity elements and tenth-minutes for D and I.",
+          "FillValue": "99999",
           "Field": {
             "Qualifier": "Component",
             "FieldQuantity": "Magnetic"
@@ -803,10 +813,10 @@
         {
           "Name": "Magnetic Field Component",
           "ParameterKey": "Columns 347-352 ",
-          "Description": "Magnetic field component.",
+          "Description": "54th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.",
           "Caveats": "This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.",
-          "Units": "0.1 nT (0.1' if D)",
-          "FillValue": "999999",
+          "Units": "nT for the intensity elements and tenth-minutes for D and I.",
+          "FillValue": "99999",
           "Field": {
             "Qualifier": "Component",
             "FieldQuantity": "Magnetic"
@@ -815,10 +825,10 @@
         {
           "Name": "Magnetic Field Component",
           "ParameterKey": "Columns 353-358 ",
-          "Description": "Magnetic field component.",
+          "Description": "55th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.",
           "Caveats": "This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.",
-          "Units": "0.1 nT (0.1' if D)",
-          "FillValue": "999999",
+          "Units": "nT for the intensity elements and tenth-minutes for D and I.",
+          "FillValue": "99999",
           "Field": {
             "Qualifier": "Component",
             "FieldQuantity": "Magnetic"
@@ -827,10 +837,10 @@
         {
           "Name": "Magnetic Field Component",
           "ParameterKey": "Columns 359-364 ",
-          "Description": "Magnetic field component.",
+          "Description": "56th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.",
           "Caveats": "This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.",
-          "Units": "0.1 nT (0.1' if D)",
-          "FillValue": "999999",
+          "Units": "nT for the intensity elements and tenth-minutes for D and I.",
+          "FillValue": "99999",
           "Field": {
             "Qualifier": "Component",
             "FieldQuantity": "Magnetic"
@@ -839,10 +849,10 @@
         {
           "Name": "Magnetic Field Component",
           "ParameterKey": "Columns 365-370 ",
-          "Description": "Magnetic field component.",
+          "Description": "57th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.",
           "Caveats": "This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.",
-          "Units": "0.1 nT (0.1' if D)",
-          "FillValue": "999999",
+          "Units": "nT for the intensity elements and tenth-minutes for D and I.",
+          "FillValue": "99999",
           "Field": {
             "Qualifier": "Component",
             "FieldQuantity": "Magnetic"
@@ -851,10 +861,10 @@
         {
           "Name": "Magnetic Field Component",
           "ParameterKey": "Columns 371-376 ",
-          "Description": "Magnetic field component.",
+          "Description": "58th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.",
           "Caveats": "This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.",
-          "Units": "0.1 nT (0.1' if D)",
-          "FillValue": "999999",
+          "Units": "nT for the intensity elements and tenth-minutes for D and I.",
+          "FillValue": "99999",
           "Field": {
             "Qualifier": "Component",
             "FieldQuantity": "Magnetic"
@@ -863,10 +873,10 @@
         {
           "Name": "Magnetic Field Component",
           "ParameterKey": "Columns 377-382 ",
-          "Description": "Magnetic field component.",
+          "Description": "59th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.",
           "Caveats": "This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.",
-          "Units": "0.1 nT (0.1' if D)",
-          "FillValue": "999999",
+          "Units": "nT for the intensity elements and tenth-minutes for D and I.",
+          "FillValue": "99999",
           "Field": {
             "Qualifier": "Component",
             "FieldQuantity": "Magnetic"
@@ -875,10 +885,10 @@
         {
           "Name": "Magnetic Field Component",
           "ParameterKey": "Columns 383-388 ",
-          "Description": "Magnetic field component.",
+          "Description": "60th of 60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.",
           "Caveats": "This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.",
-          "Units": "0.1 nT (0.1' if D)",
-          "FillValue": "999999",
+          "Units": "nT for the intensity elements and tenth-minutes for D and I.",
+          "FillValue": "99999",
           "Field": {
             "Qualifier": "Component",
             "FieldQuantity": "Magnetic"
@@ -887,22 +897,22 @@
         {
           "Name": "Magnetic Field Component",
           "ParameterKey": "Columns 389-394 ",
-          "Description": "Magnetic field component.",
+          "Description": "60 6-digit 1-minute values for the given element for that data hour. Each element value is given in a 6-digit field including a minus sign for negative values.",
           "Caveats": "This component coordinate system strongly depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.",
-          "Units": "0.1 nT (0.1' if D)",
-          "FillValue": "999999",
+          "Units": "nT for the intensity elements and tenth-minutes for D and I.",
+          "FillValue": "99999",
           "Field": {
             "Qualifier": "Component",
             "FieldQuantity": "Magnetic"
           }
         },
         {
-          "Name": "Hourly Mean Magnetic Field Component",
+          "Name": "Hourly Mean",
           "ParameterKey": "Columns 395-400",
-          "Description": "Hourly mean magnetic field component.",
+          "Description": "Hourly Mean. The average of the preceeding 60 1-minute values. The hourly mean is given in a 6-digit field including a minus sign for negative values.\r\nUnits: nT for the intensity elements and tenth-minutes for D and I.",
           "Caveats": "This component strong depends of the Components parameter. The first character from left is the sign, which is minus or, for positive values, space.",
-          "Units": "0.1 nT (0.1' if D)",
-          "FillValue": "999999",
+          "Units": "nT for the intensity elements and tenth-minutes for D and I.",
+          "FillValue": "99999",
           "Field": {
             "Qualifier": "Component",
             "FieldQuantity": "Magnetic"
