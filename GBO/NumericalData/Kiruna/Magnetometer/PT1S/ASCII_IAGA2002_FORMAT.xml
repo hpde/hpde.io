@@ -4,7 +4,8 @@
   <NumericalData>
     <ResourceID>spase://GBO/NumericalData/Kiruna/Magnetometer/PT1S/ASCII_IAGA2002_FORMAT</ResourceID>
     <ResourceHeader>
-      <ResourceName>Kiruna Magnetometer 1 hour Data in ASCII Flat Table Format</ResourceName>
+      <ResourceName>Kiruna Magnetometer 1 and 5 second Data in ASCII Flat Table Format</ResourceName>
+	  <DOI>https://doi.org/10.48322/zeps-0f35</DOI>
 	  <ReleaseDate>2024-03-05T12:34:56.789</ReleaseDate>
 	  <RevisionHistory>
 		 <RevisionEvent>
@@ -16,7 +17,7 @@
 		    <Note>Added DOI. JMW</Note>
 		 </RevisionEvent>
 	  </RevisionHistory>
-      <Description>Kiruna Magnetometer data, 1 second time resolution, in ASCII IAGA2002 format. Magnetic Field Vector Element List: XYZF. </Description>
+      <Description>Kiruna Magnetometer data, 1 and 5 second time resolution, in ASCII IAGA2002 format. Cadence prior to 31 December 1996 is 5 s and after that date is 1 second. Magnetic Field Vector Element List: XYZF. </Description>
       <Acknowledgement>Please acknowledge: Swedish Institute of Space Physics, Kiruna for providing the data observations, and the British Geological Survey, World Data Center for Geomagnetism, Edinburgh for providing access to the data.</Acknowledgement>
 	  <PublicationInfo>
 		<Authors>Yamauchi, M., Luspa, M., Mikhaylova, D., and Brandstrom, U.</Authors>
@@ -69,9 +70,10 @@
       <TimeSpan>
         <StartDate>1996-01-01T00:00:00.000</StartDate>
         <RelativeStopDate>-P3M</RelativeStopDate>
-        <Note>Some data gaps may be present. If a gap is present at the beginning or end of the file, the time span start and stop dates could be inaccurate as they are assigned assuming an absence of such gaps.</Note>
+        <Note>Cadence prior to 31 December 1996 is 5 s and after that date is 1 second. Some data gaps may be present. If a gap is present at the beginning or end of the file, the time span start and stop dates could be inaccurate as they are assigned assuming an absence of such gaps.</Note>
       </TimeSpan>
-      <Cadence>PT1S</Cadence>
+      <CadenceMin>PT1S</CadenceMin>
+	  <CadenceMax>PT5S</CadenceMax>
     </TemporalDescription>
     <ObservedRegion>Earth.Surface</ObservedRegion>
     <Keyword>ground station</Keyword>
@@ -86,7 +88,8 @@
       <Name>Universal Time</Name>
       <ParameterKey>Time</ParameterKey>
       <Description>Time is expressed using a six column format with the following order: year, month, day, hour, minute, and second each stored in interger format. The time columns are the first six columns (1,2,3,4,5,6). The year, month and day are separated by hyphens. The hour, minute, and second are separated by colons.</Description>
-      <Cadence>PT1S</Cadence>
+      <CadenceMin>PT1S</CadenceMin>
+	  <CadenceMax>PT5S</CadenceMax>
       <Structure>
         <Size>6</Size>
         <Description>Universal Time expressed using a 5-column year, month, day, hour, minute representation</Description>
@@ -129,7 +132,8 @@
       <Name>Day of Year</Name>
       <ParameterKey>Column_7</ParameterKey>
       <Description>Day of year expressed as an integer.</Description>
-      <Cadence>PT1S</Cadence>
+	  <CadenceMin>PT1S</CadenceMin>
+	  <CadenceMax>PT5S</CadenceMax>
       <Units>DOY</Units>
       <ValidMin>0</ValidMin>
       <ValidMax>366</ValidMax>
@@ -139,8 +143,9 @@
     </Parameter>
     <Parameter>
       <Name>Kiruna Magnetic Field XYZ</Name>
-      <Description>Kiruna Magnetic Field in XYZ coordinates</Description>
-      <Cadence>PT1S</Cadence>
+      <Description>Kiruna Magnetic Field in XYZ coordinates.</Description>
+	  <CadenceMin>PT1S</CadenceMin>
+	  <CadenceMax>PT5S</CadenceMax>
       <CoordinateSystem>
         <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
         <CoordinateSystemName>GEO</CoordinateSystemName>
@@ -184,8 +189,9 @@
     <Parameter>
       <Name>Magnetic Field Magnitude</Name>
       <ParameterKey>Column_11</ParameterKey>
-      <Description>Kiruna Magnetic Field Vector Magnitude</Description>
-      <Cadence>PT1S</Cadence>
+      <Description>Kiruna Magnetic Field Vector Magnitude.</Description>
+	  <CadenceMin>PT1S</CadenceMin>
+	  <CadenceMax>PT5S</CadenceMax>
       <Units>nT</Units>
       <UnitsConversion>10^9 &gt;T</UnitsConversion>
       <FillValue>99999.00</FillValue>

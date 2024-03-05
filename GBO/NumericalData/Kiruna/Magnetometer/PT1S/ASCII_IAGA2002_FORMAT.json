@@ -7,7 +7,8 @@
     "NumericalData": {
       "ResourceID": "spase://GBO/NumericalData/Kiruna/Magnetometer/PT1S/ASCII_IAGA2002_FORMAT",
       "ResourceHeader": {
-        "ResourceName": "Kiruna Magnetometer 1 hour Data in ASCII Flat Table Format",
+        "ResourceName": "Kiruna Magnetometer 1 and 5 second Data in ASCII Flat Table Format",
+        "DOI": "https://doi.org/10.48322/zeps-0f35",
         "ReleaseDate": "2024-03-05T12:34:56.789",
         "RevisionHistory": {
           "RevisionEvent": [
@@ -21,7 +22,7 @@
             }
           ]
         },
-        "Description": "Kiruna Magnetometer data, 1 second time resolution, in ASCII IAGA2002 format. Magnetic Field Vector Element List: XYZF. ",
+        "Description": "Kiruna Magnetometer data, 1 and 5 second time resolution, in ASCII IAGA2002 format. Cadence prior to 31 December 1996 is 5 s and after that date is 1 second. Magnetic Field Vector Element List: XYZF. ",
         "Acknowledgement": "Please acknowledge: Swedish Institute of Space Physics, Kiruna for providing the data observations, and the British Geological Survey, World Data Center for Geomagnetism, Edinburgh for providing access to the data.",
         "PublicationInfo": {
           "Authors": "Yamauchi, M., Luspa, M., Mikhaylova, D., and Brandstrom, U.",
@@ -76,9 +77,10 @@
         "TimeSpan": {
           "StartDate": "1996-01-01T00:00:00.000",
           "RelativeStopDate": "-P3M",
-          "Note": "Some data gaps may be present. If a gap is present at the beginning or end of the file, the time span start and stop dates could be inaccurate as they are assigned assuming an absence of such gaps."
+          "Note": "Cadence prior to 31 December 1996 is 5 s and after that date is 1 second. Some data gaps may be present. If a gap is present at the beginning or end of the file, the time span start and stop dates could be inaccurate as they are assigned assuming an absence of such gaps."
         },
-        "Cadence": "PT1S"
+        "CadenceMin": "PT1S",
+        "CadenceMax": "PT5S"
       },
       "ObservedRegion": "Earth.Surface",
       "Keyword": [
@@ -96,7 +98,8 @@
           "Name": "Universal Time",
           "ParameterKey": "Time",
           "Description": "Time is expressed using a six column format with the following order: year, month, day, hour, minute, and second each stored in interger format. The time columns are the first six columns (1,2,3,4,5,6). The year, month and day are separated by hyphens. The hour, minute, and second are separated by colons.",
-          "Cadence": "PT1S",
+          "CadenceMin": "PT1S",
+          "CadenceMax": "PT5S",
           "Structure": {
             "Size": "6",
             "Description": "Universal Time expressed using a 5-column year, month, day, hour, minute representation",
@@ -141,7 +144,8 @@
           "Name": "Day of Year",
           "ParameterKey": "Column_7",
           "Description": "Day of year expressed as an integer.",
-          "Cadence": "PT1S",
+          "CadenceMin": "PT1S",
+          "CadenceMax": "PT5S",
           "Units": "DOY",
           "ValidMin": "0",
           "ValidMax": "366",
@@ -151,8 +155,9 @@
         },
         {
           "Name": "Kiruna Magnetic Field XYZ",
-          "Description": "Kiruna Magnetic Field in XYZ coordinates",
-          "Cadence": "PT1S",
+          "Description": "Kiruna Magnetic Field in XYZ coordinates.",
+          "CadenceMin": "PT1S",
+          "CadenceMax": "PT5S",
           "CoordinateSystem": {
             "CoordinateRepresentation": "Cartesian",
             "CoordinateSystemName": "GEO"
@@ -198,8 +203,9 @@
         {
           "Name": "Magnetic Field Magnitude",
           "ParameterKey": "Column_11",
-          "Description": "Kiruna Magnetic Field Vector Magnitude",
-          "Cadence": "PT1S",
+          "Description": "Kiruna Magnetic Field Vector Magnitude.",
+          "CadenceMin": "PT1S",
+          "CadenceMax": "PT5S",
           "Units": "nT",
           "UnitsConversion": "10^9 >T",
           "FillValue": "99999.00",
