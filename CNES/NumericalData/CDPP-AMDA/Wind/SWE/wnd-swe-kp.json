@@ -1,0 +1,169 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2.4.1.xsd",
+    "Version": "2.4.1",
+    "NumericalData": {
+      "ResourceID": "spase://CNES/NumericalData/CDPP-AMDA/Wind/SWE/wnd-swe-kp",
+      "ResourceHeader": {
+        "ResourceName": "key parameters",
+        "ReleaseDate": "2022-09-25T20:07:36Z",
+        "Description": "ToDo",
+        "Contact": {
+          "PersonID": "spase://SMWG/Person/Elena.Budnik",
+          "Role": "TechnicalContact"
+        },
+        "InformationURL": {
+          "Name": "Wind Spacecraft Homepage",
+          "URL": "http://wind.nasa.gov",
+          "Description": "A web site hosting instrument information as well\n                     as web utilities for plotting and downloading data\n                "
+        }
+      },
+      "AccessInformation": [
+        {
+          "RepositoryID": "spase://SMWG/Repository/CDPP/AMDA",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDPP/AMDA HAPI Server",
+            "URL": "http://amda.irap.omp.eu/service/hapi",
+            "Style": "HAPI",
+            "Description": "Web Service to this product using the HAPI interface."
+          },
+          "Format": "CSV",
+          "Acknowledgement": "Thank you for acknowledging the use of AMDA in publications with wording like \"Data analysis was performed with the AMDA science analysis system provided by the Centre de Données de la Physique des Plasmas (CDPP) supported by CNRS, CNES, Observatoire de Paris and Université Paul Sabatier, Toulouse\".. See the Rules of the road at http://amda.cdpp.eu/help/policy.html. Please acknowledge the Data Providers."
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/CDPP/AMDA",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDPP/AMDA Web application",
+            "URL": "http://amda.cdpp.eu",
+            "Description": "Access to Data via CDPP/AMDA Web application."
+          },
+          "Format": [
+            "CSV",
+            "VOTable",
+            "CDF",
+            "PNG"
+          ],
+          "Acknowledgement": "Thank you for acknowledging the use of AMDA in publications with wording like \"Data analysis was performed with the AMDA science analysis system provided by the Centre de Données de la Physique des Plasmas (CDPP) supported by CNRS, CNES, Observatoire de Paris and Université Paul Sabatier, Toulouse\".. See the Rules of the road at http://amda.cdpp.eu/help/policy.html. Please acknowledge the Data Providers."
+        }
+      ],
+      "ProviderName": "CDAWeb",
+      "ProviderResourceName": "Wind SWE Data",
+      "ProviderProcessingLevel": "Level 2",
+      "InstrumentID": "spase://CNES/Instrument/CDPP-AMDA/Wind/SWE",
+      "MeasurementType": "MagneticField",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "1994-11-01T12:00:00Z",
+          "StopDate": "2022-09-21T23:58:59Z"
+        },
+        "Cadence": "PT90S"
+      },
+      "ObservedRegion": [
+        "Heliosphere.NearEarth",
+        "Earth.Magnetosheath",
+        "Earth.Magnetosphere",
+        "Earth.Magnetosphere.Magnetotail",
+        "Earth.Magnetosphere.Main"
+      ],
+      "Parameter": [
+        {
+          "Name": "density",
+          "ParameterKey": "wnd_swe_n",
+          "UCD": "phys.density;phys.electron",
+          "Units": "cm-3",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "FillValue": "-1.e31",
+          "Particle": {
+            "ParticleType": "Ion",
+            "ParticleQuantity": "NumberDensity"
+          }
+        },
+        {
+          "Name": "v_gse",
+          "ParameterKey": "wnd_swe_v",
+          "UCD": "phys.veloc;phys.atmol.ionStage",
+          "Units": "km/s",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "vx",
+                "Index": "1",
+                "ParameterKey": "wnd_swe_v(0)"
+              },
+              {
+                "Name": "vy",
+                "Index": "2",
+                "ParameterKey": "wnd_swe_v(1)"
+              },
+              {
+                "Name": "vz",
+                "Index": "3",
+                "ParameterKey": "wnd_swe_v(2)"
+              }
+            ]
+          },
+          "FillValue": "-1.e31",
+          "Particle": {
+            "ParticleType": "Ion",
+            "Qualifier": "Vector",
+            "ParticleQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "|v|",
+          "ParameterKey": "wnd_swe_vmag",
+          "UCD": "phys.veloc;phys.atmol.ionStage",
+          "Units": "km/s",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "FillValue": "-1.e31",
+          "Particle": {
+            "ParticleType": "Ion",
+            "Qualifier": "Magnitude",
+            "ParticleQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "v_thermal",
+          "ParameterKey": "wnd_swe_vth",
+          "UCD": "phys.veloc;phys.atmol.ionStage",
+          "Units": "km/s",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "FillValue": "-1.e31",
+          "Particle": {
+            "ParticleType": "Ion",
+            "ParticleQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "ram pressure",
+          "ParameterKey": "wnd_swe_pdyn",
+          "Description": "P = 2*10e-6 * Np * Vp^2",
+          "Units": "nPa",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Particle": {
+            "ParticleType": "Ion",
+            "ParticleQuantity": "Pressure"
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_4_0.xsd">
+  <Version>2.4.0</Version>
+  <NumericalData>
+    <ResourceID>spase://CNES/NumericalData/CDPP-Archive/Wind/WAVES/WIND_WAVES_RAD1_L3A</ResourceID>
+    <ResourceHeader>
+      <ResourceName>Wind Waves RAD1_L3A : Direction Finding Data (Unpolarized Source Assumption)</ResourceName>
+      <DOI>https://doi.org/10.24400/802406/mbdb-0ep4</DOI>
+      <ReleaseDate>2022-09-01T16:55:14Z</ReleaseDate>
+      <Description>This data set contains Wind Waves RAD1  direction-finding data.
+ Direction-finding inversion method has been applied on RAD1_L2 high resolution data to derive characteristics of radio emissions.
+The method is based on the work by Manning and Fainberg, Space Science Instrumentation, 1980. It returns the absolute flux density (in W/m^2/Hz) of the radio source, as well as the azimuth, and the elevation angles (in degrees) in a RTN reference frame centered on the Wind spacecraft.
+The method is only valid under the following criteria:
+   * Radio source is unpolarized
+   * Radio source has an uniform brightness
+   * Radio source signal remains constant at a given frequency over a spacecraft rotation (~3sec)
+   * Short antenna dipole assumption is valid
+   * Z axial antenna is not tilted
+Absolute flux density is calibrated using radio galaxy method (see Zaslavsky et al., 2011. DOI 10.1029/2010RS004464). 
+Caveat: Level 3 df data are computed with the following assumptions : (i) incoming wave properties do not change during a spacecraft rotation (~3 seconds)parameter set, (ii) radio sources are unpolarized (U=V=Q=0), (iii) galaxy radio emission is not subtracted, (iv) radio sources have an uniform brightness distribution, (v) Z antennas are not tilted</Description>
+      <Acknowledgement>
+        Data provided are publicly available. 
+If used in presentations or publications, please acknowledge Wind/Waves Investigation (K. Issautier and K. Goetz).
+We recommend the data users to contact the Wind/Waves team early in their study. 
+For reporting purposes, we request bibliography information for any publication, etc., using these data. 
+Please send information on the use of this data to: K. Issautier (PI). 
+We suggest to add the following lines into the acknowledgments: The authors acknowledge CNES (Centre National d'Etudes Spatiales), CNRS (Centre National de la Recherche Scientifique), and Observatoire de Paris for support to the Wind/Waves team and the CDPP (Centre de Données de la Physique des Plasmas) for the provision of the Wind/Waves data. 
+The following paper should also be used to reference: Bougeret et al, Space Science Reviews, 1995, doi: 10.1007/BF00751331	  
+	  </Acknowledgement>
+      <Contact>
+        <PersonID>spase://CNES/Person/CDPP-Archive/Karine.Issautier</PersonID>
+        <Role>PrincipalInvestigator</Role>
+      </Contact>
+      <Contact>
+        <PersonID>spase://CNES/Person/CDPP-Archive/Keith.Goetz</PersonID>
+        <Role>PrincipalInvestigator</Role>
+      </Contact>
+      <Contact>
+        <PersonID>spase://CNES/Person/CDPP-Archive/Lynn.B.Wilson.III</PersonID>
+        <Role>ProjectScientist</Role>
+      </Contact>
+      <Contact>
+        <PersonID>spase://CNES/Person/CDPP-Archive/Xavier.Bonnin</PersonID>
+        <Role>DataProducer</Role>
+      </Contact>
+      <Contact>
+        <PersonID>spase://CNES/Person/CDPP-Archive/CDPP.general.contact</PersonID>
+        <Role>GeneralContact</Role>
+      </Contact>
+    </ResourceHeader>
+    <AccessInformation>
+      <RepositoryID>spase://CNES/Repository/CDPP-Archive/REGARDS-CDPP</RepositoryID>
+      <Availability>Online</Availability>
+      <AccessURL>
+        <Name>REGARDS</Name>
+        <URL>https://cdpp-archive.cnes.fr</URL>
+      </AccessURL>
+      <Format>CDF</Format>
+    </AccessInformation>
+    <ProcessingLevel>Calibrated</ProcessingLevel>
+    <ProviderProcessingLevel>3</ProviderProcessingLevel>
+    <InstrumentID>spase://CNES/Instrument/CDPP-Archive/Wind/WAVES</InstrumentID>
+    <MeasurementType>Waves.Passive</MeasurementType>
+    <MeasurementType>Spectrum</MeasurementType>
+    <TemporalDescription>
+      <TimeSpan>
+        <StartDate>1994-11-10T00:00:00Z</StartDate>
+        <StopDate>2022-02-28T00:00:00Z</StopDate>
+      </TimeSpan>
+    </TemporalDescription>
+    <ObservedRegion>Heliosphere.NearEarth</ObservedRegion>
+    <Parameter>
+      <Name>Sequential sweep number</Name>
+      <Description>Sequential sweep number in the file, starting from the first sweep of the current day</Description>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Frequency</Name>
+      <Description>Frequency of analysis</Description>
+      <Units>kHz</Units>
+      <UnitsConversion>1e3&gt;Hz</UnitsConversion>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Sequential number in parent L2 data file</Name>
+      <Description>Sequential number in parent L2 data file</Description>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Flux density</Name>
+      <Description>Absolute flux density measured at the antennas (receiver background removed) : Stokes parameter I</Description>
+      <Units>W/m^2/Hz</Units>
+      <Wave>
+        <WaveType>PlasmaWaves</WaveType>
+        <WaveQuantity>StokesParameters</WaveQuantity>
+      </Wave>
+    </Parameter>
+    <Parameter>
+      <Name>Wave vector elevation</Name>
+      <Description>Elevation of the wave vector in the RTN reference frame centered on Wind spacecraft</Description>
+      <Units>degree</Units>
+      <UnitsConversion>0.0174532925&gt;rad</UnitsConversion>
+      <Support>
+        <Qualifier>DirectionAngle.ElevationAngle</Qualifier>
+        <SupportQuantity>Orientation</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Wave vector azimuth</Name>
+      <Description>Azimuth of the wave vector in the RTN reference frame centered on Wind spacecraft</Description>
+      <Units>degree</Units>
+      <UnitsConversion>0.0174532925&gt;rad</UnitsConversion>
+      <Support>
+        <Qualifier>DirectionAngle.AzimuthAngle</Qualifier>
+        <SupportQuantity>Orientation</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Radio source angular radius</Name>
+      <Description>Radio source angular radius, assuming an uniform brightness distribution.</Description>
+      <Units>degree</Units>
+      <UnitsConversion>0.0174532925&gt;rad</UnitsConversion>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Signal modulation rate</Name>
+      <Description>Signal modulation rate</Description>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+  </NumericalData>
+</Spase>

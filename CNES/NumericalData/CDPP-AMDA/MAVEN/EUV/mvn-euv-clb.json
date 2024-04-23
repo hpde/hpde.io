@@ -1,0 +1,169 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2.4.1.xsd",
+    "Version": "2.4.1",
+    "NumericalData": {
+      "ResourceID": "spase://CNES/NumericalData/CDPP-AMDA/MAVEN/EUV/mvn-euv-clb",
+      "ResourceHeader": {
+        "ResourceName": "measured EUV flux",
+        "AlternateName": "Extreme Ultraviolet monitor calibrated irradiances",
+        "ReleaseDate": "2022-06-01T22:43:44Z",
+        "Description": "Extreme Ultraviolet (EUV) monitor calibrated irradiances in three bandpasses: 17-22 nm, \n            0-7 nm, and 121-122 nm. See Eparvier et al, Space Research, 195, 203-301 2015               \n         ",
+        "Acknowledgement": "Principal Investigator : Frank Eparvier, LASP, Colorado          \n         ",
+        "Contact": {
+          "PersonID": "spase://CNES/Person/CDPP-AMDA/Frank.Eparvier",
+          "Role": "PrincipalInvestigator"
+        },
+        "InformationURL": {
+          "Name": "EUV web page, Summary sheet ",
+          "URL": "http://lasp.colorado.edu/home/maven/science/instrument-package/lpw/extreme-ultraviolet-euv-monitor/",
+          "Description": "             \n           "
+        }
+      },
+      "AccessInformation": [
+        {
+          "RepositoryID": "spase://SMWG/Repository/CDPP/AMDA",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDPP/AMDA HAPI Server",
+            "URL": "http://amda.irap.omp.eu/service/hapi",
+            "Style": "HAPI",
+            "Description": "Web Service to this product using the HAPI interface."
+          },
+          "Format": "CSV",
+          "Acknowledgement": "Thank you for acknowledging the use of AMDA in publications with wording like \"Data analysis was performed with the AMDA science analysis system provided by the Centre de Données de la Physique des Plasmas (CDPP) supported by CNRS, CNES, Observatoire de Paris and Université Paul Sabatier, Toulouse\".. See the Rules of the road at http://amda.cdpp.eu/help/policy.html. Please acknowledge the Data Providers."
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/CDPP/AMDA",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDPP/AMDA Web application",
+            "URL": "http://amda.cdpp.eu",
+            "Description": "Access to Data via CDPP/AMDA Web application."
+          },
+          "Format": [
+            "CSV",
+            "VOTable",
+            "CDF",
+            "PNG"
+          ],
+          "Acknowledgement": "Thank you for acknowledging the use of AMDA in publications with wording like \"Data analysis was performed with the AMDA science analysis system provided by the Centre de Données de la Physique des Plasmas (CDPP) supported by CNRS, CNES, Observatoire de Paris and Université Paul Sabatier, Toulouse\".. See the Rules of the road at http://amda.cdpp.eu/help/policy.html. Please acknowledge the Data Providers."
+        }
+      ],
+      "ProviderName": "PDS",
+      "ProviderResourceName": "maven-euv-calibrated/bands",
+      "InstrumentID": "spase://CNES/Instrument/CDPP-AMDA/MAVEN/EUV",
+      "MeasurementType": "ThermalPlasma",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "2014-10-18T00:00:16Z",
+          "StopDate": "2022-02-22T15:18:22Z"
+        },
+        "Cadence": "PT60S"
+      },
+      "ObservedRegion": "Mars",
+      "Caveats": "Data flag:\n\n    * 0 : Good solar\n    * 1 : Occultation\n    * 2 : No pointing info\n    * 3 : Sun NOT fully In FOV\n    * 4 : Sun NOT In FOV\n    * 5 : Windowed\n    * 6 : Eclipse\n    * 7 : spare \n      ",
+      "Parameter": [
+        {
+          "Name": "energy flux",
+          "ParameterKey": "mav_euv_fluxc",
+          "Units": "Watts/m^2",
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "A: 17-22 nm",
+                "Index": "1",
+                "ParameterKey": "mav_euv_fluxc(0)"
+              },
+              {
+                "Name": "B: 0-7 nm",
+                "Index": "2",
+                "ParameterKey": "mav_euv_fluxc(1)"
+              },
+              {
+                "Name": "C: 121-122 nm",
+                "Index": "3",
+                "ParameterKey": "mav_euv_fluxc(2)"
+              }
+            ]
+          },
+          "Wave": {
+            "WaveType": "Photon",
+            "WaveQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "measurement uncertainty",
+          "ParameterKey": "mav_euv_deltac",
+          "Units": "%",
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "A: 17-22 nm",
+                "Index": "1",
+                "ParameterKey": "mav_euv_deltac(0)"
+              },
+              {
+                "Name": "B: 0-7 nm",
+                "Index": "2",
+                "ParameterKey": "mav_euv_deltac(1)"
+              },
+              {
+                "Name": "C: 121-122 nm",
+                "Index": "3",
+                "ParameterKey": "mav_euv_deltac(2)"
+              }
+            ]
+          },
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "total uncertainty",
+          "ParameterKey": "mav_euv_deltatot",
+          "Units": "%",
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "A: 17-22 nm",
+                "Index": "1",
+                "ParameterKey": "mav_euv_deltatot(0)"
+              },
+              {
+                "Name": "B: 0-7 nm",
+                "Index": "2",
+                "ParameterKey": "mav_euv_deltatot(1)"
+              },
+              {
+                "Name": "C: 121-122 nm",
+                "Index": "3",
+                "ParameterKey": "mav_euv_deltatot(2)"
+              }
+            ]
+          },
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "quality flag",
+          "ParameterKey": "mav_euv_flagc",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        }
+      ]
+    }
+  }
+}

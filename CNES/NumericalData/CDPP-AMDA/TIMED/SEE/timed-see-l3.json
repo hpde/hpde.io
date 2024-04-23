@@ -1,0 +1,106 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2.4.1.xsd",
+    "Version": "2.4.1",
+    "NumericalData": {
+      "ResourceID": "spase://CNES/NumericalData/CDPP-AMDA/TIMED/SEE/timed-see-l3",
+      "ResourceHeader": {
+        "ResourceName": "daily averages",
+        "AlternateName": "daily averages / level3 / flares excluded",
+        "ReleaseDate": "2022-09-29T02:28:04Z",
+        "Description": "\n          SEE Level 3 OVERVIEW:  \n          The Solar EUV Experiment (SEE) is comprised of two science components: \n* the EUV Grating Spectrograph (EGS) component covers the wavelength range from approximately 26 to 190 nm\n* the X-Ray Photometer System (XPS) component covers the wavelength range from approximately 0.5 to 34 nm \n\nLevel 3 data has flares removed, is useful for long-term climatological study.\n         ",
+        "Acknowledgement": "\n          Users that wish to publish the results derived from TIMED \ndata should normally offer co-authorship to the PI or \nhis/her designated team member.  Co-authorship may be \ndeclined. Appropriate acknowledgement to institutions, \npersonnel, and funding agencies should be given.  \n         ",
+        "Contact": {
+          "PersonID": "spase://CNES/Person/CDPP-AMDA/T.Woods",
+          "Role": "PrincipalInvestigator"
+        },
+        "InformationURL": {
+          "Name": "Dataset description",
+          "URL": "http://lasp.colorado.edu/data/timed_see/level3/README_SEE_L3_012.TXT"
+        },
+        "Association": {
+          "AssociationID": "timed-see-flux",
+          "AssociationType": "PartOf",
+          "Note": "EUV / X ray"
+        }
+      },
+      "AccessInformation": [
+        {
+          "RepositoryID": "spase://SMWG/Repository/CDPP/AMDA",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDPP/AMDA HAPI Server",
+            "URL": "http://amda.irap.omp.eu/service/hapi",
+            "Style": "HAPI",
+            "Description": "Web Service to this product using the HAPI interface."
+          },
+          "Format": "CSV",
+          "Acknowledgement": "Thank you for acknowledging the use of AMDA in publications with wording like \"Data analysis was performed with the AMDA science analysis system provided by the Centre de Données de la Physique des Plasmas (CDPP) supported by CNRS, CNES, Observatoire de Paris and Université Paul Sabatier, Toulouse\".. See the Rules of the road at http://amda.cdpp.eu/help/policy.html. Please acknowledge the Data Providers."
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/CDPP/AMDA",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDPP/AMDA Web application",
+            "URL": "http://amda.cdpp.eu",
+            "Description": "Access to Data via CDPP/AMDA Web application."
+          },
+          "Format": [
+            "CSV",
+            "VOTable",
+            "CDF",
+            "PNG"
+          ],
+          "Acknowledgement": "Thank you for acknowledging the use of AMDA in publications with wording like \"Data analysis was performed with the AMDA science analysis system provided by the Centre de Données de la Physique des Plasmas (CDPP) supported by CNRS, CNES, Observatoire de Paris and Université Paul Sabatier, Toulouse\".. See the Rules of the road at http://amda.cdpp.eu/help/policy.html. Please acknowledge the Data Providers."
+        }
+      ],
+      "ProviderName": "http://lasp.colorado.edu/data",
+      "ProviderResourceName": "level3",
+      "InstrumentID": "spase://CNES/Instrument/CDPP-AMDA/TIMED/SEE",
+      "MeasurementType": "Irradiance",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "2002-01-22T12:00:00Z",
+          "StopDate": "2022-09-25T12:00:00Z"
+        },
+        "Cadence": "PT24H"
+      },
+      "ObservedRegion": "Earth.NearSurface.Ionosphere",
+      "Caveats": "SEE Level 3 data files contain one daily averaged solar irradiance spectrum in 1 nm intervals extracted \n          from the EGS Level 2 and XPS Level 2 data products. Shortward of 27 nm, a solar model is scaled to match the \n          XPS broadband data. SEE Level 3 data files also contain 38 emission lines extracted from EGS Level 2 spectra, \n          and the XPS Level 2 diode irradiances.\n\nFor normal operations, SEE observes the Sun for about 3 minutes every orbit (97 minutes), which usually gives 14-15 \nmeasurements per day. The SEE Level 3 data are time averaged over the entire day, after applying corrections for atmospheric \nabsorption, degradation, flare removal, and to 1 AU.\n      ",
+      "Parameter": [
+        {
+          "Name": "flux : spectra",
+          "ParameterKey": "timed_sp_daily",
+          "Description": "Merged median solar irradiance for XPS and EGS flux at 1nm bins",
+          "Units": "W/m**2/nm",
+          "RenderingHints": {
+            "DisplayType": "Spectrogram"
+          },
+          "FillValue": "-1",
+          "Wave": {
+            "WaveType": "Photon",
+            "WaveQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "flux : lines",
+          "ParameterKey": "timed_ln_daily",
+          "Description": "Integrated median spectral line irradiance",
+          "Units": "W/m**2/nm",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "FillValue": "-1",
+          "Wave": {
+            "WaveType": "Photon",
+            "WaveQuantity": "EnergyFlux"
+          }
+        }
+      ]
+    }
+  }
+}

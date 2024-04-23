@@ -1,0 +1,261 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_3_0.xsd",
+    "Version": "2.3.0",
+    "NumericalData": {
+      "ResourceID": "spase://NOAA/NumericalData/GOES/8/EPS/PT1M",
+      "ResourceHeader": {
+        "ResourceName": "GOES 8 Energetic Particle Monitor (EPM) Electron and Proton Fluxes, 1 min Data",
+        "AlternateName": [
+          "GOES 8 EPS data",
+          "GOES 8 EP8 data"
+        ],
+        "ReleaseDate": "2019-10-11T16:15:00Z",
+        "Description": "The energetic particle sensor (now called EP8 instead of EPS or EPM) data consists of electron and proton data. The electrons consists of 3 energy flux channels with energies greater than 0.6 MeV. The proton fluxes consist of 7 energy channels from 0.6 to 500 MeV.",
+        "Acknowledgement": "NOAA Environmental Research Laboratories, Terry G. Onsager",
+        "Contact": [
+          {
+            "PersonID": "spase://SMWG/Person/Terry.Onsager",
+            "Role": "PrincipalInvestigator"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/James.M.Weygand",
+            "Role": "MetadataContact"
+          }
+        ],
+        "InformationURL": [
+          {
+            "Name": "GOES 8 Energetic Particle Monitor",
+            "URL": "https://nssdc.gsfc.nasa.gov/nmc/experiment/display.action?id=1994-022A-05",
+            "Description": "Introduction to the GOES 8 Energetic Particle Sensor."
+          },
+          {
+            "Name": "GOES 8 Energetic Particle Sensor Data File Information",
+            "URL": "https://www.ngdc.noaa.gov/stp/satellite/goes/",
+            "Description": "Additional GOES EPM information."
+          },
+          {
+            "Name": "GOES 8 Energetic Particle Sensor Additional Data File Information",
+            "URL": "https://satdat.ngdc.noaa.gov/sem/goes/goes_docs/full/readme.txt",
+            "Description": "Additional GOES EPM data file information."
+          }
+        ],
+        "PriorID": [
+          "spase://VMO/NumericalData/GOES/8/EPM/PT1M",
+          "spase://VSPO/NumericalData/GOES/8/EPS/PT1M"
+        ]
+      },
+      "AccessInformation": {
+        "RepositoryID": "spase://SMWG/Repository/NOAA/SEC",
+        "Availability": "Online",
+        "AccessRights": "Open",
+        "AccessURL": {
+          "Name": "Direct access to the GOES 8 SEM data",
+          "URL": "ftp://satdat.ngdc.noaa.gov/sem/goes/data/avg/",
+          "Description": "Direct link to the GOES 8 EPM data in ASCII format as well as the energetic particle data from other GOES spacecraft. The data are sorted by year, month, spacecraft. The file names indicates the spacecraft number, data type, and time range. For example, g08_eps_1m_19950801_19950131.csv indicates the GOES 8 spacecraft EPS data from 1995-08-01 to 1995-01-31."
+        },
+        "Format": "Text",
+        "Encoding": "None",
+        "Acknowledgement": "NOAA Environmental Research Laboratories, Terry G. Onsager"
+      },
+      "ProcessingLevel": "Calibrated",
+      "ProviderResourceName": "NOAA GOES",
+      "ProviderProcessingLevel": "Level-0",
+      "InstrumentID": "spase://SMWG/Instrument/GOES/8/EPM",
+      "MeasurementType": "EnergeticParticles",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "1995-01-01T00:00:00",
+          "StopDate": "2003-06-30T23:59:59",
+          "Note": "Time format in data files is year-month-day hour:minute:seconds."
+        },
+        "Cadence": "PT1M"
+      },
+      "Caveats": "\r\n",
+      "Keyword": [
+        "1 min",
+        "geosynchronous",
+        "GOES",
+        "energetic particle monitor",
+        "energetic particles"
+      ],
+      "Parameter": [
+        {
+          "Name": "Time Format",
+          "ParameterKey": "Time",
+          "Description": "Time format in data files is year-month-day hour:minute:seconds.",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Flux of electrons with energy >0.6 MeV",
+          "ParameterKey": "e1_flux_i",
+          "Description": "E1 Electron integral flux >0.6 MeV unreliable during ion storms",
+          "Units": "(cm^2 s sr)^-1",
+          "ValidMin": "0.01",
+          "ValidMax": "1.0e8",
+          "FillValue": "-99999",
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "Flux of electrons with energy >2 MeV",
+          "ParameterKey": "e2_flux_i",
+          "Description": "E2 Electron integral flux >2 MeV unreliable during ion storms",
+          "Units": "(cm^2 s sr)^-1",
+          "ValidMin": "0.01",
+          "ValidMax": "1.0e6",
+          "FillValue": "-99999",
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "Flux of electrons with energy >4 MeV",
+          "ParameterKey": "e3_flux_i",
+          "Description": "E3 Electron integral flux >4 MeV unreliable during ion storms",
+          "Units": "(cm^2 s sr)^-1",
+          "ValidMin": "0.01",
+          "ValidMax": "1.0e6",
+          "FillValue": "-99999",
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "Flux of protons with energies from 0.6 to 4.0 MeV.",
+          "ParameterKey": "p1_flux",
+          "Description": "P1 Proton channel 0.6 to 4.0 MeV",
+          "Units": "(cm^2 s sr MeV)^-1",
+          "ValidMin": "1.0e-4",
+          "ValidMax": "1.0e5",
+          "FillValue": "-99999",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "0.6",
+              "High": "4.0",
+              "Units": "MeV"
+            }
+          }
+        },
+        {
+          "Name": "Flux of protons with energies from 4 to 9 MeV.",
+          "ParameterKey": "p2_flux",
+          "Description": "P2 Proton channel 4 to 9 MeV",
+          "Units": "(cm^2 s sr MeV)^-1",
+          "ValidMin": "1.0e-4",
+          "ValidMax": "1.0e5",
+          "FillValue": "-99999",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "4.0",
+              "High": "9.0",
+              "Units": "MeV"
+            }
+          }
+        },
+        {
+          "Name": "Flux of protons with energies from 9 to 15 MeV.",
+          "ParameterKey": "p3_flux",
+          "Description": "P3 Proton channel 9 to 15 MeV",
+          "Units": "(cm^2 s sr MeV)^-1",
+          "ValidMin": "1.0e-4",
+          "ValidMax": "1.0e5",
+          "FillValue": "-99999",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "9.0",
+              "High": "15.0",
+              "Units": "MeV"
+            }
+          }
+        },
+        {
+          "Name": "Flux of protons with energies from 15 to 44 MeV.",
+          "ParameterKey": "p4_flux",
+          "Description": "P4 Proton channel 15 to 44 MeV",
+          "Units": "(cm^2 s sr MeV)^-1",
+          "ValidMin": "1.0e-4",
+          "ValidMax": "1.0e5",
+          "FillValue": "-99999",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "15.0",
+              "High": "44.0",
+              "Units": "MeV"
+            }
+          }
+        },
+        {
+          "Name": "Flux of protons with energies from 40 to 80 MeV.",
+          "ParameterKey": "p5_flux",
+          "Description": "P5 Proton channel 40 to 80 MeV",
+          "Units": "(cm^2 s sr MeV)^-1",
+          "ValidMin": "1.0e-4",
+          "ValidMax": "1.0e5",
+          "FillValue": "-99999",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "40.0",
+              "High": "80.0",
+              "Units": "MeV"
+            }
+          }
+        },
+        {
+          "Name": "Flux of protons with energies from 80 to 165 MeV.",
+          "ParameterKey": "p6_flux",
+          "Description": "P6 Proton channel 80 to 165 MeV",
+          "Units": "(cm^2 s sr MeV)^-1",
+          "ValidMin": "1.0e-4",
+          "ValidMax": "1.0e5",
+          "FillValue": "-99999",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "80.0",
+              "High": "165.0",
+              "Units": "MeV"
+            }
+          }
+        },
+        {
+          "Name": "Flux of protons with energies from 165 to 500 MeV.",
+          "ParameterKey": "p7_flux",
+          "Description": "P7 Proton channel 165 to 500 MeV",
+          "Units": "(cm^2 s sr MeV)^-1",
+          "ValidMin": "1.0e-4",
+          "ValidMax": "1.0e5",
+          "FillValue": "-99999",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "165.0",
+              "High": "500.0",
+              "Units": "MeV"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

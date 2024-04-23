@@ -1,0 +1,609 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema  http://www.spase-group.org/data/schema/spase-2.6.0.xsd",
+    "Version": "2.6.0",
+    "NumericalData": {
+      "ResourceID": "spase://NASA/NumericalData/ICON/MIGHTI/L2/B/Green/PT30S",
+      "ResourceHeader": {
+        "ResourceName": "ICON Michelson Interferometer for Global High-resolution Thermospheric Imaging viewing direction B",
+        "AlternateName": "MIGHTI B LOS Green",
+        "DOI": "https://doi.org/10.48322/s7j9-kn77",
+        "ReleaseDate": "2024-01-22T00:00:00Z",
+        "RevisionHistory": {
+          "RevisionEvent": [
+            {
+              "ReleaseDate": "2023-08-01T00:00:00Z",
+              "Note": "Added DOI and PublicationInfo minted by JMW on 20230801. Updated SPASE version."
+            },
+            {
+              "ReleaseDate": "2024-01-22T00:00:00Z",
+              "Note": "Updated PublicationInfo Authors. JMW."
+            }
+          ]
+        },
+        "Description": "The MIGHTI instrument measures the horizontal wind speed and direction (the wind vector). Each MIGHTI unit measures the wind along its line of sight. MIGHTI uses two perpendicular fields of view nominally pointing 45 degrees and 135 degrees in azimuth from the spacecraft velocity (MIGHTI A and MIGHTI B). Combining data from both units, this 90 degrees separation between their views allows the wind vector to be determined. For the wind measurements MIGHTI observes the Doppler shift of the atomic oxygen red and green lines at 630.0 nm and 557.7 nm wavelength.  The wavelength shift is measured using field-widened, temperature compensated Doppler Asymmetric Spatial Heterodyne (DASH) spectrometers, employing low order échelle gratings operating at two different orders for the different atmospheric lines. The temperature measurement is accomplished by a multichannel photometric measurement of the spectral shape of the molecular oxygen A-band around 762 nm wavelength. For each field of view, the signals of the two oxygen lines and the A-band are detected on different regions of a single, cooled, frame transfer charge coupled device (CCD) detector. On-board calibration sources are used to periodically quantify thermal drifts, simultaneously with observing the atmosphere.",
+        "Acknowledgement": "National Aeronautics and Space Administration; Dr. Brian J. Harding; Dr. Thomas Immel",
+        "PublicationInfo": {
+          "Authors": "Harding, B. J.; Englert, C. R.; Harlander, J. M.; Marr, K. D.; Makela, J. M.; Brown, C. M.; England, S. L.; Immel, T. J.",
+          "PublicationDate": "2023-01-01T00:00:00",
+          "PublishedBy": "NASA Space Physics Data Facility"
+        },
+        "Funding": {
+          "Agency": "National Aeronautics and Space Administration",
+          "Project": "Explorers Program",
+          "AwardNumber": "contracts NNG12FA45C and NNG12FA42I"
+        },
+        "Contact": [
+          {
+            "PersonID": "spase://SMWG/Person/Brian.J.Harding",
+            "Role": "PrincipalInvestigator"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/James.M.Weygand",
+            "Role": "MetadataContact"
+          }
+        ],
+        "InformationURL": [
+          {
+            "Name": "Additional information on ICON",
+            "URL": "https://icon.ssl.berkeley.edu/",
+            "Description": "ICON spacecraft Homepage."
+          },
+          {
+            "Name": "Michelson Interferometer for Global High-resolution Thermospheric Imaging (MIGHTI): instrument design and calibration",
+            "URL": "https://doi.org/10.1007/s11214-017-0358-4",
+            "Description": "Space Science Reviews, 212(1-2), pp.553-584. DOI: 10.1007/s11214-017-0358-4"
+          }
+        ]
+      },
+      "AccessInformation": [
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/CDAW",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "HTTPS from CDAWeb",
+            "URL": "https://cdaweb.gsfc.nasa.gov/pub/data/icon/l2/",
+            "Description": "FTPS access to ICON data via ftps at the Space Physics Data Facility (SPDF)"
+          },
+          "Format": "NetCDF"
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "HTTPS from SPDF",
+            "URL": "https://spdf.gsfc.nasa.gov/pub/data/icon/l2/",
+            "Description": "HTTPS access to ICON data at the Space Physics Data Facility (SPDF)"
+          },
+          "Format": "NetCDF"
+        }
+      ],
+      "ProcessingLevel": "Calibrated",
+      "ProviderName": "ICON MIGHTI team",
+      "InstrumentID": "spase://SMWG/Instrument/ICON/MIGHTI",
+      "MeasurementType": "Dopplergram",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "2019-12-06T00:00:00Z",
+          "RelativeStopDate": "-P2M"
+        },
+        "Cadence": "PT30S"
+      },
+      "ObservedRegion": [
+        "Earth.NearSurface.Atmosphere",
+        "Earth.NearSurface.Ionosphere"
+      ],
+      "Parameter": [
+        {
+          "Name": "Epoch time",
+          "ParameterKey": "Epoch",
+          "Description": "Sample time, midpoint of exposure. Number of msec since Jan 1, 1970.",
+          "Cadence": "PT30S",
+          "Units": "ms",
+          "ValidMin": "0",
+          "ValidMax": "31536000000000",
+          "FillValue": "-9223372036854775806",
+          "Support": {
+            "Qualifier": "Magnitude",
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Time",
+          "ParameterKey": "ICON_L21_Time",
+          "Description": "Sample time at start, mid, stop of exposure. Number of msec since Jan 1, 1970.",
+          "Cadence": "PT30S",
+          "Units": "ms",
+          "ValidMin": "0",
+          "ValidMax": "31536000000000",
+          "FillValue": "-9223372036854775806",
+          "Support": {
+            "Qualifier": "Magnitude",
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "UTC time",
+          "ParameterKey": "ICON_L21_UTC_Time",
+          "Description": "Sample time, midpoint of exposure.",
+          "Cadence": "PT30S",
+          "Units": "date/time",
+          "FillValue": "''",
+          "Support": {
+            "Qualifier": "Magnitude",
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Line-of-Sight Wind Values",
+          "ParameterKey": "ICON_L21_Line_of_Sight_Wind",
+          "Description": "Line-of-sight horizontal wind profile. A positive wind is towards MIGHTI.",
+          "Cadence": "PT30S",
+          "Units": "m/s",
+          "ValidMin": "-4000",
+          "ValidMax": "4000",
+          "FillValue": "9.969209968386869e+36",
+          "Particle": {
+            "ParticleType": "Molecule",
+            "Qualifier": "LineOfSight",
+            "ParticleQuantity": "FlowSpeed"
+          }
+        },
+        {
+          "Name": "Line-of-Sight Wind Errors",
+          "ParameterKey": "ICON_L21_Line_of_Sight_Wind_Error",
+          "Description": "Line-of-sight horizontal wind error profile.",
+          "Cadence": "PT30S",
+          "Units": "m/s",
+          "ValidMin": "0",
+          "ValidMax": "4000",
+          "FillValue": "9.969209968386869e+36",
+          "Support": {
+            "Qualifier": "Uncertainty",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Wind Quality Flag",
+          "ParameterKey": "ICON_L21_Wind_Quality",
+          "Description": "A quantification of the wind quality, from 0 (Bad) to 1 (Good).",
+          "Cadence": "PT30S",
+          "ValidMin": "0",
+          "ValidMax": "1",
+          "FillValue": "9.969209968386869e+36",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "DataQuality"
+          }
+        },
+        {
+          "Name": "Fringe Amplitude Profile",
+          "ParameterKey": "ICON_L21_Fringe_Amplitude",
+          "Description": "Fringe amplitude profile.",
+          "Cadence": "PT30S",
+          "Units": "arb",
+          "ValidMin": "-1e+30",
+          "ValidMax": "1e+30",
+          "FillValue": "9.969209968386869e+36",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Fringe Amplitude Error Profile",
+          "ParameterKey": "ICON_L21_Fringe_Amplitude_Error",
+          "Description": "Fringe amplitude error profile.",
+          "Cadence": "PT30S",
+          "Units": "arb",
+          "ValidMin": "0",
+          "ValidMax": "1e+30",
+          "FillValue": "9.969209968386869e+36",
+          "Support": {
+            "Qualifier": "Uncertainty",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Relative Volume Emission Rate",
+          "ParameterKey": "ICON_L21_Relative_VER",
+          "Description": "Relative volume emission rate profile.",
+          "Cadence": "PT30S",
+          "Units": "ph/cm^3/s",
+          "ValidMin": "0",
+          "ValidMax": "1e+30",
+          "FillValue": "9.969209968386869e+36",
+          "Wave": {
+            "WaveType": "Photon",
+            "Qualifier": "LineOfSight",
+            "WaveQuantity": "VolumeEmissionRate"
+          }
+        },
+        {
+          "Name": "Relative Volume Emission Rate Error",
+          "ParameterKey": "ICON_L21_Relative_VER_Error",
+          "Description": "Relative volume emission rate error profile.",
+          "Cadence": "PT30S",
+          "Units": "ph/cm^3/s",
+          "ValidMin": "0",
+          "ValidMax": "1e+30",
+          "FillValue": "9.969209968386869e+36",
+          "Support": {
+            "Qualifier": "Uncertainty",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Relative Volume Emission Rate Quality Flag",
+          "ParameterKey": "ICON_L21_VER_Quality",
+          "Description": "A quantification of the VER quality, from 0 (Bad) to 1 (Good).",
+          "Cadence": "PT30S",
+          "ValidMin": "0",
+          "ValidMax": "1",
+          "FillValue": "9.969209968386869e+36",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "DataQuality"
+          }
+        },
+        {
+          "Name": "Altitude of Wind Sample",
+          "ParameterKey": "ICON_L21_Altitude",
+          "Description": "WGS84 altitude of each wind sample.",
+          "Cadence": "PT30S",
+          "Units": "km",
+          "ValidMin": "50",
+          "ValidMax": "1000",
+          "FillValue": "9.969209968386869e+36",
+          "Support": {
+            "Qualifier": "Direction",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Latitude of Wind Sample",
+          "ParameterKey": "ICON_L21_Latitude",
+          "Description": "WGS84 latitude of each wind sample.",
+          "Cadence": "PT30S",
+          "Units": "deg",
+          "ValidMin": "-90",
+          "ValidMax": "90",
+          "FillValue": "9.969209968386869e+36",
+          "Support": {
+            "Qualifier": "Direction",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Longitude of Wind Sample",
+          "ParameterKey": "ICON_L21_Longitude",
+          "Description": "WGS84 longitude of each wind sample.",
+          "Cadence": "PT30S",
+          "Units": "deg",
+          "ValidMin": "0",
+          "ValidMax": "360",
+          "FillValue": "9.969209968386869e+36",
+          "Support": {
+            "Qualifier": "Direction",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Magnetic Latitude of Wind Sample",
+          "ParameterKey": "ICON_L21_Magnetic_Latitude",
+          "Description": "Magnetic quasi-dipole latitude of each wind sample.",
+          "Cadence": "PT30S",
+          "Units": "deg",
+          "ValidMin": "-90",
+          "ValidMax": "90",
+          "FillValue": "9.969209968386869e+36",
+          "Support": {
+            "Qualifier": "Direction",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Magnetic Longitude of Wind Sample",
+          "ParameterKey": "ICON_L21_Magnetic_Longitude",
+          "Description": "Magnetic quasi-dipole longitude of each wind sample.",
+          "Cadence": "PT30S",
+          "Units": "deg",
+          "ValidMin": "0",
+          "ValidMax": "360",
+          "FillValue": "9.969209968386869e+36",
+          "Support": {
+            "Qualifier": "Direction",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Azimuth Angle of the Line of Sight",
+          "ParameterKey": "ICON_L21_Line_of_Sight_Azimuth",
+          "Description": "Azimuth angle of the line of sight at the tangent point. Deg East of North.",
+          "Cadence": "PT30S",
+          "Units": "degrees",
+          "ValidMin": "0",
+          "ValidMax": "360",
+          "FillValue": "9.969209968386869e+36",
+          "Support": {
+            "Qualifier": "Direction",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Solar Zenith Angle of Each Wind Sample",
+          "ParameterKey": "ICON_L21_Solar_Zenith_Angle",
+          "Description": "Solar zenith angle of each wind sample.",
+          "Cadence": "PT30S",
+          "Units": "degrees",
+          "ValidMin": "0",
+          "ValidMax": "180",
+          "FillValue": "9.969209968386869e+36",
+          "Support": {
+            "Qualifier": "Direction",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Local Solar Time of Each Wind Sample",
+          "ParameterKey": "ICON_L21_Local_Solar_Time",
+          "Description": "Local solar time of each wind sample.",
+          "Cadence": "PT30S",
+          "Units": "hours",
+          "ValidMin": "0",
+          "ValidMax": "24",
+          "FillValue": "9.969209968386869e+36",
+          "Support": {
+            "Qualifier": "Direction",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Exposure Time",
+          "ParameterKey": "ICON_L21_Exposure_Time",
+          "Description": "The exposure time for each profile",
+          "Cadence": "PT30S",
+          "Units": "s",
+          "ValidMin": "0",
+          "ValidMax": "120",
+          "FillValue": "9.969209968386869e+36",
+          "Support": {
+            "Qualifier": "Total",
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Variance of the Phase",
+          "ParameterKey": "ICON_L21_Chi2",
+          "Description": "Variance of the phase in each (unwrapped) row: (std of phase)^2.",
+          "Cadence": "PT30S",
+          "Units": "rad^2",
+          "ValidMin": "0",
+          "ValidMax": "1e+30",
+          "FillValue": "9.969209968386869e+36",
+          "Support": {
+            "Qualifier": "Variance",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Velocity Vector",
+          "ParameterKey": "ICON_L21_Observatory_Velocity_Vector",
+          "Description": "ICON S/C velocity vector in Earth-centered, Earth-fixed coordinates.",
+          "Cadence": "PT30S",
+          "Units": "m/s",
+          "ValidMin": "-100000000",
+          "ValidMax": "100000000",
+          "FillValue": "9.969209968386869e+36",
+          "Particle": {
+            "ParticleType": "Molecule",
+            "Qualifier": "LineOfSight",
+            "ParticleQuantity": "FlowSpeed"
+          }
+        },
+        {
+          "Name": "Latitude of the ICON S/C",
+          "ParameterKey": "ICON_L21_Observatory_Latitude",
+          "Description": "The WGS84 latitude of the ICON S/C.",
+          "Cadence": "PT30S",
+          "Units": "deg",
+          "ValidMin": "-90",
+          "ValidMax": "90",
+          "FillValue": "9.969209968386869e+36",
+          "Support": {
+            "Qualifier": "Direction",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Longitude of the ICON S/C",
+          "ParameterKey": "ICON_L21_Observatory_Longitude",
+          "Description": "The WGS84 longitude of the ICON S/C.",
+          "Cadence": "PT30S",
+          "Units": "deg",
+          "ValidMin": "0",
+          "ValidMax": "360",
+          "FillValue": "9.969209968386869e+36",
+          "Support": {
+            "Qualifier": "Direction",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Altitude of the ICON S/C",
+          "ParameterKey": "ICON_L21_Observatory_Altitude",
+          "Description": "The WGS84 altitude of the ICON S/C......",
+          "Cadence": "PT30S",
+          "Units": "km",
+          "ValidMin": "100",
+          "ValidMax": "2000",
+          "FillValue": "9.969209968386869e+36",
+          "Support": {
+            "Qualifier": "Direction",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Line of Sight Direction of MIGHTI",
+          "ParameterKey": "ICON_L21_Line_of_Sight_Vector",
+          "Description": "The look direction of each MIGHTI line of sight, as a vector in ECEF.",
+          "Cadence": "PT30S",
+          "ValidMin": "-1",
+          "ValidMax": "1",
+          "FillValue": "9.969209968386869e+36",
+          "Support": {
+            "Qualifier": "Vector",
+            "SupportQuantity": "Orientation"
+          }
+        },
+        {
+          "Name": "Orbit Number",
+          "ParameterKey": "ICON_L21_Orbit_Number",
+          "Description": "Orbit Number",
+          "Cadence": "PT30S",
+          "ValidMin": "0",
+          "ValidMax": "1000000",
+          "FillValue": "-9223372036854775806",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Orbit Node Flag",
+          "ParameterKey": "ICON_L21_Orbit_Node",
+          "Description": "Orbit Ascending/Descending Node Flag.",
+          "Cadence": "PT30S",
+          "ValidMin": "0",
+          "ValidMax": "1",
+          "FillValue": "-127",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "Orientation"
+          }
+        },
+        {
+          "Name": "Number of Binned Raw Samples",
+          "ParameterKey": "ICON_L21_Bin_Size",
+          "Description": "How many raw samples were binned vertically for each reported sample.",
+          "Cadence": "PT30S",
+          "ValidMin": "1",
+          "ValidMax": "100",
+          "FillValue": "-127",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Integration Order",
+          "ParameterKey": "ICON_L21_Integration_Order",
+          "Description": "Order used to discretize the integral for inversion: 0=Riemann, 1=Trapezoidal.",
+          "Cadence": "PT30S",
+          "ValidMin": "0",
+          "ValidMax": "1",
+          "FillValue": "-127",
+          "Support": {
+            "Qualifier": "Integral",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "ICON Top Layer Model",
+          "ParameterKey": "ICON_L21_Top_Layer_Model",
+          "Description": "How the top altitudinal layer is handled in the inversion: \"exp\" or \"thin.\"",
+          "Cadence": "PT30S",
+          "FillValue": "' '",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Attitude of Local Vertical Local Horizontal Normal",
+          "ParameterKey": "ICON_L21_Attitude_LVLH_Normal",
+          "Description": "Attitude status bit 0: local vertical local horizontal Normal.",
+          "Cadence": "PT30S",
+          "ValidMin": "0",
+          "ValidMax": "1",
+          "FillValue": "-127",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "DataQuality"
+          }
+        },
+        {
+          "Name": "Attitude of Local Vertical Local Horizontal Reverse",
+          "ParameterKey": "ICON_L21_Attitude_LVLH_Reverse",
+          "Description": "Attitude status bit 1: Local Vertical Local Horizontal Reverse.",
+          "Cadence": "PT30S",
+          "ValidMin": "0",
+          "ValidMax": "1",
+          "FillValue": "-127",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "DataQuality"
+          }
+        },
+        {
+          "Name": "Attitude of Earth Limb Pointing Status",
+          "ParameterKey": "ICON_L21_Attitude_Limb_Pointing",
+          "Description": "Attitude status bit 2: Earth Limb Pointing.",
+          "Cadence": "PT30S",
+          "ValidMin": "0",
+          "ValidMax": "1",
+          "FillValue": "-127",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "DataQuality"
+          }
+        },
+        {
+          "Name": "Attitude: Conjugate Maneuver Status",
+          "ParameterKey": "ICON_L21_Attitude_Conjugate_Maneuver",
+          "Description": "Attitude status bit 6: Conjugate Maneuver.",
+          "Cadence": "PT30S",
+          "ValidMin": "0",
+          "ValidMax": "1",
+          "FillValue": "-127",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "DataQuality"
+          }
+        },
+        {
+          "Name": "Attitude Quality Flag",
+          "ParameterKey": "ICON_L21_Quality_Flags",
+          "Description": "Attitude quality flag.",
+          "Cadence": "PT30S",
+          "ValidMin": "0",
+          "ValidMax": "1",
+          "FillValue": "-127",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "DataQuality"
+          }
+        },
+        {
+          "Name": "Relative Volume Emission Rate (DC Value)",
+          "ParameterKey": "ICON_L21_Relative_VER_DC",
+          "Description": "Relative volume emission rate profile derived from DC value.",
+          "Cadence": "PT30S",
+          "Units": "ph/cm^3/s",
+          "ValidMin": "0",
+          "ValidMax": "1e+30",
+          "FillValue": "9.969209968386869e+36",
+          "Wave": {
+            "WaveType": "Photon",
+            "Qualifier": "LineOfSight",
+            "WaveQuantity": "VolumeEmissionRate"
+          }
+        }
+      ]
+    }
+  }
+}

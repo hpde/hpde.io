@@ -1,0 +1,214 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2.4.1.xsd",
+    "Version": "2.4.1",
+    "NumericalData": {
+      "ResourceID": "spase://CNES/NumericalData/CDPP-AMDA/Solar_Orbiter/MAG/solo-mag-8s",
+      "ResourceHeader": {
+        "ResourceName": "LL (Low Latency)",
+        "AlternateName": "Low Latency Magnetic Field : Not for Publication",
+        "ReleaseDate": "2022-09-23T03:17:51Z",
+        "Description": "LL02 : Level 2 Low Latency Data : Not For Publication \n              \n             The MAG Low Latency data are a useful resource but should be used with caution: \n             they contain many artificial signals, are not of a high enough quality to undertake \n             science analysis and results derived from them should not submitted for publication.\n             \n             Routine processing of the MAG data on the ground removes the vast majority of these signals but the \n             automated nature of the pipeline at ESA/ESAC means that this cannot be applied to the Low Latency data stream. \n             The MAG team intends to provide a cleaned version of the MAG data in the near future which should be used in \n             preference to the Low Latency data. We also expect to release full science-quality level 2 data products to the \n             ESA archive from September 2020.",
+        "Contact": {
+          "PersonID": "spase://CNES/Person/CDPP-AMDA/Tim.Horbury",
+          "Role": "PrincipalInvestigator"
+        },
+        "InformationURL": {
+          "Name": "Low Latency Data",
+          "URL": "https://www.cosmos.esa.int/web/solar-orbiter/access-to-solar-orbiter-low-latency-data"
+        }
+      },
+      "AccessInformation": [
+        {
+          "RepositoryID": "spase://SMWG/Repository/CDPP/AMDA",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDPP/AMDA HAPI Server",
+            "URL": "http://amda.irap.omp.eu/service/hapi",
+            "Style": "HAPI",
+            "Description": "Web Service to this product using the HAPI interface."
+          },
+          "Format": "CSV",
+          "Acknowledgement": "Thank you for acknowledging the use of AMDA in publications with wording like \"Data analysis was performed with the AMDA science analysis system provided by the Centre de Données de la Physique des Plasmas (CDPP) supported by CNRS, CNES, Observatoire de Paris and Université Paul Sabatier, Toulouse\".. See the Rules of the road at http://amda.cdpp.eu/help/policy.html. Please acknowledge the Data Providers."
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/CDPP/AMDA",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDPP/AMDA Web application",
+            "URL": "http://amda.cdpp.eu",
+            "Description": "Access to Data via CDPP/AMDA Web application."
+          },
+          "Format": [
+            "CSV",
+            "VOTable",
+            "CDF",
+            "PNG"
+          ],
+          "Acknowledgement": "Thank you for acknowledging the use of AMDA in publications with wording like \"Data analysis was performed with the AMDA science analysis system provided by the Centre de Données de la Physique des Plasmas (CDPP) supported by CNRS, CNES, Observatoire de Paris and Université Paul Sabatier, Toulouse\".. See the Rules of the road at http://amda.cdpp.eu/help/policy.html. Please acknowledge the Data Providers."
+        }
+      ],
+      "ProviderName": "http://soar.esac.esa.int/soar",
+      "ProviderResourceName": "SOLO_LL02_mag",
+      "InstrumentID": "spase://CNES/Instrument/CDPP-AMDA/Solar_Orbiter/MAG",
+      "MeasurementType": "MagneticField",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "2020-06-03T14:28:15Z",
+          "StopDate": "2022-09-22T20:52:59Z"
+        },
+        "Cadence": "PT8S"
+      },
+      "ObservedRegion": [
+        "Heliosphere.Inner",
+        "Sun.Corona"
+      ],
+      "Caveats": "The MAG team has not had the opportunity to assess the reliability of the data \n           processing pipeline for Low Latency flight data, so we cannot vouch for the reliability or accuracy of this processing. \n       \n       In addition, the MAG data contain artificial signals covering a wide range of timescales and magnitudes, none of which \n       are predictable at this time:\n       \n       * MAG heater signal  up to 1nT in amplitude, typically lasts one minute and occurs every 10-20 minutes. This is the most visible signature in the data.\n       * Varying spacecraft offsets  spacecraft fields can vary over long timescales (weeks or more) by up to several nT. Since these can only be determined after the fact, that are not corrected in the Low Latency data. Some changes can also be rapid, such as those due to solar array movements.\n       * Spacecraft-operated heaters  over 50 heaters operate on the spacecraft and switch off and on unpredictably to keep various components within their required temperature range. Their total contribution to the field at the sensor location is around 0.5 nT but variations due to the total field are more common at around the 0.1 nT level.\n       * Thruster firings  these occur up to once a day, last up to several minutes, and have amplitudes up to 0.2 nT.\n       * Operation of other instruments  fields due to the currents from other instruments, and sharper variations due to mechanism movements, can also be present in the data. The MAG team are still quantifying these fields but the total field due to the operation of the payload is around 0.5 nT. Note that the majority of the power is consumed by remote sensing instruments, which are not operated continuously, so these fields can vary.\n       * Operation of SWA/EAS  we have evidence that operation of the electron sensor at the end of the instrument boom introduces signals into the MAG data at the 0.1 nT level but these have not yet been quantified in detail.",
+      "Parameter": [
+        {
+          "Name": "b_rtn",
+          "ParameterKey": "solo_b_rtn_8s",
+          "UCD": "phys.magField",
+          "Units": "nT",
+          "UnitsConversion": "1e-9>T",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "RTN"
+          },
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "br",
+                "Qualifier": "Component.I",
+                "Index": "1",
+                "ParameterKey": "solo_b_rtn_8s(0)"
+              },
+              {
+                "Name": "bt",
+                "Qualifier": "Component.J",
+                "Index": "2",
+                "ParameterKey": "solo_b_rtn_8s(1)"
+              },
+              {
+                "Name": "bn",
+                "Qualifier": "Component.K",
+                "Index": "3",
+                "ParameterKey": "solo_b_rtn_8s(2)"
+              }
+            ]
+          },
+          "Field": {
+            "Qualifier": [
+              "Vector",
+              "Component.I",
+              "Component.J",
+              "Component.K"
+            ],
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "b_srf",
+          "ParameterKey": "solo_b_srf_8s",
+          "UCD": "phys.magField",
+          "Units": "nT",
+          "UnitsConversion": "1e-9>T",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "bx",
+                "Qualifier": "Component.I",
+                "Index": "1",
+                "ParameterKey": "solo_b_srf_8s(0)"
+              },
+              {
+                "Name": "by",
+                "Qualifier": "Component.J",
+                "Index": "2",
+                "ParameterKey": "solo_b_srf_8s(1)"
+              },
+              {
+                "Name": "bz",
+                "Qualifier": "Component.K",
+                "Index": "3",
+                "ParameterKey": "solo_b_sr_8s(2)"
+              }
+            ]
+          },
+          "Field": {
+            "Qualifier": [
+              "Vector",
+              "Component.I",
+              "Component.J",
+              "Component.K"
+            ],
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "|b|",
+          "ParameterKey": "solo_b_tot_8s",
+          "Description": "Magnetic field magnitude",
+          "UCD": "phys.magField",
+          "Units": "nT",
+          "UnitsConversion": "1e-9>T",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Structure": {
+            "Size": "1"
+          },
+          "Field": {
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "phi",
+          "ParameterKey": "solo_b_rtn_8s_phi",
+          "Description": "Magnetic field phi angle",
+          "UCD": "phys.magField",
+          "Units": "degrees",
+          "UnitsConversion": "1e-9&gt;T",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Structure": {
+            "Size": "1"
+          },
+          "Field": {
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "theta",
+          "ParameterKey": "solo_b_rtn_8s_theta",
+          "Description": "Magnetic field theta angle",
+          "UCD": "phys.magField",
+          "Units": "degrees",
+          "UnitsConversion": "1e-9&gt;T",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Structure": {
+            "Size": "1"
+          },
+          "Field": {
+            "FieldQuantity": "Magnetic"
+          }
+        }
+      ]
+    }
+  }
+}

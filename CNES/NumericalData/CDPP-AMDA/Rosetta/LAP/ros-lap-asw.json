@@ -1,0 +1,251 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2.4.1.xsd",
+    "Version": "2.4.1",
+    "NumericalData": {
+      "ResourceID": "spase://CNES/NumericalData/CDPP-AMDA/Rosetta/LAP/ros-lap-asw",
+      "ResourceHeader": {
+        "ResourceName": "parameters from sweeps (ASW)",
+        "AlternateName": "Analyzed sweeps (ASW). Miscellaneous physical high-level quantities derived from individual sweeps.",
+        "ReleaseDate": "2019-08-29T11:24:49Z",
+        "Description": "Time series of sweep-based estimates of electron density, ion bulk speed, electron temperature, and photoelectron knee potential. Timestamps represent the middle of the corresponding sweeps.\n            This is a preliminary data set which will be replaced by another in a few months.",
+        "Contact": [
+          {
+            "PersonID": "spase://CNES/Person/CDPP-AMDA/Anders.Eriksson",
+            "Role": "PrincipalInvestigator"
+          },
+          {
+            "PersonID": "spase://CNES/Person/CDPP-AMDA/Erik.Johansson",
+            "Role": "DataProducer"
+          }
+        ],
+        "InformationURL": [
+          {
+            "Name": "RPC User Guide",
+            "URL": "http://amda.irap.omp.eu/help/parameters/RPC_USER_GUIDE.PDF"
+          },
+          {
+            "Name": "RPC LAP User Guide",
+            "URL": "http://amda.irap.omp.eu/help/parameters/RO-IRFU-LAP-UG.PDF"
+          },
+          {
+            "Name": "RPC-LAP to Planetary Science Archive Interface Control Document",
+            "URL": "http://amda.irap.omp.eu/help/parameters/RO-IRFU-LAP-EAICD.PDF"
+          },
+          {
+            "Name": "RPC-LAP Report on cross-calibration of LAP data to measurements by other RPC instruments",
+            "URL": "http://amda.irap.omp.eu/help/parameters/RO-IRFU-LAP-XCAL_1_0_PDF_A-1b.PDF"
+          }
+        ]
+      },
+      "AccessInformation": [
+        {
+          "RepositoryID": "spase://SMWG/Repository/CDPP/AMDA",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDPP/AMDA HAPI Server",
+            "URL": "http://amda.irap.omp.eu/service/hapi",
+            "Style": "HAPI",
+            "Description": "Web Service to this product using the HAPI interface."
+          },
+          "Format": "CSV",
+          "Acknowledgement": "Thank you for acknowledging the use of AMDA in publications with wording like \"Data analysis was performed with the AMDA science analysis system provided by the Centre de Données de la Physique des Plasmas (CDPP) supported by CNRS, CNES, Observatoire de Paris and Université Paul Sabatier, Toulouse\".. See the Rules of the road at http://amda.cdpp.eu/help/policy.html. Please acknowledge the Data Providers."
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/CDPP/AMDA",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDPP/AMDA Web application",
+            "URL": "http://amda.cdpp.eu",
+            "Description": "Access to Data via CDPP/AMDA Web application."
+          },
+          "Format": [
+            "CSV",
+            "VOTable",
+            "CDF",
+            "PNG"
+          ],
+          "Acknowledgement": "Thank you for acknowledging the use of AMDA in publications with wording like \"Data analysis was performed with the AMDA science analysis system provided by the Centre de Données de la Physique des Plasmas (CDPP) supported by CNRS, CNES, Observatoire de Paris and Université Paul Sabatier, Toulouse\".. See the Rules of the road at http://amda.cdpp.eu/help/policy.html. Please acknowledge the Data Providers."
+        }
+      ],
+      "ProviderName": "PSA",
+      "ProviderResourceName": "RO-C-RPCLAP-5-xxx-DERIV2-V1.0",
+      "InstrumentID": "spase://CNES/Instrument/CDPP-AMDA/Rosetta/LAP",
+      "MeasurementType": "ThermalPlasma",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "2014-03-24T08:13:00Z",
+          "StopDate": "2016-09-28T23:55:32Z"
+        },
+        "CadenceMin": "PT0.016S",
+        "CadenceMax": "PT128S"
+      },
+      "Caveats": "* n_e_fix_t - electron density is calculated from the slope of the probe curve where electron collection dominates, which should be proportional to the plasma density divided by the square root of the electron temperature [Eriksson et al., 2017]. An electron temperature is assumed to be fixed (value of 5 eV) which has been found suitable for giving densities comparable to MIP at the points where both instruments have data. A user who wishes to use another fixed Te,  or use the sweep derived T_E, may scale N_E by the square root of Te/(5 eV). While N_E works well in low density plasmas, severe underestimation can result in high density plasmas where Vsc becomes very negative.\n                 * i_ph0_s - photosaturation current derived from individual sweep (LAP1). As LAP1 has shown no significant contamination effects, these estimates should be directly proportional to the EUV flux at Rosetta position in the 20-130 nm band.\n                 * v_ion_eff_xcal - effective ion speed derived from individual sweep (speed; always non-negative scalar), while assuming a specific ion mass. Cross-calibrated with RPCMIP.\n                 * t_e - electron temperature derived from exponential part of sweep. The temperature from the exponential slope of the retarding electron current (a least-square fit slope of the logarithm of the current, after subtraction of a fitted ion current) refers to the warm electron population. If the automatic identification of the retarding electron current region is poor, this estimate can be quite noisy and have a large random spread.\n                 * t_e_xcal - electron temperature, derived by using the linear part of the electron current of the sweep, and density measurement from RPCMIP. The interpretation should be that when T_E_XCAL has a value below 1 eV, there is a cold electron population present. As the relative fractions of the warm and cold electrons are unknown, the provided value of T_E_XCAL should be interpreted as an upper limit to the temperature of the cold electrons.\n                 * It should be noted that the absolute accuracy of the two Te estimates is not well constrained as there is little independent data to compare to.  T_E_XCAL should be seen as an approximate upper value for the cold electron temperature, while T_E should not be considered to estimate the warm electron temperature better than by a factor of two.\n                 * v+ph_knee  - spacecraft potential derived from the voltage where the photoelectron emission current from the probe transits from being constant at lower votages to decaying with increasing voltage, clearly visible as a knee. \n        \n        Quality Flag : \n        \n        A quality flag is a (base 10) integer that is constructed in the two steps below:\n        * Add together the constants associated with the relevant quality-related effects listed below. Note that these constants are chosen such that every digit represents up to three true/false values for the presence/absence of three specific separate quality-related effects.\n        * Should the three quality-related effects be irrelevant for the given data product, then that digit is replaced by the digit “9”.\n        \n        Quality flag event description :\n        * +1 - Low quality sweep analysis model fit\n        * +2 - One of two meanings: (1) Low sample size; an average is based on fewer data points than nominal (due to filtering or otherwise) and applies to sweep steps and downsampled time series. (2) zero-padding; zeros replace lost samples for the purpose of calculating PSD.\n        * +10 - One of two meanings: (1) Sweep data product and data products based on sweeps: SAA rotation of more than 0.05° during sweep. (2) Downsampled time series data product: Bias change within the 32 s downsampling period.\n        * +20 - Probe in partial or full shadow\n        * +100 - Rosetta wheel off-loading (WOL) or Orbit-control-maneuver (OCM)\n        * +200 - One of two meanings: (1) For LAP1: LDL disturbance (LAP2 in LDL mode); (2) For LAP2: Contamination signature possibly present\n        * +400 - Saturation\n        \n        Example: suppose that one encounters the quality flag “109”. 109 = 100 + 9 means (1) that there is an ongoing wheel off-loading (+100), and (2) that the quality-related effects associated with +1 and +2 cannot occur even in principle for the kind of data that one is looking at.           \n        \n        ",
+      "Parameter": [
+        {
+          "Name": "n_e_fix_t",
+          "ParameterKey": "ros_lap_neft",
+          "Description": "Electron density derived from individual sweep. An electron temperature is assumed to be fixed (value of 5 eV)",
+          "Units": "cm^-3",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "FillValue": "-1.e+09",
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "NumberDensity"
+          }
+        },
+        {
+          "Name": "n_e_fix_t : qual",
+          "ParameterKey": "ros_lap_neft_q",
+          "Description": "Quality value in the range 0 (worst) to 1 (best). Corresponds to goodness of fit or how well the model fits the data",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "t_e",
+          "ParameterKey": "ros_lap_te",
+          "Description": "Electron temperature derived from exponential part of sweep",
+          "Units": "eV",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "FillValue": "-1.e+09",
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "Temperature"
+          }
+        },
+        {
+          "Name": "t_e : qual",
+          "ParameterKey": "ros_lap_te_q",
+          "Description": "Quality value in the range 0 (worst) to 1 (best). Corresponds to goodness of fit or how well the model fits the data",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "t_e_xcal",
+          "ParameterKey": "ros_lap_te_xcalc",
+          "Description": "Electron temperature, derived by using the linear part of the electron current of the sweep, and density measurement from RPCMIP.",
+          "Units": "eV",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "FillValue": "-1.e+09",
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "Temperature"
+          }
+        },
+        {
+          "Name": "t_e_xcal : qual",
+          "ParameterKey": "ros_lap_te_xcalc_q",
+          "Description": "Quality value in the range 0 (worst) to 1 (best). Corresponds to goodness of fit or how well the model fits the data",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "i_ph0_s",
+          "ParameterKey": "ros_lap_ipho",
+          "Description": "Photosaturation current derived from individual sweep. As LAP1 has shown no significant \ncontamination effects, these estimates should be directly proportional to the EUV flux at Rosetta position in the 20-130 nm band.",
+          "Units": "A",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "FillValue": "-1.e+09",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "i_ph0_s : qual",
+          "ParameterKey": "ros_lap_ipho_q",
+          "Description": "Quality value in the range 0 (worst) to 1 (best). Corresponds to goodness of fit or how well the model fits the data",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "v_ion_eff_xcal",
+          "ParameterKey": "ros_lap_vi_asw",
+          "Description": "Effective ion speed derived from individual sweep (speed; always non-negative scalar), while assuming a specific ion mass. Cross-calibrated with RPCMIP",
+          "Units": "m/s",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "FillValue": "-1.e+09",
+          "Particle": {
+            "ParticleType": "Ion",
+            "ParticleQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "v_ion_eff_xcal : qual",
+          "ParameterKey": "ros_lap_vi_asw_q",
+          "Description": "Quality value in the range 0 (worst) to 1 (best). Corresponds to goodness of fit or how well the model fits the data",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "v_ph_knee",
+          "ParameterKey": "ros_lap_usc_asw",
+          "Description": "Photoelectron knee potential",
+          "Units": "V",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "FillValue": "-1.e+09",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "v_ph_knee : qual",
+          "ParameterKey": "ros_lap_usc_asw_q",
+          "Description": "Quality value in the range 0 (worst) to 1 (best). Corresponds to goodness of fit or how well the model fits the data",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "quality flag",
+          "ParameterKey": "ros_lap_asw_f",
+          "Description": "Quality flag constructed as the sum of multiple terms, depending on what quality related effects are present. Each digit is either in \nthe range 0 (best) to 7 (worst), or 9 (not used)",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        }
+      ]
+    }
+  }
+}

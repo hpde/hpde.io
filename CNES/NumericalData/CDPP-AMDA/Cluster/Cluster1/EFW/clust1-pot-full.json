@@ -1,0 +1,135 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2.4.1.xsd",
+    "Version": "2.4.1",
+    "NumericalData": {
+      "ResourceID": "spase://CNES/NumericalData/CDPP-AMDA/Cluster/Cluster1/EFW/clust1-pot-full",
+      "ResourceHeader": {
+        "ResourceName": "0.2 sec (full)",
+        "AlternateName": "Cluster 1 Spacecraft Potential (L2)",
+        "ReleaseDate": "2022-03-14T03:15:22Z",
+        "Description": "L2 Spacecraft potential (0.2 sec)\n                is normally the average potential of all available probes, measured relative to \n                the spacecraft. If all four probes are available, the average is done over all 4 probes. If only two\n                or three probes are available, the average is done over 2 opposing probes ( P1 and \n                P, or P3 and P4). If only two non-opposing probes are available (e.g. P2 and P3), this quantity is the \n                value of one of the probes. If only one probe is available, this quantity is the value of that \n                probe. The probes used are given by the parameter P_probes. When moderate high-bias \n                saturation is detected on one of the probes (indicated by bit 14 in the P_bitmask), the average \n                over 4 seconds is replaced by a maximum over 4 seconds to avoid errors resulting from the \n                resulting spikes; also the data quality is lowered for such intervals. The \n                individual probe potentials are available in the ancillary data",
+        "Acknowledgement": "PrincipalInvestigator: Prof. Mats Andre",
+        "Contact": {
+          "PersonID": "spase://SMWG/Person/Mats.Andre",
+          "Role": "PrincipalInvestigator"
+        },
+        "InformationURL": [
+          {
+            "Name": "ESA web page",
+            "URL": "http://www.cosmos.esa.int/web/csa/documentation",
+            "Description": "This site contains EFW documentation"
+          },
+          {
+            "Name": "NSSDC Master Catalog listing for Cluster II Rumba Electric Field and Waves (EFW)",
+            "URL": "http://nssdc.gsfc.nasa.gov/nmc/experimentDisplay.do?id=2000-045A-08",
+            "Description": "This site provides information concerning the Cluster II Rumba Electric Field and Waves Instrument."
+          }
+        ],
+        "Association": {
+          "AssociationID": "c1-efw-pot",
+          "AssociationType": "PartOf",
+          "Note": "s/c potential"
+        }
+      },
+      "AccessInformation": [
+        {
+          "RepositoryID": "spase://SMWG/Repository/CDPP/AMDA",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDPP/AMDA HAPI Server",
+            "URL": "http://amda.irap.omp.eu/service/hapi",
+            "Style": "HAPI",
+            "Description": "Web Service to this product using the HAPI interface."
+          },
+          "Format": "CSV",
+          "Acknowledgement": "Thank you for acknowledging the use of AMDA in publications with wording like \"Data analysis was performed with the AMDA science analysis system provided by the Centre de Données de la Physique des Plasmas (CDPP) supported by CNRS, CNES, Observatoire de Paris and Université Paul Sabatier, Toulouse\".. See the Rules of the road at http://amda.cdpp.eu/help/policy.html. Please acknowledge the Data Providers."
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/CDPP/AMDA",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDPP/AMDA Web application",
+            "URL": "http://amda.cdpp.eu",
+            "Description": "Access to Data via CDPP/AMDA Web application."
+          },
+          "Format": [
+            "CSV",
+            "VOTable",
+            "CDF",
+            "PNG"
+          ],
+          "Acknowledgement": "Thank you for acknowledging the use of AMDA in publications with wording like \"Data analysis was performed with the AMDA science analysis system provided by the Centre de Données de la Physique des Plasmas (CDPP) supported by CNRS, CNES, Observatoire de Paris and Université Paul Sabatier, Toulouse\".. See the Rules of the road at http://amda.cdpp.eu/help/policy.html. Please acknowledge the Data Providers."
+        }
+      ],
+      "ProcessingLevel": "Calibrated",
+      "ProviderName": "CSA",
+      "ProviderResourceName": "C1_CP_EFW_L2_P",
+      "ProviderProcessingLevel": "Calibrated",
+      "InstrumentID": "spase://CNES/Instrument/CDPP-AMDA/Cluster1/EFW",
+      "MeasurementType": [
+        "ElectricField",
+        "Waves.Passive"
+      ],
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "2001-01-01T00:00:00Z",
+          "StopDate": "2020-12-31T23:59:59Z"
+        },
+        "Cadence": "PT0.2S"
+      },
+      "ObservedRegion": [
+        "Earth.Magnetosheath",
+        "Earth.Magnetosphere",
+        "Earth.Magnetosphere.Magnetotail",
+        "Earth.Magnetosphere.Main",
+        "Earth.Magnetosphere.Polar",
+        "Earth.Magnetosphere.RadiationBelt",
+        "Earth.NearSurface.AuroralRegion",
+        "Earth.NearSurface.Ionosphere",
+        "Earth.NearSurface.Plasmasphere",
+        "Earth.NearSurface.PolarCap",
+        "Heliosphere.NearEarth"
+      ],
+      "Keyword": [
+        "0.2 second",
+        "magnetosphere",
+        "auroral region",
+        "polar cap",
+        "cusp",
+        "bow shock",
+        "solar wind",
+        "magnetosheath",
+        "Cluster",
+        "magnetotail",
+        "lobe"
+      ],
+      "Parameter": {
+        "Name": "s/c pot",
+        "ParameterKey": "c1_potfull",
+        "Description": "\n                Probe potential, Relative to Spacecraft at full resolution (0.2s) \n            ",
+        "UCD": "phys.potential;phys.elecField;instr.obsty",
+        "Cadence": "PT0.2S",
+        "Units": "V",
+        "UnitsConversion": "1.0>V",
+        "RenderingHints": {
+          "DisplayType": "TimeSeries",
+          "AxisLabel": "U_probe_sc",
+          "ScaleMin": "-60",
+          "ScaleMax": "0"
+        },
+        "ValidMin": "-75",
+        "ValidMax": "25",
+        "FillValue": "-1.0000e+9",
+        "Field": {
+          "Qualifier": "Scalar",
+          "FieldQuantity": "Potential"
+        }
+      }
+    }
+  }
+}

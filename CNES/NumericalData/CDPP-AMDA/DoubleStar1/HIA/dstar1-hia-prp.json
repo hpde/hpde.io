@@ -1,0 +1,242 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2.4.1.xsd",
+    "Version": "2.4.1",
+    "NumericalData": {
+      "ResourceID": "spase://CNES/NumericalData/CDPP-AMDA/DoubleStar1/HIA/dstar1-hia-prp",
+      "ResourceHeader": {
+        "ResourceName": "prime parameters",
+        "ReleaseDate": "2012-03-06T21:14:03Z",
+        "Description": "The Double Star 1 Hot Ion Analyzer (HIA) prime parameter data set contains various parameters at spin resolution. These parameters include universal time, the instrument status, the ion density, ion bulk velocity, and ion temperature. These parameters are available through Double Star Science Data Centre The Data Ring with restricted access.",
+        "Acknowledgement": "Prof. Henri Reme, European Space Agency/International",
+        "Contact": {
+          "PersonID": "spase://CNES/Person/CDPP-AMDA/Jannis.Dandouras",
+          "Role": "PrincipalInvestigator"
+        },
+        "InformationURL": {
+          "Name": "Double Star 1 Hot Ion Analyzer (HIA)",
+          "URL": "http://nssdc.gsfc.nasa.gov/nmc/experimentDisplay.do?id=2003-061A-04",
+          "Description": "Introduction to the Double Star 1 HIA Instrument."
+        }
+      },
+      "AccessInformation": [
+        {
+          "RepositoryID": "spase://SMWG/Repository/CDPP/AMDA",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDPP/AMDA HAPI Server",
+            "URL": "http://amda.irap.omp.eu/service/hapi",
+            "Style": "HAPI",
+            "Description": "Web Service to this product using the HAPI interface."
+          },
+          "Format": "CSV",
+          "Acknowledgement": "Thank you for acknowledging the use of AMDA in publications with wording like \"Data analysis was performed with the AMDA science analysis system provided by the Centre de Données de la Physique des Plasmas (CDPP) supported by CNRS, CNES, Observatoire de Paris and Université Paul Sabatier, Toulouse\".. See the Rules of the road at http://amda.cdpp.eu/help/policy.html. Please acknowledge the Data Providers."
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/CDPP/AMDA",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDPP/AMDA Web application",
+            "URL": "http://amda.cdpp.eu",
+            "Description": "Access to Data via CDPP/AMDA Web application."
+          },
+          "Format": [
+            "CSV",
+            "VOTable",
+            "CDF",
+            "PNG"
+          ],
+          "Acknowledgement": "Thank you for acknowledging the use of AMDA in publications with wording like \"Data analysis was performed with the AMDA science analysis system provided by the Centre de Données de la Physique des Plasmas (CDPP) supported by CNRS, CNES, Observatoire de Paris and Université Paul Sabatier, Toulouse\".. See the Rules of the road at http://amda.cdpp.eu/help/policy.html. Please acknowledge the Data Providers."
+        }
+      ],
+      "ProcessingLevel": "Calibrated",
+      "ProviderName": "CSDS-CNES",
+      "ProviderResourceName": "Double Star 1 Hot Ion Analyzer (HIA) Prime Parameters Data",
+      "ProviderProcessingLevel": "Calibrated",
+      "InstrumentID": "spase://CNES/Instrument/CDPP-AMDA/DoubleStar1/HIA",
+      "MeasurementType": "ThermalPlasma",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "2004-02-04T02:40:38Z",
+          "StopDate": "2007-09-29T06:38:33Z"
+        },
+        "Cadence": "PT4S"
+      },
+      "ObservedRegion": [
+        "Earth.Magnetosheath",
+        "Earth.Magnetosphere",
+        "Earth.Magnetosphere.Magnetotail",
+        "Earth.Magnetosphere.Main",
+        "Earth.Magnetosphere.RadiationBelt",
+        "Earth.NearSurface.Ionosphere",
+        "Earth.NearSurface.Plasmasphere"
+      ],
+      "Keyword": [
+        "Double Star",
+        "Tan Ce 1",
+        "TC 1",
+        "HIA",
+        "4 second",
+        "lobe",
+        "magnetosphere",
+        "magnetotail"
+      ],
+      "Parameter": [
+        {
+          "Name": "ion density",
+          "ParameterKey": "ds1_n",
+          "Description": "Double Star 1 HIA ion number density at spin resolution in units of #/cm^3.",
+          "UCD": "phys.density;phys.atmol.ionStage",
+          "Cadence": "PT4S",
+          "Units": "cm^-3",
+          "UnitsConversion": "1.0e6>m^-3",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "n (HIA)",
+            "ScaleMin": "0.0010",
+            "ScaleMax": "1000"
+          },
+          "ValidMin": "0.0010",
+          "ValidMax": "1000",
+          "FillValue": "-1.0e31",
+          "Particle": {
+            "ParticleType": "Ion",
+            "Qualifier": "Scalar",
+            "ParticleQuantity": "NumberDensity"
+          }
+        },
+        {
+          "Name": "v_gse",
+          "ParameterKey": "ds1_v",
+          "Description": "Double Star 1 HIA ion bulk velocity at spin resolution in GSE Coordinates in units of km/s.",
+          "UCD": "phys.velocity;phys.atmol.ionStage",
+          "Cadence": "PT4S",
+          "Units": "km/s",
+          "UnitsConversion": "1.0e3>m s^-1",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GSE"
+          },
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "ScaleMin": "-2000",
+            "ScaleMax": "2000"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "vx",
+                "Qualifier": "Component.I",
+                "Index": "1",
+                "ParameterKey": "ds1_v(0)"
+              },
+              {
+                "Name": "vy",
+                "Qualifier": "Component.J",
+                "Index": "2",
+                "ParameterKey": "ds1_v(1)"
+              },
+              {
+                "Name": "vz",
+                "Qualifier": "Component.K",
+                "Index": "3",
+                "ParameterKey": "ds1_v(2)"
+              }
+            ]
+          },
+          "ValidMin": "-2000",
+          "ValidMax": "2000",
+          "FillValue": "-1.0e31",
+          "Particle": {
+            "ParticleType": "Ion",
+            "Qualifier": "Vector",
+            "ParticleQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "v_gsm",
+          "ParameterKey": "ds1_v_gsm",
+          "Description": "Double Star 1 HIA ion bulk velocity at spin resolution in GSM Coordinates in units of km/s.",
+          "UCD": "phys.velocity;phys.atmol.ionStage",
+          "Cadence": "PT4S",
+          "Units": "km/s",
+          "UnitsConversion": "1.0e3>m s^-1",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GSM"
+          },
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "ScaleMin": "-2000",
+            "ScaleMax": "2000"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "vx",
+                "Qualifier": "Component.I",
+                "Index": "1",
+                "ParameterKey": "ds1_v_gsm(0)"
+              },
+              {
+                "Name": "vy",
+                "Qualifier": "Component.J",
+                "Index": "2",
+                "ParameterKey": "ds1_v_gsm(1)"
+              },
+              {
+                "Name": "vz",
+                "Qualifier": "Component.K",
+                "Index": "3",
+                "ParameterKey": "ds1_v_gsm(2)"
+              }
+            ]
+          },
+          "ValidMin": "-2000",
+          "ValidMax": "2000",
+          "FillValue": "-1.0e31",
+          "Particle": {
+            "ParticleType": "Ion",
+            "Qualifier": "Vector",
+            "ParticleQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "temperature",
+          "ParameterKey": "ds1_t",
+          "Description": "Double Star 1 HIA ion temperature at spin resolution in units of eV.",
+          "UCD": "phys.temperature;phys.atmol.ionStage",
+          "Cadence": "PT4S",
+          "Units": "eV",
+          "Structure": {
+            "Size": "2",
+            "Element": [
+              {
+                "Name": "t_para",
+                "Index": "1",
+                "ParameterKey": "ds1_t(0)"
+              },
+              {
+                "Name": "t_perp",
+                "Index": "2",
+                "ParameterKey": "ds1_t(1)"
+              }
+            ]
+          },
+          "FillValue": "-1.0e31",
+          "Particle": {
+            "ParticleType": "Ion",
+            "Qualifier": "Scalar",
+            "ParticleQuantity": "Temperature"
+          }
+        }
+      ]
+    }
+  }
+}

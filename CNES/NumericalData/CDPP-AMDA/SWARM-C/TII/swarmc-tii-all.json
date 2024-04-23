@@ -1,0 +1,182 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2.4.1.xsd",
+    "Version": "2.4.1",
+    "NumericalData": {
+      "ResourceID": "spase://CNES/NumericalData/CDPP-AMDA/SWARM-C/TII/swarmc-tii-all",
+      "ResourceHeader": {
+        "ResourceName": "cross-track",
+        "AlternateName": "2Hz TII Cross-track Dataset",
+        "ReleaseDate": "2019-05-06T14:55:47Z",
+        "Description": "ToDo",
+        "Contact": {
+          "PersonID": "spase://CNES/Person/CDPP-AMDA/Johnathan.Burchill",
+          "Role": "Scientist"
+        },
+        "InformationURL": {
+          "Name": "Dataset Description",
+          "URL": "ftp://swarm-diss.eo.esa.int/Advanced/Plasma_Data/2Hz_TII_Cross-track_Dataset/SW-RN-UoC-GS-004_TIICT_ReleaseNotes.ZIP"
+        }
+      },
+      "AccessInformation": [
+        {
+          "RepositoryID": "spase://SMWG/Repository/CDPP/AMDA",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDPP/AMDA HAPI Server",
+            "URL": "http://amda.irap.omp.eu/service/hapi",
+            "Style": "HAPI",
+            "Description": "Web Service to this product using the HAPI interface."
+          },
+          "Format": "CSV",
+          "Acknowledgement": "Thank you for acknowledging the use of AMDA in publications with wording like \"Data analysis was performed with the AMDA science analysis system provided by the Centre de Données de la Physique des Plasmas (CDPP) supported by CNRS, CNES, Observatoire de Paris and Université Paul Sabatier, Toulouse\".. See the Rules of the road at http://amda.cdpp.eu/help/policy.html. Please acknowledge the Data Providers."
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/CDPP/AMDA",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDPP/AMDA Web application",
+            "URL": "http://amda.cdpp.eu",
+            "Description": "Access to Data via CDPP/AMDA Web application."
+          },
+          "Format": [
+            "CSV",
+            "VOTable",
+            "CDF",
+            "PNG"
+          ],
+          "Acknowledgement": "Thank you for acknowledging the use of AMDA in publications with wording like \"Data analysis was performed with the AMDA science analysis system provided by the Centre de Données de la Physique des Plasmas (CDPP) supported by CNRS, CNES, Observatoire de Paris and Université Paul Sabatier, Toulouse\".. See the Rules of the road at http://amda.cdpp.eu/help/policy.html. Please acknowledge the Data Providers."
+        }
+      ],
+      "ProcessingLevel": "Calibrated",
+      "ProviderName": "ftp://swarm-diss.eo.esa.int",
+      "ProviderResourceName": "EFI TII Cross-Track Flow Data",
+      "ProviderProcessingLevel": "Calibrated",
+      "InstrumentID": "spase://CNES/Instrument/CDPP-AMDA/SWARM-C/TII",
+      "MeasurementType": "ElectricField",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "2015-11-01T17:32:18Z",
+          "StopDate": "2017-12-31T14:00:03Z"
+        },
+        "Cadence": "PT0.5S"
+      },
+      "ObservedRegion": "Earth.Magnetosphere",
+      "Caveats": " \n            Data coverage is not continuous. Starting in 2014 EFI TII operations have been limited to a small number of orbits per day. \n            Experience has shown that daily rest periods have the effect of stabilizing the TII imaging performance. \nEffort has been made to remove background levels on an orbital timescale. Significant non-geophysical \noffsets can remain, however, and the TII team urges caution in interpreting flow variations spanning time-scales larger than \na few to 10s of minutes. Horizontal flow data flagged calibration level 2 are for the most \npart suitable for research and publication. The flagging algorithm \ncurrently does not perform as well for the vertical flow measurements. The EFI team continues to work on improving the \nflagging algorithm, and solicits and welcomes feedback from the scientific community on the data quality. \nBecause along-track flow is assumed to be the satellite speed (~7.6 km/s), real flow variations in the along-track direction  \nwill appear in the cross-track direction when the angle between the ram flow and the satellite x-axis is non-zero. \nApparent variations typically not exceeding 100 – 200 m/s in the cross-track flow due \nto large-amplitude along-track flow variations can be expected mainly at high latitudes.\n\n            \n            2 Hz ion cross-track flow speed :\n            * vy_ion - horizontal flow speed in co-rotating frame. Positive values are to the right, facing forward\n            * vz_ion - vertical flow speed in co-rotating frame. Positive values are downward.\n            \n            * v_corot - Co-rotation signal. Can be added to viy to get approximate horizontal cross-track component of ion velocity in inertial frame of reference.\n            Electric field :\n            * ex - component parallel to along-track direction in co-rotating frame. Calculated from -vxB assuming along-track ion velocity component is zero\n            * ey - component in cross-track horizontal direction in co-rotating frame. Positive values are to the right facing forward. Calculated from -vxB assuming along-track ion velocity component is zero.\n            * ez - component in cross-track vertical direction in co-rotating frame. Positive values are downward. Calculated from -vxB assuming along-track ion velocity component is zero.\n            Flags :\n            Three quality flags are included for each measurement: vy_qual, vz_qual, and e_qual represent approximate data quality \n            for the y and z components of ion velocity and all components of electric field, respectively. Because electric field is derived from \n            both y and z components of ion velocity, qe is effectively the logical ‘AND’ of the other two flags. The flag meanings are as follows :                      \n            * -1: ion flow measurements lie outside the nominal measurement range of +- 4 km/s; this encompasses both anomalous measurements and large, geophysical flows.\n            * 0: calibration level 0; do not use in scientific publications except for research into TII imaging anomaly, calibration and validation studies.\n            * 1: calibration level 1: may contain significant uncorrected biases; the data are often of good quality.\n            * 2: calibration level 2: horizontal flows are generally of good quality with reasonable baselines; vertical flows may still contain large variations not of geophysical origin.        \n        ",
+      "Parameter": [
+        {
+          "Name": "v ion",
+          "ParameterKey": "swc_v_ion",
+          "Units": "km/s",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Structure": {
+            "Size": "2",
+            "Element": [
+              {
+                "Name": "vy",
+                "Qualifier": "Component.I",
+                "Index": "1",
+                "ParameterKey": "swc_v_ion(0)"
+              },
+              {
+                "Name": "vz",
+                "Qualifier": "Component.J",
+                "Index": "2",
+                "ParameterKey": "swc_v_ion(1)"
+              }
+            ]
+          },
+          "Field": {
+            "Qualifier": "Vector",
+            "FieldQuantity": "Electric"
+          }
+        },
+        {
+          "Name": "vy quality",
+          "ParameterKey": "swc_vy_qual",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Support": {
+            "SupportQuantity": "DataQuality"
+          }
+        },
+        {
+          "Name": "vz quality",
+          "ParameterKey": "swc_vz_qual",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Support": {
+            "SupportQuantity": "DataQuality"
+          }
+        },
+        {
+          "Name": "v corot",
+          "ParameterKey": "swc_v_corot",
+          "Description": "Co-rotation signal. Can be added to viy to get approximate horizontal cross-track component of ion velocity in inertial frame of reference",
+          "Units": "m/s",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Field": {
+            "FieldQuantity": "Electric"
+          }
+        },
+        {
+          "Name": "e field",
+          "ParameterKey": "swc_e",
+          "Description": "Electric field in co-rotating frame",
+          "Units": "mV/m",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "ex",
+                "Qualifier": "Component.I",
+                "Index": "1",
+                "ParameterKey": "swc_e(0)"
+              },
+              {
+                "Name": "ey",
+                "Qualifier": "Component.J",
+                "Index": "2",
+                "ParameterKey": "swc_e(1)"
+              },
+              {
+                "Name": "ez",
+                "Qualifier": "Component.K",
+                "Index": "3",
+                "ParameterKey": "swc_e(2)"
+              }
+            ]
+          },
+          "Field": {
+            "Qualifier": "Vector",
+            "FieldQuantity": "Electric"
+          }
+        },
+        {
+          "Name": "e quality",
+          "ParameterKey": "swc_e_qual",
+          "Units": " ",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Support": {
+            "SupportQuantity": "DataQuality"
+          }
+        }
+      ]
+    }
+  }
+}

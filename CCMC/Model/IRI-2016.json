@@ -1,0 +1,76 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2.6.0.xsd",
+    "Version": "2.6.0",
+    "Model": {
+      "ResourceID": "spase://CCMC/Model/IRI/2016",
+      "ResourceHeader": {
+        "ResourceName": "International Reference Ionosphere Model 2016",
+        "AlternateName": "IRI2016",
+        "ReleaseDate": "2023-09-28T00:00:00Z",
+        "RevisionHistory": {
+          "RevisionEvent": {
+            "ReleaseDate": "2023-09-28T00:00:00",
+            "Note": "Initial submission of metadata written by Chiu Wiegand 20230801, reviewed and revised LFB 20230928"
+          }
+        },
+        "Description": "The International Reference Ionosphere (IRI) is an international project sponsored by the Committee on Space Research (COSPAR) and the International Union of Radio Science (URSI). These organizations formed a Working Group in the late sixties to produce an empirical standard model of the ionosphere based on all available data sources. Several steadily improved editions of the model have been released. For given location, time and date, IRI provides monthly averages of the electron density, electron temperature, ion temperature, and ion composition in the ionospheric altitude range.\n\nThe major data sources are the worldwide network of ionosondes, the powerful incoherent scatter radars (Jicamarca, Arecibo, Millstone Hill, Malvern, St. Santin), the ISIS and Alouette topside sounders, and in situ instruments flown on many satellites and rockets. IRI is updated yearly during special IRI Workshops (e.g., during COSPAR general assemblies).\n\nThe IRI model and software is updated according to the decisions of the IRI Working Group. The software package includes the FORTRAN subroutines, model coefficients (Committee Consultative for Ionospheric Radiowave propagation (CCIR), URSI, International Geomagnetic Reference Field (IGRF)), indices files (IG_RZ.DAT, APF107.DAT) and README and LICENSE files. The IRI build-up and formulas are described in detail in a 158-page NSSDC report by Bilitza (1990) and more recently in a 65-page Reviews of Geophysics paper by Bilitza et al. (2022)\n\nAn IRI listserver keeps the community informed about model updates, workshops, publication, and other IRI-related matters. To subscribe send a message to info@irimodel.org with 'subscribe IRI your_email_address' in the SUBJECT line and your name, affiliation and mailing address in the body of the message.\n\nInput Description: \n\n* Required Input:\n\n- Solar indices (F10.7 daily, 81-day, and 12-month running mean; sunspot number 12-month running mean)\n- Ionospheric index (ionosonde-based IG index 12-month running mean)\n- Magnetic index (3-h ap, daily ap)\n- The indices are found internally from indices files for the user-specified date and time. But a user can also input his/her own indices values if so desired.\n\n* Optionali Input (user can provide a number of input parameters and the IRI profiles will then be adjusted to these input parameters):\n\n- F2-peak height (hmF2) or propagation factor M3000F2\n- F2-peak plasmafrequency (foF2) or electron density (NmF2)\n- Bottomside profile parameters B0 (thickness) and B1 (shape)\n- F1-ledge height (hmF1)\n- F1-ledge plasmafrequency (foF1) or electron density (NmF1)\n- E-peak height (hmE)\n- E-peak plasmafrequency (foE) or electron density (NmE)\n- D-ledge height (hmD)\n- D-ledge plasmafrequency (foD) or electron density (NmD)\n\nOutput Description:\n\nThe model produces electron density, electron temperature, ion temperature, ion composition (O+, H+, He+, NO+, O+2), Total Electron Content (TEC).",
+        "Contact": [
+          {
+            "PersonID": "spase://SMWG/Person/Dieter.K.Bilitza",
+            "Role": "Developer"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Min-Yang.Chou",
+            "Role": "HostContact"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Jia.Yue",
+            "Role": "HostContact"
+          }
+        ],
+        "InformationURL": [
+          {
+            "Name": "International Reference Ionosphere (IRI) Model Main Page",
+            "URL": "http://irimodel.org/"
+          },
+          {
+            "Name": "International Reference Ionosphere (IRI) Model NASA Page, Archival Only",
+            "URL": "https://spdf.gsfc.nasa.gov/research/IRI/website/doc/"
+          }
+        ]
+      },
+      "AccessInformationOptional": [
+        {
+          "RepositoryID": "spase://CCMC/Repository/NASA/GSFC/CCMC",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CCMC Runs-On-Request",
+            "URL": "https://ccmc.gsfc.nasa.gov/requests/IT/IRI/iri_first.php"
+          },
+          "Format": "HTML"
+        },
+        {
+          "RepositoryID": "spase://CCMC/Repository/NASA/GSFC/CCMC",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CCMC Instant-Run",
+            "URL": "https://kauai.ccmc.gsfc.nasa.gov/instantrun/iri/"
+          },
+          "Format": "HTML"
+        }
+      ],
+      "Versions": {
+        "ModelVersion": {
+          "VersionTag": "2016",
+          "ReleaseDate": "2016-01-01T00:00:00Z"
+        }
+      },
+      "ModelType": "Empirical"
+    }
+  }
+}

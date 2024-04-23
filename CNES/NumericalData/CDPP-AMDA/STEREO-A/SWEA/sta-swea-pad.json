@@ -1,0 +1,137 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2.4.1.xsd",
+    "Version": "2.4.1",
+    "NumericalData": {
+      "ResourceID": "spase://CNES/NumericalData/CDPP-AMDA/STEREO-A/SWEA/sta-swea-pad",
+      "ResourceHeader": {
+        "ResourceName": "pitch-angle/energy distribution E:45-2000eV",
+        "AlternateName": "Electron phase space density pitch-angle / energy distribution E : 45-2000eV",
+        "ReleaseDate": "2022-05-29T20:10:45Z",
+        "Description": "ToDo",
+        "Contact": [
+          {
+            "PersonID": "spase://CNES/Person/CDPP-AMDA/Sauvaud",
+            "Role": "CoInvestigator"
+          },
+          {
+            "PersonID": "spase://CNES/Person/CDPP-AMDA/Penou",
+            "Role": "DataProducer"
+          }
+        ]
+      },
+      "AccessInformation": [
+        {
+          "RepositoryID": "spase://SMWG/Repository/CDPP/AMDA",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDPP/AMDA HAPI Server",
+            "URL": "http://amda.irap.omp.eu/service/hapi",
+            "Style": "HAPI",
+            "Description": "Web Service to this product using the HAPI interface."
+          },
+          "Format": "CSV",
+          "Acknowledgement": "Thank you for acknowledging the use of AMDA in publications with wording like \"Data analysis was performed with the AMDA science analysis system provided by the Centre de Données de la Physique des Plasmas (CDPP) supported by CNRS, CNES, Observatoire de Paris and Université Paul Sabatier, Toulouse\".. See the Rules of the road at http://amda.cdpp.eu/help/policy.html. Please acknowledge the Data Providers."
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/CDPP/AMDA",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDPP/AMDA Web application",
+            "URL": "http://amda.cdpp.eu",
+            "Description": "Access to Data via CDPP/AMDA Web application."
+          },
+          "Format": [
+            "CSV",
+            "VOTable",
+            "CDF",
+            "PNG"
+          ],
+          "Acknowledgement": "Thank you for acknowledging the use of AMDA in publications with wording like \"Data analysis was performed with the AMDA science analysis system provided by the Centre de Données de la Physique des Plasmas (CDPP) supported by CNRS, CNES, Observatoire de Paris and Université Paul Sabatier, Toulouse\".. See the Rules of the road at http://amda.cdpp.eu/help/policy.html. Please acknowledge the Data Providers."
+        }
+      ],
+      "ProviderName": "IRAP",
+      "ProviderResourceName": "http://stereo.irap.omp.eu/CEF/PAD/ahead/",
+      "InstrumentID": "spase://CNES/Instrument/CDPP-AMDA/STEREO-A/IMPACT/SWEA",
+      "MeasurementType": "ThermalPlasma",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "2006-10-31T00:00:38Z",
+          "StopDate": "2022-04-01T00:00:05Z"
+        },
+        "Cadence": "PT20S"
+      },
+      "ObservedRegion": "Heliosphere.Remote1AU",
+      "Caveats": " \n            quality_mag index :\n          *   0 : B field INSIDE instrument field-of-view: ALL PA covered.\n          *   1 : B field OUTSIDE instrument field-of-view: NOT ALL PA covered.\n\n           quality_pla index :\n          *  0 : PA distributions corrected for ion bulk flow (from STEREO/PLASTIC)\n          *  1 : PA distributions NOT corrected for ion bulk flow (Data unavailable)\n        ",
+      "Parameter": [
+        {
+          "Name": "el psd : 2D",
+          "ParameterKey": "sta_swea_pad",
+          "Units": "s^3/km^6",
+          "RenderingHints": {
+            "DisplayType": "Spectrogram"
+          },
+          "FillValue": "-1.e+31",
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "el psd : sum over energy",
+          "ParameterKey": "sta_swea_pad_angle",
+          "Description": "Electron pitch angle distribution (sum over all energy bins)",
+          "Units": "s^3/km^6",
+          "RenderingHints": {
+            "DisplayType": "Spectrogram"
+          },
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "el psd : omni",
+          "ParameterKey": "sta_swea_pad_omni",
+          "Description": "Electron pitch angle distribution (sum over all energy bins)",
+          "Units": "s^3/km^6",
+          "RenderingHints": {
+            "DisplayType": "Spectrogram"
+          },
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "quality_mag",
+          "ParameterKey": "quality1_sta",
+          "UCD": "meta.code;phys.magField",
+          "Units": "0:B_inside",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Support": {
+            "SupportQuantity": "DataQuality"
+          }
+        },
+        {
+          "Name": "quality_pla",
+          "ParameterKey": "quality2_sta",
+          "UCD": "meta.code;phys.particle",
+          "Units": "0:corrected_by_PLA",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Support": {
+            "SupportQuantity": "DataQuality"
+          }
+        }
+      ]
+    }
+  }
+}

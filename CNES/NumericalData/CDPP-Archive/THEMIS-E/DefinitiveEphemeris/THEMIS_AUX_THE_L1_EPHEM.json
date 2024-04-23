@@ -1,0 +1,285 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_4_0.xsd",
+    "Version": "2.4.0",
+    "NumericalData": {
+      "ResourceID": "spase://CNES/NumericalData/CDPP-Archive/THEMIS-E/DefinitiveEphemeris/THEMIS_AUX_THE_L1_EPHEM",
+      "ResourceHeader": {
+        "ResourceName": "THEMIS-E Definitive Ephemeris and Spin Attitude Corrections (CDF)",
+        "DOI": "https://doi.org/10.24400/802406/5q9d-srnq",
+        "ReleaseDate": "2022-01-21T08:24:18Z",
+        "Description": "This dataset contains THEMIS-E  position, velocity, attitude and sun pulse data.\nThe data are definitive  with added science attitude determination using perigee data post-processing.",
+        "Contact": [
+          {
+            "PersonID": "spase://CNES/Person/CDPP-Archive/Vassilis.Angelopoulos",
+            "Role": "PrincipalInvestigator"
+          },
+          {
+            "PersonID": "spase://CNES/Person/CDPP-Archive/CDPP.general.contact",
+            "Role": "GeneralContact"
+          }
+        ]
+      },
+      "AccessInformation": {
+        "RepositoryID": "spase://CNES/Repository/CDPP-Archive/REGARDS-CDPP",
+        "Availability": "Online",
+        "AccessURL": {
+          "Name": "REGARDS",
+          "URL": "https://cdpp-archive.cnes.fr"
+        },
+        "Format": "CDF"
+      },
+      "ProcessingLevel": "Uncalibrated",
+      "InstrumentID": "spase://CNES/Instrument/CDPP-Archive/THEMIS-E/Ephemeris",
+      "MeasurementType": "Ephemeris",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "2007-02-28T00:00:00Z",
+          "StopDate": "2013-02-20T00:00:00Z"
+        }
+      },
+      "ObservedRegion": [
+        "Heliosphere.NearEarth",
+        "Earth.Magnetosphere.Magnetotail",
+        "Earth.Magnetosphere.Main",
+        "Earth.Magnetosheath"
+      ],
+      "Parameter": [
+        {
+          "Name": "THEMIS-E position vector in GEI coordinates",
+          "Description": "THEMIS-E position vector (km) in GEI coordinates",
+          "Units": "km",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GEI"
+          },
+          "Support": {
+            "Qualifier": "Vector",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "THEMIS-E velocity vector  in GEI coordinates",
+          "Description": "THEMIS-E velocity vector (km/s) in GEI coordinates",
+          "Units": "km/s",
+          "UnitsConversion": "1e3>m/s",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GEI"
+          },
+          "Support": {
+            "Qualifier": "Vector",
+            "SupportQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "THEMIS-E Maneuver Flag",
+          "Description": "THEMIS-E maneuver status code (XYYZZZ). Values indicate if/what maneuver is being performed.  Spacecraft data will be unreliable during maneuvers.\n      * Unpowered flight (Coast):\n          - X=0, Y=00, Z=000            \n      * Sequence Code X:\n          - 0= No Segmentation\n          - 1= Segmented Maneuver\n      * Type Code YY:\n          - 0= No Maneuver\n          - 1= Axial-thrust Maneuver\n          - 2= Side-thrust Maneuver\n          - 3= Beta-thrust Maneuver\n          - 4= Attitude Precession\n          - 5= Spin-Rate Change\n      * Sequence Number ZZZ:\n          - 001-999= Maneuver Sequence Number",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "THEMIS-E RoI",
+          "Description": "Region of interest. Different bits of this parameter give a general indication of the region that the spacecraft is in.  The first 18 bits are significant.  An active bit indicates the spacecraft is in a given region.  Multiple bits may be set simultaneously. The value of the bit is in parentheses in the following table.\n\n          +---------------------------------------------------+\n          | Bit 1(1)      | Earth Shadow                      |\n          | Bit 2(2)      | Lunar Shadow                      |\n          | Bit 3(4)      | Atmospheric absorbtion zone       |\n          | Bit 4(8)      | South Atlantic Anomaly            |\n          | Bit 5(16)     | Northern Auroral Zone             |\n          | Bit 6(32)     | Southern Auroral Zone             |\n          | Bit 7(64)     | Perigee Passage                   |\n          | Bit 8(128)    | Inner & Outer Radiation Belts |\n          | Bit 9(256)    | Deep Plasma Sphere                |\n          | Bit 10(512)   | Foreshock Solar Wind              |\n          | Bit 11(1024)  | Solar Wind Beam                   |\n          | Bit 12(2048)  | High Magnetic Field               |\n          | Bit 13(4096)  | Average Plasma Sheet              |\n          | Bit 14(8192)  | Bowshock Crossing                 |\n          | Bit 15(16384) | Magnetopause Crossing             |\n          | Bit 16(32768) | Ground Based Observatories        |\n          | Bit 17(65536) | 2-Day Conjunctions                |\n          | Bit 18(131072)| 4-Day Conjunctions                |\n          +---------------------------------------------------+",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "THEMIS-E spin axis right ascension",
+          "Description": "THEMIS-E spin axis right ascension in GEI coordinates.",
+          "Units": "deg",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "GEI"
+          },
+          "Support": {
+            "Qualifier": "DirectionAngle.AzimuthAngle",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "THEMIS-E spin axis declination in GEI coordinates",
+          "Description": "THEMIS-E spin axis declination in GEI coordinates",
+          "Units": "deg",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "GEI"
+          },
+          "Support": {
+            "Qualifier": "DirectionAngle.ElevationAngle",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "THEMIS-E spin axis azimuth, Euler alpha, in Probe Geometric (SPG) coordinates",
+          "Description": "THEMIS-E spin axis azimuth, Euler alpha, in Probe Geometric (SPG) coordinates",
+          "Units": "deg",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "SC"
+          },
+          "Support": {
+            "Qualifier": "DirectionAngle.AzimuthAngle",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "THEMIS-E spin axis colatitude, Euler beta, in Probe Geometric (SPG) coordinates",
+          "Description": "THEMIS-E spin axis colatitude, Euler beta, in Probe Geometric (SPG) coordinates",
+          "Units": "deg",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "SC"
+          },
+          "Support": {
+            "Qualifier": "DirectionAngle.PolarAngle",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "THEMIS-E spin period, regularized and boxcar averaged",
+          "Description": "THEMIS-E spin period, regularized and boxcar averaged",
+          "Units": "s",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "THEMIS-E angle rotated since the sun sensor registered the sun pulse, regularized and boxcar averaged.",
+          "Description": "THEMIS-E angle rotated since the sun sensor registered the sun pulse, regularized and boxcar averaged.",
+          "Units": "deg",
+          "Support": {
+            "Qualifier": "PhaseAngle",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "THEMIS-E Initial Spin Period for segment",
+          "Description": "THEMIS-E Initial Spin Period for segment",
+          "Units": "s",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "THEMIS-E Drift term for spin rate",
+          "Description": "Drift term for spin rate",
+          "Caveats": "Applies to angular velocity (deg/sec), not spin period.",
+          "Units": "deg/s^2",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "THEMIS-E Spin Correction",
+          "Description": "THEMIS-E Spin phase correction from definitive position and field model calculated at 1 minute intervals",
+          "Units": "deg",
+          "Support": {
+            "Qualifier": "DirectionAngle",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "THEMIS-E  Spin axis right ascension",
+          "Description": "Spin axis right ascension correction from definitive position and field model",
+          "Units": "deg",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "THEMIS-E Spin axis declination",
+          "Description": "Spin axis declination correction from definitive position and field model",
+          "Units": "deg",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "THEMIS-E Maximum absolute phase error",
+          "Description": "Maximum absolute phase error between model and non-outlier sun crossing time",
+          "Caveats": "Errors due to recognized BAU timing errors do not contribute to this quantity",
+          "Support": {
+            "Qualifier": "Uncertainty",
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "THEMIS-E Number of spins contained in this segment",
+          "Description": "THEMIS-E Number of spins contained in this segment",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "THEMIS-E Pulse Gap",
+          "Description": "Duration, in seconds, of longest gap between sun pulses in this segment. Long gaps (60 sec or more) will generally indicate shadow periods.",
+          "Units": "s",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "THEMIS-E Position (GSE)",
+          "Description": "Spacecraft position vector (km) in GSE coordinates",
+          "Units": "km",
+          "UnitsConversion": "1e3>m",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GSE"
+          },
+          "Support": {
+            "Qualifier": "Vector",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "THEMIS-E Position (GSM)",
+          "Description": "Spacecraft position vector (km) in GSM coordinates",
+          "Units": "km",
+          "UnitsConversion": "1e3>m",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GSM"
+          },
+          "Support": {
+            "Qualifier": "Vector",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "THEMIS-E Velocity (GSE)",
+          "Description": "Spacecraft velocity (km/s) in GSE coordinates",
+          "Units": "km/s",
+          "UnitsConversion": "1e3>m/s",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GSE"
+          },
+          "Support": {
+            "Qualifier": "Vector",
+            "SupportQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "THEMIS-E Velocity (GSM)",
+          "Description": "Spacecraft velocity (km/s) in GSM coordinates",
+          "Units": "km/s",
+          "UnitsConversion": "1e3>m/s",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GSM"
+          },
+          "Support": {
+            "Qualifier": "Vector",
+            "SupportQuantity": "Velocity"
+          }
+        }
+      ]
+    }
+  }
+}

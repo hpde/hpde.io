@@ -1,0 +1,188 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2.4.1.xsd",
+    "Version": "2.4.1",
+    "NumericalData": {
+      "ResourceID": "spase://CNES/NumericalData/CDPP-AMDA/Solar_Orbiter/EPD/so-ept-anti",
+      "ResourceHeader": {
+        "ResourceName": "sunward flow",
+        "AlternateName": "Ion Flux From AntiSun Direction",
+        "ReleaseDate": "2022-09-04T20:38:56Z",
+        "Description": "Solar Orbiter, Level 2 Data, Energetic Particle Detector, Electron and Proton Telescope, Rates. \n              \n            EPT  measures electrons and ions in the lower part of the energetic particle spectrum. It \neffectuates measurements in 4 different fields of view :\n\n* Anti-Sunward Flow. Detector looks in the direction of the mean Parker spiral towards the Sun.\n* Sunward Flow. Detector looks opposite to the Sun direction.\n* Northward Flow. Detector looks towards the south ecliptic hemisphere.\n* Southward Flow. Detector looks towards the north ecliptic hemisphere.\n\nParameter ID uses Detector looking directon.\n \nAdditionally, EPT has 2 channels that separate electrons and ions:\n* Magnet channel. Uses a permanent magnet to deflect electrons. It measures protons with energies between 25 keV and 6.5 MeV and alpha particles up to 25 MeV.\n* Foil channel. Equipped with a foil that absorbs ions, it measures electrons in the energy range 25–500 keV. Ions with energies above 400 keV can penetrate the foil, contaminating the electron measurements. \n          ",
+        "Acknowledgement": "See http://espada.uah.es/epd/EPD_data.php",
+        "Contact": {
+          "PersonID": "spase://CNES/Person/CDPP-AMDA/J.Rodrigues-Pacheco",
+          "Role": "PrincipalInvestigator"
+        },
+        "InformationURL": {
+          "Name": "SolO Archive Support Data",
+          "URL": "https://issues.cosmos.esa.int/solarorbiterwiki/display/SOSP/Archive+Support+Data"
+        },
+        "Association": {
+          "AssociationID": "solo-epd-eptsun",
+          "AssociationType": "PartOf",
+          "Note": "L2 : ion flux"
+        }
+      },
+      "AccessInformation": [
+        {
+          "RepositoryID": "spase://SMWG/Repository/CDPP/AMDA",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDPP/AMDA HAPI Server",
+            "URL": "http://amda.irap.omp.eu/service/hapi",
+            "Style": "HAPI",
+            "Description": "Web Service to this product using the HAPI interface."
+          },
+          "Format": "CSV",
+          "Acknowledgement": "Thank you for acknowledging the use of AMDA in publications with wording like \"Data analysis was performed with the AMDA science analysis system provided by the Centre de Données de la Physique des Plasmas (CDPP) supported by CNRS, CNES, Observatoire de Paris and Université Paul Sabatier, Toulouse\".. See the Rules of the road at http://amda.cdpp.eu/help/policy.html. Please acknowledge the Data Providers."
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/CDPP/AMDA",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDPP/AMDA Web application",
+            "URL": "http://amda.cdpp.eu",
+            "Description": "Access to Data via CDPP/AMDA Web application."
+          },
+          "Format": [
+            "CSV",
+            "VOTable",
+            "CDF",
+            "PNG"
+          ],
+          "Acknowledgement": "Thank you for acknowledging the use of AMDA in publications with wording like \"Data analysis was performed with the AMDA science analysis system provided by the Centre de Données de la Physique des Plasmas (CDPP) supported by CNRS, CNES, Observatoire de Paris and Université Paul Sabatier, Toulouse\".. See the Rules of the road at http://amda.cdpp.eu/help/policy.html. Please acknowledge the Data Providers."
+        }
+      ],
+      "ProviderName": "http://soar.esac.esa.int/soar",
+      "ProviderResourceName": "EPD-EPT-SUN-RATES",
+      "InstrumentID": "spase://CNES/Instrument/CDPP-AMDA/Solar_Orbiter/EPD-EPT",
+      "MeasurementType": "EnergeticParticles",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "2020-05-13T00:00:03Z",
+          "StopDate": "2022-04-03T23:59:59Z"
+        },
+        "CadenceMin": "PT5S",
+        "CadenceMax": "PT30S"
+      },
+      "ObservedRegion": [
+        "Heliosphere.Inner",
+        "Sun.Corona"
+      ],
+      "Parameter": [
+        {
+          "Name": "ion flux : sunward",
+          "ParameterKey": "solo_ept_asun_iflux",
+          "Description": "Particle flux in magnet channel",
+          "Units": "1/(s cm^2 sr MeV)",
+          "RenderingHints": {
+            "DisplayType": "Spectrogram"
+          },
+          "Structure": {
+            "Size": "64"
+          },
+          "Particle": {
+            "ParticleType": "Ion",
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "ion flux unc: sunward",
+          "ParameterKey": "solo_ept_asun_iunc",
+          "Description": "Uncertainty in ion flux",
+          "Units": "1/(s cm^2 sr MeV)",
+          "RenderingHints": {
+            "DisplayType": "Spectrogram"
+          },
+          "Structure": {
+            "Size": "64"
+          },
+          "Particle": {
+            "ParticleType": "Ion",
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "ion cntrate: sunward",
+          "ParameterKey": "solo_ept_asun_irate",
+          "Description": "Particle count rate in magnet channel",
+          "Units": "cnts/s",
+          "RenderingHints": {
+            "DisplayType": "Spectrogram"
+          },
+          "Structure": {
+            "Size": "64"
+          },
+          "Particle": {
+            "ParticleType": "Ion",
+            "ParticleQuantity": "CountRate"
+          }
+        },
+        {
+          "Name": "alpha flux: sunward",
+          "ParameterKey": "solo_ept_asun_aflux",
+          "Description": "High energy particle flux in magnet channel",
+          "Units": "1/(s cm^2 sr MeV)",
+          "RenderingHints": {
+            "DisplayType": "Spectrogram"
+          },
+          "Structure": {
+            "Size": "8"
+          },
+          "Particle": {
+            "ParticleType": "Ion",
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "alpha flux unc: sunward",
+          "ParameterKey": "solo_ept_asun_aunc",
+          "Description": "Uncertainty in alpha flux",
+          "Units": "1/(s cm^2 sr MeV)",
+          "RenderingHints": {
+            "DisplayType": "Spectrogram"
+          },
+          "Structure": {
+            "Size": "8"
+          },
+          "Particle": {
+            "ParticleType": "Ion",
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "alpha cntrate: sunward",
+          "ParameterKey": "solo_ept_asun_arate",
+          "Description": "High energy particle count rate in magnet channel",
+          "Units": "cnts/s",
+          "RenderingHints": {
+            "DisplayType": "Spectrogram"
+          },
+          "Structure": {
+            "Size": "8"
+          },
+          "Particle": {
+            "ParticleType": "Ion",
+            "ParticleQuantity": "CountRate"
+          }
+        },
+        {
+          "Name": "quality flag: sunward",
+          "ParameterKey": "solo_ept_asun_qf",
+          "Description": "0: Bad, 1: Known problems, 2: Survey data, 3: Good, 4: Excellent",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Support": {
+            "SupportQuantity": "DataQuality"
+          }
+        }
+      ]
+    }
+  }
+}

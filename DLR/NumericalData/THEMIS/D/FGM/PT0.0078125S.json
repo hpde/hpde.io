@@ -1,0 +1,837 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema  http://www.spase-group.org/data/schema/spase-2_3_2.xsd'",
+    "Version": "2.3.2",
+    "NumericalData": {
+      "ResourceID": "spase://DLR/NumericalData/THEMIS/D/FGM/PT0.0078125S",
+      "ResourceHeader": {
+        "ResourceName": "THEMIS-D: Fluxgate Magnetometer Measurements 1/128s",
+        "ReleaseDate": "2021-04-27T17:51:13Z",
+        "Description": "Spacecraft-collected fluxgate magnetometer measurements: Decimated TeleMetry High, DSL, GSE and GSM coordinates, cadence 3s-1/128s. The high-resolution data is available only for time intervals when the instrument was switched into a high-resolution mode. Sensor and electronics design provided by TUBS (Glassmeier, Auster) and IWF (Baumjohann, Magnes)",
+        "Acknowledgement": "NASA contract NAS5-02099 and V. Angelopoulos for use of data from the THEMIS Mission, K. H. Glassmeier, U. Auster and W. Baumjohann for the use of FGM data provided under the lead of the Technical University of Braunschweig and with financial support through the German Ministry for Economy and Technology and the German Center for Aviation and Space (DLR) under contract 50 OC 0302",
+        "Contact": [
+          {
+            "PersonID": "spase://SMWG/Person/Rumi.Nakamura",
+            "Role": "CoInvestigator"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Wolfgang.Baumjohann",
+            "Role": "CoInvestigator"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Karl-Heinz.Glassmeier",
+            "Role": "CoInvestigator"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Vassilis.Angelopoulos",
+            "Role": "PrincipalInvestigator"
+          }
+        ],
+        "InformationURL": {
+          "Name": "THEMIS website",
+          "URL": "http://themis.ssl.berkeley.edu"
+        },
+        "PriorID": [
+          "spase://VMO/NumericalData/THEMIS-D/FGM/PT0.0078125S",
+          "spase://VMO/NumericalData/THEMIS/D/FGM/PT0.0078125S",
+          "spase://VSPO/NumericalData/THEMIS/D/FGM/PT0.0078125S",
+          "spase://NASA/NumericalData/THEMIS/D/FGM/PT0.0078125S"
+        ]
+      },
+      "AccessInformation": [
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF/CDAWeb",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": [
+            {
+              "Name": "FTPS from SPDF (not with most browsers)",
+              "URL": "ftps://spdf.gsfc.nasa.gov/pub/data/themis/thd/l2/fgm/",
+              "Description": "NASA/GSFC CDAWeb ftp access to the data."
+            },
+            {
+              "Name": "HTTPS from SPDF",
+              "URL": "https://spdf.gsfc.nasa.gov/pub/data/themis/thd/l2/fgm/",
+              "Description": "In CDF via HTTP from SPDF"
+            },
+            {
+              "Name": "CDAWeb",
+              "URL": "https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=THD_L2_FGM&index=sp_phys",
+              "ProductKey": "THD_L2_FGM",
+              "Description": "Access to ASCII, CDF, and plots via NASA/GSFC CDAWeb"
+            }
+          ],
+          "Format": "CDF",
+          "Encoding": "None"
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDAWeb HAPI Server",
+            "URL": "https://cdaweb.gsfc.nasa.gov/hapi",
+            "Style": "HAPI",
+            "ProductKey": [
+              "THD_L2_FGM@0",
+              "THD_L2_FGM@1",
+              "THD_L2_FGM@2",
+              "THD_L2_FGM@3"
+            ],
+            "Description": "Web Service to this product using the HAPI interface."
+          },
+          "Format": "CSV"
+        }
+      ],
+      "ProcessingLevel": "Calibrated",
+      "ProviderProcessingLevel": "Level 2",
+      "InstrumentID": "spase://SMWG/Instrument/THEMIS/D/FGM",
+      "MeasurementType": "MagneticField",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "2007-02-16T00:00:00Z",
+          "RelativeStopDate": "-P07D"
+        }
+      },
+      "ObservedRegion": [
+        "Heliosphere.NearEarth",
+        "Earth.Magnetosphere.Magnetotail",
+        "Earth.Magnetosphere.Main",
+        "Earth.Magnetosheath"
+      ],
+      "Caveats": "The THEMIS mission uses the coordinate name \" DSL\" for the coordinate system that is called \"SR2\" is the SPASE data model.  See THEMIS website for caveats.",
+      "Parameter": [
+        {
+          "Name": "B FGE SSL",
+          "ParameterKey": "thd_fge_ssl",
+          "Description": "FGE (engineering) magnetic field B in XYZ Spinning Spacecraft Coordinates (SSL)",
+          "Cadence": "PT0.125S",
+          "Units": "nT",
+          "UnitsConversion": "1e-9>T",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "SR"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "Bx FGE",
+                "Qualifier": "Component.I",
+                "Index": "1",
+                "ValidMin": "-25000.0",
+                "ValidMax": "25000.0",
+                "FillValue": "NaN"
+              },
+              {
+                "Name": "By FGE",
+                "Qualifier": "Component.J",
+                "Index": "2",
+                "ValidMin": "-25000.0",
+                "ValidMax": "25000.0",
+                "FillValue": "NaN"
+              },
+              {
+                "Name": "Bz FGE",
+                "Qualifier": "Component.K",
+                "Index": "3",
+                "ValidMin": "-25000.0",
+                "ValidMax": "25000.0",
+                "FillValue": "NaN"
+              }
+            ]
+          },
+          "Field": {
+            "Qualifier": "Vector",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "B FGE DSL",
+          "ParameterKey": "thd_fge_dsl",
+          "Description": "FGE (engineering) magnetic field B in XYZ Despun Spacecraft Coordinates (DSL/SR2)",
+          "Cadence": "PT0.125S",
+          "Units": "nT",
+          "UnitsConversion": "1e-9>T",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "SR2"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "Bx FGE",
+                "Qualifier": "Component.I",
+                "Index": "1",
+                "ValidMin": "-25000.0",
+                "ValidMax": "25000.0",
+                "FillValue": "NaN"
+              },
+              {
+                "Name": "By FGE",
+                "Qualifier": "Component.J",
+                "Index": "2",
+                "ValidMin": "-25000.0",
+                "ValidMax": "25000.0",
+                "FillValue": "NaN"
+              },
+              {
+                "Name": "Bz FGE",
+                "Qualifier": "Component.K",
+                "Index": "3",
+                "ValidMin": "-25000.0",
+                "ValidMax": "25000.0",
+                "FillValue": "NaN"
+              }
+            ]
+          },
+          "Field": {
+            "Qualifier": "Vector",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "B FGE GSE",
+          "ParameterKey": "thd_fge_gse",
+          "Description": "FGE (engineering) magnetic field B in XYZ GSE Coordinates",
+          "Cadence": "PT0.125S",
+          "Units": "nT",
+          "UnitsConversion": "1e-9>T",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GSE"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "Bx FGE",
+                "Qualifier": "Component.I",
+                "Index": "1",
+                "ValidMin": "-25000.0",
+                "ValidMax": "25000.0",
+                "FillValue": "NaN"
+              },
+              {
+                "Name": "By FGE",
+                "Qualifier": "Component.J",
+                "Index": "2",
+                "ValidMin": "-25000.0",
+                "ValidMax": "25000.0",
+                "FillValue": "NaN"
+              },
+              {
+                "Name": "Bz FGE",
+                "Qualifier": "Component.K",
+                "Index": "3",
+                "ValidMin": "-25000.0",
+                "ValidMax": "25000.0",
+                "FillValue": "NaN"
+              }
+            ]
+          },
+          "Field": {
+            "Qualifier": "Vector",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "B FGE GSM",
+          "ParameterKey": "thd_fge_gsm",
+          "Description": "FGE (engineering) magnetic field B in XYZ GSM Coordinates",
+          "Cadence": "PT0.125S",
+          "Units": "nT",
+          "UnitsConversion": "1e-9>T",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GSM"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "Bx FGE",
+                "Qualifier": "Component.I",
+                "Index": "1",
+                "ValidMin": "-25000.0",
+                "ValidMax": "25000.0",
+                "FillValue": "NaN"
+              },
+              {
+                "Name": "By FGE",
+                "Qualifier": "Component.J",
+                "Index": "2",
+                "ValidMin": "-25000.0",
+                "ValidMax": "25000.0",
+                "FillValue": "NaN"
+              },
+              {
+                "Name": "Bz FGE",
+                "Qualifier": "Component.K",
+                "Index": "3",
+                "ValidMin": "-25000.0",
+                "ValidMax": "25000.0",
+                "FillValue": "NaN"
+              }
+            ]
+          },
+          "Field": {
+            "Qualifier": "Vector",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "FGE Time",
+          "ParameterKey": "thd_fge_time",
+          "Description": "FGE time, UTC, in seconds since 01-Jan-1970 00:00:00",
+          "Caveats": "Unleaped seconds",
+          "Cadence": "PT0.125S",
+          "Units": "s",
+          "ValidMin": "0.0",
+          "ValidMax": "5.0E9",
+          "FillValue": "NaN",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "B FGL SSL",
+          "ParameterKey": "thd_fgl_ssl",
+          "Description": "FGL (low-resolution) magnetic field B in XYZ Spinning Spacecraft Coordinates (SSL)",
+          "Cadence": "PT0.25S",
+          "Units": "nT",
+          "UnitsConversion": "1e-9>T",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "SR"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "Bx FGL",
+                "Qualifier": "Component.I",
+                "Index": "1",
+                "ValidMin": "-25000.0",
+                "ValidMax": "25000.0",
+                "FillValue": "NaN"
+              },
+              {
+                "Name": "By FGL",
+                "Qualifier": "Component.J",
+                "Index": "2",
+                "ValidMin": "-25000.0",
+                "ValidMax": "25000.0",
+                "FillValue": "NaN"
+              },
+              {
+                "Name": "Bz FGL",
+                "Qualifier": "Component.K",
+                "Index": "3",
+                "ValidMin": "-25000.0",
+                "ValidMax": "25000.0",
+                "FillValue": "NaN"
+              }
+            ]
+          },
+          "Field": {
+            "Qualifier": "Vector",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "B FGL DSL",
+          "ParameterKey": "thd_fgl_dsl",
+          "Description": "FGL (low-resolution) magnetic field B in XYZ Despun Spacecraft Coordinates (DSL/SR2)",
+          "Cadence": "PT0.25S",
+          "Units": "nT",
+          "UnitsConversion": "1e-9>T",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "SR2"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "Bx FGL",
+                "Qualifier": "Component.I",
+                "Index": "1",
+                "ValidMin": "-25000.0",
+                "ValidMax": "25000.0",
+                "FillValue": "NaN"
+              },
+              {
+                "Name": "By FGL",
+                "Qualifier": "Component.J",
+                "Index": "2",
+                "ValidMin": "-25000.0",
+                "ValidMax": "25000.0",
+                "FillValue": "NaN"
+              },
+              {
+                "Name": "Bz FGL",
+                "Qualifier": "Component.K",
+                "Index": "3",
+                "ValidMin": "-25000.0",
+                "ValidMax": "25000.0",
+                "FillValue": "NaN"
+              }
+            ]
+          },
+          "Field": {
+            "Qualifier": "Vector",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "B FGL GSE",
+          "ParameterKey": "thd_fgl_gse",
+          "Description": "FGL (low-resolution) magnetic field B in XYZ GSE Coordinates",
+          "Cadence": "PT0.25S",
+          "Units": "nT",
+          "UnitsConversion": "1e-9>T",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GSE"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "Bx FGL",
+                "Qualifier": "Component.I",
+                "Index": "1",
+                "ValidMin": "-25000.0",
+                "ValidMax": "25000.0",
+                "FillValue": "NaN"
+              },
+              {
+                "Name": "By FGL",
+                "Qualifier": "Component.J",
+                "Index": "2",
+                "ValidMin": "-25000.0",
+                "ValidMax": "25000.0",
+                "FillValue": "NaN"
+              },
+              {
+                "Name": "Bz FGL",
+                "Qualifier": "Component.K",
+                "Index": "3",
+                "ValidMin": "-25000.0",
+                "ValidMax": "25000.0",
+                "FillValue": "NaN"
+              }
+            ]
+          },
+          "Field": {
+            "Qualifier": "Vector",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "B FGL GSM",
+          "ParameterKey": "thd_fgl_gsm",
+          "Description": "FGL (low-resolution) magnetic field B in XYZ GSM Coordinates",
+          "Cadence": "PT0.25S",
+          "Units": "nT",
+          "UnitsConversion": "1e-9>T",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GSM"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "Bx FGL",
+                "Qualifier": "Component.I",
+                "Index": "1",
+                "ValidMin": "-25000.0",
+                "ValidMax": "25000.0",
+                "FillValue": "NaN"
+              },
+              {
+                "Name": "By FGL",
+                "Qualifier": "Component.J",
+                "Index": "2",
+                "ValidMin": "-25000.0",
+                "ValidMax": "25000.0",
+                "FillValue": "NaN"
+              },
+              {
+                "Name": "Bz FGL",
+                "Qualifier": "Component.K",
+                "Index": "3",
+                "ValidMin": "-25000.0",
+                "ValidMax": "25000.0",
+                "FillValue": "NaN"
+              }
+            ]
+          },
+          "Field": {
+            "Qualifier": "Vector",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "FGL Time",
+          "ParameterKey": "thd_fgl_time",
+          "Description": "FGL time, UTC, in seconds since 01-Jan-1970 00:00:00",
+          "Cadence": "PT0.25S",
+          "Units": "s",
+          "ValidMin": "0.0",
+          "ValidMax": "5.0E9",
+          "FillValue": "NaN",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "B FGH SSL",
+          "ParameterKey": "thd_fgh_ssl",
+          "Description": "FGH (high-resolution) magnetic field B in XYZ Spinning Spacecraft Coordinates (SSL)",
+          "Cadence": "PT0.0078125S",
+          "Units": "nT",
+          "UnitsConversion": "1e-9>T",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "SR"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "Bx FGH",
+                "Qualifier": "Component.I",
+                "Index": "1",
+                "ValidMin": "-25000.0",
+                "ValidMax": "25000.0",
+                "FillValue": "NaN"
+              },
+              {
+                "Name": "By FGH",
+                "Qualifier": "Component.J",
+                "Index": "2",
+                "ValidMin": "-25000.0",
+                "ValidMax": "25000.0",
+                "FillValue": "NaN"
+              },
+              {
+                "Name": "Bz FGH",
+                "Qualifier": "Component.K",
+                "Index": "3",
+                "ValidMin": "-25000.0",
+                "ValidMax": "25000.0",
+                "FillValue": "NaN"
+              }
+            ]
+          },
+          "Field": {
+            "Qualifier": "Vector",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "B FGH DSL",
+          "ParameterKey": "thd_fgh_dsl",
+          "Description": "FGH (high-resolution) magnetic field B in XYZ Despun Spacecraft Coordinates (DSL/SR2)",
+          "Cadence": "PT0.0078125S",
+          "Units": "nT",
+          "UnitsConversion": "1e-9>T",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "SR2"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "Bx FGH",
+                "Qualifier": "Component.I",
+                "Index": "1",
+                "ValidMin": "-25000.0",
+                "ValidMax": "25000.0",
+                "FillValue": "NaN"
+              },
+              {
+                "Name": "By FGH",
+                "Qualifier": "Component.J",
+                "Index": "2",
+                "ValidMin": "-25000.0",
+                "ValidMax": "25000.0",
+                "FillValue": "NaN"
+              },
+              {
+                "Name": "Bz FGH",
+                "Qualifier": "Component.K",
+                "Index": "3",
+                "ValidMin": "-25000.0",
+                "ValidMax": "25000.0",
+                "FillValue": "NaN"
+              }
+            ]
+          },
+          "Field": {
+            "Qualifier": "Vector",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "B FGH GSE",
+          "ParameterKey": "thd_fgh_gse",
+          "Description": "FGH (high-resolution) magnetic field B in XYZ GSE Coordinates",
+          "Cadence": "PT0.0078125S",
+          "Units": "nT",
+          "UnitsConversion": "1e-9>T",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GSE"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "Bx FGH",
+                "Qualifier": "Component.I",
+                "Index": "1",
+                "ValidMin": "-25000.0",
+                "ValidMax": "25000.0",
+                "FillValue": "NaN"
+              },
+              {
+                "Name": "By FGH",
+                "Qualifier": "Component.J",
+                "Index": "2",
+                "ValidMin": "-25000.0",
+                "ValidMax": "25000.0",
+                "FillValue": "NaN"
+              },
+              {
+                "Name": "Bz FGH",
+                "Qualifier": "Component.K",
+                "Index": "3",
+                "ValidMin": "-25000.0",
+                "ValidMax": "25000.0",
+                "FillValue": "NaN"
+              }
+            ]
+          },
+          "Field": {
+            "Qualifier": "Vector",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "B FGH GSM",
+          "ParameterKey": "thd_fgh_gsm",
+          "Description": "FGH (high-resolution) magnetic field B in XYZ GSM Coordinates",
+          "Cadence": "PT0.0078125S",
+          "Units": "nT",
+          "UnitsConversion": "1e-9>T",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GSM"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "Bx FGH",
+                "Qualifier": "Component.I",
+                "Index": "1",
+                "ValidMin": "-25000.0",
+                "ValidMax": "25000.0",
+                "FillValue": "NaN"
+              },
+              {
+                "Name": "By FGH",
+                "Qualifier": "Component.J",
+                "Index": "2",
+                "ValidMin": "-25000.0",
+                "ValidMax": "25000.0",
+                "FillValue": "NaN"
+              },
+              {
+                "Name": "Bz FGH",
+                "Qualifier": "Component.K",
+                "Index": "3",
+                "ValidMin": "-25000.0",
+                "ValidMax": "25000.0",
+                "FillValue": "NaN"
+              }
+            ]
+          },
+          "Field": {
+            "Qualifier": "Vector",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "FGH Time",
+          "ParameterKey": "thd_fgh_time",
+          "Description": "FGH time, UTC, in seconds since 01-Jan-1970 00:00:00",
+          "Cadence": "PT0.0078125S",
+          "Units": "s",
+          "ValidMin": "0.0",
+          "ValidMax": "5.0E9",
+          "FillValue": "NaN",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "B FGS DSL",
+          "ParameterKey": "thd_fgs_dsl",
+          "Description": "FGS (spin-resolution/3s) magnetic field B in XYZ Despun Spacecraft Coordinates (DSL/SR2)",
+          "Cadence": "PT3S",
+          "Units": "nT",
+          "UnitsConversion": "1e-9>T",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "SR2"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "Bx FGS",
+                "Qualifier": "Component.I",
+                "Index": "1",
+                "ValidMin": "-25000.0",
+                "ValidMax": "25000.0",
+                "FillValue": "NaN"
+              },
+              {
+                "Name": "By FGS",
+                "Qualifier": "Component.J",
+                "Index": "2",
+                "ValidMin": "-25000.0",
+                "ValidMax": "25000.0",
+                "FillValue": "NaN"
+              },
+              {
+                "Name": "Bz FGS",
+                "Qualifier": "Component.K",
+                "Index": "3",
+                "ValidMin": "-25000.0",
+                "ValidMax": "25000.0",
+                "FillValue": "NaN"
+              }
+            ]
+          },
+          "Field": {
+            "Qualifier": "Vector",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "B FGS GSE",
+          "ParameterKey": "thd_fgs_gse",
+          "Description": "FGS (spin-resolution/3s) magnetic field B in XYZ GSE Coordinates",
+          "Cadence": "PT3S",
+          "Units": "nT",
+          "UnitsConversion": "1e-9>T",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GSE"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "Bx FGS",
+                "Qualifier": "Component.I",
+                "Index": "1",
+                "ValidMin": "-25000.0",
+                "ValidMax": "25000.0",
+                "FillValue": "NaN"
+              },
+              {
+                "Name": "By FGS",
+                "Qualifier": "Component.J",
+                "Index": "2",
+                "ValidMin": "-25000.0",
+                "ValidMax": "25000.0",
+                "FillValue": "NaN"
+              },
+              {
+                "Name": "Bz FGS",
+                "Qualifier": "Component.K",
+                "Index": "3",
+                "ValidMin": "-25000.0",
+                "ValidMax": "25000.0",
+                "FillValue": "NaN"
+              }
+            ]
+          },
+          "Field": {
+            "Qualifier": "Vector",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "B FGS GSM",
+          "ParameterKey": "thd_fgs_gsm",
+          "Description": "FGS (spin-resolution/3s) magnetic field B in XYZ GSM Coordinates",
+          "Cadence": "PT3S",
+          "Units": "nT",
+          "UnitsConversion": "1e-9>T",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GSM"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "Bx FGS",
+                "Qualifier": "Component.I",
+                "Index": "1",
+                "ValidMin": "-25000.0",
+                "ValidMax": "25000.0",
+                "FillValue": "NaN"
+              },
+              {
+                "Name": "By FGS",
+                "Qualifier": "Component.J",
+                "Index": "2",
+                "ValidMin": "-25000.0",
+                "ValidMax": "25000.0",
+                "FillValue": "NaN"
+              },
+              {
+                "Name": "Bz FGS",
+                "Qualifier": "Component.K",
+                "Index": "3",
+                "ValidMin": "-25000.0",
+                "ValidMax": "25000.0",
+                "FillValue": "NaN"
+              }
+            ]
+          },
+          "Field": {
+            "Qualifier": "Vector",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "FGS Time",
+          "ParameterKey": "thd_fgs_time",
+          "Description": "FGS time, UTC, in seconds since 01-Jan-1970 00:00:00",
+          "Cadence": "PT3S",
+          "Units": "s",
+          "ValidMin": "0.0",
+          "ValidMax": "5.0E9",
+          "FillValue": "NaN",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        }
+      ]
+    }
+  }
+}

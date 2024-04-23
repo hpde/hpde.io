@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2.4.1.xsd">
+  <Version>2.4.1</Version>
+  <NumericalData>
+    <ResourceID>spase://CNES/NumericalData/CDPP-AMDA/SWARM-B/LP/swarmb-lp-all</ResourceID>
+    <ResourceHeader>
+      <ResourceName>lp extended dataset</ResourceName>
+      <AlternateName>2Hz Langmuir Probe Extended Dataset</AlternateName>
+      <ReleaseDate>2022-09-25T20:31:06Z</ReleaseDate>
+      <Description>The extended swb_rm EFI LP data from the probes in the so-called “harmonic 
+submode” which contributes with more than 99% to the normal LP science data. They include
+ 
+* estimates of the electron density, using the ion current
+* estimates of the electron temperature and spacecraft potential  from both probes
+* flags of informative character or indicating quality issues of data
+* estimates of the electron temperature using a combination of the results from both probes, applying a modified, potentially improved blending algorithm compared to the present L1b algorithm 
+
+The data are intended for users with some experience and understanding of Langmuir probe data.
+ </Description>
+      <Acknowledgement> </Acknowledgement>
+      <Contact>
+        <PersonID>spase://CNES/Person/CDPP-AMDA/S.Buchert</PersonID>
+        <Role>Scientist</Role>
+      </Contact>
+      <InformationURL>
+        <Name>Dataset Description</Name>
+        <URL>ftp://swarm-diss.eo.esa.int/Advanced/Plasma_Data/2_Hz_Langmuir_Probe_Extended_Dataset/SW-RN-IRF-GS-005_Extended_LP_Data_Probes.ZIP</URL>
+        </InformationURL>
+    </ResourceHeader>
+    <AccessInformation>
+         <RepositoryID>spase://SMWG/Repository/CDPP/AMDA</RepositoryID>
+         <Availability>Online</Availability>
+         <AccessRights>Open</AccessRights>
+         <AccessURL>
+            <Name>CDPP/AMDA HAPI Server</Name>
+            <URL>http://amda.irap.omp.eu/service/hapi</URL>
+            <Style>HAPI</Style>
+            <Description>Web Service to this product using the HAPI interface.</Description>
+         </AccessURL>
+         <Format>CSV</Format>
+         <Acknowledgement>Thank you for acknowledging the use of AMDA in publications with wording like "Data analysis was performed with the AMDA science analysis system provided by the Centre de Données de la Physique des Plasmas (CDPP) supported by CNRS, CNES, Observatoire de Paris and Université Paul Sabatier, Toulouse".. See the Rules of the road at http://amda.cdpp.eu/help/policy.html. Please acknowledge the Data Providers.</Acknowledgement>
+      </AccessInformation>
+    <AccessInformation>
+         <RepositoryID>spase://SMWG/Repository/CDPP/AMDA</RepositoryID>
+         <Availability>Online</Availability>
+         <AccessRights>Open</AccessRights>
+         <AccessURL>
+            <Name>CDPP/AMDA Web application</Name>
+            <URL>http://amda.cdpp.eu</URL>
+            <Description>Access to Data via CDPP/AMDA Web application.</Description>
+         </AccessURL>
+         <Format>CSV</Format>
+         <Format>VOTable</Format>
+         <Format>CDF</Format>
+         <Format>PNG</Format>
+         <Acknowledgement>Thank you for acknowledging the use of AMDA in publications with wording like "Data analysis was performed with the AMDA science analysis system provided by the Centre de Données de la Physique des Plasmas (CDPP) supported by CNRS, CNES, Observatoire de Paris and Université Paul Sabatier, Toulouse".. See the Rules of the road at http://amda.cdpp.eu/help/policy.html. Please acknowledge the Data Providers.</Acknowledgement>
+      </AccessInformation>
+    <ProcessingLevel>Calibrated</ProcessingLevel>
+    <ProviderName>ftp://swarm-diss.eo.esa.int</ProviderName>
+    <ProviderResourceName>Extended Set of Swarm Langmuir Probe Data</ProviderResourceName>
+    <ProviderProcessingLevel>Calibrated</ProviderProcessingLevel>
+    <InstrumentID>spase://CNES/Instrument/CDPP-AMDA/SWARM-B/LP</InstrumentID>
+    <MeasurementType>ElectricField</MeasurementType>
+    <TemporalDescription>
+      <TimeSpan>
+        <StartDate>2013-12-02T11:44:45Z</StartDate>
+        <StopDate>2022-09-07T23:59:59Z</StopDate>
+      </TimeSpan>
+      <Cadence>PT0.5S</Cadence>
+    </TemporalDescription>
+    <ObservedRegion>Earth.Magnetosphere</ObservedRegion>
+    <Caveats>
+          * density e- - plasma density from ion current
+          * temperature e- - electron temperature, blended value
+          * s/c pot - spacecraft potential, blended value
+        </Caveats>
+    <Parameter>
+      <Name>density e-</Name>
+      <ParameterKey>swb_ne</ParameterKey>
+      <Description>Plasma density from ion current</Description>
+      <Units>cm**-3</Units>
+      <RenderingHints>
+        <DisplayType>TimeSeries</DisplayType>
+      </RenderingHints>
+      <Particle>
+        <ParticleQuantity>NumberDensity</ParticleQuantity>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>temperature e-</Name>
+      <ParameterKey>swb_te</ParameterKey>
+      <Description>Electron temperature, blended value</Description>
+      <Units>K</Units>
+      <RenderingHints>
+        <DisplayType>TimeSeries</DisplayType>
+      </RenderingHints>
+      <Particle>
+        <ParticleQuantity>Temperature</ParticleQuantity>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>s/c pot</Name>
+      <ParameterKey>swb_pot</ParameterKey>
+      <Description>Spacecraft potential, blended value</Description>
+      <Units>V</Units>
+      <RenderingHints>
+        <DisplayType>TimeSeries</DisplayType>
+      </RenderingHints>
+      <Field>
+        <FieldQuantity>Potential</FieldQuantity>
+      </Field>
+    </Parameter>
+  </NumericalData>
+</Spase>
