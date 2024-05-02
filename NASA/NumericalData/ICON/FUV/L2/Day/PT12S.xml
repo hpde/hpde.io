@@ -1,16 +1,20 @@
 <Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema  http://spase-group.org/data/schema/spase-2.3.2.xsd">
-  <Version>2.5.0</Version>
+  <Version>2.6.0</Version>
   <NumericalData>
     <ResourceID>spase://NASA/NumericalData/ICON/FUV/L2/Day/PT12S</ResourceID>
     <ResourceHeader>
       <ResourceName>ICON The Far Ultra Violet Imaging Spectrograph Dayside Images </ResourceName>
 	  <AlternateName>FUV Dayside Images</AlternateName>
 	  <DOI>https://doi.org/10.48322/w3qs-ed95</DOI>
-      <ReleaseDate>2023-08-01T00:00:00Z</ReleaseDate>
+      <ReleaseDate>2024-05-02T00:00:00Z</ReleaseDate>
       <RevisionHistory>
          <RevisionEvent>
             <ReleaseDate>2023-08-01T00:00:00Z</ReleaseDate>
             <Note>Added DOI and PublicationInfo minted by JMW on 20230801. Updated SPASE version.</Note>
+         </RevisionEvent>
+		 <RevisionEvent>
+            <ReleaseDate>2024-05-02T00:00:00Z</ReleaseDate>
+            <Note>Updated SPASE version. Edited AccessInformation. JMW</Note>
          </RevisionEvent>
       </RevisionHistory>
       <Description>The FUV instrument takes 2D images of the Earth’s horizon in the Far ultraviolet. The imager is pointing approximately 90 degrees to the spacecraft motion, similar to looking out of the side window of a car as it drives down the road. Onboard electronics read the image 8 times per second and perform Time Delay Integration (TDI) to remove the motion-blur from the images. A turret is used to steer the field of view of the instrument left to right to ensure it always looks along the magnetic meridian (towards the magnetic pole).
@@ -43,27 +47,39 @@
       </InformationURL>
     </ResourceHeader>
 	<AccessInformation>
-		<RepositoryID>spase://SMWG/Repository/NASA/GSFC/CDAW</RepositoryID>
-		<Availability>Online</Availability>
-		<AccessRights>Open</AccessRights>
-		<AccessURL>
-			<Name>HTTPS from CDAWeb</Name>
-			<URL>https://cdaweb.gsfc.nasa.gov/pub/data/icon/l2/</URL>
-			<Description>FTPS access to ICON data via ftps at the Space Physics Data Facility (SPDF)</Description>
-		</AccessURL>
-		<Format>NetCDF</Format>
-	</AccessInformation>
-    <AccessInformation>
-		<RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF</RepositoryID>
-		<Availability>Online</Availability>
-		<AccessRights>Open</AccessRights>
-		<AccessURL>
-			<Name>HTTPS from SPDF</Name>
-			<URL>https://spdf.gsfc.nasa.gov/pub/data/icon/l2/</URL>
-			<Description>HTTPS access to ICON data at the Space Physics Data Facility (SPDF)</Description>
-		</AccessURL>
-		<Format>NetCDF</Format>
-	</AccessInformation>
+       <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF/CDAWeb</RepositoryID>
+       <Availability>Online</Availability>
+       <AccessRights>Open</AccessRights>
+       <AccessURL>
+          <Name>CDAWeb HAPI Server</Name>
+          <URL>https://cdaweb.gsfc.nasa.gov/hapi</URL>
+          <Style>HAPI</Style>
+          <ProductKey>ICON_L2-4_FUV_DAY</ProductKey>
+          <Description>Web Service to this product using the HAPI interface.</Description>
+       </AccessURL>
+       <Format>NetCDF</Format>
+       <Acknowledgement>Please acknowledge Dr. Farzad Kamalabadi and Dr. Thomas Immel. Please acknowledge the Data Providers and CDAWeb when using these Data.</Acknowledgement>
+    </AccessInformation> 
+	<AccessInformation>
+       <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF/CDAWeb</RepositoryID>
+       <Availability>Online</Availability>
+       <AccessRights>Open</AccessRights>
+       <AccessURL>
+          <Name>HTTPS from SPDF</Name>
+          <URL>https://spdf.gsfc.nasa.gov/pub/data/icon/l2/l2-4_fuv_day/</URL>
+          <ProductKey>ICON_L2-4_FUV_DAY</ProductKey>
+          <Description>Access to Data in NetCDF Format via https from SPDF</Description>
+       </AccessURL>
+       <AccessURL>
+          <Name>CDAWeb</Name>
+          <URL>https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=ICON_L2-4_FUV_DAY&amp;index=sp_phys</URL>
+          <ProductKey>ICON_L2-4_FUV_DAY</ProductKey>
+          <Description>Access to NetCDFs via NASA/GSFC CDAWeb</Description>
+       </AccessURL>
+       <Format>NetCDF</Format>
+       <Encoding>None</Encoding>
+       <Acknowledgement>Please acknowledge Dr. Farzad Kamalabadi and Dr. Thomas Immel. Please acknowledge the Data Providers and CDAWeb when using these Data.</Acknowledgement>
+    </AccessInformation>
 	<ProcessingLevel>Calibrated</ProcessingLevel>
 	<ProviderName>ICON FUV team</ProviderName>
 		<InstrumentID>spase://SMWG/Instrument/ICON/FUV</InstrumentID>
@@ -77,7 +93,6 @@
 	</TemporalDescription>
 	<ObservedRegion>Earth.NearSurface.Atmosphere</ObservedRegion>
 	<ObservedRegion>Earth.NearSurface.Ionosphere</ObservedRegion>
-
 	<Parameter>
 	    <Name>Epoch Time</Name>
 	    <ParameterKey>Epoch</ParameterKey>

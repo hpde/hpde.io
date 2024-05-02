@@ -3,19 +3,25 @@
     "xmlns": "http://www.spase-group.org/data/schema",
     "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
     "xsi:schemaLocation": "http://www.spase-group.org/data/schema  http://spase-group.org/data/schema/spase-2.3.2.xsd",
-    "Version": "2.5.0",
+    "Version": "2.6.0",
     "NumericalData": {
       "ResourceID": "spase://NASA/NumericalData/ICON/FUV/L2/Day/PT12S",
       "ResourceHeader": {
         "ResourceName": "ICON The Far Ultra Violet Imaging Spectrograph Dayside Images ",
         "AlternateName": "FUV Dayside Images",
         "DOI": "https://doi.org/10.48322/w3qs-ed95",
-        "ReleaseDate": "2023-08-01T00:00:00Z",
+        "ReleaseDate": "2024-05-02T00:00:00Z",
         "RevisionHistory": {
-          "RevisionEvent": {
-            "ReleaseDate": "2023-08-01T00:00:00Z",
-            "Note": "Added DOI and PublicationInfo minted by JMW on 20230801. Updated SPASE version."
-          }
+          "RevisionEvent": [
+            {
+              "ReleaseDate": "2023-08-01T00:00:00Z",
+              "Note": "Added DOI and PublicationInfo minted by JMW on 20230801. Updated SPASE version."
+            },
+            {
+              "ReleaseDate": "2024-05-02T00:00:00Z",
+              "Note": "Updated SPASE version. Edited AccessInformation. JMW"
+            }
+          ]
         },
         "Description": "The FUV instrument takes 2D images of the Earth’s horizon in the Far ultraviolet. The imager is pointing approximately 90 degrees to the spacecraft motion, similar to looking out of the side window of a car as it drives down the road. Onboard electronics read the image 8 times per second and perform Time Delay Integration (TDI) to remove the motion-blur from the images. A turret is used to steer the field of view of the instrument left to right to ensure it always looks along the magnetic meridian (towards the magnetic pole).\r\n\t  \r\n\t  This describes the data product for ICON FUV Daytime O/N2 (DP 2.4). The ratio of oxygen to nitrogen in the thermosphere is obtained from the two channels of ICON FUV instrument data in, through an inversion process described in https://doi.org/10.1007/s11214-018-0477-6.  The L2 FUV Daytime files are produced from the L1 FUV files.",
         "Acknowledgement": "National Aeronautics and Space Administration; Dr. Andrew W. Stephan; Dr. Thomas Immel",
@@ -48,26 +54,40 @@
       },
       "AccessInformation": [
         {
-          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/CDAW",
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF/CDAWeb",
           "Availability": "Online",
           "AccessRights": "Open",
           "AccessURL": {
-            "Name": "HTTPS from CDAWeb",
-            "URL": "https://cdaweb.gsfc.nasa.gov/pub/data/icon/l2/",
-            "Description": "FTPS access to ICON data via ftps at the Space Physics Data Facility (SPDF)"
+            "Name": "CDAWeb HAPI Server",
+            "URL": "https://cdaweb.gsfc.nasa.gov/hapi",
+            "Style": "HAPI",
+            "ProductKey": "ICON_L2-4_FUV_DAY",
+            "Description": "Web Service to this product using the HAPI interface."
           },
-          "Format": "NetCDF"
+          "Format": "NetCDF",
+          "Acknowledgement": "Please acknowledge Dr. Farzad Kamalabadi and Dr. Thomas Immel. Please acknowledge the Data Providers and CDAWeb when using these Data."
         },
         {
-          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF/CDAWeb",
           "Availability": "Online",
           "AccessRights": "Open",
-          "AccessURL": {
-            "Name": "HTTPS from SPDF",
-            "URL": "https://spdf.gsfc.nasa.gov/pub/data/icon/l2/",
-            "Description": "HTTPS access to ICON data at the Space Physics Data Facility (SPDF)"
-          },
-          "Format": "NetCDF"
+          "AccessURL": [
+            {
+              "Name": "HTTPS from SPDF",
+              "URL": "https://spdf.gsfc.nasa.gov/pub/data/icon/l2/l2-4_fuv_day/",
+              "ProductKey": "ICON_L2-4_FUV_DAY",
+              "Description": "Access to Data in NetCDF Format via https from SPDF"
+            },
+            {
+              "Name": "CDAWeb",
+              "URL": "https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=ICON_L2-4_FUV_DAY&index=sp_phys",
+              "ProductKey": "ICON_L2-4_FUV_DAY",
+              "Description": "Access to NetCDFs via NASA/GSFC CDAWeb"
+            }
+          ],
+          "Format": "NetCDF",
+          "Encoding": "None",
+          "Acknowledgement": "Please acknowledge Dr. Farzad Kamalabadi and Dr. Thomas Immel. Please acknowledge the Data Providers and CDAWeb when using these Data."
         }
       ],
       "ProcessingLevel": "Calibrated",
