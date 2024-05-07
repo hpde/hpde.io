@@ -1,0 +1,145 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2.4.1.xsd",
+    "Version": "2.4.1",
+    "NumericalData": {
+      "ResourceID": "spase://CNES/NumericalData/CDPP-AMDA/ULYSSES/SWOOPS/ulys-bae-mom",
+      "ResourceHeader": {
+        "ResourceName": "sw electrons",
+        "ReleaseDate": "2012-03-06T21:16:53Z",
+        "Description": "ToDo",
+        "Contact": {
+          "PersonID": "spase://SMWG/Person/Elena.Budnik",
+          "Role": "GeneralContact"
+        },
+        "InformationURL": [
+          {
+            "Name": "Readme file at SPDF",
+            "URL": "ftp://spdf.gsfc.nasa.gov/pub/data/ulysses/merged/ulymgd.txt"
+          },
+          {
+            "Name": "SWOOPS data users' guide",
+            "URL": "ftp://spdf.gsfc.nasa.gov/pub/data/ulysses/plasma/swoops/ion/swoops_ion_users_guide_update_20030214.txt"
+          }
+        ]
+      },
+      "AccessInformation": [
+        {
+          "RepositoryID": "spase://SMWG/Repository/CDPP/AMDA",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDPP/AMDA HAPI Server",
+            "URL": "http://amda.irap.omp.eu/service/hapi",
+            "Style": "HAPI",
+            "Description": "Web Service to this product using the HAPI interface."
+          },
+          "Format": "CSV",
+          "Acknowledgement": "Thank you for acknowledging the use of AMDA in publications with wording like \"Data analysis was performed with the AMDA science analysis system provided by the Centre de Données de la Physique des Plasmas (CDPP) supported by CNRS, CNES, Observatoire de Paris and Université Paul Sabatier, Toulouse\".. See the Rules of the road at http://amda.cdpp.eu/help/policy.html. Please acknowledge the Data Providers."
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/CDPP/AMDA",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDPP/AMDA Web application",
+            "URL": "http://amda.cdpp.eu",
+            "Description": "Access to Data via CDPP/AMDA Web application."
+          },
+          "Format": [
+            "CSV",
+            "VOTable",
+            "CDF",
+            "PNG"
+          ],
+          "Acknowledgement": "Thank you for acknowledging the use of AMDA in publications with wording like \"Data analysis was performed with the AMDA science analysis system provided by the Centre de Données de la Physique des Plasmas (CDPP) supported by CNRS, CNES, Observatoire de Paris and Université Paul Sabatier, Toulouse\".. See the Rules of the road at http://amda.cdpp.eu/help/policy.html. Please acknowledge the Data Providers."
+        }
+      ],
+      "ProviderName": "CDAWeb",
+      "ProviderResourceName": "UY_M0_BAE",
+      "InstrumentID": "spase://CNES/Instrument/CDPP-AMDA/Ulysses/SWOOPS",
+      "MeasurementType": "ThermalPlasma",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "1990-11-18T00:55:16Z",
+          "StopDate": "2004-12-31T00:00:00Z"
+        },
+        "CadenceMin": "PT3M",
+        "CadenceMax": "PT22M"
+      },
+      "ObservedRegion": "Heliosphere",
+      "Parameter": [
+        {
+          "Name": "density",
+          "ParameterKey": "ne_ulys",
+          "Description": "Solar wind electron plasma density",
+          "UCD": "phys.density;phys.electron",
+          "Units": "cm-3",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "n_total",
+                "Index": "1",
+                "ParameterKey": "ne_ulys(0)"
+              },
+              {
+                "Name": "n_core",
+                "Index": "2",
+                "ParameterKey": "ne_ulys(1)"
+              },
+              {
+                "Name": "n_halo",
+                "Index": "3",
+                "ParameterKey": "ne_ulys(2)"
+              }
+            ]
+          },
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "NumberDensity"
+          }
+        },
+        {
+          "Name": "temperature",
+          "ParameterKey": "te_ulys",
+          "Description": "solar wind plasma temperature",
+          "UCD": "phys.temperature;phys.electron",
+          "Units": "eV",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "t_total",
+                "Index": "1",
+                "ParameterKey": "te_ulys(0)"
+              },
+              {
+                "Name": "t_core",
+                "Index": "2",
+                "ParameterKey": "te_ulys(1)"
+              },
+              {
+                "Name": "t_halo",
+                "Index": "3",
+                "ParameterKey": "te_ulys(2)"
+              }
+            ]
+          },
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "Temperature"
+          }
+        }
+      ]
+    }
+  }
+}

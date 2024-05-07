@@ -1,0 +1,115 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2.4.1.xsd",
+    "Version": "2.4.1",
+    "NumericalData": {
+      "ResourceID": "spase://CNES/NumericalData/CDPP-AMDA/Cassini/RPWS/cass-rpws-neproxy",
+      "ResourceHeader": {
+        "ResourceName": "electron proxy",
+        "AlternateName": "Langmuir Probe : electron proxy",
+        "ReleaseDate": "2018-01-23T15:12:07Z",
+        "Description": "Cassini RPWS Neproxy data contains all available RPWS Langmuir probe (LP) floating potentials and secondary products.\n                \n       Cassini RPWS Langmuir Probe proxy electron density data are derived    \n      using an empirical relation between the floating potential and CAPS    \n      measured densities, for the entire mission. Spacecraft potential data  \n      are also derived from LP floating potential.               \n            ",
+        "Contact": [
+          {
+            "PersonID": "spase://SMWG/Person/William.S.Kurth",
+            "Role": "PrincipalInvestigator"
+          },
+          {
+            "PersonID": "spase://CNES/Person/CDPP-AMDA/J.Wahlund",
+            "Role": "DataProducer"
+          }
+        ],
+        "InformationURL": {
+          "Name": "PDS home page",
+          "URL": "https://pds-ppi.igpp.ucla.edu/data/CO-SS_S-RPWS-5-NEPROXY-V1.0/CATALOG/NEPROXYDS.CAT"
+        }
+      },
+      "AccessInformation": [
+        {
+          "RepositoryID": "spase://SMWG/Repository/CDPP/AMDA",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDPP/AMDA HAPI Server",
+            "URL": "http://amda.irap.omp.eu/service/hapi",
+            "Style": "HAPI",
+            "Description": "Web Service to this product using the HAPI interface."
+          },
+          "Format": "CSV",
+          "Acknowledgement": "Thank you for acknowledging the use of AMDA in publications with wording like \"Data analysis was performed with the AMDA science analysis system provided by the Centre de Données de la Physique des Plasmas (CDPP) supported by CNRS, CNES, Observatoire de Paris and Université Paul Sabatier, Toulouse\".. See the Rules of the road at http://amda.cdpp.eu/help/policy.html. Please acknowledge the Data Providers."
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/CDPP/AMDA",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDPP/AMDA Web application",
+            "URL": "http://amda.cdpp.eu",
+            "Description": "Access to Data via CDPP/AMDA Web application."
+          },
+          "Format": [
+            "CSV",
+            "VOTable",
+            "CDF",
+            "PNG"
+          ],
+          "Acknowledgement": "Thank you for acknowledging the use of AMDA in publications with wording like \"Data analysis was performed with the AMDA science analysis system provided by the Centre de Données de la Physique des Plasmas (CDPP) supported by CNRS, CNES, Observatoire de Paris and Université Paul Sabatier, Toulouse\".. See the Rules of the road at http://amda.cdpp.eu/help/policy.html. Please acknowledge the Data Providers."
+        }
+      ],
+      "ProviderName": "PDS",
+      "ProviderResourceName": "CO-SS_S-RPWS-5-NEPROXY-V1.0",
+      "InstrumentID": "spase://CNES/Instrument/CDPP-AMDA/Cassini/RPWS",
+      "MeasurementType": "ThermalPlasma",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "2004-08-27T00:03:27Z",
+          "StopDate": "2015-12-31T22:28:25Z"
+        },
+        "Cadence": "PT640S"
+      },
+      "ObservedRegion": "Saturn",
+      "Caveats": "Occasional RPWS Langmuir probe voltage sweeps have interference in       \n    individual sweep samples. These samples have been filtered away before  \n    analysis and should not pose a problem for the delivered output          \n    parameters.  The Ufloat proxy method for this data set is applicable only\n    for densities below 5 cm^-3.  To avoid uncertainty of the transition    \n    region, data are limited to radial distance beyond 7 Rs from Saturn and  \n    absolute magnetic latitude above 15 degrees.  Also the data inside 10 Rt \n    from Titan are not included for the same reason.  The proxy method uses  \n    the photoelectron condition directly measured by the instrument and      \n    therefore not available when LP is totally in shadow.",
+      "Parameter": [
+        {
+          "Name": "floating potential",
+          "ParameterKey": "cass_neproxy_fpot",
+          "UCD": "phys.potential;phys.elecField;instr.obsty",
+          "Units": "V",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "s/c potential",
+          "ParameterKey": "cass_neproxy_scpot",
+          "UCD": "phys.potential;phys.elecField;instr.obsty",
+          "Units": "V",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "density e-",
+          "ParameterKey": "cass_neproxy_e",
+          "UCD": "phys.density;phys.electron",
+          "Units": "cm-3",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "NumberDensity"
+          }
+        }
+      ]
+    }
+  }
+}

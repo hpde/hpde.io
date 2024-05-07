@@ -1,0 +1,409 @@
+<?xml version="1.0"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><title>SPASE Resource Description</title><script type="application/ld+json">{
+		"@context": "https://schema.org/",
+		"@type" :"Dataset",
+		"name": "Voyager 2 Heliosphere Magnetic Field in Heliographic and Inertial Heliographic Coordinates, Hourly Data",
+    
+		"dateModified": "2020-07-07",
+
+    "identifier": "spase://NASA/NumericalData/Voyager2/MAG/Heliosphere/PT1H",
+
+    "creditText": "",
+ 		"description": "* Data Set Overview\n* =================\n\nThis Data Set contains hourly Averages of the Interplanetary Magnetic Field (IMF) Measurements obtained by the Triaxial Fluxgate Magnetometer Experiment on Voyager 2. Identical Instruments on Voyager 1 and 2 were designed to measure the IMF between Earth and Saturn (10 AU) during the primary Voyager Mission. The Design and Performance yielded Absolute Accuracies to better than &lt;0.1 nT. In general, each Component of the hourly Average has an Uncertainty of up to (±0.05 nT) in the Region beyond 10 AU. More accurate Measurements can be obtained by Special Processing of the Data, but it was not feasible to do this for the entire Data Set included here. The Magnetic Field Magnitude in nT is provided along with Angles of the Field Vector in the Spacecraft-centered Heliographic (HG) Coordinate System, also known as RTN.\n\n* Coordinate System\n* =================\n\nInterplanetary Magnetic Field Studies make use of two important Coordinate Systems, the Inertial Heliographic (IHG) Coordinate System and the Heliographic (HG) Coordinate System.\n\nThe IHG Coordinate System is used to define the Position of the Spacecraft. The IHG System is defined with its Origin at the Sun. There are three Orthogonal Axes, X(IHG), Y(IHG), and Z(IHG). The Z(IHG) Axis points northward along the Spin Axis of the Sun. The XY Plane of the IHG System lays in the Solar Equatorial Plane. The Intersection of the Solar Equatorial Plane with the Ecliptic Plane defines a Line, the Longitude of the Ascending Node, which is taken to be the X(IHG) Axis. The X(IHG) Axis drifts slowly with Time, approximately one degree per 72 years.\n\nThe Magnetic Field Orientation is defined in relation to the Spacecraft. Drawing a Line from the Center of the Sun, which is the Origin of the IHG System, to the Spacecraft defines the X Axis of the HG Coordinate System. The HG Coordinate System is defined with its Origin centered at the Spacecraft. Three orthogonal Axes are defined, X(HG), Y(HG), and Z(HG). The X(HG) Axis points radially away from the Sun and the Y(HG) Axis is parallel to the Solar Equatorial Plane and therefore parallel to the X(IHG)-Y(IHG) Plane as well. The Z(HG) Axis is chosen to complete the Orthonormal Triad.\n\nAn excellent Reference Guide with Diagrams explaining the IHG and HG Systems may be found in Space and Science Reviews, Volume 39 (1984), 255-316, MHD Processes in the Outer Heliosphere, L. F. Burlaga.\n\n* Data Formats\n* ============\n\n+--------------------------------------------------------------------------+\n| Num | Field         | Description for Data before 1990                   |\n----------------------------------------------------------------------------\n| 1   | Spacecraft ID | 1=Voyager 1, 2=Voyager 2                           |\n| 2   | Time (UTC)    | YY DDD HH where YY=year, DDD=day, and HH=hour      |\n| 3   | X             | X Position Component, in AU, IHG Coordinates       |\n| 4   | Y             | Y Position Component, in AU, IHG Coordinates       |\n| 5   | Z             | Z Position Component, in AU, IHG Coordinates       |\n| 6   | Range         | Heliocentric Range, equal to the sqrt(X^2+Y^2+Z^2) |\n| 7   | F1            | Field Magnitude, in nT, avg(F2(48sec))             |\n| 8   | F2            | Field Modulus, in nT, norm(B1,B2,B3)               |\n| 9   | delta         | Latitudinal Angle, in degrees, HG Coordinates      |\n| 10  | lambda        | Longitudinal Angle, in degrees, HG Coordinates     |\n+--------------------------------------------------------------------------+\n\n+-------------------------------------------------------------------------------------+\n| Num | Field                       | Description for Data after 1990                 |\n---------------------------------------------------------------------------------------\n| 1   | Spacecraft ID               | FLT1=Voyager 1, FLT2=Voyager 2                  |\n| 2   | Time (UTC)                  | Decimal Year Format (90.00000 is Day 1 of 1990) |\n| 3   | Magnetic Field Strength, F1 | computed from high-resolution Observations      |\n| 4   | Elevation Angle             | in degrees, HG Coordinates                      |\n| 5   | Azimuthal Angle             | in degrees, HG Coordinates                      |\n| 6   | Magnetic Field Strength, F2 | computed from hourly Averages of the Components |\n+-------------------------------------------------------------------------------------+\n\nThe Magnetic Field Components may be recovered by using F2, delta, and lambda. Note that Fortran Users need to convert from Degrees to Radians before using Trigonometric Functions.\n\n* BR = F2*cos(lambda)*cos(delta)\n* BT = F2*sin(lambda)*cos(delta)\n* BN = F2*sin(delta)\n\n* Contact Information\n* ===================\n\n+---------------------------------+\n| Principal Investigator          |\n-----------------------------------\n| Prof. Norman F. Ness            |\n| Bartol Research Institute       |\n| Univerity of Delaware           |\n| Newark, Delaware 19716-4793     |\n| Phone: (302) 831-8116           |\n| Fax: (302) 831-1843             |\n| Email: norman.ness@mus.udel.edu |\n+---------------------------------+\n\n+----------------------------------+\n| Data Contact                     |\n------------------------------------\n| Dr. Len Burlaga                  |\n| Code 612.2                       |\n| NASA Goddard Space Flight Center |\n| Greenbelt, MD 20771              |\n| Tel.: 301-286-5956               |\n| Fax: 301-286-1433                |\n+----------------------------------+",
+		"abstract": "* Data Set Overview\n* =================\n\nThis Data Set contains hourly Averages of the Interplanetary Magnetic Field (IMF) Measurements obtained by the Triaxial Fluxgate Magnetometer Experiment on Voyager 2. Identical Instruments on Voyager 1 and 2 were designed to measure the IMF between Earth and Saturn (10 AU) during the primary Voyager Mission. The Design and Performance yielded Absolute Accuracies to better than &lt;0.1 nT. In general, each Component of the hourly Average has an Uncertainty of up to (±0.05 nT) in the Region beyond 10 AU. More accurate Measurements can be obtained by Special Processing of the Data, but it was not feasible to do this for the entire Data Set included here. The Magnetic Field Magnitude in nT is provided along with Angles of the Field Vector in the Spacecraft-centered Heliographic (HG) Coordinate System, also known as RTN.\n\n* Coordinate System\n* =================\n\nInterplanetary Magnetic Field Studies make use of two important Coordinate Systems, the Inertial Heliographic (IHG) Coordinate System and the Heliographic (HG) Coordinate System.\n\nThe IHG Coordinate System is used to define the Position of the Spacecraft. The IHG System is defined with its Origin at the Sun. There are three Orthogonal Axes, X(IHG), Y(IHG), and Z(IHG). The Z(IHG) Axis points northward along the Spin Axis of the Sun. The XY Plane of the IHG System lays in the Solar Equatorial Plane. The Intersection of the Solar Equatorial Plane with the Ecliptic Plane defines a Line, the Longitude of the Ascending Node, which is taken to be the X(IHG) Axis. The X(IHG) Axis drifts slowly with Time, approximately one degree per 72 years.\n\nThe Magnetic Field Orientation is defined in relation to the Spacecraft. Drawing a Line from the Center of the Sun, which is the Origin of the IHG System, to the Spacecraft defines the X Axis of the HG Coordinate System. The HG Coordinate System is defined with its Origin centered at the Spacecraft. Three orthogonal Axes are defined, X(HG), Y(HG), and Z(HG). The X(HG) Axis points radially away from the Sun and the Y(HG) Axis is parallel to the Solar Equatorial Plane and therefore parallel to the X(IHG)-Y(IHG) Plane as well. The Z(HG) Axis is chosen to complete the Orthonormal Triad.\n\nAn excellent Reference Guide with Diagrams explaining the IHG and HG Systems may be found in Space and Science Reviews, Volume 39 (1984), 255-316, MHD Processes in the Outer Heliosphere, L. F. Burlaga.\n\n* Data Formats\n* ============\n\n+--------------------------------------------------------------------------+\n| Num | Field         | Description for Data before 1990                   |\n----------------------------------------------------------------------------\n| 1   | Spacecraft ID | 1=Voyager 1, 2=Voyager 2                           |\n| 2   | Time (UTC)    | YY DDD HH where YY=year, DDD=day, and HH=hour      |\n| 3   | X             | X Position Component, in AU, IHG Coordinates       |\n| 4   | Y             | Y Position Component, in AU, IHG Coordinates       |\n| 5   | Z             | Z Position Component, in AU, IHG Coordinates       |\n| 6   | Range         | Heliocentric Range, equal to the sqrt(X^2+Y^2+Z^2) |\n| 7   | F1            | Field Magnitude, in nT, avg(F2(48sec))             |\n| 8   | F2            | Field Modulus, in nT, norm(B1,B2,B3)               |\n| 9   | delta         | Latitudinal Angle, in degrees, HG Coordinates      |\n| 10  | lambda        | Longitudinal Angle, in degrees, HG Coordinates     |\n+--------------------------------------------------------------------------+\n\n+-------------------------------------------------------------------------------------+\n| Num | Field                       | Description for Data after 1990                 |\n---------------------------------------------------------------------------------------\n| 1   | Spacecraft ID               | FLT1=Voyager 1, FLT2=Voyager 2                  |\n| 2   | Time (UTC)                  | Decimal Year Format (90.00000 is Day 1 of 1990) |\n| 3   | Magnetic Field Strength, F1 | computed from high-resolution Observations      |\n| 4   | Elevation Angle             | in degrees, HG Coordinates                      |\n| 5   | Azimuthal Angle             | in degrees, HG Coordinates                      |\n| 6   | Magnetic Field Strength, F2 | computed from hourly Averages of the Components |\n+-------------------------------------------------------------------------------------+\n\nThe Magnetic Field Components may be recovered by using F2, delta, and lambda. Note that Fortran Users need to convert from Degrees to Radians before using Trigonometric Functions.\n\n* BR = F2*cos(lambda)*cos(delta)\n* BT = F2*sin(lambda)*cos(delta)\n* BN = F2*sin(delta)\n\n* Contact Information\n* ===================\n\n+---------------------------------+\n| Principal Investigator          |\n-----------------------------------\n| Prof. Norman F. Ness            |\n| Bartol Research Institute       |\n| Univerity of Delaware           |\n| Newark, Delaware 19716-4793     |\n| Phone: (302) 831-8116           |\n| Fax: (302) 831-1843             |\n| Email: norman.ness@mus.udel.edu |\n+---------------------------------+\n\n+----------------------------------+\n| Data Contact                     |\n------------------------------------\n| Dr. Len Burlaga                  |\n| Code 612.2                       |\n| NASA Goddard Space Flight Center |\n| Greenbelt, MD 20771              |\n| Tel.: 301-286-5956               |\n| Fax: 301-286-1433                |\n+----------------------------------+",
+
+		"temporalCoverage": "1977-09-05T00:00:00.00/2005-01-01T00:00:00.000",
+
+    "genre": "MagneticField",
+		"keywords": [  ],
+		"license": "https://cdla.io/permissive-1-0/",
+
+    "audience":{
+        "@type": "Audience",
+        "audienceType": ["Space Physicist", "Space Community", "Data Scientists", "Machine Learning Users"]
+    }
+}
+	  </script><style>
+/* http://spase-group.org/tools/xmlviewer */
+/* v1.0 | 20160908 */
+
+* {
+   margin: 0;
+   padding: 0;
+   border: 0;
+   outline: 0;
+   font-size: 100%;
+   vertical-align: baseline;
+   background: transparent;
+}
+
+body {
+	background-color: #f0f0f0; // #eaf5e9; #277bc0; #d3d3f9;
+	color: black;
+	font-family: Verdana, Arial, sans-serif; 
+	font-size:12px; 
+	line-height: 1.2;
+}
+ 
+h1,h2,h3,h4,h5,h6 {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-weight:bold;
+}
+
+h1 {
+	font-size: 140%;
+}
+
+h2 {
+	font-size: 120%;
+}
+
+h3 {
+	font-size: 110%;
+	font-style: oblique;
+}
+
+p {
+	margin-bottom: 0.75ex;
+}
+
+a:link,
+a:visited {
+   color: #277bc0;/* #339;*/
+   font-weight:bolder; 
+   text-decoration:none; 
+}
+
+a:hover {
+   color: blue;
+   font-weight:bolder; 
+   text-decoration:underline; 
+}
+
+ul {
+	list-style: square inside ;
+	margin-bottom: 0.75ex;
+}
+
+table {
+   border: thin solid #666;
+	margin-top: 5px;
+	margin-bottom: 10px;
+}
+
+table.nested {
+	margin-left: 2em;
+}
+
+thead,tbody {
+   border: thin solid #666;
+}
+
+td, th {
+   margin: 0;
+	padding: 2px 2px 2px 2px;
+}
+
+th {
+	font-style: oblique;
+}
+
+h1.detail {
+}
+
+.header {
+	width:100%;
+	padding: 1em 10px 1em 10px;
+	color: #fff;
+	background: #5e87b0;
+	font-weight: bold;
+	text-shadow: 0 /*{b-bar-shadow-x}*/ 1px /*{b-bar-shadow-y}*/ 1px /*{b-bar-shadow-radius}*/ #3e6790 /*{b-bar-shadow-color}*/;
+	text-align: center;
+	font-size: 16px;
+	display: block;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	outline: 0 !important;
+}
+
+.inset {
+	margin-left: 22%;
+}
+
+.page {
+	padding: 10px 3% 10px 3%;
+}
+
+div.indent {
+    margin-left: 2em;
+}
+
+div.term {
+	margin-top: 5px;
+	padding-left: 5px;
+	border-top: 1px solid #DDD;
+	font-weight: bold;
+}
+
+div.definition {
+	margin-left: 5ex;
+}
+
+div.value {
+	margin-left: 5ex;
+}
+
+div.product {
+	background-color: white;
+	border: thin solid #333;
+	padding: 10px 15px 10px 15px;
+	margin-top: 10px;
+}
+
+div.parameter {
+	margin-top: 10px;
+	padding: 5px 10px 10px 10px;
+	border: thin dotted #333;
+	background-color: #ebebeb;
+}
+
+#toc {
+   border: thin solid #333;
+   background-color: #F5F5F5; 
+   padding: 10px 15px 10px 15px;
+   margin-left: 5%;
+   margin-right: 5%;
+   margin-bottom: 30px;
+}
+
+#toc ol, ul, li {
+	padding-left: 5ex;
+}
+
+#toc ol {
+	list-style-type: decimal;
+	list-style-position: inside; 
+}
+
+#toc ul {
+	list-style-type: square;
+	list-style-position: inside; 
+}
+
+p.version {
+  float: right;
+  width: 100%;
+  margin-top: 5px;
+  text-align: right;
+  font-size: x-small;
+}
+
+p.right {
+  float: right;
+  text-align: right;
+}
+
+.box-title {
+	font-size: 120%;
+	font-weight:bold;
+	text-align: center;
+	border-bottom: 1px solid #DDD;
+}
+
+ul.list {
+	list-style-position: outside;
+	padding-left: 1.5em;
+}
+
+li.list {
+	text-align: left;
+	padding-left: 0px;
+}
+
+.no-break {
+	white-space: nowrap;
+}
+
+p.author {
+	font-size: 120%;
+}
+
+div.brand {
+	width: 100%;
+	text-align: right;
+}
+
+div.abstract {
+	display: table;
+	position: relative;
+	width: 100%;
+}
+
+div.citation {
+}
+
+div.access {
+	float: left;
+	width: 20%;
+	background-color: white;
+	border: thin solid #333;
+	padding: 5px 5px 5px 5px;
+	margin-right: 1em;
+}
+
+a.xml-logo:link,
+a.xml-logo:visited {
+   background: #ff6600;
+   color: #ffffff;
+   font-weight:bolder; 
+   text-decoration:none; 
+   padding-left:2px;
+   padding-right:2px;
+}
+a.xml-logo:hover {
+   text-decoration:underline; 
+}
+
+	  </style></head><body><div><a id="top"/></div><div class="header"><div class="middle">HPDE.io</div></div><div class="page"><div class="spase"><div class="abstract"><div class="access"><p class="box-title">Data Access</p><ul class="list"><li class="list"><a target="_blank" href="https://pds-ppi.igpp.ucla.edu/search/view/?f=yes&amp;id=pds://PPI/VG2-SW-MAG-4-SUMM-HGCOORDS-1HR-V1.0">PDS/PPI</a></li></ul></div><div class="citation inset"><h1><a name="spase://NASA/NumericalData/Voyager2/MAG/Heliosphere/PT1H">Voyager 2 Heliosphere Magnetic Field in Heliographic and Inertial Heliographic Coordinates, Hourly Data</a></h1><p><div class="term">ResourceID</div><div class="definition">spase://NASA/NumericalData/Voyager2/MAG/Heliosphere/PT1H</div></p><p><div class="term">Description</div><div class="definition"><ul>
+<li>Data Set Overview</li>
+<li>=================</li>
+</ul>
+<p>This Data Set contains hourly Averages of the Interplanetary Magnetic Field (IMF) Measurements obtained by the Triaxial Fluxgate Magnetometer Experiment on Voyager 2. Identical Instruments on Voyager 1 and 2 were designed to measure the IMF between Earth and Saturn (10 AU) during the primary Voyager Mission. The Design and Performance yielded Absolute Accuracies to better than &lt;0.1 nT. In general, each Component of the hourly Average has an Uncertainty of up to (±0.05 nT) in the Region beyond 10 AU. More accurate Measurements can be obtained by Special Processing of the Data, but it was not feasible to do this for the entire Data Set included here. The Magnetic Field Magnitude in nT is provided along with Angles of the Field Vector in the Spacecraft-centered Heliographic (HG) Coordinate System, also known as RTN.</p>
+<ul>
+<li>Coordinate System</li>
+<li>=================</li>
+</ul>
+<p>Interplanetary Magnetic Field Studies make use of two important Coordinate Systems, the Inertial Heliographic (IHG) Coordinate System and the Heliographic (HG) Coordinate System.</p>
+<p>The IHG Coordinate System is used to define the Position of the Spacecraft. The IHG System is defined with its Origin at the Sun. There are three Orthogonal Axes, X(IHG), Y(IHG), and Z(IHG). The Z(IHG) Axis points northward along the Spin Axis of the Sun. The XY Plane of the IHG System lays in the Solar Equatorial Plane. The Intersection of the Solar Equatorial Plane with the Ecliptic Plane defines a Line, the Longitude of the Ascending Node, which is taken to be the X(IHG) Axis. The X(IHG) Axis drifts slowly with Time, approximately one degree per 72 years.</p>
+<p>The Magnetic Field Orientation is defined in relation to the Spacecraft. Drawing a Line from the Center of the Sun, which is the Origin of the IHG System, to the Spacecraft defines the X Axis of the HG Coordinate System. The HG Coordinate System is defined with its Origin centered at the Spacecraft. Three orthogonal Axes are defined, X(HG), Y(HG), and Z(HG). The X(HG) Axis points radially away from the Sun and the Y(HG) Axis is parallel to the Solar Equatorial Plane and therefore parallel to the X(IHG)-Y(IHG) Plane as well. The Z(HG) Axis is chosen to complete the Orthonormal Triad.</p>
+<p>An excellent Reference Guide with Diagrams explaining the IHG and HG Systems may be found in Space and Science Reviews, Volume 39 (1984), 255-316, MHD Processes in the Outer Heliosphere, L. F. Burlaga.</p>
+<ul>
+<li>Data Formats</li>
+<li>============</li>
+</ul>
+<p>+--------------------------------------------------------------------------+<br>
+| Num | Field         | Description for Data before 1990                   |</p>
+<hr>
+<p>| 1   | Spacecraft ID | 1=Voyager 1, 2=Voyager 2                           |<br>
+| 2   | Time (UTC)    | YY DDD HH where YY=year, DDD=day, and HH=hour      |<br>
+| 3   | X             | X Position Component, in AU, IHG Coordinates       |<br>
+| 4   | Y             | Y Position Component, in AU, IHG Coordinates       |<br>
+| 5   | Z             | Z Position Component, in AU, IHG Coordinates       |<br>
+| 6   | Range         | Heliocentric Range, equal to the sqrt(X^2+Y^2+Z^2) |<br>
+| 7   | F1            | Field Magnitude, in nT, avg(F2(48sec))             |<br>
+| 8   | F2            | Field Modulus, in nT, norm(B1,B2,B3)               |<br>
+| 9   | delta         | Latitudinal Angle, in degrees, HG Coordinates      |<br>
+| 10  | lambda        | Longitudinal Angle, in degrees, HG Coordinates     |<br>
++--------------------------------------------------------------------------+</p>
+<p>+-------------------------------------------------------------------------------------+<br>
+| Num | Field                       | Description for Data after 1990                 |</p>
+<hr>
+<p>| 1   | Spacecraft ID               | FLT1=Voyager 1, FLT2=Voyager 2                  |<br>
+| 2   | Time (UTC)                  | Decimal Year Format (90.00000 is Day 1 of 1990) |<br>
+| 3   | Magnetic Field Strength, F1 | computed from high-resolution Observations      |<br>
+| 4   | Elevation Angle             | in degrees, HG Coordinates                      |<br>
+| 5   | Azimuthal Angle             | in degrees, HG Coordinates                      |<br>
+| 6   | Magnetic Field Strength, F2 | computed from hourly Averages of the Components |<br>
++-------------------------------------------------------------------------------------+</p>
+<p>The Magnetic Field Components may be recovered by using F2, delta, and lambda. Note that Fortran Users need to convert from Degrees to Radians before using Trigonometric Functions.</p>
+<ul>
+<li><p>BR = F2<em>cos(lambda)</em>cos(delta)</p></li>
+<li><p>BT = F2<em>sin(lambda)</em>cos(delta)</p></li>
+<li><p>BN = F2*sin(delta)</p></li>
+<li><p>Contact Information</p></li>
+<li><p>===================</p></li>
+</ul>
+<p>+---------------------------------+</p>
+<h2>| Principal Investigator          |</h2>
+<p>| Prof. Norman F. Ness            |<br>
+| Bartol Research Institute       |<br>
+| Univerity of Delaware           |<br>
+| Newark, Delaware 19716-4793     |<br>
+| Phone: (302) 831-8116           |<br>
+| Fax: (302) 831-1843             |<br>
+| Email: norman.ness@mus.udel.edu |<br>
++---------------------------------+</p>
+<p>+----------------------------------+</p>
+<h2>| Data Contact                     |</h2>
+<p>| Dr. Len Burlaga                  |<br>
+| Code 612.2                       |<br>
+| NASA Goddard Space Flight Center |<br>
+| Greenbelt, MD 20771              |<br>
+| Tel.: 301-286-5956               |<br>
+| Fax: 301-286-1433                |<br>
++----------------------------------+</p>
+</div></p></div></div><div><p class="right"><a target="_blank" href="PT1H.xml">View XML</a> 
+				| <a target="_blank" href="PT1H.json">View JSON</a> 
+				| <a target="_blank" href="https://xmleditor.spase-utilities.org/?edit=https://hpde.io/NASA/NumericalData/Voyager2/MAG/Heliosphere/PT1H.xml">Edit</a></p><h1 class="detail">Details</h1></div><div><div class="product"><p class="version">Version:2.3.0</p><h1>NumericalData</h1><div class="term">ResourceID</div><div class="definition">spase://NASA/NumericalData/Voyager2/MAG/Heliosphere/PT1H</div><div class="term">ResourceHeader</div><div class="definition"><div class="term">ResourceName</div><div class="definition">Voyager 2 Heliosphere Magnetic Field in Heliographic and Inertial Heliographic Coordinates, Hourly Data</div><div class="term">ReleaseDate</div><div class="definition">2020-07-07 21:15:59Z</div><div class="term">Description</div><div class="definition"><ul>
+<li>Data Set Overview</li>
+<li>=================</li>
+</ul>
+<p>This Data Set contains hourly Averages of the Interplanetary Magnetic Field (IMF) Measurements obtained by the Triaxial Fluxgate Magnetometer Experiment on Voyager 2. Identical Instruments on Voyager 1 and 2 were designed to measure the IMF between Earth and Saturn (10 AU) during the primary Voyager Mission. The Design and Performance yielded Absolute Accuracies to better than &lt;0.1 nT. In general, each Component of the hourly Average has an Uncertainty of up to (±0.05 nT) in the Region beyond 10 AU. More accurate Measurements can be obtained by Special Processing of the Data, but it was not feasible to do this for the entire Data Set included here. The Magnetic Field Magnitude in nT is provided along with Angles of the Field Vector in the Spacecraft-centered Heliographic (HG) Coordinate System, also known as RTN.</p>
+<ul>
+<li>Coordinate System</li>
+<li>=================</li>
+</ul>
+<p>Interplanetary Magnetic Field Studies make use of two important Coordinate Systems, the Inertial Heliographic (IHG) Coordinate System and the Heliographic (HG) Coordinate System.</p>
+<p>The IHG Coordinate System is used to define the Position of the Spacecraft. The IHG System is defined with its Origin at the Sun. There are three Orthogonal Axes, X(IHG), Y(IHG), and Z(IHG). The Z(IHG) Axis points northward along the Spin Axis of the Sun. The XY Plane of the IHG System lays in the Solar Equatorial Plane. The Intersection of the Solar Equatorial Plane with the Ecliptic Plane defines a Line, the Longitude of the Ascending Node, which is taken to be the X(IHG) Axis. The X(IHG) Axis drifts slowly with Time, approximately one degree per 72 years.</p>
+<p>The Magnetic Field Orientation is defined in relation to the Spacecraft. Drawing a Line from the Center of the Sun, which is the Origin of the IHG System, to the Spacecraft defines the X Axis of the HG Coordinate System. The HG Coordinate System is defined with its Origin centered at the Spacecraft. Three orthogonal Axes are defined, X(HG), Y(HG), and Z(HG). The X(HG) Axis points radially away from the Sun and the Y(HG) Axis is parallel to the Solar Equatorial Plane and therefore parallel to the X(IHG)-Y(IHG) Plane as well. The Z(HG) Axis is chosen to complete the Orthonormal Triad.</p>
+<p>An excellent Reference Guide with Diagrams explaining the IHG and HG Systems may be found in Space and Science Reviews, Volume 39 (1984), 255-316, MHD Processes in the Outer Heliosphere, L. F. Burlaga.</p>
+<ul>
+<li>Data Formats</li>
+<li>============</li>
+</ul>
+<p>+--------------------------------------------------------------------------+<br>
+| Num | Field         | Description for Data before 1990                   |</p>
+<hr>
+<p>| 1   | Spacecraft ID | 1=Voyager 1, 2=Voyager 2                           |<br>
+| 2   | Time (UTC)    | YY DDD HH where YY=year, DDD=day, and HH=hour      |<br>
+| 3   | X             | X Position Component, in AU, IHG Coordinates       |<br>
+| 4   | Y             | Y Position Component, in AU, IHG Coordinates       |<br>
+| 5   | Z             | Z Position Component, in AU, IHG Coordinates       |<br>
+| 6   | Range         | Heliocentric Range, equal to the sqrt(X^2+Y^2+Z^2) |<br>
+| 7   | F1            | Field Magnitude, in nT, avg(F2(48sec))             |<br>
+| 8   | F2            | Field Modulus, in nT, norm(B1,B2,B3)               |<br>
+| 9   | delta         | Latitudinal Angle, in degrees, HG Coordinates      |<br>
+| 10  | lambda        | Longitudinal Angle, in degrees, HG Coordinates     |<br>
++--------------------------------------------------------------------------+</p>
+<p>+-------------------------------------------------------------------------------------+<br>
+| Num | Field                       | Description for Data after 1990                 |</p>
+<hr>
+<p>| 1   | Spacecraft ID               | FLT1=Voyager 1, FLT2=Voyager 2                  |<br>
+| 2   | Time (UTC)                  | Decimal Year Format (90.00000 is Day 1 of 1990) |<br>
+| 3   | Magnetic Field Strength, F1 | computed from high-resolution Observations      |<br>
+| 4   | Elevation Angle             | in degrees, HG Coordinates                      |<br>
+| 5   | Azimuthal Angle             | in degrees, HG Coordinates                      |<br>
+| 6   | Magnetic Field Strength, F2 | computed from hourly Averages of the Components |<br>
++-------------------------------------------------------------------------------------+</p>
+<p>The Magnetic Field Components may be recovered by using F2, delta, and lambda. Note that Fortran Users need to convert from Degrees to Radians before using Trigonometric Functions.</p>
+<ul>
+<li><p>BR = F2<em>cos(lambda)</em>cos(delta)</p></li>
+<li><p>BT = F2<em>sin(lambda)</em>cos(delta)</p></li>
+<li><p>BN = F2*sin(delta)</p></li>
+<li><p>Contact Information</p></li>
+<li><p>===================</p></li>
+</ul>
+<p>+---------------------------------+</p>
+<h2>| Principal Investigator          |</h2>
+<p>| Prof. Norman F. Ness            |<br>
+| Bartol Research Institute       |<br>
+| Univerity of Delaware           |<br>
+| Newark, Delaware 19716-4793     |<br>
+| Phone: (302) 831-8116           |<br>
+| Fax: (302) 831-1843             |<br>
+| Email: norman.ness@mus.udel.edu |<br>
++---------------------------------+</p>
+<p>+----------------------------------+</p>
+<h2>| Data Contact                     |</h2>
+<p>| Dr. Len Burlaga                  |<br>
+| Code 612.2                       |<br>
+| NASA Goddard Space Flight Center |<br>
+| Greenbelt, MD 20771              |<br>
+| Tel.: 301-286-5956               |<br>
+| Fax: 301-286-1433                |<br>
++----------------------------------+</p>
+</div><div class="term">Contacts</div><dd><table class="nested" cellspacing="0"><tr><th/><th class="center">Role</th><th class="center">Person</th><th class="center">StartDate</th><th class="center">StopDate</th><th class="center">Note</th></tr><tbody><tr><td>1.</td><td>MetadataContact</td><td><a target="_blank" href="https://hpde.io/SMWG/Person/Todd.A.King.html">spase://SMWG/Person/Todd.A.King</a></td><td/><td/><td/></tr><tr><td>2.</td><td>MetadataContact</td><td><a target="_blank" href="https://hpde.io/SMWG/Person/Lee.Frost.Bargatze.html">spase://SMWG/Person/Lee.Frost.Bargatze</a></td><td/><td/><td/></tr></tbody></table></dd><div class="term">InformationURL</div><div class="definition"><div class="term">Name</div><div class="definition">VG2-SW-MAG-4-SUMM-HGCOORDS-1HR-V1.0</div><div class="term">URL</div><div class="definition"><a target="_blank" href="https://pds-ppi.igpp.ucla.edu/data/VG2-SW-MAG-4-SUMM-HGCOORDS-1HR-V1.0/AAREADME.TXT">https://pds-ppi.igpp.ucla.edu/data/VG2-SW-MAG-4-SUMM-HGCOORDS-1HR-V1.0/AAREADME.TXT</a></div><div class="term">Description</div><div class="definition"><p>The Document describing the Contents of the Collection.</p>
+</div><div class="term">Language</div><div class="definition">En</div></div><div class="term">PriorIDs</div><div class="definition">spase://VMO/NumericalData/Voyager2/MAG/Heliosphere.Outer/PT1H</div><div class="definition">spase://VSPO/NumericalData/Voyager2/MAG/Heliosphere/PT1H</div></div><div class="term">AccessInformation</div><div class="definition"><div class="term">RepositoryID</div><div class="definition"><a href="https://hpde.io/SMWG/Repository/PDS/PPI.html">spase://SMWG/Repository/PDS/PPI</a></div><div class="term">Availability</div><div class="definition">Online</div><div class="term">AccessRights</div><div class="definition">Open</div><div class="term">AccessURL</div><div class="definition"><div class="term">Name</div><div class="definition">PDS/PPI</div><div class="term">URL</div><div class="definition"><a target="_blank" href="https://pds-ppi.igpp.ucla.edu/search/view/?f=yes&amp;id=pds://PPI/VG2-SW-MAG-4-SUMM-HGCOORDS-1HR-V1.0">https://pds-ppi.igpp.ucla.edu/search/view/?f=yes&amp;id=pds://PPI/VG2-SW-MAG-4-SUMM-HGCOORDS-1HR-V1.0</a></div><div class="term">ProductKey</div><div class="definition">VG2-SW-MAG-4-SUMM-HGCOORDS-1HR-V1.0</div><div class="term">Description</div><div class="definition"><p>This Collection is archived with the NASA Planetary Data System.</p>
+</div><div class="term">Language</div><div class="definition">En</div></div><div class="term">Format</div><div class="definition">Text.ASCII</div><div class="term">Acknowledgement</div><div class="definition">NASA Planetary Plasma Interactions (PPI) Node of the Planetary Data System (PDS) and the Principal Investigator for the Data.</div></div><div class="term">InstrumentIDs</div><div class="definition"><a target="_blank" href="https://hpde.io/SMWG/Instrument/Voyager2/MAG.html">spase://SMWG/Instrument/Voyager2/MAG</a></div><div class="term">MeasurementType</div><div class="definition">MagneticField</div><div class="term">TemporalDescription</div><div class="definition"><div class="term">TimeSpan</div><div class="definition"><div class="term">StartDate</div><div class="definition">1977-09-05 00:00:00.00</div><div class="term">StopDate</div><div class="definition">2005-01-01 00:00:00.000</div></div><div class="term">Cadence</div><div class="definition">PT1H</div></div><div class="term">ObservedRegion</div><div class="definition">Heliosphere.Outer</div></div></div></div></div></body></html>

@@ -1,0 +1,98 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2.4.1.xsd",
+    "Version": "2.4.1",
+    "NumericalData": {
+      "ResourceID": "spase://CNES/NumericalData/CDPP-AMDA/Rosetta/IES/ros-ion-az",
+      "ResourceHeader": {
+        "ResourceName": "azimuthal spectra : countrate",
+        "AlternateName": "ion azimuthal spectra : countrate",
+        "ReleaseDate": "2017-03-17T23:15:14Z",
+        "Description": "Ion azimuthal (16 anodes)  spectra : Counts summed over energies and elevations.\n            * Azimuth  45 - 90 - Anode #0 \n            * Azimuth  00 - 45 - Anode #1 \n            * Azimuth  315-360 - Anode #2\n            * Azimuth  310-315 - Anode #3\n            * Azimuth  305-310 - Anode #4\n            * Azimuth  300-305 - Anode #5\n            * Azimuth  295-300 - Anode #6\n            * Azimuth  290-295 - Anode #7\n            * Azimuth  285-290 - Anode #8\n            * Azimuth  280-285 - Anode #9\n            * Azimuth  275-280 - Anode #10\n            * Azimuth  270-275 - Anode #11\n            * Azimuth  225-270 - Anode #12\n            * Azimuth  180-225 - Anode #13\n            * Azimuth  135-180 - Anode #14\n            * Azimuth   90-135 - Anode #15\n         ",
+        "Acknowledgement": "Principal Investigator : James L. Burch, SwRI",
+        "Contact": [
+          {
+            "PersonID": "spase://SMWG/Person/James.L.Burch",
+            "Role": "PrincipalInvestigator"
+          },
+          {
+            "PersonID": "spase://CNES/Person/CDPP-AMDA/Ray.Goldstein",
+            "Role": "CoInvestigator"
+          },
+          {
+            "PersonID": "spase://CNES/Person/CDPP-AMDA/Brad.Trantham",
+            "Role": "DataProducer"
+          }
+        ],
+        "Association": {
+          "AssociationID": "ros-ion-all",
+          "AssociationType": "PartOf",
+          "Note": "ions"
+        }
+      },
+      "AccessInformation": [
+        {
+          "RepositoryID": "spase://SMWG/Repository/CDPP/AMDA",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDPP/AMDA HAPI Server",
+            "URL": "http://amda.irap.omp.eu/service/hapi",
+            "Style": "HAPI",
+            "Description": "Web Service to this product using the HAPI interface."
+          },
+          "Format": "CSV",
+          "Acknowledgement": "Thank you for acknowledging the use of AMDA in publications with wording like \"Data analysis was performed with the AMDA science analysis system provided by the Centre de Données de la Physique des Plasmas (CDPP) supported by CNRS, CNES, Observatoire de Paris and Université Paul Sabatier, Toulouse\".. See the Rules of the road at http://amda.cdpp.eu/help/policy.html. Please acknowledge the Data Providers."
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/CDPP/AMDA",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDPP/AMDA Web application",
+            "URL": "http://amda.cdpp.eu",
+            "Description": "Access to Data via CDPP/AMDA Web application."
+          },
+          "Format": [
+            "CSV",
+            "VOTable",
+            "CDF",
+            "PNG"
+          ],
+          "Acknowledgement": "Thank you for acknowledging the use of AMDA in publications with wording like \"Data analysis was performed with the AMDA science analysis system provided by the Centre de Données de la Physique des Plasmas (CDPP) supported by CNRS, CNES, Observatoire de Paris and Université Paul Sabatier, Toulouse\".. See the Rules of the road at http://amda.cdpp.eu/help/policy.html. Please acknowledge the Data Providers."
+        }
+      ],
+      "ProviderName": "SwRI / ImperialCollege",
+      "ProviderProcessingLevel": "Uncalibrated",
+      "InstrumentID": "spase://CNES/Instrument/CDPP-AMDA/Rosetta/IES",
+      "MeasurementType": "ThermalPlasma",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "2010-11-29T23:18:19Z",
+          "StopDate": "2016-09-30T23:58:44Z"
+        },
+        "Cadence": "PT128S"
+      },
+      "ObservedRegion": "Comet",
+      "Caveats": "Sometimes anode data are combined on board in certain operating modes because of telemetry\nlimitations. In those cases each of the anodes is given identical values (sum/number of anodes).\nAnodes 13 and 14 are often noisy so caution is recommended when using data from them.\nThe so-called \"fine anodes\" (3 - 11) are sometimes combined on board in certain operating modes\nbecause of telemetry limitations. In those cases each of these 9 anodes are given identical values (the\nsum/9).\nThe data from individual fine anodes, when provided, suffer from crosstalk between these anodes and\nthus may not be reliable.\nIt was discovered after launch, apparently as a result of a light leak, that when the sun is incident between\nanodes 2 and 3, a high count rate is seen in anode 12. It is also seen in anode 13 when counts in 12 and 13\nare combined.",
+      "Parameter": {
+        "Name": "ion countrate",
+        "ParameterKey": "ros_ion_az",
+        "Units": "s**-1",
+        "RenderingHints": {
+          "DisplayType": "Spectrogram"
+        },
+        "Structure": {
+          "Size": "16"
+        },
+        "FillValue": "-1",
+        "Particle": {
+          "ParticleType": "Ion",
+          "ParticleQuantity": "CountRate"
+        }
+      }
+    }
+  }
+}

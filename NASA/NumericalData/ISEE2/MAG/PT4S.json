@@ -1,0 +1,150 @@
+{
+  "Spase": {
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_3_2.xsd",
+    "Version": "2.3.2",
+    "NumericalData": {
+      "ResourceID": "spase://NASA/NumericalData/ISEE2/MAG/PT4S",
+      "ResourceHeader": {
+        "ResourceName": "ISEE 2 magnetometer 4-sec data",
+        "DOI": "https://doi.org/10.21978/p8pg8v",
+        "ReleaseDate": "2021-05-31T12:34:56.789",
+        "RevisionHistory": {
+          "RevisionEvent": {
+            "ReleaseDate": "2021-05-31T12:34:56.789",
+            "Note": "Updated to SPASE Version 2.3.2 if needed, Applied quality control for DOI usage, LFB"
+          }
+        },
+        "Description": "4-sec vector magnetic field values recorded by the ESA ISEE-2 satellite, in spacecraft coordinates (close to GSE).",
+        "Acknowledgement": "UCLA-IGPP ISEE Magnetometer Team, and the source used for accessing data (see below).",
+        "PublicationInfo": {
+          "Authors": "Russell, Christopher T.",
+          "PublicationDate": "1987-01-01T00:00:00",
+          "PublishedBy": "University of California, Los Angeles and NASA Space Physics Data Facility"
+        },
+        "Contact": [
+          {
+            "PersonID": "spase://SMWG/Person/Christopher.T.Russell",
+            "Role": "PrincipalInvestigator"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Robert.J.Strangeway",
+            "Role": "DataProducer"
+          }
+        ],
+        "Association": {
+          "AssociationID": "spase://SMWG/Instrument/ISEE2/MAG",
+          "AssociationType": "ObservedBy"
+        },
+        "PriorID": [
+          "spase://VMO/NumericalData/ISEE2/MAG/PT4S",
+          "spase://VSPO/NumericalData/ISEE2/MAG/PT4S"
+        ]
+      },
+      "AccessInformation": [
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+          "AccessRights": "Open",
+          "AccessURL": [
+            {
+              "Name": "FTPS from SPDF (not with most browsers)",
+              "URL": "ftps://spdf.gsfc.nasa.gov/pub/data/isee/isee2/isee2_cdaweb/4sec_mfi/",
+              "Description": "ftp access to CDF files"
+            },
+            {
+              "Name": "HTTPS from SPDF",
+              "URL": "https://spdf.gsfc.nasa.gov/pub/data/isee/isee2/isee2_cdaweb/4sec_mfi/",
+              "Description": "In CDF via HTTP from SPDF"
+            }
+          ],
+          "Format": "CDF",
+          "Acknowledgement": "UCLA ISEE Magnetometer and GSFC CDAWeb teams"
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDAWeb",
+            "URL": "https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=ISEE2_4SEC_MFI&index=sp_phys",
+            "ProductKey": "ISEE2_4SEC_MFI",
+            "Description": "Plots, lists and files from CDAWeb"
+          },
+          "Format": "Text",
+          "Acknowledgement": "UCLA ISEE Magnetometer and GSFC CDAWeb teams"
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDAWeb HAPI Server",
+            "URL": "https://cdaweb.gsfc.nasa.gov/hapi",
+            "Style": "HAPI",
+            "ProductKey": "ISEE2_4SEC_MFI",
+            "Description": "Web Service to this product using the HAPI interface."
+          },
+          "Format": "CSV",
+          "Acknowledgement": "UCLA ISEE Magnetometer and GSFC CDAWeb teams"
+        }
+      ],
+      "ProcessingLevel": "Calibrated",
+      "InstrumentID": "spase://SMWG/Instrument/ISEE2/MAG",
+      "MeasurementType": "MagneticField",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "1977-10-22T14:49:19",
+          "StopDate": "1987-09-26T05:59:00"
+        },
+        "Cadence": "PT4S"
+      },
+      "ObservedRegion": [
+        "Earth.Magnetosphere",
+        "Earth.Magnetosheath",
+        "Heliosphere.NearEarth"
+      ],
+      "Parameter": [
+        {
+          "Name": "Universal Time",
+          "ParameterKey": "Epoch",
+          "Description": "DD-MON-YY HH:MM:SS.SSS",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Magnetic Field Components",
+          "ParameterKey": "BX, BY, BZ",
+          "Description": "Cartesian components of magnetic field vector in spacecraft coordinates",
+          "Cadence": "PT4S",
+          "Units": "nT",
+          "UnitsConversion": "1.0E-9>T",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "SC"
+          },
+          "Structure": {
+            "Size": "3",
+            "Description": "The three elements are BX, BY, and BZ."
+          },
+          "Field": {
+            "Qualifier": "Vector",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "Total magnetic field",
+          "ParameterKey": "BT",
+          "Description": "Magnetic field magnitude average",
+          "Cadence": "PT4S",
+          "Units": "nT",
+          "UnitsConversion": "1.0E-9>T",
+          "Field": {
+            "Qualifier": "Magnitude",
+            "FieldQuantity": "Magnetic"
+          }
+        }
+      ]
+    }
+  }
+}

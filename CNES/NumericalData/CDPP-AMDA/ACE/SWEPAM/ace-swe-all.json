@@ -1,0 +1,251 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2.4.1.xsd",
+    "Version": "2.4.1",
+    "NumericalData": {
+      "ResourceID": "spase://CNES/NumericalData/CDPP-AMDA/ACE/SWEPAM/ace-swe-all",
+      "ResourceHeader": {
+        "ResourceName": "sw : final",
+        "AlternateName": "Solar Wind 64-Second Level 2 Data",
+        "ReleaseDate": "2022-09-25T20:04:13Z",
+        "Description": "\n         Solar Wind Ion parameters from ACE/SWEPAM. Level 2 data, 64-second averages (from AC_H0_SWE dataset). Parameters include proton density, \n         temperature (radial component) and flow speed, flow velocity vector in GSE and GSM coordinates, and alpha \n         to proton density ratio.        \n         AMDA presents temperature in eV. The ram pressure is calculated using P=rho*Np*Vp², where rho=1.672622*(1+4*(1/(1-He++_ratio)-1)). \n         We use rho=2 here, which corresponds to a ratio of He++ between 4% and 5%.\n      ",
+        "Acknowledgement": "\n          Please acknowledge the ACE/SWEPAM instrument team and the ACE Science Center\n      ",
+        "Contact": [
+          {
+            "PersonID": "spase://SMWG/Person/David.J.McComas",
+            "Role": "CoInvestigator"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Ruth.Skoug",
+            "Role": "TechnicalContact"
+          }
+        ],
+        "InformationURL": [
+          {
+            "Name": "ACE SWEPAM Level 2 data Home Page",
+            "URL": "http://www.srl.caltech.edu/ACE/ASC/level2/swepam_l2desc.html",
+            "Description": "\n            ACE Science Center site hosting instrument information, data release notes, as well as web utilities for plotting and downloading data\n         "
+          },
+          {
+            "Name": "Rules of use, and caveats",
+            "URL": "http://www.srl.caltech.edu/ACE/ASC/level2/policy_lvl2.html",
+            "Description": "ACE level 2 data rules of use, and caveats"
+          }
+        ]
+      },
+      "AccessInformation": [
+        {
+          "RepositoryID": "spase://SMWG/Repository/CDPP/AMDA",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDPP/AMDA HAPI Server",
+            "URL": "http://amda.irap.omp.eu/service/hapi",
+            "Style": "HAPI",
+            "Description": "Web Service to this product using the HAPI interface."
+          },
+          "Format": "CSV",
+          "Acknowledgement": "Thank you for acknowledging the use of AMDA in publications with wording like \"Data analysis was performed with the AMDA science analysis system provided by the Centre de Données de la Physique des Plasmas (CDPP) supported by CNRS, CNES, Observatoire de Paris and Université Paul Sabatier, Toulouse\".. See the Rules of the road at http://amda.cdpp.eu/help/policy.html. Please acknowledge the Data Providers."
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/CDPP/AMDA",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDPP/AMDA Web application",
+            "URL": "http://amda.cdpp.eu",
+            "Description": "Access to Data via CDPP/AMDA Web application."
+          },
+          "Format": [
+            "CSV",
+            "VOTable",
+            "CDF",
+            "PNG"
+          ],
+          "Acknowledgement": "Thank you for acknowledging the use of AMDA in publications with wording like \"Data analysis was performed with the AMDA science analysis system provided by the Centre de Données de la Physique des Plasmas (CDPP) supported by CNRS, CNES, Observatoire de Paris and Université Paul Sabatier, Toulouse\".. See the Rules of the road at http://amda.cdpp.eu/help/policy.html. Please acknowledge the Data Providers."
+        }
+      ],
+      "ProviderName": "CDAWeb",
+      "ProviderResourceName": "ac_h0_swe",
+      "InstrumentID": "spase://CNES/Instrument/CDPP-AMDA/ACE/SWEPAM",
+      "MeasurementType": "ThermalPlasma",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "1998-02-04T00:00:31Z",
+          "StopDate": "2021-03-12T23:59:38Z"
+        },
+        "Cadence": "PT64S"
+      },
+      "ObservedRegion": [
+        "Heliosphere",
+        "Heliosphere.NearEarth"
+      ],
+      "Caveats": "\n      The quality of ACE level 2 data is such that it is suitable for serious scientific study. However, to avoid confusion and misunderstanding, it is recommended that users consult with the appropriate ACE team members before publishing work derived from the data. The ACE team has worked hard to ensure that the level 2 data are free from errors, but the team cannot accept responsibility for erroneous data, or for misunderstandings about how the data may be used. This is especially true if the appropriate ACE team members are not consulted before publication. At the very least, preprints should be forwarded to the ACE team before publication.\n      \n      The SWEPAM observations, in particular the proton density and to lesser extent the temperature, became increasing sparse starting in 2010 as the primary channel electron multiplier (CEM) detectors have aged. Now, many years past the original planned mission lifetime, these Ulysses spare detectors do not provide adequate gain to make good measurements. In response, the ACE science team has developed and implemented, starting Oct 23 2012, an innovative mission operations concept that more frequently repoints the ACE spacecraft's spin axis further away from the Sun. This allows other, stronger CEMs that have received significantly less total fluence to measure the solar wind; this operational improvement has significantly increased the frequency of good quality SWEPAM observations, back to levels not seen in several years.\n   ",
+      "Parameter": [
+        {
+          "Name": "v_gse",
+          "ParameterKey": "sw_v_gse",
+          "UCD": "phys.veloc;phys.atmol.ionStage",
+          "Units": "km/s",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "vx",
+                "Index": "1",
+                "ParameterKey": "sw_v_gse(0)"
+              },
+              {
+                "Name": "vy",
+                "Index": "2",
+                "ParameterKey": "sw_v_gse(1)"
+              },
+              {
+                "Name": "vz",
+                "Index": "3",
+                "ParameterKey": "sw_v_gse(2)"
+              }
+            ]
+          },
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "v_gsm",
+          "ParameterKey": "sw_v_gsm",
+          "UCD": "phys.veloc;phys.atmol.ionStage",
+          "Units": "km/s",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "vx",
+                "Index": "1",
+                "ParameterKey": "sw_v_gsm(0)"
+              },
+              {
+                "Name": "vy",
+                "Index": "2",
+                "ParameterKey": "sw_v_gsm(1)"
+              },
+              {
+                "Name": "vz",
+                "Index": "3",
+                "ParameterKey": "sw_v_gsm(2)"
+              }
+            ]
+          },
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "density",
+          "ParameterKey": "sw_n",
+          "Description": "Solar Wind Proton Number Density, scalar",
+          "UCD": "phys.density;phys.atmol.ionStage",
+          "Caveats": "\n         Np is the proton number density in units of cm-3, as calculated by integrating the ion distribution function.\n      ",
+          "Units": "cm^-3",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "ValidMin": "0.0",
+          "ValidMax": "200.0",
+          "FillValue": "-1.0E31",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": "Moment",
+            "ParticleQuantity": "NumberDensity"
+          }
+        },
+        {
+          "Name": "v_bulk",
+          "ParameterKey": "sw_vb",
+          "Description": "Solar Wind Bulk Speed",
+          "UCD": "phys.veloc;phys.atmol.ionStage",
+          "Caveats": "\n         Vp is the solar wind proton speed, or more generally just the solar wind (bulk) speed. It is obtained by integrating the ion (proton) distribution function.\n      ",
+          "Units": "km/s",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "ValidMin": "0.0",
+          "ValidMax": "2500.0",
+          "FillValue": "-1.0E31",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": [
+              "Moment",
+              "Scalar"
+            ],
+            "ParticleQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "t_radial",
+          "ParameterKey": "sw_t",
+          "Description": "radial component of the proton temperature",
+          "UCD": "phys.temperature;phys.atmol.ionStage",
+          "Caveats": "\n         The radial component of the proton temperature is the (1,1) component of the temperature tensor, along the radial direction. It is obtained by integration of the ion (proton) distribution function.\n      ",
+          "Units": "eV",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "ValidMin": "1000.0",
+          "ValidMax": "1100000.0",
+          "FillValue": "-1.0E31",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": "Moment",
+            "ParticleQuantity": "Temperature"
+          }
+        },
+        {
+          "Name": "alpha/proton ratio",
+          "ParameterKey": "sw_he",
+          "Description": "alpha to proton density ratio",
+          "UCD": "phys.density;arith.ratio;phys.atmol.ionStage",
+          "Caveats": "\n         Alpha ratio (Na/Np) - is the ratio of the number density of helium++ ions to the number density of protons.\n      ",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "ValidMin": "0.0",
+          "ValidMax": "10.0",
+          "FillValue": "-1.0E31",
+          "Particle": {
+            "ParticleType": [
+              "AlphaParticle",
+              "Proton"
+            ],
+            "Qualifier": "Ratio",
+            "ParticleQuantity": "NumberDensity"
+          }
+        },
+        {
+          "Name": "ram pressure",
+          "ParameterKey": "sw_pdyn",
+          "Description": "P = 2*10e-6 * Np * Vp^2",
+          "UCD": "phys.pressure;phys.atmol.ionStage",
+          "Units": "nPa",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "Pressure"
+          }
+        }
+      ]
+    }
+  }
+}

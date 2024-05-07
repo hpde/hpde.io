@@ -1,0 +1,666 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_2_9.xsd",
+    "Version": "2.2.9",
+    "NumericalData": {
+      "ResourceID": "spase://NASA/NumericalData/Explorer35/GSFC_Magnetometer/PT82S",
+      "ResourceHeader": {
+        "ResourceName": "Explorer 35 Goddard Space Flight Center Magnetometer data",
+        "AlternateName": [
+          "IMP 2 Goddard Space Flight Center Magnetometer data",
+          "IMP-E Goddard Space Flight Center Magnetometer data",
+          "AIMP 2 Goddard Space Flight Center Magnetometer data"
+        ],
+        "ReleaseDate": "2021-03-11T18:39:11Z",
+        "Description": "This data set, from the GSFC magnetometer on the lunar- orbiting Explorer 35 spacecraft, contains 81.92s averages, taken over 5.12s values, of the magnetic field magnitude and Cartesian components in GSE and GSM coordinates, plus the standard deviations for field magnitude and GSE component averages. The spacecraft position vector is given in GSE, GSM and SSE (Selenocentric Solar Ecliptic) coordinates. Additional parameters in the data records relate to field data in payload coordinates, spacecraft spin rate and spin axis direction, relative variability of the field vector and its magnitude, and various quality flags. The data are available in annual ASCII files.",
+        "Acknowledgement": "To the instrument PI, Norman F. Ness, and to the Space Physics Data Facility at Goddard",
+        "Contact": {
+          "PersonID": "spase://SMWG/Person/Norman.F.Ness",
+          "Role": "PrincipalInvestigator"
+        },
+        "InformationURL": {
+          "Name": "Readme file from SPDF",
+          "URL": "https://spdf.gsfc.nasa.gov/pub/data/explorer/explorer35/gsfc_magnetometer/82s_mag_data_ascii/aareadme.txt"
+        },
+        "PriorID": [
+          "spase://VHO/NumericalData/Explorer35/GSFC_Magnetometer/PT82S",
+          "spase://VMO/NumericalData/Explorer35/GSFC_Magnetometer/PT82S",
+          "spase://VSPO/NumericalData/Explorer35/GSFC_Magnetometer/PT82S"
+        ]
+      },
+      "AccessInformation": [
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": [
+            {
+              "Name": "FTPS from SPDF (not with most browsers)",
+              "URL": "ftps://spdf.gsfc.nasa.gov/pub/data/explorer/explorer35/gsfc_magnetometer/82s_mag_data_ascii/"
+            },
+            {
+              "Name": "HTTPS from SPDF",
+              "URL": "https://spdf.gsfc.nasa.gov/pub/data/explorer/explorer35/gsfc_magnetometer/82s_mag_data_ascii/",
+              "Description": "In CDF via HTTP from SPDF"
+            }
+          ],
+          "Format": "Text",
+          "DataExtent": {
+            "Quantity": "315",
+            "Units": "MB"
+          },
+          "Acknowledgement": "To the instrument PI, Norman F. Ness, and to the Space Physics Data Facility at Goddard"
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/UCLA/VMO",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "Virtual Magnetospheric Observatory",
+            "URL": "http://vmo.igpp.ucla.edu/data1/Explorer/35/",
+            "Description": "Explorer 35 GSFC magnetometer data."
+          },
+          "Format": "Text",
+          "Acknowledgement": "NSSDC; Dr. Steve Joy"
+        }
+      ],
+      "ProcessingLevel": "Calibrated",
+      "InstrumentID": "spase://SMWG/Instrument/Explorer35/GSFC_Magnetometer",
+      "MeasurementType": "MagneticField",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "1967-07-19T00:00:00",
+          "StopDate": "1972-02-23T00:00:00"
+        },
+        "Cadence": "PT82S"
+      },
+      "ObservedRegion": "Heliosphere.NearEarth",
+      "Parameter": [
+        {
+          "Name": "Universal Time",
+          "ParameterKey": "Time",
+          "Description": "Universal time columns from left to right are: year-month-day (yyyy-mm-dd) and seconds of the day.",
+          "Cadence": "PT1S",
+          "Structure": {
+            "Size": "5",
+            "Description": "Universal Time expressed using a 5-column year, day of year, hour, minute, second representation",
+            "Element": [
+              {
+                "Name": "Year",
+                "Index": "1",
+                "ParameterKey": "Year"
+              },
+              {
+                "Name": "Day of Year",
+                "Index": "2",
+                "ParameterKey": "Day of the year"
+              },
+              {
+                "Name": "Hour",
+                "Index": "3",
+                "ParameterKey": "hour"
+              },
+              {
+                "Name": "Minute",
+                "Index": "4",
+                "ParameterKey": "minute"
+              },
+              {
+                "Name": "Second",
+                "Index": "5",
+                "ParameterKey": "second"
+              }
+            ]
+          },
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Field Magnitude",
+          "ParameterKey": "Magnetic field magnitude",
+          "Description": "Magnetic field magnitude for Explorer 35 in units of nT.",
+          "Cadence": "PT82S",
+          "Units": "nT",
+          "Field": {
+            "Qualifier": "Magnitude",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "Standard Deviation in the Field Magnitude",
+          "ParameterKey": "Standard Deviation in the magnetic field magnitude",
+          "Description": "Standard deviation in the magnetic field magnitude for Explorer 35 in units of nT. The magnitude give is an average over 82 s and the standard deviation is given with the mean value.",
+          "Cadence": "PT82S",
+          "Units": "nT",
+          "Field": {
+            "Qualifier": "StandardDeviation",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "GSE Bx, By, Bz",
+          "ParameterKey": "Magnetic Field Vectors in GSE coordinates",
+          "Description": "Magnetic field vector for Explorer 35 in GSE coordinate system in units of nT.",
+          "Cadence": "PT82S",
+          "Units": "nT",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GSE"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "Bx",
+                "Qualifier": "Component.I",
+                "Index": "1",
+                "ParameterKey": "Bx"
+              },
+              {
+                "Name": "By",
+                "Qualifier": "Component.J",
+                "Index": "2",
+                "ParameterKey": "By"
+              },
+              {
+                "Name": "Bz",
+                "Qualifier": "Component.K",
+                "Index": "3",
+                "ParameterKey": "Bz"
+              }
+            ]
+          },
+          "Field": {
+            "Qualifier": "Vector",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "Standard deviations of Magnetic Field Vectors",
+          "ParameterKey": "Standard deviations of Magnetic Field Vectors in GSE coordinates",
+          "Description": "Standard deviations for each magnetic field component for Explorer 35 in GSE coordinate system in units of nT.",
+          "Cadence": "PT82S",
+          "Units": "nT",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GSE"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "Standard deviation of Bx",
+                "Qualifier": "Component.I",
+                "Index": "1",
+                "ParameterKey": "sigma Bx"
+              },
+              {
+                "Name": "Standard deviation of By",
+                "Qualifier": "Component.J",
+                "Index": "2",
+                "ParameterKey": "sigma By"
+              },
+              {
+                "Name": "Standard deviation of Bz",
+                "Qualifier": "Component.K",
+                "Index": "3",
+                "ParameterKey": "sigma Bz"
+              }
+            ]
+          },
+          "Field": {
+            "Qualifier": "StandardDeviation",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "GSE B Latitutde and Azimuth",
+          "ParameterKey": "Latitude and azimuthal direction of the magnetic field",
+          "Description": "Latitude and azimuthal direction of the magnetic field for Explorer 35 in GSE coordinate system in units of degrees.",
+          "Cadence": "PT82S",
+          "Units": "degrees",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "GSE"
+          },
+          "Structure": {
+            "Size": "2",
+            "Element": [
+              {
+                "Name": "Latitude",
+                "Qualifier": "DirectionAngle.ElevationAngle",
+                "Index": "1",
+                "ParameterKey": "Latitude angle of the magnetic field."
+              },
+              {
+                "Name": "Azimuth",
+                "Qualifier": "DirectionAngle.AzimuthAngle",
+                "Index": "2",
+                "ParameterKey": "Azimuthal angle of the magnetic field."
+              }
+            ]
+          },
+          "Support": {
+            "Qualifier": "Directional",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "GSM By, Bz",
+          "ParameterKey": "Magnetic Field Vectors in GSM coordinates",
+          "Description": "Magnetic field vector for Explorer 35 in GSM coordinate system in units of nT.",
+          "Cadence": "PT82S",
+          "Units": "nT",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GSM"
+          },
+          "Structure": {
+            "Size": "2",
+            "Element": [
+              {
+                "Name": "By",
+                "Qualifier": "Component.J",
+                "Index": "1",
+                "ParameterKey": "By"
+              },
+              {
+                "Name": "Bz",
+                "Qualifier": "Component.K",
+                "Index": "2",
+                "ParameterKey": "Bz"
+              }
+            ]
+          },
+          "Field": {
+            "Qualifier": "Vector",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "GSE X,Y,Z",
+          "ParameterKey": "Position Vectors",
+          "Description": "Location of the spacecraft in GSE coordinates in units of Re.",
+          "Cadence": "PT82S",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GSM"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "X",
+                "Qualifier": "Component.I",
+                "Index": "1",
+                "ParameterKey": "Xgsm"
+              },
+              {
+                "Name": "Y",
+                "Qualifier": "Component.J",
+                "Index": "2",
+                "ParameterKey": "Ygsm"
+              },
+              {
+                "Name": "Z",
+                "Qualifier": "Component.K",
+                "Index": "3",
+                "ParameterKey": "Zgsm"
+              }
+            ]
+          },
+          "Support": {
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "GSM Y,Z",
+          "ParameterKey": "Position Vectors",
+          "Description": "Location of the spacecraft in GSM coordinates in units of Re.",
+          "Cadence": "PT82S",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GSM"
+          },
+          "Structure": {
+            "Size": "2",
+            "Element": [
+              {
+                "Name": "Y",
+                "Qualifier": "Component.J",
+                "Index": "1",
+                "ParameterKey": "Ygsm"
+              },
+              {
+                "Name": "Z",
+                "Qualifier": "Component.K",
+                "Index": "2",
+                "ParameterKey": "Zgsm"
+              }
+            ]
+          },
+          "Support": {
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Selenocentric Solar Ecliptic X,Y,Z",
+          "ParameterKey": "Position Vectors",
+          "Description": "Location of the spacecraft in Selenocentric Solar Ecliptic coordinates in units of lunar radii.",
+          "Cadence": "PT82S",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "SSE"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "X",
+                "Qualifier": "Component.I",
+                "Index": "1",
+                "ParameterKey": "Xsse"
+              },
+              {
+                "Name": "Y",
+                "Qualifier": "Component.J",
+                "Index": "2",
+                "ParameterKey": "Ysse"
+              },
+              {
+                "Name": "Z",
+                "Qualifier": "Component.K",
+                "Index": "3",
+                "ParameterKey": "Zsse"
+              }
+            ]
+          },
+          "Support": {
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Spacecraft spin period",
+          "ParameterKey": "S/C spin period",
+          "Description": "Spin period of the spacecraft in seconds.",
+          "Cadence": "PT82S",
+          "Units": "s",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Optical Aspect Time",
+          "ParameterKey": "Optical aspect time",
+          "Description": "Come from the optical apsect system on Explroer 35. It is unclear what the optical aspect time is a measure of.",
+          "Cadence": "PT82S",
+          "Units": "s",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Right Ascension and Declination",
+          "ParameterKey": "Spin axis RA and Declination",
+          "Description": "Right ascension and declination in GSE coordinates referenced to the earth equator and equinox of Julian Epoch 1950.0.",
+          "Cadence": "PT82S",
+          "Units": "degrees",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "GSE"
+          },
+          "Structure": {
+            "Size": "2",
+            "Element": [
+              {
+                "Name": "Right Ascension",
+                "Qualifier": "Component.J",
+                "Index": "1",
+                "ParameterKey": "RA"
+              },
+              {
+                "Name": "Declination",
+                "Qualifier": "Component.K",
+                "Index": "2",
+                "ParameterKey": "Dec"
+              }
+            ]
+          },
+          "Support": {
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Right Ascension and Declination",
+          "ParameterKey": "Spin axis RA and Declination",
+          "Description": "Right ascension and declination in GSM coordinates referenced to the earth equator and equinox of Julian Epoch 1950.0.",
+          "Cadence": "PT82S",
+          "Units": "degrees",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "GSM"
+          },
+          "Structure": {
+            "Size": "2",
+            "Element": [
+              {
+                "Name": "Right Ascension",
+                "Qualifier": "Component.J",
+                "Index": "1",
+                "ParameterKey": "RA"
+              },
+              {
+                "Name": "Declination",
+                "Qualifier": "Component.K",
+                "Index": "2",
+                "ParameterKey": "Dec"
+              }
+            ]
+          },
+          "Support": {
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "F Ratio",
+          "ParameterKey": "F Ratio",
+          "Description": "F Ratio is {(RMS standard deviation in sequence-averaged field magnitude)/(sequence averaged field magnitude)}*100.",
+          "Cadence": "PT82S",
+          "Support": {
+            "Qualifier": "Ratio",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Payload  Bx, By, Bz",
+          "ParameterKey": "Magnetic Field Vectors in spacecraft coordinates",
+          "Description": "Magnetic field vector for Explorer 35 in spacecraft coordinate system in units of nT.",
+          "Cadence": "PT82S",
+          "Units": "nT",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "SC"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "Bx",
+                "Qualifier": "Component.I",
+                "Index": "1",
+                "ParameterKey": "Bx"
+              },
+              {
+                "Name": "By",
+                "Qualifier": "Component.J",
+                "Index": "2",
+                "ParameterKey": "By"
+              },
+              {
+                "Name": "Bz",
+                "Qualifier": "Component.K",
+                "Index": "3",
+                "ParameterKey": "Bz"
+              }
+            ]
+          },
+          "Field": {
+            "Qualifier": "Vector",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "Standard deviations of Payload Magnetic Field Vectors",
+          "ParameterKey": "Standard deviations of Magnetic Field Vectors in spacecraft coordinates",
+          "Description": "Standard deviations for each magnetic field component for Explorer 35 in spacecraft coordinate system in units of nT. See N.F. Ness, Magnetometers for space research,\nSpace Science Reviews November 1970, Volume 11, Issue 4, pp 459-554 for a good discussion on the payload coordinates.",
+          "Cadence": "PT82S",
+          "Units": "nT",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "SC"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "Standard deviation Bx",
+                "Qualifier": "Component.I",
+                "Index": "1",
+                "ParameterKey": "sigma Bx"
+              },
+              {
+                "Name": "Standard deviation By",
+                "Qualifier": "Component.J",
+                "Index": "2",
+                "ParameterKey": "sigma By"
+              },
+              {
+                "Name": "Standard deviation Bz",
+                "Qualifier": "Component.K",
+                "Index": "3",
+                "ParameterKey": "sigma Bz"
+              }
+            ]
+          },
+          "Field": {
+            "Qualifier": "StandardDeviation",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "Payload B Latitutde and Azimuth",
+          "ParameterKey": "Latitude and azimuthal direction of the magnetic field",
+          "Description": "Latitude and azimuthal direction of the magnetic field for Explorer 35 in spacecraft coordinate system in units of degrees.",
+          "Cadence": "PT82S",
+          "Units": "degrees",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "SC"
+          },
+          "Structure": {
+            "Size": "2",
+            "Element": [
+              {
+                "Name": "Latitude",
+                "Qualifier": "DirectionAngle.ElevationAngle",
+                "Index": "1",
+                "ParameterKey": "Latitude angle of the magnetic field."
+              },
+              {
+                "Name": "Azimuth",
+                "Qualifier": "DirectionAngle.AzimuthAngle",
+                "Index": "2",
+                "ParameterKey": "Azimuthal angle of the magnetic field."
+              }
+            ]
+          },
+          "Support": {
+            "Qualifier": "Directional",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "C Ratio",
+          "ParameterKey": "C Ratio",
+          "Description": "C Ratio is {[RMS(BxSE) + RMS(BySE) + RMS(BzSE)]/[SQRT(<BxSE>**2 + <BySE>**2 + <BzSE>**2)]}* 100/3.",
+          "Cadence": "PT82S",
+          "Support": {
+            "Qualifier": "Ratio",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Data quality flag",
+          "ParameterKey": "Data quality flag",
+          "Description": "Data quality flags relate to spacecraft clock readings. A value of zero is best.",
+          "Cadence": "PT82S",
+          "Support": {
+            "SupportQuantity": "InstrumentMode"
+          }
+        },
+        {
+          "Name": "Experiment flag 1",
+          "ParameterKey": "Experiment flag",
+          "Description": "The sensor flip state. It is unclear what each value indicates.",
+          "Cadence": "PT82S",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "InstrumentMode"
+          }
+        },
+        {
+          "Name": "Experiment flag 2",
+          "ParameterKey": "Experiment flag",
+          "Description": "State of the magnetometer: normal, flipping, or calibrating. It is unclear what each value indicates.",
+          "Cadence": "PT82S",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "InstrumentMode"
+          }
+        },
+        {
+          "Name": "Experiment flag 3",
+          "ParameterKey": "Experiment flag",
+          "Description": "The sensitivity level (+/-24 nT or ±64 nT) of the magnetometer. It is unclear what each value indicates.",
+          "Cadence": "PT82S",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "InstrumentMode"
+          }
+        },
+        {
+          "Name": "Number of points in avgs",
+          "ParameterKey": "# of points in avgs",
+          "Description": "The number of data points used to get average values.",
+          "Cadence": "PT82S",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Sequence Number",
+          "ParameterKey": "Sequence # (clock)",
+          "Description": "Spacecraft clock sequence number.",
+          "Cadence": "PT82S",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Sequence ID",
+          "ParameterKey": "Sequence ID",
+          "Description": "It is unclear what each value indicates.",
+          "Cadence": "PT82S",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        }
+      ]
+    }
+  }
+}

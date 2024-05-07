@@ -1,0 +1,248 @@
+{
+  "Spase": {
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_3_2.xsd",
+    "Version": "2.3.2",
+    "NumericalData": {
+      "ResourceID": "spase://NASA/NumericalData/Wind/EPACT/LEMT/L2/PT5M",
+      "ResourceHeader": {
+        "ResourceName": "Wind EPACT/LEMT 5-min key parameter flux data",
+        "DOI": "https://doi.org/10.48322/5jq3-gs16",
+        "ReleaseDate": "2021-05-31T12:34:56.789",
+        "RevisionHistory": {
+          "RevisionEvent": {
+            "ReleaseDate": "2021-05-31T12:34:56.789",
+            "Note": "Updated to SPASE Version 2.3.2 if needed, Applied quality control for DOI usage, LFB"
+          }
+        },
+        "Description": "This set of key parameter flux data from the Wind EPACT (Energetic Particles: Acceleration,Composition and Transport) telescopes contains fluxes of He, C, O Ne,Si, Fe nuclei in the general range 2-11 MeV/n, each averaged over 5 minutes. Poisson uncertainties are given for each flux.",
+        "Acknowledgement": "Dr. Tycho T. Von Rosenvinge",
+        "PublicationInfo": {
+          "Authors": "Von Rosenvinge, Tycho T.; Reames, Donald V.; Tan, Lun C.; & Tylka, Allan J.",
+          "PublicationDate": "2021-01-01T00:00:00",
+          "PublishedBy": "NASA Space Physics Data Facility"
+        },
+        "Contact": [
+          {
+            "PersonID": "spase://SMWG/Person/Tycho.T.Von.Rosenvinge",
+            "Role": "PrincipalInvestigator"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Donald.V.Reames",
+            "Role": "CoInvestigator"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Robert.E.McGuire",
+            "Role": "GeneralContact"
+          }
+        ],
+        "PriorID": "spase://VSPO/NumericalData/Wind/EPACT/LEMT/L2/PT5M"
+      },
+      "AccessInformation": [
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": [
+            {
+              "Name": "FTPS from SPDF (not with most browsers)",
+              "URL": "ftps://spdf.gsfc.nasa.gov/pub/data/wind/epact/epact_l2-5min-sept/"
+            },
+            {
+              "Name": "HTTPS from SPDF",
+              "URL": "https://spdf.gsfc.nasa.gov/pub/data/wind/epact/epact_l2-5min-sept/",
+              "Description": "In CDF via HTTP from SPDF"
+            },
+            {
+              "Name": "CDAWeb",
+              "URL": "https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=WI_L2-5MIN-SEP_EPACT-LEMT&index=sp_phys",
+              "ProductKey": "WI_L2-5MIN-SEP_EPACT-LEMT",
+              "Description": "CDAWeb interface with subsetting, graphics, listing and file creation"
+            }
+          ],
+          "Format": "CDF",
+          "Acknowledgement": "Please acknowledge Principal Investigator T. von Rosenvinge and the CDAWeb team at NASA/GSFC"
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDAWeb HAPI Server",
+            "URL": "https://cdaweb.gsfc.nasa.gov/hapi",
+            "Style": "HAPI",
+            "ProductKey": "WI_L2-5MIN-SEP_EPACT-LEMT",
+            "Description": "Web Service to this product using the HAPI interface."
+          },
+          "Format": "CSV",
+          "Acknowledgement": "Please acknowledge Principal Investigator T. von Rosenvinge and the CDAWeb team at NASA/GSFC"
+        }
+      ],
+      "ProcessingLevel": "Calibrated",
+      "InstrumentID": "spase://SMWG/Instrument/Wind/EPACT",
+      "MeasurementType": "EnergeticParticles",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "1994-11-16T00:00:00",
+          "RelativeStopDate": "-P12M"
+        },
+        "Cadence": "PT5M"
+      },
+      "ObservedRegion": "Heliosphere.NearEarth",
+      "Parameter": [
+        {
+          "Name": "Epoch Time",
+          "ParameterKey": "Epoch",
+          "Description": "Number of milliseconds since the CDF epoch.",
+          "Units": "ms",
+          "UnitsConversion": "1e-3>s",
+          "ValidMin": "01-Jan-1956 00:00:00.000",
+          "ValidMax": "01-Jan-2083 00:00:00.000",
+          "FillValue": "-1.0E31",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Helium Flux",
+          "ParameterKey": "flux_He",
+          "Description": "He intensity, at select energies 2.2-8.5 MeV/nuc",
+          "Cadence": "PT1H",
+          "Units": "1/(cm^2 sec ster MeV/n)",
+          "Structure": {
+            "Size": "7 1",
+            "Description": "This is a 7 x 1 matrix, with 7 rows for each of the 7 energy windows"
+          },
+          "Particle": {
+            "ParticleType": [
+              "AlphaParticle",
+              "Ion"
+            ],
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "2",
+              "High": "9.64",
+              "Units": "MeV/n"
+            }
+          }
+        },
+        {
+          "Name": "Carbon Flux",
+          "ParameterKey": "flux_C",
+          "Description": "C intensity, at 7 energies 2.9-11.4 MeV/nuc",
+          "Cadence": "PT1H",
+          "Units": "1/(cm^2 sec ster MeV/n)",
+          "Structure": {
+            "Size": "7 1",
+            "Description": "This is a 7 x 1 matrix, with 7 rows for each of the 7 energy windows"
+          },
+          "Particle": {
+            "ParticleType": [
+              "AlphaParticle",
+              "Ion"
+            ],
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "2.57",
+              "High": "13.7",
+              "Units": "MeV/n"
+            }
+          }
+        },
+        {
+          "Name": "Oxygen Flux",
+          "ParameterKey": "flux_O",
+          "Description": "O intensity, at 7 energies 2.9-11.3 MeV/nuc",
+          "Cadence": "PT1H",
+          "Units": "1/(cm^2 sec ster MeV/n)",
+          "Structure": {
+            "Size": "7 1",
+            "Description": "This is a 7 x 1 matrix, with 7 rows for each of the 7 energy windows"
+          },
+          "Particle": {
+            "ParticleType": [
+              "AlphaParticle",
+              "Ion"
+            ],
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "2.56",
+              "High": "13.4",
+              "Units": "MeV/n"
+            }
+          }
+        },
+        {
+          "Name": "Neon Flux",
+          "ParameterKey": "flux_Ne",
+          "Description": "Ne intensity, at 6 energies 3.6-11.3 MeV/nuc",
+          "Cadence": "PT1H",
+          "Units": "1/(cm^2 sec ster MeV/n)",
+          "Structure": {
+            "Size": "7 1",
+            "Description": "This is a 7 x 1 matrix, with 7 rows for each of the 7 energy windows"
+          },
+          "Particle": {
+            "ParticleType": [
+              "AlphaParticle",
+              "Ion"
+            ],
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "3.27",
+              "High": "12.7",
+              "Units": "MeV/n"
+            }
+          }
+        },
+        {
+          "Name": "Silicon Flux",
+          "ParameterKey": "flux_Si",
+          "Description": "Si intensity, at 7 energies 2.8-11.6 MeV/nuc (time-series with uncertainties)",
+          "Cadence": "PT1H",
+          "Units": "1/(cm^2 sec ster MeV/n)",
+          "Structure": {
+            "Size": "7 1",
+            "Description": "This is a 7 x 1 matrix, with 7 rows for each of the 7 energy windows"
+          },
+          "Particle": {
+            "ParticleType": [
+              "AlphaParticle",
+              "Ion"
+            ],
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "2.5",
+              "High": "13.6",
+              "Units": "MeV/n"
+            }
+          }
+        },
+        {
+          "Name": "Iron Flux",
+          "ParameterKey": "flux_Fe",
+          "Description": "Fe intensity, at 7 energies 2.7-10.9 MeV/nuc",
+          "Cadence": "PT1H",
+          "Units": "1/(cm^2 sec ster MeV/n)",
+          "Structure": {
+            "Size": "7 1",
+            "Description": "This is a 7 x 1 matrix, with 7 rows for each of the 7 energy windows"
+          },
+          "Particle": {
+            "ParticleType": [
+              "AlphaParticle",
+              "Ion"
+            ],
+            "ParticleQuantity": "NumberFlux",
+            "EnergyRange": {
+              "Low": "2.4",
+              "High": "12.5",
+              "Units": "MeV/n"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

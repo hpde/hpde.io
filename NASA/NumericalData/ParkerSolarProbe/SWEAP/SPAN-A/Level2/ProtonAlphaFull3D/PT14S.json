@@ -1,0 +1,801 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema  https://www.spase-group.org/data/schema/spase-2_3_2.xsd",
+    "Version": "2.3.2",
+    "NumericalData": {
+      "ResourceID": "spase://NASA/NumericalData/ParkerSolarProbe/SWEAP/SPAN-A/Level2/ProtonAlphaFull3D/PT14S",
+      "ResourceHeader": {
+        "ResourceName": "PSP Solar Wind Electrons Alphas and Protons (SWEAP) SPAN-A Full 3D Electron Spectra, Level 2 (L2), 14 s Data",
+        "DOI": "https://doi.org/10.48322/7j5c-zg65",
+        "ReleaseDate": "2021-04-27T15:38:11Z",
+        "Description": "SPAN-E Level 2 Electron Full 3D Spectra Data\n--------------------------------------------\n\nFile Naming Format: psp_swp_spa_sf0_L2_16Ax8Dx32E_YYYYMMDD_v01.cdf\n\nThe SF0 products are the Full 3D Electron spectra from each individual SPAN-E instrument, SPAN-Ae and SPAN-B. Units are in differential energy flux, degrees, and eV. One spectrum comprises decreasing steps in Energy specified by the number in the filename, alternating sweeps in Theta/Deflection, also specified by the number in the filename, and a number of Phi/Anode directions, also specified by the number in the filename. The sample filename above includes 16 Anodes, 8 Deflections, and 32 Energies.\n\nThis data set covers all periods for which the instrument was turned on and taking data in the solar wind in \"Full Sweep\", normal cadence survey mode. This includes maneuvers affecting the spacecraft attitude and orientation. Measurements taken by SPAN-B during cruise phase periods when the spacecraft is pointed away from the sun are taken in sunlight.\n\nParker Solar Probe SWEAP Solar Probe Analyzer, SPAN, Electron Data Release Notes\n--------------------------------------------------------------------------------\n\nNovember 19, 2019 Initial Data Release\n--------------------------------------\n\nOverview of Measurements\n------------------------\n\nThe SWEAP team is pleased to release the data from Encounter 1 and Encounter 2. The files contain data from the time range October 31, 2018 - June 18, 2019.\n\nThe prime mission of Parker Solar Probe is to take data when within 0.25 AU of the Sun during its orbit. However, there has been some extended campaign measurements outside of this distance. The data are available for those days that are within 0.25 AU as well as those days when the instruments were operational outside of 0.25 AU.\n\nEach SWEAP data file includes a set of a particular type of measurements over a single observing day. Measurements are provided in Common Data Format (CDF), a self-documenting data framework for which convenient open source tools exist across most scientific computing platforms. Users are strongly encouraged to consult the global metadata in each file, and the metadata that are linked to each variable. The metadata includes comprehensive listings of relevant information, including units, coordinate systems, qualitative descriptions, measurement uncertainties, methodologies, links to further documentation, and so forth.\n\nSPAN-E Level 2 Version 01 Release Notes\n---------------------------------------\n\nThe SPAN-Ae and SPAN-B instruments together have fields of view covering >90% of the sky; major obstructions to the FOV include the spacecraft heat shield and other intrusions by spacecraft components. Each individual SPAN-E has FOV of ±60° in Theta and 240° in Phi. The rotation matrices to convert into the spacecraft frame can be found in the individual CDF files, or in the instrument paper.\n\nThis data set covers all periods for which the instrument was turned on and taking data in the solar wind in ion mode. This includes maneuvers affecting the spacecraft attitude and orientation. Measurements taken by SPAN-B when the spacecraft is pointed away from the sun are taken in sunlight.\n\nThe data quality flags for the SPAN data can be found in the CDF files as: QUALITY_FLAG (0=good, 1=bad)\n\nGeneral Remarks for Version 01 Data\n-----------------------------------\n\nUsers interested in field-aligned electrons should take care regarding potential blockages from the heat shield when B is near radial, especially in SPAN-Ae. Artificial reductions in strahl width can result.\n\nDue to the relatively high electron temperature in the inner heliosphere, many secondary electrons are generated from spacecraft and instrument surfaces. As a result, electron measurements in this release below 30 eV are not advised for scientific analysis.\n\nThe fields of view in SPAN-Ae and SPAN-B have many intrusions by the spacecraft, and erroneous pixels discovered in analysis, in particular near the edges of the FOV, should be viewed with skepticism. Details on FOV intrusion are found in the instrument paper, forthcoming, or by contacting the SPAN-E instrument scientist.\n\nThe instrument mechanical attentuators are engaged during the eight days around perihelia 1 and perihelia 2, which results in a factor of about 10 reduction of the total electron flux into the instrument. During these eight days, halo electron measurements are artificially enhanced in the L2 products as a result of the reduced instrument geometric factor and subsequent ground corrections.\n\nA general note for Encounter 1 and Encounter 2 data: a miscalculation in the deflection tables loaded to both SPAN-Ae and SPAN-B resulted in over-deflection of the outermost Theta angles during these encounters. As such, pixels at large Thetas should be ignored. This error was corrected by a table upload prior to Encounter 3.\n\nLastly, when viewing time gaps in the SPAN-E measurements, be advised that the first data point produced by the instrument after a power-on is the maximum value permitted by internal instrument counters. Therefore, the first data point after powerup is erroneous and should be discarded, as indicated by quality flags.\n\nSPAN-E Encounter 1 Remarks\n--------------------------\n\nSPAN-E operated nominally for the majority of the first encounter. Exceptions to this include: a few instances of corrupted, higher-energy sweep tables, and an instrument commanding error for the two hours surrounding perihelion 1. These and other instrument diagnostic tests are indicated with the QUALITY_FLAG variable in the CDFs.\n\nThe mechanical attentuator was engaged for the 8 days around perihelion 1: as a result the microchannel plate, MCP, noise due to thermal effects and cosmic rays are artificially enhanced and are particularly obvious at higher energies. Exercise caution with this data release if looking for halo electrons when the mechanical attenuator is engaged.\n\nSPAN-E Cruise Phase Remarks\n---------------------------\n\nThe cruise mode rates of SPAN-E are greatly reduced compared to the encounter mode rates. When the PSP spacecraft is in a communications slew, the SPAN-B instrument occasionally reaches its maximum allowable operating temperature and is powered off by SWEM.\n\nTiming for the SF1 products in cruise phase is not corrected in v01, and thus it is not advised to use the data at this time for scientific analysis. The typical return of SF0 products is one spectrum out of every 32 survey spectra is returned every 15 minutes or so. One out of every four 27.75 s SF1 spectra is produced every 111 s.\n\nSPAN-E Encounter 2 Remarks\n--------------------------\n\nSPAN-E operated nominally for the majority of the second encounter. Exceptions include instrument diagnostic and health checks and a few instances of corrupted high-energy sweep tables. These tests and corrupted table loads are indicated with the QUALITY_FLAG parameter.\n\nThe mechanical attentuator was engaged for the 8 days around perihelion 2: as a result the MCP noise due to thermal effects and cosmic rays are artificially enhanced and are particularly obvious at higher energies. Exercise caution in this data release if looking for halo electrons when the mechanical attenuator is engaged.\n\nParker Solar Probe SWEAP Rules of the Road\n------------------------------------------\n\nAs part of the development of collaboration with the broader Heliophysics community, the mission has drafted a \"Rules of the Road\" to govern how PSP instrument data are to be used.\n\n* 1) Users should consult with the PI to discuss the appropriate use of instrument data or model results and to ensure that the users are accessing the most recently available versions of the data and of the analysis routines. Instrument team Science Operations Centers, SOCs, and/or Virtual Observatories, VOs, should facilitate this process serving as the contact point between PI and users in most cases.\n\n* 2) Users should heed the caveats of investigators to the interpretations and limitations of data or model results. Investigators supplying data or models may insist that such caveats be published. Data and model version numbers should also be specified.\n\n* 3) Browse products, Quicklook, and Planning data are not intended for science analysis or publication and should not be used for those purposes without consent of the PI.\n\n* 4) Users should acknowledge the sources of data used in all publications, presentations, and reports: \"We acknowledge the NASA Parker Solar Probe Mission and the SWEAP team led by J. Kasper for use of data.\".\n\n* 5) Users are encouraged to provide the PI a copy of each manuscript that uses the PI data prior to submission of that manuscript for consideration of publication. On publication, the citation should be transmitted to the PI and any other providers of data.",
+        "Acknowledgement": "Please acknowledge the Principal Investigator J.C. Kasper for use of the Data",
+        "PublicationInfo": {
+          "Authors": "Whittlesey, Phyllis; Larson, Davin E.; Rahmati, Ali",
+          "PublicationDate": "2020-01-01T00:00:00",
+          "PublishedBy": "NASA Space Physics Data Facility"
+        },
+        "Contact": [
+          {
+            "PersonID": "spase://SMWG/Person/Justin.C.Kasper",
+            "Role": "PrincipalInvestigator"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Robert.M.Candey",
+            "Role": "MetadataContact"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Lee.Frost.Bargatze",
+            "Role": "MetadataContact"
+          }
+        ],
+        "InformationURL": [
+          {
+            "Name": "PSP SWEAP Instrument Suite, Space Science Review Publication",
+            "URL": "https://doi.org/10.1007/s11214-015-0206-3",
+            "Description": "Parker Solar Probe, PSP, SWEAP Instrument Suite Description: Kasper, J.C., Abiad, R., Austin, G. et al., Solar Wind Electrons Alphas and Protons (SWEAP) Investigation: Design of the Solar Wind and Coronal Plasma Instrument Suite for Solar Probe Plus, Space Scii. Rev., 204, 131–186 (2016)"
+          },
+          {
+            "Name": "PSP SWEAP home page, SAO",
+            "URL": "http://sweap.cfa.harvard.edu",
+            "Description": "Parker Solar Probe, PSP, SWEAP home page, Smithsonian Astrophysical Observatory"
+          },
+          {
+            "Name": "PSP SWEAP Data Access web site, SAO",
+            "URL": "http://sweap.cfa.harvard.edu/Data.html",
+            "Description": "Parker Solar Probe, PSP, SWEAP Data Access web site, Smithsonian Astrophysical Observatory"
+          }
+        ],
+        "PriorID": "spase://VSPO/NumericalData/ParkerSolarProbe/SWEAP/SPAN-A/Level2/ProtonAlphaFull3D/PT14S"
+      },
+      "AccessInformation": [
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": [
+            {
+              "Name": "FTPS from SPDF (not with most browsers)",
+              "URL": "ftps://spdf.gsfc.nasa.gov/pub/data/psp/sweap/spe/l2/spa_sf0_16ax8dx32e/",
+              "Description": "Access to Data in CDF Format via ftp from SPDF"
+            },
+            {
+              "Name": "HTTPS from SPDF",
+              "URL": "https://spdf.gsfc.nasa.gov/pub/data/psp/sweap/spe/l2/spa_sf0_16ax8dx32e/",
+              "Description": "Access to Data in CDF Format via http from SPDF"
+            },
+            {
+              "Name": "CDAWeb",
+              "URL": "https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=PSP_SWP_SPA_SF0_L2_16AX8DX32E&index=sp_phys",
+              "ProductKey": "PSP_SWP_SPA_SF0_L2_16AX8DX32E",
+              "Description": "Access to ASCII, CDF, and Plots via NASA/GSFC CDAWeb"
+            }
+          ],
+          "Format": "CDF",
+          "Encoding": "None",
+          "Acknowledgement": "Please acknowledge the Principal Investigator J.C. Kasper. Please acknowledge the Data Providers and CDAWeb when using these Data."
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDAWeb HAPI Server",
+            "URL": "https://cdaweb.gsfc.nasa.gov/hapi",
+            "Style": "HAPI",
+            "ProductKey": "PSP_SWP_SPA_SF0_L2_16AX8DX32E",
+            "Description": "Web Service to this product using the HAPI interface."
+          },
+          "Format": "CSV",
+          "Acknowledgement": "Please acknowledge the Principal Investigator J.C. Kasper. Please acknowledge the Data Providers and CDAWeb when using these Data."
+        }
+      ],
+      "ProcessingLevel": "Calibrated",
+      "InstrumentID": "spase://SMWG/Instrument/ParkerSolarProbe/SWEAP/SPAN-A",
+      "MeasurementType": [
+        "InstrumentStatus",
+        "ThermalPlasma"
+      ],
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "2018-10-06T00:00:00.000",
+          "RelativeStopDate": "-P6M"
+        },
+        "Cadence": "PT14S"
+      },
+      "ObservedRegion": [
+        "Heliosphere",
+        "Heliosphere.Inner",
+        "Heliosphere.NearEarth",
+        "Sun.Corona"
+      ],
+      "Parameter": [
+        {
+          "Name": "Epoch Time, TT2000, Midpoint of Integration",
+          "Set": "Time Series defined by using: EPOCH",
+          "ParameterKey": "Epoch",
+          "Description": "Epoch Time Tags, TT2000, Nanoseconds since J2000 at Midpoint of the Integration",
+          "Caveats": "Warning: the Epoch time typically has an irregular cadence owing to frequent changes in the operating mode. TT2000 is measured in nanoseconds from J2000 with leap seconds included. Please refer to CDF TT2000 documentation with regards to this convention. This time corresponds to the first measurement of the spectrum. In accordance with SPDF standards, this epoch is interpreted a CDF_TT2000 time. It is acknowledged here that this epoch is not strictly equal to \"terrestrial time\" as it is defined in the CDF_TT2000 documentation nor is the calendar date interpreted by CDF_T2000 operation performed on this epoch strictly equal to Coordinated Universal Time, UTC This Parameter exhibits an increasing Monotonic Progression.",
+          "Cadence": "PT14S",
+          "Units": "ns",
+          "UnitsConversion": "1.0e-9>s",
+          "RenderingHints": {
+            "AxisLabel": "Epoch",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "01-Jan-1990 00:00:00.000000000",
+          "ValidMax": "31-Dec-2029 23:59:58.999000000",
+          "FillValue": "25-May-1890 12:04:13.995524607",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Time",
+          "Set": "Time Series defined by using: EPOCH",
+          "ParameterKey": "TIME",
+          "Description": "Time",
+          "Caveats": "This Parameter exhibits an increasing Monotonic Progression",
+          "Cadence": "PT14S",
+          "Units": "s",
+          "RenderingHints": {
+            "AxisLabel": "Unix Time",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "1.2623e+09",
+          "ValidMax": "1.89346e+09",
+          "FillValue": "nan",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Parker Solar Probe, Mission Elapsed Time",
+          "Set": "Time Series defined by using: EPOCH",
+          "ParameterKey": "MET",
+          "Description": "Parker Solar Probe, PSP, Mission Elapsed Time, MET, in string format",
+          "Caveats": "The mission elapsed time string is constructed as met_seconds+':'+met_subseconds_base50000, where: met_seconds is the CCSDS_MET value cast as an integer string with no whitespace and met_subseconds_base50000 is an \"I05\" format integer string formed by converting the xxx_SUBSEC value to units of 1/50000 second. For example, if the xxx_SUBSEC value is recorded in parts per 65536 o second, the correct procedure would be to round 50000*(xxx_SUBSEC/65536) to the nearest integer and cast a string by using the \"I05\" format. Here, CCSDS_MET is the mission elapsed time, in seconds, from the PSP Epoch, which is defined to be January 1, 2010, 12:00:00 UTC and xxx_SUBSEC is the elapsed time in fractional seconds since the last tick of MET typically in units of 2^-16 seconds.",
+          "Cadence": "PT14S",
+          "RenderingHints": {
+            "AxisLabel": "MET",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "-1.0e+30",
+          "ValidMax": "1.0e+30",
+          "FillValue": "nan",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Application ID",
+          "Set": "Time Series defined by using: EPOCH",
+          "ParameterKey": "APID",
+          "Description": "Application Identifier, APID",
+          "Cadence": "PT14S",
+          "RenderingHints": {
+            "AxisLabel": "APID",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "-1.0e+30",
+          "ValidMax": "1.0e+30",
+          "FillValue": "nan",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "InstrumentMode"
+          }
+        },
+        {
+          "Name": "Sequence Number",
+          "Set": "Time Series defined by using: EPOCH",
+          "ParameterKey": "SEQN",
+          "Description": "Sequence Number",
+          "Cadence": "PT14S",
+          "RenderingHints": {
+            "AxisLabel": "SEQN",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "-1.0e+30",
+          "ValidMax": "1.0e+30",
+          "FillValue": "nan",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Sequence Number Delta",
+          "Set": "Time Series defined by using: EPOCH",
+          "ParameterKey": "SEQN_DELTA",
+          "Description": "Sequence Number Delta",
+          "Cadence": "PT14S",
+          "RenderingHints": {
+            "AxisLabel": "SEQN_DELTA",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "-1.0e+30",
+          "ValidMax": "1.0e+30",
+          "FillValue": "nan",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Sequence Group",
+          "Set": "Time Series defined by using: EPOCH",
+          "ParameterKey": "SEQ_GROUP",
+          "Description": "Sequence Group",
+          "Cadence": "PT14S",
+          "RenderingHints": {
+            "AxisLabel": "SEQ_GROUP",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "-1.0e+30",
+          "ValidMax": "1.0e+30",
+          "FillValue": "nan",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Packet Size",
+          "Set": "Time Series defined by using: EPOCH",
+          "ParameterKey": "PKT_SIZE",
+          "Description": "Packet Size",
+          "Cadence": "PT14S",
+          "RenderingHints": {
+            "AxisLabel": "PKT_SIZE",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "-1.0e+30",
+          "ValidMax": "1.0e+30",
+          "FillValue": "nan",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Source",
+          "Set": "Time Series defined by using: EPOCH",
+          "ParameterKey": "SOURCE",
+          "Description": "Source",
+          "Cadence": "PT14S",
+          "RenderingHints": {
+            "AxisLabel": "SOURCE",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "-1.0e+30",
+          "ValidMax": "1.0e+30",
+          "FillValue": "nan",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Source Hash Value",
+          "Set": "Time Series defined by using: EPOCH",
+          "ParameterKey": "SOURCE_HASH",
+          "Description": "Source Hash Value",
+          "Cadence": "PT14S",
+          "RenderingHints": {
+            "AxisLabel": "SOURCE_HASH",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "-1.0e+30",
+          "ValidMax": "1.0e+30",
+          "FillValue": "nan",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Compression Ratio",
+          "Set": "Time Series defined by using: EPOCH",
+          "ParameterKey": "COMPR_RATIO",
+          "Description": "Compression Ratio",
+          "Cadence": "PT14S",
+          "RenderingHints": {
+            "AxisLabel": "COMPR_RATIO",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "-1.0e+30",
+          "ValidMax": "1.0e+30",
+          "FillValue": "nan",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Number of Data Points",
+          "Set": "Time Series defined by using: EPOCH",
+          "ParameterKey": "NDAT",
+          "Description": "Number of Data Points",
+          "Cadence": "PT14S",
+          "RenderingHints": {
+            "AxisLabel": "NDAT",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "-1.0e+30",
+          "ValidMax": "1.0e+30",
+          "FillValue": "nan",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Data Size",
+          "Set": "Time Series defined by using: EPOCH",
+          "ParameterKey": "DATASIZE",
+          "Description": "Data Size",
+          "Cadence": "PT14S",
+          "RenderingHints": {
+            "AxisLabel": "DATASIZE",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "-1.0e+30",
+          "ValidMax": "1.0e+30",
+          "FillValue": "nan",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "SMP Bits",
+          "Set": "Time Series defined by using: EPOCH",
+          "ParameterKey": "SMP_BITS",
+          "Description": "SMP Bits",
+          "Cadence": "PT14S",
+          "RenderingHints": {
+            "AxisLabel": "SMP_BITS",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "-1.0e+30",
+          "ValidMax": "1.0e+30",
+          "FillValue": "nan",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "LTCS NNNN Bits",
+          "Set": "Time Series defined by using: EPOCH",
+          "ParameterKey": "LTCSNNNN_BITS",
+          "Description": "LTCS NNNN Bits",
+          "Cadence": "PT14S",
+          "RenderingHints": {
+            "AxisLabel": "LTCSNNNN_BITS",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "-1.0e+30",
+          "ValidMax": "1.0e+30",
+          "FillValue": "nan",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "ARCH Bits",
+          "Set": "Time Series defined by using: EPOCH",
+          "ParameterKey": "ARCH_BITS",
+          "Description": "ARCH Bits",
+          "Cadence": "PT14S",
+          "RenderingHints": {
+            "AxisLabel": "ARCH_BITS",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "-1.0e+30",
+          "ValidMax": "1.0e+30",
+          "FillValue": "nan",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Mode 1",
+          "Set": "Time Series defined by using: EPOCH",
+          "ParameterKey": "MODE1",
+          "Description": "Mode Number 1",
+          "Cadence": "PT14S",
+          "RenderingHints": {
+            "AxisLabel": "MODE1",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "-1.0e+30",
+          "ValidMax": "1.0e+30",
+          "FillValue": "nan",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "InstrumentMode"
+          }
+        },
+        {
+          "Name": "ARCH SUM",
+          "Set": "Time Series defined by using: EPOCH",
+          "ParameterKey": "ARCH_SUM",
+          "Description": "ARCH SUM",
+          "Cadence": "PT14S",
+          "RenderingHints": {
+            "AxisLabel": "ARCH_SUM",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "-1.0e+30",
+          "ValidMax": "1.0e+30",
+          "FillValue": "nan",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "ARCH SMP Data Quality Flag",
+          "Set": "Time Series defined by using: EPOCH",
+          "ParameterKey": "ARCH_SMP_FLAG",
+          "Description": "ARCH SMP Data Quality Flag",
+          "Cadence": "PT14S",
+          "RenderingHints": {
+            "AxisLabel": "ARCH_SMP_FLAG",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "-1.0e+30",
+          "ValidMax": "1.0e+30",
+          "FillValue": "nan",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "InstrumentMode"
+          }
+        },
+        {
+          "Name": "Total Accumulation Period",
+          "Set": "Time Series defined by using: EPOCH",
+          "ParameterKey": "TOT_ACCUM_PERIOD",
+          "Description": "Total Accumulation Period",
+          "Cadence": "PT14S",
+          "RenderingHints": {
+            "AxisLabel": "TOT_ACCUM_PERIOD",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "-1.0e+30",
+          "ValidMax": "1.0e+30",
+          "FillValue": "nan",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Number of Accumulations",
+          "Set": "Time Series defined by using: EPOCH",
+          "ParameterKey": "NUM_ACCUM",
+          "Description": "Number of Accumulations",
+          "Cadence": "PT14S",
+          "RenderingHints": {
+            "AxisLabel": "NUM_ACCUM",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "-1.0e+30",
+          "ValidMax": "1.0e+30",
+          "FillValue": "nan",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Mode 2, ORI",
+          "Set": "Time Series defined by using: EPOCH",
+          "ParameterKey": "MODE2_ORI",
+          "Description": "Mode Number 2, ORI",
+          "Cadence": "PT14S",
+          "RenderingHints": {
+            "AxisLabel": "MODE2_ORI",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "-1.0e+30",
+          "ValidMax": "1.0e+30",
+          "FillValue": "nan",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "InstrumentMode"
+          }
+        },
+        {
+          "Name": "Mode 2",
+          "Set": "Time Series defined by using: EPOCH",
+          "ParameterKey": "MODE2",
+          "Description": "Mode Number 2",
+          "Cadence": "PT14S",
+          "RenderingHints": {
+            "AxisLabel": "MODE2",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "-1.0e+30",
+          "ValidMax": "1.0e+30",
+          "FillValue": "nan",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "InstrumentMode"
+          }
+        },
+        {
+          "Name": "F0",
+          "Set": "Time Series defined by using: EPOCH",
+          "ParameterKey": "F0",
+          "Description": "F0",
+          "Cadence": "PT14S",
+          "RenderingHints": {
+            "AxisLabel": "F0",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "-1.0e+30",
+          "ValidMax": "1.0e+30",
+          "FillValue": "nan",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Status Bits",
+          "Set": "Time Series defined by using: EPOCH",
+          "ParameterKey": "STATUS_BITS",
+          "Description": "Status Bits",
+          "Cadence": "PT14S",
+          "RenderingHints": {
+            "AxisLabel": "STATUS_BITS",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "-1.0e+30",
+          "ValidMax": "1.0e+30",
+          "FillValue": "nan",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Peak Bin",
+          "Set": "Time Series defined by using: EPOCH",
+          "ParameterKey": "PEAK_BIN",
+          "Description": "Peak Bin",
+          "Cadence": "PT14S",
+          "RenderingHints": {
+            "AxisLabel": "PEAK_BIN",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "-1.0e+30",
+          "ValidMax": "1.0e+30",
+          "FillValue": "nan",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Product Bits",
+          "Set": "Time Series defined by using: EPOCH",
+          "ParameterKey": "PRODUCT_BITS",
+          "Description": "Product Bits",
+          "Cadence": "PT14S",
+          "RenderingHints": {
+            "AxisLabel": "PRODUCT_BITS",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "-1.0e+30",
+          "ValidMax": "1.0e+30",
+          "FillValue": "nan",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Particle Counts",
+          "Set": "Time Series defined by using: EPOCH",
+          "ParameterKey": "CNTS",
+          "Description": "Particle Counts",
+          "Cadence": "PT14S",
+          "RenderingHints": {
+            "AxisLabel": "CNTS",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "-1.0e+30",
+          "ValidMax": "1.0e+30",
+          "FillValue": "nan",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": "Scalar",
+            "ParticleQuantity": "Counts"
+          }
+        },
+        {
+          "Name": "Data",
+          "Set": "Time Series defined by using: EPOCH",
+          "ParameterKey": "DATA",
+          "Description": "Data",
+          "Cadence": "PT14S",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "DATA",
+            "ValueFormat": "E10.2",
+            "ScaleType": "LinearScale"
+          },
+          "Structure": {
+            "Size": "4096"
+          },
+          "FillValue": "nan",
+          "Support": {
+            "Qualifier": "Array",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Gap",
+          "Set": "Time Series defined by using: EPOCH",
+          "ParameterKey": "GAP",
+          "Description": "Gap",
+          "Cadence": "PT14S",
+          "RenderingHints": {
+            "AxisLabel": "GAP",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "-1.0e+30",
+          "ValidMax": "1.0e+30",
+          "FillValue": "nan",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Differential Energy Flux",
+          "Set": "Time Series defined by using: EPOCH",
+          "ParameterKey": "EFLUX",
+          "Description": "Differential Energy Flux",
+          "Cadence": "PT14S",
+          "Units": "eV/(cm^2 s sr eV)",
+          "UnitsConversion": "1.0e4>J/(m^2 s sr J)",
+          "RenderingHints": {
+            "DisplayType": "Spectrogram",
+            "AxisLabel": "Diff Energy Flux",
+            "ValueFormat": "E12.2",
+            "ScaleType": "LogScale"
+          },
+          "Structure": {
+            "Size": "4096"
+          },
+          "FillValue": "nan",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": "Array",
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "Particle Energy",
+          "Set": "Time Series defined by using: EPOCH",
+          "ParameterKey": "ENERGY",
+          "Description": "Particle Energy",
+          "Cadence": "PT14S",
+          "Units": "eV",
+          "UnitsConversion": "1.602176565e-19>J",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "Energy",
+            "ValueFormat": "E12.2",
+            "ScaleType": "LogScale"
+          },
+          "Structure": {
+            "Size": "4096"
+          },
+          "FillValue": "nan",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": "Array",
+            "ParticleQuantity": "Energy"
+          }
+        },
+        {
+          "Name": "Elevation Angle, Spacecraft coordinates",
+          "Set": "Time Series defined by using: EPOCH",
+          "ParameterKey": "THETA",
+          "Description": "Elevation Angle, Spacecraft, SC, coordinates",
+          "Cadence": "PT14S",
+          "Units": "°",
+          "UnitsConversion": "0.0174532925>rad",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "Elevation Angle",
+            "ValueFormat": "F7.1",
+            "ScaleType": "LinearScale"
+          },
+          "Structure": {
+            "Size": "4096"
+          },
+          "FillValue": "nan",
+          "Support": {
+            "Qualifier": "Array",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Azimuth Angle, Spacecraft coordinates",
+          "Set": "Time Series defined by using: EPOCH",
+          "ParameterKey": "PHI",
+          "Description": "Azimuth Angle, Spacecraft, SC, coordinates",
+          "Cadence": "PT14S",
+          "Units": "°",
+          "UnitsConversion": "0.0174532925>rad",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "Azimuth Angle",
+            "ValueFormat": "F8.1",
+            "ScaleType": "LinearScale"
+          },
+          "Structure": {
+            "Size": "4096"
+          },
+          "FillValue": "nan",
+          "Support": {
+            "Qualifier": "Array",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Quality Flag",
+          "Set": "Time Series defined by using: EPOCH",
+          "ParameterKey": "QUALITY_FLAG",
+          "Description": "Quality Flag",
+          "Cadence": "PT14S",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "QUALITY_FLAG",
+            "ValueFormat": "I10",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMax": "256",
+          "FillValue": "-1",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "Rotation Matrix, Spacecraft Instrument",
+          "Set": "Time Series defined by using: EPOCH",
+          "ParameterKey": "ROTMAT_SC_INST",
+          "Description": "Rotation Matrix, Spacecraft Instrument",
+          "Cadence": "PT14S",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "ROTMAT_SC_INST",
+            "ValueFormat": "E10.2",
+            "ScaleType": "LinearScale"
+          },
+          "Structure": {
+            "Size": "3 3"
+          },
+          "FillValue": "nan",
+          "Support": {
+            "Qualifier": "Array",
+            "SupportQuantity": "Other"
+          }
+        }
+      ]
+    }
+  }
+}

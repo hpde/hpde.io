@@ -1,0 +1,150 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_2_9.xsd",
+    "Version": "2.2.9",
+    "NumericalData": {
+      "ResourceID": "spase://NASA/NumericalData/IMP8/CRNC/PT15M",
+      "ResourceHeader": {
+        "ResourceName": "IMP 8 Cosmic Ray Nuclear Composition (CRNC) 15-min PHA and coincidence mode counts",
+        "ReleaseDate": "2021-03-11T18:39:11Z",
+        "Description": "This 15-min-resolution data set consists of 5 count rates from the Low Energy Telescope, \n        8 count rates for the main telescope (MT), 4 counts of pulse height analyzed events in each of 4 MT \n        coincidence modes, and 27 box counts corresponding to specific species and energy ranges associated \n        with 3 of the MT coincidence modes.  Actually the 13 referenced \"count rates\" are given as paired counts\n       and accumulation times.  Associated documentation suggests algorithms for computation of count rates and\n       fluxes from the MT data given, for electrons in 3 energy bands (0.7-2.0, 2.0-12, 12-50 MeV), protons in 9 bands\n       (11.24-20.00 MeV to 74.50-94.78 MeV), helium nuclei in 10 bands  (10.90-12.89 MeV per n to 84.32-94.81 MeV per n),\n       and CNO nuclei in 1 band (25 - 250 Mev per n). There are no azimuthally sectored data in this data set.  \n       The data are accessible via ftp and, with higher functionality, via FTPBrowser.",
+        "Acknowledgement": "C. Lopate, UNH, and the late J. Simpson, U. Chi",
+        "Contact": {
+          "PersonID": "spase://SMWG/Person/Clifford.Lopate",
+          "Role": "GeneralContact"
+        },
+        "InformationURL": {
+          "Name": "Voldesc file at SPDF",
+          "URL": "https://spdf.gsfc.nasa.gov/pub/data/imp/imp8/particles_uchi/15min_asci/voldesc.sfd",
+          "Description": "Detailed documentation file about experiment and data"
+        },
+        "PriorID": [
+          "spase://VEPO/NumericalData/IMP8/UChi/PT15M",
+          "spase://VEPO/NumericalData/IMP8/CRNC/PT15M",
+          "spase://VSPO/NumericalData/IMP8/CRNC/PT15M"
+        ]
+      },
+      "AccessInformation": {
+        "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+        "Availability": "Online",
+        "AccessRights": "Open",
+        "AccessURL": [
+          {
+            "Name": "FTPBrowser",
+            "URL": "https://omniweb.gsfc.nasa.gov/ftpbrowser/chicago.html",
+            "Description": "Interface to plot or list parameter subsets"
+          },
+          {
+            "Name": "FTPS from SPDF (not with most browsers)",
+            "URL": "ftps://spdf.gsfc.nasa.gov/pub/data/imp/imp8/particles_uchi/15min_asci/",
+            "Description": "download files by ftp"
+          },
+          {
+            "Name": "HTTPS from SPDF",
+            "URL": "https://spdf.gsfc.nasa.gov/pub/data/imp/imp8/particles_uchi/15min_asci/",
+            "Description": "In CDF via HTTP from SPDF"
+          }
+        ],
+        "Format": "Text",
+        "DataExtent": {
+          "Quantity": "320",
+          "Units": "MB"
+        },
+        "Acknowledgement": "C. Lopate, UNH, the late J. Simpson, U. Chicago, and the NSSDC and SPDF at GSFC"
+      },
+      "ProcessingLevel": "Uncalibrated",
+      "InstrumentID": "spase://SMWG/Instrument/IMP8/CRNC",
+      "MeasurementType": "EnergeticParticles",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "1973-10-30T00:00:00",
+          "StopDate": "2000-09-30T00:00:00"
+        },
+        "Cadence": "PT15M"
+      },
+      "ObservedRegion": "Heliosphere.NearEarth",
+      "Caveats": "Data must be processed to obtain count rates and fluxes.  Note that records with no data have spacecraft ID = 0 in first word.",
+      "Parameter": [
+        {
+          "Name": "Coincidence mode counts",
+          "Description": "A set of 13 counts of events corresponding various telescope coincidence modes and discriminator levels",
+          "Cadence": "PT15M",
+          "Structure": {
+            "Size": "13",
+            "Description": "A set of 13 counts of events corresponding various telescope coincidence modes and discriminator levels.  Counts are due to a mix of protons and alpha particles identified below plus 0.7-50 MeV electrons."
+          },
+          "Particle": {
+            "ParticleType": [
+              "Proton",
+              "AlphaParticle"
+            ],
+            "ParticleQuantity": "Counts",
+            "EnergyRange": {
+              "Low": "0.54",
+              "High": "94.78",
+              "Units": "MeV per n"
+            }
+          }
+        },
+        {
+          "Name": "Count accumulation durations",
+          "Description": "A set of 13 accumulation durations (in seconds) corresponding to the 13 coincidence mode counts described above",
+          "Cadence": "PT15M",
+          "Units": "sec",
+          "Structure": {
+            "Size": "13",
+            "Description": "A set of 13 accumulation durations (in seconds) corresponding to the 13 coincidence mode counts described above"
+          },
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Counts of events pulse height analyzed",
+          "Description": "A set of 4 counts of events pulse height analyzed in various coincidence modes for this interval for the CPI main telescope",
+          "Cadence": "PT15M",
+          "Structure": {
+            "Size": "4",
+            "Description": "A set of 4 counts of events pulse height analyzed in various coincidence modes for this interval.  Counts are due to a mix of protons and alpha particles identified below plus 0.7-50 MeV electrons."
+          },
+          "Particle": {
+            "ParticleType": [
+              "Proton",
+              "AlphaParticle"
+            ],
+            "ParticleQuantity": "Counts",
+            "EnergyRange": {
+              "Low": "11.24",
+              "High": "94.78",
+              "Units": "MeV per n"
+            }
+          }
+        },
+        {
+          "Name": "Box counts for specific species",
+          "Description": "A set of 27 counts in E-dE/dx boxes corresponding to known species and energy ranges.  In particular, there are 9 proton counts with energy ranges between 11.24-12.62 MeV and 74.50-94.78 MeV plus 2 proton counts aggregated over subsets of the 9, 10 alpha particle counts with energy ranges between 10.90-12.89 MeV/n and 84.32-94.81 MeV/n plus 2 alpha particle counts aggregated over subsets of the 10, 3 electron boxes at 0.7-2.0 MeV, 2.0-12 MeV, and 12-50 MeV, and one CNO box at ~25-250 MeV/n",
+          "Caveats": "Data and companion documentation (algorithms, geometric factors, etc.) enable calculation of count rates and fluxes",
+          "Cadence": "PT15M",
+          "Structure": {
+            "Size": "27",
+            "Description": "A set of 27 box counts as described above"
+          },
+          "Particle": {
+            "ParticleType": [
+              "Proton",
+              "AlphaParticle"
+            ],
+            "ParticleQuantity": "Counts",
+            "EnergyRange": {
+              "Low": "11.24",
+              "High": "94.78",
+              "Units": "MeV per n"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

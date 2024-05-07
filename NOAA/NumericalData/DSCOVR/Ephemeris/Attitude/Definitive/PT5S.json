@@ -1,0 +1,386 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema   http://www.spase-group.org/data/schema/spase-2_3_0.xsd",
+    "Version": "2.3.0",
+    "NumericalData": {
+      "ResourceID": "spase://NOAA/NumericalData/DSCOVR/Ephemeris/Attitude/Definitive/PT5S",
+      "ResourceHeader": {
+        "ResourceName": "DSCOVR 3-Axis Stabilized Attitude (Ephemeris) Definitive Data",
+        "ReleaseDate": "2021-04-27T17:52:57Z",
+        "Description": "DSCOVR 3-Axis Stabilized Definitive Attitude Data File, 5 s Time Resolution. Convention: Intrinsic Rotations applied in Yaw, Pitch, Roll Order. Extended Kalman Filter applied to Ground-Based Solution during Normal Operations. Onboard Computer, OBC, Solution used during Calibration Maneuvers.",
+        "Acknowledgement": "A. Szabo",
+        "Contact": [
+          {
+            "PersonID": "spase://SMWG/Person/Adam.Szabo",
+            "Role": "PrincipalInvestigator"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Robert.E.McGuire",
+            "Role": "MetadataContact"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Lee.Frost.Bargatze",
+            "Role": "MetadataContact"
+          }
+        ],
+        "InformationURL": {
+          "Name": "Deep Space Climate Observatory, DSCOVR, Web Page, NESDIS, NOAA",
+          "URL": "https://www.nesdis.noaa.gov/content/dscovr-deep-space-climate-observatory",
+          "Description": "Deep Space Climate Observatory, DSCOVR, Web Page hosted by the National Environmental Satellite, Data, and Information Service, NESDIS, National Oceanic and Atmospheric Administration, NOAA"
+        },
+        "PriorID": "spase://VSPO/NumericalData/DSCOVR/Ephemeris/Attitude/Definitive/PT5S"
+      },
+      "AccessInformation": [
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": [
+            {
+              "Name": "FTPS from SPDF (not with most browsers)",
+              "URL": "ftps://spdf.gsfc.nasa.gov/pub/data/dscovr/orbit/def_at/",
+              "Description": "In CDF via ftp from SPDF."
+            },
+            {
+              "Name": "HTTPS from SPDF",
+              "URL": "https://spdf.gsfc.nasa.gov/pub/data/dscovr/orbit/def_at/",
+              "Description": "In CDF via http from SPDF."
+            },
+            {
+              "Name": "CDAWeb",
+              "URL": "https://cdaweb.gsfc.nasa.gov/index.html/",
+              "ProductKey": "DSCOVR_AT_DEF",
+              "Description": "Access to ASCII, CDF, and plots via NASA/GSFC CDAWeb"
+            }
+          ],
+          "Format": "CDF",
+          "Encoding": "None",
+          "Acknowledgement": "A. Szabo. Please acknowledge the data providers and CDAWeb when using these data."
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDAWeb HAPI Server",
+            "URL": "https://cdaweb.gsfc.nasa.gov/hapi",
+            "Style": "HAPI",
+            "ProductKey": "DSCOVR_AT_DEF",
+            "Description": "Web Service to this product using the HAPI interface."
+          },
+          "Format": "CSV",
+          "Acknowledgement": "A. Szabo. Please acknowledge the data providers and CDAWeb when using these data."
+        }
+      ],
+      "ProcessingLevel": "Calibrated",
+      "InstrumentID": "spase://SMWG/Instrument/DSCOVR/Ephemeris",
+      "MeasurementType": "Ephemeris",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "2015-02-11T00:00:00.000",
+          "StopDate": "2017-07-08T23:59:59.999"
+        },
+        "Cadence": "PT5S"
+      },
+      "ObservedRegion": [
+        "Heliosphere",
+        "Heliosphere.NearEarth",
+        "Heliosphere.Inner"
+      ],
+      "Parameter": [
+        {
+          "Name": "Epoch Time, since 0 A.D.",
+          "ParameterKey": "Epoch",
+          "Description": "Epoch Time, Milliseconds since 0 A.D.",
+          "Caveats": "This parameter exhibits an increasing monotonic progression.",
+          "Cadence": "PT5S",
+          "Units": "ms",
+          "UnitsConversion": "1e-3>s",
+          "RenderingHints": {
+            "AxisLabel": "Epoch",
+            "ValueFormat": "E14.8"
+          },
+          "ValidMin": "11-Feb-2015 00:00:00.000",
+          "ValidMax": "11-Feb-2065 00:00:00.000",
+          "FillValue": "31-Dec-9999 23:59:59.999",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Time PB5",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "Time_PB5",
+          "Description": "Time in PB5 Format: Year, Day, Milliseconds, Observation Time",
+          "Cadence": "PT5S",
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "Year",
+                "Index": "1",
+                "Units": "year",
+                "ValidMin": "2015",
+                "ValidMax": "2065"
+              },
+              {
+                "Name": "Day of Year",
+                "Index": "2",
+                "Units": "d",
+                "ValidMin": "0",
+                "ValidMax": "366"
+              },
+              {
+                "Name": "Elapsed milliseconds of day",
+                "Index": "3",
+                "Units": "ms",
+                "ValidMin": "0",
+                "ValidMax": "86400000"
+              }
+            ]
+          },
+          "FillValue": "-2147483647",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Yaw Angle, J2000",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "J2000_Yaw",
+          "Description": "Spacecraft Yaw Angle, J2000 Coordinates",
+          "Cadence": "PT5S",
+          "Units": "rad",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "J2000"
+          },
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "Yaw J2000",
+            "ValueFormat": "F10.6",
+            "ScaleMin": "-3.14159",
+            "ScaleMax": "3.14159"
+          },
+          "ValidMin": "-3.14159",
+          "ValidMax": "3.14159",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "Qualifier": "DirectionAngle.AzimuthAngle",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Pitch Angle, J2000",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "J2000_Pitch",
+          "Description": "Spacecraft Pitch Angle, J2000 Coordinates",
+          "Cadence": "PT5S",
+          "Units": "rad",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "J2000"
+          },
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "Pitch J2000",
+            "ValueFormat": "F10.6",
+            "ScaleMin": "-3.14159",
+            "ScaleMax": "3.14159"
+          },
+          "ValidMin": "-3.14159",
+          "ValidMax": "3.14159",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "Qualifier": "DirectionAngle.ElevationAngle",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Roll Angle, J2000",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "J2000_Roll",
+          "Description": "Spacecraft Roll Angle, J2000 Coordinates",
+          "Cadence": "PT5S",
+          "Units": "rad",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "J2000"
+          },
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "Roll J2000",
+            "ValueFormat": "F10.6",
+            "ScaleMin": "-3.14159",
+            "ScaleMax": "3.14159"
+          },
+          "ValidMin": "-3.14159",
+          "ValidMax": "3.14159",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "Qualifier": "DirectionAngle.AzimuthAngle",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Yaw Angle, J2000 GEI",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "GCI_Yaw",
+          "Description": "Spacecraft Yaw Angle, Geocentric Inertial, J2000 GEI Coordinates",
+          "Cadence": "PT5S",
+          "Units": "rad",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "GEI"
+          },
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "Yaw GCI",
+            "ValueFormat": "F10.6",
+            "ScaleMin": "-3.14159",
+            "ScaleMax": "3.14159"
+          },
+          "ValidMin": "-3.14159",
+          "ValidMax": "3.14159",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "Qualifier": "DirectionAngle.AzimuthAngle",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Pitch Angle, J2000 GEI",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "GCI_Pitch",
+          "Description": "Spacecraft Pitch Angle, Geocentric Inertial, J2000 GEI Coordinates",
+          "Cadence": "PT5S",
+          "Units": "rad",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "GEI"
+          },
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "Pitch GCI",
+            "ValueFormat": "F10.6",
+            "ScaleMin": "-3.14159",
+            "ScaleMax": "3.14159"
+          },
+          "ValidMin": "-3.14159",
+          "ValidMax": "3.14159",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "Qualifier": "DirectionAngle.ElevationAngle",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Roll Angle, J2000 GEI",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "GCI_Roll",
+          "Description": "Spacecraft Roll Angle, Geocentric Inertial, J2000 GEI Coordinates",
+          "Cadence": "PT5S",
+          "Units": "rad",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "GEI"
+          },
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "Roll GCI",
+            "ValueFormat": "F10.6",
+            "ScaleMin": "-3.14159",
+            "ScaleMax": "3.14159"
+          },
+          "ValidMin": "-3.14159",
+          "ValidMax": "3.14159",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "Qualifier": "DirectionAngle.AzimuthAngle",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Yaw Angle, GSE",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "GSE_Yaw",
+          "Description": "Spacecraft Yaw Angle, Geocentric Solar Ecliptic, GSE Coordinates",
+          "Cadence": "PT5S",
+          "Units": "rad",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "GSE"
+          },
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "Yaw GSE",
+            "ValueFormat": "F10.6",
+            "ScaleMin": "-3.14159",
+            "ScaleMax": "3.14159"
+          },
+          "ValidMin": "-3.14159",
+          "ValidMax": "3.14159",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "Qualifier": "DirectionAngle.AzimuthAngle",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Pitch Angle, GSE",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "GSE_Pitch",
+          "Description": "Spacecraft Pitch Angle, Geocentric Solar Ecliptic, GSE Coordinates",
+          "Cadence": "PT5S",
+          "Units": "rad",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "GSE"
+          },
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "Pitch GSE",
+            "ValueFormat": "F10.6",
+            "ScaleMin": "-3.14159",
+            "ScaleMax": "3.14159"
+          },
+          "ValidMin": "-3.14159",
+          "ValidMax": "3.14159",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "Qualifier": "DirectionAngle.ElevationAngle",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Roll Angle, GSE",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "GSE_Roll",
+          "Description": "Spacecraft Roll Angle, Geocentric Solar Ecliptic, GSE Coordinates",
+          "Cadence": "PT5S",
+          "Units": "rad",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "GSE"
+          },
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "Roll GSE",
+            "ValueFormat": "F10.6",
+            "ScaleMin": "-3.14159",
+            "ScaleMax": "3.14159"
+          },
+          "ValidMin": "-3.14159",
+          "ValidMax": "3.14159",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "Qualifier": "DirectionAngle.AzimuthAngle",
+            "SupportQuantity": "Positional"
+          }
+        }
+      ]
+    }
+  }
+}

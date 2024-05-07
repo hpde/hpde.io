@@ -1,0 +1,804 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema  http://spase-group.org/data/schema/spase-2.3.2.xsd",
+    "Version": "2.6.0",
+    "NumericalData": {
+      "ResourceID": "spase://NASA/NumericalData/ICON/EUV/L2/PT1S",
+      "ResourceHeader": {
+        "ResourceName": "ICON Extreme Ultraviolet Spectrograph Images ",
+        "AlternateName": "EUV Images",
+        "DOI": "https://doi.org/10.48322/hwg4-hw39",
+        "ReleaseDate": "2024-05-01T00:00:00Z",
+        "RevisionHistory": {
+          "RevisionEvent": [
+            {
+              "ReleaseDate": "2023-08-01T00:00:00Z",
+              "Note": "Added DOI and PublicationInfo minted by JMW on 20230801. Updated SPASE version."
+            },
+            {
+              "ReleaseDate": "2024-05-01T00:00:00Z",
+              "Note": "Updated SPASE version. Edited AccessInformation. JMW"
+            }
+          ]
+        },
+        "Description": "This describes the data produce for ICON EUV Daytime O+ (DP 2.6), which is in NetCDF4 format. These files are named ICON_L2-6_EUV_YYYY-MM-DD_vXXrZZ.NC, where YYYY-MM-DD is the year month day and VXX shows the version number and rZZ shows the revision number of this file.  Each individual file nominally contains 1 day (24 hours) of data. The L2 EUV Daytime files are produced from the L1 EUV files, and their primary data product is the O+ profile derived from a retrieval that is detailed in a paper: https://doi.org/10.1007/s11214-017-0385-1. In addition, many other parameters and geophysical data products are included in the file.  The data are identified in one of 3 var_types: data – which contains the primary data product; support data – which contains parameters used in the retrieval such as geometry etc. that may also be useful in any analysis of this data; and ignore_data – which are recorded for debugging purposes and should not be used for publication without detailed discussion with the ICON team. The dimensions of the data also indicate its type.  For example, anything with epoch as a dimension means there is 1 value corresponding to each instrument exposure. Anything with dimension Input_data corresponds to the input data, passed from Level 1.  Anything with a dimension of model refers to the forward model parameters used as part of the inversion. Anything with dimension altitude corresponds to the altitude grid used for the inverted parameters.",
+        "Acknowledgement": "National Aeronautics and Space Administration; Dr. Andrew W. Stephan; Dr. Thomas Immel",
+        "PublicationInfo": {
+          "Authors": "Stephan, A. W.",
+          "PublicationDate": "2023-01-01T00:00:00",
+          "PublishedBy": "NASA Space Physics Data Facility"
+        },
+        "Funding": {
+          "Agency": "National Aeronautics and Space Administration",
+          "Project": "Explorers Program",
+          "AwardNumber": "contracts NNG12FA45C"
+        },
+        "Contact": {
+          "PersonID": "spase://SMWG/Person/Andrew.W.Stephan",
+          "Role": "PrincipalInvestigator"
+        },
+        "InformationURL": [
+          {
+            "Name": "Additional information on ICON",
+            "URL": "https://icon.ssl.berkeley.edu/",
+            "Description": "ICON spacecraft Homepage."
+          },
+          {
+            "Name": "Design and Performance of the ICON EUV Spectrograph",
+            "URL": "https://doi.org/10.1007/s11214-017-0384-2",
+            "Description": "Space Science Reviews, 212(1-2), pp.631-643. DOI: 10.1007/s11214-017-0384-2"
+          }
+        ]
+      },
+      "AccessInformation": [
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF/CDAWeb",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDAWeb HAPI Server",
+            "URL": "https://cdaweb.gsfc.nasa.gov/hapi",
+            "Style": "HAPI",
+            "ProductKey": "ICON_L2-6_EUV",
+            "Description": "Web Service to this product using the HAPI interface."
+          },
+          "Format": "NetCDF",
+          "Acknowledgement": "Please acknowledge Dr. Andrew W. Stephan and Dr. Thomas Immel. Please acknowledge the Data Providers and CDAWeb when using these Data."
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF/CDAWeb",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": [
+            {
+              "Name": "HTTPS from SPDF",
+              "URL": "https://spdf.gsfc.nasa.gov/pub/data/icon/l2/l2-6_euv/",
+              "ProductKey": "ICON_L2-6_EUV",
+              "Description": "Access to Data in NetCDF Format via https from SPDF"
+            },
+            {
+              "Name": "CDAWeb",
+              "URL": "https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=ICON_L2-6_EUV&index=sp_phys",
+              "ProductKey": "ICON_L2-6_EUV",
+              "Description": "Access to NetCDFs via NASA/GSFC CDAWeb"
+            }
+          ],
+          "Format": "NetCDF",
+          "Encoding": "None",
+          "Acknowledgement": "Please acknowledge Dr. Andrew W. Stephan and Dr. Thomas Immel. Please acknowledge the Data Providers and CDAWeb when using these Data."
+        }
+      ],
+      "ProcessingLevel": "Calibrated",
+      "ProviderName": "ICON EUV team",
+      "InstrumentID": "spase://SMWG/Instrument/ICON/EUV",
+      "MeasurementType": "ImageIntensity",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "2019-12-06T00:00:00Z",
+          "RelativeStopDate": "-P2M"
+        },
+        "Cadence": "PT1S"
+      },
+      "ObservedRegion": [
+        "Earth.NearSurface.Atmosphere",
+        "Earth.NearSurface.Ionosphere"
+      ],
+      "Parameter": [
+        {
+          "Name": "Epoch Time",
+          "ParameterKey": "Epoch",
+          "Description": "Sample time, midpoint of exposure. Number of msec since Jan 1, 1970.",
+          "Cadence": "PT1S",
+          "Units": "ms",
+          "ValidMin": "0",
+          "ValidMax": "6000000000000",
+          "FillValue": "-999",
+          "Support": {
+            "Qualifier": "Magnitude",
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Activity Status of the EUV Instrument",
+          "ParameterKey": "ICON_L26_Activity",
+          "Description": "Flag for activity status of the EUV instrument, as defined in the Ephemeris Definition Document.",
+          "Cadence": "PT1S",
+          "ValidMin": "0",
+          "ValidMax": "1024",
+          "FillValue": "-999",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "InstrumentMode"
+          }
+        },
+        {
+          "Name": "Altitude of the Retrieved Quantities",
+          "ParameterKey": "ICON_L26_Altitude",
+          "Description": "Altitude corresponding to the retrieved quantities, in WGS84.",
+          "Cadence": "PT1S",
+          "Units": "km",
+          "FillValue": "-999",
+          "Support": {
+            "Qualifier": "Direction",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Ap Index",
+          "ParameterKey": "ICON_L26_Ap",
+          "Description": "Value of the Ap index used in the retrieval, from GPI file.",
+          "Cadence": "PT1S",
+          "ValidMin": "0",
+          "ValidMax": "400",
+          "FillValue": "-999",
+          "Field": {
+            "Qualifier": "Scalar",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "Local Earth Radius at Retrieval",
+          "ParameterKey": "ICON_L26_Earth_Radius",
+          "Description": "Local Earth Radius at Retrieval location, from WGS.",
+          "Cadence": "PT1S",
+          "Units": "km",
+          "ValidMin": "0",
+          "ValidMax": "7000",
+          "FillValue": "-999",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "F10.7 Values",
+          "ParameterKey": "ICON_L24_F107",
+          "Description": "F10.7 values used, from GPI file, in solar flux units.",
+          "Cadence": "PT1S",
+          "Units": "sfu",
+          "ValidMin": "0",
+          "ValidMax": "999",
+          "FillValue": "-999",
+          "Wave": {
+            "WaveType": "Photon",
+            "Qualifier": "Scalar",
+            "WaveQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "F10.7a Values",
+          "ParameterKey": "ICON_L24_F107a",
+          "Description": "F10.7a values used, from GPI file, in solar flux units.",
+          "Cadence": "PT1S",
+          "Units": "sfu",
+          "ValidMin": "0",
+          "ValidMax": "999",
+          "FillValue": "-999",
+          "Wave": {
+            "WaveType": "Photon",
+            "Qualifier": "Scalar",
+            "WaveQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "Retrieval Flags",
+          "ParameterKey": "ICON_L26_Flags",
+          "Description": "Quality flag associated with the retrieval and L1 data.",
+          "Cadence": "PT1S",
+          "FillValue": "-999",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "DataQuality"
+          }
+        },
+        {
+          "Name": "Height of F2 layer from Retrieval",
+          "ParameterKey": "ICON_L26_HmF2",
+          "Description": "Height of the peak of the F2 layer from Retrieval, in WGS.",
+          "Cadence": "PT1S",
+          "Units": "km",
+          "ValidMin": "0",
+          "ValidMax": "1000",
+          "FillValue": "-999",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Input Altitude",
+          "ParameterKey": "ICON_L26_Input_Altitude",
+          "Description": "*Diagnostic* Tangent altitudes corresponding to the input data, in WGS84.",
+          "Cadence": "PT1S",
+          "Units": "km",
+          "ValidMin": "0",
+          "ValidMax": "1000",
+          "FillValue": "-999",
+          "Support": {
+            "Qualifier": "Direction",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Input Covariance for 61.7 nm",
+          "ParameterKey": "ICON_L26_Input_Covariance_617",
+          "Description": "*Diagnostic* Covariance of the observed Radiance in the 61.7 nm wavelength channel.",
+          "Cadence": "PT1S",
+          "Units": "Rayleighs^2",
+          "ValidMin": "0",
+          "ValidMax": "1000000015047466219876688855040",
+          "FillValue": "-999",
+          "Support": {
+            "Qualifier": "Variance",
+            "SupportQuantity": "DataQuality"
+          }
+        },
+        {
+          "Name": "Input Covariance for 83.4 nm",
+          "ParameterKey": "ICON_L26_Input_Covariance_834",
+          "Description": "*Diagnostic* Covariance of the observed Radiance in the 83.4 nm wavelength channel.",
+          "Cadence": "PT1S",
+          "Units": "Rayleighs^2",
+          "ValidMin": "0",
+          "ValidMax": "1000000015047466219876688855040",
+          "FillValue": "-999",
+          "Support": {
+            "Qualifier": "Variance",
+            "SupportQuantity": "DataQuality"
+          }
+        },
+        {
+          "Name": "Input Filename",
+          "ParameterKey": "ICON_L26_Input_Filename",
+          "Description": "Name of the L1 file used with the input data.",
+          "Cadence": "PT1S",
+          "Units": "string",
+          "FillValue": " ",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Input Radiance 61.7 nm",
+          "ParameterKey": "ICON_L26_Input_Radiance_617",
+          "Description": "*Diagnostic* Observed Radiance in the 61.7 nm wavelength channel.",
+          "Cadence": "PT1S",
+          "Units": "Rayleighs",
+          "ValidMin": "0",
+          "ValidMax": "1000000015047466219876688855040",
+          "FillValue": "-999",
+          "Wave": {
+            "WaveType": "Photon",
+            "Qualifier": "Scalar",
+            "WaveQuantity": "Intensity"
+          }
+        },
+        {
+          "Name": "Input Radiance 83.4 nm",
+          "ParameterKey": "ICON_L26_Input_Radiance_834",
+          "Description": "*Diagnostic* Observed Radiance in the 83.4 nm wavelength channel.",
+          "Cadence": "PT1S",
+          "Units": "Rayleighs",
+          "ValidMin": "0",
+          "ValidMax": "1000000015047466219876688855040",
+          "FillValue": "-999",
+          "Wave": {
+            "WaveType": "Photon",
+            "Qualifier": "Scalar",
+            "WaveQuantity": "Intensity"
+          }
+        },
+        {
+          "Name": "Geodetic Latitude",
+          "ParameterKey": "ICON_L26_Latitude",
+          "Description": "Geodetic Latitude at retrieval location, referenced at 300 km altitude, in WGS.",
+          "Cadence": "PT1S",
+          "Units": "degrees",
+          "ValidMin": "-90",
+          "ValidMax": "90",
+          "FillValue": "-999",
+          "Support": {
+            "Qualifier": "Direction",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Local Solar Time",
+          "ParameterKey": "ICON_L26_Local_Solar_Time",
+          "Description": "Local solar time at Retrieval.",
+          "Cadence": "PT12S",
+          "Units": "hours",
+          "ValidMin": "0",
+          "ValidMax": "24",
+          "FillValue": "-999",
+          "Support": {
+            "Qualifier": "Direction",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Geodetic Longitude",
+          "ParameterKey": "ICON_L26_Longitude",
+          "Description": "Geodetic Longitude at retrieval location, referenced at 300 km altitude in WGS.",
+          "Cadence": "PT1S",
+          "Units": "degrees",
+          "ValidMin": "0",
+          "ValidMax": "360",
+          "FillValue": "-999",
+          "Support": {
+            "Qualifier": "Direction",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Magnetic Latitude",
+          "ParameterKey": "ICON_L26_Magnetic_Latitude",
+          "Description": "Quasi-Dipole Magnetic Latitude at 300 km at Retrieval location, in degrees.",
+          "Cadence": "PT1S",
+          "Units": "degrees",
+          "ValidMin": "-90",
+          "ValidMax": "90",
+          "FillValue": "-999",
+          "Support": {
+            "Qualifier": "Direction",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Magnetic Longitude",
+          "ParameterKey": "ICON_L26_Magnetic_Longitude",
+          "Description": "Quasi-Dipole Magnetic Longitude at 300 km at Retrieval location, in degrees.",
+          "Cadence": "PT1S",
+          "Units": "degrees",
+          "ValidMin": "-180",
+          "ValidMax": "180",
+          "FillValue": "-999",
+          "Support": {
+            "Qualifier": "Direction",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Model Change",
+          "ParameterKey": "ICON_L26_Model_Change",
+          "Description": "'*Diagnostic* A value of 1 shows which forward model parameters are set to change during the retrieval, where the parameters are in order, Rz12 multiplier,   ig12 multiplier,   IRI F107 multiplier,   density scalar, and the j0 multiplier'.",
+          "Cadence": "PT1S",
+          "Units": "unitless",
+          "ValidMin": "0",
+          "ValidMax": "999",
+          "FillValue": "-999",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Model Covariance",
+          "ParameterKey": "ICON_L26_Model_Covariance",
+          "Description": "*Diagnostic* Covariance matrix of the model parameters from the retrieval.",
+          "Cadence": "PT1S",
+          "Units": "unitless",
+          "ValidMin": "0",
+          "ValidMax": "1000000015047466219876688855040",
+          "FillValue": "-999",
+          "Support": {
+            "Qualifier": "Tensor",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Model Lower Limit",
+          "ParameterKey": "ICON_L26_Model_Lower_Limit",
+          "Description": "*Diagnostic* Lower limit of the parameters used in the forward model, which are in order, Rz12 multiplier,   ig12 multiplier,   IRI F107 multiplier,   density scalar, and the j0 multiplier.",
+          "Cadence": "PT1S",
+          "Units": "unitless",
+          "ValidMin": "-1000",
+          "ValidMax": "1000",
+          "FillValue": "-999",
+          "Support": {
+            "Qualifier": "Fit",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Model Parameters",
+          "ParameterKey": "ICON_L26_Model_Parameters",
+          "Description": "*Diagnostic* Parameters used in the forwared model, which are in order, Rz12 multiplier, ig12 multiplier, IRI F107 multiplier, density scalar, and the j0 multiplier.",
+          "Cadence": "PT1S",
+          "Units": "unitless",
+          "ValidMin": "0",
+          "ValidMax": "999",
+          "FillValue": "-999",
+          "Support": {
+            "Qualifier": "Fit",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Model Parameters Initial",
+          "ParameterKey": "ICON_L26_Model_Parameters_Initial",
+          "Description": "*Diagnostic* Initial values of the parameters used in the forward model, which are in order, Rz12 multiplier,   ig12 multiplier,   IRI F107 multiplier,   density scalar, and the j0 multiplier.",
+          "Cadence": "PT1S",
+          "Units": "unitless",
+          "ValidMin": "0",
+          "ValidMax": "999",
+          "FillValue": "-999",
+          "Support": {
+            "Qualifier": "Fit",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Model Upper Limit",
+          "ParameterKey": "ICON_L26_Model_Upper_Limit",
+          "Description": "*Diagnostic* Upper limit of the parameters used in the forward model, which are in order, Rz12 multiplier,   ig12 multiplier,   IRI F107 multiplier,   density scalar, and the j0 multiplier.",
+          "Cadence": "PT1S",
+          "Units": "unitless",
+          "ValidMin": "0",
+          "ValidMax": "999",
+          "FillValue": "-999",
+          "Support": {
+            "Qualifier": "Fit",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "O+ density at the peak of the F2 layer from Retrieval",
+          "ParameterKey": "ICON_L26_NmF2",
+          "Description": "O+ density at the peak of the F2 layer from Retrieval.",
+          "Cadence": "PT1S",
+          "Units": "1/cm^3",
+          "ValidMin": "0",
+          "ValidMax": "10000000000",
+          "FillValue": "-999",
+          "Particle": {
+            "ParticleType": "Ion",
+            "Qualifier": "LineOfSight",
+            "ParticleQuantity": "NumberDensity",
+            "AtomicNumber": "8"
+          }
+        },
+        {
+          "Name": "WGS84 Altitude of s/c Position (Geodetic)",
+          "ParameterKey": "ICON_L26_Observatory_Altitude",
+          "Description": "Altitude of the spacecraft at the time of data collection, in WGS84.",
+          "Cadence": "PT1S",
+          "Units": "km",
+          "ValidMin": "0",
+          "ValidMax": "1000",
+          "FillValue": "-999",
+          "Support": {
+            "Qualifier": "Direction",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Earth Centered Earth Fixed Spacecraft Position",
+          "ParameterKey": "ICON_L26_Observatory_ECEF",
+          "Description": "Location of the spacecraft in ECEF coordinates at the time of data collection. Dimension corresponding to the X, Y, Z components of Cartesian vector.",
+          "Cadence": "PT1S",
+          "Units": "km",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "ECEF"
+          },
+          "Structure": {
+            "Size": "3 2069",
+            "Description": "Spacecraft Position in ECEF Coordinates",
+            "Element": [
+              {
+                "Name": "X",
+                "Index": "1",
+                "Units": "km",
+                "ValidMin": "6000",
+                "ValidMax": "10000",
+                "FillValue": "-999"
+              },
+              {
+                "Name": "Y",
+                "Index": "2",
+                "Units": "km",
+                "ValidMin": "6000",
+                "ValidMax": "10000",
+                "FillValue": "-999"
+              },
+              {
+                "Name": "Z",
+                "Index": "3",
+                "Units": "km",
+                "ValidMin": "6000",
+                "ValidMax": "10000",
+                "FillValue": "-999"
+              }
+            ]
+          },
+          "Support": {
+            "Qualifier": "Direction",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "WGS84 Latitude of Spacecraft Position (Geodetic)",
+          "ParameterKey": "ICON_L26_Observatory_Latitude",
+          "Description": "Geographic latitude of the spacecraft at the time of data collection, in WGS84.",
+          "Cadence": "PT1S",
+          "Units": "degrees",
+          "ValidMin": "-90",
+          "ValidMax": "90",
+          "FillValue": "-999",
+          "Support": {
+            "Qualifier": "Direction",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "WGS84 Latitude of Spacecraft Position (Geodetic)",
+          "ParameterKey": "ICON_L26_Observatory_Longitude",
+          "Description": "Geographic longitude of the spacecraft at the time of data collection, in WGS84.",
+          "Cadence": "PT1S",
+          "Units": "degrees",
+          "ValidMin": "0",
+          "ValidMax": "360",
+          "FillValue": "-999",
+          "Support": {
+            "Qualifier": "Direction",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Number density of O+",
+          "ParameterKey": "ICON_L26_Oplus",
+          "Description": "Number density of O+ as a function of altitude found in the retrieval.",
+          "Cadence": "PT1S",
+          "Units": "1/cm^3",
+          "FillValue": "-999",
+          "Particle": {
+            "ParticleType": "Ion",
+            "Qualifier": "LineOfSight",
+            "ParticleQuantity": "NumberDensity",
+            "AtomicNumber": "8"
+          }
+        },
+        {
+          "Name": "Orbit Number",
+          "ParameterKey": "ICON_L26_Orbit_Number",
+          "Description": "Integer orbit number of the ICON spacecraft, incremented throughout the mission.",
+          "Cadence": "PT1S",
+          "Units": "integer",
+          "ValidMin": "0",
+          "ValidMax": "105000",
+          "FillValue": "-999",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Processing Date",
+          "ParameterKey": "ICON_L26_Processing_Date",
+          "Description": "Date on which this file was generated by the Science Data Center.",
+          "Cadence": "PT1S",
+          "Units": "string",
+          "FillValue": " ",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Radiance 61.7 nm",
+          "ParameterKey": "ICON_L26_Radiance_617",
+          "Description": "Radiance profile of 61.7 nm emission produced by the forward model during the retrieval.",
+          "Cadence": "PT1S",
+          "Units": "Rayleighs",
+          "ValidMin": "0",
+          "ValidMax": "1000000015047466219876688855040",
+          "FillValue": "-999",
+          "Wave": {
+            "WaveType": "Photon",
+            "Qualifier": "Scalar",
+            "WaveQuantity": "Intensity"
+          }
+        },
+        {
+          "Name": "Radiance 83.4 nm",
+          "ParameterKey": "ICON_L26_Radiance_834",
+          "Description": "Radiance profile of 83.4 nm emission produced by the forward model during the retrieval.",
+          "Cadence": "PT1S",
+          "Units": "Rayleighs",
+          "ValidMin": "0",
+          "ValidMax": "1000000015047466219876688855040",
+          "FillValue": "-999",
+          "Wave": {
+            "WaveType": "Photon",
+            "Qualifier": "Scalar",
+            "WaveQuantity": "Intensity"
+          }
+        },
+        {
+          "Name": "Retrieval Flags",
+          "ParameterKey": "ICON_L26_SC_Slew_Status",
+          "Description": "Flag corresponding to slew of the spacecraft during the time of data collection as defined in the ephemeris definition document.",
+          "Cadence": "PT1S",
+          "ValidMin": "0",
+          "ValidMax": "1024",
+          "FillValue": "-999",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "InstrumentMode"
+          }
+        },
+        {
+          "Name": "1 sigma in Height of F2 layer from Retrieval",
+          "ParameterKey": "ICON_L26_Sigma_HmF2",
+          "Description": "1 sigma in Height of F2 layer peak from retrieval.",
+          "Cadence": "PT1S",
+          "Units": "Rayleighs",
+          "ValidMin": "0",
+          "ValidMax": "1000",
+          "FillValue": "-999",
+          "Wave": {
+            "WaveType": "Photon",
+            "Qualifier": "Scalar",
+            "WaveQuantity": "Intensity"
+          }
+        },
+        {
+          "Name": "1 sigma in Density of F2 layer from Retrieval",
+          "ParameterKey": "ICON_L26_Sigma_NmF2",
+          "Description": "1 sigma in O+ density at the peak of the F2 layer from retrieval.",
+          "Cadence": "PT1S",
+          "Units": "cm-3",
+          "ValidMin": "0",
+          "ValidMax": "10000000000",
+          "FillValue": "-999",
+          "Particle": {
+            "ParticleType": "Ion",
+            "Qualifier": "LineOfSight",
+            "ParticleQuantity": "NumberDensity",
+            "AtomicNumber": "8"
+          }
+        },
+        {
+          "Name": "1 Sigma in the Number Density of O+",
+          "ParameterKey": "ICON_L26_Sigma_Oplus",
+          "Description": "1 sigma in the number density of O+ as a function of altitude found in the retrieval.",
+          "Cadence": "PT1S",
+          "Units": "cm-3",
+          "FillValue": "-999",
+          "Particle": {
+            "ParticleType": "Ion",
+            "Qualifier": "LineOfSight",
+            "ParticleQuantity": "NumberDensity",
+            "AtomicNumber": "8"
+          }
+        },
+        {
+          "Name": "Solar Zenith Angle at Retrieval Location",
+          "ParameterKey": "ICON_L26_Solar_Zenith_Angle",
+          "Description": "Solar Zenith Angle at retrieval location.",
+          "Cadence": "PT12S",
+          "Units": "degrees",
+          "ValidMin": "0",
+          "ValidMax": "180",
+          "FillValue": "-999",
+          "Support": {
+            "Qualifier": "Direction",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Space Environment Region Status",
+          "ParameterKey": "ICON_L26_Space_Environment_Region_Status",
+          "Description": "Flag corresponding to space environment region as defined in the ephemeris definition document during the time of data collection.",
+          "Cadence": "PT1S",
+          "ValidMin": "0",
+          "ValidMax": "268405455",
+          "FillValue": "-999",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Binary Coded Integer Describing the View Status of EUV",
+          "ParameterKey": "ICON_L26_Status",
+          "Description": "Flag for activity status of the spacecraft, as defined in the Ephemeris Definition Document.",
+          "Cadence": "PT1S",
+          "ValidMin": "0",
+          "ValidMax": "1024",
+          "FillValue": "-999",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "InstrumentMode"
+          }
+        },
+        {
+          "Name": "Spacecraft Sun/Shadow Status Code",
+          "ParameterKey": "ICON_L26_Sun_Status",
+          "Description": "Flag for activity status of the sun on the spacecraft, as defined in the Ephemeris Definition Document. 0=Sun 1=Earth Shadow.",
+          "Cadence": "PT1S",
+          "ValidMin": "0",
+          "ValidMax": "1",
+          "FillValue": "-999",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Date and Time in UTC format",
+          "ParameterKey": "ICON_L26_UTC_Time",
+          "Description": "UTC time corresponding to the retrieval.",
+          "Cadence": "PT1S",
+          "FillValue": "' '",
+          "Support": {
+            "Qualifier": "Magnitude",
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "UT Seconds",
+          "ParameterKey": "ICON_L26_UT_Seconds",
+          "Description": "UTC time in seconds since midnight corresponding to the time of the retrieval.",
+          "Cadence": "PT1S",
+          "Units": "seconds",
+          "FillValue": "-999",
+          "Support": {
+            "Qualifier": "Magnitude",
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Unreduced Chi^2",
+          "ParameterKey": "ICON_L26_Unreduced_Chi2",
+          "Description": "Unreduced Chi Squared values from the retrieval.",
+          "Cadence": "PT1S",
+          "Units": "unitless",
+          "FillValue": "-999",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Integer Year DOY",
+          "ParameterKey": "ICON_L26_Year_DOY",
+          "Description": "Year and Day of Year corresponding to the retrieval, in the format of YYYYDOY.",
+          "Cadence": "PT1S",
+          "Units": "day",
+          "ValidMin": "2015000",
+          "ValidMax": "2050000",
+          "FillValue": "-999",
+          "Support": {
+            "Qualifier": "Magnitude",
+            "SupportQuantity": "Temporal"
+          }
+        }
+      ]
+    }
+  }
+}

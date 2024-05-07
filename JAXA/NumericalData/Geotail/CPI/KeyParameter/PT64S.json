@@ -1,0 +1,524 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema  http://www.spase-group.org/data/schema/spase-2_3_0.xsd'",
+    "Version": "2.3.0",
+    "NumericalData": {
+      "ResourceID": "spase://JAXA/NumericalData/Geotail/CPI/KeyParameter/PT64S",
+      "ResourceHeader": {
+        "ResourceName": "Geotail CPI Plasma Key Parameters (64s)",
+        "ReleaseDate": "2021-04-27T17:52:35Z",
+        "Description": "A combination of plasma key parameters from the Geotail CPI analyzers.\n\n            The CPI-SW Solar Wind Analyzer provides\n\n         * Ion number density\n         * Average proton energy\n         * Bulk flow velocity\n\n            The CPI-HP Hot Plasma Analyzer provides\n\n         * Ion number density\n         * Average proton energy\n         * Average electron energy\n         * Bulk flow velocity\n         * Plasma pressure\n\n            The CPI-IC Ion Composition Analyzer provides principal Species\n\n         * H+\n         * He++\n         * He+\n         * O+",
+        "Contact": [
+          {
+            "PersonID": "spase://SMWG/Person/Louis.A.Frank",
+            "Role": "PrincipalInvestigator"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Jan.Merka",
+            "Role": "MetadataContact"
+          }
+        ],
+        "InformationURL": {
+          "Name": "CPI Survey Plots",
+          "URL": "http://www-pi.physics.uiowa.edu/cpi/",
+          "Description": "Geotail CPI description and survey plots."
+        },
+        "PriorID": [
+          "spase://VMO/NumericalData/Geotail/CPI/kp_PT64S",
+          "spase://VSPO/NumericalData/Geotail/CPI/KeyParameter/PT64S"
+        ]
+      },
+      "AccessInformation": [
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF/CDAWeb",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": [
+            {
+              "Name": "FTPS from SPDF (not with most browsers)",
+              "URL": "ftps://spdf.gsfc.nasa.gov/pub/data/geotail/cpi/cpi_k0/"
+            },
+            {
+              "Name": "HTTPS from SPDF",
+              "URL": "https://spdf.gsfc.nasa.gov/pub/data/geotail/cpi/cpi_k0/",
+              "Description": "In CDF via HTTP from SPDF"
+            },
+            {
+              "Name": "CDAWeb",
+              "URL": "https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=GE_K0_CPI&index=sp_phys",
+              "ProductKey": "GE_K0_CPI"
+            }
+          ],
+          "Format": "CDF",
+          "Encoding": "None"
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDAWeb HAPI Server",
+            "URL": "https://cdaweb.gsfc.nasa.gov/hapi",
+            "Style": "HAPI",
+            "ProductKey": "GE_K0_CPI",
+            "Description": "Web Service to this product using the HAPI interface."
+          },
+          "Format": "CSV"
+        }
+      ],
+      "InstrumentID": [
+        "spase://SMWG/Instrument/Geotail/CPI/HPA",
+        "spase://SMWG/Instrument/Geotail/CPI/SWA"
+      ],
+      "MeasurementType": "ThermalPlasma",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "1992-09-08T07:30:40",
+          "RelativeStopDate": "-P2D"
+        },
+        "Cadence": "PT64S"
+      },
+      "ObservedRegion": [
+        "Heliosphere.NearEarth",
+        "Earth.Magnetosheath",
+        "Earth.Magnetosphere",
+        "Earth.Magnetosphere.Magnetotail"
+      ],
+      "Caveats": "The CPI solar wind ion analyzer is an E/Q analyzer and the initial distribution functions were calculated assuming that the plasma is H+. Care must be taken when multi-component plasmas are present. If He++ is present and is flowing with the same speed as the H+ component, it will contribute to the distribution function at twice the velocity (four times the energy) of the H+. To facilitate the automated processing of the data the integral was evaluated between  vmin  = 171 km/s and  vmax  = 1.35 ×  u . The resulting temperatures produce excellent fits to the observations. When He++ is present the distribution functions are consistent with an He++ temperature, THe++ = 4 × TH+, i.e., the H+ and He++ have similar thermal velocities.",
+      "Parameter": [
+        {
+          "Name": "Time",
+          "ParameterKey": "Epoch",
+          "Description": "Time in milliseconds, centered, since CDF Epoch",
+          "Units": "ms",
+          "UnitsConversion": "1e-3>s",
+          "ValidMin": "08-Sep-1992 00:00:00.000",
+          "ValidMax": "31-Dec-2020 20:00:00.000",
+          "FillValue": "-1.0E31",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Time",
+          "ParameterKey": "Time_PB5",
+          "Description": "Time, centered, in GSFC PB5 format (yr, day, ms). Jan 1 = Day 1.",
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "Year",
+                "Index": "1",
+                "Units": "year",
+                "ValidMin": "1992",
+                "ValidMax": "2020",
+                "FillValue": "-2147483648"
+              },
+              {
+                "Name": "Day of year",
+                "Index": "2",
+                "Units": "day",
+                "ValidMin": "1",
+                "ValidMax": "366",
+                "FillValue": "-2147483648"
+              },
+              {
+                "Name": "Elapsed millisecond of day",
+                "Qualifier": "Component.I",
+                "Index": "3",
+                "Units": "ms",
+                "ValidMin": "0",
+                "ValidMax": "86400000",
+                "FillValue": "-2147483648"
+              }
+            ]
+          },
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Ion Number Density (CPI/SWA)",
+          "ParameterKey": "SW_P_Den",
+          "Description": "Ion number density (ions 144-7000 eV, 60x60 deg FOV, CPI/SWA), scalar",
+          "Caveats": "From 5 deg angular bins.",
+          "Units": "cm^-3",
+          "UnitsConversion": "1e6>m^-3",
+          "RenderingHints": {
+            "AxisLabel": "n(SWA)",
+            "ValueFormat": "F8.3"
+          },
+          "ValidMin": "0.01",
+          "ValidMax": "1000.0",
+          "FillValue": "-1.0E31",
+          "Particle": {
+            "ParticleType": [
+              "Proton",
+              "AlphaParticle",
+              "Ion"
+            ],
+            "Qualifier": [
+              "Moment",
+              "Scalar"
+            ],
+            "ParticleQuantity": "NumberDensity",
+            "EnergyRange": {
+              "Low": "144",
+              "High": "7000",
+              "Units": "eV"
+            },
+            "AzimuthalAngleRange": {
+              "Low": "-56.25",
+              "High": "56.25",
+              "Units": "deg"
+            },
+            "PolarAngleRange": {
+              "Low": "60",
+              "High": "120",
+              "Units": "deg"
+            }
+          }
+        },
+        {
+          "Name": "Ion Average Energy (CPI/SWA)",
+          "ParameterKey": "SW_P_AVGE",
+          "Description": "Ion average energy (ions 144-7000 eV, in the spacecraft frame of reference, CPI/SWA), scalar",
+          "Units": "eV",
+          "UnitsConversion": "1.60217653e-19>J",
+          "RenderingHints": {
+            "ValueFormat": "F7.0"
+          },
+          "ValidMin": "100.0",
+          "ValidMax": "8000.0",
+          "FillValue": "-1.0E31",
+          "Particle": {
+            "ParticleType": [
+              "Proton",
+              "AlphaParticle",
+              "Ion"
+            ],
+            "Qualifier": [
+              "Average",
+              "Scalar"
+            ],
+            "ParticleQuantity": "Energy",
+            "EnergyRange": {
+              "Low": "144",
+              "High": "7000",
+              "Units": "eV"
+            },
+            "AzimuthalAngleRange": {
+              "Low": "-56.25",
+              "High": "56.25",
+              "Units": "deg"
+            },
+            "PolarAngleRange": {
+              "Low": "60",
+              "High": "120",
+              "Units": "deg"
+            }
+          }
+        },
+        {
+          "Name": "Ion bulk Flow Velocity (CPI/SWA)",
+          "ParameterKey": "SW_V",
+          "Description": "Ion bulk flow velocity in GSE coordinates (ions 144-7000 eV, 60x60 deg FOV, CPI/SWA)",
+          "Caveats": "From 5 deg angular bins",
+          "Units": "km/s",
+          "UnitsConversion": "1e3>m/s",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GSE"
+          },
+          "RenderingHints": {
+            "ValueFormat": "F7.0"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "Vx",
+                "Qualifier": "Component.I",
+                "Index": "1",
+                "ValidMin": "-1400.0",
+                "ValidMax": "1400.0",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "Vy",
+                "Qualifier": "Component.J",
+                "Index": "2",
+                "ValidMin": "-1400.0",
+                "ValidMax": "1400.0",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "Vz",
+                "Qualifier": "Component.K",
+                "Index": "3",
+                "ValidMin": "-1400.0",
+                "ValidMax": "1400.0",
+                "FillValue": "-1.0E31"
+              }
+            ]
+          },
+          "Particle": {
+            "ParticleType": [
+              "Proton",
+              "AlphaParticle",
+              "Ion"
+            ],
+            "Qualifier": [
+              "Moment",
+              "Vector"
+            ],
+            "ParticleQuantity": "FlowVelocity",
+            "EnergyRange": {
+              "Low": "144",
+              "High": "7000",
+              "Units": "eV"
+            },
+            "AzimuthalAngleRange": {
+              "Low": "-56.25",
+              "High": "56.25",
+              "Units": "deg"
+            },
+            "PolarAngleRange": {
+              "Low": "60",
+              "High": "120",
+              "Units": "deg"
+            }
+          }
+        },
+        {
+          "Name": "CPI/SWA Data Quality Flag",
+          "ParameterKey": "Quality_SW",
+          "Description": "CPI/SWA Data Quality Flag (0: adequate; 100: poor, more problems), scalar",
+          "ValidMin": "0.0",
+          "ValidMax": "100.0",
+          "FillValue": "-1.0E31",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "CPI Post Gap Flag",
+          "ParameterKey": "GAP_FLAG",
+          "Description": "CPI Post Gap Flag, scalar\n\n             * 0: no gap immediately prior to this record;\n             * 1: gap due to instrument mode;\n             * 2: gap due to missing SIRIUS data;\n             * 3: gap due to noisy SIRIUS data;\n             * 20: gap due to missing Minor Frame(s))",
+          "ValidMin": "0",
+          "ValidMax": "20",
+          "FillValue": "-2147483648",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Ion Number Density (CPI/HPA)",
+          "ParameterKey": "HP_P_Den",
+          "Description": "Ion number density (ions 50-50000 eV, equatorial plane, CPI/HPA), scalar",
+          "Caveats": "The ions are assumed to be protons",
+          "Units": "cm^-3",
+          "UnitsConversion": "1e6>m^-3",
+          "RenderingHints": {
+            "AxisLabel": "n(HPA)",
+            "ValueFormat": "F8.3"
+          },
+          "ValidMin": "0.01",
+          "ValidMax": "1000.0",
+          "FillValue": "-1.0E31",
+          "Particle": {
+            "ParticleType": [
+              "Proton",
+              "AlphaParticle",
+              "Ion"
+            ],
+            "Qualifier": [
+              "Moment",
+              "Scalar"
+            ],
+            "ParticleQuantity": "NumberDensity"
+          }
+        },
+        {
+          "Name": "Ion Average Energy (CPI/HPA)",
+          "ParameterKey": "HP_P_AVGE",
+          "Description": "Ion average energy (ions 50-50000 eV, equatorial plane, CPI/HPA), scalar",
+          "Units": "eV",
+          "UnitsConversion": "1.60217653e-19>J",
+          "RenderingHints": {
+            "ValueFormat": "F7.0"
+          },
+          "ValidMin": "50.0",
+          "ValidMax": "50000.0",
+          "FillValue": "-1.0E31",
+          "Particle": {
+            "ParticleType": [
+              "Proton",
+              "AlphaParticle",
+              "Ion"
+            ],
+            "Qualifier": [
+              "Average",
+              "Scalar"
+            ],
+            "ParticleQuantity": "Energy"
+          }
+        },
+        {
+          "Name": "Ion Bulk Flow Velocity (CPI/HPA)",
+          "ParameterKey": "HP_V",
+          "Description": "Bulk ion flow velocity, approximate GSE X-Y components (ions 50-50000 eV, CPI/HPA)",
+          "Units": "km/s",
+          "UnitsConversion": "1e3>m/s",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GSE"
+          },
+          "RenderingHints": {
+            "ValueFormat": "F7.0"
+          },
+          "Structure": {
+            "Size": "2",
+            "Element": [
+              {
+                "Name": "Vx",
+                "Qualifier": "Component.I",
+                "Index": "1",
+                "ValidMin": "-4000.0",
+                "ValidMax": "4000.0",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "Vy",
+                "Qualifier": "Component.J",
+                "Index": "2",
+                "ValidMin": "-4000.0",
+                "ValidMax": "4000.0",
+                "FillValue": "-1.0E31"
+              }
+            ]
+          },
+          "Particle": {
+            "ParticleType": [
+              "Proton",
+              "AlphaParticle",
+              "Ion"
+            ],
+            "Qualifier": [
+              "Moment",
+              "Vector"
+            ],
+            "ParticleQuantity": "FlowVelocity"
+          }
+        },
+        {
+          "Name": "Electron Average Energy (CPI/HPA)",
+          "ParameterKey": "HP_E_AVGE",
+          "Description": "Average electron energy  (electrons 50-50000 eV, CPI/HPA), scalar",
+          "Units": "eV",
+          "UnitsConversion": "1.60217653e-19>J",
+          "RenderingHints": {
+            "ValueFormat": "F7.0"
+          },
+          "ValidMin": "50.0",
+          "ValidMax": "50000.0",
+          "FillValue": "-1.0E31",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": [
+              "Average",
+              "Scalar"
+            ],
+            "ParticleQuantity": "Energy"
+          }
+        },
+        {
+          "Name": "Plasma Pressure (CPI/HPA)",
+          "ParameterKey": "W",
+          "Description": "Plasma pressure (50-50000 eV, CPI/HPA), scalar",
+          "Units": "Pa",
+          "ValidMin": "1.0E-15",
+          "ValidMax": "1.0E-5",
+          "FillValue": "-1.0E31",
+          "Particle": {
+            "ParticleType": [
+              "Proton",
+              "AlphaParticle",
+              "Ion"
+            ],
+            "Qualifier": "Scalar",
+            "ParticleQuantity": "Pressure"
+          }
+        },
+        {
+          "Name": "CPI/HPA Data Quality Flag",
+          "ParameterKey": "Quality_HP",
+          "Description": "CPI/HPA data quality flag (0: adequate; 100: poor, more problems), scalar",
+          "ValidMin": "0.0",
+          "ValidMax": "100.0",
+          "FillValue": "-1.0E31",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "CPI/ICA Data Quality Flag",
+          "ParameterKey": "Quality_IC",
+          "Description": "CPI/ICA data quality flag (0: adequate; 100: poor, more problems), scalar",
+          "ValidMin": "0.0",
+          "ValidMax": "100.0",
+          "FillValue": "-1.0E31",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "H+ Flag (CPI/ICA)",
+          "ParameterKey": "H_P_FLAG",
+          "Description": "H+ flag: non-zero value indicates presence of singly ionized hydrogen, (CPI/ICA), scalar",
+          "ValidMin": "0",
+          "ValidMax": "99",
+          "FillValue": "-128",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "He++ Flag (CPI/ICA)",
+          "ParameterKey": "HE_PP_FLAG",
+          "Description": "He++ flag: non-zero value indicates presence of doubly ionized helium, (CPI/ICA)), scalar",
+          "ValidMin": "0",
+          "ValidMax": "99",
+          "FillValue": "-128",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "He+ Flag",
+          "ParameterKey": "HE_P_FLAG",
+          "Description": "He+ flag: non-zero value indicates presence of singly ionized helium, (CPI/ICA), scalar",
+          "ValidMin": "0",
+          "ValidMax": "99",
+          "FillValue": "-128",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "O+ Flag (CPI/ICA)",
+          "ParameterKey": "O_P_FLAG",
+          "Description": "O+ flag: non-zero value indicates presence of singly ionized atomic oxygen, (CPI/ICA), scalar",
+          "ValidMin": "0",
+          "ValidMax": "99",
+          "FillValue": "-128",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        }
+      ]
+    }
+  }
+}

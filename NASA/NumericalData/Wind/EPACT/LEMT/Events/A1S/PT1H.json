@@ -1,0 +1,530 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema  http://www.spase-group.org/data/schema/spase-2_2_9.xsd",
+    "Version": "2.2.9",
+    "NumericalData": {
+      "ResourceID": "spase://NASA/NumericalData/Wind/EPACT/LEMT/Events/A1S/PT1H",
+      "ResourceHeader": {
+        "ResourceName": "Wind Energetic Particle Acceleration, Composition and Transport (EPACT)/LEMT 1-Hr H,He,O,Fe Anisotropies for Events",
+        "ReleaseDate": "2020-07-07T21:16:04Z",
+        "Description": "This data set contains hourly resolution anisotropies\r\nin spacecraft and solar wind frames for 2.5-5 MeV/n H, He, O and Fe \r\nnuclei, plus 5-8 MeV/n He nuclei.  First-, second- and third-order \r\nspacecraft-frame anisotropies, and the magnitude and direction angles, \r\nrelative to the mean magnetic field, of the spacecraft-frame first-order \r\nanisotropy vectors are given.  Ion spectral parameters used in anisotropy \r\ndeterminations, namely spectral power law index (gamma), mean energy of \r\nions in sampled energy range, and ion flux at the mean energy, are given.  \r\nMany solar wind parameter averages are given, including magnetic field \r\nmagnitude and direction, solar wind density and flow speed and azimuthal \r\nangle.  Standard deviations in all hourly averages are also given.  See \r\nTan et al, Ap.J.,661, 1297-1310, 2007, for discussions of anisotropies, \r\nreference frames, etc.  As of 10/2011, the data cover 39 1997-2006 multi-\r\nday intervals that include energetic solar particle events.  ASCII data \r\nwords are comma-separated.  For a given particle event, there are \r\nspecies-specific files.  File naming uses the convention XX_a1s_YYYYMMDD, \r\nwhere XX = H (or Hng), He2 (2.5-5 MeV/n), He5 (5-8 MeV/n), O or Fe, and \r\nwhere YYYYMMDD is the day of the first record of the file. \"Hng\" means\r\nhydrogen - no gamma (as obtained from IMP 8 GME data); but see the \r\nreadme file cited below on the use of EPACT/LEMT He data as providing\r\nan alternative power law index.",
+        "Acknowledgement": "Dr. Tycho T. Von Rosenvinge",
+        "Contact": [
+          {
+            "PersonID": "spase://SMWG/Person/Tycho.T.Von.Rosenvinge",
+            "Role": "PrincipalInvestigator"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Donald.V.Reames",
+            "Role": "CoInvestigator"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Lun.C.Tan",
+            "Role": "DataProducer"
+          }
+        ],
+        "InformationURL": {
+          "Name": "Readme file",
+          "URL": "https://vho.nasa.gov/mission/wind/epact/a1s/A00_read_me_first.txt"
+        },
+        "PriorID": [
+          "spase://VEPO/NumericalData/Wind/EPACT/LEMT/Events/A1S/PT1H",
+          "spase://VSPO/NumericalData/Wind/EPACT/LEMT/Events/A1S/PT1H"
+        ]
+      },
+      "AccessInformation": {
+        "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/Wind",
+        "Availability": "Online",
+        "AccessRights": "Open",
+        "AccessURL": {
+          "Name": "Wind repository",
+          "URL": "https://vho.nasa.gov/mission/wind/epact/a1s/",
+          "Description": "File-level access to event-specific, species-specific \r\nASCII files"
+        },
+        "Format": "Text",
+        "Acknowledgement": "Please acknowledge Principal Investigator \r\nT. von Rosenvinge and the Wind EPACT team."
+      },
+      "ProcessingLevel": "Calibrated",
+      "InstrumentID": "spase://SMWG/Instrument/Wind/EPACT",
+      "MeasurementType": "EnergeticParticles",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "1997-11-03T00:00:00",
+          "StopDate": "2006-12-17T00:00:00"
+        },
+        "Cadence": "PT1H"
+      },
+      "ObservedRegion": "Heliosphere.NearEarth",
+      "Parameter": [
+        {
+          "Name": "Time",
+          "ParameterKey": "Column_1-Column_6",
+          "Description": "Universal time at start of hour average",
+          "Cadence": "PT1H",
+          "Structure": {
+            "Size": "6",
+            "Description": "Year, month, day, hour at start of average, and\r\nfractional day of year and fractional day of month at midpoint of \r\naverage"
+          },
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Magnitude of average magnetic field vector",
+          "ParameterKey": "Column_7",
+          "Cadence": "PT1H",
+          "Units": "nT",
+          "Field": {
+            "Qualifier": "Magnitude",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "Standard deviation in magnitude of average magnetic field vector",
+          "ParameterKey": "Column_8",
+          "Cadence": "PT1H",
+          "Units": "nT",
+          "Field": {
+            "Qualifier": "StandardDeviation",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "Latitude angle of average magnetic field vector",
+          "ParameterKey": "Column_9",
+          "Cadence": "PT1H",
+          "Units": "Deg",
+          "Field": {
+            "Qualifier": "DirectionAngle.ElevationAngle",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "Standard deviation in elevation angle of average magnetic field vector",
+          "ParameterKey": "Column_10",
+          "Cadence": "PT1H",
+          "Units": "Deg",
+          "Field": {
+            "Qualifier": [
+              "DirectionAngle.ElevationAngle",
+              "StandardDeviation"
+            ],
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "Azimuthal angle of average magnetic field vector",
+          "ParameterKey": "Column_11",
+          "Cadence": "PT1H",
+          "Units": "Deg",
+          "Field": {
+            "Qualifier": "DirectionAngle.AzimuthAngle",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "Standard deviation in azimuth angle of average magnetic field vector",
+          "ParameterKey": "Column_12",
+          "Cadence": "PT1H",
+          "Units": "Deg",
+          "Field": {
+            "Qualifier": [
+              "DirectionAngle.ElevationAngle",
+              "StandardDeviation"
+            ],
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "Solar wind ion density",
+          "ParameterKey": "Column_15",
+          "Cadence": "PT1H",
+          "Units": "cm**-3",
+          "Particle": {
+            "ParticleType": "Ion",
+            "ParticleQuantity": "NumberDensity"
+          }
+        },
+        {
+          "Name": "Standard deviation in solar wind ion density",
+          "ParameterKey": "Column_16",
+          "Cadence": "PT1H",
+          "Units": "cm**-3",
+          "Particle": {
+            "ParticleType": "Ion",
+            "Qualifier": "StandardDeviation",
+            "ParticleQuantity": "NumberDensity"
+          }
+        },
+        {
+          "Name": "Solar wind flow speed",
+          "ParameterKey": "Column_17",
+          "Cadence": "PT1H",
+          "Units": "1000km/s",
+          "Particle": {
+            "ParticleType": "Ion",
+            "ParticleQuantity": "FlowSpeed"
+          }
+        },
+        {
+          "Name": "Standard deviation in solar wind flow speed",
+          "ParameterKey": "Column_18",
+          "Cadence": "PT1H",
+          "Units": "1000km/s",
+          "Particle": {
+            "ParticleType": "Ion",
+            "Qualifier": "StandardDeviation",
+            "ParticleQuantity": "FlowSpeed"
+          }
+        },
+        {
+          "Name": "Solar wind flow azimuth angle",
+          "ParameterKey": "Column_19",
+          "Cadence": "PT1H",
+          "Units": "Deg",
+          "Particle": {
+            "ParticleType": "Ion",
+            "Qualifier": "DirectionAngle.AzimuthAngle",
+            "ParticleQuantity": "FlowVelocity"
+          }
+        },
+        {
+          "Name": "Standard deviation in solar wind flow azimuth angle",
+          "ParameterKey": "Column_20",
+          "Cadence": "PT1H",
+          "Units": "Deg",
+          "Particle": {
+            "ParticleType": "Ion",
+            "Qualifier": [
+              "DirectionAngle.AzimuthAngle",
+              "StandardDeviation"
+            ],
+            "ParticleQuantity": "FlowVelocity"
+          }
+        },
+        {
+          "Name": "Alfven speed",
+          "ParameterKey": "Column_21",
+          "Cadence": "PT1H",
+          "Units": "1000km/s",
+          "Mixed": {
+            "MixedQuantity": "AlfvenVelocity"
+          }
+        },
+        {
+          "Name": "Gamma",
+          "ParameterKey": "Column_22",
+          "Description": "Spectral power law exponent",
+          "Cadence": "PT1H",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Standard deviation in gamma",
+          "ParameterKey": "Column_23",
+          "Description": "Standard deviation in spectral power law exponent",
+          "Cadence": "PT1H",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Mean particle energy",
+          "ParameterKey": "Column_24",
+          "Description": "Mean energy of ions in sampled energy range",
+          "Cadence": "PT1H",
+          "Units": "MeV/n",
+          "Particle": {
+            "ParticleType": "Ion",
+            "Qualifier": "Average",
+            "ParticleQuantity": "Energy"
+          }
+        },
+        {
+          "Name": "Ion flux at mean energy",
+          "ParameterKey": "Column_25",
+          "Description": "Logarithm of ion flux at mean particle energy",
+          "Cadence": "PT1H",
+          "Units": "(cm**2 sec ster MeV/n)**-1",
+          "Particle": {
+            "ParticleType": "Ion",
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "First order anisotropy, spacecraft frame",
+          "ParameterKey": "Column_26",
+          "Description": "See Tan et al, Ap.J., 661, 1297, 2007",
+          "Cadence": "PT1H",
+          "Units": "unit-less",
+          "Particle": {
+            "ParticleType": "Ion",
+            "Qualifier": "Anisotropy",
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "RMS deviation in spacecraft frame first order anisotropy",
+          "ParameterKey": "Column_27",
+          "Description": "See Tan et al, Ap.J., 661, 1297, 2007",
+          "Cadence": "PT1H",
+          "Units": "unit-less",
+          "Particle": {
+            "ParticleType": "Ion",
+            "Qualifier": [
+              "StandardDeviation",
+              "Anisotropy"
+            ],
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "Second order anisotropy, spacecraft frame",
+          "ParameterKey": "Column_28",
+          "Description": "See Tan et al, Ap.J., 661, 1297, 2007",
+          "Cadence": "PT1H",
+          "Units": "unit-less",
+          "Particle": {
+            "ParticleType": "Ion",
+            "Qualifier": "Anisotropy",
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "RMS deviation in spacecraft frame second order anisotropy",
+          "ParameterKey": "Column_29",
+          "Description": "See Tan et al, Ap.J., 661, 1297, 2007",
+          "Cadence": "PT1H",
+          "Units": "unit-less",
+          "Particle": {
+            "ParticleType": "Ion",
+            "Qualifier": [
+              "StandardDeviation",
+              "Anisotropy"
+            ],
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "Third order anisotropy, spacecraft frame",
+          "ParameterKey": "Column_30",
+          "Description": "See Tan et al, Ap.J., 661, 1297, 2007",
+          "Cadence": "PT1H",
+          "Units": "unit-less",
+          "Particle": {
+            "ParticleType": "Ion",
+            "Qualifier": "Anisotropy",
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "RMS deviation in spacecraft frame third order anisotropy",
+          "ParameterKey": "Column_31",
+          "Description": "See Tan et al, Ap.J., 661, 1297, 2007",
+          "Cadence": "PT1H",
+          "Units": "unit-less",
+          "Particle": {
+            "ParticleType": "Ion",
+            "Qualifier": [
+              "StandardDeviation",
+              "Anisotropy"
+            ],
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "Ion bulk flow speed",
+          "ParameterKey": "Column_32",
+          "Description": "Bulk flow speed of energetic ion population; \r\nsee Tan et al, Ap.J., 661, 1297, 2007",
+          "Cadence": "PT1H",
+          "Units": "1000km/s",
+          "Particle": {
+            "ParticleType": "Ion",
+            "ParticleQuantity": "FlowSpeed"
+          }
+        },
+        {
+          "Name": "RMS deviation in ion bulk flow speed",
+          "ParameterKey": "Column_33",
+          "Cadence": "PT1H",
+          "Units": "1000km/s",
+          "Particle": {
+            "ParticleType": "Ion",
+            "Qualifier": "StandardDeviation",
+            "ParticleQuantity": "FlowSpeed"
+          }
+        },
+        {
+          "Name": "Longitude angle of ion bulk flow velocity",
+          "ParameterKey": "Column_34",
+          "Cadence": "PT1H",
+          "Units": "deg",
+          "Particle": {
+            "ParticleType": "Ion",
+            "Qualifier": "DirectionAngle.AzimuthAngle",
+            "ParticleQuantity": "FlowVelocity"
+          }
+        },
+        {
+          "Name": "RMS deviation in longitude angle of ion bulk flow velocity",
+          "ParameterKey": "Column_35",
+          "Cadence": "PT1H",
+          "Units": "Deg",
+          "Particle": {
+            "ParticleType": "Ion",
+            "Qualifier": [
+              "StandardDeviation",
+              "DirectionAngle.AzimuthAngle"
+            ],
+            "ParticleQuantity": "FlowVelocity"
+          }
+        },
+        {
+          "Name": "Difference between flow and field longitude angles",
+          "ParameterKey": "Column_36",
+          "Description": "Difference between the longitude angles of the ion bulk flow\r\nvelocity and the magnetic field vectors",
+          "Cadence": "PT1H",
+          "Units": "deg",
+          "Particle": {
+            "ParticleType": "Ion",
+            "Qualifier": "DirectionAngle.AzimuthAngle",
+            "ParticleQuantity": "FlowVelocity"
+          }
+        },
+        {
+          "Name": "RMS deviation in difference between flow and field longitude angles",
+          "ParameterKey": "Column_37",
+          "Cadence": "PT1H",
+          "Units": "Deg",
+          "Particle": {
+            "ParticleType": "Ion",
+            "Qualifier": [
+              "StandardDeviation",
+              "DirectionAngle.AzimuthAngle"
+            ],
+            "ParticleQuantity": "FlowVelocity"
+          }
+        },
+        {
+          "Name": "First order anisotropy, solar wind frame",
+          "ParameterKey": "Column_38",
+          "Description": "Magnitude of ion first order anisotropy in solar \r\nwind frame; see Tan et al, Ap.J., 661, 1297, 2007",
+          "Cadence": "PT1H",
+          "Units": "unit-less",
+          "Particle": {
+            "ParticleType": "Ion",
+            "Qualifier": "Anisotropy",
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "RMS deviation in solar wind frame frame first order anisotropy",
+          "ParameterKey": "Column_39",
+          "Cadence": "PT1H",
+          "Units": "unit-less",
+          "Particle": {
+            "ParticleType": "Ion",
+            "Qualifier": [
+              "StandardDeviation",
+              "Anisotropy"
+            ],
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "Longitude angle of first order anisotropy, solar wind frame",
+          "ParameterKey": "Column_40",
+          "Description": "Magnitude of ion first order anisotropy in solar \r\nwind frame; see Tan et al, Ap.J., 661, 1297, 2007",
+          "Cadence": "PT1H",
+          "Units": "Deg",
+          "Particle": {
+            "ParticleType": "Ion",
+            "Qualifier": [
+              "DirectionAngle.AzimuthAngle",
+              "Anisotropy"
+            ],
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "RMS deviation in longitude angle of solar-wind-frame \r\nfirst order anisotropy",
+          "ParameterKey": "Column_41",
+          "Cadence": "PT1H",
+          "Units": "deg",
+          "Particle": {
+            "ParticleType": "Ion",
+            "Qualifier": [
+              "StandardDeviation",
+              "DirectionAngle.AzimuthAngle",
+              "Anisotropy"
+            ],
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "Component of first order anisotropy normal to magnetic field",
+          "ParameterKey": "Column_42",
+          "Description": "Component of solar-wind-frame first order anisotropy \r\nvector perpendicular to mean magnetic field",
+          "Cadence": "PT1H",
+          "Units": "Unit-less",
+          "Particle": {
+            "ParticleType": "Ion",
+            "Qualifier": [
+              "Component",
+              "Anisotropy"
+            ],
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "RMS deviation in component of first order anisotropy \r\nnormal to magnetic field",
+          "ParameterKey": "Column_43",
+          "Cadence": "PT1H",
+          "Units": "Unit-less",
+          "Particle": {
+            "ParticleType": "Ion",
+            "Qualifier": [
+              "StandardDeviation",
+              "Component",
+              "Anisotropy"
+            ],
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "Component of first order anisotropy parallel to magnetic field",
+          "ParameterKey": "Column_44",
+          "Description": "Component of solar-wind-frame first order anisotropy \r\nvector parallel to mean magnetic field",
+          "Cadence": "PT1H",
+          "Units": "Unit-less",
+          "Particle": {
+            "ParticleType": "Ion",
+            "Qualifier": [
+              "Component",
+              "Anisotropy"
+            ],
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "RMS deviation in component of first order anisotropy \r\nparallel to magnetic field",
+          "ParameterKey": "Column_45",
+          "Cadence": "PT1H",
+          "Units": "Unit-less",
+          "Particle": {
+            "ParticleType": "Ion",
+            "Qualifier": [
+              "StandardDeviation",
+              "Component",
+              "Anisotropy"
+            ],
+            "ParticleQuantity": "NumberFlux"
+          }
+        }
+      ]
+    }
+  }
+}

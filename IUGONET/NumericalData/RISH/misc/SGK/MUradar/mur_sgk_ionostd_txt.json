@@ -1,0 +1,307 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema https://www.spase-group.org/data/schema/spase-2_5_0.xsd",
+    "Version": "2.5.0",
+    "NumericalData": {
+      "ResourceID": "spase://IUGONET/NumericalData/RISH/misc/SGK/MUradar/mur_sgk_ionostd_txt",
+      "ResourceHeader": {
+        "ResourceName": "Observation data in the ionosphere taken by the MU radar (Text format)",
+        "ReleaseDate": "2016-11-17T23:03:00",
+        "Description": "The 1-hour average observation data of ion drift velocities, electron and ion temperatures and echo power in the ionosphere taken by the MU radar at Shigaraki in Shiga Prefecture, Japan (34.86N, 136.11E, 385m MSL), which has been operated in the incoherent scatter observation mode. The data are stored in the text file named (year)(month)(day)_(variable).txt. The variable abbreviations are dv, teti, pwr1, pwr2, pwr3, and pwr4 which mean plasma drift, electron and ion temperatures and echo powers for radar beam 1-5 directions, respectively. The plasma drift data include nine kinds of drift velocity components for eastward and northward/upward directions perpendicular to the magnetic field line, southward/upward direction parallel to the magnetic field line, vertical direction calculated from northward and southward beams, vertical direction calculated from eastward and westward beams, and for beam 1-4 directions, respectively. The azimuth and zenith angles of beam 1, 2, 3, and 4 are (355.0, 20.0), (85.0, 20.0), (175.0, 20.0), and (265.0, 20.0), respectively, in unit of degree. The temperature data include electron and ion temperature, their error values, condition code and signal to noise ratio between 228.5 and 724.6 km. The echo power data show the intensity of electromagnetic wave reflected from the ionosphere between 80 and 1,200 km for radar beam 1-4 directions. The value of -999.0 means missing data. Local time (UT + 09:00) is used for time data. The plasma drift and temperature data are essential for understanding of ionospheric plasma dynamics and chemical reactions of electron and ions in the middle latitude.",
+        "Acknowledgement": "If you acquire MU radar data, we ask that you acknowledge us in your use of the data. This may be done by including text such as MU radar data provided by Research Institute for Sustainable Humanosphere of Kyoto University. We would also appreciate receiving a copy of the relevant publications.",
+        "Contact": [
+          {
+            "PersonID": "spase://IUGONET/Person/Mamoru.Yamamoto",
+            "Role": "PrincipalInvestigator"
+          },
+          {
+            "PersonID": "spase://IUGONET/Person/Yuichi.Otsuka",
+            "Role": "CoInvestigator"
+          },
+          {
+            "PersonID": "spase://IUGONET/Person/Noriko.Hashiguchi",
+            "Role": "TechnicalContact"
+          },
+          {
+            "PersonID": "spase://IUGONET/Person/MU.Radar.Management.Group",
+            "Role": "GeneralContact"
+          },
+          {
+            "PersonID": "spase://IUGONET/Person/RISH.Metadata.Management.Group",
+            "Role": "MetadataContact"
+          }
+        ]
+      },
+      "AccessInformation": {
+        "RepositoryID": "spase://IUGONET/Repository/RISH/RISHDB",
+        "Availability": "Online",
+        "AccessRights": "Open",
+        "AccessURL": {
+          "Name": "MU Ionospheric Observation",
+          "URL": "http://www.rish.kyoto-u.ac.jp/radar-group/mu/isdata/",
+          "Language": "English"
+        },
+        "Format": "Text.ASCII"
+      },
+      "InstrumentID": "spase://IUGONET/Instrument/RISH/misc/SGK/MUradar",
+      "MeasurementType": "Profile",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "1986-07-14T13:20:36",
+          "RelativeStopDate": "-P7D"
+        },
+        "Cadence": "PT1H"
+      },
+      "SpectralRange": "RadioFrequency",
+      "ObservedRegion": [
+        "Earth.NearSurface.Ionosphere",
+        "Earth.NearSurface.Ionosphere.ERegion",
+        "Earth.NearSurface.Ionosphere.FRegion",
+        "Earth.NearSurface.Ionosphere.Topside"
+      ],
+      "SpatialCoverage": {
+        "CoordinateSystem": {
+          "CoordinateRepresentation": "Spherical",
+          "CoordinateSystemName": "WGS84"
+        },
+        "NorthernmostLatitude": "34.856",
+        "SouthernmostLatitude": "34.856",
+        "EasternmostLongitude": "136.106",
+        "WesternmostLongitude": "136.106",
+        "MinimumElevation": "81.98",
+        "MaximumElevation": "1231.36"
+      },
+      "Keyword": "EARTH SCIENCE Sun-earth Interactions Ionosphere/Magnetosphere Dynamics Ion Chemistry/Ionization",
+      "Parameter": [
+        {
+          "Name": "year",
+          "Description": "Year in the form YY where YY = the last two digits of year (00-99).",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "month",
+          "Description": "Month in the form MM where MM = month of year (01-12).",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "day",
+          "Description": "Day in the form DD where DD = day of month (01-31).",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "time",
+          "Description": "Time in the form hh where hh = hour of day (00-23). Local time (UT + 09:00:00) is used for time data.",
+          "Units": "hour",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Vperp_e",
+          "Description": "Ion drift velocity (eastward direction perpendicular to the magnetic field line)",
+          "Units": "m/s",
+          "FillValue": "-999.0",
+          "Particle": {
+            "ParticleType": "Ion",
+            "ParticleQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "Vperp_n",
+          "Description": "Ion drift velocity (northward/upward direction perpendicular to the magnetic field line)",
+          "Units": "m/s",
+          "FillValue": "-999.0",
+          "Particle": {
+            "ParticleType": "Ion",
+            "ParticleQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "Vpara_u",
+          "Description": "Ion Drift Velocity (southward/upward direction parallel to the magnetic field line)",
+          "Units": "m/s",
+          "FillValue": "-999.0",
+          "Particle": {
+            "ParticleType": "Ion",
+            "ParticleQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "Vz_ns",
+          "Description": "Ion Drift Velocity (vertical direction calculated from northward and southward beams)",
+          "Units": "m/s",
+          "FillValue": "-999.0",
+          "Particle": {
+            "ParticleType": "Ion",
+            "ParticleQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "Vz_ew",
+          "Description": "Ion Drift Velocity (vertical direction calculated from eastward and westward beams)",
+          "Units": "m/s",
+          "FillValue": "-999.0",
+          "Particle": {
+            "ParticleType": "Ion",
+            "ParticleQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "Vd_b1",
+          "Description": "Ion Drift Velocity for beam 1 direction (azimuth angle:355.0, zenith angle:20.0)",
+          "Units": "m/s",
+          "FillValue": "-999.0",
+          "Particle": {
+            "ParticleType": "Ion",
+            "ParticleQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "Vd_b2",
+          "Description": "Ion Drift Velocity for beam 2 direction (azimuth angle:85.0, zenith angle:20.0)",
+          "Units": "m/s",
+          "FillValue": "-999.0",
+          "Particle": {
+            "ParticleType": "Ion",
+            "ParticleQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "Vd_b3",
+          "Description": "Ion Drift Velocity for beam 3 direction (azimuth angle:175.0, zenith angle:20.0)",
+          "Units": "m/s",
+          "FillValue": "-999.0",
+          "Particle": {
+            "ParticleType": "Ion",
+            "ParticleQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "Vd_b4",
+          "Description": "Ion Drift Velocity for beam 4 direction (azimuth angle:265.0, zenith angle:20.0)",
+          "Units": "m/s",
+          "FillValue": "-999.0",
+          "Particle": {
+            "ParticleType": "Ion",
+            "ParticleQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "Ti",
+          "Description": "Ion temperature",
+          "Units": "K",
+          "FillValue": "-999.0",
+          "Particle": {
+            "ParticleType": "Ion",
+            "ParticleQuantity": "Temperature"
+          }
+        },
+        {
+          "Name": "Te",
+          "Description": "Electron temperature",
+          "Units": "K",
+          "FillValue": "-999.0",
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "Temperature"
+          }
+        },
+        {
+          "Name": "icon",
+          "Description": "Condition code (0 is normal. 0, 1 and 4 are available)",
+          "Units": "1",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "er_ti",
+          "Description": "Error of estimate for ion temperature",
+          "Units": "K",
+          "FillValue": "-999.0",
+          "Particle": {
+            "ParticleType": "Ion",
+            "ParticleQuantity": "Temperature"
+          }
+        },
+        {
+          "Name": "er_te",
+          "Description": "Error of estimate for electron temperature",
+          "Units": "K",
+          "FillValue": "-999.0",
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "Temperature"
+          }
+        },
+        {
+          "Name": "er_tr",
+          "Description": "Error of estimate for Tr (= Te/Ti)",
+          "Units": "1",
+          "FillValue": "-999.0",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "snr",
+          "Description": "Signal to noise ratio",
+          "Units": "dB",
+          "FillValue": "-999.0",
+          "Wave": {
+            "WaveType": "Electromagnetic",
+            "WaveQuantity": "Intensity"
+          }
+        },
+        {
+          "Name": "pwr1",
+          "Description": "Echo power for radar beam 1 (azimuth angle:355.0, zenith angle:20.0)",
+          "Units": "dB",
+          "FillValue": "-999.0",
+          "Wave": {
+            "WaveType": "Electromagnetic",
+            "WaveQuantity": "Intensity"
+          }
+        },
+        {
+          "Name": "pwr2",
+          "Description": "Echo power for radar beam 2 (azimuth angle:85.0, zenith angle:20.0)",
+          "Units": "dB",
+          "FillValue": "-999.0",
+          "Wave": {
+            "WaveType": "Electromagnetic",
+            "WaveQuantity": "Intensity"
+          }
+        },
+        {
+          "Name": "pwr3",
+          "Description": "Echo power for radar beam 3 (azimuth angle:175.0, zenith angle:20.0)",
+          "Units": "dB",
+          "FillValue": "-999.0",
+          "Wave": {
+            "WaveType": "Electromagnetic",
+            "WaveQuantity": "Intensity"
+          }
+        },
+        {
+          "Name": "pwr4",
+          "Description": "Echo power for radar beam 4 (azimuth angle:265.0, zenith angle:20.0)",
+          "Units": "dB",
+          "FillValue": "-999.0",
+          "Wave": {
+            "WaveType": "Electromagnetic",
+            "WaveQuantity": "Intensity"
+          }
+        }
+      ]
+    }
+  }
+}

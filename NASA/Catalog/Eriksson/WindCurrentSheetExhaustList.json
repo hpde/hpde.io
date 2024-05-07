@@ -1,0 +1,218 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema https://www.spase-group.org/data/schema/spase-2_4_0.xsd",
+    "Version": "2.4.0",
+    "Catalog": {
+      "ResourceID": "spase://NASA/Catalog/Eriksson/WindCurrentSheetExhaustList",
+      "ResourceHeader": {
+        "ResourceName": "Wind Current Sheet_Exhaust Event List in LMN Coordinates",
+        "DOI": "https://doi.org/10.48322/tyd4-fw87",
+        "ReleaseDate": "2022-04-20T12:34:56.789",
+        "RevisionHistory": {
+          "RevisionEvent": {
+            "ReleaseDate": "2022-04-20T12:34:56.789",
+            "Note": "Initial SPASE XML resource description submission, metadata written by J.M. Weygand on 2022-04-13, reviewed and revised by LFB"
+          }
+        },
+        "Description": "The dataset contains a list of solar wind current sheet exhaust event data derived from Wind interplanetary magnetic field and solar wind plasma observations. The list is described in a peer reviewed article, Eriksson et al. 2022, titled: Characteristics of Multi-Scale Current Sheets in the Solar Wind at 1 AU Associated with Magnetic Reconnection and the Case for a Heliospheric Current Sheet Avalanche. The data is listed as an ASCII table with eleven columns including the current sheet (CS) start date/time and stop date/time, and the three unit vectors of each CS in a GSE base coordinate system. Here, NGSE is the CS normal direction, LGSE is the direction of the reconnecting component of the magnetic field, and MGSE is the cross-product MGSE = [NGSE cross LGSE] vector.",
+        "Acknowledgement": "Stefan Eriksson",
+        "PublicationInfo": {
+          "Authors": "Eriksson, S., Swisdak, M., Weygand, J.M., Mallet, A., Newman, D. L., Lapenta, G., Wilson III, L.B., Turner, D.T., and Larsen B.",
+          "PublicationDate": "2022-04-25T00:00:00",
+          "PublishedBy": "NASA's Space Physics Data Facility (SPDF)"
+        },
+        "Funding": [
+          {
+            "Agency": "National Aeronautics and Space Administration",
+            "Project": "Magnetic Flux Rope Dynamics at Solar Wind Reconnection Exhausts",
+            "AwardNumber": "80NSSC19K0828"
+          },
+          {
+            "Agency": "National Aeronautics and Space Administration",
+            "Project": "Exploring the Onset and Suppression of Magnetic Reconnection at Inner Heliosphere Current Sheets",
+            "AwardNumber": "80NSSC20K1284"
+          }
+        ],
+        "Contact": {
+          "PersonID": "spase://SMWG/Person/Stefan.Eriksson",
+          "Role": "GeneralContact"
+        }
+      },
+      "AccessInformation": {
+        "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+        "Availability": "Online",
+        "AccessRights": "Open",
+        "AccessURL": {
+          "Name": "Eriksson Wind Solar Wind Current Sheet Exhaust List, text version",
+          "URL": "https://spdf.gsfc.nasa.gov/pub/event_lists/eriksson_wind_current_sheet_exhaust_lmn_v01.txt",
+          "Description": "Wind current sheet exhaust list in LMN coordinates"
+        },
+        "Format": "Text"
+      },
+      "InstrumentID": [
+        "spase://SMWG/Instrument/Wind/MFI",
+        "spase://SMWG/Instrument/Wind/3DP"
+      ],
+      "PhenomenonType": "SolarWindExtreme",
+      "TimeSpan": {
+        "StartDate": "2004-07-09T07:06:25.299Z",
+        "StopDate": "2014-10-14T17:09:20.000Z",
+        "Note": "This list consists of 3,374 events where it was possible to determine the time period of magnetic reconnection exhausts in the ecliptic plane of the solar wind at 1 AU."
+      },
+      "Keyword": [
+        "current sheet",
+        "magnetic reconnection",
+        "magnetic reconnection exhausts"
+      ],
+      "Parameter": [
+        {
+          "Name": "Begin ISO 8601 Date and Time",
+          "ParameterKey": "Column 1",
+          "Description": "Begin date and time of the current sheet exhaust as ISO 8601 Date and Time",
+          "ValidMin": "2004-07-09T07:06:25.299Z",
+          "ValidMax": "2014-10-14T17:09:20.000Z",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "End ISO 8601 Date and Time",
+          "ParameterKey": "Column 2",
+          "Description": "End date and time of the current sheet exhaust as ISO 8601 Date and Time",
+          "ValidMin": "2004-07-09T07:06:39.299Z",
+          "ValidMax": "2014-10-14T17:18:50.000Z",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Current Sheet Normal Direction",
+          "Description": "Current sheet normal direction expressed as a unit vector in a GSE base coordinate system",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GSE"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "Normal XGSE Direction",
+                "Qualifier": "Component.I",
+                "Index": "1",
+                "ParameterKey": "Column 3",
+                "ValidMin": "-1",
+                "ValidMax": "1"
+              },
+              {
+                "Name": "Normal YGSE Direction",
+                "Qualifier": "Component.J",
+                "Index": "2",
+                "ParameterKey": "Column 4",
+                "ValidMin": "-1",
+                "ValidMax": "1"
+              },
+              {
+                "Name": "Normal ZGSE Direction",
+                "Qualifier": "Component.K",
+                "Index": "3",
+                "ParameterKey": "Column 5",
+                "ValidMin": "-1",
+                "ValidMax": "1"
+              }
+            ]
+          },
+          "Support": {
+            "Qualifier": "Vector",
+            "SupportQuantity": "Orientation"
+          }
+        },
+        {
+          "Name": "Direction of the Reconnecting Component of the Magnetic Field",
+          "Description": "Direction of the reconnecting component of the magnetic field expressed as a unit vector in a GSE base coordinate system",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GSE"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "Reconnection XGSE Direction",
+                "Qualifier": "Component.I",
+                "Index": "1",
+                "ParameterKey": "Column 6",
+                "ValidMin": "-1",
+                "ValidMax": "1"
+              },
+              {
+                "Name": "Reconnection YGSE Direction",
+                "Qualifier": "Component.J",
+                "Index": "2",
+                "ParameterKey": "Column 7",
+                "ValidMin": "-1",
+                "ValidMax": "1"
+              },
+              {
+                "Name": "Reconnection ZGSE Direction",
+                "Qualifier": "Component.K",
+                "Index": "3",
+                "ParameterKey": "Column 8",
+                "ValidMin": "-1",
+                "ValidMax": "1"
+              }
+            ]
+          },
+          "Support": {
+            "Qualifier": "Vector",
+            "SupportQuantity": "Orientation"
+          }
+        },
+        {
+          "Name": "Cross-Product MGSE = [NGSE cross LGSE] Direction",
+          "Description": "Cross-product MGSE = [NGSE cross LGSE] direction expressed as a unit vector in a GSE base coordinate system",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GSE"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "Cross-product XGSE Direction",
+                "Qualifier": "Component.I",
+                "Index": "1",
+                "ParameterKey": "Column 9",
+                "ValidMin": "-1",
+                "ValidMax": "1"
+              },
+              {
+                "Name": "Cross-product YGSE Direction",
+                "Qualifier": "Component.J",
+                "Index": "2",
+                "ParameterKey": "Column 10",
+                "ValidMin": "-1",
+                "ValidMax": "1"
+              },
+              {
+                "Name": "Cross-product ZGSE Direction",
+                "Qualifier": "Component.K",
+                "Index": "3",
+                "ParameterKey": "Column 11",
+                "ValidMin": "-1",
+                "ValidMax": "1"
+              }
+            ]
+          },
+          "Support": {
+            "Qualifier": "Vector",
+            "SupportQuantity": "Orientation"
+          }
+        }
+      ]
+    }
+  }
+}

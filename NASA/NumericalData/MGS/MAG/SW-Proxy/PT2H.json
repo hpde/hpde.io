@@ -1,0 +1,96 @@
+{
+  "Spase": {
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_2_9.xsd",
+    "Version": "2.2.9",
+    "NumericalData": {
+      "ResourceID": "spase://NASA/NumericalData/MGS/MAG/SW-Proxy/PT2H",
+      "ResourceHeader": {
+        "ResourceName": "Mars Global Surveyor Solar Wind Proxy Pressures",
+        "ReleaseDate": "2020-07-07T21:14:45Z",
+        "Description": "Derivation of the solar wind dynamic pressure at Mars using Mars Global Surveyor data. There is no upstream solar wind monitor at Mars (as of the release of this data set). This data set is a proxy for the solar wind dynamic pressure derived from Mars Global Surveyor (MGS) Magnetometer (MAG) measurements. The rationale behind the proxy is that pressure is conserved in the solar wind interaction with Mars. At altitudes from ~400-800 km, the dominant pressure term is magnetic field pressure. We measure the magnetic field with MAG, calculate the pressure (B2/2µo) in that altitude range and assume that it balances the incident solar wind pressure. This proxy is reliable for determining relative solar wind pressure at Mars. Absolute values may deviate from the proxy. The pressure does drop with solar zenith angle (SZA). This affect is accounted for by fitting a function of SZA to the dayside, northern hemisphere data from an MGS pass. The number of points included in the fit is provided in the file. The standard deviation from the fit is also provided. Because we do a fit to one orbit's worth of dayside, northern hemisphere data, we obtain one value for PSW every orbit, which has a period of ~2 hr.",
+        "Contact": {
+          "PersonID": "spase://SMWG/Person/Dana.H.Crider",
+          "Role": "DataProducer"
+        },
+        "InformationURL": {
+          "Name": "Data Derivation Description from the Provider",
+          "URL": "https://vho.nasa.gov/mission/mgs_proxy/description/Derivation_description.html",
+          "Description": "Data Derivation Description from the Provider"
+        },
+        "PriorID": [
+          "spase://VHO/NumericalData/MGS/MAG/SW-Proxy/PT2H",
+          "spase://VSPO/NumericalData/MGS/MAG/SW-Proxy/PT2H"
+        ]
+      },
+      "AccessInformation": {
+        "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/VHO-VMO",
+        "Availability": "Online",
+        "AccessRights": "Open",
+        "AccessURL": {
+          "Name": "MGS Solar Wind Proxy",
+          "URL": "https://vho.nasa.gov/mission/mgs_proxy/data/",
+          "Description": "MGS Solar Wind Proxy yearly files at VHO"
+        },
+        "Format": "Text",
+        "Encoding": "ASCII"
+      },
+      "InstrumentID": "spase://SMWG/Instrument/MGS/MAG",
+      "MeasurementType": "ThermalPlasma",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "1999-03-08T00:00:00Z",
+          "StopDate": "2006-11-02T23:59:59Z"
+        },
+        "Cadence": "PT2H"
+      },
+      "InputResourceID": "spase://SMWG/Instrument/MGS/MAG",
+      "Parameter": [
+        {
+          "Name": "Year",
+          "ParameterKey": "Field 1",
+          "Description": "Year",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Fractional DOY",
+          "ParameterKey": "Field 2",
+          "Description": "Fractional Day of Year",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Solar Wind Pressure",
+          "ParameterKey": "Field 3",
+          "Description": "Solar Wind Pressure Estimate (nPa)",
+          "Units": "nPa",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": "Magnitude",
+            "ParticleQuantity": "Pressure"
+          }
+        },
+        {
+          "Name": "Number of Points in Fit",
+          "ParameterKey": "Field 4",
+          "Description": "Number of points used in fit",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Standard Deviation",
+          "ParameterKey": "Field 5",
+          "Description": "Standard deviation of points in fit",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        }
+      ]
+    }
+  }
+}

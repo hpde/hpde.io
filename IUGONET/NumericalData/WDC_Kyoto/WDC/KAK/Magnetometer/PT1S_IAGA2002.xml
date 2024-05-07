@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema https://www.spase-group.org/data/schema/spase-2_5_0.xsd">
+   <Version>2.5.0</Version>
+   <NumericalData>
+      <ResourceID>spase://IUGONET/NumericalData/WDC_Kyoto/WDC/KAK/Magnetometer/PT1S_IAGA2002</ResourceID>
+      <ResourceHeader>
+         <ResourceName>Kakioka geomagnetic field 1-second digital data in IAGA-2002 format</ResourceName>
+         <ReleaseDate>2011-03-23T11:20:28</ReleaseDate>
+         <Description>The geomagnetic field 1.0 second digital data observed at Kakioka (KAK) in IAGA-2002 format. Data file comprises: Twelve mandatory file header records, Unlimited optional comment records, One mandatory data header record, A series of data records. Every record is 70 characters long plus the machine-dependent carriage return / line feed. Details of the format is described at http://wdc.kugi.kyoto-u.ac.jp/mdplt/format/iaga2002.html</Description>
+         <Acknowledgement>If the data are used in publications and presentations, the data suppliers and the WDC for Geomagnetism, Kyoto must properly be acknowledged.</Acknowledgement>
+         <Contact>
+            <PersonID>spase://IUGONET/Person/Toshihiko.Iyemori</PersonID>
+            <Role>GeneralContact</Role>
+         </Contact>
+         <Contact>
+            <PersonID>spase://IUGONET/Person/Masahito.Nose</PersonID>
+            <Role>MetadataContact</Role>
+         </Contact>
+      </ResourceHeader>
+      <AccessInformation>
+         <RepositoryID>spase://IUGONET/Repository/WDC_Kyoto/WDC</RepositoryID>
+         <Availability>Online</Availability>
+         <AccessRights>Open</AccessRights>
+         <AccessURL>
+            <Name>Geomagnetic Data Service</Name>
+            <URL>http://wdc.kugi.kyoto-u.ac.jp/wdc/Sec3.html</URL>
+            <Description>Geomagnetic Data Service at World Data Center for Geomagnetism, Kyoto.</Description>
+         </AccessURL>
+         <Format>Text</Format>
+         <Encoding>ASCII</Encoding>
+         <Acknowledgement>If the data are used in publications and presentations, the data suppliers and the WDC for Geomagnetism, Kyoto must properly be acknowledged.</Acknowledgement>
+      </AccessInformation>
+      <ProcessingLevel>Calibrated</ProcessingLevel>
+      <InstrumentID>spase://IUGONET/Instrument/WDC_Kyoto/WDC/KAK/Magnetometer</InstrumentID>
+      <MeasurementType>MagneticField</MeasurementType>
+      <TemporalDescription>
+         <TimeSpan>
+            <StartDate>1983-02-01T00:00:00</StartDate>
+            <StopDate>2011-01-31T23:59:59</StopDate>
+            <Note>Latest information of data abailability is provided at http://wdc.kugi.kyoto-u.ac.jp/catmap/index.html</Note>
+         </TimeSpan>
+         <Cadence>PT1S</Cadence>
+      </TemporalDescription>
+      <ObservedRegion>Earth.Surface</ObservedRegion>
+      <SpatialCoverage>
+         <CoordinateSystem>
+            <CoordinateRepresentation>Spherical</CoordinateRepresentation>
+            <CoordinateSystemName>GEO</CoordinateSystemName>
+         </CoordinateSystem>
+         <NorthernmostLatitude>36.232</NorthernmostLatitude>
+         <SouthernmostLatitude>36.232</SouthernmostLatitude>
+         <EasternmostLongitude>140.186</EasternmostLongitude>
+         <WesternmostLongitude>140.186</WesternmostLongitude>
+         <MinimumElevation>0.036</MinimumElevation>
+         <MaximumElevation>0.036</MaximumElevation>
+      </SpatialCoverage>
+      <Keyword>EARTH SCIENCE Atmosphere Solid Earth Geomagnetism Magnetic Field</Keyword>
+      <Keyword>EARTH SCIENCE Atmosphere Sun-earth Interactions Ionosphere/Magnetosphere Dynamics Magnetic Fields/Magnetic Currents</Keyword>
+      <Parameter>
+         <Name>Universal Time</Name>
+         <Description>The date and time headers are DATE, TIME, and DOY (day of year).</Description>
+         <Cadence>PT1S</Cadence>
+         <Structure>
+            <Size>3</Size>
+            <Description>DATE is the calendar date in ISO YYYY-MM-DD format (4-digit year, month as 01-12, day as 01-31). TIME is in ISO hh:mm:ss.sss format (hour as 0-24, minute as 0-59, second as 0-59 Note: if the hour is 24, the minute and second must be 0). DOY is the day of the year, from 1 - 365 (or 366 for leap years).</Description>
+            <Element>
+               <Name>DATE</Name>
+               <Index>1</Index>
+            </Element>
+            <Element>
+               <Name>TIME</Name>
+               <Index>2</Index>
+            </Element>
+            <Element>
+               <Name>DOY</Name>
+               <Index>3</Index>
+            </Element>
+         </Structure>
+         <Support>
+            <SupportQuantity>Temporal</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>Magnetic Field Elements (DHIF, DHZF, or XYZF)</Name>
+         <Description>Data records report exactly 4 magnetic field elements (DHIF, DHZF, or XYZF). Use missing data values (8&apos;s or 9&apos;s) if fewer than 4 elements are available.</Description>
+         <Cadence>PT1S</Cadence>
+         <Units>D and I are reported in angular units of minutes of arc to the precision of the instruments. F, H, X, Y, Z, E, and V are reported in nanotesla and a fraction of nT.</Units>
+         <Structure>
+            <Size>4</Size>
+            <Description>The format for field elements is 4(1X, F9.2).</Description>
+         </Structure>
+         <FillValue>Indicate missing data with 99999 to the corresponding accuracy for a given component (e.g., 99999.00 or 99999.90). If an element is not observed, please record 88888 (to the corresponding accuarcy) in that field.</FillValue>
+         <Field>
+            <Qualifier>Scalar</Qualifier>
+            <FieldQuantity>Magnetic</FieldQuantity>
+         </Field>
+      </Parameter>
+   </NumericalData>
+</Spase>
