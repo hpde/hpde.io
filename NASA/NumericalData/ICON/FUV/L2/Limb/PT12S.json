@@ -1,0 +1,693 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema  http://spase-group.org/data/schema/spase-2.3.2.xsd",
+    "Version": "2.6.0",
+    "NumericalData": {
+      "ResourceID": "spase://NASA/NumericalData/ICON/FUV/L2/Limb/PT12S",
+      "ResourceHeader": {
+        "ResourceName": "ICON The Far Ultra Violet Imaging Spectrograph Day Limb Images ",
+        "AlternateName": "FUV Day Limb Images",
+        "ReleaseDate": "2024-05-08T00:00:00Z",
+        "RevisionHistory": {
+          "RevisionEvent": {
+            "ReleaseDate": "2024-05-08T00:00:00Z",
+            "Note": "Created NumericalData Metadata. JMW."
+          }
+        },
+        "Description": "The FUV instrument takes 2D images of the Earth’s horizon in the Far ultraviolet. The imager is pointing approximately 90 degrees to the spacecraft motion, similar to looking out of the side window of a car as it drives down the road. Onboard electronics read the image 8 times per second and perform Time Delay Integration (TDI) to remove the motion-blur from the images. A turret is used to steer the field of view of the instrument left to right to ensure it always looks along the magnetic meridian (towards the magnetic pole).\r\n\t  \r\n\t  This describes the data product for ICON FUV Limb Daytime O/N2. The ratio of oxygen to nitrogen in the thermosphere is obtained from the two channels of ICON FUV instrument data. In this file, only the limb parameters are included. Each individual file nominally contains 1 day (24 hours) of data. The L2 FUV Limb Daytime files are produced from the L1 FUV files. In addition, many other parameters and geophysical data products are included in the file.",
+        "Acknowledgement": "National Aeronautics and Space Administration; Dr. Andrew W. Stephan; Dr. Thomas Immel",
+        "PublicationInfo": {
+          "Authors": "Stephan, A. W.",
+          "PublicationDate": "2023-01-01T00:00:00",
+          "PublishedBy": "NASA Space Physics Data Facility"
+        },
+        "Funding": {
+          "Agency": "National Aeronautics and Space Administration",
+          "Project": "Explorers Program",
+          "AwardNumber": "contracts NNG12FA45C"
+        },
+        "Contact": {
+          "PersonID": "spase://SMWG/Person/Andrew.W.Stephan",
+          "Role": "PrincipalInvestigator"
+        },
+        "InformationURL": [
+          {
+            "Name": "Additional information on ICON",
+            "URL": "https://icon.ssl.berkeley.edu/",
+            "Description": "ICON spacecraft Homepage."
+          },
+          {
+            "Name": "The far ultra-violet Imager on the ICON mission",
+            "URL": "https://doi.org/10.1007/s11214-017-0386-0",
+            "Description": "Space Science Reviews, 212(1-2), pp.655-696. DOI: 10.1007/s11214-017-0386-0"
+          }
+        ]
+      },
+      "AccessInformation": [
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF/CDAWeb",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDAWeb HAPI Server",
+            "URL": "https://cdaweb.gsfc.nasa.gov/hapi",
+            "Style": "HAPI",
+            "ProductKey": "ICON_L2-4_FUV_DAY-LIMB",
+            "Description": "Web Service to this product using the HAPI interface."
+          },
+          "Format": "NetCDF",
+          "Acknowledgement": "Please acknowledge Dr. Farzad Kamalabadi and Dr. Thomas Immel. Please acknowledge the Data Providers and CDAWeb when using these Data."
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF/CDAWeb",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": [
+            {
+              "Name": "HTTPS from SPDF",
+              "URL": "https://spdf.gsfc.nasa.gov/pub/data/icon/l2/l2-4_fuv_day-limb/",
+              "ProductKey": "ICON_L2-4_FUV_DAY-LIMB",
+              "Description": "Access to Data in NetCDF Format via https from SPDF"
+            },
+            {
+              "Name": "CDAWeb",
+              "URL": "https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=ICON_L2-4_FUV_DAY-LIMB&index=sp_phys",
+              "ProductKey": "ICON_L2-4_FUV_DAY-LIMB",
+              "Description": "Access to NetCDFs via NASA/GSFC CDAWeb"
+            }
+          ],
+          "Format": "NetCDF",
+          "Encoding": "None",
+          "Acknowledgement": "Please acknowledge Dr. Farzad Kamalabadi and Dr. Thomas Immel. Please acknowledge the Data Providers and CDAWeb when using these Data."
+        }
+      ],
+      "ProcessingLevel": "Calibrated",
+      "ProviderName": "ICON FUV team",
+      "InstrumentID": "spase://SMWG/Instrument/ICON/FUV",
+      "MeasurementType": "ImageIntensity",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "2019-12-06T00:00:00Z",
+          "StopDate": "2024-11-24T23:59:59Z"
+        },
+        "Cadence": "PT12S"
+      },
+      "ObservedRegion": [
+        "Earth.NearSurface.Atmosphere",
+        "Earth.NearSurface.Ionosphere"
+      ],
+      "Parameter": [
+        {
+          "Name": "Epoch Time",
+          "ParameterKey": "Epoch",
+          "Description": "Time corresponding to the center of each observation, in milliseconds since Jan 1 1970.",
+          "Cadence": "PT12S",
+          "Units": "ms",
+          "ValidMin": "0",
+          "ValidMax": "6000000000000",
+          "FillValue": "-999",
+          "Support": {
+            "Qualifier": "Magnitude",
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Altitude Grid Used by the Retrieval",
+          "ParameterKey": "ICON_L24_Altitude",
+          "Description": "Altitude grid used by the retrieval, in WGS, as a function of time.",
+          "Cadence": "PT12S",
+          "Units": "km",
+          "ValidMin": "-600",
+          "ValidMax": "600",
+          "FillValue": "-999",
+          "Support": {
+            "Qualifier": "Direction",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Ap Index",
+          "ParameterKey": "ICON_L24_Ap",
+          "Description": "Value of Ap used in the forward model, as a function of time. These data are from http://www-app3.gfz-potsdam.de/kp_index/. These are the tabulated Kp values from GFZ German Research Centre for Geosciences at the Helmholtz Centre Potsdam.",
+          "Cadence": "PT12S",
+          "ValidMin": "0",
+          "ValidMax": "400",
+          "FillValue": "-999",
+          "Field": {
+            "Qualifier": "Scalar",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "Retrieved Disk Column O/N2",
+          "ParameterKey": "ICON_L24_Column_O_N2",
+          "Description": "Retrieved column O/N2 from the limb data, as a function of time.",
+          "Cadence": "PT12S",
+          "Units": "Dimensionless",
+          "ValidMin": "0",
+          "ValidMax": "45",
+          "FillValue": "-999",
+          "Mixed": {
+            "MixedQuantity": "Other",
+            "Qualifier": "Ratio"
+          }
+        },
+        {
+          "Name": "F10.7 Used in Inversion Process",
+          "ParameterKey": "ICON_L24_F107",
+          "Description": "Unscaled value of F10.7 used as an input to the inversion process, as a function of time. These data are from ftp://ftp.seismo.nrcan.gc.ca/spaceweather/solar_flux/fluxtable.txt. These are the solar radio flux values tabulated from the Space Weather Canada which is a part of Natural Resources Canada.",
+          "Cadence": "PT12S",
+          "Units": "sfu",
+          "ValidMin": "0",
+          "ValidMax": "500",
+          "FillValue": "-999",
+          "Wave": {
+            "WaveType": "Photon",
+            "Qualifier": "Scalar",
+            "WaveQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "Tangent Altitudes of Input Data",
+          "ParameterKey": "ICON_L24_Input_Altitude",
+          "Description": "Tangent altitudes of input data, in km above the WGS-84 geoid, as functions of time.",
+          "Cadence": "PT12S",
+          "Units": "km",
+          "ValidMin": "-1000",
+          "ValidMax": "1000",
+          "FillValue": "-999",
+          "Support": {
+            "Qualifier": "Direction",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Corrected Input Data for the Long Wave Channel",
+          "ParameterKey": "ICON_L24_Input_Corrected_LW_L1_Radiance",
+          "Description": "Corrected input data for the long wave channel, in Rayleighs, as functions of tangent altitude and time.",
+          "Cadence": "PT12S",
+          "Units": "Rayleighs",
+          "ValidMin": "-1000",
+          "ValidMax": "1000",
+          "FillValue": "-999",
+          "Wave": {
+            "WaveType": "Photon",
+            "WaveQuantity": "Intensity"
+          }
+        },
+        {
+          "Name": "Corrected input data for the Short Wave Channel",
+          "ParameterKey": "ICON_L24_Input_Corrected_SW_L1_Radiance",
+          "Description": "Corrected input data for the short wave channel, in Rayleighs, as functions of tangent altitude and time.",
+          "Cadence": "PT12S",
+          "Units": "Rayleighs",
+          "ValidMin": "-1000",
+          "ValidMax": "1000",
+          "FillValue": "-999",
+          "Wave": {
+            "WaveType": "Photon",
+            "WaveQuantity": "Intensity"
+          }
+        },
+        {
+          "Name": "Line of Sight Azimuth Angles",
+          "ParameterKey": "ICON_L24_Input_Look_Azimuth_Angle",
+          "Description": "Line of sight azimuth angles, in degrees, as functions tangent altitude of time.",
+          "Cadence": "PT12S",
+          "Units": "degrees",
+          "ValidMin": "-360",
+          "ValidMax": "360",
+          "FillValue": "-999",
+          "Support": {
+            "Qualifier": "Direction",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Line of Sight Zenith Angles",
+          "ParameterKey": "ICON_L24_Input_Look_Zenith_Angle",
+          "Description": "Line of sight zenith angles, in degrees, as functions tangent altitdue of time.",
+          "Cadence": "PT12S",
+          "Units": "degrees",
+          "ValidMin": "-360",
+          "ValidMax": "360",
+          "FillValue": "-999",
+          "Support": {
+            "Qualifier": "Direction",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Uncorrected Input Data for the Long Wave Channel",
+          "ParameterKey": "ICON_L24_Input_Uncorrected_LW_L1_Radiance",
+          "Description": "Uncorrected input data for the long wave channel, in Rayleighs, as functions of tangent altitude and time.",
+          "Cadence": "PT12S",
+          "Units": "Rayleighs",
+          "ValidMin": "-1000",
+          "ValidMax": "1000",
+          "FillValue": "-999",
+          "Wave": {
+            "WaveType": "Photon",
+            "WaveQuantity": "Intensity"
+          }
+        },
+        {
+          "Name": "Uncorrected Input Data for the Short Wave Channel",
+          "ParameterKey": "ICON_L24_Input_Uncorrected_SW_L1_Radiance",
+          "Description": "Uncorrected input data for the short wave channel, in Rayleighs, as functions of tangent altitude and time.",
+          "Cadence": "PT12S",
+          "Units": "Rayleighs",
+          "ValidMin": "-1000",
+          "ValidMax": "1000",
+          "FillValue": "-999",
+          "Wave": {
+            "WaveType": "Photon",
+            "WaveQuantity": "Intensity"
+          }
+        },
+        {
+          "Name": "Data Collection Mode",
+          "ParameterKey": "ICON_L24_Instrument_Mode_Flag",
+          "Description": "Data collection mode of FUV instrument\r\n        1 = Dayside science\r\n        2 = Nightside science\r\n        3 = Calibration\r\n        4 = Nadir\r\n        5 = Conjugate\r\n        6 = Stars\r\n        7 = Ram\r\n        8 = Off Target\r\n        9 = Engineering\r\n       13 = Unknown.",
+          "Cadence": "PT12S",
+          "ValidMin": "0",
+          "ValidMax": "127",
+          "FillValue": "127",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "InstrumentMode"
+          }
+        },
+        {
+          "Name": "Number of Iteration Steps",
+          "ParameterKey": "ICON_L24_Iteration_Steps",
+          "Description": "*Diagnostic* Number of iteration steps performed before model converged on answer, as a function of time.",
+          "Cadence": "PT12S",
+          "ValidMin": "0",
+          "ValidMax": "45",
+          "FillValue": "-999",
+          "Support": {
+            "Qualifier": "Total",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Latitude of the Retrieval",
+          "ParameterKey": "ICON_L24_Latitude",
+          "Description": "Latitude of the retrieval, defined at 150 km tangent altitude, in WGS.",
+          "Cadence": "PT12S",
+          "Units": "degrees",
+          "ValidMin": "0",
+          "ValidMax": "45",
+          "FillValue": "-999",
+          "Support": {
+            "Qualifier": "Direction",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Quality Flag of Data Quality",
+          "ParameterKey": "ICON_L24_Level_1_Quality_Flag",
+          "Description": "QUALITY_FLAG is an indicator of data quality = \r\n        0 = No errors or quality conditions, LVLH \r\n        1 = No errors or quality conditions, R-LVLH \r\n        2 = Lunar calibration \r\n        3 = Insufficient high voltage \r\n        4 = Nadir calibration \r\n        5 = Zero wind calibration \r\n        6 = Bad pointing \r\n        7 = S/C attitude slew \r\n        8 = Conjugate observation \r\n        9 = Stellar calibration \r\n       10 = Unreliable background subtracted \r\n       17 = unspecified error condition.",
+          "Cadence": "PT12S",
+          "ValidMin": "0",
+          "ValidMax": "127",
+          "FillValue": "127",
+          "Support": {
+            "Qualifier": "Uncertainty",
+            "SupportQuantity": "DataQuality"
+          }
+        },
+        {
+          "Name": "Limb Retrieval Quality Flag",
+          "ParameterKey": "ICON_L24_Limb_Retrieval_Flags",
+          "Description": "Limb retrieval quality flag, where 0 = no limb inversion, 1 = retrieval nominal, 2 = number of iterations in retrieval algorithm reaches 10 without convergence, 3 = one or more inversion model parameters hits a priori upper or lower limit, 4 = altitude of peak intensity too close to boundary, 5 = standard deviation of one or more variables exceeds expected limit, 6 = Chi-squared value is outside of expected range - either too large or too small, 7 = one or more uncertainties is outside of expected range.",
+          "Cadence": "PT12S",
+          "ValidMin": "0",
+          "ValidMax": "10",
+          "FillValue": "-999",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "DataQuality"
+          }
+        },
+        {
+          "Name": "Local Solar Time of the Retrieval",
+          "ParameterKey": "ICON_L24_Local_Solar_Time",
+          "Description": "Local solar time of the retrieval, defined at 150 km tangent altitude, in WGS.",
+          "Cadence": "PT12S",
+          "Units": "hours",
+          "ValidMin": "0",
+          "ValidMax": "24",
+          "FillValue": "-999",
+          "Support": {
+            "Qualifier": "Direction",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Longitude of the Retrieval",
+          "ParameterKey": "ICON_L24_Longitude",
+          "Description": "Longitude of the retrieval, defined at 150 km tangent altitude, in WGS.",
+          "Cadence": "PT12S",
+          "Units": "degrees",
+          "ValidMin": "0",
+          "ValidMax": "360",
+          "FillValue": "-999",
+          "Support": {
+            "Qualifier": "Direction",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Model Error Flag",
+          "ParameterKey": "ICON_L24_Model_Flags",
+          "Description": "*Diagnostic* flag = 0 - nominal, flag(0)= 1 - 20 steps reached without convergining, flag(1)=1 model para hit upper or lower limit, flag(2)=1 peak alt is too close to boundary.",
+          "Cadence": "PT12S",
+          "ValidMin": "0",
+          "ValidMax": "45",
+          "FillValue": "-999",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "DataQuality"
+          }
+        },
+        {
+          "Name": "Retrieved Altitude Profile of Nitrogen Molecules",
+          "ParameterKey": "ICON_L24_N2",
+          "Description": "Retrieved altitude profile of N2 from the retrieval, in cm-3, as a function of altitude and time.",
+          "Cadence": "PT12S",
+          "Units": "cm-3",
+          "ValidMin": "0",
+          "ValidMax": "100000002004087734272",
+          "FillValue": "-999",
+          "Particle": {
+            "ParticleType": "Molecule",
+            "Qualifier": "LineOfSight",
+            "ParticleQuantity": "NumberDensity",
+            "AtomicNumber": "14"
+          }
+        },
+        {
+          "Name": "Retrieved Altitude Profile of Oxygen",
+          "ParameterKey": "ICON_L24_O",
+          "Description": "Retrieved altitude profile of oxygen from the retrieval, in cm-3, as a function of altitude and time.",
+          "Cadence": "PT12S",
+          "Units": "cm-3",
+          "ValidMin": "0",
+          "ValidMax": "100000002004087734272",
+          "FillValue": "-999",
+          "Particle": {
+            "ParticleType": "Molecule",
+            "Qualifier": "LineOfSight",
+            "ParticleQuantity": "NumberDensity",
+            "AtomicNumber": "8"
+          }
+        },
+        {
+          "Name": "Retrieved Altitude Profile of Oxygen Molecules",
+          "ParameterKey": "ICON_L24_O2",
+          "Description": "Retrieved altitude profile of O2 from the retrieval, in cm-3, as a function of altitude and time.",
+          "Cadence": "PT12S",
+          "Units": "cm-3",
+          "ValidMin": "0",
+          "ValidMax": "100000002004087734272",
+          "FillValue": "-999",
+          "Particle": {
+            "ParticleType": "Molecule",
+            "Qualifier": "LineOfSight",
+            "ParticleQuantity": "NumberDensity",
+            "AtomicNumber": "16"
+          }
+        },
+        {
+          "Name": "Geodetic Altitude (WGS84) of the Spacecraft",
+          "ParameterKey": "ICON_L24_Observatory_Altitude",
+          "Description": "Geodetic altitude (WGS84) of the spacecraft at the time corresponding to the middle of each FUV image, in kilometers.",
+          "Cadence": "PT12S",
+          "Units": "km",
+          "ValidMin": "-600",
+          "ValidMax": "600",
+          "FillValue": "-999",
+          "Support": {
+            "Qualifier": "Direction",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "ICON Spacecraft WGS84 Latitude",
+          "ParameterKey": "ICON_L24_Observatory_Latitude",
+          "Description": "Geodetic latitude (WGS84) of the spacecraft at the time corresponding to the middle of each FUV image, in degrees.",
+          "Cadence": "PT12S",
+          "Units": "degrees",
+          "ValidMin": "-90",
+          "ValidMax": "90",
+          "FillValue": "-999",
+          "Support": {
+            "Qualifier": "Direction",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "ICON Spacecraft WGS84 Longitude",
+          "ParameterKey": "ICON_L24_Observatory_Longitude",
+          "Description": "Geodetic longitude (WGS84) of the spacecraft at the time corresponding to the middle of each FUV image, in degrees.",
+          "Cadence": "PT12S",
+          "Units": "degrees",
+          "ValidMin": "0",
+          "ValidMax": "360",
+          "FillValue": "-999",
+          "Support": {
+            "Qualifier": "Direction",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Predicted Initial Column O/N2",
+          "ParameterKey": "ICON_L24_Predicted_Column_O_N2",
+          "Description": "*Diagnostic* Initial column O/N2 used by the limb retrieval, as a function of time.",
+          "Cadence": "PT12S",
+          "Units": "Dimensionless",
+          "ValidMin": "0",
+          "ValidMax": "45",
+          "FillValue": "-999",
+          "Mixed": {
+            "MixedQuantity": "Other",
+            "Qualifier": "Ratio"
+          }
+        },
+        {
+          "Name": "Initial Predicted Altitude Profile of Nitrogen Molecules",
+          "ParameterKey": "ICON_L24_Predicted_N2",
+          "Description": "*Diagnostic* Initial altitude profile of N2 used by the retrieval, in cm-3, as a function of altitude and time.",
+          "Cadence": "PT12S",
+          "Units": "cm-3",
+          "ValidMin": "0",
+          "ValidMax": "100000002004087734272",
+          "FillValue": "-999",
+          "Particle": {
+            "ParticleType": "Molecule",
+            "Qualifier": "LineOfSight",
+            "ParticleQuantity": "NumberDensity",
+            "AtomicNumber": "14"
+          }
+        },
+        {
+          "Name": "Initial Predicted Altitude Profile of Oxygen",
+          "ParameterKey": "ICON_L24_Predicted_O",
+          "Description": "*Diagnostic* Initial altitude profile of O used by the retrieval, in cm-3, as a function of altitude and time.",
+          "Cadence": "PT12S",
+          "Units": "cm-3",
+          "ValidMin": "0",
+          "ValidMax": "100000002004087734272",
+          "FillValue": "-999",
+          "Particle": {
+            "ParticleType": "Molecule",
+            "Qualifier": "LineOfSight",
+            "ParticleQuantity": "NumberDensity",
+            "AtomicNumber": "8"
+          }
+        },
+        {
+          "Name": "Initial Predicted Altitude Profile of Oxygen Molecules",
+          "ParameterKey": "ICON_L24_Predicted_O2",
+          "Description": "*Diagnostic* Initial altitude profile of O2 used by the retrieval, in cm-3, as a function of altitude and time.",
+          "Cadence": "PT12S",
+          "Units": "cm-3",
+          "ValidMin": "0",
+          "ValidMax": "100000002004087734272",
+          "FillValue": "-999",
+          "Particle": {
+            "ParticleType": "Molecule",
+            "Qualifier": "LineOfSight",
+            "ParticleQuantity": "NumberDensity",
+            "AtomicNumber": "16"
+          }
+        },
+        {
+          "Name": "Predicted Ion Temperature",
+          "ParameterKey": "ICON_L24_Predicted_Temperature",
+          "Description": "*Diagnostic* Initial altitude profile of temperature used by the retrieval, in K, as a function of altitude and time.",
+          "Cadence": "PT1S",
+          "Units": "K",
+          "ValidMin": "0",
+          "ValidMax": "Inf",
+          "FillValue": "NaN",
+          "Particle": {
+            "ParticleType": "Ion",
+            "Qualifier": "Scalar",
+            "ParticleQuantity": "Temperature"
+          }
+        },
+        {
+          "Name": "Retrieved Qeuv on the Disk",
+          "ParameterKey": "ICON_L24_QEUV",
+          "Description": "*Diagnostic* Effective solar EUV energy flux, mW/m2.",
+          "Cadence": "PT12S",
+          "Units": "mW/m2",
+          "ValidMin": "0",
+          "ValidMax": "100000002004087734272",
+          "FillValue": "-999",
+          "Wave": {
+            "WaveType": "Photon",
+            "Qualifier": "Total",
+            "WaveQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "Standard Deviation of the Retrieved Nitrogen Molecules",
+          "ParameterKey": "ICON_L24_Sigma_N2",
+          "Description": "1 standard deviation of the retrieved N2 from the retrieval, as a function of altitude and time. The data product uncertainties are based on the measurement counting statistics and are lower limits because systematic uncertainties, which are expected to be much larger, are not included. The data processing complexity requires a qualitatively new uncertainty approach that must be derived from first principles.",
+          "Cadence": "PT12S",
+          "Units": "cm-3",
+          "ValidMin": "0",
+          "ValidMax": "100000002004087734272",
+          "FillValue": "-999",
+          "Particle": {
+            "ParticleType": "Molecule",
+            "Qualifier": "LineOfSight",
+            "ParticleQuantity": "NumberDensity",
+            "AtomicNumber": "14"
+          }
+        },
+        {
+          "Name": "Standard Deviation of the Retrieved Oxygen",
+          "ParameterKey": "ICON_L24_Sigma_O",
+          "Description": "1 standard deviation of the retrieved O from the retrieval, as a function of altitude and time. The data product uncertainties are based on the measurement counting statistics and are lower limits because systematic uncertainties, which are expected to be much larger, are not included. The data processing complexity requires a qualitatively new uncertainty approach that must be derived from first principles.",
+          "Cadence": "PT12S",
+          "Units": "cm-3",
+          "ValidMin": "0",
+          "ValidMax": "100000002004087734272",
+          "FillValue": "-999",
+          "Particle": {
+            "ParticleType": "Molecule",
+            "Qualifier": "LineOfSight",
+            "ParticleQuantity": "NumberDensity",
+            "AtomicNumber": "8"
+          }
+        },
+        {
+          "Name": "Standard Deviation of the Retrieved Oxygen Molecules",
+          "ParameterKey": "ICON_L24_Sigma_O2",
+          "Description": "1 standard deviation of the retrieved O2 from the retrieval, as a function of altitude and time. The data product uncertainties are based on the measurement counting statistics and are lower limits because systematic uncertainties, which are expected to be much larger, are not included. The data processing complexity requires a qualitatively new uncertainty approach that must be derived from first principles.",
+          "Cadence": "PT12S",
+          "Units": "cm-3",
+          "ValidMin": "0",
+          "ValidMax": "100000002004087734272",
+          "FillValue": "-999",
+          "Particle": {
+            "ParticleType": "Molecule",
+            "Qualifier": "LineOfSight",
+            "ParticleQuantity": "NumberDensity",
+            "AtomicNumber": "16"
+          }
+        },
+        {
+          "Name": "Standard Deviation of the Column O/N2",
+          "ParameterKey": "ICON_L24_Sigma_O_N2'",
+          "Description": "1 standard deviation of the retrieved O/N2 from the retrieval, as a function of time. The data product uncertainties are based on the measurement counting statistics and are lower limits because systematic uncertainties, which are expected to be much larger, are not included. The data processing complexity requires a qualitatively new uncertainty approach that must be derived from first principles.",
+          "Cadence": "PT12S",
+          "Units": "Dimensionless",
+          "ValidMin": "0",
+          "ValidMax": "100000002004087734272",
+          "FillValue": "-999",
+          "Mixed": {
+            "MixedQuantity": "Other",
+            "Qualifier": "Ratio"
+          }
+        },
+        {
+          "Name": "Standard Deviation of the Ion Temperature",
+          "ParameterKey": "ICON_L24_Sigma_Temperature",
+          "Description": "1 standard deviation of the retrieved temperature from the retrieval, as a function of altitude and time. The data product uncertainties are based on the measurement counting statistics and are lower limits because systematic uncertainties, which are expected to be much larger, are not included. The data processing complexity requires a qualitatively new uncertainty approach that must be derived from first principles.",
+          "Cadence": "PT1S",
+          "Units": "K",
+          "ValidMin": "0",
+          "ValidMax": "Inf",
+          "FillValue": "-999",
+          "Particle": {
+            "ParticleType": "Ion",
+            "Qualifier": "Scalar",
+            "ParticleQuantity": "Temperature"
+          }
+        },
+        {
+          "Name": "Solar Zenith Angle of the Retrieval",
+          "ParameterKey": "ICON_L24_Solar_Zenith_Angle",
+          "Description": "Solar zenith angle of the retrieval, defined at 150 km tangent altitude, in WGS.",
+          "Cadence": "PT12S",
+          "Units": "degrees",
+          "ValidMin": "0",
+          "ValidMax": "45",
+          "FillValue": "-999",
+          "Support": {
+            "Qualifier": "Direction",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Retrieved Altitude Profile of Temperature",
+          "ParameterKey": "ICON_L24_Temperature",
+          "Description": "Retrieved altitude profile of temperature from the retrieval, in K, as a function of altitude and time.",
+          "Cadence": "PT1S",
+          "Units": "K",
+          "ValidMin": "0",
+          "ValidMax": "100000002004087734272",
+          "FillValue": "-999",
+          "Particle": {
+            "ParticleType": "Ion",
+            "Qualifier": "Scalar",
+            "ParticleQuantity": "Temperature"
+          }
+        },
+        {
+          "Name": "UTC Time String",
+          "ParameterKey": "ICON_L24_UTC_Time",
+          "Description": "UTC time corresponding to the retrieved parameters, in string format, as a function of time, in the format: 2017-05-27/00:00:01.435.",
+          "Cadence": "PT12S",
+          "FillValue": "Bad",
+          "Support": {
+            "Qualifier": "Magnitude",
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Whole Day Retrieval Flags",
+          "ParameterKey": "ICON_L24_Whole_Day_Retrieval_Flag",
+          "Description": "Single flag set for whole day, where 0 = nominal data set, 1 = whole day skipped because no solar zenith angles were within range.",
+          "Cadence": "PT12S",
+          "Units": "integer",
+          "ValidMin": "0",
+          "ValidMax": "1",
+          "FillValue": "-999",
+          "Support": {
+            "Qualifier": "Uncertainty",
+            "SupportQuantity": "DataQuality"
+          }
+        }
+      ]
+    }
+  }
+}
