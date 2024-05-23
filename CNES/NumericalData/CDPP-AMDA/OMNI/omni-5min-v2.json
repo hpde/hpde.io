@@ -1,0 +1,354 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2.4.1.xsd",
+    "Version": "2.4.1",
+    "NumericalData": {
+      "ResourceID": "spase://CNES/NumericalData/CDPP-AMDA/OMNI/omni-5min-v2",
+      "ResourceHeader": {
+        "ResourceName": "OMNI - Sun / Solar Wind / Ground-Based Indices - 5 min V2",
+        "AlternateName": "Five min averaged",
+        "ReleaseDate": "2023-09-07T05:48:06Z",
+        "Description": "5 min averaged, multi-source, near-Earth solar wind magnetic \n              field, plasma and energetic proton flux data, plus AE, AU, AL, Kp, ap, and Dst \n              geomagnetic indices, Polar Cap (Thule) index, F10.7 index, and Rz (sunspot number).  \n            ",
+        "Acknowledgement": "We acknowledge the experiment teams that acquired, processed \nand provided the OMNI-included data, and J.H. King and N.E. Papitashvili of NASA/GSFC \nfor creating the OMNI data set.",
+        "Contact": [
+          {
+            "PersonID": "spase://SMWG/Person/Joseph.H.King",
+            "Role": "GeneralContact"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Natalia.E.Papitashvili",
+            "Role": "TechnicalContact"
+          }
+        ],
+        "InformationURL": {
+          "Name": "OMNI documentation at OMNIWeb",
+          "URL": "http://omniweb.sci.gsfc.nasa.gov/html/ow_data.html",
+          "Description": "Extensive OMNI documentation pages"
+        }
+      },
+      "AccessInformation": [
+        {
+          "RepositoryID": "spase://SMWG/Repository/CDPP/AMDA",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDPP/AMDA HAPI Server",
+            "URL": "https://amda.irap.omp.eu/service/hapi",
+            "Style": "HAPI",
+            "ProductKey": "omni-5min-v2",
+            "Description": "Web Service to this product using the HAPI interface."
+          },
+          "Format": "CSV",
+          "Acknowledgement": "Thank you for acknowledging the use of AMDA in publications with wording like \"Data analysis was performed with the AMDA science analysis system provided by the Centre de Données de la Physique des Plasmas (CDPP) supported by CNRS, CNES, Observatoire de Paris and Université Paul Sabatier, Toulouse\". See the Rules of the road at https://amda.cdpp.eu/help/policy.html . Please acknowledge the Data Providers."
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/CDPP/AMDA",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDPP/AMDA Web application",
+            "URL": "https://amda.cdpp.eu",
+            "Description": "Access to Data via CDPP/AMDA Web application."
+          },
+          "Format": [
+            "CSV",
+            "VOTable",
+            "CDF",
+            "PNG"
+          ],
+          "Acknowledgement": "Thank you for acknowledging the use of AMDA in publications with wording like \"Data analysis was performed with the AMDA science analysis system provided by the Centre de Données de la Physique des Plasmas (CDPP) supported by CNRS, CNES, Observatoire de Paris and Université Paul Sabatier, Toulouse\". See the Rules of the road at https://amda.cdpp.eu/help/policy.html . Please acknowledge the Data Providers."
+        }
+      ],
+      "ProcessingLevel": "Calibrated",
+      "ProviderName": "CDAWeb",
+      "ProviderResourceName": "OMNI_HRO2_5MIN",
+      "InstrumentID": "spase://CNES/Instrument/CDPP-AMDA/OMNI",
+      "MeasurementType": [
+        "ThermalPlasma",
+        "MagneticField",
+        "EnergeticParticles",
+        "ActivityIndex"
+      ],
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "1995-01-01T00:00:00Z",
+          "StopDate": "2023-06-30T23:55:00Z"
+        },
+        "Cadence": "PT5M"
+      },
+      "ObservedRegion": "Heliosphere.NearEarth",
+      "Parameter": [
+        {
+          "Name": "|b|",
+          "ParameterKey": "omni_hro2_5min_mag",
+          "UCD": "phys.magField",
+          "Units": "nT",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Field": {
+            "Qualifier": "Average",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "sw average b magn (vec)",
+          "ParameterKey": "omni_hro2_5min_b_amag",
+          "UCD": "phys.magField",
+          "Units": "nT",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "FillValue": "9999.99",
+          "Field": {
+            "Qualifier": "Average",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "b_gse",
+          "ParameterKey": "omni_hro2_5min_b_gse",
+          "UCD": "phys.magField",
+          "Units": "nT",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "bx",
+                "Index": "1",
+                "ParameterKey": "omni_hro2_5min_b_gse(0)",
+                "FillValue": "9999.99"
+              },
+              {
+                "Name": "by",
+                "Index": "2",
+                "ParameterKey": "omni_hro2_5min_b_gse(1)",
+                "FillValue": "9999.99"
+              },
+              {
+                "Name": "bz",
+                "Index": "3",
+                "ParameterKey": "omni_hro2_5min_b_gse(2)",
+                "FillValue": "9999.99"
+              }
+            ]
+          },
+          "Field": {
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "sw density",
+          "ParameterKey": "omni_hro2_5min_sw_n",
+          "UCD": "phys.density;phys.atmol.ionStage",
+          "Units": "cm-3",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "FillValue": "999.99",
+          "Particle": {
+            "ParticleType": [
+              "Ion",
+              "Electron",
+              "Proton"
+            ],
+            "ParticleQuantity": "NumberDensity"
+          }
+        },
+        {
+          "Name": "sw temperature",
+          "ParameterKey": "omni_hro2_5min_sw_t",
+          "UCD": "phys.temperature;phys.atmol.ionStage",
+          "Units": "K",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "FillValue": "1.0e+07",
+          "Particle": {
+            "ParticleType": [
+              "Ion",
+              "Electron",
+              "Proton"
+            ],
+            "ParticleQuantity": "Temperature"
+          }
+        },
+        {
+          "Name": "sw v_bulk",
+          "ParameterKey": "omni_hro2_5min_sw_vb",
+          "UCD": "phys.veloc;phys.atmol.ionStage",
+          "Units": "km/s",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "FillValue": "99999.9",
+          "Particle": {
+            "ParticleType": [
+              "Ion",
+              "Electron",
+              "Proton"
+            ],
+            "ParticleQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "sw v_gse",
+          "ParameterKey": "omni_hro2_5min_sw_vgse",
+          "UCD": "phys.veloc;phys.atmol.ionStage",
+          "Units": "km/s",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GSE"
+          },
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "vx",
+                "Index": "1",
+                "ParameterKey": "omni_hro2_5min_sw_vgse(0)",
+                "FillValue": "99999.9"
+              },
+              {
+                "Name": "vy",
+                "Index": "2",
+                "ParameterKey": "omni_hro2_5min_sw_vgse(1)",
+                "FillValue": "99999.9"
+              },
+              {
+                "Name": "vz",
+                "Index": "3",
+                "ParameterKey": "omni_hro2_5min_sw_vgse(2)",
+                "FillValue": "99999.9"
+              }
+            ]
+          },
+          "Particle": {
+            "ParticleType": [
+              "Ion",
+              "Electron",
+              "Proton"
+            ],
+            "ParticleQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "sw alpha ratio",
+          "ParameterKey": "omni_hro2_5min_ap_ratio",
+          "UCD": "phys.abund",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "FillValue": "9.999",
+          "Particle": {
+            "ParticleType": "AlphaParticle",
+            "Qualifier": "Ratio",
+            "ParticleQuantity": "NumberDensity"
+          }
+        },
+        {
+          "Name": "sw ram pressure",
+          "ParameterKey": "omni_hro2_5min_sw_p",
+          "UCD": "phys.pressure;phys.atmol.ionStage",
+          "Units": "nPa",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "FillValue": "99.99",
+          "Particle": {
+            "ParticleType": [
+              "Ion",
+              "Electron",
+              "Proton"
+            ],
+            "ParticleQuantity": "Pressure"
+          }
+        },
+        {
+          "Name": "sw electric field",
+          "ParameterKey": "omni_hro2_5min_sw_e",
+          "UCD": "phys.elecField",
+          "Units": "mV/m",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "FillValue": "999.99",
+          "Field": {
+            "FieldQuantity": "Electric"
+          }
+        },
+        {
+          "Name": "sw beta",
+          "ParameterKey": "omni_hro2_5min_beta",
+          "UCD": "phys.pressure;arith.ratio",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "FillValue": "999.99",
+          "Mixed": {
+            "MixedQuantity": "PlasmaBeta"
+          }
+        },
+        {
+          "Name": "sw mach alfven",
+          "ParameterKey": "omni_hro2_5min_mach_num",
+          "UCD": "phys.veloc;arith.ratio",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "FillValue": "999.9",
+          "Mixed": {
+            "MixedQuantity": "AlfvenMachNumber"
+          }
+        },
+        {
+          "Name": "AE index",
+          "ParameterKey": "omni_hro2_5min_ae_index",
+          "UCD": "src.var.index;phys.magField",
+          "Units": "nT",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "FillValue": "99999",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "AL index",
+          "ParameterKey": "omni_hro2_5min_al_index",
+          "UCD": "src.var.index;phys.magField",
+          "Units": "nT",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "FillValue": "99999",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "AU index",
+          "ParameterKey": "omni_hro2_5min_au_index",
+          "UCD": "src.var.index;phys.magField",
+          "Units": "nT",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "FillValue": "99999",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        }
+      ]
+    }
+  }
+}

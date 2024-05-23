@@ -7,13 +7,19 @@
     "NumericalData": {
       "ResourceID": "spase://CNES/NumericalData/CDPP-AMDA/Juno/JEDI/juno-jedi-i270",
       "ResourceHeader": {
-        "ResourceName": "instrument-270",
-        "ReleaseDate": "2022-01-27T10:23:07Z",
-        "Description": "ToDo",
-        "Contact": {
-          "PersonID": "spase://SMWG/Person/Barry.H.Mauk",
-          "Role": "PrincipalInvestigator"
-        },
+        "ResourceName": "Juno - JEDI - ions - instrument-270",
+        "ReleaseDate": "2024-02-15T07:53:52Z",
+        "Description": "JUNO JEDI calibrated observations, consisting of energetic particle data collected by the JEDI instruments during the Jupiter Science Orbits phase of the Juno mission.",
+        "Contact": [
+          {
+            "PersonID": "spase://SMWG/Person/Barry.H.Mauk",
+            "Role": "PrincipalInvestigator"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Dennis.Haggerty",
+            "Role": "InstrumentScientist"
+          }
+        ],
         "Association": {
           "AssociationID": "juno-jedi-i",
           "AssociationType": "PartOf",
@@ -27,12 +33,13 @@
           "AccessRights": "Open",
           "AccessURL": {
             "Name": "CDPP/AMDA HAPI Server",
-            "URL": "http://amda.irap.omp.eu/service/hapi",
+            "URL": "https://amda.irap.omp.eu/service/hapi",
             "Style": "HAPI",
+            "ProductKey": "juno-jedi-i270",
             "Description": "Web Service to this product using the HAPI interface."
           },
           "Format": "CSV",
-          "Acknowledgement": "Thank you for acknowledging the use of AMDA in publications with wording like \"Data analysis was performed with the AMDA science analysis system provided by the Centre de Données de la Physique des Plasmas (CDPP) supported by CNRS, CNES, Observatoire de Paris and Université Paul Sabatier, Toulouse\".. See the Rules of the road at http://amda.cdpp.eu/help/policy.html. Please acknowledge the Data Providers."
+          "Acknowledgement": "Thank you for acknowledging the use of AMDA in publications with wording like \"Data analysis was performed with the AMDA science analysis system provided by the Centre de Données de la Physique des Plasmas (CDPP) supported by CNRS, CNES, Observatoire de Paris and Université Paul Sabatier, Toulouse\". See the Rules of the road at https://amda.cdpp.eu/help/policy.html . Please acknowledge the Data Providers."
         },
         {
           "RepositoryID": "spase://SMWG/Repository/CDPP/AMDA",
@@ -40,7 +47,7 @@
           "AccessRights": "Open",
           "AccessURL": {
             "Name": "CDPP/AMDA Web application",
-            "URL": "http://amda.cdpp.eu",
+            "URL": "https://amda.cdpp.eu",
             "Description": "Access to Data via CDPP/AMDA Web application."
           },
           "Format": [
@@ -49,17 +56,17 @@
             "CDF",
             "PNG"
           ],
-          "Acknowledgement": "Thank you for acknowledging the use of AMDA in publications with wording like \"Data analysis was performed with the AMDA science analysis system provided by the Centre de Données de la Physique des Plasmas (CDPP) supported by CNRS, CNES, Observatoire de Paris and Université Paul Sabatier, Toulouse\".. See the Rules of the road at http://amda.cdpp.eu/help/policy.html. Please acknowledge the Data Providers."
+          "Acknowledgement": "Thank you for acknowledging the use of AMDA in publications with wording like \"Data analysis was performed with the AMDA science analysis system provided by the Centre de Données de la Physique des Plasmas (CDPP) supported by CNRS, CNES, Observatoire de Paris and Université Paul Sabatier, Toulouse\". See the Rules of the road at https://amda.cdpp.eu/help/policy.html . Please acknowledge the Data Providers."
         }
       ],
       "ProviderName": "PDS",
-      "ProviderResourceName": "JED_HIERSISP_CDR; JED_LOERSISP_CDR",
+      "ProviderResourceName": "JNO-J-JED-3-CDR-V1.0",
       "InstrumentID": "spase://CNES/Instrument/CDPP-AMDA/Juno/JEDI",
       "MeasurementType": "EnergeticParticles",
       "TemporalDescription": {
         "TimeSpan": {
           "StartDate": "2016-08-26T12:07:29Z",
-          "StopDate": "2021-04-15T05:32:47Z"
+          "StopDate": "2023-07-31T09:20:52Z"
         },
         "CadenceMin": "PT0.5S",
         "CadenceMax": "PT3S"
@@ -73,6 +80,25 @@
           "RenderingHints": {
             "DisplayType": "Spectrogram"
           },
+          "Structure": {
+            "Size": "24"
+          },
+          "Particle": {
+            "ParticleType": "Ion",
+            "ParticleQuantity": "Counts"
+          }
+        },
+        {
+          "Name": "counts - PAD",
+          "ParameterKey": "jedi_i270_countspad",
+          "Description": "Pitch Angle Distribution",
+          "Units": "counts",
+          "RenderingHints": {
+            "DisplayType": "Spectrogram"
+          },
+          "Structure": {
+            "Size": "6"
+          },
           "Particle": {
             "ParticleType": "Ion",
             "ParticleQuantity": "Counts"
@@ -85,6 +111,25 @@
           "RenderingHints": {
             "DisplayType": "Spectrogram"
           },
+          "Structure": {
+            "Size": "24"
+          },
+          "Particle": {
+            "ParticleType": "Ion",
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "diff flux - PAD",
+          "ParameterKey": "jedi_i270_fluxpad",
+          "Description": "Pitch Angle Distribution",
+          "Units": "counts per sec cm^2 ster keV",
+          "RenderingHints": {
+            "DisplayType": "Spectrogram"
+          },
+          "Structure": {
+            "Size": "6"
+          },
           "Particle": {
             "ParticleType": "Ion",
             "ParticleQuantity": "NumberFlux"
@@ -96,6 +141,25 @@
           "Units": "counts per sec",
           "RenderingHints": {
             "DisplayType": "Spectrogram"
+          },
+          "Structure": {
+            "Size": "24"
+          },
+          "Particle": {
+            "ParticleType": "Ion",
+            "ParticleQuantity": "CountRate"
+          }
+        },
+        {
+          "Name": "counts/sec - PAD",
+          "ParameterKey": "jedi_i270_cpspad",
+          "Description": "Pitch Angle Distribution",
+          "Units": "counts per sec",
+          "RenderingHints": {
+            "DisplayType": "Spectrogram"
+          },
+          "Structure": {
+            "Size": "6"
           },
           "Particle": {
             "ParticleType": "Ion",
@@ -110,6 +174,98 @@
           },
           "Support": {
             "SupportQuantity": "InstrumentMode"
+          }
+        },
+        {
+          "Name": "pitch angle",
+          "ParameterKey": "jedi_i270_pa",
+          "Units": "deg",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Structure": {
+            "Size": "6",
+            "Element": [
+              {
+                "Name": "Look Dir. 0",
+                "Index": "1",
+                "ParameterKey": "jedi_i270_pa(0)"
+              },
+              {
+                "Name": "Look Dir. 1",
+                "Index": "2",
+                "ParameterKey": "jedi_i270_pa(1)"
+              },
+              {
+                "Name": "Look Dir. 2",
+                "Index": "3",
+                "ParameterKey": "jedi_i270_pa(2)"
+              },
+              {
+                "Name": "Look Dir. 3",
+                "Index": "4",
+                "ParameterKey": "jedi_i270_pa(3)"
+              },
+              {
+                "Name": "Look Dir. 4",
+                "Index": "5",
+                "ParameterKey": "jedi_i270_pa(4)"
+              },
+              {
+                "Name": "Look Dir. 5",
+                "Index": "6",
+                "ParameterKey": "jedi_i270_pa(5)"
+              }
+            ]
+          },
+          "Support": {
+            "SupportQuantity": "Orientation"
+          }
+        },
+        {
+          "Name": "counts SSD",
+          "ParameterKey": "jedi_i270_ssd",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Structure": {
+            "Size": "6",
+            "Element": [
+              {
+                "Name": "Look Dir. 0",
+                "Index": "1",
+                "ParameterKey": "jedi_i270_ssd(0)"
+              },
+              {
+                "Name": "Look Dir. 1",
+                "Index": "2",
+                "ParameterKey": "jedi_i270_ssd(1)"
+              },
+              {
+                "Name": "Look Dir. 2",
+                "Index": "3",
+                "ParameterKey": "jedi_i270_ssd(2)"
+              },
+              {
+                "Name": "Look Dir. 3",
+                "Index": "4",
+                "ParameterKey": "jedi_i270_ssd(3)"
+              },
+              {
+                "Name": "Look Dir. 4",
+                "Index": "5",
+                "ParameterKey": "jedi_i270_ssd(4)"
+              },
+              {
+                "Name": "Look Dir. 5",
+                "Index": "6",
+                "ParameterKey": "jedi_i270_ssd(5)"
+              }
+            ]
+          },
+          "Particle": {
+            "ParticleType": "Ion",
+            "ParticleQuantity": "Counts"
           }
         }
       ]
