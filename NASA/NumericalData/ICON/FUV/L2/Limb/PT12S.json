@@ -7,20 +7,27 @@
     "NumericalData": {
       "ResourceID": "spase://NASA/NumericalData/ICON/FUV/L2/Limb/PT12S",
       "ResourceHeader": {
-        "ResourceName": "ICON The Far Ultra Violet Imaging Spectrograph Day Limb Images ",
+        "ResourceName": "ICON The Far Ultra Violet Imaging Spectrograph Day Limb Images",
         "AlternateName": "FUV Day Limb Images",
-        "ReleaseDate": "2024-05-08T00:00:00Z",
+        "DOI": "https://doi.org/10.48322/BWJZ-NK36",
+        "ReleaseDate": "2024-06-05T00:00:00Z",
         "RevisionHistory": {
-          "RevisionEvent": {
-            "ReleaseDate": "2024-05-08T00:00:00Z",
-            "Note": "Created NumericalData Metadata. JMW."
-          }
+          "RevisionEvent": [
+            {
+              "ReleaseDate": "2024-05-08T00:00:00Z",
+              "Note": "Created NumericalData Metadata. JMW."
+            },
+            {
+              "ReleaseDate": "2024-06-05T00:00:00Z",
+              "Note": "Added DOI. Edited metadata at PIs request. JMW."
+            }
+          ]
         },
-        "Description": "The FUV instrument takes 2D images of the Earth’s horizon in the Far ultraviolet. The imager is pointing approximately 90 degrees to the spacecraft motion, similar to looking out of the side window of a car as it drives down the road. Onboard electronics read the image 8 times per second and perform Time Delay Integration (TDI) to remove the motion-blur from the images. A turret is used to steer the field of view of the instrument left to right to ensure it always looks along the magnetic meridian (towards the magnetic pole).\r\n\t  \r\n\t  This describes the data product for ICON FUV Limb Daytime O/N2. The ratio of oxygen to nitrogen in the thermosphere is obtained from the two channels of ICON FUV instrument data. In this file, only the limb parameters are included. Each individual file nominally contains 1 day (24 hours) of data. The L2 FUV Limb Daytime files are produced from the L1 FUV files. In addition, many other parameters and geophysical data products are included in the file.",
+        "Description": "The FUV instrument takes 2D images of the Earth’s horizon in the Far ultraviolet. \r\n\t  The imager is pointing approximately 90 degrees to the spacecraft motion, similar to looking out \r\n\t  of the side window of a car as it drives down the road. Onboard electronics read the CCD detectors 8 times per\r\n\t  second and collect the data into radiance profiles every 12 seconds. The calibrated level 1 radiances\r\n\t  and Level 1 ancillary spacecraft data are combined in a limb retrieval to produce the level 2.4 O/N2 limb product.",
         "Acknowledgement": "National Aeronautics and Space Administration; Dr. Andrew W. Stephan; Dr. Thomas Immel",
         "PublicationInfo": {
-          "Authors": "Stephan, A. W.",
-          "PublicationDate": "2023-01-01T00:00:00",
+          "Authors": "Stephan, A. W., R.R. Meier, S.L. England, S.B. Mende, H.U. Frey, T.J. Immel",
+          "PublicationDate": "2024-06-05T00:00:00",
           "PublishedBy": "NASA Space Physics Data Facility"
         },
         "Funding": {
@@ -36,11 +43,16 @@
           {
             "Name": "Additional information on ICON",
             "URL": "https://icon.ssl.berkeley.edu/",
-            "Description": "ICON spacecraft Homepage."
+            "Description": "ICON Project Homepage."
           },
           {
             "Name": "The far ultra-violet Imager on the ICON mission",
             "URL": "https://doi.org/10.1007/s11214-017-0386-0",
+            "Description": "Space Science Reviews, 212(1-2), pp.655-696. DOI: 10.1007/s11214-017-0386-0"
+          },
+          {
+            "Name": "Daytime O/N2 Retrieval Algorithm for the Ionospheric Connection Explorer (ICON)",
+            "URL": "https://doi.org/10.1007/s11214-018-0477-6",
             "Description": "Space Science Reviews, 212(1-2), pp.655-696. DOI: 10.1007/s11214-017-0386-0"
           }
         ]
@@ -58,7 +70,7 @@
             "Description": "Web Service to this product using the HAPI interface."
           },
           "Format": "NetCDF",
-          "Acknowledgement": "Please acknowledge Dr. Farzad Kamalabadi and Dr. Thomas Immel. Please acknowledge the Data Providers and CDAWeb when using these Data."
+          "Acknowledgement": "Please acknowledge Andrew W. Stephan and Robert R. Meier. Please acknowledge the Data Providers and CDAWeb when using these Data."
         },
         {
           "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF/CDAWeb",
@@ -80,7 +92,7 @@
           ],
           "Format": "NetCDF",
           "Encoding": "None",
-          "Acknowledgement": "Please acknowledge Dr. Farzad Kamalabadi and Dr. Thomas Immel. Please acknowledge the Data Providers and CDAWeb when using these Data."
+          "Acknowledgement": "Please acknowledge Andrew W. Stephan and Robert R. Meier. Please acknowledge the Data Providers and CDAWeb when using these Data."
         }
       ],
       "ProcessingLevel": "Calibrated",
@@ -231,8 +243,8 @@
           "Description": "Line of sight zenith angles, in degrees, as functions tangent altitdue of time.",
           "Cadence": "PT12S",
           "Units": "degrees",
-          "ValidMin": "-360",
-          "ValidMax": "360",
+          "ValidMin": "0",
+          "ValidMax": "180",
           "FillValue": "-999",
           "Support": {
             "Qualifier": "Direction",
@@ -299,8 +311,8 @@
           "Description": "Latitude of the retrieval, defined at 150 km tangent altitude, in WGS.",
           "Cadence": "PT12S",
           "Units": "degrees",
-          "ValidMin": "0",
-          "ValidMax": "45",
+          "ValidMin": "-90",
+          "ValidMax": "90",
           "FillValue": "-999",
           "Support": {
             "Qualifier": "Direction",
@@ -364,7 +376,7 @@
         {
           "Name": "Model Error Flag",
           "ParameterKey": "ICON_L24_Model_Flags",
-          "Description": "*Diagnostic* flag = 0 - nominal, flag(0)= 1 - 20 steps reached without convergining, flag(1)=1 model para hit upper or lower limit, flag(2)=1 peak alt is too close to boundary.",
+          "Description": "*Diagnostic* flag = 0 - nominal, flag(0)= 1 - 20 steps reached without converging, flag(1)=1 model para hit upper or lower limit, flag(2)=1 peak alt is too close to boundary.",
           "Cadence": "PT12S",
           "ValidMin": "0",
           "ValidMax": "45",
@@ -640,7 +652,7 @@
           "Cadence": "PT12S",
           "Units": "degrees",
           "ValidMin": "0",
-          "ValidMax": "45",
+          "ValidMax": "80",
           "FillValue": "-999",
           "Support": {
             "Qualifier": "Direction",
