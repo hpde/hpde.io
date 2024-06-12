@@ -1,62 +1,678 @@
 {
   "Spase": {
     "xmlns": "http://www.spase-group.org/data/schema",
-    "Version": "2.2.3",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_6_0.xsd",
+    "Version": "2.6.0",
     "NumericalData": {
       "ResourceID": "spase://NASA/NumericalData/STEREO-B/IMPACT/HET/L1/PT1M",
       "ResourceHeader": {
         "ResourceName": "STEREO-B IMPACT HET Level 1 Data",
-        "ReleaseDate": "2020-07-07T21:15:21Z",
-        "Description": "This data set contains Level 1 1-min data from the High Energy Telescopes (HET) of STEREO IMAPCT.  Electron flux in particles/(cm2-sr-sec-MeV) are measured in 3 energy ranges: 0.7-1.4, 1.4-2.8 and 2.8-4.0 MeV.  Proton flux are measured in 11 energy ranges: 13.6-15.1, 14.9-17.1, 17.0-19.3, 20.8-23.8, 23.8-26.4, 26.3-29.7, 29.5-33.4, 33.4-35.8, 35.5-40.5, 40.0-60.0, and 60.0-100.0 MeV.",
-        "Acknowledgement": "Please acknowledge the STEREO IMPACT PI, Janet Luhmann of UCB and NASA Space Physics Data Facility (SPDF) CDAWeb",
+        "ReleaseDate": "2024-06-11T00:00:00",
+        "RevisionHistory": {
+          "RevisionEvent": [
+            {
+              "ReleaseDate": "2020-07-07T21:15:19",
+              "Note": "Only known prior ReleaseDate of the metadata"
+            },
+            {
+              "ReleaseDate": "2024-06-11T00:00:00",
+              "Note": "Metadata, including parameter descriptions, updated by ADAPT code (LFB), final editing by AK"
+            }
+          ]
+        },
+        "Description": "STEREO-B In-Situ Measurements of Particles and CME Transients (IMPACT) High Energy Telescopes (HET) Level 1 1-minute data include electron fluxes in (cm^2 s sr MeV)^-1 measured in 3 energy ranges (0.7-1.4, 1.4-2.8 and 2.8-4.0 MeV) and proton fluxes in (cm^2 s sr MeV)^-1 measured in 11 energy ranges (13.6-15.0, 14.9-16.9, 16.9-19.0, 20.6-23.8, 23.7-26.5, 26.3-29.8, 29.8-33.7, 33.6-36.1, 35.6-40.5, 40-60, and 60-100 MeV).",
+        "Acknowledgement": "Please acknowledge the STEREO IMPACT PI, Janet Luhmann of UCB, and NASA Space Physics Data Facility (SPDF)",
         "Contact": [
           {
             "PersonID": "spase://SMWG/Person/Janet.G.Luhmann",
             "Role": "PrincipalInvestigator"
           },
           {
-            "PersonID": "spase://SMWG/Person/Robert.E.McGuire",
-            "Role": "GeneralContact"
+            "PersonID": "spase://SMWG/Person/Robert.M.Candey",
+            "Role": "MetadataContact"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Andriy.Koval",
+            "Role": "MetadataContact"
           }
         ],
         "InformationURL": [
           {
-            "Name": "STEREO page at Caltech",
-            "URL": "http://www.srl.caltech.edu/STEREO/"
+            "Name": "STEREO/IMPACT PI Site",
+            "URL": "https://sprg.ssl.berkeley.edu/impact",
+            "Description": "Experiment and Data descriptions for STEREO/IMPACT"
           },
           {
-            "Name": "Readme at STEREO Science Center",
+            "Name": "HET description",
+            "URL": "https://sprg.ssl.berkeley.edu/impact/SSR/vonRosenetalSSR.pdf",
+            "Description": "HET Instrument description paper"
+          },
+          {
+            "Name": "STEREO page at Caltech",
+            "URL": "https://www.srl.caltech.edu/STEREO/"
+          },
+          {
+            "Name": "STEREO Science Center",
             "URL": "https://stereo-ssc.nascom.nasa.gov/data.shtml"
           }
         ],
         "PriorID": "spase://VSPO/NumericalData/STEREO-B/IMPACT/HET/L1/PT1M"
       },
-      "AccessInformation": {
-        "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
-        "Availability": "Online",
-        "AccessRights": "Open",
-        "AccessURL": [
-          {
-            "Name": "FTPS from SPDF (not with most browsers)",
-            "URL": "ftps://spdf.gsfc.nasa.gov/pub/data/stereo/behind/l1/impact/het/"
+      "AccessInformation": [
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": [
+            {
+              "Name": "FTPS from SPDF (not with most browsers)",
+              "URL": "ftps://spdf.gsfc.nasa.gov/pub/data/stereo/behind/l1/impact/het/",
+              "Description": "Access to Data in CDF Format via ftps from SPDF"
+            },
+            {
+              "Name": "HTTPS from SPDF",
+              "URL": "https://spdf.gsfc.nasa.gov/pub/data/stereo/behind/l1/impact/het/",
+              "Description": "Access to Data in CDF Format via https from SPDF"
+            },
+            {
+              "Name": "CDAWeb",
+              "URL": "https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=STB_L1_HET&index=sp_phys",
+              "ProductKey": "STB_L1_HET",
+              "Description": "Access to ASCII, CDF, and Plots via NASA/GSFC CDAWeb"
+            }
+          ],
+          "Format": "CDF",
+          "Encoding": "None",
+          "Acknowledgement": "Please acknowledge the STEREO IMPACT PI, Janet Luhmann of UCB, and NASA Space Physics Data Facility (SPDF)"
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDAWeb HAPI Server",
+            "URL": "https://cdaweb.gsfc.nasa.gov/hapi",
+            "Style": "HAPI",
+            "ProductKey": "STB_L1_HET",
+            "Description": "Web Service to this product using the HAPI interface."
           },
-          {
-            "Name": "HTTPS from SPDF",
-            "URL": "https://spdf.gsfc.nasa.gov/pub/data/stereo/behind/l1/impact/het/"
-          }
-        ],
-        "Format": "CDF"
-      },
+          "Format": "CSV"
+        }
+      ],
+      "ProviderProcessingLevel": "Level 1",
       "InstrumentID": "spase://SMWG/Instrument/STEREO-B/IMPACT/HET",
-      "MeasurementType": "ThermalPlasma",
+      "MeasurementType": "EnergeticParticles",
       "TemporalDescription": {
         "TimeSpan": {
-          "StartDate": "2006-12-01T00:00:00",
-          "RelativeStopDate": "-P180D"
+          "StartDate": "2006-12-01T00:00:08",
+          "StopDate": "2014-09-27T16:28:26"
         },
         "Cadence": "PT1M"
       },
-      "ObservedRegion": "Heliosphere.Remote1AU"
+      "ObservedRegion": "Heliosphere.Remote1AU",
+      "Parameter": [
+        {
+          "Name": "Epoch",
+          "ParameterKey": "Epoch",
+          "Description": "Time since 0 AD",
+          "Caveats": "Start of interval time tag",
+          "Units": "ms",
+          "UnitsConversion": "1.0e-3>s",
+          "RenderingHints": {
+            "AxisLabel": "Epoch"
+          },
+          "ValidMin": "01-Jan-1990 00:00:00.000",
+          "ValidMax": "31-Dec-2020 00:00:00.000",
+          "FillValue": "31-Dec-9999 23:59:59.999",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Instrument Mode",
+          "Set": "Time series defined by using: Epoch",
+          "ParameterKey": "Mode",
+          "Description": "Rate mode of the HET instrument.",
+          "Caveats": "0: Low rate mode 1: High rate mode",
+          "Cadence": "PT1M",
+          "RenderingHints": {
+            "AxisLabel": "mode",
+            "ValueFormat": "I3",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "0",
+          "ValidMax": "1",
+          "FillValue": "255",
+          "Support": {
+            "SupportQuantity": "InstrumentMode"
+          }
+        },
+        {
+          "Name": "Electron Flux",
+          "Set": "Time series defined by using: Epoch",
+          "ParameterKey": "Electron_Flux",
+          "Description": "Electron flux measured by HET in 3 energy bins (time series: good with plot overlay option, above)",
+          "Cadence": "PT1M",
+          "Units": "(cm^2 s sr MeV)^-1",
+          "UnitsConversion": "6.24161e-19>(m^2 s sr J)^-1",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "Electron Flux",
+            "ValueFormat": "E12.2",
+            "ScaleType": "LogScale"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "E 0.7 - 1.4 MeV",
+                "Index": "1",
+                "RenderingHints": {
+                  "AxisLabel": "1.05000"
+                }
+              },
+              {
+                "Name": "E 1.4 - 2.8 MeV",
+                "Index": "2",
+                "RenderingHints": {
+                  "AxisLabel": "2.10000"
+                }
+              },
+              {
+                "Name": "E 2.8 - 4.0 MeV",
+                "Index": "3",
+                "RenderingHints": {
+                  "AxisLabel": "3.40000"
+                }
+              }
+            ]
+          },
+          "ValidMin": "-1.0e+30",
+          "ValidMax": "1.0e+30",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": [
+              "Array",
+              "Differential"
+            ],
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "Electron Flux",
+          "Set": "Time series defined by using: Epoch",
+          "ParameterKey": "Electron_Flux_stack",
+          "Description": "Electron flux measured by HET in 3 energy bins (stacked plot)",
+          "Caveats": "This parameter is virtual. It is calculated by calling the function ALTERNATE_VIEW with the following input parameters: Electron_Flux.",
+          "Cadence": "PT1M",
+          "Units": "(cm^2 s sr MeV)^-1",
+          "UnitsConversion": "6.24161e-19>(m^2 s sr J)^-1",
+          "RenderingHints": {
+            "AxisLabel": "Electron Flux",
+            "ValueFormat": "E12.2",
+            "ScaleType": "LogScale"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "E 0.7 - 1.4 MeV",
+                "Index": "1",
+                "RenderingHints": {
+                  "AxisLabel": "1.05000"
+                }
+              },
+              {
+                "Name": "E 1.4 - 2.8 MeV",
+                "Index": "2",
+                "RenderingHints": {
+                  "AxisLabel": "2.10000"
+                }
+              },
+              {
+                "Name": "E 2.8 - 4.0 MeV",
+                "Index": "3",
+                "RenderingHints": {
+                  "AxisLabel": "3.40000"
+                }
+              }
+            ]
+          },
+          "ValidMin": "-1.0e+30",
+          "ValidMax": "1.0e+30",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": [
+              "Array",
+              "Differential"
+            ],
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "Proton Flux",
+          "Set": "Time series defined by using: Epoch",
+          "ParameterKey": "Proton_Flux",
+          "Description": "Proton flux measured by the HET instrument in 11 energy bins (time series: good with plot overlay option, above)",
+          "Cadence": "PT1M",
+          "Units": "(cm^2 s sr MeV)^-1",
+          "UnitsConversion": "6.24161e-19>(m^2 s sr J)^-1",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "Proton Flux",
+            "ValueFormat": "E12.2",
+            "ScaleType": "LogScale"
+          },
+          "Structure": {
+            "Size": "11",
+            "Element": [
+              {
+                "Name": "P 13.6 - 15.0 MeV",
+                "Index": "1",
+                "RenderingHints": {
+                  "AxisLabel": "14.3000"
+                }
+              },
+              {
+                "Name": "P 14.9 - 16.9 MeV",
+                "Index": "2",
+                "RenderingHints": {
+                  "AxisLabel": "15.9000"
+                }
+              },
+              {
+                "Name": "P 16.9 - 19.0 MeV",
+                "Index": "3",
+                "RenderingHints": {
+                  "AxisLabel": "18.1500"
+                }
+              },
+              {
+                "Name": "P 20.6 - 23.8 MeV",
+                "Index": "4",
+                "RenderingHints": {
+                  "AxisLabel": "22.2000"
+                }
+              },
+              {
+                "Name": "P 23.7 - 26.5 MeV",
+                "Index": "5",
+                "RenderingHints": {
+                  "AxisLabel": "25.1000"
+                }
+              },
+              {
+                "Name": "P 26.3 - 29.8 MeV",
+                "Index": "6",
+                "RenderingHints": {
+                  "AxisLabel": "28.0500"
+                }
+              },
+              {
+                "Name": "P 29.8 - 33.7 MeV",
+                "Index": "7",
+                "RenderingHints": {
+                  "AxisLabel": "31.7500"
+                }
+              },
+              {
+                "Name": "P 33.6 - 36.1 MeV",
+                "Index": "8",
+                "RenderingHints": {
+                  "AxisLabel": "34.8500"
+                }
+              },
+              {
+                "Name": "P 35.6 - 40.5 MeV",
+                "Index": "9",
+                "RenderingHints": {
+                  "AxisLabel": "38.0500"
+                }
+              },
+              {
+                "Name": "P 40 - 60 MeV",
+                "Index": "10",
+                "RenderingHints": {
+                  "AxisLabel": "50"
+                }
+              },
+              {
+                "Name": "P 60 - 100 MeV",
+                "Index": "11",
+                "RenderingHints": {
+                  "AxisLabel": "80"
+                }
+              }
+            ]
+          },
+          "ValidMin": "-1.0e+30",
+          "ValidMax": "1.0e+30",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": [
+              "Array",
+              "Differential"
+            ],
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "Proton Flux",
+          "Set": "Time series defined by using: Epoch",
+          "ParameterKey": "Proton_Flux_stack",
+          "Description": "Proton flux measured by the HET instrument in 11 energy bins (stacked)",
+          "Caveats": "This parameter is virtual. It is calculated by calling the function ALTERNATE_VIEW with the following input parameters: Proton_Flux.",
+          "Cadence": "PT1M",
+          "Units": "(cm^2 s sr MeV)^-1",
+          "UnitsConversion": "6.24161e-19>(m^2 s sr J)^-1",
+          "RenderingHints": {
+            "AxisLabel": "Proton Flux",
+            "ValueFormat": "E12.2",
+            "ScaleType": "LogScale"
+          },
+          "Structure": {
+            "Size": "11",
+            "Element": [
+              {
+                "Name": "P 13.6 - 15.0 MeV",
+                "Index": "1",
+                "RenderingHints": {
+                  "AxisLabel": "14.3000"
+                }
+              },
+              {
+                "Name": "P 14.9 - 16.9 MeV",
+                "Index": "2",
+                "RenderingHints": {
+                  "AxisLabel": "15.9000"
+                }
+              },
+              {
+                "Name": "P 16.9 - 19.0 MeV",
+                "Index": "3",
+                "RenderingHints": {
+                  "AxisLabel": "18.1500"
+                }
+              },
+              {
+                "Name": "P 20.6 - 23.8 MeV",
+                "Index": "4",
+                "RenderingHints": {
+                  "AxisLabel": "22.2000"
+                }
+              },
+              {
+                "Name": "P 23.7 - 26.5 MeV",
+                "Index": "5",
+                "RenderingHints": {
+                  "AxisLabel": "25.1000"
+                }
+              },
+              {
+                "Name": "P 26.3 - 29.8 MeV",
+                "Index": "6",
+                "RenderingHints": {
+                  "AxisLabel": "28.0500"
+                }
+              },
+              {
+                "Name": "P 29.8 - 33.7 MeV",
+                "Index": "7",
+                "RenderingHints": {
+                  "AxisLabel": "31.7500"
+                }
+              },
+              {
+                "Name": "P 33.6 - 36.1 MeV",
+                "Index": "8",
+                "RenderingHints": {
+                  "AxisLabel": "34.8500"
+                }
+              },
+              {
+                "Name": "P 35.6 - 40.5 MeV",
+                "Index": "9",
+                "RenderingHints": {
+                  "AxisLabel": "38.0500"
+                }
+              },
+              {
+                "Name": "P 40 - 60 MeV",
+                "Index": "10",
+                "RenderingHints": {
+                  "AxisLabel": "50"
+                }
+              },
+              {
+                "Name": "P 60 - 100 MeV",
+                "Index": "11",
+                "RenderingHints": {
+                  "AxisLabel": "80"
+                }
+              }
+            ]
+          },
+          "ValidMin": "-1.0e+30",
+          "ValidMax": "1.0e+30",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": [
+              "Array",
+              "Differential"
+            ],
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "Electron_Sigma",
+          "Set": "Time series defined by using: Epoch",
+          "ParameterKey": "Electron_Sigma",
+          "Description": "Electron flux sigma uncertainty based on counting statistics",
+          "Cadence": "PT1M",
+          "Units": "(cm^2 s sr MeV)^-1",
+          "UnitsConversion": "6.24161e-19>(m^2 s sr J)^-1",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "Electron Sigma",
+            "ValueFormat": "E12.2",
+            "ScaleType": "LogScale"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "E 0.7 - 1.4 MeV",
+                "Index": "1",
+                "RenderingHints": {
+                  "AxisLabel": "1.05000"
+                }
+              },
+              {
+                "Name": "E 1.4 - 2.8 MeV",
+                "Index": "2",
+                "RenderingHints": {
+                  "AxisLabel": "2.10000"
+                }
+              },
+              {
+                "Name": "E 2.8 - 4.0 MeV",
+                "Index": "3",
+                "RenderingHints": {
+                  "AxisLabel": "3.40000"
+                }
+              }
+            ]
+          },
+          "ValidMin": "-1.0e+30",
+          "ValidMax": "1.0e+30",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": [
+              "Array",
+              "Uncertainty",
+              "Differential"
+            ],
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "Proton_Sigma",
+          "Set": "Time series defined by using: Epoch",
+          "ParameterKey": "Proton_Sigma",
+          "Description": "Proton flux sigma uncertainty based on counting statistics",
+          "Cadence": "PT1M",
+          "Units": "(cm^2 s sr MeV)^-1",
+          "UnitsConversion": "6.24161e-19>(m^2 s sr J)^-1",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "Proton Sigma",
+            "ValueFormat": "E12.2",
+            "ScaleType": "LogScale"
+          },
+          "Structure": {
+            "Size": "11",
+            "Element": [
+              {
+                "Name": "P 13.6 - 15.0 MeV",
+                "Index": "1",
+                "RenderingHints": {
+                  "AxisLabel": "14.3000"
+                }
+              },
+              {
+                "Name": "P 14.9 - 16.9 MeV",
+                "Index": "2",
+                "RenderingHints": {
+                  "AxisLabel": "15.9000"
+                }
+              },
+              {
+                "Name": "P 16.9 - 19.0 MeV",
+                "Index": "3",
+                "RenderingHints": {
+                  "AxisLabel": "18.1500"
+                }
+              },
+              {
+                "Name": "P 20.6 - 23.8 MeV",
+                "Index": "4",
+                "RenderingHints": {
+                  "AxisLabel": "22.2000"
+                }
+              },
+              {
+                "Name": "P 23.7 - 26.5 MeV",
+                "Index": "5",
+                "RenderingHints": {
+                  "AxisLabel": "25.1000"
+                }
+              },
+              {
+                "Name": "P 26.3 - 29.8 MeV",
+                "Index": "6",
+                "RenderingHints": {
+                  "AxisLabel": "28.0500"
+                }
+              },
+              {
+                "Name": "P 29.8 - 33.7 MeV",
+                "Index": "7",
+                "RenderingHints": {
+                  "AxisLabel": "31.7500"
+                }
+              },
+              {
+                "Name": "P 33.6 - 36.1 MeV",
+                "Index": "8",
+                "RenderingHints": {
+                  "AxisLabel": "34.8500"
+                }
+              },
+              {
+                "Name": "P 35.6 - 40.5 MeV",
+                "Index": "9",
+                "RenderingHints": {
+                  "AxisLabel": "38.0500"
+                }
+              },
+              {
+                "Name": "P 40 - 60 MeV",
+                "Index": "10",
+                "RenderingHints": {
+                  "AxisLabel": "50"
+                }
+              },
+              {
+                "Name": "P 60 - 100 MeV",
+                "Index": "11",
+                "RenderingHints": {
+                  "AxisLabel": "80"
+                }
+              }
+            ]
+          },
+          "ValidMin": "-1.0e+30",
+          "ValidMax": "1.0e+30",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": [
+              "Array",
+              "Uncertainty",
+              "Differential"
+            ],
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "Electron_Flux_midpoints",
+          "ParameterKey": "Electron_Flux_Energy_vals",
+          "Description": "Electron flux midpoints",
+          "Units": "MeV",
+          "UnitsConversion": "1.602176565e-13>J",
+          "RenderingHints": {
+            "AxisLabel": "Electron Flux energies",
+            "ValueFormat": "F5",
+            "ScaleType": "LogScale"
+          },
+          "Structure": {
+            "Size": "3"
+          },
+          "ValidMin": "1.0",
+          "ValidMax": "3.4",
+          "Support": {
+            "Qualifier": "Array",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Proton_Flux_Energy midpoint vals",
+          "ParameterKey": "Proton_Flux_Energy_vals",
+          "Description": "Proton_Flux_Energy midpoint vals",
+          "Units": "MeV",
+          "UnitsConversion": "1.602176565e-13>J",
+          "RenderingHints": {
+            "AxisLabel": "Proton Flux energies",
+            "ValueFormat": "F5",
+            "ScaleType": "LogScale"
+          },
+          "Structure": {
+            "Size": "11"
+          },
+          "ValidMin": "14.3",
+          "ValidMax": "80.0",
+          "Support": {
+            "Qualifier": "Array",
+            "SupportQuantity": "Other"
+          }
+        }
+      ]
     }
   }
 }
