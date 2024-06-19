@@ -8,15 +8,27 @@
       "ResourceID": "spase://NASA/NumericalData/ELFIN/A/EPD/L1/electron/PT0.2S",
       "ResourceHeader": {
         "ResourceName": "ELFIN A  Energetic Particle Detectors for Electrons (EPD-E) 0.2 s Data",
-        "ReleaseDate": "2024-06-10T12:34:56.789",
+        "DOI": "https://doi.org/10.48322/jyaq-cq12",
+        "ReleaseDate": "2024-06-19T12:34:56.789",
         "RevisionHistory": {
-          "RevisionEvent": {
-            "ReleaseDate": "2024-06-10T12:34:56.789Z",
-            "Note": "Numerical data metadata added to the Github."
-          }
+          "RevisionEvent": [
+            {
+              "ReleaseDate": "2024-06-10T12:34:56.789Z",
+              "Note": "Numerical data metadata added to the Github. JMW"
+            },
+            {
+              "ReleaseDate": "2024-06-19T12:34:56.789Z",
+              "Note": "Revised metadata and added DOI. JMW"
+            }
+          ]
         },
         "Description": "The Electron Losses and Fields Investigation (ELFIN) mission is a space weather mission using three scientific instruments in a 3U+ CubeSat. Each spacecraft has two Energetic Particle Detectors, one for Electrons (EPD-E) and one for Ions (EPD-I), as well as a Fluxgate Magnetometer deployed at the end of a 75cm stacer boom. These science instruments were developed by UCLA staff at the Institute for Geophysics and Planetary Physics (IGPP) and the Earth, Planetary, and Space Sciences department (EPSS). ",
         "Acknowledgement": "Please acknowledge the Principal Investigator, V. Angelopoulos, NASA, and NSF for providing the Data. Open Data for Scientific Use.",
+        "PublicationInfo": {
+          "Authors": "Angelopoulos, V.",
+          "PublicationDate": "2024-06-19T12:34:56.789Z",
+          "PublishedBy": "NASA Space Physics Data Facility"
+        },
         "Contact": [
           {
             "PersonID": "spase://SMWG/Person/Vassilis.Angelopoulos\t",
@@ -100,18 +112,18 @@
             "ValueFormat": "E12.2",
             "ScaleType": "LinearScale"
           },
-          "ValidMin": "2010-01-01T00:00:00.000000000",
-          "ValidMax": "2029-12-31T23:59:58.999000000",
+          "ValidMin": "2018-01-01T00:00:00.000000000",
+          "ValidMax": "2022-12-31T23:59:58.999000000",
           "FillValue": "9999-12-31T23:59:59.999999999",
           "Support": {
             "SupportQuantity": "Temporal"
           }
         },
         {
-          "Name": "Electron Counts",
+          "Name": "Electron Differential-Directional Counts",
           "Set": "Time series defined by using: ela_pef_time",
           "ParameterKey": "ela_pef",
-          "Description": "[ADC UNITS ONLY] L1 EPD Electron counts, Fast Mode - all 16 energies",
+          "Description": "[ADC UNITS ONLY] L1 EPD Electron differential-directional counts, Fast Mode - all 16 energies. All energy elements are the log-mean values of the channel.",
           "Cadence": "PT0.2S",
           "Units": "raw counts",
           "RenderingHints": {
@@ -245,13 +257,13 @@
           }
         },
         {
-          "Name": "Central Energy for Each of the 16 EPD Electron Channels",
+          "Name": "Central Energies for Each of the 16 EPD Electron Channels",
           "ParameterKey": "ela_pef_energies_mean",
-          "Description": "Central energy bins for each of 16 EPD electron channels",
+          "Description": "Central energies for each of 16 EPD electron channels. All values are the log-mean energies of each differential channel and not summed averages.",
           "Cadence": "PT0.2S",
           "Units": "keV",
           "RenderingHints": {
-            "AxisLabel": "Central electron energy bins",
+            "AxisLabel": "Central energies for ech eletron bin",
             "ValueFormat": "F12.8",
             "ScaleType": "LogScale"
           },
@@ -318,7 +330,7 @@
             "ValueFormat": "I2"
           },
           "ValidMin": "0",
-          "ValidMax": "16",
+          "ValidMax": "31",
           "FillValue": "-128",
           "Support": {
             "SupportQuantity": "Housekeeping"
@@ -344,19 +356,19 @@
           }
         },
         {
-          "Name": "Number of Sectors",
+          "Name": "Number of Spin Sectors",
           "Set": "Time series defined by using: ela_pef_time",
           "ParameterKey": "ela_pef_nsectors",
-          "Description": "number of sectors",
+          "Description": "Number of spin sectors",
           "Cadence": "PT0.2S",
           "Units": "num sectors",
           "RenderingHints": {
             "DisplayType": "TimeSeries",
-            "AxisLabel": "Number of sectors",
+            "AxisLabel": "Number of spin sectors",
             "ValueFormat": "I2"
           },
           "ValidMin": "0",
-          "ValidMax": "32",
+          "ValidMax": "31",
           "FillValue": "-128",
           "Support": {
             "SupportQuantity": "Housekeeping"
@@ -384,7 +396,7 @@
           "Name": "Electron Counts",
           "Set": "Time series defined by using: ela_pef_time",
           "ParameterKey": "ela_pef_8",
-          "Description": "---> just bottom eight energies",
+          "Description": "---> just the bottom eight energy channels",
           "Caveats": "This parameter is virtual. It is calculated by calling the function ALTERNATE_VIEW with the following input parameters: ela_pef.",
           "Cadence": "PT0.2S",
           "Units": "raw counts",
@@ -522,7 +534,7 @@
           "Name": "Electron Counts",
           "Set": "Time series defined by using: ela_pef_time",
           "ParameterKey": "ela_pef_top8",
-          "Description": "---> just top eight energies",
+          "Description": "---> just the top eight energy channels",
           "Caveats": "This parameter is virtual. It is calculated by calling the function ALTERNATE_VIEW with the following input parameters: ela_pef.",
           "Cadence": "PT0.2S",
           "Units": "raw counts",

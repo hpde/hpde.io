@@ -5,15 +5,25 @@
       <ResourceID>spase://NASA/NumericalData/ELFIN/A/EPD/L1/electron/PT0.2S</ResourceID>
       <ResourceHeader>
          <ResourceName>ELFIN A  Energetic Particle Detectors for Electrons (EPD-E) 0.2 s Data</ResourceName>
-         <ReleaseDate>2024-06-10T12:34:56.789</ReleaseDate>
+		 <DOI>https://doi.org/10.48322/jyaq-cq12</DOI>
+         <ReleaseDate>2024-06-19T12:34:56.789</ReleaseDate>
 		 <RevisionHistory>
             <RevisionEvent>
                <ReleaseDate>2024-06-10T12:34:56.789Z</ReleaseDate>
-               <Note>Numerical data metadata added to the Github.</Note>
+               <Note>Numerical data metadata added to the Github. JMW</Note>
+            </RevisionEvent>
+			<RevisionEvent>
+               <ReleaseDate>2024-06-19T12:34:56.789Z</ReleaseDate>
+               <Note>Revised metadata and added DOI. JMW</Note>
             </RevisionEvent>
          </RevisionHistory>
          <Description>The Electron Losses and Fields Investigation (ELFIN) mission is a space weather mission using three scientific instruments in a 3U+ CubeSat. Each spacecraft has two Energetic Particle Detectors, one for Electrons (EPD-E) and one for Ions (EPD-I), as well as a Fluxgate Magnetometer deployed at the end of a 75cm stacer boom. These science instruments were developed by UCLA staff at the Institute for Geophysics and Planetary Physics (IGPP) and the Earth, Planetary, and Space Sciences department (EPSS). </Description>
          <Acknowledgement>Please acknowledge the Principal Investigator, V. Angelopoulos, NASA, and NSF for providing the Data. Open Data for Scientific Use.</Acknowledgement>
+		 <PublicationInfo>
+		    <Authors>Angelopoulos, V.</Authors>
+			<PublicationDate>2024-06-19T12:34:56.789Z</PublicationDate>
+			<PublishedBy>NASA Space Physics Data Facility</PublishedBy>
+		 </PublicationInfo>
          <Contact>
             <PersonID>spase://SMWG/Person/Vassilis.Angelopoulos	</PersonID>
             <Role>PrincipalInvestigator</Role>
@@ -90,18 +100,18 @@
             <ValueFormat>E12.2</ValueFormat>
             <ScaleType>LinearScale</ScaleType>
          </RenderingHints>
-         <ValidMin>2010-01-01T00:00:00.000000000</ValidMin>
-         <ValidMax>2029-12-31T23:59:58.999000000</ValidMax>
+         <ValidMin>2018-01-01T00:00:00.000000000</ValidMin>
+         <ValidMax>2022-12-31T23:59:58.999000000</ValidMax>
          <FillValue>9999-12-31T23:59:59.999999999</FillValue>
          <Support>
             <SupportQuantity>Temporal</SupportQuantity>
          </Support>
       </Parameter>
       <Parameter>
-         <Name>Electron Counts</Name>
+         <Name>Electron Differential-Directional Counts</Name>
          <Set>Time series defined by using: ela_pef_time</Set>
          <ParameterKey>ela_pef</ParameterKey>
-         <Description>[ADC UNITS ONLY] L1 EPD Electron counts, Fast Mode - all 16 energies</Description>
+         <Description>[ADC UNITS ONLY] L1 EPD Electron differential-directional counts, Fast Mode - all 16 energies. All energy elements are the log-mean values of the channel.</Description>
          <Cadence>PT0.2S</Cadence>
          <Units>raw counts</Units>
          <RenderingHints>
@@ -233,13 +243,13 @@
 		 </Particle>
       </Parameter>
       <Parameter>
-         <Name>Central Energy for Each of the 16 EPD Electron Channels</Name>
+         <Name>Central Energies for Each of the 16 EPD Electron Channels</Name>
          <ParameterKey>ela_pef_energies_mean</ParameterKey>
-         <Description>Central energy bins for each of 16 EPD electron channels</Description>
+         <Description>Central energies for each of 16 EPD electron channels. All values are the log-mean energies of each differential channel and not summed averages.</Description>
 		 <Cadence>PT0.2S</Cadence>
          <Units>keV</Units>
          <RenderingHints>
-            <AxisLabel>Central electron energy bins</AxisLabel>
+            <AxisLabel>Central energies for ech eletron bin</AxisLabel>
             <ValueFormat>F12.8</ValueFormat>
             <ScaleType>LogScale</ScaleType>
          </RenderingHints>
@@ -306,7 +316,7 @@
             <ValueFormat>I2</ValueFormat>
          </RenderingHints>
          <ValidMin>0</ValidMin>
-         <ValidMax>16</ValidMax>
+         <ValidMax>31</ValidMax>
          <FillValue>-128</FillValue>
 		 <Support>
             <SupportQuantity>Housekeeping</SupportQuantity>
@@ -332,19 +342,19 @@
          </Support>
       </Parameter>
       <Parameter>
-         <Name>Number of Sectors</Name>
+         <Name>Number of Spin Sectors</Name>
          <Set>Time series defined by using: ela_pef_time</Set>
          <ParameterKey>ela_pef_nsectors</ParameterKey>
-         <Description>number of sectors</Description>
+         <Description>Number of spin sectors</Description>
          <Cadence>PT0.2S</Cadence>
          <Units>num sectors</Units>
          <RenderingHints>
             <DisplayType>TimeSeries</DisplayType>
-            <AxisLabel>Number of sectors</AxisLabel>
+            <AxisLabel>Number of spin sectors</AxisLabel>
             <ValueFormat>I2</ValueFormat>
          </RenderingHints>
          <ValidMin>0</ValidMin>
-         <ValidMax>32</ValidMax>
+         <ValidMax>31</ValidMax>
          <FillValue>-128</FillValue>
 		 <Support>
             <SupportQuantity>Housekeeping</SupportQuantity>
@@ -372,7 +382,7 @@
          <Name>Electron Counts</Name>
          <Set>Time series defined by using: ela_pef_time</Set>
          <ParameterKey>ela_pef_8</ParameterKey>
-         <Description>---&gt; just bottom eight energies</Description>
+         <Description>---&gt; just the bottom eight energy channels</Description>
          <Caveats>This parameter is virtual. It is calculated by calling the function ALTERNATE_VIEW with the following input parameters: ela_pef.</Caveats>
          <Cadence>PT0.2S</Cadence>
          <Units>raw counts</Units>
@@ -508,7 +518,7 @@
          <Name>Electron Counts</Name>
          <Set>Time series defined by using: ela_pef_time</Set>
          <ParameterKey>ela_pef_top8</ParameterKey>
-         <Description>---&gt; just top eight energies</Description>
+         <Description>---&gt; just the top eight energy channels</Description>
          <Caveats>This parameter is virtual. It is calculated by calling the function ALTERNATE_VIEW with the following input parameters: ela_pef.</Caveats>
          <Cadence>PT0.2S</Cadence>
          <Units>raw counts</Units>
