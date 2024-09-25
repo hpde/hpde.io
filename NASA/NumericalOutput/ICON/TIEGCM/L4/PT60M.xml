@@ -6,7 +6,7 @@
     <ResourceHeader>
       <ResourceName>Ionospheric Connection Explorer (ICON) Thermosphere Ionosphere Electrodynamics General Circulation Model (TIEGCM) Model Product</ResourceName>
 	  <AlternateName>ICON TIEGCM Model Products</AlternateName>
-      <ReleaseDate>2024-07-24T00:00:00Z</ReleaseDate>
+      <ReleaseDate>2024-09-25T00:00:00Z</ReleaseDate>
       <Description>Thermosphere Ionosphere Electrodynamics General Circulation Model (TIEGCM) L4-3 with Hough Mode Extension (HME) forcing. These metadtaa include both the model input data and model output data.</Description>
 	  <Acknowledgement>National Aeronautics and Space Administration; Dr. Astrid Maute; Dr. Thomas J. Immel</Acknowledgement>
 	  <Funding>
@@ -300,7 +300,7 @@
 	</Parameter>
 	<Parameter>
 	   <Name>Prescribed High Latitude Potential</Name>
-	   <ParameterKey>PHIM2D</ParameterKey>
+	   <ParameterKey>PHIMW</ParameterKey>
 	   <Description>Prescribed high latitude potential (for L4.3 Weimer potential). This is a 3 dimensional array: 81x97x24. The dimensions are based on the size of the arrays (81x97x24): mlon, mlat, and time.</Description>
 	   <Cadence>PT60M</Cadence>
 	   <Units>V</Units>
@@ -574,7 +574,7 @@
 	<Parameter>
 	   <Name>Neutral Vertical Wind</Name>
 	   <ParameterKey>WN</ParameterKey>
-	   <Description>Upward neutral wind (note that the vertical dimension is using ilev).  This is a 4 dimensional array: 144x72x57x24. The dimensions are based on the size of the arrays (144x72x57x24): long, lat, ilev, and time.</Description>
+	   <Description>Upward neutral wind (plus up) (note that the vertical dimension is using ilev).  This is a 4 dimensional array: 144x72x57x24. The dimensions are based on the size of the arrays (144x72x57x24): long, lat, ilev, and time.</Description>
 	   <Cadence>PT60M</Cadence>
 	   <Units>cm/s</Units>
 	   <FillValue>1e+36</FillValue>
@@ -734,7 +734,7 @@
 	<Parameter>
 	   <Name>CISM/CMIT coupling flag</Name>
 	   <ParameterKey>coupled_cmit</ParameterKey>
-	   <Description>1 if coupled with CISM/CMIT, 0 otherwise</Description>
+	   <Description>1 if coupled with Center for Integrated Space Weather Modeling (CISM)/Coupled Magnetospherer-Ionosphere-Thermosphere (CMIT), 0 otherwise</Description>
 	   <Cadence>PT60M</Cadence>
 	   <Support>
 		  <SupportQuantity>Other</SupportQuantity>
@@ -888,7 +888,7 @@
 	<Parameter>
 	   <Name>Global Scale Wave Model migrating diurnal tides data file</Name>
 	   <ParameterKey>gswm_mi_di_ncfile</ParameterKey>
-	   <Description>GSWM migrating diurnal tides data file. The lower boundary perturbations for TN, UN, VN, and Z. This is a 2 dimensional array: 1024x24.</Description>
+	   <Description>Global Scale Wave Model (GSWM) migrating diurnal tides data file. The lower boundary perturbations for TN, UN, VN, and Z. This is a 2 dimensional array: 1024x24.</Description>
 	   <Cadence>PT60M</Cadence>
 	   <Support>
 		  <SupportQuantity>Other</SupportQuantity>
@@ -897,7 +897,7 @@
 	<Parameter>
 	   <Name>Global Scale Wave Model migrating semi-diurnal tides data file</Name>
 	   <ParameterKey>gswm_mi_sdi_ncfile</ParameterKey>
-	   <Description>GSWM migrating semi-diurnal tides data file. The lower boundary perturbations for TN, UN, VN, and Z. This is a 2 dimensional array: 1024x24.</Description>
+	   <Description>Global Scale Wave Model (GSWM) migrating semi-diurnal tides data file. The lower boundary perturbations for TN, UN, VN, and Z. This is a 2 dimensional array: 1024x24.</Description>
 	   <Cadence>PT60M</Cadence>
 	   <Support>
 		  <SupportQuantity>Other</SupportQuantity>
@@ -906,7 +906,7 @@
 	<Parameter>
 	   <Name>Global Scale Wave Model non-migrating diurnal tides data file</Name>
 	   <ParameterKey>gswm_nm_di_ncfile</ParameterKey>
-	   <Description>GSWM non-migrating diurnal tides data file. The lower boundary perturbations for TN, UN, VN, and Z. This is a 2 dimensional array: 1024x24.</Description>
+	   <Description>Global Scale Wave Model (GSWM) non-migrating diurnal tides data file. The lower boundary perturbations for TN, UN, VN, and Z. This is a 2 dimensional array: 1024x24.</Description>
 	   <Cadence>PT60M</Cadence>
 	   <Support>
 		  <SupportQuantity>Other</SupportQuantity>
@@ -915,7 +915,7 @@
 	<Parameter>
 	   <Name>Global Scale Wave Model non-migrating semi-diurnal tides data file</Name>
 	   <ParameterKey>gswm_nm_sdi_ncfile</ParameterKey>
-	   <Description>GSWM non-migrating semi-diurnal tides data file. The lower boundary perturbations for TN, UN, VN, and Z. This is a 2 dimensional array: 1024x24.</Description>
+	   <Description>Global Scale Wave Model (GSWM) non-migrating semi-diurnal tides data file. The lower boundary perturbations for TN, UN, VN, and Z. This is a 2 dimensional array: 1024x24.</Description>
 	   <Cadence>PT60M</Cadence>
 	   <Support>
 		  <SupportQuantity>Other</SupportQuantity>
@@ -970,7 +970,7 @@
 	</Parameter>
 	<Parameter>
 	   <Name>Interplanetary Magnetic Field Data file</Name>
-	   <ParameterKey>hme_ncfile</ParameterKey>
+	   <ParameterKey>imf_ncfile</ParameterKey>
 	   <Description>IMF data file. GSM Bx, GSM By, GSM Bz, Swvel, Swden, Kp, f107, and f107a. This is a 2 dimensional array: 1024x24.</Description>
 	   <Cadence>PT60M</Cadence>
 	   <Support>
@@ -1062,7 +1062,7 @@
 	</Parameter>
 	<Parameter>
 	   <Name>Magnetic Longitude</Name>
-	   <ParameterKey>lon</ParameterKey>
+	   <ParameterKey>mlon</ParameterKey>
 	   <Description>Magnetic longitude (-west, +east).</Description>
 	   <Cadence>PT60M</Cadence>
 	   <Units>degrees</Units>
@@ -1101,7 +1101,7 @@
 	<Parameter>
 	   <Name>NCEP Data File</Name>
 	   <ParameterKey>ncep_ncfile</ParameterKey>
-	   <Description>NCEP data file.10 mb lower boundary for TN and Z. This is a 2 dimensional array: 1024x24.</Description>
+	   <Description>NCEP data file. 10 mb lower boundary for TN and Z. This is a 2 dimensional array: 1024x24.</Description>
 	   <Cadence>PT60M</Cadence>
 	   <Support>
 		  <SupportQuantity>Other</SupportQuantity>
@@ -1129,7 +1129,7 @@
 	   <Name>Reference pressure (as used by the model)</Name>
 	   <ParameterKey>p0_model</ParameterKey>
 	   <Description>Reference pressure (as used by the model).</Description>
-	   <Units>microbars?????see above????</Units>
+	   <Units>microbars</Units>
 	   <Support>
 		  <SupportQuantity>Other</SupportQuantity>
 	   </Support>
@@ -1174,7 +1174,7 @@
 	</Parameter>
 	<Parameter>
 	   <Name>Solar Wind Velocity</Name>
-	   <ParameterKey>swden</ParameterKey>
+	   <ParameterKey>swvel</ParameterKey>
 	   <Description>Solar Wind Velocity.</Description>
 	   <Cadence>PT60M</Cadence>
 	   <Units>km/s</Units>
@@ -1214,7 +1214,7 @@
 	<Parameter>
 	   <Name>Time Step</Name>
 	   <ParameterKey>timestep</ParameterKey>
-	   <Description>Time minutes since 2022-1-1 0:0:0.</Description>
+	   <Description>Timestep size.</Description>
 	   <Cadence>PT60M</Cadence>
 	   <Units>seconds</Units>
 	   <Support>
