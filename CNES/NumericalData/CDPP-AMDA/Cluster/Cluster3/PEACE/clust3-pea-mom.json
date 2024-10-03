@@ -9,7 +9,7 @@
       "ResourceHeader": {
         "ResourceName": "Cluster 3 - PEACE - electron moments",
         "AlternateName": "Cluster 3 electron moments",
-        "ReleaseDate": "2023-12-17T21:13:51Z",
+        "ReleaseDate": "2024-08-22T14:02:19Z",
         "Description": " The  CAA  Moments  data  are  electron  density,  velocity  vector, \n            pressure  tensor  and  heat  flux  vector.  The  vectors  and tensors  are  provided  in  GSE  coordinates.  Velocity  and  temperature  \n            are  also  provided  as  components  perpendicular  and parallel  to  the  magnetic field. \n            The  magnetic  field  data  is  taken  from  CSDS  FGM  PP  data,  at  present.  In  a  possible  future \n            release  we would  ideally  use CAA  FGM  data,  but  it  is  considered  unlikely  that  there  will  be  major  differences  except  in \n            very weak field regions. Furthermore : \n            * T_perp and T_para are determined by projecting the pressure tensor along the magnetic field and dividing by the density and by Boltzmanns constant. T_perp is the average of the two perpendicular components.              \n            * v_para = (v.b) b and v_perp = v - (v.b) b. where v is the velocity vector and b is the magnetic field unit vector. \n           \n           These data  are  produced on the  ground  using 3-D  data  and thus are  available at  time  resolutions  which are  limited by the \n            rate  at  which  3-D  data  can  be  transmitted.  The  data  source  used  to  generate  the  mome\n            nts  is  always  the  best  available resolution 3-D data; this means mainly 3DR data but in the case 3DX or 3DXP are available these \n            are used instead for the MOMENTS  production (see  Mode_DataOrigin_HEEA/LEEA).  Choices  on  the  best  way  to  combine  data  from  the  two \n            sensors can be made in the moments production software; in the first release the moments are made using LEEA data in the \n            energy overlap region. \n            In some situations, use of both sensors together may be a better choice, for example in case\n            s where the  distribution  changes \n            during  a  spin  as  the  method  can  resolve  time  aliasing  errors.  If  resources  allow,  the  Moments \n            product at CAA may be updated to take advantage of this possibility.\n            The  advantage  of  these  ground  - calculated  moments  is  that  the  best  available \n            calibration  data  is  used,  a  correction  can  be made  for  the  spacecraft  potential\n            measurements  (collected  by  the  EFW  experiment),  and  spacecraft  electrons  can  be \n            properly  removed.  The  current  release  has  been  generated  automatically  \n            using  default  values  to  control  the  approach  to \n            potential correction and photoelectron removal, and has not been systematically human\n            - validated, so some errors may exist. \n            Specifically, the spacecraft potential, Vsc, is set to be 1 V greater than the\n            measured probe - spacecraft potential provided by \n            the electric field experiment (EFW) and the lower energy cutoff for the  moments\n            integration is set to reject the energy bin \n            containing  the  EFW  potential  and  the  one  above  that  (which  in  practice  \n            may  also  contain  counts  due  to  spacecraft electrons). \n            Sometimes cold electrons are present which can appear in the same energy bin as the spacecraft photoelectrons, \n            therefore  both the  cold electrons and spacecraft photoelectrons are  removed resulting in underestimated electron densities. \n            Recent  work\n            by  the  EFW  team  suggests  a  more  accurate  determination  of  from  would  be  a  term  that  increases  linearly \n            above  ~10  V  (Cully  et  al.,  2007)  but  this  has  not  yet  been  \n            implemented  in  our  CAA  moments  generation  code.",
         "Acknowledgement": "Principal Investigator: Andrew Fazakerley",
         "Contact": {
@@ -71,7 +71,7 @@
       "TemporalDescription": {
         "TimeSpan": {
           "StartDate": "2001-01-09T15:15:12Z",
-          "StopDate": "2021-12-30T20:30:04Z"
+          "StopDate": "2022-12-30T18:25:09Z"
         },
         "CadenceMin": "PT4S",
         "CadenceMax": "PT160S"
@@ -424,7 +424,7 @@
           "Name": "heat_flux_gse",
           "ParameterKey": "c3_pea_flux",
           "Description": "\n                Parallel electron heat flux at spin time resolution, in GSE\n            ",
-          "UCD": "phys.heatflux;phys.atmol.ionStage",
+          "UCD": "phys.flux.energy;phys.atmol.ionStage",
           "Cadence": "PT4S",
           "Units": "microW/m^2",
           "RenderingHints": {

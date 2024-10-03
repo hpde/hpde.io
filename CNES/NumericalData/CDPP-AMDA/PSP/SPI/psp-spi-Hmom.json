@@ -9,7 +9,7 @@
       "ResourceHeader": {
         "ResourceName": "PSP - SWEAP SPANi - protons - moments",
         "AlternateName": "SWEAP SPAN-Ai Level 3 moments",
-        "ReleaseDate": "2022-02-14T10:47:55Z",
+        "ReleaseDate": "2024-09-25T16:27:37Z",
         "Description": "\n             This data product contains Partial moments of the Proton distribution function in the RTN frame of reference. User should be aware that the full ion distribution is typically not in the field of view of the instrument. \n         ",
         "Acknowledgement": "\n             Please acknowledge the NASA Parker Solar Probe Mission and SWEAP team\n             led by Justin Kasper for use of data.\n         ",
         "Contact": [
@@ -72,8 +72,8 @@
       "MeasurementType": "ThermalPlasma",
       "TemporalDescription": {
         "TimeSpan": {
-          "StartDate": "2018-10-02T04:03:47Z",
-          "StopDate": "2021-07-31T23:59:48Z"
+          "StartDate": "2018-10-02T04:04:01Z",
+          "StopDate": "2024-04-30T04:07:52Z"
         },
         "CadenceMin": "PT0.437S",
         "CadenceMax": "PT56S"
@@ -197,6 +197,65 @@
           "Particle": {
             "ParticleType": "Proton",
             "Qualifier": "Vector",
+            "ParticleQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "h+ v_rtn",
+          "ParameterKey": "psp_spi_Hv",
+          "Description": "Particle Velocity in RTN frame",
+          "Units": "km/s",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "RTN"
+          },
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "vr",
+                "Qualifier": "Component.I",
+                "Index": "1",
+                "ParameterKey": "psp_spi_Hv(0)"
+              },
+              {
+                "Name": "vt",
+                "Qualifier": "Component.J",
+                "Index": "2",
+                "ParameterKey": "psp_spi_Hv(1)"
+              },
+              {
+                "Name": "vn",
+                "Qualifier": "Component.K",
+                "Index": "3",
+                "ParameterKey": "psp_spi_Hv(2)"
+              }
+            ]
+          },
+          "Particle": {
+            "ParticleType": "Ion",
+            "Qualifier": "Vector",
+            "ParticleQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "h+ |v|",
+          "ParameterKey": "psp_spi_Hvtot",
+          "Description": "Particle Velocity magnitude",
+          "UCD": "phys.magField",
+          "Units": "km/s",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Structure": {
+            "Size": "1"
+          },
+          "Particle": {
+            "ParticleType": "Ion",
+            "Qualifier": "Magnitude",
             "ParticleQuantity": "Velocity"
           }
         }

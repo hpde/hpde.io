@@ -6,12 +6,14 @@
     <ResourceHeader>
       <ResourceName>OMNI - Sun / Solar Wind / Ground-Based Indices - 1 min</ResourceName>
       <AlternateName>One min averaged</AlternateName>
-      <ReleaseDate>2024-04-15T01:20:09Z</ReleaseDate>
+      <ReleaseDate>2024-09-29T23:36:21Z</ReleaseDate>
       <Description>1 min averaged, multi-source, near-Earth solar wind magnetic 
               field, plasma and energetic proton flux data, plus AE, AU, AL, Kp, ap, and Dst 
               geomagnetic indices, Polar Cap (Thule) index, F10.7 index, and Rz (sunspot number). 
               The ram pressure is calculated using P=rho*Np*Vp², where rho=1.672622*(1+4*(1/(1-He++_ratio)-1)). 
               We use rho=2 here, which corresponds to a ratio of He++ between 4% and 5%.
+
+              Determination of bow shock nose location : https://omniweb.gsfc.nasa.gov/html/HROdocum.html#ap4
             </Description>
       <Acknowledgement>We acknowledge the experiment teams that acquired, processed 
 and provided the OMNI-included data, and J.H. King and N.E. Papitashvili of NASA/GSFC 
@@ -28,6 +30,10 @@ for creating the OMNI data set.</Acknowledgement>
         <Name>OMNI documentation at OMNIWeb</Name>
         <URL>http://omniweb.sci.gsfc.nasa.gov/html/ow_data.html</URL>
         <Description>Extensive OMNI documentation pages</Description>
+      </InformationURL>
+      <InformationURL>
+        <Name>Determination of bow shock nose location</Name>
+        <URL>https://omniweb.gsfc.nasa.gov/html/HROdocum.html#ap4</URL>
       </InformationURL>
     </ResourceHeader>
     <AccessInformation>
@@ -70,7 +76,7 @@ for creating the OMNI data set.</Acknowledgement>
     <TemporalDescription>
       <TimeSpan>
         <StartDate>1981-01-01T00:00:00Z</StartDate>
-        <StopDate>2024-03-14T00:33:00Z</StopDate>
+        <StopDate>2024-09-04T00:51:00Z</StopDate>
       </TimeSpan>
       <Cadence>PT60S</Cadence>
     </TemporalDescription>
@@ -226,6 +232,38 @@ for creating the OMNI data set.</Acknowledgement>
         <ParticleType>Proton</ParticleType>
         <ParticleQuantity>Pressure</ParticleQuantity>
       </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>bow shock nose location gse</Name>
+      <ParameterKey>omni1_bsn</ParameterKey>
+      <Units>Re</Units>
+      <RenderingHints>
+        <DisplayType>TimeSeries</DisplayType>
+      </RenderingHints>
+      <Structure>
+        <Size>3</Size>
+        <Element>
+          <Name>bsn_x</Name>
+          <Index>1</Index>
+          <ParameterKey>omni1_bsn(0)</ParameterKey>
+          <FillValue>9999.9</FillValue>
+        </Element>
+        <Element>
+          <Name>bsn_y</Name>
+          <Index>2</Index>
+          <ParameterKey>omni1_bsn(1)</ParameterKey>
+          <FillValue>9999.9</FillValue>
+        </Element>
+        <Element>
+          <Name>bsn_z</Name>
+          <Index>3</Index>
+          <ParameterKey>omni1_bsn(2)</ParameterKey>
+          <FillValue>9999.9</FillValue>
+        </Element>
+      </Structure>
+      <Support>
+        <SupportQuantity>Positional</SupportQuantity>
+      </Support>
     </Parameter>
   </NumericalData>
 </Spase>

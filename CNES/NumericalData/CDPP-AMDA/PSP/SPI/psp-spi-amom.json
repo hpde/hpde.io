@@ -9,8 +9,8 @@
       "ResourceHeader": {
         "ResourceName": "PSP - SWEAP SPANi - alphas - moments",
         "AlternateName": "SWEAP SPAN-Ai Level 3 moments",
-        "ReleaseDate": "2021-11-22T04:14:32Z",
-        "Description": "\n             This data product contains Partial moments of the Alpha distribution function in the RTN frame of reference. User should be aware that the full ion distribution is typically not in the field of view of the instrument. \n         ",
+        "ReleaseDate": "2024-09-25T15:46:33Z",
+        "Description": "\n             This data product contains Partial moments of the Alpha distribution function in the SPAN-Ion instrument, PSP spacecraft, and RTN coordinate systems. User should be aware that the full ion distribution is typically NOT in the FOV of the instrument.\n         ",
         "Acknowledgement": "\n             Please acknowledge the NASA Parker Solar Probe Mission and SWEAP team\n             led by Justin Kasper for use of data.\n         ",
         "Contact": [
           {
@@ -67,13 +67,13 @@
         }
       ],
       "ProviderName": "SPDF",
-      "ProviderResourceName": "psp/sweap/spi/l3/spi_sf0a_mom_inst/",
+      "ProviderResourceName": "psp/sweap/spi/l3/spi_sf0a_l3_mom/",
       "InstrumentID": "spase://CNES/Instrument/CDPP-AMDA/PSP/SPI",
       "MeasurementType": "ThermalPlasma",
       "TemporalDescription": {
         "TimeSpan": {
-          "StartDate": "2018-10-02T04:03:47Z",
-          "StopDate": "2021-07-31T23:59:48Z"
+          "StartDate": "2018-10-02T04:04:15Z",
+          "StopDate": "2024-04-30T04:07:52Z"
         },
         "CadenceMin": "PT0.437S",
         "CadenceMax": "PT56S"
@@ -197,6 +197,65 @@
           "Particle": {
             "ParticleType": "Ion",
             "Qualifier": "Vector",
+            "ParticleQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "he++ v_rtn",
+          "ParameterKey": "psp_spi_av",
+          "Description": "Particle Velocity in RTN frame",
+          "Units": "km/s",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "RTN"
+          },
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "vr",
+                "Qualifier": "Component.I",
+                "Index": "1",
+                "ParameterKey": "psp_spi_av(0)"
+              },
+              {
+                "Name": "vt",
+                "Qualifier": "Component.J",
+                "Index": "2",
+                "ParameterKey": "psp_spi_av(1)"
+              },
+              {
+                "Name": "vn",
+                "Qualifier": "Component.K",
+                "Index": "3",
+                "ParameterKey": "psp_spi_av(2)"
+              }
+            ]
+          },
+          "Particle": {
+            "ParticleType": "Ion",
+            "Qualifier": "Vector",
+            "ParticleQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "he++ |v|",
+          "ParameterKey": "psp_spi_avtot",
+          "Description": "Particle Velocity magnitude",
+          "UCD": "phys.magField",
+          "Units": "km/s",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Structure": {
+            "Size": "1"
+          },
+          "Particle": {
+            "ParticleType": "Ion",
+            "Qualifier": "Magnitude",
             "ParticleQuantity": "Velocity"
           }
         }

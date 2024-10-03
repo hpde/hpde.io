@@ -9,8 +9,8 @@
       "ResourceHeader": {
         "ResourceName": "OMNI - Sun / Solar Wind / Ground-Based Indices - 1 min V2",
         "AlternateName": "One min averaged",
-        "ReleaseDate": "2023-09-07T05:47:50Z",
-        "Description": "1 min averaged, multi-source, near-Earth solar wind magnetic \n              field, plasma and energetic proton flux data, plus AE, AU, AL, Kp, ap, and Dst \n              geomagnetic indices, Polar Cap (Thule) index, F10.7 index, and Rz (sunspot number). \n              The ram pressure is calculated using P=rho*Np*Vp², where rho=1.672622*(1+4*(1/(1-He++_ratio)-1)).\n              We use rho=2 here, which corresponds to a ratio of He++ between 4% and 5%.\n            ",
+        "ReleaseDate": "2023-09-07T07:47:50Z",
+        "Description": "1 min averaged, multi-source, near-Earth solar wind magnetic \n              field, plasma and energetic proton flux data, plus AE, AU, AL, Kp, ap, and Dst \n              geomagnetic indices, Polar Cap (Thule) index, F10.7 index, and Rz (sunspot number). \n              The ram pressure is calculated using P=rho*Np*Vp², where rho=1.672622*(1+4*(1/(1-He++_ratio)-1)).\n              We use rho=2 here, which corresponds to a ratio of He++ between 4% and 5%.\n\n              Determination of bow shock nose location : https://omniweb.gsfc.nasa.gov/html/HROdocum.html#ap4\n            ",
         "Acknowledgement": "We acknowledge the experiment teams that acquired, processed \nand provided the OMNI-included data, and J.H. King and N.E. Papitashvili of NASA/GSFC \nfor creating the OMNI data set.",
         "Contact": [
           {
@@ -22,11 +22,17 @@
             "Role": "TechnicalContact"
           }
         ],
-        "InformationURL": {
-          "Name": "OMNI documentation at OMNIWeb",
-          "URL": "http://omniweb.sci.gsfc.nasa.gov/html/ow_data.html",
-          "Description": "Extensive OMNI documentation pages"
-        }
+        "InformationURL": [
+          {
+            "Name": "OMNI documentation at OMNIWeb",
+            "URL": "http://omniweb.sci.gsfc.nasa.gov/html/ow_data.html",
+            "Description": "Extensive OMNI documentation pages"
+          },
+          {
+            "Name": "Determination of bow shock nose location",
+            "URL": "https://omniweb.gsfc.nasa.gov/html/HROdocum.html#ap4"
+          }
+        ]
       },
       "AccessInformation": [
         {
@@ -346,6 +352,40 @@
           "FillValue": "99999",
           "Support": {
             "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "bow shock nose location gse",
+          "ParameterKey": "omni_hro2_1min_bsn_gse",
+          "Units": "Re",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "bsn_x",
+                "Index": "1",
+                "ParameterKey": "omni_hro2_1min_bsn_gse(0)",
+                "FillValue": "9999.9"
+              },
+              {
+                "Name": "bsn_y",
+                "Index": "2",
+                "ParameterKey": "omni_hro2_1min_bsn_gse(1)",
+                "FillValue": "9999.9"
+              },
+              {
+                "Name": "bsn_z",
+                "Index": "3",
+                "ParameterKey": "omni_hro2_1min_bsn_gse(2)",
+                "FillValue": "9999.9"
+              }
+            ]
+          },
+          "Support": {
+            "SupportQuantity": "Positional"
           }
         }
       ]
