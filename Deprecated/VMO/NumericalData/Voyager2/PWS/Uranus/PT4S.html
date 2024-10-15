@@ -266,7 +266,171 @@ a.xml-logo:hover {
    text-decoration:underline; 
 }
 
-	  </style></head><body><div><a id="top"/></div><div class="header"><div class="middle">HPDE.io</div></div><div class="page"><div class="spase"><div class="abstract"><div class="access"><p class="box-title">Data Access</p><ul class="list"><li class="list"><a target="_blank" href="http://pds-ppi.igpp.ucla.edu/search/view/?f=yes&amp;id=pds://PPI/VG2-U-PWS-2-RDR-SA-4SEC-V1.0">PDS/PPI</a></li></ul></div><div class="citation inset"><h1><a name="spase://VMO/NumericalData/Voyager2/PWS/Uranus/PT4S">Voyager 2 Uranus PWS Edited RDR Uncalib Spectrum Analyzer 4-s V1.0</a></h1></div><div><p class="right"><a target="_blank" href="PT4S.xml">View XML</a> 
+	  </style></head><body><div><a id="top"/></div><div class="header"><div class="middle">HPDE.io</div></div><div class="page"><div class="spase"><div class="abstract"><div class="access"><p class="box-title">Data Access</p><ul class="list"><li class="list"><a target="_blank" href="http://pds-ppi.igpp.ucla.edu/search/view/?f=yes&amp;id=pds://PPI/VG2-U-PWS-2-RDR-SA-4SEC-V1.0">PDS/PPI</a></li></ul></div><div class="citation inset"><h1><a name="spase://VMO/NumericalData/Voyager2/PWS/Uranus/PT4S">Voyager 2 Uranus PWS Edited RDR Uncalib Spectrum Analyzer 4-s V1.0</a></h1><p><div class="term">ResourceID</div><div class="definition">spase://VMO/NumericalData/Voyager2/PWS/Uranus/PT4S</div></p><p><div class="term">Description</div><div class="definition"><p>This data set consists of 4-second edited, wave electric<br>
+field intensities from the Voyager 2 Plasma Wave Receiver<br>
+spectrum analyzer obtained in the vicinity of the Uranian<br>
+magnetosphere. For each 4-second interval, a field strength<br>
+is determined for each of the 16 spectrum analyzer channels<br>
+whose center frequencies range from 10 Hertz to 56.2<br>
+kiloHertz and which are logarithmically spaced in<br>
+frequency, four channels per decade. The time associated<br>
+with each set of intensities (16 channels) is the time of<br>
+the beginning of the scan. During data gaps where complete<br>
+4-second spectra are missing, no entries exist in the file,<br>
+that is, the gaps are not zero-filled or tagged in any<br>
+other way. When one or more channels are missing within a<br>
+scan, the missing measurements are zero-filled. Data are<br>
+edited but not calibrated. The data numbers in this data<br>
+set can be plotted in raw form for event searches and<br>
+simple trend analysis since they are roughly proportional<br>
+to the log of the electric field strength. Calibration<br>
+procedures and tables are provided for use with this data<br>
+set; the use of these is described below.</p>
+<pre><code>                    Use of Voyager PWS Calibration Tables
+
+
+      The Voyager PWS calibration tables are given in two plain
+      ASCII text files named VG1PWSCL.TAB and VG2PWSCL.TAB (for
+      Voyagers-1 and -2, respectively). These provide information
+      to convert the uncalibrated `data number' output of the PWS
+      16-channel spectrum analyzer to calibrated antenna voltages
+      for each frequency channel. Following is a brief
+      description of these files and a tutorial in their
+      application.
+
+      The first column lists an uncalibrated data number followed
+      by the corresponding value in calibrated volts for each of
+      the 16 frequency channels of the PWS spectrum analyzer.
+      Each line contains calibrations for successive data number
+      values ranging from 0 through 255. (Data number 0 actually
+      represents the lack of data since the baseline noise values
+      for each channel are all above that.)
+
+      A data analysis program may load the appropriate table into
+      a data structure and thus provide a simple look-up scheme
+      to obtain the appropriate voltage for a given data number
+      and frequency channel. For example, the following VAX
+      FORTRAN code may be used to load a calibration array for
+      Voyager 2 PWS:
+
+       real*4 cal (16,0:255)
+       open ( unit=10, file='vg2pwscl.tab', status='old' )
+       do i=0,38
+        read (10,*) ! skip 38 lines of label info
+       end do
+       do i=0,255
+        read (10,*) idn, (cal(ichan,i),ichan=1,16)
+       end do
+       close (10)
+
+      Then, given an uncalibrated data value idn for the
+      frequency channel ichan, the corresponding calibrated
+      antenna voltage would be given by the following array
+      reference:
+
+            volts = cal (ichan, idn)
+
+
+      This may be converted to a wave electric field amplitude by
+      dividing by the effective antenna length in meters, 7.07m.
+      That is:
+
+            efield = cal(ichan, idn) / 7.07
+
+
+      Spectral density units may be obtained by dividing the
+      square of the electric field value by the nominal frequency
+      bandwidth of the corresponding spectrum analyzer channel.
+
+            specdens = (cal(ichan,idn)/7.07)**2 / bandwidth(ichan)
+
+
+      Finally, power flux may be obtained by dividing the
+      spectral density by the impedance of free space in ohms:
+
+       pwrflux=((cal(ichan,idn)/7.07)**2/bandwidth(ichan))/376.73
+
+
+      Of course, for a particular application, it may be more
+      efficient to apply the above conversions to the calibration
+      table directly.
+
+      The center frequencies and bandwidths of each PWS spectrum
+      analyzer channel for the Voyager 2 PWS are given below:
+
+             VOYAGER 2 PWS SPECTRUM ANALYZER
+
+                                              Voyager-2
+             Channel    Center Frequency      Bandwidth
+
+             1             10.0 Hz             2.16  Hz
+             2             17.8 Hz             3.58  Hz
+             3             31.1 Hz             4.50  Hz
+             4             56.2 Hz            10.7   Hz
+             5            100.  Hz            13.8   Hz
+             6            178.  Hz            28.8   Hz
+             7            311.  Hz            39.8   Hz
+             8            562.  Hz            75.9   Hz
+             9           1.00   kHz           75.9   Hz
+             10          1.78   kHz          151.    Hz
+             11          3.11   kHz          324.    Hz
+             12          5.62   kHz          513.    Hz
+             13         10.0    kHz          832.    Hz
+             14         17.8    kHz         1260.    Hz
+             15         31.1    kHz         2400.    Hz
+             16         56.2    kHz         3800.    Hz
+
+      A failure in the Voyager 2 Flight Data System which occurred
+      about 3 months after launch has adversely affected the
+      calibration of PWS channels 9 through 16. An algorithm has
+      been devised to partially correct for this failure, and has
+      proven useful for Voyager 2 Jupiter, Saturn, and Uranus
+      encounters, but is not valid for Earth-Jupiter cruise and
+      may be modified in the future. The following implementation
+      of this correction algorithm in VAX FORTRAN assumes that
+      uncalibrated data numbers are stored in a 16-element
+      integer array, idn, with the array index equal to the PWS
+      channel number:
+
+      real*4 tonl(9:16) ! the old noise level for v2
+      data tonl/2.0,1.0,-1.0,-2.0,-3.0,1.0,2.0,1.0/
+
+      do ichan=9,16
+       if (idn(ichan).gt.0) then
+        if(idn(ichan).lt.64) idn(ichan)=64
+        if (idn(ichan).le.72) then
+         idn(ichan)=int(tonl(ichan)-530.4+8.6
+                        *real(idn(ichan)))
+        else
+         idn(ichan)=int(tonl(ichan)+20.113+0.99
+                        *real(idn(ichan)))
+        end if
+       end if
+      end do
+
+      This correction should not be applied permanently to the
+      Voyager 2 calibration table since it is valid for a limited
+      time span and may be modified in the future.
+
+
+      Additional information about this dataset and the
+      instrument which produced it can be found elsewhere in this
+      catalog. An overview of the data in this data set can be
+      found in Gurnett et al. [1986] and a complete instrument
+      description can be found in Scarf and Gurnett [1977].
+
+SAMPLING_PARAMETER_NAME        = TIME
+SAMPLING_PARAMETER_RESOLUTION  = 4.000000
+MINIMUM_SAMPLING_PARAMETER     = 197708201553.000000
+MAXIMUM_SAMPLING_PARAMETER     = N/A
+SAMPLING_PARAMETER_INTERVAL    = 4.000000
+MINIMUM_AVAILABLE_SAMPLING_INT = 4.000000
+SAMPLING_PARAMETER_UNIT        = SECOND
+DATA_SET_PARAMETER_NAME        = PLASMA WAVE SPECTRUM
+NOISE_LEVEL                    = 0.000005
+DATA_SET_PARAMETER_UNIT        = VOLT/METER
+</code></pre>
+</div></p></div><div><p class="right"><a target="_blank" href="PT4S.xml">View XML</a> 
 				| <a target="_blank" href="PT4S.json">View JSON</a> 
 				| <a target="_blank" href="https://spase-editor.heliocloud.org/?edit=https://hpde.io/VMO/NumericalData/Voyager2/PWS/Uranus/PT4S.xml">Edit</a></p><h1 class="detail">Details</h1></div><div><div class="product"><p class="version">Version:2.2.2</p><h1>NumericalData</h1><div class="term">ResourceID</div><div class="definition">spase://VMO/NumericalData/Voyager2/PWS/Uranus/PT4S</div><div class="term">ResourceHeader</div><div class="definition"><div class="term">ResourceName</div><div class="definition">Voyager 2 Uranus PWS Edited RDR Uncalib Spectrum Analyzer 4-s V1.0</div><div class="term">ReleaseDate</div><div class="definition">2017-01-19 10:00:00.00</div><div class="term">Description</div><div class="definition"><p>This data set consists of 4-second edited, wave electric<br>
 field intensities from the Voyager 2 Plasma Wave Receiver<br>

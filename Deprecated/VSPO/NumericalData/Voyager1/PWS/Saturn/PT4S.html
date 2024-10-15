@@ -266,7 +266,61 @@ a.xml-logo:hover {
    text-decoration:underline; 
 }
 
-	  </style></head><body><div><a id="top"/></div><div class="header"><div class="middle">HPDE.io</div></div><div class="page"><div class="spase"><div class="abstract"><div class="access"><p class="box-title">Data Access</p><ul class="list"><li class="list"><a target="_blank" href="https://pds-ppi.igpp.ucla.edu/search/view/?f=yes&amp;id=pds://PPI/VG1-S-PWS-2-RDR-SA-4.0SEC-V1.0">PDS/PPI</a></li></ul></div><div class="citation inset"><h1><a name="spase://VSPO/NumericalData/Voyager1/PWS/Saturn/PT4S">Voyager 1 Saturn Plasma Wave Spectrometer (PWS) Edited Spectrum Analyzer, Version 1.0, 4 s Data</a></h1></div><div><p class="right"><a target="_blank" href="PT4S.xml">View XML</a> 
+	  </style></head><body><div><a id="top"/></div><div class="header"><div class="middle">HPDE.io</div></div><div class="page"><div class="spase"><div class="abstract"><div class="access"><p class="box-title">Data Access</p><ul class="list"><li class="list"><a target="_blank" href="https://pds-ppi.igpp.ucla.edu/search/view/?f=yes&amp;id=pds://PPI/VG1-S-PWS-2-RDR-SA-4.0SEC-V1.0">PDS/PPI</a></li></ul></div><div class="citation inset"><h1><a name="spase://VSPO/NumericalData/Voyager1/PWS/Saturn/PT4S">Voyager 1 Saturn Plasma Wave Spectrometer (PWS) Edited Spectrum Analyzer, Version 1.0, 4 s Data</a></h1><p><div class="term">ResourceID</div><div class="definition">spase://VSPO/NumericalData/Voyager1/PWS/Saturn/PT4S</div></p><p><div class="term">Description</div><div class="definition"><ul>
+<li><p>Data Set Overview</p></li>
+<li><p>=================</p></li>
+<li><p>Data Set Description</p></li>
+<li><p>====================</p></li>
+</ul>
+<p>This Data Set consists of 4 s edited, Wave Electric Field Intensities from the Voyager 1 Plasma Wave Receiver Spectrum Analyzer obtained in the Vicinity of the Kronian Magnetosphere. For each 4 s Interval, a Field Strength is determined for each of the sixteen Spectrum Analyzer Channels whose Center Frequencies range from 10 Hz to 56.2 kHz and which are logarithmically spaced in Frequency, four Channels per Decade. The Time associated with each Set of Intensities (sixteen Channels) is the Time of the Beginning of the Scan. During Data Gaps where complete 4 s Spectra are missing, no Entries exist in the File, that is, the Gaps are not Zero-filled or Tagged in any other way. When one or more Channels are missing within a Scan, the missing Measurements are Zero-filled. Data are edited but not calibrated. The Data Numbers in this Data Set can be plotted in raw Form for Event Searches and simple Trend Analysis since they are roughly proportional to the Log of the Electric Field Strength. Calibration Procedures and Tables are provided for use with this Data Set; the use of these is described below.</p>
+<ul>
+<li>Use of Voyager PWS Calibration Tables</li>
+</ul>
+<p>The Voyager PWS Calibration Table is given in an ASCII Text File named SA_CL.TAB (for Voyager 1). This provides Information to convert the uncalibrated &quot;Data Number&quot; Output of the PWS sixteen-channel Spectrum Analyzer to calibrated Antenna Voltages for each Frequency Channel. Following is a brief Description of these Files and a Tutorial in their Application.</p>
+<p>Descriptive Headers have been removed from the Calibration Table File. The Columns included are IDN, ICHAN01, ICHAN02, ICHAN03, ICHAN04, ICHAN05, ICHAN06, ..., ICHAN16.</p>
+<p>The first Column lists an uncalibrated Data Number followed by the corresponding Value in calibrated Volts for each of the sixteen Frequency Channels of the PWS Spectrum Analyzer. Each Line contains Calibrations for successive Data Number Values ranging from 0 through 255. (Data Number 0 actually represents the Lack of Data since the Baseline Noise Values for each Channel are all above that.)</p>
+<p>A Data Analysis Program may load the appropriate Table into a Data Structure and thus provide a simple Look-up Scheme to obtain the appropriate Voltage for a given Data Number and Frequency Channel. For example, the following VAX FORTRAN Code may be used to load a Calibration Array for Voyager 1 PWS:</p>
+<ul>
+<li>real*4 cal(16,0:255)</li>
+<li>open(unit=10,file='SA_CL.TAB'status='old'</li>
+<li></li>
+<li>do i=0,255</li>
+<li>read(10,*) idn,(cal(ichan,i),ichan=1,16)</li>
+<li>end do</li>
+<li></li>
+<li>close(10)</li>
+</ul>
+<p>Then, given an uncalibrated Data Value idn for the Frequency Channel ichan, the corresponding calibrated Antenna Voltage would be given by the following Array Reference:</p>
+<ul>
+<li>volts=cal(ichan,idn)</li>
+</ul>
+<p>This may be converted to a Wave Electric Field Amplitude by dividing by the effective Antenna Length in meters, 7.07 m. That is:</p>
+<ul>
+<li>efield=cal(ichan,idn)/7.07</li>
+</ul>
+<p>Spectral Density Units may be obtained by dividing the Square of the Electric Field Value by the nominal Frequency Bandwidth of the corresponding Spectrum Analyzer Channel.</p>
+<ul>
+<li>specdens=(cal(ichan,idn)/7.07)^2/bandwidth(ichan)</li>
+</ul>
+<p>Finally, Power Flux may be obtained by dividing the Spectral Density by the Impedance of Free Space in Ohms:</p>
+<ul>
+<li>pwrflux=((cal(ichan,idn)/7.07)^2/bandwidth(ichan))/376.73</li>
+</ul>
+<p>Of course, for a particular Application, it may be more efficient to apply the above Conversions to the Calibration Table directly.</p>
+<p>The Center Frequencies and Bandwidths of each PWS Spectrum Analyzer Channel for the Voyager 1 PWS are given below:</p>
+<ul>
+<li>Voyager 1 PWS Spectrum Analyzer</li>
+<li>===============================</li>
+</ul>
+<p>+----------------------------------------+<br>
+| Channel | Center Frequency | Bandwidth |</p>
+<hr>
+<p>| 1       | 10.0 Hz          | 2.16 Hz   |<br>
+| 2       | 17.8 Hz          | 3.58 Hz   |<br>
+| 3       | 31.1 Hz          | 4.50 Hz   |<br>
+| 4       | 56.2 Hz          | 10.7 Hz   |<br>
++----------------------------------------+</p>
+</div></p></div><div><p class="right"><a target="_blank" href="PT4S.xml">View XML</a> 
 				| <a target="_blank" href="PT4S.json">View JSON</a> 
 				| <a target="_blank" href="https://spase-editor.heliocloud.org/?edit=https://hpde.io/VSPO/NumericalData/Voyager1/PWS/Saturn/PT4S.xml">Edit</a></p><h1 class="detail">Details</h1></div><div><div class="product"><p class="version">Version:2.3.0</p><h1>NumericalData</h1><div class="term">ResourceID</div><div class="definition">spase://VSPO/NumericalData/Voyager1/PWS/Saturn/PT4S</div><div class="term">ResourceHeader</div><div class="definition"><div class="term">ResourceName</div><div class="definition">Voyager 1 Saturn Plasma Wave Spectrometer (PWS) Edited Spectrum Analyzer, Version 1.0, 4 s Data</div><div class="term">ReleaseDate</div><div class="definition">2018-11-27 18:09:04Z</div><div class="term">Description</div><div class="definition"><ul>
 <li><p>Data Set Overview</p></li>

@@ -266,7 +266,216 @@ a.xml-logo:hover {
    text-decoration:underline; 
 }
 
-	  </style></head><body><div><a id="top"/></div><div class="header"><div class="middle">HPDE.io</div></div><div class="page"><div class="spase"><div class="abstract"><div class="access"><p class="box-title">Data Access</p><ul class="list"><li class="list"><a target="_blank" href="ftp://spdf.gsfc.nasa.gov/pub/data/ulysses/radio/urap/">FTP access to files at SPDF</a></li><li class="list"><a target="_blank" href="https://spdf.gsfc.nasa.gov/pub/data/ulysses/radio/urap/">HTTP access to files at SPDF</a></li><li class="list"><a target="_blank" href="https://urap.gsfc.nasa.gov/cgi-bin/giffer.py?plot_type=dynspec">URAP Data Access Viewer</a></li></ul></div><div class="citation inset"><h1><a name="spase://VWO/DisplayData/Ulysses/URAP/DS.P1D">Ulysses URAP Daily Color Dynamic Spectrogram Plot</a></h1></div><div><p class="right"><a target="_blank" href="DS.P1D.xml">View XML</a> 
+	  </style></head><body><div><a id="top"/></div><div class="header"><div class="middle">HPDE.io</div></div><div class="page"><div class="spase"><div class="abstract"><div class="access"><p class="box-title">Data Access</p><ul class="list"><li class="list"><a target="_blank" href="ftp://spdf.gsfc.nasa.gov/pub/data/ulysses/radio/urap/">FTP access to files at SPDF</a></li><li class="list"><a target="_blank" href="https://spdf.gsfc.nasa.gov/pub/data/ulysses/radio/urap/">HTTP access to files at SPDF</a></li><li class="list"><a target="_blank" href="https://urap.gsfc.nasa.gov/cgi-bin/giffer.py?plot_type=dynspec">URAP Data Access Viewer</a></li></ul></div><div class="citation inset"><h1><a name="spase://VWO/DisplayData/Ulysses/URAP/DS.P1D">Ulysses URAP Daily Color Dynamic Spectrogram Plot</a></h1><p><div class="term">ResourceID</div><div class="definition">spase://VWO/DisplayData/Ulysses/URAP/DS.P1D</div></p><p><div class="term">Description</div><div class="definition"><p>from URAP Users Notes: Guide  To  The  Archiving  Of  Ulysses Radio  And  Plasma  Wave  Data<br>
+by Roger Hess, Robert MacDowall, Denise Lengyel-Frey</p>
+<pre><code>               March 15, 1995 - version 1.0
+            revised March 24, 1999 - version 1.1
+             revised June 8, 1999 - version 1.2
+</code></pre>
+<p>These color plots present URAP radio and plasma wave data in a<br>
+format referred to as dynamic spectra.  For the daily plots, the time<br>
+resolution is 128 seconds, providing high-time resolution across the<br>
+entire frequency range of the URAP receivers.  The 10-day plots<br>
+use 10-minute resolution data, which permits good detection of<br>
+bursty wave activity.  The 26-day plots use 1-hour resolution data;<br>
+these plots correspond to the other Ulysses 26-day plot intervals,<br>
+but the ability to identify wave activity is reduced.  The power of<br>
+the electric or magnetic field is shown in color as a 2-dimensional<br>
+function of time and frequency.  The plots include data from the<br>
+URAP Radio Astronomy Receivers (RAR), Plasma Frequency<br>
+Receiver (PFR), and Waveform Analyzer (WFA).  Refer to the<br>
+documentation for the 10-minute average archive data files, as well<br>
+as Stone et al. (1992), for more general information on these<br>
+instruments.  Here, we describe the choices that were made in<br>
+generating these plots.</p>
+<ol>
+<li><p>Formats - These plots are available in 2 formats: GIF files for<br>
+viewing with a web browser and Postscript files for high quality<br>
+printed copies.  The resolution of the GIF files is 776 x 600 pixels,<br>
+a compromise between smaller size for network transfer and larger<br>
+size for improved resolution. The Postscript files are sized to fit<br>
+both 8.5x11 inch paper or A4 paper.  The daily unzipped (zipped)<br>
+Postscript files are typically 400-440 kB ( 130-140 KB) in size; the<br>
+daily GIF files are typically 200-230 kB in size.  (The 10-day and<br>
+26-day plots are similar in size.)</p></li>
+<li><p>Data units - The data and the associated color bar are plotted in<br>
+units of decibels, an old radio astronomer unit for describing signal<br>
+to background ratio on a logarithmic scale.  Specifically,</p>
+<pre><code>   Data_in_dB = 10. * log10(total power/background power)
+</code></pre></li>
+</ol>
+<p>The data for electric field observations are in units of microvolts<strong>2<br>
+Hz</strong>(-1) as are the calculated background levels.  The units for<br>
+magnetic field observations (the bottom panels on the page) are<br>
+nT<strong>2 Hz</strong>(-1).  The data for the 1-day plots are comparable to the<br>
+squared values of data in the URAP UFA 10-minute files.<br>
+Although the ratio (total power-background power)/background<br>
+power permits one to see weaker events in such plots, it is more<br>
+sensitive to background  determination and enhances the noise<br>
+seen in the plots.  Therefore, it is not used here.</p>
+<ol start="3">
+<li>Backgrounds - The background levels as a function of frequency<br>
+for the RAR and WFA are determined from the data for the day,<br>
+because they vary throughout the mission.  The PFR background<br>
+does not vary significantly with time, so fixed background levels<br>
+are used.  For each of the instruments, the backgrounds vary with<br>
+the instrument mode, so separate sets of backgrounds are derived<br>
+for each mode that is present.   (Modes are discussed below).<br>
+The PFR and WFA backgrounds also depend significantly on bit<br>
+rate.  For the RAR the background level selected is the lowest 3%<br>
+of the data for each frequency; for the PFR and WFA, the<br>
+background level selected is the lowest 10% of the data for each<br>
+frequency.  The higher number is chosen for the WFA because the<br>
+data are substantially noisier than the RAR.</li>
+</ol>
+<p>It should be noted that this type of background subtraction will<br>
+remove any signal at a given frequency that is constant throughout<br>
+the day.  An example is the quasithermal noise line (&quot;plasma line&quot;)<br>
+in the RAR data, when the density does not vary throughout the<br>
+day.</p>
+<p>Note that for 10-day and 26-day plots, in particular, the background<br>
+determination might result from a few hours of very low intensity<br>
+data, which will cause all the other data, referenced to that<br>
+background, to appear enhanced.  This is an unfortunate<br>
+consequence of determining the background levels from intervals<br>
+of minimum data intensity.</p>
+<ol start="4">
+<li>Modes and other labels - Each of the instruments has several<br>
+modes that affect the data display.  The telemetry bit rate is also<br>
+an important parameter.  The key modes and the bit rate are<br>
+shown on the dynamic spectrum as the thickness (or nonexistence)<br>
+of a line.</li>
+</ol>
+<p>The RAR Hi and Lo bands are plotted in separate panels because<br>
+they are commanded separately.  For each band, the spin-plane<br>
+and spin-axis antennas can be either summed or separate.  If the<br>
+RAR Hi or Lo band instrument is in summed mode, then a white<br>
+line for the appropriate band is present under the RAR plot.<br>
+Summed mode provides data used for 3-dimensional direction<br>
+finding at the expense of a higher background level.  Because the<br>
+backgrounds will differ between summed and separate modes,<br>
+backgrounds are calculated for both modes when they are present.<br>
+Although the RAR is typically operated in a mode where<br>
+measurements are made at all 76 frequencies, there are times<br>
+when only a subset of the frequencies are sampled (called<br>
+Measure mode).  In these cases, the data plotted are interpolated<br>
+in frequency to give a clearer picture of the events that might be<br>
+taking place.  These intervals are evident from the appearance of<br>
+the data, which is smoothed in frequency; see Nov. 6, 1990, where<br>
+the RAR Lo band is in Measure mode for the first 18 hours of the<br>
+day. This example also shows the RAR hi band in a rarely-used,<br>
+single frequency mode.  If the Measure mode data occupy less<br>
+than 10% of the day; they are not interpolated, because the events<br>
+occurring at these times should be clear from the non-Measure<br>
+mode data, and it is useful to see which frequencies are being<br>
+sampled.  The Jupiter flyby interval (e.g., Feb. 8, 1992) includes<br>
+examples of short intervals of measure mode.</p>
+<p>The bit rate significantly affects the PFR and WFA backgrounds.  If<br>
+the science data bit rate is 1024 bps, it is indicated by a thick line,<br>
+512 bps is indicated by a thin line, and low (&quot;emergency&quot;) bit rates,<br>
+either 256 or 126 bps, by no line.</p>
+<p>The PFR operates in one of 3 modes - fast scan, slow scan, or<br>
+fixed tune (see Stone et al., 1992).  These 3 modes have different<br>
+backgrounds and generate different interferences for the WFA<br>
+instrument.  Fast scan is shown by the white line under the PFR<br>
+plot, slow scan is in progress if there is no line, and fixed tune is a<br>
+single frequency mode (evident from the PFR data display),<br>
+typically used in 1 hour/day intervals.</p>
+<p>The WFA instruments can sample either the electrical (E) antennas<br>
+or the (B-field) search coil.   For the low band of the WFA B field<br>
+data (&lt; 8 Hz), either By or Bz data are telemetered.  The available<br>
+parameter is shown by the white line above the B (WFA) plot<br>
+(present=By, absent=Bz).</p>
+<ol start="5">
+<li><p>Interpolation - In addition to the interpolation discussed above<br>
+for the RAR, the RAR data are interpolated to remove data gaps of<br>
+384 seconds or less.  We interpolate the RAR data because the<br>
+events observed in the RAR, such as solar type II and type III<br>
+radio bursts, are mostly smoothly varying on time scales of a few<br>
+minutes.  Therefore, they are easier to visualize and interpret when<br>
+data gaps are interpolated.  For the events in the PFR and WFA<br>
+data, predominantly bursty wave events, interpolation is not<br>
+necessary and not performed.  An exception occurs when the data<br>
+telemetry rate is either 256 or 128 bps; then the WFA data are<br>
+interpolated in time because they are not sampled every 128 sec.<br>
+Finally, the RAR Hi band data, for which there are only 12<br>
+channels of data, are interpolated to fit a logarithmic frequency<br>
+scale with 37 equivalent frequencies.</p></li>
+<li><p>Interference and other issues affecting data interpretation - Each<br>
+of these instruments, like all sensitive wave receivers, is affected<br>
+by interference from other sources.  For the RAR Hi band, an<br>
+interference signal at 81 kHz is produced by the Ulysses GAS<br>
+instrument.  Depending on the mode in which the GAS instrument<br>
+is operating, this interference can occur from 0 to 24 hours per<br>
+day.  If an algorithm determines that this interference is present in<br>
+more than about 10% the RAR data for the day, we remove the 80<br>
+kHz data and interpolate from adjacent frequencies.  The RAR Hi<br>
+band also has an enhanced background at 120 kHz (source<br>
+unknown).  Subtraction of this enhanced background can cause<br>
+artifacts in other events, like type III bursts.  See Nov. 30, 1990 as<br>
+an example.</p></li>
+</ol>
+<p>The RAR Lo band has an interference line at 8.75 kHz and odd<br>
+harmonics caused by the Ulysses traveling wave tube amplifier<br>
+(TWTA), which is part of the high gain telemetry system.  In<br>
+general, this signal is removed by the background subtraction,<br>
+sometimes producing artifacts in weak radio events or the thermal<br>
+noise spectrum at these frequencies</p>
+<p>The PFR experiences interference from the URAP Sounder; these<br>
+data are removed from the plots and appear as short data gaps.<br>
+The background levels of the PFR depend on bit rate, PFR mode,<br>
+and the cadence of the URAP Fast Envelope Sampler (FES data<br>
+not presented in these plots); these background variations can<br>
+affect the appearance of events at the transition from one mode to<br>
+another.</p>
+<p>The WFA data are affected by numerous interferences, of which<br>
+the URAP PFR is the dominant source.  WFA &quot;backgrounds&quot; vary<br>
+significantly depending on whether the PFR is in fast or slow scan<br>
+mode or fixed tune, so separate backgrounds are calculated for<br>
+each of these.  The URAP Sounder also causes interference;<br>
+these data are removed from the plots and appear as short data<br>
+gaps.  Spacecraft thruster operations produce a variety of artifacts<br>
+in the data; since we have no indication of these in our telemetry,<br>
+they are not flagged on the plots.  Examples may be seen on Feb<br>
+23, 1995 at 12:00 and on Feb. 25, 1995 at 15:00. An interesting<br>
+&quot;interference&quot; is seen to disappear on Dec. 17, 1990; this is when<br>
+the spacecraft nutation was stopped.  This is best seen on the 26-<br>
+day plots.</p>
+<p>To summarize, there are a variety of artifacts in the wave data that<br>
+affect interpretation.  These can result from corrupted telemetry<br>
+values (producing bad pixels (most evident in the RAR plots, see<br>
+March 23, 1993, from 6:00-14:00, or August 16, 1991, a very good<br>
+example of very bad data quality), interferences (e.g., non-physical,<br>
+block-like structures sometimes seen in the highest frequencies of<br>
+the WFA E and B data (see March 14, 1995)), or changes of the<br>
+instrument mode or the physical medium (e.g., a short interval of<br>
+data with a very low signal level defines a background for the rest<br>
+of the day that is not appropriate; see Nov. 4, 1990, when the Ex<br>
+antenna was deployed).</p>
+<ol start="7">
+<li>Spacecraft location - At the lower left on the plots, 4 parameters<br>
+related to the location of Ulysses at the mid-time of the plot are<br>
+printed:</li>
+</ol>
+<p>a) the Ulysses-Sun (U-S) distance in AU,<br>
+b) the heliographic latitude (Hlat_U) of Ulysses in degrees,<br>
+c) the Ulysses-Sun-Earth (U-S-E) angle in degrees, and<br>
+d) the Ulysses-Jupiter (U-J) distance in AU.</p>
+<p>These are among the most relevant parameters for interpreting the<br>
+URAP data.  Additional parameters, as well as a graphic showing<br>
+the Ulysses location relative to the Sun, Earth, and Jupiter, can be<br>
+found at the URAP Home Page at Goddard Space Flight Center (see below).</p>
+<ol start="8">
+<li>For additional information on these plots or on the URAP data,<br>
+contact the PI of the URAP investigation, Dr. Robert MacDowall, at</li>
+</ol>
+<p>phone:  1-301-286-2608<br>
+fax:      1-301-286-1683<br>
+email:   robert.macdowall@gsfc.nasa.gov.</p>
+<p>The URL for the URAP Home Page at Goddard Space Flight<br>
+Center is<br>
+https://urap.gsfc.nasa.gov/</p>
+</div></p></div><div><p class="right"><a target="_blank" href="DS.P1D.xml">View XML</a> 
 				| <a target="_blank" href="DS.P1D.json">View JSON</a> 
 				| <a target="_blank" href="https://spase-editor.heliocloud.org/?edit=https://hpde.io/VWO/DisplayData/Ulysses/URAP/DS.P1D.xml">Edit</a></p><h1 class="detail">Details</h1></div><div><div class="product"><p class="version">Version:2.2.1</p><h1>DisplayData</h1><div class="term">ResourceID</div><div class="definition">spase://VWO/DisplayData/Ulysses/URAP/DS.P1D</div><div class="term">ResourceHeader</div><div class="definition"><div class="term">ResourceName</div><div class="definition">Ulysses URAP Daily Color Dynamic Spectrogram Plot</div><div class="term">AlternateName</div><div class="definition">Ulysses Unified Radio and Plasma wave (URAP) Investigation Daily Color Dynamic Spectrogram Plot</div><div class="term">ReleaseDate</div><div class="definition">2010-10-25 12:00:00Z</div><div class="term">Description</div><div class="definition"><p>from URAP Users Notes: Guide  To  The  Archiving  Of  Ulysses Radio  And  Plasma  Wave  Data<br>
 by Roger Hess, Robert MacDowall, Denise Lengyel-Frey</p>

@@ -266,7 +266,78 @@ a.xml-logo:hover {
    text-decoration:underline; 
 }
 
-	  </style></head><body><div><a id="top"/></div><div class="header"><div class="middle">HPDE.io</div></div><div class="page"><div class="spase"><div class="abstract"><div class="access"><p class="box-title">Data Access</p><ul class="list"><li class="list"><a target="_blank" href="https://pds-ppi.igpp.ucla.edu/search/view/?f=yes&amp;id=pds://PPI/VG1-J-MAG-4-SUMM-S3COORDS-1.92SEC-V1.1">PDS/PPI</a></li></ul></div><div class="citation inset"><h1><a name="spase://NASA/NumericalData/Voyager1/MAG/Jupiter/PT1.92S">Voyager 1 Jupiter Magnetic Field in System III (1965) Coordinates, Resampled, Version 1.1, 1.92 s Data</a></h1></div><div><p class="right"><a target="_blank" href="PT1.92S.xml">View XML</a> 
+	  </style></head><body><div><a id="top"/></div><div class="header"><div class="middle">HPDE.io</div></div><div class="page"><div class="spase"><div class="abstract"><div class="access"><p class="box-title">Data Access</p><ul class="list"><li class="list"><a target="_blank" href="https://pds-ppi.igpp.ucla.edu/search/view/?f=yes&amp;id=pds://PPI/VG1-J-MAG-4-SUMM-S3COORDS-1.92SEC-V1.1">PDS/PPI</a></li></ul></div><div class="citation inset"><h1><a name="spase://NASA/NumericalData/Voyager1/MAG/Jupiter/PT1.92S">Voyager 1 Jupiter Magnetic Field in System III (1965) Coordinates, Resampled, Version 1.1, 1.92 s Data</a></h1><p><div class="term">ResourceID</div><div class="definition">spase://NASA/NumericalData/Voyager1/MAG/Jupiter/PT1.92S</div></p><p><div class="term">Description</div><div class="definition"><ul>
+<li><p>Data Set Overview</p></li>
+<li><p>=================</p></li>
+<li><p>Version 1.1</p></li>
+<li><p>===========</p></li>
+</ul>
+<p>This Version 1.1 Data Set replaces the Version 1.0 Data Set (DATA_SET_ID=VG1-J-MAG-4-1.92SEC) previously archived with PDS. Changes to this Version include the Addition of Data Columns not included in Version 1.0, the Modification of Time Format and Flag Values, and Upgrade of associated Labels and Catalog Templates to PDS Version 3.2.</p>
+<ul>
+<li>Data Set Overview</li>
+<li>=================</li>
+</ul>
+<p>This Data Set includes calibrated Magnetic Field Data acquired by the Voyager 1 Low Field Magnetometer (LFM) during the Jupiter Encounter. Coverage begins in the Solar Wind inbound to Jupiter and continues past the last outbound Bowshock Crossing. The Data are in System III (1965) (SYS3) Coordinates and have been averaged from the 60 ms Instrument Sampling Rate to a 1.92 s Sample Rate. All Magnetic Field Measurements are given in nT. The Magnetic Field Data are calibrated (see the Calibration Description included in the Voyager 1 Magnetometer Instrument Catalog File for Details).</p>
+<ul>
+<li>Parameters</li>
+<li>==========</li>
+</ul>
+<p>The full LFM Instrument Sampling Rate is one Sample per 0.06 s. Full Telemetry Resolution &quot;Detail&quot; Data must be obtained from the Instrument Team. These Data have been resampled at 1.92 s from the Detail Data.</p>
+<p>The LFM has eight Dynamic Ranges. The Instrument is designed to switch between Dynamic Ranges automatically depending on the observed Magnetic Field Magnitude and Fluctuations. Instrument Digitization Uncertainty depends on the Dynamic Range as indicated in the following Table from (Behannon et al., 1977).</p>
+<ul>
+<li>LFM Dynamic Ranges and Quantization Uncertainty</li>
+<li>===============================================</li>
+</ul>
+<p>+----------------------------------------------+<br>
+| Range Num | Range (nT)   | Quantization (nT) |</p>
+<hr>
+<p>| 1         | ±8.8         | ±0.0022           |<br>
+| 2         | ±26          | ±0.0063           |<br>
+| 3         | ±79          | ±0.019            |<br>
+| 4         | ±240         | ±0.059            |<br>
+| 5         | ±710         | ±0.173            |<br>
+| 6         | ±2,100       | ±0.513            |<br>
+| 7         | ±6,400       | ±1.56             |<br>
+| 8         | ±50,000      | ±12.2             |<br>
++----------------------------------------------+</p>
+<ul>
+<li>Processing</li>
+<li>==========</li>
+</ul>
+<p>Voyager EDRs undergo the following Processing in order to produce these 1.92 s averaged Summary Data:</p>
+<ul>
+<li>Read EDR</li>
+<li>Unpack Header Block (Receiver ID, Spacecraft ID, Telemetry Mode, FDS Counts, Data Flags)</li>
+<li>Convert selected Time Tags to Integer Time (YY/DDD/HH:MM:SS.FFF)</li>
+<li>Unpack Sub-header Block (MAG Status Words, Plasma Data)</li>
+<li>Unpack Science Block (MAG Counts)</li>
+<li>Convert Counts to nT</li>
+<li>Apply Sensor and Boom Alignment Matrices</li>
+<li>Rotate (optional) 1.92 s Averages while averaging Detail Data in nT to create 1.92 s Averages</li>
+<li>Write Summary Record</li>
+</ul>
+<p>Counts are measured onboard using 12-bit Words that may represent Values ranging from 0 to 4096. Integer Counts are converted to Magnetic Field Units (nT) by subtracting a Zero Offset from the measured MAG Value and multiplying this Difference by the Sensitivity of the Instrument.</p>
+<ul>
+<li>Data</li>
+<li>====</li>
+</ul>
+<p>The Data Files are given in ASCII, Fixed Field Width, Comma-delimited Tables. The Record Structure is described in the following Table:</p>
+<ul>
+<li>Resampled Magnetic Field Data in System III (1965) Coordinates</li>
+<li>==============================================================</li>
+</ul>
+<p>+------------------------------------------------------------------------------------------------------------+<br>
+| Column   | Type | Description                                                                              |</p>
+<hr>
+<p>| Time     | a23  | Spacecraft Event Time (UT) of the Sample in the Format: YYYY-MM-DDTHH:MM:SS.SSS          |<br>
+| sclk     | a12  | Spacecraft Clock in the Format: MOD65536:MOD60:FDS-LINE                                  |<br>
+| mag_id   | i1   | Magnetometer ID (1=LFM, 2=HFM)                                                           |<br>
+| Br       | f9.3 | Average of Detail Magnetic Field R Component in nT                                       |<br>
+| Btheta   | f9.3 | Average of Detail Magnetic Field Theta Component in nT                                   |<br>
+| Bphi     | f9.3 | Average of Detail Magnetic Field Phi Component in nT                                     |<br>
+| Bmag     | f    |                                                                                          |<br>
++------------------------------------------------------------------------------------------------------------+</p>
+</div></p></div><div><p class="right"><a target="_blank" href="PT1.92S.xml">View XML</a> 
 				| <a target="_blank" href="PT1.92S.json">View JSON</a> 
 				| <a target="_blank" href="https://spase-editor.heliocloud.org/?edit=https://hpde.io/NASA/NumericalData/Voyager1/MAG/Jupiter/PT1.92S.xml">Edit</a></p><h1 class="detail">Details</h1></div><div><div class="product"><p class="version">Version:2.3.0</p><h1>NumericalData</h1><div class="term">ResourceID</div><div class="definition">spase://NASA/NumericalData/Voyager1/MAG/Jupiter/PT1.92S</div><div class="term">ResourceHeader</div><div class="definition"><div class="term">ResourceName</div><div class="definition">Voyager 1 Jupiter Magnetic Field in System III (1965) Coordinates, Resampled, Version 1.1, 1.92 s Data</div><div class="term">ReleaseDate</div><div class="definition">2020-07-07 21:15:54Z</div><div class="term">Description</div><div class="definition"><ul>
 <li><p>Data Set Overview</p></li>

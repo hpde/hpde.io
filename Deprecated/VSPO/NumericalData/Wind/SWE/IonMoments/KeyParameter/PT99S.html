@@ -266,7 +266,58 @@ a.xml-logo:hover {
    text-decoration:underline; 
 }
 
-	  </style></head><body><div><a id="top"/></div><div class="header"><div class="middle">HPDE.io</div></div><div class="page"><div class="spase"><div class="abstract"><div class="access"><p class="box-title">Data Access</p><ul class="list"><li class="list"><a target="_blank" href="ftps://spdf.gsfc.nasa.gov/pub/data/wind/swe/swe_k0/">FTPS from SPDF (not with most browsers)</a></li><li class="list"><a target="_blank" href="https://spdf.gsfc.nasa.gov/pub/data/wind/swe/swe_k0/">HTTPS from SPDF</a></li><li class="list"><a target="_blank" href="https://cdaweb.sci.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=WI_K0_SWE&amp;index=sp_phys">CDAWeb</a></li></ul></div><div class="citation inset"><h1><a name="spase://VSPO/NumericalData/Wind/SWE/IonMoments/KeyParameter/PT99S">Wind Solar Wind Experiment (SWE) Thermal Plamsa Moments, Key Parameter (K0), 99 s Data</a></h1></div><div><p class="right"><a target="_blank" href="PT99S.xml">View XML</a> 
+	  </style></head><body><div><a id="top"/></div><div class="header"><div class="middle">HPDE.io</div></div><div class="page"><div class="spase"><div class="abstract"><div class="access"><p class="box-title">Data Access</p><ul class="list"><li class="list"><a target="_blank" href="ftps://spdf.gsfc.nasa.gov/pub/data/wind/swe/swe_k0/">FTPS from SPDF (not with most browsers)</a></li><li class="list"><a target="_blank" href="https://spdf.gsfc.nasa.gov/pub/data/wind/swe/swe_k0/">HTTPS from SPDF</a></li><li class="list"><a target="_blank" href="https://cdaweb.sci.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=WI_K0_SWE&amp;index=sp_phys">CDAWeb</a></li></ul></div><div class="citation inset"><h1><a name="spase://VSPO/NumericalData/Wind/SWE/IonMoments/KeyParameter/PT99S">Wind Solar Wind Experiment (SWE) Thermal Plamsa Moments, Key Parameter (K0), 99 s Data</a></h1><p><div class="term">ResourceID</div><div class="definition">spase://VSPO/NumericalData/Wind/SWE/IonMoments/KeyParameter/PT99S</div></p><p><div class="term">Description</div><div class="definition"><p>Wind SWE Key Parameter data: proton density, thermal speed, flow velocity vectors, and spacecraft position vectors. Various versions differ slightly from each other. The version at MIT has flow velocity vectors experessed bby using Geocentric Solar Ecliptic, GSE, Cartesian and spherical representations and GSE Cartesian position vectors. The version available via nssdcftp and FTPBrowser has temperature instead of thermal speed and has no flow direction angles. The CDAWeb version has flow velocity and spacecraft position vectors in both GSE and Geocentric Solar Magnetospheric, GSM, coordinates, flow dynamic pressure, NmV^2, and velocity and density quality flags. The data were progressively despiked in passing from CDAWeb to MIT to nssdcftp/FTPBrowser.</p>
+<p>Use of the Quality Variables:</p>
+<p>Quality flags are set in the analysis program that generates the KP data. Previous descriptions of their meaning were out of date.</p>
+<p>Good data is indicated by a quality flag equal to 0.</p>
+<p>The quality flags for each parameter are given as integers 4 bytes long, integer*4.</p>
+<p>The individual 'bits' for each quality value are set or cleared in the analysis code by adding or subtracting a power of 2 as follows. To set the first bit, add 1, the second bit, add 2, the third bit, add 4, the fourth bit, add 8, and so on. See the table below.</p>
+<p>+------------------------------------------------------------------------------------------------------------------------------+<br>
+| Bit | Set Value | MEANING                                                                                                    |<br>
+|------------------------------------------------------------------------------------------------------------------------------|<br>
+| 1   | 1         | Three point parabolic fits to proton peaks were not attempted.                                             |<br>
+| 2   | 2         | Non-linear least squares fit was not attempted.                                                            |<br>
+| 3   | 4         | Three point parabolic fits to proton peaks failed.                                                         |<br>
+| 4   | 8         | Non-linear least squares fit failed.                                                                       |<br>
+| 5   | 16        | Alpha parameters not valid since the non-linear least squares fit was done for protons only.               |<br>
+|     |           | Not enough good energy channels to do simultaneous alpha fit. This value applies to iqual_core(5) only.    |<br>
+| 6   | 32        | Analysis code unable to get good value for spin period.                                                    |<br>
+| 7   | 64        | SWE instrument in mode 1, calibration state mode. Key parameters are produced in mode 1, science mode.     |<br>
+| 8   | 128       | Three point fits done for cup 1 only. Split collector ratio of currents used to get the north/south angle. |<br>
+|     |           | Either cup 2 turned off, or cup 2 densities were low indicating noise associated with vibration.           |<br>
+| 9   | 256       | Fewer than ten fc_blocks in spectrum. Analysis skipped.                                                    |<br>
+| 10  | 512       | Alpha particle non-linear fit produced values of density and thermal speed that do not seem reasonable.    |<br>
+| 11  | 1024      | Three point parabolic fits to proton peaks done for cup 2 only. Probably Cup 1 is turned off.              |<br>
+|     |           | The ratio of currents on split collectors used to get north/south angle.                                   |<br>
+| 12  | 2048      | Single width windows. Delta E over E 6.5% instead of the default 13%.                                      |<br>
+| 13  | 4096      | Tracking mode operation.                                                                                   |<br>
+| 14  | 8192      | Limited tracking mode scan, not a full scan.                                                               |<br>
++------------------------------------------------------------------------------------------------------------------------------+</p>
+<p>Particular flag settings:</p>
+<p>+-------------------------------------------------------------------------------------------+<br>
+| Flag Value | Meaning                                                                      |<br>
+|-------------------------------------------------------------------------------------------|<br>
+| 4098       | Tracking mode operation is full scan (4096) and No non-linear fits (2)       |<br>
+| 14338      | Tracking mode operation is full scan (4096) and Limited tracking mode (8192) |<br>
++-------------------------------------------------------------------------------------------+</p>
+<p>Comments:</p>
+<ul>
+<li>Note that in bit 4 of the quality flag the non-linear fit may be reported as good for protons and, at the same time, not good for alphas.</li>
+<li>Non-linear fits are not done for Key Parameters, KPs, but those parameter values are excellent and should be used to do science.</li>
+<li>Non-linear fits are available are available in this data product, but they have problems which suggests strongly that the KP parameters should be used, see the paper by Kasper et al., Physics-based tests to identify the accuracy of solar wind ion measurements: A case study with the Wind Faraday Cups, J. Geophys. Res., 111, A03105, DOI: 101029/2005JA011442.</li>
+<li>Note that all quality flag values that are even numbers are for data values when non-linear fits were not attempted.</li>
+</ul>
+<p>For the complete guide to the quality flag values see https://cdaweb.gsfc.nasa.gov/wind_swe_quality.html.</p>
+<p>Note that this SPASE Numerical Description only describes the MESSENGER Magnetometer data stored in Common Data Files. Other links to Wind SWE data in non CDF format are listed in the following table:</p>
+<p>+--------------------------------------------------------------------------------------------------------------------------------------------+<br>
+| SPASE Repository Resource ID   | Data Source                          | Data Access URL                                                    |<br>
+|--------------------------------------------------------------------------------------------------------------------------------------------|<br>
+| SMWG/Repository/MIT_CSR        | ASCII via ftp from MIT               | ftp://space.mit.edu/pub/plasma/wind/kp_files/                      |<br>
+| SMWG/Repository/NASA/GSFC/SPDF | ASCII via ftps from SPDF             | ftps://spdf.gsfc.nasa.gov/pub/data/wind/swe/ascii/swe_kp_unspike/  |<br>
+| SMWG/Repository/NASA/GSFC/SPDF | ASCII via https from SPDF            | https://spdf.gsfc.nasa.gov/pub/data/wind/swe/ascii/swe_kp_unspike/ |<br>
+| SMWG/Repository/NASA/GSFC/SPDF | Subset, plot and list via FTPBrowser | https://omniweb.sci.gsfc.nasa.gov/ftpbrowser/wind_swe_kp.html      |<br>
++--------------------------------------------------------------------------------------------------------------------------------------------+</p>
+</div></p></div><div><p class="right"><a target="_blank" href="PT99S.xml">View XML</a> 
 				| <a target="_blank" href="PT99S.json">View JSON</a> 
 				| <a target="_blank" href="https://spase-editor.heliocloud.org/?edit=https://hpde.io/VSPO/NumericalData/Wind/SWE/IonMoments/KeyParameter/PT99S.xml">Edit</a></p><h1 class="detail">Details</h1></div><div><div class="product"><p class="version">Version:2.3.1</p><h1>NumericalData</h1><div class="term">ResourceID</div><div class="definition">spase://VSPO/NumericalData/Wind/SWE/IonMoments/KeyParameter/PT99S</div><div class="term">ResourceHeader</div><div class="definition"><div class="term">ResourceName</div><div class="definition">Wind Solar Wind Experiment (SWE) Thermal Plamsa Moments, Key Parameter (K0), 99 s Data</div><div class="term">ReleaseDate</div><div class="definition">2020-07-03 23:28:58Z</div><div class="term">Description</div><div class="definition"><p>Wind SWE Key Parameter data: proton density, thermal speed, flow velocity vectors, and spacecraft position vectors. Various versions differ slightly from each other. The version at MIT has flow velocity vectors experessed bby using Geocentric Solar Ecliptic, GSE, Cartesian and spherical representations and GSE Cartesian position vectors. The version available via nssdcftp and FTPBrowser has temperature instead of thermal speed and has no flow direction angles. The CDAWeb version has flow velocity and spacecraft position vectors in both GSE and Geocentric Solar Magnetospheric, GSM, coordinates, flow dynamic pressure, NmV^2, and velocity and density quality flags. The data were progressively despiked in passing from CDAWeb to MIT to nssdcftp/FTPBrowser.</p>
 <p>Use of the Quality Variables:</p>
