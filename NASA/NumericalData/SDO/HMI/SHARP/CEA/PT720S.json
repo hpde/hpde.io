@@ -1,0 +1,282 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema  http://www.spase-group.org/data/schema/spase-2_6_1.xsd",
+    "Version": "2.6.1",
+    "NumericalData": {
+      "ResourceID": "spase://NASA/NumericalData/SDO/HMI/SHARP/CEA/PT720S",
+      "ResourceHeader": {
+        "ResourceName": "SHARP Cylindrical-Equal-Area Data",
+        "ReleaseDate": "2024-11-02T00:08:46",
+        "RevisionHistory": {
+          "RevisionEvent": {
+            "ReleaseDate": "2024-11-02T00:08:46",
+            "Note": "Metadata created by SY"
+          }
+        },
+        "Description": "SHARP stands for Space-weather HMI Active Region Patch. A SHARP is a DRMS series that contains (1) various space-weather quantities calculated from the photospheric vector magnetogram data and stored as FITS header keywords, and (2) 31 data segments (described in detail below), including each component of the vector magnetic field, the line-of-sight magnetic field, continuum intensity, doppler velocity, error maps and bitmaps. The data segments are not full-disk; rather, they are partial-disk, automatically-identified active region patches. SHARPs are calculated every 12 minutes. Often, there is more than one active region on the solar disk at any given time. Thus, SHARPs are indexed by two prime keys: time, T_REC, and HMI Active Region Patch Number, HARPNUM.\n\nThe hmi.sharp_720s_cea_nrt and hmi.sharp_cea_720s data have been projected and remapped to a Cylindrical Equal Area (CEA) Cartesian coordinate system centered on the tracked active region. The size of the nrt regions will evolve with time. At each time step the definitive SHARPs will enclose the maximum extent of the region during it's disk passage. The three prime vector components are Bx, By, and Bz. HARP maps of 8 additional quantities are also provided at each time step: the three estimated component errors, the line-of-sight magnetogram, a Dopplergram, the continuum intensity, a map of the active pixels, and an estimate of the confidence in the disambiguation.",
+        "PublicationInfo": {
+          "Authors": "The HMI Consortium: Stanford University (USA); NASA Goddard Space Flight Center (USA); Lockheed Martin Solar and Astrophysics Laboratory (USA); National Center for Atmospheric Research (USA);",
+          "PublicationDate": "2011-01-21T00:00:00",
+          "PublishedBy": "Joint Science Operations Center (JSOC), Stanford University"
+        },
+        "Contact": [
+          {
+            "PersonID": "spase://SMWG/Person/Philip.H.Scherrer",
+            "Role": "PrincipalInvestigator"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Rick.Bogart",
+            "Role": "GeneralContact"
+          }
+        ],
+        "InformationURL": [
+          {
+            "Name": "The HMI website at Stanford",
+            "URL": "http://hmi.stanford.edu/"
+          },
+          {
+            "Name": "The SDO/HMI Instrument paper",
+            "URL": "https://doi.org/10.1007/s11207-011-9834-2"
+          },
+          {
+            "Name": "Spaceweather HMI Active Region Patch (SHARP)",
+            "URL": "http://jsoc.stanford.edu/doc/data/hmi/sharp/sharp.htm"
+          }
+        ]
+      },
+      "AccessInformation": {
+        "RepositoryID": "spase://SMWG/Repository/Stanford/HMI-AIA.JSOC",
+        "Availability": "Online",
+        "AccessRights": "Open",
+        "AccessURL": {
+          "Name": "JSOC Data Center",
+          "URL": "http://jsoc.stanford.edu/ajax/lookdata.html?ds=hmi.sharp_720s_cea",
+          "Style": "Search",
+          "Description": "Change the date and the time to find the HMI data."
+        },
+        "Format": "FITS"
+      },
+      "InstrumentID": "spase://SMWG/Instrument/SDO/HMI",
+      "MeasurementType": "Magnetogram",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "2010-05-01T00:00:00",
+          "RelativeStopDate": "-P3D"
+        },
+        "Cadence": "PT720S"
+      },
+      "ObservedRegion": [
+        "Sun",
+        "Sun.Photosphere"
+      ],
+      "InputResourceID": [
+        "spase://NASA/NumericalData/SDO/HMI/LOS_Magnetogram/PT720S",
+        "spase://NASA/NumericalData/SDO/HMI/LOS_Dopplergram/PT720S",
+        "spase://NASA/NumericalData/SDO/HMI/Continuum_Intensity/PT720S"
+      ],
+      "Parameter": [
+        {
+          "Name": "USFLUX in the FITS Header",
+          "Description": "Total unsigned flux",
+          "Units": "Maxwell",
+          "Field": {
+            "Qualifier": "Total",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "MEANGAM in the FITS Header",
+          "Description": "Mean inclination angle, gamma",
+          "Units": "Degree",
+          "Field": {
+            "Qualifier": [
+              "Average",
+              "DirectionAngle"
+            ],
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "MEANGBT in the FITS Header",
+          "Description": "Mean value of the total field gradient",
+          "Units": "Gauss/Mm",
+          "Field": {
+            "Qualifier": [
+              "Average",
+              "Differential"
+            ],
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "MEANGBZ in the FITS Header",
+          "Description": "Mean value of the vertical field gradient",
+          "Units": "Gauss/Mm",
+          "Field": {
+            "Qualifier": [
+              "Average",
+              "Differential"
+            ],
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "MEANGBH in the FITS Header",
+          "Description": "Mean value of the horizontal field gradient",
+          "Units": "Gauss/Mm",
+          "Field": {
+            "Qualifier": [
+              "Average",
+              "Differential"
+            ],
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "MEANJZD in the FITS Header",
+          "Description": "Mean vertical current density",
+          "Units": "mA/m^2",
+          "Field": {
+            "Qualifier": "Average",
+            "FieldQuantity": "CurrentDensity"
+          }
+        },
+        {
+          "Name": "TOTUSJZ in the FITS Header",
+          "Description": "Total unsigned vertical current",
+          "Units": "Amperes",
+          "Field": {
+            "Qualifier": "Total",
+            "FieldQuantity": "Current"
+          }
+        },
+        {
+          "Name": "MEANALP in the FITS Header",
+          "Description": "Mean current helicity",
+          "Units": "G^2/m",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "TOTUSJH in the FITS Header",
+          "Description": "Total unsigned current helicity",
+          "Units": "G^2/m",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "ABSNJZH in the FITS Header",
+          "Description": "Absolute value of the net current helicity",
+          "Units": "G^2/m",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "SAVNCPP in the FITS Header",
+          "Description": "Sum of the Absolute Value of the Net Currents Per Polarity",
+          "Units": "Amperes",
+          "Field": {
+            "FieldQuantity": "Current"
+          }
+        },
+        {
+          "Name": "MEANPOT in the FITS Header",
+          "Description": "Mean photospheric excess magnetic energy density",
+          "Units": "ergs/cm^3",
+          "Field": {
+            "Qualifier": "Average",
+            "FieldQuantity": "Potential"
+          }
+        },
+        {
+          "Name": "TOTPOT in the FITS Header",
+          "Description": "Total photospheric magnetic energy density",
+          "Units": "ergs/cm^3",
+          "Field": {
+            "Qualifier": "Total",
+            "FieldQuantity": "Potential"
+          }
+        },
+        {
+          "Name": "SHRGT45 in the FITS Header",
+          "Description": "Percentage of pixels with a mean shear angle greater than 45 degrees",
+          "Units": "percent",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "MAGNETOGRAM",
+          "Description": "The magnetogram segment contains HARP-sized line-of-sight magnetogram data from the DRMS series hmi.M_720s.\n\nCEA version: the field is remapped, but not projected, i.e. it is still the line-of-sight component relative to HMI.",
+          "Units": "gauss",
+          "Field": {
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "BITMAP",
+          "Description": "The bitmap segment identifies the pixels located within the smooth bounding curve by labeling each pixel with the following:\n1   : weak field outside smooth bounding curve\n2   : strong field outside smooth bounding curve\n33 : weak field inside smooth bounding curve\n34 : strong field inside smooth bounding curve\n\nCEA version: same.",
+          "Units": "dimensionless",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "DOPPLERGRAM",
+          "Description": "The dopplergram segment contains HARP-sized dopplergram data from the DRMS series hmi.V_720s.\n\nCEA version: the Doppler velocity is remapped, but not projected, i.e. it is still the line-of-sight component relative to HMI.",
+          "Units": "m/s",
+          "Particle": {
+            "ParticleType": "Ion",
+            "ParticleQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "CONTINUUM",
+          "Description": "The dopplergram segment contains HARP-sized dopplergram data from the DRMS series hmi.Ic_720s.\n\nCEA Version: same.",
+          "Units": "DN/s",
+          "Wave": {
+            "WaveType": "Electromagnetic",
+            "WaveQuantity": "Intensity"
+          }
+        },
+        {
+          "Name": "CONFID_MAP",
+          "Description": "The confid_map segment identifies the confidence index of the inversion output. The index value at each pixel will take the integer value from 0 (best) to 6(worst), defined as the highest item number satisfying the following conditions:\n0: No issue found in the input Stokes\n1: Signals for the transverse field component in the input Stokes parameters (Q & U) were weak.\n2: Signal for the line-of-sight field component in the input Stokes parameters (V) was weak.\n3: Magnetic field signals of both LoS and transverse component were weak.\n4: The ME-VFISV iteration did not converge within the iteration maximum.\nIn the test data release, we set very small , thus, the confidence ε index at most pixels may be 4.\n5: If the difference between the absolute value of the line-of-sight field strength derived from magnetogram algorithm and the absolute value of the LoS component from VFISV inversion |B cos(inclination)| is greater than 500 Gauss, we regard the inversion did not well solve the problem.\n6: One (or more) of the 24 input Stokes arrays had NaN value.",
+          "Units": "dimensionless",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Bp",
+          "Description": "Phi (westward) component of the CEA vector magnetic field.",
+          "Units": "gauss",
+          "Field": {
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "Bt",
+          "Description": "Theta (southward) component of the CEA vector magnetic field.",
+          "Units": "gauss",
+          "Field": {
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "Br",
+          "Description": "Radial (out of photosphere) component of the CEA vector magnetic field.",
+          "Units": "gauss",
+          "Field": {
+            "FieldQuantity": "Magnetic"
+          }
+        }
+      ]
+    }
+  }
+}
