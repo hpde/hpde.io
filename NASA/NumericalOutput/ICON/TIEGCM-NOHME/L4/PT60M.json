@@ -27,7 +27,7 @@
         "Contact": [
           {
             "PersonID": "spase://SMWG/Person/Astrid.Maute",
-            "Role": "PrincipalInvestigator"
+            "Role": "GeneralContact"
           },
           {
             "PersonID": "spase://SMWG/Person/James.M.Weygand",
@@ -74,7 +74,7 @@
       "ProcessingLevel": "ValueAdded",
       "ProviderResourceName": "ICON TIEGCM team",
       "ProviderProcessingLevel": "ValueAdded",
-      "ProviderVersion": "Versions 1 or 2",
+      "ProviderVersion": "1",
       "MeasurementType": [
         "IonComposition",
         "NeutralGas"
@@ -208,7 +208,6 @@
           "ParameterKey": "Kp",
           "Description": "Kp index.",
           "Cadence": "PT60M",
-          "Units": "mmr",
           "Support": {
             "Qualifier": "Magnitude",
             "SupportQuantity": "Other"
@@ -385,7 +384,7 @@
           }
         },
         {
-          "Name": "Height-Integrated Joule Heating'",
+          "Name": "Height-Integrated Joule Heating",
           "ParameterKey": "QJOULE_INTEG",
           "Description": "Height-integrated joule heating. This is a 3 dimensional array: 144x72x24. The dimensions are based on the size of the arrays (144x72x24): long, lat, and time.",
           "Cadence": "PT60M",
@@ -460,9 +459,9 @@
           }
         },
         {
-          "Name": "Lower boundary condition of Neutral temperature (TIME N-1)",
+          "Name": "Lower boundary condition of Neutral temperature (previous timestep)",
           "ParameterKey": "TLBC_NM",
-          "Description": "Lower boundary condition of Neutral temperature (TIME N-1). This is a 3 dimensional array: 144x72x24. The dimensions are based on the size of the arrays (144x72x24): long, lat, and time.",
+          "Description": "Lower boundary condition of Neutral temperature (previous timestep). This is a 3 dimensional array: 144x72x24. The dimensions are based on the size of the arrays (144x72x24): long, lat, and time.",
           "Cadence": "PT60M",
           "Units": "K",
           "FillValue": "1e+36",
@@ -499,10 +498,7 @@
           "Units": "cm/s",
           "FillValue": "1e+36",
           "Particle": {
-            "ParticleType": [
-              "Atom",
-              "Molecule"
-            ],
+            "ParticleType": "Ion",
             "Qualifier": "Array",
             "ParticleQuantity": "FlowSpeed"
           }
@@ -524,9 +520,9 @@
           }
         },
         {
-          "Name": "Lower boundary condition of zonal neutral wind (TIME N-1)",
+          "Name": "Lower boundary condition of zonal neutral wind (previous timestep)",
           "ParameterKey": "ULBC_NM",
-          "Description": "Lower boundary condition of Zonal neutral wind (UN) (TIME N-1). This is a 3 dimensional array: 144x72x24. The dimensions are based on the size of the arrays (144x72x24): long, lat, and time.",
+          "Description": "Lower boundary condition of Zonal neutral wind (UN) (previous timestep). This is a 3 dimensional array: 144x72x24. The dimensions are based on the size of the arrays (144x72x24): long, lat, and time.",
           "Cadence": "PT60M",
           "Units": "cm/s",
           "FillValue": "1e+36",
@@ -563,10 +559,7 @@
           "Units": "cm/s",
           "FillValue": "1e+36",
           "Particle": {
-            "ParticleType": [
-              "Atom",
-              "Molecule"
-            ],
+            "ParticleType": "Ion",
             "Qualifier": "Array",
             "ParticleQuantity": "FlowSpeed"
           }
@@ -588,9 +581,9 @@
           }
         },
         {
-          "Name": "Lower boundary condition of meridional neutral wind (TIME N-1)",
+          "Name": "Lower boundary condition of meridional neutral wind (previous timestep)",
           "ParameterKey": "VLBC_NM",
-          "Description": "Lower boundary condition of meridional neutral wind (VN) (TIME N-1). This is a 3 dimensional array: 144x72x24. The dimensions are based on the size of the arrays (144x72x24): long, lat, and time.",
+          "Description": "Lower boundary condition of meridional neutral wind (VN) (previous timestep). This is a 3 dimensional array: 144x72x24. The dimensions are based on the size of the arrays (144x72x24): long, lat, and time.",
           "Cadence": "PT60M",
           "Units": "cm/s",
           "FillValue": "1e+36",
@@ -627,10 +620,7 @@
           "Units": "cm/s",
           "FillValue": "1e+36",
           "Particle": {
-            "ParticleType": [
-              "Atom",
-              "Molecule"
-            ],
+            "ParticleType": "Ion",
             "Qualifier": "Array",
             "ParticleQuantity": "FlowSpeed"
           }
@@ -678,7 +668,7 @@
           "ParameterKey": "ZMAG",
           "Description": "Geopotential height (constant gravity) on magnetic grid.  This is a 4 dimensional array: 81x97x63x24. The dimensions are based on the size of the arrays (81x97x63x24): mlon, mlat, imlev, and time.",
           "Cadence": "PT60M",
-          "Units": "km",
+          "Units": "cm",
           "FillValue": "1e+36",
           "Support": {
             "SupportQuantity": "Other"
@@ -809,7 +799,7 @@
         {
           "Name": "Critical cross-over latitude 1",
           "ParameterKey": "crit1",
-          "Description": "critical cross-over latitude 1",
+          "Description": "cross over latitude (co-latitude) from high to mid-latitude 1",
           "Cadence": "PT60M",
           "Units": "deg",
           "Support": {
@@ -819,7 +809,7 @@
         {
           "Name": "Critical cross-over latitude 2",
           "ParameterKey": "crit2",
-          "Description": "critical cross-over latitude 2",
+          "Description": "cross over latitude (co-latitude) from high to mid-latitude 2",
           "Cadence": "PT60M",
           "Units": "deg",
           "Support": {
