@@ -1,6 +1,6 @@
 # hpde.io
 
-Quick, uncluttered access to SPASE resource descriptions.
+Quick, uncluttered access to SPASE [https://spase-group.org/](https://spase-group.org/) resource descriptions.
 
 ## What's a "landing page"?
 
@@ -19,6 +19,13 @@ use one of the supported file name extensions.
 **.xml** : Get a resource description in XML form  
 **.json** : Get a resource description in JSON form  
 **.html** : Get a formatted resource description  
+
+## Support and Issues with HPDE.io and the SPASE landing pages
+
+The SPASE landing pages at HPDE.io are created automatically from SPASE XML descriptions in the HPDE repositories using code at [https://github.com/spase-group/spase-generate-pages](https://github.com/spase-group/spase-generate-pages)
+
+Issues can be reported at that [repo](https://github.com/spase-group/spase-generate-pages).
+
 
 ## Tips
 
