@@ -1,0 +1,4362 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema  http://www.spase-group.org/data/schema/spase-2_3_2.xsd",
+    "Version": "2.3.2",
+    "NumericalData": {
+      "ResourceID": "spase://NOAA/NumericalData/POES/18/SEM-2/CDF/PT2S",
+      "ResourceHeader": {
+        "ResourceName": "NOAA 18 POES Space Environment Monitor-2 (SEM-2) 2-second Particle Precipitation Data",
+        "ReleaseDate": "2021-04-27T17:52:57Z",
+        "Description": "POES-SEM2>POES-Space Environment Monitor 2 POES N19 Data: POES/MetOp: Particle Precipitation Data, these Data have known Contamination Problems, Please consult the Data Provider, Rob Redmon, at rob.redmon@noaa.gov, for Usage Recommendations",
+        "Acknowledgement": "NGDC, SWPC",
+        "Contact": [
+          {
+            "PersonID": "spase://SMWG/Person/R.Bushnell",
+            "Role": "PrincipalInvestigator"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Robert.Redmon",
+            "Role": "DataProducer"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Robert.E.McGuire",
+            "Role": "MetadataContact"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Lee.Frost.Bargatze",
+            "Role": "MetadataContact"
+          }
+        ],
+        "InformationURL": [
+          {
+            "Name": "Archive and Instrument Documentation at NOAA National Geophysical Data Center (NGDC)",
+            "URL": "https://www.ngdc.noaa.gov/stp/satellite/poes/",
+            "Description": "Primary POES"
+          },
+          {
+            "Name": "MEPED Telescope Data Processing Algorithm Theoretical Basis Document, Section 2.2.1",
+            "URL": "https://www.ngdc.noaa.gov/stp/satellite/poes/docs/NGDC/MEPED%20telescope%20processing%20ATBD_V1.pdf",
+            "Description": "For further Details on MEPED Contamination Issues, See the"
+          }
+        ],
+        "PriorID": "spase://VSPO/NumericalData/NOAA/18/SEM-2/PT2S"
+      },
+      "AccessInformation": [
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": [
+            {
+              "Name": "FTPS from SPDF (not with most browsers)",
+              "URL": "ftps://spdf.gsfc.nasa.gov/pub/data/noaa/noaa18/sem2_fluxes-2sec/",
+              "Description": "In CDF via ftp from SPDF."
+            },
+            {
+              "Name": "HTTPS from SPDF",
+              "URL": "https://spdf.gsfc.nasa.gov/pub/data/noaa/noaa18/sem2_fluxes-2sec/",
+              "Description": "In CDF via http from SPDF."
+            },
+            {
+              "Name": "CDAWeb",
+              "URL": "https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=NOAA18_POES-SEM2_FLUXES-2SEC&index=sp_phys",
+              "ProductKey": "NOAA18_POES-SEM2_FLUXES-2SEC",
+              "Description": "Access to ASCII, CDF, and plots via NASA/GSFC CDAWeb"
+            }
+          ],
+          "Format": "CDF",
+          "Encoding": "None",
+          "Acknowledgement": "NGDC, SWPC. Please acknowledge the data providers and CDAWeb when using these data."
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDAWeb HAPI Server",
+            "URL": "https://cdaweb.gsfc.nasa.gov/hapi",
+            "Style": "HAPI",
+            "ProductKey": "NOAA18_POES-SEM2_FLUXES-2SEC",
+            "Description": "Web Service to this product using the HAPI interface."
+          },
+          "Format": "CSV",
+          "Acknowledgement": "NGDC, SWPC. Please acknowledge the data providers and CDAWeb when using these data."
+        }
+      ],
+      "ProcessingLevel": "Calibrated",
+      "InstrumentID": "spase://SMWG/Instrument/NOAA/18/SEM-2",
+      "MeasurementType": "EnergeticParticles",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "2013-01-01T00:00:00.000",
+          "RelativeStopDate": "-P1D"
+        },
+        "Cadence": "PT2S"
+      },
+      "ObservedRegion": [
+        "Earth.Magnetosheath",
+        "Earth.Magnetosphere.Polar",
+        "Earth.NearSurface",
+        "Earth.NearSurface.AuroralRegion",
+        "Earth.NearSurface.EquatorialRegion",
+        "Earth.NearSurface.Ionosphere",
+        "Earth.NearSurface.PolarCap"
+      ],
+      "Parameter": [
+        {
+          "Name": "Epoch",
+          "ParameterKey": "Epoch",
+          "Description": "Default Time",
+          "Caveats": "This parameter exhibits an increasing monotonic progression.",
+          "Cadence": "PT2S",
+          "Units": "ns",
+          "UnitsConversion": "1e-9>s",
+          "RenderingHints": {
+            "AxisLabel": "Epoch",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "1990-01-01T00:00:00.000000000",
+          "ValidMax": "2029-12-31T23:59:59.999000000",
+          "FillValue": "9999-12-31T23:59:59.999999999",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Time",
+          "ParameterKey": "time",
+          "Description": "Date and Time for each Observation",
+          "Cadence": "PT2S",
+          "Units": "ms",
+          "UnitsConversion": "1e-3>s",
+          "ValidMin": "0.0",
+          "ValidMax": "0.0",
+          "FillValue": "-2.14748e+09",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Year",
+          "ParameterKey": "year",
+          "Description": "Year, 4 Digit",
+          "Cadence": "PT2S",
+          "Units": "year",
+          "UnitsConversion": "3.1536e7>s",
+          "ValidMin": "0.0",
+          "ValidMax": "0.0",
+          "FillValue": "-2.14748e+09",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Day of Year",
+          "ParameterKey": "day",
+          "Description": "Day of Year, 3 Digit",
+          "Cadence": "PT2S",
+          "Units": "d",
+          "UnitsConversion": "86400>s^-1",
+          "ValidMin": "0.0",
+          "ValidMax": "0.0",
+          "FillValue": "-2.14748e+09",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Milliseconds of Day",
+          "ParameterKey": "msec",
+          "Description": "Milliseconds of the Day",
+          "Cadence": "PT2S",
+          "Units": "ms",
+          "UnitsConversion": "1e-3>s",
+          "ValidMin": "0.0",
+          "ValidMax": "0.0",
+          "FillValue": "-2.14748e+09",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Electron Differential Flux, 0° Telescope",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "ted_ele_flux_stackt0",
+          "Description": "Total Energy Detector, TED, Electron Differential Flux, 0° Telescope, 189 eV to 7980 eV",
+          "Caveats": "This parameter is virtual. It is calculated by calling the function MAKE_STACK_ARRAY with the following input parameters: ted_ele_flux.",
+          "Cadence": "PT2S",
+          "Units": "(cm^2 s sr eV)^-1",
+          "UnitsConversion": "6.24161e22>(m^2 s sr J)^-1",
+          "RenderingHints": {
+            "ValueFormat": "E12.2"
+          },
+          "Structure": {
+            "Size": "2 4"
+          },
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": [
+              "Scalar",
+              "Differential"
+            ],
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "Electron Differential Flux, 30° Telescope",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "ted_ele_flux_stackt30",
+          "Description": "Total Energy Detector, TED, Electron Differential Flux, 30° Telescope, 189 eV to 7980 eV",
+          "Caveats": "This parameter is virtual. It is calculated by calling the function MAKE_STACK_ARRAY with the following input parameters: ted_ele_flux.",
+          "Cadence": "PT2S",
+          "Units": "(cm^2 s sr eV)^-1",
+          "UnitsConversion": "6.24161e22>(m^2 s sr J)^-1",
+          "RenderingHints": {
+            "ValueFormat": "E12.2"
+          },
+          "Structure": {
+            "Size": "2 4"
+          },
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": [
+              "Scalar",
+              "Differential"
+            ],
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "Electron Differential Flux, 189 keV",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "ted_ele_flux_t_stacke1",
+          "Description": "Total Energy Detector, TED, Electron Differential Flux, 0° and 30° Telescopes, Channel E1, 189 eV",
+          "Caveats": "This parameter is virtual. It is calculated by calling the function MAKE_STACK_ARRAY with the following input parameters: ted_ele_flux.",
+          "Cadence": "PT2S",
+          "Units": "(cm^2 s sr eV)^-1",
+          "UnitsConversion": "6.24161e22>(m^2 s sr J)^-1",
+          "RenderingHints": {
+            "ValueFormat": "E12.2"
+          },
+          "Structure": {
+            "Size": "2 4"
+          },
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": [
+              "Scalar",
+              "Differential"
+            ],
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "Electron Differential Flux, 844 keV",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "ted_ele_flux_t_stacke2",
+          "Description": "Total Energy Detector, TED, Electron Differential Flux, 0° and 30° Telescopes, Channel E2, 844 eV",
+          "Caveats": "This parameter is virtual. It is calculated by calling the function MAKE_STACK_ARRAY with the following input parameters: ted_ele_flux.",
+          "Cadence": "PT2S",
+          "Units": "(cm^2 s sr eV)^-1",
+          "UnitsConversion": "6.24161e22>(m^2 s sr J)^-1",
+          "RenderingHints": {
+            "ValueFormat": "E12.2"
+          },
+          "Structure": {
+            "Size": "2 4"
+          },
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": [
+              "Scalar",
+              "Differential"
+            ],
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "Electron Differential Flux, 2595 keV",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "ted_ele_flux_t_stacke3",
+          "Description": "Total Energy Detector, TED, Electron Differential Flux, 0° and 30° Telescopes, Channel E3, 2595 eV",
+          "Caveats": "This parameter is virtual. It is calculated by calling the function MAKE_STACK_ARRAY with the following input parameters: ted_ele_flux.",
+          "Cadence": "PT2S",
+          "Units": "(cm^2 s sr eV)^-1",
+          "UnitsConversion": "6.24161e22>(m^2 s sr J)^-1",
+          "RenderingHints": {
+            "ValueFormat": "E12.2"
+          },
+          "Structure": {
+            "Size": "2 4"
+          },
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": [
+              "Scalar",
+              "Differential"
+            ],
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "Electron Differential Flux, 7980 keV",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "ted_ele_flux_t_stacke4",
+          "Description": "Total Energy Detector, TED, Electron Differential Flux, 0° and 30° Telescopes, Channel E4, 7980 eV",
+          "Caveats": "This parameter is virtual. It is calculated by calling the function MAKE_STACK_ARRAY with the following input parameters: ted_ele_flux.",
+          "Cadence": "PT2S",
+          "Units": "(cm^2 s sr eV)^-1",
+          "UnitsConversion": "6.24161e22>(m^2 s sr J)^-1",
+          "RenderingHints": {
+            "ValueFormat": "E12.2"
+          },
+          "Structure": {
+            "Size": "2 4"
+          },
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": [
+              "Scalar",
+              "Differential"
+            ],
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "Electron Differential Flux, Spectrograms",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "ted_ele_flux",
+          "Description": "Column 1 Labels: [ 0.00000, 30.0000] Column 2 Labels: [ 189.000, 844.000, 2595.00, 7980.00]",
+          "Cadence": "PT2S",
+          "Units": "(cm^2 s sr eV)^-1",
+          "UnitsConversion": "6.24161e22>(m^2 s sr J)^-1",
+          "RenderingHints": {
+            "DisplayType": "Spectrogram",
+            "ValueFormat": "E12.2"
+          },
+          "Structure": {
+            "Size": "2 4"
+          },
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": [
+              "Scalar",
+              "Differential"
+            ],
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "Electron Differential Energies",
+          "ParameterKey": "ted_ele_diff_energies",
+          "Description": "Total Energy Detector, TED, Electron Differential Energies",
+          "Cadence": "PT2S",
+          "Units": "eV",
+          "UnitsConversion": "1.60218e-19>J",
+          "RenderingHints": {
+            "ValueFormat": "E12.4"
+          },
+          "Structure": {
+            "Size": "4",
+            "Element": [
+              {
+                "Name": "Element 1",
+                "Index": "1"
+              },
+              {
+                "Name": "Element 2",
+                "Index": "2"
+              },
+              {
+                "Name": "Element 3",
+                "Index": "3"
+              },
+              {
+                "Name": "Element 4",
+                "Index": "4"
+              }
+            ]
+          },
+          "ValidMin": "100.0",
+          "ValidMax": "10000.0",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": "Scalar",
+            "ParticleQuantity": "Energy"
+          }
+        },
+        {
+          "Name": "Telescope Direction",
+          "ParameterKey": "ted_telescopes",
+          "Description": "Total Energy Detector, TED, Telescope Directions, 0° and 30°",
+          "Cadence": "PT2S",
+          "RenderingHints": {
+            "ValueFormat": "E12.2",
+            "ScaleType": "LinearScale"
+          },
+          "Structure": {
+            "Size": "2",
+            "Element": [
+              {
+                "Name": "Element 1",
+                "Index": "1"
+              },
+              {
+                "Name": "Element 2",
+                "Index": "2"
+              }
+            ]
+          },
+          "ValidMin": "0.0",
+          "ValidMax": "30.0",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Proton Differential Flux, 0° Telescope",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "ted_pro_flux_stackt0",
+          "Description": "Total Energy Detector, TED, Proton Differential Flux, 0° Telescope, 189 eV to 7980 eV",
+          "Caveats": "This parameter is virtual. It is calculated by calling the function MAKE_STACK_ARRAY with the following input parameters: ted_pro_flux.",
+          "Cadence": "PT2S",
+          "Units": "(cm^2 s sr eV)^-1",
+          "UnitsConversion": "6.24161e22>(m^2 s sr J)^-1",
+          "RenderingHints": {
+            "ValueFormat": "E12.2"
+          },
+          "Structure": {
+            "Size": "2 4"
+          },
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": [
+              "Scalar",
+              "Differential"
+            ],
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "Proton Differential Flux, 30° Telescope",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "ted_pro_flux_stackt30",
+          "Description": "Total Energy Detector, TED, Proton Differential Flux, 30° Telescope, 189 eV to 7980 eV",
+          "Caveats": "This parameter is virtual. It is calculated by calling the function MAKE_STACK_ARRAY with the following input parameters: ted_pro_flux.",
+          "Cadence": "PT2S",
+          "Units": "(cm^2 s sr eV)^-1",
+          "UnitsConversion": "6.24161e22>(m^2 s sr J)^-1",
+          "RenderingHints": {
+            "ValueFormat": "E12.2"
+          },
+          "Structure": {
+            "Size": "2 4"
+          },
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": [
+              "Scalar",
+              "Differential"
+            ],
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "Proton Differential Flux, 189 keV",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "ted_pro_flux_t_stacke1",
+          "Description": "Total Energy Detector, TED, Proton Differential Flux, 0° and 30° Telescopes, Channel E1, 189 eV",
+          "Caveats": "This parameter is virtual. It is calculated by calling the function MAKE_STACK_ARRAY with the following input parameters: ted_pro_flux.",
+          "Cadence": "PT2S",
+          "Units": "(cm^2 s sr eV)^-1",
+          "UnitsConversion": "6.24161e22>(m^2 s sr J)^-1",
+          "RenderingHints": {
+            "ValueFormat": "E12.2"
+          },
+          "Structure": {
+            "Size": "2 4"
+          },
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": [
+              "Scalar",
+              "Differential"
+            ],
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "Proton Differential Flux, 844 keV",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "ted_pro_flux_t_stacke2",
+          "Description": "Total Energy Detector, TED, Proton Differential Flux, 0° and 30° Telescopes, Channel E2, 844 eV",
+          "Caveats": "This parameter is virtual. It is calculated by calling the function MAKE_STACK_ARRAY with the following input parameters: ted_pro_flux.",
+          "Cadence": "PT2S",
+          "Units": "(cm^2 s sr eV)^-1",
+          "UnitsConversion": "6.24161e22>(m^2 s sr J)^-1",
+          "RenderingHints": {
+            "ValueFormat": "E12.2"
+          },
+          "Structure": {
+            "Size": "2 4"
+          },
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": [
+              "Scalar",
+              "Differential"
+            ],
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "Proton Differential Flux, 2595 keV",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "ted_pro_flux_t_stacke3",
+          "Description": "Total Energy Detector, TED, Proton Differential Flux, 0° and 30° Telescopes, Channel E3, 2595 eV",
+          "Caveats": "This parameter is virtual. It is calculated by calling the function MAKE_STACK_ARRAY with the following input parameters: ted_pro_flux.",
+          "Cadence": "PT2S",
+          "Units": "(cm^2 s sr eV)^-1",
+          "UnitsConversion": "6.24161e22>(m^2 s sr J)^-1",
+          "RenderingHints": {
+            "ValueFormat": "E12.2"
+          },
+          "Structure": {
+            "Size": "2 4"
+          },
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": [
+              "Scalar",
+              "Differential"
+            ],
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "Proton Differential Flux, 7980 keV",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "ted_pro_flux_t_stacke4",
+          "Description": "Total Energy Detector, TED, Proton Differential Flux, 0° and 30° Telescopes, Channel E4, 7980 eV",
+          "Caveats": "This parameter is virtual. It is calculated by calling the function MAKE_STACK_ARRAY with the following input parameters: ted_pro_flux.",
+          "Cadence": "PT2S",
+          "Units": "(cm^2 s sr eV)^-1",
+          "UnitsConversion": "6.24161e22>(m^2 s sr J)^-1",
+          "RenderingHints": {
+            "ValueFormat": "E12.2"
+          },
+          "Structure": {
+            "Size": "2 4"
+          },
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": [
+              "Scalar",
+              "Differential"
+            ],
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "Proton Differential Flux, Spectrograms, 189 eV to 7980 eV",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "ted_pro_flux",
+          "Description": "Column 1 Labels: [ 0.00000, 30.0000] Column 2 Labels: [ 189.000, 844.000, 2595.00, 7980.00]",
+          "Cadence": "PT2S",
+          "Units": "(cm^2 s sr eV)^-1",
+          "UnitsConversion": "6.24161e22>(m^2 s sr J)^-1",
+          "RenderingHints": {
+            "DisplayType": "Spectrogram",
+            "ValueFormat": "E12.2"
+          },
+          "Structure": {
+            "Size": "2 4"
+          },
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": [
+              "Scalar",
+              "Differential"
+            ],
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "Proton Differential Energies",
+          "ParameterKey": "ted_pro_diff_energies",
+          "Description": "Total Energy Detector, TED, Proton Differential Energies",
+          "Cadence": "PT2S",
+          "Units": "eV",
+          "UnitsConversion": "1.60218e-19>J",
+          "RenderingHints": {
+            "ValueFormat": "E12.4"
+          },
+          "Structure": {
+            "Size": "4",
+            "Element": [
+              {
+                "Name": "Element 1",
+                "Index": "1"
+              },
+              {
+                "Name": "Element 2",
+                "Index": "2"
+              },
+              {
+                "Name": "Element 3",
+                "Index": "3"
+              },
+              {
+                "Name": "Element 4",
+                "Index": "4"
+              }
+            ]
+          },
+          "ValidMin": "100.0",
+          "ValidMax": "10000.0",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": "Scalar",
+            "ParticleQuantity": "Energy"
+          }
+        },
+        {
+          "Name": "Electron Integral Energy Flux, 0° Telescope, Low Energy",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "ted_ele_tel0_low_eflux",
+          "Description": "Total Energy Detector, TED, Electron Integral Energy Flux, 0° Telescope, Low Energy, 50 eV to 1000 eV",
+          "Cadence": "PT2S",
+          "Units": "mW/(m^2 sr)",
+          "UnitsConversion": "1e-3>W/(m^2 sr)",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "TED_T0deg_LowE_Elec_EngyFlux",
+            "ValueFormat": "E12.2"
+          },
+          "ValidMin": "-200.0",
+          "ValidMax": "200.0",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": [
+              "Scalar",
+              "Integral"
+            ],
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "Electron Integral Energy Flux, 30° Telescope, Low Energy",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "ted_ele_tel30_low_eflux",
+          "Description": "Total Energy Detector, TED, Electron Integral Energy Flux, 30° Telescope, Low Energy, 50 eV to 1000 eV",
+          "Cadence": "PT2S",
+          "Units": "mW/(m^2 sr)",
+          "UnitsConversion": "1e-3>W/(m^2 sr)",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "TED_T30deg_LowE_Elec_EngyFlux",
+            "ValueFormat": "E12.2"
+          },
+          "ValidMin": "-200.0",
+          "ValidMax": "200.0",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": [
+              "Scalar",
+              "Integral"
+            ],
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "Electron Integral Energy Flux, 0° Telescope, Low Energy, Percent Error",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "ted_ele_tel0_low_eflux_error",
+          "Description": "Total Energy Detector, TED, Electron Integral Energy Flux, 0° Telescope, Low Energy, Percent Error, 50 eV to 1000 eV",
+          "Cadence": "PT2S",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "TED_T0deg_LowE_Elec_EngyFlux%Err",
+            "ValueFormat": "F7.2"
+          },
+          "ValidMin": "0.01",
+          "ValidMax": "10000.0",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": [
+              "Scalar",
+              "Integral",
+              "Uncertainty"
+            ],
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "Electron Integral Energy Flux, 30° Telescope, Low Energy, Percent Error",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "ted_ele_tel30_low_eflux_error",
+          "Description": "Total Energy Detector, TED, Electron Integral Energy Flux, 30° Telescope, Low Energy, Percent Error, 50 eV to 1000 eV",
+          "Cadence": "PT2S",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "TED_T0deg_LowE_Elec_EngyFlux%Err",
+            "ValueFormat": "F7.2"
+          },
+          "ValidMin": "0.01",
+          "ValidMax": "10000.0",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": [
+              "Scalar",
+              "Integral",
+              "Uncertainty"
+            ],
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "Electron Integral Energy Flux, 0° Telescope, High Energy",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "ted_ele_tel0_hi_eflux",
+          "Description": "Total Energy Detector, TED, Electron Integral Energy Flux, 0° Telescope, High Energy, 1 keV to 20 keV",
+          "Cadence": "PT2S",
+          "Units": "mW/(m^2 sr)",
+          "UnitsConversion": "1e-3>W/(m^2 sr)",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "TED_T0deg_HiE_Elec_EngyFlux",
+            "ValueFormat": "E12.2"
+          },
+          "ValidMin": "-200.0",
+          "ValidMax": "200.0",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": [
+              "Scalar",
+              "Integral"
+            ],
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "Electron Integral Energy Flux, 30° Telescope, High Energy",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "ted_ele_tel30_hi_eflux",
+          "Description": "Total Energy Detector, TED, Electron Integral Energy Flux, 30° Telescope, High Energy, 1 keV to 20 keV",
+          "Cadence": "PT2S",
+          "Units": "mW/(m^2 sr)",
+          "UnitsConversion": "1e-3>W/(m^2 sr)",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "TED_T30deg_HiE_Elec_EngyFlux",
+            "ValueFormat": "E12.2"
+          },
+          "ValidMin": "-200.0",
+          "ValidMax": "200.0",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": [
+              "Scalar",
+              "Integral"
+            ],
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "Electron Integral Energy Flux, 0° Telescope, High Energy, Percent Error",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "ted_ele_tel0_hi_eflux_error",
+          "Description": "Total Energy Detector, TED, Electron Integral Energy Flux, 0° Telescope, High Energy, Percent Error, 1 keV to 20 keV",
+          "Cadence": "PT2S",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "TED_T0deg_HiE_Elec_EngyFlux%Err",
+            "ValueFormat": "F7.2"
+          },
+          "ValidMin": "0.01",
+          "ValidMax": "10000.0",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": [
+              "Scalar",
+              "Integral",
+              "Uncertainty"
+            ],
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "Electron Integral Energy Flux, 30° Telescope, High Energy, Percent Error",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "ted_ele_tel30_hi_eflux_error",
+          "Description": "Total Energy Detector, TED, Electron Integral Energy Flux, 30° Telescope, High Energy, Percent Error, 1 keV to 20 keV",
+          "Cadence": "PT2S",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "TED_T30deg_HiE_Elec_EngyFlux%Err",
+            "ValueFormat": "F7.2"
+          },
+          "ValidMin": "0.01",
+          "ValidMax": "10000.0",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": [
+              "Scalar",
+              "Integral",
+              "Uncertainty"
+            ],
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "Proton Integral Energy Flux, 0° Telescope, Low Energy",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "ted_pro_tel0_low_eflux",
+          "Description": "Total Energy Detector, TED, Proton Integral Energy Flux, 0° Telescope, Low Energy, 50 eV to 1000 eV",
+          "Cadence": "PT2S",
+          "Units": "mW/(m^2 sr)",
+          "UnitsConversion": "1e-3>W/(m^2 sr)",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "TED_T0deg_LowE_Prtn_EngyFlux",
+            "ValueFormat": "E12.2"
+          },
+          "ValidMin": "-200.0",
+          "ValidMax": "200.0",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": [
+              "Scalar",
+              "Integral"
+            ],
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "Proton Integral Energy Flux, 30° Telescope, Low Energy",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "ted_pro_tel30_low_eflux",
+          "Description": "Total Energy Detector, TED, Proton Integral Energy Flux, 30° Telescope, Low Energy, 50 eV to 1000 eV",
+          "Cadence": "PT2S",
+          "Units": "mW/(m^2 sr)",
+          "UnitsConversion": "1e-3>W/(m^2 sr)",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "TED_T30deg_LowE_Prtn_EngyFlux",
+            "ValueFormat": "E12.2"
+          },
+          "ValidMin": "-200.0",
+          "ValidMax": "200.0",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": [
+              "Scalar",
+              "Integral"
+            ],
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "Proton Integral Energy Flux, 0° Telescope, Low Energy, Percent Error",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "ted_pro_tel0_low_eflux_error",
+          "Description": "Total Energy Detector, TED, Proton Integral Energy Flux, 0° Telescope, Low Energy, Percent Error, 50 eV to 1000 eV",
+          "Cadence": "PT2S",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "TED_T0deg_LowE_Prtn_EngyFlux%Err",
+            "ValueFormat": "F7.2"
+          },
+          "ValidMin": "0.01",
+          "ValidMax": "10000.0",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": [
+              "Scalar",
+              "Integral",
+              "Uncertainty"
+            ],
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "Proton Integral Energy Flux, 30° Telescope, Low Energy, Percent Error",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "ted_pro_tel30_low_eflux_error",
+          "Description": "Total Energy Detector, TED, Proton Integral Energy Flux, 30° Telescope, Low Energy, Percent Error, 50 eV to 1000 eV",
+          "Cadence": "PT2S",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "TED_T30deg_LowE_Prtn_EngyFlux%Err",
+            "ValueFormat": "F7.2"
+          },
+          "ValidMin": "0.01",
+          "ValidMax": "10000.0",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": [
+              "Scalar",
+              "Integral",
+              "Uncertainty"
+            ],
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "Proton Integral Energy Flux, 0° Telescope, High Energy",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "ted_pro_tel0_hi_eflux",
+          "Description": "Total Energy Detector, TED, Proton Integral Energy Flux, 0° Telescope, High Energy, 1 keV to 20 keV",
+          "Cadence": "PT2S",
+          "Units": "mW/(m^2 sr)",
+          "UnitsConversion": "1e-3>W/(m^2 sr)",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "TED_T0deg_HiE_Prtn_EngyFlux",
+            "ValueFormat": "E12.2"
+          },
+          "ValidMin": "-200.0",
+          "ValidMax": "200.0",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": [
+              "Scalar",
+              "Integral"
+            ],
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "Proton Integral Energy Flux, 30° Telescope, High Energy",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "ted_pro_tel30_hi_eflux",
+          "Description": "Total Energy Detector, TED, Proton Integral Energy Flux, 30° Telescope, High Energy, 1 keV to 20 keV",
+          "Cadence": "PT2S",
+          "Units": "mW/(m^2 sr)",
+          "UnitsConversion": "1e-3>W/(m^2 sr)",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "TED_T30deg_HiE_Prtn_EngyFlux",
+            "ValueFormat": "E12.2"
+          },
+          "ValidMin": "-200.0",
+          "ValidMax": "200.0",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": [
+              "Scalar",
+              "Integral"
+            ],
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "Proton Integral Energy Flux, 0° Telescope, High Energy, Percent Error",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "ted_pro_tel0_hi_eflux_error",
+          "Description": "Total Energy Detector, TED, Proton Integral Energy Flux, 0° Telescope, High Energy, Percent Error, 1 keV to 20 keV",
+          "Cadence": "PT2S",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "TED_T0deg_HiE_Prtn_EngyFlux%Err",
+            "ValueFormat": "F7.2"
+          },
+          "ValidMin": "0.01",
+          "ValidMax": "10000.0",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": [
+              "Scalar",
+              "Integral",
+              "Uncertainty"
+            ],
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "Proton Integral Energy Flux, 30° Telescope, High Energy, Percent Error",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "ted_pro_tel30_hi_eflux_error",
+          "Description": "Total Energy Detector, TED, Proton Integral Energy Flux, 30° Telescope, High Energy, Percent Error, 1 keV to 20 keV",
+          "Cadence": "PT2S",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "TED_T30deg_HiE_Prtn_EngyFlux%Err",
+            "ValueFormat": "F7.2"
+          },
+          "ValidMin": "0.01",
+          "ValidMax": "10000.0",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": [
+              "Scalar",
+              "Integral",
+              "Uncertainty"
+            ],
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "Electron Atmospheric Integral Energy Flux, Low Energy",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "ted_ele_eflux_atmo_low",
+          "Description": "Total Energy Detector, TED, Electron Atmospheric Integral Energy Flux at 120 km, Low Energy, 50 eV to 1000 eV",
+          "Cadence": "PT2S",
+          "Units": "mW/m^2",
+          "UnitsConversion": "1e-3>W/m^2",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "TED_Atmo_LowE_Elec_EngyFlux",
+            "ValueFormat": "E12.2"
+          },
+          "ValidMin": "-6400.0",
+          "ValidMax": "6400.0",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": [
+              "Scalar",
+              "Integral"
+            ],
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "Electron Atmospheric Integral Energy Flux, High Energy",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "ted_ele_eflux_atmo_hi",
+          "Description": "Total Energy Detector, TED, Electron Atmospheric Integral Energy Flux at 120 km, Low Energy, 1 keV to 20 keV",
+          "Cadence": "PT2S",
+          "Units": "mW/m^2",
+          "UnitsConversion": "1e-3>W/m^2",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "TED_Atmo_HiE_Elec_EngyFlux",
+            "ValueFormat": "E12.2"
+          },
+          "ValidMin": "-6400.0",
+          "ValidMax": "6400.0",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": [
+              "Scalar",
+              "Integral"
+            ],
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "Electron Atmospheric Integral Energy Flux, Low Energy, Percent Error",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "ted_ele_eflux_atmo_low_err",
+          "Description": "Total Energy Detector, TED, Electron Atmospheric Integral Energy Flux at 120 km, Low Energy, Percent Error, 50 eV to 1000 eV",
+          "Cadence": "PT2S",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "TED_Atmo_LowE_Elec_EngyFlux%Err",
+            "ValueFormat": "F7.2"
+          },
+          "ValidMin": "0.01",
+          "ValidMax": "10000.0",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": [
+              "Scalar",
+              "Integral",
+              "Uncertainty"
+            ],
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "Electron Atmospheric Integral Energy Flux, High Energy, Percent Error",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "ted_ele_eflux_atmo_hi_err",
+          "Description": "Total Energy Detector, TED, Electron Atmospheric Integral Energy Flux at 120 km, Low Energy, Percent Error, 1 keV to 20 keV",
+          "Cadence": "PT2S",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "TED_Atmo_HiE_Elec_EngyFlux%Err",
+            "ValueFormat": "F7.2"
+          },
+          "ValidMin": "0.01",
+          "ValidMax": "10000.0",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": [
+              "Scalar",
+              "Integral",
+              "Uncertainty"
+            ],
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "Electron Total Atmospheric Integral Energy Flux",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "ted_ele_eflux_atmo_total",
+          "Description": "Total Energy Detector, TED, Electron Total Atmospheric Integral Energy Flux at 120 km",
+          "Cadence": "PT2S",
+          "Units": "mW/m^2",
+          "UnitsConversion": "1e-3>W/m^2",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "TED_Atmo_Total_Elec_EngyFlux",
+            "ValueFormat": "E12.2"
+          },
+          "ValidMin": "-12800.0",
+          "ValidMax": "6400.0",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": [
+              "Scalar",
+              "Integral"
+            ],
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "Electron Total Atmospheric Integral Energy Flux, Percent Error",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "ted_ele_eflux_atmo_total_err",
+          "Description": "Total Energy Detector, TED, Electron Total Atmospheric Integral Energy Flux at 120 km, Percent Error",
+          "Cadence": "PT2S",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "TED_Atmo_Total_Elec_EngyFlux%Err",
+            "ValueFormat": "F7.2"
+          },
+          "ValidMin": "0.01",
+          "ValidMax": "10000.0",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": [
+              "Scalar",
+              "Integral",
+              "Uncertainty"
+            ],
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "Proton Atmospheric Integral Energy Flux, Low Energy",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "ted_pro_eflux_atmo_low",
+          "Description": "Total Energy Detector, TED, Proton Atmospheric Integral Energy Flux at 120 km, Low Energy, 50 eV to 1000 eV",
+          "Cadence": "PT2S",
+          "Units": "mW/m^2",
+          "UnitsConversion": "1e-3>W/m^2",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "TED_Atmo_LowE_Prtn_EngyFlux",
+            "ValueFormat": "E12.2"
+          },
+          "ValidMin": "-6400.0",
+          "ValidMax": "6400.0",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": [
+              "Scalar",
+              "Integral"
+            ],
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "Proton Atmospheric Integral Energy Flux, High Energy",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "ted_pro_eflux_atmo_hi",
+          "Description": "Total Energy Detector, TED, Proton Atmospheric Integral Energy Flux at 120 km, High Energy, 1 keV to 20 keV",
+          "Cadence": "PT2S",
+          "Units": "mW/m^2",
+          "UnitsConversion": "1e-3>W/m^2",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "TED_Atmo_HiE_Prtn_EngyFlux",
+            "ValueFormat": "E12.2"
+          },
+          "ValidMin": "-6400.0",
+          "ValidMax": "6400.0",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": [
+              "Scalar",
+              "Integral"
+            ],
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "Proton Atmospheric Integral Energy Flux, Low Energy, Percent Error",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "ted_pro_eflux_atmo_low_err",
+          "Description": "Total Energy Detector, TED, Proton Atmospheric Integral Energy Flux at 120 km, Low Energy, Percent Error, 50 eV to 1000 eV",
+          "Cadence": "PT2S",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "TED_Atmo_LowE_Prtn_EngyFlux%Err",
+            "ValueFormat": "F7.2"
+          },
+          "ValidMin": "0.01",
+          "ValidMax": "10000.0",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": [
+              "Scalar",
+              "Integral",
+              "Uncertainty"
+            ],
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "Proton Atmospheric Integral Energy Flux, High Energy, Percent Error",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "ted_pro_eflux_atmo_hi_err",
+          "Description": "Total Energy Detector, TED, Proton Atmospheric Integral Energy Flux at 120 km, High Energy, Percent Error, 1 keV to 20 keV",
+          "Cadence": "PT2S",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "TED_Atmo_HiE_Prtn_EngyFlux%Err",
+            "ValueFormat": "F7.2"
+          },
+          "ValidMin": "0.01",
+          "ValidMax": "10000.0",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": [
+              "Scalar",
+              "Integral",
+              "Uncertainty"
+            ],
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "Proton Total Atmospheric Integral Energy Flux",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "ted_pro_eflux_atmo_total",
+          "Description": "Total Energy Detector, TED, Proton Total Atmospheric Integral Energy Flux at 120 km",
+          "Cadence": "PT2S",
+          "Units": "mW/m^2",
+          "UnitsConversion": "1e-3>W/m^2",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "TED_Atmo_Total_Prtn_EngyFlux",
+            "ValueFormat": "E12.2"
+          },
+          "ValidMin": "-12800.0",
+          "ValidMax": "6400.0",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": [
+              "Scalar",
+              "Integral"
+            ],
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "Proton Total Atmospheric Integral Energy Flux, Percent Error",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "ted_pro_eflux_atmo_total_err",
+          "Description": "Total Energy Detector, TED, Proton Total Atmospheric Integral Energy Flux at 120 km, Percent Error",
+          "Cadence": "PT2S",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "TED_Atmo_Total_Prtn_EngyFlux%Err",
+            "ValueFormat": "F7.2"
+          },
+          "ValidMin": "0.01",
+          "ValidMax": "10000.0",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": [
+              "Scalar",
+              "Integral",
+              "Uncertainty"
+            ],
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "Electron and Proton Total Atmospheric Integral Energy Flux, at 120 km",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "ted_total_eflux_atmo",
+          "Description": "Total Energy Detector, TED, Electron and Proton Total Atmospheric Integral Energy Flux, at 120 km",
+          "Cadence": "PT2S",
+          "Units": "mW/m^2",
+          "UnitsConversion": "1e-3>W/m^2",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "ted_total_eflux_atmo",
+            "ValueFormat": "E12.2",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "-25600.0",
+          "ValidMax": "25600.0",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": [
+              "Electron",
+              "Proton"
+            ],
+            "Qualifier": [
+              "Scalar",
+              "Integral"
+            ],
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "Electron and Proton Total Atmospheric Integral Energy Flux, at 120 km, Percent Error",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "ted_total_eflux_atmo_err",
+          "Description": "Total Energy Detector, TED, Electron and Proton Total Atmospheric Integral Energy Flux, at 120 km, Percent Error",
+          "Cadence": "PT2S",
+          "Units": "mW/m^2",
+          "UnitsConversion": "1e-3>W/m^2",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "ted_total_eflux_atmo_err",
+            "ValueFormat": "F7.2"
+          },
+          "ValidMin": "0.01",
+          "ValidMax": "10000.0",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": [
+              "Electron",
+              "Proton"
+            ],
+            "Qualifier": [
+              "Scalar",
+              "Integral",
+              "Uncertainty"
+            ],
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "Electron Characteristic Energy Channel, 0° Telescope",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "ted_ele_energy_tel0",
+          "Description": "Total Energy Detector, TED, Electron Characteristic Energy Channel, 0° Telescope",
+          "Cadence": "PT2S",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "ted_ele_CharEnergy_tel0",
+            "ValueFormat": "I4",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "0",
+          "ValidMax": "15",
+          "FillValue": "255",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Electron Characteristic Energy Channel, 30° Telescope",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "ted_ele_energy_tel30",
+          "Description": "Total Energy Detector, TED, Electron Characteristic Energy Channel, 30° Telescope",
+          "Cadence": "PT2S",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "ted_ele_CharEnergy_tel30",
+            "ValueFormat": "I4",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "0",
+          "ValidMax": "15",
+          "FillValue": "255",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Proton Characteristic Energy Channel, 0° Telescope",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "ted_pro_energy_tel0",
+          "Description": "Total Energy Detector, TED, Proton Characteristic Energy Channel, 0° Telescope",
+          "Cadence": "PT2S",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "ted_pro_CharEnergy_tel0",
+            "ValueFormat": "I4",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "0",
+          "ValidMax": "15",
+          "FillValue": "255",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Proton Characteristic Energy Channel, 30° Telescope",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "ted_pro_energy_tel30",
+          "Description": "Total Energy Detector, TED, Proton Characteristic Energy Channel, 30° Telescope",
+          "Cadence": "PT2S",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "ted_pro_CharEnergy_tel30",
+            "ValueFormat": "I4",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "0",
+          "ValidMax": "15",
+          "FillValue": "255",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Electron Maximum Differential Flux, 0° Telescope",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "ted_ele_max_flux_tel0",
+          "Description": "Total Energy Detector, TED, Electron Maximum Differential Flux, 0° Telescope",
+          "Cadence": "PT2S",
+          "Units": "(cm^2 s sr eV)^-1",
+          "UnitsConversion": "6.24161e22>(m^2 s sr J)^-1",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "ted_ele_max_flux_tel0",
+            "ValueFormat": "E12.2"
+          },
+          "ValidMin": "0.0",
+          "ValidMax": "4.0e+09",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": [
+              "Scalar",
+              "Maximum",
+              "Differential"
+            ],
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "Electron Maximum Differential Flux, 30° Telescope",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "ted_ele_max_flux_tel30",
+          "Description": "Total Energy Detector, TED, Electron Maximum Differential Flux, 30° Telescope",
+          "Cadence": "PT2S",
+          "Units": "(cm^2 s sr eV)^-1",
+          "UnitsConversion": "6.24161e22>(m^2 s sr J)^-1",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "ted_ele_max_flux_tel30",
+            "ValueFormat": "E12.2"
+          },
+          "ValidMin": "0.0",
+          "ValidMax": "4.0e+09",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": [
+              "Scalar",
+              "Maximum",
+              "Differential"
+            ],
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "Proton Maximum Differential Flux, 0° Telescope",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "ted_pro_max_flux_tel0",
+          "Description": "Total Energy Detector, TED, Proton Maximum Differential Flux, 0° Telescope",
+          "Cadence": "PT2S",
+          "Units": "(cm^2 s sr eV)^-1",
+          "UnitsConversion": "6.24161e22>(m^2 s sr J)^-1",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "ted_pro_max_flux_tel0",
+            "ValueFormat": "E12.2"
+          },
+          "ValidMin": "0.0",
+          "ValidMax": "4.0e+09",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": [
+              "Scalar",
+              "Maximum",
+              "Differential"
+            ],
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "Proton Maximum Differential Flux, 30° Telescope",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "ted_pro_max_flux_tel30",
+          "Description": "Total Energy Detector, TED, Proton Maximum Differential Flux, 30° Telescope",
+          "Cadence": "PT2S",
+          "Units": "(cm^2 s sr eV)^-1",
+          "UnitsConversion": "6.24161e22>(m^2 s sr J)^-1",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "ted_pro_max_flux_tel30",
+            "ValueFormat": "E12.2"
+          },
+          "ValidMin": "0.0",
+          "ValidMax": "4.0e+09",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": [
+              "Scalar",
+              "Maximum",
+              "Differential"
+            ],
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "Electron Background Integral Energy Flux, 0° Telescope, Low Energy, 50 eV to 1000 eV",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "ted_ele_eflux_bg_tel0_low",
+          "Description": "Total Energy Detector, TED, Electron Background Integral Energy Flux, 0° Telescope, Low Energy, 50 eV to 1000 eV",
+          "Cadence": "PT2S",
+          "Units": "mW/(m^2 sr)",
+          "UnitsConversion": "1e-3>W/(m^2 sr)",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "ted_ele_eflux_bg_tel0_low",
+            "ValueFormat": "E12.2"
+          },
+          "ValidMin": "0.0",
+          "ValidMax": "200.0",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": [
+              "Scalar",
+              "Minimum",
+              "Integral"
+            ],
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "Electron Background Integral Energy Flux, 330° Telescope, Low Energy, 50 eV to 1000 eV",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "ted_ele_eflux_bg_tel30_low",
+          "Description": "Total Energy Detector, TED, Electron Background Integral Energy Flux, 330° Telescope, Low Energy, 50 eV to 1000 eV",
+          "Cadence": "PT2S",
+          "Units": "mW/(m^2 sr)",
+          "UnitsConversion": "1e-3>W/(m^2 sr)",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "ted_ele_eflux_bg_tel30_lo",
+            "ValueFormat": "E12.2"
+          },
+          "ValidMin": "0.0",
+          "ValidMax": "200.0",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": [
+              "Scalar",
+              "Minimum",
+              "Integral"
+            ],
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "Electron Background Integral Energy Flux, 30° Telescope, High Energy, 1 keV to 20 keV",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "ted_ele_eflux_bg_tel0_hi",
+          "Description": "Total Energy Detector, TED, Electron Background Integral Energy Flux, 30° Telescope, High Energy, 1 keV to 20 keV",
+          "Cadence": "PT2S",
+          "Units": "mW/(m^2 sr)",
+          "UnitsConversion": "1e-3>W/(m^2 sr)",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "ted_ele_eflux_bg_tel0_hi",
+            "ValueFormat": "E12.2"
+          },
+          "ValidMin": "0.0",
+          "ValidMax": "200.0",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": [
+              "Scalar",
+              "Minimum",
+              "Integral"
+            ],
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "Electron Background Integral Energy Flux, 330° Telescope, High Energy, 1 keV to 20 keV",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "ted_ele_eflux_bg_tel30_hi",
+          "Description": "Total Energy Detector, TED, Electron Background Integral Energy Flux, 330° Telescope, High Energy, 1 keV to 20 keV",
+          "Cadence": "PT2S",
+          "Units": "mW/(m^2 sr)",
+          "UnitsConversion": "1e-3>W/(m^2 sr)",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "ted_ele_eflux_bg_tel30_hi",
+            "ValueFormat": "E12.2"
+          },
+          "ValidMin": "0.0",
+          "ValidMax": "200.0",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": [
+              "Scalar",
+              "Minimum",
+              "Integral"
+            ],
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "Proton Background Integral Energy Flux, 0° Telescope, Low Energy",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "ted_pro_eflux_bg_tel0_low",
+          "Description": "Total Energy Detector, TED, Proton Background Integral Energy Flux, 0° Telescope, Low Energy, 50 eV to 1000 eV",
+          "Cadence": "PT2S",
+          "Units": "mW/(m^2 sr)",
+          "UnitsConversion": "1e-3>W/(m^2 sr)",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "ted_pro_eflux_bg_tel0_low",
+            "ValueFormat": "E12.2"
+          },
+          "ValidMin": "0.0",
+          "ValidMax": "200.0",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": [
+              "Scalar",
+              "Minimum",
+              "Integral"
+            ],
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "Proton Background Integral Energy Flux, 30° Telescope, Low Energy",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "ted_pro_eflux_bg_tel30_low",
+          "Description": "Total Energy Detector, TED, Proton Background Integral Energy Flux, 30° Telescope, Low Energy, 50 eV to 1000 eV",
+          "Cadence": "PT2S",
+          "Units": "mW/(m^2 sr)",
+          "UnitsConversion": "1e-3>W/(m^2 sr)",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "ted_pro_eflux_bg_tel30_low",
+            "ValueFormat": "E12.2"
+          },
+          "ValidMin": "0.0",
+          "ValidMax": "200.0",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": [
+              "Scalar",
+              "Minimum",
+              "Integral"
+            ],
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "Proton Background Integral Energy Flux, 0° Telescope, High Energy",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "ted_pro_eflux_bg_tel0_hi",
+          "Description": "Total Energy Detector, TED, Proton Background Integral Energy Flux, 0° Telescope, High Energy, 1 keV to 20 keV",
+          "Cadence": "PT2S",
+          "Units": "mW/(m^2 sr)",
+          "UnitsConversion": "1e-3>W/(m^2 sr)",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "ted_pro_eflux_bg_tel0_hi",
+            "ValueFormat": "E12.2"
+          },
+          "ValidMin": "0.0",
+          "ValidMax": "200.0",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": [
+              "Scalar",
+              "Minimum",
+              "Integral"
+            ],
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "Proton Background Integral Energy Flux, 30° Telescope, High Energy",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "ted_pro_eflux_bg_tel30_hi",
+          "Description": "Total Energy Detector, TED, Proton Background Integral Energy Flux, 30° Telescope, High Energy, 1 keV to 20 keV",
+          "Cadence": "PT2S",
+          "Units": "mW/(m^2 sr)",
+          "UnitsConversion": "1e-3>W/(m^2 sr)",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "ted_pro_eflux_bg_tel30_hi",
+            "ValueFormat": "E12.2"
+          },
+          "ValidMin": "0.0",
+          "ValidMax": "200.0",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": [
+              "Scalar",
+              "Minimum",
+              "Integral"
+            ],
+            "ParticleQuantity": "EnergyFlux"
+          }
+        },
+        {
+          "Name": "Electron Background Counts, 0° Telescope, Low Energy",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "ted_ele_eflux_bg_tel0_low_cps",
+          "Description": "Total Energy Detector, TED, Electron Background Counts, 0° Telescope, Low Energy, 50 eV to 1000 eV",
+          "Cadence": "PT2S",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "ted_ele_eflux_bg_tel0_0.05-1keV_cps",
+            "ValueFormat": "E12.2"
+          },
+          "ValidMin": "0.0",
+          "ValidMax": "1.99885e+06",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": [
+              "Scalar",
+              "Minimum"
+            ],
+            "ParticleQuantity": "Counts"
+          }
+        },
+        {
+          "Name": "Electron Background Counts, 30° Telescope, Low Energy",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "ted_ele_eflux_bg_tel30_low_cps",
+          "Description": "Total Energy Detector, TED, Electron Background Counts, 30° Telescope, Low Energy, 50 eV to 1000 eV",
+          "Cadence": "PT2S",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "ted_ele_eflux_bg_tel30_0.05-1keV_cps",
+            "ValueFormat": "E12.2"
+          },
+          "ValidMin": "0.0",
+          "ValidMax": "1.99885e+06",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": [
+              "Scalar",
+              "Minimum"
+            ],
+            "ParticleQuantity": "Counts"
+          }
+        },
+        {
+          "Name": "Electron Background Counts, 0° Telescope, High Energy",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "ted_ele_eflux_bg_tel0_hi_cps",
+          "Description": "Total Energy Detector, TED, Electron Background Counts, 0° Telescope, High Energy, 1 keV to 20 keV",
+          "Cadence": "PT2S",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "ted_ele_eflux_bg_tel0_1-20keV_cps",
+            "ValueFormat": "E12.2"
+          },
+          "ValidMin": "0.0",
+          "ValidMax": "1.99885e+06",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": [
+              "Scalar",
+              "Minimum"
+            ],
+            "ParticleQuantity": "Counts"
+          }
+        },
+        {
+          "Name": "Electron Background Counts, 30° Telescope, High Energy",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "ted_ele_eflux_bg_tel30_hi_cps",
+          "Description": "Total Energy Detector, TED, Electron Background Counts, 30° Telescope, High Energy, 1 keV to 20 keV",
+          "Cadence": "PT2S",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "ted_ele_eflux_bg_tel30_1-20keV_cps",
+            "ValueFormat": "E12.2"
+          },
+          "ValidMin": "0.0",
+          "ValidMax": "1.99885e+06",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": [
+              "Scalar",
+              "Minimum"
+            ],
+            "ParticleQuantity": "Counts"
+          }
+        },
+        {
+          "Name": "Proton Background Counts, 0° Telescope, Low Energy",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "ted_pro_eflux_bg_tel0_low_cps",
+          "Description": "Total Energy Detector, TED, Proton Background Counts, 0° Telescope, Low Energy, 50 eV to 1000 eV",
+          "Cadence": "PT2S",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "ted_pro_eflux_bg_tel0_0.05-1keV_cps",
+            "ValueFormat": "E12.2"
+          },
+          "ValidMin": "0.0",
+          "ValidMax": "1.99885e+06",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": [
+              "Scalar",
+              "Minimum"
+            ],
+            "ParticleQuantity": "Counts"
+          }
+        },
+        {
+          "Name": "Proton Background Counts, 30° Telescope, Low Energy",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "ted_pro_eflux_bg_tel30_low_cps",
+          "Description": "Total Energy Detector, TED, Proton Background Counts, 30° Telescope, Low Energy, 50 eV to 1000 eV",
+          "Cadence": "PT2S",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "ted_pro_eflux_bg_tel30_0.05-1keV_cps",
+            "ValueFormat": "E12.2"
+          },
+          "ValidMin": "0.0",
+          "ValidMax": "1.99885e+06",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": [
+              "Scalar",
+              "Minimum"
+            ],
+            "ParticleQuantity": "Counts"
+          }
+        },
+        {
+          "Name": "Proton Background Counts, 0° Telescope, High Energy",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "ted_pro_eflux_bg_tel0_hi_cps",
+          "Description": "Total Energy Detector, TED, Proton Background Counts, 0° Telescope, High Energy, 1 keV to 20 keV",
+          "Cadence": "PT2S",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "ted_pro_eflux_bg_tel0_1-20keV_cps",
+            "ValueFormat": "E12.2"
+          },
+          "ValidMin": "0.0",
+          "ValidMax": "1.99885e+06",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": [
+              "Scalar",
+              "Minimum"
+            ],
+            "ParticleQuantity": "Counts"
+          }
+        },
+        {
+          "Name": "Proton Background Counts, 30° Telescope, High Energy",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "ted_pro_eflux_bg_tel30_hi_cps",
+          "Description": "Total Energy Detector, TED, Proton Background Counts, 30° Telescope, High Energy, 1 keV to 20 keV",
+          "Cadence": "PT2S",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "ted_pro_eflux_bg_tel30_1-20keV_cps",
+            "ValueFormat": "E12.2"
+          },
+          "ValidMin": "0.0",
+          "ValidMax": "1.99885e+06",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": [
+              "Scalar",
+              "Minimum"
+            ],
+            "ParticleQuantity": "Counts"
+          }
+        },
+        {
+          "Name": "Pitch Angle, Satellite, 0° Telescope",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "ted_alpha_0_sat",
+          "Description": "Total Energy Detector, TED, Pitch Angle, Satellite, 0° Telescope",
+          "Cadence": "PT2S",
+          "Units": "°",
+          "UnitsConversion": "0.0174532925>rad",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "ted_alpha_0_sat",
+            "ValueFormat": "E12.2",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "0.0",
+          "ValidMax": "180.0",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Pitch Angle, Satellite, 30° Telescope",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "ted_alpha_30_sat",
+          "Description": "Total Energy Detector, TED, Pitch Angle, Satellite, 30° Telescope",
+          "Cadence": "PT2S",
+          "Units": "°",
+          "UnitsConversion": "0.0174532925>rad",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "ted_alpha_30_sat",
+            "ValueFormat": "E12.2",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "0.0",
+          "ValidMax": "180.0",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Pitch Angle, Footpoint, 0° Telescope",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "ted_alpha_0_foot",
+          "Description": "Total Energy Detector, TED, Pitch Angle, Footpoint of Field Line, 0° Telescope",
+          "Cadence": "PT2S",
+          "Units": "°",
+          "UnitsConversion": "0.0174532925>rad",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "ted_alpha_0_foot",
+            "ValueFormat": "E12.2",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "0.0",
+          "ValidMax": "180.0",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Pitch Angle, Footpoint, 30° Telescope",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "ted_alpha_30_foot",
+          "Description": "Total Energy Detector, TED, Pitch Angle, Footpoint of Field Line, 30° Telescope",
+          "Cadence": "PT2S",
+          "Units": "°",
+          "UnitsConversion": "0.0174532925>rad",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "ted_alpha_30_foot",
+            "ValueFormat": "E12.2",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "0.0",
+          "ValidMax": "180.0",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "TED IFC Flag",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "ted_ifc_on",
+          "Description": "Total Energy Detector, TED, In-Flight Calibrator, IFC, Flag: 0=Off, 1=On",
+          "Cadence": "PT2S",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "ted_IFC_on",
+            "ValueFormat": "I4",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "0",
+          "ValidMax": "1",
+          "FillValue": "255",
+          "Support": {
+            "SupportQuantity": "InstrumentMode"
+          }
+        },
+        {
+          "Name": "Electron Integral Flux, 0#176; Telescope",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "mep_ele_flux_stackt0",
+          "Description": "Medium Energy Proton Detector, MEPED, Electron Integral Flux, 0#176; Telescope, >40 keV to >612 keV",
+          "Caveats": "This parameter is virtual. It is calculated by calling the function MAKE_STACK_ARRAY with the following input parameters: mep_ele_flux.",
+          "Cadence": "PT2S",
+          "Units": "(cm^2 s sr)^-1",
+          "UnitsConversion": "1e4>(m^2 s sr)^-1",
+          "RenderingHints": {
+            "ValueFormat": "E12.2"
+          },
+          "Structure": {
+            "Size": "2 4"
+          },
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": [
+              "Scalar",
+              "Integral"
+            ],
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "Electron Integral Flux, 0#176; Telescope, Percent Error",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "mep_ele_flux_err_stackt0",
+          "Description": "Medium Energy Proton Detector, MEPED, Electron Integral Flux, 0#176; Telescope, Percent Error, >40 keV to >612 keV",
+          "Caveats": "This parameter is virtual. It is calculated by calling the function MAKE_STACK_ARRAY with the following input parameters: mep_ele_flux_err.",
+          "Cadence": "PT2S",
+          "RenderingHints": {
+            "ValueFormat": "E12.2"
+          },
+          "Structure": {
+            "Size": "2 4"
+          },
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": [
+              "Scalar",
+              "Integral",
+              "Uncertainty"
+            ],
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "Electron Integral Flux, 90#176; Telescope",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "mep_ele_flux_stackt90",
+          "Description": "Medium Energy Proton Detector, MEPED, Electron Integral Flux, 90#176; Telescope, >40 keV to >612 keV",
+          "Caveats": "This parameter is virtual. It is calculated by calling the function MAKE_STACK_ARRAY with the following input parameters: mep_ele_flux.",
+          "Cadence": "PT2S",
+          "Units": "(cm^2 s sr)^-1",
+          "UnitsConversion": "1e4>(m^2 s sr)^-1",
+          "RenderingHints": {
+            "ValueFormat": "E12.2"
+          },
+          "Structure": {
+            "Size": "2 4"
+          },
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": [
+              "Scalar",
+              "Integral"
+            ],
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "Electron Integral Flux, 90#176; Telescope, Percent Error",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "mep_ele_flux_err_stackt90",
+          "Description": "Medium Energy Proton Detector, MEPED, Electron Integral Flux, 90#176; Telescope, Percent Error, >40 keV to >612 keV",
+          "Caveats": "This parameter is virtual. It is calculated by calling the function MAKE_STACK_ARRAY with the following input parameters: mep_ele_flux_err.",
+          "Cadence": "PT2S",
+          "RenderingHints": {
+            "ValueFormat": "E12.2"
+          },
+          "Structure": {
+            "Size": "2 4"
+          },
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": [
+              "Scalar",
+              "Integral",
+              "Uncertainty"
+            ],
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "Electron Integral Flux, Spectrograms",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "mep_ele_flux",
+          "Description": "Column 1 Labels: [ 0.00000, 90.0000] Column 2 Labels: [ 40.0000, 130.000, 287.000, 612.000]",
+          "Cadence": "PT2S",
+          "Units": "(cm^2 s sr)^-1",
+          "UnitsConversion": "1e4>(m^2 s sr)^-1",
+          "RenderingHints": {
+            "DisplayType": "Spectrogram",
+            "ValueFormat": "E12.2"
+          },
+          "Structure": {
+            "Size": "2 4"
+          },
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": [
+              "Scalar",
+              "Integral"
+            ],
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "Electron Integral Flux, Percent Error, Spectrograms",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "mep_ele_flux_err",
+          "Description": "Column 1 Labels: [ 0.00000, 90.0000] Column 2 Labels: [ 40.0000, 130.000, 287.000, 612.000]",
+          "Cadence": "PT2S",
+          "RenderingHints": {
+            "DisplayType": "Spectrogram",
+            "ValueFormat": "E12.2"
+          },
+          "Structure": {
+            "Size": "2 4"
+          },
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": [
+              "Scalar",
+              "Integral",
+              "Uncertainty"
+            ],
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "Electron Integral Flux, 0#176; and 90#176; Telescopes, >40 keV",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "mep_ele_flux_t_stacke1",
+          "Description": "Medium Energy Proton Detector, MEPED, Electron Integral Flux, 0#176; and 90#176; Telescopes, >40 keV",
+          "Caveats": "This parameter is virtual. It is calculated by calling the function MAKE_STACK_ARRAY with the following input parameters: mep_ele_flux.",
+          "Cadence": "PT2S",
+          "Units": "(cm^2 s sr)^-1",
+          "UnitsConversion": "1e4>(m^2 s sr)^-1",
+          "RenderingHints": {
+            "ValueFormat": "E12.2"
+          },
+          "Structure": {
+            "Size": "2 4"
+          },
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": [
+              "Scalar",
+              "Integral"
+            ],
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "Electron Integral Flux, 0#176; and 90#176; Telescopes, >130 keV",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "mep_ele_flux_t_stacke2",
+          "Description": "Medium Energy Proton Detector, MEPED, Electron Integral Flux, 0#176; and 90#176; Telescopes, >130 keV",
+          "Caveats": "This parameter is virtual. It is calculated by calling the function MAKE_STACK_ARRAY with the following input parameters: mep_ele_flux.",
+          "Cadence": "PT2S",
+          "Units": "(cm^2 s sr)^-1",
+          "UnitsConversion": "1e4>(m^2 s sr)^-1",
+          "RenderingHints": {
+            "ValueFormat": "E12.2"
+          },
+          "Structure": {
+            "Size": "2 4"
+          },
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": [
+              "Scalar",
+              "Integral"
+            ],
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "Electron Integral Flux, 0#176; and 90#176; Telescopes, >287 keV",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "mep_ele_flux_t_stacke3",
+          "Description": "Medium Energy Proton Detector, MEPED, Electron Integral Flux, 0#176; and 90#176; Telescopes, >287 keV",
+          "Caveats": "This parameter is virtual. It is calculated by calling the function MAKE_STACK_ARRAY with the following input parameters: mep_ele_flux.",
+          "Cadence": "PT2S",
+          "Units": "(cm^2 s sr)^-1",
+          "UnitsConversion": "1e4>(m^2 s sr)^-1",
+          "RenderingHints": {
+            "ValueFormat": "E12.2"
+          },
+          "Structure": {
+            "Size": "2 4"
+          },
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": [
+              "Scalar",
+              "Integral"
+            ],
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "Electron Integral Flux, 0#176; and 90#176; Telescopes, >612 keV",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "mep_ele_flux_t_stacke4",
+          "Description": "Medium Energy Proton Detector, MEPED, Electron Integral Flux, 0#176; and 90#176; Telescopes, >612 keV",
+          "Caveats": "This parameter is virtual. It is calculated by calling the function MAKE_STACK_ARRAY with the following input parameters: mep_ele_flux.",
+          "Cadence": "PT2S",
+          "Units": "(cm^2 s sr)^-1",
+          "UnitsConversion": "1e4>(m^2 s sr)^-1",
+          "RenderingHints": {
+            "ValueFormat": "E12.2"
+          },
+          "Structure": {
+            "Size": "2 4"
+          },
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": [
+              "Scalar",
+              "Integral"
+            ],
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "Electron Integral Flux, Energies",
+          "ParameterKey": "mep_ele_int_energies",
+          "Description": "Medium Energy Proton Detector, MEPED, Electron Integral Flux, Energies, >40 keV to >612 keV",
+          "Cadence": "PT2S",
+          "Units": "keV",
+          "UnitsConversion": "1.60218e-16>J",
+          "RenderingHints": {
+            "ValueFormat": "E12.4"
+          },
+          "Structure": {
+            "Size": "4",
+            "Element": [
+              {
+                "Name": "Element 1",
+                "Index": "1"
+              },
+              {
+                "Name": "Element 2",
+                "Index": "2"
+              },
+              {
+                "Name": "Element 3",
+                "Index": "3"
+              },
+              {
+                "Name": "Element 4",
+                "Index": "4"
+              }
+            ]
+          },
+          "ValidMin": "30.0",
+          "ValidMax": "800.0",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": "Scalar",
+            "ParticleQuantity": "Energy"
+          }
+        },
+        {
+          "Name": "MEPED Telescope Directions",
+          "ParameterKey": "mep_telescopes",
+          "Description": "Medium Energy Proton Detector, MEPED, Telescope Directions, 0#176; and 90#176; Telescopes",
+          "Cadence": "PT2S",
+          "RenderingHints": {
+            "ValueFormat": "E12.2",
+            "ScaleType": "LinearScale"
+          },
+          "Structure": {
+            "Size": "2",
+            "Element": [
+              {
+                "Name": "Element 1",
+                "Index": "1"
+              },
+              {
+                "Name": "Element 2",
+                "Index": "2"
+              }
+            ]
+          },
+          "ValidMin": "0.0",
+          "ValidMax": "90.0",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Proton Differential Flux, 0#176; Telescope",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "mep_pro_flux_stackt0",
+          "Description": "Medium Energy Proton Detector, MEPED, Proton Differential Flux, 0#176; Telescope, 39 keV to 2723 keV",
+          "Caveats": "This parameter is virtual. It is calculated by calling the function MAKE_STACK_ARRAY with the following input parameters: mep_pro_flux.",
+          "Cadence": "PT2S",
+          "Units": "(cm^2 s sr keV)^-1",
+          "UnitsConversion": "6.24161e19>(m^2 s sr J)^-1",
+          "RenderingHints": {
+            "ValueFormat": "E12.2"
+          },
+          "Structure": {
+            "Size": "2 5"
+          },
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": [
+              "Scalar",
+              "Differential"
+            ],
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "Proton Differential Flux, 0#176; Telescope, Percent Error",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "mep_pro_flux_err_stackt0",
+          "Description": "Medium Energy Proton Detector, MEPED, Proton Differential Flux, 0#176; Telescope, Percent Error, 39 keV to 2723 keV",
+          "Caveats": "This parameter is virtual. It is calculated by calling the function MAKE_STACK_ARRAY with the following input parameters: mep_pro_flux_err.",
+          "Cadence": "PT2S",
+          "RenderingHints": {
+            "ValueFormat": "E12.2"
+          },
+          "Structure": {
+            "Size": "2 5"
+          },
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": [
+              "Scalar",
+              "Differential",
+              "Uncertainty"
+            ],
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "Proton Differential Flux, 90#176; Telescope",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "mep_pro_flux_stackt90",
+          "Description": "Medium Energy Proton Detector, MEPED, Proton Differential Flux, 90#176; Telescope, 39 keV to 2723 keV",
+          "Caveats": "This parameter is virtual. It is calculated by calling the function MAKE_STACK_ARRAY with the following input parameters: mep_pro_flux.",
+          "Cadence": "PT2S",
+          "Units": "(cm^2 s sr keV)^-1",
+          "UnitsConversion": "6.24161e19>(m^2 s sr J)^-1",
+          "RenderingHints": {
+            "ValueFormat": "E12.2"
+          },
+          "Structure": {
+            "Size": "2 5"
+          },
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": [
+              "Scalar",
+              "Differential"
+            ],
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "Proton Differential Flux, 90#176; Telescope, Percent Error",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "mep_pro_flux_err_stackt90",
+          "Description": "Medium Energy Proton Detector, MEPED, Proton Differential Flux, 90#176; Telescope, Percent Error, 39 keV to 2723 keV",
+          "Caveats": "This parameter is virtual. It is calculated by calling the function MAKE_STACK_ARRAY with the following input parameters: mep_pro_flux_err.",
+          "Cadence": "PT2S",
+          "RenderingHints": {
+            "ValueFormat": "E12.2"
+          },
+          "Structure": {
+            "Size": "2 5"
+          },
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": [
+              "Scalar",
+              "Differential",
+              "Uncertainty"
+            ],
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "Proton Differential Flux, Spectrograms, >40 keV to >612 keV",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "mep_pro_flux",
+          "Description": "Column 1 Labels: [ 0.00000, 90.0000] Column 2 Labels: [ 39.0000, 115.000, 332.000, 1105.00, 2723.00]",
+          "Cadence": "PT2S",
+          "Units": "(cm^2 s sr keV)^-1",
+          "UnitsConversion": "6.24161e19>(m^2 s sr J)^-1",
+          "RenderingHints": {
+            "DisplayType": "Spectrogram",
+            "ValueFormat": "E12.2"
+          },
+          "Structure": {
+            "Size": "2 5"
+          },
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": [
+              "Scalar",
+              "Differential"
+            ],
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "Proton Differential Flux, Percent Error, Spectrograms",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "mep_pro_flux_err",
+          "Description": "Column 1 Labels: [ 0.00000, 90.0000] Column 2 Labels: [MEP_39keV_PrtnDiffFlux,MEP_115keV_PrtnDiffFlux,MEP_332keV_PrtnDiffFlux,MEP_1105keV_PrtnDiffFlux,MEP_2723keV_PrtnDiffFlux]",
+          "Cadence": "PT2S",
+          "RenderingHints": {
+            "DisplayType": "Spectrogram",
+            "ValueFormat": "E12.2"
+          },
+          "Structure": {
+            "Size": "2 5"
+          },
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": [
+              "Scalar",
+              "Differential",
+              "Uncertainty"
+            ],
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "Proton Differential Flux, 0#176; and 90#176; Telescopes, 39 keV",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "mep_pro_flux_t_stacke1",
+          "Description": "Medium Energy Proton Detector, MEPED, Proton Differential Flux, 0#176; and 90#176; Telescopes, 39 keV",
+          "Caveats": "This parameter is virtual. It is calculated by calling the function MAKE_STACK_ARRAY with the following input parameters: mep_pro_flux.",
+          "Cadence": "PT2S",
+          "Units": "(cm^2 s sr keV)^-1",
+          "UnitsConversion": "6.24161e19>(m^2 s sr J)^-1",
+          "RenderingHints": {
+            "ValueFormat": "E12.2"
+          },
+          "Structure": {
+            "Size": "2 5"
+          },
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": [
+              "Scalar",
+              "Differential"
+            ],
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "Proton Differential Flux, 0#176; and 90#176; Telescopes, 115 keV",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "mep_pro_flux_t_stacke2",
+          "Description": "Medium Energy Proton Detector, MEPED, Proton Differential Flux, 0#176; and 90#176; Telescopes, 115 keV",
+          "Caveats": "This parameter is virtual. It is calculated by calling the function MAKE_STACK_ARRAY with the following input parameters: mep_pro_flux.",
+          "Cadence": "PT2S",
+          "Units": "(cm^2 s sr keV)^-1",
+          "UnitsConversion": "6.24161e19>(m^2 s sr J)^-1",
+          "RenderingHints": {
+            "ValueFormat": "E12.2"
+          },
+          "Structure": {
+            "Size": "2 5"
+          },
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": [
+              "Scalar",
+              "Differential"
+            ],
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "Proton Differential Flux, 0#176; and 90#176; Telescopes, 332 keV",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "mep_pro_flux_t_stacke3",
+          "Description": "Medium Energy Proton Detector, MEPED, Proton Differential Flux, 0#176; and 90#176; Telescopes, 332 keV",
+          "Caveats": "This parameter is virtual. It is calculated by calling the function MAKE_STACK_ARRAY with the following input parameters: mep_pro_flux.",
+          "Cadence": "PT2S",
+          "Units": "(cm^2 s sr keV)^-1",
+          "UnitsConversion": "6.24161e19>(m^2 s sr J)^-1",
+          "RenderingHints": {
+            "ValueFormat": "E12.2"
+          },
+          "Structure": {
+            "Size": "2 5"
+          },
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": [
+              "Scalar",
+              "Differential"
+            ],
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "Proton Differential Flux, 0#176; and 90#176; Telescopes, 1105 keV",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "mep_pro_flux_t_stacke4",
+          "Description": "Medium Energy Proton Detector, MEPED, Proton Differential Flux, 0#176; and 90#176; Telescopes, 1105 keV",
+          "Caveats": "This parameter is virtual. It is calculated by calling the function MAKE_STACK_ARRAY with the following input parameters: mep_pro_flux.",
+          "Cadence": "PT2S",
+          "Units": "(cm^2 s sr keV)^-1",
+          "UnitsConversion": "6.24161e19>(m^2 s sr J)^-1",
+          "RenderingHints": {
+            "ValueFormat": "E12.2"
+          },
+          "Structure": {
+            "Size": "2 5"
+          },
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": [
+              "Scalar",
+              "Differential"
+            ],
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "Proton Differential Flux, 0#176; and 90#176; Telescopes, 2723 keV",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "mep_pro_flux_t_stacke5",
+          "Description": "Medium Energy Proton Detector, MEPED, Proton Differential Flux, 0#176; and 90#176; Telescopes, 2723 keV",
+          "Caveats": "This parameter is virtual. It is calculated by calling the function MAKE_STACK_ARRAY with the following input parameters: mep_pro_flux.",
+          "Cadence": "PT2S",
+          "Units": "(cm^2 s sr keV)^-1",
+          "UnitsConversion": "6.24161e19>(m^2 s sr J)^-1",
+          "RenderingHints": {
+            "ValueFormat": "E12.2"
+          },
+          "Structure": {
+            "Size": "2 5"
+          },
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": [
+              "Scalar",
+              "Differential"
+            ],
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "Proton Differential Flux, Energies",
+          "ParameterKey": "mep_pro_diff_energies",
+          "Description": "Medium Energy Proton Detector, MEPED, Proton Differential Flux, Energies, 39 keV to 2723 keV",
+          "Cadence": "PT2S",
+          "Units": "keV",
+          "UnitsConversion": "1.60218e-16>J",
+          "RenderingHints": {
+            "ValueFormat": "E12.4"
+          },
+          "Structure": {
+            "Size": "5",
+            "Element": [
+              {
+                "Name": "Element 1",
+                "Index": "1"
+              },
+              {
+                "Name": "Element 2",
+                "Index": "2"
+              },
+              {
+                "Name": "Element 3",
+                "Index": "3"
+              },
+              {
+                "Name": "Element 4",
+                "Index": "4"
+              },
+              {
+                "Name": "Element 5",
+                "Index": "5"
+              }
+            ]
+          },
+          "ValidMin": "30.0",
+          "ValidMax": "4000.0",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": "Scalar",
+            "ParticleQuantity": "Energy"
+          }
+        },
+        {
+          "Name": "Proton Integral Flux, 0#176; and 90#176; Telescopes",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "mep_pro_flux_p6",
+          "Description": "Medium Energy Proton Detector, MEPED, Proton Integral Flux, 0#176; and 90#176; Telescopes, >6174 keV",
+          "Cadence": "PT2S",
+          "Units": "(cm^2 s sr)^-1",
+          "UnitsConversion": "1e4>(m^2 s sr)^-1",
+          "RenderingHints": {
+            "ValueFormat": "E12.2"
+          },
+          "Structure": {
+            "Size": "2",
+            "Element": [
+              {
+                "Name": "Element 1",
+                "Index": "1",
+                "RenderingHints": {
+                  "AxisLabel": "0.00000"
+                }
+              },
+              {
+                "Name": "Element 2",
+                "Index": "2",
+                "RenderingHints": {
+                  "AxisLabel": "90.0000"
+                }
+              }
+            ]
+          },
+          "ValidMin": "0.0",
+          "ValidMax": "1.0e+10",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": [
+              "Scalar",
+              "Integral"
+            ],
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "Proton Integral Flux, 0#176; and 90#176; Telescopes, Percent Error",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "mep_pro_flux_p6_err",
+          "Description": "Medium Energy Proton Detector, MEPED, Proton Integral Flux, 0#176; and 90#176; Telescopes, Percent Error, >6174 keV",
+          "Cadence": "PT2S",
+          "RenderingHints": {
+            "ValueFormat": "E12.2"
+          },
+          "Structure": {
+            "Size": "2",
+            "Element": [
+              {
+                "Name": "Element 1",
+                "Index": "1",
+                "RenderingHints": {
+                  "AxisLabel": "0.00000"
+                }
+              },
+              {
+                "Name": "Element 2",
+                "Index": "2",
+                "RenderingHints": {
+                  "AxisLabel": "90.0000"
+                }
+              }
+            ]
+          },
+          "ValidMin": "1.0e-05",
+          "ValidMax": "1.0e+10",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": [
+              "Scalar",
+              "Integral",
+              "Uncertainty"
+            ],
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "Proton Differential Flux, Omnidirectional Telescope",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "mep_omni_flux_stack",
+          "Description": "Medium Energy Proton Detector, MEPED, Proton Differential Flux, Omnidirectional Telescope, at Center Energies 25 MeV, 50 MeV, and 100 MeV",
+          "Caveats": "This parameter is virtual. It is calculated by calling the function ALTERNATE_VIEW with the following input parameters: mep_omni_flux.",
+          "Cadence": "PT2S",
+          "Units": "(cm^2 s sr MeV)^-1",
+          "UnitsConversion": "6.24161e22>(m^2 s sr J)^-1",
+          "RenderingHints": {
+            "ValueFormat": "E12.2"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "MEP_Omni_25keV_PrtnDiffFlux",
+                "Index": "1",
+                "RenderingHints": {
+                  "AxisLabel": "25.0000"
+                }
+              },
+              {
+                "Name": "MEP_Omni_50keV_PrtnDiffFlux",
+                "Index": "2",
+                "RenderingHints": {
+                  "AxisLabel": "50.0000"
+                }
+              },
+              {
+                "Name": "MEP_Omni_100keV_PrtnDiffFlux",
+                "Index": "3",
+                "RenderingHints": {
+                  "AxisLabel": "100.000"
+                }
+              }
+            ]
+          },
+          "ValidMin": "0.0",
+          "ValidMax": "1.0e+10",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": [
+              "Scalar",
+              "Differential"
+            ],
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "Proton Differential Flux, Omnidirectional Telescope, Spectrograms in Energy",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "mep_omni_flux",
+          "Description": "Medium Energy Proton Detector, MEPED, Proton Differential Flux, Omnidirectional Telescope, as Spectrograms in Energy, at Center Energies 25 MeV, 50 MeV, and 100 MeV",
+          "Cadence": "PT2S",
+          "Units": "(cm^2 s sr MeV)^-1",
+          "UnitsConversion": "6.24161e22>(m^2 s sr J)^-1",
+          "RenderingHints": {
+            "DisplayType": "Spectrogram",
+            "ValueFormat": "E12.2"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "MEP_Omni_25keV_PrtnDiffFlux",
+                "Index": "1",
+                "RenderingHints": {
+                  "AxisLabel": "25.0000"
+                }
+              },
+              {
+                "Name": "MEP_Omni_50keV_PrtnDiffFlux",
+                "Index": "2",
+                "RenderingHints": {
+                  "AxisLabel": "50.0000"
+                }
+              },
+              {
+                "Name": "MEP_Omni_100keV_PrtnDiffFlux",
+                "Index": "3",
+                "RenderingHints": {
+                  "AxisLabel": "100.000"
+                }
+              }
+            ]
+          },
+          "ValidMin": "0.0",
+          "ValidMax": "1.0e+10",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": [
+              "Scalar",
+              "Differential"
+            ],
+            "ParticleQuantity": "NumberFlux"
+          }
+        },
+        {
+          "Name": "Proton Differential Flux, Omnidirectional Telescope, Energies",
+          "ParameterKey": "mep_omni_energies",
+          "Description": "Medium Energy Proton Detector, MEPED, Proton Differential Flux, Omnidirectional Telescope, at Center Energies 25 MeV, 50 MeV, and 100 MeV",
+          "Cadence": "PT2S",
+          "Units": "MeV",
+          "UnitsConversion": "1.60218e-13>J",
+          "RenderingHints": {
+            "ValueFormat": "E12.4"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "Element 1",
+                "Index": "1"
+              },
+              {
+                "Name": "Element 2",
+                "Index": "2"
+              },
+              {
+                "Name": "Element 3",
+                "Index": "3"
+              }
+            ]
+          },
+          "ValidMin": "20.0",
+          "ValidMax": "200.0",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": "Scalar",
+            "ParticleQuantity": "Energy"
+          }
+        },
+        {
+          "Name": "Fit Flag for Proton Differential Flux, Fit Flag",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "mep_omni_flux_flag_fit",
+          "Description": "Medium Energy Proton Detector, MEPED, Fit Flag for Proton Differential Flux, Fit Flag",
+          "Cadence": "PT2S",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "MEPED_OmniFitFlag",
+            "ValueFormat": "I4",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "0",
+          "ValidMax": "1",
+          "FillValue": "255",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Fit Flag for Proton Differential Flux, Iteration Limit",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "mep_omni_flux_flag_iter_lim",
+          "Description": "Medium Energy Proton Detector, MEPED, Fit Flag for Proton Differential Flux, Iteration Limit",
+          "Cadence": "PT2S",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "mep_omni_flux_flag_iter_lim",
+            "ValueFormat": "I4",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "0",
+          "ValidMax": "1",
+          "FillValue": "255",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Omnidirectional Gamma",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "mep_omni_gamma_stack",
+          "Description": "Medium Energy Proton Detector, MEPED, Omnidirectional Gamma",
+          "Caveats": "This parameter is virtual. It is calculated by calling the function ALTERNATE_VIEW with the following input parameters: mep_omni_gamma.",
+          "Cadence": "PT2S",
+          "RenderingHints": {
+            "ValueFormat": "E12.2",
+            "ScaleType": "LinearScale"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "MEP_25keV_OmniGamma",
+                "Index": "1",
+                "RenderingHints": {
+                  "AxisLabel": "25.0000"
+                }
+              },
+              {
+                "Name": "MEP_50keV_OmniGamma",
+                "Index": "2",
+                "RenderingHints": {
+                  "AxisLabel": "50.0000"
+                }
+              },
+              {
+                "Name": "MEP_100keV_OmniGamma",
+                "Index": "3",
+                "RenderingHints": {
+                  "AxisLabel": "100.000"
+                }
+              }
+            ]
+          },
+          "ValidMin": "-50.0",
+          "ValidMax": "1.0e+10",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": "Scalar",
+            "ParticleQuantity": "Energy"
+          }
+        },
+        {
+          "Name": "Omnidirectional Gamma, Spectrograms",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "mep_omni_gamma",
+          "Description": "Medium Energy Proton Detector, MEPED, Omnidirectional Gamma, as Spectrograms in Energy",
+          "Cadence": "PT2S",
+          "RenderingHints": {
+            "DisplayType": "Spectrogram",
+            "ValueFormat": "E12.2",
+            "ScaleType": "LinearScale"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "MEP_25keV_OmniGamma",
+                "Index": "1",
+                "RenderingHints": {
+                  "AxisLabel": "25.0000"
+                }
+              },
+              {
+                "Name": "MEP_50keV_OmniGamma",
+                "Index": "2",
+                "RenderingHints": {
+                  "AxisLabel": "50.0000"
+                }
+              },
+              {
+                "Name": "MEP_100keV_OmniGamma",
+                "Index": "3",
+                "RenderingHints": {
+                  "AxisLabel": "100.000"
+                }
+              }
+            ]
+          },
+          "ValidMin": "-50.0",
+          "ValidMax": "1.0e+10",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": "Scalar",
+            "ParticleQuantity": "Energy"
+          }
+        },
+        {
+          "Name": "Pitch Angle at the Satellite, 0° Telescope",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "meped_alpha_0_sat",
+          "Description": "Medium Energy Proton Detector, MEPED, Pitch Angle at the Satellite, 0° Telescope",
+          "Cadence": "PT2S",
+          "Units": "°",
+          "UnitsConversion": "0.0174532925>rad",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "meped_alpha_0_sat",
+            "ValueFormat": "E12.2",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "0.0",
+          "ValidMax": "180.0",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Pitch Angle at the Satellite, 90° Telescope",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "meped_alpha_90_sat",
+          "Description": "Medium Energy Proton Detector, MEPED, Pitch Angle at the Satellite, 90° Telescope",
+          "Cadence": "PT2S",
+          "Units": "°",
+          "UnitsConversion": "0.0174532925>rad",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "meped_alpha_90_sat",
+            "ValueFormat": "E12.2",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "0.0",
+          "ValidMax": "180.0",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Pitch Angle at the Satellite Footpoint, 0° Telescope",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "meped_alpha_0_foot",
+          "Description": "Medium Energy Proton Detector, MEPED, Pitch Angle at the Satellite Footpoint, 0° Telescope",
+          "Cadence": "PT2S",
+          "Units": "°",
+          "UnitsConversion": "0.0174532925>rad",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "meped_alpha_0_foot",
+            "ValueFormat": "E12.2",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "0.0",
+          "ValidMax": "180.0",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Pitch Angle at the Satellite Footpoint, 90° Telescope",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "meped_alpha_90_foot",
+          "Description": "Medium Energy Proton Detector, MEPED, Pitch Angle at the Satellite Footpoint, 90° Telescope",
+          "Cadence": "PT2S",
+          "Units": "°",
+          "UnitsConversion": "0.0174532925>rad",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "meped_alpha_90_foot",
+            "ValueFormat": "E12.2",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "0.0",
+          "ValidMax": "180.0",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "MEPED IFC Flag",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "mep_ifc_on",
+          "Description": "Medium Energy Proton Detector, MEPED, In-Flight Calibrator, IFC Flag: 0=Off, 1=On",
+          "Cadence": "PT2S",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "mep_IFC_on",
+            "ValueFormat": "I4",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "0",
+          "ValidMax": "1",
+          "FillValue": "255",
+          "Support": {
+            "SupportQuantity": "InstrumentMode"
+          }
+        },
+        {
+          "Name": "Satellite Designation ID",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "satid",
+          "Description": "Satellite Designation Identifier",
+          "Cadence": "PT2S",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "satID",
+            "ValueFormat": "I4",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "1.0",
+          "ValidMax": "40.0",
+          "FillValue": "-2.14748e+09",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Satellite Orbital Direction",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "sat_direction",
+          "Description": "Satellite Orbital Direction: 0=North, 1=South",
+          "Cadence": "PT2S",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "sat_direction",
+            "ValueFormat": "I4",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "0.0",
+          "ValidMax": "1.0",
+          "FillValue": "-2.14748e+09",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Satellite Geodetic Altitude",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "alt",
+          "Description": "Satellite Geodetic, WGS84, Altitude",
+          "Cadence": "PT2S",
+          "Units": "km",
+          "UnitsConversion": "1e3>m",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "Altitude",
+            "ValueFormat": "F7.1",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "800.0",
+          "ValidMax": "1000.0",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Satellite Geodetic Latitude",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "lat",
+          "Description": "Satellite Geodetic, WGS84, Latitude",
+          "Cadence": "PT2S",
+          "Units": "°",
+          "UnitsConversion": "0.0174532925>rad",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "WGS84"
+          },
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "GeodLat",
+            "ValueFormat": "F7.2",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "-90.0",
+          "ValidMax": "90.0",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "Qualifier": "DirectionAngle.AzimuthAngle",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Satellite Geodetic Longitude",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "lon",
+          "Description": "Satellite Geodetic, WGS84, Longitude",
+          "Cadence": "PT2S",
+          "Units": "°",
+          "UnitsConversion": "0.0174532925>rad",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "WGS84"
+          },
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "GeodLon",
+            "ValueFormat": "F7.2",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "0.0",
+          "ValidMax": "360.0",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "Qualifier": "DirectionAngle.ElevationAngle",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Satellite Magnetic Latitude",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "mag_lat_sat",
+          "Description": "Satellite Magnetic, MAG, Latitude",
+          "Cadence": "PT2S",
+          "Units": "°",
+          "UnitsConversion": "0.0174532925>rad",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "MAG"
+          },
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "MagLat_sat",
+            "ValueFormat": "F7.2",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "-90.0",
+          "ValidMax": "90.0",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "Qualifier": "DirectionAngle.AzimuthAngle",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Satellite Magnetic Longitude",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "mag_lon_sat",
+          "Description": "Satellite Magnetic, MAG, Longitude",
+          "Cadence": "PT2S",
+          "Units": "°",
+          "UnitsConversion": "0.0174532925>rad",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "MAG"
+          },
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "MagLon_sat",
+            "ValueFormat": "F7.2",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "0.0",
+          "ValidMax": "360.0",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "Qualifier": "DirectionAngle.ElevationAngle",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Satellite L Shell, IGRF",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "l_igrf",
+          "Description": "Satellite L Shell, CGM, Coordinates, from the International Geomagnetic Reference Field, IGRF, Model",
+          "Cadence": "PT2S",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "L_IGRF",
+            "ValueFormat": "F7.2",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "0.0",
+          "ValidMax": "20.0",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Satellite Magnetic Local Time",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "mlt",
+          "Description": "Satellite Magnetic Local Time, MLT, in Hours",
+          "Cadence": "PT2S",
+          "Units": "h",
+          "UnitsConversion": "3600>s",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "MLT",
+            "ValueFormat": "F7.2",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "0.0",
+          "ValidMax": "25.0",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Footpoint Geodetic Latitude",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "geod_lat_foot",
+          "Description": "Geodetic, WGS84, Latitude, Footpoint of Field Line",
+          "Cadence": "PT2S",
+          "Units": "°",
+          "UnitsConversion": "0.0174532925>rad",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "WGS84"
+          },
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "GeodLat_foot",
+            "ValueFormat": "F7.2",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "-90.0",
+          "ValidMax": "90.0",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "Qualifier": "DirectionAngle.AzimuthAngle",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Footpoint Geodetic Longitude",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "geod_lon_foot",
+          "Description": "Geodetic, WGS84, Longitude, Footpoint of Field Line",
+          "Cadence": "PT2S",
+          "Units": "°",
+          "UnitsConversion": "0.0174532925>rad",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "WGS84"
+          },
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "GeodLon_foot",
+            "ValueFormat": "F7.2",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "0.0",
+          "ValidMax": "360.0",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "Qualifier": "DirectionAngle.ElevationAngle",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Footpoint AACGM Latitude",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "aacgm_lat_foot",
+          "Description": "Altitude Adjusted Corrected Geomagnetic, AACGM, Latitude, Footpoint of Field Line",
+          "Cadence": "PT2S",
+          "Units": "°",
+          "UnitsConversion": "0.0174532925>rad",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "CGM"
+          },
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "AACGM_Lat_foot",
+            "ValueFormat": "F7.2",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "-90.0",
+          "ValidMax": "90.0",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "Qualifier": "DirectionAngle.AzimuthAngle",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Footpoint AACGM Longitude",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "aacgm_lon_foot",
+          "Description": "Altitude Adjusted Corrected Geomagnetic, AACGM, Longitude, Footpoint of Field Line",
+          "Cadence": "PT2S",
+          "Units": "°",
+          "UnitsConversion": "0.0174532925>rad",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "CGM"
+          },
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "AACGM_Lon_foot",
+            "ValueFormat": "F7.2",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "0.0",
+          "ValidMax": "360.0",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "Qualifier": "DirectionAngle.ElevationAngle",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Footpoint Magnetic Latitude",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "mag_lat_foot",
+          "Description": "Magnetic, MAG, Latitude, Footpoint of Field Line",
+          "Cadence": "PT2S",
+          "Units": "°",
+          "UnitsConversion": "0.0174532925>rad",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "MAG"
+          },
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "MagLat_foot",
+            "ValueFormat": "F7.2",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "-90.0",
+          "ValidMax": "90.0",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "Qualifier": "DirectionAngle.AzimuthAngle",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Footpoint Magnetic Longitude",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "mag_lon_foot",
+          "Description": "Magnetic, MAG, Longitude, Footpoint of Field Line",
+          "Cadence": "PT2S",
+          "Units": "°",
+          "UnitsConversion": "0.0174532925>rad",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "MAG"
+          },
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "MagLon_foot",
+            "ValueFormat": "F7.2",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "0.0",
+          "ValidMax": "360.0",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "Qualifier": "DirectionAngle.ElevationAngle",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Satellite Magnetic Field Radial Component",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "br_sat",
+          "Description": "Satellite Magnetic Field Radial Component, CGM, Coordinates, from the International Geomagnetic Reference Field, IGRF, Model",
+          "Cadence": "PT2S",
+          "Units": "nT",
+          "UnitsConversion": "1e-9>T",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "CGM"
+          },
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "Br_sat",
+            "ValueFormat": "E12.2",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "-100000.0",
+          "ValidMax": "100000.0",
+          "FillValue": "-1.0e+31",
+          "Field": {
+            "Qualifier": [
+              "Scalar",
+              "Magnitude"
+            ],
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "Satellite Magnetic Field Theta Component",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "bt_sat",
+          "Description": "Satellite Magnetic Field Theta Component, CGM, Coordinates, from the International Geomagnetic Reference Field, IGRF, Model",
+          "Cadence": "PT2S",
+          "Units": "nT",
+          "UnitsConversion": "1e-9>T",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "CGM"
+          },
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "Bt_sat",
+            "ValueFormat": "E12.2",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "-100000.0",
+          "ValidMax": "100000.0",
+          "FillValue": "-1.0e+31",
+          "Field": {
+            "Qualifier": "DirectionAngle.AzimuthAngle",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "Satellite Magnetic Field Phi Component",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "bp_sat",
+          "Description": "Satellite Magnetic Field Phi Component, CGM, Coordinates, from the International Geomagnetic Reference Field, IGRF, Model",
+          "Cadence": "PT2S",
+          "Units": "nT",
+          "UnitsConversion": "1e-9>T",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "CGM"
+          },
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "Bp_sat",
+            "ValueFormat": "E12.2",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "-100000.0",
+          "ValidMax": "100000.0",
+          "FillValue": "-1.0e+31",
+          "Field": {
+            "Qualifier": "DirectionAngle.ElevationAngle",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "Satellite Total Magnetic Field",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "btot_sat",
+          "Description": "Satellite Magnetic Field Total Component, CGM, Coordinates, from the International Geomagnetic Reference Field, IGRF, Model",
+          "Cadence": "PT2S",
+          "Units": "nT",
+          "UnitsConversion": "1e-9>T",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "Btot_sat",
+            "ValueFormat": "E12.2",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "-100000.0",
+          "ValidMax": "100000.0",
+          "FillValue": "-1.0e+31",
+          "Field": {
+            "Qualifier": [
+              "Scalar",
+              "Total"
+            ],
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "Magnetic Field Radial Component, Footpoint",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "br_foot",
+          "Description": "Magnetic Field Radial, CGM, Coordinates, from the International Geomagnetic Reference Field, IGRF, Footpoint of Field Line",
+          "Cadence": "PT2S",
+          "Units": "nT",
+          "UnitsConversion": "1e-9>T",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "CGM"
+          },
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "Br_foot",
+            "ValueFormat": "E12.2",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "-100000.0",
+          "ValidMax": "100000.0",
+          "FillValue": "-1.0e+31",
+          "Field": {
+            "Qualifier": [
+              "Scalar",
+              "Magnitude"
+            ],
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "Magnetic Field Theta Component, Footpoint",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "bt_foot",
+          "Description": "Magnetic Field Theta, CGM, Coordinates, from the International Geomagnetic Reference Field, IGRF, Footpoint of Field Line",
+          "Cadence": "PT2S",
+          "Units": "nT",
+          "UnitsConversion": "1e-9>T",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "CGM"
+          },
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "Bt_foot",
+            "ValueFormat": "E12.2",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "-100000.0",
+          "ValidMax": "100000.0",
+          "FillValue": "-1.0e+31",
+          "Field": {
+            "Qualifier": "DirectionAngle.AzimuthAngle",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "Magnetic Field Phi Component, Footpoint",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "bp_foot",
+          "Description": "Magnetic Field Phi, CGM, Coordinates, from the International Geomagnetic Reference Field, IGRF, Footpoint of Field Line",
+          "Cadence": "PT2S",
+          "Units": "nT",
+          "UnitsConversion": "1e-9>T",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "CGM"
+          },
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "Bp_foot",
+            "ValueFormat": "E12.2",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "-100000.0",
+          "ValidMax": "100000.0",
+          "FillValue": "-1.0e+31",
+          "Field": {
+            "Qualifier": "DirectionAngle.ElevationAngle",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "Total Magnetic Field, Footpoint",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "btot_foot",
+          "Description": "Magnetic Field Total, CGM, Coordinates, from the International Geomagnetic Reference Field, IGRF, Footpoint of Field Line",
+          "Cadence": "PT2S",
+          "Units": "nT",
+          "UnitsConversion": "1e-9>T",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "Btot_foot",
+            "ValueFormat": "E12.2",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "-100000.0",
+          "ValidMax": "100000.0",
+          "FillValue": "-1.0e+31",
+          "Field": {
+            "Qualifier": [
+              "Scalar",
+              "Total"
+            ],
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "Satellite Position, X Component, IGRF",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "bx_sat",
+          "Description": "Satellite Position, X Component, CGM, Coordinates, Towards Earth, from the International Geomagnetic Reference Field, IGRF, Model",
+          "Cadence": "PT2S",
+          "Units": "nT",
+          "UnitsConversion": "1e-9>T",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "CGM"
+          },
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "Bx_sat",
+            "ValueFormat": "E12.2",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "-100000.0",
+          "ValidMax": "100000.0",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "Qualifier": "Component.I",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Satellite Position, Y Component, IGRF",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "by_sat",
+          "Description": "Satellite Position, Y Component, CGM, Coordinates, Opposite Velocity Direction, from the International Geomagnetic Reference Field, IGRF, Model",
+          "Cadence": "PT2S",
+          "Units": "nT",
+          "UnitsConversion": "1e-9>T",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "CGM"
+          },
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "By_sat",
+            "ValueFormat": "E12.2",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "-100000.0",
+          "ValidMax": "100000.0",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "Qualifier": "Component.J",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Satellite Position, Z Component, IGRF",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "bz_sat",
+          "Description": "Satellite Position, Z Component, CGM, Coordinates, X ⨯ Y Direction, from the International Geomagnetic Reference Field, IGRF, Model",
+          "Cadence": "PT2S",
+          "Units": "nT",
+          "UnitsConversion": "1e-9>T",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "CGM"
+          },
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "Bz_sat",
+            "ValueFormat": "E12.2",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "-100000.0",
+          "ValidMax": "100000.0",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "Qualifier": "Component.K",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Satellite Altitude, Text Label",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "alt_text",
+          "Description": "Satellite Geodetic Altitude, Text Label",
+          "Caveats": "This parameter is virtual. It is calculated by calling the function ALTERNATE_VIEW with the following input parameters: alt.",
+          "Cadence": "PT2S",
+          "Units": "km",
+          "UnitsConversion": "1e3>m",
+          "RenderingHints": {
+            "AxisLabel": "Altitude",
+            "ValueFormat": "F7.1",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "800.0",
+          "ValidMax": "1000.0",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Geodetic Latitude, Text Label",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "lat_text",
+          "Description": "Satellite Geodetic Latitude, Text Label",
+          "Caveats": "This parameter is virtual. It is calculated by calling the function ALTERNATE_VIEW with the following input parameters: lat.",
+          "Cadence": "PT2S",
+          "Units": "°",
+          "UnitsConversion": "0.0174532925>rad",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "WGS84"
+          },
+          "RenderingHints": {
+            "AxisLabel": "GeodLat",
+            "ValueFormat": "F7.2",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "-90.0",
+          "ValidMax": "90.0",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "Qualifier": "DirectionAngle.AzimuthAngle",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Geodetic Longitude, Text Label",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "lon_text",
+          "Description": "Satellite Geodetic Longitude, Text Label",
+          "Caveats": "This parameter is virtual. It is calculated by calling the function ALTERNATE_VIEW with the following input parameters: lon.",
+          "Cadence": "PT2S",
+          "Units": "°",
+          "UnitsConversion": "0.0174532925>rad",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "WGS84"
+          },
+          "RenderingHints": {
+            "AxisLabel": "GeodLon",
+            "ValueFormat": "F7.2",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "0.0",
+          "ValidMax": "360.0",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "Qualifier": "DirectionAngle.ElevationAngle",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "L Shell, IGRF, Text Label",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "l_igrf_text",
+          "Description": "Satellite L Shell, CGM, Coordinates, from the International Geomagnetic Reference Field, IGRF, Model, Text Label",
+          "Caveats": "This parameter is virtual. It is calculated by calling the function ALTERNATE_VIEW with the following input parameters: l_igrf.",
+          "Cadence": "PT2S",
+          "RenderingHints": {
+            "AxisLabel": "L_IGRF",
+            "ValueFormat": "F7.2",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "0.0",
+          "ValidMax": "20.0",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Magnetic Local Time, Text Label",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "mlt_text",
+          "Description": "Satellite Magnetic Local Time, MLT in Hours, Text Label",
+          "Caveats": "This parameter is virtual. It is calculated by calling the function ALTERNATE_VIEW with the following input parameters: mlt.",
+          "Cadence": "PT2S",
+          "Units": "h",
+          "UnitsConversion": "3600>s",
+          "RenderingHints": {
+            "AxisLabel": "MLT",
+            "ValueFormat": "F4.1",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "0.0",
+          "ValidMax": "25.0",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Footpoint Geodetic Latitude, Text Label",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "geod_lat_foot_text",
+          "Description": "Geodetic, WGS84, Latitude, Footpoint of Field Line, Text Label",
+          "Caveats": "This parameter is virtual. It is calculated by calling the function ALTERNATE_VIEW with the following input parameters: geod_lat_foot.",
+          "Cadence": "PT2S",
+          "Units": "°",
+          "UnitsConversion": "0.0174532925>rad",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "WGS84"
+          },
+          "RenderingHints": {
+            "AxisLabel": "GeodLat_foot",
+            "ValueFormat": "F7.2",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "-90.0",
+          "ValidMax": "90.0",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "Qualifier": "DirectionAngle.AzimuthAngle",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Footpoint Geodetic Longitude, Text Label",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "geod_lon_foot_text",
+          "Description": "Geodetic, WGS84, Longitude, Footpoint of Field Line, Text Label",
+          "Caveats": "This parameter is virtual. It is calculated by calling the function ALTERNATE_VIEW with the following input parameters: geod_lon_foot.",
+          "Cadence": "PT2S",
+          "Units": "°",
+          "UnitsConversion": "0.0174532925>rad",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "WGS84"
+          },
+          "RenderingHints": {
+            "AxisLabel": "GeodLon_foot",
+            "ValueFormat": "F7.2",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "0.0",
+          "ValidMax": "360.0",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "Qualifier": "DirectionAngle.ElevationAngle",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Footpoint AACGM Latitude, Text Label",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "aacgm_lat_foot_text",
+          "Description": "Altitude Adjusted Corrected Geomagnetic, AACGM, Latitude, Footpoint of Field Line, Text Label",
+          "Caveats": "This parameter is virtual. It is calculated by calling the function ALTERNATE_VIEW with the following input parameters: aacgm_lat_foot.",
+          "Cadence": "PT2S",
+          "Units": "°",
+          "UnitsConversion": "0.0174532925>rad",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "CGM"
+          },
+          "RenderingHints": {
+            "AxisLabel": "AACGM_Lat_foot",
+            "ValueFormat": "F7.2",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "-90.0",
+          "ValidMax": "90.0",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "Qualifier": "DirectionAngle.AzimuthAngle",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Footpoint AACGM Longitude, Text Label",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "aacgm_lon_foot_text",
+          "Description": "Altitude Adjusted Corrected Geomagnetic, AACGM, Longitude, Footpoint of Field Line, Text Label",
+          "Caveats": "This parameter is virtual. It is calculated by calling the function ALTERNATE_VIEW with the following input parameters: aacgm_lon_foot.",
+          "Cadence": "PT2S",
+          "Units": "°",
+          "UnitsConversion": "0.0174532925>rad",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "CGM"
+          },
+          "RenderingHints": {
+            "AxisLabel": "AACGM_Lon_foot",
+            "ValueFormat": "F7.2",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "0.0",
+          "ValidMax": "360.0",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "Qualifier": "DirectionAngle.ElevationAngle",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Footpoint Magnetic Latitude, Text Label",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "mag_lat_foot_text",
+          "Description": "Magnetic, MAG, Latitude, Footpoint of Field Line, Text Label",
+          "Caveats": "This parameter is virtual. It is calculated by calling the function ALTERNATE_VIEW with the following input parameters: mag_lat_foot.",
+          "Cadence": "PT2S",
+          "Units": "°",
+          "UnitsConversion": "0.0174532925>rad",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "MAG"
+          },
+          "RenderingHints": {
+            "AxisLabel": "MagLat_foot",
+            "ValueFormat": "F7.2",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "-90.0",
+          "ValidMax": "90.0",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "Qualifier": "DirectionAngle.AzimuthAngle",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Footpoint Magnetic Longitude, Text Label",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "mag_lon_foot_text",
+          "Description": "Magnetic, MAG, Longitude, Footpoint of Field Line, Text Label",
+          "Caveats": "This parameter is virtual. It is calculated by calling the function ALTERNATE_VIEW with the following input parameters: mag_lon_foot.",
+          "Cadence": "PT2S",
+          "Units": "°",
+          "UnitsConversion": "0.0174532925>rad",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "MAG"
+          },
+          "RenderingHints": {
+            "AxisLabel": "MagLon_foot",
+            "ValueFormat": "F7.2",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "0.0",
+          "ValidMax": "360.0",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "Qualifier": "DirectionAngle.ElevationAngle",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Satellite Magnetic Field Radial Component, Text Label",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "br_sat_text",
+          "Description": "Satellite Magnetic Field Radial Component, CGM, Coordinates, from the International Geomagnetic Reference Field, IGRF, Model, Text Label",
+          "Caveats": "This parameter is virtual. It is calculated by calling the function ALTERNATE_VIEW with the following input parameters: br_sat.",
+          "Cadence": "PT2S",
+          "Units": "nT",
+          "UnitsConversion": "1e-9>T",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "CGM"
+          },
+          "RenderingHints": {
+            "AxisLabel": "Br_sat",
+            "ValueFormat": "E12.2",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "-100000.0",
+          "ValidMax": "100000.0",
+          "FillValue": "-1.0e+31",
+          "Field": {
+            "Qualifier": [
+              "Scalar",
+              "Magnitude"
+            ],
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "Satellite Magnetic Field Theta Component, Text Label",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "bt_sat_text",
+          "Description": "Satellite Magnetic Field Theta Component, CGM, Coordinates, from the International Geomagnetic Reference Field, IGRF, Model, Text Label",
+          "Caveats": "This parameter is virtual. It is calculated by calling the function ALTERNATE_VIEW with the following input parameters: bt_sat.",
+          "Cadence": "PT2S",
+          "Units": "nT",
+          "UnitsConversion": "1e-9>T",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "CGM"
+          },
+          "RenderingHints": {
+            "AxisLabel": "Bt_sat",
+            "ValueFormat": "E12.2",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "-100000.0",
+          "ValidMax": "100000.0",
+          "FillValue": "-1.0e+31",
+          "Field": {
+            "Qualifier": "DirectionAngle.AzimuthAngle",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "Satellite Magnetic Field Phi Component, Text Label",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "bp_sat_text",
+          "Description": "Satellite Magnetic Field Phi Component, CGM, Coordinates, from the International Geomagnetic Reference Field, IGRF, Model, Text Label",
+          "Caveats": "This parameter is virtual. It is calculated by calling the function ALTERNATE_VIEW with the following input parameters: bp_sat.",
+          "Cadence": "PT2S",
+          "Units": "nT",
+          "UnitsConversion": "1e-9>T",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "CGM"
+          },
+          "RenderingHints": {
+            "AxisLabel": "Bp_sat",
+            "ValueFormat": "E12.2",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "-100000.0",
+          "ValidMax": "100000.0",
+          "FillValue": "-1.0e+31",
+          "Field": {
+            "Qualifier": "DirectionAngle.ElevationAngle",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "Satellite Total Magnetic Field, Text Label",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "btot_sat_text",
+          "Description": "Satellite Magnetic Field Total Component, CGM, Coordinates, from the International Geomagnetic Reference Field, IGRF, Model, Text Label",
+          "Caveats": "This parameter is virtual. It is calculated by calling the function ALTERNATE_VIEW with the following input parameters: btot_sat.",
+          "Cadence": "PT2S",
+          "Units": "nT",
+          "UnitsConversion": "1e-9>T",
+          "RenderingHints": {
+            "AxisLabel": "Btot_sat",
+            "ValueFormat": "E12.2",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "-100000.0",
+          "ValidMax": "100000.0",
+          "FillValue": "-1.0e+31",
+          "Field": {
+            "Qualifier": [
+              "Scalar",
+              "Total"
+            ],
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "Magnetic Field Radial Component, Footpoint, Text Label",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "br_foot_text",
+          "Description": "Magnetic Field Radial, CGM, Coordinates, from the International Geomagnetic Reference Field, IGRF, Footpoint of Field Line, Text Label",
+          "Caveats": "This parameter is virtual. It is calculated by calling the function ALTERNATE_VIEW with the following input parameters: br_foot.",
+          "Cadence": "PT2S",
+          "Units": "nT",
+          "UnitsConversion": "1e-9>T",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "CGM"
+          },
+          "RenderingHints": {
+            "AxisLabel": "Br_foot",
+            "ValueFormat": "E12.2",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "-100000.0",
+          "ValidMax": "100000.0",
+          "FillValue": "-1.0e+31",
+          "Field": {
+            "Qualifier": [
+              "Scalar",
+              "Magnitude"
+            ],
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "Magnetic Field Theta Component, Footpoint, Text Label",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "bt_foot_text",
+          "Description": "Magnetic Field Theta, CGM, Coordinates, from the International Geomagnetic Reference Field, IGRF, Footpoint of Field Line, Text Label",
+          "Caveats": "This parameter is virtual. It is calculated by calling the function ALTERNATE_VIEW with the following input parameters: bt_foot.",
+          "Cadence": "PT2S",
+          "Units": "nT",
+          "UnitsConversion": "1e-9>T",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "CGM"
+          },
+          "RenderingHints": {
+            "AxisLabel": "Bt_foot",
+            "ValueFormat": "E12.2",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "-100000.0",
+          "ValidMax": "100000.0",
+          "FillValue": "-1.0e+31",
+          "Field": {
+            "Qualifier": "DirectionAngle.AzimuthAngle",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "Magnetic Field Phi Component, Footpoint, Text Label",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "bp_foot_text",
+          "Description": "Magnetic Field Phi, CGM, Coordinates, from the International Geomagnetic Reference Field, IGRF, Footpoint of Field Line, Text Label",
+          "Caveats": "This parameter is virtual. It is calculated by calling the function ALTERNATE_VIEW with the following input parameters: bp_foot.",
+          "Cadence": "PT2S",
+          "Units": "nT",
+          "UnitsConversion": "1e-9>T",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "CGM"
+          },
+          "RenderingHints": {
+            "AxisLabel": "Bp_foot",
+            "ValueFormat": "E12.2",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "-100000.0",
+          "ValidMax": "100000.0",
+          "FillValue": "-1.0e+31",
+          "Field": {
+            "Qualifier": "DirectionAngle.ElevationAngle",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "Total Magnetic Field, Footpoint, Text Label",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "btot_foot_text",
+          "Description": "Magnetic Field Total, CGM, Coordinates, from the International Geomagnetic Reference Field, IGRF, Footpoint of Field Line, Text Label",
+          "Caveats": "This parameter is virtual. It is calculated by calling the function ALTERNATE_VIEW with the following input parameters: btot_foot.",
+          "Cadence": "PT2S",
+          "Units": "nT",
+          "UnitsConversion": "1e-9>T",
+          "RenderingHints": {
+            "AxisLabel": "Btot_foot",
+            "ValueFormat": "E12.2",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "-100000.0",
+          "ValidMax": "100000.0",
+          "FillValue": "-1.0e+31",
+          "Field": {
+            "Qualifier": [
+              "Scalar",
+              "Total"
+            ],
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "Satellite Position, X Component, IGRF, Text Label",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "bx_sat_text",
+          "Description": "Satellite Position, X Component, Corrected Geomagnetic, CGM, Coordinates, Towards Earth, from the International Geomagnetic Reference Field, IGRF, Model, Text Label",
+          "Caveats": "This parameter is virtual. It is calculated by calling the function ALTERNATE_VIEW with the following input parameters: bx_sat.",
+          "Cadence": "PT2S",
+          "Units": "nT",
+          "UnitsConversion": "1e-9>T",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "CGM"
+          },
+          "RenderingHints": {
+            "AxisLabel": "Bx_sat",
+            "ValueFormat": "E12.2",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "-100000.0",
+          "ValidMax": "100000.0",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "Qualifier": "Component.I",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Satellite Position, Y Component, IGRF, Text Label",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "by_sat_text",
+          "Description": "Satellite Position, Y Component, Corrected Geomagnetic, CGM, Coordinates, Opposite Velocity Direction, from the International Geomagnetic Reference Field, IGRF, Model, Text Label",
+          "Caveats": "This parameter is virtual. It is calculated by calling the function ALTERNATE_VIEW with the following input parameters: by_sat.",
+          "Cadence": "PT2S",
+          "Units": "nT",
+          "UnitsConversion": "1e-9>T",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "CGM"
+          },
+          "RenderingHints": {
+            "AxisLabel": "By_sat",
+            "ValueFormat": "E12.2",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "-100000.0",
+          "ValidMax": "100000.0",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "Qualifier": "Component.J",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Satellite Position, Z Component, IGRF, Text Label",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "bz_sat_text",
+          "Description": "Satellite Position, Z Component, Corrected Geomagnetic, CGM, Coordinates, X ⨯ Y Direction, from the International Geomagnetic Reference Field, IGRF, Model, Text Label",
+          "Caveats": "This parameter is virtual. It is calculated by calling the function ALTERNATE_VIEW with the following input parameters: bz_sat.",
+          "Cadence": "PT2S",
+          "Units": "nT",
+          "UnitsConversion": "1e-9>T",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "CGM"
+          },
+          "RenderingHints": {
+            "AxisLabel": "Bz_sat",
+            "ValueFormat": "E12.2",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "-100000.0",
+          "ValidMax": "100000.0",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "Qualifier": "Component.K",
+            "SupportQuantity": "Positional"
+          }
+        }
+      ]
+    }
+  }
+}

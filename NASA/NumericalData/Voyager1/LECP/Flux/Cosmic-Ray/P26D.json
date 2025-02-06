@@ -1,0 +1,156 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_2_9.xsd",
+    "Version": "2.2.9",
+    "NumericalData": {
+      "ResourceID": "spase://NASA/NumericalData/Voyager1/LECP/Flux/Cosmic-Ray/P26D",
+      "ResourceHeader": {
+        "ResourceName": "Voyager 1 Low-Energy Charged Particle (LECP) Cosmic Ray Proton Rates in ASCII Format 26-day",
+        "AlternateName": "V1-LECP-COSMICRATES-P26D",
+        "ReleaseDate": "2020-07-07T21:15:52Z",
+        "Description": "Count Rates, Averaged Over All Sectors, Voyager1, LECP, Filtered, Channel, Calibrated, CadenceP26D",
+        "Acknowledgement": "Please acknowledge the LECP PI (S.M. Krimigis) and the lead LECP CoI (R.B. Decker)",
+        "Contact": [
+          {
+            "PersonID": "spase://SMWG/Person/Stamatios.M.Krimigis",
+            "Role": "PrincipalInvestigator"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Robert.B.Decker",
+            "Role": "CoInvestigator"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Lawrence.Brown",
+            "Role": "ArchiveSpecialist"
+          }
+        ],
+        "InformationURL": {
+          "Name": "Informational Website for Voyager 1 and 2 LECP Instrument",
+          "URL": "http://sd-www.jhuapl.edu/VOYAGER/vgr_data_files.html",
+          "Description": "The webpage provides a detailed description of Cosmic Ray Proton Channel Intensity files."
+        },
+        "PriorID": [
+          "spase://VEPO/NumericalData/Voyager1/LECP/Flux.Cosmic.Ray.P26D",
+          "spase://VSPO/NumericalData/Voyager1/LECP/Flux/Cosmic-Ray/P26D"
+        ]
+      },
+      "AccessInformation": [
+        {
+          "RepositoryID": "spase://SMWG/Repository/JHU_APL",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "Voyager1 LECP Average Filtered Rate Data in ASCII Format",
+            "URL": "http://sd-www.jhuapl.edu/VOYAGER/v1_data/v1_26d/",
+            "Description": "Count Rates, All Sectors Averaged, Voyager1, LECP, Filtered, Channel CSV Text Files, File Name Template: http://sd-www.jhuapl.edu/VOYAGER/v1_data/v1_26d/v1_cosray_rate_26d.txt"
+          },
+          "Format": "Text",
+          "Encoding": "GZIP",
+          "Acknowledgement": "S.M. Krimigis, JHU/APL"
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": [
+            {
+              "Name": "FTPS from SPDF (not with most browsers)",
+              "URL": "ftps://spdf.gsfc.nasa.gov/pub/data/voyager/voyager1/particle/lecp/v1_cosray_rate_26day/v1_cosray_rate_26d.txt",
+              "Description": "ftp access to single ASCII file"
+            },
+            {
+              "Name": "HTTPS from SPDF",
+              "URL": "https://spdf.gsfc.nasa.gov/pub/data/voyager/voyager1/particle/lecp/v1_cosray_rate_26day/v1_cosray_rate_26d.txt",
+              "Description": "In CDF via HTTP from SPDF"
+            }
+          ],
+          "Format": "Text",
+          "Acknowledgement": "S.M. Krimigis, JHU/APL, and the Space Physics Data Facility"
+        }
+      ],
+      "InstrumentID": "spase://SMWG/Instrument/Voyager1/LECP",
+      "MeasurementType": "EnergeticParticles",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "1977-09-07T00:00:00.000Z",
+          "StopDate": "2009-05-31T23:59:59.999"
+        },
+        "Cadence": "P26D"
+      },
+      "ObservedRegion": [
+        "Heliosphere.Outer",
+        "Heliosphere.Heliosheath"
+      ],
+      "Parameter": [
+        {
+          "Name": "Start Time of Data Record",
+          "ParameterKey": "StartTime",
+          "Description": "Start Time for the record given in year, day of\n\t\t\t\tyear, hour.",
+          "Cadence": "P26D",
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "Year",
+                "Index": "1",
+                "ValidMin": "1977",
+                "ValidMax": "2008"
+              },
+              {
+                "Name": "Day of year",
+                "Index": "2",
+                "ValidMin": "1",
+                "ValidMax": "366"
+              },
+              {
+                "Name": "Hour of day",
+                "Index": "3",
+                "ValidMin": "0",
+                "ValidMax": "23"
+              }
+            ]
+          },
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Start Time of Data Record (Decimal Year)",
+          "ParameterKey": "DEC_YEAR",
+          "Description": "decimal year (double precision) = year + (doy - 1 + hr/24)/dpy (dpy=365 or 366)",
+          "Cadence": "P26D",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Cosmic Ray Rate",
+          "ParameterKey": "EB05_RATE",
+          "Description": "Channel EB05 (Cosmic Ray Proton) Rate",
+          "Cadence": "P26D",
+          "Units": "counts/second",
+          "FillValue": "-9.900E+01",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "CountRate"
+          }
+        },
+        {
+          "Name": "Cosmic Ray Rate Uncertainty",
+          "ParameterKey": "EB05_RATEU",
+          "Description": "Channel EB05 (Cosmic Ray Proton) Rate",
+          "Cadence": "P26D",
+          "Units": "counts/second",
+          "FillValue": "-9.900E+01",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": "Uncertainty",
+            "ParticleQuantity": "CountRate"
+          }
+        }
+      ]
+    }
+  }
+}

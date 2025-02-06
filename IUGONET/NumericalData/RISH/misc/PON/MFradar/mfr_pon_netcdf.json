@@ -1,0 +1,155 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema https://www.spase-group.org/data/schema/spase-2_5_0.xsd",
+    "Version": "2.5.0",
+    "NumericalData": {
+      "ResourceID": "spase://IUGONET/NumericalData/RISH/misc/PON/MFradar/mfr_pon_netcdf",
+      "ResourceHeader": {
+        "ResourceName": "Wind data in the mesosphere and lower thermosphere estimated from the observation data of the MF radar at Pontianak (NetCDF format)",
+        "ReleaseDate": "2016-10-08T20:43:00",
+        "Description": "The wind data in the mesosphere and lower thermosphere (60-100 km) estimated from the observation data of the MF radar at Pontianak, Indonesia (0.003S, 109.36E). The data are stored in the NetCDF (Network Common Data From) named (year)(month)(day)_fca.nc. The netCDF file includes year, month, day, time (universal time), height, zonal, meridional and vertical winds of the original data in the binary format (Full Correlation Analysis: FCA). The wind data corresponding to \"bad\" status code (other than 0) in the original data are replaced by missing value. The wind data for a period from September 2, 1999 to present are available now. In the future, the wind data for other periods will be released.",
+        "Acknowledgement": "If you acquire the MF data at the Pontianak station, we ask that you acknowledge us in your use of the data. This may be done by including text such as the MF data provided by Research Institute for Sustainable Humanosphere of Kyoto University. We would also appreciate receiving a copy of the relevant publications.",
+        "Contact": [
+          {
+            "PersonID": "spase://IUGONET/Person/Toshitaka.Tsuda",
+            "Role": "PrincipalInvestigator"
+          },
+          {
+            "PersonID": "spase://IUGONET/Person/Iain.Reid",
+            "Role": "CoInvestigator"
+          },
+          {
+            "PersonID": "spase://IUGONET/Person/Erlan.Suherlan",
+            "Role": "CoInvestigator"
+          },
+          {
+            "PersonID": "spase://IUGONET/Person/Noriko.Hashiguchi",
+            "Role": "TechnicalContact"
+          },
+          {
+            "PersonID": "spase://IUGONET/Person/RISH.Metadata.Management.Group",
+            "Role": "MetadataContact"
+          }
+        ]
+      },
+      "AccessInformation": {
+        "RepositoryID": "spase://IUGONET/Repository/RISH/RISHDB",
+        "Availability": "Online",
+        "AccessRights": "Open",
+        "AccessURL": {
+          "Name": "Meteor Wind and Medium Frequency Radar Data over Indonesia",
+          "URL": "http://database.rish.kyoto-u.ac.jp/arch/iugonet/index-idr.html",
+          "Language": "English"
+        },
+        "Format": "NetCDF"
+      },
+      "InstrumentID": "spase://IUGONET/Instrument/RISH/misc/PON/MFradar",
+      "MeasurementType": "Profile",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "1995-11-01T00:00:00",
+          "RelativeStopDate": "-P2D"
+        },
+        "Cadence": "PT2M"
+      },
+      "ObservedRegion": [
+        "Earth.NearSurface.Mesosphere",
+        "Earth.NearSurface.Thermosphere",
+        "Earth.NearSurface.EquatorialRegion"
+      ],
+      "SpatialCoverage": {
+        "CoordinateSystem": {
+          "CoordinateRepresentation": "Spherical",
+          "CoordinateSystemName": "WGS84"
+        },
+        "NorthernmostLatitude": "-0.003",
+        "SouthernmostLatitude": "-0.003",
+        "EasternmostLongitude": "109.367",
+        "WesternmostLongitude": "109.367",
+        "MinimumElevation": "60.0",
+        "MaximumElevation": "100.0"
+      },
+      "Keyword": "EARTH SCIENCE Atmosphere Atmospheric Winds Wind Profiles",
+      "Parameter": [
+        {
+          "Name": "lat",
+          "Description": "Latitude of radar location",
+          "Units": "degree_north",
+          "Support": {
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "lon",
+          "Description": "Longitude of radar location",
+          "Units": "degree_east",
+          "Support": {
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "range",
+          "Description": "Altitude (above sea level)",
+          "Units": "m",
+          "ValidMin": "60",
+          "ValidMax": "100",
+          "Support": {
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "time",
+          "Description": "Hours since midnight of every day. Universal time is used for time data.",
+          "Units": "second",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "uwind",
+          "Description": "Zonal wind (eastward wind is positive.)",
+          "Units": "m/s",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "GEO"
+          },
+          "FillValue": "-9999.0",
+          "Particle": {
+            "ParticleType": "Molecule",
+            "ParticleQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "vwind",
+          "Description": "Meridional wind (northward wind is positive.)",
+          "Units": "m/s",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "GEO"
+          },
+          "FillValue": "-9999.0",
+          "Particle": {
+            "ParticleType": "Molecule",
+            "ParticleQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "wwind",
+          "Description": "Vertical wind (upflow is positive.)",
+          "Units": "m/s",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "GEO"
+          },
+          "FillValue": "-9999.0",
+          "Particle": {
+            "ParticleType": "Molecule",
+            "ParticleQuantity": "Velocity"
+          }
+        }
+      ]
+    }
+  }
+}

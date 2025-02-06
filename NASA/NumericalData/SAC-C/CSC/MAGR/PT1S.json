@@ -1,0 +1,236 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_2_9.xsd",
+    "Version": "2.2.9",
+    "NumericalData": {
+      "ResourceID": "spase://NASA/NumericalData/SAC-C/CSC/MAGR/PT1S",
+      "ResourceHeader": {
+        "ResourceName": "SAC-C Mag-R: Calibrated CSC and raw IST data",
+        "ReleaseDate": "2020-07-07T21:15:17Z",
+        "Description": "This dataset contains 1 second measurements of the magnetic field vector from the Compact Spherical Coil (CSC) Fluxgate Vector Magnetometer and matrices describing rotation from J2000 reference system to stellar compass coordinate system and Earth Centered, Earth Fixed polar coordinates to J2000 reference system on the SAC-C spacecraft.",
+        "Acknowledgement": "Centre National d'Etudes Spatiales (France); National Aeronautics and Space Administration (United States); Danish Space Research Institute (Denmark); National Commission of Space Activities (CONAE) (Argentina); Instituto Nacional de Pesquisas Espaciais, Brazil (Brazil); Agenzia Spaziale Italiana (Italy)",
+        "Contact": [
+          {
+            "PersonID": "spase://SMWG/Person/UNKNOWN",
+            "Role": "ProjectScientist"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/James.M.Weygand",
+            "Role": "MetadataContact"
+          }
+        ],
+        "PriorID": [
+          "spase://VMO/NumericalData/SAC-C/CSC/MAGR/PT1S",
+          "spase://VSPO/NumericalData/SAC-C/CSC/MAGR/PT1S"
+        ]
+      },
+      "AccessInformation": {
+        "RepositoryID": "spase://SMWG/Repository/SAC-C",
+        "Availability": "Online",
+        "AccessRights": "Open",
+        "AccessURL": {
+          "Name": "Virtual Magnetospheric Observatory",
+          "URL": "http://vmo.igpp.ucla.edu/data1/SAC-C/",
+          "Description": "Compact Spherical Coil Fluxgate Vector Magnetometer MAG-R data."
+        },
+        "Format": "Text",
+        "Acknowledgement": "Centre National d'Etudes Spatiales (France); National Aeronautics and Space Administration (United States); Danish Space Research Institute (Denmark); National Commission of Space Activities (CONAE) (Argentina); Instituto Nacional de Pesquisas Espaciais, Brazil (Brazil); Agenzia Spaziale Italiana (Italy)"
+      },
+      "ProcessingLevel": "Calibrated",
+      "ProviderResourceName": "Compact Spherical Coil Fluxgate Vector Magnetometer MAG-R data",
+      "ProviderProcessingLevel": "Calibrated",
+      "InstrumentID": "spase://SMWG/Instrument/SAC-C/CSC",
+      "MeasurementType": "MagneticField",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "2001-02-01T00:00:00Z",
+          "StopDate": "2002-06-09T23:59:59Z",
+          "Note": "It is not clear if additional data is available."
+        },
+        "Cadence": "PT1S"
+      },
+      "ObservedRegion": [
+        "Earth.NearSurface",
+        "Earth.NearSurface.AuroralRegion",
+        "Earth.NearSurface.Ionosphere",
+        "Earth.NearSurface.PolarCap"
+      ],
+      "Parameter": [
+        {
+          "Name": "Universal Time",
+          "ParameterKey": "Time",
+          "Description": "Universal time columns from left to right are: year-month-day (yyyy-mm-dd) and seconds of the day.",
+          "Cadence": "PT1S",
+          "Structure": {
+            "Size": "2",
+            "Description": "Universal Time expressed using a 6-column day, month, year, hour, minute, second representation",
+            "Element": [
+              {
+                "Name": "Year-Month-Day",
+                "Index": "1",
+                "ParameterKey": "Column_1-Column_2-Column_3"
+              },
+              {
+                "Name": "Second",
+                "Index": "2",
+                "ParameterKey": "Second"
+              }
+            ]
+          },
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "SAC-C Spacecraft Position Vector in ECEF polar coordinates",
+          "ParameterKey": "Position Vectors",
+          "Description": "Location of the spacecraft in Earth Centered, Earth Fixed polar coordinates in units of Re and degrees.",
+          "Cadence": "PT1S",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "ECEF"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "Radius",
+                "Qualifier": "Component.I",
+                "Index": "1",
+                "ParameterKey": "r",
+                "Units": "km"
+              },
+              {
+                "Name": "Theta",
+                "Qualifier": "Component.J",
+                "Index": "2",
+                "ParameterKey": "theta",
+                "Units": "degrees"
+              },
+              {
+                "Name": "Phi",
+                "Qualifier": "Component.K",
+                "Index": "3",
+                "ParameterKey": "Phi",
+                "Units": "degrees"
+              }
+            ]
+          },
+          "Support": {
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "SAC-C CSC Magnetic Field Vector in CSC coordinates",
+          "ParameterKey": "Magnetic Field Vectors",
+          "Description": "Magnetic field vector for SAC-C in CSC coordinate system in units of nT.",
+          "Cadence": "PT1S",
+          "Units": "nT",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "SC"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "B1",
+                "Qualifier": "Component.I",
+                "Index": "1",
+                "ParameterKey": "B1"
+              },
+              {
+                "Name": "B2",
+                "Qualifier": "Component.J",
+                "Index": "2",
+                "ParameterKey": "B2"
+              },
+              {
+                "Name": "B3",
+                "Qualifier": "Component.K",
+                "Index": "3",
+                "ParameterKey": "B3"
+              }
+            ]
+          },
+          "Field": {
+            "Qualifier": "Vector",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "J2000 to Stella compass quaternion",
+          "ParameterKey": "J2000 2 SIM",
+          "Description": "A quaternion describing the rotation from j2000 star coordinate system to the Italian Star Tracker system.",
+          "Cadence": "PT1S",
+          "Units": "unitless",
+          "Structure": {
+            "Size": "4",
+            "Element": [
+              {
+                "Name": "Q1",
+                "Qualifier": "Tensor",
+                "Index": "1"
+              },
+              {
+                "Name": "Q2",
+                "Qualifier": "Tensor",
+                "Index": "2"
+              },
+              {
+                "Name": "Q3",
+                "Qualifier": "Tensor",
+                "Index": "3"
+              },
+              {
+                "Name": "Q4",
+                "Qualifier": "Tensor",
+                "Index": "4"
+              }
+            ]
+          },
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Earth Centered, Earth Fixed to J2000 quaternion",
+          "ParameterKey": "ECEF 2 J2000",
+          "Description": "A quaternion describing the rotation from ECEF (Earth Centered, Earth Fixed) coordinate system (Note: not the local system) to the j2000 star coordinate system.",
+          "Cadence": "PT1S",
+          "Units": "unitless",
+          "Structure": {
+            "Size": "4",
+            "Element": [
+              {
+                "Name": "Q1",
+                "Qualifier": "Tensor",
+                "Index": "1"
+              },
+              {
+                "Name": "Q2",
+                "Qualifier": "Tensor",
+                "Index": "2"
+              },
+              {
+                "Name": "Q3",
+                "Qualifier": "Tensor",
+                "Index": "3"
+              },
+              {
+                "Name": "Q4",
+                "Qualifier": "Tensor",
+                "Index": "4"
+              }
+            ]
+          },
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        }
+      ]
+    }
+  }
+}

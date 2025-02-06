@@ -1,0 +1,150 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "Version": "2.2.9",
+    "NumericalData": {
+      "ResourceID": "spase://NASA/NumericalData/Pioneer10/CPC/PT15M",
+      "ResourceHeader": {
+        "ResourceName": "Pioneer 10 Charged Particle Composition (CPC) 15-min Count Rates",
+        "ReleaseDate": "2021-03-11T18:39:11Z",
+        "Description": "This data set contains coincidence mode counts and \naccumulation times, plus \"box counts\" based on pulse height analysis (PHA), \nat 15-min resolution. There are 11 coincidence mode counts and 27 \"box \ncounts.\"  Taken together, the parameters included allow computation of \naverage counting rates and of fluxes of protons, electrons, helium and \nCNO nuclei in selected energy windows corresponding to the PHA boxes.\nThere are 12 proton boxes spanning 3-67 MeV, 5 helium boxes spanning\n3-67 MeV/n, 5 electron boxes, 2 Z>2 boxes, 1 box each for CNO, Z>5, and \nE>67 MeV/n.",
+        "Acknowledgement": "Please acknowledge the PI (the late John A. Simpson)\nand Bruce McKibben.",
+        "Contact": [
+          {
+            "PersonID": "spase://SMWG/Person/John.A.Simpson",
+            "Role": "PrincipalInvestigator"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/R.Bruce.McKibben",
+            "Role": "GeneralContact"
+          }
+        ],
+        "InformationURL": {
+          "Name": "Readme file at SPDF",
+          "URL": "https://spdf.gsfc.nasa.gov/pub/data/pioneer/pioneer10/particle/cpi/ip_15min_ascii/cpi_p10_15min.sfdu"
+        },
+        "PriorID": [
+          "spase://VEPO/NumericalData/Pioneer10/CPC/PT15M",
+          "spase://VSPO/NumericalData/Pioneer10/CPC/PT15M"
+        ]
+      },
+      "AccessInformation": {
+        "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+        "Availability": "Online",
+        "AccessRights": "Open",
+        "AccessURL": [
+          {
+            "Name": "FTPS from SPDF (not with most browsers)",
+            "URL": "ftps://spdf.gsfc.nasa.gov/pub/data/pioneer/pioneer10/particle/cpi/ip_15min_ascii/"
+          },
+          {
+            "Name": "HTTPS from SPDF",
+            "URL": "https://spdf.gsfc.nasa.gov/pub/data/pioneer/pioneer10/particle/cpi/ip_15min_ascii/",
+            "Description": "In CDF via HTTP from SPDF"
+          }
+        ],
+        "Format": "Text",
+        "DataExtent": {
+          "Quantity": "200",
+          "Units": "MB"
+        },
+        "Acknowledgement": "Please acknowledge the PI, the late John A. Simpson,\nBruce McKibben, and the GSFC Space Physics Data Facility"
+      },
+      "InstrumentID": "spase://SMWG/Instrument/Pioneer10/CPC",
+      "MeasurementType": "EnergeticParticles",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "1972-03-03T00:00:00",
+          "StopDate": "1992-08-29T00:00:00"
+        },
+        "Cadence": "PT15M"
+      },
+      "ObservedRegion": "Heliosphere.Outer",
+      "Parameter": [
+        {
+          "Name": "Coincidence mode counts",
+          "Description": "Counts accumulated over 15 minutes in each of 11\ndistinct multi-sensor coincidence modes",
+          "Cadence": "PT15M",
+          "Units": "counts",
+          "Structure": {
+            "Size": "11",
+            "Description": "The 11 counts are in words 6, 8, ... 26 of the data records."
+          },
+          "Particle": {
+            "ParticleType": [
+              "Proton",
+              "AlphaParticle"
+            ],
+            "ParticleQuantity": "Counts",
+            "EnergyRange": {
+              "Low": "3",
+              "High": "67",
+              "Units": "MeV/n"
+            }
+          }
+        },
+        {
+          "Name": "Accumulation times for the 11 coincidence mode counts",
+          "Description": "Durations (seconds) over which counts were accumulated  \nwithin this 15 minute interval in each of 11 distinct multi-sensor \ncoincidence modes",
+          "Cadence": "PT15M",
+          "Units": "sec",
+          "Structure": {
+            "Size": "11",
+            "Description": "The 11 accumulation times are in words 5, 7, ... 25 of \nthe data records.  The accumulation time of word 5 is for the counts of word 6,\netc."
+          },
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Total numbers of Pulse Height events analyzed",
+          "Description": "Total numbers of Pulse Height events analyzed for each of 5 coincidence\nmodes (ID1, ID2, ID5, ID7+ID13, ID13) for this 15-min interval",
+          "Cadence": "PT15M",
+          "Units": "counts",
+          "Structure": {
+            "Size": "5",
+            "Description": "The 5 counts are in words 27-31 of the data records."
+          },
+          "Particle": {
+            "ParticleType": [
+              "Proton",
+              "AlphaParticle",
+              "Electron"
+            ],
+            "ParticleQuantity": "Counts"
+          }
+        },
+        {
+          "Name": "Box counts for 27 boxes",
+          "Description": "Counts of pulse height analyzed events, in each of several coincidence\nmodes, corresponding to segments (boxes) of tracks in dE/dx - E associated with specific\nspecies and energy ranges.  See species and energy range information in above description.",
+          "Cadence": "PT15M",
+          "Units": "counts",
+          "Structure": {
+            "Size": "27",
+            "Description": "The 27 box counts are in words 32-58 of the data records."
+          },
+          "Particle": {
+            "ParticleType": [
+              "Proton",
+              "AlphaParticle",
+              "Electron"
+            ],
+            "ParticleQuantity": "Counts"
+          }
+        },
+        {
+          "Name": "Spacecraft position vector",
+          "Description": "Heliocentric distance (in AU, *100) and heliographic latitude and longitude \nangles (in deg, *100) of the spacecraft.",
+          "Cadence": "PT15M",
+          "Structure": {
+            "Size": "3",
+            "Description": "Longitude, latitude and radial dictance are in words 59, 60, 61\nof the data records, respectively"
+          },
+          "Support": {
+            "SupportQuantity": "Positional"
+          }
+        }
+      ]
+    }
+  }
+}

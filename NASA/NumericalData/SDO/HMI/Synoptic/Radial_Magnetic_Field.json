@@ -1,0 +1,93 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema  http://www.spase-group.org/data/schema/spase-2_6_1.xsd",
+    "Version": "2.6.1",
+    "NumericalData": {
+      "ResourceID": "spase://NASA/NumericalData/SDO/HMI/Synoptic/Radial_Magnetic_Field",
+      "ResourceHeader": {
+        "ResourceName": "Synoptic Charts of the Radial Component of the Photospheric Magnetic Field",
+        "DOI": "https://doi.org/10.48322/pbwn-9t13",
+        "ReleaseDate": "2024-11-01T00:08:46",
+        "RevisionHistory": {
+          "RevisionEvent": [
+            {
+              "ReleaseDate": "2024-11-01T00:08:46",
+              "Note": "Metadata created by SY"
+            },
+            {
+              "ReleaseDate": "2024-11-18T00:08:46",
+              "Note": "Added DOI by SY"
+            }
+          ]
+        },
+        "Description": "Synoptic charts are maps of the entire Sun produced in Carrington coordinates. Synoptic maps are constructed by merging together solar observations taken over many days. Magnetic-field synoptic charts are produced using central meridian data from HMI full-disk magnetograms.\n\nSynoptic maps are constructed from HMI 720s line-of-sight Magnetograms collected over a 27-day solar rotation. Near-central-meridian data from 20 magnetograms contribute to each point in the final map.\n\nHMI 720s line-of-sight magnetograms are first converted to 'radial field magnetograms' by dividing by the cosine of the angle from disk center, i.e. for this purpose we assume that HMI measures the line-of-sight component of a purely radial magnetic field. Individual 'radial' magnetograms are then remapped and interpolated onto a very high-resolution Carrington coordinate grid. For each Carrington longitude the values from the 20 magnetograms obtained closest in time to the central meridian passage (CMP) of that longitude are averaged. By using a constant number of contributing magnetograms, the variation of the noise over the entire map is minimized. Generally all data are taken within about 2 degrees of CMP. The effective temporal width of the HMI synoptic map contribution is about three hours, i.e. 20 720-s magnetograms are obtained within about 90 minutes of central meridian passage. The final HMI synoptic maps have a size of 3600 x 1440, which means the resolution is lower than the disk-center resolution of a single HMI magnetogram. A two-dimensional Gaussian function is applied to high-resolution remapped data to reduce the spatial resolution before generating the 3600*1440 synoptic maps. The width of the Gaussian is 3 pixels. The upper limit of the noise is 2.3 Mx cm2.",
+        "PublicationInfo": {
+          "Authors": "The HMI Consortium: Stanford University (USA); NASA Goddard Space Flight Center (USA); Lockheed Martin Solar and Astrophysics Laboratory (USA); National Center for Atmospheric Research (USA);",
+          "PublicationDate": "2011-01-21T00:00:00",
+          "PublishedBy": "Joint Science Operations Center (JSOC), Stanford University"
+        },
+        "Contact": [
+          {
+            "PersonID": "spase://SMWG/Person/Philip.H.Scherrer",
+            "Role": "PrincipalInvestigator"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Rick.Bogart",
+            "Role": "GeneralContact"
+          }
+        ],
+        "InformationURL": [
+          {
+            "Name": "The HMI website at Stanford",
+            "URL": "http://hmi.stanford.edu/"
+          },
+          {
+            "Name": "The SDO/HMI Instrument paper",
+            "URL": "https://doi.org/10.1007/s11207-011-9834-2"
+          }
+        ]
+      },
+      "AccessInformation": {
+        "RepositoryID": "spase://SMWG/Repository/Stanford/HMI-AIA.JSOC",
+        "Availability": "Online",
+        "AccessRights": "Open",
+        "AccessURL": {
+          "Name": "JSOC Data Center",
+          "URL": "http://jsoc.stanford.edu/ajax/lookdata.html?ds=hmi.Synoptic_Mr_720s",
+          "Style": "Search"
+        },
+        "Format": "FITS"
+      },
+      "InstrumentID": "spase://SMWG/Instrument/SDO/HMI",
+      "MeasurementType": "Magnetogram",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "2010-05-19T23:59:06",
+          "RelativeStopDate": "-P28D"
+        },
+        "Cadence": "P27D"
+      },
+      "ObservedRegion": [
+        "Sun",
+        "Sun.Photosphere"
+      ],
+      "InputResourceID": "spase://NASA/NumericalData/SDO/HMI/LOS_Magnetogram/PT720S",
+      "Parameter": {
+        "Name": "FITS Data Array",
+        "Units": "gauss",
+        "Field": {
+          "FieldQuantity": "Magnetic"
+        },
+        "SpatialCoverage": {
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "Carrington"
+          },
+          "Description": "The maps are 3600 points in Carrington longitude by 1440 points equally spaced in sine latitude."
+        }
+      }
+    }
+  }
+}

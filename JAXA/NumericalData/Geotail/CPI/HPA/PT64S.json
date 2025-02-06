@@ -1,0 +1,268 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema  http://www.spase-group.org/data/schema/spase-2_3_0.xsd'",
+    "Version": "2.3.0",
+    "NumericalData": {
+      "ResourceID": "spase://JAXA/NumericalData/Geotail/CPI/HPA/PT64S",
+      "ResourceHeader": {
+        "ResourceName": "Geotail CPI Hot Plasma Moments",
+        "AlternateName": "Geotail CPI HPA High Time Resolution Plasma Moments",
+        "ReleaseDate": "2021-04-27T17:52:35Z",
+        "Description": "The CPI/HPA Hot Plasma Analyzer high time resolution moments of hot plasma:\n\n            * Ion number density\n            * Ion average temperature\n            * Ion bulk flow velocity\n            * Electron number density\n            * Electron average temperature\n\n            The CPI/HPA data are good in the magnetosphere and may be usefull in the magnetosheath.",
+        "Contact": [
+          {
+            "PersonID": "spase://SMWG/Person/Louis.A.Frank",
+            "Role": "PrincipalInvestigator"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/William.R.Paterson",
+            "Role": "DataProducer"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Jan.Merka",
+            "Role": "MetadataContact"
+          }
+        ],
+        "InformationURL": {
+          "Name": "CPI Survey Plots",
+          "URL": "http://www-pi.physics.uiowa.edu/cpi/",
+          "Description": "Geotail CPI description and survey plots."
+        },
+        "PriorID": [
+          "spase://VMO/NumericalData/Geotail/CPI/UIOWA_HPA_PT64S",
+          "spase://VMO/NumericalData/Geotail/CPI/HPA_PT64S",
+          "spase://VSPO/NumericalData/Geotail/CPI/HPA/PT64S"
+        ]
+      },
+      "AccessInformation": [
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF/CDAWeb",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": [
+            {
+              "Name": "FTPS from SPDF (not with most browsers)",
+              "URL": "ftps://spdf.gsfc.nasa.gov/pub/data/geotail/cpi/cpi_hpamom/"
+            },
+            {
+              "Name": "HTTPS from SPDF",
+              "URL": "https://spdf.gsfc.nasa.gov/pub/data/geotail/cpi/cpi_hpamom/",
+              "Description": "In CDF via HTTP from SPDF"
+            },
+            {
+              "Name": "CDAWeb",
+              "URL": "https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=GE_HPAMOM_CPI&index=sp_phys",
+              "ProductKey": "GE_HPAMOM_CPI"
+            }
+          ],
+          "Format": "CDF",
+          "Encoding": "None"
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDAWeb HAPI Server",
+            "URL": "https://cdaweb.gsfc.nasa.gov/hapi",
+            "Style": "HAPI",
+            "ProductKey": "GE_HPAMOM_CPI",
+            "Description": "Web Service to this product using the HAPI interface."
+          },
+          "Format": "CSV"
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/UIowa/ParticlesImagingGroup",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "University of Iowa: Geotail CPI HPA high time resolution data",
+            "URL": "http://www-pi.physics.uiowa.edu/cpi-data/hp/"
+          },
+          "Format": "Text",
+          "Encoding": "ASCII"
+        }
+      ],
+      "InstrumentID": "spase://SMWG/Instrument/Geotail/CPI/HPA",
+      "MeasurementType": "ThermalPlasma",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "1992-10-06T00:00:28",
+          "RelativeStopDate": "-P2Y"
+        },
+        "Cadence": "PT64S"
+      },
+      "ObservedRegion": [
+        "Earth.Magnetosheath",
+        "Earth.Magnetosphere",
+        "Earth.Magnetosphere.Magnetotail"
+      ],
+      "Caveats": "The electron sensors for the CPI HP analyzer require regular intercalibration.  Also, their sensitivity declined over time. A detrending factor is applied so that average electron densities are consistent with ion densities. The HP ion data and the electron data are good through a the end of 2005. The sensitivity decline had been linear until the end of 2005, but hasn't been checked for 2006 or 2007. That may affect the HP electron parameters for 2006 and 2007, but not the HP ion parameters.\n\n         In June of 2007, the HP sensor bias voltage was raised to improve the electron gain, which over the course of 15 years had dropped by about half. This requires recalibration of both the HP ion sensors and the HP electron sensors.",
+      "Parameter": [
+        {
+          "Name": "Time",
+          "ParameterKey": "Epoch",
+          "Description": "Time in milliseconds, centered, since CDF Epoch",
+          "Units": "ms",
+          "UnitsConversion": "1e-3>s",
+          "ValidMin": "08-Sep-1992 00:00:00.000",
+          "ValidMax": "31-Dec-2020 20:00:00.000",
+          "FillValue": "-1.0E31",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Ni",
+          "ParameterKey": "Density_i",
+          "Description": "Ion number density (Hot Plasma Analyzer), scalar",
+          "Caveats": "The ions are assumed to be protons",
+          "Units": "cm^-3",
+          "UnitsConversion": "1e6>m^-3",
+          "RenderingHints": {
+            "ValueFormat": "F8.3"
+          },
+          "ValidMin": "0.01",
+          "ValidMax": "1000.0",
+          "FillValue": "-1.0E31",
+          "Particle": {
+            "ParticleType": [
+              "Proton",
+              "AlphaParticle",
+              "Ion"
+            ],
+            "Qualifier": [
+              "Moment",
+              "Scalar"
+            ],
+            "ParticleQuantity": "NumberDensity"
+          }
+        },
+        {
+          "Name": "Ti",
+          "ParameterKey": "Temp_i",
+          "Description": "Kinetic temperature of HPA ions, scalar",
+          "Caveats": "Calculated by integrating the distribution function",
+          "Units": "Component.K",
+          "RenderingHints": {
+            "ValueFormat": "F11.0"
+          },
+          "ValidMin": "10000.0",
+          "ValidMax": "5.0E8",
+          "FillValue": "-1.0E31",
+          "Particle": {
+            "ParticleType": [
+              "Proton",
+              "AlphaParticle",
+              "Ion"
+            ],
+            "Qualifier": [
+              "Moment",
+              "Scalar"
+            ],
+            "ParticleQuantity": "Temperature"
+          }
+        },
+        {
+          "Name": "Vi",
+          "ParameterKey": "Velocity_i",
+          "Description": "Ion bulk flow velocity vector in GSE coordinates",
+          "Units": "km/s",
+          "UnitsConversion": "1e3>m/s",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GSE"
+          },
+          "RenderingHints": {
+            "ValueFormat": "F9.2"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "Vx GSE",
+                "Qualifier": "Component.I",
+                "Index": "1",
+                "ValidMin": "-1400.0",
+                "ValidMax": "1400.0",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "Vy GSE",
+                "Qualifier": "Component.J",
+                "Index": "2",
+                "ValidMin": "-1400.0",
+                "ValidMax": "1400.0",
+                "FillValue": "-1.0E31"
+              },
+              {
+                "Name": "Vz GSE",
+                "Qualifier": "Component.K",
+                "Index": "3",
+                "ValidMin": "-1400.0",
+                "ValidMax": "1400.0",
+                "FillValue": "-1.0E31"
+              }
+            ]
+          },
+          "Particle": {
+            "ParticleType": [
+              "Proton",
+              "AlphaParticle",
+              "Ion"
+            ],
+            "Qualifier": [
+              "Moment",
+              "Vector"
+            ],
+            "ParticleQuantity": "FlowVelocity"
+          }
+        },
+        {
+          "Name": "Ne",
+          "ParameterKey": "Density_e",
+          "Description": "Electron number density (Hot Plasma Analyzer), scalar",
+          "Units": "cm^-3",
+          "UnitsConversion": "1e6>m^-3",
+          "RenderingHints": {
+            "ValueFormat": "F8.3"
+          },
+          "ValidMin": "0.01",
+          "ValidMax": "1000.0",
+          "FillValue": "-1.0E31",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": [
+              "Moment",
+              "Scalar"
+            ],
+            "ParticleQuantity": "NumberDensity"
+          }
+        },
+        {
+          "Name": "Te",
+          "ParameterKey": "Temp_e",
+          "Description": "Kinetic temperature of HPA electrons, scalar",
+          "Caveats": "Calculated by integrating the distribution function",
+          "Units": "Component.K",
+          "RenderingHints": {
+            "ValueFormat": "F11.0"
+          },
+          "ValidMin": "10000.0",
+          "ValidMax": "5.0E8",
+          "FillValue": "-1.0E31",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": [
+              "Moment",
+              "Scalar"
+            ],
+            "ParticleQuantity": "Temperature"
+          }
+        }
+      ]
+    }
+  }
+}

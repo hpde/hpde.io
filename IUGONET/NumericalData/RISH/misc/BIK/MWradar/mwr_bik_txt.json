@@ -1,0 +1,187 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema https://www.spase-group.org/data/schema/spase-2_5_0.xsd",
+    "Version": "2.5.0",
+    "NumericalData": {
+      "ResourceID": "spase://IUGONET/NumericalData/RISH/misc/BIK/MWradar/mwr_bik_txt",
+      "ResourceHeader": {
+        "ResourceName": "Horizontal wind data in the mesosphere and lower thermosphere estimated from the observation data of the meteor wind radar at Biak (text format)",
+        "ReleaseDate": "2016-07-21T16:46:00",
+        "Description": "The horizontal wind data in the mesosphere and lower thermosphere (70-110 km) estimated from the meteor wind radar at Biak, Indonesia (1.17S, 136.10E, 45m MSL). The wind data are calculated from the original observation data with a weighting function. They are stored in the text file named Wb(year)(month).(resolution).txt or Wb(year)(month)(day).(resolution).txt. The resolution abbreviations are h2t60min00, h2t60min30, h4t60min00 and h4t60min30. For example, the h2t60 means weighted average with Gaussian factors over +/-2 km in height and +/-60 minutes in time. The min00 shows that the center of the Gaussian window corresponds to 00 minute of every hour. The intervals of the wind data are every 2 km and 60 minutes. The text file includes year, day of year, time (universal time), height, zonal and meridional winds, standard deviations of zonal and meridional winds, number of meteor trails used to determine the horizontal wind and two internal check values.",
+        "Acknowledgement": "If you would like to use the following data for scientific purpose, please read and keep the DATA USE POLICY (http://database.rish.kyoto-u.ac.jp/arch/iugonet/pon_mf/png/daily/data_policy/Data_Use_Policy_e.html).",
+        "Contact": [
+          {
+            "PersonID": "spase://IUGONET/Person/Toshitaka.Tsuda",
+            "Role": "PrincipalInvestigator"
+          },
+          {
+            "PersonID": "spase://IUGONET/Person/Noriko.Hashiguchi",
+            "Role": "TechnicalContact"
+          },
+          {
+            "PersonID": "spase://IUGONET/Person/RISH.Metadata.Management.Group",
+            "Role": "MetadataContact"
+          }
+        ]
+      },
+      "AccessInformation": {
+        "RepositoryID": "spase://IUGONET/Repository/RISH/RISHDB",
+        "Availability": "Online",
+        "AccessRights": "Open",
+        "AccessURL": {
+          "Name": "Meteor Wind and Medium Frequency Radar Data over Indonesia",
+          "URL": "http://database.rish.kyoto-u.ac.jp/arch/iugonet/index-idr.html",
+          "Language": "English"
+        },
+        "Format": "Text.ASCII"
+      },
+      "ProviderVersion": "Data version 1.0",
+      "InstrumentID": "spase://IUGONET/Instrument/RISH/misc/BIK/MWradar",
+      "MeasurementType": "Profile",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "2011-05-31T11:00:00",
+          "RelativeStopDate": "-P7D"
+        },
+        "Cadence": "PT1H"
+      },
+      "SpectralRange": "RadioFrequency",
+      "ObservedRegion": [
+        "Earth.NearSurface.Mesosphere",
+        "Earth.NearSurface.Thermosphere",
+        "Earth.NearSurface.EquatorialRegion"
+      ],
+      "SpatialCoverage": {
+        "CoordinateSystem": {
+          "CoordinateRepresentation": "Spherical",
+          "CoordinateSystemName": "WGS84"
+        },
+        "NorthernmostLatitude": "-1.175",
+        "SouthernmostLatitude": "-1.175",
+        "EasternmostLongitude": "136.102",
+        "WesternmostLongitude": "136.102",
+        "MinimumElevation": "70.0",
+        "MaximumElevation": "110.0"
+      },
+      "Keyword": "EARTH SCIENCE Atmosphere Atmospheric Winds Wind Profiles",
+      "Parameter": [
+        {
+          "Name": "year",
+          "Description": "Year in the form YY where YY = the last two digits of year (00-99).",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "doy",
+          "Description": "Doy in the form DDD where DDD = day of year (1-366).",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "time",
+          "Description": "Time in the form hh mm where hh = hour of day (00-23) and mm = minute of hour. Universal time is used for time data. Universal time is used for time data.",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "height",
+          "Description": "Height",
+          "Units": "km",
+          "ValidMin": "70",
+          "ValidMax": "110",
+          "Support": {
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "uwind",
+          "Description": "Zonal wind (eastward wind is positive.)",
+          "Units": "m/s",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "GEO"
+          },
+          "FillValue": "-9999",
+          "Particle": {
+            "ParticleType": "Molecule",
+            "ParticleQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "vwind",
+          "Description": "Meridional wind (northward wind is positive.)",
+          "Units": "m/s",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "GEO"
+          },
+          "FillValue": "-9999",
+          "Particle": {
+            "ParticleType": "Molecule",
+            "ParticleQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "sig_uwind",
+          "Description": "Standard deviation of zonal wind",
+          "Units": "m/s",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "GEO"
+          },
+          "FillValue": "-9999",
+          "Support": {
+            "Qualifier": "StandardDeviation",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "sig_vwind",
+          "Description": "Standard deviation of meridional wind",
+          "Units": "m/s",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "GEO"
+          },
+          "FillValue": "-9999",
+          "Support": {
+            "Qualifier": "StandardDeviation",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "num",
+          "Description": "Number of meteor trails used to determine the horizontal wind",
+          "Units": "1",
+          "FillValue": "-9999",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "int1",
+          "Description": "Internal check value",
+          "Units": "1",
+          "FillValue": "-9999.0",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "int2",
+          "Description": "Internal check value",
+          "Units": "1",
+          "FillValue": "-9999.0",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        }
+      ]
+    }
+  }
+}
