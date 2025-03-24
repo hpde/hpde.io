@@ -1,0 +1,161 @@
+{
+  "Spase": {
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_3_1.xsd",
+    "Version": "2.3.1",
+    "NumericalData": {
+      "ResourceID": "spase://NASA/NumericalData/STEREO-A/SWAVES/average_lfr/PT60S",
+      "ResourceHeader": {
+        "ResourceName": "STEREO-A SWAVES One minute averages of the low (lfr) frequency receiver data.",
+        "ReleaseDate": "2021-04-04T00:00:00Z",
+        "Description": "The two STEREO radio receivers measure wave intensity, source direction and angular size in the frequency \n\t  range 40 kHz to 16 MHz, corresponding to heliocentric source distances of about 1 Rs to 1 AU. One 10-40 kHz \n\t  receiver measures radio and plasma waves near the 1 AU electron plasma frequency. One receiver makes high \n\t  time resolution measurements at 50 MHz. Time Domain Samplers make simultaneous wideband waveform measurements \n\t  on three electric components. Antenna systems include three mutually orthogonal 6-meter monopoles. \n\t  ",
+        "Acknowledgement": "National Aeronautics and Space Administration; Dr. Jean-Louis Henry Bougeret",
+        "Contact": [
+          {
+            "PersonID": "spase://SMWG/Person/Jean-Louis.Henry.Bougeret",
+            "Role": "PrincipalInvestigator"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/James.M.Weygand",
+            "Role": "MetadataContact"
+          }
+        ],
+        "InformationURL": [
+          {
+            "Name": "SWAVES Resources page",
+            "URL": "https://stereo-ssc.nascom.nasa.gov/ins_resources/swaves_resources.shtml",
+            "Description": "NASA STEREO SWAVE resources information."
+          },
+          {
+            "Name": "NASA Master Catalog SWAVES Instrument page",
+            "URL": "https://nssdc.gsfc.nasa.gov/nmc/experiment/display.action?id=2006-047A-02",
+            "Description": "NASA STEREO SWAVE instrument information."
+          },
+          {
+            "Name": "STREREO SWAVES homepage",
+            "URL": "https://swaves.gsfc.nasa.gov/",
+            "Description": "WAVES Experiment on the STEREO Mission."
+          }
+        ]
+      },
+      "AccessInformation": {
+        "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+        "Availability": "Online",
+        "AccessRights": "Open",
+        "AccessURL": [
+          {
+            "Name": "FTPS from SPDF (not with most browsers)",
+            "URL": "ftps://spdf.gsfc.nasa.gov/pub/data/stereo/ahead/swaves/average_lfr_ascii/",
+            "Description": "FTPS access to SWAVES ASCII data"
+          },
+          {
+            "Name": "HTTPS from SPDF",
+            "URL": "https://spdf.gsfc.nasa.gov/pub/data/stereo/ahead/swaves/average_lfr_ascii/",
+            "Description": "HTTPS access to SWAVES ASCII data"
+          }
+        ],
+        "Format": "Text.ASCII",
+        "Acknowledgement": "Space Physics Data Facility of the NASA Goddard Space Flight Center; Robert E McGuire"
+      },
+      "ProcessingLevel": "Calibrated",
+      "ProviderName": "STEREO-A",
+      "ProviderResourceName": "STEREO-A SWAVES",
+      "ProviderProcessingLevel": "Level 2",
+      "InstrumentID": "spase://SMWG/Instrument/STEREO-A/SWAVES",
+      "MeasurementType": "Waves",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "2006-10-27T00:00:00",
+          "RelativeStopDate": "-P2D"
+        },
+        "Cadence": "PT60S"
+      },
+      "ObservedRegion": "Heliosphere.Remote1AU",
+      "Keyword": [
+        "low frequency receiver",
+        "STEREO-A",
+        "SWAVES"
+      ],
+      "Parameter": [
+        {
+          "Name": "Low Frequency Data",
+          "Description": "High frequency data in 48 channels.",
+          "Caveats": "This is the first 48 values in the daily file. Missing data is indicated by a value less than 0.",
+          "Cadence": "PT60S",
+          "Units": "kHz",
+          "Structure": {
+            "Size": "1 48",
+            "Description": "This is the first 48 values in the daily file."
+          },
+          "Wave": {
+            "WaveType": "Electromagnetic",
+            "Qualifier": "Average",
+            "WaveQuantity": "Frequency",
+            "FrequencyRange": {
+              "Low": "2.6",
+              "High": "153.4",
+              "Units": "kHz"
+            }
+          }
+        },
+        {
+          "Name": "Background Value",
+          "Description": "The 48 background value used in (currently) arbitrary decibel (dB) units.",
+          "Caveats": "This is the second 48 values in the daily file. Missing data is indicated by a value less than 0.",
+          "Cadence": "PT60S",
+          "Units": "dB",
+          "Structure": {
+            "Size": "1 48",
+            "Description": "The 48 background value used in (currently) arbitrary decibel (dB) units."
+          },
+          "Wave": {
+            "WaveType": "Electromagnetic",
+            "WaveQuantity": "Intensity",
+            "FrequencyRange": {
+              "Low": "2.6",
+              "High": "153.4",
+              "Units": "kHz"
+            }
+          }
+        },
+        {
+          "Name": "Average Intensity",
+          "Description": "The 2-dimensional (# of frequencies X 1440 minutes per day) array of averages in dB above the average (i.e. value-average in dB). Missing data is indicated by a value less than 0.",
+          "Caveats": "This is the next 1440 by 320 values in the daily file. Missing data is indicated by a value less than 0.",
+          "Cadence": "PT60S",
+          "Structure": {
+            "Size": "1 49",
+            "Description": "This is the next 1440 by 320 values in the daily file.",
+            "Element": [
+              {
+                "Name": "Minute of the day",
+                "Qualifier": "Average",
+                "Index": "1",
+                "Units": "minutes",
+                "ValidMin": "0",
+                "ValidMax": "1439"
+              },
+              {
+                "Name": "49 values of Average Intensity",
+                "Qualifier": "Array",
+                "Index": "2",
+                "Units": "dB",
+                "ValidMin": "0"
+              }
+            ]
+          },
+          "Wave": {
+            "WaveType": "Electromagnetic",
+            "WaveQuantity": "Intensity",
+            "FrequencyRange": {
+              "Low": "2.6",
+              "High": "153.4",
+              "Units": "kHz"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

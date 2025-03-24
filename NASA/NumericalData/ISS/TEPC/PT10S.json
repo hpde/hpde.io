@@ -1,0 +1,286 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema  https://www.spase-group.org/data/schema/spase-2_3_2.xsd",
+    "Version": "2.3.2",
+    "NumericalData": {
+      "ResourceID": "spase://NASA/NumericalData/ISS/TEPC/PT10S",
+      "ResourceHeader": {
+        "ResourceName": "ISS Tissue-Equivalent Proportional Counter (TEPC), Dose Analyzer, 10 s Data",
+        "ReleaseDate": "2021-04-27T15:38:11Z",
+        "Description": "The Position Sensitive-Tissue Equivalent Proportional Chamber, PS-TEPC, is a Radiation Measuring Instrument that measures absorbed Doses and Path Length of Space Radiation Particles simultaneously and determines the Real-Time Liner Energy Transfer, LET, and Equivalent Doses to assess Radiation Risk to Crew Members during Space Flight. Dose Management for Space Radiation Exposure is extremely Important for Crew Members, because the Dose Rates resulting from Radiation Sources including Galactic Cosmic Rays, Solar Particle Events, and Protons trapped in the Earth's Radiation Belts and Secondary Particles such as Neutrons in Low Earth Orbit, LEO, are a few Hundred times greater than those on the Ground. The Detector of the PS-TEPC is a Time Projection Chamber, TPC, made of Biological Tissue-Equivalent Materials where a Micro-Pixel Chamber, m-PIC, is used as a 2-Dimensional Position Sensor, which can acquires 3-Dimensional Tracks and the Energy of each Particle, as well as its Energy, that contributes to Dose Distributions occurring in a Human Body. TEPC Serial Number 1003, TEPC Analysis Software Version Number, 3.1.",
+        "Acknowledgement": "E.N. Zapp, Space Radiation Analysis Group, NASA Johnson Space Center",
+        "Contact": [
+          {
+            "PersonID": "spase://SMWG/Person/Edward.Neal.Zapp",
+            "Role": "PrincipalInvestigator"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Robert.E.McGuire",
+            "Role": "MetadataContact"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Lee.Frost.Bargatze",
+            "Role": "MetadataContact"
+          }
+        ],
+        "InformationURL": {
+          "Name": "ISS PS-TEPC Home Page",
+          "URL": "https://www.nasa.gov/mission_pages/station/research/experiments/1079.html",
+          "Description": "Establishment of the Dosimetric Technique in the International Space Station, ISS, with a Position Sensitive-Tissue Equivalent Proportional Chamber, PS-TEPC, 20170802"
+        },
+        "PriorID": "spase://VSPO/NumericalData/ISS/TEPC/PT10S"
+      },
+      "AccessInformation": [
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": [
+            {
+              "Name": "FTPS from SPDF (not with most browsers)",
+              "URL": "ftps://spdf.gsfc.nasa.gov/pub/data/international_space_station_iss/dos_tepc/",
+              "Description": "Access to Data in CDF Format via ftp from SPDF"
+            },
+            {
+              "Name": "HTTPS from SPDF",
+              "URL": "https://spdf.gsfc.nasa.gov/pub/data/international_space_station_iss/dos_tepc/",
+              "Description": "Access to Data in CDF Format via http from SPDF"
+            },
+            {
+              "Name": "CDAWeb",
+              "URL": "https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=ISS_DOSANL_TEPC&index=sp_phys",
+              "ProductKey": "ISS_DOSANL_TEPC",
+              "Description": "Access to ASCII, CDF, and plots via NASA/GSFC CDAWeb"
+            }
+          ],
+          "Format": "CDF",
+          "Encoding": "None",
+          "Acknowledgement": "E.N. Zapp, Space Radiation Analysis Group, NASA Johnson Space Center . Please acknowledge the data providers and CDAWeb when using these data."
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDAWeb HAPI Server",
+            "URL": "https://cdaweb.gsfc.nasa.gov/hapi",
+            "Style": "HAPI",
+            "ProductKey": "ISS_DOSANL_TEPC",
+            "Description": "Web Service to this product using the HAPI interface."
+          },
+          "Format": "CSV",
+          "Acknowledgement": "E.N. Zapp, Space Radiation Analysis Group, NASA Johnson Space Center . Please acknowledge the data providers and CDAWeb when using these data."
+        }
+      ],
+      "ProcessingLevel": "Calibrated",
+      "InstrumentID": "spase://SMWG/Instrument/ISS/TEPC",
+      "MeasurementType": "EnergeticParticles",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "2000-11-09T15:11:03",
+          "StopDate": "2010-04-29T00:49:30"
+        },
+        "Cadence": "PT10S"
+      },
+      "ObservedRegion": [
+        "Earth.NearSurface.Ionosphere.FRegion",
+        "Earth.NearSurface.Thermosphere"
+      ],
+      "Parameter": [
+        {
+          "Name": "Epoch Time",
+          "ParameterKey": "Epoch",
+          "Description": "Epoch Time, Default",
+          "Cadence": "PT10S",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "Epoch"
+          },
+          "ValidMin": "01-Jan-1990 00:00:00.000",
+          "ValidMax": "31-Dec-2010 00:00:00.000",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Dose Rate",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "DOSE",
+          "Description": "Average Dose Rate",
+          "Cadence": "PT10S",
+          "Units": "µGy/min",
+          "UnitsConversion": "6e-5>Gy/s",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "Avg Dose Rate",
+            "ValueFormat": "F8.3"
+          },
+          "ValidMin": "0.001",
+          "ValidMax": "1000.0",
+          "FillValue": "-1.0e+31",
+          "Mixed": {
+            "MixedQuantity": "Other",
+            "ParticleType": [
+              "Ion",
+              "Neutron",
+              "Proton"
+            ]
+          }
+        },
+        {
+          "Name": "Dose Equivalent Rate, ICRP-60",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "DOSE_EQ60",
+          "Description": "Average Dose Equivalent Rate, International Commission on Radiological Protection, Publication 60, ICRP-60",
+          "Cadence": "PT10S",
+          "Units": "µSv/min",
+          "UnitsConversion": "6e-5>Sv/s",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "Avg Dose Eqv Rate",
+            "ValueFormat": "F8.3"
+          },
+          "ValidMin": "0.001",
+          "ValidMax": "100000.0",
+          "FillValue": "-1.0e+31",
+          "Mixed": {
+            "MixedQuantity": "Other",
+            "ParticleType": [
+              "Ion",
+              "Neutron",
+              "Proton"
+            ]
+          }
+        },
+        {
+          "Name": "Time Interval",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "TIME_INTERVAL",
+          "Description": "Tissue Equivalent Proportional Counter, TEPC, Data Collection Duration",
+          "Cadence": "PT10S",
+          "Units": "min",
+          "UnitsConversion": "60$gt;s",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "Collection Time",
+            "ValueFormat": "F7.3",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "0.0",
+          "ValidMax": "1000.0",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "ISS Longitude, GEO",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "LONGITUDE",
+          "Description": "International Space Station, ISS, Longitude, Geographic, GEO",
+          "Cadence": "PT10S",
+          "Units": "°",
+          "UnitsConversion": "0.0174532925>rad",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "GEO"
+          },
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "ISS Geo Long",
+            "ValueFormat": "F8.3",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "-180.0",
+          "ValidMax": "180.0",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "Qualifier": "DirectionAngle.AzimuthAngle",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "ISS Latitude, GEO",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "LATITUDE",
+          "Description": "International Space Station, ISS, Latitude, Geographic, GEO",
+          "Cadence": "PT10S",
+          "Units": "°",
+          "UnitsConversion": "0.0174532925>rad",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "GEO"
+          },
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "ISS Geo Lat",
+            "ValueFormat": "F8.3",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "-90.0",
+          "ValidMax": "90.0",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "Qualifier": "DirectionAngle.ElevationAngle",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "ISS Altitude",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "ALTITUDE",
+          "Description": "International Space Station, ISS, Altitude, Geographic, GEO",
+          "Cadence": "PT10S",
+          "Units": "km",
+          "UnitsConversion": "1e3>m",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "ISS Altitude",
+            "ValueFormat": "F8.3",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "0.0",
+          "ValidMax": "1000.0",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Radiation Type Code",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "FLAG",
+          "Description": "Radiation Type Code: denotes the Dominant Radiation Source at a given Time",
+          "Cadence": "PT10S",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "Radiation Source",
+            "ValueFormat": "A12"
+          },
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "TEPC Location Code",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "LOCATION",
+          "Description": "TEPC Location Code: denotes the Physical Location of the Tissue Equivalent Proportional Counter, TEPC, inside the International Space Station, ISS",
+          "Cadence": "PT10S",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "TEPC ISS Loctn",
+            "ValueFormat": "A50"
+          },
+          "Support": {
+            "SupportQuantity": "InstrumentMode"
+          }
+        }
+      ]
+    }
+  }
+}

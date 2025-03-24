@@ -1,0 +1,585 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_3_1.xsd",
+    "Version": "2.3.1",
+    "NumericalData": {
+      "ResourceID": "spase://NOAA/NumericalData/GOES/11/MAG/PT0.512S",
+      "ResourceHeader": {
+        "ResourceName": "GOES 11 high resolution magnetometer data",
+        "ReleaseDate": "2021-04-27T17:52:57Z",
+        "Description": "GOES 11 magnetic field data at 0.512 s time resolution. The vector magnetic field is given in the spacecraft Earth-referenced coordinate system:  Hp, He, Hn, and Ht, where  Hp is perpendicular to the satellite orbital plane, or parallel to spin axis of the Earth in the case of a 0° inclination orbit, He is perpendicular to Hp and directed earthward, Hn is perpendicular to both Hp and He and directed eastward, and Ht is the total field.\n\nThis data product also provides GOES 11 satellite positions and velocities derived from SSCWEB GEI ephemeris, interpolated to 1 min time resolution.\n\nThe magnetometer data are downlinked from the spacecraft in real-time to the NOAA Space Weather Prediction Center (SWPC) in Boulder, Colorado. The data from the raw Command and Data Acquisition (CDA) telemetry stream are processed by pre-processors at SWPC and from there 1 min averages are distributed to SWPC Space Weather Operations, as well a archived at the NOAA National Geophysical Data Center (NGDC) and the NASA Coordinated Data Analysis Web (http://cdaweb.gsfc.nasa.gov/). The raw high resolution data are corrected and processed at the NOAA SWPC, and later archived at NGDC.\n\nThe major issue for processing the high resolution data is correction for the magnetic signature of spacecraft torquer currents as briefly discussed in the magnetometer instrument descriptions. In normal operation, the magnetometer samples its three axes every 0.512 s, synchronized with the telemetry frames.  The magnetometer has an anti-aliasing low-pass filter on each axis.  As part of the attitude control on the spacecraft, there are two magnetic torquers.  At the magnetometers, these torquers can generate magnetic fields larger than the ambient fields to be measured.  Therefore signals from these torquer currents need to be removed. The torquer currents are measured at the same rate as the magnetometer rate, and the currents are used to correct the magnetometer measurements.\n\nHowever, the torquer currents were not low-pass filtered.  As a result, large instantaneous steps in the torquer currents show up in the magnetometer data as a delayed, slowly rising wave with some ringing, just what one would expect from the magnetometer low-pass filters. The so-called \"Farthing coefficients\" simulate, from a short past history of the torquer measurements, the effects of the magnetometer filters.  The torquer current changes are asynchronous with the telemetry frames and the timing between these events must be measured to a eighth of a telemetry frame interval for good performance. The transient responses in changes in torquer currents are reduced, but not eliminated for large changes in torquer currents.\n\nThere exists one opportunity at the beginning of each mission to perform a spacecraft rotation maneuver to determine magnetometer offsets. These offsets are used through the duration of the lifetime of each satellite.\n\nApproximate coefficients are:\n\n* 0.8 mA per torquer current count\n* 4 counts per torquer current command step (3.2 mA per command step)\n* 410 mA full scale current\n* 32 magnetometer counts per nT (approximate)\n* 8 torquer step counts can be up to approximately 0.5 nT (depends on axis, which torquer, which satellite, etc.)",
+        "Acknowledgement": "NASA Contract NAS5-02099",
+        "Contact": [
+          {
+            "PersonID": "spase://SMWG/Person/Howard.J.Singer",
+            "Role": [
+              "PrincipalInvestigator",
+              "DataProducer"
+            ]
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Ann.Newman",
+            "Role": "DataProducer"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Lorne.Matheson",
+            "Role": "DataProducer"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Jan.Merka",
+            "Role": "MetadataContact"
+          }
+        ],
+        "PriorID": [
+          "spase://VMO/NumericalData/GOES11/MAG/PT0.512S",
+          "spase://VMO/NumericalData/GOES/11/MAG/PT0.512S",
+          "spase://VSPO/NumericalData/GOES/11/MAG/PT0.512S"
+        ]
+      },
+      "AccessInformation": [
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": [
+            {
+              "Name": "FTPS from SPDF (not with most browsers)",
+              "URL": "ftps://spdf.gsfc.nasa.gov/pub/data/goes/goes11/mag_l2/"
+            },
+            {
+              "Name": "HTTPS from SPDF",
+              "URL": "https://spdf.gsfc.nasa.gov/pub/data/goes/goes11/mag_l2/",
+              "Description": "In CDF via HTTP from CDAWeb"
+            },
+            {
+              "Name": "CDAWeb",
+              "URL": "https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=G11_L2_MAG&index=sp_phys",
+              "ProductKey": "G11_L2_MAG"
+            }
+          ],
+          "Format": "CDF"
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDAWeb HAPI Server",
+            "URL": "https://cdaweb.gsfc.nasa.gov/hapi",
+            "Style": "HAPI",
+            "ProductKey": [
+              "G11_L2_MAG@0",
+              "G11_L2_MAG@1",
+              "G11_L2_MAG@2"
+            ],
+            "Description": "Web Service to this product using the HAPI interface."
+          },
+          "Format": "CSV"
+        }
+      ],
+      "InstrumentID": "spase://SMWG/Instrument/GOES/11/MAG",
+      "MeasurementType": [
+        "MagneticField",
+        "Ephemeris"
+      ],
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "2007-09-15T23:59:58",
+          "StopDate": "2008-06-30T23:59:58"
+        },
+        "Cadence": "PT0.512S"
+      },
+      "ObservedRegion": "Earth.Magnetosphere.Main",
+      "Caveats": "Note that magnetic field values have been replaced with missing data values during calibration periods. Also, note that there can be small jumps in the data (typically <1 nT) when the torquer counts go through zero. The magnitude of the effect can be different for different spacecraft.\n\nThe GOES 8 to GOES 12 spacecraft are 3-axis stabilized and there is only one opportunity for a spin maneuver at the beginning of the mission to determine on-orbit offsets. There are additional complications that result from needing to know the changing offsets introduced by torquer coils on the satellites. Though comparisons of data to model fields during quiet times, we are doing rather well with the offsets, but it is not possible to give an exact number for the accuracy. We continue to look at comparisons of data and models, and data to other nearby spacecraft encounters. We are interested in anything learned by the user, or working with the user to help interpret the data, or to answer questions. While we have put in a significant effort to remove the effects of torquer coil interference, in the 0.512 s data there can be small, typically less than 1 nT spikes in the data at the time of torquer current changes. More information on this topic is included the more extensive \"readme file\". This file is a living document that will be updated periodically.",
+      "Parameter": [
+        {
+          "Name": "g11_longitude_time",
+          "ParameterKey": "g11_longitude_time",
+          "Description": "GEOS 11 longitude time, UTC, in seconds since 1970-01-01T00:00:00",
+          "Caveats": "Unleaped seconds",
+          "Cadence": "P1D",
+          "Units": "s",
+          "ValidMin": "0.0",
+          "ValidMax": "5.0E9",
+          "FillValue": "NaN",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "g11_longitude_epoch",
+          "ParameterKey": "g11_longitude_epoch",
+          "Description": "GEOS 11 longitude epoch",
+          "Cadence": "P1D",
+          "ValidMin": "2001-01-01T00:00:00",
+          "ValidMax": "2100-12-31T23:59:59",
+          "FillValue": "9999-12-31T23:59:59",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "g11_longitude",
+          "ParameterKey": "g11_longitude",
+          "Description": "Satellite geographic west longitude at noon UTC",
+          "Cadence": "P1D",
+          "Units": "°",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "GEO"
+          },
+          "ValidMin": "-180.0",
+          "ValidMax": "180.0",
+          "FillValue": "NaN",
+          "Support": {
+            "Qualifier": "DirectionAngle.AzimuthAngle",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "g11_mlt",
+          "ParameterKey": "g11_mlt",
+          "Description": "Magnetic local time at satellite position",
+          "Cadence": "PT1M",
+          "Units": "h",
+          "UnitsConversion": "(g11_mlt-12)*15>°",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "SM"
+          },
+          "ValidMin": "0.0",
+          "ValidMax": "24.0",
+          "FillValue": "NaN",
+          "Support": {
+            "Qualifier": "DirectionAngle.AzimuthAngle",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "g11_pos_gei",
+          "ParameterKey": "g11_pos_gei",
+          "Description": "Satellite position vector in GEI coordinates",
+          "Cadence": "PT1M",
+          "Units": "km",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GEI"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "X, GEI",
+                "Qualifier": "Component.I",
+                "Index": "1"
+              },
+              {
+                "Name": "Y, GEI",
+                "Qualifier": "Component.J",
+                "Index": "2"
+              },
+              {
+                "Name": "Z, GEI",
+                "Qualifier": "Component.K",
+                "Index": "3"
+              }
+            ]
+          },
+          "ValidMin": "-1.0e6",
+          "ValidMax": "1.0e6",
+          "FillValue": "NaN",
+          "Support": {
+            "Qualifier": "Vector",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "g11_pos_gsm",
+          "ParameterKey": "g11_pos_gsm",
+          "Description": "Satellite position vector in GSM coordinates",
+          "Cadence": "PT1M",
+          "Units": "km",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GSM"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "X, GSM",
+                "Qualifier": "Component.I",
+                "Index": "1"
+              },
+              {
+                "Name": "Y, GSM",
+                "Qualifier": "Component.J",
+                "Index": "2"
+              },
+              {
+                "Name": "Z, GSM",
+                "Qualifier": "Component.K",
+                "Index": "3"
+              }
+            ]
+          },
+          "ValidMin": "-1.0e6",
+          "ValidMax": "1.0e6",
+          "FillValue": "NaN",
+          "Support": {
+            "Qualifier": "Vector",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "g11_vel_gei",
+          "ParameterKey": "g11_vel_gei",
+          "Description": "Satellite velocity vector in GEI coordinates",
+          "Cadence": "PT1M",
+          "Units": "km/s",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GEI"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "Vx, GEI",
+                "Qualifier": "Component.I",
+                "Index": "1"
+              },
+              {
+                "Name": "Vy, GEI",
+                "Qualifier": "Component.J",
+                "Index": "2"
+              },
+              {
+                "Name": "Vz, GEI",
+                "Qualifier": "Component.K",
+                "Index": "3"
+              }
+            ]
+          },
+          "ValidMin": "-1000.0",
+          "ValidMax": "1000.0",
+          "FillValue": "NaN",
+          "Support": {
+            "Qualifier": "Vector",
+            "SupportQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "g11_vel_gsm",
+          "ParameterKey": "g11_vel_gsm",
+          "Description": "Satellite velocity vector in GSM coordinates",
+          "Cadence": "PT1M",
+          "Units": "km/s",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GSM"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "Vx, GSM",
+                "Qualifier": "Component.I",
+                "Index": "1"
+              },
+              {
+                "Name": "Vy, GSM",
+                "Qualifier": "Component.J",
+                "Index": "2"
+              },
+              {
+                "Name": "Vz, GSM",
+                "Qualifier": "Component.K",
+                "Index": "3"
+              }
+            ]
+          },
+          "ValidMin": "-1000.0",
+          "ValidMax": "1000.0",
+          "FillValue": "NaN",
+          "Support": {
+            "Qualifier": "Vector",
+            "SupportQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "g11_perp",
+          "ParameterKey": "g11_perp",
+          "Description": "g11_perpendicular",
+          "Cadence": "PT1M",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GEI"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "Px, GEI",
+                "Qualifier": "Component.I",
+                "Index": "1"
+              },
+              {
+                "Name": "Py, GEI",
+                "Qualifier": "Component.J",
+                "Index": "2"
+              },
+              {
+                "Name": "Pz, GEI",
+                "Qualifier": "Component.K",
+                "Index": "3"
+              }
+            ]
+          },
+          "ValidMin": "-1.0",
+          "ValidMax": "1.0",
+          "FillValue": "NaN",
+          "Support": {
+            "Qualifier": "Vector",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "range_epoch",
+          "ParameterKey": "range_epoch",
+          "Description": "Data epoch range, UTC",
+          "Units": "ms",
+          "UnitsConversion": "1.0e-3>s",
+          "ValidMin": "1990-01-01T00:00:00",
+          "ValidMax": "2029-12-31T23:59:59",
+          "FillValue": "9999-12-31T23:59:59",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "g11_ephem_time",
+          "ParameterKey": "g11_ephem_time",
+          "Description": "GEOS 11 ephemeris time, UTC, in seconds since 1970-01-01T00:00:00",
+          "Caveats": "Unleaped seconds",
+          "Cadence": "PT1M",
+          "Units": "s",
+          "ValidMin": "0.0",
+          "ValidMax": "5.0E9",
+          "FillValue": "NaN",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "g11_ephem_epoch",
+          "ParameterKey": "g11_ephem_epoch",
+          "Description": "GEOS 11 ephemeris epoch, UTC",
+          "Cadence": "PT1M",
+          "ValidMin": "2001-01-01T00:00:00",
+          "ValidMax": "2100-12-31T23:59:59",
+          "FillValue": "9999-12-31T23:59:59",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "g11_sample_time",
+          "ParameterKey": "g11_sample_time",
+          "Description": "GEOS 11 sample time, UTC, in seconds since 1970-01-01T00:00:00",
+          "Caveats": "Unleaped seconds",
+          "Cadence": "PT0.512S",
+          "Units": "s",
+          "ValidMin": "0.0",
+          "ValidMax": "5.0E9",
+          "FillValue": "NaN",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "g11_sample_epoch",
+          "ParameterKey": "GEOS 11 sample epoch, UTC",
+          "Description": "g11_sample_epoch",
+          "Cadence": "PT0.512S",
+          "ValidMin": "2001-01-01T00:00:00",
+          "ValidMax": "2100-12-31T23:59:59",
+          "FillValue": "9999-12-31T23:59:59",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "g11_b_enp",
+          "ParameterKey": "g11_b_enp",
+          "Description": "Magnetic field vector samples in ENP coordinates.\n\nCoordinate description for historically used PEN system:\n\n* Hp magnetic field vector component, points northward, perpendicular to orbit plane which for a 0° inclination orbit is parallel to spin axis of the Earth\n* He magnetic field vector component, perpendicular to Hp and Hn and points earthward\n* Hn magnetic field vector component, perpendicular to Hp and He and points eastward\n* Ht total field",
+          "Cadence": "PT0.512S",
+          "Units": "nT",
+          "UnitsConversion": "1.0e-9>T",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "ENP"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "He, LH-ENP (satellite to Earth)",
+                "Qualifier": "Component.I",
+                "Index": "1"
+              },
+              {
+                "Name": "Hn, LH-ENP (east, in plane)",
+                "Qualifier": "Component.J",
+                "Index": "2"
+              },
+              {
+                "Name": "Hp, LH-ENP (perpendicular to plane)",
+                "Qualifier": "Component.K",
+                "Index": "3"
+              }
+            ]
+          },
+          "ValidMin": "-1.0e6",
+          "ValidMax": "1.0e6",
+          "FillValue": "NaN",
+          "Field": {
+            "Qualifier": "Vector",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "g11_b_gei",
+          "ParameterKey": "g11_b_gei",
+          "Description": "Magnetic field vector samples in GEI coordinates",
+          "Cadence": "PT0.512S",
+          "Units": "nT",
+          "UnitsConversion": "1.0e-9>T",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GEI"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "Bx, GEI",
+                "Qualifier": "Component.I",
+                "Index": "1"
+              },
+              {
+                "Name": "By, GEI",
+                "Qualifier": "Component.J",
+                "Index": "2"
+              },
+              {
+                "Name": "Bz, GEI",
+                "Qualifier": "Component.K",
+                "Index": "3"
+              }
+            ]
+          },
+          "ValidMin": "-1.0e6",
+          "ValidMax": "1.0e6",
+          "FillValue": "NaN",
+          "Field": {
+            "Qualifier": "Vector",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "g11_b_gsm",
+          "ParameterKey": "g11_b_gsm",
+          "Description": "Magnetic field vector samples in GSM coordinates",
+          "Cadence": "PT0.512S",
+          "Units": "nT",
+          "UnitsConversion": "1.0e-9>T",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GSM"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "Bx, GSM",
+                "Qualifier": "Component.I",
+                "Index": "1"
+              },
+              {
+                "Name": "By, GSM",
+                "Qualifier": "Component.J",
+                "Index": "2"
+              },
+              {
+                "Name": "Bz, GSM",
+                "Qualifier": "Component.K",
+                "Index": "3"
+              }
+            ]
+          },
+          "ValidMin": "-1.0e6",
+          "ValidMax": "1.0e6",
+          "FillValue": "NaN",
+          "Field": {
+            "Qualifier": "Vector",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "g11_b_tot",
+          "ParameterKey": "g11_b_tot",
+          "Description": "Total magnetic field strength",
+          "Cadence": "PT0.512S",
+          "Units": "nT",
+          "UnitsConversion": "1.0e-9>T",
+          "ValidMin": "-1.0e6",
+          "ValidMax": "1.0e6",
+          "FillValue": "NaN",
+          "Field": {
+            "Qualifier": "Magnitude",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "g11_t1_counts",
+          "ParameterKey": "g11_t1_counts",
+          "Description": "Magnetotorquer T1 filtered counts. Signed counts smoothed by 3-point average, delayed, or smoothed by Farthing coefficients.",
+          "Cadence": "PT0.512S",
+          "ValidMin": "-1.0e6",
+          "ValidMax": "1.0e6",
+          "FillValue": "NaN",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "g11_t2_counts",
+          "ParameterKey": "g11_t2_counts",
+          "Description": "Magnetotorquer T2 filtered counts. Signed counts smoothed by 3-point average, delayed, or smoothed by Farthing coefficients.",
+          "Cadence": "PT0.512S",
+          "ValidMin": "-1.0e6",
+          "ValidMax": "1.0e6",
+          "FillValue": "NaN",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "g11_dataqual",
+          "ParameterKey": "g11_dataqual",
+          "Description": "Data Quality Flag: An integer with a value from 1 through 7 indicating data quality, with 1 and 2 being no data, and 7 being the best data.\n\nPossible data quality values:\n\n* 0 no satellite data\n* 1 no Magnetometer data\n* 2 satellite is in storage (spinning) mode or non-standard attitude\n* 3 satellite is in calibration mode\n* 4 3-point averaging failed\n* 5 torquer value not adjusted for commands\n* 6 smoothed with commands but not with Farthing coefficients\n* 7 best quality, smoothed with commands and Farthing coefficients\n\nCommands are not always available in the telemetry, in which case, a 3-point average is done.",
+          "Cadence": "PT0.512S",
+          "ValidMin": "0",
+          "ValidMax": "7",
+          "FillValue": "4294967295",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        }
+      ]
+    }
+  }
+}

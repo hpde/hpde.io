@@ -1,0 +1,101 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema https://www.spase-group.org/data/schema/spase-2_4_0.xsd",
+    "Version": "2.4.0",
+    "NumericalData": {
+      "ResourceID": "spase://GBO/NumericalData/NeutronMonitor/Climax/PT1H",
+      "ResourceHeader": {
+        "ResourceName": "Cosmic Ray Intensities Hourly averages from the Climax Neutron Monitor",
+        "AlternateName": "Climax Hourly Counting Rates",
+        "ReleaseDate": "2022-02-19T12:34:56.789",
+        "RevisionHistory": {
+          "RevisionEvent": {
+            "ReleaseDate": "2022-02-19T12:34:56.789",
+            "Note": "RadioJOVE: Resource Header Description reformated, One URL corrected for // typo in some files. Metadata submitted by J.M. Weygand on 2021-11-08, reviewed by LFB"
+          }
+        },
+        "Description": "Hourly averages of relativistic cosmic ray intensities from the Climax Neutron Monitor",
+        "Acknowledgement": "Please acknowledge the Principal Investigator (Dr. Clifford Lopate)",
+        "Contact": [
+          {
+            "PersonID": "spase://SMWG/Person/Clifford.Lopate",
+            "Role": [
+              "PrincipalInvestigator",
+              "DataProducer"
+            ]
+          },
+          {
+            "PersonID": "spase://SMWG/Person/James.M.Weygand",
+            "Role": "MetadataContact"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Lee.Frost.Bargatze",
+            "Role": "MetadataContact"
+          }
+        ],
+        "InformationURL": {
+          "Name": "World Data Center for Cosmic Rays (WDCCR) Read_Me (Starting Point of Data Access)",
+          "URL": "https://cidas.isee.nagoya-u.ac.jp/WDCCR/readme.html",
+          "Description": "This Web page includes numerical data and plots of cosmic-ray neutron observations covering the interval from 1953 to present."
+        },
+        "PriorID": "spase://VEPO/NumericalData/NeutronMonitor/Climax/PT1H"
+      },
+      "AccessInformation": {
+        "RepositoryID": "spase://SMWG/Repository/WDC/CosmicRays/NagoyaU",
+        "Availability": "Online",
+        "AccessRights": "Open",
+        "AccessURL": {
+          "Name": "Climax hourly intensities",
+          "URL": "https://cidas.isee.nagoya-u.ac.jp/WDCCR/files/STATIONS/CLIMAX/SHORTFORMAT/",
+          "Description": "Parent directory containing compressed yearly files with naming convention \"File: ClimaxYYYY\" containing hourly averaged Climax neutron monitor intensity measurements for YYYY = 1951 through 2006."
+        },
+        "Format": "Text",
+        "Acknowledgement": "C. Lopate, University of New Hampshire"
+      },
+      "InstrumentID": "spase://SMWG/Instrument/NeutronMonitor/Climax",
+      "MeasurementType": "EnergeticParticles",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "1951-01-01T00:00:00.000",
+          "StopDate": "2006-11-30T23:59:59.000"
+        },
+        "Cadence": "PT1H"
+      },
+      "ObservedRegion": "Heliosphere.NearEarth",
+      "Parameter": [
+        {
+          "Name": "Interval Start Time",
+          "ParameterKey": "Columns 1-3",
+          "Description": "Nominal Start Time for the average given as MM/DD/YYYY HH SSSSSSSSSS where:\n\n+--------------------------------------------------------------------------------+\n| Date/Time Element | Description       | Definition/Valid Range                 |\n|-------------------|-------------------|----------------------------------------|\n| MM                | Month of Year     | 01 to 12                               |\n| DD                | Day of Month      | 01 to 31                               |\n| YYYY              | Gregorian Year AD | Four Digit Year                        |\n| HH                | Hour of Day       | 00 to 23                               |\n| SSSSSSSSSS        | Seconds           | Elapsed since 00:00:00 January 1, 1904 |\n+--------------------------------------------------------------------------------+",
+          "Cadence": "PT1H",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Climax Hourly Average",
+          "ParameterKey": "Column 4",
+          "Description": "Climax pressure corrected counts per hour, prescaled by 100 Periods with no data are indicated by -1",
+          "Caveats": "For true counts per hour, the value given must be multiplied by 100.",
+          "Cadence": "PT1H",
+          "Units": "(counts/hr)",
+          "ValidMin": "0",
+          "ValidMax": "100000",
+          "FillValue": "-1",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": "Integral",
+            "ParticleQuantity": "Counts",
+            "EnergyRange": {
+              "Low": "2.99",
+              "High": "1000000",
+              "Units": "GV"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,563 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_5_0.xsd",
+    "Version": "2.6.0",
+    "Catalog": {
+      "ResourceID": "spase://NASA/Catalog/BS_IMP8",
+      "ResourceHeader": {
+        "ResourceName": "IMP 8 bow shock crossings",
+        "DOI": "https://doi.org/10.48322/753j-g416",
+        "ReleaseDate": "2023-09-27T12:34:56.789Z",
+        "RevisionHistory": {
+          "RevisionEvent": [
+            {
+              "ReleaseDate": "2023-05-11T12:34:56.789",
+              "Note": "Updated to SPASE Version 2.5.0 if needed, Added DOI information, JMW"
+            },
+            {
+              "ReleaseDate": "2023-07-03T12:34:56.789",
+              "Note": "Revised AccessURL, JMW"
+            },
+            {
+              "ReleaseDate": "2023-09-27T12:34:56.789",
+              "Note": "Updated Authors. JMW"
+            }
+          ]
+        },
+        "Description": "A complete list of bow shock crossings observed by IMP 8 spacecraft. The shock crossings were manually identified in magnetic field and/or thermal plasma measurements by J. Merka, A. Szabo, K. Paularena, J. Richardson, and T. Narock.\r\n      Each identified crossing was reviewed by at least two persons from the team.\r\n      \r\n      Upstream parameters are as measured by IMP 8 on the solar wind side of the shock, typically over a few-minute interval judged by the IMP field and plasma teams as stable. For multiple-shock records, all upstream parameters are for the first shock crossing.\r\n     \r\n      Downstream parameters are as measured by IMP 8 on the magnetosheath side of the shock, typically over a few-minute interval. For a multiple-shock records, all downstream parameters are for the first shock crossing if possible.\r\n      ",
+        "PublicationInfo": {
+          "Authors": "J. Merka, A. Szabo, K. Paularena, J. Richardson,  and T. Narock, ",
+          "PublicationDate": "2022-01-01T00:00:00",
+          "PublishedBy": "NASA/WIND/IMP 8 mission"
+        },
+        "Contact": {
+          "PersonID": "spase://SMWG/Person/Jan.Merka",
+          "Role": "DataProducer"
+        },
+        "PriorID": [
+          "spase://VMO/Catalog/BS_IMP8",
+          "spase://VSPO/Catalog/BS_IMP8"
+        ]
+      },
+      "AccessInformation": {
+        "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/VHO-VMO",
+        "Availability": "Online",
+        "AccessRights": "Open",
+        "AccessURL": {
+          "Name": "Download of IMP 8 bow shock crossing list",
+          "URL": "https://wind.nasa.gov/mission/imp8/bowshocks/",
+          "Description": "Repository of IMP 8 bow shock crossings"
+        },
+        "Format": "Text",
+        "Encoding": "ASCII"
+      },
+      "InstrumentID": [
+        "spase://SMWG/Instrument/IMP8/MAG",
+        "spase://SMWG/Instrument/IMP8/PLS"
+      ],
+      "PhenomenonType": "BowShockCrossing",
+      "TimeSpan": {
+        "StartDate": "1973-10-31T07:31:00Z",
+        "StopDate": "2000-06-08T16:45:00Z"
+      },
+      "Caveats": "The times are estimated to a minute (truncated).",
+      "Parameter": [
+        {
+          "Name": "Time",
+          "ParameterKey": "Fields 1-4",
+          "Description": "Time of the bow shock crossing. In general, the minute given is that in/during which the crossing is observed. For \"extended\" crossings, the minute given is that in which the peak of the shock overshoot occurs. For records recording multiple shock crossings, the minute is the minute of the first shock crossing.\r\n    ",
+          "Caveats": "Truncated to a minute precision.",
+          "Structure": {
+            "Size": "4",
+            "Element": [
+              {
+                "Name": "Year",
+                "Index": "1",
+                "ParameterKey": "Field 1"
+              },
+              {
+                "Name": "Day of year",
+                "Index": "2",
+                "ParameterKey": "Field 2"
+              },
+              {
+                "Name": "Hour",
+                "Index": "3",
+                "ParameterKey": "Field 3"
+              },
+              {
+                "Name": "Minute",
+                "Index": "4",
+                "ParameterKey": "Field 4"
+              }
+            ]
+          },
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Orbit number",
+          "ParameterKey": "Field 5",
+          "Description": "Orbit number per IMP project",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Orbit leg",
+          "ParameterKey": "Field 6",
+          "Description": "0 for solarwindward orbit leg, 1 for magnetotailward orbit letg",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Sequence number",
+          "ParameterKey": "Field 7",
+          "Description": "Sequence number of the crossing for this orbit leg (1, 2, ...N; N will be an odd number except for Transdr=2 cases). For multiple-shock records (Flag2 = 6 or 7), this number increments by one for unresolvable shock periods (Flag2=6) or by the number of resolvable shocks plus the number of unresolvable-shock subintervals.",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Transdr",
+          "ParameterKey": "Field 8",
+          "Description": "Direction of crossing transition: 0 - spacecraft passing into solar wind, 1 - spacecraft passing into magnetosheath, 2 - non-resolvable shock(s), same domain (solar wind or magnetosheath) on both sides. See Timespan for duration of the crossing.",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Flag1",
+          "ParameterKey": "Field 9",
+          "Description": "Observation flag. Flag1 has the following values:\r\n      1. Shock observed in field and plasma data\r\n      2. Field data missing\r\n      3. Plasma data missing\r\n      4. Inferred crossing, data gap\r\n      5. Inferred crossing, data but no likely shock visible.\r\n      When a bow shock crossing is inferred to have happened during some time interval, the start time of the interval is given in the record. In addition, if the interval is less than 30 minutes in duration, the location of IMP 8 at the start of the interval is also given in the record. Otherwise the IMP location words have fill values in them. Note that the Timespan parameter is used to give the interval duration in such cases. In general, upstream parameter values are given as fill values for such cases. These intervals typically correspond to data gaps (Flag 1 = 4) with IMP 8 clearly in the solar wind on one side of the gap and in the magnetosheath on the other side. There are rare Flag 1 = 5 cases where IMP 8 is clearly in the solar wind on one side of the interval and in the magnetosheath on the other side and wherein there are data within the interval, yet it is impossible to discern on a finer scale when IMP 8 passed between the solar wind and the magnetosheath.\r\n      ",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Flag2",
+          "ParameterKey": "Field 10",
+          "Description": "Shock cleanliness flag. Flag 2 has the following values. \r\n      (Note in particular that values 1-4 are relevant to cases of one shock while 6-8 are relevant to cases of multiple close shocks; note also that some or all of the members of a set of multiple close shocks may be unresolvable from each other and, separately, may be ambiguous in the sense of values 2-4 for individual shocks. In general, where an interval of multiple close shocks ends with a clean shock, there will be a separate record for that shock.)\r\n        1. The shock is clean and unambiguous in all available data\r\n        2. The shock is clean in field, ambiguous in plasma data\r\n        3. The shock is clean in plasma, ambiguous in field data\r\n        4. The shock is ambiguous in all available data\r\n        5. Used for inferred crossings (Flag1 = 4 or 5)\r\n        6. Multiple unresolvable shocks possibly involving relatively clean shocks at the start and end  (Sequence number increments by 1 whether same domain or different domains on two sides)\r\n        7. Multiple resolvable shocks with no subinterval(s) of unresolvable shocks. Used on for intervals with no shock pair separated by >15 minutes. Sequence number increments by sum of number of shocks in the interval or one less if the ending shock is also given a separate record of its own.\r\n        8. Multiple shocks, mixed resolvable/unresolvable, some resolvable shocks may be ambiguous. Sequence number increments by the number of resolvable shocks in the interval or one less if the ending shock is given a record of its own.",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Flag3",
+          "ParameterKey": "Field 11",
+          "Description": "Upstream cleanliness flag. Flag 3 has the following values:\r\n        1. Upstream values steady and well defined\r\n        2. Upstream values unsteady and uncertainly defined\r\n        3. Used for inferred crossings (Flag1 = 4)",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Spacecraft position in GSE",
+          "ParameterKey": "Field 12-14",
+          "Description": "Spacecraft positition in GSE.",
+          "Units": "Re",
+          "UnitsConversion": "6.378e6>m",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GSE"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "Xgse",
+                "Qualifier": "Component.I",
+                "Index": "1",
+                "ParameterKey": "Field 12"
+              },
+              {
+                "Name": "Ygse",
+                "Qualifier": "Component.J",
+                "Index": "2",
+                "ParameterKey": "Field 13"
+              },
+              {
+                "Name": "Zgse",
+                "Qualifier": "Component.K",
+                "Index": "3",
+                "ParameterKey": "Field 14"
+              }
+            ]
+          },
+          "FillValue": "999.9",
+          "Support": {
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Spacecraft position in GSM",
+          "ParameterKey": "Field 15-16",
+          "Description": "Spacecraft positition in GSM (components Y and Z only).",
+          "Units": "Re",
+          "UnitsConversion": "6.378e6>m",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GSM"
+          },
+          "Structure": {
+            "Size": "2",
+            "Element": [
+              {
+                "Name": "Ygsm",
+                "Qualifier": "Component.J",
+                "Index": "1",
+                "ParameterKey": "Field 15"
+              },
+              {
+                "Name": "Zgsm",
+                "Qualifier": "Component.K",
+                "Index": "2",
+                "ParameterKey": "Field 16"
+              }
+            ]
+          },
+          "FillValue": "999.9",
+          "Support": {
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "B GSE",
+          "ParameterKey": "Field 17-19",
+          "Description": "Upstream magnetic field components in GSE",
+          "Units": "nT",
+          "UnitsConversion": "1e-9>T",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GSE"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "Bx GSE",
+                "Qualifier": "Component.I",
+                "Index": "1",
+                "ParameterKey": "Field 17"
+              },
+              {
+                "Name": "By GSE",
+                "Qualifier": "Component.J",
+                "Index": "2",
+                "ParameterKey": "Field 18"
+              },
+              {
+                "Name": "Bz GSE",
+                "Qualifier": "Component.K",
+                "Index": "3",
+                "ParameterKey": "Field 19"
+              }
+            ]
+          },
+          "FillValue": "999.9",
+          "Field": {
+            "Qualifier": [
+              "Vector",
+              "Average"
+            ],
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "B GSM",
+          "ParameterKey": "Field 20-21",
+          "Description": "Upstream magnetic field components Y and Z in GSM",
+          "Units": "nT",
+          "UnitsConversion": "1e-9>T",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GSM"
+          },
+          "Structure": {
+            "Size": "2",
+            "Element": [
+              {
+                "Name": "By GSE",
+                "Qualifier": "Component.J",
+                "Index": "1",
+                "ParameterKey": "Field 20"
+              },
+              {
+                "Name": "Bz GSE",
+                "Qualifier": "Component.K",
+                "Index": "2",
+                "ParameterKey": "Field 21"
+              }
+            ]
+          },
+          "FillValue": "999.9",
+          "Field": {
+            "Qualifier": [
+              "Component.J",
+              "Component.K",
+              "Average"
+            ],
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "V GSE",
+          "ParameterKey": "Field 22-24",
+          "Description": "Solar wind velocity upstream of the shock.",
+          "Caveats": "The components of the velocity vector are negative, i.e. the vector is anti-aligned with the measured velocity vector.",
+          "Units": "km/s",
+          "UnitsConversion": "1e3>ms/s",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GSE"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "-Vx GSE",
+                "Qualifier": "Component.I",
+                "Index": "1",
+                "ParameterKey": "Field 22"
+              },
+              {
+                "Name": "-Vy GSE",
+                "Qualifier": "Component.J",
+                "Index": "2",
+                "ParameterKey": "Field 23"
+              },
+              {
+                "Name": "-Vz GSE",
+                "Qualifier": "Component.K",
+                "Index": "3",
+                "ParameterKey": "Field 24"
+              }
+            ]
+          },
+          "FillValue": "9999.9",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": "Average",
+            "ParticleQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "Nu",
+          "ParameterKey": "Field 25",
+          "Description": "Upstream solar wind proton density",
+          "Units": "cm^-3",
+          "UnitsConversion": "1e3>m^-3",
+          "FillValue": "999.9",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": "Average",
+            "ParticleQuantity": "NumberDensity"
+          }
+        },
+        {
+          "Name": "Nd",
+          "ParameterKey": "Field 26",
+          "Description": "Downstream (magnetosheath) proton density",
+          "Units": "cm^-3",
+          "UnitsConversion": "1e3>m^-3",
+          "FillValue": "999.9",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": "Average",
+            "ParticleQuantity": "NumberDensity"
+          }
+        },
+        {
+          "Name": "T",
+          "ParameterKey": "Field 27",
+          "Description": "Upstream proton temperature",
+          "Units": "K",
+          "FillValue": "9999999",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": "Average",
+            "ParticleQuantity": "Temperature"
+          }
+        },
+        {
+          "Name": "Time span",
+          "ParameterKey": "Field 28",
+          "Description": "The time span gives duration, in minutes, of gaps for inferred crossings (flag 1 = 4 cases) or duration of periods of multiple unresolved or resolved shocks (flag 2 = 6 or 7 cases).  For other cases, the time span gives the shock duration. In the majority of cases wherein the shock occurs in a fraction of minute, this field has value 0.",
+          "Units": "minutes",
+          "UnitsConversion": "60>s",
+          "FillValue": "9999",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Btot",
+          "ParameterKey": "Field 29",
+          "Description": "Upstream magnetic field intensity calculated from magnetic field components.",
+          "Units": "nT",
+          "UnitsConversion": "1e-9>T",
+          "FillValue": "999.9",
+          "Field": {
+            "Qualifier": [
+              "Magnitude",
+              "Average"
+            ],
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "Vtot",
+          "ParameterKey": "Field 30",
+          "Description": "Upstream solar wind proton flow speed",
+          "Units": "km/s",
+          "UnitsConversion": "1e3>m/s",
+          "FillValue": "9999.9",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": "Average",
+            "ParticleQuantity": "FlowSpeed"
+          }
+        },
+        {
+          "Name": "Vs",
+          "ParameterKey": "Field 31",
+          "Description": "Upstream sound speed",
+          "Units": "km/s",
+          "UnitsConversion": "1e3>m/s",
+          "FillValue": "9999.9",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": "Average",
+            "ParticleQuantity": "SoundSpeed"
+          }
+        },
+        {
+          "Name": "Va",
+          "ParameterKey": "Field 32",
+          "Description": "Upstream Alfven speed",
+          "Units": "km/s",
+          "UnitsConversion": "1e3>m/s",
+          "FillValue": "9999.9",
+          "Support": {
+            "Qualifier": "Average",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Vms",
+          "ParameterKey": "Field 33",
+          "Description": "Upstream magnetosonic speed",
+          "Units": "km/s",
+          "UnitsConversion": "1e3>m/s",
+          "FillValue": "9999.9",
+          "Support": {
+            "Qualifier": "Average",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Ms",
+          "ParameterKey": "Field 34",
+          "Description": "Upstream sonic Mach number",
+          "FillValue": "99.9",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": "Average",
+            "ParticleQuantity": "SonicMachNumber"
+          }
+        },
+        {
+          "Name": "Ma",
+          "ParameterKey": "Field 34",
+          "Description": "Upstream Alfven Mach number",
+          "FillValue": "999.9",
+          "Support": {
+            "Qualifier": "Average",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Mms",
+          "ParameterKey": "Field 35",
+          "Description": "Upstream magnetosonic Mach number",
+          "FillValue": "99.9",
+          "Support": {
+            "Qualifier": "Average",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Beta",
+          "ParameterKey": "Field 36",
+          "Description": "Upstream plasma beta",
+          "FillValue": "-999.99",
+          "Support": {
+            "Qualifier": "Average",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Psw",
+          "ParameterKey": "Field 37",
+          "Description": "Upstream solar wind flow pressure",
+          "Units": "nPa",
+          "UnitsConversion": "1e-9>Pa",
+          "FillValue": "99.99",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": "Average",
+            "ParticleQuantity": "Pressure"
+          }
+        },
+        {
+          "Name": "Str",
+          "ParameterKey": "Field 38",
+          "Description": "Shock strength: downstream to upstream density ratio (Nd/Nu).",
+          "FillValue": "9.9",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "IMF cone",
+          "ParameterKey": "Field 39",
+          "Description": "IMF cone angle = acos(|Bx|/Bt)",
+          "Units": "deg",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "GSM"
+          },
+          "FillValue": "999",
+          "Field": {
+            "Qualifier": [
+              "DirectionAngle",
+              "Average"
+            ],
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "IMF clock",
+          "ParameterKey": "Field 40",
+          "Description": "IMF clock angle = atan(|By GSM|/Bz GSM)",
+          "Units": "deg",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "GSM"
+          },
+          "FillValue": "999",
+          "Field": {
+            "Qualifier": [
+              "DirectionAngle",
+              "Average"
+            ],
+            "FieldQuantity": "Magnetic"
+          }
+        }
+      ]
+    }
+  }
+}

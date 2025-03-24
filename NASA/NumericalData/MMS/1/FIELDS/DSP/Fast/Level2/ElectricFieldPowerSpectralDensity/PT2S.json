@@ -1,0 +1,3197 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2-5-0.xsd",
+    "Version": "2.5.0",
+    "NumericalData": {
+      "ResourceID": "spase://NASA/NumericalData/MMS/1/FIELDS/DSP/Fast/Level2/ElectricFieldPowerSpectralDensity/PT2S",
+      "ResourceHeader": {
+        "ResourceName": "MMS 1 Digital Signal Processor (DSP) Double Probe (ADP, SDP), Electric Field Power Spectral Density, Level 2 (L2), Fast Mode, 2 s Data",
+        "AlternateName": "MMS1_DSP_FAST_L2_EPSD",
+        "DOI": "https://doi.org/10.48322/n5ky-bm34",
+        "ReleaseDate": "2023-03-04T12:34:56.789",
+        "RevisionHistory": {
+          "RevisionEvent": [
+            {
+              "ReleaseDate": "2021-04-27T15:38:11",
+              "Note": "Only known prior ReleaseDate of the metadata"
+            },
+            {
+              "ReleaseDate": "2022-08-04T12:34:56.789",
+              "Note": "Added DOI and PublicationInfo minted by LFB, updated the RepositoryID, updated the SPDF MetadataContact Person to Robert M. Candey, metadata updated to SPASE 2.4.1, reviewed by LFB 20220803"
+            },
+            {
+              "ReleaseDate": "2023-03-04T12:34:56.789",
+              "Note": "Standardized the ResourceName Format, Set AlternateName equal to the ProductKey, Revised the Acknowledgement, PublicationInfo Authors, and Contact Person list per request of the MMS DSP/EDP team, metadata updated to SPASE 2.5.0, reviewed by LFB 20230304"
+            }
+          ]
+        },
+        "Description": "The MMS electric field power spectral density (EPSD) is computed onboard by the Digital Signal Processor (DSP). The fast Fourier transform (FFT) calculation is performed on a digitized version of analog signals from the Axial Double Probe (ADP) and Spin-Plane Double Probe (SDP). This data product is computed in space from individual components that are not synchronized to the 1 second pulse. Therefore, the timing between channels can be inaccurate by a fraction of a second. The samples times are interval start times taken from the x component. The spectra are calculated via a 1024-point FFT algorithm on piecewise continuous sets of waveform data. Nine signals can be processed simultaneously. Six of the twelve DC-coupled E, DC-coupled V, or SCM signals (16384 samples/s) are selected for spectral processing at 100% duty cycle. In addition, the three AC-coupled signals (262,144 kS/s) each can be processed at 6.25% duty cycle. Each of the nine signals has 16, 1024-point FFT operations every second; the field-programmable gate array (FPGA) performs 144 FFTs per second. The FFT is performed by an arithmetic logic unit (ALU), which is controlled by a state machine. Both are hard-coded into the FPGA. The operation starts by applying a 1024-point Hanning window onto a waveform. Next, an FFT is implemented. The FFT is broken into a series of \"butterfly\" operations performed by the ALU. The result has real and imaginary data. Power spectra are calculated by taking the sum of squares of real and imaginary values (the ALU includes a multiplier), which produces a power spectrum with 512 frequency bins. The frequency bins are then combined to give pseudo-logarithmic frequency spacing (del f)/f. The spectra are reduced to 56 frequency bins with (del f)/f between 6% and 12% when possible. Narrow-band emissions can be fit to an accuracy of (del f)/f ~3%, allowing for an accurate determination of plasma density. The spectra can be averaged in time. The fastest reporting rate of any signal is 16 spectra per second. Reporting rates can be as slow a one spectra every 16 s (averaging 256 spectra). The averaging process has 48-bit accuracy to maximize the dynamic range. The amplitudes undergo a pseudo-logarithmic compression to an 8-bit number representing over 120 dB of dynamic range at ~5% precision.",
+        "Acknowledgement": "Please acknowledge R.E. Ergun, P.-A. Lindqvist, R.B. Torbert, N. Ahmadi, D.B. Graham, and J.L. Burch for use of these data",
+        "PublicationInfo": {
+          "Authors": "Ergun, Robert, E.; Lindqvist, Per-Arne; Torbert, Roy, B.; Ahmadi, Narges; Graham, Daniel, Bruce; Burch, James, L.",
+          "PublicationDate": "2022-01-01T00:00:00",
+          "PublishedBy": "NASA Space Physics Data Facility"
+        },
+        "Contact": [
+          {
+            "PersonID": "spase://SMWG/Person/Robert.E.Ergun",
+            "Role": [
+              "InstrumentLead",
+              "CoInvestigator"
+            ]
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Per-Arne.Lindqvist",
+            "Role": [
+              "InstrumentLead",
+              "CoInvestigator"
+            ]
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Roy.B.Torbert",
+            "Role": [
+              "InstrumentLead",
+              "CoInvestigator"
+            ]
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Narges.Ahmadi",
+            "Role": "CoInvestigator"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Daniel.Bruce.Graham",
+            "Role": "CoInvestigator"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/James.L.Burch",
+            "Role": "PrincipalInvestigator"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/MMS_SDC_POC",
+            "Role": "HostContact"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Robert.M.Candey",
+            "Role": "MetadataContact"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Lee.Frost.Bargatze",
+            "Role": "MetadataContact"
+          }
+        ],
+        "InformationURL": {
+          "Name": "The Magnetospheric Multiscale (MMS) Mission home page at Goddard Space Flight Center (GSFC)",
+          "URL": "https://mms.gsfc.nasa.gov/",
+          "Description": "The Magnetospheric Multiscale (MMS) Mission Home Page hosted by the Goddard Space Flight Center (GSFC)."
+        },
+        "PriorID": "spase://VSPO/NumericalData/MMS/1/FIELDS/DSP/Fast/Level2/ElectricFieldPowerSpectralDensity/PT2S"
+      },
+      "AccessInformation": [
+        {
+          "RepositoryID": "spase://SMWG/Repository/UCOLO/LASP/MMS_SDC",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": [
+            {
+              "Name": "FTPS from the MMS SDC (not with most browsers)",
+              "URL": "ftps://lasp.colorado.edu/mms/sdc/public/data/mms1/dsp/fast/l2/epsd/",
+              "Description": "In CDF via ftp from the MMS Science Data Center"
+            },
+            {
+              "Name": "HTTPS from the MMS SDC",
+              "URL": "https://lasp.colorado.edu/mms/sdc/public/data/mms1/dsp/fast/l2/epsd/",
+              "Description": "In CDF via http from the MMS Science Data Center"
+            }
+          ],
+          "Format": "CDF",
+          "Encoding": "None",
+          "Acknowledgement": "Please acknowledge R.E. Ergun, P.-A. Lindqvist, R.B. Torbert, N. Ahmadi, D.B. Graham, and J.L. Burch. Also please acknowledge the data providers and CDAWeb when using these data."
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF/CDAWeb",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": [
+            {
+              "Name": "FTPS from SPDF (not with most browsers)",
+              "URL": "ftps://spdf.gsfc.nasa.gov/pub/data/mms/mms1/dsp/fast/l2/epsd/",
+              "Description": "In CDF via ftp from SPDF"
+            },
+            {
+              "Name": "HTTPS from SPDF",
+              "URL": "https://spdf.gsfc.nasa.gov/pub/data/mms/mms1/dsp/fast/l2/epsd/",
+              "Description": "In CDF via http from SPDF"
+            },
+            {
+              "Name": "CDAWeb",
+              "URL": "https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=MMS1_DSP_FAST_L2_EPSD&index=sp_phys",
+              "ProductKey": "MMS1_DSP_FAST_L2_EPSD",
+              "Description": "Access to ASCII, CDF, and plots via NASA/GSFC CDAWeb"
+            }
+          ],
+          "Format": "CDF",
+          "Encoding": "None",
+          "Acknowledgement": "Please acknowledge R.E. Ergun, P.-A. Lindqvist, R.B. Torbert, N. Ahmadi, D.B. Graham, and J.L. Burch. Also please acknowledge the data providers and CDAWeb when using these data."
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF/CDAWeb",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDAWeb HAPI Server",
+            "URL": "https://cdaweb.gsfc.nasa.gov/hapi",
+            "Style": "HAPI",
+            "ProductKey": "MMS1_DSP_FAST_L2_EPSD",
+            "Description": "Web Service to this product using the HAPI interface"
+          },
+          "Format": "CSV",
+          "Acknowledgement": "Please acknowledge R.E. Ergun, P.-A. Lindqvist, R.B. Torbert, N. Ahmadi, D.B. Graham, and J.L. Burch. Also please acknowledge the data providers and CDAWeb when using these data."
+        }
+      ],
+      "ProcessingLevel": "Calibrated",
+      "InstrumentID": [
+        "spase://SMWG/Instrument/MMS/1/FIELDS/ADP",
+        "spase://SMWG/Instrument/MMS/1/FIELDS/DSP",
+        "spase://SMWG/Instrument/MMS/1/FIELDS/SDP"
+      ],
+      "MeasurementType": [
+        "ElectricField",
+        "Waves.Passive"
+      ],
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "2015-03-17T00:00:00.000",
+          "RelativeStopDate": "-P2M"
+        },
+        "Cadence": "PT2S"
+      },
+      "ObservedRegion": [
+        "Earth.Magnetosheath",
+        "Earth.Magnetosphere",
+        "Earth.Magnetosphere.Magnetotail",
+        "Earth.Magnetosphere.Main",
+        "Earth.Magnetosphere.RadiationBelt",
+        "Earth.NearSurface.EquatorialRegion",
+        "Earth.NearSurface.Plasmasphere",
+        "Heliosphere.NearEarth"
+      ],
+      "Parameter": [
+        {
+          "Name": "Epoch",
+          "ParameterKey": "Epoch",
+          "Description": "Epoch",
+          "Caveats": "This parameter exhibits an increasing monotonic progression.",
+          "Cadence": "PT2S",
+          "Units": "ns",
+          "UnitsConversion": "1.0e-9>s",
+          "RenderingHints": {
+            "AxisLabel": "Epoch",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "2000-01-01T00:00:00.000000000",
+          "ValidMax": "2030-01-01T00:00:00.999000000",
+          "FillValue": "9999-12-31T23:59:59.999999999",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Epoch_timetag",
+          "ParameterKey": "Epoch_timetag",
+          "Description": "Epoch Time Tag",
+          "Caveats": "This parameter exhibits an increasing monotonic progression.",
+          "Cadence": "PT2S",
+          "Units": "ns",
+          "UnitsConversion": "1.0e-9>s",
+          "RenderingHints": {
+            "AxisLabel": "Epoch_timetag",
+            "ValueFormat": "e14.8",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "1970-01-01T00:00:00.000000000",
+          "ValidMax": "2030-01-01T00:00:00.999999999",
+          "FillValue": "9999-12-31T23:59:59.999999999",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "mms1_dsp_epsd_x",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "mms1_dsp_epsd_x",
+          "Description": "EPSD, X-Component",
+          "Caveats": "Average Type: standard",
+          "Cadence": "PT2S",
+          "Units": "(V/m)^2/Hz",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "SC"
+          },
+          "RenderingHints": {
+            "DisplayType": "Spectrogram",
+            "ValueFormat": "e13.6",
+            "ScaleType": "LogScale"
+          },
+          "Structure": {
+            "Size": "88",
+            "Element": [
+              {
+                "Name": "1",
+                "Index": "1",
+                "RenderingHints": {
+                  "AxisLabel": "8.0"
+                }
+              },
+              {
+                "Name": "2",
+                "Index": "2",
+                "RenderingHints": {
+                  "AxisLabel": "24.0"
+                }
+              },
+              {
+                "Name": "3",
+                "Index": "3",
+                "RenderingHints": {
+                  "AxisLabel": "40.0"
+                }
+              },
+              {
+                "Name": "4",
+                "Index": "4",
+                "RenderingHints": {
+                  "AxisLabel": "56.0"
+                }
+              },
+              {
+                "Name": "5",
+                "Index": "5",
+                "RenderingHints": {
+                  "AxisLabel": "72.0"
+                }
+              },
+              {
+                "Name": "6",
+                "Index": "6",
+                "RenderingHints": {
+                  "AxisLabel": "88.0"
+                }
+              },
+              {
+                "Name": "7",
+                "Index": "7",
+                "RenderingHints": {
+                  "AxisLabel": "104.0"
+                }
+              },
+              {
+                "Name": "8",
+                "Index": "8",
+                "RenderingHints": {
+                  "AxisLabel": "120.0"
+                }
+              },
+              {
+                "Name": "9",
+                "Index": "9",
+                "RenderingHints": {
+                  "AxisLabel": "136.0"
+                }
+              },
+              {
+                "Name": "10",
+                "Index": "10",
+                "RenderingHints": {
+                  "AxisLabel": "152.0"
+                }
+              },
+              {
+                "Name": "11",
+                "Index": "11",
+                "RenderingHints": {
+                  "AxisLabel": "168.0"
+                }
+              },
+              {
+                "Name": "12",
+                "Index": "12",
+                "RenderingHints": {
+                  "AxisLabel": "184.0"
+                }
+              },
+              {
+                "Name": "13",
+                "Index": "13",
+                "RenderingHints": {
+                  "AxisLabel": "200.0"
+                }
+              },
+              {
+                "Name": "14",
+                "Index": "14",
+                "RenderingHints": {
+                  "AxisLabel": "216.0"
+                }
+              },
+              {
+                "Name": "15",
+                "Index": "15",
+                "RenderingHints": {
+                  "AxisLabel": "232.0"
+                }
+              },
+              {
+                "Name": "16",
+                "Index": "16",
+                "RenderingHints": {
+                  "AxisLabel": "248.0"
+                }
+              },
+              {
+                "Name": "17",
+                "Index": "17",
+                "RenderingHints": {
+                  "AxisLabel": "272.0"
+                }
+              },
+              {
+                "Name": "18",
+                "Index": "18",
+                "RenderingHints": {
+                  "AxisLabel": "304.0"
+                }
+              },
+              {
+                "Name": "19",
+                "Index": "19",
+                "RenderingHints": {
+                  "AxisLabel": "336.0"
+                }
+              },
+              {
+                "Name": "20",
+                "Index": "20",
+                "RenderingHints": {
+                  "AxisLabel": "368.0"
+                }
+              },
+              {
+                "Name": "21",
+                "Index": "21",
+                "RenderingHints": {
+                  "AxisLabel": "400.0"
+                }
+              },
+              {
+                "Name": "22",
+                "Index": "22",
+                "RenderingHints": {
+                  "AxisLabel": "432.0"
+                }
+              },
+              {
+                "Name": "23",
+                "Index": "23",
+                "RenderingHints": {
+                  "AxisLabel": "464.0"
+                }
+              },
+              {
+                "Name": "24",
+                "Index": "24",
+                "RenderingHints": {
+                  "AxisLabel": "496.0"
+                }
+              },
+              {
+                "Name": "25",
+                "Index": "25",
+                "RenderingHints": {
+                  "AxisLabel": "544.0"
+                }
+              },
+              {
+                "Name": "26",
+                "Index": "26",
+                "RenderingHints": {
+                  "AxisLabel": "608.0"
+                }
+              },
+              {
+                "Name": "27",
+                "Index": "27",
+                "RenderingHints": {
+                  "AxisLabel": "672.0"
+                }
+              },
+              {
+                "Name": "28",
+                "Index": "28",
+                "RenderingHints": {
+                  "AxisLabel": "736.0"
+                }
+              },
+              {
+                "Name": "29",
+                "Index": "29",
+                "RenderingHints": {
+                  "AxisLabel": "800.0"
+                }
+              },
+              {
+                "Name": "30",
+                "Index": "30",
+                "RenderingHints": {
+                  "AxisLabel": "864.0"
+                }
+              },
+              {
+                "Name": "31",
+                "Index": "31",
+                "RenderingHints": {
+                  "AxisLabel": "928.0"
+                }
+              },
+              {
+                "Name": "32",
+                "Index": "32",
+                "RenderingHints": {
+                  "AxisLabel": "992.0"
+                }
+              },
+              {
+                "Name": "33",
+                "Index": "33",
+                "RenderingHints": {
+                  "AxisLabel": "1088.0"
+                }
+              },
+              {
+                "Name": "34",
+                "Index": "34",
+                "RenderingHints": {
+                  "AxisLabel": "1216.0"
+                }
+              },
+              {
+                "Name": "35",
+                "Index": "35",
+                "RenderingHints": {
+                  "AxisLabel": "1344.0"
+                }
+              },
+              {
+                "Name": "36",
+                "Index": "36",
+                "RenderingHints": {
+                  "AxisLabel": "1472.0"
+                }
+              },
+              {
+                "Name": "37",
+                "Index": "37",
+                "RenderingHints": {
+                  "AxisLabel": "1600.0"
+                }
+              },
+              {
+                "Name": "38",
+                "Index": "38",
+                "RenderingHints": {
+                  "AxisLabel": "1728.0"
+                }
+              },
+              {
+                "Name": "39",
+                "Index": "39",
+                "RenderingHints": {
+                  "AxisLabel": "1856.0"
+                }
+              },
+              {
+                "Name": "40",
+                "Index": "40",
+                "RenderingHints": {
+                  "AxisLabel": "1984.0"
+                }
+              },
+              {
+                "Name": "41",
+                "Index": "41",
+                "RenderingHints": {
+                  "AxisLabel": "2176.0"
+                }
+              },
+              {
+                "Name": "42",
+                "Index": "42",
+                "RenderingHints": {
+                  "AxisLabel": "2432.0"
+                }
+              },
+              {
+                "Name": "43",
+                "Index": "43",
+                "RenderingHints": {
+                  "AxisLabel": "2688.0"
+                }
+              },
+              {
+                "Name": "44",
+                "Index": "44",
+                "RenderingHints": {
+                  "AxisLabel": "2944.0"
+                }
+              },
+              {
+                "Name": "45",
+                "Index": "45",
+                "RenderingHints": {
+                  "AxisLabel": "3200.0"
+                }
+              },
+              {
+                "Name": "46",
+                "Index": "46",
+                "RenderingHints": {
+                  "AxisLabel": "3456.0"
+                }
+              },
+              {
+                "Name": "47",
+                "Index": "47",
+                "RenderingHints": {
+                  "AxisLabel": "3712.0"
+                }
+              },
+              {
+                "Name": "48",
+                "Index": "48",
+                "RenderingHints": {
+                  "AxisLabel": "3968.0"
+                }
+              },
+              {
+                "Name": "49",
+                "Index": "49",
+                "RenderingHints": {
+                  "AxisLabel": "4352.0"
+                }
+              },
+              {
+                "Name": "50",
+                "Index": "50",
+                "RenderingHints": {
+                  "AxisLabel": "4864.0"
+                }
+              },
+              {
+                "Name": "51",
+                "Index": "51",
+                "RenderingHints": {
+                  "AxisLabel": "5376.0"
+                }
+              },
+              {
+                "Name": "52",
+                "Index": "52",
+                "RenderingHints": {
+                  "AxisLabel": "5888.0"
+                }
+              },
+              {
+                "Name": "53",
+                "Index": "53",
+                "RenderingHints": {
+                  "AxisLabel": "6400.0"
+                }
+              },
+              {
+                "Name": "54",
+                "Index": "54",
+                "RenderingHints": {
+                  "AxisLabel": "6912.0"
+                }
+              },
+              {
+                "Name": "55",
+                "Index": "55",
+                "RenderingHints": {
+                  "AxisLabel": "7424.0"
+                }
+              },
+              {
+                "Name": "56",
+                "Index": "56",
+                "RenderingHints": {
+                  "AxisLabel": "7936.0"
+                }
+              },
+              {
+                "Name": "57",
+                "Index": "57",
+                "RenderingHints": {
+                  "AxisLabel": "8704.0"
+                }
+              },
+              {
+                "Name": "58",
+                "Index": "58",
+                "RenderingHints": {
+                  "AxisLabel": "9728.0"
+                }
+              },
+              {
+                "Name": "59",
+                "Index": "59",
+                "RenderingHints": {
+                  "AxisLabel": "10752.0"
+                }
+              },
+              {
+                "Name": "60",
+                "Index": "60",
+                "RenderingHints": {
+                  "AxisLabel": "11776.0"
+                }
+              },
+              {
+                "Name": "61",
+                "Index": "61",
+                "RenderingHints": {
+                  "AxisLabel": "12800.0"
+                }
+              },
+              {
+                "Name": "62",
+                "Index": "62",
+                "RenderingHints": {
+                  "AxisLabel": "13824.0"
+                }
+              },
+              {
+                "Name": "63",
+                "Index": "63",
+                "RenderingHints": {
+                  "AxisLabel": "14848.0"
+                }
+              },
+              {
+                "Name": "64",
+                "Index": "64",
+                "RenderingHints": {
+                  "AxisLabel": "15872.0"
+                }
+              },
+              {
+                "Name": "65",
+                "Index": "65",
+                "RenderingHints": {
+                  "AxisLabel": "17408.0"
+                }
+              },
+              {
+                "Name": "66",
+                "Index": "66",
+                "RenderingHints": {
+                  "AxisLabel": "19456.0"
+                }
+              },
+              {
+                "Name": "67",
+                "Index": "67",
+                "RenderingHints": {
+                  "AxisLabel": "21504.0"
+                }
+              },
+              {
+                "Name": "68",
+                "Index": "68",
+                "RenderingHints": {
+                  "AxisLabel": "23552.0"
+                }
+              },
+              {
+                "Name": "69",
+                "Index": "69",
+                "RenderingHints": {
+                  "AxisLabel": "25600.0"
+                }
+              },
+              {
+                "Name": "70",
+                "Index": "70",
+                "RenderingHints": {
+                  "AxisLabel": "27648.0"
+                }
+              },
+              {
+                "Name": "71",
+                "Index": "71",
+                "RenderingHints": {
+                  "AxisLabel": "29696.0"
+                }
+              },
+              {
+                "Name": "72",
+                "Index": "72",
+                "RenderingHints": {
+                  "AxisLabel": "31744.0"
+                }
+              },
+              {
+                "Name": "73",
+                "Index": "73",
+                "RenderingHints": {
+                  "AxisLabel": "34816.0"
+                }
+              },
+              {
+                "Name": "74",
+                "Index": "74",
+                "RenderingHints": {
+                  "AxisLabel": "38912.0"
+                }
+              },
+              {
+                "Name": "75",
+                "Index": "75",
+                "RenderingHints": {
+                  "AxisLabel": "43008.0"
+                }
+              },
+              {
+                "Name": "76",
+                "Index": "76",
+                "RenderingHints": {
+                  "AxisLabel": "47104.0"
+                }
+              },
+              {
+                "Name": "77",
+                "Index": "77",
+                "RenderingHints": {
+                  "AxisLabel": "51200.0"
+                }
+              },
+              {
+                "Name": "78",
+                "Index": "78",
+                "RenderingHints": {
+                  "AxisLabel": "55296.0"
+                }
+              },
+              {
+                "Name": "79",
+                "Index": "79",
+                "RenderingHints": {
+                  "AxisLabel": "59392.0"
+                }
+              },
+              {
+                "Name": "80",
+                "Index": "80",
+                "RenderingHints": {
+                  "AxisLabel": "63488.0"
+                }
+              },
+              {
+                "Name": "81",
+                "Index": "81",
+                "RenderingHints": {
+                  "AxisLabel": "69632.0"
+                }
+              },
+              {
+                "Name": "82",
+                "Index": "82",
+                "RenderingHints": {
+                  "AxisLabel": "77824.0"
+                }
+              },
+              {
+                "Name": "83",
+                "Index": "83",
+                "RenderingHints": {
+                  "AxisLabel": "86016.0"
+                }
+              },
+              {
+                "Name": "84",
+                "Index": "84",
+                "RenderingHints": {
+                  "AxisLabel": "94208.0"
+                }
+              },
+              {
+                "Name": "85",
+                "Index": "85",
+                "RenderingHints": {
+                  "AxisLabel": "102400.0"
+                }
+              },
+              {
+                "Name": "86",
+                "Index": "86",
+                "RenderingHints": {
+                  "AxisLabel": "110592.0"
+                }
+              },
+              {
+                "Name": "87",
+                "Index": "87",
+                "RenderingHints": {
+                  "AxisLabel": "118784.0"
+                }
+              },
+              {
+                "Name": "88",
+                "Index": "88",
+                "RenderingHints": {
+                  "AxisLabel": "126976.0"
+                }
+              }
+            ]
+          },
+          "ValidMin": "0.0",
+          "ValidMax": "2.0e-05",
+          "FillValue": "-1.0e+31",
+          "Wave": {
+            "WaveType": "PlasmaWaves",
+            "Qualifier": "Component.I",
+            "WaveQuantity": "Intensity"
+          }
+        },
+        {
+          "Name": "mms1_dsp_epsd_y",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "mms1_dsp_epsd_y",
+          "Description": "EPSD, Y-Component",
+          "Caveats": "Average Type: standard",
+          "Cadence": "PT2S",
+          "Units": "(V/m)^2/Hz",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "SC"
+          },
+          "RenderingHints": {
+            "DisplayType": "Spectrogram",
+            "ValueFormat": "e13.6",
+            "ScaleType": "LogScale"
+          },
+          "Structure": {
+            "Size": "88",
+            "Element": [
+              {
+                "Name": "1",
+                "Index": "1",
+                "RenderingHints": {
+                  "AxisLabel": "8.0"
+                }
+              },
+              {
+                "Name": "2",
+                "Index": "2",
+                "RenderingHints": {
+                  "AxisLabel": "24.0"
+                }
+              },
+              {
+                "Name": "3",
+                "Index": "3",
+                "RenderingHints": {
+                  "AxisLabel": "40.0"
+                }
+              },
+              {
+                "Name": "4",
+                "Index": "4",
+                "RenderingHints": {
+                  "AxisLabel": "56.0"
+                }
+              },
+              {
+                "Name": "5",
+                "Index": "5",
+                "RenderingHints": {
+                  "AxisLabel": "72.0"
+                }
+              },
+              {
+                "Name": "6",
+                "Index": "6",
+                "RenderingHints": {
+                  "AxisLabel": "88.0"
+                }
+              },
+              {
+                "Name": "7",
+                "Index": "7",
+                "RenderingHints": {
+                  "AxisLabel": "104.0"
+                }
+              },
+              {
+                "Name": "8",
+                "Index": "8",
+                "RenderingHints": {
+                  "AxisLabel": "120.0"
+                }
+              },
+              {
+                "Name": "9",
+                "Index": "9",
+                "RenderingHints": {
+                  "AxisLabel": "136.0"
+                }
+              },
+              {
+                "Name": "10",
+                "Index": "10",
+                "RenderingHints": {
+                  "AxisLabel": "152.0"
+                }
+              },
+              {
+                "Name": "11",
+                "Index": "11",
+                "RenderingHints": {
+                  "AxisLabel": "168.0"
+                }
+              },
+              {
+                "Name": "12",
+                "Index": "12",
+                "RenderingHints": {
+                  "AxisLabel": "184.0"
+                }
+              },
+              {
+                "Name": "13",
+                "Index": "13",
+                "RenderingHints": {
+                  "AxisLabel": "200.0"
+                }
+              },
+              {
+                "Name": "14",
+                "Index": "14",
+                "RenderingHints": {
+                  "AxisLabel": "216.0"
+                }
+              },
+              {
+                "Name": "15",
+                "Index": "15",
+                "RenderingHints": {
+                  "AxisLabel": "232.0"
+                }
+              },
+              {
+                "Name": "16",
+                "Index": "16",
+                "RenderingHints": {
+                  "AxisLabel": "248.0"
+                }
+              },
+              {
+                "Name": "17",
+                "Index": "17",
+                "RenderingHints": {
+                  "AxisLabel": "272.0"
+                }
+              },
+              {
+                "Name": "18",
+                "Index": "18",
+                "RenderingHints": {
+                  "AxisLabel": "304.0"
+                }
+              },
+              {
+                "Name": "19",
+                "Index": "19",
+                "RenderingHints": {
+                  "AxisLabel": "336.0"
+                }
+              },
+              {
+                "Name": "20",
+                "Index": "20",
+                "RenderingHints": {
+                  "AxisLabel": "368.0"
+                }
+              },
+              {
+                "Name": "21",
+                "Index": "21",
+                "RenderingHints": {
+                  "AxisLabel": "400.0"
+                }
+              },
+              {
+                "Name": "22",
+                "Index": "22",
+                "RenderingHints": {
+                  "AxisLabel": "432.0"
+                }
+              },
+              {
+                "Name": "23",
+                "Index": "23",
+                "RenderingHints": {
+                  "AxisLabel": "464.0"
+                }
+              },
+              {
+                "Name": "24",
+                "Index": "24",
+                "RenderingHints": {
+                  "AxisLabel": "496.0"
+                }
+              },
+              {
+                "Name": "25",
+                "Index": "25",
+                "RenderingHints": {
+                  "AxisLabel": "544.0"
+                }
+              },
+              {
+                "Name": "26",
+                "Index": "26",
+                "RenderingHints": {
+                  "AxisLabel": "608.0"
+                }
+              },
+              {
+                "Name": "27",
+                "Index": "27",
+                "RenderingHints": {
+                  "AxisLabel": "672.0"
+                }
+              },
+              {
+                "Name": "28",
+                "Index": "28",
+                "RenderingHints": {
+                  "AxisLabel": "736.0"
+                }
+              },
+              {
+                "Name": "29",
+                "Index": "29",
+                "RenderingHints": {
+                  "AxisLabel": "800.0"
+                }
+              },
+              {
+                "Name": "30",
+                "Index": "30",
+                "RenderingHints": {
+                  "AxisLabel": "864.0"
+                }
+              },
+              {
+                "Name": "31",
+                "Index": "31",
+                "RenderingHints": {
+                  "AxisLabel": "928.0"
+                }
+              },
+              {
+                "Name": "32",
+                "Index": "32",
+                "RenderingHints": {
+                  "AxisLabel": "992.0"
+                }
+              },
+              {
+                "Name": "33",
+                "Index": "33",
+                "RenderingHints": {
+                  "AxisLabel": "1088.0"
+                }
+              },
+              {
+                "Name": "34",
+                "Index": "34",
+                "RenderingHints": {
+                  "AxisLabel": "1216.0"
+                }
+              },
+              {
+                "Name": "35",
+                "Index": "35",
+                "RenderingHints": {
+                  "AxisLabel": "1344.0"
+                }
+              },
+              {
+                "Name": "36",
+                "Index": "36",
+                "RenderingHints": {
+                  "AxisLabel": "1472.0"
+                }
+              },
+              {
+                "Name": "37",
+                "Index": "37",
+                "RenderingHints": {
+                  "AxisLabel": "1600.0"
+                }
+              },
+              {
+                "Name": "38",
+                "Index": "38",
+                "RenderingHints": {
+                  "AxisLabel": "1728.0"
+                }
+              },
+              {
+                "Name": "39",
+                "Index": "39",
+                "RenderingHints": {
+                  "AxisLabel": "1856.0"
+                }
+              },
+              {
+                "Name": "40",
+                "Index": "40",
+                "RenderingHints": {
+                  "AxisLabel": "1984.0"
+                }
+              },
+              {
+                "Name": "41",
+                "Index": "41",
+                "RenderingHints": {
+                  "AxisLabel": "2176.0"
+                }
+              },
+              {
+                "Name": "42",
+                "Index": "42",
+                "RenderingHints": {
+                  "AxisLabel": "2432.0"
+                }
+              },
+              {
+                "Name": "43",
+                "Index": "43",
+                "RenderingHints": {
+                  "AxisLabel": "2688.0"
+                }
+              },
+              {
+                "Name": "44",
+                "Index": "44",
+                "RenderingHints": {
+                  "AxisLabel": "2944.0"
+                }
+              },
+              {
+                "Name": "45",
+                "Index": "45",
+                "RenderingHints": {
+                  "AxisLabel": "3200.0"
+                }
+              },
+              {
+                "Name": "46",
+                "Index": "46",
+                "RenderingHints": {
+                  "AxisLabel": "3456.0"
+                }
+              },
+              {
+                "Name": "47",
+                "Index": "47",
+                "RenderingHints": {
+                  "AxisLabel": "3712.0"
+                }
+              },
+              {
+                "Name": "48",
+                "Index": "48",
+                "RenderingHints": {
+                  "AxisLabel": "3968.0"
+                }
+              },
+              {
+                "Name": "49",
+                "Index": "49",
+                "RenderingHints": {
+                  "AxisLabel": "4352.0"
+                }
+              },
+              {
+                "Name": "50",
+                "Index": "50",
+                "RenderingHints": {
+                  "AxisLabel": "4864.0"
+                }
+              },
+              {
+                "Name": "51",
+                "Index": "51",
+                "RenderingHints": {
+                  "AxisLabel": "5376.0"
+                }
+              },
+              {
+                "Name": "52",
+                "Index": "52",
+                "RenderingHints": {
+                  "AxisLabel": "5888.0"
+                }
+              },
+              {
+                "Name": "53",
+                "Index": "53",
+                "RenderingHints": {
+                  "AxisLabel": "6400.0"
+                }
+              },
+              {
+                "Name": "54",
+                "Index": "54",
+                "RenderingHints": {
+                  "AxisLabel": "6912.0"
+                }
+              },
+              {
+                "Name": "55",
+                "Index": "55",
+                "RenderingHints": {
+                  "AxisLabel": "7424.0"
+                }
+              },
+              {
+                "Name": "56",
+                "Index": "56",
+                "RenderingHints": {
+                  "AxisLabel": "7936.0"
+                }
+              },
+              {
+                "Name": "57",
+                "Index": "57",
+                "RenderingHints": {
+                  "AxisLabel": "8704.0"
+                }
+              },
+              {
+                "Name": "58",
+                "Index": "58",
+                "RenderingHints": {
+                  "AxisLabel": "9728.0"
+                }
+              },
+              {
+                "Name": "59",
+                "Index": "59",
+                "RenderingHints": {
+                  "AxisLabel": "10752.0"
+                }
+              },
+              {
+                "Name": "60",
+                "Index": "60",
+                "RenderingHints": {
+                  "AxisLabel": "11776.0"
+                }
+              },
+              {
+                "Name": "61",
+                "Index": "61",
+                "RenderingHints": {
+                  "AxisLabel": "12800.0"
+                }
+              },
+              {
+                "Name": "62",
+                "Index": "62",
+                "RenderingHints": {
+                  "AxisLabel": "13824.0"
+                }
+              },
+              {
+                "Name": "63",
+                "Index": "63",
+                "RenderingHints": {
+                  "AxisLabel": "14848.0"
+                }
+              },
+              {
+                "Name": "64",
+                "Index": "64",
+                "RenderingHints": {
+                  "AxisLabel": "15872.0"
+                }
+              },
+              {
+                "Name": "65",
+                "Index": "65",
+                "RenderingHints": {
+                  "AxisLabel": "17408.0"
+                }
+              },
+              {
+                "Name": "66",
+                "Index": "66",
+                "RenderingHints": {
+                  "AxisLabel": "19456.0"
+                }
+              },
+              {
+                "Name": "67",
+                "Index": "67",
+                "RenderingHints": {
+                  "AxisLabel": "21504.0"
+                }
+              },
+              {
+                "Name": "68",
+                "Index": "68",
+                "RenderingHints": {
+                  "AxisLabel": "23552.0"
+                }
+              },
+              {
+                "Name": "69",
+                "Index": "69",
+                "RenderingHints": {
+                  "AxisLabel": "25600.0"
+                }
+              },
+              {
+                "Name": "70",
+                "Index": "70",
+                "RenderingHints": {
+                  "AxisLabel": "27648.0"
+                }
+              },
+              {
+                "Name": "71",
+                "Index": "71",
+                "RenderingHints": {
+                  "AxisLabel": "29696.0"
+                }
+              },
+              {
+                "Name": "72",
+                "Index": "72",
+                "RenderingHints": {
+                  "AxisLabel": "31744.0"
+                }
+              },
+              {
+                "Name": "73",
+                "Index": "73",
+                "RenderingHints": {
+                  "AxisLabel": "34816.0"
+                }
+              },
+              {
+                "Name": "74",
+                "Index": "74",
+                "RenderingHints": {
+                  "AxisLabel": "38912.0"
+                }
+              },
+              {
+                "Name": "75",
+                "Index": "75",
+                "RenderingHints": {
+                  "AxisLabel": "43008.0"
+                }
+              },
+              {
+                "Name": "76",
+                "Index": "76",
+                "RenderingHints": {
+                  "AxisLabel": "47104.0"
+                }
+              },
+              {
+                "Name": "77",
+                "Index": "77",
+                "RenderingHints": {
+                  "AxisLabel": "51200.0"
+                }
+              },
+              {
+                "Name": "78",
+                "Index": "78",
+                "RenderingHints": {
+                  "AxisLabel": "55296.0"
+                }
+              },
+              {
+                "Name": "79",
+                "Index": "79",
+                "RenderingHints": {
+                  "AxisLabel": "59392.0"
+                }
+              },
+              {
+                "Name": "80",
+                "Index": "80",
+                "RenderingHints": {
+                  "AxisLabel": "63488.0"
+                }
+              },
+              {
+                "Name": "81",
+                "Index": "81",
+                "RenderingHints": {
+                  "AxisLabel": "69632.0"
+                }
+              },
+              {
+                "Name": "82",
+                "Index": "82",
+                "RenderingHints": {
+                  "AxisLabel": "77824.0"
+                }
+              },
+              {
+                "Name": "83",
+                "Index": "83",
+                "RenderingHints": {
+                  "AxisLabel": "86016.0"
+                }
+              },
+              {
+                "Name": "84",
+                "Index": "84",
+                "RenderingHints": {
+                  "AxisLabel": "94208.0"
+                }
+              },
+              {
+                "Name": "85",
+                "Index": "85",
+                "RenderingHints": {
+                  "AxisLabel": "102400.0"
+                }
+              },
+              {
+                "Name": "86",
+                "Index": "86",
+                "RenderingHints": {
+                  "AxisLabel": "110592.0"
+                }
+              },
+              {
+                "Name": "87",
+                "Index": "87",
+                "RenderingHints": {
+                  "AxisLabel": "118784.0"
+                }
+              },
+              {
+                "Name": "88",
+                "Index": "88",
+                "RenderingHints": {
+                  "AxisLabel": "126976.0"
+                }
+              }
+            ]
+          },
+          "ValidMin": "0.0",
+          "ValidMax": "2.0e-05",
+          "FillValue": "-1.0e+31",
+          "Wave": {
+            "WaveType": "PlasmaWaves",
+            "Qualifier": "Component.J",
+            "WaveQuantity": "Intensity"
+          }
+        },
+        {
+          "Name": "mms1_dsp_epsd_z",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "mms1_dsp_epsd_z",
+          "Description": "EPSD, Z-Component",
+          "Caveats": "Average Type: standard",
+          "Cadence": "PT2S",
+          "Units": "(V/m)^2/Hz",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "SC"
+          },
+          "RenderingHints": {
+            "DisplayType": "Spectrogram",
+            "ValueFormat": "e13.6",
+            "ScaleType": "LogScale"
+          },
+          "Structure": {
+            "Size": "88",
+            "Element": [
+              {
+                "Name": "1",
+                "Index": "1",
+                "RenderingHints": {
+                  "AxisLabel": "8.0"
+                }
+              },
+              {
+                "Name": "2",
+                "Index": "2",
+                "RenderingHints": {
+                  "AxisLabel": "24.0"
+                }
+              },
+              {
+                "Name": "3",
+                "Index": "3",
+                "RenderingHints": {
+                  "AxisLabel": "40.0"
+                }
+              },
+              {
+                "Name": "4",
+                "Index": "4",
+                "RenderingHints": {
+                  "AxisLabel": "56.0"
+                }
+              },
+              {
+                "Name": "5",
+                "Index": "5",
+                "RenderingHints": {
+                  "AxisLabel": "72.0"
+                }
+              },
+              {
+                "Name": "6",
+                "Index": "6",
+                "RenderingHints": {
+                  "AxisLabel": "88.0"
+                }
+              },
+              {
+                "Name": "7",
+                "Index": "7",
+                "RenderingHints": {
+                  "AxisLabel": "104.0"
+                }
+              },
+              {
+                "Name": "8",
+                "Index": "8",
+                "RenderingHints": {
+                  "AxisLabel": "120.0"
+                }
+              },
+              {
+                "Name": "9",
+                "Index": "9",
+                "RenderingHints": {
+                  "AxisLabel": "136.0"
+                }
+              },
+              {
+                "Name": "10",
+                "Index": "10",
+                "RenderingHints": {
+                  "AxisLabel": "152.0"
+                }
+              },
+              {
+                "Name": "11",
+                "Index": "11",
+                "RenderingHints": {
+                  "AxisLabel": "168.0"
+                }
+              },
+              {
+                "Name": "12",
+                "Index": "12",
+                "RenderingHints": {
+                  "AxisLabel": "184.0"
+                }
+              },
+              {
+                "Name": "13",
+                "Index": "13",
+                "RenderingHints": {
+                  "AxisLabel": "200.0"
+                }
+              },
+              {
+                "Name": "14",
+                "Index": "14",
+                "RenderingHints": {
+                  "AxisLabel": "216.0"
+                }
+              },
+              {
+                "Name": "15",
+                "Index": "15",
+                "RenderingHints": {
+                  "AxisLabel": "232.0"
+                }
+              },
+              {
+                "Name": "16",
+                "Index": "16",
+                "RenderingHints": {
+                  "AxisLabel": "248.0"
+                }
+              },
+              {
+                "Name": "17",
+                "Index": "17",
+                "RenderingHints": {
+                  "AxisLabel": "272.0"
+                }
+              },
+              {
+                "Name": "18",
+                "Index": "18",
+                "RenderingHints": {
+                  "AxisLabel": "304.0"
+                }
+              },
+              {
+                "Name": "19",
+                "Index": "19",
+                "RenderingHints": {
+                  "AxisLabel": "336.0"
+                }
+              },
+              {
+                "Name": "20",
+                "Index": "20",
+                "RenderingHints": {
+                  "AxisLabel": "368.0"
+                }
+              },
+              {
+                "Name": "21",
+                "Index": "21",
+                "RenderingHints": {
+                  "AxisLabel": "400.0"
+                }
+              },
+              {
+                "Name": "22",
+                "Index": "22",
+                "RenderingHints": {
+                  "AxisLabel": "432.0"
+                }
+              },
+              {
+                "Name": "23",
+                "Index": "23",
+                "RenderingHints": {
+                  "AxisLabel": "464.0"
+                }
+              },
+              {
+                "Name": "24",
+                "Index": "24",
+                "RenderingHints": {
+                  "AxisLabel": "496.0"
+                }
+              },
+              {
+                "Name": "25",
+                "Index": "25",
+                "RenderingHints": {
+                  "AxisLabel": "544.0"
+                }
+              },
+              {
+                "Name": "26",
+                "Index": "26",
+                "RenderingHints": {
+                  "AxisLabel": "608.0"
+                }
+              },
+              {
+                "Name": "27",
+                "Index": "27",
+                "RenderingHints": {
+                  "AxisLabel": "672.0"
+                }
+              },
+              {
+                "Name": "28",
+                "Index": "28",
+                "RenderingHints": {
+                  "AxisLabel": "736.0"
+                }
+              },
+              {
+                "Name": "29",
+                "Index": "29",
+                "RenderingHints": {
+                  "AxisLabel": "800.0"
+                }
+              },
+              {
+                "Name": "30",
+                "Index": "30",
+                "RenderingHints": {
+                  "AxisLabel": "864.0"
+                }
+              },
+              {
+                "Name": "31",
+                "Index": "31",
+                "RenderingHints": {
+                  "AxisLabel": "928.0"
+                }
+              },
+              {
+                "Name": "32",
+                "Index": "32",
+                "RenderingHints": {
+                  "AxisLabel": "992.0"
+                }
+              },
+              {
+                "Name": "33",
+                "Index": "33",
+                "RenderingHints": {
+                  "AxisLabel": "1088.0"
+                }
+              },
+              {
+                "Name": "34",
+                "Index": "34",
+                "RenderingHints": {
+                  "AxisLabel": "1216.0"
+                }
+              },
+              {
+                "Name": "35",
+                "Index": "35",
+                "RenderingHints": {
+                  "AxisLabel": "1344.0"
+                }
+              },
+              {
+                "Name": "36",
+                "Index": "36",
+                "RenderingHints": {
+                  "AxisLabel": "1472.0"
+                }
+              },
+              {
+                "Name": "37",
+                "Index": "37",
+                "RenderingHints": {
+                  "AxisLabel": "1600.0"
+                }
+              },
+              {
+                "Name": "38",
+                "Index": "38",
+                "RenderingHints": {
+                  "AxisLabel": "1728.0"
+                }
+              },
+              {
+                "Name": "39",
+                "Index": "39",
+                "RenderingHints": {
+                  "AxisLabel": "1856.0"
+                }
+              },
+              {
+                "Name": "40",
+                "Index": "40",
+                "RenderingHints": {
+                  "AxisLabel": "1984.0"
+                }
+              },
+              {
+                "Name": "41",
+                "Index": "41",
+                "RenderingHints": {
+                  "AxisLabel": "2176.0"
+                }
+              },
+              {
+                "Name": "42",
+                "Index": "42",
+                "RenderingHints": {
+                  "AxisLabel": "2432.0"
+                }
+              },
+              {
+                "Name": "43",
+                "Index": "43",
+                "RenderingHints": {
+                  "AxisLabel": "2688.0"
+                }
+              },
+              {
+                "Name": "44",
+                "Index": "44",
+                "RenderingHints": {
+                  "AxisLabel": "2944.0"
+                }
+              },
+              {
+                "Name": "45",
+                "Index": "45",
+                "RenderingHints": {
+                  "AxisLabel": "3200.0"
+                }
+              },
+              {
+                "Name": "46",
+                "Index": "46",
+                "RenderingHints": {
+                  "AxisLabel": "3456.0"
+                }
+              },
+              {
+                "Name": "47",
+                "Index": "47",
+                "RenderingHints": {
+                  "AxisLabel": "3712.0"
+                }
+              },
+              {
+                "Name": "48",
+                "Index": "48",
+                "RenderingHints": {
+                  "AxisLabel": "3968.0"
+                }
+              },
+              {
+                "Name": "49",
+                "Index": "49",
+                "RenderingHints": {
+                  "AxisLabel": "4352.0"
+                }
+              },
+              {
+                "Name": "50",
+                "Index": "50",
+                "RenderingHints": {
+                  "AxisLabel": "4864.0"
+                }
+              },
+              {
+                "Name": "51",
+                "Index": "51",
+                "RenderingHints": {
+                  "AxisLabel": "5376.0"
+                }
+              },
+              {
+                "Name": "52",
+                "Index": "52",
+                "RenderingHints": {
+                  "AxisLabel": "5888.0"
+                }
+              },
+              {
+                "Name": "53",
+                "Index": "53",
+                "RenderingHints": {
+                  "AxisLabel": "6400.0"
+                }
+              },
+              {
+                "Name": "54",
+                "Index": "54",
+                "RenderingHints": {
+                  "AxisLabel": "6912.0"
+                }
+              },
+              {
+                "Name": "55",
+                "Index": "55",
+                "RenderingHints": {
+                  "AxisLabel": "7424.0"
+                }
+              },
+              {
+                "Name": "56",
+                "Index": "56",
+                "RenderingHints": {
+                  "AxisLabel": "7936.0"
+                }
+              },
+              {
+                "Name": "57",
+                "Index": "57",
+                "RenderingHints": {
+                  "AxisLabel": "8704.0"
+                }
+              },
+              {
+                "Name": "58",
+                "Index": "58",
+                "RenderingHints": {
+                  "AxisLabel": "9728.0"
+                }
+              },
+              {
+                "Name": "59",
+                "Index": "59",
+                "RenderingHints": {
+                  "AxisLabel": "10752.0"
+                }
+              },
+              {
+                "Name": "60",
+                "Index": "60",
+                "RenderingHints": {
+                  "AxisLabel": "11776.0"
+                }
+              },
+              {
+                "Name": "61",
+                "Index": "61",
+                "RenderingHints": {
+                  "AxisLabel": "12800.0"
+                }
+              },
+              {
+                "Name": "62",
+                "Index": "62",
+                "RenderingHints": {
+                  "AxisLabel": "13824.0"
+                }
+              },
+              {
+                "Name": "63",
+                "Index": "63",
+                "RenderingHints": {
+                  "AxisLabel": "14848.0"
+                }
+              },
+              {
+                "Name": "64",
+                "Index": "64",
+                "RenderingHints": {
+                  "AxisLabel": "15872.0"
+                }
+              },
+              {
+                "Name": "65",
+                "Index": "65",
+                "RenderingHints": {
+                  "AxisLabel": "17408.0"
+                }
+              },
+              {
+                "Name": "66",
+                "Index": "66",
+                "RenderingHints": {
+                  "AxisLabel": "19456.0"
+                }
+              },
+              {
+                "Name": "67",
+                "Index": "67",
+                "RenderingHints": {
+                  "AxisLabel": "21504.0"
+                }
+              },
+              {
+                "Name": "68",
+                "Index": "68",
+                "RenderingHints": {
+                  "AxisLabel": "23552.0"
+                }
+              },
+              {
+                "Name": "69",
+                "Index": "69",
+                "RenderingHints": {
+                  "AxisLabel": "25600.0"
+                }
+              },
+              {
+                "Name": "70",
+                "Index": "70",
+                "RenderingHints": {
+                  "AxisLabel": "27648.0"
+                }
+              },
+              {
+                "Name": "71",
+                "Index": "71",
+                "RenderingHints": {
+                  "AxisLabel": "29696.0"
+                }
+              },
+              {
+                "Name": "72",
+                "Index": "72",
+                "RenderingHints": {
+                  "AxisLabel": "31744.0"
+                }
+              },
+              {
+                "Name": "73",
+                "Index": "73",
+                "RenderingHints": {
+                  "AxisLabel": "34816.0"
+                }
+              },
+              {
+                "Name": "74",
+                "Index": "74",
+                "RenderingHints": {
+                  "AxisLabel": "38912.0"
+                }
+              },
+              {
+                "Name": "75",
+                "Index": "75",
+                "RenderingHints": {
+                  "AxisLabel": "43008.0"
+                }
+              },
+              {
+                "Name": "76",
+                "Index": "76",
+                "RenderingHints": {
+                  "AxisLabel": "47104.0"
+                }
+              },
+              {
+                "Name": "77",
+                "Index": "77",
+                "RenderingHints": {
+                  "AxisLabel": "51200.0"
+                }
+              },
+              {
+                "Name": "78",
+                "Index": "78",
+                "RenderingHints": {
+                  "AxisLabel": "55296.0"
+                }
+              },
+              {
+                "Name": "79",
+                "Index": "79",
+                "RenderingHints": {
+                  "AxisLabel": "59392.0"
+                }
+              },
+              {
+                "Name": "80",
+                "Index": "80",
+                "RenderingHints": {
+                  "AxisLabel": "63488.0"
+                }
+              },
+              {
+                "Name": "81",
+                "Index": "81",
+                "RenderingHints": {
+                  "AxisLabel": "69632.0"
+                }
+              },
+              {
+                "Name": "82",
+                "Index": "82",
+                "RenderingHints": {
+                  "AxisLabel": "77824.0"
+                }
+              },
+              {
+                "Name": "83",
+                "Index": "83",
+                "RenderingHints": {
+                  "AxisLabel": "86016.0"
+                }
+              },
+              {
+                "Name": "84",
+                "Index": "84",
+                "RenderingHints": {
+                  "AxisLabel": "94208.0"
+                }
+              },
+              {
+                "Name": "85",
+                "Index": "85",
+                "RenderingHints": {
+                  "AxisLabel": "102400.0"
+                }
+              },
+              {
+                "Name": "86",
+                "Index": "86",
+                "RenderingHints": {
+                  "AxisLabel": "110592.0"
+                }
+              },
+              {
+                "Name": "87",
+                "Index": "87",
+                "RenderingHints": {
+                  "AxisLabel": "118784.0"
+                }
+              },
+              {
+                "Name": "88",
+                "Index": "88",
+                "RenderingHints": {
+                  "AxisLabel": "126976.0"
+                }
+              }
+            ]
+          },
+          "ValidMin": "0.0",
+          "ValidMax": "2.0e-05",
+          "FillValue": "-1.0e+31",
+          "Wave": {
+            "WaveType": "PlasmaWaves",
+            "Qualifier": "Component.K",
+            "WaveQuantity": "Intensity"
+          }
+        },
+        {
+          "Name": "mms1_dsp_epsd_omni",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "mms1_dsp_epsd_omni",
+          "Description": "EPSD, Omni-directional",
+          "Caveats": "Average Type: standard",
+          "Cadence": "PT2S",
+          "Units": "(V/m)^2/Hz",
+          "RenderingHints": {
+            "DisplayType": "Spectrogram",
+            "ValueFormat": "e13.6",
+            "ScaleType": "LogScale"
+          },
+          "Structure": {
+            "Size": "88",
+            "Element": [
+              {
+                "Name": "1",
+                "Index": "1",
+                "RenderingHints": {
+                  "AxisLabel": "8.0"
+                }
+              },
+              {
+                "Name": "2",
+                "Index": "2",
+                "RenderingHints": {
+                  "AxisLabel": "24.0"
+                }
+              },
+              {
+                "Name": "3",
+                "Index": "3",
+                "RenderingHints": {
+                  "AxisLabel": "40.0"
+                }
+              },
+              {
+                "Name": "4",
+                "Index": "4",
+                "RenderingHints": {
+                  "AxisLabel": "56.0"
+                }
+              },
+              {
+                "Name": "5",
+                "Index": "5",
+                "RenderingHints": {
+                  "AxisLabel": "72.0"
+                }
+              },
+              {
+                "Name": "6",
+                "Index": "6",
+                "RenderingHints": {
+                  "AxisLabel": "88.0"
+                }
+              },
+              {
+                "Name": "7",
+                "Index": "7",
+                "RenderingHints": {
+                  "AxisLabel": "104.0"
+                }
+              },
+              {
+                "Name": "8",
+                "Index": "8",
+                "RenderingHints": {
+                  "AxisLabel": "120.0"
+                }
+              },
+              {
+                "Name": "9",
+                "Index": "9",
+                "RenderingHints": {
+                  "AxisLabel": "136.0"
+                }
+              },
+              {
+                "Name": "10",
+                "Index": "10",
+                "RenderingHints": {
+                  "AxisLabel": "152.0"
+                }
+              },
+              {
+                "Name": "11",
+                "Index": "11",
+                "RenderingHints": {
+                  "AxisLabel": "168.0"
+                }
+              },
+              {
+                "Name": "12",
+                "Index": "12",
+                "RenderingHints": {
+                  "AxisLabel": "184.0"
+                }
+              },
+              {
+                "Name": "13",
+                "Index": "13",
+                "RenderingHints": {
+                  "AxisLabel": "200.0"
+                }
+              },
+              {
+                "Name": "14",
+                "Index": "14",
+                "RenderingHints": {
+                  "AxisLabel": "216.0"
+                }
+              },
+              {
+                "Name": "15",
+                "Index": "15",
+                "RenderingHints": {
+                  "AxisLabel": "232.0"
+                }
+              },
+              {
+                "Name": "16",
+                "Index": "16",
+                "RenderingHints": {
+                  "AxisLabel": "248.0"
+                }
+              },
+              {
+                "Name": "17",
+                "Index": "17",
+                "RenderingHints": {
+                  "AxisLabel": "272.0"
+                }
+              },
+              {
+                "Name": "18",
+                "Index": "18",
+                "RenderingHints": {
+                  "AxisLabel": "304.0"
+                }
+              },
+              {
+                "Name": "19",
+                "Index": "19",
+                "RenderingHints": {
+                  "AxisLabel": "336.0"
+                }
+              },
+              {
+                "Name": "20",
+                "Index": "20",
+                "RenderingHints": {
+                  "AxisLabel": "368.0"
+                }
+              },
+              {
+                "Name": "21",
+                "Index": "21",
+                "RenderingHints": {
+                  "AxisLabel": "400.0"
+                }
+              },
+              {
+                "Name": "22",
+                "Index": "22",
+                "RenderingHints": {
+                  "AxisLabel": "432.0"
+                }
+              },
+              {
+                "Name": "23",
+                "Index": "23",
+                "RenderingHints": {
+                  "AxisLabel": "464.0"
+                }
+              },
+              {
+                "Name": "24",
+                "Index": "24",
+                "RenderingHints": {
+                  "AxisLabel": "496.0"
+                }
+              },
+              {
+                "Name": "25",
+                "Index": "25",
+                "RenderingHints": {
+                  "AxisLabel": "544.0"
+                }
+              },
+              {
+                "Name": "26",
+                "Index": "26",
+                "RenderingHints": {
+                  "AxisLabel": "608.0"
+                }
+              },
+              {
+                "Name": "27",
+                "Index": "27",
+                "RenderingHints": {
+                  "AxisLabel": "672.0"
+                }
+              },
+              {
+                "Name": "28",
+                "Index": "28",
+                "RenderingHints": {
+                  "AxisLabel": "736.0"
+                }
+              },
+              {
+                "Name": "29",
+                "Index": "29",
+                "RenderingHints": {
+                  "AxisLabel": "800.0"
+                }
+              },
+              {
+                "Name": "30",
+                "Index": "30",
+                "RenderingHints": {
+                  "AxisLabel": "864.0"
+                }
+              },
+              {
+                "Name": "31",
+                "Index": "31",
+                "RenderingHints": {
+                  "AxisLabel": "928.0"
+                }
+              },
+              {
+                "Name": "32",
+                "Index": "32",
+                "RenderingHints": {
+                  "AxisLabel": "992.0"
+                }
+              },
+              {
+                "Name": "33",
+                "Index": "33",
+                "RenderingHints": {
+                  "AxisLabel": "1088.0"
+                }
+              },
+              {
+                "Name": "34",
+                "Index": "34",
+                "RenderingHints": {
+                  "AxisLabel": "1216.0"
+                }
+              },
+              {
+                "Name": "35",
+                "Index": "35",
+                "RenderingHints": {
+                  "AxisLabel": "1344.0"
+                }
+              },
+              {
+                "Name": "36",
+                "Index": "36",
+                "RenderingHints": {
+                  "AxisLabel": "1472.0"
+                }
+              },
+              {
+                "Name": "37",
+                "Index": "37",
+                "RenderingHints": {
+                  "AxisLabel": "1600.0"
+                }
+              },
+              {
+                "Name": "38",
+                "Index": "38",
+                "RenderingHints": {
+                  "AxisLabel": "1728.0"
+                }
+              },
+              {
+                "Name": "39",
+                "Index": "39",
+                "RenderingHints": {
+                  "AxisLabel": "1856.0"
+                }
+              },
+              {
+                "Name": "40",
+                "Index": "40",
+                "RenderingHints": {
+                  "AxisLabel": "1984.0"
+                }
+              },
+              {
+                "Name": "41",
+                "Index": "41",
+                "RenderingHints": {
+                  "AxisLabel": "2176.0"
+                }
+              },
+              {
+                "Name": "42",
+                "Index": "42",
+                "RenderingHints": {
+                  "AxisLabel": "2432.0"
+                }
+              },
+              {
+                "Name": "43",
+                "Index": "43",
+                "RenderingHints": {
+                  "AxisLabel": "2688.0"
+                }
+              },
+              {
+                "Name": "44",
+                "Index": "44",
+                "RenderingHints": {
+                  "AxisLabel": "2944.0"
+                }
+              },
+              {
+                "Name": "45",
+                "Index": "45",
+                "RenderingHints": {
+                  "AxisLabel": "3200.0"
+                }
+              },
+              {
+                "Name": "46",
+                "Index": "46",
+                "RenderingHints": {
+                  "AxisLabel": "3456.0"
+                }
+              },
+              {
+                "Name": "47",
+                "Index": "47",
+                "RenderingHints": {
+                  "AxisLabel": "3712.0"
+                }
+              },
+              {
+                "Name": "48",
+                "Index": "48",
+                "RenderingHints": {
+                  "AxisLabel": "3968.0"
+                }
+              },
+              {
+                "Name": "49",
+                "Index": "49",
+                "RenderingHints": {
+                  "AxisLabel": "4352.0"
+                }
+              },
+              {
+                "Name": "50",
+                "Index": "50",
+                "RenderingHints": {
+                  "AxisLabel": "4864.0"
+                }
+              },
+              {
+                "Name": "51",
+                "Index": "51",
+                "RenderingHints": {
+                  "AxisLabel": "5376.0"
+                }
+              },
+              {
+                "Name": "52",
+                "Index": "52",
+                "RenderingHints": {
+                  "AxisLabel": "5888.0"
+                }
+              },
+              {
+                "Name": "53",
+                "Index": "53",
+                "RenderingHints": {
+                  "AxisLabel": "6400.0"
+                }
+              },
+              {
+                "Name": "54",
+                "Index": "54",
+                "RenderingHints": {
+                  "AxisLabel": "6912.0"
+                }
+              },
+              {
+                "Name": "55",
+                "Index": "55",
+                "RenderingHints": {
+                  "AxisLabel": "7424.0"
+                }
+              },
+              {
+                "Name": "56",
+                "Index": "56",
+                "RenderingHints": {
+                  "AxisLabel": "7936.0"
+                }
+              },
+              {
+                "Name": "57",
+                "Index": "57",
+                "RenderingHints": {
+                  "AxisLabel": "8704.0"
+                }
+              },
+              {
+                "Name": "58",
+                "Index": "58",
+                "RenderingHints": {
+                  "AxisLabel": "9728.0"
+                }
+              },
+              {
+                "Name": "59",
+                "Index": "59",
+                "RenderingHints": {
+                  "AxisLabel": "10752.0"
+                }
+              },
+              {
+                "Name": "60",
+                "Index": "60",
+                "RenderingHints": {
+                  "AxisLabel": "11776.0"
+                }
+              },
+              {
+                "Name": "61",
+                "Index": "61",
+                "RenderingHints": {
+                  "AxisLabel": "12800.0"
+                }
+              },
+              {
+                "Name": "62",
+                "Index": "62",
+                "RenderingHints": {
+                  "AxisLabel": "13824.0"
+                }
+              },
+              {
+                "Name": "63",
+                "Index": "63",
+                "RenderingHints": {
+                  "AxisLabel": "14848.0"
+                }
+              },
+              {
+                "Name": "64",
+                "Index": "64",
+                "RenderingHints": {
+                  "AxisLabel": "15872.0"
+                }
+              },
+              {
+                "Name": "65",
+                "Index": "65",
+                "RenderingHints": {
+                  "AxisLabel": "17408.0"
+                }
+              },
+              {
+                "Name": "66",
+                "Index": "66",
+                "RenderingHints": {
+                  "AxisLabel": "19456.0"
+                }
+              },
+              {
+                "Name": "67",
+                "Index": "67",
+                "RenderingHints": {
+                  "AxisLabel": "21504.0"
+                }
+              },
+              {
+                "Name": "68",
+                "Index": "68",
+                "RenderingHints": {
+                  "AxisLabel": "23552.0"
+                }
+              },
+              {
+                "Name": "69",
+                "Index": "69",
+                "RenderingHints": {
+                  "AxisLabel": "25600.0"
+                }
+              },
+              {
+                "Name": "70",
+                "Index": "70",
+                "RenderingHints": {
+                  "AxisLabel": "27648.0"
+                }
+              },
+              {
+                "Name": "71",
+                "Index": "71",
+                "RenderingHints": {
+                  "AxisLabel": "29696.0"
+                }
+              },
+              {
+                "Name": "72",
+                "Index": "72",
+                "RenderingHints": {
+                  "AxisLabel": "31744.0"
+                }
+              },
+              {
+                "Name": "73",
+                "Index": "73",
+                "RenderingHints": {
+                  "AxisLabel": "34816.0"
+                }
+              },
+              {
+                "Name": "74",
+                "Index": "74",
+                "RenderingHints": {
+                  "AxisLabel": "38912.0"
+                }
+              },
+              {
+                "Name": "75",
+                "Index": "75",
+                "RenderingHints": {
+                  "AxisLabel": "43008.0"
+                }
+              },
+              {
+                "Name": "76",
+                "Index": "76",
+                "RenderingHints": {
+                  "AxisLabel": "47104.0"
+                }
+              },
+              {
+                "Name": "77",
+                "Index": "77",
+                "RenderingHints": {
+                  "AxisLabel": "51200.0"
+                }
+              },
+              {
+                "Name": "78",
+                "Index": "78",
+                "RenderingHints": {
+                  "AxisLabel": "55296.0"
+                }
+              },
+              {
+                "Name": "79",
+                "Index": "79",
+                "RenderingHints": {
+                  "AxisLabel": "59392.0"
+                }
+              },
+              {
+                "Name": "80",
+                "Index": "80",
+                "RenderingHints": {
+                  "AxisLabel": "63488.0"
+                }
+              },
+              {
+                "Name": "81",
+                "Index": "81",
+                "RenderingHints": {
+                  "AxisLabel": "69632.0"
+                }
+              },
+              {
+                "Name": "82",
+                "Index": "82",
+                "RenderingHints": {
+                  "AxisLabel": "77824.0"
+                }
+              },
+              {
+                "Name": "83",
+                "Index": "83",
+                "RenderingHints": {
+                  "AxisLabel": "86016.0"
+                }
+              },
+              {
+                "Name": "84",
+                "Index": "84",
+                "RenderingHints": {
+                  "AxisLabel": "94208.0"
+                }
+              },
+              {
+                "Name": "85",
+                "Index": "85",
+                "RenderingHints": {
+                  "AxisLabel": "102400.0"
+                }
+              },
+              {
+                "Name": "86",
+                "Index": "86",
+                "RenderingHints": {
+                  "AxisLabel": "110592.0"
+                }
+              },
+              {
+                "Name": "87",
+                "Index": "87",
+                "RenderingHints": {
+                  "AxisLabel": "118784.0"
+                }
+              },
+              {
+                "Name": "88",
+                "Index": "88",
+                "RenderingHints": {
+                  "AxisLabel": "126976.0"
+                }
+              }
+            ]
+          },
+          "ValidMin": "0.0",
+          "ValidMax": "2.0e-05",
+          "FillValue": "-1.0e+31",
+          "Wave": {
+            "WaveType": "PlasmaWaves",
+            "Qualifier": "Total",
+            "WaveQuantity": "Intensity"
+          }
+        },
+        {
+          "Name": "mms1_dsp_seqcnt_lfe",
+          "Set": "Time series defined by using: EPOCH_TIMETAG",
+          "ParameterKey": "mms1_dsp_seqcnt_lfe",
+          "Description": "Sequence Count",
+          "Cadence": "PT2S",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "ValueFormat": "i6",
+            "ScaleType": "LinearScale"
+          },
+          "ValidMin": "0",
+          "ValidMax": "65535",
+          "FillValue": "65535",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "mms1_e_freq",
+          "ParameterKey": "mms1_e_freq",
+          "Description": "EPSD, Frequency Midpoints",
+          "Cadence": "PT2S",
+          "RenderingHints": {
+            "ValueFormat": "e10.6"
+          },
+          "Structure": {
+            "Size": "88",
+            "Element": [
+              {
+                "Name": "1",
+                "Index": "1"
+              },
+              {
+                "Name": "2",
+                "Index": "2"
+              },
+              {
+                "Name": "3",
+                "Index": "3"
+              },
+              {
+                "Name": "4",
+                "Index": "4"
+              },
+              {
+                "Name": "5",
+                "Index": "5"
+              },
+              {
+                "Name": "6",
+                "Index": "6"
+              },
+              {
+                "Name": "7",
+                "Index": "7"
+              },
+              {
+                "Name": "8",
+                "Index": "8"
+              },
+              {
+                "Name": "9",
+                "Index": "9"
+              },
+              {
+                "Name": "10",
+                "Index": "10"
+              },
+              {
+                "Name": "11",
+                "Index": "11"
+              },
+              {
+                "Name": "12",
+                "Index": "12"
+              },
+              {
+                "Name": "13",
+                "Index": "13"
+              },
+              {
+                "Name": "14",
+                "Index": "14"
+              },
+              {
+                "Name": "15",
+                "Index": "15"
+              },
+              {
+                "Name": "16",
+                "Index": "16"
+              },
+              {
+                "Name": "17",
+                "Index": "17"
+              },
+              {
+                "Name": "18",
+                "Index": "18"
+              },
+              {
+                "Name": "19",
+                "Index": "19"
+              },
+              {
+                "Name": "20",
+                "Index": "20"
+              },
+              {
+                "Name": "21",
+                "Index": "21"
+              },
+              {
+                "Name": "22",
+                "Index": "22"
+              },
+              {
+                "Name": "23",
+                "Index": "23"
+              },
+              {
+                "Name": "24",
+                "Index": "24"
+              },
+              {
+                "Name": "25",
+                "Index": "25"
+              },
+              {
+                "Name": "26",
+                "Index": "26"
+              },
+              {
+                "Name": "27",
+                "Index": "27"
+              },
+              {
+                "Name": "28",
+                "Index": "28"
+              },
+              {
+                "Name": "29",
+                "Index": "29"
+              },
+              {
+                "Name": "30",
+                "Index": "30"
+              },
+              {
+                "Name": "31",
+                "Index": "31"
+              },
+              {
+                "Name": "32",
+                "Index": "32"
+              },
+              {
+                "Name": "33",
+                "Index": "33"
+              },
+              {
+                "Name": "34",
+                "Index": "34"
+              },
+              {
+                "Name": "35",
+                "Index": "35"
+              },
+              {
+                "Name": "36",
+                "Index": "36"
+              },
+              {
+                "Name": "37",
+                "Index": "37"
+              },
+              {
+                "Name": "38",
+                "Index": "38"
+              },
+              {
+                "Name": "39",
+                "Index": "39"
+              },
+              {
+                "Name": "40",
+                "Index": "40"
+              },
+              {
+                "Name": "41",
+                "Index": "41"
+              },
+              {
+                "Name": "42",
+                "Index": "42"
+              },
+              {
+                "Name": "43",
+                "Index": "43"
+              },
+              {
+                "Name": "44",
+                "Index": "44"
+              },
+              {
+                "Name": "45",
+                "Index": "45"
+              },
+              {
+                "Name": "46",
+                "Index": "46"
+              },
+              {
+                "Name": "47",
+                "Index": "47"
+              },
+              {
+                "Name": "48",
+                "Index": "48"
+              },
+              {
+                "Name": "49",
+                "Index": "49"
+              },
+              {
+                "Name": "50",
+                "Index": "50"
+              },
+              {
+                "Name": "51",
+                "Index": "51"
+              },
+              {
+                "Name": "52",
+                "Index": "52"
+              },
+              {
+                "Name": "53",
+                "Index": "53"
+              },
+              {
+                "Name": "54",
+                "Index": "54"
+              },
+              {
+                "Name": "55",
+                "Index": "55"
+              },
+              {
+                "Name": "56",
+                "Index": "56"
+              },
+              {
+                "Name": "57",
+                "Index": "57"
+              },
+              {
+                "Name": "58",
+                "Index": "58"
+              },
+              {
+                "Name": "59",
+                "Index": "59"
+              },
+              {
+                "Name": "60",
+                "Index": "60"
+              },
+              {
+                "Name": "61",
+                "Index": "61"
+              },
+              {
+                "Name": "62",
+                "Index": "62"
+              },
+              {
+                "Name": "63",
+                "Index": "63"
+              },
+              {
+                "Name": "64",
+                "Index": "64"
+              },
+              {
+                "Name": "65",
+                "Index": "65"
+              },
+              {
+                "Name": "66",
+                "Index": "66"
+              },
+              {
+                "Name": "67",
+                "Index": "67"
+              },
+              {
+                "Name": "68",
+                "Index": "68"
+              },
+              {
+                "Name": "69",
+                "Index": "69"
+              },
+              {
+                "Name": "70",
+                "Index": "70"
+              },
+              {
+                "Name": "71",
+                "Index": "71"
+              },
+              {
+                "Name": "72",
+                "Index": "72"
+              },
+              {
+                "Name": "73",
+                "Index": "73"
+              },
+              {
+                "Name": "74",
+                "Index": "74"
+              },
+              {
+                "Name": "75",
+                "Index": "75"
+              },
+              {
+                "Name": "76",
+                "Index": "76"
+              },
+              {
+                "Name": "77",
+                "Index": "77"
+              },
+              {
+                "Name": "78",
+                "Index": "78"
+              },
+              {
+                "Name": "79",
+                "Index": "79"
+              },
+              {
+                "Name": "80",
+                "Index": "80"
+              },
+              {
+                "Name": "81",
+                "Index": "81"
+              },
+              {
+                "Name": "82",
+                "Index": "82"
+              },
+              {
+                "Name": "83",
+                "Index": "83"
+              },
+              {
+                "Name": "84",
+                "Index": "84"
+              },
+              {
+                "Name": "85",
+                "Index": "85"
+              },
+              {
+                "Name": "86",
+                "Index": "86"
+              },
+              {
+                "Name": "87",
+                "Index": "87"
+              },
+              {
+                "Name": "88",
+                "Index": "88"
+              }
+            ]
+          },
+          "ValidMin": "8.0",
+          "ValidMax": "126976.0",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        }
+      ]
+    }
+  }
+}

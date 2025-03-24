@@ -1,0 +1,327 @@
+<?xml version="1.0"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><title>SPASE Resource Description</title><script type="application/ld+json">{
+		"@context": "https://schema.org/",
+		"@type" :"Dataset",
+		"name": "Spatio-Temporal Analysis of Magnetic Field Fluctuations (STAFF)",
+    
+		"dateModified": "2019-05-05",
+
+    "identifier": "spase://CNES/Instrument/CDPP-Archive/Cluster-4/STAFF",
+
+    "creditText": "",
+ 		"description": "The STAFF (Spatio-Temporal Analysis of Field Fluctuations) experiment is one of the five experiments of the WEC. STAFF uses a three-axis search coil magnetometer to measure magnetic field fluctuations at frequencies up to 4 kHz. The waveform is digitised and telemetered to the ground at low frequencies, while at higher frequencies a digital spectrum analyser calculates the power spectrum and cross-spectrum in near-real time. The spectrum analyser also analyses the two spin-plane components of electric field as measured by the long dipole antennas of the EFW experiment. The three-axis search coil unit is mounted on a rigid boom with its three mutually orthogonal mechanical axes aligned respectively with the spin axis and the axes of the two EFW spin-plane wire antennas. Each sensor consists of a high permeability core embedded inside two solenoids. The main winding has a very large number of turns mounted in separate sections. The frequency response of the sensor is flattened in the frequency range 40--4000 Hz by a secondary winding used to introduce flux feedback. The secondary winding is also used as a calibration loop on which an external signal can be applied through a calibration network included in the preamplifiers. The measured sensitivity is 3 x10^-3 nT Hz^(-1/2) at 1 Hz and 3 x10^-5 nT Hz^(-1/2 )at 100 Hz. The search coils are designed so as to minimise their sensitivity to electric fields. The angles between each magnetic axis and the three mechanical axes have been carefully measured. These angles, at most a few degrees, are known with a precision of 0.1°. The three preamplifiers are mounted inside the spacecraft. The dynamic range of the preamplifiers is about 100 dB, to allow weak signals to be measured in the presence of the large signals induced by the rotation of the spacecraft in the ambient magnetic field. The magnetic preamplifier output is used by:\n - the STAFF magnetic waveform unit,\n - the STAFF spectrum analyser,\n - the WBD experiment,\n - the EFW experiment (for the fast event detector), and\n - the EDI experiment.\nThe Magnetic Waveform Unit\nThe three signals Bx, By, and Bz from the search coil preamplifier are passed through 7th order ant-aliasing filters (i.e., they have an attenuation of 42 dB per octave) with -3 dB cut-off at either 10 Hz or 180 Hz, depending upon the experiment operating mode. The signals are then applied to three sample and hold devices, and digitised by an ADC, with 16-bit precision to achieve the required dynamic range. The sampling is synchronised by the DWP experiment at either 25 or 450 Hz. This is 2.5 times the filter frequency, so that the rejection of aliased components is at least 40 dB. The output is sent to the DWP experiment. Note that, to facilitate ground data analysis, identical filters are used by the STAFF and the EFW experiments, and the same synchronisation signal is sent to both the STAFF and the EFW experiments. The dynamic range is reduced (by differencing) from 16 to 12 bits inside DWP.\nThe Spectrum Analyser\nThe frequency range of 8 to 4000 Hz is divided into three sub-bands, each of covering 3 octaves:\n- band A: 8--64 Hz\n- band B: 64--512 Hz\n- band C: 512--4000 Hz\nThe ''front end'' of the analyser is analogue. For each of the three bands and five sensors there are nine automatic gain-controlled (AGC) amplifiers. The gain of these AGC amplifiers is a multiplying factor in the determination of the absolute measurement. The outputs from the 9 amplifiers are multiplexed to a single 8-bit ''flash'' analogue-to-digital converter, and sampled at 4 times the highest frequency in the band. The AGC gain-control signals are also digitised for inclusion in the telemetry. The digital processing is performed in three distinct steps:\n- De-spin of the spin-plane (By, Bz, and Ey, Ez) signals using the onboard sun reference pulse.\n- Determination of the complex Fourier coefficients, using an extension of the Remez exchange algorithm.\n- Calculation and integration of the correlation matrices.\nThe resulting cross-spectral matrix has its diagonal elements logarithmically compressed into eight bits. The off-diagonal elements are normalised (by the diagonal elements), and coded using four bits (including the sign) for the real and four bits for the imaginary part. The spectrum analyser determines the complete 5x5 Hermitian cross-spectral matrix of the signals from five input channels, over the frequency range of 8 Hz to 4 kHz. The five auto-spectral power estimates are obtained with:\n- a dynamic range of approximately 100 dB,\n- an average amplitude resolution of 0.38 dB,\nThe 10 cross-spectral power estimates are normalised to give the coherence, which is obtained with the following precision:\n- the magnitude falls into one of 8 bins with upper limits distributed approximately as 2-n, for n = 0 to 7 \n- the phase has a precision which depends upon the magnitude of the coherence: for a signal with magnitude in the highest bin, it is approximately 5° close to 0°, 180°, and +/-90°, increasing to about 10° midway between these angles.\nThe spectral estimates are made at 27 frequencies distributed logarithmically over the range from 8 Hz to 4 kHz, with centre frequencies\nfmn = 2^(3m) × 2^((2n+1)/6)     for     1 &lt;= m &lt;= 3     and     0 &lt;= n &lt;= 8\nAll channels are sampled quasi-simultaneously, and the integration time, normally the same for all auto and for all cross-spectral channels, can be commanded to values between 125 ms (except at the lowest frequencies) and 4 s. The cross-spectral matrix elements are generally having 4 times less time resolution than the auto-spectra. \nThis description has been obtained from Section 3.5 of the ''Users Guide to the Cluster Science Data System'', DS-MPA-TN-0015.",
+		"abstract": "The STAFF (Spatio-Temporal Analysis of Field Fluctuations) experiment is one of the five experiments of the WEC. STAFF uses a three-axis search coil magnetometer to measure magnetic field fluctuations at frequencies up to 4 kHz. The waveform is digitised and telemetered to the ground at low frequencies, while at higher frequencies a digital spectrum analyser calculates the power spectrum and cross-spectrum in near-real time. The spectrum analyser also analyses the two spin-plane components of electric field as measured by the long dipole antennas of the EFW experiment. The three-axis search coil unit is mounted on a rigid boom with its three mutually orthogonal mechanical axes aligned respectively with the spin axis and the axes of the two EFW spin-plane wire antennas. Each sensor consists of a high permeability core embedded inside two solenoids. The main winding has a very large number of turns mounted in separate sections. The frequency response of the sensor is flattened in the frequency range 40--4000 Hz by a secondary winding used to introduce flux feedback. The secondary winding is also used as a calibration loop on which an external signal can be applied through a calibration network included in the preamplifiers. The measured sensitivity is 3 x10^-3 nT Hz^(-1/2) at 1 Hz and 3 x10^-5 nT Hz^(-1/2 )at 100 Hz. The search coils are designed so as to minimise their sensitivity to electric fields. The angles between each magnetic axis and the three mechanical axes have been carefully measured. These angles, at most a few degrees, are known with a precision of 0.1°. The three preamplifiers are mounted inside the spacecraft. The dynamic range of the preamplifiers is about 100 dB, to allow weak signals to be measured in the presence of the large signals induced by the rotation of the spacecraft in the ambient magnetic field. The magnetic preamplifier output is used by:\n - the STAFF magnetic waveform unit,\n - the STAFF spectrum analyser,\n - the WBD experiment,\n - the EFW experiment (for the fast event detector), and\n - the EDI experiment.\nThe Magnetic Waveform Unit\nThe three signals Bx, By, and Bz from the search coil preamplifier are passed through 7th order ant-aliasing filters (i.e., they have an attenuation of 42 dB per octave) with -3 dB cut-off at either 10 Hz or 180 Hz, depending upon the experiment operating mode. The signals are then applied to three sample and hold devices, and digitised by an ADC, with 16-bit precision to achieve the required dynamic range. The sampling is synchronised by the DWP experiment at either 25 or 450 Hz. This is 2.5 times the filter frequency, so that the rejection of aliased components is at least 40 dB. The output is sent to the DWP experiment. Note that, to facilitate ground data analysis, identical filters are used by the STAFF and the EFW experiments, and the same synchronisation signal is sent to both the STAFF and the EFW experiments. The dynamic range is reduced (by differencing) from 16 to 12 bits inside DWP.\nThe Spectrum Analyser\nThe frequency range of 8 to 4000 Hz is divided into three sub-bands, each of covering 3 octaves:\n- band A: 8--64 Hz\n- band B: 64--512 Hz\n- band C: 512--4000 Hz\nThe ''front end'' of the analyser is analogue. For each of the three bands and five sensors there are nine automatic gain-controlled (AGC) amplifiers. The gain of these AGC amplifiers is a multiplying factor in the determination of the absolute measurement. The outputs from the 9 amplifiers are multiplexed to a single 8-bit ''flash'' analogue-to-digital converter, and sampled at 4 times the highest frequency in the band. The AGC gain-control signals are also digitised for inclusion in the telemetry. The digital processing is performed in three distinct steps:\n- De-spin of the spin-plane (By, Bz, and Ey, Ez) signals using the onboard sun reference pulse.\n- Determination of the complex Fourier coefficients, using an extension of the Remez exchange algorithm.\n- Calculation and integration of the correlation matrices.\nThe resulting cross-spectral matrix has its diagonal elements logarithmically compressed into eight bits. The off-diagonal elements are normalised (by the diagonal elements), and coded using four bits (including the sign) for the real and four bits for the imaginary part. The spectrum analyser determines the complete 5x5 Hermitian cross-spectral matrix of the signals from five input channels, over the frequency range of 8 Hz to 4 kHz. The five auto-spectral power estimates are obtained with:\n- a dynamic range of approximately 100 dB,\n- an average amplitude resolution of 0.38 dB,\nThe 10 cross-spectral power estimates are normalised to give the coherence, which is obtained with the following precision:\n- the magnitude falls into one of 8 bins with upper limits distributed approximately as 2-n, for n = 0 to 7 \n- the phase has a precision which depends upon the magnitude of the coherence: for a signal with magnitude in the highest bin, it is approximately 5° close to 0°, 180°, and +/-90°, increasing to about 10° midway between these angles.\nThe spectral estimates are made at 27 frequencies distributed logarithmically over the range from 8 Hz to 4 kHz, with centre frequencies\nfmn = 2^(3m) × 2^((2n+1)/6)     for     1 &lt;= m &lt;= 3     and     0 &lt;= n &lt;= 8\nAll channels are sampled quasi-simultaneously, and the integration time, normally the same for all auto and for all cross-spectral channels, can be commanded to values between 125 ms (except at the lowest frequencies) and 4 s. The cross-spectral matrix elements are generally having 4 times less time resolution than the auto-spectra. \nThis description has been obtained from Section 3.5 of the ''Users Guide to the Cluster Science Data System'', DS-MPA-TN-0015.",
+
+    "genre": "",
+		"keywords": [  ],
+		"license": "https://cdla.io/permissive-1-0/",
+
+    "audience":{
+        "@type": "Audience",
+        "audienceType": ["Space Physicist", "Space Community", "Data Scientists", "Machine Learning Users"]
+    }
+}
+	  </script><style>
+/* http://spase-group.org/tools/xmlviewer */
+/* v1.0 | 20160908 */
+
+* {
+   margin: 0;
+   padding: 0;
+   border: 0;
+   outline: 0;
+   font-size: 100%;
+   vertical-align: baseline;
+   background: transparent;
+}
+
+body {
+	background-color: #f0f0f0; // #eaf5e9; #277bc0; #d3d3f9;
+	color: black;
+	font-family: Verdana, Arial, sans-serif; 
+	font-size:12px; 
+	line-height: 1.2;
+}
+ 
+h1,h2,h3,h4,h5,h6 {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-weight:bold;
+}
+
+h1 {
+	font-size: 140%;
+}
+
+h2 {
+	font-size: 120%;
+}
+
+h3 {
+	font-size: 110%;
+	font-style: oblique;
+}
+
+p {
+	margin-bottom: 0.75ex;
+}
+
+a:link,
+a:visited {
+   color: #277bc0;/* #339;*/
+   font-weight:bolder; 
+   text-decoration:none; 
+}
+
+a:hover {
+   color: blue;
+   font-weight:bolder; 
+   text-decoration:underline; 
+}
+
+ul {
+	list-style: square inside ;
+	margin-bottom: 0.75ex;
+}
+
+table {
+   border: thin solid #666;
+	margin-top: 5px;
+	margin-bottom: 10px;
+}
+
+table.nested {
+	margin-left: 2em;
+}
+
+thead,tbody {
+   border: thin solid #666;
+}
+
+td, th {
+   margin: 0;
+	padding: 2px 2px 2px 2px;
+}
+
+th {
+	font-style: oblique;
+}
+
+h1.detail {
+}
+
+.header {
+	width:100%;
+	padding: 1em 10px 1em 10px;
+	color: #fff;
+	background: #5e87b0;
+	font-weight: bold;
+	text-shadow: 0 /*{b-bar-shadow-x}*/ 1px /*{b-bar-shadow-y}*/ 1px /*{b-bar-shadow-radius}*/ #3e6790 /*{b-bar-shadow-color}*/;
+	text-align: center;
+	font-size: 16px;
+	display: block;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	outline: 0 !important;
+}
+
+.inset {
+	margin-left: 22%;
+}
+
+.page {
+	padding: 10px 3% 10px 3%;
+}
+
+div.indent {
+    margin-left: 2em;
+}
+
+div.term {
+	margin-top: 5px;
+	padding-left: 5px;
+	border-top: 1px solid #DDD;
+	font-weight: bold;
+}
+
+div.definition {
+	margin-left: 5ex;
+}
+
+div.value {
+	margin-left: 5ex;
+}
+
+div.product {
+	background-color: white;
+	border: thin solid #333;
+	padding: 10px 15px 10px 15px;
+	margin-top: 10px;
+}
+
+div.parameter {
+	margin-top: 10px;
+	padding: 5px 10px 10px 10px;
+	border: thin dotted #333;
+	background-color: #ebebeb;
+}
+
+#toc {
+   border: thin solid #333;
+   background-color: #F5F5F5; 
+   padding: 10px 15px 10px 15px;
+   margin-left: 5%;
+   margin-right: 5%;
+   margin-bottom: 30px;
+}
+
+#toc ol, ul, li {
+	padding-left: 5ex;
+}
+
+#toc ol {
+	list-style-type: decimal;
+	list-style-position: inside; 
+}
+
+#toc ul {
+	list-style-type: square;
+	list-style-position: inside; 
+}
+
+p.version {
+  float: right;
+  width: 100%;
+  margin-top: 5px;
+  text-align: right;
+  font-size: x-small;
+}
+
+p.right {
+  float: right;
+  text-align: right;
+}
+
+.box-title {
+	font-size: 120%;
+	font-weight:bold;
+	text-align: center;
+	border-bottom: 1px solid #DDD;
+}
+
+ul.list {
+	list-style-position: outside;
+	padding-left: 1.5em;
+}
+
+li.list {
+	text-align: left;
+	padding-left: 0px;
+}
+
+.no-break {
+	white-space: nowrap;
+}
+
+p.author {
+	font-size: 120%;
+}
+
+div.brand {
+	width: 100%;
+	text-align: right;
+}
+
+div.abstract {
+	display: table;
+	position: relative;
+	width: 100%;
+}
+
+div.citation {
+}
+
+div.access {
+	float: left;
+	width: 20%;
+	background-color: white;
+	border: thin solid #333;
+	padding: 5px 5px 5px 5px;
+	margin-right: 1em;
+}
+
+a.xml-logo:link,
+a.xml-logo:visited {
+   background: #ff6600;
+   color: #ffffff;
+   font-weight:bolder; 
+   text-decoration:none; 
+   padding-left:2px;
+   padding-right:2px;
+}
+a.xml-logo:hover {
+   text-decoration:underline; 
+}
+
+	  </style></head><body><div><a id="top"/></div><div class="header"><div class="middle">HPDE.io <a href="https://spase-group.org/">SPASE</a> landing pages.</div></div><div class="page"><div class="spase"><div class="abstract"><div class="citation "><h1><a name="spase://CNES/Instrument/CDPP-Archive/Cluster-4/STAFF">Spatio-Temporal Analysis of Magnetic Field Fluctuations (STAFF)</a></h1><p><div class="term">ResourceID</div><div class="definition">spase://CNES/Instrument/CDPP-Archive/Cluster-4/STAFF</div></p><p><div class="term">Description</div><div class="definition"><p>The STAFF (Spatio-Temporal Analysis of Field Fluctuations) experiment is one of the five experiments of the WEC. STAFF uses a three-axis search coil magnetometer to measure magnetic field fluctuations at frequencies up to 4 kHz. The waveform is digitised and telemetered to the ground at low frequencies, while at higher frequencies a digital spectrum analyser calculates the power spectrum and cross-spectrum in near-real time. The spectrum analyser also analyses the two spin-plane components of electric field as measured by the long dipole antennas of the EFW experiment. The three-axis search coil unit is mounted on a rigid boom with its three mutually orthogonal mechanical axes aligned respectively with the spin axis and the axes of the two EFW spin-plane wire antennas. Each sensor consists of a high permeability core embedded inside two solenoids. The main winding has a very large number of turns mounted in separate sections. The frequency response of the sensor is flattened in the frequency range 40--4000 Hz by a secondary winding used to introduce flux feedback. The secondary winding is also used as a calibration loop on which an external signal can be applied through a calibration network included in the preamplifiers. The measured sensitivity is 3 x10^-3 nT Hz^(-1/2) at 1 Hz and 3 x10^-5 nT Hz^(-1/2 )at 100 Hz. The search coils are designed so as to minimise their sensitivity to electric fields. The angles between each magnetic axis and the three mechanical axes have been carefully measured. These angles, at most a few degrees, are known with a precision of 0.1°. The three preamplifiers are mounted inside the spacecraft. The dynamic range of the preamplifiers is about 100 dB, to allow weak signals to be measured in the presence of the large signals induced by the rotation of the spacecraft in the ambient magnetic field. The magnetic preamplifier output is used by:</p>
+<ul>
+<li>the STAFF magnetic waveform unit,</li>
+<li>the STAFF spectrum analyser,</li>
+<li>the WBD experiment,</li>
+<li>the EFW experiment (for the fast event detector), and</li>
+<li>the EDI experiment.<br>
+The Magnetic Waveform Unit<br>
+The three signals Bx, By, and Bz from the search coil preamplifier are passed through 7th order ant-aliasing filters (i.e., they have an attenuation of 42 dB per octave) with -3 dB cut-off at either 10 Hz or 180 Hz, depending upon the experiment operating mode. The signals are then applied to three sample and hold devices, and digitised by an ADC, with 16-bit precision to achieve the required dynamic range. The sampling is synchronised by the DWP experiment at either 25 or 450 Hz. This is 2.5 times the filter frequency, so that the rejection of aliased components is at least 40 dB. The output is sent to the DWP experiment. Note that, to facilitate ground data analysis, identical filters are used by the STAFF and the EFW experiments, and the same synchronisation signal is sent to both the STAFF and the EFW experiments. The dynamic range is reduced (by differencing) from 16 to 12 bits inside DWP.<br>
+The Spectrum Analyser<br>
+The frequency range of 8 to 4000 Hz is divided into three sub-bands, each of covering 3 octaves:</li>
+<li>band A: 8--64 Hz</li>
+<li>band B: 64--512 Hz</li>
+<li>band C: 512--4000 Hz<br>
+The ''front end'' of the analyser is analogue. For each of the three bands and five sensors there are nine automatic gain-controlled (AGC) amplifiers. The gain of these AGC amplifiers is a multiplying factor in the determination of the absolute measurement. The outputs from the 9 amplifiers are multiplexed to a single 8-bit ''flash'' analogue-to-digital converter, and sampled at 4 times the highest frequency in the band. The AGC gain-control signals are also digitised for inclusion in the telemetry. The digital processing is performed in three distinct steps:</li>
+<li>De-spin of the spin-plane (By, Bz, and Ey, Ez) signals using the onboard sun reference pulse.</li>
+<li>Determination of the complex Fourier coefficients, using an extension of the Remez exchange algorithm.</li>
+<li>Calculation and integration of the correlation matrices.<br>
+The resulting cross-spectral matrix has its diagonal elements logarithmically compressed into eight bits. The off-diagonal elements are normalised (by the diagonal elements), and coded using four bits (including the sign) for the real and four bits for the imaginary part. The spectrum analyser determines the complete 5x5 Hermitian cross-spectral matrix of the signals from five input channels, over the frequency range of 8 Hz to 4 kHz. The five auto-spectral power estimates are obtained with:</li>
+<li>a dynamic range of approximately 100 dB,</li>
+<li>an average amplitude resolution of 0.38 dB,<br>
+The 10 cross-spectral power estimates are normalised to give the coherence, which is obtained with the following precision:</li>
+<li>the magnitude falls into one of 8 bins with upper limits distributed approximately as 2-n, for n = 0 to 7</li>
+<li>the phase has a precision which depends upon the magnitude of the coherence: for a signal with magnitude in the highest bin, it is approximately 5° close to 0°, 180°, and +/-90°, increasing to about 10° midway between these angles.<br>
+The spectral estimates are made at 27 frequencies distributed logarithmically over the range from 8 Hz to 4 kHz, with centre frequencies<br>
+fmn = 2^(3m) × 2^((2n+1)/6)     for     1 &lt;= m &lt;= 3     and     0 &lt;= n &lt;= 8<br>
+All channels are sampled quasi-simultaneously, and the integration time, normally the same for all auto and for all cross-spectral channels, can be commanded to values between 125 ms (except at the lowest frequencies) and 4 s. The cross-spectral matrix elements are generally having 4 times less time resolution than the auto-spectra.<br>
+This description has been obtained from Section 3.5 of the ''Users Guide to the Cluster Science Data System'', DS-MPA-TN-0015.</li>
+</ul>
+</div></p></div><div><p class="right"><a target="_blank" href="STAFF.xml">View XML</a> 
+				| <a target="_blank" href="STAFF.json">View JSON</a> 
+				| <a target="_blank" href="https://spase-editor.heliocloud.org/?edit=https://hpde.io/CNES/Instrument/CDPP-Archive/Cluster-4/STAFF.xml">Edit</a></p><h1 class="detail">Details</h1></div><div><div class="product"><p class="version">Version:2.4.0</p><h1>Instrument</h1><div class="term">ResourceID</div><div class="definition">spase://CNES/Instrument/CDPP-Archive/Cluster-4/STAFF</div><div class="term">ResourceHeader</div><div class="definition"><div class="term">ResourceName</div><div class="definition">Spatio-Temporal Analysis of Magnetic Field Fluctuations (STAFF)</div><div class="term">ReleaseDate</div><div class="definition">2019-05-05 12:34:56Z</div><div class="term">Description</div><div class="definition"><p>The STAFF (Spatio-Temporal Analysis of Field Fluctuations) experiment is one of the five experiments of the WEC. STAFF uses a three-axis search coil magnetometer to measure magnetic field fluctuations at frequencies up to 4 kHz. The waveform is digitised and telemetered to the ground at low frequencies, while at higher frequencies a digital spectrum analyser calculates the power spectrum and cross-spectrum in near-real time. The spectrum analyser also analyses the two spin-plane components of electric field as measured by the long dipole antennas of the EFW experiment. The three-axis search coil unit is mounted on a rigid boom with its three mutually orthogonal mechanical axes aligned respectively with the spin axis and the axes of the two EFW spin-plane wire antennas. Each sensor consists of a high permeability core embedded inside two solenoids. The main winding has a very large number of turns mounted in separate sections. The frequency response of the sensor is flattened in the frequency range 40--4000 Hz by a secondary winding used to introduce flux feedback. The secondary winding is also used as a calibration loop on which an external signal can be applied through a calibration network included in the preamplifiers. The measured sensitivity is 3 x10^-3 nT Hz^(-1/2) at 1 Hz and 3 x10^-5 nT Hz^(-1/2 )at 100 Hz. The search coils are designed so as to minimise their sensitivity to electric fields. The angles between each magnetic axis and the three mechanical axes have been carefully measured. These angles, at most a few degrees, are known with a precision of 0.1°. The three preamplifiers are mounted inside the spacecraft. The dynamic range of the preamplifiers is about 100 dB, to allow weak signals to be measured in the presence of the large signals induced by the rotation of the spacecraft in the ambient magnetic field. The magnetic preamplifier output is used by:</p>
+<ul>
+<li>the STAFF magnetic waveform unit,</li>
+<li>the STAFF spectrum analyser,</li>
+<li>the WBD experiment,</li>
+<li>the EFW experiment (for the fast event detector), and</li>
+<li>the EDI experiment.<br>
+The Magnetic Waveform Unit<br>
+The three signals Bx, By, and Bz from the search coil preamplifier are passed through 7th order ant-aliasing filters (i.e., they have an attenuation of 42 dB per octave) with -3 dB cut-off at either 10 Hz or 180 Hz, depending upon the experiment operating mode. The signals are then applied to three sample and hold devices, and digitised by an ADC, with 16-bit precision to achieve the required dynamic range. The sampling is synchronised by the DWP experiment at either 25 or 450 Hz. This is 2.5 times the filter frequency, so that the rejection of aliased components is at least 40 dB. The output is sent to the DWP experiment. Note that, to facilitate ground data analysis, identical filters are used by the STAFF and the EFW experiments, and the same synchronisation signal is sent to both the STAFF and the EFW experiments. The dynamic range is reduced (by differencing) from 16 to 12 bits inside DWP.<br>
+The Spectrum Analyser<br>
+The frequency range of 8 to 4000 Hz is divided into three sub-bands, each of covering 3 octaves:</li>
+<li>band A: 8--64 Hz</li>
+<li>band B: 64--512 Hz</li>
+<li>band C: 512--4000 Hz<br>
+The ''front end'' of the analyser is analogue. For each of the three bands and five sensors there are nine automatic gain-controlled (AGC) amplifiers. The gain of these AGC amplifiers is a multiplying factor in the determination of the absolute measurement. The outputs from the 9 amplifiers are multiplexed to a single 8-bit ''flash'' analogue-to-digital converter, and sampled at 4 times the highest frequency in the band. The AGC gain-control signals are also digitised for inclusion in the telemetry. The digital processing is performed in three distinct steps:</li>
+<li>De-spin of the spin-plane (By, Bz, and Ey, Ez) signals using the onboard sun reference pulse.</li>
+<li>Determination of the complex Fourier coefficients, using an extension of the Remez exchange algorithm.</li>
+<li>Calculation and integration of the correlation matrices.<br>
+The resulting cross-spectral matrix has its diagonal elements logarithmically compressed into eight bits. The off-diagonal elements are normalised (by the diagonal elements), and coded using four bits (including the sign) for the real and four bits for the imaginary part. The spectrum analyser determines the complete 5x5 Hermitian cross-spectral matrix of the signals from five input channels, over the frequency range of 8 Hz to 4 kHz. The five auto-spectral power estimates are obtained with:</li>
+<li>a dynamic range of approximately 100 dB,</li>
+<li>an average amplitude resolution of 0.38 dB,<br>
+The 10 cross-spectral power estimates are normalised to give the coherence, which is obtained with the following precision:</li>
+<li>the magnitude falls into one of 8 bins with upper limits distributed approximately as 2-n, for n = 0 to 7</li>
+<li>the phase has a precision which depends upon the magnitude of the coherence: for a signal with magnitude in the highest bin, it is approximately 5° close to 0°, 180°, and +/-90°, increasing to about 10° midway between these angles.<br>
+The spectral estimates are made at 27 frequencies distributed logarithmically over the range from 8 Hz to 4 kHz, with centre frequencies<br>
+fmn = 2^(3m) × 2^((2n+1)/6)     for     1 &lt;= m &lt;= 3     and     0 &lt;= n &lt;= 8<br>
+All channels are sampled quasi-simultaneously, and the integration time, normally the same for all auto and for all cross-spectral channels, can be commanded to values between 125 ms (except at the lowest frequencies) and 4 s. The cross-spectral matrix elements are generally having 4 times less time resolution than the auto-spectra.<br>
+This description has been obtained from Section 3.5 of the ''Users Guide to the Cluster Science Data System'', DS-MPA-TN-0015.</li>
+</ul>
+</div><div class="term">Contacts</div><dd><table class="nested" cellspacing="0"><tr><th/><th class="center">Role</th><th class="center">Person</th><th class="center">StartDate</th><th class="center">StopDate</th><th class="center">Note</th></tr><tbody><tr><td>1.</td><td>PrincipalInvestigator</td><td><a target="_blank" href="https://hpde.io/CNES/Person/CDPP-Archive/Patrick.Canu.html">spase://CNES/Person/CDPP-Archive/Patrick.Canu</a></td><td/><td/><td/></tr></tbody></table></dd></div><div class="term">InstrumentType</div><div class="definition">Magnetometer</div><div class="term">InstrumentType</div><div class="definition">SearchCoil</div><div class="term">InvestigationName</div><div class="definition">Spatio-Temporal Analysis of Magnetic Field Fluctuations (STAFF) on Cluster-4</div><div class="term">ObservatoryID</div><div class="definition"><a href="https://hpde.io/CNES/Observatory/CDPP-Archive/Cluster-4.html">spase://CNES/Observatory/CDPP-Archive/Cluster-4</a></div></div></div></div></div></div></body></html>

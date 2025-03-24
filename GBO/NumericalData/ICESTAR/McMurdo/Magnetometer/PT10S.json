@@ -1,0 +1,151 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_2_9.xsd",
+    "Version": "2.2.9",
+    "NumericalData": {
+      "ResourceID": "spase://GBO/NumericalData/ICESTAR/McMurdo/Magnetometer/PT10S",
+      "ResourceHeader": {
+        "ResourceName": "ICESTAR McMurdo Fluxgate Magnetometer PT10S Data",
+        "AlternateName": "McMurdo Fluxgate Magnetometer PT10S Data",
+        "ReleaseDate": "2019-05-05T12:34:56Z",
+        "Description": "McMurdo Magnetometer PT10S data; Station Id: MCM; Vector Elements: HDZ; Instrument: fluxgate magnetometer",
+        "Acknowledgement": "Please acknowledge Louis J. Lanzerotti, Lucent Technologies, Bell Laboratories/1E-439 (600 Mountain Avenue, Murray Hill, NJ 07974-2070) for use of data from the McMurdo Magnetometer instrument.",
+        "Contact": [
+          {
+            "PersonID": "spase://SMWG/Person/Louis.J.Lanzerotti",
+            "Role": "PrincipalInvestigator"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Lee.Frost.Bargatze",
+            "Role": "MetadataContact"
+          }
+        ],
+        "Association": {
+          "AssociationID": "spase://SMWG/Instrument/ICESTAR/McMurdo/Magnetometer",
+          "AssociationType": "ObservedBy"
+        },
+        "PriorID": "spase://VMO/NumericalData/ICESTAR/McMurdo/Magnetometer/PT10S"
+      },
+      "AccessInformation": {
+        "RepositoryID": "spase://SMWG/Repository/ICESTAR",
+        "Availability": "Online",
+        "AccessRights": "Open",
+        "AccessURL": {
+          "Name": "ICESTAR Data Set URL Address",
+          "URL": "http://vmo.igpp.ucla.edu/data1/ICESTAR/",
+          "Description": "URL for ICESTAR data hosted on the UCLA VMO Data Repository"
+        },
+        "Format": "Text",
+        "Encoding": "ASCII",
+        "DataExtent": {
+          "Quantity": "360000",
+          "Units": "bytes",
+          "Per": "P1D"
+        },
+        "Acknowledgement": "Please acknowledge Theodore J. Rosenberg, Allan T. Weatherwax, Institute for Physical Science and Technology, University of Maryland, College Park, MD 20742-2431 for providing access to McMurdo data resources."
+      },
+      "ProcessingLevel": "Calibrated",
+      "InstrumentID": "spase://SMWG/Instrument/ICESTAR/McMurdo/Magnetometer",
+      "MeasurementType": "MagneticField",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "1984-01-11T00:00:00.000",
+          "StopDate": "2007-03-19T23:59:50.000",
+          "Note": "Some data gaps may be present.  If a gap is present at the beginning or end of the set of files, the time span start and end dates could be inaccurate as they are assigned assuming an absence of such gaps."
+        },
+        "Cadence": "PT10S"
+      },
+      "ObservedRegion": "Earth.Surface",
+      "Parameter": [
+        {
+          "Name": "Universal Time",
+          "ParameterKey": "Time",
+          "Description": "Time is expressed by using a six column format with the following order:  year, month, day, hour, minute, and second, each stored in interger format.  The ICESTAR data are stored in dayfiles with 10 second time resolution.  The files have an eleven line header followed by 8640 data records.  The year, month, and day of the data records are inferred the file header while the hour, minute, and seconds for the time series are listed in each data record.  The hour-minute-second format may be either hhmm:ss or hh:mm:ss (file dependent).",
+          "Structure": {
+            "Size": "6",
+            "Description": "Universal Time expressed using a 6-column year, month, day, hour, minute, second representation.",
+            "Element": [
+              {
+                "Name": "Year",
+                "Index": "1",
+                "ParameterKey": "Year"
+              },
+              {
+                "Name": "Month",
+                "Index": "2",
+                "ParameterKey": "Month"
+              },
+              {
+                "Name": "Day",
+                "Index": "3",
+                "ParameterKey": "Day"
+              },
+              {
+                "Name": "Hour",
+                "Index": "4",
+                "ParameterKey": "Hour"
+              },
+              {
+                "Name": "Minute",
+                "Index": "5",
+                "ParameterKey": "Minute"
+              },
+              {
+                "Name": "Second",
+                "Index": "6",
+                "ParameterKey": "Second"
+              }
+            ]
+          },
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "McMurdo PT10S Magnetic Field HDZ",
+          "ParameterKey": "Magnetometer HDZ",
+          "Description": "McMurdo PT10S Magnetic Field HDZ",
+          "Cadence": "PT10S",
+          "Units": "nT",
+          "UnitsConversion": "10^9 nT/T",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cylindrical",
+            "CoordinateSystemName": "CGM"
+          },
+          "Structure": {
+            "Size": "3",
+            "Description": "McMurdo magnetic field data expressed by using the HDZ vector element representation.",
+            "Element": [
+              {
+                "Name": "H",
+                "Qualifier": "Magnitude",
+                "Index": "1",
+                "ParameterKey": "Magnetometer H"
+              },
+              {
+                "Name": "D",
+                "Qualifier": "DirectionAngle.AzimuthAngle",
+                "Index": "2",
+                "ParameterKey": "Magnetometer D"
+              },
+              {
+                "Name": "Z",
+                "Qualifier": "Component.K",
+                "Index": "3",
+                "ParameterKey": "Magnetometer Z"
+              }
+            ]
+          },
+          "ValidMin": "70000",
+          "ValidMax": "-70000",
+          "Field": {
+            "Qualifier": "Vector",
+            "FieldQuantity": "Magnetic"
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,141 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema https://www.spase-group.org/data/schema/spase-2_5_0.xsd",
+    "Version": "2.5.0",
+    "NumericalData": {
+      "ResourceID": "spase://IUGONET/NumericalData/RISH/misc/SGK/MUradar/mur_sgk_faispc_csv",
+      "ResourceHeader": {
+        "ResourceName": "Field-aligned irregularity (FAI) observation data of the ionosphere taken by the MU radar (CSV format)",
+        "ReleaseDate": "2016-12-05T11:05:00",
+        "Description": "The field-aligned irregularity (FAI) observation data in the ionosphere between 80 km and 130 km taken by the MU radar at Shigaraki in the Shiga prefecture, Japan (34.86N, 136.11E, 385m MSL), which has been operated in the special observation mode of the FAI. The data are stored in the CSV (Comma Separated Values) file named (year)(month)(day).(observation parameter).(variable)(beam number).csv. The variable abbreviations are dpl, wdt, dpl, and pn, which mean radial Doppler velocity, echo power, spectral width and noise level for each beam number, respectively. The numbers of the first and second lines of each file represent ranges and heights, respectively, and the third and below are observational local date and time (year/month/day hour:minute) which corresponds to the center time of averaging period and data at each range and height. The value of -999 means missing data. The time resolution depends on each observation parameter. The noise level is the height-averaged value.",
+        "Acknowledgement": "If you acquire MU radar data, we ask that you acknowledge us in your use of the data. This may be done by including text such as MU radar data provided by Research Institute for Sustainable Humanosphere of Kyoto University. We would also appreciate receiving a copy of the relevant publications.",
+        "Contact": [
+          {
+            "PersonID": "spase://IUGONET/Person/Mamoru.Yamamoto",
+            "Role": "PrincipalInvestigator"
+          },
+          {
+            "PersonID": "spase://IUGONET/Person/MU.Radar.Management.Group",
+            "Role": "GeneralContact"
+          },
+          {
+            "PersonID": "spase://IUGONET/Person/RISH.Metadata.Management.Group",
+            "Role": "MetadataContact"
+          }
+        ]
+      },
+      "AccessInformation": {
+        "RepositoryID": "spase://IUGONET/Repository/RISH/RISHDB",
+        "Availability": "Online",
+        "AccessRights": "Open",
+        "AccessURL": {
+          "Name": "MU FAI Observation",
+          "URL": "http://www.rish.kyoto-u.ac.jp/mu/fai/",
+          "Language": "English"
+        },
+        "Format": "Text.ASCII"
+      },
+      "InstrumentID": "spase://IUGONET/Instrument/RISH/misc/SGK/MUradar",
+      "MeasurementType": "Profile",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "1986-07-27T00:00:00",
+          "StopDate": "2013-09-06T00:00:00"
+        },
+        "Cadence": "PT2M"
+      },
+      "SpectralRange": "RadioFrequency",
+      "ObservedRegion": [
+        "Earth.NearSurface.Ionosphere",
+        "Earth.NearSurface.Ionosphere.DRegion",
+        "Earth.NearSurface.Ionosphere.ERegion"
+      ],
+      "SpatialCoverage": {
+        "CoordinateSystem": {
+          "CoordinateRepresentation": "Spherical",
+          "CoordinateSystemName": "WGS84"
+        },
+        "NorthernmostLatitude": "34.856",
+        "SouthernmostLatitude": "34.856",
+        "EasternmostLongitude": "136.106",
+        "WesternmostLongitude": "136.106",
+        "MinimumElevation": "42.112",
+        "MaximumElevation": "433.664"
+      },
+      "Keyword": "EARTH SCIENCE Sun-earth Interactions Ionosphere/Magnetosphere Dynamics Ion Chemistry/Ionization",
+      "Parameter": [
+        {
+          "Name": "date",
+          "Description": "Date in the form YYYY/MM/DD where YYYY= Gregorian Year AD, MM = month of year (01-12), and DD = day of month (01-31).",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "time",
+          "Description": "Time in the form hh:mm where hh = hour of day (00-23) and mm = minute of hour. Local time (UT+07:00:00) is used for time data.",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "range",
+          "Description": "Range of radar beam",
+          "Units": "km",
+          "Support": {
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "height",
+          "Description": "Height",
+          "Units": "km",
+          "Support": {
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "dpl",
+          "Description": "Radial Doppler velocity",
+          "Units": "m/s",
+          "FillValue": "-999.0",
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "pwr",
+          "Description": "Echo power",
+          "Units": "dB",
+          "FillValue": "-999.0",
+          "Wave": {
+            "WaveType": "Electromagnetic",
+            "WaveQuantity": "Intensity"
+          }
+        },
+        {
+          "Name": "wdt",
+          "Description": "Spectral width",
+          "Units": "m/s",
+          "FillValue": "-999.0",
+          "Wave": {
+            "WaveType": "Electromagnetic",
+            "WaveQuantity": "EquivalentWidth"
+          }
+        },
+        {
+          "Name": "pn",
+          "Description": "Noise level (height-averaged value)",
+          "Units": "dB",
+          "FillValue": "-999.0",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        }
+      ]
+    }
+  }
+}

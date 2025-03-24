@@ -1,0 +1,812 @@
+{
+  "Spase": {
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_3_2.xsd",
+    "Version": "2.3.2",
+    "NumericalData": {
+      "ResourceID": "spase://NASA/NumericalData/Wind/SWE/IonMoments/KeyParameter/PT99S",
+      "ResourceHeader": {
+        "ResourceName": "Wind Solar Wind Experiment (SWE) Thermal Plamsa Moments, Key Parameter (K0), 99 s Data",
+        "DOI": "https://doi.org/10.48322/3zky-gy15",
+        "ReleaseDate": "2021-05-31T12:34:56.789",
+        "RevisionHistory": {
+          "RevisionEvent": {
+            "ReleaseDate": "2021-05-31T12:34:56.789",
+            "Note": "Updated to SPASE Version 2.3.2 if needed, Applied quality control for DOI usage, LFB"
+          }
+        },
+        "Description": "Wind SWE Key Parameter data: proton density, thermal speed, flow velocity vectors, and spacecraft position vectors. Various versions differ slightly from each other. The version at MIT has flow velocity vectors experessed bby using Geocentric Solar Ecliptic, GSE, Cartesian and spherical representations and GSE Cartesian position vectors. The version available via nssdcftp and FTPBrowser has temperature instead of thermal speed and has no flow direction angles. The CDAWeb version has flow velocity and spacecraft position vectors in both GSE and Geocentric Solar Magnetospheric, GSM, coordinates, flow dynamic pressure, NmV^2, and velocity and density quality flags. The data were progressively despiked in passing from CDAWeb to MIT to nssdcftp/FTPBrowser.\r\n\r\nUse of the Quality Variables:\r\n\r\nQuality flags are set in the analysis program that generates the KP data. Previous descriptions of their meaning were out of date.\r\n\r\nGood data is indicated by a quality flag equal to 0.\r\n\r\nThe quality flags for each parameter are given as integers 4 bytes long, integer*4.\r\n\r\nThe individual bits for each quality value are set or cleared in the analysis code by adding or subtracting a power of 2 as follows. To set the first bit, add 1, the second bit, add 2, the third bit, add 4, the fourth bit, add 8, and so on. See the table below.\r\n\r\n+------------------------------------------------------------------------------------------------------------------------------+\r\n| Bit | Set Value | MEANING                                                                                                    |\r\n|------------------------------------------------------------------------------------------------------------------------------|\r\n| 1   | 1         | Three point parabolic fits to proton peaks were not attempted.                                             |\r\n| 2   | 2         | Non-linear least squares fit was not attempted.                                                            |\r\n| 3   | 4         | Three point parabolic fits to proton peaks failed.                                                         |\r\n| 4   | 8         | Non-linear least squares fit failed.                                                                       |\r\n| 5   | 16        | Alpha parameters not valid since the non-linear least squares fit was done for protons only.               |\r\n|     |           | Not enough good energy channels to do simultaneous alpha fit. This value applies to iqual_core(5) only.    |\r\n| 6   | 32        | Analysis code unable to get good value for spin period.                                                    |\r\n| 7   | 64        | SWE instrument in mode 1, calibration state mode. Key parameters are produced in mode 1, science mode.     |\r\n| 8   | 128       | Three point fits done for cup 1 only. Split collector ratio of currents used to get the north/south angle. |\r\n|     |           | Either cup 2 turned off, or cup 2 densities were low indicating noise associated with vibration.           |\r\n| 9   | 256       | Fewer than ten fc_blocks in spectrum. Analysis skipped.                                                    |\r\n| 10  | 512       | Alpha particle non-linear fit produced values of density and thermal speed that do not seem reasonable.    |\r\n| 11  | 1024      | Three point parabolic fits to proton peaks done for cup 2 only. Probably Cup 1 is turned off.              |\r\n|     |           | The ratio of currents on split collectors used to get north/south angle.                                   |\r\n| 12  | 2048      | Single width windows. Delta E over E 6.5% instead of the default 13%.                                      |\r\n| 13  | 4096      | Tracking mode operation.                                                                                   |\r\n| 14  | 8192      | Limited tracking mode scan, not a full scan.                                                               |\r\n+------------------------------------------------------------------------------------------------------------------------------+\r\n\r\nParticular flag settings:\r\n\r\n+-------------------------------------------------------------------------------------------+\r\n| Flag Value | Meaning                                                                      |\r\n|-------------------------------------------------------------------------------------------|\r\n| 4098       | Tracking mode operation is full scan (4096) and No non-linear fits (2)       |\r\n| 14338      | Tracking mode operation is full scan (4096) and Limited tracking mode (8192) |\r\n+-------------------------------------------------------------------------------------------+\r\n\r\nComments:\r\n\r\n* Note that in bit 4 of the quality flag the non-linear fit may be reported as good for protons and, at the same time, not good for alphas.\r\n* Non-linear fits are not done for Key Parameters, KPs, but those parameter values are excellent and should be used to do science.\r\n* Non-linear fits are available are available in this data product, but they have problems which suggests strongly that the KP parameters should be used, see the paper by Kasper et al., Physics-based tests to identify the accuracy of solar wind ion measurements: A case study with the Wind Faraday Cups, J. Geophys. Res., 111, A03105, DOI: 101029/2005JA011442.\r\n* Note that all quality flag values that are even numbers are for data values when non-linear fits were not attempted.\r\n\r\nFor the complete guide to the quality flag values see https://cdaweb.gsfc.nasa.gov/wind_swe_quality.html.\r\n\r\nNote that this SPASE Numerical Description only describes the MESSENGER Magnetometer data stored in Common Data Files. Other links to Wind SWE data in non CDF format are listed in the following table:\r\n\r\n+--------------------------------------------------------------------------------------------------------------------------------------------+\r\n| SPASE Repository Resource ID   | Data Source                          | Data Access URL                                                    |\r\n|--------------------------------------------------------------------------------------------------------------------------------------------|\r\n| SMWG/Repository/MIT_CSR        | ASCII via ftp from MIT               | ftp://space.mit.edu/pub/plasma/wind/kp_files/                      |\r\n| SMWG/Repository/NASA/GSFC/SPDF | ASCII via ftps from SPDF             | ftps://spdf.gsfc.nasa.gov/pub/data/wind/swe/ascii/swe_kp_unspike/  |\r\n| SMWG/Repository/NASA/GSFC/SPDF | ASCII via https from SPDF            | https://spdf.gsfc.nasa.gov/pub/data/wind/swe/ascii/swe_kp_unspike/ |\r\n| SMWG/Repository/NASA/GSFC/SPDF | Subset, plot and list via FTPBrowser | https://omniweb.gsfc.nasa.gov/ftpbrowser/wind_swe_kp.html      |\r\n+--------------------------------------------------------------------------------------------------------------------------------------------+",
+        "Acknowledgement": "Please acknowledge the Principal Investigator K.W. Ogilvie for use of the Data",
+        "PublicationInfo": {
+          "Authors": "Lazarus, Alan J.; Candey, Robert M.; Kasper, Justin C.; Ogilvie, Keith W.; & Fitzenreiter, Richard J.",
+          "PublicationDate": "2021-01-01T00:00:00",
+          "PublishedBy": "NASA Space Physics Data Facility and the Massachusetts Institute of Technology, Center for Space Research"
+        },
+        "Contact": [
+          {
+            "PersonID": "spase://SMWG/Person/Keith.W.Ogilvie",
+            "Role": "PrincipalInvestigator"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Alan.J.Lazarus",
+            "Role": "CoInvestigator"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Justin.C.Kasper",
+            "Role": "DataProducer"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Robert.M.Candey",
+            "Role": "MetadataContact"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Lee.Frost.Bargatze",
+            "Role": "MetadataContact"
+          }
+        ],
+        "InformationURL": [
+          {
+            "Name": "Wind Spacecraft Overview and News web page, GSFC",
+            "URL": "https://wind.nasa.gov",
+            "Description": "Wind overview web page with news updates and information about new data product releases, hosted by NASA GSFC",
+            "Language": "en"
+          },
+          {
+            "Name": "Wind Spacecraft General Instrument web page, GSFC",
+            "URL": "https://wind.nasa.gov/data.php",
+            "Description": "Wind spacecraft general instrument web page with links to data, documentation, and home pages for all instruments, hosted by NASA GSFC",
+            "Language": "en"
+          },
+          {
+            "Name": "Wind spacecraft General web page for data sources from all instruments, GSFC",
+            "URL": "https://wind.nasa.gov/data_sources.php",
+            "Description": "Wind spacecraft general instrument web page with brief descriptions for data sources from all instruments, hosted by NASA GSFC",
+            "Language": "en"
+          },
+          {
+            "Name": "Wind SWE Instrument web page, GSFC",
+            "URL": "https://wind.nasa.gov/swe/index.html",
+            "Description": "Wind Solar Wind Experiment, SWE, Instruments, History, and Data Products web page, hosted by NASA GSFC",
+            "Language": "en"
+          },
+          {
+            "Name": "NSSDC Master Catalog, Wind, SWE instrument",
+            "URL": "https://nssdc.gsfc.nasa.gov/nmc/experiment/display.action?id=1994-071A-06",
+            "Description": "General information concerning the Wind, Solar Wind Experiment, SWE, instrument",
+            "Language": "en"
+          },
+          {
+            "Name": "Wind MFI and SWE Key Parameter Data Access and Plotting web page, GSFC",
+            "URL": "https://wind.nasa.gov/mfi_swe_plot.php",
+            "Description": "Wind Magnetic Field Instrument, MFI, and Solar Wind Experiment, SWE, Key Parameter data access and plotting web page with selectable overplotting of DSCOVR data and links to CDF data directories, hosted by NASA GSFC",
+            "Language": "en"
+          },
+          {
+            "Name": "Original Wind SWE web page, MIT",
+            "URL": "http://web.mit.edu/afs/athena/org/s/space/www/wind.html",
+            "Description": "Wind Solar Wind Experiment, SWE, web page hosted by the Massachusetts Institute of Technology Space Plasma group. Since the Summer of 2015, the responsibility for Wind plasma data has been assumed by the Harvard Smithsonian Astrophysics Lab.",
+            "Language": "en"
+          },
+          {
+            "Name": "Original Wind SWE Instrument description web page, MIT",
+            "URL": "http://web.mit.edu/space/www/wind/wind_instruments.html",
+            "Description": "Wind Solar Wind Experiment, SWE, Instrument description web page hosted by the Massachusetts Institute of Technology Space Plasma group",
+            "Language": "en"
+          },
+          {
+            "Name": "Wind Magnetic Field Investigation, MFI, instrument, Space Science Reviews publication",
+            "URL": "https://link.springer.com/article/10.1007/BF00751326",
+            "Description": "Ogilvie, K.W., D.J. Chornay, R.J. Fritzenreiter, F. Hunsaker, J. Keller, J. Lobell, G. Miller, J.D. Scudder, E.C. Sittler, Jr., R.B. Torbert, D. Bodet, G. Needell, A.J. Lazarus, J.T. Steinberg, J.H. Tappan, A. Mavretic, and E. Gergin, SWE, a comprehensive plasma instrument for the Wind spacecraft, Space Sci. Rev., 71, 55-77, 1995, DOI: 10.1007/BF00751326",
+            "Language": "en"
+          },
+          {
+            "Name": "Wind SWE KP Readme file, MIT",
+            "URL": "ftp://space.mit.edu/pub/plasma/wind/kp_files/000_README_WIND_P_FILES.TXT",
+            "Description": "Wind Solar Wind Experiment, SWE, Key Parameter Readme file, hosted by the Massachusetts Institute of Technology, MIT",
+            "Language": "en"
+          }
+        ],
+        "PriorID": [
+          "spase://VSPO/NumericalData/P_Wind_HDR_SWE_KP_92S",
+          "spase://VSPO/NumericalData/Wind/SWE/KeyParameters/PT92S",
+          "spase://VSPO/NumericalData/Wind/SWE/IonMoments/KeyParameter/PT99S"
+        ]
+      },
+      "AccessInformation": [
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": [
+            {
+              "Name": "FTPS from SPDF (not with most browsers)",
+              "URL": "ftps://spdf.gsfc.nasa.gov/pub/data/wind/swe/swe_k0/",
+              "Description": "Access to Data in CDF Format via ftp from SPDF"
+            },
+            {
+              "Name": "HTTPS from SPDF",
+              "URL": "https://spdf.gsfc.nasa.gov/pub/data/wind/swe/swe_k0/",
+              "Description": "Access to Data in CDF Format via http from SPDF"
+            },
+            {
+              "Name": "CDAWeb",
+              "URL": "https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=WI_K0_SWE&index=sp_phys",
+              "ProductKey": "WI_K0_SWE",
+              "Description": "Access to ASCII, CDF, and Plots via NASA/GSFC CDAWeb"
+            }
+          ],
+          "Format": "CDF",
+          "Encoding": "None",
+          "Acknowledgement": "Please acknowledge the Principal Investigator K.W. Ogilvie. Please acknowledge the Data Providers and CDAWeb when using these Data."
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDAWeb HAPI Server",
+            "URL": "https://cdaweb.gsfc.nasa.gov/hapi",
+            "Style": "HAPI",
+            "ProductKey": "WI_K0_SWE",
+            "Description": "Web Service to this product using the HAPI interface."
+          },
+          "Format": "CSV",
+          "Acknowledgement": "Please acknowledge the Principal Investigator K.W. Ogilvie. Please acknowledge the Data Providers and CDAWeb when using these Data."
+        }
+      ],
+      "ProcessingLevel": "Calibrated",
+      "ProviderProcessingLevel": "Calculated",
+      "InstrumentID": "spase://SMWG/Instrument/Wind/SWE",
+      "MeasurementType": [
+        "Ephemeris",
+        "InstrumentStatus",
+        "ThermalPlasma"
+      ],
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "1994-11-01T12:00:00.000",
+          "StopDate": "2019-01-18T23:58:49.000"
+        },
+        "Cadence": "PT99S"
+      },
+      "ObservedRegion": [
+        "Heliosphere",
+        "Heliosphere.Inner",
+        "Heliosphere.NearEarth"
+      ],
+      "Parameter": [
+        {
+          "Name": "Epoch Time",
+          "ParameterKey": "Epoch",
+          "Description": "Epoch Time Tags, centered",
+          "Caveats": "Average Type: standard This Parameter exhibits an increasing Monotonic Progression.",
+          "Cadence": "PT99S",
+          "Units": "ms",
+          "UnitsConversion": "1.0e-3>s",
+          "RenderingHints": {
+            "AxisLabel": "Epoch",
+            "ScaleMin": "6.2950845819904e+13",
+            "ScaleMax": "6.3776657018904e+13"
+          },
+          "ValidMin": "01-Nov-1994 00:00:00.000",
+          "ValidMax": "31-Dec-2020 23:59:59.000",
+          "FillValue": "31-Dec-9999 23:59:59.999",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Time Interval, half interval",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "Delta_time",
+          "Description": "Time Interval, half interval, delta time from center time start/finish to sample data for parameters",
+          "Caveats": "Average Type: standard",
+          "Cadence": "PT99S",
+          "Units": "ms",
+          "UnitsConversion": "1.0e-3>s",
+          "RenderingHints": {
+            "AxisLabel": "Del Time",
+            "ValueFormat": "E10.4",
+            "ScaleMin": "2000.0",
+            "ScaleMax": "200000.0"
+          },
+          "ValidMin": "0.0",
+          "ValidMax": "300000.0",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Time, PB5 format",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "Time_PB5",
+          "Description": "Time in PB5 format: Year, Day, and Milliseconds of Day",
+          "Cadence": "PT99S",
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "Year",
+                "Index": "1",
+                "Units": "a",
+                "ValidMin": "1994",
+                "ValidMax": "2020",
+                "RenderingHints": {
+                  "AxisLabel": "year",
+                  "ScaleMin": "1994",
+                  "ScaleMax": "2020"
+                }
+              },
+              {
+                "Name": "Day of Year (Jan 1 = Day 1)",
+                "Index": "2",
+                "Units": "d",
+                "ValidMin": "305",
+                "ValidMax": "365",
+                "RenderingHints": {
+                  "AxisLabel": "day",
+                  "ScaleMin": "305",
+                  "ScaleMax": "365"
+                }
+              },
+              {
+                "Name": "Elapsed millisecond of day",
+                "Index": "3",
+                "Units": "ms",
+                "ValidMin": "0",
+                "ValidMax": "86399000",
+                "RenderingHints": {
+                  "AxisLabel": "msec",
+                  "ScaleMin": "0",
+                  "ScaleMax": "86399000"
+                }
+              }
+            ]
+          },
+          "FillValue": "-2147483648",
+          "Support": {
+            "Qualifier": "Array",
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Post Gap Flag",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "GAP_FLAG",
+          "Description": "Post Gap Flag: 0=No gap immediately prior to this record, for other values: see guidelines",
+          "Cadence": "PT99S",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "Data Gap",
+            "ValueFormat": "I2",
+            "ScaleMin": "0",
+            "ScaleMax": "3"
+          },
+          "ValidMin": "0",
+          "ValidMax": "15",
+          "FillValue": "-2147483648",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "SWE Instrument Mode",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "MODE",
+          "Description": "Solar Wind Experiment, SWE, Instrument Mode",
+          "Cadence": "PT99S",
+          "RenderingHints": {
+            "AxisLabel": "Mode",
+            "ValueFormat": "I2",
+            "ScaleMin": "0",
+            "ScaleMax": "5"
+          },
+          "ValidMin": "0",
+          "ValidMax": "15",
+          "FillValue": "-2147483648",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "InstrumentMode"
+          }
+        },
+        {
+          "Name": "Spacecraft Position, GSE Cartesian coordinates",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "SC_pos_gse",
+          "Description": "Spacecraft Position, Geocentric Solar Ecliptic, GSE, Cartesian coordinates",
+          "Caveats": "Average Type: standard",
+          "Cadence": "PT99S",
+          "Units": "km",
+          "UnitsConversion": "1.0e3>m",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GSE"
+          },
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "ValueFormat": "F9.1",
+            "ScaleMin": "-2.0e+06",
+            "ScaleMax": "2.0e+06"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "WI X (GSE)",
+                "Index": "1",
+                "RenderingHints": {
+                  "AxisLabel": "x"
+                }
+              },
+              {
+                "Name": "WI Y (GSE)",
+                "Index": "2",
+                "RenderingHints": {
+                  "AxisLabel": "y"
+                }
+              },
+              {
+                "Name": "WI Z (GSE)",
+                "Index": "3",
+                "RenderingHints": {
+                  "AxisLabel": "z"
+                }
+              }
+            ]
+          },
+          "ValidMin": "-2.0e+06",
+          "ValidMax": "2.0e+06",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "Qualifier": "Vector",
+            "SupportQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "Spacecraft Position, GSM Cartesian coordinates",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "SC_pos_GSM",
+          "Description": "Spacecraft Position, Geocentric Solar Magnetospheric, GSM, Cartesian coordinates",
+          "Caveats": "Average Type: standard",
+          "Cadence": "PT99S",
+          "Units": "km",
+          "UnitsConversion": "1.0e3>m",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GSM"
+          },
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "ValueFormat": "F9.1",
+            "ScaleMin": "-2.0e+06",
+            "ScaleMax": "2.0e+06"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "WI X (GSM)",
+                "Index": "1",
+                "RenderingHints": {
+                  "AxisLabel": "x"
+                }
+              },
+              {
+                "Name": "WI Y (GSM)",
+                "Index": "2",
+                "RenderingHints": {
+                  "AxisLabel": "y"
+                }
+              },
+              {
+                "Name": "WI Z (GSM)",
+                "Index": "3",
+                "RenderingHints": {
+                  "AxisLabel": "z"
+                }
+              }
+            ]
+          },
+          "ValidMin": "-2.0e+06",
+          "ValidMax": "2.0e+06",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "Qualifier": "Vector",
+            "SupportQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "Spacecraft Position, Geocentric Radial Distance",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "SC_pos_R",
+          "Description": "Spacecraft Position, Geocentric Radial Distance, R",
+          "Caveats": "Average Type: standard",
+          "Cadence": "PT99S",
+          "Units": "km",
+          "UnitsConversion": "1.0e3>m",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "WI Rad Dist",
+            "ValueFormat": "F9.1",
+            "ScaleMin": "6400.0",
+            "ScaleMax": "4.0e+06"
+          },
+          "ValidMin": "6400.0",
+          "ValidMax": "4.0e+06",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "Qualifier": [
+              "Magnitude",
+              "Scalar"
+            ],
+            "SupportQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "Data Quality Flag, overall",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "DQF",
+          "Description": "Data Quality Flag, overall: 0=Good, 1=Bad",
+          "Cadence": "PT99S",
+          "RenderingHints": {
+            "AxisLabel": "DQ FLAG",
+            "ValueFormat": "I1",
+            "ScaleMin": "0",
+            "ScaleMax": "1"
+          },
+          "ValidMin": "0",
+          "ValidMax": "1",
+          "FillValue": "-2147483648",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "Data Quality Flag, Velocity",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "QF_V",
+          "Description": "Data Quality Flag, Velocity, V: 0=OK, 2=Caution, 130=Caution, all other values=Not valid",
+          "Caveats": "Velocity Quality Flag: 0=OK; 2=parabolic 3-point fit only; 130=parabolic 3-point fit only, senso only, N/S angle zero degrees assumed; Other values NOT VALID",
+          "Cadence": "PT99S",
+          "RenderingHints": {
+            "AxisLabel": "QF_V",
+            "ValueFormat": "I11",
+            "ScaleMin": "0",
+            "ScaleMax": "256"
+          },
+          "ValidMin": "0",
+          "ValidMax": "2147483647",
+          "FillValue": "-2147483648",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "Data Quality Flag, Proton Thermal Speed",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "QF_Vth",
+          "Description": "Data Quality Flag, Proton Thermal Speed, Vth: 0=OK, 2=Caution, 130=Caution, all other values=Not valid",
+          "Caveats": "Proton thermal speed Quality Flag: 0=OK; 2=parabolic 3-point fit only; 130=parabolic 3-point fit only, senso only, N/S angle zero degrees assumed; Other values NOT VALID",
+          "Cadence": "PT99S",
+          "RenderingHints": {
+            "AxisLabel": "QF_Vth",
+            "ValueFormat": "I11",
+            "ScaleMin": "0",
+            "ScaleMax": "255"
+          },
+          "ValidMin": "0",
+          "ValidMax": "2147483647",
+          "FillValue": "-2147483648",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "Data Quality Flag, Proton Number Density",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "QF_Np",
+          "Description": "Data Quality Flag, Proton Density, Np: 0=OK, 2=Caution, 130=Caution, all other values=Not valid",
+          "Caveats": "Proton Density Quality Flag: 0=OK; 2=parabolic 3-point fit only; 130=parabolic 3-point fit only, senso only, N/S angle zero degrees assumed; Other values NOT VALID",
+          "Cadence": "PT99S",
+          "RenderingHints": {
+            "AxisLabel": "QF_Np",
+            "ValueFormat": "I11",
+            "ScaleMin": "0",
+            "ScaleMax": "255"
+          },
+          "ValidMin": "0",
+          "ValidMax": "2147483647",
+          "FillValue": "-2147483648",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "Data Quality Flag, Alpha/Proton Number Density Ratio",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "QF_a/p",
+          "Description": "Data Quality Flag, Alpha Particle to Proton Number Density Ratio, Na/Np: 0=OK, All values greater than zero=Not valid",
+          "Cadence": "PT99S",
+          "RenderingHints": {
+            "AxisLabel": "QF_a/p",
+            "ValueFormat": "I11",
+            "ScaleMin": "0",
+            "ScaleMax": "256"
+          },
+          "ValidMin": "0",
+          "ValidMax": "2147483647",
+          "FillValue": "-2147483648",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "Solar Wind Velocity Vector, GSE Cartesian coordinates",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "V_GSE",
+          "Description": "Solar Wind Velocity Vector, Geocentric Solar Ecliptic, GSE, Cartesian coordinates",
+          "Cadence": "PT99S",
+          "Units": "km/s",
+          "UnitsConversion": "1.0e3>m/s",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GSE"
+          },
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "ValueFormat": "F8.1"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "VX (GSE)",
+                "Index": "1",
+                "ValidMin": "-1800.0",
+                "ValidMax": "0.0",
+                "RenderingHints": {
+                  "AxisLabel": "x",
+                  "ScaleMin": "-1200.0",
+                  "ScaleMax": "0.0"
+                }
+              },
+              {
+                "Name": "VY (GSE)",
+                "Index": "2",
+                "ValidMin": "-900.0",
+                "ValidMax": "900.0",
+                "RenderingHints": {
+                  "AxisLabel": "y",
+                  "ScaleMin": "-500.0",
+                  "ScaleMax": "500.0"
+                }
+              },
+              {
+                "Name": "VZ (GSE)",
+                "Index": "3",
+                "ValidMin": "-900.0",
+                "ValidMax": "900.0",
+                "RenderingHints": {
+                  "AxisLabel": "z",
+                  "ScaleMin": "-500.0",
+                  "ScaleMax": "500.0"
+                }
+              }
+            ]
+          },
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Ion",
+            "Qualifier": "Vector",
+            "ParticleQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "Solar Wind Velocity Vector, GSM Cartesian coordinates",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "V_GSM",
+          "Description": "Solar Wind Velocity Vector, Geocentric Solar Magnetospheric, GSM, Cartesian coordinates",
+          "Cadence": "PT99S",
+          "Units": "km/s",
+          "UnitsConversion": "1.0e3>m/s",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GSM"
+          },
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "ValueFormat": "F8.1"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "VX (GSM)",
+                "Index": "1",
+                "ValidMin": "-1800.0",
+                "ValidMax": "0.0",
+                "RenderingHints": {
+                  "AxisLabel": "x",
+                  "ScaleMin": "-1200.0",
+                  "ScaleMax": "0.0"
+                }
+              },
+              {
+                "Name": "VY (GSM)",
+                "Index": "2",
+                "ValidMin": "-900.0",
+                "ValidMax": "900.0",
+                "RenderingHints": {
+                  "AxisLabel": "y",
+                  "ScaleMin": "-500.0",
+                  "ScaleMax": "500.0"
+                }
+              },
+              {
+                "Name": "VZ (GSM)",
+                "Index": "3",
+                "ValidMin": "-900.0",
+                "ValidMax": "900.0",
+                "RenderingHints": {
+                  "AxisLabel": "z",
+                  "ScaleMin": "-500.0",
+                  "ScaleMax": "500.0"
+                }
+              }
+            ]
+          },
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Ion",
+            "Qualifier": "Array",
+            "ParticleQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "Solar Wind Ion Bulk Flow Vector, GSE spherical coordinates",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "V_GSE_p",
+          "Description": "Solar Wind Ion Bulk Flow Vector, Geocentric Solar Ecliptic, GSE, spherical coordinates, speed magnitude, E/W flow positive from the west of the Sun, N/S flow positive from the south of the Sun",
+          "Cadence": "PT99S",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GSE"
+          },
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "ValueFormat": "F6.1"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "Flow Speed",
+                "Index": "1",
+                "Units": "km/s",
+                "ValidMin": "0.0",
+                "ValidMax": "2000.0",
+                "RenderingHints": {
+                  "AxisLabel": "mag",
+                  "ScaleMin": "200.0",
+                  "ScaleMax": "1000.0"
+                }
+              },
+              {
+                "Name": "E/W Flow(GSE)",
+                "Index": "2",
+                "Units": "°",
+                "ValidMin": "-50.0",
+                "ValidMax": "50.0",
+                "RenderingHints": {
+                  "AxisLabel": "lon",
+                  "ScaleMin": "-20.0",
+                  "ScaleMax": "20.0"
+                }
+              },
+              {
+                "Name": "N/S Flow(GSE)",
+                "Index": "3",
+                "Units": "°",
+                "ValidMin": "-50.0",
+                "ValidMax": "50.0",
+                "RenderingHints": {
+                  "AxisLabel": "lat",
+                  "ScaleMin": "-20.0",
+                  "ScaleMax": "20.0"
+                }
+              }
+            ]
+          },
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Ion",
+            "Qualifier": "Vector",
+            "ParticleQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "Solar Wind Thermal Speed",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "THERMAL_SPD",
+          "Description": "Solar Wind Thermal Speed, Vth, sqrt(2kT/M), most probable",
+          "Cadence": "PT99S",
+          "Units": "km/s",
+          "UnitsConversion": "1.0e3>m/s",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "SW Vth",
+            "ValueFormat": "F6.1",
+            "ScaleMin": "0.0",
+            "ScaleMax": "200.0"
+          },
+          "ValidMin": "0.0",
+          "ValidMax": "500.0",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Ion",
+            "Qualifier": "Scalar",
+            "ParticleQuantity": "ThermalSpeed"
+          }
+        },
+        {
+          "Name": "Solar Wind Proton Number Density",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "Np",
+          "Description": "Solar Wind Proton Number Density, scalar",
+          "Cadence": "PT99S",
+          "Units": "cm^-3",
+          "UnitsConversion": "1.0e6>m^-3",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "Ion N",
+            "ValueFormat": "F7.1",
+            "ScaleMin": "0.0",
+            "ScaleMax": "200.0"
+          },
+          "ValidMin": "0.0",
+          "ValidMax": "1000.0",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Ion",
+            "Qualifier": "Scalar",
+            "ParticleQuantity": "NumberDensity"
+          }
+        },
+        {
+          "Name": "Alpha Particle Density Percentage",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "Alpha_Percent",
+          "Description": "Alpha Particle Density Percentage",
+          "Cadence": "PT99S",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries",
+            "AxisLabel": "Na/Np",
+            "ValueFormat": "F7.3",
+            "ScaleMin": "0.0",
+            "ScaleMax": "100.0"
+          },
+          "ValidMin": "0.0",
+          "ValidMax": "100.0",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "AlphaParticle",
+            "Qualifier": [
+              "Ratio",
+              "Scalar"
+            ],
+            "ParticleQuantity": "NumberDensity",
+            "AtomicNumber": "2"
+          }
+        }
+      ]
+    }
+  }
+}
