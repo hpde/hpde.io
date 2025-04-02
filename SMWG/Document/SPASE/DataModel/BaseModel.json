@@ -2,10 +2,12 @@
   "Spase": {
     "xmlns": "http://www.spase-group.org/data/schema",
     "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
-    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_6_1.xsd",
-    "Version": "2.6.1",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_7_0.xsd",
+    "Version": "2.7.0",
     "Document": {
       "ResourceID": "spase://SMWG/Document/SPASE/DataModel/BaseModel",
+      "NamingAuthority": "SMWG",
+      "ResourceType": "Document",
       "ResourceHeader": {
         "ResourceName": "Space Physics Archive Search and Extract (SPASE) Base Information Model",
         "DOI": "https://doi.org/10.48322/E72C-5Y75",
@@ -55,6 +57,10 @@
             {
               "ReleaseDate": "2025-01-28T00:00:00.000Z",
               "Note": "Release 2.7.0. Added DataCite equivalent container named rightsList to the AccessInformation container. The rightsList Container must include at least one text field elements called rights. Both rightsList and rights definitions have been added to the SPASE dictionary. Added new items to the Qualifier enumeration list: Amplitude, Magnitude, MassMixingRatio, and MixingRatio definitions added to the SPASE Dictionary. Added NamingAuthority, a text field element, and ResourceType, an enumerated text field element, to all SPASE resource types (eighteen total). NamingAuthority and ResourceType have been inserted immediately following ResourceID and the both terms have been added to the dictionary. An enumeration list also called ResourceType has been added under list.tab. And, the ResourceType enumeration list items have been inserted into member.tab. Added the text field element re3data to the dictionary and to the Repository resource type container. Added the RORIdentifier text field under the Instrument, Observatory, Registry, and Repository resource type containers."
+            },
+            {
+              "ReleaseDate": "2025-03-16T00:00:00.000Z",
+              "Note": "Release 2.7.0. Schema revised to ensure backwards compatibility. To do so, both of the NamingAuthority and ResourceType text elements were made optional (0) instead of required (1). Also, the list of earlier version numbers of SPASE are now added to the SPASE 2.7.0 XSD file to permit validating any XML descriptions regardless of the actual SPASE version number listed in the descriptions. For instance, xmllint, which is a unix command, can be used to validate a SPASE version 2.0.0 (or equivalently any SPASE version earlier than 2.7.0) description with the SPASE 2.7.0 XSD file. Note that online SPASE Validator still requires checking by using the version listed in a SPASE XML description."
             }
           ]
         },
@@ -67,11 +73,14 @@
         },
         "Contact": [
           {
-            "PersonID": "spase://SMWG/Person/Todd.A.King",
-            "Role": "Publisher"
+            "PersonID": "spase://SMWG/Person/Lee.Frost.Bargatze",
+            "Role": [
+              "Publisher",
+              "GeneralContact"
+            ]
           },
           {
-            "PersonID": "spase://SMWG/Person/Lee.Frost.Bargatze",
+            "PersonID": "spase://SMWG/Person/Shing.F.Fung",
             "Role": "GeneralContact"
           }
         ]
@@ -80,16 +89,16 @@
         {
           "RepositoryID": "spase://SMWG/Repository/SPASE",
           "AccessURL": {
-            "Name": "SPASE Base Model Description, released 2024-09-19",
-            "URL": "https://spase-group.org/data/model/spase-2.6.1.pdf"
+            "Name": "SPASE Base Model Description, released 2025-03-16",
+            "URL": "https://spase-group.org/data/model/spase-latest.pdf"
           },
           "Format": "PDF"
         },
         {
           "RepositoryID": "spase://SMWG/Repository/SPASE",
           "AccessURL": {
-            "Name": "SPASE Base Model XML Schema Definition, XSD, File2024-09-19",
-            "URL": "https://spase-group.org/data/schema/spase-2.6.1.xsd"
+            "Name": "SPASE Base Model XML Schema Definition, XSD, File 2025-03-16",
+            "URL": "https://spase-group.org/data/schema/spase-latest.xsd"
           },
           "Format": "XML"
         }
