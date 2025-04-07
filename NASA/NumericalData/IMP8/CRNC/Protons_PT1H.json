@@ -1,0 +1,125 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema  http://www.spase-group.org/data/schema/spase-2_2_9.xsd",
+    "Version": "2.2.9",
+    "NumericalData": {
+      "ResourceID": "spase://NASA/NumericalData/IMP8/CRNC/Protons_PT1H",
+      "ResourceHeader": {
+        "ResourceName": "IMP 8 Cosmic Ray Nuclear Composition (CRNC) hourly energetic proton fluxes",
+        "ReleaseDate": "2021-03-11T18:39:11Z",
+        "Description": "This data set contains hourly, spin-averaged\nfluxes of protons from the IMP8.  Cosmic Ray Nuclear Composition\nexperiment of U. Chicago and UNH.  There are are fluxes of protons\nin 9 energy bins from 11.24-12.62 to 74.50-94.78 MeV.  These fluxes\nwere generated at GSFC/SPDF from count rates accessible from\nUNH.",
+        "Acknowledgement": "Acknowledge the late John A. Simpson, the\noriginal CRNC PI, and Clifford Lopate/UNH, current PI.",
+        "Contact": {
+          "PersonID": "spase://SMWG/Person/Clifford.Lopate",
+          "Role": "PrincipalInvestigator"
+        },
+        "InformationURL": [
+          {
+            "Name": "Readme file at SPDF",
+            "URL": "https://spdf.gsfc.nasa.gov/pub/data/imp/imp8/particles_uchi/hourly/protons/aareadme.txt"
+          },
+          {
+            "Name": "Comprehensive data descriptive file",
+            "URL": "https://spdf.gsfc.nasa.gov/pub/data/imp/imp8/particles_uchi/15min_asci/voldesc.sfd",
+            "Description": "SFDU-formatted file describing the CRNC instrument\nand the 15-min data set of count rates and pulse height data from which the\nhourly rates data set was created.  Division of hourly rates by geometric\nfactor and energy band widths yielded the hourly fluxes."
+          }
+        ],
+        "PriorID": [
+          "spase://VEPO/NumericalData/IMP8/CRNC/Protons_PT1H",
+          "spase://VSPO/NumericalData/IMP8/CRNC/Protons_PT1H"
+        ]
+      },
+      "AccessInformation": {
+        "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+        "Availability": "Online",
+        "AccessRights": "Open",
+        "AccessURL": [
+          {
+            "Name": "FTPS from SPDF (not with most browsers)",
+            "URL": "ftps://spdf.gsfc.nasa.gov/pub/data/imp/imp8/particles_uchi/hourly/protons/",
+            "Description": "ftp access to proton-specific subdirectory\nholding annual ASCII files"
+          },
+          {
+            "Name": "HTTPS from SPDF",
+            "URL": "https://spdf.gsfc.nasa.gov/pub/data/imp/imp8/particles_uchi/hourly/protons/",
+            "Description": "In CDF via HTTP from SPDF"
+          },
+          {
+            "Name": "FTPBrowser",
+            "URL": "https://omniweb.gsfc.nasa.gov/ftpbrowser/imp_chi_crnc_1h.html",
+            "Description": "Subset, plot and list fluxes of protons, alpha\nparticles and electron, and count rates of heavies, via FTPBrowser"
+          },
+          {
+            "Name": "Multi-Source Spectral Plot",
+            "URL": "https://omniweb.gsfc.nasa.gov/ftpbrowser/flux_spectr_m.html",
+            "Description": "Spectral plots and power law fits for arbitrary durations"
+          }
+        ],
+        "Format": "Text",
+        "DataExtent": {
+          "Quantity": "1",
+          "Units": "MB",
+          "Per": "P1Y"
+        },
+        "Acknowledgement": "Acknowledge C. Lopate, J. Simpson, and GSFC/SPDF\n(Space Physics Data Facility)"
+      },
+      "InstrumentID": "spase://SMWG/Instrument/IMP8/CRNC",
+      "MeasurementType": "EnergeticParticles",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "1973-10-30T00:00:00",
+          "StopDate": "2001-10-26T00:00:00"
+        },
+        "Cadence": "PT1H"
+      },
+      "ObservedRegion": "Heliosphere.NearEarth",
+      "Parameter": [
+        {
+          "Name": "Time",
+          "ParameterKey": "Column_1-Column_3",
+          "Description": "Time at start of flux average, as year, day, hour",
+          "Cadence": "PT1H",
+          "Structure": {
+            "Size": "3",
+            "Description": "year, day, hour"
+          },
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Fractional Coverage",
+          "ParameterKey": "Column_4",
+          "Description": "Fractional counting coverage (0-1) during this hour",
+          "Cadence": "PT1H",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Proton fluxes",
+          "ParameterKey": "Column_5-Column_13",
+          "Description": "Spin-integrated fluxes of protons, at 1-hour resolution,\nin nine energy bins: 11.24-12.62, 12.62-16.18, 16.18-20.00, 20.00-29.75,\n29.75-40.10, 40.10-50.90, 50.90-62.55, 62.55-74.50, 74.50-94.78 MeV",
+          "Cadence": "PT1H",
+          "Units": "1/sec-cm**2-ster-MeV",
+          "Structure": {
+            "Size": "9",
+            "Description": "Array of fluxes at 9 energy windows"
+          },
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "NumberFlux",
+            "AtomicNumber": "1",
+            "EnergyRange": {
+              "Low": "11.24",
+              "High": "94.78",
+              "Units": "MeV"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

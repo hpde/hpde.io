@@ -1,0 +1,307 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema  https://www.spase-group.org/data/schema/spase-2_3_2.xsd",
+    "Version": "2.3.2",
+    "NumericalData": {
+      "ResourceID": "spase://NASA/NumericalData/Ulysses/MAGandPLS/PT1H",
+      "ResourceHeader": {
+        "ResourceName": "Ulysses hourly merged magnetic field and plasma data",
+        "ReleaseDate": "2021-04-27T15:38:11Z",
+        "Description": "This is an hourly resolution, merged magnetic field and plasma data set created at NSSDC for COHOWeb. Magnetic field vectors and plasma flow direction angles are given in RTN coordinates. Spacecraft position data are given in Heliographic inertial (HGI) coordinates.",
+        "Acknowledgement": "Please acknowledge the magnetic field and plasma Principal Investigators, Drs. A. Balogh and D. McComas, and NSSDC or GSFC-SPDF",
+        "Contact": [
+          {
+            "PersonID": "spase://SMWG/Person/Andre.Balogh",
+            "Role": "PrincipalInvestigator"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/David.J.McComas",
+            "Role": "PrincipalInvestigator"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Natalia.E.Papitashvili",
+            "Role": "GeneralContact"
+          }
+        ],
+        "InformationURL": [
+          {
+            "Name": "Readme file at SPDF",
+            "URL": "https://spdf.gsfc.nasa.gov/pub/data/ulysses/merged/ulymgd.txt"
+          },
+          {
+            "Name": "SWOOPS data users' guide",
+            "URL": "https://spdf.gsfc.nasa.gov/pub/data/ulysses/plasma/swoops/ion/swoops_ion_users_guide_update_20030214.txt"
+          }
+        ],
+        "PriorID": [
+          "spase://VHO/NumericalData/Ulysses/MAGandPLS/PT1H",
+          "spase://VSPO/NumericalData/Ulysses/MAGandPLS/PT1H"
+        ]
+      },
+      "AccessInformation": [
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": [
+            {
+              "Name": "FTPS from SPDF (not with most browsers)",
+              "URL": "ftps://spdf.gsfc.nasa.gov/pub/data/ulysses/merged/",
+              "Description": "for annual files via ftp"
+            },
+            {
+              "Name": "HTTPS from SPDF",
+              "URL": "https://spdf.gsfc.nasa.gov/pub/data/ulysses/merged/",
+              "Description": "In CDF via HTTP from SPDF"
+            },
+            {
+              "Name": "CDAWeb",
+              "URL": "https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=UY_COHO1HR_MERGED_MAG_PLASMA&index=sp_phys",
+              "ProductKey": "UY_COHO1HR_MERGED_MAG_PLASMA",
+              "Description": "access to subset, plot, and list functionalities from CDAWeb"
+            },
+            {
+              "Name": "COHOWeb plots and lists",
+              "URL": "https://omniweb.gsfc.nasa.gov/coho/form/ulysses.html",
+              "Description": "Ulysses-specific page for plots and lists"
+            },
+            {
+              "Name": "COHOweb top page",
+              "URL": "https://omniweb.gsfc.nasa.gov/coho/",
+              "Description": "Plots, lists, scatter plots, regressions, distributions, means, etc."
+            }
+          ],
+          "Format": "Text",
+          "DataExtent": {
+            "Quantity": "1",
+            "Units": "MB",
+            "Per": "P1Y"
+          },
+          "Acknowledgement": "Please acknowledge the magnetic field and plasma Principal Investigators, Drs. A. Balogh and D. McComas, and NSSDC or GSFC-SPDF"
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDAWeb HAPI Server",
+            "URL": "https://cdaweb.gsfc.nasa.gov/hapi",
+            "Style": "HAPI",
+            "ProductKey": "UY_COHO1HR_MERGED_MAG_PLASMA",
+            "Description": "Web Service to this product using the HAPI interface."
+          },
+          "Format": "CSV",
+          "Acknowledgement": "Please acknowledge the magnetic field and plasma Principal Investigators, Drs. A. Balogh and D. McComas, and NSSDC or GSFC-SPDF"
+        }
+      ],
+      "InstrumentID": [
+        "spase://SMWG/Instrument/Ulysses/FGM",
+        "spase://SMWG/Instrument/Ulysses/SWOOPS"
+      ],
+      "MeasurementType": [
+        "MagneticField",
+        "ThermalPlasma"
+      ],
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "1990-10-25T00:00:00",
+          "StopDate": "2008-10-18T00:00:00",
+          "Note": "Plasma data do not start until Nov. 18, 1990. As of 12/31/2008, magnetic field data end on Feb. 29, 2008. Plasma data become quite sparse after ~May 19, 2008. Data may be extended."
+        },
+        "Cadence": "PT1H"
+      },
+      "ObservedRegion": "Heliosphere.Outer",
+      "Parameter": [
+        {
+          "Name": "Magnetic Field Magnitude",
+          "ParameterKey": "Column10",
+          "Description": "Hourly average of fine time scale magnetic field magnitudes",
+          "Cadence": "PT1H",
+          "Units": "nT",
+          "FillValue": "999.99",
+          "Field": {
+            "Qualifier": "Magnitude",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "Magnetic Field Vector",
+          "Description": "Hourly averages of RTN components of fine time scale magnetic field vectors",
+          "Cadence": "PT1H",
+          "Units": "nT",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "RTN"
+          },
+          "Structure": {
+            "Size": "3",
+            "Description": "R,T,N components",
+            "Element": [
+              {
+                "Name": "R component",
+                "Qualifier": "Component.I",
+                "Index": "1",
+                "ParameterKey": "Column07"
+              },
+              {
+                "Name": "T component",
+                "Qualifier": "Component.J",
+                "Index": "2",
+                "ParameterKey": "Column08"
+              },
+              {
+                "Name": "N component",
+                "Qualifier": "Component.K",
+                "Index": "3",
+                "ParameterKey": "Column09"
+              }
+            ]
+          },
+          "FillValue": "999.99",
+          "Field": {
+            "Qualifier": "Vector",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "Flow speed",
+          "ParameterKey": "Column12",
+          "Description": "Hourly averaged solar wind plasma flow speed",
+          "Cadence": "PT1H",
+          "Units": "km/s",
+          "FillValue": "9999.9",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": "Average",
+            "ParticleQuantity": "FlowSpeed"
+          }
+        },
+        {
+          "Name": "Flow elevation angle",
+          "ParameterKey": "Column13",
+          "Description": "Hourly averaged solar wind plasma flow elevation angle",
+          "Cadence": "PT1H",
+          "Units": "deg",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "RTN"
+          },
+          "FillValue": "9999.9",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": "DirectionAngle.ElevationAngle",
+            "ParticleQuantity": "FlowVelocity"
+          }
+        },
+        {
+          "Name": "Flow azimuth angle",
+          "ParameterKey": "Column14",
+          "Description": "Hourly averaged solar wind plasma flow azimuthal angle",
+          "Cadence": "PT1H",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "RTN"
+          },
+          "FillValue": "9999.9",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": "DirectionAngle.AzimuthAngle",
+            "ParticleQuantity": "FlowVelocity"
+          }
+        },
+        {
+          "Name": "Proton density",
+          "ParameterKey": "Column15",
+          "Description": "Hourly averaged solar wind proton plasma density",
+          "Cadence": "PT1H",
+          "Units": "n/cc",
+          "FillValue": "99.99999",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": "Average",
+            "ParticleQuantity": "NumberDensity"
+          }
+        },
+        {
+          "Name": "Alpha particle density",
+          "ParameterKey": "Column16",
+          "Description": "Hourly averaged solar wind alpha particle plasma density",
+          "Cadence": "PT1H",
+          "Units": "n/cc",
+          "FillValue": "99.99999",
+          "Particle": {
+            "ParticleType": "AlphaParticle",
+            "Qualifier": "Average",
+            "ParticleQuantity": "NumberDensity"
+          }
+        },
+        {
+          "Name": "Large Temperature",
+          "ParameterKey": "Column17",
+          "Description": "Hourly averaged solar wind plasma temperature deteremined as the integral of the distribution in three-dimensional velocity space over all energy channels and angle bins that are statistically above noise",
+          "Cadence": "PT1H",
+          "Units": "degK",
+          "FillValue": "9999999.",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": "Average",
+            "ParticleQuantity": "Temperature"
+          }
+        },
+        {
+          "Name": "Small Temperature",
+          "ParameterKey": "Column18",
+          "Description": "Hourly averaged solar wind plasma temperature estimated by summing over angle the observations at a fixed energy. The moments of the resulting one dimensional plasma spectrum are then summed and the resulting RR (radial) component of the temperature tensor is used as the estimate of proton temperature.",
+          "Cadence": "PT1H",
+          "Units": "degK",
+          "FillValue": "9999999.",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": "Average",
+            "ParticleQuantity": "Temperature"
+          }
+        },
+        {
+          "Name": "Ulysses radial distance",
+          "ParameterKey": "Column04",
+          "Description": "Heliocentric radial distance of Ulysses in AU",
+          "Cadence": "PT1H",
+          "Units": "AU",
+          "Support": {
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Ulysses latitude",
+          "ParameterKey": "Column05",
+          "Description": "Heliographic Inertial elevation angle of Ulysses in deg",
+          "Cadence": "PT1H",
+          "Units": "deg",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "HGI"
+          },
+          "Support": {
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Ulysses longitude",
+          "ParameterKey": "Column06",
+          "Description": "Heliographic Inertial azimuthal angle of Ulysses in deg",
+          "Cadence": "PT1H",
+          "Units": "deg",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "HGI"
+          },
+          "Support": {
+            "SupportQuantity": "Positional"
+          }
+        }
+      ]
+    }
+  }
+}

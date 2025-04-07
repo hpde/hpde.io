@@ -1,0 +1,553 @@
+{
+  "Spase": {
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_3_2.xsd",
+    "Version": "2.3.2",
+    "NumericalData": {
+      "ResourceID": "spase://NASA/NumericalData/Wind/Ephemeris/predicted/PT10M",
+      "ResourceHeader": {
+        "ResourceName": "Wind predicted Spacecraft Positions, 10 min Data",
+        "DOI": "https://doi.org/10.48322/73de-sf52",
+        "ReleaseDate": "2021-05-31T12:34:56.789",
+        "RevisionHistory": {
+          "RevisionEvent": {
+            "ReleaseDate": "2021-05-31T12:34:56.789",
+            "Note": "Updated to SPASE Version 2.3.2 if needed, Applied quality control for DOI usage, LFB"
+          }
+        },
+        "Description": "Predicted (calculated) Wind spacecraft positions in various coordinate systems",
+        "PublicationInfo": {
+          "Authors": "Wind Flight Operations Team (FOT); & Candey, Robert M.",
+          "PublicationDate": "2021-01-01T00:00:00",
+          "PublishedBy": "NASA Space Physics Data Facility"
+        },
+        "Contact": [
+          {
+            "PersonID": "spase://SMWG/Person/Robert.M.Candey",
+            "Role": "DataProducer"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Adam.Szabo",
+            "Role": "Scientist"
+          }
+        ],
+        "PriorID": [
+          "spase://VHO/NumericalData/Wind/Ephemeris/predicted_PT10M",
+          "spase://VSPO/NumericalData/Wind/Ephemeris/PT600S",
+          "spase://VSPO/NumericalData/Wind/Ephemeris/predicted/PT10M"
+        ]
+      },
+      "AccessInformation": [
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/Wind",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "Wind Spacecraft homepage",
+            "URL": "https://wind.nasa.gov/ephemeris/pre/",
+            "Description": "Homepage for the Wind mission. Contains links to data and instrument descriptions."
+          },
+          "Format": "CDF",
+          "Encoding": "None"
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": [
+            {
+              "Name": "FTPS from SPDF (not with most browsers)",
+              "URL": "ftps://spdf.gsfc.nasa.gov/pub/data/wind/orbit/pre_or/"
+            },
+            {
+              "Name": "HTTPS from SPDF",
+              "URL": "https://spdf.gsfc.nasa.gov/pub/data/wind/orbit/pre_or/",
+              "Description": "In CDF via HTTP from CDAWeb"
+            },
+            {
+              "Name": "CDAWeb",
+              "URL": "https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=WI_OR_PRE&index=sp_phys",
+              "ProductKey": "WI_OR_PRE"
+            }
+          ],
+          "Format": "CDF"
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDAWeb HAPI Server",
+            "URL": "https://cdaweb.gsfc.nasa.gov/hapi",
+            "Style": "HAPI",
+            "ProductKey": "WI_OR_PRE",
+            "Description": "Web Service to this product using the HAPI interface."
+          },
+          "Format": "CSV"
+        }
+      ],
+      "InstrumentID": "spase://SMWG/Instrument/Wind/Ephemeris",
+      "MeasurementType": "Ephemeris",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "1997-04-06T00:00:00Z",
+          "RelativeStopDate": "P0D"
+        },
+        "Cadence": "PT10M"
+      },
+      "Parameter": [
+        {
+          "Name": "Epoch",
+          "ParameterKey": "Epoch",
+          "Description": "Number of milliseconds since the epoch",
+          "Units": "ms",
+          "UnitsConversion": "1e-3>s",
+          "FillValue": "-1.0e31",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "PB5 Time",
+          "ParameterKey": "Time_PB5",
+          "Description": "PB5 Time value of point",
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "Year",
+                "Index": "1"
+              },
+              {
+                "Name": "Day of year",
+                "Index": "2"
+              },
+              {
+                "Name": "Milisecond of day",
+                "Index": "3"
+              }
+            ]
+          },
+          "FillValue": "-2147483648",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "GEI Position",
+          "ParameterKey": "GCI_POS",
+          "Description": "Position in Geocentric Equatorial Inertial coordinates (GEI, formerly GCI)",
+          "Units": "km",
+          "UnitsConversion": "1000>m",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GEI"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "X",
+                "Qualifier": "Component.I",
+                "Index": "1"
+              },
+              {
+                "Name": "Y",
+                "Qualifier": "Component.J",
+                "Index": "2"
+              },
+              {
+                "Name": "Z",
+                "Qualifier": "Component.K",
+                "Index": "3"
+              }
+            ]
+          },
+          "ValidMin": "-1.8e+06",
+          "ValidMax": "1.8e+06",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "GEI Velocity",
+          "ParameterKey": "GCI_VEL",
+          "Description": "Spacecraft velocity in Geocentric Equatorial Inertial coordinates (GEI, formerly GCI)",
+          "Units": "km/s",
+          "UnitsConversion": "1000>m/s",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GEI"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "Vx",
+                "Qualifier": "Component.I",
+                "Index": "1"
+              },
+              {
+                "Name": "Vy",
+                "Qualifier": "Component.J",
+                "Index": "2"
+              },
+              {
+                "Name": "Vz",
+                "Qualifier": "Component.K",
+                "Index": "3"
+              }
+            ]
+          },
+          "ValidMin": "-12.0",
+          "ValidMax": "12.0",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "GSE Position",
+          "ParameterKey": "GSE_POS",
+          "Description": "Position in GSE coordinates",
+          "Units": "km",
+          "UnitsConversion": "1000>m",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GSE"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "X",
+                "Qualifier": "Component.I",
+                "Index": "1"
+              },
+              {
+                "Name": "Y",
+                "Qualifier": "Component.J",
+                "Index": "2"
+              },
+              {
+                "Name": "Z",
+                "Qualifier": "Component.K",
+                "Index": "3"
+              }
+            ]
+          },
+          "ValidMin": "-1.8e+06",
+          "ValidMax": "1.8e+06",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "GSE Velocity",
+          "ParameterKey": "GSE_VEL",
+          "Description": "Velocity in GSE coordinates",
+          "Units": "km/s",
+          "UnitsConversion": "1000>m/s",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GSE"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "Vx",
+                "Qualifier": "Component.I",
+                "Index": "1"
+              },
+              {
+                "Name": "Vy",
+                "Qualifier": "Component.J",
+                "Index": "2"
+              },
+              {
+                "Name": "Vz",
+                "Qualifier": "Component.K",
+                "Index": "3"
+              }
+            ]
+          },
+          "ValidMin": "-12.0",
+          "ValidMax": "12.0",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "GSM Position",
+          "ParameterKey": "GSM_POS",
+          "Description": "Position in GSM coordinates",
+          "Units": "km",
+          "UnitsConversion": "1000>m",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GSM"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "X",
+                "Qualifier": "Component.I",
+                "Index": "1"
+              },
+              {
+                "Name": "Y",
+                "Qualifier": "Component.J",
+                "Index": "2"
+              },
+              {
+                "Name": "Z",
+                "Qualifier": "Component.K",
+                "Index": "3"
+              }
+            ]
+          },
+          "ValidMin": "-1.8e+06",
+          "ValidMax": "1.8e+06",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "GSM Velocity",
+          "ParameterKey": "GSM_VEL",
+          "Description": "Velocity in GSM coordinates",
+          "Units": "km/s",
+          "UnitsConversion": "1000>m/s",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GSM"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "Vx",
+                "Qualifier": "Component.I",
+                "Index": "1"
+              },
+              {
+                "Name": "Vy",
+                "Qualifier": "Component.J",
+                "Index": "2"
+              },
+              {
+                "Name": "Vz",
+                "Qualifier": "Component.K",
+                "Index": "3"
+              }
+            ]
+          },
+          "ValidMin": "-12.0",
+          "ValidMax": "12.0",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Sun Vector",
+          "ParameterKey": "SUN_VECTOR",
+          "Description": "Sun position vector in GEI (GCI) coordinates",
+          "Units": "km",
+          "UnitsConversion": "1000>m",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GEI"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "X",
+                "Qualifier": "Component.I",
+                "Index": "1"
+              },
+              {
+                "Name": "Y",
+                "Qualifier": "Component.J",
+                "Index": "2"
+              },
+              {
+                "Name": "Z",
+                "Qualifier": "Component.K",
+                "Index": "3"
+              }
+            ]
+          },
+          "ValidMin": "-1.6e+08",
+          "ValidMax": "1.6e+08",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "HEC Position",
+          "ParameterKey": "HEC_POS",
+          "Description": "Position in HEC (SE) coordinates",
+          "Units": "km",
+          "UnitsConversion": "1000>m",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "SE"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "X",
+                "Qualifier": "Component.I",
+                "Index": "1"
+              },
+              {
+                "Name": "Y",
+                "Qualifier": "Component.J",
+                "Index": "2"
+              },
+              {
+                "Name": "Z",
+                "Qualifier": "Component.K",
+                "Index": "3"
+              }
+            ]
+          },
+          "ValidMin": "-1.8e+06",
+          "ValidMax": "1.8e+06",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "HEC Velocity",
+          "ParameterKey": "HEC_VEL",
+          "Description": "Velocity in HEC (SE) coordinates",
+          "Units": "km/s",
+          "UnitsConversion": "1000>m/s",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "SE"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "Vx",
+                "Qualifier": "Component.I",
+                "Index": "1"
+              },
+              {
+                "Name": "Vy",
+                "Qualifier": "Component.J",
+                "Index": "2"
+              },
+              {
+                "Name": "Vz",
+                "Qualifier": "Component.K",
+                "Index": "3"
+              }
+            ]
+          },
+          "ValidMin": "-12.0",
+          "ValidMax": "12.0",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Carrington Rotation Number",
+          "ParameterKey": "CRN_EARTH",
+          "Description": "Carrington rotation number: A method of numbering rotations of the sun based on a mean rotation period of sunspots of 27.2753 days, and starting with rotation number 1 on November 9, 1853.",
+          "Units": "unitless",
+          "ValidMin": "1857",
+          "ValidMax": "2239",
+          "FillValue": "-2147483648",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Heliographic Longitude of Earth",
+          "ParameterKey": "LONG_EARTH",
+          "Description": "Heliographic longitude of Earth",
+          "Units": "rad",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "HG"
+          },
+          "ValidMin": "0.0",
+          "ValidMax": "6.28319",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "Qualifier": "DirectionAngle.AzimuthAngle",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Heliographic Latitude of Earth",
+          "ParameterKey": "LAT_EARTH",
+          "Description": "Heliographic latitude of Earth",
+          "Units": "rad",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "HG"
+          },
+          "ValidMin": "-1.5708",
+          "ValidMax": "1.5708",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "Qualifier": "DirectionAngle.ElevationAngle",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Heliographic Longitude of Spacecraft",
+          "ParameterKey": "LONG_SPACE",
+          "Description": "Heliographic longitude of the spacecraft",
+          "Units": "rad",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "HG"
+          },
+          "ValidMin": "0.0",
+          "ValidMax": "6.28319",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "Qualifier": "DirectionAngle.AzimuthAngle",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Heliographic Latitude of Spacecraft",
+          "ParameterKey": "LAT_SPACE",
+          "Description": "Heliographic latitude of the spacecraft",
+          "Units": "rad",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "HG"
+          },
+          "ValidMin": "-1.5708",
+          "ValidMax": "1.5708",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "Qualifier": "DirectionAngle.ElevationAngle",
+            "SupportQuantity": "Positional"
+          }
+        }
+      ]
+    }
+  }
+}

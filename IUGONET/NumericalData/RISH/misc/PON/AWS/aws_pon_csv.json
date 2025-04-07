@@ -1,0 +1,157 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema https://www.spase-group.org/data/schema/spase-2_5_0.xsd",
+    "Version": "2.5.0",
+    "NumericalData": {
+      "ResourceID": "spase://IUGONET/NumericalData/RISH/misc/PON/AWS/aws_pon_csv",
+      "ResourceHeader": {
+        "ResourceName": "Surface meteorological data at Pontianak (CSV format)",
+        "ReleaseDate": "2016-09-01T11:04:00",
+        "Description": "The surface meteorological data taken by the automatical weather station (AWS) at Pontianak, Indonesia (0.00S, 109.36E, 15m MSL), which has been operated since March 17, 2008. The data are stored in the CSV (Comma Separated Values) file named (year)(month)(day).csv. The first two lines of each file represent header information, and the third and below are observational date and local time (year/month/day hour:minute:second) which corresponds to the center time of averaging period (first column) and data including pressure, precipitation, relative humidity, solar radiation, temperature, wind direction and speed (the other columns). The left columns of each parameter represent the status code.",
+        "Acknowledgement": "If you acquire surface meteorological data, we ask that you acknowledge us in your use of the data. This may be done by including text such as surface meteorological data were obtained by the JEPP-HARIMAU and SATREPS-MCCOE projects promoted by JAMSTEC and BPPT under collaboration with RISH of Kyoto University and LAPAN. We would also appreciate receiving a copy of the relevant publications.",
+        "Contact": [
+          {
+            "PersonID": "spase://IUGONET/Person/Hiroyuki.Hashiguchi",
+            "Role": "PrincipalInvestigator"
+          },
+          {
+            "PersonID": "spase://IUGONET/Person/EAR.Management.Group",
+            "Role": "GeneralContact"
+          },
+          {
+            "PersonID": "spase://IUGONET/Person/RISH.Metadata.Management.Group",
+            "Role": "MetadataContact"
+          }
+        ]
+      },
+      "AccessInformation": {
+        "RepositoryID": "spase://IUGONET/Repository/RISH/RISHDB",
+        "Availability": "Online",
+        "AccessRights": "Open",
+        "AccessURL": {
+          "Name": "Surface Meteorological Data at Pontianak, Indonesia",
+          "URL": "http://www.rish.kyoto-u.ac.jp/radar-group/surface/pontianak/aws/",
+          "Language": "English"
+        },
+        "Format": "Text.ASCII"
+      },
+      "InstrumentID": "spase://IUGONET/Instrument/RISH/misc/PON/AWS",
+      "MeasurementType": "NeutralGas",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "2008-03-17T10:26:05",
+          "RelativeStopDate": "-P6M"
+        },
+        "Cadence": "PT1M"
+      },
+      "ObservedRegion": [
+        "Earth.NearSurface",
+        "Earth.NearSurface.Atmosphere",
+        "Earth.NearSurface.EquatorialRegion"
+      ],
+      "SpatialCoverage": {
+        "CoordinateSystem": {
+          "CoordinateRepresentation": "Spherical",
+          "CoordinateSystemName": "WGS84"
+        },
+        "NorthernmostLatitude": "-0.00",
+        "SouthernmostLatitude": "-0.00",
+        "EasternmostLongitude": "109.37",
+        "WesternmostLongitude": "109.37"
+      },
+      "Keyword": "EARTH SCIENCE Atmosphere Atmospheric Phenomena",
+      "Parameter": [
+        {
+          "Name": "date",
+          "Description": "Date in the form YYYY-MM-DD where YYYY= Gregorian Year AD, MM = month of year (01-12), and DD = day of month (01-31).",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "time",
+          "Description": "Time in the form hh:mm:ss where hh = hour of day (00-23), mm = minute of hour and ss = second of minute. Local time (UT+07:00:00) is used for time data.",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "PA",
+          "Description": "Pressure",
+          "Units": "hPa",
+          "Particle": {
+            "ParticleType": "Molecule",
+            "ParticleQuantity": "Pressure"
+          }
+        },
+        {
+          "Name": "PR",
+          "Description": "Precipitation",
+          "Units": "mm",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "RH",
+          "Description": "Relative humidity",
+          "Units": "%",
+          "ValidMin": "0",
+          "ValidMax": "100",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "SR",
+          "Description": "Solar radiation",
+          "Units": "kW/m^2",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "TA",
+          "Description": "Temperature",
+          "Units": "degree C",
+          "ValidMin": "20",
+          "ValidMax": "40",
+          "Particle": {
+            "ParticleType": "Molecule",
+            "ParticleQuantity": "Temperature"
+          }
+        },
+        {
+          "Name": "DirAvg",
+          "Description": "1-minute average of wind direction",
+          "Units": "degree",
+          "ValidMin": "0",
+          "ValidMax": "360",
+          "Particle": {
+            "ParticleType": "Molecule",
+            "ParticleQuantity": "ArrivalDirection"
+          }
+        },
+        {
+          "Name": "SpdAvg",
+          "Description": "1-minute average of wind speed",
+          "Units": "m/s",
+          "Particle": {
+            "ParticleType": "Molecule",
+            "ParticleQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "status",
+          "Description": "Status code. Data with the status code 'VALID' are available.",
+          "Units": "1",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        }
+      ]
+    }
+  }
+}

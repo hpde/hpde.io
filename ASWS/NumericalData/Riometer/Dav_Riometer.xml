@@ -1,0 +1,110 @@
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_3_2.xsd">
+<Version>2.3.2</Version>
+  <NumericalData>
+    <ResourceID>spase://ASWS/NumericalData/Riometer/Dav_Riometer</ResourceID>
+    <ResourceHeader>
+      <ResourceName>Australian Space Weather Services Davis Riometer</ResourceName>
+      <ReleaseDate>2021-03-29T17:14:50Z</ReleaseDate>
+      <Description>
+	  A riometer (relative ionospheric opacity meter) (30 MHz) is an instrument used to quantify the amount of electromagnetic wave ionospheric absorption in the atmosphere.[1] As the name implies, a riometer measures the "opacity" of the ionosphere to radio noise emanating from distant stars and galaxies. In the absence of any ionospheric absorption, this radio noise, averaged over a sufficiently long period of time, forms a quiet-day curve. Increased ionization in the ionosphere will cause absorption of radio signals (both terrestrial and extraterrestrial), and a departure from the quiet-day curve. The difference between the quiet-day curve and the riometer signal is an indicator of the amount of absorption, and is measured in decibels. Riometers are generally passive radio antenna operating in the VHF radio frequency range (~30 MHz). The SWS WDC archives Riometer data obtained from Casey, Davis, Mawson and Macquarie Island in Antarctica. The first Riometer data file from Davis was obtained on 16/02/1988. 
+      </Description>
+      <Acknowledgement>We are thankful to the Australian Antarctic Division for the observations of Davis Riometer data.</Acknowledgement>
+      <Contact>
+        <PersonID>spase://ASWS/Person/Kehe.Wang</PersonID>
+        <Role>GeneralContact</Role>
+      </Contact>
+      <Contact> 
+        <PersonID>spase://ASWS/Person/Kehe.Wang</PersonID>
+        <Role>MetadataContact</Role>
+      </Contact>
+      <InformationURL>
+        <Name>Documentation</Name>
+        <URL>https://www.sws.bom.gov.au/World_Data_Centre/2/8/7</URL>
+        <Description>includes descriptions of station, data formats and examples.</Description>
+        <Language>en</Language>
+      </InformationURL>
+    </ResourceHeader>
+    <AccessInformation>
+      <RepositoryID>spase://SMWG/Repository/SWS</RepositoryID>
+      <Availability>Online</Availability>
+      <AccessRights>Open</AccessRights>
+      <AccessURL>
+        <Name>Real Time Information: Real Time Riometer Data</Name>
+        <URL>https://www.sws.bom.gov.au/HF_Systems/6/3</URL>
+	<Style>Overview</Style>
+        <Description>Online viewer of real time Riometer data.</Description>
+        <Language>en</Language>
+      </AccessURL>
+      <Format>GIF</Format>
+      <Encoding>None</Encoding>
+    </AccessInformation>
+    <AccessInformation>
+      <RepositoryID>spase://SMWG/Repository/SWS</RepositoryID>
+      <Availability>Online</Availability>
+      <AccessRights>Open</AccessRights>
+      <AccessURL>
+        <Name>World Data Centre: Data Display and Download: Riometer</Name>
+        <URL>https://www.sws.bom.gov.au/World_Data_Centre/1/8</URL>
+	<Style>Search</Style>
+        <Description>includes browse display interface, button to get daily data file and link to data availability chart</Description>
+        <Language>en</Language>
+      </AccessURL>
+      <AccessURL>
+        <Name>Access to Riometer data (not with most browsers)</Name>
+        <URL>https://downloads.sws.bom.gov.au/wdc/wdc_rio/</URL>
+	<Style>Listing</Style>
+        <Description>Access to the station Riometer data data of Davis and a README file.</Description>
+        <Language>en</Language>
+      </AccessURL>
+      <Format>Text</Format>
+      <Encoding>GZIP</Encoding>
+    </AccessInformation>
+	<ProviderProcessingLevel>The Riometer data are processed data and are uncalibrated.</ProviderProcessingLevel>  
+    <InstrumentID>spase://ASWS/Instrument/Ground/Davis/Riometer</InstrumentID>
+    <MeasurementType>Waves.Active</MeasurementType>
+    <TemporalDescription>
+      <TimeSpan>
+        <StartDate>1988-02-16T00:00:00Z</StartDate>
+        <RelativeStopDate>-P1D</RelativeStopDate>
+        <Note>The earliest Riometer data since 16/02/1988. Digital data are current to within a day.</Note>
+      </TimeSpan>
+    </TemporalDescription>
+	<ObservedRegion>Earth.NearSurface</ObservedRegion>
+    <!-- Keywords pertaining to the data presentation -->
+    <Keyword>Riometer</Keyword>
+    <!-- Keywords pertaining to the physical phenomena appearing in magnetometer --> 
+    <Parameter>
+      <Name>Raw</Name>
+      <Description>Cosmic noise intensity measured with a riometer.</Description>
+      <Cadence>PT10S</Cadence>
+      <Units>DU</Units>
+	  <ValidMin>-2047</ValidMin>
+	  <ValidMax>2047</ValidMax>
+	  <Field>
+	    <FieldQuantity>Electromagnetic</FieldQuantity>
+	  </Field>
+	</Parameter>
+    <Parameter>
+	  <Name>QDC(quiet-day curve)</Name>
+      <Description>A QDC is defined as the signal intensity that is observed with a quiet and undisturbed ionosphere. The QDC thus defined is subjected to seasonal and even shorter-term variations. A QDC determined for a given period is therefore only valid for that particular period of time.</Description>
+      <Cadence>PT10S</Cadence>
+      <Units>DU</Units>
+	  <ValidMin>-2047</ValidMin>
+	  <ValidMax>2047</ValidMax>
+	  <Field>
+	    <FieldQuantity>Electromagnetic</FieldQuantity>
+	  </Field>
+	</Parameter>
+	<Parameter>
+	  <Name>Absorption</Name>
+      <Description>Absorption = (QDC – Raw) / obliquity factor.</Description>
+      <Cadence>PT10S</Cadence>
+      <Units>dB</Units>
+	  <ValidMin>-20</ValidMin>
+	  <ValidMax>20</ValidMax>
+	  <Field>
+	    <FieldQuantity>Electromagnetic</FieldQuantity>
+	  </Field>
+	</Parameter>
+  </NumericalData>
+</Spase>

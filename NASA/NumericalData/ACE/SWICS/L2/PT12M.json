@@ -1,0 +1,189 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_6_0.xsd",
+    "Version": "2.6.0",
+    "NumericalData": {
+      "ResourceID": "spase://NASA/NumericalData/ACE/SWICS/L2/PT12M",
+      "ResourceHeader": {
+        "ResourceName": "ACE SWICS 2.0 Solar Wind Protons 12-min Data",
+        "DOI": "https://doi.org/10.48322/mfxn-cw77",
+        "ReleaseDate": "2023-07-30T12:34:56.789",
+        "RevisionHistory": {
+          "RevisionEvent": [
+            {
+              "ReleaseDate": "2021-04-27T15:38:11",
+              "Note": "Only known prior ReleaseDate of the metadata"
+            },
+            {
+              "ReleaseDate": "2023-07-30T12:34:56.789",
+              "Note": "Added DOI and PublicationInfo minted by LFB, metadata versioned up to SPASE 2.6.0, reviewed by LFB 20230727"
+            }
+          ]
+        },
+        "Description": "The SWICS 12-minute proton data contains densities, speeds, and thermal speeds from the beginning of the mission up to the present day. The densities have been cross-calibrated to the proton monitors ACE/SWEPAM and WIND/SWE, and represent a continuous data set that can be used in conjunction with other SWICS data, or as a stand-alone measurement. For details on the SWICS proton data, see the release notes provided by the instrument team: http://www.srl.caltech.edu/ACE/ASC/DATA/level2/ssprotons/swics_protons_release_notes.txt",
+        "PublicationInfo": {
+          "Authors": "Gloeckler, George, M.; McGuire, Robert, E.",
+          "PublicationDate": "2023-01-01T00:00:00",
+          "PublishedBy": "NASA Space Physics Data Facility"
+        },
+        "Contact": [
+          {
+            "PersonID": "spase://SMWG/Person/George.Gloeckler",
+            "Role": "PrincipalInvestigator"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Robert.E.McGuire",
+            "Role": "GeneralContact"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Lee.Frost.Bargatze",
+            "Role": "MetadataContact"
+          }
+        ],
+        "InformationURL": {
+          "Name": "Release notes for SWICS 2.0 level 2 data",
+          "URL": "http://www.srl.caltech.edu/ACE/ASC/DATA/level2/ssprotons/swics_protons_release_notes.txt",
+          "Description": "Additional details provided by the instrument team. All users of SWICS data should read these notes."
+        },
+        "PriorID": "spase://VSPO/NumericalData/ACE/SWICS/L2/PT12M"
+      },
+      "AccessInformation": [
+        {
+          "RepositoryID": "spase://SMWG/Repository/ACE_SC",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "ACE Science Center (ASC)",
+            "URL": "http://www.srl.caltech.edu/ACE/ASC/level2/lvl2DATA_SWICS_PROTONS.html"
+          },
+          "Format": "HDF"
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF/CDAWeb",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": [
+            {
+              "Name": "CDAWeb",
+              "URL": "https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=AC_H6_SWI&index=sp_phys",
+              "ProductKey": "AC_H6_SWI"
+            },
+            {
+              "Name": "FTPS from SPDF (not with most browsers)",
+              "URL": "ftps://spdf.gsfc.nasa.gov/pub/data/ace/swics/level_2_cdaweb/swi_h6/",
+              "Description": "In CDF via ftp from CDAWeb"
+            },
+            {
+              "Name": "HTTPS from SPDF",
+              "URL": "https://spdf.gsfc.nasa.gov/pub/data/ace/swics/level_2_cdaweb/swi_h6/",
+              "Description": "In CDF via HTTP from CDAWeb"
+            }
+          ],
+          "Format": "CDF"
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF/CDAWeb",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDAWeb HAPI Server",
+            "URL": "https://cdaweb.gsfc.nasa.gov/hapi",
+            "Style": "HAPI",
+            "ProductKey": "AC_H6_SWI",
+            "Description": "Web Service to this product using the HAPI interface."
+          },
+          "Format": "CSV"
+        }
+      ],
+      "ProviderProcessingLevel": "CALIBRATED",
+      "InstrumentID": "spase://SMWG/Instrument/ACE/SWICS",
+      "MeasurementType": "ThermalPlasma",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "1998-01-29T00:07:03",
+          "RelativeStopDate": "-P4M"
+        },
+        "Cadence": "PT12M"
+      },
+      "ObservedRegion": "Heliosphere.NearEarth",
+      "Parameter": [
+        {
+          "Name": "Epoch Time",
+          "ParameterKey": "Epoch",
+          "Description": "Number of milliseconds since the CDF epoch.",
+          "Cadence": "PT12M",
+          "Units": "ms",
+          "UnitsConversion": "1e-3>s",
+          "ValidMin": "01-Jan-1996 00:00:00.000",
+          "ValidMax": "01-Jan-2020 00:00:00.000",
+          "FillValue": "-1.0E31",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Proton density",
+          "ParameterKey": "nH",
+          "Description": "nH is the number density of Protons in the solar wind in units of #/cm^3",
+          "Cadence": "PT12M",
+          "Units": "#/cm^3",
+          "ValidMin": "0.0",
+          "ValidMax": "200.0",
+          "FillValue": "-1.0E31",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": "Magnitude",
+            "ParticleQuantity": "NumberDensity"
+          }
+        },
+        {
+          "Name": "Proton density error",
+          "ParameterKey": "nH_err",
+          "Description": "nH_err is the statistical uncertainty in the number density of Protons in the solar wind, in #/cm^3",
+          "Cadence": "PT12M",
+          "Units": "#/cm^3",
+          "ValidMin": "0.0",
+          "ValidMax": "200.0",
+          "FillValue": "-1.0E31",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": "Uncertainty",
+            "ParticleQuantity": "NumberDensity"
+          }
+        },
+        {
+          "Name": "Solar Wind Proton speed",
+          "ParameterKey": "vH",
+          "Description": "vH is the mean Proton speed in the solar wind, in km/s.",
+          "Cadence": "PT12M",
+          "Units": "km/s",
+          "ValidMin": "0.0",
+          "ValidMax": "2000.0",
+          "FillValue": "-1.0E31",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": "Magnitude",
+            "ParticleQuantity": "FlowSpeed"
+          }
+        },
+        {
+          "Name": "Solar Wind Proton Thermal speed",
+          "ParameterKey": "vthH",
+          "Description": "vthH is the thermal speed of Protons in the solar wind, in km/s",
+          "Cadence": "PT12M",
+          "Units": "km/s",
+          "ValidMin": "0.0",
+          "ValidMax": "2000.0",
+          "FillValue": "-1.0E31",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": "Magnitude",
+            "ParticleQuantity": "ThermalSpeed"
+          }
+        }
+      ]
+    }
+  }
+}

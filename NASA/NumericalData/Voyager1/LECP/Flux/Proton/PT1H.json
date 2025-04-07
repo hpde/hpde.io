@@ -1,0 +1,250 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_2_9.xsd",
+    "Version": "2.2.9",
+    "NumericalData": {
+      "ResourceID": "spase://NASA/NumericalData/Voyager1/LECP/Flux/Proton/PT1H",
+      "ResourceHeader": {
+        "ResourceName": "Voyager 1 Low-Energy Charged Particle (LECP) Proton Intensities in ASCII Format hourly",
+        "AlternateName": "V1-LECP-PROTONFLUX-PT1H",
+        "ReleaseDate": "2020-07-07T21:15:52Z",
+        "Description": "Count Rates, Averaged Over All Sectors, Voyager1, LECP, Filtered, Channel, Calibrated, CadencePT1H",
+        "Acknowledgement": "Please acknowledge the LECP PI (S.M. Krimigis) and the lead LECP CoI (R.B. Decker)",
+        "Contact": [
+          {
+            "PersonID": "spase://SMWG/Person/Stamatios.M.Krimigis",
+            "Role": "PrincipalInvestigator"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Robert.B.Decker",
+            "Role": "CoInvestigator"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Lawrence.Brown",
+            "Role": "ArchiveSpecialist"
+          }
+        ],
+        "InformationURL": {
+          "Name": "Informational Website for Voyager 1 and 2 LECP Instrument",
+          "URL": "http://sd-www.jhuapl.edu/VOYAGER/v1_data/v1_1h/v1_prot_1h/Read_Me.txt",
+          "Description": "The webpage provides a detailed description of Proton Channel Intensity files."
+        },
+        "PriorID": [
+          "spase://VEPO/NumericalData/Voyager1/LECP/Flux.Proton.PT1H",
+          "spase://VSPO/NumericalData/Voyager1/LECP/Flux/Proton/PT1H"
+        ]
+      },
+      "AccessInformation": [
+        {
+          "RepositoryID": "spase://SMWG/Repository/JHU_APL",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "Voyager1 LECP Average Filtered Rate Data in ASCII Format",
+            "URL": "http://sd-www.jhuapl.edu/VOYAGER/v1_data/v1_1h/v1_prot_1h/",
+            "Description": "Count Rates, All Sectors Averaged, Voyager1, LECP, Filtered, Channel CSV Text Files, File Name Template: http://sd-www.jhuapl.edu/VOYAGER/v1_data/v1_1h/v1_prot_1h/v1_%Y_prot_flux_1h.txt"
+          },
+          "Format": "Text",
+          "Encoding": "GZIP",
+          "Acknowledgement": "S.M. Krimigis, JHU/APL"
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": [
+            {
+              "Name": "FTPS from SPDF (not with most browsers)",
+              "URL": "ftps://spdf.gsfc.nasa.gov/pub/data/voyager/voyager1/particle/lecp/v1_prot_1hour/",
+              "Description": "ftp access to annual ascii files"
+            },
+            {
+              "Name": "HTTPS from SPDF",
+              "URL": "https://spdf.gsfc.nasa.gov/pub/data/voyager/voyager1/particle/lecp/v1_prot_1hour/",
+              "Description": "In CDF via HTTP from SPDF"
+            },
+            {
+              "Name": "FTPBrowser",
+              "URL": "https://omniweb.gsfc.nasa.gov/ftpbrowser/v1_lecp_flux_1h.html",
+              "Description": "Plots and lists of 0.57-1.78, 3.40-17.6, 22.0-31.0 MeV proton fluxes"
+            }
+          ],
+          "Format": "Text",
+          "Acknowledgement": "S.M. Krimigis, JHU/APL, and the Space Physics data Facility"
+        }
+      ],
+      "InstrumentID": "spase://SMWG/Instrument/Voyager1/LECP",
+      "MeasurementType": "EnergeticParticles",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "1977-09-07T00:00:00.000Z",
+          "StopDate": "2009-05-31T23:59:59.999"
+        },
+        "Cadence": "PT1H"
+      },
+      "ObservedRegion": [
+        "Heliosphere.Outer",
+        "Heliosphere.Heliosheath"
+      ],
+      "Parameter": [
+        {
+          "Name": "Start Time of Data Record",
+          "ParameterKey": "StartTime",
+          "Description": "Start Time for the record given in year, day of\n\t\t\t\tyear, hour.",
+          "Cadence": "PT1H",
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "Year",
+                "Index": "1",
+                "ValidMin": "1977",
+                "ValidMax": "2008"
+              },
+              {
+                "Name": "Day of year",
+                "Index": "2",
+                "ValidMin": "1",
+                "ValidMax": "366"
+              },
+              {
+                "Name": "Hour of day",
+                "Index": "3",
+                "ValidMin": "0",
+                "ValidMax": "23"
+              }
+            ]
+          },
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Start Time of Data Record (Decimal Year)",
+          "ParameterKey": "DEC_YEAR",
+          "Description": "decimal year (double precision) = year + (doy - 1 + hr/24)/dpy (dpy=365 or 366)",
+          "Cadence": "PT1H",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Start Time of Data Record (Decimal Day of Year)",
+          "ParameterKey": "DEC_DOY",
+          "Description": "Decimal Day of Year (1.0-365.0 or 366.0)",
+          "Cadence": "PT1H",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "CH1 Flux",
+          "ParameterKey": "CH1_FLUX",
+          "Description": "Channel 1 Proton Flux",
+          "Cadence": "PT1H",
+          "Units": "Protons/(cm^2 sec ster MeV)",
+          "FillValue": "-1",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "EnergyFlux",
+            "EnergyRange": {
+              "Low": "0.57",
+              "High": "1.78",
+              "Units": "MeV"
+            }
+          }
+        },
+        {
+          "Name": "CH1 Flux Uncertainty",
+          "ParameterKey": "CH1_FLUXU",
+          "Description": "Channel 1 Proton Flux Statistical Uncertainty",
+          "Cadence": "PT1H",
+          "Units": "Protons/(cm^2 sec ster MeV)",
+          "FillValue": "-1",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": "Uncertainty",
+            "ParticleQuantity": "EnergyFlux",
+            "EnergyRange": {
+              "Low": "0.57",
+              "High": "1.78",
+              "Units": "MeV"
+            }
+          }
+        },
+        {
+          "Name": "CH16 Flux",
+          "ParameterKey": "CH16_FLUX",
+          "Description": "Channel 16 Proton Flux",
+          "Cadence": "PT1H",
+          "Units": "Protons/(cm^2 sec ster MeV)",
+          "FillValue": "-1",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "EnergyFlux",
+            "EnergyRange": {
+              "Low": "3.4",
+              "High": "17.6",
+              "Units": "MeV"
+            }
+          }
+        },
+        {
+          "Name": "CH16 Flux Uncertainty",
+          "ParameterKey": "CH16_FLUXU",
+          "Description": "Channel 16 Proton Flux Statistical Uncertainty",
+          "Cadence": "PT1H",
+          "Units": "Protons/(cm^2 sec ster MeV)",
+          "FillValue": "-1",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": "Uncertainty",
+            "ParticleQuantity": "EnergyFlux",
+            "EnergyRange": {
+              "Low": "3.4",
+              "High": "17.6",
+              "Units": "MeV"
+            }
+          }
+        },
+        {
+          "Name": "CH23 Flux",
+          "ParameterKey": "CH23_FLUX",
+          "Description": "Channel 23 Proton Flux",
+          "Cadence": "PT1H",
+          "Units": "Protons/(cm^2 sec ster MeV)",
+          "FillValue": "-1",
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "EnergyFlux",
+            "EnergyRange": {
+              "Low": "22.0",
+              "High": "31.0",
+              "Units": "MeV"
+            }
+          }
+        },
+        {
+          "Name": "CH23 Flux Uncertainty",
+          "ParameterKey": "CH23_FLUXU",
+          "Description": "Channel 23 Proton Flux Statistical Uncertainty",
+          "Cadence": "PT1H",
+          "Units": "Protons/(cm^2 sec ster MeV)",
+          "FillValue": "-1",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": "Uncertainty",
+            "ParticleQuantity": "EnergyFlux",
+            "EnergyRange": {
+              "Low": "22.0",
+              "High": "31.0",
+              "Units": "MeV"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

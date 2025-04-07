@@ -1,0 +1,339 @@
+{
+  "Spase": {
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_2_9.xsd",
+    "Version": "2.2.9",
+    "NumericalData": {
+      "ResourceID": "spase://NASA/NumericalData/AMPTE-IRM/Plasma/PT4.4S",
+      "ResourceHeader": {
+        "ResourceName": "AMPTE-IRM Plasma Data",
+        "ReleaseDate": "2020-07-07T21:14:16Z",
+        "Description": "AMPT-IRM spin-averaged plasma moments at ~4.4 second resolution.",
+        "Acknowledgement": "User will acknowledge the AMPTE-IRM 3-D Plasma Analyser team in any publication resulting from the use of these data.",
+        "Contact": [
+          {
+            "PersonID": "spase://SMWG/Person/Goetz.Paschmann",
+            "Role": "PrincipalInvestigator"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Lynn.M.Kistler",
+            "Role": "DataProducer"
+          }
+        ],
+        "InformationURL": {
+          "Name": "AMPTE/IRM page at University of New Hampshire",
+          "URL": "http://www-ssg.sr.unh.edu/index.html?tof/Missions/Ampte-irm",
+          "Description": "Information on the AMPTE/IRM data"
+        },
+        "PriorID": [
+          "spase://VMO/NumericalData/AMPTE_IRM/Plasma/PT4.4S",
+          "spase://VMO/NumericalData/AMPTE-IRM/Plasma/PT4.4S",
+          "spase://VSPO/NumericalData/AMPTE-IRM/Plasma/PT4.4S"
+        ]
+      },
+      "AccessInformation": {
+        "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/VHO-VMO",
+        "Availability": "Online",
+        "AccessRights": "Open",
+        "AccessURL": {
+          "Name": "AMPTE/IRM Data",
+          "URL": "https://vmo.nasa.gov/mission/ampte_irm/",
+          "Description": "A web-accessible directory hosting AMPTE/IRM spin-averaged magnetic field and plasma data."
+        },
+        "Format": "Text",
+        "Encoding": "ASCII"
+      },
+      "InstrumentID": "spase://SMWG/Instrument/AMPTE-IRM/Plasma",
+      "MeasurementType": [
+        "Ephemeris",
+        "ThermalPlasma"
+      ],
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "1984-08-22T12:58:03",
+          "StopDate": "1986-08-11T21:32:28"
+        },
+        "Cadence": "PT4.4S"
+      },
+      "ObservedRegion": [
+        "Earth.Magnetosheath",
+        "Earth.Magnetosphere",
+        "Earth.Magnetosphere.Magnetotail",
+        "Heliosphere.NearEarth"
+      ],
+      "Caveats": "The only moment which should be used in the solar wind is proton bulk velocity.\n         The spin period changed from ~4.3s to ~4.7s during the mission.\n         IRM time stamps are UT at time of ground receipt. Thus for time-critical science, the IRM times need to be corrected by subtracting the light travel time from the spacecraft to the ground-station (at Weilheim in Germany apart special events requiring NASA DSN). For the transmission frequencies used, the vacuum light speed is appropriate. At apogee, this correction is more than a third of a second. There are no other known time delays.",
+      "Parameter": [
+        {
+          "Name": "Time",
+          "ParameterKey": "Column 1",
+          "Description": "The center of the accumulation time interval for the data point, in DA/MO/YR HR:MI:SS format.",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "DT",
+          "ParameterKey": "Column 2",
+          "Description": "The accumulation time for the measurement, normally one spin",
+          "Units": "s",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Xgse",
+          "ParameterKey": "Column 3",
+          "Description": "The X component of spacecraft location in GSE, in Re (Re=6378 km)",
+          "Units": "Re",
+          "UnitsConversion": "6.378e6>m",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GSE"
+          },
+          "Structure": {
+            "Size": "1",
+            "Element": {
+              "Name": "Xgse",
+              "Qualifier": "Component.I",
+              "Index": "1"
+            }
+          },
+          "Support": {
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Ygse",
+          "ParameterKey": "Column 4",
+          "Description": "The Y component of spacecraft location in GSE, in Re (Re=6378 km)",
+          "Units": "Re",
+          "UnitsConversion": "6.378e6>m",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GSE"
+          },
+          "Structure": {
+            "Size": "1",
+            "Element": {
+              "Name": "Ygse",
+              "Qualifier": "Component.J",
+              "Index": "1"
+            }
+          },
+          "Support": {
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Zgse",
+          "ParameterKey": "Column 5",
+          "Description": "The Z component of spacecraft location in GSE, in Re (Re=6378 km)",
+          "Units": "Re",
+          "UnitsConversion": "6.378e6>m",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GSE"
+          },
+          "Structure": {
+            "Size": "1",
+            "Element": {
+              "Name": "Zgse",
+              "Qualifier": "Component.K",
+              "Index": "1"
+            }
+          },
+          "Support": {
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Rgse",
+          "ParameterKey": "Column 6",
+          "Description": "Radial distance in SM, in Re (Re=6378 km)",
+          "Units": "Re",
+          "UnitsConversion": "6.378e6>m",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "SM"
+          },
+          "Support": {
+            "Qualifier": "Magnitude",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "MLAT",
+          "ParameterKey": "Column 7",
+          "Description": "Magnetic latitude in SM, in degrees",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "SM"
+          },
+          "Support": {
+            "Qualifier": "DirectionAngle.ElevationAngle",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "MLT",
+          "ParameterKey": "Column 8",
+          "Description": "Magnetic Local Time in SM, in hours",
+          "Units": "hour",
+          "UnitsConversion": "15>deg",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Spherical",
+            "CoordinateSystemName": "SM"
+          },
+          "Support": {
+            "Qualifier": "DirectionAngle.AzimuthAngle",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Np",
+          "ParameterKey": "Column 9",
+          "Description": "Number density of protons",
+          "Units": "cm^-3",
+          "UnitsConversion": "1e6>m^-3",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": [
+              "Moment",
+              "Scalar"
+            ],
+            "ParticleQuantity": "NumberDensity"
+          }
+        },
+        {
+          "Name": "Vp",
+          "Description": "Velocity of protons",
+          "Units": "km/s",
+          "UnitsConversion": "1.0e3>m/s",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GSE"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "Vx_p",
+                "Qualifier": "Component.I",
+                "Index": "1",
+                "ParameterKey": "Column 10"
+              },
+              {
+                "Name": "Vy_p",
+                "Qualifier": "Component.J",
+                "Index": "2",
+                "ParameterKey": "Column 11"
+              },
+              {
+                "Name": "Vz_p",
+                "Qualifier": "Component.K",
+                "Index": "3",
+                "ParameterKey": "Column 12"
+              }
+            ]
+          },
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": [
+              "Moment",
+              "Vector"
+            ],
+            "ParticleQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "Tp",
+          "ParameterKey": "Column 13",
+          "Description": "Temperature of protons",
+          "Units": "MK",
+          "UnitsConversion": "1e6>K",
+          "Particle": {
+            "ParticleType": "Proton",
+            "Qualifier": [
+              "Moment",
+              "Scalar"
+            ],
+            "ParticleQuantity": "Temperature"
+          }
+        },
+        {
+          "Name": "Ne",
+          "ParameterKey": "Column 14",
+          "Description": "Number density of electrons",
+          "Units": "cm^-3",
+          "UnitsConversion": "1e6>m^-3",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": [
+              "Moment",
+              "Scalar"
+            ],
+            "ParticleQuantity": "NumberDensity"
+          }
+        },
+        {
+          "Name": "Ve",
+          "Description": "Velocity of electrons",
+          "Caveats": "The electron velocity is rarely correct, due to photoeletrons and/or missing real electrons at low energies. Please do not use for quantitative work.",
+          "Units": "km/s",
+          "UnitsConversion": "1.0e3>m/s",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GSE"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "Vx_e",
+                "Qualifier": "Component.I",
+                "Index": "1",
+                "ParameterKey": "Column 15"
+              },
+              {
+                "Name": "Vy_e",
+                "Qualifier": "Component.J",
+                "Index": "2",
+                "ParameterKey": "Column 16"
+              },
+              {
+                "Name": "Vz_e",
+                "Qualifier": "Component.K",
+                "Index": "3",
+                "ParameterKey": "Column 17"
+              }
+            ]
+          },
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": [
+              "Moment",
+              "Vector"
+            ],
+            "ParticleQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "Te",
+          "ParameterKey": "Column 18",
+          "Description": "Temperature of electrons",
+          "Units": "MK",
+          "UnitsConversion": "1e6>K",
+          "Particle": {
+            "ParticleType": "Electron",
+            "Qualifier": [
+              "Moment",
+              "Scalar"
+            ],
+            "ParticleQuantity": "Temperature"
+          }
+        }
+      ]
+    }
+  }
+}
