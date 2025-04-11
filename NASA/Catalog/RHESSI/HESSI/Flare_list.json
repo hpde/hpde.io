@@ -1,0 +1,150 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema  http://www.spase-group.org/data/schema/spase-2_7_0.xsd",
+    "Version": "2.7.0",
+    "Catalog": {
+      "ResourceID": "spase://NASA/Catalog/NASA/RHESSI/HESSI/Flare_list",
+      "NamingAuthority": "NASA",
+      "ResourceType": "Catalog",
+      "ResourceHeader": {
+        "ResourceName": "RHESSI Flare List",
+        "ReleaseDate": "2025-04-10T18:03:25",
+        "RevisionHistory": {
+          "RevisionEvent": {
+            "ReleaseDate": "2025-04-11T14:41:38",
+            "Note": "Event list was registered 2020-07-07 21:15:17Z as numerical data with partial description. Registration completed by OYU Apr 2025."
+          }
+        },
+        "Description": "The RHESSI X-ray-based flare list is obtained by comparing the observing summary count rate in the 6 to 12 keV energy band to a threshold. The count rate threshold is determined from the background level; which is obtained using a 60 second running average. For an interval to be considered as a flare candidate, the count rate must be greater than 3*sigma above the background level. Variations in the count rate due to changes in attenuator state or decimation state are taken into account by use of the \"corrected\" count rate method, which empirically determines the corrections.\nThe flare list is created during quicklook processing. The full list includes some events which are not necessarily of solar origin.\nThe complete description can be found at https://hesperia.gsfc.nasa.gov/rhessi3/docs/qlook/hsi_flare_list.html.",
+        "Contact": [
+          {
+            "PersonID": "spase://SMWG/Person/A.Kimberley.Tolbert",
+            "Role": "DataProducer"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Olga.Y.Uritskaya",
+            "Role": "MetadataContact"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Gordon.D.Holman\t",
+            "Role": "GeneralContact"
+          }
+        ],
+        "InformationURL": {
+          "URL": "https://hesperia.gsfc.nasa.gov/rhessi3/docs/qlook/hsi_flare_list.html"
+        },
+        "PriorID": [
+          "spase://VSPO/NumericalData/P_RHESSI_HDR_EVENTLIST",
+          "spase://VSPO/NumericalData/RHESSI/HESSI/EVENTLIST",
+          "spase://NASA/NumericalData/RHESSI/HESSI/EVENTLIST"
+        ]
+      },
+      "AccessInformation": {
+        "RepositoryID": "spase://SMWG/Repository/SDAC",
+        "AccessURL": {
+          "URL": "https://umbra.nascom.nasa.gov/rhessi/hessidata/dbase/hessi_flare_list.txt"
+        },
+        "Format": "Text"
+      },
+      "InstrumentID": "spase://SMWG/Instrument/RHESSI/HESSI",
+      "PhenomenonType": "SolarFlare",
+      "TimeSpan": {
+        "StartDate": "2002-02-12T02:15:24",
+        "StopDate": "2018-03-30T05:10:12"
+      },
+      "Parameter": [
+        {
+          "Name": "Flare",
+          "Support": {
+            "SupportQuantity": "Housekeeping"
+          }
+        },
+        {
+          "Name": "Start time",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Peak",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "End",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Dur",
+          "Units": "s",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Peak",
+          "Description": "Peak Rate:  peak counts/second in energy range 6-12 keV, averaged over active collimators, including background.",
+          "Units": "c/s",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Total Counts",
+          "Description": "Total Counts:  counts in energy range 6-12 keV integrated over duration of flare summed over all subcollimators, including background.",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Energy",
+          "Description": "Energy:  the highest energy band in which the flare was observed.",
+          "Units": "keV",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "X Pos",
+          "Units": "asec",
+          "Support": {
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Y Pos",
+          "Units": "asec",
+          "Support": {
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Radial",
+          "Description": "Radial Distance:  distance from Sun center.",
+          "Units": "asec",
+          "Support": {
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "AR",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Flags",
+          "Description": "Quality Codes: Qn, where n is the total number of data gap, SAA, particle, eclipse or decimation flags set for event.     n ranges from 0 to 11.  Use care when analyzing the data when the quality is not zero.\nFlare Flag Codes: \n  a0 - In attenuator state 0 (None) sometime during flare\n  a1 - In attenuator state 1 (Thin) sometime during flare\n  a2 - In attenuator state 2 (Thick) sometime during flare\n  a3 - In attenuator state 3 (Both) sometime during flare\n  An - Attenuator state (0=None, 1=Thin, 2=Thick, 3=Both) at peak of flare\n  DF - Front segment counts were decimated sometime during flare\n  DR - Rear segment counts were decimated sometime during flare\n  ED - Spacecraft eclipse (night) sometime during flare\n  EE - Flare ended in spacecraft eclipse (night)\n  ES - Flare started in spacecraft eclipse (night)\n  FE - Flare ongoing at end of file\n  FR - In Fast Rate Mode\n  FS - Flare ongoing at start of file\n  GD - Data gap during flare\n  GE - Flare ended in data gap\n  GS - Flare started in data gap\n  MR - Spacecraft in high-latitude zone during flare\n  NS - Non-solar event\n  PE - Particle event: Particles are present\n  PS - Possible Solar Flare; in front detectors, but no position\n  Pn - Position Quality: P0 = Position is NOT valid, P1 = Position is valid\n  Qn - Data Quality: Q0 = Highest Quality, Q11 = Lowest Quality\n  SD - Spacecraft was in SAA sometime during flare\n  SE - Flare ended when spacecraft was in SAA\n  SS - Flare started when spacecraft was in SAA\nEvents which have no position and show up mostly in the front detectors, but were not able to be imaged are flagged as \"PS\".\nEvents which do not have valid position are only confirmed to be non-solar if the NS flag is set.",
+          "Support": {
+            "SupportQuantity": "DataQuality"
+          }
+        }
+      ]
+    }
+  }
+}
