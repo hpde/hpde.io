@@ -6,7 +6,7 @@
     <ResourceHeader>
       <ResourceName>Cassini - MAG - orbit saturn - 0.02 sec</ResourceName>
       <AlternateName>high resolution MAG data</AlternateName>
-      <ReleaseDate>2024-10-02T19:29:38Z</ReleaseDate>
+      <ReleaseDate>2024-10-02T17:29:39Z</ReleaseDate>
       <Description>High-resolution magnetic field data from the Cassini magnetometer during the Saturn orbital phase in KRTP coordinates obtained from NASA/PDS plasma node</Description>
       <Contact>
         <PersonID>spase://CNES/Person/CDPP-AMDA/Michele.Dougherty</PersonID>
@@ -75,7 +75,52 @@
     <Caveats>These data contain persistent noise signals at 0.2, 8, 16 Hz, and associated  
 harmonics. This noise was not observed during ground testing of the           
 instruments and is anticipated to be interference arising from the spacecraft.
-Removal of these signals is at the user's discretion.</Caveats>
+Removal of these signals is at the user's discretion.
+
+
+There are errors in some of the Cassini MAG data in this data set  
+due to incorrect handling of leapseconds. The errors are as follows:                                                                           
+* 2012-07-01 00:00:00.000 - 2015-07-01 00:00:00.000 - Error : +1 s
+* 2015-07-01 00:00:00.000 - 2017-01-01 00:00:00.000 - Error : +2 s
+* 2017-01-01 00:00:00.000 - End of Mission - Error : +13 s
+                                                                              
+The time tags can be corrected by subtracting the error from current time     
+values. This error was created during the conversion of the data from binary  
+to ASCII performed at the PDS/PPI node. It does not exist in the original     
+binary data files available from the Cassini MAG team. The PPI node will      
+correct this error in it's data holdings at a future date.
+
+
+Some versions of these data were determined to contain timing errors,         
+including both backwards and repeated times. These timing errors have not     
+been corrected in the data files.
+A full list of all files, and intervals containing timing errors is provided  
+below: 
+* 2003-09-11T00:02:02.439	2003-09-11T00:02:18.390	backwards
+* 2005-12-31T15:48:07.169	2005-12-31T23:59:59.888	backwards
+* 2006-05-30T00:19:41.029	2006-05-30T00:20:04.996	backwards
+* 2007-08-01T07:17:10.921	2007-08-01T07:17:18.855	backwards
+* 2007-12-19T00:00:01.631	2007-12-19T00:35:28.919	backwards
+* 2007-12-27T00:00:00.033	2007-12-27T00:00:20.000	backwards
+* 2008-03-12T00:00:11.701	2008-03-12T00:00:19.636	backwards
+* 2008-05-04T00:00:13.407	2008-05-04T00:00:29.276	backwards
+* 2008-05-27T00:00:05.382	2008-05-27T00:00:21.251	backwards
+* 2009-01-24T00:00:03.583	2009-01-24T00:00:07.550	backwards
+* 2009-02-21T00:00:15.395	2009-02-21T00:00:23.330	backwards
+* 2009-04-28T00:00:06.869	2009-04-28T00:00:22.804	backwards
+* 2009-07-24T00:00:14.454	2009-07-24T00:00:22.388	backwards
+* 2009-09-28T09:41:09.839	2009-09-28T09:41:29.806	backwards
+* 2009-12-19T00:05:02.755	2009-12-19T00:05:06.722	backwards
+* 2010-04-29T00:00:00.632	2010-04-29T00:00:12.099	backwards
+* 2011-11-19T00:00:02.492	2011-11-19T00:00:18.427	backwards
+* 2012-04-16T00:00:01.932	2012-04-16T00:00:09.866	backwards
+* 2012-09-26T13:55:34.270	2012-09-26T13:55:58.204	backwards
+* 2013-06-11T00:00:02.033	2013-06-11T00:00:17.902	backwards
+* 2015-01-15T00:00:02.704	2015-01-15T00:00:18.573	backwards
+* 2015-11-07T00:00:04.341	2015-11-07T00:00:20.276	backwards
+* 2016-06-07T00:00:15.522	2016-06-07T09:21:56.395	backwards
+* 2017-03-12T17:00:26.474	2017-03-12T18:21:12.765	backwards
+</Caveats>
     <Parameter>
       <Name>b_krtp</Name>
       <ParameterKey>cass_b_krtphr</ParameterKey>
