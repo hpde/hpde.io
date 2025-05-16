@@ -1,21 +1,33 @@
-<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema  https://www.spase-group.org/data/schema/spase-2_4_0.xsd">
- <Version>2.5.0</Version>
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema  https://www.spase-group.org/data/schema/spase-2_7_0.xsd">
+ <Version>2.7.0</Version>
  <NumericalData>
   <ResourceID>spase://CSA/NumericalData/GO-ABOVE/VLF/L1/IslandLake/PT0.000006S</ResourceID>
+  <NamingAuthority>CSA</NamingAuthority>
+  <ResourceType>NumericalData</ResourceType>
   <ResourceHeader>
-   <ResourceName>ABOVE VLF Level-1 time series uncalibrated CDF - Island Lake (isll)</ResourceName>
-   <ReleaseDate>2023-06-21T17:04:35</ReleaseDate>
+    <ResourceName>ABOVE VLF Level-1 time series uncalibrated CDF -
+   Island Lake (isll)</ResourceName>
+   <ReleaseDate>2025-04-07T17:52:37</ReleaseDate>
    <RevisionHistory>
-    <RevisionEvent>
-     <ReleaseDate>2022-10-25T11:50:20</ReleaseDate>
-     <Note>Added Name field to the AccessURL and modified RepositoryID</Note>
-    </RevisionEvent>
+     <RevisionEvent>
+       <ReleaseDate>2021-10-05T17:04:35</ReleaseDate>
+       <Note>Initial release of metadata</Note>
+     </RevisionEvent>
+     <RevisionEvent>
+       <ReleaseDate>2022-10-25T11:50:20</ReleaseDate>
+       <Note>Added Name field to the AccessURL and modified RepositoryID</Note>
+     </RevisionEvent>
      <RevisionEvent>
        <ReleaseDate>2022-12-22T11:50:20</ReleaseDate>
        <Note>Added lat/lon to Description, added additional parameters (ClockSpeed,
-	      SampleRate), added parameter keys, modified parameter description in
-	      Uncalibrated B for which column represented
-	      which antenna orientation.</Note>
+       SampleRate), added parameter keys, modified parameter description in
+       Uncalibrated B for which column represented
+       which antenna orientation.</Note>
+     </RevisionEvent>
+     <RevisionEvent>
+       <ReleaseDate>2025-04-07T17:52:37</ReleaseDate>
+       <Note>Updated to SPASE 2.7.0 with additional tags. Added
+       SpectralRange, ObservedRegion. LNG</Note>
      </RevisionEvent>
    </RevisionHistory>
   <Description>ABOVE Full resolution timeseries, 0.2-75kHz magnetic
@@ -62,6 +74,8 @@
    </TimeSpan>
    <Cadence>PT0.000006S</Cadence>
   </TemporalDescription>
+  <SpectralRange>RadioFrequency</SpectralRange>
+  <ObservedRegion>Earth.NearSurface.Ionosphere</ObservedRegion>
   <Parameter>
     <Name>Uncalibrated B</Name>
     <ParameterKey>abv_raw</ParameterKey>
@@ -80,10 +94,12 @@
    </Wave>
   </Parameter>
   <Parameter>
-    <Name>Epoch</Name>
+    <Name>abv_raw_epoch</Name>
     <ParameterKey>abv_raw_epoch</ParameterKey>
    <Description>CDF Epoch Time</Description>
-   <Support>
+   <Units>ns</Units>
+   <UnitsConversion>1.0E-09>s</UnitsConversion>
+  <Support>
     <SupportQuantity>Temporal</SupportQuantity>
    </Support>
   </Parameter>

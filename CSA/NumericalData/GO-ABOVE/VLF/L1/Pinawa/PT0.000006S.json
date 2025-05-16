@@ -2,22 +2,32 @@
   "Spase": {
     "xmlns": "http://www.spase-group.org/data/schema",
     "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
-    "xsi:schemaLocation": "http://www.spase-group.org/data/schema  https://www.spase-group.org/data/schema/spase-2_4_0.xsd",
-    "Version": "2.5.0",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema  https://www.spase-group.org/data/schema/spase-2_7_0.xsd",
+    "Version": "2.7.0",
     "NumericalData": {
       "ResourceID": "spase://CSA/NumericalData/GO-ABOVE/VLF/L1/Pinawa/PT0.000006S",
+      "NamingAuthority": "CSA",
+      "ResourceType": "NumericalData",
       "ResourceHeader": {
         "ResourceName": "ABOVE VLF Level-1 time series uncalibrated CDF - Pinawa (pina)",
-        "ReleaseDate": "2021-10-05T17:04:35",
+        "ReleaseDate": "2025-04-07T17:56:37",
         "RevisionHistory": {
           "RevisionEvent": [
             {
-              "ReleaseDate": "2023-06-21T17:04:35",
+              "ReleaseDate": "2021-10-05T17:04:35",
+              "Note": "Initial release of metadata"
+            },
+            {
+              "ReleaseDate": "2022-10-25T11:50:20",
               "Note": "Added Name field to the AccessURL and modified RepositoryID"
             },
             {
               "ReleaseDate": "2022-12-22T11:50:20",
               "Note": "Added lat/lon to Description, added additional parameters (ClockSpeed,\r\n\t      SampleRate), added parameter keys, modified parameter description in\r\n\t      Uncalibrated B for which column represented\r\n\t      which antenna orientation."
+            },
+            {
+              "ReleaseDate": "2025-04-07T17:56:37",
+              "Note": "Updated to SPASE 2.7.0 with additional tags. Added\r\n       SpectralRange, ObservedRegion. LNG"
             }
           ]
         },
@@ -52,6 +62,8 @@
         },
         "Cadence": "PT0.000006S"
       },
+      "SpectralRange": "RadioFrequency",
+      "ObservedRegion": "Earth.NearSurface.Ionosphere",
       "Parameter": [
         {
           "Name": "Uncalibrated B",
@@ -69,9 +81,11 @@
           }
         },
         {
-          "Name": "Epoch",
+          "Name": "abv_raw_epoch",
           "ParameterKey": "abv_raw_epoch",
           "Description": "CDF Epoch Time",
+          "Units": "ns",
+          "UnitsConversion": "1.0E-09>s",
           "Support": {
             "SupportQuantity": "Temporal"
           }

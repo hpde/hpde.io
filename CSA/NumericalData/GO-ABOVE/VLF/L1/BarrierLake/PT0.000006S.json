@@ -2,26 +2,36 @@
   "Spase": {
     "xmlns": "http://www.spase-group.org/data/schema",
     "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
-    "xsi:schemaLocation": "http://www.spase-group.org/data/schema  https://www.spase-group.org/data/schema/spase-2_4_0.xsd",
-    "Version": "2.5.0",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema  https://www.spase-group.org/data/schema/spase-2_7_0.xsd",
+    "Version": "2.7.0",
     "NumericalData": {
       "ResourceID": "spase://CSA/NumericalData/GO-ABOVE/VLF/L1/BarrierLake/PT0.000006S",
+      "NamingAuthority": "CSA",
+      "ResourceType": "NumericalData",
       "ResourceHeader": {
         "ResourceName": "ABOVE VLF Level-1 time series uncalibrated CDF - Barrier Lake (barr)",
-        "ReleaseDate": "2023-06-21T17:04:35",
+        "ReleaseDate": "2025-04-07T16:54:00",
         "RevisionHistory": {
           "RevisionEvent": [
+            {
+              "ReleaseDate": "2021-10-05T17:04:35",
+              "Note": "Initial release of metadata"
+            },
             {
               "ReleaseDate": "2022-10-25T11:50:20",
               "Note": "Added Name field to the AccessURL and modified RepositoryID"
             },
             {
               "ReleaseDate": "2022-12-22T11:50:20",
-              "Note": "Added lat/lon to Description, added additional parameters (ClockSpeed,\r\n\t      SampleRate), added parameter keys, modified parameter description in\r\n\t      Uncalibrated B for which column represented\r\n\t      which antenna orientation."
+              "Note": "Added lat/lon to Description, added additional parameters (ClockSpeed,\r\n\t  SampleRate), added parameter keys, modified parameter description in\r\n\t  Uncalibrated B for which column represented\r\n\t  which antenna orientation."
+            },
+            {
+              "ReleaseDate": "2025-04-07T16:54:00",
+              "Note": "Updated to SPASE 2.7.0 with additional tags. Added\r\n\t  SpectralRange, ObservedRegion. LNG"
             }
           ]
         },
-        "Description": "ABOVE Full resolution timeseries, 0.2-75kHz magnetic\r\n   field at Barrier Lake, Alberta, Lat: 51.01, Lon: -115.05. These Level-1 uncalibrated CDF files are created for each of the\r\n   stations in the GO-ABOVE (Geospace Observatory - Array for\r\n   Broadband Observations of VLF/ELF Emissions) array. The filenames\r\n   contain the date and time as well as an abbreviation for the\r\n   station.\r\n\r\n   GO-ABOVE is a ground‐based array of VLF radio receivers located across Canada and run as a\r\n   part of the Canadian Space Agency's Geospace Observatory\r\n   (GO). The ABOVE instruments are situated in two north‐south chains\r\n   in Alberta and Manitoba, through the region roughly from L = 3\r\n   through L = 8.  The ABOVE instruments monitor electromagnetic waves in a\r\n   frequency range from 100 Hz to 75 kHz, covering chorus and hiss\r\n   emissions as well as U.S. Navy transmitters near 25 kHz. The\r\n   absolute timing accuracy is 10 ns, from GPS. ",
+        "Description": "ABOVE Full resolution timeseries, 0.2-75kHz magnetic\r\n      field at Barrier Lake, Alberta, Lat: 51.01, Lon: -115.05. These Level-1 uncalibrated CDF files are created for each of the\r\n      stations in the GO-ABOVE (Geospace Observatory - Array for\r\n      Broadband Observations of VLF/ELF Emissions) array. The filenames\r\n      contain the date and time as well as an abbreviation for the\r\n      station.\r\n      \r\n      GO-ABOVE is a ground‐based array of VLF radio receivers located across Canada and run as a\r\n      part of the Canadian Space Agency's Geospace Observatory\r\n      (GO). The ABOVE instruments are situated in two north‐south chains\r\n      in Alberta and Manitoba, through the region roughly from L = 3\r\n      through L = 8.  The ABOVE instruments monitor electromagnetic waves in a\r\n      frequency range from 100 Hz to 75 kHz, covering chorus and hiss\r\n      emissions as well as U.S. Navy transmitters near 25 kHz. The\r\n      absolute timing accuracy is 10 ns, from GPS. ",
         "Acknowledgement": "Please include the following in any publications using this data: Infrastructure funding for ABOVE is provided by the Canada Foundation for Innovation and the province of Alberta. ABOVE data used in this work was collected with the support of the Canadian Space Agency Geospace Observatory (GO Canada) contribution initiative.",
         "Contact": [
           {
@@ -52,6 +62,8 @@
         },
         "Cadence": "PT0.000006S"
       },
+      "SpectralRange": "RadioFrequency",
+      "ObservedRegion": "Earth.NearSurface.Ionosphere",
       "Parameter": [
         {
           "Name": "Uncalibrated B",
@@ -69,9 +81,11 @@
           }
         },
         {
-          "Name": "Epoch",
+          "Name": "abv_raw_epoch",
           "ParameterKey": "abv_raw_epoch",
           "Description": "CDF Epoch Time",
+          "Units": "ns",
+          "UnitsConversion": "1.0E-09>s",
           "Support": {
             "SupportQuantity": "Temporal"
           }

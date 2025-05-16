@@ -1,11 +1,17 @@
-<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema  http://www.spase-group.org/data/schema/spase-2_5_0.xsd">
-   <Version>2.5.0</Version>
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema  http://www.spase-group.org/data/schema/spase-2_7_0.xsd">
+   <Version>2.7.0</Version>
    <NumericalData>
-      <ResourceID>spase://CSA/NumericalData/GO-ABOVE/VLF/L1/Athabasca/PT0.000006S</ResourceID>
+     <ResourceID>spase://CSA/NumericalData/GO-ABOVE/VLF/L1/Athabasca/PT0.000006S</ResourceID>
+     <NamingAuthority>CSA</NamingAuthority>
+     <ResourceType>NumericalData</ResourceType>
       <ResourceHeader>
          <ResourceName>ABOVE VLF Level-1 time series uncalibrated CDF - Athabasca (atha)</ResourceName>
-         <ReleaseDate>2023-06-21T17:04:35</ReleaseDate>
+         <ReleaseDate>2025-04-07T16:44:00</ReleaseDate>
          <RevisionHistory>
+	   <RevisionEvent>
+	     <ReleaseDate>2021-10-05T17:04:35</ReleaseDate>
+	     <Note>Initial release of metadata</Note>
+	   </RevisionEvent>
             <RevisionEvent>
                <ReleaseDate>2022-10-25T11:50:20</ReleaseDate>
                <Note>Added Name field to the AccessURL and modified RepositoryID</Note>
@@ -17,6 +23,11 @@
 	      Uncalibrated B for which column represented
 	      which antenna orientation.</Note>
             </RevisionEvent>
+	    <RevisionEvent>
+	      <ReleaseDate>2025-04-07T16:44:00</ReleaseDate>
+	      <Note>Updated to SPASE 2.7.0 with additional tags. Added
+	      SpectralRange, ObservedRegion. LNG</Note>
+	    </RevisionEvent>
          </RevisionHistory>
          <Description>ABOVE Full resolution timeseries, 0.2-75kHz magnetic
 	 field at Athabasca, Alberta, Lat: 54.60, Lon: -113.65.
@@ -62,6 +73,8 @@
          </TimeSpan>
          <Cadence>PT0.000006S</Cadence>
       </TemporalDescription>
+       <SpectralRange>RadioFrequency</SpectralRange>
+      <ObservedRegion>Earth.NearSurface.Ionosphere</ObservedRegion>
       <Parameter>
          <Name>Uncalibrated B</Name>
          <ParameterKey>abv_raw</ParameterKey>
@@ -81,10 +94,12 @@
          </Wave>
       </Parameter>
       <Parameter>
-         <Name>Epoch</Name>
+         <Name>abv_raw_epoch</Name>
          <ParameterKey>abv_raw_epoch</ParameterKey>
          <Description>CDF Epoch Time</Description>
-         <Support>
+ 	 <Units>ns</Units>
+	 <UnitsConversion>1.0E-09>s</UnitsConversion>
+        <Support>
             <SupportQuantity>Temporal</SupportQuantity>
          </Support>
       </Parameter>
