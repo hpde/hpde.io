@@ -1,12 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema  https://www.spase-group.org/data/schema/spase-2_3_2.xsd">
-  <Version>2.3.2</Version>
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema  https://www.spase-group.org/data/schema/spase-2_7_0.xsd">
+  <Version>2.7.0</Version>
   <NumericalData>
     <ResourceID>spase://NASA/NumericalData/ISIS1/SFS/TOPS</ResourceID>
     <ResourceHeader>
       <ResourceName>ISIS 1 CRC Electron Density Profiles</ResourceName>
       <ReleaseDate>2021-04-27T15:38:11Z</ReleaseDate>
-      <Description>This data set, provided by the Communications Research Centre (CRC) in Ottawa, Canada, consists of electron density profiles for the ionosphere above the F2 maximum (topside ionosphere). The data are computed from digital values of frequency and virtual height, scaled from ionograms that are measured by the ISIS 1 (International Satellites for Ionospheric Studies) Swept-Frequency Sounder. The data are ordered chronologically. Telemetry stations are not identified, but satellite location, Greenwich mean time of observation, solar zenith angle at the satellite, dip latitude at the satellite, total electron content down to the lowest height of topside signal reflection (normally near 300 km), and other relevant information is noted with each profile. The format gives sequences of numbers for each point scaled from the ionogram. These sequences include electron density at the successive points, and the coefficients a2, b3, b4, b5, etc. from which geometric heights can be calculated, using formulas 40 and 41 in J. E. Jackson, "The reduction of topside ionograms to electron-density profiles," Proceedings of the IEEE., p. 960, June 1969. These formulas can also be used to calculate interpolated density-height values. A CRC interpolation program (available at NSSDC) can be used with this data set.  (</Description>
+      <RevisionHistory>
+        <RevisionEvent>
+          <ReleaseDate>2021-04-27T16:38:11</ReleaseDate>
+          <Note>Initial release of metadata.</Note>
+        </RevisionEvent>
+       <RevisionEvent>
+          <ReleaseDate>2025-06-30T16:47:56</ReleaseDate>
+          <Note>Added parameter descriptions, added information URL to the Jackson paper, added contact, added keywords, added more Description text, updated Access URL to  point to the crc_ne_ascii and crc_ne_cdf directories, raised the description to 2.7.0. LNG</Note>
+        </RevisionEvent>
+      </RevisionHistory>
+      <Description>This data set, provided by the Communications Research Centre (CRC) in Ottawa, Canada, consists of electron density profiles for the ionosphere above the F2 maximum (topside ionosphere). The data are computed from digital values of frequency and virtual height, scaled from ionograms that are measured by the ISIS 1 (International Satellites for Ionospheric Studies) Swept-Frequency Sounder. The data are ordered chronologically. Telemetry stations are not identified, but satellite location, Greenwich mean time of observation, solar zenith angle at the satellite, dip latitude at the satellite, total electron content down to the lowest height of topside signal reflection (normally near 300 km), and other relevant information is noted with each profile. The format gives sequences of numbers for each point scaled from the ionogram. These sequences include electron density at the successive points, and the coefficients a2, b3, b4, b5, etc. from which geometric heights can be calculated, using formulas 40 and 41 in J. E. Jackson, "The reduction of topside ionograms to electron-density profiles," Proceedings of the IEEE., p. 960, June 1969. These formulas can also be used to calculate interpolated density-height values. A CRC interpolation program (available at NSSDC) can be used with this data set.
+
+
+      Format Description (ASCII):
+
++------------------------------------------------+
+| M |              I5 |     number of records |
++------------------------------------------------+
+
+each record consists of a header and then the electron density profile data
+
+HEADER:
+
++------------------------------------------------+
+|itype  |         I1 |     spacecraft identifier |
+|iquality |        I2 |     quality index* |
+|date |           I6 |     yddd            year and day of year |
+|time  |           I6 |     hhmmss  hour minutes and seconds |
+|long |           F6.1 |   longitude in degrees |
+|lat |             F6.2 |   latitude in degrees |
+|dip |            F6.2 |   magnetic inclination (IGRF) |
+|L  |             F5.2 |   L value |
+|xhi |            F6.1 |   solar zenith angle at 100 km |
+|Rz12 |           I3 |      12-month-running mean of sunspot number |
+|IG12 |           I3 |     12-month-running mean of IG index |
+|rtec |            F6.2 |    TEC found in data set (units?) |
+|ln(NmF2) |       F7.4 |   IRI value for F2 peak in cm-3 |
+|hmF2  |          F5.1 |    IRI value for F2 peak height in km |
+|TEC_IRI | 	    F6.2 |   IRI value for TEC in TECU |
+|n |              I3 |      number of data points |
++------------------------------------------------+
+
+ (*) Quality index ranges from 0 (best) to 10 (worst), actually 4 to 10 for these 
+   data sets, with a most likely value of 6. 
+
+
+
+PROFILE DATA:
+
++---------------------------------------+
+|n height values: |        14I5 |     h/km*10 |
+|n density values: |       10I7 |     ln(Ne/cm-3)*100000 |
++---------------------------------------+
+
+starting with the highest value (satellite height).
+
+      </Description>
+      <Acknowledgement>Please acknowledge the NASA Space Physics Data Facility and the instrument's Principal Investigator for data usage.</Acknowledgement>
+      <Contact>
+        <PersonID>spase://SMWG/Person/John.E.Jackson</PersonID>
+        <Role>FormerPI</Role>
+      </Contact>
       <Contact>
         <PersonID>spase://SMWG/Person/Elizabeth.D.Hewens</PersonID>
         <Role>GeneralContact</Role>
@@ -15,6 +76,20 @@
         <PersonID>spase://SMWG/Person/Dieter.K.Bilitza</PersonID>
         <Role>GeneralContact</Role>
       </Contact>
+      <Contact>
+        <PersonID>spase://SMWG/Person/Leonard.N.Garcia</PersonID>
+        <Role>MetadataContact</Role>
+      </Contact>
+       <InformationURL>
+        <Name> J. E. Jackson, "The reduction of topside ionograms to electron-density profiles", Proceedings of the IEEE., p. 960, June 1969</Name>
+        <URL>https://doi.org/10.1109/PROC.1969.7140</URL>
+        <Description>Landing page for the Jackson paper</Description>
+      </InformationURL>
+      <InformationURL>
+        <Name>ISIS/Alouette Topside Sounder Data Restoration Project</Name>
+        <URL>https://nssdc.gsfc.nasa.gov/space/isis/isis-status.html</URL>
+        <Description>Website that provides access to additional background information, software, publications and images</Description>
+      </InformationURL>
       <PriorID>spase://VSPO/NumericalData/ISIS 1/SFS/NEPROF_TOPS</PriorID>
       <PriorID>spase://VSPO/NumericalData/ISIS1/SFS/TOPS</PriorID>
     </ResourceHeader>
@@ -27,17 +102,24 @@
         <URL>ftps://spdf.gsfc.nasa.gov/pub/data/isis/topside_sounder/</URL>
       </AccessURL>
       <AccessURL>
-        <Name>HTTPS from SPDF</Name>
-        <URL>https://spdf.gsfc.nasa.gov/pub/data/isis/topside_sounder/</URL>
+        <Name>HTTPS from SPDF (CDF)</Name>
+	<URL>https://spdf.gsfc.nasa.gov/pub/data/isis/topside_sounder/crc_ne_profile_cdf/isis1/</URL>
         <Description>In CDF via HTTP from CDAWeb</Description>
       </AccessURL>
       <Format>CDF</Format>
-    </AccessInformation>
+      <AccessDirectoryTemplate>https://spdf.gsfc.nasa.gov/pub/data/isis/topside_sounder/crc_ne_profile_cdf/isis1/$Y/</AccessDirectoryTemplate>
+      <AccessFilenameTemplate>i1_neprof_tops_$Y$m$d_v$v.cdf</AccessFilenameTemplate>
+   </AccessInformation>
     <AccessInformation>
       <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF</RepositoryID>
       <Availability>Online</Availability>
       <AccessRights>Open</AccessRights>
-      <AccessURL>
+       <AccessURL>
+        <Name>HTTPS from SPDF (ASCII)</Name>
+        <URL>https://spdf.gsfc.nasa.gov/pub/data/isis/topside_sounder/crc_ne_profile_ascii/isis1_ne.asc</URL>
+        <Description>ASCII Table</Description>
+      </AccessURL>
+     <AccessURL>
         <Name>CDAWeb</Name>
         <URL>https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=I1_NEPROF_TOPS&amp;index=sp_phys</URL>
         <ProductKey>I1_NEPROF_TOPS</ProductKey>
@@ -67,5 +149,273 @@
       </TimeSpan>
     </TemporalDescription>
     <ObservedRegion>Earth.NearSurface.Ionosphere</ObservedRegion>
+    <Keyword>Ionosphere</Keyword>
+    <Keyword>Topside</Keyword>
+    <Keyword>Sounder</Keyword>    
+    <Keyword>Ionogram</Keyword>
+    <Parameter>
+      <Name>Time</Name>
+      <ParameterKey>EPOCH</ParameterKey>
+      <Description>Time</Description>
+      <Units>ms</Units>
+      <UnitsConversion>1.0e-3&gt;s</UnitsConversion>
+      <Support>
+        <SupportQuantity>Temporal</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>satellite ID</Name>
+      <ParameterKey>spacecraftID</ParameterKey>
+      <Description>sat.-ID: 1=AL1, 2=AL2, 3=ISIS1, 4=ISIS2</Description>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Topside Ne in cm-3</Name>
+      <ParameterKey>density</ParameterKey>
+      <Description>Topside electon density in cm-3 from F peak to orbit altitude</Description>
+      <Units>cm^-3</Units>
+      <UnitsConversion>1.0e-3&gt;m^-3</UnitsConversion>
+      <RenderingHints>
+        <AxisLabel>Ne</AxisLabel>
+      </RenderingHints>
+      <ValidMin>1.00</ValidMin>
+      <ValidMax>1e+09</ValidMax>
+      <FillValue>-9999.00</FillValue>
+      <Particle>
+	<ParticleType>Electron</ParticleType>
+	<ParticleQuantity>NumberDensity</ParticleQuantity>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>log(Ne/cm-3)</Name>
+      <ParameterKey>log_density</ParameterKey>
+      <Description>Logarithm (base 10) of topside Ne in cm-3</Description>
+      <RenderingHints>
+        <AxisLabel>log(Ne/cm-3)</AxisLabel>
+      </RenderingHints>
+      <ValidMin>1.0000</ValidMin>
+      <ValidMax>9.0000</ValidMax>
+      <FillValue>-9.0000</FillValue>
+      <Particle>
+	<ParticleType>Electron</ParticleType>
+	<ParticleQuantity>NumberDensity</ParticleQuantity>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>TEC</Name>
+      <ParameterKey>tec</ParameterKey>
+      <Description>Total Electron Content in TECU (=1E16 m-2)</Description>
+      <Units>1E16 m-2</Units>
+      <RenderingHints>
+        <AxisLabel>TEC</AxisLabel>
+      </RenderingHints>
+      <ValidMin>0.00</ValidMin>
+      <ValidMax>500.00</ValidMax>
+      <FillValue>-1.E+31</FillValue>
+      <Particle>
+	<ParticleType>Electron</ParticleType>
+	<ParticleQuantity>NumberDensity</ParticleQuantity>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>TEC_IRI95</Name>
+      <ParameterKey>tec_iri</ParameterKey>
+      <Description>IRI-95 value for TEC in TECU (=1E16 m-2)</Description>
+      <Units>1E16 m-2</Units>
+      <RenderingHints>
+        <AxisLabel>TEC_IRI95</AxisLabel>
+      </RenderingHints>
+      <ValidMin>0.00</ValidMin>
+      <ValidMax>1000.00</ValidMax>
+      <FillValue>-1.0E+31</FillValue>
+      <Particle>
+	<ParticleType>Electron</ParticleType>
+	<ParticleQuantity>NumberDensity</ParticleQuantity>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>ln(NmF2_IRI/cm-3)</Name>
+      <ParameterKey>IRI_F2peak</ParameterKey>
+      <Description>IRI-95 value for the natural logarithm of the F2 peak in cm-3</Description>
+      <Units>IRI-95</Units>
+      <RenderingHints>
+        <AxisLabel>ln(NmF2/cm-3)</AxisLabel>
+      </RenderingHints>
+      <ValidMin>0.00</ValidMin>
+      <ValidMax>500.00</ValidMax>
+      <FillValue>-1.0E+31</FillValue>
+      <Particle>
+	<ParticleType>Electron</ParticleType>
+	<ParticleQuantity>NumberDensity</ParticleQuantity>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>hmF2 IRI-95</Name>
+      <ParameterKey>IRI_F2peakHeight</ParameterKey>
+      <Description>IRI-95 value for F2 peak in km</Description>
+      <Units>km</Units>
+      <UnitsConversion>1.0e+3&gt;m</UnitsConversion>
+      <RenderingHints>
+        <AxisLabel>hmF2_IRI95</AxisLabel>
+      </RenderingHints>
+      <ValidMin>0.00</ValidMin>
+      <ValidMax>500.00</ValidMax>
+      <FillValue>-1.0E+31</FillValue>
+      <Support>
+	<SupportQuantity>Positional</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Num Data Points</Name>
+      <ParameterKey>numDataPoints</ParameterKey>
+      <Description>Number of data points per profile</Description>
+      <Units>data points</Units>
+      <RenderingHints>
+        <AxisLabel>Number of</AxisLabel>
+      </RenderingHints>
+      <ValidMin>1</ValidMin>
+      <ValidMax>999</ValidMax>
+      <Support>
+	<SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Quality Index</Name>
+      <ParameterKey>qualityIndex</ParameterKey>
+      <Description>Quality Index (0-best, 10-worst)</Description>
+      <RenderingHints>
+        <AxisLabel>Quality Index</AxisLabel>
+      </RenderingHints>
+      <ValidMin>0</ValidMin>
+      <ValidMax>10</ValidMax>
+      <FillValue>-1</FillValue>
+      <Support>
+	<SupportQuantity>DataQuality</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Longitude</Name>
+      <ParameterKey>lon</ParameterKey>
+      <Description>Longitude in degree (-180 to 180)</Description>
+      <Units>degrees</Units>
+      <UnitsConversion>0.01745&gt;rad</UnitsConversion>
+      <RenderingHints>
+        <AxisLabel>Longitude</AxisLabel>
+      </RenderingHints>
+      <ValidMin>-180.0</ValidMin>
+      <ValidMax>180.0</ValidMax>
+      <FillValue>-1.0e+31</FillValue>
+      <Support>
+	<SupportQuantity>Positional</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Latitude</Name>
+      <ParameterKey>lat</ParameterKey>
+      <Description>Latitude in degree</Description>
+      <Units>degrees</Units>
+      <UnitsConversion>0.01745&gt;rad</UnitsConversion>
+      <RenderingHints>
+        <AxisLabel>Latitude</AxisLabel>
+      </RenderingHints>
+      <ValidMin>-90.0</ValidMin>
+      <ValidMax>90.0</ValidMax>
+      <FillValue>-1.0e+31</FillValue>
+      <Support>
+	<SupportQuantity>Positional</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Magnetic Inclination</Name>
+      <ParameterKey>dip</ParameterKey>
+      <Description>Magnetic Inclination in degree</Description>
+      <Units>degrees</Units>
+      <UnitsConversion>0.01745&gt;rad</UnitsConversion>
+      <RenderingHints>
+        <AxisLabel>Dip</AxisLabel>
+      </RenderingHints>
+      <ValidMin>-90.0</ValidMin>
+      <ValidMax>90.0</ValidMax>
+      <FillValue>-1.0e+31</FillValue>
+      <Field>
+	<FieldQuantity>Magnetic</FieldQuantity>
+      </Field>
+    </Parameter>
+    <Parameter>
+      <Name>L value</Name>
+      <ParameterKey>L</ParameterKey>
+      <Description>L value</Description>
+      <RenderingHints>
+        <AxisLabel>L value</AxisLabel>
+      </RenderingHints>
+      <ValidMin>0.0</ValidMin>
+      <ValidMax>180.0</ValidMax>
+      <FillValue>-1.0e+31</FillValue>
+      <Field>
+	<FieldQuantity>Magnetic</FieldQuantity>
+      </Field>
+    </Parameter>
+    <Parameter>
+      <Name>Solar zenith angle</Name>
+      <ParameterKey>sza</ParameterKey>
+      <Description>Solar zenith angle at 100 km</Description>
+      <Units>degrees</Units>
+      <UnitsConversion>0.01745&gt;rad</UnitsConversion>
+      <RenderingHints>
+        <AxisLabel>SZA</AxisLabel>
+      </RenderingHints>
+      <ValidMin>0.0</ValidMin>
+      <ValidMax>180.0</ValidMax>
+      <FillValue>-1.0e+31</FillValue>
+      <Support>
+	<SupportQuantity>Positional</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Rz12</Name>
+      <ParameterKey>sunspotNumber</ParameterKey>
+      <Description>12-month-running mean of sunspot number</Description>
+      <RenderingHints>
+        <AxisLabel>Rz12</AxisLabel>
+      </RenderingHints>
+      <ValidMin>1</ValidMin>
+      <ValidMax>300</ValidMax>
+      <FillValue>-1</FillValue>
+      <Support>
+	<SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>IG-12 index</Name>
+      <ParameterKey>IGindex</ParameterKey>
+      <Description>12-month-running mean of IG ionosonde index</Description>
+      <RenderingHints>
+        <AxisLabel>IG-12</AxisLabel>
+      </RenderingHints>
+      <ValidMin>1</ValidMin>
+      <ValidMax>350</ValidMax>
+      <FillValue>-1</FillValue>
+      <Support>
+	<SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>height</Name>
+      <ParameterKey>height</ParameterKey>
+      <Description>height</Description>
+      <Units>km</Units>
+      <UnitsConversion>1e+3&gt;m</UnitsConversion>
+      <RenderingHints>
+        <AxisLabel>height</AxisLabel>
+      </RenderingHints>
+      <ValidMin>100.0</ValidMin>
+      <ValidMax>4000.0</ValidMax>
+      <FillValue>-9999.0</FillValue>
+      <Support>
+	<SupportQuantity>Positional</SupportQuantity>
+      </Support>
+    </Parameter>
   </NumericalData>
 </Spase>
