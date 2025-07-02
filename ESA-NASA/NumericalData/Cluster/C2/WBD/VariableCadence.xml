@@ -44,9 +44,7 @@
 	 The availability of these files depends on times of Deep Space Network and Panska Ves Observatory ground station telemetry downlinks as WBD data are not obtained continuously throughout the orbit but rather in targeted ~0.5-6 hour time spans. The data were processed and archived by the University of Iowa, Iowa City, Iowa, USA and the Institute of Atmospheric Physics, Prague, Czech Republic.  A list of the status of the WBD instrument on each spacecraft, the telemetry time spans, operating modes and other details are available under Science Data Availability on the University of Iowa Cluster WBD web site at http://space.physics.uiowa.edu/cluster/ and through the documentation section of the Cluster Science Archive (CSA) (https://www.cosmos.esa.int/web/csa/documentation). Details on Cluster WBD Interpretation Issues and Caveats can be found at http://space.physics.uiowa.edu/cluster/ by clicking on their links under the &quot;Data &amp; Tools&quot; tab from the Menu bar in the upper right-hand corner. These documents are also available from the Documentation section of the CSA website. For further details on the Cluster WBD data products see Pickett, J.S., et al., &quot;Cluster Wideband Data Products in the Cluster Active Archive&quot; in The Cluster Active Archive, 2010, Springer-Verlag, pp 169-183, and the Cluster WBD User Guide archived at the CSA website in the Documentation section.
 	 CALIBRATION:  The procedure used in computing the calibrated Electric Field and Magnetic Field values found in this file can be obtained from the Cluster WBD Calibration Report archived at the CSA website in the Documentation section. Because the calibration was applied in the time domain using simple equations the raw counts actually measured by the WBD instrument can be obtained by using these equations and solving for &quot;Raw Counts&quot;, keeping in mind that this number is an Integer ranging from 0 to 255. Since DC offset is a real number, the resultant when solving for raw counts will need to be converted to the nearest whole number. A sample IDL routine for reverse calibrating to obtain &quot;Raw Counts&quot; is provided in the WBD Calibration Report archived at the CSA.
 	 CONVERSION TO FREQUENCY DOMAIN:  In order to convert the WBD data to the frequency domain via an FFT, the following steps need to be carried out:
-
 +------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                                                                                                                            |
 | 1) If Electric Field, first divide calibrated data values by 1000 to get V/m;                                                                              |
 | 2) Apply window of preference, if any (such as Hann, etc.);                                                                                                |
 | 3) Divide data values by sqrt(2) to get back to the rms domain;                                                                                            |
@@ -54,10 +52,7 @@
 | 5) Divide by the noise bandwidth, which is equal to the sampling frequency divided by the FFT size (see table below for appropriate sampling frequency);   |
 | 6) Multiply by the appropriate constant for the window used, if any.                                                                                       |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
 	 These steps are more fully explained in the WBD Calibration Report archived at the CSA.
-
 +--------------------------+
 |   Bandwidth   |   Sample Rate         |
 |-----------| ---------------|
