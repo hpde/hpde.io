@@ -20,9 +20,9 @@ use one of the supported file name extensions.
 **.json** : Get a resource description in JSON form  
 **.html** : Get a formatted resource description  
 
-## Support and Issues with HPDE.io and the SPASE landing pages
+## Support and Issues with SPASE-metadata.org and the SPASE landing pages
 
-The SPASE landing pages at spase-metadata.org are created automatically from SPASE XML descriptions in the HPDE repositories using code at [https://github.com/spase-group/spase-generate-pages](https://github.com/spase-group/spase-generate-pages)
+The SPASE landing pages at spase-metadata.org are created automatically from SPASE XML descriptions in the SPASE-metadata repositories using code at [https://github.com/spase-group/spase-generate-pages](https://github.com/spase-group/spase-generate-pages)
 
 Issues can be reported at that [repo](https://github.com/spase-group/spase-generate-pages).
 
