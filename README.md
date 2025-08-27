@@ -1,4 +1,4 @@
-# hpde.io
+# spase-metadata.org
 
 Quick, uncluttered access to SPASE [https://spase-group.org/](https://spase-group.org/) resource descriptions.
 
@@ -6,13 +6,13 @@ Quick, uncluttered access to SPASE [https://spase-group.org/](https://spase-grou
 
 Its a page which provides a summary of a resource and links to things you can do with the resource.
 
-## How to form a "hpde.io" link?
+## How to form a "spase-metadata.org" link?
 
-The "hpde.io" web site is designed to work so that replacing "spase://" 
-with "https://hpde.io/" in any SPASE Resource ID and adding ".html" to the end
+The "spase-metadata.org" web site is designed to work so that replacing "spase://" 
+with "https://spase-metadata.org/" in any SPASE Resource ID and adding ".html" to the end
 will get you to a landing page. 
 
-Links at hpde.io do not have parameters. To retrieve a particular format or form of a resource 
+Links at spase-metadata.org do not have parameters. To retrieve a particular format or form of a resource 
 use one of the supported file name extensions.
 
 ## All Supported Extensions
@@ -22,7 +22,7 @@ use one of the supported file name extensions.
 
 ## Support and Issues with HPDE.io and the SPASE landing pages
 
-The SPASE landing pages at HPDE.io are created automatically from SPASE XML descriptions in the HPDE repositories using code at [https://github.com/spase-group/spase-generate-pages](https://github.com/spase-group/spase-generate-pages)
+The SPASE landing pages at spase-metadata.org are created automatically from SPASE XML descriptions in the HPDE repositories using code at [https://github.com/spase-group/spase-generate-pages](https://github.com/spase-group/spase-generate-pages)
 
 Issues can be reported at that [repo](https://github.com/spase-group/spase-generate-pages).
 
