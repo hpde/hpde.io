@@ -1,255 +1,261 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema  http://www.spase-group.org/data/schema/spase-2_6_1.xsd">
-   <Version>2.6.1</Version>
-   <NumericalData>
-      <ResourceID>spase://NASA/NumericalData/SDO/HMI/SHARP/CEA/NRT/PT720S</ResourceID>
-      <ResourceHeader>
-         <ResourceName>SHARP Near-Real-Time Cylindrical-Equal-Area Data</ResourceName>
-         <DOI>https://doi.org/10.48322/ejj7-n105</DOI>
-         <ReleaseDate>2024-11-02T00:08:46</ReleaseDate>
-         <RevisionHistory>
-            <RevisionEvent>
-               <ReleaseDate>2024-11-02T00:08:46</ReleaseDate>
-               <Note>Metadata created by SY</Note>
-            </RevisionEvent>
-            <RevisionEvent>
-               <ReleaseDate>2024-11-18T00:08:46</ReleaseDate>
-               <Note>Added DOI by SY</Note>
-            </RevisionEvent>
-         </RevisionHistory>
-         <Description>SHARP Near Real Time data in the Cylindrical Equal Area (CEA) Cartesian coordinate.
+<?xml version='1.0' encoding='UTF-8'?>
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.spase-group.org/data/schema  https://www.spase-group.org/data/schema/spase-2.7.0.xsd">
+  <Version>2.7.0</Version>
+  <NumericalData>
+    <ResourceID>spase://NASA/NumericalData/SDO/HMI/SHARP/CEA/NRT/PT720S</ResourceID>
+    <NamingAuthority>NASA</NamingAuthority>
+    <ResourceType>NumericalData</ResourceType>
+    <ResourceHeader>
+      <ResourceName>SHARP Near-Real-Time Cylindrical-Equal-Area Data</ResourceName>
+      <DOI>https://doi.org/10.48322/ejj7-n105</DOI>
+      <ReleaseDate>2025-09-18T11:27:09Z</ReleaseDate>
+      <RevisionHistory>
+        <RevisionEvent>
+          <ReleaseDate>2024-11-02T00:08:46</ReleaseDate>
+          <Note>Metadata created by SY</Note>
+        </RevisionEvent>
+        <RevisionEvent>
+          <ReleaseDate>2024-11-18T00:08:46</ReleaseDate>
+          <Note>Added DOI by SY</Note>
+        </RevisionEvent>
+        <RevisionEvent>
+          <ReleaseDate>2025-09-18T11:27:09Z</ReleaseDate>
+          <Note>Added ResourceType and NamingAuthority. Changed http to https in top-level schemaLocation attribute. Fixed version number separator in top-level schemaLocation attribute. Matched version number in schemaLocation attribute to updated value in Version tag. ZCB</Note>
+        </RevisionEvent>
+      </RevisionHistory>
+      <Description>SHARP Near Real Time data in the Cylindrical Equal Area (CEA) Cartesian coordinate.
 
 SHARP stands for Space-weather HMI Active Region Patch. A SHARP is a DRMS series that contains (1) various space-weather quantities calculated from the photospheric vector magnetogram data and stored as FITS header keywords, and (2) 31 data segments (described in detail below), including each component of the vector magnetic field, the line-of-sight magnetic field, continuum intensity, doppler velocity, error maps and bitmaps. The data segments are not full-disk; rather, they are partial-disk, automatically-identified active region patches. SHARPs are calculated every 12 minutes. Often, there is more than one active region on the solar disk at any given time. Thus, SHARPs are indexed by two prime keys: time, T_REC, and HMI Active Region Patch Number, HARPNUM.
 
-The hmi.sharp_720s_cea_nrt and hmi.sharp_cea_720s data have been projected and remapped to a Cylindrical Equal Area (CEA) Cartesian coordinate system centered on the tracked active region. The size of the nrt regions will evolve with time. At each time step the definitive SHARPs will enclose the maximum extent of the region during it&#039;s disk passage. The three prime vector components are Bx, By, and Bz. HARP maps of 8 additional quantities are also provided at each time step: the three estimated component errors, the line-of-sight magnetogram, a Dopplergram, the continuum intensity, a map of the active pixels, and an estimate of the confidence in the disambiguation.</Description>
-         <PublicationInfo>
-            <Authors>The HMI Consortium: Stanford University (USA); NASA Goddard Space Flight Center (USA); Lockheed Martin Solar and Astrophysics Laboratory (USA); National Center for Atmospheric Research (USA);</Authors>
-            <PublicationDate>2011-01-21T00:00:00</PublicationDate>
-            <PublishedBy>Joint Science Operations Center (JSOC), Stanford University</PublishedBy>
-         </PublicationInfo>
-         <Contact>
-            <PersonID>spase://SMWG/Person/Philip.H.Scherrer</PersonID>
-            <Role>PrincipalInvestigator</Role>
-         </Contact>
-         <Contact>
-            <PersonID>spase://SMWG/Person/Rick.Bogart</PersonID>
-            <Role>GeneralContact</Role>
-         </Contact>
-         <InformationURL>
-            <Name>The HMI website at Stanford</Name>
-            <URL>http://hmi.stanford.edu/</URL>
-         </InformationURL>
-         <InformationURL>
-            <Name>The SDO/HMI Instrument paper</Name>
-            <URL>https://doi.org/10.1007/s11207-011-9834-2</URL>
-         </InformationURL>
-         <InformationURL>
-            <Name>Spaceweather HMI Active Region Patch (SHARP)</Name>
-            <URL>http://jsoc.stanford.edu/doc/data/hmi/sharp/sharp.htm</URL>
-         </InformationURL>
-      </ResourceHeader>
-      <AccessInformation>
-         <RepositoryID>spase://SMWG/Repository/Stanford/HMI-AIA.JSOC</RepositoryID>
-         <Availability>Online</Availability>
-         <AccessRights>Open</AccessRights>
-         <AccessURL>
-            <Name>JSOC Data Center</Name>
-            <URL>http://jsoc.stanford.edu/ajax/lookdata.html?ds=hmi.sharp_720s_cea_nrt</URL>
-            <Style>Search</Style>
-            <Description>Change the date and the time to find the HMI data.</Description>
-         </AccessURL>
-         <Format>FITS</Format>
-      </AccessInformation>
-      <InstrumentID>spase://SMWG/Instrument/SDO/HMI</InstrumentID>
-      <MeasurementType>Magnetogram</MeasurementType>
-      <MeasurementType>Dopplergram</MeasurementType>
-      <MeasurementType>ImageIntensity</MeasurementType>
-      <TemporalDescription>
-         <TimeSpan>
-            <StartDate>2012-09-14T02:12:00</StartDate>
-            <RelativeStopDate>-PT3H</RelativeStopDate>
-         </TimeSpan>
-         <Cadence>PT720S</Cadence>
-      </TemporalDescription>
-      <ObservedRegion>Sun</ObservedRegion>
-      <ObservedRegion>Sun.Photosphere</ObservedRegion>
-      <InputResourceID>spase://NASA/NumericalData/SDO/HMI/LOS_Magnetogram/PT720S</InputResourceID>
-      <InputResourceID>spase://NASA/NumericalData/SDO/HMI/LOS_Dopplergram/PT720S</InputResourceID>
-      <InputResourceID>spase://NASA/NumericalData/SDO/HMI/Continuum_Intensity/PT720S</InputResourceID>
-      <Parameter>
-         <Name>USFLUX in the FITS Header</Name>
-         <Description>Total unsigned flux</Description>
-         <Units>Mx</Units>
-         <Field>
-            <Qualifier>Total</Qualifier>
-            <FieldQuantity>Magnetic</FieldQuantity>
-         </Field>
-      </Parameter>
-      <Parameter>
-         <Name>MEANGAM in the FITS Header</Name>
-         <Description>Mean inclination angle, gamma</Description>
-         <Units>degree</Units>
-         <Field>
-            <Qualifier>Average</Qualifier>
-            <Qualifier>DirectionAngle</Qualifier>
-            <FieldQuantity>Magnetic</FieldQuantity>
-         </Field>
-      </Parameter>
-      <Parameter>
-         <Name>MEANGBT in the FITS Header</Name>
-         <Description>Mean value of the total field gradient</Description>
-         <Units>Gauss/Mm</Units>
-         <Field>
-            <Qualifier>Average</Qualifier>
-            <Qualifier>Differential</Qualifier>
-            <FieldQuantity>Magnetic</FieldQuantity>
-         </Field>
-      </Parameter>
-      <Parameter>
-         <Name>MEANGBZ in the FITS Header</Name>
-         <Description>Mean value of the vertical field gradient</Description>
-         <Units>Gauss/Mm</Units>
-         <Field>
-            <Qualifier>Average</Qualifier>
-            <Qualifier>Differential</Qualifier>
-            <FieldQuantity>Magnetic</FieldQuantity>
-         </Field>
-      </Parameter>
-      <Parameter>
-         <Name>MEANGBH in the FITS Header</Name>
-         <Description>Mean value of the horizontal field gradient</Description>
-         <Units>Gauss/Mm</Units>
-         <Field>
-            <Qualifier>Average</Qualifier>
-            <Qualifier>Differential</Qualifier>
-            <FieldQuantity>Magnetic</FieldQuantity>
-         </Field>
-      </Parameter>
-      <Parameter>
-         <Name>MEANJZD in the FITS Header</Name>
-         <Description>Mean vertical current density</Description>
-         <Units>mA/m^2</Units>
-         <Field>
-            <Qualifier>Average</Qualifier>
-            <FieldQuantity>CurrentDensity</FieldQuantity>
-         </Field>
-      </Parameter>
-      <Parameter>
-         <Name>TOTUSJZ in the FITS Header</Name>
-         <Description>Total unsigned vertical current</Description>
-         <Units>Amperes</Units>
-         <Field>
-            <Qualifier>Total</Qualifier>
-            <FieldQuantity>Current</FieldQuantity>
-         </Field>
-      </Parameter>
-      <Parameter>
-         <Name>MEANALP in the FITS Header</Name>
-         <Description>Mean current helicity</Description>
-         <Units>G^2/m</Units>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>TOTUSJH in the FITS Header</Name>
-         <Description>Total unsigned current helicity</Description>
-         <Units>G^2/m</Units>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>ABSNJZH in the FITS Header</Name>
-         <Description>Absolute value of the net current helicity</Description>
-         <Units>G^2/m</Units>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>SAVNCPP in the FITS Header</Name>
-         <Description>Sum of the Absolute Value of the Net Currents Per Polarity</Description>
-         <Units>Amperes</Units>
-         <Field>
-            <FieldQuantity>Current</FieldQuantity>
-         </Field>
-      </Parameter>
-      <Parameter>
-         <Name>MEANPOT in the FITS Header</Name>
-         <Description>Mean photospheric excess magnetic energy density</Description>
-         <Units>ergs/cm^3</Units>
-         <Field>
-            <Qualifier>Average</Qualifier>
-            <FieldQuantity>Potential</FieldQuantity>
-         </Field>
-      </Parameter>
-      <Parameter>
-         <Name>TOTPOT in the FITS Header</Name>
-         <Description>Total photospheric magnetic energy density</Description>
-         <Units>ergs/cm^3</Units>
-         <Field>
-            <Qualifier>Total</Qualifier>
-            <FieldQuantity>Potential</FieldQuantity>
-         </Field>
-      </Parameter>
-      <Parameter>
-         <Name>SHRGT45 in the FITS Header</Name>
-         <Description>Percentage of pixels with a mean shear angle greater than 45 degrees</Description>
-         <Units>percent</Units>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>MAGNETOGRAM</Name>
-         <Description>The magnetogram segment contains HARP-sized line-of-sight magnetogram data from the DRMS series hmi.M_720s.
+The hmi.sharp_720s_cea_nrt and hmi.sharp_cea_720s data have been projected and remapped to a Cylindrical Equal Area (CEA) Cartesian coordinate system centered on the tracked active region. The size of the nrt regions will evolve with time. At each time step the definitive SHARPs will enclose the maximum extent of the region during it's disk passage. The three prime vector components are Bx, By, and Bz. HARP maps of 8 additional quantities are also provided at each time step: the three estimated component errors, the line-of-sight magnetogram, a Dopplergram, the continuum intensity, a map of the active pixels, and an estimate of the confidence in the disambiguation.</Description>
+      <PublicationInfo>
+        <Authors>The HMI Consortium: Stanford University (USA); NASA Goddard Space Flight Center (USA); Lockheed Martin Solar and Astrophysics Laboratory (USA); National Center for Atmospheric Research (USA);</Authors>
+        <PublicationDate>2011-01-21T00:00:00</PublicationDate>
+        <PublishedBy>Joint Science Operations Center (JSOC), Stanford University</PublishedBy>
+      </PublicationInfo>
+      <Contact>
+        <PersonID>spase://SMWG/Person/Philip.H.Scherrer</PersonID>
+        <Role>PrincipalInvestigator</Role>
+      </Contact>
+      <Contact>
+        <PersonID>spase://SMWG/Person/Rick.Bogart</PersonID>
+        <Role>GeneralContact</Role>
+      </Contact>
+      <InformationURL>
+        <Name>The HMI website at Stanford</Name>
+        <URL>http://hmi.stanford.edu/</URL>
+      </InformationURL>
+      <InformationURL>
+        <Name>The SDO/HMI Instrument paper</Name>
+        <URL>https://doi.org/10.1007/s11207-011-9834-2</URL>
+      </InformationURL>
+      <InformationURL>
+        <Name>Spaceweather HMI Active Region Patch (SHARP)</Name>
+        <URL>http://jsoc.stanford.edu/doc/data/hmi/sharp/sharp.htm</URL>
+      </InformationURL>
+    </ResourceHeader>
+    <AccessInformation>
+      <RepositoryID>spase://SMWG/Repository/Stanford/HMI-AIA.JSOC</RepositoryID>
+      <Availability>Online</Availability>
+      <AccessRights>Open</AccessRights>
+      <AccessURL>
+        <Name>JSOC Data Center</Name>
+        <URL>http://jsoc.stanford.edu/ajax/lookdata.html?ds=hmi.sharp_720s_cea_nrt</URL>
+        <Style>Search</Style>
+        <Description>Change the date and the time to find the HMI data.</Description>
+      </AccessURL>
+      <Format>FITS</Format>
+    </AccessInformation>
+    <InstrumentID>spase://SMWG/Instrument/SDO/HMI</InstrumentID>
+    <MeasurementType>Magnetogram</MeasurementType>
+    <MeasurementType>Dopplergram</MeasurementType>
+    <MeasurementType>ImageIntensity</MeasurementType>
+    <TemporalDescription>
+      <TimeSpan>
+        <StartDate>2012-09-14T02:12:00</StartDate>
+        <RelativeStopDate>-PT3H</RelativeStopDate>
+      </TimeSpan>
+      <Cadence>PT720S</Cadence>
+    </TemporalDescription>
+    <ObservedRegion>Sun</ObservedRegion>
+    <ObservedRegion>Sun.Photosphere</ObservedRegion>
+    <InputResourceID>spase://NASA/NumericalData/SDO/HMI/LOS_Magnetogram/PT720S</InputResourceID>
+    <InputResourceID>spase://NASA/NumericalData/SDO/HMI/LOS_Dopplergram/PT720S</InputResourceID>
+    <InputResourceID>spase://NASA/NumericalData/SDO/HMI/Continuum_Intensity/PT720S</InputResourceID>
+    <Parameter>
+      <Name>USFLUX in the FITS Header</Name>
+      <Description>Total unsigned flux</Description>
+      <Units>Mx</Units>
+      <Field>
+        <Qualifier>Total</Qualifier>
+        <FieldQuantity>Magnetic</FieldQuantity>
+      </Field>
+    </Parameter>
+    <Parameter>
+      <Name>MEANGAM in the FITS Header</Name>
+      <Description>Mean inclination angle, gamma</Description>
+      <Units>degree</Units>
+      <Field>
+        <Qualifier>Average</Qualifier>
+        <Qualifier>DirectionAngle</Qualifier>
+        <FieldQuantity>Magnetic</FieldQuantity>
+      </Field>
+    </Parameter>
+    <Parameter>
+      <Name>MEANGBT in the FITS Header</Name>
+      <Description>Mean value of the total field gradient</Description>
+      <Units>Gauss/Mm</Units>
+      <Field>
+        <Qualifier>Average</Qualifier>
+        <Qualifier>Differential</Qualifier>
+        <FieldQuantity>Magnetic</FieldQuantity>
+      </Field>
+    </Parameter>
+    <Parameter>
+      <Name>MEANGBZ in the FITS Header</Name>
+      <Description>Mean value of the vertical field gradient</Description>
+      <Units>Gauss/Mm</Units>
+      <Field>
+        <Qualifier>Average</Qualifier>
+        <Qualifier>Differential</Qualifier>
+        <FieldQuantity>Magnetic</FieldQuantity>
+      </Field>
+    </Parameter>
+    <Parameter>
+      <Name>MEANGBH in the FITS Header</Name>
+      <Description>Mean value of the horizontal field gradient</Description>
+      <Units>Gauss/Mm</Units>
+      <Field>
+        <Qualifier>Average</Qualifier>
+        <Qualifier>Differential</Qualifier>
+        <FieldQuantity>Magnetic</FieldQuantity>
+      </Field>
+    </Parameter>
+    <Parameter>
+      <Name>MEANJZD in the FITS Header</Name>
+      <Description>Mean vertical current density</Description>
+      <Units>mA/m^2</Units>
+      <Field>
+        <Qualifier>Average</Qualifier>
+        <FieldQuantity>CurrentDensity</FieldQuantity>
+      </Field>
+    </Parameter>
+    <Parameter>
+      <Name>TOTUSJZ in the FITS Header</Name>
+      <Description>Total unsigned vertical current</Description>
+      <Units>Amperes</Units>
+      <Field>
+        <Qualifier>Total</Qualifier>
+        <FieldQuantity>Current</FieldQuantity>
+      </Field>
+    </Parameter>
+    <Parameter>
+      <Name>MEANALP in the FITS Header</Name>
+      <Description>Mean current helicity</Description>
+      <Units>G^2/m</Units>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>TOTUSJH in the FITS Header</Name>
+      <Description>Total unsigned current helicity</Description>
+      <Units>G^2/m</Units>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>ABSNJZH in the FITS Header</Name>
+      <Description>Absolute value of the net current helicity</Description>
+      <Units>G^2/m</Units>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>SAVNCPP in the FITS Header</Name>
+      <Description>Sum of the Absolute Value of the Net Currents Per Polarity</Description>
+      <Units>Amperes</Units>
+      <Field>
+        <FieldQuantity>Current</FieldQuantity>
+      </Field>
+    </Parameter>
+    <Parameter>
+      <Name>MEANPOT in the FITS Header</Name>
+      <Description>Mean photospheric excess magnetic energy density</Description>
+      <Units>ergs/cm^3</Units>
+      <Field>
+        <Qualifier>Average</Qualifier>
+        <FieldQuantity>Potential</FieldQuantity>
+      </Field>
+    </Parameter>
+    <Parameter>
+      <Name>TOTPOT in the FITS Header</Name>
+      <Description>Total photospheric magnetic energy density</Description>
+      <Units>ergs/cm^3</Units>
+      <Field>
+        <Qualifier>Total</Qualifier>
+        <FieldQuantity>Potential</FieldQuantity>
+      </Field>
+    </Parameter>
+    <Parameter>
+      <Name>SHRGT45 in the FITS Header</Name>
+      <Description>Percentage of pixels with a mean shear angle greater than 45 degrees</Description>
+      <Units>percent</Units>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>MAGNETOGRAM</Name>
+      <Description>The magnetogram segment contains HARP-sized line-of-sight magnetogram data from the DRMS series hmi.M_720s.
 
 CEA version: the field is remapped, but not projected, i.e. it is still the line-of-sight component relative to HMI.</Description>
-         <Units>gauss</Units>
-         <Field>
-            <FieldQuantity>Magnetic</FieldQuantity>
-         </Field>
-      </Parameter>
-      <Parameter>
-         <Name>BITMAP</Name>
-         <Description>The bitmap segment identifies the pixels located within the smooth bounding curve by labeling each pixel with the following:
+      <Units>gauss</Units>
+      <Field>
+        <FieldQuantity>Magnetic</FieldQuantity>
+      </Field>
+    </Parameter>
+    <Parameter>
+      <Name>BITMAP</Name>
+      <Description>The bitmap segment identifies the pixels located within the smooth bounding curve by labeling each pixel with the following:
 1   : weak field outside smooth bounding curve
 2   : strong field outside smooth bounding curve
 33 : weak field inside smooth bounding curve
 34 : strong field inside smooth bounding curve
 
 CEA version: same.</Description>
-         <Units>dimensionless</Units>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>DOPPLERGRAM</Name>
-         <Description>The dopplergram segment contains HARP-sized dopplergram data from the DRMS series hmi.V_720s.
+      <Units>dimensionless</Units>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>DOPPLERGRAM</Name>
+      <Description>The dopplergram segment contains HARP-sized dopplergram data from the DRMS series hmi.V_720s.
 
 CEA version: the Doppler velocity is remapped, but not projected, i.e. it is still the line-of-sight component relative to HMI.</Description>
-         <Units>m/s</Units>
-         <Particle>
-            <ParticleType>Ion</ParticleType>
-            <ParticleQuantity>Velocity</ParticleQuantity>
-         </Particle>
-      </Parameter>
-      <Parameter>
-         <Name>CONTINUUM</Name>
-         <Description>The dopplergram segment contains HARP-sized dopplergram data from the DRMS series hmi.Ic_720s.
+      <Units>m/s</Units>
+      <Particle>
+        <ParticleType>Ion</ParticleType>
+        <ParticleQuantity>Velocity</ParticleQuantity>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>CONTINUUM</Name>
+      <Description>The dopplergram segment contains HARP-sized dopplergram data from the DRMS series hmi.Ic_720s.
 
 CEA Version: same.</Description>
-         <Units>DN/s</Units>
-         <Wave>
-            <WaveType>Electromagnetic</WaveType>
-            <WaveQuantity>Intensity</WaveQuantity>
-         </Wave>
-      </Parameter>
-      <Parameter>
-         <Name>CONFID_MAP</Name>
-         <Description>The confid_map segment identifies the confidence index of the inversion output. The index value at each pixel will take the integer value from 0 (best) to 6(worst), defined as the highest item number satisfying the following conditions:
+      <Units>DN/s</Units>
+      <Wave>
+        <WaveType>Electromagnetic</WaveType>
+        <WaveQuantity>Intensity</WaveQuantity>
+      </Wave>
+    </Parameter>
+    <Parameter>
+      <Name>CONFID_MAP</Name>
+      <Description>The confid_map segment identifies the confidence index of the inversion output. The index value at each pixel will take the integer value from 0 (best) to 6(worst), defined as the highest item number satisfying the following conditions:
 0: No issue found in the input Stokes
 1: Signals for the transverse field component in the input Stokes parameters (Q &amp; U) were weak.
 2: Signal for the line-of-sight field component in the input Stokes parameters (V) was weak.
@@ -258,34 +264,34 @@ CEA Version: same.</Description>
 In the test data release, we set very small , thus, the confidence ε index at most pixels may be 4.
 5: If the difference between the absolute value of the line-of-sight field strength derived from magnetogram algorithm and the absolute value of the LoS component from VFISV inversion |B cos(inclination)| is greater than 500 Gauss, we regard the inversion did not well solve the problem.
 6: One (or more) of the 24 input Stokes arrays had NaN value.</Description>
-         <Units>dimensionless</Units>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>Bp</Name>
-         <Description>Phi (westward) component of the CEA vector magnetic field.</Description>
-         <Units>gauss</Units>
-         <Field>
-            <FieldQuantity>Magnetic</FieldQuantity>
-         </Field>
-      </Parameter>
-      <Parameter>
-         <Name>Bt</Name>
-         <Description>Theta (southward) component of the CEA vector magnetic field.</Description>
-         <Units>gauss</Units>
-         <Field>
-            <FieldQuantity>Magnetic</FieldQuantity>
-         </Field>
-      </Parameter>
-      <Parameter>
-         <Name>Br</Name>
-         <Description>Radial (out of photosphere) component of the CEA vector magnetic field.</Description>
-         <Units>gauss</Units>
-         <Field>
-            <FieldQuantity>Magnetic</FieldQuantity>
-         </Field>
-      </Parameter>
-   </NumericalData>
+      <Units>dimensionless</Units>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Bp</Name>
+      <Description>Phi (westward) component of the CEA vector magnetic field.</Description>
+      <Units>gauss</Units>
+      <Field>
+        <FieldQuantity>Magnetic</FieldQuantity>
+      </Field>
+    </Parameter>
+    <Parameter>
+      <Name>Bt</Name>
+      <Description>Theta (southward) component of the CEA vector magnetic field.</Description>
+      <Units>gauss</Units>
+      <Field>
+        <FieldQuantity>Magnetic</FieldQuantity>
+      </Field>
+    </Parameter>
+    <Parameter>
+      <Name>Br</Name>
+      <Description>Radial (out of photosphere) component of the CEA vector magnetic field.</Description>
+      <Units>gauss</Units>
+      <Field>
+        <FieldQuantity>Magnetic</FieldQuantity>
+      </Field>
+    </Parameter>
+  </NumericalData>
 </Spase>
