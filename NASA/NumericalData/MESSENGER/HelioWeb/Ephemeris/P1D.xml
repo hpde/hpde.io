@@ -1,326 +1,332 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_6_0.xsd">
-   <Version>2.6.0</Version>
-   <NumericalData>
-      <ResourceID>spase://NASA/NumericalData/MESSENGER/HelioWeb/Ephemeris/P1D</ResourceID>
-      <ResourceHeader>
-         <ResourceName>MESSENGER Ephemeris, Heliocentric Trajectories, Heliographic, Heliographic Inertial, and Solar Ecliptic Coordinates, HelioWeb, Daily Data</ResourceName>
-         <DOI>https://doi.org/10.48322/sx90-xh93</DOI>
-         <ReleaseDate>2023-07-30T12:34:56.789</ReleaseDate>
-         <RevisionHistory>
-            <RevisionEvent>
-               <ReleaseDate>2021-04-27T15:38:11</ReleaseDate>
-               <Note>Only known prior ReleaseDate of the metadata</Note>
-            </RevisionEvent>
-            <RevisionEvent>
-               <ReleaseDate>2023-07-30T12:34:56.789</ReleaseDate>
-               <Note>Added DOI and PublicationInfo minted by LFB, metadata versioned up to SPASE 2.6.0, reviewed by LFB 20230727</Note>
-            </RevisionEvent>
-			<RevisionEvent>
-               <ReleaseDate>2025-05-22T15:38:11</ReleaseDate>
-               <Note>Added ObservedRegion. JMW</Note>
-            </RevisionEvent>
-         </RevisionHistory>
-         <Description>Heliocentric trajectories for MESSENGER in Heliographic, HG, Heliographic Inertial, HGI, and Solar Ecliptic, SE, Coordinates The original trajectory data are taken from http://ssd.jpl.nasa.gov/horizons.cgi where users can find many more objects. In the case of orbit data for planets, the orbit data can be used as a proxy for spacecraft ephemeris that are in orbit about the planets. On a heliospheric scale, differences between the planet orbital tarjectory and that of the spacecraft are very small. For instance, the heliocentric longitudes differ by only 0.25° for a spacecraft stationed near the L1 Lagrange point at approximately 100 Earth radii upstream of the Earth. The production of the HG, HGI, and SE trajectory data requires a values for the &quot;Equinox Epoch&quot;, which is defined as the epoch time when the direction from the Earth to the sun at the time of the vernal equinox when the sun seems to cross equatorial plane of the Earth from below. This direction is called the First Point of Aries, FPA and it is not a fixed direction but drifts by about 1.4° per century or 50.26&quot; per year. In addition, there are tiny irregularities in FPA drift that are on the order of 1&quot; per year or less. The Equinox Epoch can be determined by using a variety of methods for calculating the instantaneous FPA longitudinal direction and whether the tiny irregularities have been smoothed or averaged out. Four methods for determining the Equinox Epoch are in common usage: +---------------------------------------------------------------------+   Method Name   FPA Longitude Definition    ---------------------------------------------------------------------    B1950.0   the actual FPA at 22:09 UT on December 31, 1949     J2000.0   the smoothed FPA at 12:00 UT on January 1, 2000     True of Date   the actual FPA at 00:00 UT on the date of interest     Mean of Date   the smoothed FPA at 00:00 UT on the date of interest   +---------------------------------------------------------------------+ The heliocentric trajectory data included in this data product have been calculated by using the Equinox Epoch: defined via the &quot;Mean of Date&quot; method. More precise coordinates, and some planet-centered coordinates, are found in the &quot;traj&quot; subdirectories of spacecraft specific directories at https://spdf.gsfc.nasa.gov/pub/data/ and http://ssd.jpl.nasa.gov/horizons.cgi.</Description>
-         <Acknowledgement>Please acknowledge N.E. Papitashvili for use of the Data</Acknowledgement>
-         <PublicationInfo>
-            <Authors>Papitashvili, N. E.</Authors>
-            <PublicationDate>2023-01-01T00:00:00</PublicationDate>
-            <PublishedBy>NASA Space Physics Data Facility</PublishedBy>
-         </PublicationInfo>
-         <Contact>
-            <PersonID>spase://SMWG/Person/Natalia.E.Papitashvili</PersonID>
-            <Role>GeneralContact</Role>
-         </Contact>
-         <Contact>
-            <PersonID>spase://SMWG/Person/Robert.M.Candey</PersonID>
-            <Role>MetadataContact</Role>
-         </Contact>
-         <Contact>
-            <PersonID>spase://SMWG/Person/Lee.Frost.Bargatze</PersonID>
-            <Role>MetadataContact</Role>
-         </Contact>
-         <InformationURL>
-            <Name>Heliocentric Trajectories HelioWeb Data Service, NASA GSFC</Name>
-            <URL>https://omniweb.gsfc.nasa.gov/coho/helios/heli.html</URL>
-            <Description>Heliocentric trajectories for selected spacecraft, planets, and comets, HelioWeb data service, hosted by NASA GSFC</Description>
-         </InformationURL>
-         <InformationURL>
-            <Name>Heliocentric Trajectories HelioWeb Data Service Usage Instructions, NASA GSFC</Name>
-            <URL>https://omniweb.gsfc.nasa.gov/coho/helios/about_helioweb.html</URL>
-            <Description>Instructions for using the Heliocentric Trajectories HelioWeb data service, hosted by NASA GSFC</Description>
-         </InformationURL>
-         <InformationURL>
-            <Name>Heliocentric Trajectories HelioWeb Data Service Usage via CURL or WGET Commands, NASA GSFC</Name>
-            <URL>https://omniweb.gsfc.nasa.gov/coho/helios/helioweb_command_line_sample.txt</URL>
-            <Description>Instructions for using the Heliocentric Trajectories HelioWeb data service via CURL or WGET commands, hosted by NASA GSFC</Description>
-         </InformationURL>
-         <InformationURL>
-            <Name>HG, HGI, and SE Coordinate System Definitions, NASA GSFC</Name>
-            <URL>https://omniweb.gsfc.nasa.gov/coho/helios/coor_des.html</URL>
-            <Description>Definitions for the Heliographic, HG, Heliographic Inertial, HGI, and Solar Ecliptic, SE, Coordinate Systems, hosted by NASA GSFC</Description>
-         </InformationURL>
-         <InformationURL>
-            <Name>Satellite Situation Center (SSCWeb) System and Services, NASA GSFC</Name>
-            <URL>https://sscweb.gsfc.nasa.gov</URL>
-            <Description>Satellite Situation Center (SSCWeb) web page offering a variety of services that provide access to orbit trajectory graphics and listings, hosted by NASA GSFC</Description>
-         </InformationURL>
-         <InformationURL>
-            <Name>HORIZONS Web Interface, NASA JPL</Name>
-            <URL>https://ssd.jpl.nasa.gov/horizons.cgi</URL>
-            <Description>HORIZONS Web Interface, a web page that provides limited access to the JPL HORIZONS system which can be used to generate ephemerides for solar system bodies</Description>
-         </InformationURL>
-         <PriorID>spase://VSPO/NumericalData/MESSENGER/HelioWeb/Ephemeris/P1D</PriorID>
-      </ResourceHeader>
-      <AccessInformation>
-         <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF/CDAWeb</RepositoryID>
-         <Availability>Online</Availability>
-         <AccessRights>Open</AccessRights>
-         <AccessURL>
-            <Name>FTPS from SPDF (not with most browsers)</Name>
-            <URL>ftps://spdf.gsfc.nasa.gov/pub/data/messenger/helio1day/</URL>
-            <Description>Access to Data in CDF Format via ftp from SPDF</Description>
-         </AccessURL>
-         <AccessURL>
-            <Name>HTTPS from SPDF</Name>
-            <URL>https://spdf.gsfc.nasa.gov/pub/data/messenger/helio1day/</URL>
-            <Description>Access to Data in CDF Format via http from SPDF</Description>
-         </AccessURL>
-         <AccessURL>
-            <Name>CDAWeb</Name>
-            <URL>https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=MESSENGER_HELIO1DAY_POSITION&amp;index=sp_phys</URL>
-            <ProductKey>MESSENGER_HELIO1DAY_POSITION</ProductKey>
-            <Description>Access to ASCII, CDF, and Plots via NASA/GSFC CDAWeb</Description>
-         </AccessURL>
-         <Format>CDF</Format>
-         <Encoding>None</Encoding>
-         <Acknowledgement>Please acknowledge N.E. Papitashvili. Please acknowledge the Data Providers and CDAWeb when using these Data.</Acknowledgement>
-      </AccessInformation>
-      <AccessInformation>
-         <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF/CDAWeb</RepositoryID>
-         <Availability>Online</Availability>
-         <AccessRights>Open</AccessRights>
-         <AccessURL>
-            <Name>CDAWeb HAPI Server</Name>
-            <URL>https://cdaweb.gsfc.nasa.gov/hapi</URL>
-            <Style>HAPI</Style>
-            <ProductKey>MESSENGER_HELIO1DAY_POSITION</ProductKey>
-            <Description>Web Service to this product using the HAPI interface.</Description>
-         </AccessURL>
-         <Format>CSV</Format>
-         <Acknowledgement>Please acknowledge N.E. Papitashvili. Please acknowledge the Data Providers and CDAWeb when using these Data.</Acknowledgement>
-      </AccessInformation>
-      <ProcessingLevel>Calibrated</ProcessingLevel>
-      <InstrumentID>spase://SMWG/Instrument/MESSENGER/Ephemeris</InstrumentID>
-      <MeasurementType>Ephemeris</MeasurementType>
-      <TemporalDescription>
-         <TimeSpan>
-            <StartDate>2004-08-04T00:00:00.000</StartDate>
-            <StopDate>2015-05-01T00:00:00.000</StopDate>
-         </TimeSpan>
-         <Cadence>P1D</Cadence>
-      </TemporalDescription>
-	  <ObservedRegion>Mercury.Magnetosphere</ObservedRegion>
-	  <ObservedRegion>Mercury.Magnetosphere.Magnetotail</ObservedRegion>
-	  <ObservedRegion>Mercury.Magnetosphere.Main</ObservedRegion>
-	  <ObservedRegion>Mercury.Magnetosphere.Polar</ObservedRegion>
-      <Parameter>
-         <Name>Epoch Time</Name>
-         <ParameterKey>Epoch</ParameterKey>
-         <Description>Epoch Time, beginning of interval</Description>
-         <Caveats>This Parameter exhibits an increasing Monotonic Progression</Caveats>
-         <Cadence>P1D</Cadence>
-         <Units>ms</Units>
-         <UnitsConversion>1.0e-3&gt;s</UnitsConversion>
-         <RenderingHints>
-            <AxisLabel>Epoch</AxisLabel>
-            <ValueFormat>E14.8</ValueFormat>
-            <ScaleMin>6.2987652219904e+13</ScaleMin>
-            <ScaleMax>6.3745034619904e+13</ScaleMax>
-            <ScaleType>LinearScale</ScaleType>
-         </RenderingHints>
-         <ValidMin>01-Jan-1996 00:00:00.000</ValidMin>
-         <ValidMax>01-Jan-2020 00:00:00.000</ValidMax>
-         <FillValue>31-Dec-9999 23:59:59.999</FillValue>
-         <Support>
-            <SupportQuantity>Temporal</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>MESSENGER Position, Heliocentric Radial Distance</Name>
-         <Set>Time Series defined by using: EPOCH</Set>
-         <ParameterKey>RAD_AU</ParameterKey>
-         <Description>MESSENGER Position, Heliocentric Radial Distance</Description>
-         <Cadence>P1D</Cadence>
-         <Units>ua</Units>
-         <UnitsConversion>1.495978706961e11&gt;m</UnitsConversion>
-         <RenderingHints>
-            <DisplayType>TimeSeries</DisplayType>
-            <AxisLabel>RAD_AU</AxisLabel>
-            <ValueFormat>F8.2</ValueFormat>
-         </RenderingHints>
-         <ValidMin>0.0</ValidMin>
-         <ValidMax>1000.0</ValidMax>
-         <FillValue>-1.0e+31</FillValue>
-         <Support>
-            <SupportQuantity>Temporal</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>MESSENGER Position, Latitude, Solar Ecliptic Coordinates</Name>
-         <Set>Time Series defined by using: EPOCH</Set>
-         <ParameterKey>SE_LAT</ParameterKey>
-         <Description>MESSENGER Position, Latitude, Solar Ecliptic, SE, Spherical Coordinates</Description>
-         <Cadence>P1D</Cadence>
-         <Units>°</Units>
-         <UnitsConversion>0.0174532925&gt;rad</UnitsConversion>
-         <CoordinateSystem>
-            <CoordinateRepresentation>Spherical</CoordinateRepresentation>
-            <CoordinateSystemName>SE</CoordinateSystemName>
-         </CoordinateSystem>
-         <RenderingHints>
-            <DisplayType>TimeSeries</DisplayType>
-            <AxisLabel>SE_LAT</AxisLabel>
-            <ValueFormat>F8.1</ValueFormat>
-         </RenderingHints>
-         <ValidMin>-90.0</ValidMin>
-         <ValidMax>90.0</ValidMax>
-         <FillValue>-1.0e+31</FillValue>
-         <Support>
-            <Qualifier>DirectionAngle.ElevationAngle</Qualifier>
-            <Qualifier>Scalar</Qualifier>
-            <SupportQuantity>Positional</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>MESSENGER Position, Longitude, Solar Ecliptic Coordinates</Name>
-         <Set>Time Series defined by using: EPOCH</Set>
-         <ParameterKey>SE_LON</ParameterKey>
-         <Description>MESSENGER Position, Longitude, Solar Ecliptic, SE, Spherical Coordinates</Description>
-         <Cadence>P1D</Cadence>
-         <Units>°</Units>
-         <UnitsConversion>0.0174532925&gt;rad</UnitsConversion>
-         <CoordinateSystem>
-            <CoordinateRepresentation>Spherical</CoordinateRepresentation>
-            <CoordinateSystemName>SE</CoordinateSystemName>
-         </CoordinateSystem>
-         <RenderingHints>
-            <DisplayType>TimeSeries</DisplayType>
-            <AxisLabel>SE_LON</AxisLabel>
-            <ValueFormat>F8.1</ValueFormat>
-         </RenderingHints>
-         <ValidMin>0.0</ValidMin>
-         <ValidMax>360.0</ValidMax>
-         <FillValue>-1.0e+31</FillValue>
-         <Support>
-            <Qualifier>DirectionAngle.AzimuthAngle</Qualifier>
-            <Qualifier>Scalar</Qualifier>
-            <SupportQuantity>Positional</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>MESSENGER Position, Latitude, Heliographic Coordinates</Name>
-         <Set>Time Series defined by using: EPOCH</Set>
-         <ParameterKey>HG_LAT</ParameterKey>
-         <Description>MESSENGER Position, Latitude, Heliographic, HG, Spherical Coordinates</Description>
-         <Cadence>P1D</Cadence>
-         <Units>°</Units>
-         <UnitsConversion>0.0174532925&gt;rad</UnitsConversion>
-         <CoordinateSystem>
-            <CoordinateRepresentation>Spherical</CoordinateRepresentation>
-            <CoordinateSystemName>HG</CoordinateSystemName>
-         </CoordinateSystem>
-         <RenderingHints>
-            <DisplayType>TimeSeries</DisplayType>
-            <AxisLabel>HG_LAT</AxisLabel>
-            <ValueFormat>F8.1</ValueFormat>
-         </RenderingHints>
-         <ValidMin>-90.0</ValidMin>
-         <ValidMax>90.0</ValidMax>
-         <FillValue>-1.0e+31</FillValue>
-         <Support>
-            <Qualifier>DirectionAngle.ElevationAngle</Qualifier>
-            <Qualifier>Scalar</Qualifier>
-            <SupportQuantity>Positional</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>MESSENGER Position, Longitude, Heliographic Coordinates</Name>
-         <Set>Time Series defined by using: EPOCH</Set>
-         <ParameterKey>HG_LON</ParameterKey>
-         <Description>MESSENGER Position, Longitude, Heliographic, HG, Spherical Coordinates</Description>
-         <Cadence>P1D</Cadence>
-         <Units>°</Units>
-         <UnitsConversion>0.0174532925&gt;rad</UnitsConversion>
-         <CoordinateSystem>
-            <CoordinateRepresentation>Spherical</CoordinateRepresentation>
-            <CoordinateSystemName>HG</CoordinateSystemName>
-         </CoordinateSystem>
-         <RenderingHints>
-            <DisplayType>TimeSeries</DisplayType>
-            <AxisLabel>HG_LON</AxisLabel>
-            <ValueFormat>F8.1</ValueFormat>
-         </RenderingHints>
-         <ValidMin>0.0</ValidMin>
-         <ValidMax>360.0</ValidMax>
-         <FillValue>-1.0e+31</FillValue>
-         <Support>
-            <Qualifier>DirectionAngle.AzimuthAngle</Qualifier>
-            <Qualifier>Scalar</Qualifier>
-            <SupportQuantity>Positional</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>MESSENGER Position, Latitude, Heliographic Inertial Coordinates</Name>
-         <Set>Time Series defined by using: EPOCH</Set>
-         <ParameterKey>HGI_LAT</ParameterKey>
-         <Description>MESSENGER Position, Latitude, Heliographic Inertial, HGI, Spherical Coordinates</Description>
-         <Cadence>P1D</Cadence>
-         <Units>°</Units>
-         <UnitsConversion>0.0174532925&gt;rad</UnitsConversion>
-         <CoordinateSystem>
-            <CoordinateRepresentation>Spherical</CoordinateRepresentation>
-            <CoordinateSystemName>HGI</CoordinateSystemName>
-         </CoordinateSystem>
-         <RenderingHints>
-            <DisplayType>TimeSeries</DisplayType>
-            <AxisLabel>HGI_LAT</AxisLabel>
-            <ValueFormat>F8.1</ValueFormat>
-         </RenderingHints>
-         <ValidMin>-90.0</ValidMin>
-         <ValidMax>90.0</ValidMax>
-         <FillValue>-1.0e+31</FillValue>
-         <Support>
-            <Qualifier>DirectionAngle.ElevationAngle</Qualifier>
-            <Qualifier>Scalar</Qualifier>
-            <SupportQuantity>Positional</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>MESSENGER Position, Longitude, Heliographic Inertial Coordinates</Name>
-         <Set>Time Series defined by using: EPOCH</Set>
-         <ParameterKey>HGI_LON</ParameterKey>
-         <Description>MESSENGER Position, Longitude, Heliographic Inertial, HGI, Spherical Coordinates</Description>
-         <Cadence>P1D</Cadence>
-         <Units>°</Units>
-         <UnitsConversion>0.0174532925&gt;rad</UnitsConversion>
-         <CoordinateSystem>
-            <CoordinateRepresentation>Spherical</CoordinateRepresentation>
-            <CoordinateSystemName>HGI</CoordinateSystemName>
-         </CoordinateSystem>
-         <RenderingHints>
-            <DisplayType>TimeSeries</DisplayType>
-            <AxisLabel>HGI_LON</AxisLabel>
-            <ValueFormat>F8.1</ValueFormat>
-         </RenderingHints>
-         <ValidMin>0.0</ValidMin>
-         <ValidMax>360.0</ValidMax>
-         <FillValue>-1.0e+31</FillValue>
-         <Support>
-            <Qualifier>DirectionAngle.AzimuthAngle</Qualifier>
-            <Qualifier>Scalar</Qualifier>
-            <SupportQuantity>Positional</SupportQuantity>
-         </Support>
-      </Parameter>
-   </NumericalData>
+<?xml version='1.0' encoding='UTF-8'?>
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.spase-group.org/data/schema https://www.spase-group.org/data/schema/spase-2.7.0.xsd">
+  <Version>2.7.0</Version>
+  <NumericalData>
+    <ResourceID>spase://NASA/NumericalData/MESSENGER/HelioWeb/Ephemeris/P1D</ResourceID>
+    <NamingAuthority>NASA</NamingAuthority>
+    <ResourceType>NumericalData</ResourceType>
+    <ResourceHeader>
+      <ResourceName>MESSENGER Ephemeris, Heliocentric Trajectories, Heliographic, Heliographic Inertial, and Solar Ecliptic Coordinates, HelioWeb, Daily Data</ResourceName>
+      <DOI>https://doi.org/10.48322/sx90-xh93</DOI>
+      <ReleaseDate>2025-10-02T15:12:03Z</ReleaseDate>
+      <RevisionHistory>
+        <RevisionEvent>
+          <ReleaseDate>2021-04-27T15:38:11</ReleaseDate>
+          <Note>Only known prior ReleaseDate of the metadata</Note>
+        </RevisionEvent>
+        <RevisionEvent>
+          <ReleaseDate>2023-07-30T12:34:56.789</ReleaseDate>
+          <Note>Added DOI and PublicationInfo minted by LFB, metadata versioned up to SPASE 2.6.0, reviewed by LFB 20230727</Note>
+        </RevisionEvent>
+        <RevisionEvent>
+          <ReleaseDate>2025-05-22T15:38:11</ReleaseDate>
+          <Note>Added ObservedRegion. JMW</Note>
+        </RevisionEvent>
+        <RevisionEvent>
+          <ReleaseDate>2025-10-02T15:12:03Z</ReleaseDate>
+          <Note>Updated PublishedBy name to match ROR Registry. Added ResourceType and NamingAuthority. Changed http to https in top-level schemaLocation attribute. Fixed version number separator in top-level schemaLocation attribute. Matched version number in schemaLocation attribute to updated value in Version tag. ZCB</Note>
+        </RevisionEvent>
+      </RevisionHistory>
+      <Description>Heliocentric trajectories for MESSENGER in Heliographic, HG, Heliographic Inertial, HGI, and Solar Ecliptic, SE, Coordinates The original trajectory data are taken from http://ssd.jpl.nasa.gov/horizons.cgi where users can find many more objects. In the case of orbit data for planets, the orbit data can be used as a proxy for spacecraft ephemeris that are in orbit about the planets. On a heliospheric scale, differences between the planet orbital tarjectory and that of the spacecraft are very small. For instance, the heliocentric longitudes differ by only 0.25° for a spacecraft stationed near the L1 Lagrange point at approximately 100 Earth radii upstream of the Earth. The production of the HG, HGI, and SE trajectory data requires a values for the "Equinox Epoch", which is defined as the epoch time when the direction from the Earth to the sun at the time of the vernal equinox when the sun seems to cross equatorial plane of the Earth from below. This direction is called the First Point of Aries, FPA and it is not a fixed direction but drifts by about 1.4° per century or 50.26" per year. In addition, there are tiny irregularities in FPA drift that are on the order of 1" per year or less. The Equinox Epoch can be determined by using a variety of methods for calculating the instantaneous FPA longitudinal direction and whether the tiny irregularities have been smoothed or averaged out. Four methods for determining the Equinox Epoch are in common usage: +---------------------------------------------------------------------+   Method Name   FPA Longitude Definition    ---------------------------------------------------------------------    B1950.0   the actual FPA at 22:09 UT on December 31, 1949     J2000.0   the smoothed FPA at 12:00 UT on January 1, 2000     True of Date   the actual FPA at 00:00 UT on the date of interest     Mean of Date   the smoothed FPA at 00:00 UT on the date of interest   +---------------------------------------------------------------------+ The heliocentric trajectory data included in this data product have been calculated by using the Equinox Epoch: defined via the "Mean of Date" method. More precise coordinates, and some planet-centered coordinates, are found in the "traj" subdirectories of spacecraft specific directories at https://spdf.gsfc.nasa.gov/pub/data/ and http://ssd.jpl.nasa.gov/horizons.cgi.</Description>
+      <Acknowledgement>Please acknowledge N.E. Papitashvili for use of the Data</Acknowledgement>
+      <PublicationInfo>
+        <Authors>Papitashvili, N. E.</Authors>
+        <PublicationDate>2023-01-01T00:00:00</PublicationDate>
+        <PublishedBy>Space Physics Data Facility</PublishedBy>
+      </PublicationInfo>
+      <Contact>
+        <PersonID>spase://SMWG/Person/Natalia.E.Papitashvili</PersonID>
+        <Role>GeneralContact</Role>
+      </Contact>
+      <Contact>
+        <PersonID>spase://SMWG/Person/Robert.M.Candey</PersonID>
+        <Role>MetadataContact</Role>
+      </Contact>
+      <Contact>
+        <PersonID>spase://SMWG/Person/Lee.Frost.Bargatze</PersonID>
+        <Role>MetadataContact</Role>
+      </Contact>
+      <InformationURL>
+        <Name>Heliocentric Trajectories HelioWeb Data Service, NASA GSFC</Name>
+        <URL>https://omniweb.gsfc.nasa.gov/coho/helios/heli.html</URL>
+        <Description>Heliocentric trajectories for selected spacecraft, planets, and comets, HelioWeb data service, hosted by NASA GSFC</Description>
+      </InformationURL>
+      <InformationURL>
+        <Name>Heliocentric Trajectories HelioWeb Data Service Usage Instructions, NASA GSFC</Name>
+        <URL>https://omniweb.gsfc.nasa.gov/coho/helios/about_helioweb.html</URL>
+        <Description>Instructions for using the Heliocentric Trajectories HelioWeb data service, hosted by NASA GSFC</Description>
+      </InformationURL>
+      <InformationURL>
+        <Name>Heliocentric Trajectories HelioWeb Data Service Usage via CURL or WGET Commands, NASA GSFC</Name>
+        <URL>https://omniweb.gsfc.nasa.gov/coho/helios/helioweb_command_line_sample.txt</URL>
+        <Description>Instructions for using the Heliocentric Trajectories HelioWeb data service via CURL or WGET commands, hosted by NASA GSFC</Description>
+      </InformationURL>
+      <InformationURL>
+        <Name>HG, HGI, and SE Coordinate System Definitions, NASA GSFC</Name>
+        <URL>https://omniweb.gsfc.nasa.gov/coho/helios/coor_des.html</URL>
+        <Description>Definitions for the Heliographic, HG, Heliographic Inertial, HGI, and Solar Ecliptic, SE, Coordinate Systems, hosted by NASA GSFC</Description>
+      </InformationURL>
+      <InformationURL>
+        <Name>Satellite Situation Center (SSCWeb) System and Services, NASA GSFC</Name>
+        <URL>https://sscweb.gsfc.nasa.gov</URL>
+        <Description>Satellite Situation Center (SSCWeb) web page offering a variety of services that provide access to orbit trajectory graphics and listings, hosted by NASA GSFC</Description>
+      </InformationURL>
+      <InformationURL>
+        <Name>HORIZONS Web Interface, NASA JPL</Name>
+        <URL>https://ssd.jpl.nasa.gov/horizons.cgi</URL>
+        <Description>HORIZONS Web Interface, a web page that provides limited access to the JPL HORIZONS system which can be used to generate ephemerides for solar system bodies</Description>
+      </InformationURL>
+      <PriorID>spase://VSPO/NumericalData/MESSENGER/HelioWeb/Ephemeris/P1D</PriorID>
+    </ResourceHeader>
+    <AccessInformation>
+      <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF/CDAWeb</RepositoryID>
+      <Availability>Online</Availability>
+      <AccessRights>Open</AccessRights>
+      <AccessURL>
+        <Name>FTPS from SPDF (not with most browsers)</Name>
+        <URL>ftps://spdf.gsfc.nasa.gov/pub/data/messenger/helio1day/</URL>
+        <Description>Access to Data in CDF Format via ftp from SPDF</Description>
+      </AccessURL>
+      <AccessURL>
+        <Name>HTTPS from SPDF</Name>
+        <URL>https://spdf.gsfc.nasa.gov/pub/data/messenger/helio1day/</URL>
+        <Description>Access to Data in CDF Format via http from SPDF</Description>
+      </AccessURL>
+      <AccessURL>
+        <Name>CDAWeb</Name>
+        <URL>https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=MESSENGER_HELIO1DAY_POSITION&amp;index=sp_phys</URL>
+        <ProductKey>MESSENGER_HELIO1DAY_POSITION</ProductKey>
+        <Description>Access to ASCII, CDF, and Plots via NASA/GSFC CDAWeb</Description>
+      </AccessURL>
+      <Format>CDF</Format>
+      <Encoding>None</Encoding>
+      <Acknowledgement>Please acknowledge N.E. Papitashvili. Please acknowledge the Data Providers and CDAWeb when using these Data.</Acknowledgement>
+    </AccessInformation>
+    <AccessInformation>
+      <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF/CDAWeb</RepositoryID>
+      <Availability>Online</Availability>
+      <AccessRights>Open</AccessRights>
+      <AccessURL>
+        <Name>CDAWeb HAPI Server</Name>
+        <URL>https://cdaweb.gsfc.nasa.gov/hapi</URL>
+        <Style>HAPI</Style>
+        <ProductKey>MESSENGER_HELIO1DAY_POSITION</ProductKey>
+        <Description>Web Service to this product using the HAPI interface.</Description>
+      </AccessURL>
+      <Format>CSV</Format>
+      <Acknowledgement>Please acknowledge N.E. Papitashvili. Please acknowledge the Data Providers and CDAWeb when using these Data.</Acknowledgement>
+    </AccessInformation>
+    <ProcessingLevel>Calibrated</ProcessingLevel>
+    <InstrumentID>spase://SMWG/Instrument/MESSENGER/Ephemeris</InstrumentID>
+    <MeasurementType>Ephemeris</MeasurementType>
+    <TemporalDescription>
+      <TimeSpan>
+        <StartDate>2004-08-04T00:00:00.000</StartDate>
+        <StopDate>2015-05-01T00:00:00.000</StopDate>
+      </TimeSpan>
+      <Cadence>P1D</Cadence>
+    </TemporalDescription>
+    <ObservedRegion>Mercury.Magnetosphere</ObservedRegion>
+    <ObservedRegion>Mercury.Magnetosphere.Magnetotail</ObservedRegion>
+    <ObservedRegion>Mercury.Magnetosphere.Main</ObservedRegion>
+    <ObservedRegion>Mercury.Magnetosphere.Polar</ObservedRegion>
+    <Parameter>
+      <Name>Epoch Time</Name>
+      <ParameterKey>Epoch</ParameterKey>
+      <Description>Epoch Time, beginning of interval</Description>
+      <Caveats>This Parameter exhibits an increasing Monotonic Progression</Caveats>
+      <Cadence>P1D</Cadence>
+      <Units>ms</Units>
+      <UnitsConversion>1.0e-3&gt;s</UnitsConversion>
+      <RenderingHints>
+        <AxisLabel>Epoch</AxisLabel>
+        <ValueFormat>E14.8</ValueFormat>
+        <ScaleMin>6.2987652219904e+13</ScaleMin>
+        <ScaleMax>6.3745034619904e+13</ScaleMax>
+        <ScaleType>LinearScale</ScaleType>
+      </RenderingHints>
+      <ValidMin>01-Jan-1996 00:00:00.000</ValidMin>
+      <ValidMax>01-Jan-2020 00:00:00.000</ValidMax>
+      <FillValue>31-Dec-9999 23:59:59.999</FillValue>
+      <Support>
+        <SupportQuantity>Temporal</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>MESSENGER Position, Heliocentric Radial Distance</Name>
+      <Set>Time Series defined by using: EPOCH</Set>
+      <ParameterKey>RAD_AU</ParameterKey>
+      <Description>MESSENGER Position, Heliocentric Radial Distance</Description>
+      <Cadence>P1D</Cadence>
+      <Units>ua</Units>
+      <UnitsConversion>1.495978706961e11&gt;m</UnitsConversion>
+      <RenderingHints>
+        <DisplayType>TimeSeries</DisplayType>
+        <AxisLabel>RAD_AU</AxisLabel>
+        <ValueFormat>F8.2</ValueFormat>
+      </RenderingHints>
+      <ValidMin>0.0</ValidMin>
+      <ValidMax>1000.0</ValidMax>
+      <FillValue>-1.0e+31</FillValue>
+      <Support>
+        <SupportQuantity>Temporal</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>MESSENGER Position, Latitude, Solar Ecliptic Coordinates</Name>
+      <Set>Time Series defined by using: EPOCH</Set>
+      <ParameterKey>SE_LAT</ParameterKey>
+      <Description>MESSENGER Position, Latitude, Solar Ecliptic, SE, Spherical Coordinates</Description>
+      <Cadence>P1D</Cadence>
+      <Units>°</Units>
+      <UnitsConversion>0.0174532925&gt;rad</UnitsConversion>
+      <CoordinateSystem>
+        <CoordinateRepresentation>Spherical</CoordinateRepresentation>
+        <CoordinateSystemName>SE</CoordinateSystemName>
+      </CoordinateSystem>
+      <RenderingHints>
+        <DisplayType>TimeSeries</DisplayType>
+        <AxisLabel>SE_LAT</AxisLabel>
+        <ValueFormat>F8.1</ValueFormat>
+      </RenderingHints>
+      <ValidMin>-90.0</ValidMin>
+      <ValidMax>90.0</ValidMax>
+      <FillValue>-1.0e+31</FillValue>
+      <Support>
+        <Qualifier>DirectionAngle.ElevationAngle</Qualifier>
+        <Qualifier>Scalar</Qualifier>
+        <SupportQuantity>Positional</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>MESSENGER Position, Longitude, Solar Ecliptic Coordinates</Name>
+      <Set>Time Series defined by using: EPOCH</Set>
+      <ParameterKey>SE_LON</ParameterKey>
+      <Description>MESSENGER Position, Longitude, Solar Ecliptic, SE, Spherical Coordinates</Description>
+      <Cadence>P1D</Cadence>
+      <Units>°</Units>
+      <UnitsConversion>0.0174532925&gt;rad</UnitsConversion>
+      <CoordinateSystem>
+        <CoordinateRepresentation>Spherical</CoordinateRepresentation>
+        <CoordinateSystemName>SE</CoordinateSystemName>
+      </CoordinateSystem>
+      <RenderingHints>
+        <DisplayType>TimeSeries</DisplayType>
+        <AxisLabel>SE_LON</AxisLabel>
+        <ValueFormat>F8.1</ValueFormat>
+      </RenderingHints>
+      <ValidMin>0.0</ValidMin>
+      <ValidMax>360.0</ValidMax>
+      <FillValue>-1.0e+31</FillValue>
+      <Support>
+        <Qualifier>DirectionAngle.AzimuthAngle</Qualifier>
+        <Qualifier>Scalar</Qualifier>
+        <SupportQuantity>Positional</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>MESSENGER Position, Latitude, Heliographic Coordinates</Name>
+      <Set>Time Series defined by using: EPOCH</Set>
+      <ParameterKey>HG_LAT</ParameterKey>
+      <Description>MESSENGER Position, Latitude, Heliographic, HG, Spherical Coordinates</Description>
+      <Cadence>P1D</Cadence>
+      <Units>°</Units>
+      <UnitsConversion>0.0174532925&gt;rad</UnitsConversion>
+      <CoordinateSystem>
+        <CoordinateRepresentation>Spherical</CoordinateRepresentation>
+        <CoordinateSystemName>HG</CoordinateSystemName>
+      </CoordinateSystem>
+      <RenderingHints>
+        <DisplayType>TimeSeries</DisplayType>
+        <AxisLabel>HG_LAT</AxisLabel>
+        <ValueFormat>F8.1</ValueFormat>
+      </RenderingHints>
+      <ValidMin>-90.0</ValidMin>
+      <ValidMax>90.0</ValidMax>
+      <FillValue>-1.0e+31</FillValue>
+      <Support>
+        <Qualifier>DirectionAngle.ElevationAngle</Qualifier>
+        <Qualifier>Scalar</Qualifier>
+        <SupportQuantity>Positional</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>MESSENGER Position, Longitude, Heliographic Coordinates</Name>
+      <Set>Time Series defined by using: EPOCH</Set>
+      <ParameterKey>HG_LON</ParameterKey>
+      <Description>MESSENGER Position, Longitude, Heliographic, HG, Spherical Coordinates</Description>
+      <Cadence>P1D</Cadence>
+      <Units>°</Units>
+      <UnitsConversion>0.0174532925&gt;rad</UnitsConversion>
+      <CoordinateSystem>
+        <CoordinateRepresentation>Spherical</CoordinateRepresentation>
+        <CoordinateSystemName>HG</CoordinateSystemName>
+      </CoordinateSystem>
+      <RenderingHints>
+        <DisplayType>TimeSeries</DisplayType>
+        <AxisLabel>HG_LON</AxisLabel>
+        <ValueFormat>F8.1</ValueFormat>
+      </RenderingHints>
+      <ValidMin>0.0</ValidMin>
+      <ValidMax>360.0</ValidMax>
+      <FillValue>-1.0e+31</FillValue>
+      <Support>
+        <Qualifier>DirectionAngle.AzimuthAngle</Qualifier>
+        <Qualifier>Scalar</Qualifier>
+        <SupportQuantity>Positional</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>MESSENGER Position, Latitude, Heliographic Inertial Coordinates</Name>
+      <Set>Time Series defined by using: EPOCH</Set>
+      <ParameterKey>HGI_LAT</ParameterKey>
+      <Description>MESSENGER Position, Latitude, Heliographic Inertial, HGI, Spherical Coordinates</Description>
+      <Cadence>P1D</Cadence>
+      <Units>°</Units>
+      <UnitsConversion>0.0174532925&gt;rad</UnitsConversion>
+      <CoordinateSystem>
+        <CoordinateRepresentation>Spherical</CoordinateRepresentation>
+        <CoordinateSystemName>HGI</CoordinateSystemName>
+      </CoordinateSystem>
+      <RenderingHints>
+        <DisplayType>TimeSeries</DisplayType>
+        <AxisLabel>HGI_LAT</AxisLabel>
+        <ValueFormat>F8.1</ValueFormat>
+      </RenderingHints>
+      <ValidMin>-90.0</ValidMin>
+      <ValidMax>90.0</ValidMax>
+      <FillValue>-1.0e+31</FillValue>
+      <Support>
+        <Qualifier>DirectionAngle.ElevationAngle</Qualifier>
+        <Qualifier>Scalar</Qualifier>
+        <SupportQuantity>Positional</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>MESSENGER Position, Longitude, Heliographic Inertial Coordinates</Name>
+      <Set>Time Series defined by using: EPOCH</Set>
+      <ParameterKey>HGI_LON</ParameterKey>
+      <Description>MESSENGER Position, Longitude, Heliographic Inertial, HGI, Spherical Coordinates</Description>
+      <Cadence>P1D</Cadence>
+      <Units>°</Units>
+      <UnitsConversion>0.0174532925&gt;rad</UnitsConversion>
+      <CoordinateSystem>
+        <CoordinateRepresentation>Spherical</CoordinateRepresentation>
+        <CoordinateSystemName>HGI</CoordinateSystemName>
+      </CoordinateSystem>
+      <RenderingHints>
+        <DisplayType>TimeSeries</DisplayType>
+        <AxisLabel>HGI_LON</AxisLabel>
+        <ValueFormat>F8.1</ValueFormat>
+      </RenderingHints>
+      <ValidMin>0.0</ValidMin>
+      <ValidMax>360.0</ValidMax>
+      <FillValue>-1.0e+31</FillValue>
+      <Support>
+        <Qualifier>DirectionAngle.AzimuthAngle</Qualifier>
+        <Qualifier>Scalar</Qualifier>
+        <SupportQuantity>Positional</SupportQuantity>
+      </Support>
+    </Parameter>
+  </NumericalData>
 </Spase>
