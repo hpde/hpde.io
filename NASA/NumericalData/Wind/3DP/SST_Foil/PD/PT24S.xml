@@ -1,222 +1,228 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<Spase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.spase-group.org/data/schema" xsi:schemaLocation="http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_3_2.xsd">
-   <Version>2.3.2</Version>
-   <NumericalData>
-      <ResourceID>spase://NASA/NumericalData/Wind/3DP/SST_Foil/PD/PT24S</ResourceID>
-      <ResourceHeader>
-         <ResourceName>Wind 3DP SST Foil Electron Energy-Angle Distributions</ResourceName>
-         <DOI>https://doi.org/10.48322/aawb-c884</DOI>
-         <ReleaseDate>2021-05-31T12:34:56.789</ReleaseDate>
-         <RevisionHistory>
-            <RevisionEvent>
-               <ReleaseDate>2021-05-31T12:34:56.789</ReleaseDate>
-               <Note>Updated to SPASE Version 2.3.2 if needed, Applied quality control for DOI usage, LFB</Note>
-            </RevisionEvent>
-         </RevisionHistory>
-         <Description>Electron energy-angle distributions 27-520 keV, often at 24 sec, SST Foil, Wind 3DP - R. Lin (UC Berkeley)</Description>
-         <Acknowledgement>Principle Investigators Robert Lin and Stuart Bale, the Wind 3DP team, and the Space Physics Data Facility (SPDF)/NASA GSFC</Acknowledgement>
-         <PublicationInfo>
-            <Authors>Lin, Robert P.; Bale, Stuart D.; &amp; Wilson III, Lynn B.</Authors>
-            <PublicationDate>2021-01-01T00:00:00</PublicationDate>
-            <PublishedBy>NASA Space Physics Data Facility</PublishedBy>
-         </PublicationInfo>
-         <Contact>
-            <PersonID>spase://SMWG/Person/Robert.P.Lin</PersonID>
-            <Role>PrincipalInvestigator</Role>
-         </Contact>
-         <Contact>
-            <PersonID>spase://SMWG/Person/Stuart.D.Bale</PersonID>
-            <Role>PrincipalInvestigator</Role>
-         </Contact>
-         <Contact>
-            <PersonID>spase://SMWG/Person/Robert.E.McGuire</PersonID>
-            <Role>GeneralContact</Role>
-         </Contact>
-         <InformationURL>
-            <Name>Caveats to the use of Wind 3DP data</Name>
-            <URL>https://spdf.gsfc.nasa.gov/pub/data/wind/3dp/wind3dp_caveats.pdf</URL>
-            <Description>Caveats for the correct use of Wind 3DP datasets</Description>
-         </InformationURL>
-         <InformationURL>
-            <Name>Wind 3DP home page at UCB</Name>
-            <URL>http://sprg.ssl.berkeley.edu/wind3dp/</URL>
-            <Description>home page at UCB (with plotting and digital data)</Description>
-         </InformationURL>
-         <PriorID>spase://VSPO/NumericalData/Wind/3DP/SST_Foil/PD/PT24S</PriorID>
-      </ResourceHeader>
-      <AccessInformation>
-         <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF</RepositoryID>
-         <Availability>Online</Availability>
-         <AccessRights>Open</AccessRights>
-         <AccessURL>
-            <Name>FTPS from SPDF (not with most browsers)</Name>
-            <URL>ftps://spdf.gsfc.nasa.gov/pub/data/wind/3dp/3dp_sfpd/</URL>
-            <Description>In CDF via ftp from SPDF</Description>
-         </AccessURL>
-         <AccessURL>
-            <Name>HTTPS from SPDF</Name>
-            <URL>https://spdf.gsfc.nasa.gov/pub/data/wind/3dp/3dp_sfpd/</URL>
-            <Description>In CDF via HTTP from SPDF</Description>
-         </AccessURL>
-         <Format>CDF</Format>
-         <Acknowledgement>Please acknowledge the CDAWeb team at GSFC/SPDF.</Acknowledgement>
-      </AccessInformation>
-      <AccessInformation>
-         <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF</RepositoryID>
-         <Availability>Online</Availability>
-         <AccessRights>Open</AccessRights>
-         <AccessURL>
-            <Name>CDAWeb</Name>
-            <URL>https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=WI_SFPD_3DP&amp;index=sp_phys</URL>
-            <ProductKey>WI_SFPD_3DP</ProductKey>
-         </AccessURL>
-         <Format>Text</Format>
-      </AccessInformation>
-      <AccessInformation>
-         <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF</RepositoryID>
-         <Availability>Online</Availability>
-         <AccessRights>Open</AccessRights>
-         <AccessURL>
-            <Name>CDAWeb HAPI Server</Name>
-            <URL>https://cdaweb.gsfc.nasa.gov/hapi</URL>
-            <Style>HAPI</Style>
-            <ProductKey>WI_SFPD_3DP</ProductKey>
-            <Description>Web Service to this product using the HAPI interface.</Description>
-         </AccessURL>
-         <Format>CSV</Format>
-      </AccessInformation>
-      <InstrumentID>spase://SMWG/Instrument/Wind/3DP</InstrumentID>
-      <MeasurementType>EnergeticParticles</MeasurementType>
-      <TemporalDescription>
-         <TimeSpan>
-            <StartDate>1994-11-15T12:56:18.000Z</StartDate>
-            <RelativeStopDate>-P30D</RelativeStopDate>
-         </TimeSpan>
-         <Cadence>PT24S</Cadence>
-      </TemporalDescription>
-      <ObservedRegion>Heliosphere.NearEarth</ObservedRegion>
-      <Caveats>General Notes per Lynn Wilson Jan 2015: The solid-state telescope (SST) for Wind 3DP electrons returns a velocity distribution function containing 7 energy bins and 48 solid-angle bins. The automated CDF routine appears to remove all the following solid-angle bins: [7,8,9,15,31,32,33] = sun/anti-sun look directions, and [20,21,22,23,44,45,46,47] = low geometry factor bins (also correspond to the SST Thick anti-coincidence detector bins). The sun/anti-sun directions are removed to avoid X-ray and EUV contamination, which is often seen during solar flares. The onset looks exactly like the GOES X-ray observations, which is kind of fun but not what we want to look at. Unfortunately, these look directions can correspond to the magnetic field direction, which can limit the times when we would like to examine SEP events. General Notes per Lynn Wilson Jan 2015: Note that SST Open (e.g., wi_sopd_3dp_00000000_v01.cdf) software removes the following additional solid-angle bins: [0,1,24,25] = noisy. Additionally, SST Open has 9 energy channels from ~70 keV to ~6.7 or 7.1 MeV, depending on the mode the instrument is in. It does not appear that the routine mk_sosp_cdf.pro removes any of these ...bad... look directions, so that should be noted as well. General Notes per Lynn Wilson Jan 2015: Inside the radiation belts, both Foil and Open saturate and suffer from penetrating particles. The instruments are not shielded, so they can only provide relative changes when in these regions. General Notes per Lynn Wilson Jan 2015: The data all look like they are in units of number flux or # cm-2 s-1 sr-1 eV-1.</Caveats>
-      <Parameter>
-         <Name>Epoch</Name>
-         <ParameterKey>Epoch</ParameterKey>
-         <Description>Number of milliseconds since CDF_EPOCH: 0000-01-01T00:00:00.000.</Description>
-         <Units>ms</Units>
-         <UnitsConversion>1e-3&gt;s</UnitsConversion>
-         <ValidMin>01-Jan-1956 00:00:00.000</ValidMin>
-         <ValidMax>01-Jan-2083 00:00:00.000</ValidMax>
-         <FillValue>-1.0E31</FillValue>
-         <Support>
-            <SupportQuantity>Temporal</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>Unix Time</Name>
-         <ParameterKey>TIME</ParameterKey>
-         <Description>Time since 1970-01-01T00:00:00Z in seconds</Description>
-         <Units>s</Units>
-         <Support>
-            <SupportQuantity>Temporal</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>Electron Flux</Name>
-         <ParameterKey>FLUX</ParameterKey>
-         <Description>Electron number flux 30-500 keV in 7 energy and 8 pitch angle bins. The first dimension corresponds to 7 time dependent energy bands (parameter ENERGY,centered from ~30-500 keV). The 2nd dimension corresponds to 8 time dependent pitch angles (parameter PANGLE, ranging from ~15 deg to ~165 deg)</Description>
-         <Units>#/(cm^2*ster*eV*s)</Units>
-         <Structure>
-            <Size>7 8</Size>
-         </Structure>
-         <Particle>
-            <ParticleType>Electron</ParticleType>
-            <ParticleQuantity>NumberFlux</ParticleQuantity>
-            <EnergyRange>
-               <Low>30000</Low>
-               <High>500000</High>
-               <Units>eV</Units>
-            </EnergyRange>
-            <AzimuthalAngleRange>
-               <Low>0</Low>
-               <High>360</High>
-               <Units>degrees</Units>
-            </AzimuthalAngleRange>
-            <PolarAngleRange>
-               <Low>0</Low>
-               <High>180</High>
-               <Units>degrees</Units>
-            </PolarAngleRange>
-         </Particle>
-      </Parameter>
-      <Parameter>
-         <Name>Electron Pitch Angle</Name>
-         <ParameterKey>PANGLE</ParameterKey>
-         <Description>Time-varying electron pitch angles for 8 angular bins</Description>
-         <Units>degree</Units>
-         <Structure>
-            <Size>8</Size>
-            <Description>The 8 average pitch angles for this pitch angle distribution</Description>
-         </Structure>
-         <Particle>
-            <ParticleType>Electron</ParticleType>
-            <Qualifier>DirectionAngle</Qualifier>
-            <ParticleQuantity>ArrivalDirection</ParticleQuantity>
-         </Particle>
-      </Parameter>
-      <Parameter>
-         <Name>Electron Energy</Name>
-         <ParameterKey>ENERGY_filled</ParameterKey>
-         <Description>Time-varying electron energies for 7 channels</Description>
-         <Caveats>Uses fix-sparse to fill in nan energy values</Caveats>
-         <Units>eV</Units>
-         <Structure>
-            <Size>7</Size>
-            <Description>The 7 average electron energies for this pitch angle distribution</Description>
-         </Structure>
-         <Particle>
-            <ParticleType>Electron</ParticleType>
-            <Qualifier>Average</Qualifier>
-            <ParticleQuantity>Energy</ParticleQuantity>
-            <EnergyRange>
-               <Low>30000</Low>
-               <High>500000</High>
-               <Units>eV</Units>
-            </EnergyRange>
-         </Particle>
-      </Parameter>
-      <Parameter>
-         <Name>Magnetic field vector in GSE coordinates</Name>
-         <ParameterKey>MAGF</ParameterKey>
-         <Description>Magnetic field vector in GSE coordinates</Description>
-         <Units>nT</Units>
-         <CoordinateSystem>
-            <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
-            <CoordinateSystemName>GSE</CoordinateSystemName>
-         </CoordinateSystem>
-         <Structure>
-            <Size>3</Size>
-            <Element>
-               <Name>Bx</Name>
-               <Index>1</Index>
-               <ValidMin>-10</ValidMin>
-               <ValidMax>10</ValidMax>
-            </Element>
-            <Element>
-               <Name>By</Name>
-               <Index>2</Index>
-               <ValidMin>-10</ValidMin>
-               <ValidMax>10</ValidMax>
-            </Element>
-            <Element>
-               <Name>Bz</Name>
-               <Index>3</Index>
-               <ValidMin>-10</ValidMin>
-               <ValidMax>10</ValidMax>
-            </Element>
-         </Structure>
-         <Field>
-            <Qualifier>Average</Qualifier>
-            <Qualifier>Vector</Qualifier>
-            <FieldQuantity>Magnetic</FieldQuantity>
-         </Field>
-      </Parameter>
-   </NumericalData>
+<?xml version='1.0' encoding='UTF-8'?>
+<Spase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.spase-group.org/data/schema" xsi:schemaLocation="https://www.spase-group.org/data/schema https://www.spase-group.org/data/schema/spase-2.7.0.xsd">
+  <Version>2.7.0</Version>
+  <NumericalData>
+    <ResourceID>spase://NASA/NumericalData/Wind/3DP/SST_Foil/PD/PT24S</ResourceID>
+    <NamingAuthority>NASA</NamingAuthority>
+    <ResourceType>NumericalData</ResourceType>
+    <ResourceHeader>
+      <ResourceName>Wind 3DP SST Foil Electron Energy-Angle Distributions</ResourceName>
+      <DOI>https://doi.org/10.48322/aawb-c884</DOI>
+      <ReleaseDate>2025-10-03T11:24:18Z</ReleaseDate>
+      <RevisionHistory>
+        <RevisionEvent>
+          <ReleaseDate>2021-05-31T12:34:56.789</ReleaseDate>
+          <Note>Updated to SPASE Version 2.3.2 if needed, Applied quality control for DOI usage, LFB</Note>
+        </RevisionEvent>
+        <RevisionEvent>
+          <ReleaseDate>2025-10-03T11:24:18Z</ReleaseDate>
+          <Note>Updated PublishedBy name to match ROR Registry. Added ResourceType and NamingAuthority. Changed http to https in top-level schemaLocation attribute. Fixed version number separator in top-level schemaLocation attribute. Matched version number in schemaLocation attribute to updated value in Version tag. ZCB</Note>
+        </RevisionEvent>
+      </RevisionHistory>
+      <Description>Electron energy-angle distributions 27-520 keV, often at 24 sec, SST Foil, Wind 3DP - R. Lin (UC Berkeley)</Description>
+      <Acknowledgement>Principle Investigators Robert Lin and Stuart Bale, the Wind 3DP team, and the Space Physics Data Facility (SPDF)/NASA GSFC</Acknowledgement>
+      <PublicationInfo>
+        <Authors>Lin, Robert P.; Bale, Stuart D.; &amp; Wilson III, Lynn B.</Authors>
+        <PublicationDate>2021-01-01T00:00:00</PublicationDate>
+        <PublishedBy>Space Physics Data Facility</PublishedBy>
+      </PublicationInfo>
+      <Contact>
+        <PersonID>spase://SMWG/Person/Robert.P.Lin</PersonID>
+        <Role>PrincipalInvestigator</Role>
+      </Contact>
+      <Contact>
+        <PersonID>spase://SMWG/Person/Stuart.D.Bale</PersonID>
+        <Role>PrincipalInvestigator</Role>
+      </Contact>
+      <Contact>
+        <PersonID>spase://SMWG/Person/Robert.E.McGuire</PersonID>
+        <Role>GeneralContact</Role>
+      </Contact>
+      <InformationURL>
+        <Name>Caveats to the use of Wind 3DP data</Name>
+        <URL>https://spdf.gsfc.nasa.gov/pub/data/wind/3dp/wind3dp_caveats.pdf</URL>
+        <Description>Caveats for the correct use of Wind 3DP datasets</Description>
+      </InformationURL>
+      <InformationURL>
+        <Name>Wind 3DP home page at UCB</Name>
+        <URL>http://sprg.ssl.berkeley.edu/wind3dp/</URL>
+        <Description>home page at UCB (with plotting and digital data)</Description>
+      </InformationURL>
+      <PriorID>spase://VSPO/NumericalData/Wind/3DP/SST_Foil/PD/PT24S</PriorID>
+    </ResourceHeader>
+    <AccessInformation>
+      <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF</RepositoryID>
+      <Availability>Online</Availability>
+      <AccessRights>Open</AccessRights>
+      <AccessURL>
+        <Name>FTPS from SPDF (not with most browsers)</Name>
+        <URL>ftps://spdf.gsfc.nasa.gov/pub/data/wind/3dp/3dp_sfpd/</URL>
+        <Description>In CDF via ftp from SPDF</Description>
+      </AccessURL>
+      <AccessURL>
+        <Name>HTTPS from SPDF</Name>
+        <URL>https://spdf.gsfc.nasa.gov/pub/data/wind/3dp/3dp_sfpd/</URL>
+        <Description>In CDF via HTTP from SPDF</Description>
+      </AccessURL>
+      <Format>CDF</Format>
+      <Acknowledgement>Please acknowledge the CDAWeb team at GSFC/SPDF.</Acknowledgement>
+    </AccessInformation>
+    <AccessInformation>
+      <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF</RepositoryID>
+      <Availability>Online</Availability>
+      <AccessRights>Open</AccessRights>
+      <AccessURL>
+        <Name>CDAWeb</Name>
+        <URL>https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=WI_SFPD_3DP&amp;index=sp_phys</URL>
+        <ProductKey>WI_SFPD_3DP</ProductKey>
+      </AccessURL>
+      <Format>Text</Format>
+    </AccessInformation>
+    <AccessInformation>
+      <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF</RepositoryID>
+      <Availability>Online</Availability>
+      <AccessRights>Open</AccessRights>
+      <AccessURL>
+        <Name>CDAWeb HAPI Server</Name>
+        <URL>https://cdaweb.gsfc.nasa.gov/hapi</URL>
+        <Style>HAPI</Style>
+        <ProductKey>WI_SFPD_3DP</ProductKey>
+        <Description>Web Service to this product using the HAPI interface.</Description>
+      </AccessURL>
+      <Format>CSV</Format>
+    </AccessInformation>
+    <InstrumentID>spase://SMWG/Instrument/Wind/3DP</InstrumentID>
+    <MeasurementType>EnergeticParticles</MeasurementType>
+    <TemporalDescription>
+      <TimeSpan>
+        <StartDate>1994-11-15T12:56:18.000Z</StartDate>
+        <RelativeStopDate>-P30D</RelativeStopDate>
+      </TimeSpan>
+      <Cadence>PT24S</Cadence>
+    </TemporalDescription>
+    <ObservedRegion>Heliosphere.NearEarth</ObservedRegion>
+    <Caveats>General Notes per Lynn Wilson Jan 2015: The solid-state telescope (SST) for Wind 3DP electrons returns a velocity distribution function containing 7 energy bins and 48 solid-angle bins. The automated CDF routine appears to remove all the following solid-angle bins: [7,8,9,15,31,32,33] = sun/anti-sun look directions, and [20,21,22,23,44,45,46,47] = low geometry factor bins (also correspond to the SST Thick anti-coincidence detector bins). The sun/anti-sun directions are removed to avoid X-ray and EUV contamination, which is often seen during solar flares. The onset looks exactly like the GOES X-ray observations, which is kind of fun but not what we want to look at. Unfortunately, these look directions can correspond to the magnetic field direction, which can limit the times when we would like to examine SEP events. General Notes per Lynn Wilson Jan 2015: Note that SST Open (e.g., wi_sopd_3dp_00000000_v01.cdf) software removes the following additional solid-angle bins: [0,1,24,25] = noisy. Additionally, SST Open has 9 energy channels from ~70 keV to ~6.7 or 7.1 MeV, depending on the mode the instrument is in. It does not appear that the routine mk_sosp_cdf.pro removes any of these ...bad... look directions, so that should be noted as well. General Notes per Lynn Wilson Jan 2015: Inside the radiation belts, both Foil and Open saturate and suffer from penetrating particles. The instruments are not shielded, so they can only provide relative changes when in these regions. General Notes per Lynn Wilson Jan 2015: The data all look like they are in units of number flux or # cm-2 s-1 sr-1 eV-1.</Caveats>
+    <Parameter>
+      <Name>Epoch</Name>
+      <ParameterKey>Epoch</ParameterKey>
+      <Description>Number of milliseconds since CDF_EPOCH: 0000-01-01T00:00:00.000.</Description>
+      <Units>ms</Units>
+      <UnitsConversion>1e-3&gt;s</UnitsConversion>
+      <ValidMin>01-Jan-1956 00:00:00.000</ValidMin>
+      <ValidMax>01-Jan-2083 00:00:00.000</ValidMax>
+      <FillValue>-1.0E31</FillValue>
+      <Support>
+        <SupportQuantity>Temporal</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Unix Time</Name>
+      <ParameterKey>TIME</ParameterKey>
+      <Description>Time since 1970-01-01T00:00:00Z in seconds</Description>
+      <Units>s</Units>
+      <Support>
+        <SupportQuantity>Temporal</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Electron Flux</Name>
+      <ParameterKey>FLUX</ParameterKey>
+      <Description>Electron number flux 30-500 keV in 7 energy and 8 pitch angle bins. The first dimension corresponds to 7 time dependent energy bands (parameter ENERGY,centered from ~30-500 keV). The 2nd dimension corresponds to 8 time dependent pitch angles (parameter PANGLE, ranging from ~15 deg to ~165 deg)</Description>
+      <Units>#/(cm^2*ster*eV*s)</Units>
+      <Structure>
+        <Size>7 8</Size>
+      </Structure>
+      <Particle>
+        <ParticleType>Electron</ParticleType>
+        <ParticleQuantity>NumberFlux</ParticleQuantity>
+        <EnergyRange>
+          <Low>30000</Low>
+          <High>500000</High>
+          <Units>eV</Units>
+        </EnergyRange>
+        <AzimuthalAngleRange>
+          <Low>0</Low>
+          <High>360</High>
+          <Units>degrees</Units>
+        </AzimuthalAngleRange>
+        <PolarAngleRange>
+          <Low>0</Low>
+          <High>180</High>
+          <Units>degrees</Units>
+        </PolarAngleRange>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>Electron Pitch Angle</Name>
+      <ParameterKey>PANGLE</ParameterKey>
+      <Description>Time-varying electron pitch angles for 8 angular bins</Description>
+      <Units>degree</Units>
+      <Structure>
+        <Size>8</Size>
+        <Description>The 8 average pitch angles for this pitch angle distribution</Description>
+      </Structure>
+      <Particle>
+        <ParticleType>Electron</ParticleType>
+        <Qualifier>DirectionAngle</Qualifier>
+        <ParticleQuantity>ArrivalDirection</ParticleQuantity>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>Electron Energy</Name>
+      <ParameterKey>ENERGY_filled</ParameterKey>
+      <Description>Time-varying electron energies for 7 channels</Description>
+      <Caveats>Uses fix-sparse to fill in nan energy values</Caveats>
+      <Units>eV</Units>
+      <Structure>
+        <Size>7</Size>
+        <Description>The 7 average electron energies for this pitch angle distribution</Description>
+      </Structure>
+      <Particle>
+        <ParticleType>Electron</ParticleType>
+        <Qualifier>Average</Qualifier>
+        <ParticleQuantity>Energy</ParticleQuantity>
+        <EnergyRange>
+          <Low>30000</Low>
+          <High>500000</High>
+          <Units>eV</Units>
+        </EnergyRange>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>Magnetic field vector in GSE coordinates</Name>
+      <ParameterKey>MAGF</ParameterKey>
+      <Description>Magnetic field vector in GSE coordinates</Description>
+      <Units>nT</Units>
+      <CoordinateSystem>
+        <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+        <CoordinateSystemName>GSE</CoordinateSystemName>
+      </CoordinateSystem>
+      <Structure>
+        <Size>3</Size>
+        <Element>
+          <Name>Bx</Name>
+          <Index>1</Index>
+          <ValidMin>-10</ValidMin>
+          <ValidMax>10</ValidMax>
+        </Element>
+        <Element>
+          <Name>By</Name>
+          <Index>2</Index>
+          <ValidMin>-10</ValidMin>
+          <ValidMax>10</ValidMax>
+        </Element>
+        <Element>
+          <Name>Bz</Name>
+          <Index>3</Index>
+          <ValidMin>-10</ValidMin>
+          <ValidMax>10</ValidMax>
+        </Element>
+      </Structure>
+      <Field>
+        <Qualifier>Average</Qualifier>
+        <Qualifier>Vector</Qualifier>
+        <FieldQuantity>Magnetic</FieldQuantity>
+      </Field>
+    </Parameter>
+  </NumericalData>
 </Spase>

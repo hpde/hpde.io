@@ -1,962 +1,968 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2-5-0.xsd">
-   <Version>2.5.0</Version>
-   <NumericalData>
-      <ResourceID>spase://NASA/NumericalData/MMS/4/FIELDS/EDI/Burst/Level2/ElectricField/PT0.0009765625S</ResourceID>
-      <ResourceHeader>
-         <ResourceName>MMS 4 Electron Drift Instrument (EDI) Electric Field, Level 2 (L2), Burst Mode, 0.9765625 ms Data</ResourceName>
-         <AlternateName>MMS4_EDI_BRST_L2_EFIELD</AlternateName>
-         <DOI>https://doi.org/10.48322/pfaw-ps82</DOI>
-         <ReleaseDate>2023-03-04T12:34:56.789</ReleaseDate>
-         <RevisionHistory>
-            <RevisionEvent>
-               <ReleaseDate>2021-04-27T15:38:11</ReleaseDate>
-               <Note>Only known prior ReleaseDate of the metadata</Note>
-            </RevisionEvent>
-            <RevisionEvent>
-               <ReleaseDate>2022-08-04T12:34:56.789</ReleaseDate>
-               <Note>Added DOI and PublicationInfo minted by LFB, updated the RepositoryID, updated the SPDF MetadataContact Person to Robert M. Candey, metadata updated to SPASE 2.4.1, reviewed by LFB 20220803</Note>
-            </RevisionEvent>
-            <RevisionEvent>
-               <ReleaseDate>2023-03-04T12:34:56.789</ReleaseDate>
-               <Note>Standardized the ResourceName Format, Set AlternateName equal to the ProductKey, Revised the Acknowledgement, PublicationInfo Authors, and Contact Person list per request of the MMS EDI team, metadata updated to SPASE 2.5.0, reviewed by LFB 20230304</Note>
-            </RevisionEvent>
-         </RevisionHistory>
-         <Description>Electron Drift Instrument (EDI) Electric Field Burst Survey, Level 2, 0.0009765625 s Data (1024 samples/s). EDI has two scientific data acquisition modes, called electric field mode and ambient mode. In electric field mode, two coded electron beams are emitted such that they return to the detectors after one or more gyrations in the ambient magnetic and electric field. The firing directions and times-of-flight allow the derivation of the drift velocity and electric field. In ambient mode, the electron beams are not used. The detectors with their large geometric factors and their ability to adjust the field of view quickly allow continuous sampling of ambient electrons at a selected pitch angle and fixed but selectable energy. To find the beam directions that will hit the detector, EDI sweeps each beam in the plane perpendicular to B at a fixed angular rate of 0.22 °/ms until a signal has been acquired by the detector. Once signal has been acquired, the beams are swept back and forth to stay on target. Beam detection is not determined from the changes in the count-rates directly, but from the square of the beam counts divided by the background counts from ambient electrons, i.e., from the square of the instantaneous signal-to-noise ratio (SNR). This quantity is computed from data provided by the correlator in the Gun-Detector Electronics that also generates the coding pattern imposed on the outgoing beams. If the squared SNR ratio exceeds a threshold, this is taken as evidence that the beam is returning to the detector. The thresholds for SNR are chosen dependent on background fluxes. They represent a compromise between getting false hits (induced by strong variations in background electron fluxes) and missing true beam hits. The basic software loop that controls EDI operations is executed every 2 ms. As the times when the beams hit their detectors are neither synchronized with the telemetry nor equidistant, EDI data have no fixed time-resolution. Data are reported in telemetry slots. In Survey, using the standard packing mode 0, there are eight telemetry slots per second and Gyn Detector Unit (GDU). The last beam detected during the previous slot will be reported in the current slot. If no beam has been detected, the data quality will be set to zero. In Burst telemetry there are 128 slots per second and GDU. The data in each slot consists of information regarding the beam firing directions (stored in the form of analytic gun deflection voltages), times-of-flight (if successfully measured), quality indicators, time stamps of the beam hits, and some auxiliary correlator-related information. Whenever EDI is not in electron drift mode, it uses its ambient electron mode. The mode has the capability to sample at either 90 degrees pitch angle or at 0/180 degrees (field aligned), or to alternate between 90 degrees and field aligned with selectable dwell times. While all options have been demonstrated during the commissioning phase, only the field aligned mode has been used in the routine operations phase. The choices for energy are 250 eV, 500 eV, and 1 keV. The two detectors, which are facing opposite hemispheres, are looking strictly into opposite directions, so while one detector is looking along B the other is looking antiparallel to B (corresponding to pitch angles of 180 and 0 degrees, respectively). The two detectors switch roles every half spin of the spacecraft as the tip of the magnetic field vector spins outside the field of view of one detector and into the field of view of the other detector. This is the primary data product generated from data collected in electric field mode. The science data generated are drift velocity and electric field data in various coordinate systems. They are derived from triangulation and/or time-of-flight analysis. Where both methods are applicable, their results will be combined using a weighting approach based on their relative errors. The EDI instrument paper can be found at: http://link.springer.com/article/10.1007%2Fs11214-015-0182-7. The EDI instrument data products guide can be found at https://lasp.colorado.edu/mms/sdc/public/datasets/fields/.</Description>
-         <Acknowledgement>Please acknowledge R.B. Torbert, M.R. Argall, and J.L. Burch for use of these data</Acknowledgement>
-         <PublicationInfo>
-            <Authors>Torbert, Roy, B.; Argall, Matthew, R.; Burch, James, L.</Authors>
-            <PublicationDate>2022-01-01T00:00:00</PublicationDate>
-            <PublishedBy>NASA Space Physics Data Facility</PublishedBy>
-         </PublicationInfo>
-         <Contact>
-            <PersonID>spase://SMWG/Person/Roy.B.Torbert</PersonID>
-            <Role>InstrumentLead</Role>
-            <Role>CoInvestigator</Role>
-         </Contact>
-         <Contact>
-            <PersonID>spase://SMWG/Person/Matthew.R.Argall</PersonID>
-            <Role>Developer</Role>
-            <Note>GroundSoftwareDeveloper</Note>
-         </Contact>
-         <Contact>
-            <PersonID>spase://SMWG/Person/James.L.Burch</PersonID>
-            <Role>PrincipalInvestigator</Role>
-         </Contact>
-         <Contact>
-            <PersonID>spase://SMWG/Person/MMS_SDC_POC</PersonID>
-            <Role>HostContact</Role>
-         </Contact>
-         <Contact>
-            <PersonID>spase://SMWG/Person/Robert.M.Candey</PersonID>
-            <Role>MetadataContact</Role>
-         </Contact>
-         <Contact>
-            <PersonID>spase://SMWG/Person/Lee.Frost.Bargatze</PersonID>
-            <Role>MetadataContact</Role>
-         </Contact>
-         <InformationURL>
-            <Name>The Magnetospheric Multiscale (MMS) Mission home page at Goddard Space Flight Center (GSFC)</Name>
-            <URL>https://mms.gsfc.nasa.gov/</URL>
-            <Description>The Magnetospheric Multiscale (MMS) Mission Home Page hosted by the Goddard Space Flight Center (GSFC).</Description>
-         </InformationURL>
-         <InformationURL>
-            <Name>Data Caveats and Current Release Notes at LASP MMS SDC</Name>
-            <URL>https://lasp.colorado.edu/mms/sdc/public/datasets/fields/</URL>
-            <Description>The Magnetospheric Multiscale (MMS) Mission home page hosted by the Laboratory of Atmospheric and Space Physics, Science Data Center (LASP, SDC) at the University of Colorado, Boulder.</Description>
-         </InformationURL>
-         <InformationURL>
-            <Name>At UNH</Name>
-            <URL>https://mms-fields.unh.edu/</URL>
-            <Description>The Magnetospheric Multiscale (MMS) FIELDS Instrument Suite home page. The web page is hosted by the University of New Hampshire (UNH).</Description>
-         </InformationURL>
-         <PriorID>spase://VSPO/NumericalData/MMS/4/FIELDS/EDI/Burst/Level2/ElectricField/PT0.0009765625S</PriorID>
-      </ResourceHeader>
-      <AccessInformation>
-         <RepositoryID>spase://SMWG/Repository/UCOLO/LASP/MMS_SDC</RepositoryID>
-         <Availability>Online</Availability>
-         <AccessRights>Open</AccessRights>
-         <AccessURL>
-            <Name>FTPS from the MMS SDC (not with most browsers)</Name>
-            <URL>ftps://lasp.colorado.edu/mms/sdc/public/data/mms4/edi/brst/l2/efield/</URL>
-            <Description>In CDF via ftp from the MMS Science Data Center</Description>
-         </AccessURL>
-         <AccessURL>
-            <Name>HTTPS from the MMS SDC</Name>
-            <URL>https://lasp.colorado.edu/mms/sdc/public/data/mms4/edi/brst/l2/efield/</URL>
-            <Description>In CDF via http from the MMS Science Data Center</Description>
-         </AccessURL>
-         <Format>CDF</Format>
-         <Encoding>None</Encoding>
-         <Acknowledgement>Please acknowledge R.B. Torbert, M.R. Argall, and J.L. Burch. Also please acknowledge the data providers and CDAWeb when using these data.</Acknowledgement>
-      </AccessInformation>
-      <AccessInformation>
-         <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF/CDAWeb</RepositoryID>
-         <Availability>Online</Availability>
-         <AccessRights>Open</AccessRights>
-         <AccessURL>
-            <Name>FTPS from SPDF (not with most browsers)</Name>
-            <URL>ftps://spdf.gsfc.nasa.gov/pub/data/mms/mms4/edi/brst/l2/efield/</URL>
-            <Description>In CDF via ftp from SPDF</Description>
-         </AccessURL>
-         <AccessURL>
-            <Name>HTTPS from SPDF</Name>
-            <URL>https://spdf.gsfc.nasa.gov/pub/data/mms/mms4/edi/brst/l2/efield/</URL>
-            <Description>In CDF via http from SPDF</Description>
-         </AccessURL>
-         <AccessURL>
-            <Name>CDAWeb</Name>
-            <URL>https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=MMS4_EDI_BRST_L2_EFIELD&amp;index=sp_phys</URL>
-            <ProductKey>MMS4_EDI_BRST_L2_EFIELD</ProductKey>
-            <Description>Access to ASCII, CDF, and plots via NASA/GSFC CDAWeb</Description>
-         </AccessURL>
-         <Format>CDF</Format>
-         <Encoding>None</Encoding>
-         <Acknowledgement>Please acknowledge R.B. Torbert, M.R. Argall, and J.L. Burch. Also please acknowledge the data providers and CDAWeb when using these data.</Acknowledgement>
-      </AccessInformation>
-      <AccessInformation>
-         <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF/CDAWeb</RepositoryID>
-         <Availability>Online</Availability>
-         <AccessRights>Open</AccessRights>
-         <AccessURL>
-            <Name>CDAWeb HAPI Server</Name>
-            <URL>https://cdaweb.gsfc.nasa.gov/hapi</URL>
-            <Style>HAPI</Style>
-            <ProductKey>MMS4_EDI_BRST_L2_EFIELD</ProductKey>
-            <Description>Web Service to this product using the HAPI interface</Description>
-         </AccessURL>
-         <Format>CSV</Format>
-         <Acknowledgement>Please acknowledge R.B. Torbert, M.R. Argall, and J.L. Burch. Also please acknowledge the data providers and CDAWeb when using these data.</Acknowledgement>
-      </AccessInformation>
-      <ProcessingLevel>Calibrated</ProcessingLevel>
-      <InstrumentID>spase://SMWG/Instrument/MMS/4/FIELDS/EDI</InstrumentID>
-      <MeasurementType>ElectricField</MeasurementType>
-      <TemporalDescription>
-         <TimeSpan>
-            <StartDate>2015-09-14T14:16:34</StartDate>
-            <RelativeStopDate>-P2M</RelativeStopDate>
-         </TimeSpan>
-         <Cadence>PT0.0009765625S</Cadence>
-      </TemporalDescription>
-      <ObservedRegion>Earth.Magnetosheath</ObservedRegion>
-      <ObservedRegion>Earth.Magnetosphere</ObservedRegion>
-      <ObservedRegion>Earth.Magnetosphere.Magnetotail</ObservedRegion>
-      <ObservedRegion>Earth.Magnetosphere.Main</ObservedRegion>
-      <ObservedRegion>Earth.Magnetosphere.RadiationBelt</ObservedRegion>
-      <ObservedRegion>Earth.NearSurface.EquatorialRegion</ObservedRegion>
-      <ObservedRegion>Earth.NearSurface.Plasmasphere</ObservedRegion>
-      <ObservedRegion>Heliosphere.NearEarth</ObservedRegion>
-      <Parameter>
-         <Name>Epoch Time</Name>
-         <ParameterKey>Epoch</ParameterKey>
-         <Description>Epoch Time Tags for Velocity and Electric Field Data, Terrestrial Time 2000 (TT2000)</Description>
-         <Cadence>PT0.0009765625S</Cadence>
-         <Units>ns</Units>
-         <UnitsConversion>1e-9&gt;s</UnitsConversion>
-         <RenderingHints>
-            <AxisLabel>UT</AxisLabel>
-            <ValueFormat>I16</ValueFormat>
-         </RenderingHints>
-         <ValidMin>2015-03-01T00:00:00.000000000</ValidMin>
-         <ValidMax>2065-12-31T00:00:01.000000000</ValidMax>
-         <FillValue>9999-12-31T23:59:59.999999999</FillValue>
-         <Support>
-            <SupportQuantity>Temporal</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>Lower-Bound on the Time Tags</Name>
-         <Set>Time series defined by using: EPOCH</Set>
-         <ParameterKey>mms4_edi_t_delta_minus_brst_l2</ParameterKey>
-         <Description>Lower-Bound on the Epoch Time Tags</Description>
-         <Cadence>PT0.0009765625S</Cadence>
-         <Units>ns</Units>
-         <UnitsConversion>1e-9&gt;s</UnitsConversion>
-         <RenderingHints>
-            <AxisLabel>dt</AxisLabel>
-            <ValueFormat>I10</ValueFormat>
-            <ScaleType>LinearScale</ScaleType>
-         </RenderingHints>
-         <ValidMin>1707-09-22T12:12:10.961224195</ValidMin>
-         <ValidMax>2000-01-01T11:59:00.816000000</ValidMax>
-         <FillValue>9999-12-31T23:59:59.999999999</FillValue>
-         <Support>
-            <SupportQuantity>Temporal</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>Upper-Bound on the Time Tags</Name>
-         <Set>Time series defined by using: EPOCH</Set>
-         <ParameterKey>mms4_edi_t_delta_plus_brst_l2</ParameterKey>
-         <Description>Upper-Bound on the Epoch Time Tags</Description>
-         <Cadence>PT0.0009765625S</Cadence>
-         <Units>ns</Units>
-         <UnitsConversion>1e-9&gt;s</UnitsConversion>
-         <RenderingHints>
-            <AxisLabel>dt</AxisLabel>
-            <ValueFormat>I10</ValueFormat>
-            <ScaleType>LinearScale</ScaleType>
-         </RenderingHints>
-         <ValidMin>1707-09-22T12:12:10.961224195</ValidMin>
-         <ValidMax>2000-01-01T11:59:00.816000000</ValidMax>
-         <FillValue>9999-12-31T23:59:59.999999999</FillValue>
-         <Support>
-            <SupportQuantity>Temporal</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>E x B Drift Velocity Vector (DSL)</Name>
-         <Set>Time series defined by using: EPOCH</Set>
-         <ParameterKey>mms4_edi_vdrift_dsl_brst_l2</ParameterKey>
-         <Description>E cross B Drift Velocity Vector in Despun Angular Momentum (DSL) Cartesian Coordinates</Description>
-         <Cadence>PT0.0009765625S</Cadence>
-         <Units>km/s</Units>
-         <UnitsConversion>1e-3&gt;m/s</UnitsConversion>
-         <CoordinateSystem>
-            <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
-            <CoordinateSystemName>SC</CoordinateSystemName>
-         </CoordinateSystem>
-         <RenderingHints>
-            <DisplayType>TimeSeries</DisplayType>
-            <ValueFormat>F12.4</ValueFormat>
-            <ScaleType>LinearScale</ScaleType>
-         </RenderingHints>
-         <Structure>
-            <Size>3</Size>
-            <Element>
-               <Name>Vx</Name>
-               <Index>1</Index>
-            </Element>
-            <Element>
-               <Name>Vy</Name>
-               <Index>2</Index>
-            </Element>
-            <Element>
-               <Name>Vz</Name>
-               <Index>3</Index>
-            </Element>
-         </Structure>
-         <ValidMin>-500000.0</ValidMin>
-         <ValidMax>500000.0</ValidMax>
-         <FillValue>-1.0e+31</FillValue>
-         <Particle>
-            <ParticleType>Electron</ParticleType>
-            <Qualifier>Vector</Qualifier>
-            <ParticleQuantity>Velocity</ParticleQuantity>
-         </Particle>
-      </Parameter>
-      <Parameter>
-         <Name>E x B Drift Velocity Vector (GSE)</Name>
-         <Set>Time series defined by using: EPOCH</Set>
-         <ParameterKey>mms4_edi_vdrift_gse_brst_l2</ParameterKey>
-         <Description>E cross B Drift Velocity Vector in Geocentric Solar Ecliptic (GSE) Cartesian Coordinates</Description>
-         <Cadence>PT0.0009765625S</Cadence>
-         <Units>km/s</Units>
-         <UnitsConversion>1e-3&gt;m/s</UnitsConversion>
-         <CoordinateSystem>
-            <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
-            <CoordinateSystemName>GSE</CoordinateSystemName>
-         </CoordinateSystem>
-         <RenderingHints>
-            <DisplayType>TimeSeries</DisplayType>
-            <ValueFormat>F12.4</ValueFormat>
-            <ScaleType>LinearScale</ScaleType>
-         </RenderingHints>
-         <Structure>
-            <Size>3</Size>
-            <Element>
-               <Name>Vx</Name>
-               <Index>1</Index>
-            </Element>
-            <Element>
-               <Name>Vy</Name>
-               <Index>2</Index>
-            </Element>
-            <Element>
-               <Name>Vz</Name>
-               <Index>3</Index>
-            </Element>
-         </Structure>
-         <ValidMin>-500000.0</ValidMin>
-         <ValidMax>500000.0</ValidMax>
-         <FillValue>-1.0e+31</FillValue>
-         <Particle>
-            <ParticleType>Electron</ParticleType>
-            <Qualifier>Vector</Qualifier>
-            <ParticleQuantity>Velocity</ParticleQuantity>
-         </Particle>
-      </Parameter>
-      <Parameter>
-         <Name>E x B Drift Velocity Vector (GSM)</Name>
-         <Set>Time series defined by using: EPOCH</Set>
-         <ParameterKey>mms4_edi_vdrift_gsm_brst_l2</ParameterKey>
-         <Description>E cross B Drift Velocity Vector in Geocentric Solar Magnetospheric (GSM) Cartesian Coordinates</Description>
-         <Cadence>PT0.0009765625S</Cadence>
-         <Units>km/s</Units>
-         <UnitsConversion>1e-3&gt;m/s</UnitsConversion>
-         <CoordinateSystem>
-            <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
-            <CoordinateSystemName>GSM</CoordinateSystemName>
-         </CoordinateSystem>
-         <RenderingHints>
-            <DisplayType>TimeSeries</DisplayType>
-            <ValueFormat>F12.4</ValueFormat>
-            <ScaleType>LinearScale</ScaleType>
-         </RenderingHints>
-         <Structure>
-            <Size>3</Size>
-            <Element>
-               <Name>Vx</Name>
-               <Index>1</Index>
-            </Element>
-            <Element>
-               <Name>Vy</Name>
-               <Index>2</Index>
-            </Element>
-            <Element>
-               <Name>Vz</Name>
-               <Index>3</Index>
-            </Element>
-         </Structure>
-         <ValidMin>-500000.0</ValidMin>
-         <ValidMax>500000.0</ValidMax>
-         <FillValue>-1.0e+31</FillValue>
-         <Particle>
-            <ParticleType>Electron</ParticleType>
-            <Qualifier>Vector</Qualifier>
-            <ParticleQuantity>Velocity</ParticleQuantity>
-         </Particle>
-      </Parameter>
-      <Parameter>
-         <Name>Electric Field Vector (DSL)</Name>
-         <Set>Time series defined by using: EPOCH</Set>
-         <ParameterKey>mms4_edi_e_dsl_brst_l2</ParameterKey>
-         <Description>Electric Field Vector in Despun Angular Momentum (DSL) Cartesian Coordinates</Description>
-         <Cadence>PT0.0009765625S</Cadence>
-         <Units>mV/m</Units>
-         <UnitsConversion>1e-3&gt;V/m</UnitsConversion>
-         <CoordinateSystem>
-            <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
-            <CoordinateSystemName>SC</CoordinateSystemName>
-         </CoordinateSystem>
-         <RenderingHints>
-            <DisplayType>TimeSeries</DisplayType>
-            <ValueFormat>F12.4</ValueFormat>
-            <ScaleType>LinearScale</ScaleType>
-         </RenderingHints>
-         <Structure>
-            <Size>3</Size>
-            <Element>
-               <Name>Ex</Name>
-               <Index>1</Index>
-            </Element>
-            <Element>
-               <Name>Ey</Name>
-               <Index>2</Index>
-            </Element>
-            <Element>
-               <Name>Ez</Name>
-               <Index>3</Index>
-            </Element>
-         </Structure>
-         <ValidMin>-10000.0</ValidMin>
-         <ValidMax>10000.0</ValidMax>
-         <FillValue>-1.0e+31</FillValue>
-         <Field>
-            <Qualifier>Vector</Qualifier>
-            <FieldQuantity>Electric</FieldQuantity>
-         </Field>
-      </Parameter>
-      <Parameter>
-         <Name>Electric Field Vector (GSE)</Name>
-         <Set>Time series defined by using: EPOCH</Set>
-         <ParameterKey>mms4_edi_e_gse_brst_l2</ParameterKey>
-         <Description>Electric Field Vector in Geocentric Solar Ecliptic (GSE) Cartesian Coordinates</Description>
-         <Cadence>PT0.0009765625S</Cadence>
-         <Units>mV/m</Units>
-         <UnitsConversion>1e-3&gt;V/m</UnitsConversion>
-         <CoordinateSystem>
-            <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
-            <CoordinateSystemName>GSE</CoordinateSystemName>
-         </CoordinateSystem>
-         <RenderingHints>
-            <DisplayType>TimeSeries</DisplayType>
-            <ValueFormat>F12.4</ValueFormat>
-            <ScaleType>LinearScale</ScaleType>
-         </RenderingHints>
-         <Structure>
-            <Size>3</Size>
-            <Element>
-               <Name>Ex</Name>
-               <Index>1</Index>
-            </Element>
-            <Element>
-               <Name>Ey</Name>
-               <Index>2</Index>
-            </Element>
-            <Element>
-               <Name>Ez</Name>
-               <Index>3</Index>
-            </Element>
-         </Structure>
-         <ValidMin>-10000.0</ValidMin>
-         <ValidMax>10000.0</ValidMax>
-         <FillValue>-1.0e+31</FillValue>
-         <Field>
-            <Qualifier>Vector</Qualifier>
-            <FieldQuantity>Electric</FieldQuantity>
-         </Field>
-      </Parameter>
-      <Parameter>
-         <Name>Electric Field Vector (GSM)</Name>
-         <Set>Time series defined by using: EPOCH</Set>
-         <ParameterKey>mms4_edi_e_gsm_brst_l2</ParameterKey>
-         <Description>Electric Field Vector in Geocentric Solar Magnetospheric (GSM) Cartesian Coordinates</Description>
-         <Cadence>PT0.0009765625S</Cadence>
-         <Units>mV/m</Units>
-         <UnitsConversion>1e-3&gt;V/m</UnitsConversion>
-         <CoordinateSystem>
-            <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
-            <CoordinateSystemName>GSM</CoordinateSystemName>
-         </CoordinateSystem>
-         <RenderingHints>
-            <DisplayType>TimeSeries</DisplayType>
-            <ValueFormat>F12.4</ValueFormat>
-            <ScaleType>LinearScale</ScaleType>
-         </RenderingHints>
-         <Structure>
-            <Size>3</Size>
-            <Element>
-               <Name>Ex</Name>
-               <Index>1</Index>
-            </Element>
-            <Element>
-               <Name>Ey</Name>
-               <Index>2</Index>
-            </Element>
-            <Element>
-               <Name>Ez</Name>
-               <Index>3</Index>
-            </Element>
-         </Structure>
-         <ValidMin>-10000.0</ValidMin>
-         <ValidMax>10000.0</ValidMax>
-         <FillValue>-1.0e+31</FillValue>
-         <Field>
-            <Qualifier>Vector</Qualifier>
-            <FieldQuantity>Electric</FieldQuantity>
-         </Field>
-      </Parameter>
-      <Parameter>
-         <Name>Triangulation Weight</Name>
-         <Set>Time series defined by using: EPOCH</Set>
-         <ParameterKey>mms4_edi_tri_weight_brst_l2</ParameterKey>
-         <Description>Weighted Use of Triangulation Method in the Level 2 Results</Description>
-         <Cadence>PT0.0009765625S</Cadence>
-         <RenderingHints>
-            <DisplayType>TimeSeries</DisplayType>
-            <AxisLabel>TRI weight</AxisLabel>
-            <ValueFormat>I3</ValueFormat>
-            <ScaleType>LinearScale</ScaleType>
-         </RenderingHints>
-         <ValidMin>0</ValidMin>
-         <ValidMax>100</ValidMax>
-         <FillValue>-32768</FillValue>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>Triangulation Reduced Chi-Squared</Name>
-         <Set>Time series defined by using: EPOCH</Set>
-         <ParameterKey>mms4_edi_tri_rchisq_brst_l2</ParameterKey>
-         <Description>Reduced Chi-Squared from Triangulation Analysis</Description>
-         <Cadence>PT0.0009765625S</Cadence>
-         <RenderingHints>
-            <AxisLabel>Reduced chi-squared</AxisLabel>
-            <ValueFormat>F12.4</ValueFormat>
-            <ScaleType>LinearScale</ScaleType>
-         </RenderingHints>
-         <ValidMin>1.0</ValidMin>
-         <ValidMax>500000.0</ValidMax>
-         <FillValue>-1.0e+31</FillValue>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>Lower-Bound Drift Velocity Vector Error (DSL)</Name>
-         <Set>Time series defined by using: EPOCH</Set>
-         <ParameterKey>mms4_edi_v_dsl_delta_minus_brst_l2</ParameterKey>
-         <Description>Lower-Bound on the E cross B Drift Velocity Error in Despun Angular Momentum (DSL) Cartesian Coordinates</Description>
-         <Cadence>PT0.0009765625S</Cadence>
-         <Units>km/s</Units>
-         <UnitsConversion>1e-3&gt;m/s</UnitsConversion>
-         <CoordinateSystem>
-            <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
-            <CoordinateSystemName>SC</CoordinateSystemName>
-         </CoordinateSystem>
-         <RenderingHints>
-            <ValueFormat>F12.4</ValueFormat>
-            <ScaleType>LinearScale</ScaleType>
-         </RenderingHints>
-         <Structure>
-            <Size>3</Size>
-            <Element>
-               <Name>Vx</Name>
-               <Index>1</Index>
-            </Element>
-            <Element>
-               <Name>Vy</Name>
-               <Index>2</Index>
-            </Element>
-            <Element>
-               <Name>Vz</Name>
-               <Index>3</Index>
-            </Element>
-         </Structure>
-         <ValidMin>-500000.0</ValidMin>
-         <ValidMax>500000.0</ValidMax>
-         <FillValue>-1.0e+31</FillValue>
-         <Particle>
-            <ParticleType>Electron</ParticleType>
-            <Qualifier>Uncertainty</Qualifier>
-            <ParticleQuantity>Velocity</ParticleQuantity>
-         </Particle>
-      </Parameter>
-      <Parameter>
-         <Name>Upper-Bound Drift Velocity Vector Error (DSL)</Name>
-         <Set>Time series defined by using: EPOCH</Set>
-         <ParameterKey>mms4_edi_v_dsl_delta_plus_brst_l2</ParameterKey>
-         <Description>Upper-Bound on the E cross B Drift Velocity Error in Despun Angular Momentum (DSL) Cartesian Coordinates</Description>
-         <Cadence>PT0.0009765625S</Cadence>
-         <Units>km/s</Units>
-         <UnitsConversion>1e-3&gt;m/s</UnitsConversion>
-         <CoordinateSystem>
-            <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
-            <CoordinateSystemName>SC</CoordinateSystemName>
-         </CoordinateSystem>
-         <RenderingHints>
-            <ValueFormat>F12.4</ValueFormat>
-            <ScaleType>LinearScale</ScaleType>
-         </RenderingHints>
-         <Structure>
-            <Size>3</Size>
-            <Element>
-               <Name>Vx</Name>
-               <Index>1</Index>
-            </Element>
-            <Element>
-               <Name>Vy</Name>
-               <Index>2</Index>
-            </Element>
-            <Element>
-               <Name>Vz</Name>
-               <Index>3</Index>
-            </Element>
-         </Structure>
-         <ValidMin>-500000.0</ValidMin>
-         <ValidMax>500000.0</ValidMax>
-         <FillValue>-1.0e+31</FillValue>
-         <Particle>
-            <ParticleType>Electron</ParticleType>
-            <Qualifier>Uncertainty</Qualifier>
-            <ParticleQuantity>Velocity</ParticleQuantity>
-         </Particle>
-      </Parameter>
-      <Parameter>
-         <Name>Lower-Bound Drift Velocity Vector Error (GSE)</Name>
-         <Set>Time series defined by using: EPOCH</Set>
-         <ParameterKey>mms4_edi_v_gse_delta_minus_brst_l2</ParameterKey>
-         <Description>Lower-Bound on the E cross B Drift Velocity Error in Geocentric Solar Ecliptic (GSE) Cartesian Coordinates</Description>
-         <Cadence>PT0.0009765625S</Cadence>
-         <Units>km/s</Units>
-         <UnitsConversion>1e-3&gt;m/s</UnitsConversion>
-         <CoordinateSystem>
-            <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
-            <CoordinateSystemName>GSE</CoordinateSystemName>
-         </CoordinateSystem>
-         <RenderingHints>
-            <ValueFormat>F12.4</ValueFormat>
-            <ScaleType>LinearScale</ScaleType>
-         </RenderingHints>
-         <Structure>
-            <Size>3</Size>
-            <Element>
-               <Name>Vx</Name>
-               <Index>1</Index>
-            </Element>
-            <Element>
-               <Name>Vy</Name>
-               <Index>2</Index>
-            </Element>
-            <Element>
-               <Name>Vz</Name>
-               <Index>3</Index>
-            </Element>
-         </Structure>
-         <ValidMin>-500000.0</ValidMin>
-         <ValidMax>500000.0</ValidMax>
-         <FillValue>-1.0e+31</FillValue>
-         <Particle>
-            <ParticleType>Electron</ParticleType>
-            <Qualifier>Uncertainty</Qualifier>
-            <ParticleQuantity>Velocity</ParticleQuantity>
-         </Particle>
-      </Parameter>
-      <Parameter>
-         <Name>Upper-Bound Drift Velocity Vector Error (GSE)</Name>
-         <Set>Time series defined by using: EPOCH</Set>
-         <ParameterKey>mms4_edi_v_gse_delta_plus_brst_l2</ParameterKey>
-         <Description>Upper-Bound on the E cross B Drift Velocity Error in Geocentric Solar Ecliptic (GSE) Cartesian Coordinates</Description>
-         <Cadence>PT0.0009765625S</Cadence>
-         <Units>km/s</Units>
-         <UnitsConversion>1e-3&gt;m/s</UnitsConversion>
-         <CoordinateSystem>
-            <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
-            <CoordinateSystemName>GSE</CoordinateSystemName>
-         </CoordinateSystem>
-         <RenderingHints>
-            <ValueFormat>F12.4</ValueFormat>
-            <ScaleType>LinearScale</ScaleType>
-         </RenderingHints>
-         <Structure>
-            <Size>3</Size>
-            <Element>
-               <Name>Vx</Name>
-               <Index>1</Index>
-            </Element>
-            <Element>
-               <Name>Vy</Name>
-               <Index>2</Index>
-            </Element>
-            <Element>
-               <Name>Vz</Name>
-               <Index>3</Index>
-            </Element>
-         </Structure>
-         <ValidMin>-500000.0</ValidMin>
-         <ValidMax>500000.0</ValidMax>
-         <FillValue>-1.0e+31</FillValue>
-         <Particle>
-            <ParticleType>Electron</ParticleType>
-            <Qualifier>Uncertainty</Qualifier>
-            <ParticleQuantity>Velocity</ParticleQuantity>
-         </Particle>
-      </Parameter>
-      <Parameter>
-         <Name>Lower-Bound Drift Velocity Vector Error (GSM)</Name>
-         <Set>Time series defined by using: EPOCH</Set>
-         <ParameterKey>mms4_edi_v_gsm_delta_minus_brst_l2</ParameterKey>
-         <Description>Lower-Bound on the E cross B Drift Velocity Error in Geocentric Solar Magnetospheric (GSM) Cartesian Coordinates</Description>
-         <Cadence>PT0.0009765625S</Cadence>
-         <Units>km/s</Units>
-         <UnitsConversion>1e-3&gt;m/s</UnitsConversion>
-         <CoordinateSystem>
-            <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
-            <CoordinateSystemName>GSM</CoordinateSystemName>
-         </CoordinateSystem>
-         <RenderingHints>
-            <ValueFormat>F12.4</ValueFormat>
-            <ScaleType>LinearScale</ScaleType>
-         </RenderingHints>
-         <Structure>
-            <Size>3</Size>
-            <Element>
-               <Name>Vx</Name>
-               <Index>1</Index>
-            </Element>
-            <Element>
-               <Name>Vy</Name>
-               <Index>2</Index>
-            </Element>
-            <Element>
-               <Name>Vz</Name>
-               <Index>3</Index>
-            </Element>
-         </Structure>
-         <ValidMin>-500000.0</ValidMin>
-         <ValidMax>500000.0</ValidMax>
-         <FillValue>-1.0e+31</FillValue>
-         <Particle>
-            <ParticleType>Electron</ParticleType>
-            <Qualifier>Uncertainty</Qualifier>
-            <ParticleQuantity>Velocity</ParticleQuantity>
-         </Particle>
-      </Parameter>
-      <Parameter>
-         <Name>Upper-Bound Drift Velocity Vector Error (GSM)</Name>
-         <Set>Time series defined by using: EPOCH</Set>
-         <ParameterKey>mms4_edi_v_gsm_delta_plus_brst_l2</ParameterKey>
-         <Description>Upper-Bound on the E cross B Drift Velocity Error in Geocentric Solar Magnetospheric (GSM) Cartesian Coordinates</Description>
-         <Cadence>PT0.0009765625S</Cadence>
-         <Units>km/s</Units>
-         <UnitsConversion>1e-3&gt;m/s</UnitsConversion>
-         <CoordinateSystem>
-            <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
-            <CoordinateSystemName>GSM</CoordinateSystemName>
-         </CoordinateSystem>
-         <RenderingHints>
-            <ValueFormat>F12.4</ValueFormat>
-            <ScaleType>LinearScale</ScaleType>
-         </RenderingHints>
-         <Structure>
-            <Size>3</Size>
-            <Element>
-               <Name>Vx</Name>
-               <Index>1</Index>
-            </Element>
-            <Element>
-               <Name>Vy</Name>
-               <Index>2</Index>
-            </Element>
-            <Element>
-               <Name>Vz</Name>
-               <Index>3</Index>
-            </Element>
-         </Structure>
-         <ValidMin>-500000.0</ValidMin>
-         <ValidMax>500000.0</ValidMax>
-         <FillValue>-1.0e+31</FillValue>
-         <Particle>
-            <ParticleType>Electron</ParticleType>
-            <Qualifier>Uncertainty</Qualifier>
-            <ParticleQuantity>Velocity</ParticleQuantity>
-         </Particle>
-      </Parameter>
-      <Parameter>
-         <Name>Lower-Bound Electric Field Vector Error (DSL)</Name>
-         <Set>Time series defined by using: EPOCH</Set>
-         <ParameterKey>mms4_edi_e_dsl_delta_minus_brst_l2</ParameterKey>
-         <Description>Lower-Bound on the Electric Field Vector Error in Despun Angular Momentum (DSL) Cartesian Coordinates</Description>
-         <Cadence>PT0.0009765625S</Cadence>
-         <Units>mV/m</Units>
-         <UnitsConversion>1e-3&gt;V/m</UnitsConversion>
-         <CoordinateSystem>
-            <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
-            <CoordinateSystemName>SC</CoordinateSystemName>
-         </CoordinateSystem>
-         <RenderingHints>
-            <ValueFormat>F12.4</ValueFormat>
-            <ScaleType>LinearScale</ScaleType>
-         </RenderingHints>
-         <Structure>
-            <Size>3</Size>
-            <Element>
-               <Name>Ex</Name>
-               <Index>1</Index>
-            </Element>
-            <Element>
-               <Name>Ey</Name>
-               <Index>2</Index>
-            </Element>
-            <Element>
-               <Name>Ez</Name>
-               <Index>3</Index>
-            </Element>
-         </Structure>
-         <ValidMin>-10000.0</ValidMin>
-         <ValidMax>10000.0</ValidMax>
-         <FillValue>-1.0e+31</FillValue>
-         <Field>
-            <Qualifier>Uncertainty</Qualifier>
-            <FieldQuantity>Electric</FieldQuantity>
-         </Field>
-      </Parameter>
-      <Parameter>
-         <Name>Upper-Bound Electric Field Vector Error (DSL)</Name>
-         <Set>Time series defined by using: EPOCH</Set>
-         <ParameterKey>mms4_edi_e_dsl_delta_plus_brst_l2</ParameterKey>
-         <Description>Upper-Bound on the Electric Field Vector Error in Despun Angular Momentum (DSL) Cartesian Coordinates</Description>
-         <Cadence>PT0.0009765625S</Cadence>
-         <Units>mV/m</Units>
-         <UnitsConversion>1e-3&gt;V/m</UnitsConversion>
-         <CoordinateSystem>
-            <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
-            <CoordinateSystemName>SC</CoordinateSystemName>
-         </CoordinateSystem>
-         <RenderingHints>
-            <ValueFormat>F12.4</ValueFormat>
-            <ScaleType>LinearScale</ScaleType>
-         </RenderingHints>
-         <Structure>
-            <Size>3</Size>
-            <Element>
-               <Name>Ex</Name>
-               <Index>1</Index>
-            </Element>
-            <Element>
-               <Name>Ey</Name>
-               <Index>2</Index>
-            </Element>
-            <Element>
-               <Name>Ez</Name>
-               <Index>3</Index>
-            </Element>
-         </Structure>
-         <ValidMin>-10000.0</ValidMin>
-         <ValidMax>10000.0</ValidMax>
-         <FillValue>-1.0e+31</FillValue>
-         <Field>
-            <Qualifier>Uncertainty</Qualifier>
-            <FieldQuantity>Electric</FieldQuantity>
-         </Field>
-      </Parameter>
-      <Parameter>
-         <Name>Lower-Bound Electric Field Vector Error (GSE)</Name>
-         <Set>Time series defined by using: EPOCH</Set>
-         <ParameterKey>mms4_edi_e_gse_delta_minus_brst_l2</ParameterKey>
-         <Description>Lower-Bound on the Electric Field Vector Error in Geocentric Solar Ecliptic (GSE) Cartesian Coordinates</Description>
-         <Cadence>PT0.0009765625S</Cadence>
-         <Units>mV/m</Units>
-         <UnitsConversion>1e-3&gt;V/m</UnitsConversion>
-         <CoordinateSystem>
-            <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
-            <CoordinateSystemName>GSE</CoordinateSystemName>
-         </CoordinateSystem>
-         <RenderingHints>
-            <ValueFormat>F12.4</ValueFormat>
-            <ScaleType>LinearScale</ScaleType>
-         </RenderingHints>
-         <Structure>
-            <Size>3</Size>
-            <Element>
-               <Name>Ex</Name>
-               <Index>1</Index>
-            </Element>
-            <Element>
-               <Name>Ey</Name>
-               <Index>2</Index>
-            </Element>
-            <Element>
-               <Name>Ez</Name>
-               <Index>3</Index>
-            </Element>
-         </Structure>
-         <ValidMin>-10000.0</ValidMin>
-         <ValidMax>10000.0</ValidMax>
-         <FillValue>-1.0e+31</FillValue>
-         <Field>
-            <Qualifier>Uncertainty</Qualifier>
-            <FieldQuantity>Electric</FieldQuantity>
-         </Field>
-      </Parameter>
-      <Parameter>
-         <Name>Upper-Bound Electric Field Vector Error (GSE)</Name>
-         <Set>Time series defined by using: EPOCH</Set>
-         <ParameterKey>mms4_edi_e_gse_delta_plus_brst_l2</ParameterKey>
-         <Description>Upper-Bound on the Electric Field Vector Error in Geocentric Solar Ecliptic (GSE) Cartesian Coordinates</Description>
-         <Cadence>PT0.0009765625S</Cadence>
-         <Units>mV/m</Units>
-         <UnitsConversion>1e-3&gt;V/m</UnitsConversion>
-         <CoordinateSystem>
-            <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
-            <CoordinateSystemName>GSE</CoordinateSystemName>
-         </CoordinateSystem>
-         <RenderingHints>
-            <ValueFormat>F12.4</ValueFormat>
-            <ScaleType>LinearScale</ScaleType>
-         </RenderingHints>
-         <Structure>
-            <Size>3</Size>
-            <Element>
-               <Name>Ex</Name>
-               <Index>1</Index>
-            </Element>
-            <Element>
-               <Name>Ey</Name>
-               <Index>2</Index>
-            </Element>
-            <Element>
-               <Name>Ez</Name>
-               <Index>3</Index>
-            </Element>
-         </Structure>
-         <ValidMin>-10000.0</ValidMin>
-         <ValidMax>10000.0</ValidMax>
-         <FillValue>-1.0e+31</FillValue>
-         <Field>
-            <Qualifier>Uncertainty</Qualifier>
-            <FieldQuantity>Electric</FieldQuantity>
-         </Field>
-      </Parameter>
-      <Parameter>
-         <Name>Lower-Bound Electric Field Vector Error (GSM)</Name>
-         <Set>Time series defined by using: EPOCH</Set>
-         <ParameterKey>mms4_edi_e_gsm_delta_minus_brst_l2</ParameterKey>
-         <Description>Lower-Bound on the Electric Field Vector Error in Geocentric Solar Magnetospheric (GSM) Cartesian Coordinates</Description>
-         <Cadence>PT0.0009765625S</Cadence>
-         <Units>mV/m</Units>
-         <UnitsConversion>1e-3&gt;V/m</UnitsConversion>
-         <CoordinateSystem>
-            <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
-            <CoordinateSystemName>GSM</CoordinateSystemName>
-         </CoordinateSystem>
-         <RenderingHints>
-            <ValueFormat>F12.4</ValueFormat>
-            <ScaleType>LinearScale</ScaleType>
-         </RenderingHints>
-         <Structure>
-            <Size>3</Size>
-            <Element>
-               <Name>Ex</Name>
-               <Index>1</Index>
-            </Element>
-            <Element>
-               <Name>Ey</Name>
-               <Index>2</Index>
-            </Element>
-            <Element>
-               <Name>Ez</Name>
-               <Index>3</Index>
-            </Element>
-         </Structure>
-         <ValidMin>-10000.0</ValidMin>
-         <ValidMax>10000.0</ValidMax>
-         <FillValue>-1.0e+31</FillValue>
-         <Field>
-            <Qualifier>Uncertainty</Qualifier>
-            <FieldQuantity>Electric</FieldQuantity>
-         </Field>
-      </Parameter>
-      <Parameter>
-         <Name>Upper-Bound Electric Field Vector Error (GSM)</Name>
-         <Set>Time series defined by using: EPOCH</Set>
-         <ParameterKey>mms4_edi_e_gsm_delta_plus_brst_l2</ParameterKey>
-         <Description>Upper-Bound on the Electric Field Vector Error in Geocentric Solar Magnetospheric (GSM) Cartesian Coordinates</Description>
-         <Cadence>PT0.0009765625S</Cadence>
-         <Units>mV/m</Units>
-         <UnitsConversion>1e-3&gt;V/m</UnitsConversion>
-         <CoordinateSystem>
-            <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
-            <CoordinateSystemName>GSM</CoordinateSystemName>
-         </CoordinateSystem>
-         <RenderingHints>
-            <ValueFormat>F12.4</ValueFormat>
-            <ScaleType>LinearScale</ScaleType>
-         </RenderingHints>
-         <Structure>
-            <Size>3</Size>
-            <Element>
-               <Name>Ex</Name>
-               <Index>1</Index>
-            </Element>
-            <Element>
-               <Name>Ey</Name>
-               <Index>2</Index>
-            </Element>
-            <Element>
-               <Name>Ez</Name>
-               <Index>3</Index>
-            </Element>
-         </Structure>
-         <ValidMin>-10000.0</ValidMin>
-         <ValidMax>10000.0</ValidMax>
-         <FillValue>-1.0e+31</FillValue>
-         <Field>
-            <Qualifier>Uncertainty</Qualifier>
-            <FieldQuantity>Electric</FieldQuantity>
-         </Field>
-      </Parameter>
-   </NumericalData>
+<?xml version='1.0' encoding='UTF-8'?>
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.spase-group.org/data/schema https://www.spase-group.org/data/schema/spase-2.7.0.xsd">
+  <Version>2.7.0</Version>
+  <NumericalData>
+    <ResourceID>spase://NASA/NumericalData/MMS/4/FIELDS/EDI/Burst/Level2/ElectricField/PT0.0009765625S</ResourceID>
+    <NamingAuthority>NASA</NamingAuthority>
+    <ResourceType>NumericalData</ResourceType>
+    <ResourceHeader>
+      <ResourceName>MMS 4 Electron Drift Instrument (EDI) Electric Field, Level 2 (L2), Burst Mode, 0.9765625 ms Data</ResourceName>
+      <AlternateName>MMS4_EDI_BRST_L2_EFIELD</AlternateName>
+      <DOI>https://doi.org/10.48322/pfaw-ps82</DOI>
+      <ReleaseDate>2025-10-03T10:41:13Z</ReleaseDate>
+      <RevisionHistory>
+        <RevisionEvent>
+          <ReleaseDate>2021-04-27T15:38:11</ReleaseDate>
+          <Note>Only known prior ReleaseDate of the metadata</Note>
+        </RevisionEvent>
+        <RevisionEvent>
+          <ReleaseDate>2022-08-04T12:34:56.789</ReleaseDate>
+          <Note>Added DOI and PublicationInfo minted by LFB, updated the RepositoryID, updated the SPDF MetadataContact Person to Robert M. Candey, metadata updated to SPASE 2.4.1, reviewed by LFB 20220803</Note>
+        </RevisionEvent>
+        <RevisionEvent>
+          <ReleaseDate>2023-03-04T12:34:56.789</ReleaseDate>
+          <Note>Standardized the ResourceName Format, Set AlternateName equal to the ProductKey, Revised the Acknowledgement, PublicationInfo Authors, and Contact Person list per request of the MMS EDI team, metadata updated to SPASE 2.5.0, reviewed by LFB 20230304</Note>
+        </RevisionEvent>
+        <RevisionEvent>
+          <ReleaseDate>2025-10-03T10:41:13Z</ReleaseDate>
+          <Note>Updated PublishedBy name to match ROR Registry. Added ResourceType and NamingAuthority. Changed http to https in top-level schemaLocation attribute. Fixed version number separator in top-level schemaLocation attribute. Matched version number in schemaLocation attribute to updated value in Version tag. ZCB</Note>
+        </RevisionEvent>
+      </RevisionHistory>
+      <Description>Electron Drift Instrument (EDI) Electric Field Burst Survey, Level 2, 0.0009765625 s Data (1024 samples/s). EDI has two scientific data acquisition modes, called electric field mode and ambient mode. In electric field mode, two coded electron beams are emitted such that they return to the detectors after one or more gyrations in the ambient magnetic and electric field. The firing directions and times-of-flight allow the derivation of the drift velocity and electric field. In ambient mode, the electron beams are not used. The detectors with their large geometric factors and their ability to adjust the field of view quickly allow continuous sampling of ambient electrons at a selected pitch angle and fixed but selectable energy. To find the beam directions that will hit the detector, EDI sweeps each beam in the plane perpendicular to B at a fixed angular rate of 0.22 °/ms until a signal has been acquired by the detector. Once signal has been acquired, the beams are swept back and forth to stay on target. Beam detection is not determined from the changes in the count-rates directly, but from the square of the beam counts divided by the background counts from ambient electrons, i.e., from the square of the instantaneous signal-to-noise ratio (SNR). This quantity is computed from data provided by the correlator in the Gun-Detector Electronics that also generates the coding pattern imposed on the outgoing beams. If the squared SNR ratio exceeds a threshold, this is taken as evidence that the beam is returning to the detector. The thresholds for SNR are chosen dependent on background fluxes. They represent a compromise between getting false hits (induced by strong variations in background electron fluxes) and missing true beam hits. The basic software loop that controls EDI operations is executed every 2 ms. As the times when the beams hit their detectors are neither synchronized with the telemetry nor equidistant, EDI data have no fixed time-resolution. Data are reported in telemetry slots. In Survey, using the standard packing mode 0, there are eight telemetry slots per second and Gyn Detector Unit (GDU). The last beam detected during the previous slot will be reported in the current slot. If no beam has been detected, the data quality will be set to zero. In Burst telemetry there are 128 slots per second and GDU. The data in each slot consists of information regarding the beam firing directions (stored in the form of analytic gun deflection voltages), times-of-flight (if successfully measured), quality indicators, time stamps of the beam hits, and some auxiliary correlator-related information. Whenever EDI is not in electron drift mode, it uses its ambient electron mode. The mode has the capability to sample at either 90 degrees pitch angle or at 0/180 degrees (field aligned), or to alternate between 90 degrees and field aligned with selectable dwell times. While all options have been demonstrated during the commissioning phase, only the field aligned mode has been used in the routine operations phase. The choices for energy are 250 eV, 500 eV, and 1 keV. The two detectors, which are facing opposite hemispheres, are looking strictly into opposite directions, so while one detector is looking along B the other is looking antiparallel to B (corresponding to pitch angles of 180 and 0 degrees, respectively). The two detectors switch roles every half spin of the spacecraft as the tip of the magnetic field vector spins outside the field of view of one detector and into the field of view of the other detector. This is the primary data product generated from data collected in electric field mode. The science data generated are drift velocity and electric field data in various coordinate systems. They are derived from triangulation and/or time-of-flight analysis. Where both methods are applicable, their results will be combined using a weighting approach based on their relative errors. The EDI instrument paper can be found at: http://link.springer.com/article/10.1007%2Fs11214-015-0182-7. The EDI instrument data products guide can be found at https://lasp.colorado.edu/mms/sdc/public/datasets/fields/.</Description>
+      <Acknowledgement>Please acknowledge R.B. Torbert, M.R. Argall, and J.L. Burch for use of these data</Acknowledgement>
+      <PublicationInfo>
+        <Authors>Torbert, Roy, B.; Argall, Matthew, R.; Burch, James, L.</Authors>
+        <PublicationDate>2022-01-01T00:00:00</PublicationDate>
+        <PublishedBy>Laboratory for Atmospheric and Space Physics; Space Physics Data Facility</PublishedBy>
+      </PublicationInfo>
+      <Contact>
+        <PersonID>spase://SMWG/Person/Roy.B.Torbert</PersonID>
+        <Role>InstrumentLead</Role>
+        <Role>CoInvestigator</Role>
+      </Contact>
+      <Contact>
+        <PersonID>spase://SMWG/Person/Matthew.R.Argall</PersonID>
+        <Role>Developer</Role>
+        <Note>GroundSoftwareDeveloper</Note>
+      </Contact>
+      <Contact>
+        <PersonID>spase://SMWG/Person/James.L.Burch</PersonID>
+        <Role>PrincipalInvestigator</Role>
+      </Contact>
+      <Contact>
+        <PersonID>spase://SMWG/Person/MMS_SDC_POC</PersonID>
+        <Role>HostContact</Role>
+      </Contact>
+      <Contact>
+        <PersonID>spase://SMWG/Person/Robert.M.Candey</PersonID>
+        <Role>MetadataContact</Role>
+      </Contact>
+      <Contact>
+        <PersonID>spase://SMWG/Person/Lee.Frost.Bargatze</PersonID>
+        <Role>MetadataContact</Role>
+      </Contact>
+      <InformationURL>
+        <Name>The Magnetospheric Multiscale (MMS) Mission home page at Goddard Space Flight Center (GSFC)</Name>
+        <URL>https://mms.gsfc.nasa.gov/</URL>
+        <Description>The Magnetospheric Multiscale (MMS) Mission Home Page hosted by the Goddard Space Flight Center (GSFC).</Description>
+      </InformationURL>
+      <InformationURL>
+        <Name>Data Caveats and Current Release Notes at LASP MMS SDC</Name>
+        <URL>https://lasp.colorado.edu/mms/sdc/public/datasets/fields/</URL>
+        <Description>The Magnetospheric Multiscale (MMS) Mission home page hosted by the Laboratory of Atmospheric and Space Physics, Science Data Center (LASP, SDC) at the University of Colorado, Boulder.</Description>
+      </InformationURL>
+      <InformationURL>
+        <Name>At UNH</Name>
+        <URL>https://mms-fields.unh.edu/</URL>
+        <Description>The Magnetospheric Multiscale (MMS) FIELDS Instrument Suite home page. The web page is hosted by the University of New Hampshire (UNH).</Description>
+      </InformationURL>
+      <PriorID>spase://VSPO/NumericalData/MMS/4/FIELDS/EDI/Burst/Level2/ElectricField/PT0.0009765625S</PriorID>
+    </ResourceHeader>
+    <AccessInformation>
+      <RepositoryID>spase://SMWG/Repository/UCOLO/LASP/MMS_SDC</RepositoryID>
+      <Availability>Online</Availability>
+      <AccessRights>Open</AccessRights>
+      <AccessURL>
+        <Name>FTPS from the MMS SDC (not with most browsers)</Name>
+        <URL>ftps://lasp.colorado.edu/mms/sdc/public/data/mms4/edi/brst/l2/efield/</URL>
+        <Description>In CDF via ftp from the MMS Science Data Center</Description>
+      </AccessURL>
+      <AccessURL>
+        <Name>HTTPS from the MMS SDC</Name>
+        <URL>https://lasp.colorado.edu/mms/sdc/public/data/mms4/edi/brst/l2/efield/</URL>
+        <Description>In CDF via http from the MMS Science Data Center</Description>
+      </AccessURL>
+      <Format>CDF</Format>
+      <Encoding>None</Encoding>
+      <Acknowledgement>Please acknowledge R.B. Torbert, M.R. Argall, and J.L. Burch. Also please acknowledge the data providers and CDAWeb when using these data.</Acknowledgement>
+    </AccessInformation>
+    <AccessInformation>
+      <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF/CDAWeb</RepositoryID>
+      <Availability>Online</Availability>
+      <AccessRights>Open</AccessRights>
+      <AccessURL>
+        <Name>FTPS from SPDF (not with most browsers)</Name>
+        <URL>ftps://spdf.gsfc.nasa.gov/pub/data/mms/mms4/edi/brst/l2/efield/</URL>
+        <Description>In CDF via ftp from SPDF</Description>
+      </AccessURL>
+      <AccessURL>
+        <Name>HTTPS from SPDF</Name>
+        <URL>https://spdf.gsfc.nasa.gov/pub/data/mms/mms4/edi/brst/l2/efield/</URL>
+        <Description>In CDF via http from SPDF</Description>
+      </AccessURL>
+      <AccessURL>
+        <Name>CDAWeb</Name>
+        <URL>https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=MMS4_EDI_BRST_L2_EFIELD&amp;index=sp_phys</URL>
+        <ProductKey>MMS4_EDI_BRST_L2_EFIELD</ProductKey>
+        <Description>Access to ASCII, CDF, and plots via NASA/GSFC CDAWeb</Description>
+      </AccessURL>
+      <Format>CDF</Format>
+      <Encoding>None</Encoding>
+      <Acknowledgement>Please acknowledge R.B. Torbert, M.R. Argall, and J.L. Burch. Also please acknowledge the data providers and CDAWeb when using these data.</Acknowledgement>
+    </AccessInformation>
+    <AccessInformation>
+      <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF/CDAWeb</RepositoryID>
+      <Availability>Online</Availability>
+      <AccessRights>Open</AccessRights>
+      <AccessURL>
+        <Name>CDAWeb HAPI Server</Name>
+        <URL>https://cdaweb.gsfc.nasa.gov/hapi</URL>
+        <Style>HAPI</Style>
+        <ProductKey>MMS4_EDI_BRST_L2_EFIELD</ProductKey>
+        <Description>Web Service to this product using the HAPI interface</Description>
+      </AccessURL>
+      <Format>CSV</Format>
+      <Acknowledgement>Please acknowledge R.B. Torbert, M.R. Argall, and J.L. Burch. Also please acknowledge the data providers and CDAWeb when using these data.</Acknowledgement>
+    </AccessInformation>
+    <ProcessingLevel>Calibrated</ProcessingLevel>
+    <InstrumentID>spase://SMWG/Instrument/MMS/4/FIELDS/EDI</InstrumentID>
+    <MeasurementType>ElectricField</MeasurementType>
+    <TemporalDescription>
+      <TimeSpan>
+        <StartDate>2015-09-14T14:16:34</StartDate>
+        <RelativeStopDate>-P2M</RelativeStopDate>
+      </TimeSpan>
+      <Cadence>PT0.0009765625S</Cadence>
+    </TemporalDescription>
+    <ObservedRegion>Earth.Magnetosheath</ObservedRegion>
+    <ObservedRegion>Earth.Magnetosphere</ObservedRegion>
+    <ObservedRegion>Earth.Magnetosphere.Magnetotail</ObservedRegion>
+    <ObservedRegion>Earth.Magnetosphere.Main</ObservedRegion>
+    <ObservedRegion>Earth.Magnetosphere.RadiationBelt</ObservedRegion>
+    <ObservedRegion>Earth.NearSurface.EquatorialRegion</ObservedRegion>
+    <ObservedRegion>Earth.NearSurface.Plasmasphere</ObservedRegion>
+    <ObservedRegion>Heliosphere.NearEarth</ObservedRegion>
+    <Parameter>
+      <Name>Epoch Time</Name>
+      <ParameterKey>Epoch</ParameterKey>
+      <Description>Epoch Time Tags for Velocity and Electric Field Data, Terrestrial Time 2000 (TT2000)</Description>
+      <Cadence>PT0.0009765625S</Cadence>
+      <Units>ns</Units>
+      <UnitsConversion>1e-9&gt;s</UnitsConversion>
+      <RenderingHints>
+        <AxisLabel>UT</AxisLabel>
+        <ValueFormat>I16</ValueFormat>
+      </RenderingHints>
+      <ValidMin>2015-03-01T00:00:00.000000000</ValidMin>
+      <ValidMax>2065-12-31T00:00:01.000000000</ValidMax>
+      <FillValue>9999-12-31T23:59:59.999999999</FillValue>
+      <Support>
+        <SupportQuantity>Temporal</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Lower-Bound on the Time Tags</Name>
+      <Set>Time series defined by using: EPOCH</Set>
+      <ParameterKey>mms4_edi_t_delta_minus_brst_l2</ParameterKey>
+      <Description>Lower-Bound on the Epoch Time Tags</Description>
+      <Cadence>PT0.0009765625S</Cadence>
+      <Units>ns</Units>
+      <UnitsConversion>1e-9&gt;s</UnitsConversion>
+      <RenderingHints>
+        <AxisLabel>dt</AxisLabel>
+        <ValueFormat>I10</ValueFormat>
+        <ScaleType>LinearScale</ScaleType>
+      </RenderingHints>
+      <ValidMin>1707-09-22T12:12:10.961224195</ValidMin>
+      <ValidMax>2000-01-01T11:59:00.816000000</ValidMax>
+      <FillValue>9999-12-31T23:59:59.999999999</FillValue>
+      <Support>
+        <SupportQuantity>Temporal</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Upper-Bound on the Time Tags</Name>
+      <Set>Time series defined by using: EPOCH</Set>
+      <ParameterKey>mms4_edi_t_delta_plus_brst_l2</ParameterKey>
+      <Description>Upper-Bound on the Epoch Time Tags</Description>
+      <Cadence>PT0.0009765625S</Cadence>
+      <Units>ns</Units>
+      <UnitsConversion>1e-9&gt;s</UnitsConversion>
+      <RenderingHints>
+        <AxisLabel>dt</AxisLabel>
+        <ValueFormat>I10</ValueFormat>
+        <ScaleType>LinearScale</ScaleType>
+      </RenderingHints>
+      <ValidMin>1707-09-22T12:12:10.961224195</ValidMin>
+      <ValidMax>2000-01-01T11:59:00.816000000</ValidMax>
+      <FillValue>9999-12-31T23:59:59.999999999</FillValue>
+      <Support>
+        <SupportQuantity>Temporal</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>E x B Drift Velocity Vector (DSL)</Name>
+      <Set>Time series defined by using: EPOCH</Set>
+      <ParameterKey>mms4_edi_vdrift_dsl_brst_l2</ParameterKey>
+      <Description>E cross B Drift Velocity Vector in Despun Angular Momentum (DSL) Cartesian Coordinates</Description>
+      <Cadence>PT0.0009765625S</Cadence>
+      <Units>km/s</Units>
+      <UnitsConversion>1e-3&gt;m/s</UnitsConversion>
+      <CoordinateSystem>
+        <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+        <CoordinateSystemName>SC</CoordinateSystemName>
+      </CoordinateSystem>
+      <RenderingHints>
+        <DisplayType>TimeSeries</DisplayType>
+        <ValueFormat>F12.4</ValueFormat>
+        <ScaleType>LinearScale</ScaleType>
+      </RenderingHints>
+      <Structure>
+        <Size>3</Size>
+        <Element>
+          <Name>Vx</Name>
+          <Index>1</Index>
+        </Element>
+        <Element>
+          <Name>Vy</Name>
+          <Index>2</Index>
+        </Element>
+        <Element>
+          <Name>Vz</Name>
+          <Index>3</Index>
+        </Element>
+      </Structure>
+      <ValidMin>-500000.0</ValidMin>
+      <ValidMax>500000.0</ValidMax>
+      <FillValue>-1.0e+31</FillValue>
+      <Particle>
+        <ParticleType>Electron</ParticleType>
+        <Qualifier>Vector</Qualifier>
+        <ParticleQuantity>Velocity</ParticleQuantity>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>E x B Drift Velocity Vector (GSE)</Name>
+      <Set>Time series defined by using: EPOCH</Set>
+      <ParameterKey>mms4_edi_vdrift_gse_brst_l2</ParameterKey>
+      <Description>E cross B Drift Velocity Vector in Geocentric Solar Ecliptic (GSE) Cartesian Coordinates</Description>
+      <Cadence>PT0.0009765625S</Cadence>
+      <Units>km/s</Units>
+      <UnitsConversion>1e-3&gt;m/s</UnitsConversion>
+      <CoordinateSystem>
+        <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+        <CoordinateSystemName>GSE</CoordinateSystemName>
+      </CoordinateSystem>
+      <RenderingHints>
+        <DisplayType>TimeSeries</DisplayType>
+        <ValueFormat>F12.4</ValueFormat>
+        <ScaleType>LinearScale</ScaleType>
+      </RenderingHints>
+      <Structure>
+        <Size>3</Size>
+        <Element>
+          <Name>Vx</Name>
+          <Index>1</Index>
+        </Element>
+        <Element>
+          <Name>Vy</Name>
+          <Index>2</Index>
+        </Element>
+        <Element>
+          <Name>Vz</Name>
+          <Index>3</Index>
+        </Element>
+      </Structure>
+      <ValidMin>-500000.0</ValidMin>
+      <ValidMax>500000.0</ValidMax>
+      <FillValue>-1.0e+31</FillValue>
+      <Particle>
+        <ParticleType>Electron</ParticleType>
+        <Qualifier>Vector</Qualifier>
+        <ParticleQuantity>Velocity</ParticleQuantity>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>E x B Drift Velocity Vector (GSM)</Name>
+      <Set>Time series defined by using: EPOCH</Set>
+      <ParameterKey>mms4_edi_vdrift_gsm_brst_l2</ParameterKey>
+      <Description>E cross B Drift Velocity Vector in Geocentric Solar Magnetospheric (GSM) Cartesian Coordinates</Description>
+      <Cadence>PT0.0009765625S</Cadence>
+      <Units>km/s</Units>
+      <UnitsConversion>1e-3&gt;m/s</UnitsConversion>
+      <CoordinateSystem>
+        <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+        <CoordinateSystemName>GSM</CoordinateSystemName>
+      </CoordinateSystem>
+      <RenderingHints>
+        <DisplayType>TimeSeries</DisplayType>
+        <ValueFormat>F12.4</ValueFormat>
+        <ScaleType>LinearScale</ScaleType>
+      </RenderingHints>
+      <Structure>
+        <Size>3</Size>
+        <Element>
+          <Name>Vx</Name>
+          <Index>1</Index>
+        </Element>
+        <Element>
+          <Name>Vy</Name>
+          <Index>2</Index>
+        </Element>
+        <Element>
+          <Name>Vz</Name>
+          <Index>3</Index>
+        </Element>
+      </Structure>
+      <ValidMin>-500000.0</ValidMin>
+      <ValidMax>500000.0</ValidMax>
+      <FillValue>-1.0e+31</FillValue>
+      <Particle>
+        <ParticleType>Electron</ParticleType>
+        <Qualifier>Vector</Qualifier>
+        <ParticleQuantity>Velocity</ParticleQuantity>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>Electric Field Vector (DSL)</Name>
+      <Set>Time series defined by using: EPOCH</Set>
+      <ParameterKey>mms4_edi_e_dsl_brst_l2</ParameterKey>
+      <Description>Electric Field Vector in Despun Angular Momentum (DSL) Cartesian Coordinates</Description>
+      <Cadence>PT0.0009765625S</Cadence>
+      <Units>mV/m</Units>
+      <UnitsConversion>1e-3&gt;V/m</UnitsConversion>
+      <CoordinateSystem>
+        <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+        <CoordinateSystemName>SC</CoordinateSystemName>
+      </CoordinateSystem>
+      <RenderingHints>
+        <DisplayType>TimeSeries</DisplayType>
+        <ValueFormat>F12.4</ValueFormat>
+        <ScaleType>LinearScale</ScaleType>
+      </RenderingHints>
+      <Structure>
+        <Size>3</Size>
+        <Element>
+          <Name>Ex</Name>
+          <Index>1</Index>
+        </Element>
+        <Element>
+          <Name>Ey</Name>
+          <Index>2</Index>
+        </Element>
+        <Element>
+          <Name>Ez</Name>
+          <Index>3</Index>
+        </Element>
+      </Structure>
+      <ValidMin>-10000.0</ValidMin>
+      <ValidMax>10000.0</ValidMax>
+      <FillValue>-1.0e+31</FillValue>
+      <Field>
+        <Qualifier>Vector</Qualifier>
+        <FieldQuantity>Electric</FieldQuantity>
+      </Field>
+    </Parameter>
+    <Parameter>
+      <Name>Electric Field Vector (GSE)</Name>
+      <Set>Time series defined by using: EPOCH</Set>
+      <ParameterKey>mms4_edi_e_gse_brst_l2</ParameterKey>
+      <Description>Electric Field Vector in Geocentric Solar Ecliptic (GSE) Cartesian Coordinates</Description>
+      <Cadence>PT0.0009765625S</Cadence>
+      <Units>mV/m</Units>
+      <UnitsConversion>1e-3&gt;V/m</UnitsConversion>
+      <CoordinateSystem>
+        <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+        <CoordinateSystemName>GSE</CoordinateSystemName>
+      </CoordinateSystem>
+      <RenderingHints>
+        <DisplayType>TimeSeries</DisplayType>
+        <ValueFormat>F12.4</ValueFormat>
+        <ScaleType>LinearScale</ScaleType>
+      </RenderingHints>
+      <Structure>
+        <Size>3</Size>
+        <Element>
+          <Name>Ex</Name>
+          <Index>1</Index>
+        </Element>
+        <Element>
+          <Name>Ey</Name>
+          <Index>2</Index>
+        </Element>
+        <Element>
+          <Name>Ez</Name>
+          <Index>3</Index>
+        </Element>
+      </Structure>
+      <ValidMin>-10000.0</ValidMin>
+      <ValidMax>10000.0</ValidMax>
+      <FillValue>-1.0e+31</FillValue>
+      <Field>
+        <Qualifier>Vector</Qualifier>
+        <FieldQuantity>Electric</FieldQuantity>
+      </Field>
+    </Parameter>
+    <Parameter>
+      <Name>Electric Field Vector (GSM)</Name>
+      <Set>Time series defined by using: EPOCH</Set>
+      <ParameterKey>mms4_edi_e_gsm_brst_l2</ParameterKey>
+      <Description>Electric Field Vector in Geocentric Solar Magnetospheric (GSM) Cartesian Coordinates</Description>
+      <Cadence>PT0.0009765625S</Cadence>
+      <Units>mV/m</Units>
+      <UnitsConversion>1e-3&gt;V/m</UnitsConversion>
+      <CoordinateSystem>
+        <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+        <CoordinateSystemName>GSM</CoordinateSystemName>
+      </CoordinateSystem>
+      <RenderingHints>
+        <DisplayType>TimeSeries</DisplayType>
+        <ValueFormat>F12.4</ValueFormat>
+        <ScaleType>LinearScale</ScaleType>
+      </RenderingHints>
+      <Structure>
+        <Size>3</Size>
+        <Element>
+          <Name>Ex</Name>
+          <Index>1</Index>
+        </Element>
+        <Element>
+          <Name>Ey</Name>
+          <Index>2</Index>
+        </Element>
+        <Element>
+          <Name>Ez</Name>
+          <Index>3</Index>
+        </Element>
+      </Structure>
+      <ValidMin>-10000.0</ValidMin>
+      <ValidMax>10000.0</ValidMax>
+      <FillValue>-1.0e+31</FillValue>
+      <Field>
+        <Qualifier>Vector</Qualifier>
+        <FieldQuantity>Electric</FieldQuantity>
+      </Field>
+    </Parameter>
+    <Parameter>
+      <Name>Triangulation Weight</Name>
+      <Set>Time series defined by using: EPOCH</Set>
+      <ParameterKey>mms4_edi_tri_weight_brst_l2</ParameterKey>
+      <Description>Weighted Use of Triangulation Method in the Level 2 Results</Description>
+      <Cadence>PT0.0009765625S</Cadence>
+      <RenderingHints>
+        <DisplayType>TimeSeries</DisplayType>
+        <AxisLabel>TRI weight</AxisLabel>
+        <ValueFormat>I3</ValueFormat>
+        <ScaleType>LinearScale</ScaleType>
+      </RenderingHints>
+      <ValidMin>0</ValidMin>
+      <ValidMax>100</ValidMax>
+      <FillValue>-32768</FillValue>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Triangulation Reduced Chi-Squared</Name>
+      <Set>Time series defined by using: EPOCH</Set>
+      <ParameterKey>mms4_edi_tri_rchisq_brst_l2</ParameterKey>
+      <Description>Reduced Chi-Squared from Triangulation Analysis</Description>
+      <Cadence>PT0.0009765625S</Cadence>
+      <RenderingHints>
+        <AxisLabel>Reduced chi-squared</AxisLabel>
+        <ValueFormat>F12.4</ValueFormat>
+        <ScaleType>LinearScale</ScaleType>
+      </RenderingHints>
+      <ValidMin>1.0</ValidMin>
+      <ValidMax>500000.0</ValidMax>
+      <FillValue>-1.0e+31</FillValue>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Lower-Bound Drift Velocity Vector Error (DSL)</Name>
+      <Set>Time series defined by using: EPOCH</Set>
+      <ParameterKey>mms4_edi_v_dsl_delta_minus_brst_l2</ParameterKey>
+      <Description>Lower-Bound on the E cross B Drift Velocity Error in Despun Angular Momentum (DSL) Cartesian Coordinates</Description>
+      <Cadence>PT0.0009765625S</Cadence>
+      <Units>km/s</Units>
+      <UnitsConversion>1e-3&gt;m/s</UnitsConversion>
+      <CoordinateSystem>
+        <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+        <CoordinateSystemName>SC</CoordinateSystemName>
+      </CoordinateSystem>
+      <RenderingHints>
+        <ValueFormat>F12.4</ValueFormat>
+        <ScaleType>LinearScale</ScaleType>
+      </RenderingHints>
+      <Structure>
+        <Size>3</Size>
+        <Element>
+          <Name>Vx</Name>
+          <Index>1</Index>
+        </Element>
+        <Element>
+          <Name>Vy</Name>
+          <Index>2</Index>
+        </Element>
+        <Element>
+          <Name>Vz</Name>
+          <Index>3</Index>
+        </Element>
+      </Structure>
+      <ValidMin>-500000.0</ValidMin>
+      <ValidMax>500000.0</ValidMax>
+      <FillValue>-1.0e+31</FillValue>
+      <Particle>
+        <ParticleType>Electron</ParticleType>
+        <Qualifier>Uncertainty</Qualifier>
+        <ParticleQuantity>Velocity</ParticleQuantity>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>Upper-Bound Drift Velocity Vector Error (DSL)</Name>
+      <Set>Time series defined by using: EPOCH</Set>
+      <ParameterKey>mms4_edi_v_dsl_delta_plus_brst_l2</ParameterKey>
+      <Description>Upper-Bound on the E cross B Drift Velocity Error in Despun Angular Momentum (DSL) Cartesian Coordinates</Description>
+      <Cadence>PT0.0009765625S</Cadence>
+      <Units>km/s</Units>
+      <UnitsConversion>1e-3&gt;m/s</UnitsConversion>
+      <CoordinateSystem>
+        <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+        <CoordinateSystemName>SC</CoordinateSystemName>
+      </CoordinateSystem>
+      <RenderingHints>
+        <ValueFormat>F12.4</ValueFormat>
+        <ScaleType>LinearScale</ScaleType>
+      </RenderingHints>
+      <Structure>
+        <Size>3</Size>
+        <Element>
+          <Name>Vx</Name>
+          <Index>1</Index>
+        </Element>
+        <Element>
+          <Name>Vy</Name>
+          <Index>2</Index>
+        </Element>
+        <Element>
+          <Name>Vz</Name>
+          <Index>3</Index>
+        </Element>
+      </Structure>
+      <ValidMin>-500000.0</ValidMin>
+      <ValidMax>500000.0</ValidMax>
+      <FillValue>-1.0e+31</FillValue>
+      <Particle>
+        <ParticleType>Electron</ParticleType>
+        <Qualifier>Uncertainty</Qualifier>
+        <ParticleQuantity>Velocity</ParticleQuantity>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>Lower-Bound Drift Velocity Vector Error (GSE)</Name>
+      <Set>Time series defined by using: EPOCH</Set>
+      <ParameterKey>mms4_edi_v_gse_delta_minus_brst_l2</ParameterKey>
+      <Description>Lower-Bound on the E cross B Drift Velocity Error in Geocentric Solar Ecliptic (GSE) Cartesian Coordinates</Description>
+      <Cadence>PT0.0009765625S</Cadence>
+      <Units>km/s</Units>
+      <UnitsConversion>1e-3&gt;m/s</UnitsConversion>
+      <CoordinateSystem>
+        <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+        <CoordinateSystemName>GSE</CoordinateSystemName>
+      </CoordinateSystem>
+      <RenderingHints>
+        <ValueFormat>F12.4</ValueFormat>
+        <ScaleType>LinearScale</ScaleType>
+      </RenderingHints>
+      <Structure>
+        <Size>3</Size>
+        <Element>
+          <Name>Vx</Name>
+          <Index>1</Index>
+        </Element>
+        <Element>
+          <Name>Vy</Name>
+          <Index>2</Index>
+        </Element>
+        <Element>
+          <Name>Vz</Name>
+          <Index>3</Index>
+        </Element>
+      </Structure>
+      <ValidMin>-500000.0</ValidMin>
+      <ValidMax>500000.0</ValidMax>
+      <FillValue>-1.0e+31</FillValue>
+      <Particle>
+        <ParticleType>Electron</ParticleType>
+        <Qualifier>Uncertainty</Qualifier>
+        <ParticleQuantity>Velocity</ParticleQuantity>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>Upper-Bound Drift Velocity Vector Error (GSE)</Name>
+      <Set>Time series defined by using: EPOCH</Set>
+      <ParameterKey>mms4_edi_v_gse_delta_plus_brst_l2</ParameterKey>
+      <Description>Upper-Bound on the E cross B Drift Velocity Error in Geocentric Solar Ecliptic (GSE) Cartesian Coordinates</Description>
+      <Cadence>PT0.0009765625S</Cadence>
+      <Units>km/s</Units>
+      <UnitsConversion>1e-3&gt;m/s</UnitsConversion>
+      <CoordinateSystem>
+        <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+        <CoordinateSystemName>GSE</CoordinateSystemName>
+      </CoordinateSystem>
+      <RenderingHints>
+        <ValueFormat>F12.4</ValueFormat>
+        <ScaleType>LinearScale</ScaleType>
+      </RenderingHints>
+      <Structure>
+        <Size>3</Size>
+        <Element>
+          <Name>Vx</Name>
+          <Index>1</Index>
+        </Element>
+        <Element>
+          <Name>Vy</Name>
+          <Index>2</Index>
+        </Element>
+        <Element>
+          <Name>Vz</Name>
+          <Index>3</Index>
+        </Element>
+      </Structure>
+      <ValidMin>-500000.0</ValidMin>
+      <ValidMax>500000.0</ValidMax>
+      <FillValue>-1.0e+31</FillValue>
+      <Particle>
+        <ParticleType>Electron</ParticleType>
+        <Qualifier>Uncertainty</Qualifier>
+        <ParticleQuantity>Velocity</ParticleQuantity>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>Lower-Bound Drift Velocity Vector Error (GSM)</Name>
+      <Set>Time series defined by using: EPOCH</Set>
+      <ParameterKey>mms4_edi_v_gsm_delta_minus_brst_l2</ParameterKey>
+      <Description>Lower-Bound on the E cross B Drift Velocity Error in Geocentric Solar Magnetospheric (GSM) Cartesian Coordinates</Description>
+      <Cadence>PT0.0009765625S</Cadence>
+      <Units>km/s</Units>
+      <UnitsConversion>1e-3&gt;m/s</UnitsConversion>
+      <CoordinateSystem>
+        <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+        <CoordinateSystemName>GSM</CoordinateSystemName>
+      </CoordinateSystem>
+      <RenderingHints>
+        <ValueFormat>F12.4</ValueFormat>
+        <ScaleType>LinearScale</ScaleType>
+      </RenderingHints>
+      <Structure>
+        <Size>3</Size>
+        <Element>
+          <Name>Vx</Name>
+          <Index>1</Index>
+        </Element>
+        <Element>
+          <Name>Vy</Name>
+          <Index>2</Index>
+        </Element>
+        <Element>
+          <Name>Vz</Name>
+          <Index>3</Index>
+        </Element>
+      </Structure>
+      <ValidMin>-500000.0</ValidMin>
+      <ValidMax>500000.0</ValidMax>
+      <FillValue>-1.0e+31</FillValue>
+      <Particle>
+        <ParticleType>Electron</ParticleType>
+        <Qualifier>Uncertainty</Qualifier>
+        <ParticleQuantity>Velocity</ParticleQuantity>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>Upper-Bound Drift Velocity Vector Error (GSM)</Name>
+      <Set>Time series defined by using: EPOCH</Set>
+      <ParameterKey>mms4_edi_v_gsm_delta_plus_brst_l2</ParameterKey>
+      <Description>Upper-Bound on the E cross B Drift Velocity Error in Geocentric Solar Magnetospheric (GSM) Cartesian Coordinates</Description>
+      <Cadence>PT0.0009765625S</Cadence>
+      <Units>km/s</Units>
+      <UnitsConversion>1e-3&gt;m/s</UnitsConversion>
+      <CoordinateSystem>
+        <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+        <CoordinateSystemName>GSM</CoordinateSystemName>
+      </CoordinateSystem>
+      <RenderingHints>
+        <ValueFormat>F12.4</ValueFormat>
+        <ScaleType>LinearScale</ScaleType>
+      </RenderingHints>
+      <Structure>
+        <Size>3</Size>
+        <Element>
+          <Name>Vx</Name>
+          <Index>1</Index>
+        </Element>
+        <Element>
+          <Name>Vy</Name>
+          <Index>2</Index>
+        </Element>
+        <Element>
+          <Name>Vz</Name>
+          <Index>3</Index>
+        </Element>
+      </Structure>
+      <ValidMin>-500000.0</ValidMin>
+      <ValidMax>500000.0</ValidMax>
+      <FillValue>-1.0e+31</FillValue>
+      <Particle>
+        <ParticleType>Electron</ParticleType>
+        <Qualifier>Uncertainty</Qualifier>
+        <ParticleQuantity>Velocity</ParticleQuantity>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>Lower-Bound Electric Field Vector Error (DSL)</Name>
+      <Set>Time series defined by using: EPOCH</Set>
+      <ParameterKey>mms4_edi_e_dsl_delta_minus_brst_l2</ParameterKey>
+      <Description>Lower-Bound on the Electric Field Vector Error in Despun Angular Momentum (DSL) Cartesian Coordinates</Description>
+      <Cadence>PT0.0009765625S</Cadence>
+      <Units>mV/m</Units>
+      <UnitsConversion>1e-3&gt;V/m</UnitsConversion>
+      <CoordinateSystem>
+        <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+        <CoordinateSystemName>SC</CoordinateSystemName>
+      </CoordinateSystem>
+      <RenderingHints>
+        <ValueFormat>F12.4</ValueFormat>
+        <ScaleType>LinearScale</ScaleType>
+      </RenderingHints>
+      <Structure>
+        <Size>3</Size>
+        <Element>
+          <Name>Ex</Name>
+          <Index>1</Index>
+        </Element>
+        <Element>
+          <Name>Ey</Name>
+          <Index>2</Index>
+        </Element>
+        <Element>
+          <Name>Ez</Name>
+          <Index>3</Index>
+        </Element>
+      </Structure>
+      <ValidMin>-10000.0</ValidMin>
+      <ValidMax>10000.0</ValidMax>
+      <FillValue>-1.0e+31</FillValue>
+      <Field>
+        <Qualifier>Uncertainty</Qualifier>
+        <FieldQuantity>Electric</FieldQuantity>
+      </Field>
+    </Parameter>
+    <Parameter>
+      <Name>Upper-Bound Electric Field Vector Error (DSL)</Name>
+      <Set>Time series defined by using: EPOCH</Set>
+      <ParameterKey>mms4_edi_e_dsl_delta_plus_brst_l2</ParameterKey>
+      <Description>Upper-Bound on the Electric Field Vector Error in Despun Angular Momentum (DSL) Cartesian Coordinates</Description>
+      <Cadence>PT0.0009765625S</Cadence>
+      <Units>mV/m</Units>
+      <UnitsConversion>1e-3&gt;V/m</UnitsConversion>
+      <CoordinateSystem>
+        <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+        <CoordinateSystemName>SC</CoordinateSystemName>
+      </CoordinateSystem>
+      <RenderingHints>
+        <ValueFormat>F12.4</ValueFormat>
+        <ScaleType>LinearScale</ScaleType>
+      </RenderingHints>
+      <Structure>
+        <Size>3</Size>
+        <Element>
+          <Name>Ex</Name>
+          <Index>1</Index>
+        </Element>
+        <Element>
+          <Name>Ey</Name>
+          <Index>2</Index>
+        </Element>
+        <Element>
+          <Name>Ez</Name>
+          <Index>3</Index>
+        </Element>
+      </Structure>
+      <ValidMin>-10000.0</ValidMin>
+      <ValidMax>10000.0</ValidMax>
+      <FillValue>-1.0e+31</FillValue>
+      <Field>
+        <Qualifier>Uncertainty</Qualifier>
+        <FieldQuantity>Electric</FieldQuantity>
+      </Field>
+    </Parameter>
+    <Parameter>
+      <Name>Lower-Bound Electric Field Vector Error (GSE)</Name>
+      <Set>Time series defined by using: EPOCH</Set>
+      <ParameterKey>mms4_edi_e_gse_delta_minus_brst_l2</ParameterKey>
+      <Description>Lower-Bound on the Electric Field Vector Error in Geocentric Solar Ecliptic (GSE) Cartesian Coordinates</Description>
+      <Cadence>PT0.0009765625S</Cadence>
+      <Units>mV/m</Units>
+      <UnitsConversion>1e-3&gt;V/m</UnitsConversion>
+      <CoordinateSystem>
+        <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+        <CoordinateSystemName>GSE</CoordinateSystemName>
+      </CoordinateSystem>
+      <RenderingHints>
+        <ValueFormat>F12.4</ValueFormat>
+        <ScaleType>LinearScale</ScaleType>
+      </RenderingHints>
+      <Structure>
+        <Size>3</Size>
+        <Element>
+          <Name>Ex</Name>
+          <Index>1</Index>
+        </Element>
+        <Element>
+          <Name>Ey</Name>
+          <Index>2</Index>
+        </Element>
+        <Element>
+          <Name>Ez</Name>
+          <Index>3</Index>
+        </Element>
+      </Structure>
+      <ValidMin>-10000.0</ValidMin>
+      <ValidMax>10000.0</ValidMax>
+      <FillValue>-1.0e+31</FillValue>
+      <Field>
+        <Qualifier>Uncertainty</Qualifier>
+        <FieldQuantity>Electric</FieldQuantity>
+      </Field>
+    </Parameter>
+    <Parameter>
+      <Name>Upper-Bound Electric Field Vector Error (GSE)</Name>
+      <Set>Time series defined by using: EPOCH</Set>
+      <ParameterKey>mms4_edi_e_gse_delta_plus_brst_l2</ParameterKey>
+      <Description>Upper-Bound on the Electric Field Vector Error in Geocentric Solar Ecliptic (GSE) Cartesian Coordinates</Description>
+      <Cadence>PT0.0009765625S</Cadence>
+      <Units>mV/m</Units>
+      <UnitsConversion>1e-3&gt;V/m</UnitsConversion>
+      <CoordinateSystem>
+        <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+        <CoordinateSystemName>GSE</CoordinateSystemName>
+      </CoordinateSystem>
+      <RenderingHints>
+        <ValueFormat>F12.4</ValueFormat>
+        <ScaleType>LinearScale</ScaleType>
+      </RenderingHints>
+      <Structure>
+        <Size>3</Size>
+        <Element>
+          <Name>Ex</Name>
+          <Index>1</Index>
+        </Element>
+        <Element>
+          <Name>Ey</Name>
+          <Index>2</Index>
+        </Element>
+        <Element>
+          <Name>Ez</Name>
+          <Index>3</Index>
+        </Element>
+      </Structure>
+      <ValidMin>-10000.0</ValidMin>
+      <ValidMax>10000.0</ValidMax>
+      <FillValue>-1.0e+31</FillValue>
+      <Field>
+        <Qualifier>Uncertainty</Qualifier>
+        <FieldQuantity>Electric</FieldQuantity>
+      </Field>
+    </Parameter>
+    <Parameter>
+      <Name>Lower-Bound Electric Field Vector Error (GSM)</Name>
+      <Set>Time series defined by using: EPOCH</Set>
+      <ParameterKey>mms4_edi_e_gsm_delta_minus_brst_l2</ParameterKey>
+      <Description>Lower-Bound on the Electric Field Vector Error in Geocentric Solar Magnetospheric (GSM) Cartesian Coordinates</Description>
+      <Cadence>PT0.0009765625S</Cadence>
+      <Units>mV/m</Units>
+      <UnitsConversion>1e-3&gt;V/m</UnitsConversion>
+      <CoordinateSystem>
+        <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+        <CoordinateSystemName>GSM</CoordinateSystemName>
+      </CoordinateSystem>
+      <RenderingHints>
+        <ValueFormat>F12.4</ValueFormat>
+        <ScaleType>LinearScale</ScaleType>
+      </RenderingHints>
+      <Structure>
+        <Size>3</Size>
+        <Element>
+          <Name>Ex</Name>
+          <Index>1</Index>
+        </Element>
+        <Element>
+          <Name>Ey</Name>
+          <Index>2</Index>
+        </Element>
+        <Element>
+          <Name>Ez</Name>
+          <Index>3</Index>
+        </Element>
+      </Structure>
+      <ValidMin>-10000.0</ValidMin>
+      <ValidMax>10000.0</ValidMax>
+      <FillValue>-1.0e+31</FillValue>
+      <Field>
+        <Qualifier>Uncertainty</Qualifier>
+        <FieldQuantity>Electric</FieldQuantity>
+      </Field>
+    </Parameter>
+    <Parameter>
+      <Name>Upper-Bound Electric Field Vector Error (GSM)</Name>
+      <Set>Time series defined by using: EPOCH</Set>
+      <ParameterKey>mms4_edi_e_gsm_delta_plus_brst_l2</ParameterKey>
+      <Description>Upper-Bound on the Electric Field Vector Error in Geocentric Solar Magnetospheric (GSM) Cartesian Coordinates</Description>
+      <Cadence>PT0.0009765625S</Cadence>
+      <Units>mV/m</Units>
+      <UnitsConversion>1e-3&gt;V/m</UnitsConversion>
+      <CoordinateSystem>
+        <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+        <CoordinateSystemName>GSM</CoordinateSystemName>
+      </CoordinateSystem>
+      <RenderingHints>
+        <ValueFormat>F12.4</ValueFormat>
+        <ScaleType>LinearScale</ScaleType>
+      </RenderingHints>
+      <Structure>
+        <Size>3</Size>
+        <Element>
+          <Name>Ex</Name>
+          <Index>1</Index>
+        </Element>
+        <Element>
+          <Name>Ey</Name>
+          <Index>2</Index>
+        </Element>
+        <Element>
+          <Name>Ez</Name>
+          <Index>3</Index>
+        </Element>
+      </Structure>
+      <ValidMin>-10000.0</ValidMin>
+      <ValidMax>10000.0</ValidMax>
+      <FillValue>-1.0e+31</FillValue>
+      <Field>
+        <Qualifier>Uncertainty</Qualifier>
+        <FieldQuantity>Electric</FieldQuantity>
+      </Field>
+    </Parameter>
+  </NumericalData>
 </Spase>
