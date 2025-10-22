@@ -5,7 +5,7 @@
     <ResourceID>spase://CNES/NumericalData/CDPP-AMDA/Galileo/PLS/gll-pls-mom</ResourceID>
     <ResourceHeader>
       <ResourceName>Galileo - PLS - ion moments</ResourceName>
-      <ReleaseDate>2012-03-06T18:42:28Z</ReleaseDate>
+      <ReleaseDate>2025-06-30T06:59:32Z</ReleaseDate>
       <Description>Galileo Plasma Science Spectometer data (moments)</Description>
       <Contact>
         <PersonID>spase://CNES/Person/CDPP-AMDA/R.Walker</PersonID>
@@ -42,7 +42,7 @@
       <Acknowledgement>Thank you for acknowledging the use of AMDA in publications with wording like "Data analysis was performed with the AMDA science analysis system provided by the Centre de Données de la Physique des Plasmas (CDPP) supported by CNRS, CNES, Observatoire de Paris and Université Paul Sabatier, Toulouse". See the Rules of the road at https://amda.cdpp.eu/help/policy.html . Please acknowledge the Data Providers.</Acknowledgement>
     </AccessInformation>
     <ProviderName>PDS</ProviderName>
-    <ProviderResourceName>GO-J-PLS-5-RTS-MOMENTS-V1.0</ProviderResourceName>
+    <ProviderResourceName>galileo-pls-jup-derived</ProviderResourceName>
     <InstrumentID>spase://CNES/Instrument/CDPP-AMDA/Galileo/PLS</InstrumentID>
     <MeasurementType>ThermalPlasma</MeasurementType>
     <TemporalDescription>
@@ -60,6 +60,20 @@
     <ObservedRegion>Jupiter.Ganymede</ObservedRegion>
     <Keyword>Jupiter</Keyword>
     <Keyword>GALILEO</Keyword>
+    <Parameter>
+      <Name>mode</Name>
+      <ParameterKey>gll_pls_mommode</ParameterKey>
+      <Description>This column gives the spin mode of the instrument during the sample.   
+      Refer to the instrument paper for the complete definition of each      
+      mode.
+      </Description>
+      <RenderingHints>
+        <DisplayType>TimeSeries</DisplayType>
+      </RenderingHints>
+      <Support>
+        <SupportQuantity>InstrumentMode</SupportQuantity>
+      </Support>
+    </Parameter>
     <Parameter>
       <Name>density</Name>
       <ParameterKey>gll_pls_momdens</ParameterKey>
@@ -91,9 +105,10 @@
     <Parameter>
       <Name>v sc</Name>
       <ParameterKey>gll_pls_momv</ParameterKey>
-      <Description>Ion bulk velocity components in SpaceCraft coordinates</Description>
+      <Description> Plasma velocity vector in inertial rotor coordiantes
+      (despun spacecraft coordinates).</Description>
       <UCD>phys.veloc;phys.atmol.ionStage</UCD>
-      <Units>counts</Units>
+      <Units>km.s-1</Units>
       <RenderingHints>
         <DisplayType>TimeSeries</DisplayType>
       </RenderingHints>
@@ -123,12 +138,72 @@
     <Parameter>
       <Name>|v|</Name>
       <ParameterKey>gll_pls_momvmag</ParameterKey>
-      <Description>Ion bulk velocity magnitude</Description>
+      <Description>Velocity magnitude</Description>
       <UCD>phys.veloc;phys.atmol.ionStage</UCD>
       <Units>km.s-1</Units>
       <Particle>
         <ParticleType>Ion</ParticleType>
         <Qualifier>Magnitude</Qualifier>
+        <ParticleQuantity>Velocity</ParticleQuantity>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>density error</Name>
+      <ParameterKey>gll_pls_momdenserr</ParameterKey>
+      <Description>Ion density error</Description>
+      <UCD>phys.density;phys.atmol.ionStage</UCD>
+      <Units>cm^-3</Units>
+      <RenderingHints>
+        <DisplayType>TimeSeries</DisplayType>
+      </RenderingHints>
+      <Particle>
+        <ParticleType>Ion</ParticleType>
+        <ParticleQuantity>NumberDensity</ParticleQuantity>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>temperature error</Name>
+      <ParameterKey>gll_pls_momtemperr</ParameterKey>
+      <Description>Ion temperature error</Description>
+      <UCD>phys.temperature;phys.atmol.ionStage</UCD>
+      <Units>eV</Units>
+      <RenderingHints>
+        <DisplayType>TimeSeries</DisplayType>
+      </RenderingHints>
+      <Particle>
+        <ParticleType>Ion</ParticleType>
+        <ParticleQuantity>Temperature</ParticleQuantity>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>v sc error</Name>
+      <ParameterKey>gll_pls_momverr</ParameterKey>
+      <Description>Plasma velocity error vector.</Description>
+      <UCD>phys.veloc;phys.atmol.ionStage</UCD>
+      <Units>km.s-1</Units>
+      <RenderingHints>
+        <DisplayType>TimeSeries</DisplayType>
+      </RenderingHints>
+      <Structure>
+        <Size>3</Size>
+        <Element>
+          <Name>vx</Name>
+          <Index>1</Index>
+          <ParameterKey>gll_pls_momverr(0)</ParameterKey>
+        </Element>
+        <Element>
+          <Name>vy</Name>
+          <Index>2</Index>
+          <ParameterKey>gll_pls_momverr(1)</ParameterKey>
+        </Element>
+        <Element>
+          <Name>vz</Name>
+          <Index>3</Index>
+          <ParameterKey>gll_pls_momverr(2)</ParameterKey>
+        </Element>
+      </Structure>
+      <Particle>
+        <ParticleType>Ion</ParticleType>
         <ParticleQuantity>Velocity</ParticleQuantity>
       </Particle>
     </Parameter>

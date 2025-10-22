@@ -1,7 +1,9 @@
 {
   "Spase": {
     "xmlns": "http://www.spase-group.org/data/schema",
-    "Version": "2.6.0",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema  http://www.spase-group.org/data/schema/spase-2_7_0.xsd",
+    "Version": "2.7.0",
     "Catalog": {
       "ResourceID": "spase://NASA/Catalog/STEREO/ICME.List",
       "ResourceHeader": {
@@ -17,6 +19,10 @@
             {
               "ReleaseDate": "2023-09-27T12:34:56.789",
               "Note": "Updated Authors. JMW"
+            },
+            {
+              "ReleaseDate": "2025-09-25T17:31:52",
+              "Note": "PhenomenonType has been changed from CME to ICME\r\n12 parameters added\r\nby Olga Uritskaya"
             }
           ]
         },
@@ -27,10 +33,16 @@
           "PublicationDate": "2022-01-01T00:00:00",
           "PublishedBy": "NASA, STEREO Science Center"
         },
-        "Contact": {
-          "PersonID": "spase://SMWG/Person/Lan.Jian",
-          "Role": "GeneralContact"
-        },
+        "Contact": [
+          {
+            "PersonID": "spase://SMWG/Person/Lan.Jian",
+            "Role": "GeneralContact"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Olga.Y.Uritskaya",
+            "Role": "MetadataContact"
+          }
+        ],
         "InformationURL": {
           "Name": "STEREO L3 data page",
           "URL": "https://stereo-ssc.nascom.nasa.gov/data/ins_data/impact/level3/"
@@ -57,12 +69,90 @@
         "spase://SMWG/Instrument/STEREO-A/PLASTIC",
         "spase://SMWG/Instrument/STEREO-B/PLASTIC"
       ],
-      "PhenomenonType": "CoronalMassEjection",
+      "PhenomenonType": "InterplanetaryCoronalMassEjection",
       "TimeSpan": {
         "StartDate": "2006-12-14T00:00:00",
         "RelativeStopDate": "-P6M",
         "Note": "As of October 2009, ICME's through March 2009 were included"
-      }
+      },
+      "Parameter": [
+        {
+          "Name": "#",
+          "Support": {
+            "SupportQuantity": "Housekeeping"
+          }
+        },
+        {
+          "Name": "STEREO",
+          "Description": "STEREO spacecraft, A or/and B",
+          "Support": {
+            "SupportQuantity": "InstrumentMode"
+          }
+        },
+        {
+          "Name": "Start time [Year Doy Month/Day HH:MM] ",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Magnetic obstacle (~ flux rope) start time",
+          "Description": "Magnetic obstacle (~flux rope) start time: if it is different from the ICME start time, there is a sheath region. NaN indicates there is no clear magnetic obstacle, possibly because of a glance through of the sheath region.",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Magnetic obstacle End time",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Ptmax [pPa]",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Bmax [nT]",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Vmax [km/s]",
+          "Support": {
+            "SupportQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "∆V [km/s]",
+          "Description": "∆V: temporal variation of solar wind speed over one event, negative value indicating solar wind is expanding, and \"~\" means the solar wind speed remains almost constant or does not change systematically over the event despite back-and-forth changes.",
+          "Support": {
+            "SupportQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "Group",
+          "Description": "Group: We sort ICMEs into 3 groups depending on their temporal profiles of Pt. Corresponding to the Group 1, 2, and 3 ICMEs, the Pt profile, excluding any shock and/or sheath region (if present), respectively, has a central pressure maximum, a steady plateau, or a gradual decay. In the hypothesis that all ICMEs have a central flux rope, these three groups of Pt profiles are due to different approach distances to the central flux rope. Group 1 ICMEs are assumed to be the ones penetrated by spacecraft near the flux rope axis, and they usually present signatures of magnetic clouds. See Jian et al. (2006) for more detail.",
+          "Support": {
+            "SupportQuantity": "Remark"
+          }
+        },
+        {
+          "Name": "MC (2 for better defined)",
+          "Support": {
+            "SupportQuantity": "DataQuality"
+          }
+        },
+        {
+          "Name": "Comment",
+          "Support": {
+            "SupportQuantity": "Remark"
+          }
+        }
+      ]
     }
   }
 }

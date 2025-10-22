@@ -1,0 +1,503 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2.4.1.xsd",
+    "Version": "2.4.1",
+    "NumericalData": {
+      "ResourceID": "spase://CNES/NumericalData/CDPP-AMDA/Juice/RADEM/juice-radem-rawsc.earthmoon",
+      "ResourceHeader": {
+        "ResourceName": "JUICE - RADEM - Earth/Moon flyby - Raw Science Product",
+        "ReleaseDate": "2025-10-06T07:46:05Z",
+        "Description": "Science RAW data from RADEM (JUICE)\n      \nRADEM data is stored in two .cdf file types with corresponding labels (.lbx): sc - science and hk - housekeeping\n\n\nThe hk files have operational information including the RADEM's operation mode. Science data is only acquired when RADEM_MODE \nis in Normal mode. However, flight calibrations are also made in this Normal mode - refer to the caveats section for more information.\n\n\nThe sc files contain the measurements made by the detectors integrated in time (default is 60s - check INTEGRATION_TIME \nvariable in the files). In the data_raw, detector observations are split into eight ELECTRONS bins (EDH), eight PROTONS bins \n(PDH), two HEAVY_IONS bins (HIDH), 31 directionality detector bins (DDH), and 12 CUSTOM bins (mix of EDH and PDH - check the EAICD). The sensitivity of each bin \ndepends on the configuration (see the EAICD for more information).\n\n\n* Configuration 1\n\nIn this configuration all detectors work in single coincidence. The main objective was to maximize its sensitivity to cosmic rays to test all sensors. This means that all \ndetectors are measuring electrons, protons and heavy ions at the same time. However, they are more sensitive to protons and to heavy ions than to electrons. Moreover, proton \nfluxes are typically much higher than that of heavy ions so the response to protons should dominate even with large contamination from electrons and heavy ions.\n\n\n* Configuration 2\n\nThe PDH was changed to multiple coincidence. \n\nThe CUSTOM channels are now being used. \n\nThe thresholds of all detectors with the exception of the second HIDH were changed significantly. \n\nPROTONS variable are well separated in energy (see EAICD) with almost no contamination from either electrons or heavy ions.\n\nELECTRONS variable measure electrons above a certain energy (see EAICD or metadata). The first bin is contaminated by low energy protons (~7.8 MeV). All bins are contaminated by \nhigh energy protons (>~ 45-70 MeV).\n\nDirectionality detector bins measure electrons above 0.3 MeV (0º, and 22.5º zenith sensors), 0.35 MeV (45º zenith sensors), and 0.5 MeV (67.5º sensors). All bins are contaminated by high energy \nprotons (>~ 40-50 MeV).\n\nHEAVY_IONS bin 2 measures ions with energies between 30.9-90 MeV/nucleon and above 100 MeV/nucleon.\n\nCUSTOM channels measure a variety of particles and energies (check EAICD)",
+        "Contact": {
+          "PersonID": "spase://CNES/Person/CDPP-AMDA/Wojciech.Hajdas",
+          "Role": "PrincipalInvestigator"
+        },
+        "InformationURL": [
+          {
+            "Name": "PSA/ESA server",
+            "URL": "https://psa.esa.int/psa",
+            "Description": "All RADEM data is publicly available in the PSA/ESA server.\n        "
+          },
+          {
+            "Name": "RADEM EAICD",
+            "URL": "https://archives.esac.esa.int/psa/repo/esa/psa/juice_radem/document/2025-07-28/eaicd/1.0/JUICE_RADEM_EAICD__1.0.pdf",
+            "Description": "JUICE RADEM Experiment to Archive Interface Control Document (RADEM EAICD)\n        "
+          }
+        ],
+        "Association": {
+          "AssociationID": "juice-radem-earthmoon",
+          "AssociationType": "PartOf",
+          "Note": "Earth/Moon flyby"
+        }
+      },
+      "AccessInformation": [
+        {
+          "RepositoryID": "spase://SMWG/Repository/CDPP/AMDA",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDPP/AMDA HAPI Server",
+            "URL": "https://amda.irap.omp.eu/service/hapi",
+            "Style": "HAPI",
+            "ProductKey": "juice-radem-rawsc.earthmoon",
+            "Description": "Web Service to this product using the HAPI interface."
+          },
+          "Format": "CSV",
+          "Acknowledgement": "Thank you for acknowledging the use of AMDA in publications with wording like \"Data analysis was performed with the AMDA science analysis system provided by the Centre de Données de la Physique des Plasmas (CDPP) supported by CNRS, CNES, Observatoire de Paris and Université Paul Sabatier, Toulouse\". See the Rules of the road at https://amda.cdpp.eu/help/policy.html . Please acknowledge the Data Providers."
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/CDPP/AMDA",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDPP/AMDA Web application",
+            "URL": "https://amda.cdpp.eu",
+            "Description": "Access to Data via CDPP/AMDA Web application."
+          },
+          "Format": [
+            "CSV",
+            "VOTable",
+            "CDF",
+            "PNG"
+          ],
+          "Acknowledgement": "Thank you for acknowledging the use of AMDA in publications with wording like \"Data analysis was performed with the AMDA science analysis system provided by the Centre de Données de la Physique des Plasmas (CDPP) supported by CNRS, CNES, Observatoire de Paris and Université Paul Sabatier, Toulouse\". See the Rules of the road at https://amda.cdpp.eu/help/policy.html . Please acknowledge the Data Providers."
+        }
+      ],
+      "ProcessingLevel": "Raw",
+      "ProviderName": "ESA",
+      "ProviderResourceName": "urn:esa:psa:juice_radem",
+      "InstrumentID": "spase://CNES/Instrument/CDPP-AMDA/Juice/RADEM",
+      "MeasurementType": "EnergeticParticles",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "2024-08-12T00:00:15Z",
+          "StopDate": "2024-09-10T23:59:15Z"
+        },
+        "Cadence": "PT60S"
+      },
+      "ObservedRegion": [
+        "Earth",
+        "Earth.Moon"
+      ],
+      "Caveats": "14.04.2023 - 30.04.2023: NECP - Non scientific data.\n\n30.08.2023 - Onwards:    A few directional sensors are fully masked/shadowed by the spacecraft (directionality detector Bins 8, 9, 16-19, 25-28).\n\n30.08.2023 - Onwards:    The first Heavy ion detector diode is unresponsive since launch.\n\n30.08.2023 - 30.08.2023: RADEM Configuration 1: detectors in single coincidence.\n\n30.04.2024 - 30.04.2024: Software test - do not use data.\n\n21.05.2024 - 28.05.2024: Threshold scan (flight calibration) - do not use data.\n\n09.07.2024 - 09.07.2024: RADEM Configuration 2. Large reconfiguration of the coincidence logic and its thresholds.\n\n04.08.2024 - 04.08.2024: Third re-configuration. Small reconfiguration of Proton Bin 3.\n    ",
+      "Parameter": [
+        {
+          "Name": "protons",
+          "ParameterKey": "radem_rawearthmoon_prot",
+          "Description": "Array of time series for each proton energy bin. The proton detector contains 8 bins in total",
+          "Units": "counts",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Structure": {
+            "Size": "8",
+            "Element": [
+              {
+                "Name": "P-Stack_Bin_1",
+                "Index": "1",
+                "ParameterKey": "radem_rawearthmoon_prot(0)"
+              },
+              {
+                "Name": "P-Stack_Bin_2",
+                "Index": "2",
+                "ParameterKey": "radem_rawearthmoon_prot(1)"
+              },
+              {
+                "Name": "P-Stack_Bin_3",
+                "Index": "3",
+                "ParameterKey": "radem_rawearthmoon_prot(2)"
+              },
+              {
+                "Name": "P-Stack_Bin_4",
+                "Index": "4",
+                "ParameterKey": "radem_rawearthmoon_prot(3)"
+              },
+              {
+                "Name": "P-Stack_Bin_5",
+                "Index": "5",
+                "ParameterKey": "radem_rawearthmoon_prot(4)"
+              },
+              {
+                "Name": "P-Stack_Bin_6",
+                "Index": "6",
+                "ParameterKey": "radem_rawearthmoon_prot(5)"
+              },
+              {
+                "Name": "P-Stack_Bin_7",
+                "Index": "7",
+                "ParameterKey": "radem_rawearthmoon_prot(6)"
+              },
+              {
+                "Name": "P-Stack_Bin_8",
+                "Index": "8",
+                "ParameterKey": "radem_rawearthmoon_prot(7)"
+              }
+            ]
+          },
+          "Particle": {
+            "ParticleType": "Proton",
+            "ParticleQuantity": "Counts"
+          }
+        },
+        {
+          "Name": "electrons",
+          "ParameterKey": "radem_rawearthmoon_elec",
+          "Description": "Array of time series for each electron energy bin. The electron detector contains 8 bins in total",
+          "Units": "counts",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Structure": {
+            "Size": "8",
+            "Element": [
+              {
+                "Name": "E-Stack_Bin_1",
+                "Index": "1",
+                "ParameterKey": "radem_rawearthmoon_elec(0)"
+              },
+              {
+                "Name": "E-Stack_Bin_2",
+                "Index": "2",
+                "ParameterKey": "radem_rawearthmoon_elec(1)"
+              },
+              {
+                "Name": "E-Stack_Bin_3",
+                "Index": "3",
+                "ParameterKey": "radem_rawearthmoon_elec(2)"
+              },
+              {
+                "Name": "E-Stack_Bin_4",
+                "Index": "4",
+                "ParameterKey": "radem_rawearthmoon_elec(3)"
+              },
+              {
+                "Name": "E-Stack_Bin_5",
+                "Index": "5",
+                "ParameterKey": "radem_rawearthmoon_elec(4)"
+              },
+              {
+                "Name": "E-Stack_Bin_6",
+                "Index": "6",
+                "ParameterKey": "radem_rawearthmoon_elec(5)"
+              },
+              {
+                "Name": "E-Stack_Bin_7",
+                "Index": "7",
+                "ParameterKey": "radem_rawearthmoon_elec(6)"
+              },
+              {
+                "Name": "E-Stack_Bin_8",
+                "Index": "8",
+                "ParameterKey": "radem_rawearthmoon_elec(7)"
+              }
+            ]
+          },
+          "Particle": {
+            "ParticleType": "Electron",
+            "ParticleQuantity": "Counts"
+          }
+        },
+        {
+          "Name": "heavy ions",
+          "ParameterKey": "radem_rawearthmoon_hion",
+          "Description": "Array of time series for each high energy ion, energy bin. The heavy Ion detector contains 2 bins in total",
+          "Units": "counts",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Structure": {
+            "Size": "2",
+            "Element": [
+              {
+                "Name": "I-Stack_Bin_1",
+                "Index": "1",
+                "ParameterKey": "radem_rawearthmoon_hion(0)"
+              },
+              {
+                "Name": "I-Stack_Bin_2",
+                "Index": "2",
+                "ParameterKey": "radem_rawearthmoon_hion(1)"
+              }
+            ]
+          },
+          "Particle": {
+            "ParticleType": "Ion",
+            "ParticleQuantity": "Counts"
+          }
+        },
+        {
+          "Name": "directionality detector",
+          "ParameterKey": "radem_rawearthmoon_dd",
+          "Description": "Directionality detector with 31 bins/sensors each corresponding to one direction",
+          "Units": "counts",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Structure": {
+            "Size": "31",
+            "Element": [
+              {
+                "Name": "DD_Bin_1",
+                "Index": "1",
+                "ParameterKey": "radem_rawearthmoon_dd(0)"
+              },
+              {
+                "Name": "DD_Bin_2",
+                "Index": "2",
+                "ParameterKey": "radem_rawearthmoon_dd(1)"
+              },
+              {
+                "Name": "DD_Bin_3",
+                "Index": "3",
+                "ParameterKey": "radem_rawearthmoon_dd(2)"
+              },
+              {
+                "Name": "DD_Bin_4",
+                "Index": "4",
+                "ParameterKey": "radem_rawearthmoon_dd(3)"
+              },
+              {
+                "Name": "DD_Bin_5",
+                "Index": "5",
+                "ParameterKey": "radem_rawearthmoon_dd(4)"
+              },
+              {
+                "Name": "DD_Bin_6",
+                "Index": "6",
+                "ParameterKey": "radem_rawearthmoon_dd(5)"
+              },
+              {
+                "Name": "DD_Bin_7",
+                "Index": "7",
+                "ParameterKey": "radem_rawearthmoon_dd(6)"
+              },
+              {
+                "Name": "DD_Bin_8",
+                "Index": "8",
+                "ParameterKey": "radem_rawearthmoon_dd(7)"
+              },
+              {
+                "Name": "DD_Bin_9",
+                "Index": "9",
+                "ParameterKey": "radem_rawearthmoon_dd(8)"
+              },
+              {
+                "Name": "DD_Bin_10",
+                "Index": "10",
+                "ParameterKey": "radem_rawearthmoon_dd(9)"
+              },
+              {
+                "Name": "DD_Bin_11",
+                "Index": "11",
+                "ParameterKey": "radem_rawearthmoon_dd(10)"
+              },
+              {
+                "Name": "DD_Bin_12",
+                "Index": "12",
+                "ParameterKey": "radem_rawearthmoon_dd(11)"
+              },
+              {
+                "Name": "DD_Bin_13",
+                "Index": "13",
+                "ParameterKey": "radem_rawearthmoon_dd(12)"
+              },
+              {
+                "Name": "DD_Bin_14",
+                "Index": "14",
+                "ParameterKey": "radem_rawearthmoon_dd(13)"
+              },
+              {
+                "Name": "DD_Bin_15",
+                "Index": "15",
+                "ParameterKey": "radem_rawearthmoon_dd(14)"
+              },
+              {
+                "Name": "DD_Bin_16",
+                "Index": "16",
+                "ParameterKey": "radem_rawearthmoon_dd(15)"
+              },
+              {
+                "Name": "DD_Bin_17",
+                "Index": "17",
+                "ParameterKey": "radem_rawearthmoon_dd(16)"
+              },
+              {
+                "Name": "DD_Bin_18",
+                "Index": "18",
+                "ParameterKey": "radem_rawearthmoon_dd(17)"
+              },
+              {
+                "Name": "DD_Bin_19",
+                "Index": "19",
+                "ParameterKey": "radem_rawearthmoon_dd(18)"
+              },
+              {
+                "Name": "DD_Bin_20",
+                "Index": "20",
+                "ParameterKey": "radem_rawearthmoon_dd(19)"
+              },
+              {
+                "Name": "DD_Bin_21",
+                "Index": "21",
+                "ParameterKey": "radem_rawearthmoon_dd(20)"
+              },
+              {
+                "Name": "DD_Bin_22",
+                "Index": "22",
+                "ParameterKey": "radem_rawearthmoon_dd(21)"
+              },
+              {
+                "Name": "DD_Bin_23",
+                "Index": "23",
+                "ParameterKey": "radem_rawearthmoon_dd(22)"
+              },
+              {
+                "Name": "DD_Bin_24",
+                "Index": "24",
+                "ParameterKey": "radem_rawearthmoon_dd(23)"
+              },
+              {
+                "Name": "DD_Bin_25",
+                "Index": "25",
+                "ParameterKey": "radem_rawearthmoon_dd(24)"
+              },
+              {
+                "Name": "DD_Bin_26",
+                "Index": "26",
+                "ParameterKey": "radem_rawearthmoon_dd(25)"
+              },
+              {
+                "Name": "DD_Bin_27",
+                "Index": "27",
+                "ParameterKey": "radem_rawearthmoon_dd(26)"
+              },
+              {
+                "Name": "DD_Bin_28",
+                "Index": "28",
+                "ParameterKey": "radem_rawearthmoon_dd(27)"
+              },
+              {
+                "Name": "DD_Bin_29",
+                "Index": "29",
+                "ParameterKey": "radem_rawearthmoon_dd(28)"
+              },
+              {
+                "Name": "DD_Bin_30",
+                "Index": "30",
+                "ParameterKey": "radem_rawearthmoon_dd(29)"
+              },
+              {
+                "Name": "DD_Bin_31",
+                "Index": "31",
+                "ParameterKey": "radem_rawearthmoon_dd(30)"
+              }
+            ]
+          },
+          "Particle": {
+            "ParticleType": [
+              "Proton",
+              "Electron",
+              "Ion"
+            ],
+            "ParticleQuantity": "Counts"
+          }
+        },
+        {
+          "Name": "custom",
+          "ParameterKey": "radem_rawearthmoon_custom",
+          "Description": "Array of time series of unclassified particle and energy bins",
+          "Units": "counts",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Structure": {
+            "Size": "12",
+            "Element": [
+              {
+                "Name": "CUSTOM_Bin_1",
+                "Index": "1",
+                "ParameterKey": "radem_rawearthmoon_custom(0)"
+              },
+              {
+                "Name": "CUSTOM_Bin_2",
+                "Index": "2",
+                "ParameterKey": "radem_rawearthmoon_custom(1)"
+              },
+              {
+                "Name": "CUSTOM_Bin_3",
+                "Index": "3",
+                "ParameterKey": "radem_rawearthmoon_custom(2)"
+              },
+              {
+                "Name": "CUSTOM_Bin_4",
+                "Index": "4",
+                "ParameterKey": "radem_rawearthmoon_custom(3)"
+              },
+              {
+                "Name": "CUSTOM_Bin_5",
+                "Index": "5",
+                "ParameterKey": "radem_rawearthmoon_custom(4)"
+              },
+              {
+                "Name": "CUSTOM_Bin_6",
+                "Index": "6",
+                "ParameterKey": "radem_rawearthmoon_custom(5)"
+              },
+              {
+                "Name": "CUSTOM_Bin_7",
+                "Index": "7",
+                "ParameterKey": "radem_rawearthmoon_custom(6)"
+              },
+              {
+                "Name": "CUSTOM_Bin_8",
+                "Index": "8",
+                "ParameterKey": "radem_rawearthmoon_custom(7)"
+              },
+              {
+                "Name": "CUSTOM_Bin_9",
+                "Index": "9",
+                "ParameterKey": "radem_rawearthmoon_custom(8)"
+              },
+              {
+                "Name": "CUSTOM_Bin_10",
+                "Index": "10",
+                "ParameterKey": "radem_rawearthmoon_custom(9)"
+              },
+              {
+                "Name": "CUSTOM_Bin_11",
+                "Index": "11",
+                "ParameterKey": "radem_rawearthmoon_custom(10)"
+              },
+              {
+                "Name": "CUSTOM_Bin_12",
+                "Index": "12",
+                "ParameterKey": "radem_rawearthmoon_custom(11)"
+              }
+            ]
+          },
+          "Particle": {
+            "ParticleType": [
+              "Proton",
+              "Electron"
+            ],
+            "ParticleQuantity": "Counts"
+          }
+        },
+        {
+          "Name": "configuration ID",
+          "ParameterKey": "radem_rawearthmoon_confid",
+          "Description": "Detector configuration ID at the time of these measurements. Read the RADEM EAICD for more details",
+          "Units": " ",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Support": {
+            "SupportQuantity": "Housekeeping"
+          }
+        }
+      ]
+    }
+  }
+}

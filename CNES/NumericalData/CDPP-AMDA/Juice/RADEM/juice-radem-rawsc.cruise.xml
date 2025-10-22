@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2.4.1.xsd">
+  <Version>2.4.1</Version>
+  <NumericalData>
+    <ResourceID>spase://CNES/NumericalData/CDPP-AMDA/Juice/RADEM/juice-radem-rawsc.cruise</ResourceID>
+    <ResourceHeader>
+      <ResourceName>JUICE - RADEM - cruise - Raw Science Product</ResourceName>
+      <ReleaseDate>2025-10-12T20:36:13Z</ReleaseDate>
+      <Description>Science RAW data from RADEM (JUICE)
+      
+RADEM data is stored in two .cdf file types with corresponding labels (.lbx): sc - science and hk - housekeeping
+
+
+The hk files have operational information including the RADEM's operation mode. Science data is only acquired when RADEM_MODE 
+is in Normal mode. However, flight calibrations are also made in this Normal mode - refer to the caveats section for more information.
+
+
+The sc files contain the measurements made by the detectors integrated in time (default is 60s - check INTEGRATION_TIME 
+variable in the files). In the data_raw, detector observations are split into eight ELECTRONS bins (EDH), eight PROTONS bins 
+(PDH), two HEAVY_IONS bins (HIDH), 31 directionality detector bins (DDH), and 12 CUSTOM bins (mix of EDH and PDH - check the EAICD). The sensitivity of each bin 
+depends on the configuration (see the EAICD for more information).
+
+
+* Configuration 1
+
+In this configuration all detectors work in single coincidence. The main objective was to maximize its sensitivity to cosmic rays to test all sensors. This means that all 
+detectors are measuring electrons, protons and heavy ions at the same time. However, they are more sensitive to protons and to heavy ions than to electrons. Moreover, proton 
+fluxes are typically much higher than that of heavy ions so the response to protons should dominate even with large contamination from electrons and heavy ions.
+
+
+* Configuration 2
+
+The PDH was changed to multiple coincidence. 
+
+The CUSTOM channels are now being used. 
+
+The thresholds of all detectors with the exception of the second HIDH were changed significantly. 
+
+PROTONS variable are well separated in energy (see EAICD) with almost no contamination from either electrons or heavy ions.
+
+ELECTRONS variable measure electrons above a certain energy (see EAICD or metadata). The first bin is contaminated by low energy protons (~7.8 MeV). All bins are contaminated by 
+high energy protons (&gt;~ 45-70 MeV).
+
+Directionality detector bins measure electrons above 0.3 MeV (0º, and 22.5º zenith sensors), 0.35 MeV (45º zenith sensors), and 0.5 MeV (67.5º sensors). All bins are contaminated by high energy 
+protons (&gt;~ 40-50 MeV).
+
+HEAVY_IONS bin 2 measures ions with energies between 30.9-90 MeV/nucleon and above 100 MeV/nucleon.
+
+CUSTOM channels measure a variety of particles and energies (check EAICD)</Description>
+      <Contact>
+        <PersonID>spase://CNES/Person/CDPP-AMDA/Wojciech.Hajdas</PersonID>
+        <Role>PrincipalInvestigator</Role>
+      </Contact>
+      <InformationURL>
+        <Name>PSA/ESA server</Name>
+        <URL>https://psa.esa.int/psa</URL>
+        <Description>All RADEM data is publicly available in the PSA/ESA server.
+        </Description>
+      </InformationURL>
+      <InformationURL>
+        <Name>RADEM EAICD</Name>
+        <URL>https://archives.esac.esa.int/psa/repo/esa/psa/juice_radem/document/2025-07-28/eaicd/1.0/JUICE_RADEM_EAICD__1.0.pdf</URL>
+        <Description>JUICE RADEM Experiment to Archive Interface Control Document (RADEM EAICD)
+        </Description>
+      </InformationURL>
+      <Association>
+        <AssociationID>juice-radem-cruise</AssociationID>
+        <AssociationType>PartOf</AssociationType>
+        <Note>cruise</Note>
+      </Association>
+    </ResourceHeader>
+    <AccessInformation>
+      <RepositoryID>spase://SMWG/Repository/CDPP/AMDA</RepositoryID>
+      <Availability>Online</Availability>
+      <AccessRights>Open</AccessRights>
+      <AccessURL>
+        <Name>CDPP/AMDA HAPI Server</Name>
+        <URL>https://amda.irap.omp.eu/service/hapi</URL>
+        <Style>HAPI</Style>
+        <ProductKey>juice-radem-rawsc.cruise</ProductKey>
+        <Description>Web Service to this product using the HAPI interface.</Description>
+      </AccessURL>
+      <Format>CSV</Format>
+      <Acknowledgement>Thank you for acknowledging the use of AMDA in publications with wording like "Data analysis was performed with the AMDA science analysis system provided by the Centre de Données de la Physique des Plasmas (CDPP) supported by CNRS, CNES, Observatoire de Paris and Université Paul Sabatier, Toulouse". See the Rules of the road at https://amda.cdpp.eu/help/policy.html . Please acknowledge the Data Providers.</Acknowledgement>
+    </AccessInformation>
+    <AccessInformation>
+      <RepositoryID>spase://SMWG/Repository/CDPP/AMDA</RepositoryID>
+      <Availability>Online</Availability>
+      <AccessRights>Open</AccessRights>
+      <AccessURL>
+        <Name>CDPP/AMDA Web application</Name>
+        <URL>https://amda.cdpp.eu</URL>
+        <Description>Access to Data via CDPP/AMDA Web application.</Description>
+      </AccessURL>
+      <Format>CSV</Format>
+      <Format>VOTable</Format>
+      <Format>CDF</Format>
+      <Format>PNG</Format>
+      <Acknowledgement>Thank you for acknowledging the use of AMDA in publications with wording like "Data analysis was performed with the AMDA science analysis system provided by the Centre de Données de la Physique des Plasmas (CDPP) supported by CNRS, CNES, Observatoire de Paris and Université Paul Sabatier, Toulouse". See the Rules of the road at https://amda.cdpp.eu/help/policy.html . Please acknowledge the Data Providers.</Acknowledgement>
+    </AccessInformation>
+    <ProcessingLevel>Raw</ProcessingLevel>
+    <ProviderName>ESA</ProviderName>
+    <ProviderResourceName>urn:esa:psa:juice_radem</ProviderResourceName>
+    <InstrumentID>spase://CNES/Instrument/CDPP-AMDA/Juice/RADEM</InstrumentID>
+    <MeasurementType>EnergeticParticles</MeasurementType>
+    <TemporalDescription>
+      <TimeSpan>
+        <StartDate>2023-08-31T18:53:55Z</StartDate>
+        <StopDate>2025-10-11T18:45:30Z</StopDate>
+      </TimeSpan>
+      <Cadence>PT60S</Cadence>
+    </TemporalDescription>
+    <ObservedRegion>Heliosphere</ObservedRegion>
+    <Caveats>14.04.2023 - 30.04.2023: NECP - Non scientific data.
+
+30.08.2023 - Onwards:    A few directional sensors are fully masked/shadowed by the spacecraft (directionality detector Bins 8, 9, 16-19, 25-28).
+
+30.08.2023 - Onwards:    The first Heavy ion detector diode is unresponsive since launch.
+
+30.08.2023 - 30.08.2023: RADEM Configuration 1: detectors in single coincidence.
+
+30.04.2024 - 30.04.2024: Software test - do not use data.
+
+21.05.2024 - 28.05.2024: Threshold scan (flight calibration) - do not use data.
+
+09.07.2024 - 09.07.2024: RADEM Configuration 2. Large reconfiguration of the coincidence logic and its thresholds.
+
+04.08.2024 - 04.08.2024: Third re-configuration. Small reconfiguration of Proton Bin 3.
+    </Caveats>
+    <Parameter>
+      <Name>protons</Name>
+      <ParameterKey>radem_rawcruise_prot</ParameterKey>
+      <Description>Array of time series for each proton energy bin. The proton detector contains 8 bins in total</Description>
+      <Units>counts</Units>
+      <RenderingHints>
+        <DisplayType>TimeSeries</DisplayType>
+      </RenderingHints>
+      <Structure>
+        <Size>8</Size>
+        <Element>
+          <Name>P-Stack_Bin_1</Name>
+          <Index>1</Index>
+          <ParameterKey>radem_rawcruise_prot(0)</ParameterKey>
+        </Element>
+        <Element>
+          <Name>P-Stack_Bin_2</Name>
+          <Index>2</Index>
+          <ParameterKey>radem_rawcruise_prot(1)</ParameterKey>
+        </Element>
+        <Element>
+          <Name>P-Stack_Bin_3</Name>
+          <Index>3</Index>
+          <ParameterKey>radem_rawcruise_prot(2)</ParameterKey>
+        </Element>
+        <Element>
+          <Name>P-Stack_Bin_4</Name>
+          <Index>4</Index>
+          <ParameterKey>radem_rawcruise_prot(3)</ParameterKey>
+        </Element>
+        <Element>
+          <Name>P-Stack_Bin_5</Name>
+          <Index>5</Index>
+          <ParameterKey>radem_rawcruise_prot(4)</ParameterKey>
+        </Element>
+        <Element>
+          <Name>P-Stack_Bin_6</Name>
+          <Index>6</Index>
+          <ParameterKey>radem_rawcruise_prot(5)</ParameterKey>
+        </Element>
+        <Element>
+          <Name>P-Stack_Bin_7</Name>
+          <Index>7</Index>
+          <ParameterKey>radem_rawcruise_prot(6)</ParameterKey>
+        </Element>
+        <Element>
+          <Name>P-Stack_Bin_8</Name>
+          <Index>8</Index>
+          <ParameterKey>radem_rawcruise_prot(7)</ParameterKey>
+        </Element>
+      </Structure>
+      <Particle>
+        <ParticleType>Proton</ParticleType>
+        <ParticleQuantity>Counts</ParticleQuantity>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>electrons</Name>
+      <ParameterKey>radem_rawcruise_elec</ParameterKey>
+      <Description>Array of time series for each electron energy bin. The electron detector contains 8 bins in total</Description>
+      <Units>counts</Units>
+      <RenderingHints>
+        <DisplayType>TimeSeries</DisplayType>
+      </RenderingHints>
+      <Structure>
+        <Size>8</Size>
+        <Element>
+          <Name>E-Stack_Bin_1</Name>
+          <Index>1</Index>
+          <ParameterKey>radem_rawcruise_elec(0)</ParameterKey>
+        </Element>
+        <Element>
+          <Name>E-Stack_Bin_2</Name>
+          <Index>2</Index>
+          <ParameterKey>radem_rawcruise_elec(1)</ParameterKey>
+        </Element>
+        <Element>
+          <Name>E-Stack_Bin_3</Name>
+          <Index>3</Index>
+          <ParameterKey>radem_rawcruise_elec(2)</ParameterKey>
+        </Element>
+        <Element>
+          <Name>E-Stack_Bin_4</Name>
+          <Index>4</Index>
+          <ParameterKey>radem_rawcruise_elec(3)</ParameterKey>
+        </Element>
+        <Element>
+          <Name>E-Stack_Bin_5</Name>
+          <Index>5</Index>
+          <ParameterKey>radem_rawcruise_elec(4)</ParameterKey>
+        </Element>
+        <Element>
+          <Name>E-Stack_Bin_6</Name>
+          <Index>6</Index>
+          <ParameterKey>radem_rawcruise_elec(5)</ParameterKey>
+        </Element>
+        <Element>
+          <Name>E-Stack_Bin_7</Name>
+          <Index>7</Index>
+          <ParameterKey>radem_rawcruise_elec(6)</ParameterKey>
+        </Element>
+        <Element>
+          <Name>E-Stack_Bin_8</Name>
+          <Index>8</Index>
+          <ParameterKey>radem_rawcruise_elec(7)</ParameterKey>
+        </Element>
+      </Structure>
+      <Particle>
+        <ParticleType>Electron</ParticleType>
+        <ParticleQuantity>Counts</ParticleQuantity>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>heavy ions</Name>
+      <ParameterKey>radem_rawcruise_hion</ParameterKey>
+      <Description>Array of time series for each high energy ion, energy bin. The heavy Ion detector contains 2 bins in total</Description>
+      <Units>counts</Units>
+      <RenderingHints>
+        <DisplayType>TimeSeries</DisplayType>
+      </RenderingHints>
+      <Structure>
+        <Size>2</Size>
+        <Element>
+          <Name>I-Stack_Bin_1</Name>
+          <Index>1</Index>
+          <ParameterKey>radem_rawcruise_hion(0)</ParameterKey>
+        </Element>
+        <Element>
+          <Name>I-Stack_Bin_2</Name>
+          <Index>2</Index>
+          <ParameterKey>radem_rawcruise_hion(1)</ParameterKey>
+        </Element>
+      </Structure>
+      <Particle>
+        <ParticleType>Ion</ParticleType>
+        <ParticleQuantity>Counts</ParticleQuantity>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>directionality detector</Name>
+      <ParameterKey>radem_rawcruise_dd</ParameterKey>
+      <Description>Directionality detector with 31 bins/sensors each corresponding to one direction</Description>
+      <Units>counts</Units>
+      <RenderingHints>
+        <DisplayType>TimeSeries</DisplayType>
+      </RenderingHints>
+      <Structure>
+        <Size>31</Size>
+        <Element>
+          <Name>DD_Bin_1</Name>
+          <Index>1</Index>
+          <ParameterKey>radem_rawcruise_dd(0)</ParameterKey>
+        </Element>
+        <Element>
+          <Name>DD_Bin_2</Name>
+          <Index>2</Index>
+          <ParameterKey>radem_rawcruise_dd(1)</ParameterKey>
+        </Element>
+        <Element>
+          <Name>DD_Bin_3</Name>
+          <Index>3</Index>
+          <ParameterKey>radem_rawcruise_dd(2)</ParameterKey>
+        </Element>
+        <Element>
+          <Name>DD_Bin_4</Name>
+          <Index>4</Index>
+          <ParameterKey>radem_rawcruise_dd(3)</ParameterKey>
+        </Element>
+        <Element>
+          <Name>DD_Bin_5</Name>
+          <Index>5</Index>
+          <ParameterKey>radem_rawcruise_dd(4)</ParameterKey>
+        </Element>
+        <Element>
+          <Name>DD_Bin_6</Name>
+          <Index>6</Index>
+          <ParameterKey>radem_rawcruise_dd(5)</ParameterKey>
+        </Element>
+        <Element>
+          <Name>DD_Bin_7</Name>
+          <Index>7</Index>
+          <ParameterKey>radem_rawcruise_dd(6)</ParameterKey>
+        </Element>
+        <Element>
+          <Name>DD_Bin_8</Name>
+          <Index>8</Index>
+          <ParameterKey>radem_rawcruise_dd(7)</ParameterKey>
+        </Element>
+        <Element>
+          <Name>DD_Bin_9</Name>
+          <Index>9</Index>
+          <ParameterKey>radem_rawcruise_dd(8)</ParameterKey>
+        </Element>
+        <Element>
+          <Name>DD_Bin_10</Name>
+          <Index>10</Index>
+          <ParameterKey>radem_rawcruise_dd(9)</ParameterKey>
+        </Element>
+        <Element>
+          <Name>DD_Bin_11</Name>
+          <Index>11</Index>
+          <ParameterKey>radem_rawcruise_dd(10)</ParameterKey>
+        </Element>
+        <Element>
+          <Name>DD_Bin_12</Name>
+          <Index>12</Index>
+          <ParameterKey>radem_rawcruise_dd(11)</ParameterKey>
+        </Element>
+        <Element>
+          <Name>DD_Bin_13</Name>
+          <Index>13</Index>
+          <ParameterKey>radem_rawcruise_dd(12)</ParameterKey>
+        </Element>
+        <Element>
+          <Name>DD_Bin_14</Name>
+          <Index>14</Index>
+          <ParameterKey>radem_rawcruise_dd(13)</ParameterKey>
+        </Element>
+        <Element>
+          <Name>DD_Bin_15</Name>
+          <Index>15</Index>
+          <ParameterKey>radem_rawcruise_dd(14)</ParameterKey>
+        </Element>
+        <Element>
+          <Name>DD_Bin_16</Name>
+          <Index>16</Index>
+          <ParameterKey>radem_rawcruise_dd(15)</ParameterKey>
+        </Element>
+        <Element>
+          <Name>DD_Bin_17</Name>
+          <Index>17</Index>
+          <ParameterKey>radem_rawcruise_dd(16)</ParameterKey>
+        </Element>
+        <Element>
+          <Name>DD_Bin_18</Name>
+          <Index>18</Index>
+          <ParameterKey>radem_rawcruise_dd(17)</ParameterKey>
+        </Element>
+        <Element>
+          <Name>DD_Bin_19</Name>
+          <Index>19</Index>
+          <ParameterKey>radem_rawcruise_dd(18)</ParameterKey>
+        </Element>
+        <Element>
+          <Name>DD_Bin_20</Name>
+          <Index>20</Index>
+          <ParameterKey>radem_rawcruise_dd(19)</ParameterKey>
+        </Element>
+        <Element>
+          <Name>DD_Bin_21</Name>
+          <Index>21</Index>
+          <ParameterKey>radem_rawcruise_dd(20)</ParameterKey>
+        </Element>
+        <Element>
+          <Name>DD_Bin_22</Name>
+          <Index>22</Index>
+          <ParameterKey>radem_rawcruise_dd(21)</ParameterKey>
+        </Element>
+        <Element>
+          <Name>DD_Bin_23</Name>
+          <Index>23</Index>
+          <ParameterKey>radem_rawcruise_dd(22)</ParameterKey>
+        </Element>
+        <Element>
+          <Name>DD_Bin_24</Name>
+          <Index>24</Index>
+          <ParameterKey>radem_rawcruise_dd(23)</ParameterKey>
+        </Element>
+        <Element>
+          <Name>DD_Bin_25</Name>
+          <Index>25</Index>
+          <ParameterKey>radem_rawcruise_dd(24)</ParameterKey>
+        </Element>
+        <Element>
+          <Name>DD_Bin_26</Name>
+          <Index>26</Index>
+          <ParameterKey>radem_rawcruise_dd(25)</ParameterKey>
+        </Element>
+        <Element>
+          <Name>DD_Bin_27</Name>
+          <Index>27</Index>
+          <ParameterKey>radem_rawcruise_dd(26)</ParameterKey>
+        </Element>
+        <Element>
+          <Name>DD_Bin_28</Name>
+          <Index>28</Index>
+          <ParameterKey>radem_rawcruise_dd(27)</ParameterKey>
+        </Element>
+        <Element>
+          <Name>DD_Bin_29</Name>
+          <Index>29</Index>
+          <ParameterKey>radem_rawcruise_dd(28)</ParameterKey>
+        </Element>
+        <Element>
+          <Name>DD_Bin_30</Name>
+          <Index>30</Index>
+          <ParameterKey>radem_rawcruise_dd(29)</ParameterKey>
+        </Element>
+        <Element>
+          <Name>DD_Bin_31</Name>
+          <Index>31</Index>
+          <ParameterKey>radem_rawcruise_dd(30)</ParameterKey>
+        </Element>
+      </Structure>
+      <Particle>
+        <ParticleType>Proton</ParticleType>
+        <ParticleType>Electron</ParticleType>
+        <ParticleType>Ion</ParticleType>
+        <ParticleQuantity>Counts</ParticleQuantity>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>custom</Name>
+      <ParameterKey>radem_rawcruise_custom</ParameterKey>
+      <Description>Array of time series of unclassified particle and energy bins</Description>
+      <Units>counts</Units>
+      <RenderingHints>
+        <DisplayType>TimeSeries</DisplayType>
+      </RenderingHints>
+      <Structure>
+        <Size>12</Size>
+        <Element>
+          <Name>CUSTOM_Bin_1</Name>
+          <Index>1</Index>
+          <ParameterKey>radem_rawcruise_custom(0)</ParameterKey>
+        </Element>
+        <Element>
+          <Name>CUSTOM_Bin_2</Name>
+          <Index>2</Index>
+          <ParameterKey>radem_rawcruise_custom(1)</ParameterKey>
+        </Element>
+        <Element>
+          <Name>CUSTOM_Bin_3</Name>
+          <Index>3</Index>
+          <ParameterKey>radem_rawcruise_custom(2)</ParameterKey>
+        </Element>
+        <Element>
+          <Name>CUSTOM_Bin_4</Name>
+          <Index>4</Index>
+          <ParameterKey>radem_rawcruise_custom(3)</ParameterKey>
+        </Element>
+        <Element>
+          <Name>CUSTOM_Bin_5</Name>
+          <Index>5</Index>
+          <ParameterKey>radem_rawcruise_custom(4)</ParameterKey>
+        </Element>
+        <Element>
+          <Name>CUSTOM_Bin_6</Name>
+          <Index>6</Index>
+          <ParameterKey>radem_rawcruise_custom(5)</ParameterKey>
+        </Element>
+        <Element>
+          <Name>CUSTOM_Bin_7</Name>
+          <Index>7</Index>
+          <ParameterKey>radem_rawcruise_custom(6)</ParameterKey>
+        </Element>
+        <Element>
+          <Name>CUSTOM_Bin_8</Name>
+          <Index>8</Index>
+          <ParameterKey>radem_rawcruise_custom(7)</ParameterKey>
+        </Element>
+        <Element>
+          <Name>CUSTOM_Bin_9</Name>
+          <Index>9</Index>
+          <ParameterKey>radem_rawcruise_custom(8)</ParameterKey>
+        </Element>
+        <Element>
+          <Name>CUSTOM_Bin_10</Name>
+          <Index>10</Index>
+          <ParameterKey>radem_rawcruise_custom(9)</ParameterKey>
+        </Element>
+        <Element>
+          <Name>CUSTOM_Bin_11</Name>
+          <Index>11</Index>
+          <ParameterKey>radem_rawcruise_custom(10)</ParameterKey>
+        </Element>
+        <Element>
+          <Name>CUSTOM_Bin_12</Name>
+          <Index>12</Index>
+          <ParameterKey>radem_rawcruise_custom(11)</ParameterKey>
+        </Element>
+      </Structure>
+      <Particle>
+        <ParticleType>Proton</ParticleType>
+        <ParticleType>Electron</ParticleType>
+        <ParticleQuantity>Counts</ParticleQuantity>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>configuration ID</Name>
+      <ParameterKey>radem_rawcruise_confid</ParameterKey>
+      <Description>Detector configuration ID at the time of these measurements. Read the RADEM EAICD for more details</Description>
+      <Units> </Units>
+      <RenderingHints>
+        <DisplayType>TimeSeries</DisplayType>
+      </RenderingHints>
+      <Support>
+        <SupportQuantity>Housekeeping</SupportQuantity>
+      </Support>
+    </Parameter>
+  </NumericalData>
+</Spase>

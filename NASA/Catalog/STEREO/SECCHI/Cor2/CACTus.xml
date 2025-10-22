@@ -1,25 +1,29 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema https://www.spase-group.org/data/schema/spase-2_5_0.xsd">
-   <Version>2.6.0</Version>
+<?xml version="1.0" encoding="UTF-8"?>
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema  http://www.spase-group.org/data/schema/spase-2_7_0.xsd">
+   <Version>2.7.0</Version>
    <Catalog>
       <ResourceID>spase://NASA/Catalog/STEREO/SECCHI/Cor2/CACTus</ResourceID>
       <ResourceHeader>
          <ResourceName>STEREO SECCHI Cor2 Automated CME Catalog</ResourceName>
-		 <DOI>https://doi.org/10.48322/s0nk-w757</DOI>
+         <DOI>https://doi.org/10.48322/s0nk-w757</DOI>
          <ReleaseDate>2023-09-27T12:34:56.789Z</ReleaseDate>
          <RevisionHistory>
             <RevisionEvent>
                <ReleaseDate>2022-02-24T12:34:56.789</ReleaseDate>
                <Note>STEREO SECCHI: Initial SPASE XML resource description submission. Metadata submitted by A. Vourlidas on 2022-02-19, reviewed by LFB</Note>
             </RevisionEvent>
-			<RevisionEvent>
-                  <ReleaseDate>2023-05-11T12:34:56.789</ReleaseDate>
-                  <Note>Updated to SPASE Version 2.5.0 if needed, Added DOI information, JMW</Note>
+            <RevisionEvent>
+               <ReleaseDate>2023-05-11T12:34:56.789</ReleaseDate>
+               <Note>Updated to SPASE Version 2.5.0 if needed, Added DOI information, JMW</Note>
             </RevisionEvent>
-			<RevisionEvent>
-                  <ReleaseDate>2023-09-27T12:34:56.789</ReleaseDate>
-                  <Note>Updated Authors. JMW</Note>
-               </RevisionEvent>
+            <RevisionEvent>
+               <ReleaseDate>2023-09-27T12:34:56.789</ReleaseDate>
+               <Note>Updated Authors. JMW</Note>
+            </RevisionEvent>
+            <RevisionEvent>
+               <ReleaseDate>2025-10-15T18:54:06</ReleaseDate>
+               <Note>10 Parameters added by Olga Uritskaya</Note>
+            </RevisionEvent>
          </RevisionHistory>
          <Description>Computer Aided CME Tracking, CACTus, autonomously detects coronal mass ejections, CMEs, in image sequences from LASCO or SECCHI. The output of our software is a list of events, similar to the classic catalogs, with principle angle, angular width and velocity estimation for each CME. In contrast to catalogs assembled by human operators, these CME detections by software can be faster, which is especially important in the context of space weather, and possibly also more objective, as the detection criterion is written explicitly in a program. However, the algorithm is not perfect so there are sometimes false detections. 
 
@@ -58,6 +62,10 @@ This CME list is automatically generated. There is no human intervention or supe
             <PersonID>spase://SMWG/Person/Lee.Frost.Bargatze</PersonID>
             <Role>MetadataContact</Role>
          </Contact>
+         <Contact>
+            <PersonID>spase://SMWG/Person/Olga.Y.Uritskaya</PersonID>
+            <Role>MetadataContact</Role>
+         </Contact>
          <InformationURL>
             <Name>CACTus Algorithm Description</Name>
             <URL>https://iopscience.iop.org/article/10.1088/0004-637X/691/2/1222</URL>
@@ -84,5 +92,75 @@ This CME list is automatically generated. There is no human intervention or supe
       <InstrumentID>spase://SMWG/Instrument/STEREO-A/SECCHI/Cor2</InstrumentID>
       <InstrumentID>spase://SMWG/Instrument/STEREO-B/SECCHI/Cor2</InstrumentID>
       <PhenomenonType>CoronalMassEjection</PhenomenonType>
+      <Parameter>
+         <Name>CME</Name>
+         <Description>CME: CME number</Description>
+         <Support>
+            <SupportQuantity>Other</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>t0</Name>
+         <Description>t0: onset time, earliest indication of liftoff</Description>
+         <Support>
+            <SupportQuantity>Temporal</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>dt0</Name>
+         <Description>dt0: duration of liftoff (hours)</Description>
+         <Support>
+            <SupportQuantity>Other</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>pa</Name>
+         <Description>pa: principal angle, counterclockwise from North (degrees)</Description>
+         <Support>
+            <SupportQuantity>Positional</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>da</Name>
+         <Description>da: angular width (degrees)</Description>
+         <Support>
+            <SupportQuantity>Positional</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>v</Name>
+         <Description>v: median velocity (km/s)</Description>
+         <Support>
+            <SupportQuantity>Velocity</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>dv</Name>
+         <Description>dv: variation (1 sigma) of velocity over the width of the CME</Description>
+         <Support>
+            <SupportQuantity>Velocity</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>mindv</Name>
+         <Description>mindv: lowest velocity detected within the CME</Description>
+         <Support>
+            <SupportQuantity>Velocity</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>maxdv</Name>
+         <Description>maxdv: highest velocity detected within the CME</Description>
+         <Support>
+            <SupportQuantity>Velocity</SupportQuantity>
+         </Support>
+      </Parameter>
+      <Parameter>
+         <Name>halo?</Name>
+         <Description>halo?: II if da&gt;90, III if da&gt;180, IV if da&gt;270, indicating potential halo/partial halo CME</Description>
+         <Support>
+            <SupportQuantity>Remark</SupportQuantity>
+         </Support>
+      </Parameter>
    </Catalog>
 </Spase>

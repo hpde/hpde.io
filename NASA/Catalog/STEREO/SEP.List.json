@@ -1,9 +1,9 @@
 {
   "Spase": {
-    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
     "xmlns": "http://www.spase-group.org/data/schema",
-    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_3_2.xsd",
-    "Version": "2.3.2",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema  http://www.spase-group.org/data/schema/spase-2_7_0.xsd",
+    "Version": "2.7.0",
     "Catalog": {
       "ResourceID": "spase://NASA/Catalog/STEREO/SEP.List",
       "ResourceHeader": {
@@ -11,10 +11,16 @@
         "DOI": "https://doi.org/10.48322/nbrg-kw23",
         "ReleaseDate": "2021-05-31T12:34:56.789",
         "RevisionHistory": {
-          "RevisionEvent": {
-            "ReleaseDate": "2021-05-31T12:34:56.789",
-            "Note": "Updated to SPASE Version 2.3.2 if needed, Applied quality control for DOI usage, LFB"
-          }
+          "RevisionEvent": [
+            {
+              "ReleaseDate": "2021-05-31T12:34:56.789",
+              "Note": "Updated to SPASE Version 2.3.2 if needed, Applied quality control for DOI usage, LFB"
+            },
+            {
+              "ReleaseDate": "2025-10-15T19:34:21",
+              "Note": "6 Parameters added by Olga Urirskaya"
+            }
+          ]
         },
         "Description": "This catalog has a list of the Solar Energetic Particles (SEP) Events observed by STEREO-A and/or STEREO-B. For each of the observations, the following information is given: event start time, event end time, STEREO maximum_flux fluence, and a comment. It is expected that this list, given in both PDF and Excel formats, will be updated periodically.",
         "Acknowledgement": "STEREO IMPACT Team",
@@ -23,10 +29,16 @@
           "PublicationDate": "2020-01-01T00:00:00",
           "PublishedBy": "STEREO Science Center at the NASA Solar Data Analysis Center"
         },
-        "Contact": {
-          "PersonID": "spase://SMWG/Person/Lan.Jian",
-          "Role": "GeneralContact"
-        },
+        "Contact": [
+          {
+            "PersonID": "spase://SMWG/Person/Lan.Jian",
+            "Role": "GeneralContact"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Olga.Y.Uritskaya",
+            "Role": "MetadataContact"
+          }
+        ],
         "InformationURL": {
           "Name": "STEREO L3 data page",
           "URL": "https://stereo-ssc.nascom.nasa.gov/data/ins_data/impact/level3/"
@@ -65,7 +77,45 @@
         "StartDate": "2016-12-06T22:30:00Z",
         "StopDate": "2019-02-01T00:00:00Z",
         "Note": "The events in 2006 are in the solar wind, outside the Earth's bow shock. There are no events reaching the criterion in 2007-2010 at either STEREO spacecraft."
-      }
+      },
+      "Parameter": [
+        {
+          "Name": "start_time",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "end_time",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Maximum Flux (pfu)",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Fluence(cm-2 sr-1)",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "STEREO",
+          "Support": {
+            "SupportQuantity": "InstrumentMode"
+          }
+        },
+        {
+          "Name": "Comments",
+          "Support": {
+            "SupportQuantity": "Remark"
+          }
+        }
+      ]
     }
   }
 }

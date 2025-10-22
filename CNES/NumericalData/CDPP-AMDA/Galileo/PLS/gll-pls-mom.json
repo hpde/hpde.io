@@ -8,7 +8,7 @@
       "ResourceID": "spase://CNES/NumericalData/CDPP-AMDA/Galileo/PLS/gll-pls-mom",
       "ResourceHeader": {
         "ResourceName": "Galileo - PLS - ion moments",
-        "ReleaseDate": "2012-03-06T18:42:28Z",
+        "ReleaseDate": "2025-06-30T06:59:32Z",
         "Description": "Galileo Plasma Science Spectometer data (moments)",
         "Contact": {
           "PersonID": "spase://CNES/Person/CDPP-AMDA/R.Walker",
@@ -49,7 +49,7 @@
         }
       ],
       "ProviderName": "PDS",
-      "ProviderResourceName": "GO-J-PLS-5-RTS-MOMENTS-V1.0",
+      "ProviderResourceName": "galileo-pls-jup-derived",
       "InstrumentID": "spase://CNES/Instrument/CDPP-AMDA/Galileo/PLS",
       "MeasurementType": "ThermalPlasma",
       "TemporalDescription": {
@@ -72,6 +72,17 @@
         "GALILEO"
       ],
       "Parameter": [
+        {
+          "Name": "mode",
+          "ParameterKey": "gll_pls_mommode",
+          "Description": "This column gives the spin mode of the instrument during the sample.   \n      Refer to the instrument paper for the complete definition of each      \n      mode.\n      ",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Support": {
+            "SupportQuantity": "InstrumentMode"
+          }
+        },
         {
           "Name": "density",
           "ParameterKey": "gll_pls_momdens",
@@ -103,9 +114,9 @@
         {
           "Name": "v sc",
           "ParameterKey": "gll_pls_momv",
-          "Description": "Ion bulk velocity components in SpaceCraft coordinates",
+          "Description": " Plasma velocity vector in inertial rotor coordiantes\n      (despun spacecraft coordinates).",
           "UCD": "phys.veloc;phys.atmol.ionStage",
-          "Units": "counts",
+          "Units": "km.s-1",
           "RenderingHints": {
             "DisplayType": "TimeSeries"
           },
@@ -137,12 +148,74 @@
         {
           "Name": "|v|",
           "ParameterKey": "gll_pls_momvmag",
-          "Description": "Ion bulk velocity magnitude",
+          "Description": "Velocity magnitude",
           "UCD": "phys.veloc;phys.atmol.ionStage",
           "Units": "km.s-1",
           "Particle": {
             "ParticleType": "Ion",
             "Qualifier": "Magnitude",
+            "ParticleQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "density error",
+          "ParameterKey": "gll_pls_momdenserr",
+          "Description": "Ion density error",
+          "UCD": "phys.density;phys.atmol.ionStage",
+          "Units": "cm^-3",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Particle": {
+            "ParticleType": "Ion",
+            "ParticleQuantity": "NumberDensity"
+          }
+        },
+        {
+          "Name": "temperature error",
+          "ParameterKey": "gll_pls_momtemperr",
+          "Description": "Ion temperature error",
+          "UCD": "phys.temperature;phys.atmol.ionStage",
+          "Units": "eV",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Particle": {
+            "ParticleType": "Ion",
+            "ParticleQuantity": "Temperature"
+          }
+        },
+        {
+          "Name": "v sc error",
+          "ParameterKey": "gll_pls_momverr",
+          "Description": "Plasma velocity error vector.",
+          "UCD": "phys.veloc;phys.atmol.ionStage",
+          "Units": "km.s-1",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "vx",
+                "Index": "1",
+                "ParameterKey": "gll_pls_momverr(0)"
+              },
+              {
+                "Name": "vy",
+                "Index": "2",
+                "ParameterKey": "gll_pls_momverr(1)"
+              },
+              {
+                "Name": "vz",
+                "Index": "3",
+                "ParameterKey": "gll_pls_momverr(2)"
+              }
+            ]
+          },
+          "Particle": {
+            "ParticleType": "Ion",
             "ParticleQuantity": "Velocity"
           }
         }

@@ -1,0 +1,566 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2.4.1.xsd",
+    "Version": "2.4.1",
+    "NumericalData": {
+      "ResourceID": "spase://CNES/NumericalData/CDPP-AMDA/Juice/RADEM/juice-radem-rawhk.venus",
+      "ResourceHeader": {
+        "ResourceName": "JUICE - RADEM - Venus flyby - Raw Housekeeping",
+        "ReleaseDate": "2025-10-06T07:33:24Z",
+        "Description": "Housekeeping RAW data from RADEM (JUICE)\n      \nRADEM data is stored in two .cdf file types with corresponding labels (.lbx): sc - science and hk - housekeeping\n\n\nThe hk files have operational information including the RADEM's operation mode. Science data is only acquired when RADEM_MODE \nis in Normal mode. However, flight calibrations are also made in this Normal mode - refer to the caveats section for more information.\n\n\nThe sc files contain the measurements made by the detectors integrated in time (default is 60s - check INTEGRATION_TIME \nvariable in the files). In the data_raw, detector observations are split into eight ELECTRONS bins (EDH), eight PROTONS bins \n(PDH), two HEAVY_IONS bins (HIDH), 31 directionality detector bins (DDH), and 12 CUSTOM bins (mix of EDH and PDH - check the EAICD). The sensitivity of each bin \ndepends on the configuration (see the EAICD for more information).\n\n\n* Configuration 1\n\nIn this configuration all detectors work in single coincidence. The main objective was to maximize its sensitivity to cosmic rays to test all sensors. This means that all \ndetectors are measuring electrons, protons and heavy ions at the same time. However, they are more sensitive to protons and to heavy ions than to electrons. Moreover, proton \nfluxes are typically much higher than that of heavy ions so the response to protons should dominate even with large contamination from electrons and heavy ions.\n\n\n* Configuration 2\n\nThe PDH was changed to multiple coincidence. \n\nThe CUSTOM channels are now being used. \n\nThe thresholds of all detectors with the exception of the second HIDH were changed significantly. \n\nPROTONS variable are well separated in energy (see EAICD) with almost no contamination from either electrons or heavy ions.\n\nELECTRONS variable measure electrons above a certain energy (see EAICD or metadata). The first bin is contaminated by low energy protons (~7.8 MeV). All bins are contaminated by \nhigh energy protons (>~ 45-70 MeV).\n\nDirectionality detector bins measure electrons above 0.3 MeV (0º, and 22.5º zenith sensors), 0.35 MeV (45º zenith sensors), and 0.5 MeV (67.5º sensors). All bins are contaminated by high energy \nprotons (>~ 40-50 MeV).\n\nHEAVY_IONS bin 2 measures ions with energies between 30.9-90 MeV/nucleon and above 100 MeV/nucleon.\n\nCUSTOM channels measure a variety of particles and energies (check EAICD)",
+        "Contact": {
+          "PersonID": "spase://CNES/Person/CDPP-AMDA/Wojciech.Hajdas",
+          "Role": "PrincipalInvestigator"
+        },
+        "InformationURL": [
+          {
+            "Name": "PSA/ESA server",
+            "URL": "https://psa.esa.int/psa",
+            "Description": "All RADEM data is publicly available in the PSA/ESA server.\n        "
+          },
+          {
+            "Name": "RADEM EAICD",
+            "URL": "https://archives.esac.esa.int/psa/repo/esa/psa/juice_radem/document/2025-07-28/eaicd/1.0/JUICE_RADEM_EAICD__1.0.pdf",
+            "Description": "JUICE RADEM Experiment to Archive Interface Control Document (RADEM EAICD)\n        "
+          }
+        ],
+        "Association": {
+          "AssociationID": "juice-radem-venus",
+          "AssociationType": "PartOf",
+          "Note": "Venus flyby"
+        }
+      },
+      "AccessInformation": [
+        {
+          "RepositoryID": "spase://SMWG/Repository/CDPP/AMDA",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDPP/AMDA HAPI Server",
+            "URL": "https://amda.irap.omp.eu/service/hapi",
+            "Style": "HAPI",
+            "ProductKey": "juice-radem-rawhk.venus",
+            "Description": "Web Service to this product using the HAPI interface."
+          },
+          "Format": "CSV",
+          "Acknowledgement": "Thank you for acknowledging the use of AMDA in publications with wording like \"Data analysis was performed with the AMDA science analysis system provided by the Centre de Données de la Physique des Plasmas (CDPP) supported by CNRS, CNES, Observatoire de Paris and Université Paul Sabatier, Toulouse\". See the Rules of the road at https://amda.cdpp.eu/help/policy.html . Please acknowledge the Data Providers."
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/CDPP/AMDA",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "AccessURL": {
+            "Name": "CDPP/AMDA Web application",
+            "URL": "https://amda.cdpp.eu",
+            "Description": "Access to Data via CDPP/AMDA Web application."
+          },
+          "Format": [
+            "CSV",
+            "VOTable",
+            "CDF",
+            "PNG"
+          ],
+          "Acknowledgement": "Thank you for acknowledging the use of AMDA in publications with wording like \"Data analysis was performed with the AMDA science analysis system provided by the Centre de Données de la Physique des Plasmas (CDPP) supported by CNRS, CNES, Observatoire de Paris and Université Paul Sabatier, Toulouse\". See the Rules of the road at https://amda.cdpp.eu/help/policy.html . Please acknowledge the Data Providers."
+        }
+      ],
+      "ProcessingLevel": "Raw",
+      "ProviderName": "ESA",
+      "ProviderResourceName": "urn:esa:psa:juice_radem",
+      "InstrumentID": "spase://CNES/Instrument/CDPP-AMDA/Juice/RADEM",
+      "MeasurementType": "EnergeticParticles",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "2025-08-24T00:00:42Z",
+          "StopDate": "2025-09-06T23:59:15Z"
+        },
+        "Cadence": "PT60S"
+      },
+      "ObservedRegion": "Heliosphere",
+      "Caveats": "14.04.2023 - 30.04.2023: NECP - Non scientific data.\n\n30.08.2023 - Onwards:    A few directional sensors are fully masked/shadowed by the spacecraft (directionality detector Bins 8, 9, 16-19, 25-28).\n\n30.08.2023 - Onwards:    The first Heavy ion detector diode is unresponsive since launch.\n\n30.08.2023 - 30.08.2023: RADEM Configuration 1: detectors in single coincidence.\n\n30.04.2024 - 30.04.2024: Software test - do not use data.\n\n21.05.2024 - 28.05.2024: Threshold scan (flight calibration) - do not use data.\n\n09.07.2024 - 09.07.2024: RADEM Configuration 2. Large reconfiguration of the coincidence logic and its thresholds.\n\n04.08.2024 - 04.08.2024: Third re-configuration. Small reconfiguration of Proton Bin 3.\n    ",
+      "Parameter": [
+        {
+          "Name": "packet type",
+          "ParameterKey": "radem_rawvenus_packettype",
+          "Description": "ID of the HK report",
+          "Units": "bits",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Support": {
+            "SupportQuantity": "Housekeeping"
+          }
+        },
+        {
+          "Name": "mode",
+          "ParameterKey": "radem_rawvenus_mode",
+          "Description": "RADEM working mode (10 - Calibration, 5 - Safe and 15 - Normal)",
+          "Units": " ",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Support": {
+            "SupportQuantity": "Housekeeping"
+          }
+        },
+        {
+          "Name": "system errors",
+          "ParameterKey": "radem_rawvenus_syserr",
+          "Description": "System Errors: CEU Software Status and Parametric Errors\nLRG30728 - Breakdown:\n* Bit 0 (LSB): Found SRAM correctable error\n* Bit 1: Found MRAM correctable error\n* Bit 2: Found SRAM uncorrectable error\n* Bit 3: Found MRAM uncorrectable error\n* Bit 4: EDH access error\n* Bit 5: PIDH access error\n\nLRG30753 - Breakdown:\n* Bit 0 (LSB): PCU OR CEU Temperatures\n* Bit 1: PIDH Temperature\n* Bit 2: EDH Temperature\n* Bit 3: DDH Temperature\n* Bit 4: PIDH Vbias/Mbias\n* Bit 5: EDH Vbias/Mbias\n* Bit 6: DDH Vbias/Mbias\n* Bit 7: HK 4V3 Soft Limit\n* Bit 8: PIDH 1V8\n* Bit 9: EDH 1V8\n* Bit 10: DDH 1V8\n* Bit 11: PIDH 3V3\n* Bit 12: EDH 3V3\n* Bit 13: DDH 3V3\n* Bit 14: Mbias/Vbias\n* Bit 15: VREF CEU 3V3\n* Bit 29: Vbias Hard Limit\n* Bit 30: HK 4V3 Hard Limit\n* Others: DC",
+          "Units": "bits",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Structure": {
+            "Size": "2",
+            "Element": [
+              {
+                "Name": "SW_Errors",
+                "Index": "1",
+                "ParameterKey": "radem_rawvenus_syserr(0)"
+              },
+              {
+                "Name": "Parametric_Errors",
+                "Index": "2",
+                "ParameterKey": "radem_rawvenus_syserr(1)"
+              }
+            ]
+          },
+          "Support": {
+            "SupportQuantity": "Housekeeping"
+          }
+        },
+        {
+          "Name": "BIST status",
+          "ParameterKey": "radem_rawvenus_biststatus",
+          "Description": "BIST Status procedure, responsible to perform the RADEM self-test, where RADEM Detector Heads and Power Supply Health are evaluated.",
+          "Units": "bits",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Support": {
+            "SupportQuantity": "Housekeeping"
+          }
+        },
+        {
+          "Name": "uProcessor work load",
+          "ParameterKey": "radem_rawvenus_cpuwl",
+          "Description": "uProcessor Watchdog reload margin.",
+          "Units": "ADC",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Support": {
+            "SupportQuantity": "Housekeeping"
+          }
+        },
+        {
+          "Name": "detector heads status",
+          "ParameterKey": "radem_rawvenus_headsstatus",
+          "Description": "PIDH Detector Status, EDH Detector Status, DDH Detector Status (ON/OFF), PIDH ASIC Status, EDH ASIC Status, DDH ASIC Status (SEL detected and internal Errors).\n\nLRT30707 - Bit 0 (LSB): PIDH Detector ON/OFF\nLRT30715 - Bit 0 (LSB): EDH Detector ON/OFF\nLRT30723 - Bit 0 (LSB): DDH Detector ON/OFF\nLRT30706 - Bit 0 (LSB): PIDH ASIC Scrubbing Error\nLRT30714 - Bit 0 (LSB): EDH ASIC Scrubbing Error\nLRT30722 - Bit 0 (LSB): DDH ASIC Scrubbing Error",
+          "Units": "bits",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Structure": {
+            "Size": "6",
+            "Element": [
+              {
+                "Name": "PIDH_Detector_Status",
+                "Index": "1",
+                "ParameterKey": "radem_rawvenus_headsstatus(0)"
+              },
+              {
+                "Name": "EDH_Detector_Status",
+                "Index": "2",
+                "ParameterKey": "radem_rawvenus_headsstatus(1)"
+              },
+              {
+                "Name": "DDH_Detector_Status",
+                "Index": "3",
+                "ParameterKey": "radem_rawvenus_headsstatus(2)"
+              },
+              {
+                "Name": "PIDH_ASIC_Status",
+                "Index": "4",
+                "ParameterKey": "radem_rawvenus_headsstatus(3)"
+              },
+              {
+                "Name": "EDH_ASIC_Status",
+                "Index": "5",
+                "ParameterKey": "radem_rawvenus_headsstatus(4)"
+              },
+              {
+                "Name": "DDH_ASIC_Status",
+                "Index": "6",
+                "ParameterKey": "radem_rawvenus_headsstatus(5)"
+              }
+            ]
+          },
+          "Support": {
+            "SupportQuantity": "Housekeeping"
+          }
+        },
+        {
+          "Name": "voltages",
+          "ParameterKey": "radem_rawvenus_voltages",
+          "Description": "System voltages. Parameters under control are PCU +92.5V and +4.3V, Detector 90V, CEU 3.3V and the ASICs suply voltage of 3.3V and 1.8V.",
+          "Units": "ADC",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Structure": {
+            "Size": "10",
+            "Element": [
+              {
+                "Name": "PCU_+92d5V",
+                "Index": "1",
+                "ParameterKey": "radem_rawvenus_voltages(0)"
+              },
+              {
+                "Name": "PCU_+4d3V",
+                "Index": "2",
+                "ParameterKey": "radem_rawvenus_voltages(1)"
+              },
+              {
+                "Name": "CEU_+3d3V",
+                "Index": "3",
+                "ParameterKey": "radem_rawvenus_voltages(2)"
+              },
+              {
+                "Name": "VBias",
+                "Index": "4",
+                "ParameterKey": "radem_rawvenus_voltages(3)"
+              },
+              {
+                "Name": "PIDH_ASIC_+1d8V",
+                "Index": "5",
+                "ParameterKey": "radem_rawvenus_voltages(4)"
+              },
+              {
+                "Name": "EDH_ASIC_+1d8V",
+                "Index": "6",
+                "ParameterKey": "radem_rawvenus_voltages(5)"
+              },
+              {
+                "Name": "DDH_ASIC_+1d8V",
+                "Index": "7",
+                "ParameterKey": "radem_rawvenus_voltages(6)"
+              },
+              {
+                "Name": "PIDH_ASIC_+3d3V",
+                "Index": "8",
+                "ParameterKey": "radem_rawvenus_voltages(7)"
+              },
+              {
+                "Name": "EDH_ASIC_+3d3V",
+                "Index": "9",
+                "ParameterKey": "radem_rawvenus_voltages(8)"
+              },
+              {
+                "Name": "DDH_ASIC_+3d3V",
+                "Index": "10",
+                "ParameterKey": "radem_rawvenus_voltages(9)"
+              }
+            ]
+          },
+          "Support": {
+            "SupportQuantity": "Housekeeping"
+          }
+        },
+        {
+          "Name": "currents",
+          "ParameterKey": "radem_rawvenus_currents",
+          "Description": "PIDH, EDH, and DDH ASICs Mbias (reference current).",
+          "Units": "ADC",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "PIDH_ASIC_Mbias",
+                "Index": "1",
+                "ParameterKey": "radem_rawvenus_currents(0)"
+              },
+              {
+                "Name": "EDH_ASIC_Mbias",
+                "Index": "2",
+                "ParameterKey": "radem_rawvenus_currents(1)"
+              },
+              {
+                "Name": "DDH_ASIC_Mbias",
+                "Index": "3",
+                "ParameterKey": "radem_rawvenus_currents(2)"
+              }
+            ]
+          },
+          "Support": {
+            "SupportQuantity": "Housekeeping"
+          }
+        },
+        {
+          "Name": "temperatures",
+          "ParameterKey": "radem_rawvenus_temperatures",
+          "Description": "System Temperatures: PCU, CEU, PIDH, EDH, DDH.",
+          "Units": "ADC",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Structure": {
+            "Size": "5",
+            "Element": [
+              {
+                "Name": "PCU_Temperature",
+                "Index": "1",
+                "ParameterKey": "radem_rawvenus_temperatures(0)"
+              },
+              {
+                "Name": "CEU_Temperature",
+                "Index": "2",
+                "ParameterKey": "radem_rawvenus_temperatures(1)"
+              },
+              {
+                "Name": "PIDH_Temperature",
+                "Index": "3",
+                "ParameterKey": "radem_rawvenus_temperatures(2)"
+              },
+              {
+                "Name": "EDH_Temperature",
+                "Index": "4",
+                "ParameterKey": "radem_rawvenus_temperatures(3)"
+              },
+              {
+                "Name": "DDH_Temperature",
+                "Index": "5",
+                "ParameterKey": "radem_rawvenus_temperatures(4)"
+              }
+            ]
+          },
+          "Support": {
+            "SupportQuantity": "Housekeeping"
+          }
+        },
+        {
+          "Name": "CEU mem. err. counters",
+          "ParameterKey": "radem_rawvenus_ceuerrcount",
+          "Description": "System Memory Error Counters: SRAM Single Error, SRAM Double Error, MRAM Double Error and MRAM Double Error.",
+          "Units": "counts",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Structure": {
+            "Size": "4",
+            "Element": [
+              {
+                "Name": "SRAM_Single_Error_Bit_Counter",
+                "Index": "1",
+                "ParameterKey": "radem_rawvenus_ceuerrcount(0)"
+              },
+              {
+                "Name": "SRAM_Double_Error_Bit_Counter",
+                "Index": "2",
+                "ParameterKey": "radem_rawvenus_ceuerrcount(1)"
+              },
+              {
+                "Name": "MRAM_Single_Error_Bit_Counter",
+                "Index": "3",
+                "ParameterKey": "radem_rawvenus_ceuerrcount(2)"
+              },
+              {
+                "Name": "MRAM_Double_Error_Bit_Counter",
+                "Index": "4",
+                "ParameterKey": "radem_rawvenus_ceuerrcount(3)"
+              }
+            ]
+          },
+          "Support": {
+            "SupportQuantity": "Housekeeping"
+          }
+        },
+        {
+          "Name": "CEU mem. err. addresses",
+          "ParameterKey": "radem_rawvenus_ceuerradd",
+          "Description": "CEU Memory Error Addresses.",
+          "Units": "address",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Structure": {
+            "Size": "4",
+            "Element": [
+              {
+                "Name": "SRAM_Single_Error_Bit_Address",
+                "Index": "1",
+                "ParameterKey": "radem_rawvenus_ceuerradd(0)"
+              },
+              {
+                "Name": "SRAM_Double_Error_Bit_Address",
+                "Index": "2",
+                "ParameterKey": "radem_rawvenus_ceuerradd(1)"
+              },
+              {
+                "Name": "MRAM_Single_Error_Bit_Address",
+                "Index": "3",
+                "ParameterKey": "radem_rawvenus_ceuerradd(2)"
+              },
+              {
+                "Name": "MRAM_Double_Error_Bit_Address",
+                "Index": "4",
+                "ParameterKey": "radem_rawvenus_ceuerradd(3)"
+              }
+            ]
+          },
+          "Support": {
+            "SupportQuantity": "Housekeeping"
+          }
+        },
+        {
+          "Name": "ASIC err. counters",
+          "ParameterKey": "radem_rawvenus_asicerrcount",
+          "Description": "PIDH, EDH, and DDH ASIC Error Counters.",
+          "Units": "ADC",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "PIDH_ASIC_ERR_Counter",
+                "Index": "1",
+                "ParameterKey": "radem_rawvenus_asicerrcount(0)"
+              },
+              {
+                "Name": "EDH_ASIC_ERR_Counter",
+                "Index": "2",
+                "ParameterKey": "radem_rawvenus_asicerrcount(1)"
+              },
+              {
+                "Name": "DDH_ASIC_ERR_Counter",
+                "Index": "3",
+                "ParameterKey": "radem_rawvenus_asicerrcount(2)"
+              }
+            ]
+          },
+          "Support": {
+            "SupportQuantity": "Housekeeping"
+          }
+        },
+        {
+          "Name": "ASIC latchup monitor",
+          "ParameterKey": "radem_rawvenus_asiclatmon",
+          "Description": "ASIC Latchup Monitor: PIDH, EDH, DDH.",
+          "Units": "bits",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "ASIC_PIDH_SEL",
+                "Index": "1",
+                "ParameterKey": "radem_rawvenus_asiclatmon(0)"
+              },
+              {
+                "Name": "ASIC_EDH_SEL",
+                "Index": "2",
+                "ParameterKey": "radem_rawvenus_asiclatmon(1)"
+              },
+              {
+                "Name": "ASIC_DDH_SEL",
+                "Index": "3",
+                "ParameterKey": "radem_rawvenus_asiclatmon(2)"
+              }
+            ]
+          },
+          "Support": {
+            "SupportQuantity": "Housekeeping"
+          }
+        },
+        {
+          "Name": "ASIC scrubbing",
+          "ParameterKey": "radem_rawvenus_asicscru",
+          "Description": "ASIC Scrubbing: PIDH, EDH, DDH Bit 0 error status.",
+          "Units": "bits",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Structure": {
+            "Size": "3",
+            "Element": [
+              {
+                "Name": "PIDH_ASIC_Scrub",
+                "Index": "1",
+                "ParameterKey": "radem_rawvenus_asicscru(0)"
+              },
+              {
+                "Name": "EDH_ASIC_Scrub",
+                "Index": "2",
+                "ParameterKey": "radem_rawvenus_asicscru(1)"
+              },
+              {
+                "Name": "DDH_ASIC_Scrub",
+                "Index": "3",
+                "ParameterKey": "radem_rawvenus_asicscru(2)"
+              }
+            ]
+          },
+          "Support": {
+            "SupportQuantity": "Housekeeping"
+          }
+        },
+        {
+          "Name": "ASIC tables",
+          "ParameterKey": "radem_rawvenus_asictab",
+          "Description": "ASIC configuration in use including coincidence logic (Coincidence Tables) and thresholds (Register Table).",
+          "Units": "bits",
+          "RenderingHints": {
+            "DisplayType": "TimeSeries"
+          },
+          "Structure": {
+            "Size": "6",
+            "Element": [
+              {
+                "Name": "PIDH_CL_Table",
+                "Index": "1",
+                "ParameterKey": "radem_rawvenus_asictab(0)"
+              },
+              {
+                "Name": "PIDH_Register_Table",
+                "Index": "2",
+                "ParameterKey": "radem_rawvenus_asictab(1)"
+              },
+              {
+                "Name": "EDH_CL_Table",
+                "Index": "3",
+                "ParameterKey": "radem_rawvenus_asictab(2)"
+              },
+              {
+                "Name": "EDH_Register_Table",
+                "Index": "4",
+                "ParameterKey": "radem_rawvenus_asictab(3)"
+              },
+              {
+                "Name": "DDH_CL_Table",
+                "Index": "5",
+                "ParameterKey": "radem_rawvenus_asictab(4)"
+              },
+              {
+                "Name": "DDH_Register_Table",
+                "Index": "6",
+                "ParameterKey": "radem_rawvenus_asictab(5)"
+              }
+            ]
+          },
+          "Support": {
+            "SupportQuantity": "Housekeeping"
+          }
+        }
+      ]
+    }
+  }
+}

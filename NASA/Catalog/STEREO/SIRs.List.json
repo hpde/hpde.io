@@ -1,7 +1,9 @@
 {
   "Spase": {
     "xmlns": "http://www.spase-group.org/data/schema",
-    "Version": "2.6.0",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema  http://www.spase-group.org/data/schema/spase-2_7_0.xsd",
+    "Version": "2.7.0",
     "Catalog": {
       "ResourceID": "spase://NASA/Catalog/STEREO/SIRs.List",
       "ResourceHeader": {
@@ -9,10 +11,16 @@
         "DOI": "https://doi.org/10.48322/s7mq-ns41",
         "ReleaseDate": "2023-09-27T12:34:56.789Z",
         "RevisionHistory": {
-          "RevisionEvent": {
-            "ReleaseDate": "2023-05-11T12:34:56.789",
-            "Note": "Updated to SPASE Version 2.5.0 if needed, fix broken URL, Added DOI information, JMW"
-          }
+          "RevisionEvent": [
+            {
+              "ReleaseDate": "2023-05-11T12:34:56.789",
+              "Note": "Updated to SPASE Version 2.5.0 if needed, fix broken URL, Added DOI information, JMW"
+            },
+            {
+              "ReleaseDate": "2025-10-15T19:44:58",
+              "Note": "10 Parameters added by Olga Uritskaya"
+            }
+          ]
         },
         "Description": "This catalog has a list of stream interaction regions \r\n(SIR's) observed by STEREO-A and/or STEREO-B between March 2007 and March \r\n2009.  For each of the ~145 STEREO A or B observations, the following \r\ninformation is given: event start time, time of the peak pressure, event \r\nend time, maximum values of pressure, magnetic field magnitude, proton \r\ndensity and flow speed, and minimum flow speed.  It is expected that this \r\nlist, given in both PDF and Excel formats, will be updated periodically.",
         "Acknowledgement": "STEREO IMPACT/Magnetometer Team",
@@ -21,10 +29,16 @@
           "PublicationDate": "2022-01-01T00:00:00",
           "PublishedBy": "NASA, STEREO Science Center"
         },
-        "Contact": {
-          "PersonID": "spase://SMWG/Person/Lan.Jian",
-          "Role": "GeneralContact"
-        },
+        "Contact": [
+          {
+            "PersonID": "spase://SMWG/Person/Lan.Jian",
+            "Role": "GeneralContact"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Olga.Y.Uritskaya",
+            "Role": "MetadataContact"
+          }
+        ],
         "InformationURL": {
           "Name": "STEREO L3 data page",
           "URL": "https://stereo-ssc.nascom.nasa.gov/data/ins_data/impact/level3/"
@@ -56,7 +70,71 @@
         "StartDate": "2007-03-04T00:00:00",
         "RelativeStopDate": "-P6M",
         "Note": "As of October 2009, SIR's through March 2009 were included"
-      }
+      },
+      "Parameter": [
+        {
+          "Name": "Compari son pair #",
+          "Support": {
+            "SupportQuantity": "Housekeeping"
+          }
+        },
+        {
+          "Name": "# of Spacecraft",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Start time [Doy Month/Day]",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "End time",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Ptmax time",
+          "Description": "Ptmax time: approximate stream interface time, because it is where the forces at the two sides of the interface are equal and in opposite directions. ",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Ptmax [pPa]",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Bmax [nT]",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Npmax [cm-3]",
+          "Description": "Npmax: maximum proton number density",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Vmin [km/s]",
+          "Support": {
+            "SupportQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "Vmax [km/s]",
+          "Support": {
+            "SupportQuantity": "Velocity"
+          }
+        }
+      ]
     }
   }
 }

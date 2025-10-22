@@ -2,8 +2,8 @@
   "Spase": {
     "xmlns": "http://www.spase-group.org/data/schema",
     "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
-    "xsi:schemaLocation": "http://www.spase-group.org/data/schema https://www.spase-group.org/data/schema/spase-2_5_0.xsd",
-    "Version": "2.6.0",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema  http://www.spase-group.org/data/schema/spase-2_7_0.xsd",
+    "Version": "2.7.0",
     "Catalog": {
       "ResourceID": "spase://NASA/Catalog/STEREO/SECCHI/Cor2/CACTus",
       "ResourceHeader": {
@@ -23,6 +23,10 @@
             {
               "ReleaseDate": "2023-09-27T12:34:56.789",
               "Note": "Updated Authors. JMW"
+            },
+            {
+              "ReleaseDate": "2025-10-15T18:54:06",
+              "Note": "10 Parameters added by Olga Uritskaya"
             }
           ]
         },
@@ -63,6 +67,10 @@
           {
             "PersonID": "spase://SMWG/Person/Lee.Frost.Bargatze",
             "Role": "MetadataContact"
+          },
+          {
+            "PersonID": "spase://SMWG/Person/Olga.Y.Uritskaya",
+            "Role": "MetadataContact"
           }
         ],
         "InformationURL": {
@@ -91,7 +99,79 @@
         "spase://SMWG/Instrument/STEREO-A/SECCHI/Cor2",
         "spase://SMWG/Instrument/STEREO-B/SECCHI/Cor2"
       ],
-      "PhenomenonType": "CoronalMassEjection"
+      "PhenomenonType": "CoronalMassEjection",
+      "Parameter": [
+        {
+          "Name": "CME",
+          "Description": "CME: CME number",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "t0",
+          "Description": "t0: onset time, earliest indication of liftoff",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "dt0",
+          "Description": "dt0: duration of liftoff (hours)",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "pa",
+          "Description": "pa: principal angle, counterclockwise from North (degrees)",
+          "Support": {
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "da",
+          "Description": "da: angular width (degrees)",
+          "Support": {
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "v",
+          "Description": "v: median velocity (km/s)",
+          "Support": {
+            "SupportQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "dv",
+          "Description": "dv: variation (1 sigma) of velocity over the width of the CME",
+          "Support": {
+            "SupportQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "mindv",
+          "Description": "mindv: lowest velocity detected within the CME",
+          "Support": {
+            "SupportQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "maxdv",
+          "Description": "maxdv: highest velocity detected within the CME",
+          "Support": {
+            "SupportQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "halo?",
+          "Description": "halo?: II if da>90, III if da>180, IV if da>270, indicating potential halo/partial halo CME",
+          "Support": {
+            "SupportQuantity": "Remark"
+          }
+        }
+      ]
     }
   }
 }
