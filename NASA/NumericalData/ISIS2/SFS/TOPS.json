@@ -2,13 +2,15 @@
   "Spase": {
     "xmlns": "http://www.spase-group.org/data/schema",
     "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
-    "xsi:schemaLocation": "http://www.spase-group.org/data/schema  https://www.spase-group.org/data/schema/spase-2_7_0.xsd",
+    "xsi:schemaLocation": "https://www.spase-group.org/data/schema  https://www.spase-group.org/data/schema/spase-2.7.0.xsd",
     "Version": "2.7.0",
     "NumericalData": {
       "ResourceID": "spase://NASA/NumericalData/ISIS2/SFS/TOPS",
+      "NamingAuthority": "NASA",
+      "ResourceType": "NumericalData",
       "ResourceHeader": {
         "ResourceName": "ISIS 2 CRC Electron Density Profiles",
-        "ReleaseDate": "2025-09-10T15:38:11Z",
+        "ReleaseDate": "2025-11-14T16:02:28Z",
         "RevisionHistory": {
           "RevisionEvent": [
             {
@@ -22,11 +24,20 @@
             {
               "ReleaseDate": "2025-09-10T15:38:11Z",
               "Note": "Revised ObservedRegions. JMW"
+            },
+            {
+              "ReleaseDate": "2025-11-14T16:02:28Z",
+              "Note": "Added PublicationInfo. Added ResourceType and NamingAuthority. Changed http to https in top-level schemaLocation attribute. Fixed version number separator in top-level schemaLocation attribute. ZCB"
             }
           ]
         },
         "Description": "This data set, provided by the Communications Research Centre (CRC) in Ottawa, Canada, consists of electron density profiles for the ionosphere above the F2 maximum (topside ionosphere). The data are computed from digital values of frequency and virtual height, scaled from ionograms that are measured by the ISIS 2 (International Satellites for Ionospheric Studies) Swept-Frequency Sounder. The data are ordered chronologically. Telemetry stations are not identified, but satellite location, Greenwich mean time of observation, solar zenith angle at the satellite, dip latitude at the satellite, total electron content down to the lowest height of topside signal reflection (normally near 300 km), and other relevant information is noted with each profile. The format gives sequences of numbers for each point scaled from the ionogram. These sequences include electron density at the successive points, and the coefficients a2, b3, b4, b5, etc. from which geometric heights can be calculated, using formulas 40 and 41 in J. E. Jackson, \"The reduction of topside ionograms to electron-density profiles,\" Proceedings of the IEEE., p. 960, June 1969. These formulas can also be used to calculate interpolated density-height values. A CRC interpolation program (available at NSSDC) can be used with this data set.\n\n     Format Description (ASCII):\n\n+------------------------------------------------+\n| M |              I5 |     number of records |\n+------------------------------------------------+\n\neach record consists of a header and then the electron density profile data\n\nHEADER:\n\n+------------------------------------------------+\n|itype  |         I1 |     spacecraft identifier |\n|iquality |        I2 |     quality index* |\n|date |           I6 |     yddd            year and day of year |\n|time  |           I6 |     hhmmss  hour minutes and seconds |\n|long |           F6.1 |   longitude in degrees |\n|lat |             F6.2 |   latitude in degrees |\n|dip |            F6.2 |   magnetic inclination (IGRF) |\n|L  |             F5.2 |   L value |\n|xhi |            F6.1 |   solar zenith angle at 100 km |\n|Rz12 |           I3 |      12-month-running mean of sunspot number |\n|IG12 |           I3 |     12-month-running mean of IG index |\n|rtec |            F6.2 |    TEC found in data set (units?) |\n|ln(NmF2) |       F7.4 |   IRI value for F2 peak in cm-3 |\n|hmF2  |          F5.1 |    IRI value for F2 peak height in km |\n|TEC_IRI | \t    F6.2 |   IRI value for TEC in TECU |\n|n |              I3 |      number of data points |\n+------------------------------------------------+\n\n (*) Quality index ranges from 0 (best) to 10 (worst), actually 4 to 10 for these \n   data sets, with a most likely value of 6. \n\n\n\nPROFILE DATA:\n\n+---------------------------------------+\n|n height values: |        14I5 |     h/km*10 |\n|n density values: |       10I7 |     ln(Ne/cm-3)*100000 |\n+---------------------------------------+\n\nstarting with the highest value (satellite height).\n\n\n      ",
         "Acknowledgement": "Please acknowledge the NASA Space Physics Data Facility and the instrument's Principal Investigator for data usage.",
+        "PublicationInfo": {
+          "Authors": "Jackson, John E.",
+          "PublicationDate": "2025-11-14T16:02:28Z",
+          "PublishedBy": "Space Physics Data Facility"
+        },
         "Contact": [
           {
             "PersonID": "spase://SMWG/Person/John.E.Jackson",

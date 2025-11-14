@@ -1,311 +1,329 @@
-<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_2_2.xsd">
-<Version>2.2.2</Version>
-<NumericalData>
-      <ResourceID>spase://NASA/NumericalData/TIMED/SEE/L2_XPS</ResourceID>
-      <ResourceHeader>
-         <ResourceName>TIMED SEE Level2 XPS Solar Irradiance Data</ResourceName>
-         <ReleaseDate>2020-07-07T21:15:38Z</ReleaseDate>
-         <Description>The 12 X-Ray Photometers (XP) aboard SEE perform full-disk irradiance measurements of the Sun for about 3 minutes every orbit (97 minutes) which usually gives 14-15 measurements per day. 8 of the XPs produce XUV signals (more info on XP coatings) and one other XP provides a hydrogen Lyman-alpha measurement (121.5 nm). The XPS Level 2 data is time averaged over the entire day, after being 1-AU corrected and removing flares. The 1-AU correction is provided.</Description>
-         <Acknowledgement>NASA, Thomas N. Woods</Acknowledgement>
-         <Contact>
-            <PersonID>spase://SMWG/Person/Thomas.N.Woods</PersonID>
-            <Role>PrincipalInvestigator</Role>
-         </Contact>
-         <InformationURL>
-            <Name>L2 XPS Data Information</Name>
-            <URL>http://lasp.colorado.edu/home/see/data/daily-averages/level-2-xps/</URL>
-         </InformationURL>
-         <PriorID>spase://VITMO/NumericalData/TIMED/SEE/L2_XPS</PriorID>
-          <PriorID>spase://VSPO/NumericalData/TIMED/SEE/L2_XPS</PriorID>
-      </ResourceHeader>
-      <AccessInformation>
-         <RepositoryID>spase://SMWG/Repository/TIMED/SEE_POC</RepositoryID>
-         <Availability>Online</Availability>
-         <AccessRights>Open</AccessRights>
-         <AccessURL>
-            <Name>SEE Data Products web page</Name>
-            <URL>http://lasp.colorado.edu/home/see/data/</URL>
-            <Description>This web page allows the request of data files for this product.  To request data: for the XPS data type of interest, click the year of interest to go the the ftp directory of files and download the desired day-long file by clicking on it.</Description>
-         </AccessURL>
-         <Format>NetCDF</Format>
-         <Encoding>None</Encoding>
-         <Acknowledgement>NASA, Thomas N. Woods</Acknowledgement>
-      </AccessInformation>
-      <ProcessingLevel>Calibrated</ProcessingLevel>
-      <ProviderResourceName>SEE Level 2 XPS Solar Irradiance data</ProviderResourceName>
-      <ProviderProcessingLevel>Level 2</ProviderProcessingLevel>
-      <ProviderVersion>10</ProviderVersion>
-      <InstrumentID>spase://SMWG/Instrument/TIMED/SEE</InstrumentID>
-      <MeasurementType>Irradiance</MeasurementType>
-      <TemporalDescription>
-         <TimeSpan>
-            <StartDate>2002-01-22T00:00:00.000</StartDate>
-            <RelativeStopDate>P2D</RelativeStopDate>
-         </TimeSpan>
-      </TemporalDescription>
-      <ObservedRegion>Sun</ObservedRegion>
-      <Keyword>TIMED</Keyword>
-      <Keyword>SEE</Keyword>
-      <Keyword>XPS</Keyword>
-      <Keyword>Sun</Keyword>
-      <Parameter>
-         <Name>Date of observation</Name>
-         <ParameterKey>DATE</ParameterKey>
-         <Description>Date of observation</Description>
-         <Units>YYYY-DOY</Units>
-         <Structure>
-            <Size>9</Size>
-            <Description>Dimensions: [Number_of_bandpass_wavelength_ranges] - where Number_of_bandpass_wavelength_ranges is the number of bandpass wavelength ranges.</Description>
-         </Structure>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>Channel index</Name>
-         <ParameterKey>CHANNEL</ParameterKey>
-         <Description>Channel index of the 12 XUV Photometers (1-12)</Description>
-         <Units>NONE</Units>
-         <Structure>
-            <Size>9</Size>
-            <Description>Dimensions: [Number_of_bandpass_wavelength_ranges] - where Number_of_bandpass_wavelength_ranges is the number of bandpass wavelength ranges.</Description>
-         </Structure>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>Bandpass wavelength range</Name>
-         <ParameterKey>WAVE(structure_elements, dim1_WAVE)</ParameterKey>
-         <Description>Bandpass wavelength range</Description>
-         <Units>nm</Units>
-         <Structure>
-            <Size>9 2</Size>
-            <Description>Dimensions: [Number_of_bandpass_wavelength_ranges, Bandpass_wavelength_range_limits] - where Number_of_bandpass_wavelength_ranges is the number of bandpass wavelength ranges, and Bandpass_wavelength_range_limits is the pair of values specifying the lower and upper wavelength limits.</Description>
-         </Structure>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>XPS median solar irradiance</Name>
-         <ParameterKey>FLUX_MEDIAN</ParameterKey>
-         <Description>Solar irradiance - median for the day</Description>
-         <Units>W / m^2</Units>
-         <Structure>
-            <Size>9</Size>
-            <Description>Dimensions: [Number_of_bandpass_wavelength_ranges] - where Number_of_bandpass_wavelength_ranges is the number of bandpass wavelength ranges.</Description>
-         </Structure>
-         <Wave>
-            <WaveType>Electromagnetic</WaveType>
-            <WaveQuantity>Wavelength</WaveQuantity>
-            <WavelengthRange>
-               <Low>0.1</Low>
-               <High>122.0</High>
-               <Units>nm</Units>
-               <Bin>
-                  <BandName>Channel 1: Ti/C-14 coating</BandName>
-                  <Low>0.1</Low>
-                  <High>7</High>
-               </Bin>
-               <Bin>
-                  <BandName>Channel 2: Ti/C-10 coating</BandName>
-                  <Low>0.1</Low>
-                  <High>7</High>
-               </Bin>
-               <Bin>
-                  <BandName>Channel 3: Al/Sc/C-24 coating</BandName>
-                  <Low>17</Low>
-                  <High>23</High>
-               </Bin>
-               <Bin>
-                  <BandName>Channel 5: Ti/Pd-17 coating</BandName>
-                  <Low>0.1</Low>
-                  <High>10</High>
-               </Bin>
-               <Bin>
-                  <BandName>Channel 6: Ti/Zr/Au-04 coating</BandName>
-                  <Low>0.1</Low>
-                  <High>10</High>
-               </Bin>
-               <Bin>
-                  <BandName>Channel 7: Al/Nb/C-03 coating</BandName>
-                  <Low>17</Low>
-                  <High>21</High>
-               </Bin>
-               <Bin>
-                  <BandName>Channel 9: Al/Mn-06 coating</BandName>
-                  <Low>0.1</Low>
-                  <High>7</High>
-               </Bin>
-               <Bin>
-                  <BandName>Channel 10: Cr/Al-07 coating</BandName>
-                  <Low>0.1</Low>
-                  <High>7.0</High>
-               </Bin>
-               <Bin>
-                  <BandName>Channel 11: Lyman-alpha</BandName>
-                  <Low>121</Low>
-                  <High>122</High>
-               </Bin>
-            </WavelengthRange>
-         </Wave>
-      </Parameter>
-      <Parameter>
-         <Name>Difference of median and weighted average solar irradiance</Name>
-         <ParameterKey>DIFF_MA</ParameterKey>
-         <Description>Difference of median and weighted average solar irradiance over the day</Description>
-         <Units>W / m^2</Units>
-         <Structure>
-            <Size>9</Size>
-            <Description>Dimensions: [Number_of_bandpass_wavelength_ranges] - where Number_of_bandpass_wavelength_ranges is the number of bandpass wavelength ranges.</Description>
-         </Structure>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>Accuracy of solar irradiance</Name>
-         <ParameterKey>ERR_TOT</ParameterKey>
-         <Description>Accuracy of solar irradiance averaged over the day</Description>
-         <Units>Fractional</Units>
-         <Structure>
-            <Size>9</Size>
-            <Description>Dimensions: [Number_of_bandpass_wavelength_ranges] - where Number_of_bandpass_wavelength_ranges is the number of bandpass wavelength ranges.</Description>
-         </Structure>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>Measurement precision</Name>
-         <ParameterKey>ERR_MEAS</ParameterKey>
-         <Description>Measurement precision averaged over the day</Description>
-         <Units>Fractional</Units>
-         <Structure>
-            <Size>9</Size>
-            <Description>Dimensions: [Number_of_bandpass_wavelength_ranges] - where Number_of_bandpass_wavelength_ranges is the number of bandpass wavelength ranges.</Description>
-         </Structure>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>Standard deviation of median for good measurements</Name>
-         <ParameterKey>STDEV_MEAS</ParameterKey>
-         <Description>Standard deviation of median for good measurements</Description>
-         <Units>Fractional</Units>
-         <Structure>
-            <Size>9</Size>
-            <Description>Dimensions: [Number_of_bandpass_wavelength_ranges] - where Number_of_bandpass_wavelength_ranges is the number of bandpass wavelength ranges.</Description>
-         </Structure>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>AU correction factor</Name>
-         <ParameterKey>COR_1AU</ParameterKey>
-         <Description>AU correction factor for date</Description>
-         <Units>1 / (AU^2)</Units>
-         <Structure>
-            <Size>9</Size>
-            <Description>Dimensions: [Number_of_bandpass_wavelength_ranges] - where Number_of_bandpass_wavelength_ranges is the number of bandpass wavelength ranges.</Description>
-         </Structure>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>Median of Total-Dark-Visible currents</Name>
-         <ParameterKey>CURRENT</ParameterKey>
-         <Description>Median of Total-Dark-Visible currents from level 1 with FOV and 1-AU corrections applied</Description>
-         <Units>nanoAmps</Units>
-         <Structure>
-            <Size>9</Size>
-            <Description>Dimensions: [Number_of_bandpass_wavelength_ranges] - where Number_of_bandpass_wavelength_ranges is the number of bandpass wavelength ranges.</Description>
-         </Structure>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>Number of measurements used</Name>
-         <ParameterKey>NUMPT</ParameterKey>
-         <Description>Number of measurements used in daily average</Description>
-         <Units>NONE</Units>
-         <Structure>
-            <Size>9</Size>
-            <Description>Dimensions: [Number_of_bandpass_wavelength_ranges] - where Number_of_bandpass_wavelength_ranges is the number of bandpass wavelength ranges.</Description>
-         </Structure>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>Instrument degradation correction factor</Name>
-         <ParameterKey>COR_DEGRADE</ParameterKey>
-         <Description>Instrument degradation correction factor</Description>
-         <Units>Fractional</Units>
-         <Structure>
-            <Size>9</Size>
-            <Description>Dimensions: [Number_of_bandpass_wavelength_ranges] - where Number_of_bandpass_wavelength_ranges is the number of bandpass wavelength ranges.</Description>
-         </Structure>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>Degradation function linear extrapolation/interpolation flag</Name>
-         <ParameterKey>DEGRADE_MODEL</ParameterKey>
-         <Description>Long value = 1 if degradation function is linearly extrapolated, 0 if linearly interpolated</Description>
-         <Units>None</Units>
-         <Structure>
-            <Size>9</Size>
-            <Description>Dimensions: [Number_of_bandpass_wavelength_ranges] - where Number_of_bandpass_wavelength_ranges is the number of bandpass wavelength ranges.</Description>
-         </Structure>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>Atmospheric correction factors average</Name>
-         <ParameterKey>COR_ATMOS.AVG</ParameterKey>
-         <Description>Average of atmospheric correction factors</Description>
-         <Units>Fractional</Units>
-         <Structure>
-            <Size>9</Size>
-            <Description>Dimensions: [Number_of_bandpass_wavelength_ranges] - where Number_of_bandpass_wavelength_ranges is the number of bandpass wavelength ranges.</Description>
-         </Structure>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>Atmospheric correction factors minimum</Name>
-         <ParameterKey>COR_ATMOS.MIN</ParameterKey>
-         <Description>Minimum of atmospheric correction factors</Description>
-         <Units>Fractional</Units>
-         <Structure>
-            <Size>9</Size>
-            <Description>Dimensions: [Number_of_bandpass_wavelength_ranges] - where Number_of_bandpass_wavelength_ranges is the number of bandpass wavelength ranges.</Description>
-         </Structure>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>Atmospheric correction factors maximum</Name>
-         <ParameterKey>COR_ATMOS.MAX</ParameterKey>
-         <Description>Maximum of atmospheric correction factors</Description>
-         <Units>Fractional</Units>
-         <Structure>
-            <Size>9</Size>
-            <Description>Dimensions: [Number_of_bandpass_wavelength_ranges] - where Number_of_bandpass_wavelength_ranges is the number of bandpass wavelength ranges.</Description>
-         </Structure>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-   </NumericalData>
+<?xml version='1.0' encoding='UTF-8'?>
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.spase-group.org/data/schema https://www.spase-group.org/data/schema/spase-2.7.0.xsd">
+  <Version>2.7.0</Version>
+  <NumericalData>
+    <ResourceID>spase://NASA/NumericalData/TIMED/SEE/L2_XPS</ResourceID>
+    <NamingAuthority>NASA</NamingAuthority>
+    <ResourceType>NumericalData</ResourceType>
+    <ResourceHeader>
+      <ResourceName>TIMED SEE Level2 XPS Solar Irradiance Data</ResourceName>
+      <ReleaseDate>2025-11-14T16:01:52Z</ReleaseDate>
+      <RevisionHistory>
+        <RevisionEvent>
+          <ReleaseDate>2020-07-07T21:15:38Z</ReleaseDate>
+          <Note>Only known prior ReleaseDate of the metadata</Note>
+        </RevisionEvent>
+        <RevisionEvent>
+          <ReleaseDate>2025-11-14T16:01:52Z</ReleaseDate>
+          <Note>Added PublicationInfo. Added ResourceType and NamingAuthority. Changed http to https in top-level schemaLocation attribute. Fixed version number separator in top-level schemaLocation attribute. Matched version number in schemaLocation attribute to updated value in Version tag. ZCB</Note>
+        </RevisionEvent>
+      </RevisionHistory>
+      <Description>The 12 X-Ray Photometers (XP) aboard SEE perform full-disk irradiance measurements of the Sun for about 3 minutes every orbit (97 minutes) which usually gives 14-15 measurements per day. 8 of the XPs produce XUV signals (more info on XP coatings) and one other XP provides a hydrogen Lyman-alpha measurement (121.5 nm). The XPS Level 2 data is time averaged over the entire day, after being 1-AU corrected and removing flares. The 1-AU correction is provided.</Description>
+      <Acknowledgement>NASA, Thomas N. Woods</Acknowledgement>
+      <PublicationInfo>
+        <Authors>Woods, Thomas N.</Authors>
+        <PublicationDate>2025-11-14T16:01:52Z</PublicationDate>
+        <PublishedBy>Johns Hopkins University Applied Physics Laboratory</PublishedBy>
+      </PublicationInfo>
+      <Contact>
+        <PersonID>spase://SMWG/Person/Thomas.N.Woods</PersonID>
+        <Role>PrincipalInvestigator</Role>
+      </Contact>
+      <InformationURL>
+        <Name>L2 XPS Data Information</Name>
+        <URL>http://lasp.colorado.edu/home/see/data/daily-averages/level-2-xps/</URL>
+      </InformationURL>
+      <PriorID>spase://VITMO/NumericalData/TIMED/SEE/L2_XPS</PriorID>
+      <PriorID>spase://VSPO/NumericalData/TIMED/SEE/L2_XPS</PriorID>
+    </ResourceHeader>
+    <AccessInformation>
+      <RepositoryID>spase://SMWG/Repository/TIMED/SEE_POC</RepositoryID>
+      <Availability>Online</Availability>
+      <AccessRights>Open</AccessRights>
+      <AccessURL>
+        <Name>SEE Data Products web page</Name>
+        <URL>http://lasp.colorado.edu/home/see/data/</URL>
+        <Description>This web page allows the request of data files for this product.  To request data: for the XPS data type of interest, click the year of interest to go the the ftp directory of files and download the desired day-long file by clicking on it.</Description>
+      </AccessURL>
+      <Format>NetCDF</Format>
+      <Encoding>None</Encoding>
+      <Acknowledgement>NASA, Thomas N. Woods</Acknowledgement>
+    </AccessInformation>
+    <ProcessingLevel>Calibrated</ProcessingLevel>
+    <ProviderResourceName>SEE Level 2 XPS Solar Irradiance data</ProviderResourceName>
+    <ProviderProcessingLevel>Level 2</ProviderProcessingLevel>
+    <ProviderVersion>10</ProviderVersion>
+    <InstrumentID>spase://SMWG/Instrument/TIMED/SEE</InstrumentID>
+    <MeasurementType>Irradiance</MeasurementType>
+    <TemporalDescription>
+      <TimeSpan>
+        <StartDate>2002-01-22T00:00:00.000</StartDate>
+        <RelativeStopDate>P2D</RelativeStopDate>
+      </TimeSpan>
+    </TemporalDescription>
+    <ObservedRegion>Sun</ObservedRegion>
+    <Keyword>TIMED</Keyword>
+    <Keyword>SEE</Keyword>
+    <Keyword>XPS</Keyword>
+    <Keyword>Sun</Keyword>
+    <Parameter>
+      <Name>Date of observation</Name>
+      <ParameterKey>DATE</ParameterKey>
+      <Description>Date of observation</Description>
+      <Units>YYYY-DOY</Units>
+      <Structure>
+        <Size>9</Size>
+        <Description>Dimensions: [Number_of_bandpass_wavelength_ranges] - where Number_of_bandpass_wavelength_ranges is the number of bandpass wavelength ranges.</Description>
+      </Structure>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Channel index</Name>
+      <ParameterKey>CHANNEL</ParameterKey>
+      <Description>Channel index of the 12 XUV Photometers (1-12)</Description>
+      <Units>NONE</Units>
+      <Structure>
+        <Size>9</Size>
+        <Description>Dimensions: [Number_of_bandpass_wavelength_ranges] - where Number_of_bandpass_wavelength_ranges is the number of bandpass wavelength ranges.</Description>
+      </Structure>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Bandpass wavelength range</Name>
+      <ParameterKey>WAVE(structure_elements, dim1_WAVE)</ParameterKey>
+      <Description>Bandpass wavelength range</Description>
+      <Units>nm</Units>
+      <Structure>
+        <Size>9 2</Size>
+        <Description>Dimensions: [Number_of_bandpass_wavelength_ranges, Bandpass_wavelength_range_limits] - where Number_of_bandpass_wavelength_ranges is the number of bandpass wavelength ranges, and Bandpass_wavelength_range_limits is the pair of values specifying the lower and upper wavelength limits.</Description>
+      </Structure>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>XPS median solar irradiance</Name>
+      <ParameterKey>FLUX_MEDIAN</ParameterKey>
+      <Description>Solar irradiance - median for the day</Description>
+      <Units>W / m^2</Units>
+      <Structure>
+        <Size>9</Size>
+        <Description>Dimensions: [Number_of_bandpass_wavelength_ranges] - where Number_of_bandpass_wavelength_ranges is the number of bandpass wavelength ranges.</Description>
+      </Structure>
+      <Wave>
+        <WaveType>Electromagnetic</WaveType>
+        <WaveQuantity>Wavelength</WaveQuantity>
+        <WavelengthRange>
+          <Low>0.1</Low>
+          <High>122.0</High>
+          <Units>nm</Units>
+          <Bin>
+            <BandName>Channel 1: Ti/C-14 coating</BandName>
+            <Low>0.1</Low>
+            <High>7</High>
+          </Bin>
+          <Bin>
+            <BandName>Channel 2: Ti/C-10 coating</BandName>
+            <Low>0.1</Low>
+            <High>7</High>
+          </Bin>
+          <Bin>
+            <BandName>Channel 3: Al/Sc/C-24 coating</BandName>
+            <Low>17</Low>
+            <High>23</High>
+          </Bin>
+          <Bin>
+            <BandName>Channel 5: Ti/Pd-17 coating</BandName>
+            <Low>0.1</Low>
+            <High>10</High>
+          </Bin>
+          <Bin>
+            <BandName>Channel 6: Ti/Zr/Au-04 coating</BandName>
+            <Low>0.1</Low>
+            <High>10</High>
+          </Bin>
+          <Bin>
+            <BandName>Channel 7: Al/Nb/C-03 coating</BandName>
+            <Low>17</Low>
+            <High>21</High>
+          </Bin>
+          <Bin>
+            <BandName>Channel 9: Al/Mn-06 coating</BandName>
+            <Low>0.1</Low>
+            <High>7</High>
+          </Bin>
+          <Bin>
+            <BandName>Channel 10: Cr/Al-07 coating</BandName>
+            <Low>0.1</Low>
+            <High>7.0</High>
+          </Bin>
+          <Bin>
+            <BandName>Channel 11: Lyman-alpha</BandName>
+            <Low>121</Low>
+            <High>122</High>
+          </Bin>
+        </WavelengthRange>
+      </Wave>
+    </Parameter>
+    <Parameter>
+      <Name>Difference of median and weighted average solar irradiance</Name>
+      <ParameterKey>DIFF_MA</ParameterKey>
+      <Description>Difference of median and weighted average solar irradiance over the day</Description>
+      <Units>W / m^2</Units>
+      <Structure>
+        <Size>9</Size>
+        <Description>Dimensions: [Number_of_bandpass_wavelength_ranges] - where Number_of_bandpass_wavelength_ranges is the number of bandpass wavelength ranges.</Description>
+      </Structure>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Accuracy of solar irradiance</Name>
+      <ParameterKey>ERR_TOT</ParameterKey>
+      <Description>Accuracy of solar irradiance averaged over the day</Description>
+      <Units>Fractional</Units>
+      <Structure>
+        <Size>9</Size>
+        <Description>Dimensions: [Number_of_bandpass_wavelength_ranges] - where Number_of_bandpass_wavelength_ranges is the number of bandpass wavelength ranges.</Description>
+      </Structure>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Measurement precision</Name>
+      <ParameterKey>ERR_MEAS</ParameterKey>
+      <Description>Measurement precision averaged over the day</Description>
+      <Units>Fractional</Units>
+      <Structure>
+        <Size>9</Size>
+        <Description>Dimensions: [Number_of_bandpass_wavelength_ranges] - where Number_of_bandpass_wavelength_ranges is the number of bandpass wavelength ranges.</Description>
+      </Structure>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Standard deviation of median for good measurements</Name>
+      <ParameterKey>STDEV_MEAS</ParameterKey>
+      <Description>Standard deviation of median for good measurements</Description>
+      <Units>Fractional</Units>
+      <Structure>
+        <Size>9</Size>
+        <Description>Dimensions: [Number_of_bandpass_wavelength_ranges] - where Number_of_bandpass_wavelength_ranges is the number of bandpass wavelength ranges.</Description>
+      </Structure>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>AU correction factor</Name>
+      <ParameterKey>COR_1AU</ParameterKey>
+      <Description>AU correction factor for date</Description>
+      <Units>1 / (AU^2)</Units>
+      <Structure>
+        <Size>9</Size>
+        <Description>Dimensions: [Number_of_bandpass_wavelength_ranges] - where Number_of_bandpass_wavelength_ranges is the number of bandpass wavelength ranges.</Description>
+      </Structure>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Median of Total-Dark-Visible currents</Name>
+      <ParameterKey>CURRENT</ParameterKey>
+      <Description>Median of Total-Dark-Visible currents from level 1 with FOV and 1-AU corrections applied</Description>
+      <Units>nanoAmps</Units>
+      <Structure>
+        <Size>9</Size>
+        <Description>Dimensions: [Number_of_bandpass_wavelength_ranges] - where Number_of_bandpass_wavelength_ranges is the number of bandpass wavelength ranges.</Description>
+      </Structure>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Number of measurements used</Name>
+      <ParameterKey>NUMPT</ParameterKey>
+      <Description>Number of measurements used in daily average</Description>
+      <Units>NONE</Units>
+      <Structure>
+        <Size>9</Size>
+        <Description>Dimensions: [Number_of_bandpass_wavelength_ranges] - where Number_of_bandpass_wavelength_ranges is the number of bandpass wavelength ranges.</Description>
+      </Structure>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Instrument degradation correction factor</Name>
+      <ParameterKey>COR_DEGRADE</ParameterKey>
+      <Description>Instrument degradation correction factor</Description>
+      <Units>Fractional</Units>
+      <Structure>
+        <Size>9</Size>
+        <Description>Dimensions: [Number_of_bandpass_wavelength_ranges] - where Number_of_bandpass_wavelength_ranges is the number of bandpass wavelength ranges.</Description>
+      </Structure>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Degradation function linear extrapolation/interpolation flag</Name>
+      <ParameterKey>DEGRADE_MODEL</ParameterKey>
+      <Description>Long value = 1 if degradation function is linearly extrapolated, 0 if linearly interpolated</Description>
+      <Units>None</Units>
+      <Structure>
+        <Size>9</Size>
+        <Description>Dimensions: [Number_of_bandpass_wavelength_ranges] - where Number_of_bandpass_wavelength_ranges is the number of bandpass wavelength ranges.</Description>
+      </Structure>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Atmospheric correction factors average</Name>
+      <ParameterKey>COR_ATMOS.AVG</ParameterKey>
+      <Description>Average of atmospheric correction factors</Description>
+      <Units>Fractional</Units>
+      <Structure>
+        <Size>9</Size>
+        <Description>Dimensions: [Number_of_bandpass_wavelength_ranges] - where Number_of_bandpass_wavelength_ranges is the number of bandpass wavelength ranges.</Description>
+      </Structure>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Atmospheric correction factors minimum</Name>
+      <ParameterKey>COR_ATMOS.MIN</ParameterKey>
+      <Description>Minimum of atmospheric correction factors</Description>
+      <Units>Fractional</Units>
+      <Structure>
+        <Size>9</Size>
+        <Description>Dimensions: [Number_of_bandpass_wavelength_ranges] - where Number_of_bandpass_wavelength_ranges is the number of bandpass wavelength ranges.</Description>
+      </Structure>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Atmospheric correction factors maximum</Name>
+      <ParameterKey>COR_ATMOS.MAX</ParameterKey>
+      <Description>Maximum of atmospheric correction factors</Description>
+      <Units>Fractional</Units>
+      <Structure>
+        <Size>9</Size>
+        <Description>Dimensions: [Number_of_bandpass_wavelength_ranges] - where Number_of_bandpass_wavelength_ranges is the number of bandpass wavelength ranges.</Description>
+      </Structure>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+  </NumericalData>
 </Spase>

@@ -1,238 +1,255 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Spase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.spase-group.org/data/schema" xsi:schemaLocation="http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_2_9.xsd">
-   <Version>2.2.9</Version>
-   <NumericalData>
-      <ResourceID>spase://NASA/NumericalData/Vega1/PLASMAG/PT20M</ResourceID>
-      <ResourceHeader>
-         <ResourceName>Vega 1 solar wind parameters (20-min)</ResourceName>
-         <ReleaseDate>2020-07-07T21:15:50Z</ReleaseDate>
-         <Description>This data set is a 20-min-resolution collection of solar wind plasma parameters from the interplanetary phases of the Soviet Vega 1 mission to Comet Halley. The data consist of proton flow speeds, densities and temperatures determined by fitting counts-vs-energy data measured on the sunward-looking electrostatic analyzer to a convecting Maxwellian. There are actually two sets of parameters, one ("linear") obtained by minimizing the sum of squares of measured and modelled counts and the other ("log") used logs of counts rather than counts themselves. Also included are numbers of energy intervals used in the linear and log determinations less than and greater than the spectral peaks. The data are at 20-min resolution because the during cruise phase only one or two 10-sec spectra were determined every 20 minutes. Further, the data have long gaps between the first and last days of coverage. The major data gaps are +---------------------------------------------------------------+   Vega 1:   Vega 2:    ----------------------------------------------------------------+   85/04/20 - 85/07/23   85/04/16 - 85/07/24     85/12/21 - 86/01/05   85/09/27 - 85/11/27     86/04/29 - 86/08/04   85/12/03 - 86/02/20       86/02/23 - 86/03/06   +----------------------------------------------------------------+ Discussions of this investigation are found in Gringauz et al (Nature, v321, p282, 1986), Galeev et al (JGR, v93, p7527, 1988) and references therein.</Description>
-         <Acknowledgement>Dr. M. Verigin of the Space Research Institute in Moscow.</Acknowledgement>
-         <Contact>
-            <PersonID>spase://SMWG/Person/Mikhail.I.Verigin</PersonID>
-            <Role>CoInvestigator</Role>
-            <Role>DataProducer</Role>
-         </Contact>
-         <Contact>
-            <PersonID>spase://SMWG/Person/Natalia.E.Papitashvili</PersonID>
-            <Role>TechnicalContact</Role>
-         </Contact>
-         <Contact>
-            <PersonID>spase://SMWG/Person/Jan.Merka</PersonID>
-            <Role>MetadataContact</Role>
-         </Contact>
-         <PriorID>spase://VHO/NumericalData/Vega1/PLASMAG/PT20M</PriorID>
-          <PriorID>spase://VSPO/NumericalData/Vega1/PLASMAG/PT20M</PriorID>
-      </ResourceHeader>
-      <AccessInformation>
-         <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF</RepositoryID>
-         <Availability>Online</Availability>
-         <AccessRights>Open</AccessRights>
-         <AccessURL>
-            <Name>FTPS from SPDF (not with most browsers)</Name>
-            <URL>ftps://spdf.gsfc.nasa.gov/pub/data/zzz_old/vega_data_from_nssdc/plasma/</URL>
-            <Description>FTP access to Vega mission data at NSSDC.</Description>
-         </AccessURL>
-         <AccessURL>
-            <Name>HTTPS from SPDF</Name>
-            <URL>https://spdf.gsfc.nasa.gov/pub/data/zzz_old/vega_data_from_nssdc/plasma/</URL>
-            <Description>In CDF via HTTP from SPDF</Description>
-         </AccessURL>
-         <Format>Text.ASCII</Format>
-         <Encoding>ASCII</Encoding>
-         <Acknowledgement>The National Space Science Data Center(NSSDC), Space Physics Data Facility(SPDF).</Acknowledgement>
-      </AccessInformation>
-      <InstrumentID>spase://SMWG/Instrument/Vega1/PLASMAG</InstrumentID>
-      <MeasurementType>ThermalPlasma</MeasurementType>
-      <TemporalDescription>
-         <TimeSpan>
-            <StartDate>1985-03-09T04:46:26Z</StartDate>
-            <StopDate>1986-10-04T06:13:32Z</StopDate>
-         </TimeSpan>
-         <Cadence>PT20M</Cadence>
-      </TemporalDescription>
-      <ObservedRegion>Heliosphere.Inner</ObservedRegion>
-      <ObservedRegion>Comet</ObservedRegion>
-      <Parameter>
-         <Name>Year</Name>
-         <ParameterKey>Column 1</ParameterKey>
-         <Description>Time of observation (year)</Description>
-         <Support>
-            <SupportQuantity>Temporal</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>Month</Name>
-         <ParameterKey>Column 2</ParameterKey>
-         <Description>Time of observation (month of year)</Description>
-         <Support>
-            <SupportQuantity>Temporal</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>Day</Name>
-         <ParameterKey>Column 3</ParameterKey>
-         <Description>Time of observation (day of month)</Description>
-         <Support>
-            <SupportQuantity>Temporal</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>Hour</Name>
-         <ParameterKey>Column 4</ParameterKey>
-         <Description>Time of observation (hour of day)</Description>
-         <Support>
-            <SupportQuantity>Temporal</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>Minute</Name>
-         <ParameterKey>Column 5</ParameterKey>
-         <Description>Time of observation (minute)</Description>
-         <Support>
-            <SupportQuantity>Temporal</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>Second</Name>
-         <ParameterKey>Column 6</ParameterKey>
-         <Description>Time of observation (second)</Description>
-         <Units>s</Units>
-         <Support>
-            <SupportQuantity>Temporal</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>ID</Name>
-         <ParameterKey>Column 7</ParameterKey>
-         <Description>Spacecraft ID: * 1 = Vega 1 * 2 = Vega 2</Description>
-         <ValidMin>1</ValidMin>
-         <ValidMax>2</ValidMax>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>Vp (lin)</Name>
-         <ParameterKey>Column 8</ParameterKey>
-         <Description>Proton speed (km/s), linear fit.</Description>
-         <Units>km/s</Units>
-         <UnitsConversion>1e3&gt;m/s</UnitsConversion>
-         <FillValue>9999.90</FillValue>
-         <Particle>
-            <ParticleType>Proton</ParticleType>
-            <Qualifier>Fit</Qualifier>
-            <Qualifier>Magnitude</Qualifier>
-            <ParticleQuantity>Velocity</ParticleQuantity>
-            <AtomicNumber>1</AtomicNumber>
-            <EnergyRange>
-               <Low>50</Low>
-               <High>25000</High>
-               <Units>eV</Units>
-            </EnergyRange>
-         </Particle>
-      </Parameter>
-      <Parameter>
-         <Name>Vp (log)</Name>
-         <ParameterKey>Column 9</ParameterKey>
-         <Description>Proton speed (km/s), log fit.</Description>
-         <Units>km/s</Units>
-         <UnitsConversion>1e3&gt;m/s</UnitsConversion>
-         <FillValue>9999.90</FillValue>
-         <Particle>
-            <ParticleType>Proton</ParticleType>
-            <Qualifier>Fit</Qualifier>
-            <Qualifier>Magnitude</Qualifier>
-            <ParticleQuantity>Velocity</ParticleQuantity>
-            <AtomicNumber>1</AtomicNumber>
-            <EnergyRange>
-               <Low>50</Low>
-               <High>25000</High>
-               <Units>eV</Units>
-            </EnergyRange>
-         </Particle>
-      </Parameter>
-      <Parameter>
-         <Name>Np (lin)</Name>
-         <ParameterKey>Column 10</ParameterKey>
-         <Description>Proton density (cm^-3), linear fit</Description>
-         <Units>cm^-3</Units>
-         <UnitsConversion>1e-6&gt;m^-3</UnitsConversion>
-         <FillValue>999.990</FillValue>
-         <Particle>
-            <ParticleType>Proton</ParticleType>
-            <Qualifier>Fit</Qualifier>
-            <ParticleQuantity>NumberDensity</ParticleQuantity>
-            <AtomicNumber>1</AtomicNumber>
-            <EnergyRange>
-               <Low>50</Low>
-               <High>25000</High>
-               <Units>eV</Units>
-            </EnergyRange>
-         </Particle>
-      </Parameter>
-      <Parameter>
-         <Name>Np (log)</Name>
-         <ParameterKey>Column 11</ParameterKey>
-         <Description>Proton density (cm^-3), log fit</Description>
-         <Units>cm^-3</Units>
-         <UnitsConversion>1e-6&gt;m^-3</UnitsConversion>
-         <FillValue>999.990</FillValue>
-         <Particle>
-            <ParticleType>Proton</ParticleType>
-            <Qualifier>Fit</Qualifier>
-            <ParticleQuantity>NumberDensity</ParticleQuantity>
-            <AtomicNumber>1</AtomicNumber>
-            <EnergyRange>
-               <Low>50</Low>
-               <High>25000</High>
-               <Units>eV</Units>
-            </EnergyRange>
-         </Particle>
-      </Parameter>
-      <Parameter>
-         <Name>Tp (lin)</Name>
-         <ParameterKey>Column 12</ParameterKey>
-         <Description>Proton temperature (K), linear fit</Description>
-         <Units>K</Units>
-         <FillValue>0.1E35</FillValue>
-         <Particle>
-            <ParticleType>Proton</ParticleType>
-            <Qualifier>Fit</Qualifier>
-            <ParticleQuantity>Temperature</ParticleQuantity>
-            <AtomicNumber>1</AtomicNumber>
-            <EnergyRange>
-               <Low>50</Low>
-               <High>25000</High>
-               <Units>eV</Units>
-            </EnergyRange>
-         </Particle>
-      </Parameter>
-      <Parameter>
-         <Name>Tp (log)</Name>
-         <ParameterKey>Column 13</ParameterKey>
-         <Description>Proton temperature (K), log fit</Description>
-         <Units>K</Units>
-         <FillValue>0.1E35</FillValue>
-         <Particle>
-            <ParticleType>Proton</ParticleType>
-            <Qualifier>Fit</Qualifier>
-            <ParticleQuantity>Temperature</ParticleQuantity>
-            <AtomicNumber>1</AtomicNumber>
-            <EnergyRange>
-               <Low>50</Low>
-               <High>25000</High>
-               <Units>eV</Units>
-            </EnergyRange>
-         </Particle>
-      </Parameter>
-      <Parameter>
-         <Name>Code</Name>
-         <ParameterKey>Column 14</ParameterKey>
-         <Description>4-digit number abcd that codes the number of ion energy intervals used in lin (a+b+1) or log (c+d+1) maxwellian fitting procedures. * a,c - number of intervals used with energies less than energy of ion spectra maximum. * b,d - number of intervals used with energies more than energy of ion spectra maximum.</Description>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-   </NumericalData>
+<?xml version='1.0' encoding='UTF-8'?>
+<Spase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.spase-group.org/data/schema" xsi:schemaLocation="https://www.spase-group.org/data/schema https://www.spase-group.org/data/schema/spase-2.7.0.xsd">
+  <Version>2.7.0</Version>
+  <NumericalData>
+    <ResourceID>spase://NASA/NumericalData/Vega1/PLASMAG/PT20M</ResourceID>
+    <NamingAuthority>NASA</NamingAuthority>
+    <ResourceType>NumericalData</ResourceType>
+    <ResourceHeader>
+      <ResourceName>Vega 1 solar wind parameters (20-min)</ResourceName>
+      <ReleaseDate>2025-11-14T16:03:00Z</ReleaseDate>
+      <RevisionHistory>
+        <RevisionEvent>
+          <ReleaseDate>2020-07-07T21:15:50Z</ReleaseDate>
+          <Note>Only known prior ReleaseDate of the metadata</Note>
+        </RevisionEvent>
+        <RevisionEvent>
+          <ReleaseDate>2025-11-14T16:03:00Z</ReleaseDate>
+          <Note>Added PublicationInfo. Added ResourceType and NamingAuthority. Changed http to https in top-level schemaLocation attribute. Fixed version number separator in top-level schemaLocation attribute. Matched version number in schemaLocation attribute to updated value in Version tag. ZCB</Note>
+        </RevisionEvent>
+      </RevisionHistory>
+      <Description>This data set is a 20-min-resolution collection of solar wind plasma parameters from the interplanetary phases of the Soviet Vega 1 mission to Comet Halley. The data consist of proton flow speeds, densities and temperatures determined by fitting counts-vs-energy data measured on the sunward-looking electrostatic analyzer to a convecting Maxwellian. There are actually two sets of parameters, one ("linear") obtained by minimizing the sum of squares of measured and modelled counts and the other ("log") used logs of counts rather than counts themselves. Also included are numbers of energy intervals used in the linear and log determinations less than and greater than the spectral peaks. The data are at 20-min resolution because the during cruise phase only one or two 10-sec spectra were determined every 20 minutes. Further, the data have long gaps between the first and last days of coverage. The major data gaps are +---------------------------------------------------------------+   Vega 1:   Vega 2:    ----------------------------------------------------------------+   85/04/20 - 85/07/23   85/04/16 - 85/07/24     85/12/21 - 86/01/05   85/09/27 - 85/11/27     86/04/29 - 86/08/04   85/12/03 - 86/02/20       86/02/23 - 86/03/06   +----------------------------------------------------------------+ Discussions of this investigation are found in Gringauz et al (Nature, v321, p282, 1986), Galeev et al (JGR, v93, p7527, 1988) and references therein.</Description>
+      <Acknowledgement>Dr. M. Verigin of the Space Research Institute in Moscow.</Acknowledgement>
+      <PublicationInfo>
+        <Authors>Verigin, Mikhail I.</Authors>
+        <PublicationDate>2025-11-14T16:03:00Z</PublicationDate>
+        <PublishedBy>Space Physics Data Facility</PublishedBy>
+      </PublicationInfo>
+      <Contact>
+        <PersonID>spase://SMWG/Person/Mikhail.I.Verigin</PersonID>
+        <Role>CoInvestigator</Role>
+        <Role>DataProducer</Role>
+      </Contact>
+      <Contact>
+        <PersonID>spase://SMWG/Person/Natalia.E.Papitashvili</PersonID>
+        <Role>TechnicalContact</Role>
+      </Contact>
+      <Contact>
+        <PersonID>spase://SMWG/Person/Jan.Merka</PersonID>
+        <Role>MetadataContact</Role>
+      </Contact>
+      <PriorID>spase://VHO/NumericalData/Vega1/PLASMAG/PT20M</PriorID>
+      <PriorID>spase://VSPO/NumericalData/Vega1/PLASMAG/PT20M</PriorID>
+    </ResourceHeader>
+    <AccessInformation>
+      <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF</RepositoryID>
+      <Availability>Online</Availability>
+      <AccessRights>Open</AccessRights>
+      <AccessURL>
+        <Name>FTPS from SPDF (not with most browsers)</Name>
+        <URL>ftps://spdf.gsfc.nasa.gov/pub/data/zzz_old/vega_data_from_nssdc/plasma/</URL>
+        <Description>FTP access to Vega mission data at NSSDC.</Description>
+      </AccessURL>
+      <AccessURL>
+        <Name>HTTPS from SPDF</Name>
+        <URL>https://spdf.gsfc.nasa.gov/pub/data/zzz_old/vega_data_from_nssdc/plasma/</URL>
+        <Description>In CDF via HTTP from SPDF</Description>
+      </AccessURL>
+      <Format>Text.ASCII</Format>
+      <Encoding>ASCII</Encoding>
+      <Acknowledgement>The National Space Science Data Center(NSSDC), Space Physics Data Facility(SPDF).</Acknowledgement>
+    </AccessInformation>
+    <InstrumentID>spase://SMWG/Instrument/Vega1/PLASMAG</InstrumentID>
+    <MeasurementType>ThermalPlasma</MeasurementType>
+    <TemporalDescription>
+      <TimeSpan>
+        <StartDate>1985-03-09T04:46:26Z</StartDate>
+        <StopDate>1986-10-04T06:13:32Z</StopDate>
+      </TimeSpan>
+      <Cadence>PT20M</Cadence>
+    </TemporalDescription>
+    <ObservedRegion>Heliosphere.Inner</ObservedRegion>
+    <ObservedRegion>Comet</ObservedRegion>
+    <Parameter>
+      <Name>Year</Name>
+      <ParameterKey>Column 1</ParameterKey>
+      <Description>Time of observation (year)</Description>
+      <Support>
+        <SupportQuantity>Temporal</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Month</Name>
+      <ParameterKey>Column 2</ParameterKey>
+      <Description>Time of observation (month of year)</Description>
+      <Support>
+        <SupportQuantity>Temporal</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Day</Name>
+      <ParameterKey>Column 3</ParameterKey>
+      <Description>Time of observation (day of month)</Description>
+      <Support>
+        <SupportQuantity>Temporal</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Hour</Name>
+      <ParameterKey>Column 4</ParameterKey>
+      <Description>Time of observation (hour of day)</Description>
+      <Support>
+        <SupportQuantity>Temporal</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Minute</Name>
+      <ParameterKey>Column 5</ParameterKey>
+      <Description>Time of observation (minute)</Description>
+      <Support>
+        <SupportQuantity>Temporal</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Second</Name>
+      <ParameterKey>Column 6</ParameterKey>
+      <Description>Time of observation (second)</Description>
+      <Units>s</Units>
+      <Support>
+        <SupportQuantity>Temporal</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>ID</Name>
+      <ParameterKey>Column 7</ParameterKey>
+      <Description>Spacecraft ID: * 1 = Vega 1 * 2 = Vega 2</Description>
+      <ValidMin>1</ValidMin>
+      <ValidMax>2</ValidMax>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Vp (lin)</Name>
+      <ParameterKey>Column 8</ParameterKey>
+      <Description>Proton speed (km/s), linear fit.</Description>
+      <Units>km/s</Units>
+      <UnitsConversion>1e3&gt;m/s</UnitsConversion>
+      <FillValue>9999.90</FillValue>
+      <Particle>
+        <ParticleType>Proton</ParticleType>
+        <Qualifier>Fit</Qualifier>
+        <Qualifier>Magnitude</Qualifier>
+        <ParticleQuantity>Velocity</ParticleQuantity>
+        <AtomicNumber>1</AtomicNumber>
+        <EnergyRange>
+          <Low>50</Low>
+          <High>25000</High>
+          <Units>eV</Units>
+        </EnergyRange>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>Vp (log)</Name>
+      <ParameterKey>Column 9</ParameterKey>
+      <Description>Proton speed (km/s), log fit.</Description>
+      <Units>km/s</Units>
+      <UnitsConversion>1e3&gt;m/s</UnitsConversion>
+      <FillValue>9999.90</FillValue>
+      <Particle>
+        <ParticleType>Proton</ParticleType>
+        <Qualifier>Fit</Qualifier>
+        <Qualifier>Magnitude</Qualifier>
+        <ParticleQuantity>Velocity</ParticleQuantity>
+        <AtomicNumber>1</AtomicNumber>
+        <EnergyRange>
+          <Low>50</Low>
+          <High>25000</High>
+          <Units>eV</Units>
+        </EnergyRange>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>Np (lin)</Name>
+      <ParameterKey>Column 10</ParameterKey>
+      <Description>Proton density (cm^-3), linear fit</Description>
+      <Units>cm^-3</Units>
+      <UnitsConversion>1e-6&gt;m^-3</UnitsConversion>
+      <FillValue>999.990</FillValue>
+      <Particle>
+        <ParticleType>Proton</ParticleType>
+        <Qualifier>Fit</Qualifier>
+        <ParticleQuantity>NumberDensity</ParticleQuantity>
+        <AtomicNumber>1</AtomicNumber>
+        <EnergyRange>
+          <Low>50</Low>
+          <High>25000</High>
+          <Units>eV</Units>
+        </EnergyRange>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>Np (log)</Name>
+      <ParameterKey>Column 11</ParameterKey>
+      <Description>Proton density (cm^-3), log fit</Description>
+      <Units>cm^-3</Units>
+      <UnitsConversion>1e-6&gt;m^-3</UnitsConversion>
+      <FillValue>999.990</FillValue>
+      <Particle>
+        <ParticleType>Proton</ParticleType>
+        <Qualifier>Fit</Qualifier>
+        <ParticleQuantity>NumberDensity</ParticleQuantity>
+        <AtomicNumber>1</AtomicNumber>
+        <EnergyRange>
+          <Low>50</Low>
+          <High>25000</High>
+          <Units>eV</Units>
+        </EnergyRange>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>Tp (lin)</Name>
+      <ParameterKey>Column 12</ParameterKey>
+      <Description>Proton temperature (K), linear fit</Description>
+      <Units>K</Units>
+      <FillValue>0.1E35</FillValue>
+      <Particle>
+        <ParticleType>Proton</ParticleType>
+        <Qualifier>Fit</Qualifier>
+        <ParticleQuantity>Temperature</ParticleQuantity>
+        <AtomicNumber>1</AtomicNumber>
+        <EnergyRange>
+          <Low>50</Low>
+          <High>25000</High>
+          <Units>eV</Units>
+        </EnergyRange>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>Tp (log)</Name>
+      <ParameterKey>Column 13</ParameterKey>
+      <Description>Proton temperature (K), log fit</Description>
+      <Units>K</Units>
+      <FillValue>0.1E35</FillValue>
+      <Particle>
+        <ParticleType>Proton</ParticleType>
+        <Qualifier>Fit</Qualifier>
+        <ParticleQuantity>Temperature</ParticleQuantity>
+        <AtomicNumber>1</AtomicNumber>
+        <EnergyRange>
+          <Low>50</Low>
+          <High>25000</High>
+          <Units>eV</Units>
+        </EnergyRange>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>Code</Name>
+      <ParameterKey>Column 14</ParameterKey>
+      <Description>4-digit number abcd that codes the number of ion energy intervals used in lin (a+b+1) or log (c+d+1) maxwellian fitting procedures. * a,c - number of intervals used with energies less than energy of ion spectra maximum. * b,d - number of intervals used with energies more than energy of ion spectra maximum.</Description>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+  </NumericalData>
 </Spase>

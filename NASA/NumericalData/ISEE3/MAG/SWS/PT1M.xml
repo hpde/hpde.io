@@ -1,333 +1,350 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Spase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.spase-group.org/data/schema" xsi:schemaLocation="http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_2_9.xsd">
-   <Version>2.2.9</Version>
-   <NumericalData>
-      <ResourceID>spase://NASA/NumericalData/ISEE3/MAG/SWS/PT1M</ResourceID>
-      <ResourceHeader>
-         <ResourceName>ISEE-3 1-minute Magnetic Field Data with Solar Wind Speed included</ResourceName>
-         <ReleaseDate>2020-07-07T21:14:40Z</ReleaseDate>
-         <Description>This is an ASCII version of the original binary data set (ID = SPHE-00571; old ID = 78-079A-02J), which was never available online. The new ASCII records are fixed-length, 214 bytes long, with carriage return carriage control. The data parameters are the same in the two versions and are in the same order. This data set covers the time interval 1978 Day 225 (August 13) through 1979 Day 179 (June 28). Every minute of every day in this time span is represented in the data, even if there is no valid data for that time. Missing data or bad data are indicated by the special value 0.0000E+00 in the V and ISEE position fields, and by -1.0E9 in the other data fields. It often happens that there are lengthy segments where one or another parameter (or many parameters) are absent, as indicated by the special flag values. The original data were contained on two 9-track tapes, in IBM binary format, with the following DCB: (LRECL=88,BLKSIZE=26404,RECFM=VBS,DEN=3). The original tape (ID 78-079A-02J) was created at GSFC by J. King from reduced magnetometer data provided by E. Smith (JPL) and plasma data provided by S. Bame / R. Zwickl (LANL). This ASCII version of the data set was created at NSSDC by H. K. Hills in March and August, 2002. The conversion from binary was handled by the VAX operating system, and a special program unblocked the input and wrote the ASCII output. The precision of the ASCII version was selected to keep sufficient precision without using excessive space.</Description>
-         <Acknowledgement>Please acknowledge Edward J. Smith (P.I.) and the National Space Science Data Center.</Acknowledgement>
-         <Contact>
-            <PersonID>spase://SMWG/Person/Edward.J.Smith</PersonID>
-            <Role>PrincipalInvestigator</Role>
-         </Contact>
-         <Contact>
-            <PersonID>spase://SMWG/Person/H.Kent.Hills</PersonID>
-            <Role>DataProducer</Role>
-         </Contact>
-         <PriorID>spase://VHO/NumericalData/ISEE3/MAG/Solar.Wind.Speed.PT1M</PriorID>
-          <PriorID>spase://VSPO/NumericalData/ISEE3/MAG/SWS/PT1M</PriorID>
-      </ResourceHeader>
-      <AccessInformation>
-         <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF</RepositoryID>
-         <Availability>Online</Availability>
-         <AccessRights>Open</AccessRights>
-         <AccessURL>
-            <Name>FTPS from SPDF (not with most browsers)</Name>
-            <URL>ftps://spdf.gsfc.nasa.gov/pub/data/isee/isee3/magnetic_fields/1min_ascii_with_sw_speed/</URL>
-            <Description>Directory listing of files</Description>
-         </AccessURL>
-         <Format>Text.ASCII</Format>
-      </AccessInformation>
-      <InstrumentID>spase://SMWG/Instrument/ISEE3/MAG</InstrumentID>
-      <InstrumentID>spase://SMWG/Instrument/ISEE3/SWP</InstrumentID>
-      <MeasurementType>MagneticField</MeasurementType>
-      <MeasurementType>ThermalPlasma</MeasurementType>
-      <TemporalDescription>
-         <TimeSpan>
-            <StartDate>1978-08-13T00:00:00</StartDate>
-            <StopDate>1979-06-28T00:00:00</StopDate>
-         </TimeSpan>
-         <Cadence>PT1M</Cadence>
-      </TemporalDescription>
-      <ObservedRegion>Heliosphere.NearEarth</ObservedRegion>
-      <Parameter>
-         <Name>Year</Name>
-         <ParameterKey>Column_1</ParameterKey>
-         <Description>year</Description>
-         <Support>
-            <SupportQuantity>Temporal</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>CDAY</Name>
-         <ParameterKey>Column_2</ParameterKey>
-         <Description>Day of Year (Jan. 1 = Day 1)</Description>
-         <Support>
-            <SupportQuantity>Temporal</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>Seconds</Name>
-         <ParameterKey>Column_3</ParameterKey>
-         <Description>Seconds of day at start of minute</Description>
-         <Support>
-            <SupportQuantity>Temporal</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>Velocity</Name>
-         <ParameterKey>Column_4</ParameterKey>
-         <Description>Speed from Los Alamos reduced data set</Description>
-         <Particle>
-            <ParticleType>Proton</ParticleType>
-            <ParticleQuantity>FlowSpeed</ParticleQuantity>
-         </Particle>
-      </Parameter>
-      <Parameter>
-         <Name>ISEE Position X-GSE</Name>
-         <ParameterKey>Column_5</ParameterKey>
-         <Description>GSE X Position in meters</Description>
-         <Units>meters</Units>
-         <CoordinateSystem>
-            <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
-            <CoordinateSystemName>GSE</CoordinateSystemName>
-         </CoordinateSystem>
-         <Support>
-            <SupportQuantity>Positional</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>ISEE Position Y-GSE</Name>
-         <ParameterKey>Column_6</ParameterKey>
-         <Description>GSE Y Position in meters</Description>
-         <Units>meters</Units>
-         <CoordinateSystem>
-            <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
-            <CoordinateSystemName>GSE</CoordinateSystemName>
-         </CoordinateSystem>
-         <Support>
-            <SupportQuantity>Positional</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>ISEE Position Z-GSE</Name>
-         <ParameterKey>Column_7</ParameterKey>
-         <Description>GSE Z Position in meters</Description>
-         <Units>meters</Units>
-         <CoordinateSystem>
-            <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
-            <CoordinateSystemName>GSE</CoordinateSystemName>
-         </CoordinateSystem>
-         <Support>
-            <SupportQuantity>Positional</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>Bx GSE</Name>
-         <ParameterKey>Column_8</ParameterKey>
-         <Description>Averages of Bx GSE in nT</Description>
-         <Units>nT</Units>
-         <CoordinateSystem>
-            <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
-            <CoordinateSystemName>GSE</CoordinateSystemName>
-         </CoordinateSystem>
-         <Field>
-            <Qualifier>Average</Qualifier>
-            <Qualifier>Component.I</Qualifier>
-            <FieldQuantity>Magnetic</FieldQuantity>
-         </Field>
-      </Parameter>
-      <Parameter>
-         <Name>By GSE</Name>
-         <ParameterKey>Column_9</ParameterKey>
-         <Description>Averages of By GSE in nT</Description>
-         <Units>nT</Units>
-         <CoordinateSystem>
-            <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
-            <CoordinateSystemName>GSE</CoordinateSystemName>
-         </CoordinateSystem>
-         <Field>
-            <Qualifier>Average</Qualifier>
-            <Qualifier>Component.J</Qualifier>
-            <FieldQuantity>Magnetic</FieldQuantity>
-         </Field>
-      </Parameter>
-      <Parameter>
-         <Name>Bz GSE</Name>
-         <ParameterKey>Column_10</ParameterKey>
-         <Description>Averages of Bz GSE in nT</Description>
-         <Units>nT</Units>
-         <CoordinateSystem>
-            <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
-            <CoordinateSystemName>GSE</CoordinateSystemName>
-         </CoordinateSystem>
-         <Field>
-            <Qualifier>Average</Qualifier>
-            <Qualifier>Component.K</Qualifier>
-            <FieldQuantity>Magnetic</FieldQuantity>
-         </Field>
-      </Parameter>
-      <Parameter>
-         <Name>Bx**2</Name>
-         <ParameterKey>Column_11</ParameterKey>
-         <Description>Averages of Bx component squared, average(bx*bx)</Description>
-         <Units>nT^2</Units>
-         <CoordinateSystem>
-            <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
-            <CoordinateSystemName>GSE</CoordinateSystemName>
-         </CoordinateSystem>
-         <Field>
-            <Qualifier>Average</Qualifier>
-            <Qualifier>Component.I</Qualifier>
-            <Qualifier>Component.I</Qualifier>
-            <FieldQuantity>Magnetic</FieldQuantity>
-         </Field>
-      </Parameter>
-      <Parameter>
-         <Name>BxBy</Name>
-         <ParameterKey>Column_12</ParameterKey>
-         <Description>Averages of Bx multiplied by By, average(bx*by)</Description>
-         <Units>nT^2</Units>
-         <CoordinateSystem>
-            <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
-            <CoordinateSystemName>GSE</CoordinateSystemName>
-         </CoordinateSystem>
-         <Field>
-            <Qualifier>Average</Qualifier>
-            <Qualifier>Component.I</Qualifier>
-            <Qualifier>Component.J</Qualifier>
-            <FieldQuantity>Magnetic</FieldQuantity>
-         </Field>
-      </Parameter>
-      <Parameter>
-         <Name>BxBz</Name>
-         <ParameterKey>Column_13</ParameterKey>
-         <Description>Averages of Bx multiplied by Bz, average(bx*bz)</Description>
-         <Units>nT^2</Units>
-         <CoordinateSystem>
-            <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
-            <CoordinateSystemName>GSE</CoordinateSystemName>
-         </CoordinateSystem>
-         <Field>
-            <Qualifier>Average</Qualifier>
-            <Qualifier>Component.I</Qualifier>
-            <Qualifier>Component.K</Qualifier>
-            <FieldQuantity>Magnetic</FieldQuantity>
-         </Field>
-      </Parameter>
-      <Parameter>
-         <Name>ByBy</Name>
-         <ParameterKey>Column_14</ParameterKey>
-         <Description>Averages of By multiplied by By, average(by*by)</Description>
-         <Units>nT^2</Units>
-         <CoordinateSystem>
-            <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
-            <CoordinateSystemName>GSE</CoordinateSystemName>
-         </CoordinateSystem>
-         <Field>
-            <Qualifier>Average</Qualifier>
-            <Qualifier>Component.J</Qualifier>
-            <Qualifier>Component.J</Qualifier>
-            <FieldQuantity>Magnetic</FieldQuantity>
-         </Field>
-      </Parameter>
-      <Parameter>
-         <Name>ByBz</Name>
-         <ParameterKey>Column_15</ParameterKey>
-         <Description>Averages of By multiplied by Bz, average(by*bz)</Description>
-         <Units>nT^2</Units>
-         <CoordinateSystem>
-            <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
-            <CoordinateSystemName>GSE</CoordinateSystemName>
-         </CoordinateSystem>
-         <Field>
-            <Qualifier>Average</Qualifier>
-            <Qualifier>Component.J</Qualifier>
-            <Qualifier>Component.K</Qualifier>
-            <FieldQuantity>Magnetic</FieldQuantity>
-         </Field>
-      </Parameter>
-      <Parameter>
-         <Name>BzBz</Name>
-         <ParameterKey>Column_16</ParameterKey>
-         <Description>Averages of Bz multiplied by Bz, average(bz*bz)</Description>
-         <Units>nT^2</Units>
-         <CoordinateSystem>
-            <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
-            <CoordinateSystemName>GSE</CoordinateSystemName>
-         </CoordinateSystem>
-         <Field>
-            <Qualifier>Average</Qualifier>
-            <Qualifier>Component.K</Qualifier>
-            <Qualifier>Component.K</Qualifier>
-            <FieldQuantity>Magnetic</FieldQuantity>
-         </Field>
-      </Parameter>
-      <Parameter>
-         <Name>Cosine alpha</Name>
-         <ParameterKey>Column_17</ParameterKey>
-         <Description>Average Cosine alpha = averages of (bx/b)</Description>
-         <CoordinateSystem>
-            <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
-            <CoordinateSystemName>GSE</CoordinateSystemName>
-         </CoordinateSystem>
-         <Field>
-            <Qualifier>Average</Qualifier>
-            <Qualifier>Component.I</Qualifier>
-            <Qualifier>Magnitude</Qualifier>
-            <FieldQuantity>Magnetic</FieldQuantity>
-         </Field>
-      </Parameter>
-      <Parameter>
-         <Name>Cosine beta</Name>
-         <ParameterKey>Column_18</ParameterKey>
-         <Description>Average Cosine beta = averages of (by/b)</Description>
-         <CoordinateSystem>
-            <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
-            <CoordinateSystemName>GSE</CoordinateSystemName>
-         </CoordinateSystem>
-         <Field>
-            <Qualifier>Average</Qualifier>
-            <Qualifier>Component.J</Qualifier>
-            <Qualifier>Magnitude</Qualifier>
-            <FieldQuantity>Magnetic</FieldQuantity>
-         </Field>
-      </Parameter>
-      <Parameter>
-         <Name>Cosine gamma</Name>
-         <ParameterKey>Column_19</ParameterKey>
-         <Description>Average Cosine gamma = averages of (bz/b)</Description>
-         <CoordinateSystem>
-            <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
-            <CoordinateSystemName>GSE</CoordinateSystemName>
-         </CoordinateSystem>
-         <Field>
-            <Qualifier>Average</Qualifier>
-            <Qualifier>Component.K</Qualifier>
-            <Qualifier>Magnitude</Qualifier>
-            <FieldQuantity>Magnetic</FieldQuantity>
-         </Field>
-      </Parameter>
-      <Parameter>
-         <Name>Magnetic Field Magnitude</Name>
-         <ParameterKey>Column_20</ParameterKey>
-         <Description>Averages of Magnetic Field Magnitude</Description>
-         <CoordinateSystem>
-            <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
-            <CoordinateSystemName>GSE</CoordinateSystemName>
-         </CoordinateSystem>
-         <Field>
-            <Qualifier>Average</Qualifier>
-            <Qualifier>Magnitude</Qualifier>
-            <FieldQuantity>Magnetic</FieldQuantity>
-         </Field>
-      </Parameter>
-      <Parameter>
-         <Name>Magnetic Field Magnitude Squared</Name>
-         <ParameterKey>Column_21</ParameterKey>
-         <Description>Averages of Magnetic Field Magnitude Squared, averages of (b*b)</Description>
-         <CoordinateSystem>
-            <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
-            <CoordinateSystemName>GSE</CoordinateSystemName>
-         </CoordinateSystem>
-         <Field>
-            <Qualifier>Average</Qualifier>
-            <Qualifier>Magnitude</Qualifier>
-            <Qualifier>Magnitude</Qualifier>
-            <FieldQuantity>Magnetic</FieldQuantity>
-         </Field>
-      </Parameter>
-   </NumericalData>
+<?xml version='1.0' encoding='UTF-8'?>
+<Spase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.spase-group.org/data/schema" xsi:schemaLocation="https://www.spase-group.org/data/schema https://www.spase-group.org/data/schema/spase-2.7.0.xsd">
+  <Version>2.7.0</Version>
+  <NumericalData>
+    <ResourceID>spase://NASA/NumericalData/ISEE3/MAG/SWS/PT1M</ResourceID>
+    <NamingAuthority>NASA</NamingAuthority>
+    <ResourceType>NumericalData</ResourceType>
+    <ResourceHeader>
+      <ResourceName>ISEE-3 1-minute Magnetic Field Data with Solar Wind Speed included</ResourceName>
+      <ReleaseDate>2025-11-14T16:02:26Z</ReleaseDate>
+      <RevisionHistory>
+        <RevisionEvent>
+          <ReleaseDate>2020-07-07T21:14:40Z</ReleaseDate>
+          <Note>Only known prior ReleaseDate of the metadata</Note>
+        </RevisionEvent>
+        <RevisionEvent>
+          <ReleaseDate>2025-11-14T16:02:26Z</ReleaseDate>
+          <Note>Added PublicationInfo. Added ResourceType and NamingAuthority. Changed http to https in top-level schemaLocation attribute. Fixed version number separator in top-level schemaLocation attribute. Matched version number in schemaLocation attribute to updated value in Version tag. ZCB</Note>
+        </RevisionEvent>
+      </RevisionHistory>
+      <Description>This is an ASCII version of the original binary data set (ID = SPHE-00571; old ID = 78-079A-02J), which was never available online. The new ASCII records are fixed-length, 214 bytes long, with carriage return carriage control. The data parameters are the same in the two versions and are in the same order. This data set covers the time interval 1978 Day 225 (August 13) through 1979 Day 179 (June 28). Every minute of every day in this time span is represented in the data, even if there is no valid data for that time. Missing data or bad data are indicated by the special value 0.0000E+00 in the V and ISEE position fields, and by -1.0E9 in the other data fields. It often happens that there are lengthy segments where one or another parameter (or many parameters) are absent, as indicated by the special flag values. The original data were contained on two 9-track tapes, in IBM binary format, with the following DCB: (LRECL=88,BLKSIZE=26404,RECFM=VBS,DEN=3). The original tape (ID 78-079A-02J) was created at GSFC by J. King from reduced magnetometer data provided by E. Smith (JPL) and plasma data provided by S. Bame / R. Zwickl (LANL). This ASCII version of the data set was created at NSSDC by H. K. Hills in March and August, 2002. The conversion from binary was handled by the VAX operating system, and a special program unblocked the input and wrote the ASCII output. The precision of the ASCII version was selected to keep sufficient precision without using excessive space.</Description>
+      <Acknowledgement>Please acknowledge Edward J. Smith (P.I.) and the National Space Science Data Center.</Acknowledgement>
+      <PublicationInfo>
+        <Authors>Smith, Edward J.</Authors>
+        <PublicationDate>2025-11-14T16:02:26Z</PublicationDate>
+        <PublishedBy>Space Physics Data Facility</PublishedBy>
+      </PublicationInfo>
+      <Contact>
+        <PersonID>spase://SMWG/Person/Edward.J.Smith</PersonID>
+        <Role>PrincipalInvestigator</Role>
+      </Contact>
+      <Contact>
+        <PersonID>spase://SMWG/Person/H.Kent.Hills</PersonID>
+        <Role>DataProducer</Role>
+      </Contact>
+      <PriorID>spase://VHO/NumericalData/ISEE3/MAG/Solar.Wind.Speed.PT1M</PriorID>
+      <PriorID>spase://VSPO/NumericalData/ISEE3/MAG/SWS/PT1M</PriorID>
+    </ResourceHeader>
+    <AccessInformation>
+      <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF</RepositoryID>
+      <Availability>Online</Availability>
+      <AccessRights>Open</AccessRights>
+      <AccessURL>
+        <Name>FTPS from SPDF (not with most browsers)</Name>
+        <URL>ftps://spdf.gsfc.nasa.gov/pub/data/isee/isee3/magnetic_fields/1min_ascii_with_sw_speed/</URL>
+        <Description>Directory listing of files</Description>
+      </AccessURL>
+      <Format>Text.ASCII</Format>
+    </AccessInformation>
+    <InstrumentID>spase://SMWG/Instrument/ISEE3/MAG</InstrumentID>
+    <InstrumentID>spase://SMWG/Instrument/ISEE3/SWP</InstrumentID>
+    <MeasurementType>MagneticField</MeasurementType>
+    <MeasurementType>ThermalPlasma</MeasurementType>
+    <TemporalDescription>
+      <TimeSpan>
+        <StartDate>1978-08-13T00:00:00</StartDate>
+        <StopDate>1979-06-28T00:00:00</StopDate>
+      </TimeSpan>
+      <Cadence>PT1M</Cadence>
+    </TemporalDescription>
+    <ObservedRegion>Heliosphere.NearEarth</ObservedRegion>
+    <Parameter>
+      <Name>Year</Name>
+      <ParameterKey>Column_1</ParameterKey>
+      <Description>year</Description>
+      <Support>
+        <SupportQuantity>Temporal</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>CDAY</Name>
+      <ParameterKey>Column_2</ParameterKey>
+      <Description>Day of Year (Jan. 1 = Day 1)</Description>
+      <Support>
+        <SupportQuantity>Temporal</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Seconds</Name>
+      <ParameterKey>Column_3</ParameterKey>
+      <Description>Seconds of day at start of minute</Description>
+      <Support>
+        <SupportQuantity>Temporal</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Velocity</Name>
+      <ParameterKey>Column_4</ParameterKey>
+      <Description>Speed from Los Alamos reduced data set</Description>
+      <Particle>
+        <ParticleType>Proton</ParticleType>
+        <ParticleQuantity>FlowSpeed</ParticleQuantity>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>ISEE Position X-GSE</Name>
+      <ParameterKey>Column_5</ParameterKey>
+      <Description>GSE X Position in meters</Description>
+      <Units>meters</Units>
+      <CoordinateSystem>
+        <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+        <CoordinateSystemName>GSE</CoordinateSystemName>
+      </CoordinateSystem>
+      <Support>
+        <SupportQuantity>Positional</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>ISEE Position Y-GSE</Name>
+      <ParameterKey>Column_6</ParameterKey>
+      <Description>GSE Y Position in meters</Description>
+      <Units>meters</Units>
+      <CoordinateSystem>
+        <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+        <CoordinateSystemName>GSE</CoordinateSystemName>
+      </CoordinateSystem>
+      <Support>
+        <SupportQuantity>Positional</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>ISEE Position Z-GSE</Name>
+      <ParameterKey>Column_7</ParameterKey>
+      <Description>GSE Z Position in meters</Description>
+      <Units>meters</Units>
+      <CoordinateSystem>
+        <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+        <CoordinateSystemName>GSE</CoordinateSystemName>
+      </CoordinateSystem>
+      <Support>
+        <SupportQuantity>Positional</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Bx GSE</Name>
+      <ParameterKey>Column_8</ParameterKey>
+      <Description>Averages of Bx GSE in nT</Description>
+      <Units>nT</Units>
+      <CoordinateSystem>
+        <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+        <CoordinateSystemName>GSE</CoordinateSystemName>
+      </CoordinateSystem>
+      <Field>
+        <Qualifier>Average</Qualifier>
+        <Qualifier>Component.I</Qualifier>
+        <FieldQuantity>Magnetic</FieldQuantity>
+      </Field>
+    </Parameter>
+    <Parameter>
+      <Name>By GSE</Name>
+      <ParameterKey>Column_9</ParameterKey>
+      <Description>Averages of By GSE in nT</Description>
+      <Units>nT</Units>
+      <CoordinateSystem>
+        <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+        <CoordinateSystemName>GSE</CoordinateSystemName>
+      </CoordinateSystem>
+      <Field>
+        <Qualifier>Average</Qualifier>
+        <Qualifier>Component.J</Qualifier>
+        <FieldQuantity>Magnetic</FieldQuantity>
+      </Field>
+    </Parameter>
+    <Parameter>
+      <Name>Bz GSE</Name>
+      <ParameterKey>Column_10</ParameterKey>
+      <Description>Averages of Bz GSE in nT</Description>
+      <Units>nT</Units>
+      <CoordinateSystem>
+        <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+        <CoordinateSystemName>GSE</CoordinateSystemName>
+      </CoordinateSystem>
+      <Field>
+        <Qualifier>Average</Qualifier>
+        <Qualifier>Component.K</Qualifier>
+        <FieldQuantity>Magnetic</FieldQuantity>
+      </Field>
+    </Parameter>
+    <Parameter>
+      <Name>Bx**2</Name>
+      <ParameterKey>Column_11</ParameterKey>
+      <Description>Averages of Bx component squared, average(bx*bx)</Description>
+      <Units>nT^2</Units>
+      <CoordinateSystem>
+        <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+        <CoordinateSystemName>GSE</CoordinateSystemName>
+      </CoordinateSystem>
+      <Field>
+        <Qualifier>Average</Qualifier>
+        <Qualifier>Component.I</Qualifier>
+        <Qualifier>Component.I</Qualifier>
+        <FieldQuantity>Magnetic</FieldQuantity>
+      </Field>
+    </Parameter>
+    <Parameter>
+      <Name>BxBy</Name>
+      <ParameterKey>Column_12</ParameterKey>
+      <Description>Averages of Bx multiplied by By, average(bx*by)</Description>
+      <Units>nT^2</Units>
+      <CoordinateSystem>
+        <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+        <CoordinateSystemName>GSE</CoordinateSystemName>
+      </CoordinateSystem>
+      <Field>
+        <Qualifier>Average</Qualifier>
+        <Qualifier>Component.I</Qualifier>
+        <Qualifier>Component.J</Qualifier>
+        <FieldQuantity>Magnetic</FieldQuantity>
+      </Field>
+    </Parameter>
+    <Parameter>
+      <Name>BxBz</Name>
+      <ParameterKey>Column_13</ParameterKey>
+      <Description>Averages of Bx multiplied by Bz, average(bx*bz)</Description>
+      <Units>nT^2</Units>
+      <CoordinateSystem>
+        <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+        <CoordinateSystemName>GSE</CoordinateSystemName>
+      </CoordinateSystem>
+      <Field>
+        <Qualifier>Average</Qualifier>
+        <Qualifier>Component.I</Qualifier>
+        <Qualifier>Component.K</Qualifier>
+        <FieldQuantity>Magnetic</FieldQuantity>
+      </Field>
+    </Parameter>
+    <Parameter>
+      <Name>ByBy</Name>
+      <ParameterKey>Column_14</ParameterKey>
+      <Description>Averages of By multiplied by By, average(by*by)</Description>
+      <Units>nT^2</Units>
+      <CoordinateSystem>
+        <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+        <CoordinateSystemName>GSE</CoordinateSystemName>
+      </CoordinateSystem>
+      <Field>
+        <Qualifier>Average</Qualifier>
+        <Qualifier>Component.J</Qualifier>
+        <Qualifier>Component.J</Qualifier>
+        <FieldQuantity>Magnetic</FieldQuantity>
+      </Field>
+    </Parameter>
+    <Parameter>
+      <Name>ByBz</Name>
+      <ParameterKey>Column_15</ParameterKey>
+      <Description>Averages of By multiplied by Bz, average(by*bz)</Description>
+      <Units>nT^2</Units>
+      <CoordinateSystem>
+        <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+        <CoordinateSystemName>GSE</CoordinateSystemName>
+      </CoordinateSystem>
+      <Field>
+        <Qualifier>Average</Qualifier>
+        <Qualifier>Component.J</Qualifier>
+        <Qualifier>Component.K</Qualifier>
+        <FieldQuantity>Magnetic</FieldQuantity>
+      </Field>
+    </Parameter>
+    <Parameter>
+      <Name>BzBz</Name>
+      <ParameterKey>Column_16</ParameterKey>
+      <Description>Averages of Bz multiplied by Bz, average(bz*bz)</Description>
+      <Units>nT^2</Units>
+      <CoordinateSystem>
+        <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+        <CoordinateSystemName>GSE</CoordinateSystemName>
+      </CoordinateSystem>
+      <Field>
+        <Qualifier>Average</Qualifier>
+        <Qualifier>Component.K</Qualifier>
+        <Qualifier>Component.K</Qualifier>
+        <FieldQuantity>Magnetic</FieldQuantity>
+      </Field>
+    </Parameter>
+    <Parameter>
+      <Name>Cosine alpha</Name>
+      <ParameterKey>Column_17</ParameterKey>
+      <Description>Average Cosine alpha = averages of (bx/b)</Description>
+      <CoordinateSystem>
+        <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+        <CoordinateSystemName>GSE</CoordinateSystemName>
+      </CoordinateSystem>
+      <Field>
+        <Qualifier>Average</Qualifier>
+        <Qualifier>Component.I</Qualifier>
+        <Qualifier>Magnitude</Qualifier>
+        <FieldQuantity>Magnetic</FieldQuantity>
+      </Field>
+    </Parameter>
+    <Parameter>
+      <Name>Cosine beta</Name>
+      <ParameterKey>Column_18</ParameterKey>
+      <Description>Average Cosine beta = averages of (by/b)</Description>
+      <CoordinateSystem>
+        <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+        <CoordinateSystemName>GSE</CoordinateSystemName>
+      </CoordinateSystem>
+      <Field>
+        <Qualifier>Average</Qualifier>
+        <Qualifier>Component.J</Qualifier>
+        <Qualifier>Magnitude</Qualifier>
+        <FieldQuantity>Magnetic</FieldQuantity>
+      </Field>
+    </Parameter>
+    <Parameter>
+      <Name>Cosine gamma</Name>
+      <ParameterKey>Column_19</ParameterKey>
+      <Description>Average Cosine gamma = averages of (bz/b)</Description>
+      <CoordinateSystem>
+        <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+        <CoordinateSystemName>GSE</CoordinateSystemName>
+      </CoordinateSystem>
+      <Field>
+        <Qualifier>Average</Qualifier>
+        <Qualifier>Component.K</Qualifier>
+        <Qualifier>Magnitude</Qualifier>
+        <FieldQuantity>Magnetic</FieldQuantity>
+      </Field>
+    </Parameter>
+    <Parameter>
+      <Name>Magnetic Field Magnitude</Name>
+      <ParameterKey>Column_20</ParameterKey>
+      <Description>Averages of Magnetic Field Magnitude</Description>
+      <CoordinateSystem>
+        <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+        <CoordinateSystemName>GSE</CoordinateSystemName>
+      </CoordinateSystem>
+      <Field>
+        <Qualifier>Average</Qualifier>
+        <Qualifier>Magnitude</Qualifier>
+        <FieldQuantity>Magnetic</FieldQuantity>
+      </Field>
+    </Parameter>
+    <Parameter>
+      <Name>Magnetic Field Magnitude Squared</Name>
+      <ParameterKey>Column_21</ParameterKey>
+      <Description>Averages of Magnetic Field Magnitude Squared, averages of (b*b)</Description>
+      <CoordinateSystem>
+        <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+        <CoordinateSystemName>GSE</CoordinateSystemName>
+      </CoordinateSystem>
+      <Field>
+        <Qualifier>Average</Qualifier>
+        <Qualifier>Magnitude</Qualifier>
+        <Qualifier>Magnitude</Qualifier>
+        <FieldQuantity>Magnetic</FieldQuantity>
+      </Field>
+    </Parameter>
+  </NumericalData>
 </Spase>

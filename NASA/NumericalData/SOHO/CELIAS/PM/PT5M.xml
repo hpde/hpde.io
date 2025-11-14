@@ -1,228 +1,240 @@
-<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_6_0.xsd">
-   <Version>2.6.0</Version>
-   <NumericalData>
-	   <ResourceID>spase://NASA/NumericalData/SOHO/CELIAS/PM/PT5M</ResourceID>
-      <ResourceHeader>
-         <ResourceName>SOHO Charge, Element, and Isotope Analysis System (CELIAS) Proton Monitor 5 Minute Solar Wind data</ResourceName>
-         <ReleaseDate>2023-10-17T00:00:00Z</ReleaseDate>
-         <RevisionHistory>
-            <RevisionEvent>
-               <ReleaseDate>2020-07-07T21:15:18Z</ReleaseDate>
-               <Note>Only known prior ReleaseDate of the metadata</Note>
-            </RevisionEvent>
-            <RevisionEvent>
-               <ReleaseDate>2023-10-17T00:00:00Z</ReleaseDate>
-               <Note>Updated URLs, minor corrections, AK 20231017</Note>
-            </RevisionEvent>
-         </RevisionHistory>
-         <Description>The Proton Monitor is a solar wind Energy per Charge (E/Q) analyzer of a new design, consisting of a three-box deflection system followed by a wedge-shaped MicroChannel Plate (MCP) assembly. The data are derived from sets of 6 rates (one for each voltage step of the PM deflection system) obtained every 30 seconds. The voltage steps are spaced logarithmically (about 60% step size) from about 0.3 to 3 kV. At a given voltage step the energy per charge dynamic range is slightly more than a factor of 2. The overall geometry factor of the PM is about 1.0 x 10^-4 cm^2.</Description>
-         <Acknowledgement>Please acknowledge the University of Maryland Space Physics Group</Acknowledgement>
-         <Contact>
-            <PersonID>spase://SMWG/Person/Fred.M.Ipavich</PersonID>
-            <Role>PrincipalInvestigator</Role>
-         </Contact>
-         <InformationURL>
-            <Name>SOHO Celias Proton Monitor Home Page</Name>
-            <URL>https://space.umd.edu/pm/</URL>
-            <Description>Site hosting instrument information, some data and plots for SOHO Celias PM</Description>
-         </InformationURL>
-         <PriorID>spase://VHO/NumericalData/SOHO/CELIAS/PT5M</PriorID>
-          <PriorID>spase://VSPO/NumericalData/SOHO/CELIAS/PT5M</PriorID>
-          <PriorID>spase://NASA/NumericalData/SOHO/CELIAS/PT5M</PriorID>
-      </ResourceHeader>
-      <AccessInformation>
-         <RepositoryID>spase://SMWG/Repository/UMD</RepositoryID>
-         <Availability>Online</Availability>
-         <AccessRights>Open</AccessRights>
-         <AccessURL>
-            <Name>Proton Monitor Data at UMD</Name>
-            <URL>https://l1.umd.edu/</URL>
-            <Description>CELIAS Proton Monitor repository at UMD</Description>
-         </AccessURL>
-         <Format>Text</Format>
-         <Encoding>ASCII</Encoding>
-      </AccessInformation>
-      <InstrumentID>spase://SMWG/Instrument/SOHO/CELIAS</InstrumentID>
-      <InstrumentID>spase://SMWG/Instrument/SOHO/Ephemeris</InstrumentID>
-      <MeasurementType>ThermalPlasma</MeasurementType>
-      <MeasurementType>Ephemeris</MeasurementType>
-      <TemporalDescription>
-         <TimeSpan>
-            <StartDate>1996-01-20T20:17:30Z</StartDate>
-            <RelativeStopDate>-P1M</RelativeStopDate>
-         </TimeSpan>
-         <Cadence>PT5M</Cadence>
-      </TemporalDescription>
-      <ObservedRegion>Heliosphere.NearEarth</ObservedRegion>
-      <Caveats>On rare occassions the spacecraft's roll angle is changed for brief periods, during which the derived flow direction will refer to a different plane. A list of such times is available at http://umtof.umd.edu/pm/roll.html. In addition, since SOHO is not a spinning spacecraft, the deflection system was designed to have a wide angular acceptance (+- 15 deg). For technical reasons this leads to an ambiguity between incident angle and incident energy/charge; this ambiguity was designed into the PM to match as closely as possible the behavior of the deflection system for the main MTOF sensor. It is not the energy/charge but rather the mass/charge that is needed for interpretation of the MTOF mass data.</Caveats>
-      <Parameter>
-         <Name>Year</Name>
-         <ParameterKey>Field 1</ParameterKey>
-         <Description>Two digit year</Description>
-         <Support>
-            <SupportQuantity>Temporal</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>Month</Name>
-         <ParameterKey>Field 2</ParameterKey>
-         <Description>String representation of month</Description>
-         <Support>
-            <SupportQuantity>Temporal</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>Day</Name>
-         <ParameterKey>Field 3</ParameterKey>
-         <Description>Day of the Month</Description>
-         <Support>
-            <SupportQuantity>Temporal</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>Time</Name>
-         <ParameterKey>Field 4</ParameterKey>
-         <Description>Colon seperated day of year, hour, minute and second (doy:HH:MM:SS)</Description>
-         <Support>
-            <SupportQuantity>Temporal</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>Proton Speed</Name>
-         <ParameterKey>Field 5</ParameterKey>
-         <Description>Proton Speed</Description>
-         <Units>km/s</Units>
-         <Particle>
-            <ParticleType>Proton</ParticleType>
-            <Qualifier>Magnitude</Qualifier>
-            <ParticleQuantity>Velocity</ParticleQuantity>
-         </Particle>
-      </Parameter>
-      <Parameter>
-         <Name>Proton Density</Name>
-         <ParameterKey>Field 6</ParameterKey>
-         <Description>Proton number density</Description>
-         <Caveats>Parameters are derived from a combination of fitting and moment techniques</Caveats>
-         <Units>cm^-3</Units>
-         <Particle>
-            <ParticleType>Proton</ParticleType>
-            <Qualifier>Fit</Qualifier>
-            <Qualifier>Moment</Qualifier>
-            <ParticleQuantity>NumberDensity</ParticleQuantity>
-         </Particle>
-      </Parameter>
-      <Parameter>
-         <Name>Proton Thermal Speed</Name>
-         <ParameterKey>Field 7</ParameterKey>
-         <Description>Most probable proton thermal speed</Description>
-         <Caveats>Parameters are derived from a combination of fitting and moment techniques</Caveats>
-         <Units>km/s</Units>
-         <Particle>
-            <ParticleType>Proton</ParticleType>
-            <Qualifier>Scalar</Qualifier>
-            <Qualifier>Moment</Qualifier>
-            <Qualifier>Fit</Qualifier>
-            <ParticleQuantity>ThermalSpeed</ParticleQuantity>
-         </Particle>
-      </Parameter>
-      <Parameter>
-         <Name>Proton arrival direction</Name>
-         <ParameterKey>Field 8</ParameterKey>
-         <Description>Proton arrival direction in degrees from north/south with positive meaning from the south</Description>
-         <Units>degrees</Units>
-         <Particle>
-            <ParticleType>Proton</ParticleType>
-            <Qualifier>DirectionAngle.ElevationAngle</Qualifier>
-            <ParticleQuantity>Velocity</ParticleQuantity>
-         </Particle>
-      </Parameter>
-      <Parameter>
-         <Name>Predicted Helium speed</Name>
-         <ParameterKey>Field 9</ParameterKey>
-         <Description>Predicted (not measured) Helium speed</Description>
-         <Particle>
-            <ParticleType>Atom</ParticleType>
-            <ParticleQuantity>FlowSpeed</ParticleQuantity>
-            <AtomicNumber>2</AtomicNumber>
-         </Particle>
-      </Parameter>
-      <Parameter>
-         <Name>GSE X</Name>
-         <ParameterKey>Field 10</ParameterKey>
-         <Description>GSE X Component of SOHO position vector based on predicted orbit files ( 1 Re = 6378 km )</Description>
-         <Units>Re</Units>
-         <UnitsConversion>6.378e6&gt;m</UnitsConversion>
-         <CoordinateSystem>
-            <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
-            <CoordinateSystemName>GSE</CoordinateSystemName>
-         </CoordinateSystem>
-         <Support>
-            <SupportQuantity>Positional</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>GSE Y</Name>
-         <ParameterKey>Field 11</ParameterKey>
-         <Description>GSE Y Component of SOHO position vector based on predicted orbit files ( 1 Re = 6378 km )</Description>
-         <Units>Re</Units>
-         <UnitsConversion>6.378e6&gt;m</UnitsConversion>
-         <CoordinateSystem>
-            <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
-            <CoordinateSystemName>GSE</CoordinateSystemName>
-         </CoordinateSystem>
-         <Support>
-            <SupportQuantity>Positional</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>GSE Z</Name>
-         <ParameterKey>Field 12</ParameterKey>
-         <Description>GSE Z Component of SOHO position vector based on predicted orbit files ( 1 Re = 6378 km )</Description>
-         <Units>Re</Units>
-         <UnitsConversion>6.378e6&gt;m</UnitsConversion>
-         <CoordinateSystem>
-            <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
-            <CoordinateSystemName>GSE</CoordinateSystemName>
-         </CoordinateSystem>
-         <Support>
-            <SupportQuantity>Positional</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>Heliocentric Range</Name>
-         <ParameterKey>Field 13</ParameterKey>
-         <Description>Heliocentric Range of SOHO in 10^6 km</Description>
-         <Units>millions of km (10^6 km)</Units>
-         <UnitsConversion>1e9&gt;m</UnitsConversion>
-         <Support>
-            <SupportQuantity>Positional</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>Heliographic latitude</Name>
-         <ParameterKey>Field 14</ParameterKey>
-         <Description>Heliographic latitude of SOHO</Description>
-         <Units>degrees</Units>
-         <Support>
-            <SupportQuantity>Positional</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>Heliographic longitude</Name>
-         <ParameterKey>Field 15</ParameterKey>
-         <Description>Heliographic longitude of SOHO</Description>
-         <Units>degrees</Units>
-         <Support>
-            <SupportQuantity>Positional</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>Earth Carrington Rotation Number</Name>
-         <ParameterKey>Field 16</ParameterKey>
-         <Description>Earth Carrington Rotation Number</Description>
-         <Support>
-            <SupportQuantity>Temporal</SupportQuantity>
-         </Support>
-      </Parameter>
-   </NumericalData>
+<?xml version='1.0' encoding='UTF-8'?>
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.spase-group.org/data/schema https://www.spase-group.org/data/schema/spase-2.7.0.xsd">
+  <Version>2.7.0</Version>
+  <NumericalData>
+    <ResourceID>spase://NASA/NumericalData/SOHO/CELIAS/PM/PT5M</ResourceID>
+    <NamingAuthority>NASA</NamingAuthority>
+    <ResourceType>NumericalData</ResourceType>
+    <ResourceHeader>
+      <ResourceName>SOHO Charge, Element, and Isotope Analysis System (CELIAS) Proton Monitor 5 Minute Solar Wind data</ResourceName>
+      <ReleaseDate>2025-11-14T16:03:10Z</ReleaseDate>
+      <RevisionHistory>
+        <RevisionEvent>
+          <ReleaseDate>2020-07-07T21:15:18Z</ReleaseDate>
+          <Note>Only known prior ReleaseDate of the metadata</Note>
+        </RevisionEvent>
+        <RevisionEvent>
+          <ReleaseDate>2023-10-17T00:00:00Z</ReleaseDate>
+          <Note>Updated URLs, minor corrections, AK 20231017</Note>
+        </RevisionEvent>
+        <RevisionEvent>
+          <ReleaseDate>2025-11-14T16:03:10Z</ReleaseDate>
+          <Note>Added PublicationInfo. Added ResourceType and NamingAuthority. Changed http to https in top-level schemaLocation attribute. Fixed version number separator in top-level schemaLocation attribute. Matched version number in schemaLocation attribute to updated value in Version tag. ZCB</Note>
+        </RevisionEvent>
+      </RevisionHistory>
+      <Description>The Proton Monitor is a solar wind Energy per Charge (E/Q) analyzer of a new design, consisting of a three-box deflection system followed by a wedge-shaped MicroChannel Plate (MCP) assembly. The data are derived from sets of 6 rates (one for each voltage step of the PM deflection system) obtained every 30 seconds. The voltage steps are spaced logarithmically (about 60% step size) from about 0.3 to 3 kV. At a given voltage step the energy per charge dynamic range is slightly more than a factor of 2. The overall geometry factor of the PM is about 1.0 x 10^-4 cm^2.</Description>
+      <Acknowledgement>Please acknowledge the University of Maryland Space Physics Group</Acknowledgement>
+      <PublicationInfo>
+        <Authors>Ipavich, Fred M.</Authors>
+        <PublicationDate>2025-11-14T16:03:10Z</PublicationDate>
+        <PublishedBy>University of Maryland, College Park; Space Physics Data Facility</PublishedBy>
+      </PublicationInfo>
+      <Contact>
+        <PersonID>spase://SMWG/Person/Fred.M.Ipavich</PersonID>
+        <Role>PrincipalInvestigator</Role>
+      </Contact>
+      <InformationURL>
+        <Name>SOHO Celias Proton Monitor Home Page</Name>
+        <URL>https://space.umd.edu/pm/</URL>
+        <Description>Site hosting instrument information, some data and plots for SOHO Celias PM</Description>
+      </InformationURL>
+      <PriorID>spase://VHO/NumericalData/SOHO/CELIAS/PT5M</PriorID>
+      <PriorID>spase://VSPO/NumericalData/SOHO/CELIAS/PT5M</PriorID>
+      <PriorID>spase://NASA/NumericalData/SOHO/CELIAS/PT5M</PriorID>
+    </ResourceHeader>
+    <AccessInformation>
+      <RepositoryID>spase://SMWG/Repository/UMD</RepositoryID>
+      <Availability>Online</Availability>
+      <AccessRights>Open</AccessRights>
+      <AccessURL>
+        <Name>Proton Monitor Data at UMD</Name>
+        <URL>https://l1.umd.edu/</URL>
+        <Description>CELIAS Proton Monitor repository at UMD</Description>
+      </AccessURL>
+      <Format>Text</Format>
+      <Encoding>ASCII</Encoding>
+    </AccessInformation>
+    <InstrumentID>spase://SMWG/Instrument/SOHO/CELIAS</InstrumentID>
+    <InstrumentID>spase://SMWG/Instrument/SOHO/Ephemeris</InstrumentID>
+    <MeasurementType>ThermalPlasma</MeasurementType>
+    <MeasurementType>Ephemeris</MeasurementType>
+    <TemporalDescription>
+      <TimeSpan>
+        <StartDate>1996-01-20T20:17:30Z</StartDate>
+        <RelativeStopDate>-P1M</RelativeStopDate>
+      </TimeSpan>
+      <Cadence>PT5M</Cadence>
+    </TemporalDescription>
+    <ObservedRegion>Heliosphere.NearEarth</ObservedRegion>
+    <Caveats>On rare occassions the spacecraft's roll angle is changed for brief periods, during which the derived flow direction will refer to a different plane. A list of such times is available at http://umtof.umd.edu/pm/roll.html. In addition, since SOHO is not a spinning spacecraft, the deflection system was designed to have a wide angular acceptance (+- 15 deg). For technical reasons this leads to an ambiguity between incident angle and incident energy/charge; this ambiguity was designed into the PM to match as closely as possible the behavior of the deflection system for the main MTOF sensor. It is not the energy/charge but rather the mass/charge that is needed for interpretation of the MTOF mass data.</Caveats>
+    <Parameter>
+      <Name>Year</Name>
+      <ParameterKey>Field 1</ParameterKey>
+      <Description>Two digit year</Description>
+      <Support>
+        <SupportQuantity>Temporal</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Month</Name>
+      <ParameterKey>Field 2</ParameterKey>
+      <Description>String representation of month</Description>
+      <Support>
+        <SupportQuantity>Temporal</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Day</Name>
+      <ParameterKey>Field 3</ParameterKey>
+      <Description>Day of the Month</Description>
+      <Support>
+        <SupportQuantity>Temporal</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Time</Name>
+      <ParameterKey>Field 4</ParameterKey>
+      <Description>Colon seperated day of year, hour, minute and second (doy:HH:MM:SS)</Description>
+      <Support>
+        <SupportQuantity>Temporal</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Proton Speed</Name>
+      <ParameterKey>Field 5</ParameterKey>
+      <Description>Proton Speed</Description>
+      <Units>km/s</Units>
+      <Particle>
+        <ParticleType>Proton</ParticleType>
+        <Qualifier>Magnitude</Qualifier>
+        <ParticleQuantity>Velocity</ParticleQuantity>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>Proton Density</Name>
+      <ParameterKey>Field 6</ParameterKey>
+      <Description>Proton number density</Description>
+      <Caveats>Parameters are derived from a combination of fitting and moment techniques</Caveats>
+      <Units>cm^-3</Units>
+      <Particle>
+        <ParticleType>Proton</ParticleType>
+        <Qualifier>Fit</Qualifier>
+        <Qualifier>Moment</Qualifier>
+        <ParticleQuantity>NumberDensity</ParticleQuantity>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>Proton Thermal Speed</Name>
+      <ParameterKey>Field 7</ParameterKey>
+      <Description>Most probable proton thermal speed</Description>
+      <Caveats>Parameters are derived from a combination of fitting and moment techniques</Caveats>
+      <Units>km/s</Units>
+      <Particle>
+        <ParticleType>Proton</ParticleType>
+        <Qualifier>Scalar</Qualifier>
+        <Qualifier>Moment</Qualifier>
+        <Qualifier>Fit</Qualifier>
+        <ParticleQuantity>ThermalSpeed</ParticleQuantity>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>Proton arrival direction</Name>
+      <ParameterKey>Field 8</ParameterKey>
+      <Description>Proton arrival direction in degrees from north/south with positive meaning from the south</Description>
+      <Units>degrees</Units>
+      <Particle>
+        <ParticleType>Proton</ParticleType>
+        <Qualifier>DirectionAngle.ElevationAngle</Qualifier>
+        <ParticleQuantity>Velocity</ParticleQuantity>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>Predicted Helium speed</Name>
+      <ParameterKey>Field 9</ParameterKey>
+      <Description>Predicted (not measured) Helium speed</Description>
+      <Particle>
+        <ParticleType>Atom</ParticleType>
+        <ParticleQuantity>FlowSpeed</ParticleQuantity>
+        <AtomicNumber>2</AtomicNumber>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>GSE X</Name>
+      <ParameterKey>Field 10</ParameterKey>
+      <Description>GSE X Component of SOHO position vector based on predicted orbit files ( 1 Re = 6378 km )</Description>
+      <Units>Re</Units>
+      <UnitsConversion>6.378e6&gt;m</UnitsConversion>
+      <CoordinateSystem>
+        <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+        <CoordinateSystemName>GSE</CoordinateSystemName>
+      </CoordinateSystem>
+      <Support>
+        <SupportQuantity>Positional</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>GSE Y</Name>
+      <ParameterKey>Field 11</ParameterKey>
+      <Description>GSE Y Component of SOHO position vector based on predicted orbit files ( 1 Re = 6378 km )</Description>
+      <Units>Re</Units>
+      <UnitsConversion>6.378e6&gt;m</UnitsConversion>
+      <CoordinateSystem>
+        <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+        <CoordinateSystemName>GSE</CoordinateSystemName>
+      </CoordinateSystem>
+      <Support>
+        <SupportQuantity>Positional</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>GSE Z</Name>
+      <ParameterKey>Field 12</ParameterKey>
+      <Description>GSE Z Component of SOHO position vector based on predicted orbit files ( 1 Re = 6378 km )</Description>
+      <Units>Re</Units>
+      <UnitsConversion>6.378e6&gt;m</UnitsConversion>
+      <CoordinateSystem>
+        <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+        <CoordinateSystemName>GSE</CoordinateSystemName>
+      </CoordinateSystem>
+      <Support>
+        <SupportQuantity>Positional</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Heliocentric Range</Name>
+      <ParameterKey>Field 13</ParameterKey>
+      <Description>Heliocentric Range of SOHO in 10^6 km</Description>
+      <Units>millions of km (10^6 km)</Units>
+      <UnitsConversion>1e9&gt;m</UnitsConversion>
+      <Support>
+        <SupportQuantity>Positional</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Heliographic latitude</Name>
+      <ParameterKey>Field 14</ParameterKey>
+      <Description>Heliographic latitude of SOHO</Description>
+      <Units>degrees</Units>
+      <Support>
+        <SupportQuantity>Positional</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Heliographic longitude</Name>
+      <ParameterKey>Field 15</ParameterKey>
+      <Description>Heliographic longitude of SOHO</Description>
+      <Units>degrees</Units>
+      <Support>
+        <SupportQuantity>Positional</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Earth Carrington Rotation Number</Name>
+      <ParameterKey>Field 16</ParameterKey>
+      <Description>Earth Carrington Rotation Number</Description>
+      <Support>
+        <SupportQuantity>Temporal</SupportQuantity>
+      </Support>
+    </Parameter>
+  </NumericalData>
 </Spase>

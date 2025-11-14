@@ -1,128 +1,145 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Spase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.spase-group.org/data/schema" xsi:schemaLocation="http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_2_9.xsd">
-   <Version>2.2.9</Version>
-   <NumericalData>
-      <ResourceID>spase://NASA/NumericalData/STEREO-B/Ephemeris/GEI/PT05M</ResourceID>
-      <ResourceHeader>
-         <ResourceName>STEREO-B Ephemeris in the GEI Coordinate System</ResourceName>
-         <AlternateName>STEREO-B Positions</AlternateName>
-         <ReleaseDate>2020-07-07T21:15:21Z</ReleaseDate>
-         <Description>STEREO atttitude and orbit data are distributed as SPICE kernels. Since most SEP investigators would rather not deal with SPICE kernels, Caltech provides text files containing position data for the two STEREO spacecraft, in the following coordinate systems: GEI, GSE, GSM, HCI, HEE, HEEQ.</Description>
-         <Contact>
-            <PersonID>spase://SMWG/Person/Janet.G.Luhmann</PersonID>
-            <Role>PrincipalInvestigator</Role>
-         </Contact>
-         <Contact>
-            <PersonID>spase://SMWG/Person/Andrew.J.Davis</PersonID>
-            <Role>DataProducer</Role>
-         </Contact>
-         <InformationURL>
-            <Name>Pointing and Orbit Data for the SEP Instruments on the STEREO Spacecraft</Name>
-            <URL>ftp://mussel.srl.caltech.edu/pub/stereo/Position/SEP_Attitude_Orbit.pdf</URL>
-            <Description>This document provides information about orientation of the LET instrument on the STEREO Ahead and Behind spacecraft, and instructions for calculating pointing (attitude) and position vectors for any SEP instrument from the spacecraft ancillary data.</Description>
-         </InformationURL>
-         <PriorID>spase://VHO/NumericalData/STEREO-B/Ephemeris/GEI_PT05M</PriorID>
-          <PriorID>spase://VSPO/NumericalData/STEREO-B/Ephemeris/GEI/PT05M</PriorID>
-      </ResourceHeader>
-      <AccessInformation>
-         <RepositoryID>spase://SMWG/Repository/STEREO/AttitudeOrbit</RepositoryID>
-         <Availability>Online</Availability>
-         <AccessRights>Open</AccessRights>
-         <AccessURL>
-            <Name>STEREO Attitude and Orbit Data</Name>
-            <URL>http://www.srl.caltech.edu/STEREO/attorb.html</URL>
-            <Description>Predicted or definitive STEREO attitude and orbit data are generated from SPICE kernels and offered in various coordinate system.</Description>
-         </AccessURL>
-         <Format>Text</Format>
-         <Encoding>None</Encoding>
-      </AccessInformation>
-      <ProcessingLevel>Calibrated</ProcessingLevel>
-      <InstrumentID>spase://SMWG/Instrument/STEREO-B/Ephemeris</InstrumentID>
-      <MeasurementType>Ephemeris</MeasurementType>
-      <TemporalDescription>
-         <TimeSpan>
-            <StartDate>2006-10-27T00:00:00Z</StartDate>
-            <RelativeStopDate>-P61D</RelativeStopDate>
-         </TimeSpan>
-         <Cadence>PT05M</Cadence>
-      </TemporalDescription>
-      <ObservedRegion>Heliosphere.NearEarth</ObservedRegion>
-      <ObservedRegion>Heliosphere.Inner</ObservedRegion>
-      <ObservedRegion>Earth.Magnetosheath</ObservedRegion>
-      <Caveats>These data are produced at Caltech for the benefit of SEP instrument suite investigators. The data are not currently officially "blessed" by the larger STEREO team. The time cadence of records within data files is variable. A new record is appended only at the beginning of each day, or if the position of the S/C changes by more than TOL kilometers from the previous position. TOL is currently set to 5000 km. However, the position is only sampled every 5 minutes, so for some coordinate systems the position resolution is less than 5000 km. The daily updating of these data goes 61 days into the future, and 20 days into the past. This is usually sufficient to ensure that all the data in the files eventually get promoted form "predicted" to "definitive". Occasionally, the data are manually checked to make sure that this is all working as expected.</Caveats>
-      <Parameter>
-         <Name>Year</Name>
-         <ParameterKey>Column 1</ParameterKey>
-         <Description>The year of the data point</Description>
-         <Support>
-            <SupportQuantity>Temporal</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>DOY</Name>
-         <ParameterKey>Column 2</ParameterKey>
-         <Description>The day of year of the data point</Description>
-         <Support>
-            <SupportQuantity>Temporal</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>Second</Name>
-         <ParameterKey>Column 3</ParameterKey>
-         <Description>The second of the day of the data point</Description>
-         <Support>
-            <SupportQuantity>Temporal</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>Flag</Name>
-         <ParameterKey>Column 4</ParameterKey>
-         <Description>0 if the data are predictive and 1 if the data are definitive</Description>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>X</Name>
-         <ParameterKey>Column 5</ParameterKey>
-         <Description>The X component of the spacecraft position vector</Description>
-         <Units>km</Units>
-         <UnitsConversion>1e3&gt;m</UnitsConversion>
-         <CoordinateSystem>
-            <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
-            <CoordinateSystemName>GEI</CoordinateSystemName>
-         </CoordinateSystem>
-         <Support>
-            <SupportQuantity>Positional</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>Y</Name>
-         <ParameterKey>Column 6</ParameterKey>
-         <Description>The Y component of the spacecraft position vector</Description>
-         <Units>km</Units>
-         <UnitsConversion>1e3&gt;m</UnitsConversion>
-         <CoordinateSystem>
-            <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
-            <CoordinateSystemName>GEI</CoordinateSystemName>
-         </CoordinateSystem>
-         <Support>
-            <SupportQuantity>Positional</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>Z</Name>
-         <ParameterKey>Column 7</ParameterKey>
-         <Description>The Z component of the spacecraft position vector</Description>
-         <Units>km</Units>
-         <UnitsConversion>1e3&gt;m</UnitsConversion>
-         <CoordinateSystem>
-            <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
-            <CoordinateSystemName>GEI</CoordinateSystemName>
-         </CoordinateSystem>
-         <Support>
-            <SupportQuantity>Positional</SupportQuantity>
-         </Support>
-      </Parameter>
-   </NumericalData>
+<?xml version='1.0' encoding='UTF-8'?>
+<Spase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.spase-group.org/data/schema" xsi:schemaLocation="https://www.spase-group.org/data/schema https://www.spase-group.org/data/schema/spase-2.7.0.xsd">
+  <Version>2.7.0</Version>
+  <NumericalData>
+    <ResourceID>spase://NASA/NumericalData/STEREO-B/Ephemeris/GEI/PT05M</ResourceID>
+    <NamingAuthority>NASA</NamingAuthority>
+    <ResourceType>NumericalData</ResourceType>
+    <ResourceHeader>
+      <ResourceName>STEREO-B Ephemeris in the GEI Coordinate System</ResourceName>
+      <AlternateName>STEREO-B Positions</AlternateName>
+      <ReleaseDate>2025-11-14T16:01:45Z</ReleaseDate>
+      <RevisionHistory>
+        <RevisionEvent>
+          <ReleaseDate>2020-07-07T21:15:21Z</ReleaseDate>
+          <Note>Only known prior ReleaseDate of the metadata</Note>
+        </RevisionEvent>
+        <RevisionEvent>
+          <ReleaseDate>2025-11-14T16:01:45Z</ReleaseDate>
+          <Note>Added PublicationInfo. Added ResourceType and NamingAuthority. Changed http to https in top-level schemaLocation attribute. Fixed version number separator in top-level schemaLocation attribute. Matched version number in schemaLocation attribute to updated value in Version tag. ZCB</Note>
+        </RevisionEvent>
+      </RevisionHistory>
+      <Description>STEREO atttitude and orbit data are distributed as SPICE kernels. Since most SEP investigators would rather not deal with SPICE kernels, Caltech provides text files containing position data for the two STEREO spacecraft, in the following coordinate systems: GEI, GSE, GSM, HCI, HEE, HEEQ.</Description>
+      <PublicationInfo>
+        <Authors>Luhmann, Janet G.</Authors>
+        <PublicationDate>2025-11-14T16:01:45Z</PublicationDate>
+        <PublishedBy>Goddard Space Flight Center</PublishedBy>
+      </PublicationInfo>
+      <Contact>
+        <PersonID>spase://SMWG/Person/Janet.G.Luhmann</PersonID>
+        <Role>PrincipalInvestigator</Role>
+      </Contact>
+      <Contact>
+        <PersonID>spase://SMWG/Person/Andrew.J.Davis</PersonID>
+        <Role>DataProducer</Role>
+      </Contact>
+      <InformationURL>
+        <Name>Pointing and Orbit Data for the SEP Instruments on the STEREO Spacecraft</Name>
+        <URL>ftp://mussel.srl.caltech.edu/pub/stereo/Position/SEP_Attitude_Orbit.pdf</URL>
+        <Description>This document provides information about orientation of the LET instrument on the STEREO Ahead and Behind spacecraft, and instructions for calculating pointing (attitude) and position vectors for any SEP instrument from the spacecraft ancillary data.</Description>
+      </InformationURL>
+      <PriorID>spase://VHO/NumericalData/STEREO-B/Ephemeris/GEI_PT05M</PriorID>
+      <PriorID>spase://VSPO/NumericalData/STEREO-B/Ephemeris/GEI/PT05M</PriorID>
+    </ResourceHeader>
+    <AccessInformation>
+      <RepositoryID>spase://SMWG/Repository/STEREO/AttitudeOrbit</RepositoryID>
+      <Availability>Online</Availability>
+      <AccessRights>Open</AccessRights>
+      <AccessURL>
+        <Name>STEREO Attitude and Orbit Data</Name>
+        <URL>http://www.srl.caltech.edu/STEREO/attorb.html</URL>
+        <Description>Predicted or definitive STEREO attitude and orbit data are generated from SPICE kernels and offered in various coordinate system.</Description>
+      </AccessURL>
+      <Format>Text</Format>
+      <Encoding>None</Encoding>
+    </AccessInformation>
+    <ProcessingLevel>Calibrated</ProcessingLevel>
+    <InstrumentID>spase://SMWG/Instrument/STEREO-B/Ephemeris</InstrumentID>
+    <MeasurementType>Ephemeris</MeasurementType>
+    <TemporalDescription>
+      <TimeSpan>
+        <StartDate>2006-10-27T00:00:00Z</StartDate>
+        <RelativeStopDate>-P61D</RelativeStopDate>
+      </TimeSpan>
+      <Cadence>PT05M</Cadence>
+    </TemporalDescription>
+    <ObservedRegion>Heliosphere.NearEarth</ObservedRegion>
+    <ObservedRegion>Heliosphere.Inner</ObservedRegion>
+    <ObservedRegion>Earth.Magnetosheath</ObservedRegion>
+    <Caveats>These data are produced at Caltech for the benefit of SEP instrument suite investigators. The data are not currently officially "blessed" by the larger STEREO team. The time cadence of records within data files is variable. A new record is appended only at the beginning of each day, or if the position of the S/C changes by more than TOL kilometers from the previous position. TOL is currently set to 5000 km. However, the position is only sampled every 5 minutes, so for some coordinate systems the position resolution is less than 5000 km. The daily updating of these data goes 61 days into the future, and 20 days into the past. This is usually sufficient to ensure that all the data in the files eventually get promoted form "predicted" to "definitive". Occasionally, the data are manually checked to make sure that this is all working as expected.</Caveats>
+    <Parameter>
+      <Name>Year</Name>
+      <ParameterKey>Column 1</ParameterKey>
+      <Description>The year of the data point</Description>
+      <Support>
+        <SupportQuantity>Temporal</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>DOY</Name>
+      <ParameterKey>Column 2</ParameterKey>
+      <Description>The day of year of the data point</Description>
+      <Support>
+        <SupportQuantity>Temporal</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Second</Name>
+      <ParameterKey>Column 3</ParameterKey>
+      <Description>The second of the day of the data point</Description>
+      <Support>
+        <SupportQuantity>Temporal</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Flag</Name>
+      <ParameterKey>Column 4</ParameterKey>
+      <Description>0 if the data are predictive and 1 if the data are definitive</Description>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>X</Name>
+      <ParameterKey>Column 5</ParameterKey>
+      <Description>The X component of the spacecraft position vector</Description>
+      <Units>km</Units>
+      <UnitsConversion>1e3&gt;m</UnitsConversion>
+      <CoordinateSystem>
+        <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+        <CoordinateSystemName>GEI</CoordinateSystemName>
+      </CoordinateSystem>
+      <Support>
+        <SupportQuantity>Positional</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Y</Name>
+      <ParameterKey>Column 6</ParameterKey>
+      <Description>The Y component of the spacecraft position vector</Description>
+      <Units>km</Units>
+      <UnitsConversion>1e3&gt;m</UnitsConversion>
+      <CoordinateSystem>
+        <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+        <CoordinateSystemName>GEI</CoordinateSystemName>
+      </CoordinateSystem>
+      <Support>
+        <SupportQuantity>Positional</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Z</Name>
+      <ParameterKey>Column 7</ParameterKey>
+      <Description>The Z component of the spacecraft position vector</Description>
+      <Units>km</Units>
+      <UnitsConversion>1e3&gt;m</UnitsConversion>
+      <CoordinateSystem>
+        <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+        <CoordinateSystemName>GEI</CoordinateSystemName>
+      </CoordinateSystem>
+      <Support>
+        <SupportQuantity>Positional</SupportQuantity>
+      </Support>
+    </Parameter>
+  </NumericalData>
 </Spase>

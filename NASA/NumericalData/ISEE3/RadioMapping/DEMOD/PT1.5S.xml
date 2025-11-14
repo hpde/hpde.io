@@ -1,338 +1,356 @@
-<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_2_9.xsd">
-   <Version>2.2.9</Version>
-   <NumericalData>
-      <ResourceID>spase://NASA/NumericalData/ISEE3/RadioMapping/DEMOD/PT1.5S</ResourceID>
-      <ResourceHeader>
-         <ResourceName>ISEE-3 Radio Mapping Experiment Demodulated - 1.5 sec resolution</ResourceName>
-         <ReleaseDate>2020-07-07T21:14:40Z</ReleaseDate>
-         <Description>The following is extracted from "User Guide for ISEE-3 Radio Mapping Experiment CD-ROM Data" the original document is available via the Information URL below. The ISEE-3 Radio Mapping Experiment is designed to detect and measure radio bursts from the Sun, the interplanetary medium, and the Earth's magnetosphere, at frequencies from 30 kHz to 2 MHz. It is a collaboration of the Observatory of Paris-Meudon and the Goddard Space Flight Center; the Principal Investigator is Jean-Louis Steinberg. The experiment determines the direction of sources and estimates their apparent angular sizes using two dipole antennas. One dipole, the shorter of the two, is along the spin axis of the satellite, while the second dipole is perpendicular to the spin axis and is therefore carried around by the rotation of the satellite. Each of the monopoles making up the spin-axis dipole can be extended to 7m, whereas each monopole making up the dipole in the spin plane is 45m long. The signal received by the spinning dipole is modulated, being strongest when the dipole is perpendicular to the direction of the source. The phase of the spin modulation provides information on the direction of the source, projected onto the plane in which the dipole is spinning, and the amplitude of the modulation determines the angular size of the source as a function of its elevation above or below the spin plane. The additional information provided by the spin-axis dipole helps determine whether the source is above or below the spin plane, and its elevation. Detailed Description of the Data Acquisition The experiment is designed to make a series of measurements at each frequency (listed in Table 2-1), covering one-half spin. Such a series is called a step. The specifics of the data are described below. In this document, the spin-axis dipole is called the Z-dipole, because the spin axis is labeled the z-axis of the satellite-based coordinate system. The other dipole is called the S-dipole, because it is spinning. ISEE-3 has two spinning dipoles, called U and V. Only the V dipole was used to acquire radio data. Table 2-1. ISEE-3 Radio Mapping Experiment Frequencies +------------------------------------+ Channel Receiver Freq. (Khz) No. Broad Narrow =========== ========= ============== 1 1980 1000 2 1000 466 3 513 290 4 360 188 5 233 145 6 160 110 7 123 80 8 94 66 9 72 56 10 60 47 11 50 36 12 41 30 +------------------------------------+ Demodulating the data The direction to the source and the source strength are determined from the spin-modulated S samples and the Z sample by the procedure described in the following section. The linear least-squares solution provides a despun source amplitude A, which is its maximum amplitude, observed when the S dipole is "broadside" to the source, the azimuth angle with respect to the Sun of the source center in the spin plane, and a measure of the modulation of the source due to the changing orientation of the S dipole, called alpha. The standard deviation of the least-squares fit and the uncertainties in the three parameters are also calculated. Comparison of the Z sample and A with the modulation index alpha permits to evaluate the source radius and its elevation from the spin plane. Data file contents There are 3 different sets of data files that are of potential interest to new users - 1.5 sec modulated data, 108 second averages, and 1.5 sec demodulated data. The 1.5 sec modulated data files contain individual data samples, calibrated in units of antenna temperature. The spin modulation has not been removed from these files. The 108 sec average files are simple averages of the 1.5 sec modulated data as a function of frequency. (Note that the average is done in log space, I.e., mean(log(antenna temperature)).) Finally, the 1.5 sec demodulated data file contains the parameters A, alpha, and azimuth. The demodulated data file is the file that most users will want to use. Contents of the ISEE-3 Radio 1.5 sec DEMOD Record +--------------------------------------------------------------------+ VARIABLE DIM # DESCRIPTION ========== ==== ======= ============================================ MDATE Julian date of record (YYDDD) MHMS Time of midpoint of record in hhmmss MSEC Time of midpoint or record in msecs NFREQ Frequency channel 1-12 ADSP 4 1 Despun SB amplitude (or SN for Mode3) 2 Despun SN amplitude if mode 1 3 Log of SB as log TA 4 Log SN if mode 1, else 0 ALPHA 2 1 Modulation Index for B(or N if mode3) 2 Modulation Index for N if mode 1, else 0 PHI 2 Source longitude(increasing to west of sun) for B, N in degrees (-90 - 90) Z 4 Average Z amplitude - elements as for ADSP PHASE 2 Phase(volts) for the first input record used in group for B, N(or both B for mode 2, both N for mode 3) PHANG 2 Phase sun angle for B,N in radians ELEV 2 Calculated elevation angle for B,N RAD 2 Calculated source radius for B,N in degrees BW 4 1 Background value used for SB in calculating ELEV and RAD 2 Background value used for SN (mode 1) 3 Background value used for ZB 4 Background value for ZN if mode 1 ST 2 Fractional standard deviations of least squares fit for B,N SIGA 3x2 Uncertainties in parameters for least squares fit 1x Uncertainty in mean SB, SN amplitude 2x Uncertainty in alpha for B,N 3x Uncertainty in PHI for B, N in degrees NSAMP Number of S samples in fit IQUAL 2 Quality of analysis B, N KDATE Julian date of processing MODE Data mode SPINP Spin period in msec GSE 3 XYZ coordinates Geocentric solar ecliptic in meters SPARE 10 Spares +--------------------------------------------------------------------+</Description>
-         <Acknowledgement>Users please acknowledge the ISEE-3 Radio Mapping Experiment Principal Investigator Jean-Louis Steinberg and Robert MacDowall.</Acknowledgement>
-         <Contact>
-            <PersonID>spase://SMWG/Person/Jean-Louis.Steinberg</PersonID>
-            <Role>PrincipalInvestigator</Role>
-         </Contact>
-         <Contact>
-            <PersonID>spase://SMWG/Person/Robert.J.MacDowall</PersonID>
-            <Role>GeneralContact</Role>
-         </Contact>
-         <InformationURL>
-            <Name>User Guide for ISEE-3 Radio Mapping Experiment CD-ROM Data</Name>
-            <URL>https://spdf.gsfc.nasa.gov/pub/data/isee/isee3/radio_mapping/DOCUMENT/ISEE3_radio_data_guide_2009.pdf</URL>
-            <Description>by Robert J. MacDowall, version 1.2 - revised July 1, 2009</Description>
-            <Language>en</Language>
-         </InformationURL>
-         <PriorID>spase://VWO/NumericalData/ISEE3/RadioMapping/DEMOD.PT1.5S</PriorID>
-          <PriorID>spase://VSPO/NumericalData/ISEE3/RadioMapping/DEMOD/PT1.5S</PriorID>
-      </ResourceHeader>
-      <AccessInformation>
-         <RepositoryID>spase://SMWG/Repository/NASA/GSFC</RepositoryID>
-         <Availability>Online</Availability>
-         <AccessRights>Open</AccessRights>
-         <AccessURL>
-            <Name>HTTPS from SPDF</Name>
-            <URL>https://spdf.gsfc.nasa.gov/pub/data/isee/isee3/radio_mapping/DATA/</URL>
-            <Description>Access to gzipped IEEE binary data files of 1.5 second demodulated data. Beneath this directory are also 1.5 second modulated data and 108 second averaged data.</Description>
-            <Language>en</Language>
-         </AccessURL>
-         <Format>Binary</Format>
-         <Encoding>None</Encoding>
-         <Acknowledgement>Users please acknowledge the ISEE-3 Radio Mapping Experiment Principal Investigator Jean-Louis Steinberg and Robert MacDowall.</Acknowledgement>
-      </AccessInformation>
-      <ProcessingLevel>Calibrated</ProcessingLevel>
-      <InstrumentID>spase://SMWG/Instrument/ISEE3/Radio_Mapping</InstrumentID>
-      <MeasurementType>Waves.Passive</MeasurementType>
-      <MeasurementType>Spectrum</MeasurementType>
-      <TemporalDescription>
-         <TimeSpan>
-            <StartDate>1978-08-13T08:31:28Z</StartDate>
-            <StopDate>1987-01-23T11:13:38Z</StopDate>
-         </TimeSpan>
-         <Cadence>PT1.5S</Cadence>
-      </TemporalDescription>
-      <SpectralRange>RadioFrequency</SpectralRange>
-      <ObservedRegion>Heliosphere.Inner</ObservedRegion>
-      <ObservedRegion>Earth.Magnetosphere</ObservedRegion>
-      <Parameter>
-         <Name>MDATE</Name>
-         <Description>Julian date of record (YYDDD)</Description>
-         <Support>
-            <SupportQuantity>Temporal</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>MHMS</Name>
-         <Description>Time of midpoint of record in hhmmss</Description>
-         <Support>
-            <SupportQuantity>Temporal</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>MSEC</Name>
-         <Description>Time of midpoint or record in msecs</Description>
-         <Units>msec</Units>
-         <Support>
-            <SupportQuantity>Temporal</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>NFREQ</Name>
-         <Description>Frequency channel 1-12. See Table 2-1 to convert into kHz</Description>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>ADSP</Name>
-         <Structure>
-            <Size>4</Size>
-            <Element>
-               <Name>Despun SB amplitude (or SN for Mode3)</Name>
-               <Index>1</Index>
-            </Element>
-            <Element>
-               <Name>Despun SN amplitude if mode 1</Name>
-               <Index>2</Index>
-            </Element>
-            <Element>
-               <Name>Log of SB as log TA</Name>
-               <Index>3</Index>
-            </Element>
-            <Element>
-               <Name>Log SN if mode 1, else 0</Name>
-               <Index>4</Index>
-            </Element>
-         </Structure>
-         <Wave>
-            <WaveType>PlasmaWaves</WaveType>
-            <WaveQuantity>ACElectricField</WaveQuantity>
-            <FrequencyRange>
-               <SpectralRange>RadioFrequency</SpectralRange>
-               <Low>30</Low>
-               <High>1980</High>
-               <Units>kHz</Units>
-            </FrequencyRange>
-         </Wave>
-      </Parameter>
-      <Parameter>
-         <Name>ALPHA</Name>
-         <Structure>
-            <Size>2</Size>
-            <Element>
-               <Name>Modulation Index for B(or N if mode3)</Name>
-               <Index>1</Index>
-            </Element>
-            <Element>
-               <Name>Modulation Index for N if mode 1, else 0</Name>
-               <Index>2</Index>
-            </Element>
-         </Structure>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>PHI</Name>
-         <Description>Source longitude(increasing to west of sun) for B, N in degrees (-90 - 90)</Description>
-         <Structure>
-            <Size>2</Size>
-         </Structure>
-         <Support>
-            <SupportQuantity>Positional</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>Z</Name>
-         <Description>Average Z amplitude - elements as for ADSP</Description>
-         <Structure>
-            <Size>4</Size>
-            <Element>
-               <Name>Despun SB amplitude (or SN for Mode3)</Name>
-               <Index>1</Index>
-            </Element>
-            <Element>
-               <Name>Despun SN amplitude if mode 1</Name>
-               <Index>2</Index>
-            </Element>
-            <Element>
-               <Name>Log of SB as log TA</Name>
-               <Index>3</Index>
-            </Element>
-            <Element>
-               <Name>Log SN if mode 1, else 0</Name>
-               <Index>4</Index>
-            </Element>
-         </Structure>
-         <Wave>
-            <WaveType>PlasmaWaves</WaveType>
-            <WaveQuantity>ACElectricField</WaveQuantity>
-            <FrequencyRange>
-               <SpectralRange>RadioFrequency</SpectralRange>
-               <Low>30</Low>
-               <High>1980</High>
-               <Units>kHz</Units>
-            </FrequencyRange>
-         </Wave>
-      </Parameter>
-      <Parameter>
-         <Name>PHASE</Name>
-         <Description>Phase(volts) for the first input record used in group for B, N(or both B for mode 2, both N for mode 3)</Description>
-         <Units>Volts</Units>
-         <Structure>
-            <Size>2</Size>
-         </Structure>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>PHANG</Name>
-         <Description>Phase Sun angle for B,N in radians</Description>
-         <Units>radians</Units>
-         <Structure>
-            <Size>2</Size>
-         </Structure>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>ELEV</Name>
-         <Description>Calculated elevation angle for B,N</Description>
-         <Structure>
-            <Size>2</Size>
-         </Structure>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>RAD</Name>
-         <Description>Calculated source radius in degrees</Description>
-         <Units>degrees</Units>
-         <Structure>
-            <Size>2</Size>
-         </Structure>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>BW</Name>
-         <Structure>
-            <Size>4</Size>
-            <Element>
-               <Name>Background value used for SB in calculating ELEV and RAD</Name>
-               <Index>1</Index>
-            </Element>
-            <Element>
-               <Name>Background value used for SN (mode 1)</Name>
-               <Index>2</Index>
-            </Element>
-            <Element>
-               <Name>Background value used for ZB</Name>
-               <Index>3</Index>
-            </Element>
-            <Element>
-               <Name>Background value for ZN if mode 1</Name>
-               <Index>4</Index>
-            </Element>
-         </Structure>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>ST</Name>
-         <Description>Fractional standard deviations of least squares fit for B,N</Description>
-         <Structure>
-            <Size>2</Size>
-         </Structure>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>SIGA</Name>
-         <Description>Uncertainties in parameters for least squares fit</Description>
-         <Structure>
-            <Size>3</Size>
-            <Element>
-               <Name>Uncertainty in mean SB, SN amplitude</Name>
-               <Index>1</Index>
-            </Element>
-            <Element>
-               <Name>Uncertainty in alpha for B,N</Name>
-               <Index>2</Index>
-            </Element>
-            <Element>
-               <Name>Uncertainty in PHI for B, N in degrees</Name>
-               <Index>3</Index>
-            </Element>
-         </Structure>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>NSAMP</Name>
-         <Description>Number of S samples in fit</Description>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>IQUAL</Name>
-         <Description>Quality of analysis B, N</Description>
-         <Structure>
-            <Size>2</Size>
-         </Structure>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>KDATE</Name>
-         <Description>Julian date of processing</Description>
-         <Support>
-            <SupportQuantity>Temporal</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>MODE</Name>
-         <Description>Data mode</Description>
-         <Support>
-            <SupportQuantity>InstrumentMode</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>SPINP</Name>
-         <Description>Spin period in msec</Description>
-         <Units>msec</Units>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>GSE</Name>
-         <Description>XYZ coordinates Geocentric solar ecliptic in meters</Description>
-         <Units>meters</Units>
-         <CoordinateSystem>
-            <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
-            <CoordinateSystemName>GSE</CoordinateSystemName>
-         </CoordinateSystem>
-         <Support>
-            <SupportQuantity>Positional</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>SPARE</Name>
-         <Description>Spares</Description>
-         <Structure>
-            <Size>10</Size>
-         </Structure>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-   </NumericalData>
+<?xml version='1.0' encoding='UTF-8'?>
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.spase-group.org/data/schema https://www.spase-group.org/data/schema/spase-2.7.0.xsd">
+  <Version>2.7.0</Version>
+  <NumericalData>
+    <ResourceID>spase://NASA/NumericalData/ISEE3/RadioMapping/DEMOD/PT1.5S</ResourceID>
+    <NamingAuthority>NASA</NamingAuthority>
+    <ResourceType>NumericalData</ResourceType>
+    <ResourceHeader>
+      <ResourceName>ISEE-3 Radio Mapping Experiment Demodulated - 1.5 sec resolution</ResourceName>
+      <ReleaseDate>2025-11-14T16:01:46Z</ReleaseDate>
+      <RevisionHistory>
+        <RevisionEvent>
+          <ReleaseDate>2020-07-07T21:14:40Z</ReleaseDate>
+          <Note>Only known prior ReleaseDate of the metadata</Note>
+        </RevisionEvent>
+        <RevisionEvent>
+          <ReleaseDate>2025-11-14T16:01:46Z</ReleaseDate>
+          <Note>Added PublicationInfo. Added ResourceType and NamingAuthority. Changed http to https in top-level schemaLocation attribute. Fixed version number separator in top-level schemaLocation attribute. Matched version number in schemaLocation attribute to updated value in Version tag. ZCB</Note>
+        </RevisionEvent>
+      </RevisionHistory>
+      <Description>The following is extracted from "User Guide for ISEE-3 Radio Mapping Experiment CD-ROM Data" the original document is available via the Information URL below. The ISEE-3 Radio Mapping Experiment is designed to detect and measure radio bursts from the Sun, the interplanetary medium, and the Earth's magnetosphere, at frequencies from 30 kHz to 2 MHz. It is a collaboration of the Observatory of Paris-Meudon and the Goddard Space Flight Center; the Principal Investigator is Jean-Louis Steinberg. The experiment determines the direction of sources and estimates their apparent angular sizes using two dipole antennas. One dipole, the shorter of the two, is along the spin axis of the satellite, while the second dipole is perpendicular to the spin axis and is therefore carried around by the rotation of the satellite. Each of the monopoles making up the spin-axis dipole can be extended to 7m, whereas each monopole making up the dipole in the spin plane is 45m long. The signal received by the spinning dipole is modulated, being strongest when the dipole is perpendicular to the direction of the source. The phase of the spin modulation provides information on the direction of the source, projected onto the plane in which the dipole is spinning, and the amplitude of the modulation determines the angular size of the source as a function of its elevation above or below the spin plane. The additional information provided by the spin-axis dipole helps determine whether the source is above or below the spin plane, and its elevation. Detailed Description of the Data Acquisition The experiment is designed to make a series of measurements at each frequency (listed in Table 2-1), covering one-half spin. Such a series is called a step. The specifics of the data are described below. In this document, the spin-axis dipole is called the Z-dipole, because the spin axis is labeled the z-axis of the satellite-based coordinate system. The other dipole is called the S-dipole, because it is spinning. ISEE-3 has two spinning dipoles, called U and V. Only the V dipole was used to acquire radio data. Table 2-1. ISEE-3 Radio Mapping Experiment Frequencies +------------------------------------+ Channel Receiver Freq. (Khz) No. Broad Narrow =========== ========= ============== 1 1980 1000 2 1000 466 3 513 290 4 360 188 5 233 145 6 160 110 7 123 80 8 94 66 9 72 56 10 60 47 11 50 36 12 41 30 +------------------------------------+ Demodulating the data The direction to the source and the source strength are determined from the spin-modulated S samples and the Z sample by the procedure described in the following section. The linear least-squares solution provides a despun source amplitude A, which is its maximum amplitude, observed when the S dipole is "broadside" to the source, the azimuth angle with respect to the Sun of the source center in the spin plane, and a measure of the modulation of the source due to the changing orientation of the S dipole, called alpha. The standard deviation of the least-squares fit and the uncertainties in the three parameters are also calculated. Comparison of the Z sample and A with the modulation index alpha permits to evaluate the source radius and its elevation from the spin plane. Data file contents There are 3 different sets of data files that are of potential interest to new users - 1.5 sec modulated data, 108 second averages, and 1.5 sec demodulated data. The 1.5 sec modulated data files contain individual data samples, calibrated in units of antenna temperature. The spin modulation has not been removed from these files. The 108 sec average files are simple averages of the 1.5 sec modulated data as a function of frequency. (Note that the average is done in log space, I.e., mean(log(antenna temperature)).) Finally, the 1.5 sec demodulated data file contains the parameters A, alpha, and azimuth. The demodulated data file is the file that most users will want to use. Contents of the ISEE-3 Radio 1.5 sec DEMOD Record +--------------------------------------------------------------------+ VARIABLE DIM # DESCRIPTION ========== ==== ======= ============================================ MDATE Julian date of record (YYDDD) MHMS Time of midpoint of record in hhmmss MSEC Time of midpoint or record in msecs NFREQ Frequency channel 1-12 ADSP 4 1 Despun SB amplitude (or SN for Mode3) 2 Despun SN amplitude if mode 1 3 Log of SB as log TA 4 Log SN if mode 1, else 0 ALPHA 2 1 Modulation Index for B(or N if mode3) 2 Modulation Index for N if mode 1, else 0 PHI 2 Source longitude(increasing to west of sun) for B, N in degrees (-90 - 90) Z 4 Average Z amplitude - elements as for ADSP PHASE 2 Phase(volts) for the first input record used in group for B, N(or both B for mode 2, both N for mode 3) PHANG 2 Phase sun angle for B,N in radians ELEV 2 Calculated elevation angle for B,N RAD 2 Calculated source radius for B,N in degrees BW 4 1 Background value used for SB in calculating ELEV and RAD 2 Background value used for SN (mode 1) 3 Background value used for ZB 4 Background value for ZN if mode 1 ST 2 Fractional standard deviations of least squares fit for B,N SIGA 3x2 Uncertainties in parameters for least squares fit 1x Uncertainty in mean SB, SN amplitude 2x Uncertainty in alpha for B,N 3x Uncertainty in PHI for B, N in degrees NSAMP Number of S samples in fit IQUAL 2 Quality of analysis B, N KDATE Julian date of processing MODE Data mode SPINP Spin period in msec GSE 3 XYZ coordinates Geocentric solar ecliptic in meters SPARE 10 Spares +--------------------------------------------------------------------+</Description>
+      <Acknowledgement>Users please acknowledge the ISEE-3 Radio Mapping Experiment Principal Investigator Jean-Louis Steinberg and Robert MacDowall.</Acknowledgement>
+      <PublicationInfo>
+        <Authors>Steinberg, Jean-Louis</Authors>
+        <PublicationDate>2025-11-14T16:01:46Z</PublicationDate>
+        <PublishedBy>Space Physics Data Facility</PublishedBy>
+      </PublicationInfo>
+      <Contact>
+        <PersonID>spase://SMWG/Person/Jean-Louis.Steinberg</PersonID>
+        <Role>PrincipalInvestigator</Role>
+      </Contact>
+      <Contact>
+        <PersonID>spase://SMWG/Person/Robert.J.MacDowall</PersonID>
+        <Role>GeneralContact</Role>
+      </Contact>
+      <InformationURL>
+        <Name>User Guide for ISEE-3 Radio Mapping Experiment CD-ROM Data</Name>
+        <URL>https://spdf.gsfc.nasa.gov/pub/data/isee/isee3/radio_mapping/DOCUMENT/ISEE3_radio_data_guide_2009.pdf</URL>
+        <Description>by Robert J. MacDowall, version 1.2 - revised July 1, 2009</Description>
+        <Language>en</Language>
+      </InformationURL>
+      <PriorID>spase://VWO/NumericalData/ISEE3/RadioMapping/DEMOD.PT1.5S</PriorID>
+      <PriorID>spase://VSPO/NumericalData/ISEE3/RadioMapping/DEMOD/PT1.5S</PriorID>
+    </ResourceHeader>
+    <AccessInformation>
+      <RepositoryID>spase://SMWG/Repository/NASA/GSFC</RepositoryID>
+      <Availability>Online</Availability>
+      <AccessRights>Open</AccessRights>
+      <AccessURL>
+        <Name>HTTPS from SPDF</Name>
+        <URL>https://spdf.gsfc.nasa.gov/pub/data/isee/isee3/radio_mapping/DATA/</URL>
+        <Description>Access to gzipped IEEE binary data files of 1.5 second demodulated data. Beneath this directory are also 1.5 second modulated data and 108 second averaged data.</Description>
+        <Language>en</Language>
+      </AccessURL>
+      <Format>Binary</Format>
+      <Encoding>None</Encoding>
+      <Acknowledgement>Users please acknowledge the ISEE-3 Radio Mapping Experiment Principal Investigator Jean-Louis Steinberg and Robert MacDowall.</Acknowledgement>
+    </AccessInformation>
+    <ProcessingLevel>Calibrated</ProcessingLevel>
+    <InstrumentID>spase://SMWG/Instrument/ISEE3/Radio_Mapping</InstrumentID>
+    <MeasurementType>Waves.Passive</MeasurementType>
+    <MeasurementType>Spectrum</MeasurementType>
+    <TemporalDescription>
+      <TimeSpan>
+        <StartDate>1978-08-13T08:31:28Z</StartDate>
+        <StopDate>1987-01-23T11:13:38Z</StopDate>
+      </TimeSpan>
+      <Cadence>PT1.5S</Cadence>
+    </TemporalDescription>
+    <SpectralRange>RadioFrequency</SpectralRange>
+    <ObservedRegion>Heliosphere.Inner</ObservedRegion>
+    <ObservedRegion>Earth.Magnetosphere</ObservedRegion>
+    <Parameter>
+      <Name>MDATE</Name>
+      <Description>Julian date of record (YYDDD)</Description>
+      <Support>
+        <SupportQuantity>Temporal</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>MHMS</Name>
+      <Description>Time of midpoint of record in hhmmss</Description>
+      <Support>
+        <SupportQuantity>Temporal</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>MSEC</Name>
+      <Description>Time of midpoint or record in msecs</Description>
+      <Units>msec</Units>
+      <Support>
+        <SupportQuantity>Temporal</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>NFREQ</Name>
+      <Description>Frequency channel 1-12. See Table 2-1 to convert into kHz</Description>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>ADSP</Name>
+      <Structure>
+        <Size>4</Size>
+        <Element>
+          <Name>Despun SB amplitude (or SN for Mode3)</Name>
+          <Index>1</Index>
+        </Element>
+        <Element>
+          <Name>Despun SN amplitude if mode 1</Name>
+          <Index>2</Index>
+        </Element>
+        <Element>
+          <Name>Log of SB as log TA</Name>
+          <Index>3</Index>
+        </Element>
+        <Element>
+          <Name>Log SN if mode 1, else 0</Name>
+          <Index>4</Index>
+        </Element>
+      </Structure>
+      <Wave>
+        <WaveType>PlasmaWaves</WaveType>
+        <WaveQuantity>ACElectricField</WaveQuantity>
+        <FrequencyRange>
+          <SpectralRange>RadioFrequency</SpectralRange>
+          <Low>30</Low>
+          <High>1980</High>
+          <Units>kHz</Units>
+        </FrequencyRange>
+      </Wave>
+    </Parameter>
+    <Parameter>
+      <Name>ALPHA</Name>
+      <Structure>
+        <Size>2</Size>
+        <Element>
+          <Name>Modulation Index for B(or N if mode3)</Name>
+          <Index>1</Index>
+        </Element>
+        <Element>
+          <Name>Modulation Index for N if mode 1, else 0</Name>
+          <Index>2</Index>
+        </Element>
+      </Structure>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>PHI</Name>
+      <Description>Source longitude(increasing to west of sun) for B, N in degrees (-90 - 90)</Description>
+      <Structure>
+        <Size>2</Size>
+      </Structure>
+      <Support>
+        <SupportQuantity>Positional</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Z</Name>
+      <Description>Average Z amplitude - elements as for ADSP</Description>
+      <Structure>
+        <Size>4</Size>
+        <Element>
+          <Name>Despun SB amplitude (or SN for Mode3)</Name>
+          <Index>1</Index>
+        </Element>
+        <Element>
+          <Name>Despun SN amplitude if mode 1</Name>
+          <Index>2</Index>
+        </Element>
+        <Element>
+          <Name>Log of SB as log TA</Name>
+          <Index>3</Index>
+        </Element>
+        <Element>
+          <Name>Log SN if mode 1, else 0</Name>
+          <Index>4</Index>
+        </Element>
+      </Structure>
+      <Wave>
+        <WaveType>PlasmaWaves</WaveType>
+        <WaveQuantity>ACElectricField</WaveQuantity>
+        <FrequencyRange>
+          <SpectralRange>RadioFrequency</SpectralRange>
+          <Low>30</Low>
+          <High>1980</High>
+          <Units>kHz</Units>
+        </FrequencyRange>
+      </Wave>
+    </Parameter>
+    <Parameter>
+      <Name>PHASE</Name>
+      <Description>Phase(volts) for the first input record used in group for B, N(or both B for mode 2, both N for mode 3)</Description>
+      <Units>Volts</Units>
+      <Structure>
+        <Size>2</Size>
+      </Structure>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>PHANG</Name>
+      <Description>Phase Sun angle for B,N in radians</Description>
+      <Units>radians</Units>
+      <Structure>
+        <Size>2</Size>
+      </Structure>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>ELEV</Name>
+      <Description>Calculated elevation angle for B,N</Description>
+      <Structure>
+        <Size>2</Size>
+      </Structure>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>RAD</Name>
+      <Description>Calculated source radius in degrees</Description>
+      <Units>degrees</Units>
+      <Structure>
+        <Size>2</Size>
+      </Structure>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>BW</Name>
+      <Structure>
+        <Size>4</Size>
+        <Element>
+          <Name>Background value used for SB in calculating ELEV and RAD</Name>
+          <Index>1</Index>
+        </Element>
+        <Element>
+          <Name>Background value used for SN (mode 1)</Name>
+          <Index>2</Index>
+        </Element>
+        <Element>
+          <Name>Background value used for ZB</Name>
+          <Index>3</Index>
+        </Element>
+        <Element>
+          <Name>Background value for ZN if mode 1</Name>
+          <Index>4</Index>
+        </Element>
+      </Structure>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>ST</Name>
+      <Description>Fractional standard deviations of least squares fit for B,N</Description>
+      <Structure>
+        <Size>2</Size>
+      </Structure>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>SIGA</Name>
+      <Description>Uncertainties in parameters for least squares fit</Description>
+      <Structure>
+        <Size>3</Size>
+        <Element>
+          <Name>Uncertainty in mean SB, SN amplitude</Name>
+          <Index>1</Index>
+        </Element>
+        <Element>
+          <Name>Uncertainty in alpha for B,N</Name>
+          <Index>2</Index>
+        </Element>
+        <Element>
+          <Name>Uncertainty in PHI for B, N in degrees</Name>
+          <Index>3</Index>
+        </Element>
+      </Structure>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>NSAMP</Name>
+      <Description>Number of S samples in fit</Description>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>IQUAL</Name>
+      <Description>Quality of analysis B, N</Description>
+      <Structure>
+        <Size>2</Size>
+      </Structure>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>KDATE</Name>
+      <Description>Julian date of processing</Description>
+      <Support>
+        <SupportQuantity>Temporal</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>MODE</Name>
+      <Description>Data mode</Description>
+      <Support>
+        <SupportQuantity>InstrumentMode</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>SPINP</Name>
+      <Description>Spin period in msec</Description>
+      <Units>msec</Units>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>GSE</Name>
+      <Description>XYZ coordinates Geocentric solar ecliptic in meters</Description>
+      <Units>meters</Units>
+      <CoordinateSystem>
+        <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+        <CoordinateSystemName>GSE</CoordinateSystemName>
+      </CoordinateSystem>
+      <Support>
+        <SupportQuantity>Positional</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>SPARE</Name>
+      <Description>Spares</Description>
+      <Structure>
+        <Size>10</Size>
+      </Structure>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+  </NumericalData>
 </Spase>

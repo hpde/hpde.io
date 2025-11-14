@@ -2,15 +2,34 @@
   "Spase": {
     "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
     "xmlns": "http://www.spase-group.org/data/schema",
-    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_3_1.xsd",
-    "Version": "2.3.1",
+    "xsi:schemaLocation": "https://www.spase-group.org/data/schema https://www.spase-group.org/data/schema/spase-2.7.0.xsd",
+    "Version": "2.7.0",
     "NumericalData": {
       "ResourceID": "spase://NASA/NumericalData/GOLD/L2/TLIMB/PT8S",
+      "NamingAuthority": "NASA",
+      "ResourceType": "NumericalData",
       "ResourceHeader": {
         "ResourceName": "Gold Level L2 exospheric temperature",
-        "ReleaseDate": "2020-09-14T16:47:17Z",
+        "ReleaseDate": "2025-11-14T16:02:21Z",
+        "RevisionHistory": {
+          "RevisionEvent": [
+            {
+              "ReleaseDate": "2020-09-14T16:47:17Z",
+              "Note": "Only known prior ReleaseDate of the metadata"
+            },
+            {
+              "ReleaseDate": "2025-11-14T16:02:21Z",
+              "Note": "Added PublicationInfo. Added ResourceType and NamingAuthority. Changed http to https in top-level schemaLocation attribute. Fixed version number separator in top-level schemaLocation attribute. Matched version number in schemaLocation attribute to updated value in Version tag. ZCB"
+            }
+          ]
+        },
         "Description": "\n\t  GOLD retrieves the exospheric temperature from the integrated N2 LBH radiance profile \n\t  obtained from atmospheric limb scans (LIM observation mode). This data product, referred to as TLIMB, \n\t  is derived from limb scan data by fitting the shape of the LBH radiance profile between 100 and 300 km.\n\t  \n\t  Algorithm heritage\n      An approach similar to the GOLD TLIMB retrieval has been used to analyze data from TIMED/GUVI, \n\t  Cassini/UVIS and MAVEN/IUVS. The GOLD TLIMB algorithm is most similar to the operational algorithm \n\t  used to retrieve exospheric temperature on Mars from MAVEN/IUVS CO2 density retrievals. The GOLD \n\t  algorithm follows the procedure outlined in Lo et al. [2015] as originally applied to the atmosphere of \n\t  Mars. The operational code is implemented in IDL and has been generalized to be used with any species in \n\t  any planetary atmosphere.\n      \n\t  Algorithm theoretical basis\n      Limb profiles of thermospheric airglow emissions depend fundamentally on temperature, particularly \n\t  the decay rate with altitude above the peak of the emission. This has been exploited in retrieval \n\t  algorithms for analyzing far-ultraviolet limb emissions from low-Earth orbit (e.g., Picone and \n\t  Meier [2000]). For GOLD, the low spatial resolution on the limb mandates that, rather than attempting \n\t  to fit an entire temperature profile, we only infer a single parameter, the exospheric temperature \n\t  (TLIMB), defined as the temperature of the atmosphere when in diffusion equilibrium.\n      \n\t  We use daytime, non-auroral N2 LBH emission limb brightness profiles where the only excitation \n\t  mechanism is photoelectron impact on N2. LBH emission bands in the 137-160 nm range are integrated \n\t  spectrally, excluding the N I 149.3 nm line. The GOLD limb scan measurements are done in one hemisphere \n\t  at a time, and the L1C LIMB data covers a latitude range from the equator to ~20 degree.\n\t  \n\t  The specific steps involved in the TLIMB retrieval are as follows:\n\t  • Filter data using topside tangent height range (~100-300 km).\n\t  • Fit a Chapman function to the emission brightness profile.\n      • Obtain the N2 scale height H (Zo) from the Chapman fit.\n\t  • Obtain T∞ from H (Zo) = kT/Mg, where k is Boltzmann’s constant, M is the molecular mass of \n\t  N2, and g is the gravitational acceleration.\n\t  \n\t  Note that this fit is independent of the absolute brightness calibration of the airglow intensity, \n\t  it depends only on the shape of the radiance profile. For this reason, it is necessary to detect stars \n\t  in the field-of-view, since the emission from stars can produce a profile shape that can be very \n\t  different from a profile produced solely by thermospheric airglow.\n\n      References\n      Picone and Meier (2000), Similarity transformations for fitting of geophysical properties: Application \n\t  to altitude profiles of upper atmospheric species, J. Geophys. Res., 105, 18599, doi:10.1029/1999JA000385].\n      \n\t  Lo, D. Y., et al. (2015), Nonmigrating tides in the Martian atmosphere as observed by MAVEN IUVS, Geophys. \n\t  Res. Lett., 42, 9057–9063, doi:10.1002/2015GL066268.\n\t  \n      Snowden, D., R. V. Yelle, J. Cui, J.-E. Wahlund, N. J. T. Edberg, and K. Ågren (2013), The thermal \n\t  structure of Titan’s upper atmosphere, I: Temperature profiles from Cassini INMS observations, \n\t  Icarus, 226, 52–582.\n\t  ",
         "Acknowledgement": "National Aeronautics and Space Administration; Dr. Richard Eastes",
+        "PublicationInfo": {
+          "Authors": "Eastes, Richard",
+          "PublicationDate": "2025-11-14T16:02:21Z",
+          "PublishedBy": "Space Physics Data Facility"
+        },
         "Contact": [
           {
             "PersonID": "spase://SMWG/Person/Richard.Eastes",

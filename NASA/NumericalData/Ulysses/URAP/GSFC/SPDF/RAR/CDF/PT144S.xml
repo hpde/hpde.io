@@ -1,25 +1,36 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema  https://www.spase-group.org/data/schema/spase-2_3_2.xsd">
-  <Version>2.3.2</Version>
+<?xml version='1.0' encoding='UTF-8'?>
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.spase-group.org/data/schema  https://www.spase-group.org/data/schema/spase-2.7.0.xsd">
+  <Version>2.7.0</Version>
   <NumericalData>
     <ResourceID>spase://NASA/NumericalData/Ulysses/URAP/GSFC/SPDF/RAR/CDF/PT144S</ResourceID>
+    <NamingAuthority>NASA</NamingAuthority>
+    <ResourceType>NumericalData</ResourceType>
     <ResourceHeader>
       <ResourceName>Ulysses Unified Radio and Plasma wave (URAP) Radio Astronomy Receiver (RAR) 144 Second Data</ResourceName>
       <AlternateName>Ulysses Unified Radio and Plasma Wave Experiment - Radio Astronomy Receiver 144 Second Resolution Data</AlternateName>
       <AlternateName>UY_M0_R144</AlternateName>
-      <ReleaseDate>2021-04-27T15:38:11Z</ReleaseDate>
-	  <RevisionHistory>
+      <ReleaseDate>2025-11-14T16:02:59Z</ReleaseDate>
+      <RevisionHistory>
         <RevisionEvent>
           <ReleaseDate>2021-04-27T15:38:11Z</ReleaseDate>
           <Note>Only known prior ReleaseDate of the metadata</Note>
         </RevisionEvent>
-		<RevisionEvent>
+        <RevisionEvent>
           <ReleaseDate>2025-10-22T12:34:56.789</ReleaseDate>
           <Note>Revised ObservedRegion. JMW</Note>
+        </RevisionEvent>
+        <RevisionEvent>
+          <ReleaseDate>2025-11-14T16:02:59Z</ReleaseDate>
+          <Note>Added PublicationInfo. Added ResourceType and NamingAuthority. Changed http to https in top-level schemaLocation attribute. Fixed version number separator in top-level schemaLocation attribute. Matched version number in schemaLocation attribute to updated value in Version tag. ZCB</Note>
         </RevisionEvent>
       </RevisionHistory>
       <Description>This data set contains 144 second averages of the electric field intensities from the Unified Radio and Plasma Wave Instrument Radio Astronomy Receiver. Units are microVolt/Hz**0.5 measured at the receiver input terminals. To convert to electric field strength the given data must be divided by the effective length of the antenna. This is complicated by the fact that the effective length depends on the antenna impedance which is affected by the plasma conditions local to the Ulysses spacecraft. The impedance will also depend on the frequency. In general, the RAR frequency channels that are well above the local electron plasma frequency are not affected by the plasma conditions and the effective length of 23 meters can be used. When the RAR is in summed, rather than separate, mode the determination of field strengths is even more difficult. The time period of 144 seconds was used for the averaging period because that is the basic cycling time of the instrument. The RAR continually cycles through a list of frequencies. There are 16 lists and the list currently in use is chosen by telecommand. The time period to complete the list is 144 seconds for the high band of the receiver (for telemetry bit rates of 1024 and 512 bps, the cycle time is 64 seconds for bit rates of 256 and 128 bps), after which the instrument begins with the list again. Therefore this period was chosen for the averaging period. Notes on the Radio Astronomy Receiver from URAP User Notes http://helio.esa.int/ulysses/archive/urap_un.html The Radio Astronomy Receiver is divided into two parts, a low frequency receiver and a high frequency receiver. The low frequency receiver has 64 channels that cover the frequency range from 1.25 to 48.0 kHz in linear steps of 0.75 kHz. The high frequency receiver has 12 channels that cover the range from 52 kHz to 940 kHz in approximately logarithmic steps. The high frequency receiver is usually operated in what is called "measure" mode, which causes the receiver to step repeatedly through a list of frequencies that is determined by a ROM on board the spacecraft. There are 16 different lists and one of them is chosen by telecommand. The different lists emphasize different frequency ranges, so as to maximize the information received depending on the type of phenomena being studied. Some of the lists include all 12 possible frequency channels while other lists skip some of the frequencies. The list that has been used for most of the mission does include all frequecies, but there may be times when other lists have been used. At these times only a subset of the frequencies will be present. The low frequency receiver can be operated in measure mode (with its own set of lists of 8 or 16 frequencies) or in "linear sweep" mode where it steps through a contiguous set of frequencies. In linear mode, all 64 frequencies can be stepped through, or a subset of 32 frequencies can be chosen using the lower half, middle half, or upper half of the frequencies. For most of the mission, the low frequency receiver has been operated in linear mode with all 64 frequencies but there have been periods when it has operated in measure mode or in in linear mode with less than 64 frequencies. During these periods only a subset (8, 16, or 32) of the 64 possible frequencies will appear. Besides the intensity of a signal reaching the spacecraft, the RAR can also, when operated in particular modes, determine additional information about the source of the radiation, including its direction relative to the location of Ulysses, its angular size, and its polarization. This is most efficiently done with the signal from the X and Z axis antennas summed together electronically either with or without a phase shift added between the two signals. Although this additional information cannot be recovered from the averaged data, the mode does have a large effect on the background signal level, so the mode of high and low frequency receivers is given in the data as either summed (X and Z antenna combined) or separate (X antenna alone). Reference: Astron. Astrophys. Suppl. Ser., 92(2), 291-316 (1992).</Description>
       <Acknowledgement>Please acknowledge the Principal Investigator, R J MacDowall, of the NASA Goddard Space Flight Center, Greenbelt, MD, USA, and Mike Lancaster and Cecil Tranquille of the Ulysses Data System, ESA/ESTEC, Noordwijk, NL</Acknowledgement>
+      <PublicationInfo>
+        <Authors>MacDowall, Robert J.</Authors>
+        <PublicationDate>2025-11-14T16:02:59Z</PublicationDate>
+        <PublishedBy>Planetary Data System; Space Physics Data Facility; European Space Astronomy Centre</PublishedBy>
+      </PublicationInfo>
       <Contact>
         <PersonID>spase://SMWG/Person/Robert.J.MacDowall</PersonID>
         <Role>PrincipalInvestigator</Role>
@@ -96,11 +107,11 @@
     </TemporalDescription>
     <SpectralRange>RadioFrequency</SpectralRange>
     <ObservedRegion>Heliosphere</ObservedRegion>
-	<ObservedRegion>Sun.Corona</ObservedRegion>
-	<ObservedRegion>Jupiter</ObservedRegion>
-	<ObservedRegion>Heliosphere.NearEarth</ObservedRegion>
-	<ObservedRegion>Heliosphere.Inner</ObservedRegion>
-	<ObservedRegion>Heliosphere.Outer</ObservedRegion>
+    <ObservedRegion>Sun.Corona</ObservedRegion>
+    <ObservedRegion>Jupiter</ObservedRegion>
+    <ObservedRegion>Heliosphere.NearEarth</ObservedRegion>
+    <ObservedRegion>Heliosphere.Inner</ObservedRegion>
+    <ObservedRegion>Heliosphere.Outer</ObservedRegion>
     <Caveats>Ulyssses URAP Interference and other issues affecting data interpretation - see Ulysses URAP - Interference and other issues affecting data interpretation http://vwo.nasa.gov/urap/URAP_InterpretationIssues/urap_interpretation.html and URAP - User Notes http://ulysses-ops.esa.int/ulysses/archive/urap_un.html</Caveats>
     <!-- Keywords pertaining to the data presentation -->
     <Keyword>Dynamic Spectrogram</Keyword>

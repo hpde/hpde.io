@@ -1,590 +1,607 @@
-<?xml version="1.0"?>
-<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_2_9.xsd">
-   <Version>2.2.9</Version>
-   <NumericalData>
-      <ResourceID>spase://NASA/NumericalData/Ulysses/COSPIN/HET/PHA/PT5S</ResourceID>
-      <ResourceHeader>
-         <ResourceName>Ulysses Cosmic Ray and Solar Particle Investigation (COSPIN) High Energy Telescope (HET) Full Resolution PHA Events, 5 s Data</ResourceName>
-         <ReleaseDate>2020-07-07T21:15:40Z</ReleaseDate>
-         <Description>A Directory containing Daily FTP downloadable Files containing full Information for every Non-zero HET PHA Event returned in Telemetry, including Raw Channels and Discriminator States, the Energy Deposits corresponding to the Channels, and certain derived Quantities including Particle Charge and Trajectory through the Telescope. PHA is performed for Electrons and Nuclei with Penetrating Power equivalent to that of Protons with Energy greater than 14 MeV. The Naming Convention of the Files is uly_het_full_pha_YYYDDD.txt, where YYY indicates the three digit Year since 1900 (e.g. YYY=090 for 1990, and YYY=102 for 2002) and DDD indicates the three digit Day of Year (January 1 = 1). At the Start of each File there is a detailed Description of the Format, in which each Event is represented by a Line with 54 Columns that provide complete Information about the Event. The first four Columns give the Time of the opening of the Window in which the Event was recorded as Fractional Year (to 12 Decimal Places) and as Year since 1900, Day of Year, and Milliseconds of Day. At the most common Science Telemetry Rate, 2048 bps, six Events are collected in every 32 s Telemetry Format. Because of the large Geometrical Factor of the Telescope, almost every available PHA Slot contains an Event. Since far more Events are recorded in the Telescope than can be returned as PHA Events in the Telemetry, only a Sample of the Events incident on the Telescope can be sent down as PHA Events. With the PHA Data for an Event, the Charge, Mass, Kinetic Energy, and Trajectory of the Particle through the Telescope can be determined. While most of the Nuclei incident on the HET are Protons, a three level Priority System selects Events for PHA and return in the Telemetry so as to assure Capture of almost all of the relatively rare Heavy Element Nuclei that stop in the Telescope. The lowest Priority (P3) Events are those that satisfy the most basic Criteria for being an analyzable Event, as determined by the Combination of Discriminators on various Detectors in the Telescope that fire. A higher Priority (P2) is given to Events that stop in the Telescope, and the highest Priority (P1) is given to Events that stop in the Telescope and that are identified as Heavy Nuclei by the Size of their Energy Deposits in the Detectors. The highest Priority Event that occurs in each Window for Accumulation of PHA Events is selected for inclusion in the Telemetry Data returned to the Ground. Thus, in large Solar Energetic Particle Events with abundant Heavy Nuclei, few Protons may be included in the PHA Events transmitted via Telemetry. The Counting Rates, however, Count every Event, and in such Cases it can usually be assumed the Counting Rates that respond to Protons are dominated by the Proton Flux. Absolute Fluxes for individual Elements may be derived by identifying PHA Events that would contribute to Counting Rates (i.e. that have the same Discriminator Configuration as one of the Counting Rates) and determining the Ratio between Events counted by the Rate and returned in Telemetry during a given Interval. Appropriate Counting Rates exist that Match each of the three PHA Priority States. The Priority Levels corresponding to the Counting Rates are listed in Table 7 of J.A. Simpson et al., Astron. Astrophys. Suppl. Ser. 92, 365-399, 1992. *** N.B. Three Corrections are necessary in Table 7. *** 1) The (H) Discriminator Logic should include the Discriminator K6H orred with the other seven Discriminators listed. 2) the middle Term of the P2 (Medium Priority) Logic should include D4 as well as D1, D2, and D6 as required Detectors. 3) Because of an Error in the Logic Design Counting Rate H3, listed as responding to P3 (Lowest Priority) Events, also includes P2 Events, which satisfy the first Term in the P2 Logic. Thus H3 should not be used for deriving Absolute Fluxes of P3 Events from PHA Data.</Description>
-         <Acknowledgement>Please acknowledge the COSPIN HET Lead Investigator and COSPIN PI, R. Bruce McKibben</Acknowledgement>
-         <Contact>
-            <PersonID>spase://SMWG/Person/R.Bruce.McKibben</PersonID>
-            <Role>PrincipalInvestigator</Role>
-            <Role>TeamLeader</Role>
-</Contact>
-         <Contact>
-            <PersonID>spase://SMWG/Person/Clifford.Lopate</PersonID>
-            <Role>DataProducer</Role>
-</Contact>
-         <Contact>
-            <PersonID>spase://SMWG/Person/James.Connell</PersonID>
-            <Role>CoInvestigator</Role>
-            <Role>DataProducer</Role>
-</Contact>
-         <InformationURL>
-            <Name>The Ulysses Cosmic Ray and Solar Particle Investigation, COSPIN</Name>
-            <URL>http://ufa.esac.esa.int/ufa/#instruments</URL>
-            <Description>Published Description of the COSPIN Instrumentation, J.A. Simpson et al., Astron. Astrophys. Suppl. Ser. 92, 365-399, 1992. See especially Section 4.3 for a detailed Description of the High Energy Telescopes, HET. An electronic Copy of this Paper is available at http://adsbit.harvard.edu/cgi-bin/nph-iarticle_query?1992A%26AS...92..365S&amp;defaultprint=YES&amp;filetype=.pdf.</Description>
-</InformationURL>
-         <InformationURL>
-            <Name>User Notes for the COSPIN/HET Data Files</Name>
-            <URL>http://ufa.esac.esa.int/ufa-sl-server/data-action?PROTOCOL=HTTP&amp;PRODUCT_TYPE=ALL&amp;FILE_NAME=het_usernotes.pdf&amp;FILE_PATH=/ufa/HiRes/doc/cospin</URL>
-            <Description>The User Notes File at the Ulysses Final Archive (UFA) describes the Format of the ASCII Data Files for the COSPIN High Energy Telescope, HET</Description>
-</InformationURL>
-         <InformationURL>
-            <Name>COSPIN HET Full Resolution ReadMe Document, Word Format</Name>
-            <URL>http://ufa.esac.esa.int/ufa-sl-server/data-action?PROTOCOL=HTTP&amp;PRODUCT_TYPE=ALL&amp;FILE_NAME=ReadMeHETFullRes.doc&amp;FILE_PATH=/ufa/HiRes/COSPIN/HET</URL>
-            <Description>Top Level Descriptions of Formats and Contents of the six File Types that make up the COSPIN HET Full Resolution Data Set. Detailed Descriptions of the Formats and Contents are found in Header Lines at the Start of each downloaded Data File. The Data covered by this SPASE Description are described in the ReadMe under the Heading pha. (*** Note ***: During the Build-up of this Data Set, a few Errors and Omissions have been found in the Header Lines for some of the File Types. These Errors and Omissions are listed in this ReadMe File. Upon Completion of the Data Set, all Errors and Omissions discovered will be corrected in all of the Header Lines of all of the File Types at which time this Note will be removed).</Description>
-</InformationURL>
-         <PriorID>spase://VEPO/NumericalData/Ulysses/COSPIN/HET/FullResolution/PHA</PriorID>
-          <PriorID>spase://VSPO/NumericalData/Ulysses/COSPIN/HET/PHA/PT5S</PriorID>
-</ResourceHeader>
-      <AccessInformation>
-         <RepositoryID>spase://SMWG/Repository/ESA/ESAC/UlyssesFinalArchive</RepositoryID>
-         <Availability>Online</Availability>
-         <AccessRights>Open</AccessRights>
-         <AccessURL>
-            <Name>Ulysses Final Archive Access to COSPIN/HET Full Resolution PHA Events</Name>
-            <URL>http://ufa.esac.esa.int/ufa/#data</URL>
-            <Description>Parent Directory containing FTP downloadable Daily Files with the Format described below</Description>
-</AccessURL>
-         <Format>Text</Format>
-         <Encoding>ASCII</Encoding>
-         <Acknowledgement>Please acknowledge R. Bruce McKibben, Space Science Center, University of New Hampshire</Acknowledgement>
-</AccessInformation>
-      <InstrumentID>spase://SMWG/Instrument/Ulysses/COSPIN/HET</InstrumentID>
-      <MeasurementType>EnergeticParticles</MeasurementType>
-      <TemporalDescription>
-         <TimeSpan>
-            <StartDate>1990-10-22T00:00:00.000</StartDate>
-            <StopDate>2009-06-29T23:59:59.999</StopDate>
-</TimeSpan>
-         <Cadence>PT5S</Cadence>
-</TemporalDescription>
-      <ObservedRegion>Heliosphere.Outer</ObservedRegion>
-      <Parameter>
-         <Name>Time of Measurement</Name>
-         <Description>Start Time of the Collection Window in which the Event occurred</Description>
-         <Cadence>PT5S</Cadence>
-         <Structure>
-            <Size>4</Size>
-            <Element>
-               <Name>Decimal Year</Name>
-               <Index>1</Index>
-               <ParameterKey>Column_1</ParameterKey>
-               <ValidMin>1990</ValidMin>
-               <ValidMax>2009</ValidMax>
-               <FillValue>0.00000000000</FillValue>
-</Element>
-            <Element>
-               <Name>Year</Name>
-               <Index>2</Index>
-               <ParameterKey>Column_2</ParameterKey>
-               <ValidMin>1990</ValidMin>
-               <ValidMax>2009</ValidMax>
-               <FillValue>0</FillValue>
-</Element>
-            <Element>
-               <Name>Day of Year</Name>
-               <Index>3</Index>
-               <ParameterKey>Column_3</ParameterKey>
-               <ValidMin>1</ValidMin>
-               <ValidMax>366</ValidMax>
-               <FillValue>0</FillValue>
-</Element>
-            <Element>
-               <Name>Milliseconds of Day</Name>
-               <Index>4</Index>
-               <ParameterKey>Column_4</ParameterKey>
-               <ValidMin>0</ValidMin>
-               <ValidMax>86400000</ValidMax>
-               <FillValue>0</FillValue>
-</Element>
-</Structure>
-         <Support>
-            <SupportQuantity>Temporal</SupportQuantity>
-</Support>
-</Parameter>
-      <Parameter>
-         <Name>Event Parameters</Name>
-         <Description>All Parameters related to a single PHA Event. The PHA Data are complex, so a careful Study of the Material below and of the similar Material in the Header of each File is strongly recommended before trying to use these Data. The Parameters listed are: Column 5 (discs): 12 Character Hexadecimal Representation of the State of all Discriminators on the 12 PHA Detectors, D1-D6 and K1-K6 (or D7-D12) in the HET. D1 and D2 each have four Discriminator Levels, denoted L, M, H, and S for Low, Medium, High, and Switch (S controls the Gain State of the Detector Amplifier). D3 has three Levels (L, M, and S), while D4 has only 2 Levels (L and S). D5, D6, and K1-K6 each have three Levels (L, H, and S). As described in the In-line Documentation in the Header of each File, the States of these Discriminators are combined into one Hexadecimal Character for each Detector. Column 6 (ash): three Character Integer Representation of the States of Single Level Discriminators (0=OFF, 1=ON) on Detectors A (detects Particles which completely penetrate the Detector Stack), S (Scintillator which detects Particles entering or exiting through the Side of the Stack), and H (Logical Sum of High-Level Discriminators on Detectors D5-K6; if set to 1, Event is Priority 1) Column 7 (P123): three Character Integer Representation of the Priority Level of the Event. The effective Priority is that of the highest Level triggered. For example 1XX (X may be 0 or 1) corresponds to a Priority One Event, 01X to a Priority Two Event, and 001 to a Priority Three Event. Column 8 (C1245): four Character Representation of the State of Commands 1,2,4, and 5 (See Simpson et al., 1992 for Definitions of Commands). 1=Command in Effect, 0=Command Off. These Commands were never issued in Flight, so the Value should always be 0000. Column 9 (sect): Spin Sector in which the analyzed Event occurred. PHA Sectors are identical to the Sectors used for the sectored Counting Rates H45S and H7S. Column 10 (IFC): 1 if IFC is in progress, 0 otherwise Column 11 (Step): Most recent Step executed in the 2048 Step IFC Sequence Columns 12-17 (p1-p6): Channel Numbers of the Signals from the P-side of the Position Sensing Detectors D1-D6. The Amplifiers on the D and K Detectors have two Gain Ranges. If the Discriminator S is triggered on any Detector, the Low Gain Range is used for that Detector and the Conversion of Channel Number to Energy Deposit must be interpreted accordingly. If the S (Switch) Discriminator is not triggered, the High Gain Range is used. Contacts on the P-sides of the Position Sensing Detectors consist of thin Strips (223 for Detectors D1-D3, and 144 for Detectors D4-D6) distributed along a resistive Divider Chain. Thus the Signal collected from the P-side is proportional to the Position of the Strip closest to the Particle Penetration along the Divider Chain. See Lamport et al., (Nuc. Inst. Meth., 134, page 71, 1976) for a more detailed Description of the Function of the Position Sensing Detectors. Columns 18-23 (e1-e6): Channel Numbers of the Signals from the E-side of the Position Sensing Detectors D1-D6. Again, if the S (Switch) Discriminator is triggered for a Detector, the Channel Number corresponds to the Output of the Low Gain Amplifier for that Detector. Contacts on the E-sides of the Position Sensing Detectors are single evaporated Contacts covering the entire Surface of the Detector. Thus the full Signal is collected from the E-side. The P/E Ratio then determines the Position of the Particle Penetration in one Dimension perpendicular to the Orientation of the Strips on the P-side. The single S Discriminators on the D1-D6 Detectors mean that the P and E Signals from each Detector are always produced using the same Gain Range. Columns 24-29 (k1-k6): Channel Numbers of the Signals from the 0.5 cm thick Kevex Detectors that form the Calorimeter Portion of the HET. Again, the Amplifier on these Detectors are Dual Range. If the S Discriminator is fired, the Signal Size and thus the Channel corresponds to the Low Gain Range of the Amplifier. Columns 30-35 (p1ST-p6ST): Strip Numbers (times 1000) corresponding to the P/E Ratios from Detectors D1-D6. Columns 36-41 (e1EN-e6EN): Energy Deposits (MeV times 1000) based on the E-signals from Detectors D1-D6. Channel to Energy Conversions are regularly updated based on Results of In-Flight Calibrate Sequences performed approximately monthly. Columns 42-47 (K1EN-K6EN): Energy Deposits (MeV times 1000) based on PHA Channels from Detectors K1-K6. Channel to Energy Conversions are similarly updated based on IFC Sequences performed roughly once per Month. Column 48 (RANGE): Detector Number of the deepest Detector in the Stack with a Signal above the Low-Level (L) Discriminator. Values range from 1-13, where D1-D6 = 1-6, K1-K6 = 7-12, and A=13. Columns 49-50 (X0, Y0): X, Y Position (Millimeters times 1000) of the Particle Trajectory in a Plane half way between Detectors D3 and D4. Computed from Positions determined in D1-D6. Column 51 (Angle): Angle of the Trajectory with respect to the HET Axis (degrees X 1000). Computed from Positions determined in D1-D6. Columns 52-53 (RMS1, RMS2): Root Mean Square Deviations from the Best Fit Trajectory in D1-D3 and D4-D6. Computed from Positions determined in D1-D6. Columns 54-55 (DX, DY): DX and DY are Projections of the Trajectory onto the X- and Y-axes where the Projection onto the Z-Axis is 1. Thus, the Tangent of the Angle is sqrt(DX * DX + DY * DY) and the Secant is sqrt(1 + DX * DX + DY * DY). Columns 56-57 (RS, RSP1) Radius from the Telescope Axis in the Stopping Detector as defined by Range above (RS) and in the next Detector beyond the Stopping Detector (RSP1), measured in Millimeters times 1000. Column 58 (ZCAL): Estimate of Particle Charge (Z times 1000) based on Energy Losses and Trajectory in the Telescope, derived using the ZCAL Algorithm developed by K.H. Lau (Cal Tech Ph.D. Thesis, 1985).</Description>
-         <Caveats>Occasional logically inconsistent Combinations of Status and Flag Bits (Discriminator Triggers, Status Bits, etc.) occur. For example, Firing of the H Discriminator but not the L Discriminator for a Detector, or low (or higher) Level Discriminators fired for K1 and K3 but not K2. These are probably the Result of a Timing Glitch or Pile-up of more than one Event within the Resolving Time of the Logic. For such Events, and for Events of questionable Quality for any other reason, no Nuclear Charge will be computed. The ZCAL Algorithm as implemented does not work well for Hydrogen, and often does not work at all for Electrons. Hydrogen will generally be assigned a ZCAL near 0.7 (700 as listed in this File). Electrons will either be given a Fill Value (-1) or some small Value. To study Protons and Electrons using PHA Data, it is recommended that all Events with ZCAL&gt;1.3 be eliminated, and that the remaining Events be analyzed using standard dE/dX versus Residual Energy Techniques, using the Detector immediately in front of the stopping Detector to measure dE/dX, and the Stopping Detector (indicated by Range in Column 49) to measure Residual Energy. For Protons and Electrons, the Trajectory Determining System (P and E Signals) does not give accurate Trajectories as a Result of the small Energy Deposits left in the Position Sensing Detectors.</Caveats>
-         <Cadence>PT5S</Cadence>
-         <Structure>
-            <Size>54</Size>
-            <Description>All Parameters associated with a single PHA Event (see extended Description under Parameter above and in the File Headers).</Description>
-            <Element>
-               <Name>discs</Name>
-               <Index>1</Index>
-               <ParameterKey>Column_5</ParameterKey>
-</Element>
-            <Element>
-               <Name>ash</Name>
-               <Index>2</Index>
-               <ParameterKey>Column 6</ParameterKey>
-</Element>
-            <Element>
-               <Name>P123</Name>
-               <Index>3</Index>
-               <ParameterKey>Column_7</ParameterKey>
-</Element>
-            <Element>
-               <Name>C1245</Name>
-               <Index>4</Index>
-               <ParameterKey>Column_8</ParameterKey>
-</Element>
-            <Element>
-               <Name>Sect</Name>
-               <Index>5</Index>
-               <ParameterKey>Column_9</ParameterKey>
-               <ValidMin>0</ValidMin>
-               <ValidMax>7</ValidMax>
-</Element>
-            <Element>
-               <Name>IFC</Name>
-               <Index>6</Index>
-               <ParameterKey>Column_10</ParameterKey>
-               <ValidMin>0</ValidMin>
-               <ValidMax>1</ValidMax>
-</Element>
-            <Element>
-               <Name>step</Name>
-               <Index>7</Index>
-               <ParameterKey>Column 11</ParameterKey>
-               <ValidMin>0</ValidMin>
-               <ValidMax>2047</ValidMax>
-</Element>
-            <Element>
-               <Name>p1</Name>
-               <Index>8</Index>
-               <ParameterKey>Column_12</ParameterKey>
-               <ValidMin>0</ValidMin>
-               <ValidMax>4094</ValidMax>
-               <FillValue>4095</FillValue>
-</Element>
-            <Element>
-               <Name>p2</Name>
-               <Index>9</Index>
-               <ParameterKey>Column_13</ParameterKey>
-               <ValidMin>0</ValidMin>
-               <ValidMax>4094</ValidMax>
-               <FillValue>4095</FillValue>
-</Element>
-            <Element>
-               <Name>p3</Name>
-               <Index>10</Index>
-               <ParameterKey>Column 14</ParameterKey>
-               <ValidMin>0</ValidMin>
-               <ValidMax>4094</ValidMax>
-               <FillValue>4095</FillValue>
-</Element>
-            <Element>
-               <Name>p4</Name>
-               <Index>11</Index>
-               <ParameterKey>Column_15</ParameterKey>
-               <ValidMin>0</ValidMin>
-               <ValidMax>4094</ValidMax>
-               <FillValue>4095</FillValue>
-</Element>
-            <Element>
-               <Name>p5</Name>
-               <Index>12</Index>
-               <ParameterKey>Column_16</ParameterKey>
-               <ValidMin>0</ValidMin>
-               <ValidMax>4094</ValidMax>
-               <FillValue>4095</FillValue>
-</Element>
-            <Element>
-               <Name>p6</Name>
-               <Index>13</Index>
-               <ParameterKey>Column_17</ParameterKey>
-               <ValidMin>0</ValidMin>
-               <ValidMax>4094</ValidMax>
-               <FillValue>4095</FillValue>
-</Element>
-            <Element>
-               <Name>e1</Name>
-               <Index>14</Index>
-               <ParameterKey>Column_18</ParameterKey>
-               <ValidMin>0</ValidMin>
-               <ValidMax>4094</ValidMax>
-               <FillValue>4095</FillValue>
-</Element>
-            <Element>
-               <Name>e2</Name>
-               <Index>15</Index>
-               <ParameterKey>Column_19</ParameterKey>
-               <ValidMin>0</ValidMin>
-               <ValidMax>4094</ValidMax>
-               <FillValue>4095</FillValue>
-</Element>
-            <Element>
-               <Name>e3</Name>
-               <Index>16</Index>
-               <ParameterKey>Column_20</ParameterKey>
-               <ValidMin>0</ValidMin>
-               <ValidMax>4094</ValidMax>
-               <FillValue>4095</FillValue>
-</Element>
-            <Element>
-               <Name>e4</Name>
-               <Index>17</Index>
-               <ParameterKey>Column_21</ParameterKey>
-               <ValidMin>0</ValidMin>
-               <ValidMax>4094</ValidMax>
-               <FillValue>4095</FillValue>
-</Element>
-            <Element>
-               <Name>e5</Name>
-               <Index>18</Index>
-               <ParameterKey>Column_22</ParameterKey>
-               <ValidMin>0</ValidMin>
-               <ValidMax>4094</ValidMax>
-               <FillValue>4095</FillValue>
-</Element>
-            <Element>
-               <Name>e6</Name>
-               <Index>19</Index>
-               <ParameterKey>Column_23</ParameterKey>
-               <ValidMin>0</ValidMin>
-               <ValidMax>4094</ValidMax>
-               <FillValue>4095</FillValue>
-</Element>
-            <Element>
-               <Name>k1</Name>
-               <Index>20</Index>
-               <ParameterKey>Column_24</ParameterKey>
-               <ValidMin>0</ValidMin>
-               <ValidMax>4094</ValidMax>
-               <FillValue>4095</FillValue>
-</Element>
-            <Element>
-               <Name>k2</Name>
-               <Index>21</Index>
-               <ParameterKey>Column_25</ParameterKey>
-               <ValidMin>0</ValidMin>
-               <ValidMax>4094</ValidMax>
-               <FillValue>4095</FillValue>
-</Element>
-            <Element>
-               <Name>k3</Name>
-               <Index>22</Index>
-               <ParameterKey>Column_26</ParameterKey>
-               <ValidMin>0</ValidMin>
-               <ValidMax>4094</ValidMax>
-               <FillValue>4095</FillValue>
-</Element>
-            <Element>
-               <Name>k4</Name>
-               <Index>23</Index>
-               <ParameterKey>Column_27</ParameterKey>
-               <ValidMin>0</ValidMin>
-               <ValidMax>4094</ValidMax>
-               <FillValue>4095</FillValue>
-</Element>
-            <Element>
-               <Name>k5</Name>
-               <Index>24</Index>
-               <ParameterKey>Column_28</ParameterKey>
-               <ValidMin>0</ValidMin>
-               <ValidMax>4094</ValidMax>
-               <FillValue>4095</FillValue>
-</Element>
-            <Element>
-               <Name>k6</Name>
-               <Index>25</Index>
-               <ParameterKey>Column_29</ParameterKey>
-               <ValidMin>0</ValidMin>
-               <ValidMax>4094</ValidMax>
-               <FillValue>4095</FillValue>
-</Element>
-            <Element>
-               <Name>p1ST</Name>
-               <Index>26</Index>
-               <ParameterKey>Column_30</ParameterKey>
-               <ValidMin>0</ValidMin>
-               <ValidMax>223</ValidMax>
-               <FillValue>-1</FillValue>
-</Element>
-            <Element>
-               <Name>p2ST</Name>
-               <Index>27</Index>
-               <ParameterKey>Column_31</ParameterKey>
-               <ValidMin>0</ValidMin>
-               <ValidMax>223</ValidMax>
-               <FillValue>-1</FillValue>
-</Element>
-            <Element>
-               <Name>p3ST</Name>
-               <Index>28</Index>
-               <ParameterKey>Column_32</ParameterKey>
-               <ValidMin>0</ValidMin>
-               <ValidMax>223</ValidMax>
-               <FillValue>-1</FillValue>
-</Element>
-            <Element>
-               <Name>p4ST</Name>
-               <Index>29</Index>
-               <ParameterKey>Column_33</ParameterKey>
-               <ValidMin>0</ValidMin>
-               <ValidMax>144</ValidMax>
-               <FillValue>-1</FillValue>
-</Element>
-            <Element>
-               <Name>p5ST</Name>
-               <Index>30</Index>
-               <ParameterKey>Column_34</ParameterKey>
-               <ValidMin>0</ValidMin>
-               <ValidMax>144</ValidMax>
-               <FillValue>-1</FillValue>
-</Element>
-            <Element>
-               <Name>p6ST</Name>
-               <Index>31</Index>
-               <ParameterKey>Column_35</ParameterKey>
-               <ValidMin>0</ValidMin>
-               <ValidMax>223</ValidMax>
-               <FillValue>-1</FillValue>
-</Element>
-            <Element>
-               <Name>e1EN</Name>
-               <Index>32</Index>
-               <ParameterKey>Column_36</ParameterKey>
-               <Units>MeV</Units>
-               <ValidMin>0</ValidMin>
-               <ValidMax>3500</ValidMax>
-               <FillValue>-1</FillValue>
-</Element>
-            <Element>
-               <Name>e2EN</Name>
-               <Index>33</Index>
-               <ParameterKey>Column_37</ParameterKey>
-               <Units>MeV</Units>
-               <ValidMin>0</ValidMin>
-               <ValidMax>3500</ValidMax>
-               <FillValue>-1</FillValue>
-</Element>
-            <Element>
-               <Name>e3EN</Name>
-               <Index>34</Index>
-               <ParameterKey>Column_38</ParameterKey>
-               <Units>MeV</Units>
-               <ValidMin>0</ValidMin>
-               <ValidMax>3500</ValidMax>
-               <FillValue>-1</FillValue>
-</Element>
-            <Element>
-               <Name>e4EN</Name>
-               <Index>35</Index>
-               <ParameterKey>Column_39</ParameterKey>
-               <Units>MeV</Units>
-               <ValidMin>0</ValidMin>
-               <ValidMax>3500</ValidMax>
-               <FillValue>-1</FillValue>
-</Element>
-            <Element>
-               <Name>e5EN</Name>
-               <Index>36</Index>
-               <ParameterKey>Column_40</ParameterKey>
-               <Units>MeV</Units>
-               <ValidMin>0</ValidMin>
-               <ValidMax>3500</ValidMax>
-               <FillValue>-1</FillValue>
-</Element>
-            <Element>
-               <Name>e6EN</Name>
-               <Index>37</Index>
-               <ParameterKey>Column_41</ParameterKey>
-               <Units>MeV</Units>
-               <ValidMin>0</ValidMin>
-               <ValidMax>3500</ValidMax>
-               <FillValue>-1</FillValue>
-</Element>
-            <Element>
-               <Name>k1EN</Name>
-               <Index>38</Index>
-               <ParameterKey>Column_42</ParameterKey>
-               <Units>MeV</Units>
-               <ValidMin>0</ValidMin>
-               <ValidMax>8000</ValidMax>
-               <FillValue>-1</FillValue>
-</Element>
-            <Element>
-               <Name>k2EN</Name>
-               <Index>39</Index>
-               <ParameterKey>Column_43</ParameterKey>
-               <Units>MeV</Units>
-               <ValidMin>0</ValidMin>
-               <ValidMax>8000</ValidMax>
-               <FillValue>-1</FillValue>
-</Element>
-            <Element>
-               <Name>k3EN</Name>
-               <Index>40</Index>
-               <ParameterKey>Column_44</ParameterKey>
-               <Units>MeV</Units>
-               <ValidMin>0</ValidMin>
-               <ValidMax>8000</ValidMax>
-               <FillValue>-1</FillValue>
-</Element>
-            <Element>
-               <Name>k4EN</Name>
-               <Index>41</Index>
-               <ParameterKey>Column_45</ParameterKey>
-               <Units>MeV</Units>
-               <ValidMin>0</ValidMin>
-               <ValidMax>8000</ValidMax>
-               <FillValue>-1</FillValue>
-</Element>
-            <Element>
-               <Name>k5EN</Name>
-               <Index>42</Index>
-               <ParameterKey>Column_46</ParameterKey>
-               <Units>MeV</Units>
-               <ValidMin>0</ValidMin>
-               <ValidMax>8000</ValidMax>
-               <FillValue>-1</FillValue>
-</Element>
-            <Element>
-               <Name>k6EN</Name>
-               <Index>43</Index>
-               <ParameterKey>Column_47</ParameterKey>
-               <Units>MeV</Units>
-               <ValidMin>0</ValidMin>
-               <ValidMax>8000</ValidMax>
-               <FillValue>-1</FillValue>
-</Element>
-            <Element>
-               <Name>RANGE</Name>
-               <Index>44</Index>
-               <ParameterKey>Column_48</ParameterKey>
-               <ValidMin>1</ValidMin>
-               <ValidMax>13</ValidMax>
-               <FillValue>-1</FillValue>
-</Element>
-            <Element>
-               <Name>X0</Name>
-               <Index>45</Index>
-               <ParameterKey>Column_49</ParameterKey>
-               <Units>&#181;m</Units>
-               <ValidMin>0</ValidMin>
-               <ValidMax>40000</ValidMax>
-               <FillValue>-1</FillValue>
-</Element>
-            <Element>
-               <Name>Y0</Name>
-               <Index>46</Index>
-               <ParameterKey>Column_50</ParameterKey>
-               <Units>&#181;m</Units>
-               <ValidMin>0</ValidMin>
-               <ValidMax>40000</ValidMax>
-               <FillValue>-1</FillValue>
-</Element>
-            <Element>
-               <Name>ANGLE</Name>
-               <Index>47</Index>
-               <ParameterKey>Column_51</ParameterKey>
-               <Units>1000 &#176;</Units>
-               <ValidMin>0</ValidMin>
-               <ValidMax>45000</ValidMax>
-               <FillValue>-1</FillValue>
-</Element>
-            <Element>
-               <Name>RMS1</Name>
-               <Index>48</Index>
-               <ParameterKey>Column_52</ParameterKey>
-               <Units>&#181;m</Units>
-               <ValidMin>0</ValidMin>
-               <ValidMax>40000</ValidMax>
-               <FillValue>-1</FillValue>
-</Element>
-            <Element>
-               <Name>RMS2</Name>
-               <Index>49</Index>
-               <ParameterKey>Column_53</ParameterKey>
-               <Units>&#181;m</Units>
-               <ValidMin>0</ValidMin>
-               <ValidMax>40000</ValidMax>
-               <FillValue>-1</FillValue>
-</Element>
-            <Element>
-               <Name>DX</Name>
-               <Index>50</Index>
-               <ParameterKey>Column_54</ParameterKey>
-               <Units>&#181;m</Units>
-               <ValidMin>0</ValidMin>
-               <ValidMax>40000</ValidMax>
-               <FillValue>-1</FillValue>
-</Element>
-            <Element>
-               <Name>DY</Name>
-               <Index>51</Index>
-               <ParameterKey>Column_55</ParameterKey>
-               <Units>&#181;m</Units>
-               <ValidMin>0</ValidMin>
-               <ValidMax>40000</ValidMax>
-               <FillValue>-1</FillValue>
-</Element>
-            <Element>
-               <Name>RS</Name>
-               <Index>52</Index>
-               <ParameterKey>Column_56</ParameterKey>
-               <Units>&#181;m</Units>
-               <ValidMin>0</ValidMin>
-               <ValidMax>40000</ValidMax>
-               <FillValue>-1</FillValue>
-</Element>
-            <Element>
-               <Name>RSP1</Name>
-               <Index>53</Index>
-               <ParameterKey>Column_57</ParameterKey>
-               <Units>&#181;m</Units>
-               <ValidMin>0</ValidMin>
-               <ValidMax>40000</ValidMax>
-               <FillValue>-1</FillValue>
-</Element>
-            <Element>
-               <Name>ZCAL</Name>
-               <Index>54</Index>
-               <ParameterKey>Column_58</ParameterKey>
-               <ValidMin>0</ValidMin>
-               <ValidMax>30000</ValidMax>
-               <FillValue>-1</FillValue>
-</Element>
-</Structure>
-         <Particle>
-            <ParticleType>Ion</ParticleType>
-            <ParticleQuantity>Energy</ParticleQuantity>
-            <AtomicNumber>1</AtomicNumber>
-            <AtomicNumber>2</AtomicNumber>
-            <AtomicNumber>3</AtomicNumber>
-            <AtomicNumber>4</AtomicNumber>
-            <AtomicNumber>5</AtomicNumber>
-            <AtomicNumber>6</AtomicNumber>
-            <AtomicNumber>7</AtomicNumber>
-            <AtomicNumber>8</AtomicNumber>
-            <AtomicNumber>9</AtomicNumber>
-            <AtomicNumber>10</AtomicNumber>
-            <AtomicNumber>11</AtomicNumber>
-            <AtomicNumber>12</AtomicNumber>
-            <AtomicNumber>13</AtomicNumber>
-            <AtomicNumber>14</AtomicNumber>
-            <AtomicNumber>15</AtomicNumber>
-            <AtomicNumber>16</AtomicNumber>
-            <AtomicNumber>17</AtomicNumber>
-            <AtomicNumber>18</AtomicNumber>
-            <AtomicNumber>19</AtomicNumber>
-            <AtomicNumber>20</AtomicNumber>
-            <AtomicNumber>21</AtomicNumber>
-            <AtomicNumber>22</AtomicNumber>
-            <AtomicNumber>23</AtomicNumber>
-            <AtomicNumber>24</AtomicNumber>
-            <AtomicNumber>25</AtomicNumber>
-            <AtomicNumber>26</AtomicNumber>
-            <AtomicNumber>26</AtomicNumber>
-            <AtomicNumber>28</AtomicNumber>
-</Particle>
-</Parameter>
-</NumericalData>
+<?xml version='1.0' encoding='UTF-8'?>
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.spase-group.org/data/schema https://www.spase-group.org/data/schema/spase-2.7.0.xsd">
+  <Version>2.7.0</Version>
+  <NumericalData>
+    <ResourceID>spase://NASA/NumericalData/Ulysses/COSPIN/HET/PHA/PT5S</ResourceID>
+    <NamingAuthority>NASA</NamingAuthority>
+    <ResourceType>NumericalData</ResourceType>
+    <ResourceHeader>
+      <ResourceName>Ulysses Cosmic Ray and Solar Particle Investigation (COSPIN) High Energy Telescope (HET) Full Resolution PHA Events, 5 s Data</ResourceName>
+      <ReleaseDate>2025-11-14T16:03:03Z</ReleaseDate>
+      <RevisionHistory>
+        <RevisionEvent>
+          <ReleaseDate>2020-07-07T21:15:40Z</ReleaseDate>
+          <Note>Only known prior ReleaseDate of the metadata</Note>
+        </RevisionEvent>
+        <RevisionEvent>
+          <ReleaseDate>2025-11-14T16:03:03Z</ReleaseDate>
+          <Note>Added PublicationInfo. Added ResourceType and NamingAuthority. Changed http to https in top-level schemaLocation attribute. Fixed version number separator in top-level schemaLocation attribute. Matched version number in schemaLocation attribute to updated value in Version tag. ZCB</Note>
+        </RevisionEvent>
+      </RevisionHistory>
+      <Description>A Directory containing Daily FTP downloadable Files containing full Information for every Non-zero HET PHA Event returned in Telemetry, including Raw Channels and Discriminator States, the Energy Deposits corresponding to the Channels, and certain derived Quantities including Particle Charge and Trajectory through the Telescope. PHA is performed for Electrons and Nuclei with Penetrating Power equivalent to that of Protons with Energy greater than 14 MeV. The Naming Convention of the Files is uly_het_full_pha_YYYDDD.txt, where YYY indicates the three digit Year since 1900 (e.g. YYY=090 for 1990, and YYY=102 for 2002) and DDD indicates the three digit Day of Year (January 1 = 1). At the Start of each File there is a detailed Description of the Format, in which each Event is represented by a Line with 54 Columns that provide complete Information about the Event. The first four Columns give the Time of the opening of the Window in which the Event was recorded as Fractional Year (to 12 Decimal Places) and as Year since 1900, Day of Year, and Milliseconds of Day. At the most common Science Telemetry Rate, 2048 bps, six Events are collected in every 32 s Telemetry Format. Because of the large Geometrical Factor of the Telescope, almost every available PHA Slot contains an Event. Since far more Events are recorded in the Telescope than can be returned as PHA Events in the Telemetry, only a Sample of the Events incident on the Telescope can be sent down as PHA Events. With the PHA Data for an Event, the Charge, Mass, Kinetic Energy, and Trajectory of the Particle through the Telescope can be determined. While most of the Nuclei incident on the HET are Protons, a three level Priority System selects Events for PHA and return in the Telemetry so as to assure Capture of almost all of the relatively rare Heavy Element Nuclei that stop in the Telescope. The lowest Priority (P3) Events are those that satisfy the most basic Criteria for being an analyzable Event, as determined by the Combination of Discriminators on various Detectors in the Telescope that fire. A higher Priority (P2) is given to Events that stop in the Telescope, and the highest Priority (P1) is given to Events that stop in the Telescope and that are identified as Heavy Nuclei by the Size of their Energy Deposits in the Detectors. The highest Priority Event that occurs in each Window for Accumulation of PHA Events is selected for inclusion in the Telemetry Data returned to the Ground. Thus, in large Solar Energetic Particle Events with abundant Heavy Nuclei, few Protons may be included in the PHA Events transmitted via Telemetry. The Counting Rates, however, Count every Event, and in such Cases it can usually be assumed the Counting Rates that respond to Protons are dominated by the Proton Flux. Absolute Fluxes for individual Elements may be derived by identifying PHA Events that would contribute to Counting Rates (i.e. that have the same Discriminator Configuration as one of the Counting Rates) and determining the Ratio between Events counted by the Rate and returned in Telemetry during a given Interval. Appropriate Counting Rates exist that Match each of the three PHA Priority States. The Priority Levels corresponding to the Counting Rates are listed in Table 7 of J.A. Simpson et al., Astron. Astrophys. Suppl. Ser. 92, 365-399, 1992. *** N.B. Three Corrections are necessary in Table 7. *** 1) The (H) Discriminator Logic should include the Discriminator K6H orred with the other seven Discriminators listed. 2) the middle Term of the P2 (Medium Priority) Logic should include D4 as well as D1, D2, and D6 as required Detectors. 3) Because of an Error in the Logic Design Counting Rate H3, listed as responding to P3 (Lowest Priority) Events, also includes P2 Events, which satisfy the first Term in the P2 Logic. Thus H3 should not be used for deriving Absolute Fluxes of P3 Events from PHA Data.</Description>
+      <Acknowledgement>Please acknowledge the COSPIN HET Lead Investigator and COSPIN PI, R. Bruce McKibben</Acknowledgement>
+      <PublicationInfo>
+        <Authors>McKibben, R. B.; Connell, James</Authors>
+        <PublicationDate>2025-11-14T16:03:03Z</PublicationDate>
+        <PublishedBy>Planetary Data System; Space Physics Data Facility; European Space Astronomy Centre</PublishedBy>
+      </PublicationInfo>
+      <Contact>
+        <PersonID>spase://SMWG/Person/R.Bruce.McKibben</PersonID>
+        <Role>PrincipalInvestigator</Role>
+        <Role>TeamLeader</Role>
+      </Contact>
+      <Contact>
+        <PersonID>spase://SMWG/Person/Clifford.Lopate</PersonID>
+        <Role>DataProducer</Role>
+      </Contact>
+      <Contact>
+        <PersonID>spase://SMWG/Person/James.Connell</PersonID>
+        <Role>CoInvestigator</Role>
+        <Role>DataProducer</Role>
+      </Contact>
+      <InformationURL>
+        <Name>The Ulysses Cosmic Ray and Solar Particle Investigation, COSPIN</Name>
+        <URL>http://ufa.esac.esa.int/ufa/#instruments</URL>
+        <Description>Published Description of the COSPIN Instrumentation, J.A. Simpson et al., Astron. Astrophys. Suppl. Ser. 92, 365-399, 1992. See especially Section 4.3 for a detailed Description of the High Energy Telescopes, HET. An electronic Copy of this Paper is available at http://adsbit.harvard.edu/cgi-bin/nph-iarticle_query?1992A%26AS...92..365S&amp;defaultprint=YES&amp;filetype=.pdf.</Description>
+      </InformationURL>
+      <InformationURL>
+        <Name>User Notes for the COSPIN/HET Data Files</Name>
+        <URL>http://ufa.esac.esa.int/ufa-sl-server/data-action?PROTOCOL=HTTP&amp;PRODUCT_TYPE=ALL&amp;FILE_NAME=het_usernotes.pdf&amp;FILE_PATH=/ufa/HiRes/doc/cospin</URL>
+        <Description>The User Notes File at the Ulysses Final Archive (UFA) describes the Format of the ASCII Data Files for the COSPIN High Energy Telescope, HET</Description>
+      </InformationURL>
+      <InformationURL>
+        <Name>COSPIN HET Full Resolution ReadMe Document, Word Format</Name>
+        <URL>http://ufa.esac.esa.int/ufa-sl-server/data-action?PROTOCOL=HTTP&amp;PRODUCT_TYPE=ALL&amp;FILE_NAME=ReadMeHETFullRes.doc&amp;FILE_PATH=/ufa/HiRes/COSPIN/HET</URL>
+        <Description>Top Level Descriptions of Formats and Contents of the six File Types that make up the COSPIN HET Full Resolution Data Set. Detailed Descriptions of the Formats and Contents are found in Header Lines at the Start of each downloaded Data File. The Data covered by this SPASE Description are described in the ReadMe under the Heading pha. (*** Note ***: During the Build-up of this Data Set, a few Errors and Omissions have been found in the Header Lines for some of the File Types. These Errors and Omissions are listed in this ReadMe File. Upon Completion of the Data Set, all Errors and Omissions discovered will be corrected in all of the Header Lines of all of the File Types at which time this Note will be removed).</Description>
+      </InformationURL>
+      <PriorID>spase://VEPO/NumericalData/Ulysses/COSPIN/HET/FullResolution/PHA</PriorID>
+      <PriorID>spase://VSPO/NumericalData/Ulysses/COSPIN/HET/PHA/PT5S</PriorID>
+    </ResourceHeader>
+    <AccessInformation>
+      <RepositoryID>spase://SMWG/Repository/ESA/ESAC/UlyssesFinalArchive</RepositoryID>
+      <Availability>Online</Availability>
+      <AccessRights>Open</AccessRights>
+      <AccessURL>
+        <Name>Ulysses Final Archive Access to COSPIN/HET Full Resolution PHA Events</Name>
+        <URL>http://ufa.esac.esa.int/ufa/#data</URL>
+        <Description>Parent Directory containing FTP downloadable Daily Files with the Format described below</Description>
+      </AccessURL>
+      <Format>Text</Format>
+      <Encoding>ASCII</Encoding>
+      <Acknowledgement>Please acknowledge R. Bruce McKibben, Space Science Center, University of New Hampshire</Acknowledgement>
+    </AccessInformation>
+    <InstrumentID>spase://SMWG/Instrument/Ulysses/COSPIN/HET</InstrumentID>
+    <MeasurementType>EnergeticParticles</MeasurementType>
+    <TemporalDescription>
+      <TimeSpan>
+        <StartDate>1990-10-22T00:00:00.000</StartDate>
+        <StopDate>2009-06-29T23:59:59.999</StopDate>
+      </TimeSpan>
+      <Cadence>PT5S</Cadence>
+    </TemporalDescription>
+    <ObservedRegion>Heliosphere.Outer</ObservedRegion>
+    <Parameter>
+      <Name>Time of Measurement</Name>
+      <Description>Start Time of the Collection Window in which the Event occurred</Description>
+      <Cadence>PT5S</Cadence>
+      <Structure>
+        <Size>4</Size>
+        <Element>
+          <Name>Decimal Year</Name>
+          <Index>1</Index>
+          <ParameterKey>Column_1</ParameterKey>
+          <ValidMin>1990</ValidMin>
+          <ValidMax>2009</ValidMax>
+          <FillValue>0.00000000000</FillValue>
+        </Element>
+        <Element>
+          <Name>Year</Name>
+          <Index>2</Index>
+          <ParameterKey>Column_2</ParameterKey>
+          <ValidMin>1990</ValidMin>
+          <ValidMax>2009</ValidMax>
+          <FillValue>0</FillValue>
+        </Element>
+        <Element>
+          <Name>Day of Year</Name>
+          <Index>3</Index>
+          <ParameterKey>Column_3</ParameterKey>
+          <ValidMin>1</ValidMin>
+          <ValidMax>366</ValidMax>
+          <FillValue>0</FillValue>
+        </Element>
+        <Element>
+          <Name>Milliseconds of Day</Name>
+          <Index>4</Index>
+          <ParameterKey>Column_4</ParameterKey>
+          <ValidMin>0</ValidMin>
+          <ValidMax>86400000</ValidMax>
+          <FillValue>0</FillValue>
+        </Element>
+      </Structure>
+      <Support>
+        <SupportQuantity>Temporal</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Event Parameters</Name>
+      <Description>All Parameters related to a single PHA Event. The PHA Data are complex, so a careful Study of the Material below and of the similar Material in the Header of each File is strongly recommended before trying to use these Data. The Parameters listed are: Column 5 (discs): 12 Character Hexadecimal Representation of the State of all Discriminators on the 12 PHA Detectors, D1-D6 and K1-K6 (or D7-D12) in the HET. D1 and D2 each have four Discriminator Levels, denoted L, M, H, and S for Low, Medium, High, and Switch (S controls the Gain State of the Detector Amplifier). D3 has three Levels (L, M, and S), while D4 has only 2 Levels (L and S). D5, D6, and K1-K6 each have three Levels (L, H, and S). As described in the In-line Documentation in the Header of each File, the States of these Discriminators are combined into one Hexadecimal Character for each Detector. Column 6 (ash): three Character Integer Representation of the States of Single Level Discriminators (0=OFF, 1=ON) on Detectors A (detects Particles which completely penetrate the Detector Stack), S (Scintillator which detects Particles entering or exiting through the Side of the Stack), and H (Logical Sum of High-Level Discriminators on Detectors D5-K6; if set to 1, Event is Priority 1) Column 7 (P123): three Character Integer Representation of the Priority Level of the Event. The effective Priority is that of the highest Level triggered. For example 1XX (X may be 0 or 1) corresponds to a Priority One Event, 01X to a Priority Two Event, and 001 to a Priority Three Event. Column 8 (C1245): four Character Representation of the State of Commands 1,2,4, and 5 (See Simpson et al., 1992 for Definitions of Commands). 1=Command in Effect, 0=Command Off. These Commands were never issued in Flight, so the Value should always be 0000. Column 9 (sect): Spin Sector in which the analyzed Event occurred. PHA Sectors are identical to the Sectors used for the sectored Counting Rates H45S and H7S. Column 10 (IFC): 1 if IFC is in progress, 0 otherwise Column 11 (Step): Most recent Step executed in the 2048 Step IFC Sequence Columns 12-17 (p1-p6): Channel Numbers of the Signals from the P-side of the Position Sensing Detectors D1-D6. The Amplifiers on the D and K Detectors have two Gain Ranges. If the Discriminator S is triggered on any Detector, the Low Gain Range is used for that Detector and the Conversion of Channel Number to Energy Deposit must be interpreted accordingly. If the S (Switch) Discriminator is not triggered, the High Gain Range is used. Contacts on the P-sides of the Position Sensing Detectors consist of thin Strips (223 for Detectors D1-D3, and 144 for Detectors D4-D6) distributed along a resistive Divider Chain. Thus the Signal collected from the P-side is proportional to the Position of the Strip closest to the Particle Penetration along the Divider Chain. See Lamport et al., (Nuc. Inst. Meth., 134, page 71, 1976) for a more detailed Description of the Function of the Position Sensing Detectors. Columns 18-23 (e1-e6): Channel Numbers of the Signals from the E-side of the Position Sensing Detectors D1-D6. Again, if the S (Switch) Discriminator is triggered for a Detector, the Channel Number corresponds to the Output of the Low Gain Amplifier for that Detector. Contacts on the E-sides of the Position Sensing Detectors are single evaporated Contacts covering the entire Surface of the Detector. Thus the full Signal is collected from the E-side. The P/E Ratio then determines the Position of the Particle Penetration in one Dimension perpendicular to the Orientation of the Strips on the P-side. The single S Discriminators on the D1-D6 Detectors mean that the P and E Signals from each Detector are always produced using the same Gain Range. Columns 24-29 (k1-k6): Channel Numbers of the Signals from the 0.5 cm thick Kevex Detectors that form the Calorimeter Portion of the HET. Again, the Amplifier on these Detectors are Dual Range. If the S Discriminator is fired, the Signal Size and thus the Channel corresponds to the Low Gain Range of the Amplifier. Columns 30-35 (p1ST-p6ST): Strip Numbers (times 1000) corresponding to the P/E Ratios from Detectors D1-D6. Columns 36-41 (e1EN-e6EN): Energy Deposits (MeV times 1000) based on the E-signals from Detectors D1-D6. Channel to Energy Conversions are regularly updated based on Results of In-Flight Calibrate Sequences performed approximately monthly. Columns 42-47 (K1EN-K6EN): Energy Deposits (MeV times 1000) based on PHA Channels from Detectors K1-K6. Channel to Energy Conversions are similarly updated based on IFC Sequences performed roughly once per Month. Column 48 (RANGE): Detector Number of the deepest Detector in the Stack with a Signal above the Low-Level (L) Discriminator. Values range from 1-13, where D1-D6 = 1-6, K1-K6 = 7-12, and A=13. Columns 49-50 (X0, Y0): X, Y Position (Millimeters times 1000) of the Particle Trajectory in a Plane half way between Detectors D3 and D4. Computed from Positions determined in D1-D6. Column 51 (Angle): Angle of the Trajectory with respect to the HET Axis (degrees X 1000). Computed from Positions determined in D1-D6. Columns 52-53 (RMS1, RMS2): Root Mean Square Deviations from the Best Fit Trajectory in D1-D3 and D4-D6. Computed from Positions determined in D1-D6. Columns 54-55 (DX, DY): DX and DY are Projections of the Trajectory onto the X- and Y-axes where the Projection onto the Z-Axis is 1. Thus, the Tangent of the Angle is sqrt(DX * DX + DY * DY) and the Secant is sqrt(1 + DX * DX + DY * DY). Columns 56-57 (RS, RSP1) Radius from the Telescope Axis in the Stopping Detector as defined by Range above (RS) and in the next Detector beyond the Stopping Detector (RSP1), measured in Millimeters times 1000. Column 58 (ZCAL): Estimate of Particle Charge (Z times 1000) based on Energy Losses and Trajectory in the Telescope, derived using the ZCAL Algorithm developed by K.H. Lau (Cal Tech Ph.D. Thesis, 1985).</Description>
+      <Caveats>Occasional logically inconsistent Combinations of Status and Flag Bits (Discriminator Triggers, Status Bits, etc.) occur. For example, Firing of the H Discriminator but not the L Discriminator for a Detector, or low (or higher) Level Discriminators fired for K1 and K3 but not K2. These are probably the Result of a Timing Glitch or Pile-up of more than one Event within the Resolving Time of the Logic. For such Events, and for Events of questionable Quality for any other reason, no Nuclear Charge will be computed. The ZCAL Algorithm as implemented does not work well for Hydrogen, and often does not work at all for Electrons. Hydrogen will generally be assigned a ZCAL near 0.7 (700 as listed in this File). Electrons will either be given a Fill Value (-1) or some small Value. To study Protons and Electrons using PHA Data, it is recommended that all Events with ZCAL&gt;1.3 be eliminated, and that the remaining Events be analyzed using standard dE/dX versus Residual Energy Techniques, using the Detector immediately in front of the stopping Detector to measure dE/dX, and the Stopping Detector (indicated by Range in Column 49) to measure Residual Energy. For Protons and Electrons, the Trajectory Determining System (P and E Signals) does not give accurate Trajectories as a Result of the small Energy Deposits left in the Position Sensing Detectors.</Caveats>
+      <Cadence>PT5S</Cadence>
+      <Structure>
+        <Size>54</Size>
+        <Description>All Parameters associated with a single PHA Event (see extended Description under Parameter above and in the File Headers).</Description>
+        <Element>
+          <Name>discs</Name>
+          <Index>1</Index>
+          <ParameterKey>Column_5</ParameterKey>
+        </Element>
+        <Element>
+          <Name>ash</Name>
+          <Index>2</Index>
+          <ParameterKey>Column 6</ParameterKey>
+        </Element>
+        <Element>
+          <Name>P123</Name>
+          <Index>3</Index>
+          <ParameterKey>Column_7</ParameterKey>
+        </Element>
+        <Element>
+          <Name>C1245</Name>
+          <Index>4</Index>
+          <ParameterKey>Column_8</ParameterKey>
+        </Element>
+        <Element>
+          <Name>Sect</Name>
+          <Index>5</Index>
+          <ParameterKey>Column_9</ParameterKey>
+          <ValidMin>0</ValidMin>
+          <ValidMax>7</ValidMax>
+        </Element>
+        <Element>
+          <Name>IFC</Name>
+          <Index>6</Index>
+          <ParameterKey>Column_10</ParameterKey>
+          <ValidMin>0</ValidMin>
+          <ValidMax>1</ValidMax>
+        </Element>
+        <Element>
+          <Name>step</Name>
+          <Index>7</Index>
+          <ParameterKey>Column 11</ParameterKey>
+          <ValidMin>0</ValidMin>
+          <ValidMax>2047</ValidMax>
+        </Element>
+        <Element>
+          <Name>p1</Name>
+          <Index>8</Index>
+          <ParameterKey>Column_12</ParameterKey>
+          <ValidMin>0</ValidMin>
+          <ValidMax>4094</ValidMax>
+          <FillValue>4095</FillValue>
+        </Element>
+        <Element>
+          <Name>p2</Name>
+          <Index>9</Index>
+          <ParameterKey>Column_13</ParameterKey>
+          <ValidMin>0</ValidMin>
+          <ValidMax>4094</ValidMax>
+          <FillValue>4095</FillValue>
+        </Element>
+        <Element>
+          <Name>p3</Name>
+          <Index>10</Index>
+          <ParameterKey>Column 14</ParameterKey>
+          <ValidMin>0</ValidMin>
+          <ValidMax>4094</ValidMax>
+          <FillValue>4095</FillValue>
+        </Element>
+        <Element>
+          <Name>p4</Name>
+          <Index>11</Index>
+          <ParameterKey>Column_15</ParameterKey>
+          <ValidMin>0</ValidMin>
+          <ValidMax>4094</ValidMax>
+          <FillValue>4095</FillValue>
+        </Element>
+        <Element>
+          <Name>p5</Name>
+          <Index>12</Index>
+          <ParameterKey>Column_16</ParameterKey>
+          <ValidMin>0</ValidMin>
+          <ValidMax>4094</ValidMax>
+          <FillValue>4095</FillValue>
+        </Element>
+        <Element>
+          <Name>p6</Name>
+          <Index>13</Index>
+          <ParameterKey>Column_17</ParameterKey>
+          <ValidMin>0</ValidMin>
+          <ValidMax>4094</ValidMax>
+          <FillValue>4095</FillValue>
+        </Element>
+        <Element>
+          <Name>e1</Name>
+          <Index>14</Index>
+          <ParameterKey>Column_18</ParameterKey>
+          <ValidMin>0</ValidMin>
+          <ValidMax>4094</ValidMax>
+          <FillValue>4095</FillValue>
+        </Element>
+        <Element>
+          <Name>e2</Name>
+          <Index>15</Index>
+          <ParameterKey>Column_19</ParameterKey>
+          <ValidMin>0</ValidMin>
+          <ValidMax>4094</ValidMax>
+          <FillValue>4095</FillValue>
+        </Element>
+        <Element>
+          <Name>e3</Name>
+          <Index>16</Index>
+          <ParameterKey>Column_20</ParameterKey>
+          <ValidMin>0</ValidMin>
+          <ValidMax>4094</ValidMax>
+          <FillValue>4095</FillValue>
+        </Element>
+        <Element>
+          <Name>e4</Name>
+          <Index>17</Index>
+          <ParameterKey>Column_21</ParameterKey>
+          <ValidMin>0</ValidMin>
+          <ValidMax>4094</ValidMax>
+          <FillValue>4095</FillValue>
+        </Element>
+        <Element>
+          <Name>e5</Name>
+          <Index>18</Index>
+          <ParameterKey>Column_22</ParameterKey>
+          <ValidMin>0</ValidMin>
+          <ValidMax>4094</ValidMax>
+          <FillValue>4095</FillValue>
+        </Element>
+        <Element>
+          <Name>e6</Name>
+          <Index>19</Index>
+          <ParameterKey>Column_23</ParameterKey>
+          <ValidMin>0</ValidMin>
+          <ValidMax>4094</ValidMax>
+          <FillValue>4095</FillValue>
+        </Element>
+        <Element>
+          <Name>k1</Name>
+          <Index>20</Index>
+          <ParameterKey>Column_24</ParameterKey>
+          <ValidMin>0</ValidMin>
+          <ValidMax>4094</ValidMax>
+          <FillValue>4095</FillValue>
+        </Element>
+        <Element>
+          <Name>k2</Name>
+          <Index>21</Index>
+          <ParameterKey>Column_25</ParameterKey>
+          <ValidMin>0</ValidMin>
+          <ValidMax>4094</ValidMax>
+          <FillValue>4095</FillValue>
+        </Element>
+        <Element>
+          <Name>k3</Name>
+          <Index>22</Index>
+          <ParameterKey>Column_26</ParameterKey>
+          <ValidMin>0</ValidMin>
+          <ValidMax>4094</ValidMax>
+          <FillValue>4095</FillValue>
+        </Element>
+        <Element>
+          <Name>k4</Name>
+          <Index>23</Index>
+          <ParameterKey>Column_27</ParameterKey>
+          <ValidMin>0</ValidMin>
+          <ValidMax>4094</ValidMax>
+          <FillValue>4095</FillValue>
+        </Element>
+        <Element>
+          <Name>k5</Name>
+          <Index>24</Index>
+          <ParameterKey>Column_28</ParameterKey>
+          <ValidMin>0</ValidMin>
+          <ValidMax>4094</ValidMax>
+          <FillValue>4095</FillValue>
+        </Element>
+        <Element>
+          <Name>k6</Name>
+          <Index>25</Index>
+          <ParameterKey>Column_29</ParameterKey>
+          <ValidMin>0</ValidMin>
+          <ValidMax>4094</ValidMax>
+          <FillValue>4095</FillValue>
+        </Element>
+        <Element>
+          <Name>p1ST</Name>
+          <Index>26</Index>
+          <ParameterKey>Column_30</ParameterKey>
+          <ValidMin>0</ValidMin>
+          <ValidMax>223</ValidMax>
+          <FillValue>-1</FillValue>
+        </Element>
+        <Element>
+          <Name>p2ST</Name>
+          <Index>27</Index>
+          <ParameterKey>Column_31</ParameterKey>
+          <ValidMin>0</ValidMin>
+          <ValidMax>223</ValidMax>
+          <FillValue>-1</FillValue>
+        </Element>
+        <Element>
+          <Name>p3ST</Name>
+          <Index>28</Index>
+          <ParameterKey>Column_32</ParameterKey>
+          <ValidMin>0</ValidMin>
+          <ValidMax>223</ValidMax>
+          <FillValue>-1</FillValue>
+        </Element>
+        <Element>
+          <Name>p4ST</Name>
+          <Index>29</Index>
+          <ParameterKey>Column_33</ParameterKey>
+          <ValidMin>0</ValidMin>
+          <ValidMax>144</ValidMax>
+          <FillValue>-1</FillValue>
+        </Element>
+        <Element>
+          <Name>p5ST</Name>
+          <Index>30</Index>
+          <ParameterKey>Column_34</ParameterKey>
+          <ValidMin>0</ValidMin>
+          <ValidMax>144</ValidMax>
+          <FillValue>-1</FillValue>
+        </Element>
+        <Element>
+          <Name>p6ST</Name>
+          <Index>31</Index>
+          <ParameterKey>Column_35</ParameterKey>
+          <ValidMin>0</ValidMin>
+          <ValidMax>223</ValidMax>
+          <FillValue>-1</FillValue>
+        </Element>
+        <Element>
+          <Name>e1EN</Name>
+          <Index>32</Index>
+          <ParameterKey>Column_36</ParameterKey>
+          <Units>MeV</Units>
+          <ValidMin>0</ValidMin>
+          <ValidMax>3500</ValidMax>
+          <FillValue>-1</FillValue>
+        </Element>
+        <Element>
+          <Name>e2EN</Name>
+          <Index>33</Index>
+          <ParameterKey>Column_37</ParameterKey>
+          <Units>MeV</Units>
+          <ValidMin>0</ValidMin>
+          <ValidMax>3500</ValidMax>
+          <FillValue>-1</FillValue>
+        </Element>
+        <Element>
+          <Name>e3EN</Name>
+          <Index>34</Index>
+          <ParameterKey>Column_38</ParameterKey>
+          <Units>MeV</Units>
+          <ValidMin>0</ValidMin>
+          <ValidMax>3500</ValidMax>
+          <FillValue>-1</FillValue>
+        </Element>
+        <Element>
+          <Name>e4EN</Name>
+          <Index>35</Index>
+          <ParameterKey>Column_39</ParameterKey>
+          <Units>MeV</Units>
+          <ValidMin>0</ValidMin>
+          <ValidMax>3500</ValidMax>
+          <FillValue>-1</FillValue>
+        </Element>
+        <Element>
+          <Name>e5EN</Name>
+          <Index>36</Index>
+          <ParameterKey>Column_40</ParameterKey>
+          <Units>MeV</Units>
+          <ValidMin>0</ValidMin>
+          <ValidMax>3500</ValidMax>
+          <FillValue>-1</FillValue>
+        </Element>
+        <Element>
+          <Name>e6EN</Name>
+          <Index>37</Index>
+          <ParameterKey>Column_41</ParameterKey>
+          <Units>MeV</Units>
+          <ValidMin>0</ValidMin>
+          <ValidMax>3500</ValidMax>
+          <FillValue>-1</FillValue>
+        </Element>
+        <Element>
+          <Name>k1EN</Name>
+          <Index>38</Index>
+          <ParameterKey>Column_42</ParameterKey>
+          <Units>MeV</Units>
+          <ValidMin>0</ValidMin>
+          <ValidMax>8000</ValidMax>
+          <FillValue>-1</FillValue>
+        </Element>
+        <Element>
+          <Name>k2EN</Name>
+          <Index>39</Index>
+          <ParameterKey>Column_43</ParameterKey>
+          <Units>MeV</Units>
+          <ValidMin>0</ValidMin>
+          <ValidMax>8000</ValidMax>
+          <FillValue>-1</FillValue>
+        </Element>
+        <Element>
+          <Name>k3EN</Name>
+          <Index>40</Index>
+          <ParameterKey>Column_44</ParameterKey>
+          <Units>MeV</Units>
+          <ValidMin>0</ValidMin>
+          <ValidMax>8000</ValidMax>
+          <FillValue>-1</FillValue>
+        </Element>
+        <Element>
+          <Name>k4EN</Name>
+          <Index>41</Index>
+          <ParameterKey>Column_45</ParameterKey>
+          <Units>MeV</Units>
+          <ValidMin>0</ValidMin>
+          <ValidMax>8000</ValidMax>
+          <FillValue>-1</FillValue>
+        </Element>
+        <Element>
+          <Name>k5EN</Name>
+          <Index>42</Index>
+          <ParameterKey>Column_46</ParameterKey>
+          <Units>MeV</Units>
+          <ValidMin>0</ValidMin>
+          <ValidMax>8000</ValidMax>
+          <FillValue>-1</FillValue>
+        </Element>
+        <Element>
+          <Name>k6EN</Name>
+          <Index>43</Index>
+          <ParameterKey>Column_47</ParameterKey>
+          <Units>MeV</Units>
+          <ValidMin>0</ValidMin>
+          <ValidMax>8000</ValidMax>
+          <FillValue>-1</FillValue>
+        </Element>
+        <Element>
+          <Name>RANGE</Name>
+          <Index>44</Index>
+          <ParameterKey>Column_48</ParameterKey>
+          <ValidMin>1</ValidMin>
+          <ValidMax>13</ValidMax>
+          <FillValue>-1</FillValue>
+        </Element>
+        <Element>
+          <Name>X0</Name>
+          <Index>45</Index>
+          <ParameterKey>Column_49</ParameterKey>
+          <Units>µm</Units>
+          <ValidMin>0</ValidMin>
+          <ValidMax>40000</ValidMax>
+          <FillValue>-1</FillValue>
+        </Element>
+        <Element>
+          <Name>Y0</Name>
+          <Index>46</Index>
+          <ParameterKey>Column_50</ParameterKey>
+          <Units>µm</Units>
+          <ValidMin>0</ValidMin>
+          <ValidMax>40000</ValidMax>
+          <FillValue>-1</FillValue>
+        </Element>
+        <Element>
+          <Name>ANGLE</Name>
+          <Index>47</Index>
+          <ParameterKey>Column_51</ParameterKey>
+          <Units>1000 °</Units>
+          <ValidMin>0</ValidMin>
+          <ValidMax>45000</ValidMax>
+          <FillValue>-1</FillValue>
+        </Element>
+        <Element>
+          <Name>RMS1</Name>
+          <Index>48</Index>
+          <ParameterKey>Column_52</ParameterKey>
+          <Units>µm</Units>
+          <ValidMin>0</ValidMin>
+          <ValidMax>40000</ValidMax>
+          <FillValue>-1</FillValue>
+        </Element>
+        <Element>
+          <Name>RMS2</Name>
+          <Index>49</Index>
+          <ParameterKey>Column_53</ParameterKey>
+          <Units>µm</Units>
+          <ValidMin>0</ValidMin>
+          <ValidMax>40000</ValidMax>
+          <FillValue>-1</FillValue>
+        </Element>
+        <Element>
+          <Name>DX</Name>
+          <Index>50</Index>
+          <ParameterKey>Column_54</ParameterKey>
+          <Units>µm</Units>
+          <ValidMin>0</ValidMin>
+          <ValidMax>40000</ValidMax>
+          <FillValue>-1</FillValue>
+        </Element>
+        <Element>
+          <Name>DY</Name>
+          <Index>51</Index>
+          <ParameterKey>Column_55</ParameterKey>
+          <Units>µm</Units>
+          <ValidMin>0</ValidMin>
+          <ValidMax>40000</ValidMax>
+          <FillValue>-1</FillValue>
+        </Element>
+        <Element>
+          <Name>RS</Name>
+          <Index>52</Index>
+          <ParameterKey>Column_56</ParameterKey>
+          <Units>µm</Units>
+          <ValidMin>0</ValidMin>
+          <ValidMax>40000</ValidMax>
+          <FillValue>-1</FillValue>
+        </Element>
+        <Element>
+          <Name>RSP1</Name>
+          <Index>53</Index>
+          <ParameterKey>Column_57</ParameterKey>
+          <Units>µm</Units>
+          <ValidMin>0</ValidMin>
+          <ValidMax>40000</ValidMax>
+          <FillValue>-1</FillValue>
+        </Element>
+        <Element>
+          <Name>ZCAL</Name>
+          <Index>54</Index>
+          <ParameterKey>Column_58</ParameterKey>
+          <ValidMin>0</ValidMin>
+          <ValidMax>30000</ValidMax>
+          <FillValue>-1</FillValue>
+        </Element>
+      </Structure>
+      <Particle>
+        <ParticleType>Ion</ParticleType>
+        <ParticleQuantity>Energy</ParticleQuantity>
+        <AtomicNumber>1</AtomicNumber>
+        <AtomicNumber>2</AtomicNumber>
+        <AtomicNumber>3</AtomicNumber>
+        <AtomicNumber>4</AtomicNumber>
+        <AtomicNumber>5</AtomicNumber>
+        <AtomicNumber>6</AtomicNumber>
+        <AtomicNumber>7</AtomicNumber>
+        <AtomicNumber>8</AtomicNumber>
+        <AtomicNumber>9</AtomicNumber>
+        <AtomicNumber>10</AtomicNumber>
+        <AtomicNumber>11</AtomicNumber>
+        <AtomicNumber>12</AtomicNumber>
+        <AtomicNumber>13</AtomicNumber>
+        <AtomicNumber>14</AtomicNumber>
+        <AtomicNumber>15</AtomicNumber>
+        <AtomicNumber>16</AtomicNumber>
+        <AtomicNumber>17</AtomicNumber>
+        <AtomicNumber>18</AtomicNumber>
+        <AtomicNumber>19</AtomicNumber>
+        <AtomicNumber>20</AtomicNumber>
+        <AtomicNumber>21</AtomicNumber>
+        <AtomicNumber>22</AtomicNumber>
+        <AtomicNumber>23</AtomicNumber>
+        <AtomicNumber>24</AtomicNumber>
+        <AtomicNumber>25</AtomicNumber>
+        <AtomicNumber>26</AtomicNumber>
+        <AtomicNumber>26</AtomicNumber>
+        <AtomicNumber>28</AtomicNumber>
+      </Particle>
+    </Parameter>
+  </NumericalData>
 </Spase>

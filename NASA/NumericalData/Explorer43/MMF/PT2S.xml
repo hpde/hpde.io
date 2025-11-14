@@ -1,16 +1,33 @@
-<?xml version="1.0"?>
-<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_2_9.xsd">
-  <Version>2.3.0</Version>
+<?xml version='1.0' encoding='UTF-8'?>
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.spase-group.org/data/schema https://www.spase-group.org/data/schema/spase-2.7.0.xsd">
+  <Version>2.7.0</Version>
   <NumericalData>
     <ResourceID>spase://NASA/NumericalData/Explorer43/MMF/PT2S</ResourceID>
+    <NamingAuthority>NASA</NamingAuthority>
+    <ResourceType>NumericalData</ResourceType>
     <ResourceHeader>
       <ResourceName>Explorer 43 Measurement of Magnetic Fields (MMF) data at 15.36 s Resolution</ResourceName>
       <AlternateName>IMP 6 MMF data</AlternateName>
       <AlternateName>IMP I MMF data</AlternateName>
       <AlternateName>IMP EYE MMF data</AlternateName>
-      <ReleaseDate>2025-05-06T21:14:33Z</ReleaseDate>
+      <ReleaseDate>2025-11-14T16:03:09Z</ReleaseDate>
+      <RevisionHistory>
+        <RevisionEvent>
+          <ReleaseDate>2025-05-06T21:14:33Z</ReleaseDate>
+          <Note>Only known prior ReleaseDate of the metadata</Note>
+        </RevisionEvent>
+        <RevisionEvent>
+          <ReleaseDate>2025-11-14T16:03:09Z</ReleaseDate>
+          <Note>Added PublicationInfo. Added ResourceType and NamingAuthority. Changed http to https in top-level schemaLocation attribute. Fixed version number separator in top-level schemaLocation attribute. Matched version number in schemaLocation attribute to updated value in Version tag. ZCB</Note>
+        </RevisionEvent>
+      </RevisionHistory>
       <Description>The Explorer 43 Measurement of Magnetic Fields (MMF) data at 15.36 s resolution in various coordinate systems.  These data consists of magnetic field vectors, variances, and spacecraft position measurements in several coordinate systems.</Description>
       <Acknowledgement>NASA-Office of Space Science Applications (United States); Dr. Norman F. Ness</Acknowledgement>
+      <PublicationInfo>
+        <Authors>Ness, Norman F.</Authors>
+        <PublicationDate>2025-11-14T16:03:09Z</PublicationDate>
+        <PublishedBy>University of California, Los Angeles</PublishedBy>
+      </PublicationInfo>
       <Contact>
         <PersonID>spase://SMWG/Person/Norman.F.Ness</PersonID>
         <Role>PrincipalInvestigator</Role>
@@ -27,7 +44,7 @@
       </InformationURL>
       <PriorID>spase://VMO/NumericalData/Explorer/43/MMF/PT2S</PriorID>
       <PriorID>spase://VSPO/NumericalData/Explorer/43/MMF/PT2S</PriorID>
-        <PriorID>spase://VSPO/NumericalData/Explorer43/MMF/PT2S</PriorID>
+      <PriorID>spase://VSPO/NumericalData/Explorer43/MMF/PT2S</PriorID>
     </ResourceHeader>
     <AccessInformation>
       <RepositoryID>spase://SMWG/Repository/UCLA/VMO</RepositoryID>
@@ -56,8 +73,8 @@
       <Cadence>PT15.34S</Cadence>
     </TemporalDescription>
     <ObservedRegion>Earth.Magnetosheath</ObservedRegion>
-	<ObservedRegion>Earth.Magnetosphere</ObservedRegion>
-	<ObservedRegion>Earth.Magnetosphere.Magnetotail</ObservedRegion>
+    <ObservedRegion>Earth.Magnetosphere</ObservedRegion>
+    <ObservedRegion>Earth.Magnetosphere.Magnetotail</ObservedRegion>
     <Caveats>Flag value is unknown. All of the descriptions for the parameters are taken from original notes on the data. Not all the descriptions are clear.</Caveats>
     <Keyword>15.36 s</Keyword>
     <Keyword>Explorer</Keyword>
@@ -106,7 +123,7 @@
       <Support>
         <SupportQuantity>Other</SupportQuantity>
       </Support>
-    </Parameter>  
+    </Parameter>
     <Parameter>
       <Name>Bit Rate Flag</Name>
       <Description>No description given.</Description>
@@ -150,7 +167,7 @@
     </Parameter>
     <Parameter>
       <Name>Field Magnitude (F2)</Name>
-      <Description>Averaged over 15.36 s. Fl = SQRT( ((1/N) &#x2211; X_i)^2 + ((1/N) &#x2211; Y_i)^2 + ((1/N) &#x2211; Z_i)^2 ) where X_i, Y_i, and Z_i are computed by the PAYAVG subroutine over 1.28 seconds. Sum from i=1 to N.</Description>
+      <Description>Averaged over 15.36 s. Fl = SQRT( ((1/N) ∑ X_i)^2 + ((1/N) ∑ Y_i)^2 + ((1/N) ∑ Z_i)^2 ) where X_i, Y_i, and Z_i are computed by the PAYAVG subroutine over 1.28 seconds. Sum from i=1 to N.</Description>
       <Units>gamma</Units>
       <Field>
         <Qualifier>Magnitude</Qualifier>
@@ -166,8 +183,8 @@
       <Field>
         <Qualifier>DirectionAngle.ElevationAngle</Qualifier>
         <FieldQuantity>Magnetic</FieldQuantity>
-</Field>
-</Parameter>
+      </Field>
+    </Parameter>
     <Parameter>
       <Name>Phi</Name>
       <Description>Averaged over 15.36 s.</Description>
@@ -177,11 +194,11 @@
       <Field>
         <Qualifier>DirectionAngle.AzimuthAngle</Qualifier>
         <FieldQuantity>Magnetic</FieldQuantity>
-</Field>
-</Parameter>
+      </Field>
+    </Parameter>
     <Parameter>
       <Name>Variance from Averages</Name>
-      <Description>Variance matrix over 15.36 s. [Vxx,--,--;Vyx,Vyy,--;Vzx,Vzy,VZZ]. e.g., Vxx = ( (N &#x2211; X^{2}_{i}) - &#x2211; X_{i} &#x2211; X_{i} )/(N(N-1)). Vzy = ( (N &#x2211; Z_{i}Y_{i}) - &#x2211; Z_{i} &#x2211; Y_{i} )/(N(N-1)). Sum from i=1 to N.</Description>
+      <Description>Variance matrix over 15.36 s. [Vxx,--,--;Vyx,Vyy,--;Vzx,Vzy,VZZ]. e.g., Vxx = ( (N ∑ X^{2}_{i}) - ∑ X_{i} ∑ X_{i} )/(N(N-1)). Vzy = ( (N ∑ Z_{i}Y_{i}) - ∑ Z_{i} ∑ Y_{i} )/(N(N-1)). Sum from i=1 to N.</Description>
       <Structure>
         <Size>6</Size>
         <Description>Only includes 6 elements of the 3 by 3 matrix since three elements are repeated..</Description>
@@ -190,97 +207,97 @@
           <Index>1</Index>
           <ParameterKey>Column_14</ParameterKey>
           <Units>gamma^2</Units>
-</Element>
+        </Element>
         <Element>
           <Name>Variance YY from averages.</Name>
           <Index>2</Index>
           <ParameterKey>Column_15</ParameterKey>
           <Units>gamma^2</Units>
-</Element>
+        </Element>
         <Element>
           <Name>Variance ZZ from averages.</Name>
           <Index>3</Index>
           <ParameterKey>Column_16</ParameterKey>
           <Units>gamma^2</Units>
-</Element>
+        </Element>
         <Element>
           <Name>Variance YX from averages.</Name>
           <Index>1</Index>
           <ParameterKey>Column_17</ParameterKey>
           <Units>gamma^2</Units>
-</Element>
+        </Element>
         <Element>
           <Name>Variance ZX from averages.</Name>
           <Index>1</Index>
           <ParameterKey>Column_18</ParameterKey>
           <Units>gamma^2</Units>
-</Element>
+        </Element>
         <Element>
           <Name>Variance ZY from averages.</Name>
           <Index>1</Index>
           <ParameterKey>Column_19</ParameterKey>
           <Units>gamma^2</Units>
-</Element>
-</Structure>
+        </Element>
+      </Structure>
       <Support>
         <Qualifier>Variance</Qualifier>
         <SupportQuantity>Other</SupportQuantity>
-</Support>
-</Parameter>
+      </Support>
+    </Parameter>
     <Parameter>
       <Name>N</Name>
       <Description>Number of sequences over which statistics were comuted.</Description>
       <Support>
         <Qualifier>Total</Qualifier>
         <SupportQuantity>Other</SupportQuantity>
-</Support>
-</Parameter>
+      </Support>
+    </Parameter>
     <Parameter>
       <Name>ND</Name>
       <Description>Number of detail points over which statistics were comuted.</Description>
       <Support>
         <Qualifier>Total</Qualifier>
         <SupportQuantity>Other</SupportQuantity>
-</Support>
-</Parameter>
+      </Support>
+    </Parameter>
     <Parameter>
       <Name>Trajectory Day</Name>
       <Description>Jan 1 = 0.</Description>
       <Units>day</Units>
       <Support>
         <SupportQuantity>Temporal</SupportQuantity>
-</Support>
-</Parameter>
+      </Support>
+    </Parameter>
     <Parameter>
       <Name>Trajectory Millisec of the Day</Name>
       <Units>millisec</Units>
       <Support>
         <SupportQuantity>Temporal</SupportQuantity>
-</Support>
-</Parameter>
+      </Support>
+    </Parameter>
     <Parameter>
       <Name>Geomagnetic Latitude Satellite position</Name>
       <Units>degrees</Units>
       <Support>
         <Qualifier>DirectionAngle.ElevationAngle</Qualifier>
         <SupportQuantity>Positional</SupportQuantity>
-</Support>
-</Parameter>
+      </Support>
+    </Parameter>
     <Parameter>
       <Name>Geomagnetic Longitude Satellite position</Name>
       <Units>degrees</Units>
       <Support>
         <Qualifier>DirectionAngle.AzimuthAngle</Qualifier>
         <SupportQuantity>Positional</SupportQuantity>
-</Support>
-</Parameter>
+      </Support>
+    </Parameter>
     <Parameter>
       <Name>Geocentric Solar Ecliptic Satellite Position</Name>
       <Description>Location of the spacecraft in GSE coordinates in units of kilometers.</Description>
       <CoordinateSystem>
         <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
         <CoordinateSystemName>GSE</CoordinateSystemName>
-</CoordinateSystem>
+      </CoordinateSystem>
       <Structure>
         <Size>3</Size>
         <Element>
@@ -288,39 +305,39 @@
           <Index>1</Index>
           <ParameterKey>Column_26</ParameterKey>
           <Units>km</Units>
-</Element>
+        </Element>
         <Element>
           <Name>Y-GSE</Name>
           <Index>2</Index>
           <ParameterKey>Column_27</ParameterKey>
           <Units>km</Units>
-</Element>
+        </Element>
         <Element>
           <Name>Z-GSE</Name>
           <Index>3</Index>
           <ParameterKey>Column_28</ParameterKey>
           <Units>km</Units>
-</Element>
-</Structure>
+        </Element>
+      </Structure>
       <Support>
         <SupportQuantity>Positional</SupportQuantity>
-</Support>
-</Parameter>
+      </Support>
+    </Parameter>
     <Parameter>
       <Name>Radial Distance to Satellite from Earth's center</Name>
       <Units>km</Units>
       <Support>
         <Qualifier>Magnitude</Qualifier>
         <SupportQuantity>Positional</SupportQuantity>
-</Support>
-</Parameter>
+      </Support>
+    </Parameter>
     <Parameter>
       <Name>Geocentric Solar Magnetospheric Satellite Position</Name>
       <Description>Location of the spacecraft in GSM coordinates in units of kilometers.</Description>
       <CoordinateSystem>
         <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
         <CoordinateSystemName>GSM</CoordinateSystemName>
-</CoordinateSystem>
+      </CoordinateSystem>
       <Structure>
         <Size>2</Size>
         <Element>
@@ -328,41 +345,41 @@
           <Index>1</Index>
           <ParameterKey>Column_30</ParameterKey>
           <Units>km</Units>
-</Element>
+        </Element>
         <Element>
           <Name>Z-GSE</Name>
           <Index>2</Index>
           <ParameterKey>Column_31</ParameterKey>
           <Units>km</Units>
-</Element>
-</Structure>
+        </Element>
+      </Structure>
       <Support>
         <SupportQuantity>Positional</SupportQuantity>
-</Support>
-</Parameter>
+      </Support>
+    </Parameter>
     <Parameter>
       <Name>Geomagnetic Latitude Sun position</Name>
       <Units>degrees</Units>
       <Support>
         <Qualifier>DirectionAngle.ElevationAngle</Qualifier>
         <SupportQuantity>Positional</SupportQuantity>
-</Support>
-</Parameter>
+      </Support>
+    </Parameter>
     <Parameter>
       <Name>Geomagnetic Longitude Sun position</Name>
       <Units>degrees</Units>
       <Support>
         <Qualifier>DirectionAngle.AzimuthAngle</Qualifier>
         <SupportQuantity>Positional</SupportQuantity>
-</Support>
-</Parameter>
+      </Support>
+    </Parameter>
     <Parameter>
       <Name>Theoretical Geomagnetic Field Geocentric Solar Ecliptic</Name>
       <Description>Theoretical geomagnetic field but the magnetic field model is unclear.</Description>
       <CoordinateSystem>
         <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
         <CoordinateSystemName>GSE</CoordinateSystemName>
-</CoordinateSystem>
+      </CoordinateSystem>
       <Structure>
         <Size>3</Size>
         <Element>
@@ -370,25 +387,25 @@
           <Index>1</Index>
           <ParameterKey>Column_34</ParameterKey>
           <Units>gamma</Units>
-</Element>
+        </Element>
         <Element>
           <Name>BY-GSE</Name>
           <Index>2</Index>
           <ParameterKey>Column_35</ParameterKey>
           <Units>gamma</Units>
-</Element>
+        </Element>
         <Element>
           <Name>BZ-GSE</Name>
           <Index>3</Index>
           <ParameterKey>Column_36</ParameterKey>
           <Units>gamma</Units>
-</Element>
-</Structure>
+        </Element>
+      </Structure>
       <Field>
         <Qualifier>Vector</Qualifier>
         <FieldQuantity>Magnetic</FieldQuantity>
-</Field>
-</Parameter>
+      </Field>
+    </Parameter>
     <Parameter>
       <Name>Rotation Matrix</Name>
       <Description>Rotation matrix from GSE to GSM</Description>
@@ -398,53 +415,53 @@
           <Name>1st row, 1st column</Name>
           <Index>1</Index>
           <ParameterKey>Column_37</ParameterKey>
-</Element>
+        </Element>
         <Element>
           <Name>1st row, 2nd column</Name>
           <Index>2</Index>
           <ParameterKey>Column_38</ParameterKey>
-</Element>
+        </Element>
         <Element>
           <Name>1st row, 3rd column</Name>
           <Index>3</Index>
           <ParameterKey>Column_39</ParameterKey>
-</Element>
+        </Element>
         <Element>
           <Name>2nd row, 1st column</Name>
           <Index>4</Index>
           <ParameterKey>Column_40</ParameterKey>
-</Element>
+        </Element>
         <Element>
           <Name>2nd row, 2nd column</Name>
           <Index>5</Index>
           <ParameterKey>Column_41</ParameterKey>
-</Element>
+        </Element>
         <Element>
           <Name>2nd row, 3rd column</Name>
           <Index>6</Index>
           <ParameterKey>Column_42</ParameterKey>
-</Element>
+        </Element>
         <Element>
           <Name>3rd row, 1st column</Name>
           <Index>7</Index>
           <ParameterKey>Column_43</ParameterKey>
-</Element>
+        </Element>
         <Element>
           <Name>3rd row, 2nd column</Name>
           <Index>8</Index>
           <ParameterKey>Column_44</ParameterKey>
-</Element>
+        </Element>
         <Element>
           <Name>3rd row, 3rd column</Name>
           <Index>9</Index>
           <ParameterKey>Column_45</ParameterKey>
-</Element>
-</Structure>
+        </Element>
+      </Structure>
       <Support>
         <Qualifier>Array</Qualifier>
         <SupportQuantity>Other</SupportQuantity>
-</Support>
-</Parameter>
+      </Support>
+    </Parameter>
     <Parameter>
       <Name>Rotation Matrix</Name>
       <Description>Rotation matrix from celestial inertial to GSE</Description>
@@ -454,69 +471,69 @@
           <Name>1st row, 1st column</Name>
           <Index>1</Index>
           <ParameterKey>Column_46</ParameterKey>
-</Element>
+        </Element>
         <Element>
           <Name>1st row, 2nd column</Name>
           <Index>2</Index>
           <ParameterKey>Column_47</ParameterKey>
-</Element>
+        </Element>
         <Element>
           <Name>1st row, 3rd column</Name>
           <Index>3</Index>
           <ParameterKey>Column_48</ParameterKey>
-</Element>
+        </Element>
         <Element>
           <Name>2nd row, 1st column</Name>
           <Index>4</Index>
           <ParameterKey>Column_49</ParameterKey>
-</Element>
+        </Element>
         <Element>
           <Name>2nd row, 2nd column</Name>
           <Index>5</Index>
           <ParameterKey>Column_50</ParameterKey>
-</Element>
+        </Element>
         <Element>
           <Name>2nd row, 3rd column</Name>
           <Index>6</Index>
           <ParameterKey>Column_51</ParameterKey>
-</Element>
+        </Element>
         <Element>
           <Name>3rd row, 1st column</Name>
           <Index>7</Index>
           <ParameterKey>Column_52</ParameterKey>
-</Element>
+        </Element>
         <Element>
           <Name>3rd row, 2nd column</Name>
           <Index>8</Index>
           <ParameterKey>Column_53</ParameterKey>
-</Element>
+        </Element>
         <Element>
           <Name>3rd row, 3rd column</Name>
           <Index>9</Index>
           <ParameterKey>Column_54</ParameterKey>
-</Element>
-</Structure>
+        </Element>
+      </Structure>
       <Support>
         <Qualifier>Array</Qualifier>
         <SupportQuantity>Other</SupportQuantity>
-</Support>
-</Parameter>
+      </Support>
+    </Parameter>
     <Parameter>
       <Name>Geocentric Latitude Satellite Position</Name>
       <Units>degrees</Units>
       <Support>
         <Qualifier>DirectionAngle.ElevationAngle</Qualifier>
         <SupportQuantity>Positional</SupportQuantity>
-</Support>
-</Parameter>
+      </Support>
+    </Parameter>
     <Parameter>
       <Name>Geocentric Longitude Satellite Position</Name>
       <Units>degrees</Units>
       <Support>
         <Qualifier>DirectionAngle.AzimuthAngle</Qualifier>
         <SupportQuantity>Positional</SupportQuantity>
-</Support>
-</Parameter>
+      </Support>
+    </Parameter>
     <Parameter>
       <Name>Right Ascension</Name>
       <Description>Not clear what this is the right ascension of. Celestial Equatorial Coordinate System?</Description>
@@ -524,8 +541,8 @@
       <Support>
         <Qualifier>DirectionAngle.AzimuthAngle</Qualifier>
         <SupportQuantity>Positional</SupportQuantity>
-</Support>
-</Parameter>
+      </Support>
+    </Parameter>
     <Parameter>
       <Name>Declination</Name>
       <Description>Not clear what this is the right ascension of. Celestial Equatorial Coordinate System?</Description>
@@ -533,46 +550,46 @@
       <Support>
         <Qualifier>DirectionAngle.ElevationAngle</Qualifier>
         <SupportQuantity>Positional</SupportQuantity>
-</Support>
-</Parameter>
+      </Support>
+    </Parameter>
     <Parameter>
       <Name>Theta Solar Ecliptic</Name>
       <Units>degrees</Units>
       <Support>
         <Qualifier>DirectionAngle.ElevationAngle</Qualifier>
         <SupportQuantity>Positional</SupportQuantity>
-</Support>
-</Parameter>
+      </Support>
+    </Parameter>
     <Parameter>
       <Name>Theta Solar Magnetic</Name>
       <Units>degrees</Units>
       <Support>
         <Qualifier>DirectionAngle.ElevationAngle</Qualifier>
         <SupportQuantity>Positional</SupportQuantity>
-</Support>
-</Parameter>
+      </Support>
+    </Parameter>
     <Parameter>
       <Name>Phi Solar Ecliptic</Name>
       <Units>degrees</Units>
       <Support>
         <Qualifier>DirectionAngle.AzimuthAngle</Qualifier>
         <SupportQuantity>Positional</SupportQuantity>
-</Support>
-</Parameter>
+      </Support>
+    </Parameter>
     <Parameter>
       <Name>Phi Solar Magnetic</Name>
       <Units>degrees</Units>
       <Support>
         <Qualifier>DirectionAngle.AzimuthAngle</Qualifier>
         <SupportQuantity>Positional</SupportQuantity>
-</Support>
-</Parameter>
+      </Support>
+    </Parameter>
     <Parameter>
       <Name>Magnetic Field Vector Solar Ecliptic</Name>
       <CoordinateSystem>
         <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
         <CoordinateSystemName>SE</CoordinateSystemName>
-</CoordinateSystem>
+      </CoordinateSystem>
       <Structure>
         <Size>3</Size>
         <Element>
@@ -580,31 +597,31 @@
           <Index>1</Index>
           <ParameterKey>Column_63</ParameterKey>
           <Units>gamma</Units>
-</Element>
+        </Element>
         <Element>
           <Name>BY-SE</Name>
           <Index>2</Index>
           <ParameterKey>Column_64</ParameterKey>
           <Units>gamma</Units>
-</Element>
+        </Element>
         <Element>
           <Name>BZ-SE</Name>
           <Index>3</Index>
           <ParameterKey>Column_65</ParameterKey>
           <Units>gamma</Units>
-</Element>
-</Structure>
+        </Element>
+      </Structure>
       <Field>
         <Qualifier>Vector</Qualifier>
         <FieldQuantity>Magnetic</FieldQuantity>
-</Field>
-</Parameter>
+      </Field>
+    </Parameter>
     <Parameter>
       <Name>Magnetic Field Vector Solar Magnetic</Name>
       <CoordinateSystem>
         <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
         <CoordinateSystemName>SM</CoordinateSystemName>
-</CoordinateSystem>
+      </CoordinateSystem>
       <Structure>
         <Size>3</Size>
         <Element>
@@ -612,24 +629,24 @@
           <Index>1</Index>
           <ParameterKey>Column_66</ParameterKey>
           <Units>gamma</Units>
-</Element>
+        </Element>
         <Element>
           <Name>BY-SM</Name>
           <Index>2</Index>
           <ParameterKey>Column_67</ParameterKey>
           <Units>gamma</Units>
-</Element>
+        </Element>
         <Element>
           <Name>BZ-SM</Name>
           <Index>3</Index>
           <ParameterKey>Column_68</ParameterKey>
           <Units>gamma</Units>
-</Element>
-</Structure>
+        </Element>
+      </Structure>
       <Field>
         <Qualifier>Vector</Qualifier>
         <FieldQuantity>Magnetic</FieldQuantity>
-</Field>
-</Parameter>
-</NumericalData>
+      </Field>
+    </Parameter>
+  </NumericalData>
 </Spase>

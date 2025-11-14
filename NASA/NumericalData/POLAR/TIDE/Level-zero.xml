@@ -1,117 +1,134 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<Spase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.spase-group.org/data/schema" xsi:schemaLocation="http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_3_0.xsd">
-   <Version>2.3.0</Version>
-   <NumericalData>
-      <ResourceID>spase://NASA/NumericalData/POLAR/TIDE/Level-zero</ResourceID>
-      <ResourceHeader>
-         <ResourceName>Polar Thermal Ion Dynamics Experiment, TIDE, Level-Zero Telemetry Files</ResourceName>
-         <ReleaseDate>2020-07-07T21:15:02Z</ReleaseDate>
-         <Description>TIDE Level-Zero Processing Software provides several Analysis and Display Options with an extensive List of Processing Options. The TIDE team has provided Web Sites that allow Users to process Data from the Web and then download the processed Data Files and Plots, see the Custom Plot and Data Dump Links on one of the TIDE Home Pages. The Software (C and IDL) can be downloaded and installed locally. There is a Data Download Page that can be used to get the Level-Zero Data and the required Ancillary Data (Polar Orbit and Attitude, extracted EFI Spacecraft Potential, and Ion Masks). NOTE: The only Way to read a TIDE Level-Zero File is with the Processing Software. See the TIDE Documentation Link on one of the two TIDE Home Pages for Documentation of the Processing Software and the Input File Data Formats. See the Parameters below for more Information about Key Elements in the Level-Zero Processing.</Description>
-         <Contact>
-            <PersonID>spase://SMWG/Person/Thomas.E.Moore</PersonID>
-            <Role>PrincipalInvestigator</Role>
-</Contact>
-         <Contact>
-            <PersonID>spase://SMWG/Person/Paul.D.Craven</PersonID>
-            <Role>GeneralContact</Role>
-</Contact>
-         <Contact>
-            <PersonID>spase://SMWG/Person/Peggy.Sloan</PersonID>
-            <Role>MetadataContact</Role>
-</Contact>
-         <Contact>
-            <PersonID>spase://SMWG/Person/Lee.Frost.Bargatze</PersonID>
-            <Role>MetadataContact</Role>
-</Contact>
-         <InformationURL>
-            <Name>Archived Web Page for the NASA Polar Project, GSFC</Name>
-            <URL>https://www-istp.gsfc.nasa.gov/polar/</URL>
-            <Description>Archived Web Page for the Polar Spacecraft, hosted at GSFC. Disclaimer: The Web Page Content is being kept Online for Archival Purposes. Although accurate at the Time of Publication, it is no longer being updated. The Page may contain broken Links or outdated Information, and Parts may not function in current Web Browsers.</Description>
-</InformationURL>
-         <InformationURL>
-            <Name>NSSDC Listing for Polar TIDE Level-Zero Telemetry Files</Name>
-            <URL>https://nssdc.gsfc.nasa.gov/nmc/dataset/display.action?id=SPMS-00155</URL>
-            <Description>NSSDC Listing for the Polar Project Thermal Ion Dynamics Experiment, TIDE, Daily Level-Zero Telemetry Files, All Non-Image Data: PO_ALL_LZ, NSSDCA ID: SPMS-00155</Description>
-</InformationURL>
-         <PriorID>spase://VMO/NumericalData/POLAR/TIDE/Level-zero</PriorID>
-          <PriorID>spase://VSPO/NumericalData/POLAR/TIDE/Level-zero</PriorID>
-</ResourceHeader>
-      <AccessInformation>
-         <RepositoryID>spase://SMWG/Repository/NASA/GSFC</RepositoryID>
-         <Availability>Online</Availability>
-         <AccessRights>Open</AccessRights>
-         <AccessURL>
-            <Name>PWGDATA Data Archive for Polar TIDE Level-Zero Data Archive, GSFC</Name>
-            <URL>ftps://pwgdata.gsfc.nasa.gov/pub/compressed/po/tid/</URL>
-            <Description>PWGDATA Data Archive FTP Site for access to Polar TIDE Level-Zero Telemetry Files hosted by the GSFC</Description>
-</AccessURL>
-         <Format>Binary</Format>
-</AccessInformation>
-      <ProcessingLevel>Raw</ProcessingLevel>
-      <ProviderProcessingLevel>Level 0</ProviderProcessingLevel>
-      <InstrumentID>spase://SMWG/Instrument/POLAR/TIDE</InstrumentID>
-      <MeasurementType>ThermalPlasma</MeasurementType>
-      <TemporalDescription>
-         <TimeSpan>
-            <StartDate>1996-03-27T00:00:00</StartDate>
-            <StopDate>2008-04-16T23:59:59</StopDate>
-</TimeSpan>
-         <Cadence>PT9.2S</Cadence>
-</TemporalDescription>
-      <ObservedRegion>Earth.Magnetosphere</ObservedRegion>
-      <ObservedRegion>Earth.Magnetosphere.Polar</ObservedRegion>
-      <Caveats>TIDE was originally designed to detect mass-resolved ions, H+, O+, He+, and NO+, for 32 energy steps (31 reported), 32 spin angle bins, and 7 polar angle channels. The detection of time-of-flight direct-events deteriorated rapidly early in the mission, reducing the ability to resolve ion masses and resulting in the lost of information in one axis (Z). After 09/30/96, the ion data is of poor quality and as a result, only Total Ions (Stops) are reported starting 12/08/96. Total Ions is the sum over the 7 polar angle channels of the particle counts detected by the Stop microchannel plate (MCP) detectors. The resolution in the 32 energy steps and in the 32 spin angle bins is retained. 1996 H+, O+, and He+ data are reported in the TIDE H0 CDFs. In order to avoid damage to the MCPs, starting 03/27/96 and continuing throughout the rest of the mission, the high voltage on the MCPs is reduced during radiation belt passes.</Caveats>
-      <Parameter>
-         <Name>Major Frame, in Telemetry Bytes</Name>
-         <Description>Each record in the TIDE level-zero file contains a major frame header followed by the bytes for the 250 minor frames that make up a major frame. A major frame is reported every 9.2 s for a single day. The length of a minor frame varies depending on the mode the Polar Spacecraft is in: for science mode 1, the TIDE minor frames are 22 bytes long. For science mode 2 (contingency), the minor frames are 43 bytes long. The first three bytes contain TIDE housekeeping bytes or fill data (000). The remaining bytes contain TIDE science data products (see Science Data Products Parameter) or fill data. See http://tideuvira.nsstc.nasa.gov/tide/Documentation/DataFileFormats/LevelZero.html or http://tide.gsfc.nasa.gov/Documentation/DataFileFormats/LevelZero.html for format details.</Description>
-         <ValidMin>0</ValidMin>
-         <ValidMax>255</ValidMax>
-         <FillValue>0</FillValue>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-</Support>
-</Parameter>
-      <Parameter>
-         <Name>Science Data Products, in Telemetry Bytes</Name>
-         <Description>All TIDE science telemetry is reported in one of 188 data products. All TIDE data is collected for a Polar Spacecraft spin (~6 s). All of the Data Products for a specific spin are reported as a spin packet that contains a spin header followed by each Data Product. Six Data Products contain instrument parameters or memory dumps. The remaining 182 Data Products contain collapsed and doubly compressed ion counts for specific ions, energy bins, and spin and polar angle bins. The counts can be summed (collapesd) over adjacent energy and spin angle bins. The counts are then converted (compressed) from a 16-bit to an 8-bit integer. A Lossy compression is then applied to the Data Product bytes. The data products reported each spin depend on TIDE's operating modes. NOTE: The only way to read TIDE data products is to use the TIDE processing software. See http://tideuvira.nsstc.nasa.gov/tide/Documentation/DataFileFormats/LevelZero.html or http://tide.gsfc.nasa.gov/Documentation/DataFileFormats/LevelZero.html for details.</Description>
-         <ValidMin>0</ValidMin>
-         <ValidMax>255</ValidMax>
-         <FillValue>0</FillValue>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-</Support>
-</Parameter>
-      <Parameter>
-         <Name>Spacecraft Potential</Name>
-         <Description>TIDE uses EFI spacecraft potential to calculate phase space density and then moments. The negative of the spacecraft potential was extracted from EFI key parameter files and saved in a large text file that contains year, day-of-year, milliseconds, and the negative of the spacecraft potential every 6 s for one month. The files are available via the TIDE data download page or directly from the TIDE data archive at either http://tideuvira.nsstc.nasa.gov/tide/archive/data/scpot or http://tide.gsfc.nasa.gov/archive/data/scpot.</Description>
-         <Units>V</Units>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-</Support>
-</Parameter>
-      <Parameter>
-         <Name>ion mask, in Floating Point Counts</Name>
-         <Description>The TIDE instrument recorded high counts centered on two different spin angles and resulting from solar photons. There is one large pulse (centered on the sun direction) and one small pulse (at high spin angles) every spin of the spacecraft, about every 6 s. The ion mask is used to subtract the sun pulse and background noise. Once every other day at a point near apogee where few counts are expected the MCPs are shut down for a couple of superspins (32 spins/superspin) so that only background counts and sun pulses are detected. The count rate data collected during this time are then averaged to get the background mask. The mask file is a binary file that contains an averaged background count for each energy (31), spin angle (32), polar angle (7), and mass (6). From 04/01/96 to 12/07/06, the mask files contain a mask for each of the ions (H+, He+, O+, He++, molecular ions, and Singles). For Total Ions (Stops) data from 12/08/96 to 04/15/08, the mask file is mostly zeros with masks created for H+ (never used) and for Stops. The Stops mask is a 31 x 32 (energy versus spin angle) array stored in channel 3 (polar angle), mass 4. For Stops the rest of the array is zeros.</Description>
-         <Structure>
-            <Size>31 32 7 6</Size>
-</Structure>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-</Support>
-</Parameter>
-      <Parameter>
-         <Name>Polar Orbit</Name>
-         <Description>The Polar Orbit CDF files are used by the TIDE level-zero processing software as plot labeling information and in the calculation of moments and phase space density velocity distributions. Parameters include spacecraft location and velocity (GSE and GSM), magnetic local time, magnetic latitude, and L-shell.</Description>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-</Support>
-</Parameter>
-      <Parameter>
-         <Name>Polar Attitude</Name>
-         <Description>The Polar Attitude CDF files are used by the TIDE level-zero processing software in the calculation of moments and phase space density velocity distributions. Parameters include spacecraft right ascension and declination (GSE and GSM).</Description>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-</Support>
-</Parameter>
-</NumericalData>
+<?xml version='1.0' encoding='UTF-8'?>
+<Spase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.spase-group.org/data/schema" xsi:schemaLocation="https://www.spase-group.org/data/schema https://www.spase-group.org/data/schema/spase-2.7.0.xsd">
+  <Version>2.7.0</Version>
+  <NumericalData>
+    <ResourceID>spase://NASA/NumericalData/POLAR/TIDE/Level-zero</ResourceID>
+    <NamingAuthority>NASA</NamingAuthority>
+    <ResourceType>NumericalData</ResourceType>
+    <ResourceHeader>
+      <ResourceName>Polar Thermal Ion Dynamics Experiment, TIDE, Level-Zero Telemetry Files</ResourceName>
+      <ReleaseDate>2025-11-14T16:01:46Z</ReleaseDate>
+      <RevisionHistory>
+        <RevisionEvent>
+          <ReleaseDate>2020-07-07T21:15:02Z</ReleaseDate>
+          <Note>Only known prior ReleaseDate of the metadata</Note>
+        </RevisionEvent>
+        <RevisionEvent>
+          <ReleaseDate>2025-11-14T16:01:46Z</ReleaseDate>
+          <Note>Added PublicationInfo. Added ResourceType and NamingAuthority. Changed http to https in top-level schemaLocation attribute. Fixed version number separator in top-level schemaLocation attribute. Matched version number in schemaLocation attribute to updated value in Version tag. ZCB</Note>
+        </RevisionEvent>
+      </RevisionHistory>
+      <Description>TIDE Level-Zero Processing Software provides several Analysis and Display Options with an extensive List of Processing Options. The TIDE team has provided Web Sites that allow Users to process Data from the Web and then download the processed Data Files and Plots, see the Custom Plot and Data Dump Links on one of the TIDE Home Pages. The Software (C and IDL) can be downloaded and installed locally. There is a Data Download Page that can be used to get the Level-Zero Data and the required Ancillary Data (Polar Orbit and Attitude, extracted EFI Spacecraft Potential, and Ion Masks). NOTE: The only Way to read a TIDE Level-Zero File is with the Processing Software. See the TIDE Documentation Link on one of the two TIDE Home Pages for Documentation of the Processing Software and the Input File Data Formats. See the Parameters below for more Information about Key Elements in the Level-Zero Processing.</Description>
+      <PublicationInfo>
+        <Authors>Moore, Thomas E.</Authors>
+        <PublicationDate>2025-11-14T16:01:46Z</PublicationDate>
+        <PublishedBy>Space Physics Data Facility</PublishedBy>
+      </PublicationInfo>
+      <Contact>
+        <PersonID>spase://SMWG/Person/Thomas.E.Moore</PersonID>
+        <Role>PrincipalInvestigator</Role>
+      </Contact>
+      <Contact>
+        <PersonID>spase://SMWG/Person/Paul.D.Craven</PersonID>
+        <Role>GeneralContact</Role>
+      </Contact>
+      <Contact>
+        <PersonID>spase://SMWG/Person/Peggy.Sloan</PersonID>
+        <Role>MetadataContact</Role>
+      </Contact>
+      <Contact>
+        <PersonID>spase://SMWG/Person/Lee.Frost.Bargatze</PersonID>
+        <Role>MetadataContact</Role>
+      </Contact>
+      <InformationURL>
+        <Name>Archived Web Page for the NASA Polar Project, GSFC</Name>
+        <URL>https://www-istp.gsfc.nasa.gov/polar/</URL>
+        <Description>Archived Web Page for the Polar Spacecraft, hosted at GSFC. Disclaimer: The Web Page Content is being kept Online for Archival Purposes. Although accurate at the Time of Publication, it is no longer being updated. The Page may contain broken Links or outdated Information, and Parts may not function in current Web Browsers.</Description>
+      </InformationURL>
+      <InformationURL>
+        <Name>NSSDC Listing for Polar TIDE Level-Zero Telemetry Files</Name>
+        <URL>https://nssdc.gsfc.nasa.gov/nmc/dataset/display.action?id=SPMS-00155</URL>
+        <Description>NSSDC Listing for the Polar Project Thermal Ion Dynamics Experiment, TIDE, Daily Level-Zero Telemetry Files, All Non-Image Data: PO_ALL_LZ, NSSDCA ID: SPMS-00155</Description>
+      </InformationURL>
+      <PriorID>spase://VMO/NumericalData/POLAR/TIDE/Level-zero</PriorID>
+      <PriorID>spase://VSPO/NumericalData/POLAR/TIDE/Level-zero</PriorID>
+    </ResourceHeader>
+    <AccessInformation>
+      <RepositoryID>spase://SMWG/Repository/NASA/GSFC</RepositoryID>
+      <Availability>Online</Availability>
+      <AccessRights>Open</AccessRights>
+      <AccessURL>
+        <Name>PWGDATA Data Archive for Polar TIDE Level-Zero Data Archive, GSFC</Name>
+        <URL>ftps://pwgdata.gsfc.nasa.gov/pub/compressed/po/tid/</URL>
+        <Description>PWGDATA Data Archive FTP Site for access to Polar TIDE Level-Zero Telemetry Files hosted by the GSFC</Description>
+      </AccessURL>
+      <Format>Binary</Format>
+    </AccessInformation>
+    <ProcessingLevel>Raw</ProcessingLevel>
+    <ProviderProcessingLevel>Level 0</ProviderProcessingLevel>
+    <InstrumentID>spase://SMWG/Instrument/POLAR/TIDE</InstrumentID>
+    <MeasurementType>ThermalPlasma</MeasurementType>
+    <TemporalDescription>
+      <TimeSpan>
+        <StartDate>1996-03-27T00:00:00</StartDate>
+        <StopDate>2008-04-16T23:59:59</StopDate>
+      </TimeSpan>
+      <Cadence>PT9.2S</Cadence>
+    </TemporalDescription>
+    <ObservedRegion>Earth.Magnetosphere</ObservedRegion>
+    <ObservedRegion>Earth.Magnetosphere.Polar</ObservedRegion>
+    <Caveats>TIDE was originally designed to detect mass-resolved ions, H+, O+, He+, and NO+, for 32 energy steps (31 reported), 32 spin angle bins, and 7 polar angle channels. The detection of time-of-flight direct-events deteriorated rapidly early in the mission, reducing the ability to resolve ion masses and resulting in the lost of information in one axis (Z). After 09/30/96, the ion data is of poor quality and as a result, only Total Ions (Stops) are reported starting 12/08/96. Total Ions is the sum over the 7 polar angle channels of the particle counts detected by the Stop microchannel plate (MCP) detectors. The resolution in the 32 energy steps and in the 32 spin angle bins is retained. 1996 H+, O+, and He+ data are reported in the TIDE H0 CDFs. In order to avoid damage to the MCPs, starting 03/27/96 and continuing throughout the rest of the mission, the high voltage on the MCPs is reduced during radiation belt passes.</Caveats>
+    <Parameter>
+      <Name>Major Frame, in Telemetry Bytes</Name>
+      <Description>Each record in the TIDE level-zero file contains a major frame header followed by the bytes for the 250 minor frames that make up a major frame. A major frame is reported every 9.2 s for a single day. The length of a minor frame varies depending on the mode the Polar Spacecraft is in: for science mode 1, the TIDE minor frames are 22 bytes long. For science mode 2 (contingency), the minor frames are 43 bytes long. The first three bytes contain TIDE housekeeping bytes or fill data (000). The remaining bytes contain TIDE science data products (see Science Data Products Parameter) or fill data. See http://tideuvira.nsstc.nasa.gov/tide/Documentation/DataFileFormats/LevelZero.html or http://tide.gsfc.nasa.gov/Documentation/DataFileFormats/LevelZero.html for format details.</Description>
+      <ValidMin>0</ValidMin>
+      <ValidMax>255</ValidMax>
+      <FillValue>0</FillValue>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Science Data Products, in Telemetry Bytes</Name>
+      <Description>All TIDE science telemetry is reported in one of 188 data products. All TIDE data is collected for a Polar Spacecraft spin (~6 s). All of the Data Products for a specific spin are reported as a spin packet that contains a spin header followed by each Data Product. Six Data Products contain instrument parameters or memory dumps. The remaining 182 Data Products contain collapsed and doubly compressed ion counts for specific ions, energy bins, and spin and polar angle bins. The counts can be summed (collapesd) over adjacent energy and spin angle bins. The counts are then converted (compressed) from a 16-bit to an 8-bit integer. A Lossy compression is then applied to the Data Product bytes. The data products reported each spin depend on TIDE's operating modes. NOTE: The only way to read TIDE data products is to use the TIDE processing software. See http://tideuvira.nsstc.nasa.gov/tide/Documentation/DataFileFormats/LevelZero.html or http://tide.gsfc.nasa.gov/Documentation/DataFileFormats/LevelZero.html for details.</Description>
+      <ValidMin>0</ValidMin>
+      <ValidMax>255</ValidMax>
+      <FillValue>0</FillValue>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Spacecraft Potential</Name>
+      <Description>TIDE uses EFI spacecraft potential to calculate phase space density and then moments. The negative of the spacecraft potential was extracted from EFI key parameter files and saved in a large text file that contains year, day-of-year, milliseconds, and the negative of the spacecraft potential every 6 s for one month. The files are available via the TIDE data download page or directly from the TIDE data archive at either http://tideuvira.nsstc.nasa.gov/tide/archive/data/scpot or http://tide.gsfc.nasa.gov/archive/data/scpot.</Description>
+      <Units>V</Units>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>ion mask, in Floating Point Counts</Name>
+      <Description>The TIDE instrument recorded high counts centered on two different spin angles and resulting from solar photons. There is one large pulse (centered on the sun direction) and one small pulse (at high spin angles) every spin of the spacecraft, about every 6 s. The ion mask is used to subtract the sun pulse and background noise. Once every other day at a point near apogee where few counts are expected the MCPs are shut down for a couple of superspins (32 spins/superspin) so that only background counts and sun pulses are detected. The count rate data collected during this time are then averaged to get the background mask. The mask file is a binary file that contains an averaged background count for each energy (31), spin angle (32), polar angle (7), and mass (6). From 04/01/96 to 12/07/06, the mask files contain a mask for each of the ions (H+, He+, O+, He++, molecular ions, and Singles). For Total Ions (Stops) data from 12/08/96 to 04/15/08, the mask file is mostly zeros with masks created for H+ (never used) and for Stops. The Stops mask is a 31 x 32 (energy versus spin angle) array stored in channel 3 (polar angle), mass 4. For Stops the rest of the array is zeros.</Description>
+      <Structure>
+        <Size>31 32 7 6</Size>
+      </Structure>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Polar Orbit</Name>
+      <Description>The Polar Orbit CDF files are used by the TIDE level-zero processing software as plot labeling information and in the calculation of moments and phase space density velocity distributions. Parameters include spacecraft location and velocity (GSE and GSM), magnetic local time, magnetic latitude, and L-shell.</Description>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Polar Attitude</Name>
+      <Description>The Polar Attitude CDF files are used by the TIDE level-zero processing software in the calculation of moments and phase space density velocity distributions. Parameters include spacecraft right ascension and declination (GSE and GSM).</Description>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+  </NumericalData>
 </Spase>

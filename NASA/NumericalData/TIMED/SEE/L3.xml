@@ -1,68 +1,86 @@
-<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_2_1.xsd">
-<Version>2.2.1</Version>
-<NumericalData>
-      <ResourceID>spase://NASA/NumericalData/TIMED/SEE/L3</ResourceID>
-      <ResourceHeader>
-         <ResourceName>TIMED SEE Level 3 Solar Irradiance Data</ResourceName>
-         <ReleaseDate>2020-07-07T21:15:38Z</ReleaseDate>
-         <Description>SEE Level 3 data files contain one daily averaged solar irradiance spectrum in 1 nm intervals extracted from the EGS Level 2 and XPS Level 2 data products. Shortward of 27 nm, a solar model is scaled to match the XPS broadband data. SEE Level 3 data files also contain 38 emission lines extracted from EGS Level 2 spectra, and the XPS Level 2 diode irradiances.
+<?xml version='1.0' encoding='UTF-8'?>
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.spase-group.org/data/schema https://www.spase-group.org/data/schema/spase-2.7.0.xsd">
+  <Version>2.7.0</Version>
+  <NumericalData>
+    <ResourceID>spase://NASA/NumericalData/TIMED/SEE/L3</ResourceID>
+    <NamingAuthority>NASA</NamingAuthority>
+    <ResourceType>NumericalData</ResourceType>
+    <ResourceHeader>
+      <ResourceName>TIMED SEE Level 3 Solar Irradiance Data</ResourceName>
+      <ReleaseDate>2025-11-14T16:01:52Z</ReleaseDate>
+      <RevisionHistory>
+        <RevisionEvent>
+          <ReleaseDate>2020-07-07T21:15:38Z</ReleaseDate>
+          <Note>Only known prior ReleaseDate of the metadata</Note>
+        </RevisionEvent>
+        <RevisionEvent>
+          <ReleaseDate>2025-11-14T16:01:52Z</ReleaseDate>
+          <Note>Added PublicationInfo. Added ResourceType and NamingAuthority. Changed http to https in top-level schemaLocation attribute. Fixed version number separator in top-level schemaLocation attribute. Matched version number in schemaLocation attribute to updated value in Version tag. ZCB</Note>
+        </RevisionEvent>
+      </RevisionHistory>
+      <Description>SEE Level 3 data files contain one daily averaged solar irradiance spectrum in 1 nm intervals extracted from the EGS Level 2 and XPS Level 2 data products. Shortward of 27 nm, a solar model is scaled to match the XPS broadband data. SEE Level 3 data files also contain 38 emission lines extracted from EGS Level 2 spectra, and the XPS Level 2 diode irradiances.
 
 For normal operations, SEE observes the Sun for about 3 minutes every orbit (97 minutes), which usually gives 14-15 measurements per day. The SEE Level 3 data are time averaged over the entire day, after applying corrections for atmospheric absorption, degradation, flare removal, and to 1-AU.</Description>
-         <Acknowledgement>NASA, Thomas N. Woods</Acknowledgement>
-         <Contact>
-            <PersonID>spase://SMWG/Person/Thomas.N.Woods</PersonID>
-            <Role>PrincipalInvestigator</Role>
-         </Contact>
-         <InformationURL>
-            <Name>L3 Data Information</Name>
-            <URL>http://lasp.colorado.edu/home/see/data/daily-averages/level-3/</URL>
-         </InformationURL>
-         <PriorID>spase://VITMO/NumericalData/TIMED/SEE/L3</PriorID>
-          <PriorID>spase://VSPO/NumericalData/TIMED/SEE/L3</PriorID>
-      </ResourceHeader>
-      <AccessInformation>
-         <RepositoryID>spase://SMWG/Repository/TIMED/SEE_POC</RepositoryID>
-         <Availability>Online</Availability>
-         <AccessRights>Open</AccessRights>
-         <AccessURL>
-            <Name>SEE Data Products web page</Name>
-            <URL>http://lasp.colorado.edu/home/see/data/</URL>
-            <Description>This web page allows the request of data files for this product.  To request data: for the L3 data type of interest, click the year of interest to go the the ftp directory of files and download the desired day-long file by clicking on it.</Description>
-         </AccessURL>
-         <Format>NetCDF</Format>
-         <Encoding>None</Encoding>
-         <Acknowledgement>NASA, Thomas N. Woods</Acknowledgement>
-      </AccessInformation>
-      <ProcessingLevel>Calibrated</ProcessingLevel>
-      <ProviderResourceName>SEE Level 3 Solar Irradiance data</ProviderResourceName>
-      <ProviderProcessingLevel>Level 3</ProviderProcessingLevel>
-      <ProviderVersion>10.02</ProviderVersion>
-      <InstrumentID>spase://SMWG/Instrument/TIMED/SEE</InstrumentID>
-      <MeasurementType>Irradiance</MeasurementType>
-      <TemporalDescription>
-         <TimeSpan>
-            <StartDate>2002-01-22T00:00:00.000</StartDate>
-            <RelativeStopDate>P2D</RelativeStopDate>
-         </TimeSpan>
-      </TemporalDescription>
-      <ObservedRegion>Sun</ObservedRegion>
-      <Keyword>TIMED</Keyword>
-      <Keyword>SEE</Keyword>
-      <Keyword>Sun</Keyword>
-      <Parameter>
-         <Name>solar irradiance spectrum</Name>
-         <ParameterKey>SP.FLUX</ParameterKey>
-         <Description>Merged Solar irradiance for XPS and EGS flux at 1nm bins with gaps filled using Woods-Rottman 2002 VUV model. Below 26 nm, flux is result of solution of linear equations involving XPS diodes and scaled to the VUV model.  EGS data is used above 26 nm except 114.5-120.5 and 122.5-128.5 nm where the VUV model is scaled to the EGS Lyman-alpha line.</Description>
-         <Units>W / m^2 / nm</Units>
-         <Wave>
-            <WaveType>Electromagnetic</WaveType>
-            <WaveQuantity>Wavelength</WaveQuantity>
-            <WavelengthRange>
-               <Low>0.5</Low>
-               <High>194.5</High>
-               <Units>nm</Units>
-            </WavelengthRange>
-         </Wave>
-      </Parameter>
-   </NumericalData>
+      <Acknowledgement>NASA, Thomas N. Woods</Acknowledgement>
+      <PublicationInfo>
+        <Authors>Woods, Thomas N.</Authors>
+        <PublicationDate>2025-11-14T16:01:52Z</PublicationDate>
+        <PublishedBy>Johns Hopkins University Applied Physics Laboratory</PublishedBy>
+      </PublicationInfo>
+      <Contact>
+        <PersonID>spase://SMWG/Person/Thomas.N.Woods</PersonID>
+        <Role>PrincipalInvestigator</Role>
+      </Contact>
+      <InformationURL>
+        <Name>L3 Data Information</Name>
+        <URL>http://lasp.colorado.edu/home/see/data/daily-averages/level-3/</URL>
+      </InformationURL>
+      <PriorID>spase://VITMO/NumericalData/TIMED/SEE/L3</PriorID>
+      <PriorID>spase://VSPO/NumericalData/TIMED/SEE/L3</PriorID>
+    </ResourceHeader>
+    <AccessInformation>
+      <RepositoryID>spase://SMWG/Repository/TIMED/SEE_POC</RepositoryID>
+      <Availability>Online</Availability>
+      <AccessRights>Open</AccessRights>
+      <AccessURL>
+        <Name>SEE Data Products web page</Name>
+        <URL>http://lasp.colorado.edu/home/see/data/</URL>
+        <Description>This web page allows the request of data files for this product.  To request data: for the L3 data type of interest, click the year of interest to go the the ftp directory of files and download the desired day-long file by clicking on it.</Description>
+      </AccessURL>
+      <Format>NetCDF</Format>
+      <Encoding>None</Encoding>
+      <Acknowledgement>NASA, Thomas N. Woods</Acknowledgement>
+    </AccessInformation>
+    <ProcessingLevel>Calibrated</ProcessingLevel>
+    <ProviderResourceName>SEE Level 3 Solar Irradiance data</ProviderResourceName>
+    <ProviderProcessingLevel>Level 3</ProviderProcessingLevel>
+    <ProviderVersion>10.02</ProviderVersion>
+    <InstrumentID>spase://SMWG/Instrument/TIMED/SEE</InstrumentID>
+    <MeasurementType>Irradiance</MeasurementType>
+    <TemporalDescription>
+      <TimeSpan>
+        <StartDate>2002-01-22T00:00:00.000</StartDate>
+        <RelativeStopDate>P2D</RelativeStopDate>
+      </TimeSpan>
+    </TemporalDescription>
+    <ObservedRegion>Sun</ObservedRegion>
+    <Keyword>TIMED</Keyword>
+    <Keyword>SEE</Keyword>
+    <Keyword>Sun</Keyword>
+    <Parameter>
+      <Name>solar irradiance spectrum</Name>
+      <ParameterKey>SP.FLUX</ParameterKey>
+      <Description>Merged Solar irradiance for XPS and EGS flux at 1nm bins with gaps filled using Woods-Rottman 2002 VUV model. Below 26 nm, flux is result of solution of linear equations involving XPS diodes and scaled to the VUV model.  EGS data is used above 26 nm except 114.5-120.5 and 122.5-128.5 nm where the VUV model is scaled to the EGS Lyman-alpha line.</Description>
+      <Units>W / m^2 / nm</Units>
+      <Wave>
+        <WaveType>Electromagnetic</WaveType>
+        <WaveQuantity>Wavelength</WaveQuantity>
+        <WavelengthRange>
+          <Low>0.5</Low>
+          <High>194.5</High>
+          <Units>nm</Units>
+        </WavelengthRange>
+      </Wave>
+    </Parameter>
+  </NumericalData>
 </Spase>

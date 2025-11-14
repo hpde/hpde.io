@@ -1,169 +1,187 @@
-<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_2_9.xsd">
-   <Version>2.2.9</Version>
-   <NumericalData>
-      <ResourceID>spase://NASA/NumericalData/Ulysses/URAP/GSFC/SPDF/RAR/ASCII/PT144S</ResourceID>
-      <ResourceHeader>
-         <ResourceName>Ulysses Unified Radio and Plasma wave (URAP) Radio Astronomy Receiver (RAR) 144 Second Data in ASCII</ResourceName>
-         <AlternateName>Ulysses Unified Radio and Plasma Wave Experiment - Radio Astronomy Receiver 144 Second Resolution ASCII Data</AlternateName>
-         <ReleaseDate>2020-07-07T21:15:50Z</ReleaseDate>
-         <Description>This data set contains 144 second averages of the electric field intensities from the Ulysses Unified Radio and Plasma Wave Instrument Radio Astronomy Receiver (URAP/RAR). The following notes are taken from the Guide to Archiving of Ulysses URAP Data revised January 27, 2010 - version 1.3 ftp://ftp.rssd.esa.int/pub/ulysses/URAP/docs/others/archived_data_user_guide.html Appendix C: USER'S GUIDE TO RAR 144 SECOND AVERAGED DATA FILES The time period of 144 seconds was used for the averaging period because that is the basic cycling time of the instrument. The RAR continually cycles through a list of frequencies. There are 16 lists and the list currently in use is chosen by telecommand. The time period to complete the list is 144 seconds for the high band of the receiver (for telemetry bit rates of 1024 and 512 bps, the cycle time is 64 seconds for bit rates of 256 and 128 bps), after which the instrument begins with the list again. Therefore this period was chosen for the averaging period. The format of the data is indicated by the following Fortran statement which can be used to read the data: DIMENSION F(0:75) READ(1,'(I4,2I2,1X,3I2,1X,5I2,12(/6E12.4),/4E12.4)') + IYEAR, IMONTH, IDAY, IHOUR, IMINUTE, ISECOND, + LO_POL_MODE, LO_SUM_MODE, HI_POL_MODE, HI_SUM_MODE, + IBPS, F The variables are defined as follows: The date and time of the beginning of the averaging period are given in IYEAR, IMONTH, IDAY, IHOUR, IMINUTE, ISECOND. LO_POL_MODE and HI_POL_MODE are the polarization modes of the low and high receiver bands. Their values are defined as: 1: Polarization on. 2: Polarization off. 3: Polarization mode switched during the averaging interval. 4: Polarization mode was unknown (usually due to a data gap). LO_SUM_MODE and HI_SUM_MODE are the polarization modes of the low and high receiver bands. Their values are defined as: 1: Summation on. 2: Summation off. 3: Summation mode switched during the averaging interval. 4: Summation mode was unknown (usually due to a data gap). 1: Summation on. 2: Summation off. 3: Summation mode switched during the averaging interval. 4: Summation mode was unknown (usually due to a data gap). IBPS indicates the telemetry bit rate during the averaging interval. Its values are defined as: 1: 128 bps. 2: 256 bps. 3: 512 bps. 4: 1024 bps. 5: Bit rate changed during the averaging period. 6: Bit rate unknown - usually due to a data gap. F is a vector containing the average signal for the 76 frequencies of the low and high bands. Elements 0 through 63 are from the low band receiver and correspond to frequencies of 1.25+0.75*N Khz where N is the element number (0..63). The frequency channels from 64 to 75 correspond to the following frequencies: F(64): 52 KHz F(65): 63 KHz F(66): 71 KHz F(67): 100 KHz F(68): 120 KHz F(69): 148 KHz F(70): 196 KHz F(71): 272 KHz F(72): 387 KHz F(73): 540 KHz F(74): 740 KHz F(75): 940 KHz The units of the data are microvolt/Hz**.5 measured at the receiver input terminals. To convert to electric field strength the given data must be divided by the effective length of the antenna. This is complicated by the fact that the effective length depends on the antenna impedance which is affected by the plasma conditions local to the Ulysses spacecraft. The impedance will also depend on the frequency. In general, the RAR frequency channels that are well above the local electron plasma frequency are not affected by the plasma conditions and the effective length of 23 meters can be used. When the RAR is in summed, rather than separate, mode the determination of field strengths is even more difficult. Description of the Unified Radio and Plasma Wave Instrument Radio Astronomy Receiver The Radio Astronomy Receiver is divided into two parts, a low frequency receiver and a high frequency receiver. The low frequency receiver has 64 channels that cover the frequency range from 1.25 to 48.0 kHz in linear steps of 0.75 kHz. The high frequency receiver has 12 channels that cover the range from 52 kHz to 940 kHz in approximately logarithmic steps. The high frequency receiver is usually operated in what is called "measure" mode, which causes the receiver to step repeatedly through a list of frequencies that is determined by a ROM on board the spacecraft. There are 16 different lists and one of them is chosen by telecommand. The different lists emphasize different frequency ranges, so as to maximize the information received depending on the type of phenomena being studied. Some of the lists include all 12 possible frequency channels while other lists skip some of the frequencies. The list that has been used for most of the mission does include all frequecies, but there may be times when other lists have been used. At these times only a subset of the frequencies will be present. The low frequency receiver can be operated in measure mode (with its own set of lists of 8 or 16 frequencies) or in "linear sweep" mode where it steps through a contiguous set of frequencies. In linear mode, all 64 frequencies can be stepped through, or a subset of 32 frequencies can be chosen using the lower half, middle half, or upper half of the frequencies. For most of the mission, the low frequency receiver has been operated in linear mode with all 64 frequencies but there have been periods when it has operated in measure mode or in in linear mode with less than 64 frequencies. During these periods only a subset (8, 16, or 32) of the 64 possible frequencies will appear. Besides the intensity of a signal reaching the spacecraft, the RAR can also, when operated in particular modes, determine additional information about the source of the radiation, including its direction relative to the location of Ulysses, its angular size, and its polarization. This is most efficiently done with the signal from the X and Z axis antennas summed together electronically either with or without a phase shift added between the two signals. Although this additional information cannot be recovered from the averaged data, the mode does have a large effect on the background signal level, so the mode of high and low frequency receivers is given in the data as either summed (X and Z antenna combined) or separate (X antenna alone). Reference: Astron. Astrophys. Suppl. Ser., 92(2), 291-316 (1992).</Description>
-         <Acknowledgement>Please acknowledge the Principal Investigator, R J MacDowall, of the NASA Goddard Space Flight Center, Greenbelt, MD, USA, and Mike Lancaster and Cecil Tranquille of the Ulysses Data System, ESA/ESTEC, Noordwijk, NL</Acknowledgement>
-         <Contact>
-            <PersonID>spase://SMWG/Person/Robert.J.MacDowall</PersonID>
-            <Role>PrincipalInvestigator</Role>
-</Contact>
-         <Contact>
-            <PersonID>spase://SMWG/Person/Roger.A.Hess</PersonID>
-            <Role>TechnicalContact</Role>
-</Contact>
-         <InformationURL>
-            <Name>Ulysses URAP Instrument Page at NASA/GSFC</Name>
-            <URL>https://urap.gsfc.nasa.gov</URL>
-            <Description>Ulysses URAP Instrument page maintained by NASA GSFC with URAP data plotting tools, Data Access, Publication lists, Team member lists, documents, and related links sections</Description>
-            <Language>en</Language>
-</InformationURL>
-         <InformationURL>
-            <Name>Guide to Archiving of Ulysses URAP Data</Name>
-            <URL>http://ufa.esac.esa.int/ufa/#instruments</URL>
-            <Description>by Roger Hess, Robert MacDowall, Denise Lengyel-Frey, formerly known as GUIDE TO THE ARCHIVING OF ULYSSES RADIO AND PLASMA WAVE DATA, revised January 27, 2010 - version 1.3</Description>
-            <Language>en</Language>
-</InformationURL>
-         <InformationURL>
-            <Name>Ulysses URAP Instrument Page at ESA</Name>
-            <URL>http://ufa.esac.esa.int/ufa/#instruments</URL>
-            <Language>en</Language>
-</InformationURL>
-         <InformationURL>
-            <Name>The Unified Radio and Plasma Wave Investigation</Name>
-            <URL>http://ufa.esac.esa.int/ufa/#instruments</URL>
-            <Description>A copy of the instrument paper, Stone et al. Astron. Astrophys. Suppl. Ser. 92, 291-316 (1992)</Description>
-            <Language>en</Language>
-</InformationURL>
-         <PriorID>spase://VWO/NumericalData/Ulysses/URAP/Ulysses_RAR_ASCII_PT144S</PriorID>
-         <PriorID>spase://VWO/NumericalData/Ulysses/URAP/RAR.ASCII.PT144S</PriorID>
-          <PriorID>spase://VSPO/NumericalData/Ulysses/URAP/GSFC/SPDF/RAR/ASCII/PT144S</PriorID>
-</ResourceHeader>
-      <AccessInformation>
-         <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF</RepositoryID>
-         <Availability>Online</Availability>
-         <AccessRights>Open</AccessRights>
-         <AccessURL>
-            <Name>FTPS from SPDF (not with most browsers)</Name>
-            <URL>ftps://spdf.gsfc.nasa.gov/pub/data/ulysses/radio/urap/rar_144sec_ascii/</URL>
-            <Description>FTP access to repository of Ulysses/URAP RAR 144 ASCII format data files at NASA's SPDF</Description>
-            <Language>en</Language>
-</AccessURL>
-         <AccessURL>
-            <Name>HTTPS from SPDF</Name>
-            <URL>https://spdf.gsfc.nasa.gov/pub/data/ulysses/radio/urap/rar_144sec_ascii/</URL>
-            <Description>In CDF via HTTP from SPDF</Description>
-</AccessURL>
-         <Format>Text.ASCII</Format>
-         <Acknowledgement>Please acknowledge the Principal Investigator, R J MacDowall, of the NASA Goddard Space Flight Center, Greenbelt, MD, USA, and Mike Lancaster and Cecil Tranquille of the Ulysses Data System, ESA/ESTEC, Noordwijk, NL</Acknowledgement>
-</AccessInformation>
-      <ProcessingLevel>Calibrated</ProcessingLevel>
-      <InstrumentID>spase://SMWG/Instrument/Ulysses/URAP</InstrumentID>
-      <MeasurementType>Waves.Passive</MeasurementType>
-      <MeasurementType>ElectricField</MeasurementType>
-      <TemporalDescription>
-         <TimeSpan>
-            <StartDate>1990-11-03T19:30:00Z</StartDate>
-            <StopDate>2007-11-26T18:30:00Z</StopDate>
-</TimeSpan>
-         <Cadence>PT144S</Cadence>
-</TemporalDescription>
-      <SpectralRange>RadioFrequency</SpectralRange>
-      <ObservedRegion>Heliosphere.Inner</ObservedRegion>
-      <ObservedRegion>Heliosphere.Outer</ObservedRegion>
-      <ObservedRegion>Jupiter</ObservedRegion>
-      <ObservedRegion>Sun.Corona</ObservedRegion>
-      <Caveats>Ulyssses URAP Interference and other issues affecting data interpretation - see Ulysses URAP - Interference and other issues affecting data interpretation http://vwo.nasa.gov/urap/URAP_InterpretationIssues/urap_interpretation.html</Caveats>
-      <!-- Keywords pertaining to the data presentation -->
-      <Keyword>Dynamic Spectrogram</Keyword>
-      <Keyword>Spectrogram</Keyword>
-      <!-- Keywords pertaining to the physical phenomena appearing in spectrograms -->
-      <Keyword>Solar radio burst</Keyword>
-      <Keyword>Jovian Kilometric Radiation</Keyword>
-      <Keyword>KOM</Keyword>
-      <Keyword>bKOM</Keyword>
-      <Keyword>Jovian Hectometric Radiation</Keyword>
-      <Keyword>HOM</Keyword>
-      <Keyword>Type II Solar radio burst</Keyword>
-      <Keyword>Type III Solar radio burst</Keyword>
-      <Keyword>UHR</Keyword>
-      <Keyword>Upper hybrid resonance</Keyword>
-      <Keyword>VLF Emissions</Keyword>
-      <Keyword>ULF Emissions</Keyword>
-      <Keyword>Whistler</Keyword>
-      <Parameter>
-         <Name>Date</Name>
-         <Units>year, month, day</Units>
-         <RenderingHints>
-            <ValueFormat>I4,2I2</ValueFormat>
-</RenderingHints>
-         <Support>
-            <SupportQuantity>Temporal</SupportQuantity>
-</Support>
-</Parameter>
-      <Parameter>
-         <Name>Time</Name>
-         <Units>hour, minutes, sec</Units>
-         <RenderingHints>
-            <ValueFormat>3I2</ValueFormat>
-</RenderingHints>
-         <Support>
-            <SupportQuantity>Temporal</SupportQuantity>
-</Support>
-</Parameter>
-      <Parameter>
-         <Name>LO_POL_MODE</Name>
-         <Description>The polarization mode of the low receiver band. Their values are defined as: 1: Polarization on. 2: Polarization off. 3: Polarization mode switched during the averaging interval. 4: Polarization mode was unknown (usually due to a data gap).</Description>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-</Support>
-</Parameter>
-      <Parameter>
-         <Name>LO_SUM_MODE</Name>
-         <Description>The polarization modes of the low receiver bands. Their values are defined as: 1: Summation on. 2: Summation off. 3: Summation mode switched during the averaging interval. 4: Summation mode was unknown (usually due to a data gap).</Description>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-</Support>
-</Parameter>
-      <Parameter>
-         <Name>HI_POL_MODE</Name>
-         <Description>The polarization mode of the low receiver band. Their values are defined as: 1: Polarization on. 2: Polarization off. 3: Polarization mode switched during the averaging interval. 4: Polarization mode was unknown (usually due to a data gap).</Description>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-</Support>
-</Parameter>
-      <Parameter>
-         <Name>HI_SUM_MODE</Name>
-         <Description>The polarization modes of the low receiver bands. Their values are defined as: 1: Summation on. 2: Summation off. 3: Summation mode switched during the averaging interval. 4: Summation mode was unknown (usually due to a data gap).</Description>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-</Support>
-</Parameter>
-      <Parameter>
-         <Name>IBPS</Name>
-         <Description>The telemetry bit rate during the averaging interval. Its values are defined as: 1: 128 bps. 2: 256 bps. 3: 512 bps. 4: 1024 bps. 5: Bit rate changed during the averaging period. 6: Bit rate unknown - usually due to a data gap.</Description>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-</Support>
-</Parameter>
-      <Parameter>
-         <Name>RAR Electric field intensity</Name>
-         <Description>RAR Electric field intensity in 76 channels. See Description above for computing the corresponding frequencies and converting the intensities into electric field strength.</Description>
-         <Units>microVolt/Hz**0.5</Units>
-         <Wave>
-            <WaveType>PlasmaWaves</WaveType>
-            <WaveQuantity>ACElectricField</WaveQuantity>
-            <FrequencyRange>
-               <SpectralRange>RadioFrequency</SpectralRange>
-               <Low>1.25</Low>
-               <High>940</High>
-               <Units>kHz</Units>
-</FrequencyRange>
-</Wave>
-</Parameter>
-</NumericalData>
+<?xml version='1.0' encoding='UTF-8'?>
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.spase-group.org/data/schema https://www.spase-group.org/data/schema/spase-2.7.0.xsd">
+  <Version>2.7.0</Version>
+  <NumericalData>
+    <ResourceID>spase://NASA/NumericalData/Ulysses/URAP/GSFC/SPDF/RAR/ASCII/PT144S</ResourceID>
+    <NamingAuthority>NASA</NamingAuthority>
+    <ResourceType>NumericalData</ResourceType>
+    <ResourceHeader>
+      <ResourceName>Ulysses Unified Radio and Plasma wave (URAP) Radio Astronomy Receiver (RAR) 144 Second Data in ASCII</ResourceName>
+      <AlternateName>Ulysses Unified Radio and Plasma Wave Experiment - Radio Astronomy Receiver 144 Second Resolution ASCII Data</AlternateName>
+      <ReleaseDate>2025-11-14T16:02:59Z</ReleaseDate>
+      <RevisionHistory>
+        <RevisionEvent>
+          <ReleaseDate>2020-07-07T21:15:50Z</ReleaseDate>
+          <Note>Only known prior ReleaseDate of the metadata</Note>
+        </RevisionEvent>
+        <RevisionEvent>
+          <ReleaseDate>2025-11-14T16:02:59Z</ReleaseDate>
+          <Note>Added PublicationInfo. Added ResourceType and NamingAuthority. Changed http to https in top-level schemaLocation attribute. Fixed version number separator in top-level schemaLocation attribute. Matched version number in schemaLocation attribute to updated value in Version tag. ZCB</Note>
+        </RevisionEvent>
+      </RevisionHistory>
+      <Description>This data set contains 144 second averages of the electric field intensities from the Ulysses Unified Radio and Plasma Wave Instrument Radio Astronomy Receiver (URAP/RAR). The following notes are taken from the Guide to Archiving of Ulysses URAP Data revised January 27, 2010 - version 1.3 ftp://ftp.rssd.esa.int/pub/ulysses/URAP/docs/others/archived_data_user_guide.html Appendix C: USER'S GUIDE TO RAR 144 SECOND AVERAGED DATA FILES The time period of 144 seconds was used for the averaging period because that is the basic cycling time of the instrument. The RAR continually cycles through a list of frequencies. There are 16 lists and the list currently in use is chosen by telecommand. The time period to complete the list is 144 seconds for the high band of the receiver (for telemetry bit rates of 1024 and 512 bps, the cycle time is 64 seconds for bit rates of 256 and 128 bps), after which the instrument begins with the list again. Therefore this period was chosen for the averaging period. The format of the data is indicated by the following Fortran statement which can be used to read the data: DIMENSION F(0:75) READ(1,'(I4,2I2,1X,3I2,1X,5I2,12(/6E12.4),/4E12.4)') + IYEAR, IMONTH, IDAY, IHOUR, IMINUTE, ISECOND, + LO_POL_MODE, LO_SUM_MODE, HI_POL_MODE, HI_SUM_MODE, + IBPS, F The variables are defined as follows: The date and time of the beginning of the averaging period are given in IYEAR, IMONTH, IDAY, IHOUR, IMINUTE, ISECOND. LO_POL_MODE and HI_POL_MODE are the polarization modes of the low and high receiver bands. Their values are defined as: 1: Polarization on. 2: Polarization off. 3: Polarization mode switched during the averaging interval. 4: Polarization mode was unknown (usually due to a data gap). LO_SUM_MODE and HI_SUM_MODE are the polarization modes of the low and high receiver bands. Their values are defined as: 1: Summation on. 2: Summation off. 3: Summation mode switched during the averaging interval. 4: Summation mode was unknown (usually due to a data gap). 1: Summation on. 2: Summation off. 3: Summation mode switched during the averaging interval. 4: Summation mode was unknown (usually due to a data gap). IBPS indicates the telemetry bit rate during the averaging interval. Its values are defined as: 1: 128 bps. 2: 256 bps. 3: 512 bps. 4: 1024 bps. 5: Bit rate changed during the averaging period. 6: Bit rate unknown - usually due to a data gap. F is a vector containing the average signal for the 76 frequencies of the low and high bands. Elements 0 through 63 are from the low band receiver and correspond to frequencies of 1.25+0.75*N Khz where N is the element number (0..63). The frequency channels from 64 to 75 correspond to the following frequencies: F(64): 52 KHz F(65): 63 KHz F(66): 71 KHz F(67): 100 KHz F(68): 120 KHz F(69): 148 KHz F(70): 196 KHz F(71): 272 KHz F(72): 387 KHz F(73): 540 KHz F(74): 740 KHz F(75): 940 KHz The units of the data are microvolt/Hz**.5 measured at the receiver input terminals. To convert to electric field strength the given data must be divided by the effective length of the antenna. This is complicated by the fact that the effective length depends on the antenna impedance which is affected by the plasma conditions local to the Ulysses spacecraft. The impedance will also depend on the frequency. In general, the RAR frequency channels that are well above the local electron plasma frequency are not affected by the plasma conditions and the effective length of 23 meters can be used. When the RAR is in summed, rather than separate, mode the determination of field strengths is even more difficult. Description of the Unified Radio and Plasma Wave Instrument Radio Astronomy Receiver The Radio Astronomy Receiver is divided into two parts, a low frequency receiver and a high frequency receiver. The low frequency receiver has 64 channels that cover the frequency range from 1.25 to 48.0 kHz in linear steps of 0.75 kHz. The high frequency receiver has 12 channels that cover the range from 52 kHz to 940 kHz in approximately logarithmic steps. The high frequency receiver is usually operated in what is called "measure" mode, which causes the receiver to step repeatedly through a list of frequencies that is determined by a ROM on board the spacecraft. There are 16 different lists and one of them is chosen by telecommand. The different lists emphasize different frequency ranges, so as to maximize the information received depending on the type of phenomena being studied. Some of the lists include all 12 possible frequency channels while other lists skip some of the frequencies. The list that has been used for most of the mission does include all frequecies, but there may be times when other lists have been used. At these times only a subset of the frequencies will be present. The low frequency receiver can be operated in measure mode (with its own set of lists of 8 or 16 frequencies) or in "linear sweep" mode where it steps through a contiguous set of frequencies. In linear mode, all 64 frequencies can be stepped through, or a subset of 32 frequencies can be chosen using the lower half, middle half, or upper half of the frequencies. For most of the mission, the low frequency receiver has been operated in linear mode with all 64 frequencies but there have been periods when it has operated in measure mode or in in linear mode with less than 64 frequencies. During these periods only a subset (8, 16, or 32) of the 64 possible frequencies will appear. Besides the intensity of a signal reaching the spacecraft, the RAR can also, when operated in particular modes, determine additional information about the source of the radiation, including its direction relative to the location of Ulysses, its angular size, and its polarization. This is most efficiently done with the signal from the X and Z axis antennas summed together electronically either with or without a phase shift added between the two signals. Although this additional information cannot be recovered from the averaged data, the mode does have a large effect on the background signal level, so the mode of high and low frequency receivers is given in the data as either summed (X and Z antenna combined) or separate (X antenna alone). Reference: Astron. Astrophys. Suppl. Ser., 92(2), 291-316 (1992).</Description>
+      <Acknowledgement>Please acknowledge the Principal Investigator, R J MacDowall, of the NASA Goddard Space Flight Center, Greenbelt, MD, USA, and Mike Lancaster and Cecil Tranquille of the Ulysses Data System, ESA/ESTEC, Noordwijk, NL</Acknowledgement>
+      <PublicationInfo>
+        <Authors>MacDowall, Robert J.</Authors>
+        <PublicationDate>2025-11-14T16:02:59Z</PublicationDate>
+        <PublishedBy>Planetary Data System; Space Physics Data Facility; European Space Astronomy Centre</PublishedBy>
+      </PublicationInfo>
+      <Contact>
+        <PersonID>spase://SMWG/Person/Robert.J.MacDowall</PersonID>
+        <Role>PrincipalInvestigator</Role>
+      </Contact>
+      <Contact>
+        <PersonID>spase://SMWG/Person/Roger.A.Hess</PersonID>
+        <Role>TechnicalContact</Role>
+      </Contact>
+      <InformationURL>
+        <Name>Ulysses URAP Instrument Page at NASA/GSFC</Name>
+        <URL>https://urap.gsfc.nasa.gov</URL>
+        <Description>Ulysses URAP Instrument page maintained by NASA GSFC with URAP data plotting tools, Data Access, Publication lists, Team member lists, documents, and related links sections</Description>
+        <Language>en</Language>
+      </InformationURL>
+      <InformationURL>
+        <Name>Guide to Archiving of Ulysses URAP Data</Name>
+        <URL>http://ufa.esac.esa.int/ufa/#instruments</URL>
+        <Description>by Roger Hess, Robert MacDowall, Denise Lengyel-Frey, formerly known as GUIDE TO THE ARCHIVING OF ULYSSES RADIO AND PLASMA WAVE DATA, revised January 27, 2010 - version 1.3</Description>
+        <Language>en</Language>
+      </InformationURL>
+      <InformationURL>
+        <Name>Ulysses URAP Instrument Page at ESA</Name>
+        <URL>http://ufa.esac.esa.int/ufa/#instruments</URL>
+        <Language>en</Language>
+      </InformationURL>
+      <InformationURL>
+        <Name>The Unified Radio and Plasma Wave Investigation</Name>
+        <URL>http://ufa.esac.esa.int/ufa/#instruments</URL>
+        <Description>A copy of the instrument paper, Stone et al. Astron. Astrophys. Suppl. Ser. 92, 291-316 (1992)</Description>
+        <Language>en</Language>
+      </InformationURL>
+      <PriorID>spase://VWO/NumericalData/Ulysses/URAP/Ulysses_RAR_ASCII_PT144S</PriorID>
+      <PriorID>spase://VWO/NumericalData/Ulysses/URAP/RAR.ASCII.PT144S</PriorID>
+      <PriorID>spase://VSPO/NumericalData/Ulysses/URAP/GSFC/SPDF/RAR/ASCII/PT144S</PriorID>
+    </ResourceHeader>
+    <AccessInformation>
+      <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF</RepositoryID>
+      <Availability>Online</Availability>
+      <AccessRights>Open</AccessRights>
+      <AccessURL>
+        <Name>FTPS from SPDF (not with most browsers)</Name>
+        <URL>ftps://spdf.gsfc.nasa.gov/pub/data/ulysses/radio/urap/rar_144sec_ascii/</URL>
+        <Description>FTP access to repository of Ulysses/URAP RAR 144 ASCII format data files at NASA's SPDF</Description>
+        <Language>en</Language>
+      </AccessURL>
+      <AccessURL>
+        <Name>HTTPS from SPDF</Name>
+        <URL>https://spdf.gsfc.nasa.gov/pub/data/ulysses/radio/urap/rar_144sec_ascii/</URL>
+        <Description>In CDF via HTTP from SPDF</Description>
+      </AccessURL>
+      <Format>Text.ASCII</Format>
+      <Acknowledgement>Please acknowledge the Principal Investigator, R J MacDowall, of the NASA Goddard Space Flight Center, Greenbelt, MD, USA, and Mike Lancaster and Cecil Tranquille of the Ulysses Data System, ESA/ESTEC, Noordwijk, NL</Acknowledgement>
+    </AccessInformation>
+    <ProcessingLevel>Calibrated</ProcessingLevel>
+    <InstrumentID>spase://SMWG/Instrument/Ulysses/URAP</InstrumentID>
+    <MeasurementType>Waves.Passive</MeasurementType>
+    <MeasurementType>ElectricField</MeasurementType>
+    <TemporalDescription>
+      <TimeSpan>
+        <StartDate>1990-11-03T19:30:00Z</StartDate>
+        <StopDate>2007-11-26T18:30:00Z</StopDate>
+      </TimeSpan>
+      <Cadence>PT144S</Cadence>
+    </TemporalDescription>
+    <SpectralRange>RadioFrequency</SpectralRange>
+    <ObservedRegion>Heliosphere.Inner</ObservedRegion>
+    <ObservedRegion>Heliosphere.Outer</ObservedRegion>
+    <ObservedRegion>Jupiter</ObservedRegion>
+    <ObservedRegion>Sun.Corona</ObservedRegion>
+    <Caveats>Ulyssses URAP Interference and other issues affecting data interpretation - see Ulysses URAP - Interference and other issues affecting data interpretation http://vwo.nasa.gov/urap/URAP_InterpretationIssues/urap_interpretation.html</Caveats>
+    <!-- Keywords pertaining to the data presentation -->
+    <Keyword>Dynamic Spectrogram</Keyword>
+    <Keyword>Spectrogram</Keyword>
+    <!-- Keywords pertaining to the physical phenomena appearing in spectrograms -->
+    <Keyword>Solar radio burst</Keyword>
+    <Keyword>Jovian Kilometric Radiation</Keyword>
+    <Keyword>KOM</Keyword>
+    <Keyword>bKOM</Keyword>
+    <Keyword>Jovian Hectometric Radiation</Keyword>
+    <Keyword>HOM</Keyword>
+    <Keyword>Type II Solar radio burst</Keyword>
+    <Keyword>Type III Solar radio burst</Keyword>
+    <Keyword>UHR</Keyword>
+    <Keyword>Upper hybrid resonance</Keyword>
+    <Keyword>VLF Emissions</Keyword>
+    <Keyword>ULF Emissions</Keyword>
+    <Keyword>Whistler</Keyword>
+    <Parameter>
+      <Name>Date</Name>
+      <Units>year, month, day</Units>
+      <RenderingHints>
+        <ValueFormat>I4,2I2</ValueFormat>
+      </RenderingHints>
+      <Support>
+        <SupportQuantity>Temporal</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Time</Name>
+      <Units>hour, minutes, sec</Units>
+      <RenderingHints>
+        <ValueFormat>3I2</ValueFormat>
+      </RenderingHints>
+      <Support>
+        <SupportQuantity>Temporal</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>LO_POL_MODE</Name>
+      <Description>The polarization mode of the low receiver band. Their values are defined as: 1: Polarization on. 2: Polarization off. 3: Polarization mode switched during the averaging interval. 4: Polarization mode was unknown (usually due to a data gap).</Description>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>LO_SUM_MODE</Name>
+      <Description>The polarization modes of the low receiver bands. Their values are defined as: 1: Summation on. 2: Summation off. 3: Summation mode switched during the averaging interval. 4: Summation mode was unknown (usually due to a data gap).</Description>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>HI_POL_MODE</Name>
+      <Description>The polarization mode of the low receiver band. Their values are defined as: 1: Polarization on. 2: Polarization off. 3: Polarization mode switched during the averaging interval. 4: Polarization mode was unknown (usually due to a data gap).</Description>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>HI_SUM_MODE</Name>
+      <Description>The polarization modes of the low receiver bands. Their values are defined as: 1: Summation on. 2: Summation off. 3: Summation mode switched during the averaging interval. 4: Summation mode was unknown (usually due to a data gap).</Description>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>IBPS</Name>
+      <Description>The telemetry bit rate during the averaging interval. Its values are defined as: 1: 128 bps. 2: 256 bps. 3: 512 bps. 4: 1024 bps. 5: Bit rate changed during the averaging period. 6: Bit rate unknown - usually due to a data gap.</Description>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>RAR Electric field intensity</Name>
+      <Description>RAR Electric field intensity in 76 channels. See Description above for computing the corresponding frequencies and converting the intensities into electric field strength.</Description>
+      <Units>microVolt/Hz**0.5</Units>
+      <Wave>
+        <WaveType>PlasmaWaves</WaveType>
+        <WaveQuantity>ACElectricField</WaveQuantity>
+        <FrequencyRange>
+          <SpectralRange>RadioFrequency</SpectralRange>
+          <Low>1.25</Low>
+          <High>940</High>
+          <Units>kHz</Units>
+        </FrequencyRange>
+      </Wave>
+    </Parameter>
+  </NumericalData>
 </Spase>

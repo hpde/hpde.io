@@ -1,287 +1,305 @@
-<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_2_2.xsd">
-<Version>2.2.2</Version>
-<NumericalData>
-      <ResourceID>spase://NASA/NumericalData/TIMED/SEE/L2_EGS</ResourceID>
-      <ResourceHeader>
-         <ResourceName>TIMED SEE Level2 EGS Solar Irradiance Data</ResourceName>
-         <ReleaseDate>2020-07-07T21:15:38Z</ReleaseDate>
-         <Description>The EUV Grating Spectrograph (EGS) aboard SEE performs measurements of the Sun for about 3 minutes every orbit (97 minutes) which usually gives 14-15 measurements per day. The Level 2 data is time averaged over the entire day, after being 1-AU corrected and removing flares. The 1-AU correction is provided.</Description>
-         <Acknowledgement>NASA, Thomas N. Woods</Acknowledgement>
-         <Contact>
-            <PersonID>spase://SMWG/Person/Thomas.N.Woods</PersonID>
-            <Role>PrincipalInvestigator</Role>
-         </Contact>
-         <InformationURL>
-            <Name>L2 EGS Data Information</Name>
-            <URL>http://lasp.colorado.edu/home/see/data/daily-averages/level-2-egs/</URL>
-         </InformationURL>
-         <PriorID>spase://VITMO/NumericalData/TIMED/SEE/L2_EGS</PriorID>
-          <PriorID>spase://VSPO/NumericalData/TIMED/SEE/L2_EGS</PriorID>
-      </ResourceHeader>
-      <AccessInformation>
-         <RepositoryID>spase://SMWG/Repository/TIMED/SEE_POC</RepositoryID>
-         <Availability>Online</Availability>
-         <AccessRights>Open</AccessRights>
-         <AccessURL>
-            <Name>SEE Data Products web page</Name>
-            <URL>http://lasp.colorado.edu/home/see/data/</URL>
-            <Description>This web page allows the request of data files for this product.  To request data: for the EGS data type of interest, click the year of interest to go the the ftp directory of files and download the desired day-long file by clicking on it.</Description>
-         </AccessURL>
-         <Format>NetCDF</Format>
-         <Encoding>None</Encoding>
-         <Acknowledgement>NASA, Thomas N. Woods</Acknowledgement>
-      </AccessInformation>
-      <ProcessingLevel>Calibrated</ProcessingLevel>
-      <ProviderResourceName>SEE Level 2 EGS Solar Irradiance data</ProviderResourceName>
-      <ProviderProcessingLevel>Level 2</ProviderProcessingLevel>
-      <ProviderVersion>10</ProviderVersion>
-      <InstrumentID>spase://SMWG/Instrument/TIMED/SEE</InstrumentID>
-      <MeasurementType>Irradiance</MeasurementType>
-      <TemporalDescription>
-         <TimeSpan>
-            <StartDate>2002-02-08T00:00:00.000</StartDate>
-            <RelativeStopDate>P2D</RelativeStopDate>
-         </TimeSpan>
-      </TemporalDescription>
-      <ObservedRegion>Sun</ObservedRegion>
-      <Keyword>TIMED</Keyword>
-      <Keyword>SEE</Keyword>
-      <Keyword>EGS</Keyword>
-      <Keyword>Sun</Keyword>
-      <Parameter>
-         <Name>DATE</Name>
-         <ParameterKey>DATE</ParameterKey>
-         <Description>Date of observation</Description>
-         <Units>YYYYDOY</Units>
-         <Structure>
-            <Size>1</Size>
-         </Structure>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>Wavelength intervals</Name>
-         <ParameterKey>WAVE</ParameterKey>
-         <Description>Array of wavelength intervals, half-Angstrom centers</Description>
-         <Units>nm</Units>
-         <Structure>
-            <Size>1690</Size>
-            <Description>Dimensions: [Number_of_wavelength_intervals] - where Number_of_wavelength_intervals is the number of wavelength intervals.</Description>
-         </Structure>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>EGS median solar irradiance</Name>
-         <ParameterKey>FLUX_MEDIAN</ParameterKey>
-         <Description>Array of median solar irradiances for each wavelength interval.  This is the spectrum.</Description>
-         <Units>W / m^2 / nm</Units>
-         <Structure>
-            <Size>1690</Size>
-            <Description>Dimensions: [Number_of_wavelength_intervals] - where Number_of_wavelength_intervals is the number of wavelength intervals.</Description>
-         </Structure>
-         <Wave>
-            <WaveType>Electromagnetic</WaveType>
-            <WaveQuantity>Wavelength</WaveQuantity>
-            <WavelengthRange>
-               <Low>26.05</Low>
-               <High>194.95</High>
-               <Units>nm</Units>
-            </WavelengthRange>
-         </Wave>
-      </Parameter>
-      <Parameter>
-         <Name>Differences between the median and weighted averaged solar irradiances</Name>
-         <ParameterKey>DIFF_MA</ParameterKey>
-         <Description>Array of differences between the median and weighted averaged solar irradiances for each wavelength interval</Description>
-         <Units>W / m^2 / nm</Units>
-         <Structure>
-            <Size>1690</Size>
-            <Description>Dimensions: [Number_of_wavelength_intervals] - where Number_of_wavelength_intervals is the number of wavelength intervals.</Description>
-         </Structure>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>Accuracy of solar irradiance</Name>
-         <ParameterKey>ERR_TOT</ParameterKey>
-         <Description>Accuracy of solar irradiance</Description>
-         <Units>Fractional</Units>
-         <Structure>
-            <Size>1690</Size>
-            <Description>Dimensions: [Number_of_wavelength_intervals] - where Number_of_wavelength_intervals is the number of wavelength intervals.</Description>
-         </Structure>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>Measurement precision</Name>
-         <ParameterKey>ERR_MEAS</ParameterKey>
-         <Description>Measurement precision</Description>
-         <Units>Fractional</Units>
-         <Structure>
-            <Size>1690</Size>
-            <Description>Dimensions: [Number_of_wavelength_intervals] - where Number_of_wavelength_intervals is the number of wavelength intervals.</Description>
-         </Structure>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>Standard deviation of the median</Name>
-         <ParameterKey>STDEV_MEAS</ParameterKey>
-         <Description>Standard deviation of the median</Description>
-         <Units>Fractional</Units>
-         <Structure>
-            <Size>1690</Size>
-            <Description>Dimensions: [Number_of_wavelength_intervals] - where Number_of_wavelength_intervals is the number of wavelength intervals.</Description>
-         </Structure>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>Number of points used in determining the daily average</Name>
-         <ParameterKey>NUMPT</ParameterKey>
-         <Description>Array of the Number of points (1-Angstrom-gridded measurements) used in determining the daily average for each wavelength interval</Description>
-         <Structure>
-            <Size>1690</Size>
-            <Description>Dimensions: [Number_of_wavelength_intervals] - where Number_of_wavelength_intervals is the number of wavelength intervals.</Description>
-         </Structure>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>AU correction factor</Name>
-         <ParameterKey>COR_1AU</ParameterKey>
-         <Description>AU correction factor for date</Description>
-         <Units>1 / (AU^2)</Units>
-         <Structure>
-            <Size>1</Size>
-         </Structure>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>Order Sorting correction applied to flux_median</Name>
-         <ParameterKey>COR_OS_MED</ParameterKey>
-         <Description>Order Sorting correction applied to flux_median</Description>
-         <Units>W/m^2/nm</Units>
-         <Structure>
-            <Size>1690</Size>
-            <Description>Dimensions: [Number_of_wavelength_intervals] - where Number_of_wavelength_intervals is the number of wavelength intervals.</Description>
-         </Structure>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>Order Sorting correction applied to weighted avg irradiance</Name>
-         <ParameterKey>COR_OS_AVG</ParameterKey>
-         <Description>Order Sorting correction applied to weighted avg irradiance</Description>
-         <Units>W/m^2/nm</Units>
-         <Structure>
-            <Size>1690</Size>
-            <Description>Dimensions: [Number_of_wavelength_intervals] - where Number_of_wavelength_intervals is the number of wavelength intervals.</Description>
-         </Structure>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>Degradation function linear extrapolation/interpolation flag</Name>
-         <ParameterKey>DEGRADE_MODEL</ParameterKey>
-         <Description>Long value = 1 if degradation function is linearly extrapolated, 0 if linearly interpolated</Description>
-         <Structure>
-            <Size>1</Size>
-         </Structure>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>Averaged atmospheric correction factors</Name>
-         <ParameterKey>COR_ATMOS.AVG</ParameterKey>
-         <Description>Array of Averaged atmospheric correction factors for each wavelength interval</Description>
-         <Units>Fractional</Units>
-         <Structure>
-            <Size>1690</Size>
-            <Description>Dimensions: [Number_of_wavelength_intervals] - where Number_of_wavelength_intervals is the number of wavelength intervals.</Description>
-         </Structure>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>Minimum atmospheric correction factors</Name>
-         <ParameterKey>COR_ATMOS.MIN</ParameterKey>
-         <Description>Array of Minimum atmospheric correction factors</Description>
-         <Units>Fractional</Units>
-         <Structure>
-            <Size>1690</Size>
-            <Description>Dimensions: [Number_of_wavelength_intervals] - where Number_of_wavelength_intervals is the number of wavelength intervals.</Description>
-         </Structure>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>Maximum atmospheric correction factors</Name>
-         <ParameterKey>COR_ATMOS.MAX</ParameterKey>
-         <Description>Array of Maximum atmospheric correction factors</Description>
-         <Units>Fractional</Units>
-         <Structure>
-            <Size>1690</Size>
-            <Description>Dimensions: [Number_of_wavelength_intervals] - where Number_of_wavelength_intervals is the number of wavelength intervals.</Description>
-         </Structure>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>Average instrument degradation correction factors</Name>
-         <ParameterKey>COR_DEGRADE.AVG</ParameterKey>
-         <Description>Array of Average instrument degradation correction factors</Description>
-         <Units>Fractional</Units>
-         <Structure>
-            <Size>1690</Size>
-            <Description>Dimensions: [Number_of_wavelength_intervals] - where Number_of_wavelength_intervals is the number of wavelength intervals.</Description>
-         </Structure>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>Minimum instrument degradation correction factors</Name>
-         <ParameterKey>COR_DEGRADE.MIN</ParameterKey>
-         <Description>Array of Minimum instrument degradation correction factors</Description>
-         <Units>Fractional</Units>
-         <Structure>
-            <Size>1690</Size>
-            <Description>Dimensions: [Number_of_wavelength_intervals] - where Number_of_wavelength_intervals is the number of wavelength intervals.</Description>
-         </Structure>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>Maximum instrument degradation correction factors</Name>
-         <ParameterKey>COR_DEGRADE.MAX)</ParameterKey>
-         <Description>Array of Maximum instrument degradation correction factors</Description>
-         <Units>Fractional</Units>
-         <Structure>
-            <Size>1690</Size>
-            <Description>Dimensions: [Number_of_wavelength_intervals] - where Number_of_wavelength_intervals is the number of wavelength intervals.</Description>
-         </Structure>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-   </NumericalData>
+<?xml version='1.0' encoding='UTF-8'?>
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.spase-group.org/data/schema https://www.spase-group.org/data/schema/spase-2.7.0.xsd">
+  <Version>2.7.0</Version>
+  <NumericalData>
+    <ResourceID>spase://NASA/NumericalData/TIMED/SEE/L2_EGS</ResourceID>
+    <NamingAuthority>NASA</NamingAuthority>
+    <ResourceType>NumericalData</ResourceType>
+    <ResourceHeader>
+      <ResourceName>TIMED SEE Level2 EGS Solar Irradiance Data</ResourceName>
+      <ReleaseDate>2025-11-14T16:01:52Z</ReleaseDate>
+      <RevisionHistory>
+        <RevisionEvent>
+          <ReleaseDate>2020-07-07T21:15:38Z</ReleaseDate>
+          <Note>Only known prior ReleaseDate of the metadata</Note>
+        </RevisionEvent>
+        <RevisionEvent>
+          <ReleaseDate>2025-11-14T16:01:52Z</ReleaseDate>
+          <Note>Added PublicationInfo. Added ResourceType and NamingAuthority. Changed http to https in top-level schemaLocation attribute. Fixed version number separator in top-level schemaLocation attribute. Matched version number in schemaLocation attribute to updated value in Version tag. ZCB</Note>
+        </RevisionEvent>
+      </RevisionHistory>
+      <Description>The EUV Grating Spectrograph (EGS) aboard SEE performs measurements of the Sun for about 3 minutes every orbit (97 minutes) which usually gives 14-15 measurements per day. The Level 2 data is time averaged over the entire day, after being 1-AU corrected and removing flares. The 1-AU correction is provided.</Description>
+      <Acknowledgement>NASA, Thomas N. Woods</Acknowledgement>
+      <PublicationInfo>
+        <Authors>Woods, Thomas N.</Authors>
+        <PublicationDate>2025-11-14T16:01:52Z</PublicationDate>
+        <PublishedBy>Johns Hopkins University Applied Physics Laboratory</PublishedBy>
+      </PublicationInfo>
+      <Contact>
+        <PersonID>spase://SMWG/Person/Thomas.N.Woods</PersonID>
+        <Role>PrincipalInvestigator</Role>
+      </Contact>
+      <InformationURL>
+        <Name>L2 EGS Data Information</Name>
+        <URL>http://lasp.colorado.edu/home/see/data/daily-averages/level-2-egs/</URL>
+      </InformationURL>
+      <PriorID>spase://VITMO/NumericalData/TIMED/SEE/L2_EGS</PriorID>
+      <PriorID>spase://VSPO/NumericalData/TIMED/SEE/L2_EGS</PriorID>
+    </ResourceHeader>
+    <AccessInformation>
+      <RepositoryID>spase://SMWG/Repository/TIMED/SEE_POC</RepositoryID>
+      <Availability>Online</Availability>
+      <AccessRights>Open</AccessRights>
+      <AccessURL>
+        <Name>SEE Data Products web page</Name>
+        <URL>http://lasp.colorado.edu/home/see/data/</URL>
+        <Description>This web page allows the request of data files for this product.  To request data: for the EGS data type of interest, click the year of interest to go the the ftp directory of files and download the desired day-long file by clicking on it.</Description>
+      </AccessURL>
+      <Format>NetCDF</Format>
+      <Encoding>None</Encoding>
+      <Acknowledgement>NASA, Thomas N. Woods</Acknowledgement>
+    </AccessInformation>
+    <ProcessingLevel>Calibrated</ProcessingLevel>
+    <ProviderResourceName>SEE Level 2 EGS Solar Irradiance data</ProviderResourceName>
+    <ProviderProcessingLevel>Level 2</ProviderProcessingLevel>
+    <ProviderVersion>10</ProviderVersion>
+    <InstrumentID>spase://SMWG/Instrument/TIMED/SEE</InstrumentID>
+    <MeasurementType>Irradiance</MeasurementType>
+    <TemporalDescription>
+      <TimeSpan>
+        <StartDate>2002-02-08T00:00:00.000</StartDate>
+        <RelativeStopDate>P2D</RelativeStopDate>
+      </TimeSpan>
+    </TemporalDescription>
+    <ObservedRegion>Sun</ObservedRegion>
+    <Keyword>TIMED</Keyword>
+    <Keyword>SEE</Keyword>
+    <Keyword>EGS</Keyword>
+    <Keyword>Sun</Keyword>
+    <Parameter>
+      <Name>DATE</Name>
+      <ParameterKey>DATE</ParameterKey>
+      <Description>Date of observation</Description>
+      <Units>YYYYDOY</Units>
+      <Structure>
+        <Size>1</Size>
+      </Structure>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Wavelength intervals</Name>
+      <ParameterKey>WAVE</ParameterKey>
+      <Description>Array of wavelength intervals, half-Angstrom centers</Description>
+      <Units>nm</Units>
+      <Structure>
+        <Size>1690</Size>
+        <Description>Dimensions: [Number_of_wavelength_intervals] - where Number_of_wavelength_intervals is the number of wavelength intervals.</Description>
+      </Structure>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>EGS median solar irradiance</Name>
+      <ParameterKey>FLUX_MEDIAN</ParameterKey>
+      <Description>Array of median solar irradiances for each wavelength interval.  This is the spectrum.</Description>
+      <Units>W / m^2 / nm</Units>
+      <Structure>
+        <Size>1690</Size>
+        <Description>Dimensions: [Number_of_wavelength_intervals] - where Number_of_wavelength_intervals is the number of wavelength intervals.</Description>
+      </Structure>
+      <Wave>
+        <WaveType>Electromagnetic</WaveType>
+        <WaveQuantity>Wavelength</WaveQuantity>
+        <WavelengthRange>
+          <Low>26.05</Low>
+          <High>194.95</High>
+          <Units>nm</Units>
+        </WavelengthRange>
+      </Wave>
+    </Parameter>
+    <Parameter>
+      <Name>Differences between the median and weighted averaged solar irradiances</Name>
+      <ParameterKey>DIFF_MA</ParameterKey>
+      <Description>Array of differences between the median and weighted averaged solar irradiances for each wavelength interval</Description>
+      <Units>W / m^2 / nm</Units>
+      <Structure>
+        <Size>1690</Size>
+        <Description>Dimensions: [Number_of_wavelength_intervals] - where Number_of_wavelength_intervals is the number of wavelength intervals.</Description>
+      </Structure>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Accuracy of solar irradiance</Name>
+      <ParameterKey>ERR_TOT</ParameterKey>
+      <Description>Accuracy of solar irradiance</Description>
+      <Units>Fractional</Units>
+      <Structure>
+        <Size>1690</Size>
+        <Description>Dimensions: [Number_of_wavelength_intervals] - where Number_of_wavelength_intervals is the number of wavelength intervals.</Description>
+      </Structure>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Measurement precision</Name>
+      <ParameterKey>ERR_MEAS</ParameterKey>
+      <Description>Measurement precision</Description>
+      <Units>Fractional</Units>
+      <Structure>
+        <Size>1690</Size>
+        <Description>Dimensions: [Number_of_wavelength_intervals] - where Number_of_wavelength_intervals is the number of wavelength intervals.</Description>
+      </Structure>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Standard deviation of the median</Name>
+      <ParameterKey>STDEV_MEAS</ParameterKey>
+      <Description>Standard deviation of the median</Description>
+      <Units>Fractional</Units>
+      <Structure>
+        <Size>1690</Size>
+        <Description>Dimensions: [Number_of_wavelength_intervals] - where Number_of_wavelength_intervals is the number of wavelength intervals.</Description>
+      </Structure>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Number of points used in determining the daily average</Name>
+      <ParameterKey>NUMPT</ParameterKey>
+      <Description>Array of the Number of points (1-Angstrom-gridded measurements) used in determining the daily average for each wavelength interval</Description>
+      <Structure>
+        <Size>1690</Size>
+        <Description>Dimensions: [Number_of_wavelength_intervals] - where Number_of_wavelength_intervals is the number of wavelength intervals.</Description>
+      </Structure>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>AU correction factor</Name>
+      <ParameterKey>COR_1AU</ParameterKey>
+      <Description>AU correction factor for date</Description>
+      <Units>1 / (AU^2)</Units>
+      <Structure>
+        <Size>1</Size>
+      </Structure>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Order Sorting correction applied to flux_median</Name>
+      <ParameterKey>COR_OS_MED</ParameterKey>
+      <Description>Order Sorting correction applied to flux_median</Description>
+      <Units>W/m^2/nm</Units>
+      <Structure>
+        <Size>1690</Size>
+        <Description>Dimensions: [Number_of_wavelength_intervals] - where Number_of_wavelength_intervals is the number of wavelength intervals.</Description>
+      </Structure>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Order Sorting correction applied to weighted avg irradiance</Name>
+      <ParameterKey>COR_OS_AVG</ParameterKey>
+      <Description>Order Sorting correction applied to weighted avg irradiance</Description>
+      <Units>W/m^2/nm</Units>
+      <Structure>
+        <Size>1690</Size>
+        <Description>Dimensions: [Number_of_wavelength_intervals] - where Number_of_wavelength_intervals is the number of wavelength intervals.</Description>
+      </Structure>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Degradation function linear extrapolation/interpolation flag</Name>
+      <ParameterKey>DEGRADE_MODEL</ParameterKey>
+      <Description>Long value = 1 if degradation function is linearly extrapolated, 0 if linearly interpolated</Description>
+      <Structure>
+        <Size>1</Size>
+      </Structure>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Averaged atmospheric correction factors</Name>
+      <ParameterKey>COR_ATMOS.AVG</ParameterKey>
+      <Description>Array of Averaged atmospheric correction factors for each wavelength interval</Description>
+      <Units>Fractional</Units>
+      <Structure>
+        <Size>1690</Size>
+        <Description>Dimensions: [Number_of_wavelength_intervals] - where Number_of_wavelength_intervals is the number of wavelength intervals.</Description>
+      </Structure>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Minimum atmospheric correction factors</Name>
+      <ParameterKey>COR_ATMOS.MIN</ParameterKey>
+      <Description>Array of Minimum atmospheric correction factors</Description>
+      <Units>Fractional</Units>
+      <Structure>
+        <Size>1690</Size>
+        <Description>Dimensions: [Number_of_wavelength_intervals] - where Number_of_wavelength_intervals is the number of wavelength intervals.</Description>
+      </Structure>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Maximum atmospheric correction factors</Name>
+      <ParameterKey>COR_ATMOS.MAX</ParameterKey>
+      <Description>Array of Maximum atmospheric correction factors</Description>
+      <Units>Fractional</Units>
+      <Structure>
+        <Size>1690</Size>
+        <Description>Dimensions: [Number_of_wavelength_intervals] - where Number_of_wavelength_intervals is the number of wavelength intervals.</Description>
+      </Structure>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Average instrument degradation correction factors</Name>
+      <ParameterKey>COR_DEGRADE.AVG</ParameterKey>
+      <Description>Array of Average instrument degradation correction factors</Description>
+      <Units>Fractional</Units>
+      <Structure>
+        <Size>1690</Size>
+        <Description>Dimensions: [Number_of_wavelength_intervals] - where Number_of_wavelength_intervals is the number of wavelength intervals.</Description>
+      </Structure>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Minimum instrument degradation correction factors</Name>
+      <ParameterKey>COR_DEGRADE.MIN</ParameterKey>
+      <Description>Array of Minimum instrument degradation correction factors</Description>
+      <Units>Fractional</Units>
+      <Structure>
+        <Size>1690</Size>
+        <Description>Dimensions: [Number_of_wavelength_intervals] - where Number_of_wavelength_intervals is the number of wavelength intervals.</Description>
+      </Structure>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Maximum instrument degradation correction factors</Name>
+      <ParameterKey>COR_DEGRADE.MAX)</ParameterKey>
+      <Description>Array of Maximum instrument degradation correction factors</Description>
+      <Units>Fractional</Units>
+      <Structure>
+        <Size>1690</Size>
+        <Description>Dimensions: [Number_of_wavelength_intervals] - where Number_of_wavelength_intervals is the number of wavelength intervals.</Description>
+      </Structure>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+  </NumericalData>
 </Spase>

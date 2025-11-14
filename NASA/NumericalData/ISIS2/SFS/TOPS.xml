@@ -1,11 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema  https://www.spase-group.org/data/schema/spase-2_7_0.xsd">
+<?xml version='1.0' encoding='UTF-8'?>
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.spase-group.org/data/schema  https://www.spase-group.org/data/schema/spase-2.7.0.xsd">
   <Version>2.7.0</Version>
   <NumericalData>
     <ResourceID>spase://NASA/NumericalData/ISIS2/SFS/TOPS</ResourceID>
+    <NamingAuthority>NASA</NamingAuthority>
+    <ResourceType>NumericalData</ResourceType>
     <ResourceHeader>
       <ResourceName>ISIS 2 CRC Electron Density Profiles</ResourceName>
-      <ReleaseDate>2025-09-10T15:38:11Z</ReleaseDate>
+      <ReleaseDate>2025-11-14T16:02:28Z</ReleaseDate>
       <RevisionHistory>
         <RevisionEvent>
           <ReleaseDate>2021-04-27T16:38:11</ReleaseDate>
@@ -18,6 +20,10 @@
         <RevisionEvent>
           <ReleaseDate>2025-09-10T15:38:11Z</ReleaseDate>
           <Note>Revised ObservedRegions. JMW</Note>
+        </RevisionEvent>
+        <RevisionEvent>
+          <ReleaseDate>2025-11-14T16:02:28Z</ReleaseDate>
+          <Note>Added PublicationInfo. Added ResourceType and NamingAuthority. Changed http to https in top-level schemaLocation attribute. Fixed version number separator in top-level schemaLocation attribute. ZCB</Note>
         </RevisionEvent>
       </RevisionHistory>
       <Description>This data set, provided by the Communications Research Centre (CRC) in Ottawa, Canada, consists of electron density profiles for the ionosphere above the F2 maximum (topside ionosphere). The data are computed from digital values of frequency and virtual height, scaled from ionograms that are measured by the ISIS 2 (International Satellites for Ionospheric Studies) Swept-Frequency Sounder. The data are ordered chronologically. Telemetry stations are not identified, but satellite location, Greenwich mean time of observation, solar zenith angle at the satellite, dip latitude at the satellite, total electron content down to the lowest height of topside signal reflection (normally near 300 km), and other relevant information is noted with each profile. The format gives sequences of numbers for each point scaled from the ionogram. These sequences include electron density at the successive points, and the coefficients a2, b3, b4, b5, etc. from which geometric heights can be calculated, using formulas 40 and 41 in J. E. Jackson, "The reduction of topside ionograms to electron-density profiles," Proceedings of the IEEE., p. 960, June 1969. These formulas can also be used to calculate interpolated density-height values. A CRC interpolation program (available at NSSDC) can be used with this data set.
@@ -68,6 +74,11 @@ starting with the highest value (satellite height).
 
       </Description>
       <Acknowledgement>Please acknowledge the NASA Space Physics Data Facility and the instrument's Principal Investigator for data usage.</Acknowledgement>
+      <PublicationInfo>
+        <Authors>Jackson, John E.</Authors>
+        <PublicationDate>2025-11-14T16:02:28Z</PublicationDate>
+        <PublishedBy>Space Physics Data Facility</PublishedBy>
+      </PublicationInfo>
       <Contact>
         <PersonID>spase://SMWG/Person/John.E.Jackson</PersonID>
         <Role>FormerPI</Role>
@@ -159,10 +170,10 @@ starting with the highest value (satellite height).
     <ObservedRegion>Earth.NearSurface.EquatorialRegion</ObservedRegion>
     <ObservedRegion>Earth.NearSurface.Ionosphere</ObservedRegion>
     <ObservedRegion>Earth.NearSurface.PolarCap</ObservedRegion>
-	<ObservedRegion>Earth.NearSurface.Ionosphere.Topside</ObservedRegion>
+    <ObservedRegion>Earth.NearSurface.Ionosphere.Topside</ObservedRegion>
     <Keyword>Ionosphere</Keyword>
     <Keyword>Topside</Keyword>
-    <Keyword>Sounder</Keyword>    
+    <Keyword>Sounder</Keyword>
     <Keyword>Ionogram</Keyword>
     <Parameter>
       <Name>Time</Name>
@@ -174,7 +185,7 @@ starting with the highest value (satellite height).
         <SupportQuantity>Temporal</SupportQuantity>
       </Support>
     </Parameter>
-   <Parameter>
+    <Parameter>
       <Name>satellite ID</Name>
       <ParameterKey>spacecraftID</ParameterKey>
       <Description>sat.-ID: 1=AL1, 2=AL2, 3=ISIS1, 4=ISIS2</Description>
@@ -195,8 +206,8 @@ starting with the highest value (satellite height).
       <ValidMax>1e+09</ValidMax>
       <FillValue>-9999.00</FillValue>
       <Particle>
-	<ParticleType>Electron</ParticleType>
-	<ParticleQuantity>NumberDensity</ParticleQuantity>
+        <ParticleType>Electron</ParticleType>
+        <ParticleQuantity>NumberDensity</ParticleQuantity>
       </Particle>
     </Parameter>
     <Parameter>
@@ -210,11 +221,11 @@ starting with the highest value (satellite height).
       <ValidMax>9.0000</ValidMax>
       <FillValue>-9.0000</FillValue>
       <Particle>
-	<ParticleType>Electron</ParticleType>
-	<ParticleQuantity>NumberDensity</ParticleQuantity>
+        <ParticleType>Electron</ParticleType>
+        <ParticleQuantity>NumberDensity</ParticleQuantity>
       </Particle>
     </Parameter>
-   <Parameter>
+    <Parameter>
       <Name>TEC</Name>
       <ParameterKey>tec</ParameterKey>
       <Description>Total Electron Content in TECU (=1E16 m-2)</Description>
@@ -226,11 +237,11 @@ starting with the highest value (satellite height).
       <ValidMax>500.00</ValidMax>
       <FillValue>-1.E+31</FillValue>
       <Particle>
-	<ParticleType>Electron</ParticleType>
-	<ParticleQuantity>NumberDensity</ParticleQuantity>
+        <ParticleType>Electron</ParticleType>
+        <ParticleQuantity>NumberDensity</ParticleQuantity>
       </Particle>
     </Parameter>
-   <Parameter>
+    <Parameter>
       <Name>TEC_IRI95</Name>
       <ParameterKey>tec_iri</ParameterKey>
       <Description>IRI-95 value for TEC in TECU (=1E16 m-2)</Description>
@@ -242,11 +253,11 @@ starting with the highest value (satellite height).
       <ValidMax>1000.00</ValidMax>
       <FillValue>-1.0E+31</FillValue>
       <Particle>
-	<ParticleType>Electron</ParticleType>
-	<ParticleQuantity>NumberDensity</ParticleQuantity>
+        <ParticleType>Electron</ParticleType>
+        <ParticleQuantity>NumberDensity</ParticleQuantity>
       </Particle>
     </Parameter>
-   <Parameter>
+    <Parameter>
       <Name>ln(NmF2_IRI/cm-3)</Name>
       <ParameterKey>IRI_F2peak</ParameterKey>
       <Description>IRI-95 value for the natural logarithm of the F2 peak in cm-3</Description>
@@ -258,8 +269,8 @@ starting with the highest value (satellite height).
       <ValidMax>500.00</ValidMax>
       <FillValue>-1.0E+31</FillValue>
       <Particle>
-	<ParticleType>Electron</ParticleType>
-	<ParticleQuantity>NumberDensity</ParticleQuantity>
+        <ParticleType>Electron</ParticleType>
+        <ParticleQuantity>NumberDensity</ParticleQuantity>
       </Particle>
     </Parameter>
     <Parameter>
@@ -275,10 +286,10 @@ starting with the highest value (satellite height).
       <ValidMax>500.00</ValidMax>
       <FillValue>-1.0E+31</FillValue>
       <Support>
-	<SupportQuantity>Positional</SupportQuantity>
+        <SupportQuantity>Positional</SupportQuantity>
       </Support>
     </Parameter>
-   <Parameter>
+    <Parameter>
       <Name>Num Data Points</Name>
       <ParameterKey>numDataPoints</ParameterKey>
       <Description>Number of data points per profile</Description>
@@ -289,10 +300,10 @@ starting with the highest value (satellite height).
       <ValidMin>1</ValidMin>
       <ValidMax>999</ValidMax>
       <Support>
-	<SupportQuantity>Other</SupportQuantity>
+        <SupportQuantity>Other</SupportQuantity>
       </Support>
     </Parameter>
-  <Parameter>
+    <Parameter>
       <Name>Quality Index</Name>
       <ParameterKey>qualityIndex</ParameterKey>
       <Description>Quality Index (0-best, 10-worst)</Description>
@@ -303,10 +314,10 @@ starting with the highest value (satellite height).
       <ValidMax>10</ValidMax>
       <FillValue>-1</FillValue>
       <Support>
-	<SupportQuantity>DataQuality</SupportQuantity>
+        <SupportQuantity>DataQuality</SupportQuantity>
       </Support>
     </Parameter>
-  <Parameter>
+    <Parameter>
       <Name>Longitude</Name>
       <ParameterKey>lon</ParameterKey>
       <Description>Longitude in degree (-180 to 180)</Description>
@@ -319,7 +330,7 @@ starting with the highest value (satellite height).
       <ValidMax>180.0</ValidMax>
       <FillValue>-1.0e+31</FillValue>
       <Support>
-	<SupportQuantity>Positional</SupportQuantity>
+        <SupportQuantity>Positional</SupportQuantity>
       </Support>
     </Parameter>
     <Parameter>
@@ -335,10 +346,10 @@ starting with the highest value (satellite height).
       <ValidMax>90.0</ValidMax>
       <FillValue>-1.0e+31</FillValue>
       <Support>
-	<SupportQuantity>Positional</SupportQuantity>
+        <SupportQuantity>Positional</SupportQuantity>
       </Support>
     </Parameter>
-   <Parameter>
+    <Parameter>
       <Name>Magnetic Inclination</Name>
       <ParameterKey>dip</ParameterKey>
       <Description>Magnetic Inclination in degree</Description>
@@ -351,7 +362,7 @@ starting with the highest value (satellite height).
       <ValidMax>90.0</ValidMax>
       <FillValue>-1.0e+31</FillValue>
       <Field>
-	<FieldQuantity>Magnetic</FieldQuantity>
+        <FieldQuantity>Magnetic</FieldQuantity>
       </Field>
     </Parameter>
     <Parameter>
@@ -365,10 +376,10 @@ starting with the highest value (satellite height).
       <ValidMax>180.0</ValidMax>
       <FillValue>-1.0e+31</FillValue>
       <Field>
-	<FieldQuantity>Magnetic</FieldQuantity>
+        <FieldQuantity>Magnetic</FieldQuantity>
       </Field>
     </Parameter>
-   <Parameter>
+    <Parameter>
       <Name>Solar zenith angle</Name>
       <ParameterKey>sza</ParameterKey>
       <Description>Solar zenith angle at 100 km</Description>
@@ -381,7 +392,7 @@ starting with the highest value (satellite height).
       <ValidMax>180.0</ValidMax>
       <FillValue>-1.0e+31</FillValue>
       <Support>
-	<SupportQuantity>Positional</SupportQuantity>
+        <SupportQuantity>Positional</SupportQuantity>
       </Support>
     </Parameter>
     <Parameter>
@@ -395,7 +406,7 @@ starting with the highest value (satellite height).
       <ValidMax>300</ValidMax>
       <FillValue>-1</FillValue>
       <Support>
-	<SupportQuantity>Other</SupportQuantity>
+        <SupportQuantity>Other</SupportQuantity>
       </Support>
     </Parameter>
     <Parameter>
@@ -409,7 +420,7 @@ starting with the highest value (satellite height).
       <ValidMax>350</ValidMax>
       <FillValue>-1</FillValue>
       <Support>
-	<SupportQuantity>Other</SupportQuantity>
+        <SupportQuantity>Other</SupportQuantity>
       </Support>
     </Parameter>
     <Parameter>
@@ -425,7 +436,7 @@ starting with the highest value (satellite height).
       <ValidMax>4000.0</ValidMax>
       <FillValue>-9999.0</FillValue>
       <Support>
-	<SupportQuantity>Positional</SupportQuantity>
+        <SupportQuantity>Positional</SupportQuantity>
       </Support>
     </Parameter>
   </NumericalData>
