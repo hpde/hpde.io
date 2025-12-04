@@ -1,6 +1,16 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.spase-group.org/data/schema https://www.spase-group.org/data/schema/spase-2.7.0.xsd">
-  <Version>2.7.0</Version>
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.spase-group.org/data/schema https://www.spase-group.org/data/schema/spase-2.7.1.xsd">
+  <Version>2.7.1</Version>
+  <MetadataRightsList>
+    <Rights>
+      <SchemeURI>https://spdx.org/licenses/</SchemeURI>
+      <RightsIdentifierScheme>SPDX</RightsIdentifierScheme>
+      <RightsIdentifier>CC0-1.0</RightsIdentifier>
+      <RightsURI>https://spdx.org/licenses/CC0-1.0.html</RightsURI>
+      <RightsName>Creative Commons Zero v1.0 Universal</RightsName>
+      <Note>CC0 1.0 Universal is the Creative Commons license applicable to all publicly available SPASE metadata descriptions</Note>
+    </Rights>
+  </MetadataRightsList>
   <NumericalData>
     <ResourceID>spase://NASA/NumericalData/MMS/3/FIELDS/EDI/Survey/Level2/ElectronFluxAmbient/ProjectionMethod1/PT0.03125S</ResourceID>
     <NamingAuthority>NASA</NamingAuthority>
@@ -9,7 +19,7 @@
       <ResourceName>MMS 3 Electron Drift Instrument (EDI) Ambient Electron Flux, Projection Method 1 (PM1), Level 2 (L2), Survey Mode, 31.25 ms Data</ResourceName>
       <AlternateName>MMS3_EDI_SRVY_L2_AMB</AlternateName>
       <DOI>https://doi.org/10.48322/a0g4-rp41</DOI>
-      <ReleaseDate>2025-10-03T10:41:09Z</ReleaseDate>
+      <ReleaseDate>2025-12-04T13:30:07Z</ReleaseDate>
       <RevisionHistory>
         <RevisionEvent>
           <ReleaseDate>2021-04-27T15:38:11</ReleaseDate>
@@ -26,6 +36,10 @@
         <RevisionEvent>
           <ReleaseDate>2025-10-03T10:41:09Z</ReleaseDate>
           <Note>Updated PublishedBy name to match ROR Registry. Added ResourceType and NamingAuthority. Changed http to https in top-level schemaLocation attribute. Fixed version number separator in top-level schemaLocation attribute. Matched version number in schemaLocation attribute to updated value in Version tag. ZCB</Note>
+        </RevisionEvent>
+        <RevisionEvent>
+          <ReleaseDate>2025-12-04T13:30:07Z</ReleaseDate>
+          <Note>Added MetadataRightsList and RightsList(s). Updated to 2.7.1. ZCB</Note>
         </RevisionEvent>
       </RevisionHistory>
       <Description>Electron Drift Instrument (EDI) Ambient Survey, Level 2, 0.03125 s Data. (32 samples/s)EDI has two scientific data acquisition modes, called electric field mode and ambient mode. In electric field mode, two coded electron beams are emitted such that they return to the detectors after one or more gyrations in the ambient magnetic and electric field. The firing directions and times-of-flight allow the derivation of the drift velocity and electric field. In ambient mode, the electron beams are not used. The detectors with their large geometric factors and their ability to adjust the field of view quickly allow continuous sampling of ambient electrons at a selected pitch angle and fixed but selectable energy. To find the beam directions that will hit the detector, EDI sweeps each beam in the plane perpendicular to B at a fixed angular rate of 0.22 °/ms until a signal has been acquired by the detector. Once signal has been acquired, the beams are swept back and forth to stay on target. Beam detection is not determined from the changes in the count-rates directly, but from the square of the beam counts divided by the background counts from ambient electrons, i.e., from the square of the instantaneous signal-to-noise ratio (SNR). This quantity is computed from data provided by the correlator in the Gun-Detector Electronics that also generates the coding pattern imposed on the outgoing beams. If the squared SNR ratio exceeds a threshold, this is taken as evidence that the beam is returning to the detector. The thresholds for SNR are chosen dependent on background fluxes. They represent a compromise between getting false hits (induced by strong variations in background electron fluxes) and missing true beam hits. The basic software loop that controls EDI operations is executed every 2 ms. As the times when the beams hit their detectors are neither synchronized with the telemetry nor equidistant, EDI data have no fixed time-resolution. Data are reported in telemetry slots. In Survey, using the standard packing mode 0, there are eight telemetry slots per second and Gyn Detector Unit (GDU). The last beam detected during the previous slot will be reported in the current slot. If no beam has been detected, the data quality will be set to zero. In Burst telemetry there are 128 slots per second and GDU. The data in each slot consists of information regarding the beam firing directions (stored in the form of analytic gun deflection voltages), times-of-flight (if successfully measured), quality indicators, time stamps of the beam hits, and some auxiliary correlator-related information. Whenever EDI is not in electron drift mode, it uses its ambient electron mode. The mode has the capability to sample at either 90 degrees pitch angle or at 0/180 degrees (field aligned), or to alternate between 90 degrees and field aligned with selectable dwell times. While all options have been demonstrated during the commissioning phase, only the field aligned mode has been used in the routine operations phase. The choices for energy are 250 eV, 500 eV, and 1 keV. The two detectors, which are facing opposite hemispheres, are looking strictly into opposite directions, so while one detector is looking along B the other is looking antiparallel to B (corresponding to pitch angles of 180 and 0 degrees, respectively). The two detectors switch roles every half spin of the spacecraft as the tip of the magnetic field vector spins outside the field of view of one detector and into the field of view of the other detector. Up until January 4, 2016 the anodes were chosen such that the magnetic field vector projected into the plane of the micro-channel plate entry surface was best aligned with the center of the four anodes ( that is, with the gap between the inner two of the four anodes). Data taken in this configuration are using the term "amb" in the data product names. In the burst data where four channels (corresponding to the four adjacent sensor anode pads) are sampled per GDU, the average (or sum) of the center two channels (channels 2 and 3) represents best the pitch angle of 0 degrees (or 180 degrees). The EDI instrument paper can be found at: http://link.springer.com/article/10.1007%2Fs11214-015-0182-7. The EDI instrument data products guide can be found at https://lasp.colorado.edu/mms/sdc/public/datasets/fields/.</Description>
@@ -100,6 +114,16 @@
       <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF/CDAWeb</RepositoryID>
       <Availability>Online</Availability>
       <AccessRights>Open</AccessRights>
+      <RightsList>
+        <Rights>
+          <SchemeURI>https://spdx.org/licenses/</SchemeURI>
+          <RightsIdentifierScheme>SPDX</RightsIdentifierScheme>
+          <RightsIdentifier>CC0-1.0</RightsIdentifier>
+          <RightsURI>https://spdx.org/licenses/CC0-1.0.html</RightsURI>
+          <RightsName>Creative Commons Zero v1.0 Universal</RightsName>
+          <Note>CC0 1.0 Universal is the Creative Commons license applicable to all publicly available NASA Heliophysics data products</Note>
+        </Rights>
+      </RightsList>
       <AccessURL>
         <Name>FTPS from SPDF (not with most browsers)</Name>
         <URL>ftps://spdf.gsfc.nasa.gov/pub/data/mms/mms3/edi/srvy/l2/amb/</URL>
@@ -124,6 +148,16 @@
       <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF/CDAWeb</RepositoryID>
       <Availability>Online</Availability>
       <AccessRights>Open</AccessRights>
+      <RightsList>
+        <Rights>
+          <SchemeURI>https://spdx.org/licenses/</SchemeURI>
+          <RightsIdentifierScheme>SPDX</RightsIdentifierScheme>
+          <RightsIdentifier>CC0-1.0</RightsIdentifier>
+          <RightsURI>https://spdx.org/licenses/CC0-1.0.html</RightsURI>
+          <RightsName>Creative Commons Zero v1.0 Universal</RightsName>
+          <Note>CC0 1.0 Universal is the Creative Commons license applicable to all publicly available NASA Heliophysics data products</Note>
+        </Rights>
+      </RightsList>
       <AccessURL>
         <Name>CDAWeb HAPI Server</Name>
         <URL>https://cdaweb.gsfc.nasa.gov/hapi</URL>

@@ -1,6 +1,16 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.spase-group.org/data/schema https://www.spase-group.org/data/schema/spase-2.7.0.xsd">
-  <Version>2.7.0</Version>
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.spase-group.org/data/schema https://www.spase-group.org/data/schema/spase-2.7.1.xsd">
+  <Version>2.7.1</Version>
+  <MetadataRightsList>
+    <Rights>
+      <SchemeURI>https://spdx.org/licenses/</SchemeURI>
+      <RightsIdentifierScheme>SPDX</RightsIdentifierScheme>
+      <RightsIdentifier>CC0-1.0</RightsIdentifier>
+      <RightsURI>https://spdx.org/licenses/CC0-1.0.html</RightsURI>
+      <RightsName>Creative Commons Zero v1.0 Universal</RightsName>
+      <Note>CC0 1.0 Universal is the Creative Commons license applicable to all publicly available SPASE metadata descriptions</Note>
+    </Rights>
+  </MetadataRightsList>
   <NumericalData>
     <ResourceID>spase://NASA/NumericalData/THEMIS/E/FBK/PT4S</ResourceID>
     <NamingAuthority>NASA</NamingAuthority>
@@ -8,7 +18,7 @@
     <ResourceHeader>
       <ResourceName>THEMIS-E: Probe Electric Field Instrument and Search Coil Magnetometer Instrument, Digital Fields Board - digitally computed Filter Bank spectra and E12 peak and average in HF band (FBK).</ResourceName>
       <DOI>https://doi.org/10.48322/x1a6-8d82</DOI>
-      <ReleaseDate>2025-10-03T11:23:59Z</ReleaseDate>
+      <ReleaseDate>2025-12-04T13:31:46Z</ReleaseDate>
       <RevisionHistory>
         <RevisionEvent>
           <ReleaseDate>2021-04-27T15:38:11</ReleaseDate>
@@ -25,6 +35,10 @@
         <RevisionEvent>
           <ReleaseDate>2025-10-03T11:23:59Z</ReleaseDate>
           <Note>Updated PublishedBy name to match ROR Registry. Added ResourceType and NamingAuthority. ZCB</Note>
+        </RevisionEvent>
+        <RevisionEvent>
+          <ReleaseDate>2025-12-04T13:31:46Z</ReleaseDate>
+          <Note>Added MetadataRightsList and RightsList(s). Updated to 2.7.1. ZCB</Note>
         </RevisionEvent>
       </RevisionHistory>
       <Description>The Filter Bank is part of the Digital fields board and provides band-pass filtering for EFI and SCM spectra as well as E12HF peak and average value calculations. The Filter Bank provides band-pass filtering for less computationally and power intensive spectra than the FFT would provide. The process is as follows: Signals are fed to the Filter Bank via a low-pass FIR filter with a cut-off frequency half that of the original signal maximum. The output is passed to the band-pass filters, is differenced from the original signal, then absolute value of the data is taken and averaged. The output from the low-pass filter is also sent to a second FIR filter with 2:1 decimation. This output is then fed back through the system. The process runs through 12 cascades for input at 8,192 samples/s and 13 for input at 16,384 samples/sec (EAC input only), reducing the signal and computing power by a factor 2 at each cascade. At each cascade a set of data is produced at a sampling frequency of 2^n from 2 Hz to the initial sampling frequency (frequency characteristics for each step are shown below in Table 1). The average from the Filter Bank is compressed to 8 bits with a pseudo-logarithmic encoder. The data is stored in sets of six frequency bins at 2.689 kHz, 572 Hz, 144.2 Hz, 36.2 Hz, 9.05 Hz, and 2.26 Hz. The average of the coupled E12HF signal and it's peak value are recorded over 62.5 ms windows (i.e. a 16 Hz sampling rate). Accumulation of values from signal 31.25 ms windows is performed externally. The analog signals fed into the FBK are E12DC and SCM1. Sensor and electronics design provided by UCB (J. W. Bonnell, F. S. Mozer), Digital Fields Board provided by LASP (R. Ergun), Search coil data provided by CETP (A. Roux). Table 1: Frequency Properties. Cascade   Frequency content of Input Signal   Low-pass Filter Cutoff Frequency   Freuency Content of Low-pass Output Signal   Filter Bank Frequency Band 0* 0 - 8 kHz 4 kHz 0 - 4 kHz 4 - 8 kHz 1 0 - 4 kHz 2 kHz 0 - 2 kHz 2 - 4 kHz 2 0 - 2 kHz 1 kHz 0 - 1 kHz 1 - 2 kHz 3 0 - 1 kHz 512 Hz 0 - 512 Hz 512 Hz - 1 kHz 4 0 - 512 Hz 256 Hz 0 - 256 Hz 256 - 512 Hz 5 0 - 256 Hz 128 Hz 0 - 128 Hz 128 - 256 Hz 6 0 - 128 Hz 64 Hz 0 - 64 Hz 64 - 128 Hz 7 0 - 64 Hz 32 Hz 0 - 32 Hz 32 - 64 Hz 8 0 - 32 Hz 16 Hz 0 - 16 Hz 16 - 32 Hz 9 0 - 16 Hz 8 Hz 0 - 8 Hz 8 - 16 Hz 10 0 - 8 Hz 4 Hz 0 - 4 Hz 4 - 8 Hz 11 0 - 4 Hz 2 Hz 0 - 2 Hz 2 - 4 Hz 12 0 - 2 Hz 1 Hz 0 - 1 Hz 1 - 2 Hz *Only available for 16,384 Hz sampling.</Description>
@@ -69,6 +83,16 @@
       <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF/CDAWeb</RepositoryID>
       <Availability>Online</Availability>
       <AccessRights>Open</AccessRights>
+      <RightsList>
+        <Rights>
+          <SchemeURI>https://spdx.org/licenses/</SchemeURI>
+          <RightsIdentifierScheme>SPDX</RightsIdentifierScheme>
+          <RightsIdentifier>CC0-1.0</RightsIdentifier>
+          <RightsURI>https://spdx.org/licenses/CC0-1.0.html</RightsURI>
+          <RightsName>Creative Commons Zero v1.0 Universal</RightsName>
+          <Note>CC0 1.0 Universal is the Creative Commons license applicable to all publicly available NASA Heliophysics data products</Note>
+        </Rights>
+      </RightsList>
       <AccessURL>
         <Name>FTPS from SPDF (not with most browsers)</Name>
         <URL>ftps://spdf.gsfc.nasa.gov/pub/data/themis/the/l2/fbk/</URL>
@@ -91,6 +115,16 @@
       <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF/CDAWeb</RepositoryID>
       <Availability>Online</Availability>
       <AccessRights>Open</AccessRights>
+      <RightsList>
+        <Rights>
+          <SchemeURI>https://spdx.org/licenses/</SchemeURI>
+          <RightsIdentifierScheme>SPDX</RightsIdentifierScheme>
+          <RightsIdentifier>CC0-1.0</RightsIdentifier>
+          <RightsURI>https://spdx.org/licenses/CC0-1.0.html</RightsURI>
+          <RightsName>Creative Commons Zero v1.0 Universal</RightsName>
+          <Note>CC0 1.0 Universal is the Creative Commons license applicable to all publicly available NASA Heliophysics data products</Note>
+        </Rights>
+      </RightsList>
       <AccessURL>
         <Name>CDAWeb HAPI Server</Name>
         <URL>https://cdaweb.gsfc.nasa.gov/hapi</URL>

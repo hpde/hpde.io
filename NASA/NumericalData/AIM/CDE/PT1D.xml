@@ -1,11 +1,34 @@
-<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema  http://www.spase-group.org/data/schema/spase-2_3_1.xsd">
-    <Version>2.3.1</Version>
-    <NumericalData>
-        <ResourceID>spase://NASA/NumericalData/AIM/CDE/PT1D</ResourceID>
-        <ResourceHeader>
-            <ResourceName>AIM/CDE dust grain impact data</ResourceName>
-            <ReleaseDate>2020-12-05T20:54:15Z</ReleaseDate>
-            <Description>AIM/CDE (Cosmic Dust Experiment) data are available
+<?xml version='1.0' encoding='UTF-8'?>
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.spase-group.org/data/schema  https://www.spase-group.org/data/schema/spase-2.7.1.xsd">
+  <Version>2.7.1</Version>
+  <MetadataRightsList>
+    <Rights>
+      <SchemeURI>https://spdx.org/licenses/</SchemeURI>
+      <RightsIdentifierScheme>SPDX</RightsIdentifierScheme>
+      <RightsIdentifier>CC0-1.0</RightsIdentifier>
+      <RightsURI>https://spdx.org/licenses/CC0-1.0.html</RightsURI>
+      <RightsName>Creative Commons Zero v1.0 Universal</RightsName>
+      <Note>CC0 1.0 Universal is the Creative Commons license applicable to all publicly available SPASE metadata descriptions</Note>
+    </Rights>
+  </MetadataRightsList>
+  <NumericalData>
+    <ResourceID>spase://NASA/NumericalData/AIM/CDE/PT1D</ResourceID>
+    <NamingAuthority>NASA</NamingAuthority>
+    <ResourceType>NumericalData</ResourceType>
+    <ResourceHeader>
+      <ResourceName>AIM/CDE dust grain impact data</ResourceName>
+      <ReleaseDate>2025-12-04T13:28:27Z</ReleaseDate>
+      <RevisionHistory>
+        <RevisionEvent>
+          <ReleaseDate>2020-12-05T20:54:15Z</ReleaseDate>
+          <Note>Only known prior ReleaseDate of the metadata</Note>
+        </RevisionEvent>
+        <RevisionEvent>
+          <ReleaseDate>2025-12-04T13:28:27Z</ReleaseDate>
+          <Note>Added MetadataRightsList and RightsList(s). Added ResourceType and NamingAuthority. Updated to 2.7.1. Changed http to https in top-level schemaLocation attribute. Fixed version number separator in top-level schemaLocation attribute. ZCB</Note>
+        </RevisionEvent>
+      </RevisionHistory>
+      <Description>AIM/CDE (Cosmic Dust Experiment) data are available
 as Levels 1 and 2 daily netCDF files.  L1 data contains, for each dust 
 grain impact, a time tag, pulse height data, a number of electrons released 
 by the impact, and engineering and housekeeping data.  L2 data adds the mass 
@@ -14,420 +37,430 @@ Future L3 and L4 products will add total mass impacting per orbit and
 impact rates (L3) and mass correlation with CIPS total particle mass and 
 Polar Mesospheric Cloud brightness.
 </Description>
-			<Acknowledgement>National Aeronautics and Space Administration; Laboratory for Atmospheric and Space Physics (LASP) of Colorado University; Dr. Mihaly Horanyi; Dr. James M. Russell, III</Acknowledgement>
-            <Contact>
-                <PersonID>spase://SMWG/Person/Mihaly.Horanyi</PersonID>
-                <Role>GeneralContact</Role>
-            </Contact>
-            <InformationURL>
-                <Name>Documentation directory on the SPDF server</Name>
-                <URL>https://spdf.gsfc.nasa.gov/pub/data/aim/cde/documentation/</URL>
-            </InformationURL>
-            <InformationURL>
-                <Name>info interface page at Hampton U.</Name>
-                <URL>http://aim.hamptonu.edu/library/documentation/instruments/cde/cde_docs.html</URL>
-            </InformationURL>
-            <PriorID>spase://VSPO/NumericalData/AIM/CDE/L1_L2_Data</PriorID>
-            <PriorID>spase://VSPO/NumericalData/AIM/CDE/PT1D</PriorID>
-        </ResourceHeader>
-        <AccessInformation>
-           <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF</RepositoryID>
-           <Availability>Online</Availability>
-           <AccessRights>Open</AccessRights>
-           <AccessURL>
-              <Name>FTPS from SPDF (not with most browsers)</Name>
-              <URL>ftps://spdf.gsfc.nasa.gov/pub/data/aim/cde/data/</URL>
-              <Description>In CDF via FTP from CDAWeb</Description>
-           </AccessURL>
-           <AccessURL>
-              <Name>HTTPS from SPDF</Name>
-              <URL>https://spdf.gsfc.nasa.gov/pub/data/aim/cde/data/</URL>
-              <Description>In CDF via HTTP from CDAWeb</Description>
-           </AccessURL>
-           <Format>NetCDF</Format>
-           <Encoding>None</Encoding>
-        </AccessInformation>
-        <AccessInformation>
-            <RepositoryID>spase://SMWG/Repository/UCOLO</RepositoryID>
-            <Availability>Online</Availability>
-            <AccessRights>Open</AccessRights>
-            <AccessURL>
-                <Name>Data interface page at Hampton U.</Name>
-                <URL>http://aim.hamptonu.edu/sds/cal_index_aim.php?instrument=cde</URL>
-                <Description>For levels 1 and 2 only</Description>
-            </AccessURL>
-            <Format>NetCDF</Format>
-        </AccessInformation>
-        <InstrumentID>spase://SMWG/Instrument/AIM/CDE</InstrumentID>
-        <MeasurementType>Dust</MeasurementType>
-        <TemporalDescription>
-            <TimeSpan>
-                <StartDate>2007-06-01T00:00:00</StartDate>
-                <RelativeStopDate>-P10M</RelativeStopDate>
-            </TimeSpan>
-        </TemporalDescription>
-        <ObservedRegion>Earth.NearSurface</ObservedRegion>
-		<Parameter>
-			<Name>Mass Treshold</Name>
-			<ParameterKey>MASS_DATA.MASS_THRESH</ParameterKey>
-			<Description>Threshold in grams.</Description>
-			<Units>grams</Units>
-			<Structure>
-				<Size>15752</Size>
-			</Structure>
-			<Particle>
-				<ParticleType>Dust</ParticleType>
-				<Qualifier>Minimum</Qualifier>
-				<ParticleQuantity>Mass</ParticleQuantity>
-			</Particle>
-		</Parameter>
-		<Parameter>
-			<Name>GPS Time</Name>
-			<ParameterKey>MASS_DATA.TIME</ParameterKey>
-			<Description>GPS time tag. Time of event in gps.</Description>
-			<Units>gps</Units>
-			<Structure>
-				<Size>15752</Size>
-			</Structure>
-			<Support>
-				<Qualifier>Scalar</Qualifier>
-				<SupportQuantity>Temporal</SupportQuantity>
-			</Support>
-		</Parameter>
-		<Parameter>
-			<Name>Channel</Name>
-			<ParameterKey>MASS_DATA.CHANNEL</ParameterKey>
-			<Description>ID of the channel</Description>
-			<Structure>
-				<Size>15752</Size>
-			</Structure>
-			<Support>
-				<Qualifier>Scalar</Qualifier>
-				<SupportQuantity>InstrumentMode</SupportQuantity>
-			</Support>
-		</Parameter>
-		<Parameter>
-			<Name>Charge</Name>
-			<ParameterKey>MASS_DATA.CHARGE</ParameterKey>
-			<Description>Charge generated from each event</Description>
-			<Units>Number of electrons</Units>
-			<Structure>
-				<Size>15752</Size>
-			</Structure>
-			<Particle>
-				<ParticleType>Dust</ParticleType>
-				<Qualifier>Magnitude</Qualifier>
-				<ParticleQuantity>ChargeState</ParticleQuantity>
-			</Particle>
-		</Parameter>
-		<Parameter>
-			<Name>Mass of the Particle</Name>
-			<ParameterKey>MASS_DATA.MASS</ParameterKey>
-			<Description>Mass of a particle that would cause this event.</Description>
-			<Units>grams</Units>
-			<Structure>
-				<Size>15752</Size>
-			</Structure>
-			<Particle>
-				<ParticleType>Dust</ParticleType>
-				<Qualifier>Magnitude</Qualifier>
-				<ParticleQuantity>Mass</ParticleQuantity>
-			</Particle>
-		</Parameter>
-		<Parameter>
-		    <Name>Sigma Plus for Mass</Name>
-			<ParameterKey>MASS_DATA.M_SIGPLUS</ParameterKey>
-			<Description>Plus sigma for mass generated</Description>
-			<Units>grams</Units>
-			<Structure>
-				<Size>15752</Size>
-			</Structure>
-			<Particle>
-				<ParticleType>Dust</ParticleType>
-				<Qualifier>Uncertainty</Qualifier>
-				<ParticleQuantity>Mass</ParticleQuantity>
-			</Particle>
-		</Parameter>
-		<Parameter>
-		    <Name>Sigma Minus for Mass</Name>
-			<ParameterKey>MASS_DATA.M_SIGMINUS</ParameterKey>
-			<Description>Minus sigma for mass generated</Description>
-			<Units>grams</Units>
-			<Structure>
-				<Size>15752</Size>
-			</Structure>
-			<Particle>
-				<ParticleType>Dust</ParticleType>
-				<Qualifier>Uncertainty</Qualifier>
-				<ParticleQuantity>Mass</ParticleQuantity>
-			</Particle>
-		</Parameter>
-		<Parameter>
-			<Name>Position Information</Name>
-			<ParameterKey>MASS_DATA.POSITION</ParameterKey>
-						<Structure>
-				<Size>15752 5</Size>
-				<Description>Positional Information</Description>
-				<Element>
-					<Name>Latitude?</Name>
-					<Qualifier>DirectionAngle.ElevationAngle</Qualifier>
-					<Index>1</Index>
-					<Units>radians?</Units>
-				</Element>
-				<Element>
-					<Name>Longitude</Name>
-					<Qualifier>DirectionAngle.AzimuthAngle</Qualifier>
-					<Index>2</Index>
-					<Units>radians?</Units>
-				</Element>
-				<Element>
-					<Name>Altitude</Name>
-					<Qualifier>Magnitude</Qualifier>
-					<Index>3</Index>
-					<Units>km</Units>
-				</Element>
-				<Element>
-					<Name>CDE defined coordinate system with 0-360 degrees of latitude</Name>
-					<Qualifier>DirectionAngle</Qualifier>
-					<Index>4</Index>
-					<Units>degrees</Units>
-					<ValidMin>0</ValidMin>
-					<ValidMax>360</ValidMax>
-				</Element>
-				<Element>
-					<Name>glongitude?</Name>
-					<Qualifier>DirectionAngle.AzimuthAngle</Qualifier>
-					<Index>5</Index>
-					<Units>degrees</Units>
-				</Element>
-			</Structure>
-			<Support>
-				<Qualifier>Directional</Qualifier>
-				<SupportQuantity>Positional</SupportQuantity>
-			</Support>
-		</Parameter>
-		<Parameter>
-			<Name>Orbit Number</Name>
-			<ParameterKey>MASS_DATA.ORBITNUM</ParameterKey>
-			<Description>Orbit number during which the event occurred.</Description>
-			<Structure>
-				<Size>15752</Size>
-			</Structure>
-			<Support>
-				<Qualifier>Scalar</Qualifier>
-				<SupportQuantity>Temporal</SupportQuantity>
-			</Support>
-		</Parameter>
-		<Parameter>
-			<Name>Science Quality Flag</Name>
-			<ParameterKey>QUAL_DATA.SCIENCE_FLAG</ParameterKey>
-			<Description>SCIENCE indicates if the data number was interpolated outside of the bounds calibrated on the ground (approximately 63000-8000).</Description>
-			<Structure>
-				<Size>15752 10</Size>
-			</Structure>
-			<Support>
-				<SupportQuantity>DataQuality</SupportQuantity>
-			</Support>
-		</Parameter>
-		<Parameter>
-			<Name>Coincident Flag</Name>
-			<ParameterKey>QUAL_DATA.COINCIDENT_FLAG</ParameterKey>
-			<Description>COINCIDENT returns 'COIN' or 'OK' for if another impact shares a timetag with the respective measurement.</Description>
-			<Structure>
-				<Size>15752 10</Size>
-			</Structure>
-			<Support>
-				<SupportQuantity>Other</SupportQuantity>
-			</Support>
-		</Parameter>
-		<Parameter>
-			<Name>ANA A Temperature Flag</Name>
-			<ParameterKey>QUAL_DATA.ANA_A_TEMP_FLAG</ParameterKey>
-			<Description>Temp refers to the safety limits on the electronic box components. Allowed values are 'OVER', 'OK', 'LOW', or 'NO_DATA.' Limits are: low:-7.1 degC high: 49.9 degC.</Description>
-			<Structure>
-				<Size>15752 10</Size>
-			</Structure>
-			<Support>
-				<SupportQuantity>Other</SupportQuantity>
-			</Support>
-		</Parameter>
-		<Parameter>
-			<Name>ANA B Temperature Flag</Name>
-			<ParameterKey>QUAL_DATA.ANA_B_TEMP_FLAG</ParameterKey>
-			<Description>Temp refers to the safety limits on the electronic box components. Allowed values are 'OVER', 'OK', 'LOW', or 'NO_DATA.' Limits are: low:-7.1 degC high: 49.9 degC.</Description>
-			<Structure>
-				<Size>15752 10</Size>
-			</Structure>
-			<Support>
-				<SupportQuantity>Other</SupportQuantity>
-			</Support>
-		</Parameter>
-		<Parameter>
-			<Name>DCDC Converter Temperature Flag</Name>
-			<ParameterKey>QUAL_DATA.DCDC_TEMP_FLAG</ParameterKey>
-			<Description>Temp refers to the safety limits on the electronic box components. Allowed values are 'OVER', 'OK', 'LOW', or 'NO_DATA.' Limits are: low:-30 degC high: 50 degC.</Description>
-			<Structure>
-				<Size>15752 10</Size>
-			</Structure>
-			<ValidMin>-30 C</ValidMin>
-			<ValidMax>50 C</ValidMax>
-			<Support>
-				<SupportQuantity>Other</SupportQuantity>
-			</Support>
-		</Parameter>
-		<Parameter>
-			<Name>Field Programmable Gate Array Temperature Flag</Name>
-			<ParameterKey>QUAL_DATA.FPGA_TEMP_FLAG</ParameterKey>
-			<Description>Temp refers to the safety limits on the electronic box components. Allowed values are 'OVER', 'OK', 'LOW', or 'NO_DATA.' Limits are: low:-30 degC high: 50 degC.</Description>
-			<Structure>
-				<Size>15752 10</Size>
-			</Structure>
-			<Support>
-				<SupportQuantity>Other</SupportQuantity>
-			</Support>
-		</Parameter>
-		<Parameter>
-			<Name>PNL A Temperature Flag</Name>
-			<ParameterKey>QUAL_DATA.PNL_A_TEMP_FLAG</ParameterKey>
-			<Description>Temp refers to the safety limits on the electronic box components. Allowed values are 'OVER', 'OK', 'LOW', or 'NO_DATA.' Limits are: low:-120 degC high: 80 degC.</Description>
-			<Structure>
-				<Size>15752 10</Size>
-			</Structure>
-			<Support>
-				<SupportQuantity>Other</SupportQuantity>
-			</Support>
-		</Parameter>
-		<Parameter>
-			<Name>PNL B Temperature Flag</Name>
-			<ParameterKey>QUAL_DATA.PNL_B_TEMP_FLAG</ParameterKey>
-			<Description>Temp refers to the safety limits on the electronic box components. Allowed values are 'OVER', 'OK', 'LOW', or 'NO_DATA.' Limits are: low:-120 degC high: 80 degC.</Description>
-			<Structure>
-				<Size>15752 10</Size>
-			</Structure>
-			<Support>
-				<SupportQuantity>Other</SupportQuantity>
-			</Support>
-		</Parameter>
-		<Parameter>
-			<Name>PNL C Temperature Flag</Name>
-			<ParameterKey>QUAL_DATA.PNL_C_TEMP_FLAG</ParameterKey>
-			<Description>Temp refers to the safety limits on the electronic box components. Allowed values are 'OVER', 'OK', 'LOW', or 'NO_DATA.' Limits are: low:-120 degC high: 80 degC.</Description>
-			<Structure>
-				<Size>15752 10</Size>
-			</Structure>
-			<Support>
-				<SupportQuantity>Other</SupportQuantity>
-			</Support>
-		</Parameter>
-		<Parameter>
-			<Name>PNL D Temperature Flag</Name>
-			<ParameterKey>QUAL_DATA.PNL_D_TEMP_FLAG</ParameterKey>
-			<Description>Temp refers to the safety limits on the electronic box components. Allowed values are 'OVER', 'OK', 'LOW', or 'NO_DATA.' Limits are: low:-120 degC high: 80 degC.</Description>
-			<Structure>
-				<Size>15752 10</Size>
-			</Structure>
-			<Support>
-				<SupportQuantity>Other</SupportQuantity>
-			</Support>
-		</Parameter>
-		<Parameter>
-			<Name>P5 Volt Flag</Name>
-			<ParameterKey>QUAL_DATA.P5_VOLT_FLAG</ParameterKey>
-			<Description>Volt refers to the safety limits on the electronic box components. Allowed values are 'OVER', 'OK', 'LOW', or 'NO_DATA.' Limits are: low:4.9 high: 5 V.</Description>
-			<Structure>
-				<Size>15752 10</Size>
-			</Structure>
-			<Support>
-				<SupportQuantity>Other</SupportQuantity>
-			</Support>
-		</Parameter>
-		<Parameter>
-			<Name>M5 Volt Flag</Name>
-			<ParameterKey>QUAL_DATA.M5_VOLT_FLAG</ParameterKey>
-			<Description>Volt refers to the safety limits on the electronic box components. Allowed values are 'OVER', 'OK', 'LOW', or 'NO_DATA.' Limits are: low:-5.4 high: -5.1 V.</Description>
-			<Structure>
-				<Size>15752 10</Size>
-			</Structure>
-			<Support>
-				<SupportQuantity>Other</SupportQuantity>
-			</Support>
-		</Parameter>
-		<Parameter>
-			<Name>Box Temperature Flag</Name>
-			<ParameterKey>QUAL_DATA.SC_BOX_TEMP_FLAG</ParameterKey>
-			<Description>Temp refers to the safety limits on the electronic box components. Allowed values are 'OVER', 'OK', 'LOW', or 'NO_DATA.' Limits are: low:-30 degC high: 50 degC.</Description>
-			<Structure>
-				<Size>15752 10</Size>
-			</Structure>
-			<Support>
-				<SupportQuantity>Other</SupportQuantity>
-			</Support>
-		</Parameter>
-		<Parameter>
-			<Name>PNL temperature Flag</Name>
-			<ParameterKey>QUAL_DATA.SC_PNL_TEMP_FLAG</ParameterKey>
-			<Description>Temp refers to the safety limits on the electronic box components. Allowed values are 'OVER', 'OK', 'LOW', or 'NO_DATA.' Limits are: low:-120 degC high: 80 degC.</Description>
-			<Structure>
-				<Size>15752 10</Size>
-			</Structure>
-			<Support>
-				<SupportQuantity>Other</SupportQuantity>
-			</Support>
-		</Parameter>
-		<Parameter>
-			<Name>Volt Flag</Name>
-			<ParameterKey>QUAL_DATA.SC_VOLT_FLAG</ParameterKey>
-			<Description>Volt refers to the safety limits on the electronic box components. Allowed values are 'OVER', 'OK', 'LOW', or 'NO_DATA.' Limits are: low: 36 V high: 36 V.</Description>
-			<Structure>
-				<Size>15752 10</Size>
-			</Structure>
-			<Support>
-				<SupportQuantity>Other</SupportQuantity>
-			</Support>
-		</Parameter>
-		<Parameter>
-			<Name>Current Flag</Name>
-			<ParameterKey>QUAL_DATA.SC_CURR_FLAG</ParameterKey>
-			<Description>Current refers to the safety limits on the electronic box components. Allowed values are 'OVER', 'OK', 'LOW', or 'NO_DATA.' Limits are: low: 120 mA high: 180 mA.</Description>
-			<Structure>
-				<Size>15752 10</Size>
-			</Structure>
-			<Support>
-				<SupportQuantity>Other</SupportQuantity>
-			</Support>
-		</Parameter>
-		<Parameter>
-			<Name>Truster Flag</Name>
-			<ParameterKey>QUAL_DATA.THRUSTER_FLAG</ParameterKey>
-			<Description>THRUSTER returns 'TF' or 'OK' for if a thruster firing occurred within 1 second of the respective measurement.</Description>
-			<Structure>
-				<Size>15752 10</Size>
-			</Structure>
-			<Support>
-				<SupportQuantity>Other</SupportQuantity>
-			</Support>
-		</Parameter>
-		<Parameter>
-			<Name>Flag</Name>
-			<ParameterKey>QUAL_DATA.PART_ANG_FLAG</ParameterKey>
-			<Description>PART_ANG quality flags return 'OVER', 'OK', or 'INVALID' for the angle limit of pi/4. PART_ANG is the angle of the particle's trajectory for a 1 micron particle with respect to zenith using a beta of 0.3 where beta is the ratio of radiation to gravitational force.</Description>
-			<Structure>
-				<Size>15752 10</Size>
-			</Structure>
-			<Support>
-				<SupportQuantity>Other</SupportQuantity>
-			</Support>
-		</Parameter>
-		<Parameter>
-			<Name>Ram Angle Flag</Name>
-			<ParameterKey>QUAL_DATA.RAM_ANG_FLAG</ParameterKey>
-			<Description>RAM_ANG quality flags return 'OVER', 'OK', or 'INVALID' for the angle limit of pi/4. RAM_ANG is the angle of the instrument's boresight with respect to the spacecraft's velocity.</Description>
-			<Structure>
-				<Size>15752 10</Size>
-			</Structure>
-			<Support>
-				<SupportQuantity>Other</SupportQuantity>
-			</Support>
-		</Parameter>
-    </NumericalData>
+      <Acknowledgement>National Aeronautics and Space Administration; Laboratory for Atmospheric and Space Physics (LASP) of Colorado University; Dr. Mihaly Horanyi; Dr. James M. Russell, III</Acknowledgement>
+      <Contact>
+        <PersonID>spase://SMWG/Person/Mihaly.Horanyi</PersonID>
+        <Role>GeneralContact</Role>
+      </Contact>
+      <InformationURL>
+        <Name>Documentation directory on the SPDF server</Name>
+        <URL>https://spdf.gsfc.nasa.gov/pub/data/aim/cde/documentation/</URL>
+      </InformationURL>
+      <InformationURL>
+        <Name>info interface page at Hampton U.</Name>
+        <URL>http://aim.hamptonu.edu/library/documentation/instruments/cde/cde_docs.html</URL>
+      </InformationURL>
+      <PriorID>spase://VSPO/NumericalData/AIM/CDE/L1_L2_Data</PriorID>
+      <PriorID>spase://VSPO/NumericalData/AIM/CDE/PT1D</PriorID>
+    </ResourceHeader>
+    <AccessInformation>
+      <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF</RepositoryID>
+      <Availability>Online</Availability>
+      <AccessRights>Open</AccessRights>
+      <RightsList>
+        <Rights>
+          <SchemeURI>https://spdx.org/licenses/</SchemeURI>
+          <RightsIdentifierScheme>SPDX</RightsIdentifierScheme>
+          <RightsIdentifier>CC0-1.0</RightsIdentifier>
+          <RightsURI>https://spdx.org/licenses/CC0-1.0.html</RightsURI>
+          <RightsName>Creative Commons Zero v1.0 Universal</RightsName>
+          <Note>CC0 1.0 Universal is the Creative Commons license applicable to all publicly available NASA Heliophysics data products</Note>
+        </Rights>
+      </RightsList>
+      <AccessURL>
+        <Name>FTPS from SPDF (not with most browsers)</Name>
+        <URL>ftps://spdf.gsfc.nasa.gov/pub/data/aim/cde/data/</URL>
+        <Description>In CDF via FTP from CDAWeb</Description>
+      </AccessURL>
+      <AccessURL>
+        <Name>HTTPS from SPDF</Name>
+        <URL>https://spdf.gsfc.nasa.gov/pub/data/aim/cde/data/</URL>
+        <Description>In CDF via HTTP from CDAWeb</Description>
+      </AccessURL>
+      <Format>NetCDF</Format>
+      <Encoding>None</Encoding>
+    </AccessInformation>
+    <AccessInformation>
+      <RepositoryID>spase://SMWG/Repository/UCOLO</RepositoryID>
+      <Availability>Online</Availability>
+      <AccessRights>Open</AccessRights>
+      <AccessURL>
+        <Name>Data interface page at Hampton U.</Name>
+        <URL>http://aim.hamptonu.edu/sds/cal_index_aim.php?instrument=cde</URL>
+        <Description>For levels 1 and 2 only</Description>
+      </AccessURL>
+      <Format>NetCDF</Format>
+    </AccessInformation>
+    <InstrumentID>spase://SMWG/Instrument/AIM/CDE</InstrumentID>
+    <MeasurementType>Dust</MeasurementType>
+    <TemporalDescription>
+      <TimeSpan>
+        <StartDate>2007-06-01T00:00:00</StartDate>
+        <RelativeStopDate>-P10M</RelativeStopDate>
+      </TimeSpan>
+    </TemporalDescription>
+    <ObservedRegion>Earth.NearSurface</ObservedRegion>
+    <Parameter>
+      <Name>Mass Treshold</Name>
+      <ParameterKey>MASS_DATA.MASS_THRESH</ParameterKey>
+      <Description>Threshold in grams.</Description>
+      <Units>grams</Units>
+      <Structure>
+        <Size>15752</Size>
+      </Structure>
+      <Particle>
+        <ParticleType>Dust</ParticleType>
+        <Qualifier>Minimum</Qualifier>
+        <ParticleQuantity>Mass</ParticleQuantity>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>GPS Time</Name>
+      <ParameterKey>MASS_DATA.TIME</ParameterKey>
+      <Description>GPS time tag. Time of event in gps.</Description>
+      <Units>gps</Units>
+      <Structure>
+        <Size>15752</Size>
+      </Structure>
+      <Support>
+        <Qualifier>Scalar</Qualifier>
+        <SupportQuantity>Temporal</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Channel</Name>
+      <ParameterKey>MASS_DATA.CHANNEL</ParameterKey>
+      <Description>ID of the channel</Description>
+      <Structure>
+        <Size>15752</Size>
+      </Structure>
+      <Support>
+        <Qualifier>Scalar</Qualifier>
+        <SupportQuantity>InstrumentMode</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Charge</Name>
+      <ParameterKey>MASS_DATA.CHARGE</ParameterKey>
+      <Description>Charge generated from each event</Description>
+      <Units>Number of electrons</Units>
+      <Structure>
+        <Size>15752</Size>
+      </Structure>
+      <Particle>
+        <ParticleType>Dust</ParticleType>
+        <Qualifier>Magnitude</Qualifier>
+        <ParticleQuantity>ChargeState</ParticleQuantity>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>Mass of the Particle</Name>
+      <ParameterKey>MASS_DATA.MASS</ParameterKey>
+      <Description>Mass of a particle that would cause this event.</Description>
+      <Units>grams</Units>
+      <Structure>
+        <Size>15752</Size>
+      </Structure>
+      <Particle>
+        <ParticleType>Dust</ParticleType>
+        <Qualifier>Magnitude</Qualifier>
+        <ParticleQuantity>Mass</ParticleQuantity>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>Sigma Plus for Mass</Name>
+      <ParameterKey>MASS_DATA.M_SIGPLUS</ParameterKey>
+      <Description>Plus sigma for mass generated</Description>
+      <Units>grams</Units>
+      <Structure>
+        <Size>15752</Size>
+      </Structure>
+      <Particle>
+        <ParticleType>Dust</ParticleType>
+        <Qualifier>Uncertainty</Qualifier>
+        <ParticleQuantity>Mass</ParticleQuantity>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>Sigma Minus for Mass</Name>
+      <ParameterKey>MASS_DATA.M_SIGMINUS</ParameterKey>
+      <Description>Minus sigma for mass generated</Description>
+      <Units>grams</Units>
+      <Structure>
+        <Size>15752</Size>
+      </Structure>
+      <Particle>
+        <ParticleType>Dust</ParticleType>
+        <Qualifier>Uncertainty</Qualifier>
+        <ParticleQuantity>Mass</ParticleQuantity>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>Position Information</Name>
+      <ParameterKey>MASS_DATA.POSITION</ParameterKey>
+      <Structure>
+        <Size>15752 5</Size>
+        <Description>Positional Information</Description>
+        <Element>
+          <Name>Latitude?</Name>
+          <Qualifier>DirectionAngle.ElevationAngle</Qualifier>
+          <Index>1</Index>
+          <Units>radians?</Units>
+        </Element>
+        <Element>
+          <Name>Longitude</Name>
+          <Qualifier>DirectionAngle.AzimuthAngle</Qualifier>
+          <Index>2</Index>
+          <Units>radians?</Units>
+        </Element>
+        <Element>
+          <Name>Altitude</Name>
+          <Qualifier>Magnitude</Qualifier>
+          <Index>3</Index>
+          <Units>km</Units>
+        </Element>
+        <Element>
+          <Name>CDE defined coordinate system with 0-360 degrees of latitude</Name>
+          <Qualifier>DirectionAngle</Qualifier>
+          <Index>4</Index>
+          <Units>degrees</Units>
+          <ValidMin>0</ValidMin>
+          <ValidMax>360</ValidMax>
+        </Element>
+        <Element>
+          <Name>glongitude?</Name>
+          <Qualifier>DirectionAngle.AzimuthAngle</Qualifier>
+          <Index>5</Index>
+          <Units>degrees</Units>
+        </Element>
+      </Structure>
+      <Support>
+        <Qualifier>Directional</Qualifier>
+        <SupportQuantity>Positional</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Orbit Number</Name>
+      <ParameterKey>MASS_DATA.ORBITNUM</ParameterKey>
+      <Description>Orbit number during which the event occurred.</Description>
+      <Structure>
+        <Size>15752</Size>
+      </Structure>
+      <Support>
+        <Qualifier>Scalar</Qualifier>
+        <SupportQuantity>Temporal</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Science Quality Flag</Name>
+      <ParameterKey>QUAL_DATA.SCIENCE_FLAG</ParameterKey>
+      <Description>SCIENCE indicates if the data number was interpolated outside of the bounds calibrated on the ground (approximately 63000-8000).</Description>
+      <Structure>
+        <Size>15752 10</Size>
+      </Structure>
+      <Support>
+        <SupportQuantity>DataQuality</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Coincident Flag</Name>
+      <ParameterKey>QUAL_DATA.COINCIDENT_FLAG</ParameterKey>
+      <Description>COINCIDENT returns 'COIN' or 'OK' for if another impact shares a timetag with the respective measurement.</Description>
+      <Structure>
+        <Size>15752 10</Size>
+      </Structure>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>ANA A Temperature Flag</Name>
+      <ParameterKey>QUAL_DATA.ANA_A_TEMP_FLAG</ParameterKey>
+      <Description>Temp refers to the safety limits on the electronic box components. Allowed values are 'OVER', 'OK', 'LOW', or 'NO_DATA.' Limits are: low:-7.1 degC high: 49.9 degC.</Description>
+      <Structure>
+        <Size>15752 10</Size>
+      </Structure>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>ANA B Temperature Flag</Name>
+      <ParameterKey>QUAL_DATA.ANA_B_TEMP_FLAG</ParameterKey>
+      <Description>Temp refers to the safety limits on the electronic box components. Allowed values are 'OVER', 'OK', 'LOW', or 'NO_DATA.' Limits are: low:-7.1 degC high: 49.9 degC.</Description>
+      <Structure>
+        <Size>15752 10</Size>
+      </Structure>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>DCDC Converter Temperature Flag</Name>
+      <ParameterKey>QUAL_DATA.DCDC_TEMP_FLAG</ParameterKey>
+      <Description>Temp refers to the safety limits on the electronic box components. Allowed values are 'OVER', 'OK', 'LOW', or 'NO_DATA.' Limits are: low:-30 degC high: 50 degC.</Description>
+      <Structure>
+        <Size>15752 10</Size>
+      </Structure>
+      <ValidMin>-30 C</ValidMin>
+      <ValidMax>50 C</ValidMax>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Field Programmable Gate Array Temperature Flag</Name>
+      <ParameterKey>QUAL_DATA.FPGA_TEMP_FLAG</ParameterKey>
+      <Description>Temp refers to the safety limits on the electronic box components. Allowed values are 'OVER', 'OK', 'LOW', or 'NO_DATA.' Limits are: low:-30 degC high: 50 degC.</Description>
+      <Structure>
+        <Size>15752 10</Size>
+      </Structure>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>PNL A Temperature Flag</Name>
+      <ParameterKey>QUAL_DATA.PNL_A_TEMP_FLAG</ParameterKey>
+      <Description>Temp refers to the safety limits on the electronic box components. Allowed values are 'OVER', 'OK', 'LOW', or 'NO_DATA.' Limits are: low:-120 degC high: 80 degC.</Description>
+      <Structure>
+        <Size>15752 10</Size>
+      </Structure>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>PNL B Temperature Flag</Name>
+      <ParameterKey>QUAL_DATA.PNL_B_TEMP_FLAG</ParameterKey>
+      <Description>Temp refers to the safety limits on the electronic box components. Allowed values are 'OVER', 'OK', 'LOW', or 'NO_DATA.' Limits are: low:-120 degC high: 80 degC.</Description>
+      <Structure>
+        <Size>15752 10</Size>
+      </Structure>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>PNL C Temperature Flag</Name>
+      <ParameterKey>QUAL_DATA.PNL_C_TEMP_FLAG</ParameterKey>
+      <Description>Temp refers to the safety limits on the electronic box components. Allowed values are 'OVER', 'OK', 'LOW', or 'NO_DATA.' Limits are: low:-120 degC high: 80 degC.</Description>
+      <Structure>
+        <Size>15752 10</Size>
+      </Structure>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>PNL D Temperature Flag</Name>
+      <ParameterKey>QUAL_DATA.PNL_D_TEMP_FLAG</ParameterKey>
+      <Description>Temp refers to the safety limits on the electronic box components. Allowed values are 'OVER', 'OK', 'LOW', or 'NO_DATA.' Limits are: low:-120 degC high: 80 degC.</Description>
+      <Structure>
+        <Size>15752 10</Size>
+      </Structure>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>P5 Volt Flag</Name>
+      <ParameterKey>QUAL_DATA.P5_VOLT_FLAG</ParameterKey>
+      <Description>Volt refers to the safety limits on the electronic box components. Allowed values are 'OVER', 'OK', 'LOW', or 'NO_DATA.' Limits are: low:4.9 high: 5 V.</Description>
+      <Structure>
+        <Size>15752 10</Size>
+      </Structure>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>M5 Volt Flag</Name>
+      <ParameterKey>QUAL_DATA.M5_VOLT_FLAG</ParameterKey>
+      <Description>Volt refers to the safety limits on the electronic box components. Allowed values are 'OVER', 'OK', 'LOW', or 'NO_DATA.' Limits are: low:-5.4 high: -5.1 V.</Description>
+      <Structure>
+        <Size>15752 10</Size>
+      </Structure>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Box Temperature Flag</Name>
+      <ParameterKey>QUAL_DATA.SC_BOX_TEMP_FLAG</ParameterKey>
+      <Description>Temp refers to the safety limits on the electronic box components. Allowed values are 'OVER', 'OK', 'LOW', or 'NO_DATA.' Limits are: low:-30 degC high: 50 degC.</Description>
+      <Structure>
+        <Size>15752 10</Size>
+      </Structure>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>PNL temperature Flag</Name>
+      <ParameterKey>QUAL_DATA.SC_PNL_TEMP_FLAG</ParameterKey>
+      <Description>Temp refers to the safety limits on the electronic box components. Allowed values are 'OVER', 'OK', 'LOW', or 'NO_DATA.' Limits are: low:-120 degC high: 80 degC.</Description>
+      <Structure>
+        <Size>15752 10</Size>
+      </Structure>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Volt Flag</Name>
+      <ParameterKey>QUAL_DATA.SC_VOLT_FLAG</ParameterKey>
+      <Description>Volt refers to the safety limits on the electronic box components. Allowed values are 'OVER', 'OK', 'LOW', or 'NO_DATA.' Limits are: low: 36 V high: 36 V.</Description>
+      <Structure>
+        <Size>15752 10</Size>
+      </Structure>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Current Flag</Name>
+      <ParameterKey>QUAL_DATA.SC_CURR_FLAG</ParameterKey>
+      <Description>Current refers to the safety limits on the electronic box components. Allowed values are 'OVER', 'OK', 'LOW', or 'NO_DATA.' Limits are: low: 120 mA high: 180 mA.</Description>
+      <Structure>
+        <Size>15752 10</Size>
+      </Structure>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Truster Flag</Name>
+      <ParameterKey>QUAL_DATA.THRUSTER_FLAG</ParameterKey>
+      <Description>THRUSTER returns 'TF' or 'OK' for if a thruster firing occurred within 1 second of the respective measurement.</Description>
+      <Structure>
+        <Size>15752 10</Size>
+      </Structure>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Flag</Name>
+      <ParameterKey>QUAL_DATA.PART_ANG_FLAG</ParameterKey>
+      <Description>PART_ANG quality flags return 'OVER', 'OK', or 'INVALID' for the angle limit of pi/4. PART_ANG is the angle of the particle's trajectory for a 1 micron particle with respect to zenith using a beta of 0.3 where beta is the ratio of radiation to gravitational force.</Description>
+      <Structure>
+        <Size>15752 10</Size>
+      </Structure>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>Ram Angle Flag</Name>
+      <ParameterKey>QUAL_DATA.RAM_ANG_FLAG</ParameterKey>
+      <Description>RAM_ANG quality flags return 'OVER', 'OK', or 'INVALID' for the angle limit of pi/4. RAM_ANG is the angle of the instrument's boresight with respect to the spacecraft's velocity.</Description>
+      <Structure>
+        <Size>15752 10</Size>
+      </Structure>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+  </NumericalData>
 </Spase>

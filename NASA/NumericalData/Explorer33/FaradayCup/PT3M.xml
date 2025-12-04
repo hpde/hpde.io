@@ -1,108 +1,141 @@
-<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_2_9.xsd">
-   <Version>2.2.9</Version>
-   <NumericalData>
-      <ResourceID>spase://NASA/NumericalData/Explorer33/FaradayCup/PT3M</ResourceID>
-      <ResourceHeader>
-         <ResourceName>Explorer 33 3-min solar wind plasma data</ResourceName>
-         <ReleaseDate>2021-03-11T18:39:11Z</ReleaseDate>
-         <Description>This data set has 3-min resolution solar wind plasma parameters (flow speed and direction angles, ion thermal speed and density) from the MIT Faraday Cup on Explorer 33 (AIMP 1, IMP D). There are no spacecraft position data in the records. The data are in annual ASCII files.</Description>
-         <Acknowledgement>To the MIT plasma team and to the Space Physics Data Facility at Goddard</Acknowledgement>
-         <Contact>
-            <PersonID>spase://SMWG/Person/Alan.J.Lazarus</PersonID>
-            <Role>GeneralContact</Role>
-</Contact>
-         <InformationURL>
-            <Name>NSSDC Master Catalog</Name>
-            <URL>https://nssdc.gsfc.nasa.gov/nmc/experiment/display.action?id=1966-058A-06</URL>
-            <Description>This reference contains a citation to a descriptive 1967 J.Geophys.Res. paper by the MIT team.</Description>
-</InformationURL>
-         <InformationURL>
-            <Name>NSSDC Data Set Catalog</Name>
-            <URL>https://spdf.gsfc.nasa.gov/pub/documents/old/documentation_from_nssdc/dataset_catalogs/DSC_0168.pdf</URL>
-</InformationURL>
-         <PriorID>spase://VHO/NumericalData/Explorer33/FaradayCup/PT3M</PriorID>
-          <PriorID>spase://VSPO/NumericalData/Explorer33/FaradayCup/PT3M</PriorID>
-</ResourceHeader>
-      <AccessInformation>
-         <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF</RepositoryID>
-         <Availability>Online</Availability>
-         <AccessRights>Open</AccessRights>
-         <AccessURL>
-            <Name>FTPS from SPDF (not with most browsers)</Name>
-            <URL>ftps://spdf.gsfc.nasa.gov/pub/data/explorer/explorer33/plasma_probe/3-min_interplanetary_plasma_param/</URL>
-</AccessURL>
-         <AccessURL>
-            <Name>HTTPS from SPDF</Name>
-            <URL>https://spdf.gsfc.nasa.gov/pub/data/explorer/explorer33/plasma_probe/3-min_interplanetary_plasma_param/</URL>
-            <Description>In CDF via HTTP from SPDF</Description>
-</AccessURL>
-         <Format>Text</Format>
-         <DataExtent>
-            <Quantity>11</Quantity>
-            <Units>MB</Units>
-</DataExtent>
-         <Acknowledgement>The MIT Plasma Team and NSSDC</Acknowledgement>
-</AccessInformation>
-      <ProcessingLevel>Calibrated</ProcessingLevel>
-      <InstrumentID>spase://SMWG/Instrument/Explorer33/FaradayCup</InstrumentID>
-      <MeasurementType>ThermalPlasma</MeasurementType>
-      <TemporalDescription>
-         <TimeSpan>
-            <StartDate>1966-07-06T00:00:00</StartDate>
-            <StopDate>1971-10-14T00:00:00</StopDate>
-</TimeSpan>
-         <Cadence>PT3M</Cadence>
-</TemporalDescription>
-      <ObservedRegion>Heliosphere.NearEarth</ObservedRegion>
-      <Caveats>There are no spacecraft ephemeris data in this data set, as of September, 2010.</Caveats>
-      <Parameter>
-         <Name>Ion density</Name>
-         <ParameterKey>Column_8</ParameterKey>
-         <Cadence>PT3M</Cadence>
-         <Units>1/cm**3</Units>
-         <Particle>
-            <ParticleType>Ion</ParticleType>
-            <ParticleQuantity>NumberDensity</ParticleQuantity>
-</Particle>
-</Parameter>
-      <Parameter>
-         <Name>Thermal speed</Name>
-         <ParameterKey>Column_12</ParameterKey>
-         <Cadence>PT3M</Cadence>
-         <Units>km/s</Units>
-         <Particle>
-            <ParticleType>Ion</ParticleType>
-            <ParticleQuantity>ThermalSpeed</ParticleQuantity>
-</Particle>
-</Parameter>
-      <Parameter>
-         <Name>Flow speed</Name>
-         <ParameterKey>Column_17</ParameterKey>
-         <Description>Made from aberration-corrected flow velocity</Description>
-         <Cadence>PT3M</Cadence>
-         <Units>km/s</Units>
-         <Particle>
-            <ParticleType>Ion</ParticleType>
-            <ParticleQuantity>FlowSpeed</ParticleQuantity>
-</Particle>
-</Parameter>
-      <Parameter>
-         <Name>Flow direction angles</Name>
-         <Description>Both aberrated (columns 10 and 11) and unaberrated (columns 15 and 16) flow directions are given, first longitude then latitude.</Description>
-         <Cadence>PT3M</Cadence>
-         <Units>deg</Units>
-         <CoordinateSystem>
-            <CoordinateRepresentation>Spherical</CoordinateRepresentation>
-            <CoordinateSystemName>GSE</CoordinateSystemName>
-</CoordinateSystem>
-         <Structure>
-            <Size>2 2</Size>
-            <Description>Flow latitude and longitude angles, aberrated and unaberrated</Description>
-</Structure>
-         <Particle>
-            <ParticleType>Ion</ParticleType>
-            <ParticleQuantity>ArrivalDirection</ParticleQuantity>
-</Particle>
-</Parameter>
-</NumericalData>
+<?xml version='1.0' encoding='UTF-8'?>
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.spase-group.org/data/schema https://www.spase-group.org/data/schema/spase-2.7.1.xsd">
+  <Version>2.7.1</Version>
+  <MetadataRightsList>
+    <Rights>
+      <SchemeURI>https://spdx.org/licenses/</SchemeURI>
+      <RightsIdentifierScheme>SPDX</RightsIdentifierScheme>
+      <RightsIdentifier>CC0-1.0</RightsIdentifier>
+      <RightsURI>https://spdx.org/licenses/CC0-1.0.html</RightsURI>
+      <RightsName>Creative Commons Zero v1.0 Universal</RightsName>
+      <Note>CC0 1.0 Universal is the Creative Commons license applicable to all publicly available SPASE metadata descriptions</Note>
+    </Rights>
+  </MetadataRightsList>
+  <NumericalData>
+    <ResourceID>spase://NASA/NumericalData/Explorer33/FaradayCup/PT3M</ResourceID>
+    <NamingAuthority>NASA</NamingAuthority>
+    <ResourceType>NumericalData</ResourceType>
+    <ResourceHeader>
+      <ResourceName>Explorer 33 3-min solar wind plasma data</ResourceName>
+      <ReleaseDate>2025-12-04T13:29:11Z</ReleaseDate>
+      <RevisionHistory>
+        <RevisionEvent>
+          <ReleaseDate>2021-03-11T18:39:11Z</ReleaseDate>
+          <Note>Only known prior ReleaseDate of the metadata</Note>
+        </RevisionEvent>
+        <RevisionEvent>
+          <ReleaseDate>2025-12-04T13:29:11Z</ReleaseDate>
+          <Note>Added MetadataRightsList and RightsList(s). Added ResourceType and NamingAuthority. Updated to 2.7.1. Changed http to https in top-level schemaLocation attribute. Fixed version number separator in top-level schemaLocation attribute. ZCB</Note>
+        </RevisionEvent>
+      </RevisionHistory>
+      <Description>This data set has 3-min resolution solar wind plasma parameters (flow speed and direction angles, ion thermal speed and density) from the MIT Faraday Cup on Explorer 33 (AIMP 1, IMP D). There are no spacecraft position data in the records. The data are in annual ASCII files.</Description>
+      <Acknowledgement>To the MIT plasma team and to the Space Physics Data Facility at Goddard</Acknowledgement>
+      <Contact>
+        <PersonID>spase://SMWG/Person/Alan.J.Lazarus</PersonID>
+        <Role>GeneralContact</Role>
+      </Contact>
+      <InformationURL>
+        <Name>NSSDC Master Catalog</Name>
+        <URL>https://nssdc.gsfc.nasa.gov/nmc/experiment/display.action?id=1966-058A-06</URL>
+        <Description>This reference contains a citation to a descriptive 1967 J.Geophys.Res. paper by the MIT team.</Description>
+      </InformationURL>
+      <InformationURL>
+        <Name>NSSDC Data Set Catalog</Name>
+        <URL>https://spdf.gsfc.nasa.gov/pub/documents/old/documentation_from_nssdc/dataset_catalogs/DSC_0168.pdf</URL>
+      </InformationURL>
+      <PriorID>spase://VHO/NumericalData/Explorer33/FaradayCup/PT3M</PriorID>
+      <PriorID>spase://VSPO/NumericalData/Explorer33/FaradayCup/PT3M</PriorID>
+    </ResourceHeader>
+    <AccessInformation>
+      <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF</RepositoryID>
+      <Availability>Online</Availability>
+      <AccessRights>Open</AccessRights>
+      <RightsList>
+        <Rights>
+          <SchemeURI>https://spdx.org/licenses/</SchemeURI>
+          <RightsIdentifierScheme>SPDX</RightsIdentifierScheme>
+          <RightsIdentifier>CC0-1.0</RightsIdentifier>
+          <RightsURI>https://spdx.org/licenses/CC0-1.0.html</RightsURI>
+          <RightsName>Creative Commons Zero v1.0 Universal</RightsName>
+          <Note>CC0 1.0 Universal is the Creative Commons license applicable to all publicly available NASA Heliophysics data products</Note>
+        </Rights>
+      </RightsList>
+      <AccessURL>
+        <Name>FTPS from SPDF (not with most browsers)</Name>
+        <URL>ftps://spdf.gsfc.nasa.gov/pub/data/explorer/explorer33/plasma_probe/3-min_interplanetary_plasma_param/</URL>
+      </AccessURL>
+      <AccessURL>
+        <Name>HTTPS from SPDF</Name>
+        <URL>https://spdf.gsfc.nasa.gov/pub/data/explorer/explorer33/plasma_probe/3-min_interplanetary_plasma_param/</URL>
+        <Description>In CDF via HTTP from SPDF</Description>
+      </AccessURL>
+      <Format>Text</Format>
+      <DataExtent>
+        <Quantity>11</Quantity>
+        <Units>MB</Units>
+      </DataExtent>
+      <Acknowledgement>The MIT Plasma Team and NSSDC</Acknowledgement>
+    </AccessInformation>
+    <ProcessingLevel>Calibrated</ProcessingLevel>
+    <InstrumentID>spase://SMWG/Instrument/Explorer33/FaradayCup</InstrumentID>
+    <MeasurementType>ThermalPlasma</MeasurementType>
+    <TemporalDescription>
+      <TimeSpan>
+        <StartDate>1966-07-06T00:00:00</StartDate>
+        <StopDate>1971-10-14T00:00:00</StopDate>
+      </TimeSpan>
+      <Cadence>PT3M</Cadence>
+    </TemporalDescription>
+    <ObservedRegion>Heliosphere.NearEarth</ObservedRegion>
+    <Caveats>There are no spacecraft ephemeris data in this data set, as of September, 2010.</Caveats>
+    <Parameter>
+      <Name>Ion density</Name>
+      <ParameterKey>Column_8</ParameterKey>
+      <Cadence>PT3M</Cadence>
+      <Units>1/cm**3</Units>
+      <Particle>
+        <ParticleType>Ion</ParticleType>
+        <ParticleQuantity>NumberDensity</ParticleQuantity>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>Thermal speed</Name>
+      <ParameterKey>Column_12</ParameterKey>
+      <Cadence>PT3M</Cadence>
+      <Units>km/s</Units>
+      <Particle>
+        <ParticleType>Ion</ParticleType>
+        <ParticleQuantity>ThermalSpeed</ParticleQuantity>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>Flow speed</Name>
+      <ParameterKey>Column_17</ParameterKey>
+      <Description>Made from aberration-corrected flow velocity</Description>
+      <Cadence>PT3M</Cadence>
+      <Units>km/s</Units>
+      <Particle>
+        <ParticleType>Ion</ParticleType>
+        <ParticleQuantity>FlowSpeed</ParticleQuantity>
+      </Particle>
+    </Parameter>
+    <Parameter>
+      <Name>Flow direction angles</Name>
+      <Description>Both aberrated (columns 10 and 11) and unaberrated (columns 15 and 16) flow directions are given, first longitude then latitude.</Description>
+      <Cadence>PT3M</Cadence>
+      <Units>deg</Units>
+      <CoordinateSystem>
+        <CoordinateRepresentation>Spherical</CoordinateRepresentation>
+        <CoordinateSystemName>GSE</CoordinateSystemName>
+      </CoordinateSystem>
+      <Structure>
+        <Size>2 2</Size>
+        <Description>Flow latitude and longitude angles, aberrated and unaberrated</Description>
+      </Structure>
+      <Particle>
+        <ParticleType>Ion</ParticleType>
+        <ParticleQuantity>ArrivalDirection</ParticleQuantity>
+      </Particle>
+    </Parameter>
+  </NumericalData>
 </Spase>

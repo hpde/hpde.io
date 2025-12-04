@@ -1,11 +1,33 @@
-<?xml version="1.0"?>
-<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_2_9.xsd">
-  <Version>2.3.0</Version>
+<?xml version='1.0' encoding='UTF-8'?>
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.spase-group.org/data/schema https://www.spase-group.org/data/schema/spase-2.7.1.xsd">
+  <Version>2.7.1</Version>
+  <MetadataRightsList>
+    <Rights>
+      <SchemeURI>https://spdx.org/licenses/</SchemeURI>
+      <RightsIdentifierScheme>SPDX</RightsIdentifierScheme>
+      <RightsIdentifier>CC0-1.0</RightsIdentifier>
+      <RightsURI>https://spdx.org/licenses/CC0-1.0.html</RightsURI>
+      <RightsName>Creative Commons Zero v1.0 Universal</RightsName>
+      <Note>CC0 1.0 Universal is the Creative Commons license applicable to all publicly available SPASE metadata descriptions</Note>
+    </Rights>
+  </MetadataRightsList>
   <NumericalData>
     <ResourceID>spase://NASA/NumericalData/Voyager2/CRS/Neptune/PT6S</ResourceID>
+    <NamingAuthority>NASA</NamingAuthority>
+    <ResourceType>NumericalData</ResourceType>
     <ResourceHeader>
       <ResourceName>Voyager 2 Neptune Cosmic Ray Subsystem (CRS) Electron Telescope D1 Counting Rates, Version 1.0, 6 s High Resolution Data</ResourceName>
-      <ReleaseDate>2020-07-07T21:15:55Z</ReleaseDate>
+      <ReleaseDate>2025-12-04T13:32:32Z</ReleaseDate>
+      <RevisionHistory>
+        <RevisionEvent>
+          <ReleaseDate>2020-07-07T21:15:55Z</ReleaseDate>
+          <Note>Only known prior ReleaseDate of the metadata</Note>
+        </RevisionEvent>
+        <RevisionEvent>
+          <ReleaseDate>2025-12-04T13:32:32Z</ReleaseDate>
+          <Note>Added MetadataRightsList. Added ResourceType and NamingAuthority. Updated to 2.7.1. Changed http to https in top-level schemaLocation attribute. Fixed version number separator in top-level schemaLocation attribute. ZCB</Note>
+        </RevisionEvent>
+      </RevisionHistory>
       <Description>* Data Set Overview
 * =================
 
@@ -28,9 +50,9 @@ This Data Set describes the Data of the High Time Resolution Counting Rate from 
 | Data Set Parameter Unit             | COUNTS/SECOND       |
 +-----------------------------------------------------------+
 
-The D1 Rate is the Counting Rate from the D1 Detector of the CRS Electron Telescope (TET). When the Rate is above Background it is approximately proportional to the Omnidirectional Flux of Electrons with Kinetic Energy greater than &#x223C;1 MeV. To obtain an accurate Flux the D1 Calibration Tables should be used (see below). When the Rate is near Background, the Background Rate should be subtracted. The Background Rate is due to Gamma Rays generated in the Spacecraft RTG and to penetrating Cosmic Rays. It varies slightly with Time on the Time Scale of Months, but is generally near 25 counts per second. When the Rate is near Saturation, Corrections for Discriminator Deadtime should be made. The Discriminator Deadtime is approximately 20 &#xB5;s (it varies slightly with the Electron Energy Spectrum), so that the Saturation Level is approximately 50,000 counts per second. When the Correction is near a Factor of two or less a reliable corrected Rate can be obtained from the Formula (corrected rate) = (uncorrected rate)/(1+(deadtime)*(uncorrected rate)) When the Deadtime Correction is substantially larger than a Factor of two, reliable Corrections are not available. In this case, Electron Pileup and Baseline Shift may also be important, which may increase or decrease the expected Rate. The Data Points are 6 s Averages taken once every 96 s.
+The D1 Rate is the Counting Rate from the D1 Detector of the CRS Electron Telescope (TET). When the Rate is above Background it is approximately proportional to the Omnidirectional Flux of Electrons with Kinetic Energy greater than ∼1 MeV. To obtain an accurate Flux the D1 Calibration Tables should be used (see below). When the Rate is near Background, the Background Rate should be subtracted. The Background Rate is due to Gamma Rays generated in the Spacecraft RTG and to penetrating Cosmic Rays. It varies slightly with Time on the Time Scale of Months, but is generally near 25 counts per second. When the Rate is near Saturation, Corrections for Discriminator Deadtime should be made. The Discriminator Deadtime is approximately 20 µs (it varies slightly with the Electron Energy Spectrum), so that the Saturation Level is approximately 50,000 counts per second. When the Correction is near a Factor of two or less a reliable corrected Rate can be obtained from the Formula (corrected rate) = (uncorrected rate)/(1+(deadtime)*(uncorrected rate)) When the Deadtime Correction is substantially larger than a Factor of two, reliable Corrections are not available. In this case, Electron Pileup and Baseline Shift may also be important, which may increase or decrease the expected Rate. The Data Points are 6 s Averages taken once every 96 s.
 
-Table 1 below provides the D1 Response Function R(E,&#x3B8;) which is a Function of Electron Energy E in MeV (column at left) and Angle &#x3B8; in Degrees from the TET axis (row at top). Each Table Entry is R in cm^2 for the corresponding E and &#x3B8;. The D1 Electron Rate is related to the Differential Intensity j(E,&#x3B1;) in (cm^2 s sr MeV)^-1, where &#x3B1; is the Electron Pitch Angle, by integrating the Product R*j over E and Solid Angle. Note that the Angle between the TET Axis and the Local Magnetic Field Direction is also required. The D1 RATE is then obtained by adding the Background Rate and applying the Inverse of the Deadtime Correction described above. At Energies above the Maximum provided R can be approximated by the Value at the highest provided Energy. At Angles above the maximum provided R can be approximated by Zero.
+Table 1 below provides the D1 Response Function R(E,θ) which is a Function of Electron Energy E in MeV (column at left) and Angle θ in Degrees from the TET axis (row at top). Each Table Entry is R in cm^2 for the corresponding E and θ. The D1 Electron Rate is related to the Differential Intensity j(E,α) in (cm^2 s sr MeV)^-1, where α is the Electron Pitch Angle, by integrating the Product R*j over E and Solid Angle. Note that the Angle between the TET Axis and the Local Magnetic Field Direction is also required. The D1 RATE is then obtained by adding the Background Rate and applying the Inverse of the Deadtime Correction described above. At Energies above the Maximum provided R can be approximated by the Value at the highest provided Energy. At Angles above the maximum provided R can be approximated by Zero.
 
 Table 1. D1 Response Function
 
@@ -68,7 +90,7 @@ Table 1. D1 Response Function
         <Language>En</Language>
       </InformationURL>
       <PriorID>spase://VMO/NumericalData/Voyager2/CRS/Neptune/PT6S</PriorID>
-        <PriorID>spase://VSPO/NumericalData/Voyager2/CRS/Neptune/PT6S</PriorID>
+      <PriorID>spase://VSPO/NumericalData/Voyager2/CRS/Neptune/PT6S</PriorID>
     </ResourceHeader>
     <AccessInformation>
       <RepositoryID>spase://SMWG/Repository/PDS/PPI</RepositoryID>

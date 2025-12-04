@@ -1,11 +1,33 @@
-<?xml version="1.0"?>
-<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_2_9.xsd">
-  <Version>2.3.0</Version>
+<?xml version='1.0' encoding='UTF-8'?>
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.spase-group.org/data/schema https://www.spase-group.org/data/schema/spase-2.7.1.xsd">
+  <Version>2.7.1</Version>
+  <MetadataRightsList>
+    <Rights>
+      <SchemeURI>https://spdx.org/licenses/</SchemeURI>
+      <RightsIdentifierScheme>SPDX</RightsIdentifierScheme>
+      <RightsIdentifier>CC0-1.0</RightsIdentifier>
+      <RightsURI>https://spdx.org/licenses/CC0-1.0.html</RightsURI>
+      <RightsName>Creative Commons Zero v1.0 Universal</RightsName>
+      <Note>CC0 1.0 Universal is the Creative Commons license applicable to all publicly available SPASE metadata descriptions</Note>
+    </Rights>
+  </MetadataRightsList>
   <NumericalData>
     <ResourceID>spase://NASA/NumericalData/Voyager1/PRA/Saturn/PT6S</ResourceID>
+    <NamingAuthority>NASA</NamingAuthority>
+    <ResourceType>NumericalData</ResourceType>
     <ResourceHeader>
       <ResourceName>Voyager 1 Saturn Planetary Radio Astronomy (PRA) Calibrated Low-Frequency Receiver Band, Version 1.0, 6 s High Resolution Data</ResourceName>
-      <ReleaseDate>2020-07-07T21:15:55Z</ReleaseDate>
+      <ReleaseDate>2025-12-04T13:32:31Z</ReleaseDate>
+      <RevisionHistory>
+        <RevisionEvent>
+          <ReleaseDate>2020-07-07T21:15:55Z</ReleaseDate>
+          <Note>Only known prior ReleaseDate of the metadata</Note>
+        </RevisionEvent>
+        <RevisionEvent>
+          <ReleaseDate>2025-12-04T13:32:31Z</ReleaseDate>
+          <Note>Added MetadataRightsList. Added ResourceType and NamingAuthority. Updated to 2.7.1. Changed http to https in top-level schemaLocation attribute. Fixed version number separator in top-level schemaLocation attribute. ZCB</Note>
+        </RevisionEvent>
+      </RevisionHistory>
       <Description>* Data Set Overview
 * =================
 
@@ -16,11 +38,11 @@ VG1-S-PRA-3-RDR-LOWBAND-6SEC-V1.0 contains Data at the highest Time Resolution p
 * Measured Parameters
 * ===================
 
-The Data here are from the Low Frequency Receiver Band and are "packaged" into Spacecraft Major Frame Records. Each Major Frame is 48 s long or eight Sweeps through the PRA Receiver. The Data are calibrated and are given in Units of "millibels" or mB, which is 1000 times the Log of the received Power. Zero mB corresponds to approximately 1.4&#xD7;10^-21 W m^-2 Hz^-1, however, this Value is never seen in practice. The minimum Values detected, which includes Receiver internal and Spacecraft generated Noise, are about 2300 mB to 2400 mB, or about 3.5&#xD7;10^-19 W m^-2 Hz^-1; even higher Values are seen at the very lowest Frequencies.
+The Data here are from the Low Frequency Receiver Band and are "packaged" into Spacecraft Major Frame Records. Each Major Frame is 48 s long or eight Sweeps through the PRA Receiver. The Data are calibrated and are given in Units of "millibels" or mB, which is 1000 times the Log of the received Power. Zero mB corresponds to approximately 1.4×10^-21 W m^-2 Hz^-1, however, this Value is never seen in practice. The minimum Values detected, which includes Receiver internal and Spacecraft generated Noise, are about 2300 mB to 2400 mB, or about 3.5×10^-19 W m^-2 Hz^-1; even higher Values are seen at the very lowest Frequencies.
 
 The Data Format is ASCII and consists of a Time Indicator followed by an Array containing the eight Low Band Sweeps. Time is Spacecraft Event Time (SCET) which is basically Universal Time at the Spacecraft. Specifically, Time is in the Form of YYMMDD and Seconds into YYMMDD. Both are written as I6. Example: July 1, 1979 at 12:00 SCET would be 790701, 43200. The Seconds corresponds, to the nearest Second, to the Start of the Sweep (which occurs in PRA High Band). The first Value in Low Band (1326.0 kHz) occurs some 3.9 s after this Time and Samples at successively lower Frequencies are spaced 0.03 s apart. Only one Time is given for the entire Major Frame, thus the Start of each Sweep is the Time given plus 6 times the Sweep Number minus 1 (i.e., 0 through 7).
 
-The Data Array is dimensioned as 71 &#xD7; 8 and written as I4 Format (i.e., 568I4). The "8" corresponds to the eight PRA Sweeps. The lowest 68 of the 70 Low Band Channels (1287.6 kHz to 1.2 kHz) are in Positions 2 to 69. Positions 70 and 71 should be ignored. Missing or Bad Data Values are set to Zero. In Position 1 of each Sweep is a Status Word where the 12 least significant Bits have used, although not all 12 have meaning for the PRA Low Band. Numbering those Bits 0 for least significant to 11 for most significant, the Bits that have meaning are as follows:
+The Data Array is dimensioned as 71 × 8 and written as I4 Format (i.e., 568I4). The "8" corresponds to the eight PRA Sweeps. The lowest 68 of the 70 Low Band Channels (1287.6 kHz to 1.2 kHz) are in Positions 2 to 69. Positions 70 and 71 should be ignored. Missing or Bad Data Values are set to Zero. In Position 1 of each Sweep is a Status Word where the 12 least significant Bits have used, although not all 12 have meaning for the PRA Low Band. Numbering those Bits 0 for least significant to 11 for most significant, the Bits that have meaning are as follows:
 
 * Bit Value(s)
 - 0: 15 dB Attenuator in use when equal to 1
@@ -53,7 +75,7 @@ Missing or Bad Data Values are set to Zero. If the Status Word is Zero, any Data
         <Language>En</Language>
       </InformationURL>
       <PriorID>spase://VMO/NumericalData/Voyager1/PRA/Saturn/PT6S</PriorID>
-        <PriorID>spase://VSPO/NumericalData/Voyager1/PRA/Saturn/PT6S</PriorID>
+      <PriorID>spase://VSPO/NumericalData/Voyager1/PRA/Saturn/PT6S</PriorID>
     </ResourceHeader>
     <AccessInformation>
       <RepositoryID>spase://SMWG/Repository/PDS/PPI</RepositoryID>

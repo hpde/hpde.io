@@ -1,6 +1,16 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.spase-group.org/data/schema  https://www.spase-group.org/data/schema/spase-2.7.0.xsd">
-  <Version>2.7.0</Version>
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.spase-group.org/data/schema  https://www.spase-group.org/data/schema/spase-2.7.1.xsd">
+  <Version>2.7.1</Version>
+  <MetadataRightsList>
+    <Rights>
+      <SchemeURI>https://spdx.org/licenses/</SchemeURI>
+      <RightsIdentifierScheme>SPDX</RightsIdentifierScheme>
+      <RightsIdentifier>CC0-1.0</RightsIdentifier>
+      <RightsURI>https://spdx.org/licenses/CC0-1.0.html</RightsURI>
+      <RightsName>Creative Commons Zero v1.0 Universal</RightsName>
+      <Note>CC0 1.0 Universal is the Creative Commons license applicable to all publicly available SPASE metadata descriptions</Note>
+    </Rights>
+  </MetadataRightsList>
   <NumericalData>
     <ResourceID>spase://NASA/NumericalData/Cluster-Salsa/WBD/BM2/PT0.0000046S</ResourceID>
     <NamingAuthority>NASA</NamingAuthority>
@@ -11,7 +21,7 @@
       <AlternateName>C2_CE_WBD_WAVEFORM_BM2_CDF</AlternateName>
       <AlternateName>C2_WAVEFORM_WBD_BM2</AlternateName>
       <DOI>https://doi.org/10.48322/9w1c-fm41</DOI>
-      <ReleaseDate>2025-11-14T16:01:46Z</ReleaseDate>
+      <ReleaseDate>2025-12-04T13:29:02Z</ReleaseDate>
       <RevisionHistory>
         <RevisionEvent>
           <ReleaseDate>2021-04-27T15:38:11Z</ReleaseDate>
@@ -24,6 +34,10 @@
         <RevisionEvent>
           <ReleaseDate>2025-11-14T16:01:46Z</ReleaseDate>
           <Note>Added PublicationInfo. Added ResourceType and NamingAuthority. Changed http to https in top-level schemaLocation attribute. Fixed version number separator in top-level schemaLocation attribute. Matched version number in schemaLocation attribute to updated value in Version tag. ZCB</Note>
+        </RevisionEvent>
+        <RevisionEvent>
+          <ReleaseDate>2025-12-04T13:29:02Z</ReleaseDate>
+          <Note>Added MetadataRightsList and RightsList(s). Updated to 2.7.1. ZCB</Note>
         </RevisionEvent>
       </RevisionHistory>
       <Description>The following description applies to the Wideband Data (WBD) Plasma Wave Receivers on all four Cluster satellites, each satellite being uniquely identified by its number (1 through 4) or its given name (Rumba, Salsa, Samba, Tango, respectively). High time resolution calibrated waveform data sampled in one of 3 frequency bands in the range 0-577 kHz along one axis using either an electric field antenna or a magnetic search coil sensor. The dataset also includes instrument mode, data quality and the angles required to orient the measurement with respect to the magnetic field and to the GSE coordinate system. The AC electric field data are obtained by using one of the two 88m spin plane electric field antennas of the EFW (Electric Fields and Waves) instrument as a sensor. The AC magnetic field data are obtained by using one of the two search coil magnetometers (one in the spin plane, the other along the spin axis) of the STAFF (Spatio-Temporal Analysis of Field Fluctuations) instrument as a sensor. The WBD data are obtained in one of three filter bandwidth modes: (1) 9.5 kHz, (2) 19 kHz, or (3) 77 kHz. The minimum frequency of each of these three frequency bands can be shifted up (converted) from the default 0 kHz base frequency by 125.454, 250.908 or 501.816 kHz. The time resolution of the data shown in the plots is determined from the WBD instrument mode. The highest time resolution data (generally the 77 kHz bandwidth mode) are sampled at 4.6 microseconds in the time domain (~4.7 milliseconds in the frequency domain using a standard 1024 point FFT). The lowest time resolution data (generally the 9.5 kHz bandwidth mode) are sampled at 36.5 microseconds in the time domain (~37.3 milliseconds in the frequency domain using a standard 1024 point FFT). The availability of these files depends on times of DSN and Panska Ves ground station telemetry downlinks. A list of the status of the WBD instrument on each spacecraft, the telemetry time spans, operating modes and other details are available under Science Data Availability on the University of Iowa Cluster WBD web site at http://www- pw.physics.uiowa.edu/cluster/ and through the documentation section of the Cluster Science Archive (CSA) (https://www.cosmos.esa.int/web/csa/documentation). Details on Cluster WBD Interpretation Issues and Caveats can be found at http://www- pw.physics.uiowa.edu/cluster/ by clicking on the links next to the Caution symbol in the listing on the left side of the web site. These documents are also available from the Documentation section of the CSA website. For further details on the Cluster WBD data products see Pickett, J.S., et al., "Cluster Wideband Data Products in the Cluster Active Archive" in The Cluster Active Archive, 2010, Springer-Verlag, pp 169-183, and the Cluster WBD User Guide archived at the CSA website in the Documentation section. ... CALIBRATION: ... The procedure used in computing the calibrated Electric Field and Magnetic Field values found in this file can be obtained from the Cluster WBD Calibration Report archived at the CSA website in the Documentation section. Because the calibration was applied in the time domain using simple equations the raw counts actually measured by the WBD instrument can be obtained by using these equations and solving for 'Raw Counts', keeping in mind that this number is an Integer ranging from 0 to 255. Since DC offset is a real number, the resultant when solving for raw counts will need to be converted to the nearest whole number. A sample IDL routine for reverse calibrating to obtain 'Raw Counts' is provided in the WBD Calibration Report archived at the CSA. ... CONVERSION TO FREQUENCY DOMAIN: ... In order to convert the WBD data to the frequency domain via an FFT, the following steps need to be carried out: 1) If Electric Field, first divide calibrated data values by 1000 to get V/m; 2) Apply window of preference, if any (such as Hann, etc.); 3) Divide data values by sqrt(2) to get back to the rms domain; 4) perform FFT (see Bandwidth variable notes for non-continuous modes and/or the WBD User Guide archived at the CSA); 5) divide by the noise bandwidth, which is equal to the sampling frequency divided by the FFT size (see table below for appropriate sampling frequency); 6) multiply by the appropriate constant for the window used, if any. These steps are more fully explained in the WBD Calibration Report archived at the CSA.... BURST MODE: ... WBD data can also be obtained in a mode called Burst Mode 2 (BM2), stored onboard, and transmitted to the ground with the data from all the other instruments. This mode has been rarely used throughout the mission only once prior to July 2010 (on March 7, 2001), but more often thereafter to obtain data at low altitude or in the high priority auroral acceleration region, because it results in decreased bandwidth or a higher degree of duty cycling for WBD. NASA's Deep Space Network terminated WBD data acquisition in February 2015 and after that date WBD operations are limited to Panska Ves real time downlink (limited to altitudes below 10 RE) and a limited number of BM2 operations. This resulted in a decreased total weekly quota of WBD operations, especially at higher altitudes where only BM2 mode is available. BM2 data are thus obtained primarily at outer boundaries (bow shock, foreshock, magnetosheath, magnetopause, plasmasheet) and during perigee crossings of the magnetic equator when Panska Ves does not have visibility. Typically, approximately 4 operations of 1-2 hours duration are obtained in these regions each month. BM_Mode (0=Duty Cycled 9.5 kHz, 1-in-3, 1 = Duty Cycled 9.5 kHz, 1-in-4, 2 = Duty Cycled 19 kHz, 1-in-3, 3 = Duty Cycled 19 kHz, 1-in-4, 4 = Duty Cycled 77 kHz, 1-in-3, 5 = Duty Cycled 77 kHz, 1-in-4, 6 = Digital Filtered 9.5 kHz, 1-in-3, roll-off at 3.2 kHz 7 = Digital Filtered 9.5 kHz, 1-in-3, optimized roll-off at 4.2 kHz 8 = Digital Filtered 9.5 kHz, 1-in-4, roll-off at 2.5 kHz 9 = Digital Filtered 9.5 kHz, 1-in-4, optimized roll-off at 3.1 kHz) +--------------------------------------+ Bandwidth Sample Rate Burst Mode ----------- ------------- ------------ 9.5 kHz 27.443 kHz 0,1 19 kHz 54.886 kHz 2,3 77 kHz 219.544 kHz 4,5 9.5 kHz 9.148 kHz 6,7 9.5 kHz 6.861 kHz 8,9 +--------------------------------------+ COORDINATE SYSTEM USED: ... One axis measurements made in the Antenna Coordinate System, i.e., if electric field measurement, it will either be Ey or Ez, both of which are in the spin plane of the spacecraft, and if magnetic field measurement, it will either be Bx, along the spin axis, or By, in spin plane. The user of WBD data should refer to the WBD User Guide, archived at the CSA, Section 5.4.1 and Figure 5.3 for a description of the three orientation angles provided in these files. Since WBD measurements are made along one axis only, these three angles provide the only means for orienting the WBD measurements with respect to a geocentric coordinate system and to the magnetic field direction ...</Description>
@@ -64,6 +78,16 @@
       <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF</RepositoryID>
       <Availability>Online</Availability>
       <AccessRights>Open</AccessRights>
+      <RightsList>
+        <Rights>
+          <SchemeURI>https://spdx.org/licenses/</SchemeURI>
+          <RightsIdentifierScheme>SPDX</RightsIdentifierScheme>
+          <RightsIdentifier>CC0-1.0</RightsIdentifier>
+          <RightsURI>https://spdx.org/licenses/CC0-1.0.html</RightsURI>
+          <RightsName>Creative Commons Zero v1.0 Universal</RightsName>
+          <Note>CC0 1.0 Universal is the Creative Commons license applicable to all publicly available NASA Heliophysics data products</Note>
+        </Rights>
+      </RightsList>
       <AccessURL>
         <Name>FTP access to files at SPDF</Name>
         <URL>ftps://cdaweb.gsfc.nasa.gov/pub/data/cluster/c2/wbd_bm2/</URL>
@@ -92,6 +116,16 @@
       <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF</RepositoryID>
       <Availability>Online</Availability>
       <AccessRights>Open</AccessRights>
+      <RightsList>
+        <Rights>
+          <SchemeURI>https://spdx.org/licenses/</SchemeURI>
+          <RightsIdentifierScheme>SPDX</RightsIdentifierScheme>
+          <RightsIdentifier>CC0-1.0</RightsIdentifier>
+          <RightsURI>https://spdx.org/licenses/CC0-1.0.html</RightsURI>
+          <RightsName>Creative Commons Zero v1.0 Universal</RightsName>
+          <Note>CC0 1.0 Universal is the Creative Commons license applicable to all publicly available NASA Heliophysics data products</Note>
+        </Rights>
+      </RightsList>
       <AccessURL>
         <Name>CDAWeb HAPI Server</Name>
         <URL>https://cdaweb.gsfc.nasa.gov/hapi</URL>
