@@ -1,318 +1,340 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema  http://www.spase-group.org/data/schema/spase-2_7_0.xsd">
-   <Version>2.7.0</Version>
-   <Catalog>
-      <ResourceID>spase://NASA/Catalog/STEREO/ICMECAT</ResourceID>
-      <ResourceHeader>
-         <ResourceName>ICMECAT - a catalog of interplanetary coronal mass ejections</ResourceName>
-         <ReleaseDate>2025-07-09T10:37:17</ReleaseDate>
-         <Description>This is the HELIO4CAST interplanetary coronal mass ejection (ICME) catalog (ICMECAT), based on in situ magnetic field and bulk plasma observations in the heliosphere.</Description>
-         <Contact>
-            <PersonID>spase://SMWG/Person/Christian.Moestl</PersonID>
-            <Role>Author</Role>
-         </Contact>
-         <Contact>
-            <PersonID>spase://SMWG/Person/Eva.Weiler</PersonID>
-            <Role>Author</Role>
-         </Contact>
-         <Contact>
-            <PersonID>spase://SMWG/Person/Emma.E.Davies </PersonID>
-            <Role>Author</Role>
-         </Contact>
-         <Contact>
-            <PersonID>spase://SMWG/Person/Olga.Y.Uritskaya</PersonID>
-            <Role>MetadataContact</Role>
-         </Contact>
-      </ResourceHeader>
-      <AccessInformation>
-         <RepositoryID>spase://SMWG/Repository/Helio4cast</RepositoryID>
-         <AccessURL>
-            <URL>https://helioforecast.space/icmecat</URL>
-         </AccessURL>
-         <Format>HTML</Format>
-      </AccessInformation>
-      <InstrumentID>spase://SMWG/Instrument/STEREO-A/Ephemeris</InstrumentID>
-      <InstrumentID>spase://SMWG/Instrument/STEREO-B/Ephemeris</InstrumentID>
-      <InstrumentID>spase://SMWG/Instrument/SolarOrbiter/Ephemeris</InstrumentID>
-      <InstrumentID>spase://SMWG/Instrument/ParkerSolarProbe/Ephemeris</InstrumentID>
-      <InstrumentID>spase://SMWG/Instrument/BepiColombo/Ephemeris</InstrumentID>
-      <InstrumentID>spase://SMWG/Instrument/Wind/Ephemeris</InstrumentID>
-      <InstrumentID>spase://SMWG/Instrument/VenusExpress/ASPERA4</InstrumentID>
-      <InstrumentID>spase://SMWG/Instrument/MESSENGER/Ephemeris</InstrumentID>
-      <InstrumentID>spase://SMWG/Instrument/MAVEN/Ephemeris</InstrumentID>
-      <InstrumentID>spase://SMWG/Instrument/Ulysses/Ephemeris</InstrumentID>
-      <PhenomenonType>InterplanetaryCoronalMassEjection</PhenomenonType>
-      <TimeSpan>
-         <StartDate>1990-12-11T04:00:00</StartDate>
-         <StopDate>2024-12-20T22:34:00</StopDate>
-      </TimeSpan>
-      <Parameter>
-         <Name>icmecat_id</Name>
-         <Description>icmecat_id: The unique identifier for the observed ICME. unit: string.</Description>
-         <Support>
-            <SupportQuantity>Housekeeping</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>sc insitu</Name>
-         <Description>sc insitu: The name of the in situ observing spacecraft. unit: string.</Description>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name> icme_start_time</Name>
-         <Description> icme_start_time: Shock arrival or density enhancement time, can be similar to mo_start_time. unit: UTC.</Description>
-         <Support>
-            <SupportQuantity>Temporal</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>mo_start_time</Name>
-         <Description>mo_start_time: Start time of the magnetic obstacle (MO), including flux ropes, flux-rope-like, and ejecta signatures. unit: UTC.</Description>
-         <Support>
-            <SupportQuantity>Temporal</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>mo_end_time</Name>
-         <Description>mo_end_time: End time of the magnetic obstacle. unit: UTC.</Description>
-         <Support>
-            <SupportQuantity>Temporal</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>mo_sc_heliodistance</Name>
-         <Description>mo_sc_heliodistance: Heliocentric distance of the spacecraft at mo_start_time. unit: AU.</Description>
-         <Support>
-            <SupportQuantity>Positional</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>mo_sc_long_heeq</Name>
-         <Description>mo_sc_long_heeq: Heliospheric longitude of the spacecraft at mo_start_time, range [-180,180]. unit: degree (HEEQ).
+<?xml version='1.0' encoding='UTF-8'?>
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.spase-group.org/data/schema  https://www.spase-group.org/data/schema/spase-2.7.1.xsd">
+  <Version>2.7.1</Version>
+  <MetadataRightsList>
+    <Rights>
+      <SchemeURI>https://spdx.org/licenses/</SchemeURI>
+      <RightsIdentifierScheme>SPDX</RightsIdentifierScheme>
+      <RightsIdentifier>CC0-1.0</RightsIdentifier>
+      <RightsURI>https://spdx.org/licenses/CC0-1.0.html</RightsURI>
+      <RightsName>Creative Commons Zero v1.0 Universal</RightsName>
+      <Note>CC0 1.0 Universal is the Creative Commons license applicable to all publicly available SPASE metadata descriptions</Note>
+    </Rights>
+  </MetadataRightsList>
+  <Catalog>
+    <ResourceID>spase://NASA/Catalog/STEREO/ICMECAT</ResourceID>
+    <NamingAuthority>NASA</NamingAuthority>
+    <ResourceType>Catalog</ResourceType>
+    <ResourceHeader>
+      <ResourceName>ICMECAT - a catalog of interplanetary coronal mass ejections</ResourceName>
+      <ReleaseDate>2026-02-02T13:10:25Z</ReleaseDate>
+      <RevisionHistory>
+        <RevisionEvent>
+          <ReleaseDate>2025-07-09T10:37:17</ReleaseDate>
+          <Note>Only known prior ReleaseDate of the metadata</Note>
+        </RevisionEvent>
+        <RevisionEvent>
+          <ReleaseDate>2026-02-02T13:10:25Z</ReleaseDate>
+          <Note>Added MetadataRightsList. Added ResourceType and NamingAuthority. Updated to 2.7.1. Changed http to https in top-level schemaLocation attribute. Fixed version number separator in top-level schemaLocation attribute. ZCB</Note>
+        </RevisionEvent>
+      </RevisionHistory>
+      <Description>This is the HELIO4CAST interplanetary coronal mass ejection (ICME) catalog (ICMECAT), based on in situ magnetic field and bulk plasma observations in the heliosphere.</Description>
+      <Contact>
+        <PersonID>spase://SMWG/Person/Christian.Moestl</PersonID>
+        <Role>Author</Role>
+      </Contact>
+      <Contact>
+        <PersonID>spase://SMWG/Person/Eva.Weiler</PersonID>
+        <Role>Author</Role>
+      </Contact>
+      <Contact>
+        <PersonID>spase://SMWG/Person/Emma.E.Davies </PersonID>
+        <Role>Author</Role>
+      </Contact>
+      <Contact>
+        <PersonID>spase://SMWG/Person/Olga.Y.Uritskaya</PersonID>
+        <Role>MetadataContact</Role>
+      </Contact>
+    </ResourceHeader>
+    <AccessInformation>
+      <RepositoryID>spase://SMWG/Repository/Helio4cast</RepositoryID>
+      <AccessURL>
+        <URL>https://helioforecast.space/icmecat</URL>
+      </AccessURL>
+      <Format>HTML</Format>
+    </AccessInformation>
+    <InstrumentID>spase://SMWG/Instrument/STEREO-A/Ephemeris</InstrumentID>
+    <InstrumentID>spase://SMWG/Instrument/STEREO-B/Ephemeris</InstrumentID>
+    <InstrumentID>spase://SMWG/Instrument/SolarOrbiter/Ephemeris</InstrumentID>
+    <InstrumentID>spase://SMWG/Instrument/ParkerSolarProbe/Ephemeris</InstrumentID>
+    <InstrumentID>spase://SMWG/Instrument/BepiColombo/Ephemeris</InstrumentID>
+    <InstrumentID>spase://SMWG/Instrument/Wind/Ephemeris</InstrumentID>
+    <InstrumentID>spase://SMWG/Instrument/VenusExpress/ASPERA4</InstrumentID>
+    <InstrumentID>spase://SMWG/Instrument/MESSENGER/Ephemeris</InstrumentID>
+    <InstrumentID>spase://SMWG/Instrument/MAVEN/Ephemeris</InstrumentID>
+    <InstrumentID>spase://SMWG/Instrument/Ulysses/Ephemeris</InstrumentID>
+    <PhenomenonType>InterplanetaryCoronalMassEjection</PhenomenonType>
+    <TimeSpan>
+      <StartDate>1990-12-11T04:00:00</StartDate>
+      <StopDate>2024-12-20T22:34:00</StopDate>
+    </TimeSpan>
+    <Parameter>
+      <Name>icmecat_id</Name>
+      <Description>icmecat_id: The unique identifier for the observed ICME. unit: string.</Description>
+      <Support>
+        <SupportQuantity>Housekeeping</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>sc insitu</Name>
+      <Description>sc insitu: The name of the in situ observing spacecraft. unit: string.</Description>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name> icme_start_time</Name>
+      <Description> icme_start_time: Shock arrival or density enhancement time, can be similar to mo_start_time. unit: UTC.</Description>
+      <Support>
+        <SupportQuantity>Temporal</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>mo_start_time</Name>
+      <Description>mo_start_time: Start time of the magnetic obstacle (MO), including flux ropes, flux-rope-like, and ejecta signatures. unit: UTC.</Description>
+      <Support>
+        <SupportQuantity>Temporal</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>mo_end_time</Name>
+      <Description>mo_end_time: End time of the magnetic obstacle. unit: UTC.</Description>
+      <Support>
+        <SupportQuantity>Temporal</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>mo_sc_heliodistance</Name>
+      <Description>mo_sc_heliodistance: Heliocentric distance of the spacecraft at mo_start_time. unit: AU.</Description>
+      <Support>
+        <SupportQuantity>Positional</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>mo_sc_long_heeq</Name>
+      <Description>mo_sc_long_heeq: Heliospheric longitude of the spacecraft at mo_start_time, range [-180,180]. unit: degree (HEEQ).
 </Description>
-         <Support>
-            <SupportQuantity>Orientation</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>mo_sc_lat_heeq</Name>
-         <Description>mo_sc_lat_heeq: Heliospheric latitude of the spacecraft at mo_start_time, range [-90,90]. unit: degree (HEEQ).</Description>
-         <Support>
-            <SupportQuantity>Orientation</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>icme_duration</Name>
-         <Description>icme_duration: Duration of the interval between icme_start_time and mo_endtime. unit: hours.</Description>
-         <Support>
-            <SupportQuantity>Temporal</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name> icme_bmax</Name>
-         <Description> icme_bmax: Maximum total magnetic field in the full icme interval (icme_start_time to mo_end_time). unit: nT.</Description>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name> icme_bmean</Name>
-         <Description> icme_bmean: Mean total magnetic field during the full icme interval (icme_start_time to mo_end_time). unit: nT.</Description>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>icme_bstd</Name>
-         <Description>icme_bstd: Standard deviation of the total magnetic field from icme_start_time to mo_end_time. unit: nT.</Description>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>icme_speed</Name>
-         <Description>12: icme_speed_mean: Mean proton speed from icme_start_time to mo_end_time. unit: km/s.</Description>
-         <Support>
-            <SupportQuantity>Velocity</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name> icme_speed_std</Name>
-         <Description>icme_speed_std: Standard deviation of proton speed from icme_start_time to mo_end_time. unit: km/s.
+      <Support>
+        <SupportQuantity>Orientation</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>mo_sc_lat_heeq</Name>
+      <Description>mo_sc_lat_heeq: Heliospheric latitude of the spacecraft at mo_start_time, range [-90,90]. unit: degree (HEEQ).</Description>
+      <Support>
+        <SupportQuantity>Orientation</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>icme_duration</Name>
+      <Description>icme_duration: Duration of the interval between icme_start_time and mo_endtime. unit: hours.</Description>
+      <Support>
+        <SupportQuantity>Temporal</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name> icme_bmax</Name>
+      <Description> icme_bmax: Maximum total magnetic field in the full icme interval (icme_start_time to mo_end_time). unit: nT.</Description>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name> icme_bmean</Name>
+      <Description> icme_bmean: Mean total magnetic field during the full icme interval (icme_start_time to mo_end_time). unit: nT.</Description>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>icme_bstd</Name>
+      <Description>icme_bstd: Standard deviation of the total magnetic field from icme_start_time to mo_end_time. unit: nT.</Description>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>icme_speed</Name>
+      <Description>12: icme_speed_mean: Mean proton speed from icme_start_time to mo_end_time. unit: km/s.</Description>
+      <Support>
+        <SupportQuantity>Velocity</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name> icme_speed_std</Name>
+      <Description>icme_speed_std: Standard deviation of proton speed from icme_start_time to mo_end_time. unit: km/s.
 </Description>
-         <Support>
-            <SupportQuantity>Velocity</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>mo_duration</Name>
-         <Description>mo_duration: Duration of the interval between mo_start_time and mo_endtime. unit: hours.</Description>
-         <Support>
-            <SupportQuantity>Velocity</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>mo_bmax</Name>
-         <Description>mo_bmax: Maximum total magnetic field in the magnetic obstacle interval (mo_start_time to mo_end_time). unit: nT.</Description>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>mo_bmean</Name>
-         <Description>mo_bmean: Mean total magnetic field in the magnetic obstacle. unit: nT.</Description>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name> mo_bstd</Name>
-         <Description> mo_bstd: Standard deviation of the total magnetic field in the magnetic obstacle. unit: nT.</Description>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>mo_bzmean</Name>
-         <Description>mo_bzmean: Mean magnetic field Bz component in the magnetic obstacle. unit: nT.</Description>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>mo_bzmin</Name>
-         <Description>mo_bzmin: Minimum magnetic field Bz component in the magnetic obstacle. unit: nT.</Description>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>mo_bzstd</Name>
-         <Description>mo_bzstd: Standard deviation of the magnetic field Bz component in the magnetic obstacle. unit: nT.</Description>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>mo_bymean</Name>
-         <Description>mo_bymean: Mean magnetic field By component in the magnetic obstacle. unit: nT.</Description>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>mo_bystd</Name>
-         <Description>: mo_bystd: Standard deviation of the magnetic field By component in the magnetic obstacle. unit: nT.</Description>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>mo_speed_mean</Name>
-         <Description>mo_speed_mean: Mean proton speed from mo_start_time to mo_end_time. unit: km/s.</Description>
-         <Support>
-            <SupportQuantity>Velocity</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name> mo_speed_std</Name>
-         <Description> mo_speed_std: Standard deviation of proton speed from mo_start_time to mo_end_time. unit: km/s.</Description>
-         <Support>
-            <SupportQuantity>Velocity</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>mo_expansion_speed</Name>
-         <Description>mo_expansion_speed: Difference between proton speed at mo_start_time to proton speed at mo_end_time. unit: km/s.</Description>
-         <Support>
-            <SupportQuantity>Velocity</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>mo_pdyn_mean</Name>
-         <Description>mo_pdyn_mean: Mean proton dynamic pressure from mo_start_time to mo_start_time. unit: nPa.</Description>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name> mo_pdyn_std</Name>
-         <Description> mo_pdyn_std: Standard deviation of proton dynamic pressure from mo_start_time to mo_start_time. unit: nPa.</Description>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>mo_density_mean</Name>
-         <Description>mo_density_mean: Mean proton density from mo_start_time to mo_start_time. unit: cm^-3.</Description>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>mo_density_std</Name>
-         <Description>mo_density_std: Standard deviation of proton density from mo_start_time to mo_start_time. unit: cm^-3</Description>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>mo_temperature_mean</Name>
-         <Description>mo_temperature_mean: Mean proton temperature from mo_start_time to mo_start_time. unit: K.</Description>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>mo_temperature_std</Name>
-         <Description>mo_temperature_std: Standard deviation of proton temperature from mo_start_time to mo_end_time. unit: K.</Description>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>sheath_speed_mean</Name>
-         <Description>sheath_speed_mean: Mean proton speed from icme_start_time to mo_start_time, NaN if these times are similar. unit: km/s.</Description>
-         <Support>
-            <SupportQuantity>Velocity</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>sheath_speed_std</Name>
-         <Description>sheath_speed_std: Standard deviation of proton speed from icme_start_time to mo_start_time, NaN if these times are similar. unit: km/s.</Description>
-         <Support>
-            <SupportQuantity>Velocity</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>sheath_density_mean</Name>
-         <Description>sheath_density_mean: Mean proton density from icme_start_time to mo_start_time, NaN if these times are similar. unit: cm^-3.</Description>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>sheath_density_std</Name>
-         <Description>sheath_density_std: Standard deviation of proton density from icme_start_time to mo_start_time, NaN if these times are similar. unit: cm^-3.</Description>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>sheath_pdyn_mean</Name>
-         <Description>sheath_pdyn_mean: Mean proton dynamic pressure, from icme_start_time to mo_start_time, NaN if these times are similar. unit: nPa.</Description>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>sheath_pdyn_std</Name>
-         <Description>sheath_pdyn_std: Standard deviation of proton dynamic pressure, from icme_start_time to mo_start_time, NaN if these times are similar. unit: nPa.</Description>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-   </Catalog>
+      <Support>
+        <SupportQuantity>Velocity</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>mo_duration</Name>
+      <Description>mo_duration: Duration of the interval between mo_start_time and mo_endtime. unit: hours.</Description>
+      <Support>
+        <SupportQuantity>Velocity</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>mo_bmax</Name>
+      <Description>mo_bmax: Maximum total magnetic field in the magnetic obstacle interval (mo_start_time to mo_end_time). unit: nT.</Description>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>mo_bmean</Name>
+      <Description>mo_bmean: Mean total magnetic field in the magnetic obstacle. unit: nT.</Description>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name> mo_bstd</Name>
+      <Description> mo_bstd: Standard deviation of the total magnetic field in the magnetic obstacle. unit: nT.</Description>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>mo_bzmean</Name>
+      <Description>mo_bzmean: Mean magnetic field Bz component in the magnetic obstacle. unit: nT.</Description>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>mo_bzmin</Name>
+      <Description>mo_bzmin: Minimum magnetic field Bz component in the magnetic obstacle. unit: nT.</Description>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>mo_bzstd</Name>
+      <Description>mo_bzstd: Standard deviation of the magnetic field Bz component in the magnetic obstacle. unit: nT.</Description>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>mo_bymean</Name>
+      <Description>mo_bymean: Mean magnetic field By component in the magnetic obstacle. unit: nT.</Description>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>mo_bystd</Name>
+      <Description>: mo_bystd: Standard deviation of the magnetic field By component in the magnetic obstacle. unit: nT.</Description>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>mo_speed_mean</Name>
+      <Description>mo_speed_mean: Mean proton speed from mo_start_time to mo_end_time. unit: km/s.</Description>
+      <Support>
+        <SupportQuantity>Velocity</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name> mo_speed_std</Name>
+      <Description> mo_speed_std: Standard deviation of proton speed from mo_start_time to mo_end_time. unit: km/s.</Description>
+      <Support>
+        <SupportQuantity>Velocity</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>mo_expansion_speed</Name>
+      <Description>mo_expansion_speed: Difference between proton speed at mo_start_time to proton speed at mo_end_time. unit: km/s.</Description>
+      <Support>
+        <SupportQuantity>Velocity</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>mo_pdyn_mean</Name>
+      <Description>mo_pdyn_mean: Mean proton dynamic pressure from mo_start_time to mo_start_time. unit: nPa.</Description>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name> mo_pdyn_std</Name>
+      <Description> mo_pdyn_std: Standard deviation of proton dynamic pressure from mo_start_time to mo_start_time. unit: nPa.</Description>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>mo_density_mean</Name>
+      <Description>mo_density_mean: Mean proton density from mo_start_time to mo_start_time. unit: cm^-3.</Description>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>mo_density_std</Name>
+      <Description>mo_density_std: Standard deviation of proton density from mo_start_time to mo_start_time. unit: cm^-3</Description>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>mo_temperature_mean</Name>
+      <Description>mo_temperature_mean: Mean proton temperature from mo_start_time to mo_start_time. unit: K.</Description>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>mo_temperature_std</Name>
+      <Description>mo_temperature_std: Standard deviation of proton temperature from mo_start_time to mo_end_time. unit: K.</Description>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>sheath_speed_mean</Name>
+      <Description>sheath_speed_mean: Mean proton speed from icme_start_time to mo_start_time, NaN if these times are similar. unit: km/s.</Description>
+      <Support>
+        <SupportQuantity>Velocity</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>sheath_speed_std</Name>
+      <Description>sheath_speed_std: Standard deviation of proton speed from icme_start_time to mo_start_time, NaN if these times are similar. unit: km/s.</Description>
+      <Support>
+        <SupportQuantity>Velocity</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>sheath_density_mean</Name>
+      <Description>sheath_density_mean: Mean proton density from icme_start_time to mo_start_time, NaN if these times are similar. unit: cm^-3.</Description>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>sheath_density_std</Name>
+      <Description>sheath_density_std: Standard deviation of proton density from icme_start_time to mo_start_time, NaN if these times are similar. unit: cm^-3.</Description>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>sheath_pdyn_mean</Name>
+      <Description>sheath_pdyn_mean: Mean proton dynamic pressure, from icme_start_time to mo_start_time, NaN if these times are similar. unit: nPa.</Description>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>sheath_pdyn_std</Name>
+      <Description>sheath_pdyn_std: Standard deviation of proton dynamic pressure, from icme_start_time to mo_start_time, NaN if these times are similar. unit: nPa.</Description>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+  </Catalog>
 </Spase>

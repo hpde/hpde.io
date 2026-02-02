@@ -1,196 +1,218 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema  http://www.spase-group.org/data/schema/spase-2_7_0.xsd">
-   <Version>2.7.0</Version>
-   <Catalog>
-      <ResourceID>spase://NASA/Catalog/STEREO/ARRCAT_CME_arrival</ResourceID>
-      <ResourceHeader>
-         <ResourceName>ARRCAT - CME arrival times and speeds with heliospheric imagers</ResourceName>
-         <ReleaseDate>2025-07-20T11:28:55</ReleaseDate>
-         <Description>In this ARRival CATalog (ARRCAT), the arrivals of solar coronal mass ejections (CMEs) that were tracked by the STEREO heliospheric imagers are calculated. ARRCAT lists modeled arrivals of CMEs at various spacecraft and planets, based on the HIGeoCAT catalog of CMEs established at RAL Space, UK (R. A. Harrison, J. A. Davies, D. Barnes). It is a living catalog, updated about every 2 months.</Description>
-         <Contact>
-            <PersonID>spase://SMWG/Person/Christian.Moestl</PersonID>
-            <Role>Author</Role>
-         </Contact>
-         <Contact>
-            <PersonID>spase://SMWG/Person/Eva.Weiler</PersonID>
-            <Role>Author</Role>
-         </Contact>
-         <Contact>
-            <PersonID>spase://SMWG/Person/Emma.E.Davies </PersonID>
-            <Role>Author</Role>
-         </Contact>
-         <Contact>
-            <PersonID>spase://SMWG/Person/Richard.A.Harrison</PersonID>
-            <Role>Author</Role>
-         </Contact>
-         <Contact>
-            <PersonID>spase://SMWG/Person/Jackie.Davies</PersonID>
-            <Role>Author</Role>
-         </Contact>
-         <Contact>
-            <PersonID>spase://SMWG/Person/Olga.Y.Uritskaya</PersonID>
-            <Role>MetadataContact</Role>
-         </Contact>
-      </ResourceHeader>
-      <AccessInformation>
-         <RepositoryID>spase://SMWG/Repository/Helio4cast</RepositoryID>
-         <AccessURL>
-            <URL>https://helioforecast.space/arrcat</URL>
-         </AccessURL>
-         <Format>HTML</Format>
-      </AccessInformation>
-      <InstrumentID>spase://SMWG/Instrument/STEREO-A/Ephemeris</InstrumentID>
-      <InstrumentID>spase://SMWG/Instrument/STEREO-B/Ephemeris</InstrumentID>
-      <InstrumentID>spase://SMWG/Instrument/SolarOrbiter/Ephemeris</InstrumentID>
-      <InstrumentID>spase://SMWG/Instrument/ParkerSolarProbe/Ephemeris</InstrumentID>
-      <InstrumentID>spase://SMWG/Instrument/BepiColombo/Ephemeris</InstrumentID>
-      <InstrumentID>spase://SMWG/Instrument/MESSENGER/Ephemeris</InstrumentID>
-      <InstrumentID>spase://SMWG/Instrument/Ulysses/Ephemeris</InstrumentID>
-      <InstrumentID>spase://SMWG/Instrument/Juno/Ephemeris</InstrumentID>
-      <PhenomenonType>CoronalMassEjection</PhenomenonType>
-      <TimeSpan>
-         <StartDate>2007-04-19T06:50:00</StartDate>
-         <RelativeStopDate>P2M</RelativeStopDate>
-      </TimeSpan>
-      <Parameter>
-         <Name> id</Name>
-         <Description> id: From HIGeoCAT, the unique identifier for the observed CME.</Description>
-         <Support>
-            <SupportQuantity>Housekeeping</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>sc</Name>
-         <Description>sc: From HIGeoCAT, the HI observing STEREO spacecraft, (A=Ahead or B=Behind)</Description>
-         <Support>
-            <SupportQuantity>Orientation</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>   target_name</Name>
-         <Description>   target_name: Name of in situ target.</Description>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name> sse_launch_time</Name>
-         <Description> sse_launch_time: From HIGeoCAT, launch time of the CME at Sun center, unit: UTC.</Description>
-         <Support>
-            <SupportQuantity>Temporal</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>  target_arrival_time</Name>
-         <Description> target_arrival_time: CME arrival time at target location calculated with the SSEF30 model, corrected for SSE shape (Möstl and Davies, 2013). unit: UTC.</Description>
-         <Support>
-            <SupportQuantity>Temporal</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name> target_arrival_time_err</Name>
-         <Description> target_arrival_time_err: Error of CME arrival time at target location from SSEF30 model, solely based on error in parameter sse_speed_err. unit: hours.</Description>
-         <Support>
-            <SupportQuantity>Temporal</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name> target_distance</Name>
-         <Description>target_distance: Target distance from Sun, at model CME arrival time. unit: AU.</Description>
-         <Support>
-            <SupportQuantity>Positional</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>target_heeq_lon</Name>
-         <Description>target_heeq_lon: Target longitude in HEEQ, at model CME arrival time. unit: degree.</Description>
-         <Support>
-            <SupportQuantity>Positional</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>target_heeq_lat</Name>
-         <Description>target_heeq_lat: Target latitude in HEEQ, at model CME arrival time. unit: degree.</Description>
-         <Support>
-            <SupportQuantity>Positional</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>target_delta</Name>
-         <Description>target_delta: Difference in HEEQ longitude between central CME direction and target location at model CME arrival time, positive values: spacecraft is west of CME apex. unit: degree.</Description>
-         <Support>
-            <SupportQuantity>Positional</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>sse_heeq_lon</Name>
-         <Description>sse_heeq_lon: From HIGeoCAT, the HEEQ longitude of the CME apex propagation direction, unit: degree.</Description>
-         <Support>
-            <SupportQuantity>Positional</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>sse_heeq_lat</Name>
-         <Description>sse_heeq_lat: From HIGeoCAT, the HEEQ latitude of the CME apex propagation direction, unit: degree.</Description>
-         <Support>
-            <SupportQuantity>Positional</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>sse_speed</Name>
-         <Description>sse_speed: From HIGeoCAT, speed of the CME apex, unit: km/s.</Description>
-         <Support>
-            <SupportQuantity>Velocity</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>sse_speed_err</Name>
-         <Description>sse_speed_err: From HIGeoCAT, error in the speed of the CME apex, unit: km/s.</Description>
-         <Support>
-            <SupportQuantity>Velocity</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>target_speed</Name>
-         <Description>target_speed: CME arrival speed from SSEF30 at target location, corrected for SSE shape (Möstl and Davies, 2013). unit: km/s.</Description>
-         <Support>
-            <SupportQuantity>Velocity</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>target_speed_err</Name>
-         <Description>target_speed_err: Error in CME arrival speed from SSEF30 at target location, corrected for SSE shape (Möstl and Davies, 2013). unit: km/s.</Description>
-         <Support>
-            <SupportQuantity>Velocity</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>pa_fit</Name>
-         <Description>pa_fit: From HIGeoCAT, PA along which time-elongation profile is extracted, unit: degree.</Description>
-         <Support>
-            <SupportQuantity>Positional</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>pa_n</Name>
-         <Description>pa_n: From HIGeoCAT, northern position angle of CME, unit: degree.</Description>
-         <Support>
-            <SupportQuantity>Positional</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>pa_s</Name>
-         <Description>pa_s: From HIGeoCAT, southernmost position angle of CME, unit: degree.</Description>
-         <Support>
-            <SupportQuantity>Positional</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>pa_center</Name>
-         <Description>pa_center: average of pa_n and pa_s, unit: degree.</Description>
-         <Support>
-            <SupportQuantity>Positional</SupportQuantity>
-         </Support>
-      </Parameter>
-   </Catalog>
+<?xml version='1.0' encoding='UTF-8'?>
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.spase-group.org/data/schema  https://www.spase-group.org/data/schema/spase-2.7.1.xsd">
+  <Version>2.7.1</Version>
+  <MetadataRightsList>
+    <Rights>
+      <SchemeURI>https://spdx.org/licenses/</SchemeURI>
+      <RightsIdentifierScheme>SPDX</RightsIdentifierScheme>
+      <RightsIdentifier>CC0-1.0</RightsIdentifier>
+      <RightsURI>https://spdx.org/licenses/CC0-1.0.html</RightsURI>
+      <RightsName>Creative Commons Zero v1.0 Universal</RightsName>
+      <Note>CC0 1.0 Universal is the Creative Commons license applicable to all publicly available SPASE metadata descriptions</Note>
+    </Rights>
+  </MetadataRightsList>
+  <Catalog>
+    <ResourceID>spase://NASA/Catalog/STEREO/ARRCAT_CME_arrival</ResourceID>
+    <NamingAuthority>NASA</NamingAuthority>
+    <ResourceType>Catalog</ResourceType>
+    <ResourceHeader>
+      <ResourceName>ARRCAT - CME arrival times and speeds with heliospheric imagers</ResourceName>
+      <ReleaseDate>2026-02-02T13:10:25Z</ReleaseDate>
+      <RevisionHistory>
+        <RevisionEvent>
+          <ReleaseDate>2025-07-20T11:28:55</ReleaseDate>
+          <Note>Only known prior ReleaseDate of the metadata</Note>
+        </RevisionEvent>
+        <RevisionEvent>
+          <ReleaseDate>2026-02-02T13:10:25Z</ReleaseDate>
+          <Note>Added MetadataRightsList. Added ResourceType and NamingAuthority. Updated to 2.7.1. Changed http to https in top-level schemaLocation attribute. Fixed version number separator in top-level schemaLocation attribute. ZCB</Note>
+        </RevisionEvent>
+      </RevisionHistory>
+      <Description>In this ARRival CATalog (ARRCAT), the arrivals of solar coronal mass ejections (CMEs) that were tracked by the STEREO heliospheric imagers are calculated. ARRCAT lists modeled arrivals of CMEs at various spacecraft and planets, based on the HIGeoCAT catalog of CMEs established at RAL Space, UK (R. A. Harrison, J. A. Davies, D. Barnes). It is a living catalog, updated about every 2 months.</Description>
+      <Contact>
+        <PersonID>spase://SMWG/Person/Christian.Moestl</PersonID>
+        <Role>Author</Role>
+      </Contact>
+      <Contact>
+        <PersonID>spase://SMWG/Person/Eva.Weiler</PersonID>
+        <Role>Author</Role>
+      </Contact>
+      <Contact>
+        <PersonID>spase://SMWG/Person/Emma.E.Davies </PersonID>
+        <Role>Author</Role>
+      </Contact>
+      <Contact>
+        <PersonID>spase://SMWG/Person/Richard.A.Harrison</PersonID>
+        <Role>Author</Role>
+      </Contact>
+      <Contact>
+        <PersonID>spase://SMWG/Person/Jackie.Davies</PersonID>
+        <Role>Author</Role>
+      </Contact>
+      <Contact>
+        <PersonID>spase://SMWG/Person/Olga.Y.Uritskaya</PersonID>
+        <Role>MetadataContact</Role>
+      </Contact>
+    </ResourceHeader>
+    <AccessInformation>
+      <RepositoryID>spase://SMWG/Repository/Helio4cast</RepositoryID>
+      <AccessURL>
+        <URL>https://helioforecast.space/arrcat</URL>
+      </AccessURL>
+      <Format>HTML</Format>
+    </AccessInformation>
+    <InstrumentID>spase://SMWG/Instrument/STEREO-A/Ephemeris</InstrumentID>
+    <InstrumentID>spase://SMWG/Instrument/STEREO-B/Ephemeris</InstrumentID>
+    <InstrumentID>spase://SMWG/Instrument/SolarOrbiter/Ephemeris</InstrumentID>
+    <InstrumentID>spase://SMWG/Instrument/ParkerSolarProbe/Ephemeris</InstrumentID>
+    <InstrumentID>spase://SMWG/Instrument/BepiColombo/Ephemeris</InstrumentID>
+    <InstrumentID>spase://SMWG/Instrument/MESSENGER/Ephemeris</InstrumentID>
+    <InstrumentID>spase://SMWG/Instrument/Ulysses/Ephemeris</InstrumentID>
+    <InstrumentID>spase://SMWG/Instrument/Juno/Ephemeris</InstrumentID>
+    <PhenomenonType>CoronalMassEjection</PhenomenonType>
+    <TimeSpan>
+      <StartDate>2007-04-19T06:50:00</StartDate>
+      <RelativeStopDate>P2M</RelativeStopDate>
+    </TimeSpan>
+    <Parameter>
+      <Name> id</Name>
+      <Description> id: From HIGeoCAT, the unique identifier for the observed CME.</Description>
+      <Support>
+        <SupportQuantity>Housekeeping</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>sc</Name>
+      <Description>sc: From HIGeoCAT, the HI observing STEREO spacecraft, (A=Ahead or B=Behind)</Description>
+      <Support>
+        <SupportQuantity>Orientation</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>   target_name</Name>
+      <Description>   target_name: Name of in situ target.</Description>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name> sse_launch_time</Name>
+      <Description> sse_launch_time: From HIGeoCAT, launch time of the CME at Sun center, unit: UTC.</Description>
+      <Support>
+        <SupportQuantity>Temporal</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>  target_arrival_time</Name>
+      <Description> target_arrival_time: CME arrival time at target location calculated with the SSEF30 model, corrected for SSE shape (Möstl and Davies, 2013). unit: UTC.</Description>
+      <Support>
+        <SupportQuantity>Temporal</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name> target_arrival_time_err</Name>
+      <Description> target_arrival_time_err: Error of CME arrival time at target location from SSEF30 model, solely based on error in parameter sse_speed_err. unit: hours.</Description>
+      <Support>
+        <SupportQuantity>Temporal</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name> target_distance</Name>
+      <Description>target_distance: Target distance from Sun, at model CME arrival time. unit: AU.</Description>
+      <Support>
+        <SupportQuantity>Positional</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>target_heeq_lon</Name>
+      <Description>target_heeq_lon: Target longitude in HEEQ, at model CME arrival time. unit: degree.</Description>
+      <Support>
+        <SupportQuantity>Positional</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>target_heeq_lat</Name>
+      <Description>target_heeq_lat: Target latitude in HEEQ, at model CME arrival time. unit: degree.</Description>
+      <Support>
+        <SupportQuantity>Positional</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>target_delta</Name>
+      <Description>target_delta: Difference in HEEQ longitude between central CME direction and target location at model CME arrival time, positive values: spacecraft is west of CME apex. unit: degree.</Description>
+      <Support>
+        <SupportQuantity>Positional</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>sse_heeq_lon</Name>
+      <Description>sse_heeq_lon: From HIGeoCAT, the HEEQ longitude of the CME apex propagation direction, unit: degree.</Description>
+      <Support>
+        <SupportQuantity>Positional</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>sse_heeq_lat</Name>
+      <Description>sse_heeq_lat: From HIGeoCAT, the HEEQ latitude of the CME apex propagation direction, unit: degree.</Description>
+      <Support>
+        <SupportQuantity>Positional</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>sse_speed</Name>
+      <Description>sse_speed: From HIGeoCAT, speed of the CME apex, unit: km/s.</Description>
+      <Support>
+        <SupportQuantity>Velocity</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>sse_speed_err</Name>
+      <Description>sse_speed_err: From HIGeoCAT, error in the speed of the CME apex, unit: km/s.</Description>
+      <Support>
+        <SupportQuantity>Velocity</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>target_speed</Name>
+      <Description>target_speed: CME arrival speed from SSEF30 at target location, corrected for SSE shape (Möstl and Davies, 2013). unit: km/s.</Description>
+      <Support>
+        <SupportQuantity>Velocity</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>target_speed_err</Name>
+      <Description>target_speed_err: Error in CME arrival speed from SSEF30 at target location, corrected for SSE shape (Möstl and Davies, 2013). unit: km/s.</Description>
+      <Support>
+        <SupportQuantity>Velocity</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>pa_fit</Name>
+      <Description>pa_fit: From HIGeoCAT, PA along which time-elongation profile is extracted, unit: degree.</Description>
+      <Support>
+        <SupportQuantity>Positional</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>pa_n</Name>
+      <Description>pa_n: From HIGeoCAT, northern position angle of CME, unit: degree.</Description>
+      <Support>
+        <SupportQuantity>Positional</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>pa_s</Name>
+      <Description>pa_s: From HIGeoCAT, southernmost position angle of CME, unit: degree.</Description>
+      <Support>
+        <SupportQuantity>Positional</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>pa_center</Name>
+      <Description>pa_center: average of pa_n and pa_s, unit: degree.</Description>
+      <Support>
+        <SupportQuantity>Positional</SupportQuantity>
+      </Support>
+    </Parameter>
+  </Catalog>
 </Spase>

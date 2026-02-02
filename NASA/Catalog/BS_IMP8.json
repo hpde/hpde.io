@@ -2,14 +2,26 @@
   "Spase": {
     "xmlns": "http://www.spase-group.org/data/schema",
     "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
-    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_5_0.xsd",
-    "Version": "2.6.0",
+    "xsi:schemaLocation": "https://www.spase-group.org/data/schema https://www.spase-group.org/data/schema/spase-2.7.1.xsd",
+    "Version": "2.7.1",
+    "MetadataRightsList": {
+      "Rights": {
+        "SchemeURI": "https://spdx.org/licenses/",
+        "RightsIdentifierScheme": "SPDX",
+        "RightsIdentifier": "CC0-1.0",
+        "RightsURI": "https://spdx.org/licenses/CC0-1.0.html",
+        "RightsName": "Creative Commons Zero v1.0 Universal",
+        "Note": "CC0 1.0 Universal is the Creative Commons license applicable to all publicly available SPASE metadata descriptions"
+      }
+    },
     "Catalog": {
       "ResourceID": "spase://NASA/Catalog/BS_IMP8",
+      "NamingAuthority": "NASA",
+      "ResourceType": "Catalog",
       "ResourceHeader": {
         "ResourceName": "IMP 8 bow shock crossings",
         "DOI": "https://doi.org/10.48322/753j-g416",
-        "ReleaseDate": "2023-09-27T12:34:56.789Z",
+        "ReleaseDate": "2026-02-02T13:10:20Z",
         "RevisionHistory": {
           "RevisionEvent": [
             {
@@ -23,10 +35,14 @@
             {
               "ReleaseDate": "2023-09-27T12:34:56.789",
               "Note": "Updated Authors. JMW"
+            },
+            {
+              "ReleaseDate": "2026-02-02T13:10:20Z",
+              "Note": "Added MetadataRightsList and RightsList(s). Added ResourceType and NamingAuthority. Updated to 2.7.1. Changed http to https in top-level schemaLocation attribute. Fixed version number separator in top-level schemaLocation attribute. ZCB"
             }
           ]
         },
-        "Description": "A complete list of bow shock crossings observed by IMP 8 spacecraft. The shock crossings were manually identified in magnetic field and/or thermal plasma measurements by J. Merka, A. Szabo, K. Paularena, J. Richardson, and T. Narock.\r\n      Each identified crossing was reviewed by at least two persons from the team.\r\n      \r\n      Upstream parameters are as measured by IMP 8 on the solar wind side of the shock, typically over a few-minute interval judged by the IMP field and plasma teams as stable. For multiple-shock records, all upstream parameters are for the first shock crossing.\r\n     \r\n      Downstream parameters are as measured by IMP 8 on the magnetosheath side of the shock, typically over a few-minute interval. For a multiple-shock records, all downstream parameters are for the first shock crossing if possible.\r\n      ",
+        "Description": "A complete list of bow shock crossings observed by IMP 8 spacecraft. The shock crossings were manually identified in magnetic field and/or thermal plasma measurements by J. Merka, A. Szabo, K. Paularena, J. Richardson, and T. Narock.\n      Each identified crossing was reviewed by at least two persons from the team.\n      \n      Upstream parameters are as measured by IMP 8 on the solar wind side of the shock, typically over a few-minute interval judged by the IMP field and plasma teams as stable. For multiple-shock records, all upstream parameters are for the first shock crossing.\n     \n      Downstream parameters are as measured by IMP 8 on the magnetosheath side of the shock, typically over a few-minute interval. For a multiple-shock records, all downstream parameters are for the first shock crossing if possible.\n      ",
         "PublicationInfo": {
           "Authors": "J. Merka, A. Szabo, K. Paularena, J. Richardson,  and T. Narock, ",
           "PublicationDate": "2022-01-01T00:00:00",
@@ -45,6 +61,16 @@
         "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/VHO-VMO",
         "Availability": "Online",
         "AccessRights": "Open",
+        "RightsList": {
+          "Rights": {
+            "SchemeURI": "https://spdx.org/licenses/",
+            "RightsIdentifierScheme": "SPDX",
+            "RightsIdentifier": "CC0-1.0",
+            "RightsURI": "https://spdx.org/licenses/CC0-1.0.html",
+            "RightsName": "Creative Commons Zero v1.0 Universal",
+            "Note": "CC0 1.0 Universal is the Creative Commons license applicable to all publicly available NASA Heliophysics data products"
+          }
+        },
         "AccessURL": {
           "Name": "Download of IMP 8 bow shock crossing list",
           "URL": "https://wind.nasa.gov/mission/imp8/bowshocks/",
@@ -67,7 +93,7 @@
         {
           "Name": "Time",
           "ParameterKey": "Fields 1-4",
-          "Description": "Time of the bow shock crossing. In general, the minute given is that in/during which the crossing is observed. For \"extended\" crossings, the minute given is that in which the peak of the shock overshoot occurs. For records recording multiple shock crossings, the minute is the minute of the first shock crossing.\r\n    ",
+          "Description": "Time of the bow shock crossing. In general, the minute given is that in/during which the crossing is observed. For \"extended\" crossings, the minute given is that in which the peak of the shock overshoot occurs. For records recording multiple shock crossings, the minute is the minute of the first shock crossing.\n    ",
           "Caveats": "Truncated to a minute precision.",
           "Structure": {
             "Size": "4",
@@ -133,7 +159,7 @@
         {
           "Name": "Flag1",
           "ParameterKey": "Field 9",
-          "Description": "Observation flag. Flag1 has the following values:\r\n      1. Shock observed in field and plasma data\r\n      2. Field data missing\r\n      3. Plasma data missing\r\n      4. Inferred crossing, data gap\r\n      5. Inferred crossing, data but no likely shock visible.\r\n      When a bow shock crossing is inferred to have happened during some time interval, the start time of the interval is given in the record. In addition, if the interval is less than 30 minutes in duration, the location of IMP 8 at the start of the interval is also given in the record. Otherwise the IMP location words have fill values in them. Note that the Timespan parameter is used to give the interval duration in such cases. In general, upstream parameter values are given as fill values for such cases. These intervals typically correspond to data gaps (Flag 1 = 4) with IMP 8 clearly in the solar wind on one side of the gap and in the magnetosheath on the other side. There are rare Flag 1 = 5 cases where IMP 8 is clearly in the solar wind on one side of the interval and in the magnetosheath on the other side and wherein there are data within the interval, yet it is impossible to discern on a finer scale when IMP 8 passed between the solar wind and the magnetosheath.\r\n      ",
+          "Description": "Observation flag. Flag1 has the following values:\n      1. Shock observed in field and plasma data\n      2. Field data missing\n      3. Plasma data missing\n      4. Inferred crossing, data gap\n      5. Inferred crossing, data but no likely shock visible.\n      When a bow shock crossing is inferred to have happened during some time interval, the start time of the interval is given in the record. In addition, if the interval is less than 30 minutes in duration, the location of IMP 8 at the start of the interval is also given in the record. Otherwise the IMP location words have fill values in them. Note that the Timespan parameter is used to give the interval duration in such cases. In general, upstream parameter values are given as fill values for such cases. These intervals typically correspond to data gaps (Flag 1 = 4) with IMP 8 clearly in the solar wind on one side of the gap and in the magnetosheath on the other side. There are rare Flag 1 = 5 cases where IMP 8 is clearly in the solar wind on one side of the interval and in the magnetosheath on the other side and wherein there are data within the interval, yet it is impossible to discern on a finer scale when IMP 8 passed between the solar wind and the magnetosheath.\n      ",
           "Support": {
             "SupportQuantity": "Other"
           }
@@ -141,7 +167,7 @@
         {
           "Name": "Flag2",
           "ParameterKey": "Field 10",
-          "Description": "Shock cleanliness flag. Flag 2 has the following values. \r\n      (Note in particular that values 1-4 are relevant to cases of one shock while 6-8 are relevant to cases of multiple close shocks; note also that some or all of the members of a set of multiple close shocks may be unresolvable from each other and, separately, may be ambiguous in the sense of values 2-4 for individual shocks. In general, where an interval of multiple close shocks ends with a clean shock, there will be a separate record for that shock.)\r\n        1. The shock is clean and unambiguous in all available data\r\n        2. The shock is clean in field, ambiguous in plasma data\r\n        3. The shock is clean in plasma, ambiguous in field data\r\n        4. The shock is ambiguous in all available data\r\n        5. Used for inferred crossings (Flag1 = 4 or 5)\r\n        6. Multiple unresolvable shocks possibly involving relatively clean shocks at the start and end  (Sequence number increments by 1 whether same domain or different domains on two sides)\r\n        7. Multiple resolvable shocks with no subinterval(s) of unresolvable shocks. Used on for intervals with no shock pair separated by >15 minutes. Sequence number increments by sum of number of shocks in the interval or one less if the ending shock is also given a separate record of its own.\r\n        8. Multiple shocks, mixed resolvable/unresolvable, some resolvable shocks may be ambiguous. Sequence number increments by the number of resolvable shocks in the interval or one less if the ending shock is given a record of its own.",
+          "Description": "Shock cleanliness flag. Flag 2 has the following values. \n      (Note in particular that values 1-4 are relevant to cases of one shock while 6-8 are relevant to cases of multiple close shocks; note also that some or all of the members of a set of multiple close shocks may be unresolvable from each other and, separately, may be ambiguous in the sense of values 2-4 for individual shocks. In general, where an interval of multiple close shocks ends with a clean shock, there will be a separate record for that shock.)\n        1. The shock is clean and unambiguous in all available data\n        2. The shock is clean in field, ambiguous in plasma data\n        3. The shock is clean in plasma, ambiguous in field data\n        4. The shock is ambiguous in all available data\n        5. Used for inferred crossings (Flag1 = 4 or 5)\n        6. Multiple unresolvable shocks possibly involving relatively clean shocks at the start and end  (Sequence number increments by 1 whether same domain or different domains on two sides)\n        7. Multiple resolvable shocks with no subinterval(s) of unresolvable shocks. Used on for intervals with no shock pair separated by >15 minutes. Sequence number increments by sum of number of shocks in the interval or one less if the ending shock is also given a separate record of its own.\n        8. Multiple shocks, mixed resolvable/unresolvable, some resolvable shocks may be ambiguous. Sequence number increments by the number of resolvable shocks in the interval or one less if the ending shock is given a record of its own.",
           "Support": {
             "SupportQuantity": "Other"
           }
@@ -149,7 +175,7 @@
         {
           "Name": "Flag3",
           "ParameterKey": "Field 11",
-          "Description": "Upstream cleanliness flag. Flag 3 has the following values:\r\n        1. Upstream values steady and well defined\r\n        2. Upstream values unsteady and uncertainly defined\r\n        3. Used for inferred crossings (Flag1 = 4)",
+          "Description": "Upstream cleanliness flag. Flag 3 has the following values:\n        1. Upstream values steady and well defined\n        2. Upstream values unsteady and uncertainly defined\n        3. Used for inferred crossings (Flag1 = 4)",
           "Support": {
             "SupportQuantity": "Other"
           }

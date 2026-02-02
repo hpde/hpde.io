@@ -1,265 +1,287 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema  http://www.spase-group.org/data/schema/spase-2_7_0.xsd">
-   <Version>2.7.0</Version>
-   <Catalog>
-      <ResourceID>spase://NASA/Catalog/MAVEN/SIR_CATALOGUE</ResourceID>
-      <ResourceHeader>
-         <ResourceName>High speed solar wind streams and solar wind interaction regions
+<?xml version='1.0' encoding='UTF-8'?>
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.spase-group.org/data/schema  https://www.spase-group.org/data/schema/spase-2.7.1.xsd">
+  <Version>2.7.1</Version>
+  <MetadataRightsList>
+    <Rights>
+      <SchemeURI>https://spdx.org/licenses/</SchemeURI>
+      <RightsIdentifierScheme>SPDX</RightsIdentifierScheme>
+      <RightsIdentifier>CC0-1.0</RightsIdentifier>
+      <RightsURI>https://spdx.org/licenses/CC0-1.0.html</RightsURI>
+      <RightsName>Creative Commons Zero v1.0 Universal</RightsName>
+      <Note>CC0 1.0 Universal is the Creative Commons license applicable to all publicly available SPASE metadata descriptions</Note>
+    </Rights>
+  </MetadataRightsList>
+  <Catalog>
+    <ResourceID>spase://NASA/Catalog/MAVEN/SIR_CATALOGUE</ResourceID>
+    <NamingAuthority>NASA</NamingAuthority>
+    <ResourceType>Catalog</ResourceType>
+    <ResourceHeader>
+      <ResourceName>High speed solar wind streams and solar wind interaction regions
 SIR CATALOGUE v1.0</ResourceName>
-         <ReleaseDate>2025-06-25T11:28:59</ReleaseDate>
-         <Description>This is the HELIO4CAST high speed stream and stream interaction catalog (SIR), based on in situ magnetic field and bulk plasma observations in the heliosphere.</Description>
-         <Contact>
-            <PersonID>spase://SMWG/Person/Christian.Moestl</PersonID>
-            <Role>Author</Role>
-         </Contact>
-         <Contact>
-            <PersonID>spase://SMWG/Person/Lan.Jian</PersonID>
-            <Role>Author</Role>
-         </Contact>
-         <Contact>
-            <PersonID>spase://SMWG/Person/Maxime.Grandin</PersonID>
-            <Role>Author</Role>
-         </Contact>
-         <Contact>
-            <PersonID>spase://SMWG/Person/Olga.Y.Uritskaya</PersonID>
-            <Role>MetadataContact</Role>
-         </Contact>
-         <InformationURL>
-            <URL>https://helioforecast.space/static/sync/sircat/HELIO4CAST_SIRCAT_v10_header.txt</URL>
-         </InformationURL>
-      </ResourceHeader>
-      <AccessInformation>
-         <RepositoryID>spase://SMWG/Repository/Helio4cast</RepositoryID>
-         <AccessURL>
-            <URL>https://helioforecast.space/sircat</URL>
-         </AccessURL>
-         <Format>HTML</Format>
-      </AccessInformation>
-      <InstrumentID>spase://SMWG/Instrument/MAVEN/SWEA</InstrumentID>
-      <InstrumentID>spase://SMWG/Instrument/WIND/SWE</InstrumentID>
-      <InstrumentID>spase://SMWG/Instrument/STEREO-A/IMPACT/SWEA</InstrumentID>
-      <InstrumentID>spase://SMWG/Instrument/STEREO-B/IMPACT/SWEA</InstrumentID>
-      <PhenomenonType>SolarWindExtreme</PhenomenonType>
-      <TimeSpan>
-         <StartDate>2014-12-03T03:25:00</StartDate>
-         <StopDate>2017-12-20T01:00:00</StopDate>
-      </TimeSpan>
-      <Parameter>
-         <Name>sircat_id:</Name>
-         <Description>sircat_id: The unique identifier for the observed stream interaction region (SIR). unit: string.</Description>
-         <Support>
-            <SupportQuantity>Housekeeping</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>sc insitu</Name>
-         <Description>sc insitu: The name of the in situ observing spacecraft. unit: string.</Description>
-         <Support>
-            <SupportQuantity>Remark</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>sir_start_time</Name>
-         <Description>sir_start_time: Stream interaction region start time. unit: UTC.</Description>
-         <Support>
-            <SupportQuantity>Temporal</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>hss_start_time</Name>
-         <Description>hss_start_time: High speed stream start time, equal to the stream interface time (for STEREO, MAVEN catalogs). unit: UTC.</Description>
-         <Support>
-            <SupportQuantity>Temporal</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>sir_end_time</Name>
-         <Description>sir_end_time: End time of the stream interaction region. unit: UTC.</Description>
-         <Support>
-            <SupportQuantity>Temporal</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>hss_end_time</Name>
-         <Description>hss_end_time: High speed stream end time, criterion at Wind: speed &lt; 450 km/s. unit: UTC.</Description>
-         <Support>
-            <SupportQuantity>Temporal</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>hss_vtmax_time</Name>
-         <Description>hss_vtmax_time: High speed stream maxmimum speed time. unit: UTC.</Description>
-         <Support>
-            <SupportQuantity>Temporal</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>sc_heliodistance</Name>
-         <Description>sc_heliodistance: Heliocentric distance of the spacecraft at hss_start_time. unit: AU.</Description>
-         <Support>
-            <SupportQuantity>Positional</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>sc_long_heeq</Name>
-         <Description>sc_long_heeq: Heliospheric longitude of the spacecraft at hss_start_time, range [-180,180]. unit: degree (HEEQ).</Description>
-         <Support>
-            <SupportQuantity>Positional</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>sc_lat_heeq</Name>
-         <Description>sc_lat_heeq: Heliospheric latitude of the spacecraft at hss_start_time, range [-90,90]. unit: degree (HEEQ).</Description>
-         <Support>
-            <SupportQuantity>Positional</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>hss_vt_max</Name>
-         <Description>hss_vt_max: Maximum proton speed from hss_start_time to hss_end_time. unit: km/s.</Description>
-         <Support>
-            <SupportQuantity>Velocity</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>hss_vt_mean</Name>
-         <Description>hss_vt_mean: Mean proton speed from hss_start_time to hss_end_time. unit: km/s.</Description>
-         <Support>
-            <SupportQuantity>Velocity</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>hss_vt_std</Name>
-         <Description>hss_vt_std: Standard deviation of proton speed from hss_start_time to hss_end_time. unit: km/s</Description>
-         <Support>
-            <SupportQuantity>Velocity</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>hss_vt_mean</Name>
-         <Description>hss_vt_mean: Mean proton speed from hss_start_time to hss_end_time. unit: km/s</Description>
-         <Support>
-            <SupportQuantity>Velocity</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>hss_bt_max</Name>
-         <Description>hss_bt_max: Maximum total magnetic field from hss_start_time to hss_end_time. unit: nT</Description>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>hss_bt_mean</Name>
-         <Description>hss_bt_mean: Mean total magnetic field from hss_start_time to hss_end_time. unit: nT</Description>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>hss_bt_std</Name>
-         <Description>hss_bt_std: Standard deviation of total magnetic field from hss_start_time to hss_end_time. unit: nT</Description>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>hss_bz_min</Name>
-         <Description>hss_bz_min: Minimum Bz component (SCEQ) from hss_start_time to hss_end_time. unit: nT</Description>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>hss_bz_mean</Name>
-         <Description>hss_bz_mean: Mean Bz component (SCEQ) from hss_start_time to hss_end_time. unit: nT</Description>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>hss_bz_std</Name>
-         <Description>hss_bz_std: Standard deviation of Bz component (SCEQ) from hss_start_time to hss_end_time. unit: nT</Description>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>hss_duration</Name>
-         <Description>hss_duration: Duration of high speed stream from hss_start_time to hss_end_time. unit: hours</Description>
-         <Support>
-            <SupportQuantity>Temporal</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>ir_vt_mean</Name>
-         <Description>ir_vt_mean: Mean proton speed from hss_start_time to sir_end_time. unit: km/s</Description>
-         <Support>
-            <SupportQuantity>Velocity</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>sir_vt_std</Name>
-         <Description>sir_vt_std: Standard deviation of proton speed from sir_start_time to hss_end_time. unit: km/s</Description>
-         <Support>
-            <SupportQuantity>Velocity</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>sir_vt_mean</Name>
-         <Description>sir_vt_mean: Mean proton speed from hss_start_time to sir_end_time. unit: km/s</Description>
-         <Support>
-            <SupportQuantity>Velocity</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>sir_bt_max</Name>
-         <Description>sir_bt_max: Maximum total magnetic field from sir_start_time to hss_end_time. unit: nT</Description>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>sir_bt_mean</Name>
-         <Description>sir_bt_mean: Mean total magnetic field from sir_start_time to sir_end_time. unit: nT</Description>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>sir_bt_std</Name>
-         <Description>sir_bt_std: Standard deviation of total magnetic field from sir_start_time to sir_end_time. unit: nT</Description>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>sir_bz_min</Name>
-         <Description>sir_bz_min: Minimum Bz component (SCEQ) from sir_start_time to sir_end_time. unit: nT</Description>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>sir_bz_mean</Name>
-         <Description>sir_bz_mean: Mean Bz component (SCEQ) from sir_start_time to sir_end_time. unit: nT</Description>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>sir_bz_std</Name>
-         <Description>sir_bz_std: Standard deviation of Bz component (SCEQ) from sir_start_time to sir_end_time. unit: nT</Description>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>sir_duration</Name>
-         <Description>sir_duration: Duration of stream interaction region from sir_start_time to sir_end_time. unit: hours</Description>
-         <Support>
-            <SupportQuantity>Temporal</SupportQuantity>
-         </Support>
-      </Parameter>
-   </Catalog>
+      <ReleaseDate>2026-02-02T13:10:23Z</ReleaseDate>
+      <RevisionHistory>
+        <RevisionEvent>
+          <ReleaseDate>2025-06-25T11:28:59</ReleaseDate>
+          <Note>Only known prior ReleaseDate of the metadata</Note>
+        </RevisionEvent>
+        <RevisionEvent>
+          <ReleaseDate>2026-02-02T13:10:23Z</ReleaseDate>
+          <Note>Added MetadataRightsList. Added ResourceType and NamingAuthority. Updated to 2.7.1. Changed http to https in top-level schemaLocation attribute. Fixed version number separator in top-level schemaLocation attribute. ZCB</Note>
+        </RevisionEvent>
+      </RevisionHistory>
+      <Description>This is the HELIO4CAST high speed stream and stream interaction catalog (SIR), based on in situ magnetic field and bulk plasma observations in the heliosphere.</Description>
+      <Contact>
+        <PersonID>spase://SMWG/Person/Christian.Moestl</PersonID>
+        <Role>Author</Role>
+      </Contact>
+      <Contact>
+        <PersonID>spase://SMWG/Person/Lan.Jian</PersonID>
+        <Role>Author</Role>
+      </Contact>
+      <Contact>
+        <PersonID>spase://SMWG/Person/Maxime.Grandin</PersonID>
+        <Role>Author</Role>
+      </Contact>
+      <Contact>
+        <PersonID>spase://SMWG/Person/Olga.Y.Uritskaya</PersonID>
+        <Role>MetadataContact</Role>
+      </Contact>
+      <InformationURL>
+        <URL>https://helioforecast.space/static/sync/sircat/HELIO4CAST_SIRCAT_v10_header.txt</URL>
+      </InformationURL>
+    </ResourceHeader>
+    <AccessInformation>
+      <RepositoryID>spase://SMWG/Repository/Helio4cast</RepositoryID>
+      <AccessURL>
+        <URL>https://helioforecast.space/sircat</URL>
+      </AccessURL>
+      <Format>HTML</Format>
+    </AccessInformation>
+    <InstrumentID>spase://SMWG/Instrument/MAVEN/SWEA</InstrumentID>
+    <InstrumentID>spase://SMWG/Instrument/WIND/SWE</InstrumentID>
+    <InstrumentID>spase://SMWG/Instrument/STEREO-A/IMPACT/SWEA</InstrumentID>
+    <InstrumentID>spase://SMWG/Instrument/STEREO-B/IMPACT/SWEA</InstrumentID>
+    <PhenomenonType>SolarWindExtreme</PhenomenonType>
+    <TimeSpan>
+      <StartDate>2014-12-03T03:25:00</StartDate>
+      <StopDate>2017-12-20T01:00:00</StopDate>
+    </TimeSpan>
+    <Parameter>
+      <Name>sircat_id:</Name>
+      <Description>sircat_id: The unique identifier for the observed stream interaction region (SIR). unit: string.</Description>
+      <Support>
+        <SupportQuantity>Housekeeping</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>sc insitu</Name>
+      <Description>sc insitu: The name of the in situ observing spacecraft. unit: string.</Description>
+      <Support>
+        <SupportQuantity>Remark</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>sir_start_time</Name>
+      <Description>sir_start_time: Stream interaction region start time. unit: UTC.</Description>
+      <Support>
+        <SupportQuantity>Temporal</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>hss_start_time</Name>
+      <Description>hss_start_time: High speed stream start time, equal to the stream interface time (for STEREO, MAVEN catalogs). unit: UTC.</Description>
+      <Support>
+        <SupportQuantity>Temporal</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>sir_end_time</Name>
+      <Description>sir_end_time: End time of the stream interaction region. unit: UTC.</Description>
+      <Support>
+        <SupportQuantity>Temporal</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>hss_end_time</Name>
+      <Description>hss_end_time: High speed stream end time, criterion at Wind: speed &lt; 450 km/s. unit: UTC.</Description>
+      <Support>
+        <SupportQuantity>Temporal</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>hss_vtmax_time</Name>
+      <Description>hss_vtmax_time: High speed stream maxmimum speed time. unit: UTC.</Description>
+      <Support>
+        <SupportQuantity>Temporal</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>sc_heliodistance</Name>
+      <Description>sc_heliodistance: Heliocentric distance of the spacecraft at hss_start_time. unit: AU.</Description>
+      <Support>
+        <SupportQuantity>Positional</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>sc_long_heeq</Name>
+      <Description>sc_long_heeq: Heliospheric longitude of the spacecraft at hss_start_time, range [-180,180]. unit: degree (HEEQ).</Description>
+      <Support>
+        <SupportQuantity>Positional</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>sc_lat_heeq</Name>
+      <Description>sc_lat_heeq: Heliospheric latitude of the spacecraft at hss_start_time, range [-90,90]. unit: degree (HEEQ).</Description>
+      <Support>
+        <SupportQuantity>Positional</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>hss_vt_max</Name>
+      <Description>hss_vt_max: Maximum proton speed from hss_start_time to hss_end_time. unit: km/s.</Description>
+      <Support>
+        <SupportQuantity>Velocity</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>hss_vt_mean</Name>
+      <Description>hss_vt_mean: Mean proton speed from hss_start_time to hss_end_time. unit: km/s.</Description>
+      <Support>
+        <SupportQuantity>Velocity</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>hss_vt_std</Name>
+      <Description>hss_vt_std: Standard deviation of proton speed from hss_start_time to hss_end_time. unit: km/s</Description>
+      <Support>
+        <SupportQuantity>Velocity</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>hss_vt_mean</Name>
+      <Description>hss_vt_mean: Mean proton speed from hss_start_time to hss_end_time. unit: km/s</Description>
+      <Support>
+        <SupportQuantity>Velocity</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>hss_bt_max</Name>
+      <Description>hss_bt_max: Maximum total magnetic field from hss_start_time to hss_end_time. unit: nT</Description>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>hss_bt_mean</Name>
+      <Description>hss_bt_mean: Mean total magnetic field from hss_start_time to hss_end_time. unit: nT</Description>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>hss_bt_std</Name>
+      <Description>hss_bt_std: Standard deviation of total magnetic field from hss_start_time to hss_end_time. unit: nT</Description>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>hss_bz_min</Name>
+      <Description>hss_bz_min: Minimum Bz component (SCEQ) from hss_start_time to hss_end_time. unit: nT</Description>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>hss_bz_mean</Name>
+      <Description>hss_bz_mean: Mean Bz component (SCEQ) from hss_start_time to hss_end_time. unit: nT</Description>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>hss_bz_std</Name>
+      <Description>hss_bz_std: Standard deviation of Bz component (SCEQ) from hss_start_time to hss_end_time. unit: nT</Description>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>hss_duration</Name>
+      <Description>hss_duration: Duration of high speed stream from hss_start_time to hss_end_time. unit: hours</Description>
+      <Support>
+        <SupportQuantity>Temporal</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>ir_vt_mean</Name>
+      <Description>ir_vt_mean: Mean proton speed from hss_start_time to sir_end_time. unit: km/s</Description>
+      <Support>
+        <SupportQuantity>Velocity</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>sir_vt_std</Name>
+      <Description>sir_vt_std: Standard deviation of proton speed from sir_start_time to hss_end_time. unit: km/s</Description>
+      <Support>
+        <SupportQuantity>Velocity</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>sir_vt_mean</Name>
+      <Description>sir_vt_mean: Mean proton speed from hss_start_time to sir_end_time. unit: km/s</Description>
+      <Support>
+        <SupportQuantity>Velocity</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>sir_bt_max</Name>
+      <Description>sir_bt_max: Maximum total magnetic field from sir_start_time to hss_end_time. unit: nT</Description>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>sir_bt_mean</Name>
+      <Description>sir_bt_mean: Mean total magnetic field from sir_start_time to sir_end_time. unit: nT</Description>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>sir_bt_std</Name>
+      <Description>sir_bt_std: Standard deviation of total magnetic field from sir_start_time to sir_end_time. unit: nT</Description>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>sir_bz_min</Name>
+      <Description>sir_bz_min: Minimum Bz component (SCEQ) from sir_start_time to sir_end_time. unit: nT</Description>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>sir_bz_mean</Name>
+      <Description>sir_bz_mean: Mean Bz component (SCEQ) from sir_start_time to sir_end_time. unit: nT</Description>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>sir_bz_std</Name>
+      <Description>sir_bz_std: Standard deviation of Bz component (SCEQ) from sir_start_time to sir_end_time. unit: nT</Description>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>sir_duration</Name>
+      <Description>sir_duration: Duration of stream interaction region from sir_start_time to sir_end_time. unit: hours</Description>
+      <Support>
+        <SupportQuantity>Temporal</SupportQuantity>
+      </Support>
+    </Parameter>
+  </Catalog>
 </Spase>

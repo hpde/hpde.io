@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.spase-group.org/data/schema https://www.spase-group.org/data/schema/spase-2.7.1.xsd">
   <Version>2.7.1</Version>
+  <Status>Deprecated</Status>
   <MetadataRightsList>
     <Rights>
       <SchemeURI>https://spdx.org/licenses/</SchemeURI>
@@ -18,7 +19,7 @@
     <ResourceHeader>
       <ResourceName>STEREO-A Ephemeris, Heliocentric Trajectories, Heliographic, Heliographic Inertial, and Solar Ecliptic Coordinates, HelioWeb, Daily Data</ResourceName>
       <DOI>https://doi.org/10.48322/4ekf-zt68</DOI>
-      <ReleaseDate>2025-12-04T13:31:32Z</ReleaseDate>
+      <ReleaseDate>2026-02-02T13:24:38Z</ReleaseDate>
       <RevisionHistory>
         <RevisionEvent>
           <ReleaseDate>2021-04-27T15:38:11</ReleaseDate>
@@ -36,8 +37,12 @@
           <ReleaseDate>2025-12-04T13:31:32Z</ReleaseDate>
           <Note>Added MetadataRightsList and RightsList(s). Updated to 2.7.1. ZCB</Note>
         </RevisionEvent>
+        <RevisionEvent>
+          <ReleaseDate>2026-02-02T13:24:38Z</ReleaseDate>
+          <Note>Fixed outdated Parameter units. Condensed existing description. Added 'Deprecated' Status. Added 'SupersededBy' Association. ZCB</Note>
+        </RevisionEvent>
       </RevisionHistory>
-      <Description>Heliocentric trajectories for STEREO-A in Heliographic, HG, Heliographic Inertial, HGI, and Solar Ecliptic, SE, Coordinates The original trajectory data are taken from http://ssd.jpl.nasa.gov/horizons.cgi where users can find many more objects. In the case of orbit data for planets, the orbit data can be used as a proxy for spacecraft ephemeris that are in orbit about the planets. On a heliospheric scale, differences between the planet orbital tarjectory and that of the spacecraft are very small. For instance, the heliocentric longitudes differ by only 0.25° for a spacecraft stationed near the L1 Lagrange point at approximately 100 Earth radii upstream of the Earth. The production of the HG, HGI, and SE trajectory data requires a values for the "Equinox Epoch", which is defined as the epoch time when the direction from the Earth to the sun at the time of the vernal equinox when the sun seems to cross equatorial plane of the Earth from below. This direction is called the First Point of Aries, FPA and it is not a fixed direction but drifts by about 1.4° per century or 50.26" per year. In addition, there are tiny irregularities in FPA drift that are on the order of 1" per year or less. The Equinox Epoch can be determined by using a variety of methods for calculating the instantaneous FPA longitudinal direction and whether the tiny irregularities have been smoothed or averaged out. Four methods for determining the Equinox Epoch are in common usage: +---------------------------------------------------------------------+   Method Name   FPA Longitude Definition    ---------------------------------------------------------------------    B1950.0   the actual FPA at 22:09 UT on December 31, 1949     J2000.0   the smoothed FPA at 12:00 UT on January 1, 2000     True of Date   the actual FPA at 00:00 UT on the date of interest     Mean of Date   the smoothed FPA at 00:00 UT on the date of interest   +---------------------------------------------------------------------+ The heliocentric trajectory data included in this data product have been calculated by using the Equinox Epoch: defined via the "Mean of Date" method. More precise coordinates, and some planet-centered coordinates, are found in the "traj" subdirectories of spacecraft specific directories at https://spdf.gsfc.nasa.gov/pub/data/ and http://ssd.jpl.nasa.gov/horizons.cgi.</Description>
+      <Description>STEREO-A Heliocentric orbit in Heliographic Inertial, Heliographic rotating, and Solar Ecliptic coordinates at a daily cadence. For coordinate definitions see https://omniweb.gsfc.nasa.gov/coho/helios/coor_des.html.</Description>
       <Acknowledgement>Please acknowledge N.E. Papitashvili for use of the Data</Acknowledgement>
       <PublicationInfo>
         <Authors>Papitashvili, Natalia, E.</Authors>
@@ -86,6 +91,11 @@
         <URL>https://ssd.jpl.nasa.gov/horizons.cgi</URL>
         <Description>HORIZONS Web Interface, a web page that provides limited access to the JPL HORIZONS system which can be used to generate ephemerides for solar system bodies</Description>
       </InformationURL>
+      <Association>
+        <AssociationID>spase://NASA/NumericalData/STEREO-A/HelioWeb/Ephemeris/PT1H</AssociationID>
+        <AssociationType>SupersededBy</AssociationType>
+        <Note>The current resource description has been replaced by the SPASE record listed above.</Note>
+      </Association>
       <PriorID>spase://VSPO/NumericalData/STEREO-A/HelioWeb/Ephemeris/P1D</PriorID>
     </ResourceHeader>
     <AccessInformation>
@@ -185,7 +195,7 @@
       <ParameterKey>RAD_AU</ParameterKey>
       <Description>STEREO-A Position, Heliocentric Radial Distance</Description>
       <Cadence>P1D</Cadence>
-      <Units>ua</Units>
+      <Units>AU</Units>
       <UnitsConversion>1.495978706961e11&gt;m</UnitsConversion>
       <RenderingHints>
         <DisplayType>TimeSeries</DisplayType>

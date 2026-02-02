@@ -1,137 +1,159 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema  http://www.spase-group.org/data/schema/spase-2_7_0.xsd">
-   <Version>2.7.0</Version>
-   <Catalog>
-      <ResourceID>spase://NASA/Catalog/STEREO/LineupCAT</ResourceID>
-      <ResourceHeader>
-         <ResourceName>LineupCAT - a catalog of multipoint solar storm observations</ResourceName>
-         <ReleaseDate>2025-07-20T11:12:22</ReleaseDate>
-         <Description>This is the HELIO4CAST LineupCAT, a catalog for interplanetary coronal mass ejections (ICMEs) observed by multiple spacecraft.</Description>
-         <Contact>
-            <PersonID>spase://SMWG/Person/Eva.Weiler</PersonID>
-            <Role>Author</Role>
-         </Contact>
-         <Contact>
-            <PersonID>spase://SMWG/Person/Christian.Moestl</PersonID>
-            <Role>Author</Role>
-         </Contact>
-         <Contact>
-            <PersonID>spase://SMWG/Person/Emma.E.Davies</PersonID>
-            <Role>Author</Role>
-         </Contact>
-         <Contact>
-            <PersonID>spase://SMWG/Person/Olga.Y.Uritskaya</PersonID>
-            <Role>MetadataContact</Role>
-         </Contact>
-      </ResourceHeader>
-      <AccessInformation>
-         <RepositoryID>spase://SMWG/Repository/Helio4cast</RepositoryID>
-         <AccessURL>
-            <URL>https://helioforecast.space/lineups</URL>
-         </AccessURL>
-         <Format>HTML</Format>
-      </AccessInformation>
-      <InstrumentID>spase://SMWG/Instrument/STEREO-A/Ephemeris</InstrumentID>
-      <InstrumentID>spase://SMWG/Instrument/STEREO-A/SECCHI/Cor2</InstrumentID>
-      <InstrumentID>spase://SMWG/Instrument/SOHO/LASCO</InstrumentID>
-      <InstrumentID>spase://SMWG/Instrument/BepiColombo/Ephemeris</InstrumentID>
-      <InstrumentID>spase://SMWG/Instrument/Wind/Ephemeris</InstrumentID>
-      <InstrumentID>spase://SMWG/Instrument/SolarOrbiter/Ephemeris</InstrumentID>
-      <PhenomenonType>GeomagneticStorm</PhenomenonType>
-      <TimeSpan>
-         <StartDate>2020-04-15T20:49:00</StartDate>
-         <StopDate>2024-12-17T04:28:00</StopDate>
-      </TimeSpan>
-      <Parameter>
-         <Name>event</Name>
-         <Description>event: To which multipoint event the row belongs to, unit: integer.</Description>
-         <Support>
-            <SupportQuantity>Housekeeping</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>lineupcat_id</Name>
-         <Description>lineupcat_id: Observations that are assigned to the same ICME are given the same ID. unit: string.</Description>
-         <Support>
-            <SupportQuantity>Housekeeping</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>event_start_time</Name>
-         <Description>event_start_time: For in situ spacecraft, similar to icme_start_time in the ICMECAT. For STEREO-A-HI (HIA), its the see_launch_time from HIGeoCAT, for DONKI its time21_5 from the DONKI database. unit: UTC.</Description>
-         <Support>
-            <SupportQuantity>Temporal</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>spacecraft</Name>
-         <Description>spacecraft: HIA if the entry refers to observations from STEREO-A-HI; STEREO A: SECCHI/COR2, SOHO: LASCO/C2 if the entry refers to coronagraph observations by either STEREO-A or SOHO; otherwise the in situ observing spacecraft. unit: string.</Description>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>sc_heliodistance</Name>
-         <Description>sc_heliodistance: Heliocentric distance of the spacecraft at event_start_time. unit: AU</Description>
-         <Support>
-            <SupportQuantity>Positional</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>sc_long_heeq</Name>
-         <Description>sc_long_heeq: Heliospheric longitude of the spacecraft at event_start_time, range [-180,180]. unit: degree (HEEQ).</Description>
-         <Support>
-            <SupportQuantity>Positional</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>sc_lat_heeq</Name>
-         <Description>sc_lat_heeq: Heliospheric latitude of the spacecraft at event_start_time, range [-180,180]. unit: degree (HEEQ).</Description>
-         <Support>
-            <SupportQuantity>Positional</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>cme_long_heeq</Name>
-         <Description>cme_long_heeq: CME longitude, derived either from SSEF30 modeling with STEREO-A-HI or SWPC CAT with STEREO A: SECCHI/COR2 or SOHO: LASCO/C2, range [-180,180]. unit: degree (HEEQ)</Description>
-         <Support>
-            <SupportQuantity>Positional</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>speed</Name>
-         <Description>speed: For in situ observations, the speed over the whole ICME interval (icme_speed_mean in ICMECAT). For HIA, the speed derived from SSEF30 modeling in HIGeoCAT. unit: km/s.</Description>
-         <Support>
-            <SupportQuantity>Velocity</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>mo_bmax</Name>
-         <Description>mo_bmax: Only for in situ observations, maximum total magnetic field in the magnetic obstacle interval (mo_start_time to mo_end_time). unit: nT.</Description>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>mo_bzmin</Name>
-         <Description>mo_bzmin: Only for in situ observations, minimum magnetic field Bz component in the magnetic obstacle. unit: nT (RTN).</Description>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>catalog_id.</Name>
-         <Description>catalog_id: the id from either the ICMECAT or HIGeoCAT, allowing to look up the event directly in these other catalogs.</Description>
-         <Support>
-            <SupportQuantity>Housekeeping</SupportQuantity>
-         </Support>
-      </Parameter>
-      <Parameter>
-         <Name>source</Name>
-         <Description>source: Solar source region as given in DONKI.</Description>
-         <Support>
-            <SupportQuantity>Other</SupportQuantity>
-         </Support>
-      </Parameter>
-   </Catalog>
+<?xml version='1.0' encoding='UTF-8'?>
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.spase-group.org/data/schema  https://www.spase-group.org/data/schema/spase-2.7.1.xsd">
+  <Version>2.7.1</Version>
+  <MetadataRightsList>
+    <Rights>
+      <SchemeURI>https://spdx.org/licenses/</SchemeURI>
+      <RightsIdentifierScheme>SPDX</RightsIdentifierScheme>
+      <RightsIdentifier>CC0-1.0</RightsIdentifier>
+      <RightsURI>https://spdx.org/licenses/CC0-1.0.html</RightsURI>
+      <RightsName>Creative Commons Zero v1.0 Universal</RightsName>
+      <Note>CC0 1.0 Universal is the Creative Commons license applicable to all publicly available SPASE metadata descriptions</Note>
+    </Rights>
+  </MetadataRightsList>
+  <Catalog>
+    <ResourceID>spase://NASA/Catalog/STEREO/LineupCAT</ResourceID>
+    <NamingAuthority>NASA</NamingAuthority>
+    <ResourceType>Catalog</ResourceType>
+    <ResourceHeader>
+      <ResourceName>LineupCAT - a catalog of multipoint solar storm observations</ResourceName>
+      <ReleaseDate>2026-02-02T13:10:25Z</ReleaseDate>
+      <RevisionHistory>
+        <RevisionEvent>
+          <ReleaseDate>2025-07-20T11:12:22</ReleaseDate>
+          <Note>Only known prior ReleaseDate of the metadata</Note>
+        </RevisionEvent>
+        <RevisionEvent>
+          <ReleaseDate>2026-02-02T13:10:25Z</ReleaseDate>
+          <Note>Added MetadataRightsList. Added ResourceType and NamingAuthority. Updated to 2.7.1. Changed http to https in top-level schemaLocation attribute. Fixed version number separator in top-level schemaLocation attribute. ZCB</Note>
+        </RevisionEvent>
+      </RevisionHistory>
+      <Description>This is the HELIO4CAST LineupCAT, a catalog for interplanetary coronal mass ejections (ICMEs) observed by multiple spacecraft.</Description>
+      <Contact>
+        <PersonID>spase://SMWG/Person/Eva.Weiler</PersonID>
+        <Role>Author</Role>
+      </Contact>
+      <Contact>
+        <PersonID>spase://SMWG/Person/Christian.Moestl</PersonID>
+        <Role>Author</Role>
+      </Contact>
+      <Contact>
+        <PersonID>spase://SMWG/Person/Emma.E.Davies</PersonID>
+        <Role>Author</Role>
+      </Contact>
+      <Contact>
+        <PersonID>spase://SMWG/Person/Olga.Y.Uritskaya</PersonID>
+        <Role>MetadataContact</Role>
+      </Contact>
+    </ResourceHeader>
+    <AccessInformation>
+      <RepositoryID>spase://SMWG/Repository/Helio4cast</RepositoryID>
+      <AccessURL>
+        <URL>https://helioforecast.space/lineups</URL>
+      </AccessURL>
+      <Format>HTML</Format>
+    </AccessInformation>
+    <InstrumentID>spase://SMWG/Instrument/STEREO-A/Ephemeris</InstrumentID>
+    <InstrumentID>spase://SMWG/Instrument/STEREO-A/SECCHI/Cor2</InstrumentID>
+    <InstrumentID>spase://SMWG/Instrument/SOHO/LASCO</InstrumentID>
+    <InstrumentID>spase://SMWG/Instrument/BepiColombo/Ephemeris</InstrumentID>
+    <InstrumentID>spase://SMWG/Instrument/Wind/Ephemeris</InstrumentID>
+    <InstrumentID>spase://SMWG/Instrument/SolarOrbiter/Ephemeris</InstrumentID>
+    <PhenomenonType>GeomagneticStorm</PhenomenonType>
+    <TimeSpan>
+      <StartDate>2020-04-15T20:49:00</StartDate>
+      <StopDate>2024-12-17T04:28:00</StopDate>
+    </TimeSpan>
+    <Parameter>
+      <Name>event</Name>
+      <Description>event: To which multipoint event the row belongs to, unit: integer.</Description>
+      <Support>
+        <SupportQuantity>Housekeeping</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>lineupcat_id</Name>
+      <Description>lineupcat_id: Observations that are assigned to the same ICME are given the same ID. unit: string.</Description>
+      <Support>
+        <SupportQuantity>Housekeeping</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>event_start_time</Name>
+      <Description>event_start_time: For in situ spacecraft, similar to icme_start_time in the ICMECAT. For STEREO-A-HI (HIA), its the see_launch_time from HIGeoCAT, for DONKI its time21_5 from the DONKI database. unit: UTC.</Description>
+      <Support>
+        <SupportQuantity>Temporal</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>spacecraft</Name>
+      <Description>spacecraft: HIA if the entry refers to observations from STEREO-A-HI; STEREO A: SECCHI/COR2, SOHO: LASCO/C2 if the entry refers to coronagraph observations by either STEREO-A or SOHO; otherwise the in situ observing spacecraft. unit: string.</Description>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>sc_heliodistance</Name>
+      <Description>sc_heliodistance: Heliocentric distance of the spacecraft at event_start_time. unit: AU</Description>
+      <Support>
+        <SupportQuantity>Positional</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>sc_long_heeq</Name>
+      <Description>sc_long_heeq: Heliospheric longitude of the spacecraft at event_start_time, range [-180,180]. unit: degree (HEEQ).</Description>
+      <Support>
+        <SupportQuantity>Positional</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>sc_lat_heeq</Name>
+      <Description>sc_lat_heeq: Heliospheric latitude of the spacecraft at event_start_time, range [-180,180]. unit: degree (HEEQ).</Description>
+      <Support>
+        <SupportQuantity>Positional</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>cme_long_heeq</Name>
+      <Description>cme_long_heeq: CME longitude, derived either from SSEF30 modeling with STEREO-A-HI or SWPC CAT with STEREO A: SECCHI/COR2 or SOHO: LASCO/C2, range [-180,180]. unit: degree (HEEQ)</Description>
+      <Support>
+        <SupportQuantity>Positional</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>speed</Name>
+      <Description>speed: For in situ observations, the speed over the whole ICME interval (icme_speed_mean in ICMECAT). For HIA, the speed derived from SSEF30 modeling in HIGeoCAT. unit: km/s.</Description>
+      <Support>
+        <SupportQuantity>Velocity</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>mo_bmax</Name>
+      <Description>mo_bmax: Only for in situ observations, maximum total magnetic field in the magnetic obstacle interval (mo_start_time to mo_end_time). unit: nT.</Description>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>mo_bzmin</Name>
+      <Description>mo_bzmin: Only for in situ observations, minimum magnetic field Bz component in the magnetic obstacle. unit: nT (RTN).</Description>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>catalog_id.</Name>
+      <Description>catalog_id: the id from either the ICMECAT or HIGeoCAT, allowing to look up the event directly in these other catalogs.</Description>
+      <Support>
+        <SupportQuantity>Housekeeping</SupportQuantity>
+      </Support>
+    </Parameter>
+    <Parameter>
+      <Name>source</Name>
+      <Description>source: Solar source region as given in DONKI.</Description>
+      <Support>
+        <SupportQuantity>Other</SupportQuantity>
+      </Support>
+    </Parameter>
+  </Catalog>
 </Spase>
