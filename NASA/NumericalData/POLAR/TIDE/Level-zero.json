@@ -39,6 +39,10 @@
             {
               "ReleaseDate": "2026-02-12T23:59:30Z",
               "Note": "Added DOI. tlk"
+            },
+            {
+              "ReleaseDate": "2026-02-19T13:32:02Z",
+              "Note": "Removed broken links. The is no replacement. JMW"
             }
           ]
         },
@@ -123,7 +127,7 @@
       "Parameter": [
         {
           "Name": "Major Frame, in Telemetry Bytes",
-          "Description": "Each record in the TIDE level-zero file contains a major frame header followed by the bytes for the 250 minor frames that make up a major frame. A major frame is reported every 9.2 s for a single day. The length of a minor frame varies depending on the mode the Polar Spacecraft is in: for science mode 1, the TIDE minor frames are 22 bytes long. For science mode 2 (contingency), the minor frames are 43 bytes long. The first three bytes contain TIDE housekeeping bytes or fill data (000). The remaining bytes contain TIDE science data products (see Science Data Products Parameter) or fill data. See http://tideuvira.nsstc.nasa.gov/tide/Documentation/DataFileFormats/LevelZero.html or http://tide.gsfc.nasa.gov/Documentation/DataFileFormats/LevelZero.html for format details.",
+          "Description": "Each record in the TIDE level-zero file contains a major frame header followed by the bytes for the 250 minor frames that make up a major frame. A major frame is reported every 9.2 s for a single day. The length of a minor frame varies depending on the mode the Polar Spacecraft is in: for science mode 1, the TIDE minor frames are 22 bytes long. For science mode 2 (contingency), the minor frames are 43 bytes long. The first three bytes contain TIDE housekeeping bytes or fill data (000). The remaining bytes contain TIDE science data products (see Science Data Products Parameter) or fill data.",
           "ValidMin": "0",
           "ValidMax": "255",
           "FillValue": "0",
@@ -133,7 +137,7 @@
         },
         {
           "Name": "Science Data Products, in Telemetry Bytes",
-          "Description": "All TIDE science telemetry is reported in one of 188 data products. All TIDE data is collected for a Polar Spacecraft spin (~6 s). All of the Data Products for a specific spin are reported as a spin packet that contains a spin header followed by each Data Product. Six Data Products contain instrument parameters or memory dumps. The remaining 182 Data Products contain collapsed and doubly compressed ion counts for specific ions, energy bins, and spin and polar angle bins. The counts can be summed (collapesd) over adjacent energy and spin angle bins. The counts are then converted (compressed) from a 16-bit to an 8-bit integer. A Lossy compression is then applied to the Data Product bytes. The data products reported each spin depend on TIDE's operating modes. NOTE: The only way to read TIDE data products is to use the TIDE processing software. See http://tideuvira.nsstc.nasa.gov/tide/Documentation/DataFileFormats/LevelZero.html or http://tide.gsfc.nasa.gov/Documentation/DataFileFormats/LevelZero.html for details.",
+          "Description": "All TIDE science telemetry is reported in one of 188 data products. All TIDE data is collected for a Polar Spacecraft spin (~6 s). All of the Data Products for a specific spin are reported as a spin packet that contains a spin header followed by each Data Product. Six Data Products contain instrument parameters or memory dumps. The remaining 182 Data Products contain collapsed and doubly compressed ion counts for specific ions, energy bins, and spin and polar angle bins. The counts can be summed (collapesd) over adjacent energy and spin angle bins. The counts are then converted (compressed) from a 16-bit to an 8-bit integer. A Lossy compression is then applied to the Data Product bytes. The data products reported each spin depend on TIDE's operating modes. NOTE: The only way to read TIDE data products is to use the TIDE processing software.",
           "ValidMin": "0",
           "ValidMax": "255",
           "FillValue": "0",
@@ -143,7 +147,7 @@
         },
         {
           "Name": "Spacecraft Potential",
-          "Description": "TIDE uses EFI spacecraft potential to calculate phase space density and then moments. The negative of the spacecraft potential was extracted from EFI key parameter files and saved in a large text file that contains year, day-of-year, milliseconds, and the negative of the spacecraft potential every 6 s for one month. The files are available via the TIDE data download page or directly from the TIDE data archive at either http://tideuvira.nsstc.nasa.gov/tide/archive/data/scpot or http://tide.gsfc.nasa.gov/archive/data/scpot.",
+          "Description": "TIDE uses EFI spacecraft potential to calculate phase space density and then moments. The negative of the spacecraft potential was extracted from EFI key parameter files and saved in a large text file that contains year, day-of-year, milliseconds, and the negative of the spacecraft potential every 6 s for one month.",
           "Units": "V",
           "Support": {
             "SupportQuantity": "Other"

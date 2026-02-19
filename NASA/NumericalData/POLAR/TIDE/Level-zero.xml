@@ -36,6 +36,10 @@
           <ReleaseDate>2026-02-12T23:59:30Z</ReleaseDate>
           <Note>Added DOI. tlk</Note>
         </RevisionEvent>
+		<RevisionEvent>
+          <ReleaseDate>2026-02-19T13:32:02Z</ReleaseDate>
+          <Note>Removed broken links. The is no replacement. JMW</Note>
+        </RevisionEvent>
       </RevisionHistory>
       <Description>TIDE Level-Zero Processing Software provides several Analysis and Display Options with an extensive List of Processing Options. The TIDE team has provided Web Sites that allow Users to process Data from the Web and then download the processed Data Files and Plots, see the Custom Plot and Data Dump Links on one of the TIDE Home Pages. The Software (C and IDL) can be downloaded and installed locally. There is a Data Download Page that can be used to get the Level-Zero Data and the required Ancillary Data (Polar Orbit and Attitude, extracted EFI Spacecraft Potential, and Ion Masks). NOTE: The only Way to read a TIDE Level-Zero File is with the Processing Software. See the TIDE Documentation Link on one of the two TIDE Home Pages for Documentation of the Processing Software and the Input File Data Formats. See the Parameters below for more Information about Key Elements in the Level-Zero Processing.</Description>
       <PublicationInfo>
@@ -109,7 +113,7 @@
     <Caveats>TIDE was originally designed to detect mass-resolved ions, H+, O+, He+, and NO+, for 32 energy steps (31 reported), 32 spin angle bins, and 7 polar angle channels. The detection of time-of-flight direct-events deteriorated rapidly early in the mission, reducing the ability to resolve ion masses and resulting in the lost of information in one axis (Z). After 09/30/96, the ion data is of poor quality and as a result, only Total Ions (Stops) are reported starting 12/08/96. Total Ions is the sum over the 7 polar angle channels of the particle counts detected by the Stop microchannel plate (MCP) detectors. The resolution in the 32 energy steps and in the 32 spin angle bins is retained. 1996 H+, O+, and He+ data are reported in the TIDE H0 CDFs. In order to avoid damage to the MCPs, starting 03/27/96 and continuing throughout the rest of the mission, the high voltage on the MCPs is reduced during radiation belt passes.</Caveats>
     <Parameter>
       <Name>Major Frame, in Telemetry Bytes</Name>
-      <Description>Each record in the TIDE level-zero file contains a major frame header followed by the bytes for the 250 minor frames that make up a major frame. A major frame is reported every 9.2 s for a single day. The length of a minor frame varies depending on the mode the Polar Spacecraft is in: for science mode 1, the TIDE minor frames are 22 bytes long. For science mode 2 (contingency), the minor frames are 43 bytes long. The first three bytes contain TIDE housekeeping bytes or fill data (000). The remaining bytes contain TIDE science data products (see Science Data Products Parameter) or fill data. See http://tideuvira.nsstc.nasa.gov/tide/Documentation/DataFileFormats/LevelZero.html or http://tide.gsfc.nasa.gov/Documentation/DataFileFormats/LevelZero.html for format details.</Description>
+      <Description>Each record in the TIDE level-zero file contains a major frame header followed by the bytes for the 250 minor frames that make up a major frame. A major frame is reported every 9.2 s for a single day. The length of a minor frame varies depending on the mode the Polar Spacecraft is in: for science mode 1, the TIDE minor frames are 22 bytes long. For science mode 2 (contingency), the minor frames are 43 bytes long. The first three bytes contain TIDE housekeeping bytes or fill data (000). The remaining bytes contain TIDE science data products (see Science Data Products Parameter) or fill data.</Description>
       <ValidMin>0</ValidMin>
       <ValidMax>255</ValidMax>
       <FillValue>0</FillValue>
@@ -119,7 +123,7 @@
     </Parameter>
     <Parameter>
       <Name>Science Data Products, in Telemetry Bytes</Name>
-      <Description>All TIDE science telemetry is reported in one of 188 data products. All TIDE data is collected for a Polar Spacecraft spin (~6 s). All of the Data Products for a specific spin are reported as a spin packet that contains a spin header followed by each Data Product. Six Data Products contain instrument parameters or memory dumps. The remaining 182 Data Products contain collapsed and doubly compressed ion counts for specific ions, energy bins, and spin and polar angle bins. The counts can be summed (collapesd) over adjacent energy and spin angle bins. The counts are then converted (compressed) from a 16-bit to an 8-bit integer. A Lossy compression is then applied to the Data Product bytes. The data products reported each spin depend on TIDE's operating modes. NOTE: The only way to read TIDE data products is to use the TIDE processing software. See http://tideuvira.nsstc.nasa.gov/tide/Documentation/DataFileFormats/LevelZero.html or http://tide.gsfc.nasa.gov/Documentation/DataFileFormats/LevelZero.html for details.</Description>
+      <Description>All TIDE science telemetry is reported in one of 188 data products. All TIDE data is collected for a Polar Spacecraft spin (~6 s). All of the Data Products for a specific spin are reported as a spin packet that contains a spin header followed by each Data Product. Six Data Products contain instrument parameters or memory dumps. The remaining 182 Data Products contain collapsed and doubly compressed ion counts for specific ions, energy bins, and spin and polar angle bins. The counts can be summed (collapesd) over adjacent energy and spin angle bins. The counts are then converted (compressed) from a 16-bit to an 8-bit integer. A Lossy compression is then applied to the Data Product bytes. The data products reported each spin depend on TIDE's operating modes. NOTE: The only way to read TIDE data products is to use the TIDE processing software.</Description>
       <ValidMin>0</ValidMin>
       <ValidMax>255</ValidMax>
       <FillValue>0</FillValue>
@@ -129,7 +133,7 @@
     </Parameter>
     <Parameter>
       <Name>Spacecraft Potential</Name>
-      <Description>TIDE uses EFI spacecraft potential to calculate phase space density and then moments. The negative of the spacecraft potential was extracted from EFI key parameter files and saved in a large text file that contains year, day-of-year, milliseconds, and the negative of the spacecraft potential every 6 s for one month. The files are available via the TIDE data download page or directly from the TIDE data archive at either http://tideuvira.nsstc.nasa.gov/tide/archive/data/scpot or http://tide.gsfc.nasa.gov/archive/data/scpot.</Description>
+      <Description>TIDE uses EFI spacecraft potential to calculate phase space density and then moments. The negative of the spacecraft potential was extracted from EFI key parameter files and saved in a large text file that contains year, day-of-year, milliseconds, and the negative of the spacecraft potential every 6 s for one month.</Description>
       <Units>V</Units>
       <Support>
         <SupportQuantity>Other</SupportQuantity>
