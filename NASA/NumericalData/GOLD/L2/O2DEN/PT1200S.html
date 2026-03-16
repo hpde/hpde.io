@@ -1,40 +1,440 @@
 <?xml version="1.0"?>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><title>SPASE Resource Description</title><script type="application/ld+json">{
-		"@context": "https://schema.org/",
-		"@type" :"Dataset",
-		"name": "Gold Level L2 Molecular Oxygen Density Profile",
-    
-		"dateModified": "2025-12-04",
-
-    "identifier": "https://doi.org/10.48322/ybkm-rz28",
-    "publication": "Eastes, Richard, Gold Level L2 Molecular Oxygen Density Profile,  (2025)",
-    "datePublished": "2025-11-14",
-    "creator":{
-       "@type": "Person",
-           "name": "Eastes, Richard"
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <title>
+   SPASE Resource Description
+  </title>
+  <script type="application/ld+json">
+   {
+    "@context": {
+        "@vocab": "https://schema.org/",
+        "prov": "http://www.w3.org/ns/prov#",
+        "sosa": "https://w3c.github.io/sdw-sosa-ssn/ssn/#SOSA"
     },
-    "publisher":{
-       "@type": "Organization",
-           "name": "Space Physics Data Facility"
+    "@id": "https://doi.org/10.48322/ybkm-rz28",
+    "@type": "Dataset",
+    "citation": [
+        {
+            "@id": "https://gold.cs.ucf.edu/",
+            "@type": "CreativeWork",
+            "description": "GOLD web page with news and other information.",
+            "identifier": "https://gold.cs.ucf.edu/",
+            "name": "GOLD Homepage web page",
+            "url": "https://gold.cs.ucf.edu/"
+        },
+        {
+            "@id": "https://doi.org/10.1007/s11214-017-0392-2",
+            "@type": "CreativeWork",
+            "description": "Eastes, R.W., McClintock, W.E., Burns, A.G. et al. Space Sci. Rev. (2017) vol. 212, pp.383.",
+            "identifier": "https://doi.org/10.1007/s11214-017-0392-2",
+            "name": "GOLD Missions Space Science Reviews Article",
+            "url": "https://doi.org/10.1007/s11214-017-0392-2"
+        }
+    ],
+    "contributor": {
+        "@list": [
+            {
+                "@type": [
+                    "Role",
+                    "DefinedTerm"
+                ],
+                "contributor": {
+                    "@type": "Person",
+                    "affiliation": {
+                        "@type": "Organization",
+                        "name": "Laboratory for Atmospheric and Space Physics"
+                    },
+                    "familyName": "Eastes",
+                    "givenName": "Richard",
+                    "name": "Richard Eastes"
+                },
+                "inDefinedTermSet": {
+                    "@id": "https://spase-group.org/data/model/spase-latest/spase-latest_xsd.htm#Role",
+                    "@type": "DefinedTermSet",
+                    "name": "SPASE Role",
+                    "url": "https://spase-group.org/data/model/spase-latest/spase-latest_xsd.htm#Role"
+                },
+                "roleName": "Eastes,  Richard",
+                "termCode": "Eastes, Richard"
+            },
+            {
+                "@type": [
+                    "Role",
+                    "DefinedTerm"
+                ],
+                "contributor": {
+                    "@type": "Person",
+                    "affiliation": {
+                        "@type": "Organization",
+                        "identifier": {
+                            "@id": "https://ror.org/0171mag52",
+                            "@type": "PropertyValue",
+                            "propertyID": "https://registry.identifiers.org/registry/ror",
+                            "url": "https://ror.org/0171mag52",
+                            "value": "ror:0171mag52"
+                        },
+                        "name": "NASA Goddard Space Flight Center"
+                    },
+                    "familyName": "Weygand",
+                    "givenName": "James M.",
+                    "name": "James M. Weygand"
+                },
+                "inDefinedTermSet": {
+                    "@id": "https://spase-group.org/data/model/spase-latest/spase-latest_xsd.htm#Role"
+                },
+                "roleName": "Metadata Contact",
+                "termCode": "MetadataContact"
+            }
+        ]
     },
-
-    "creditText": "National Aeronautics and Space Administration; Dr. Richard Eastes",
- 		"description": "O2 is derived from measurements of stellar occultation in the Shumann Runge continuum. \n	  As the star rises or sets relative to the satellite position the stellar spectrum is measured across \n	  the GOLD spectral bandpass, from 132 to 162 nm. Geolocation of the OCC L1B data provides the \n	  line-of-sight tangent altitude vs. time during the occultation. This results in a 2-dimensional \n	  map of the stellar signal, in counts or calibrated geophysical units (irradiance), vs. wavelength \n	  and tangent altitude. A sample of this image is represented in the top left panel of the OCC L1D \n	  image in Figure 3-22.\n	  \n      The measured counts profile is then normalized by the unattenuated, exo-atmospheric spectrum, yielding \n	  the slant path transmission profile vs. wavelength at the native L1C spectral sampling of 0.12 nm. \n	  The defining characteristic of the atmospheric transmission is that it is completely independent of \n	  instrument calibration or absolute accuracy. The full transmission spectrum is binned into a small \n	  number of 2-nm spectral channels for use in the retrievals. These retrieval channels are chosen to \n	  span the spectral dependence of the O2 absorption cross-section in order to maximize the O2 retrieval \n	  altitude range (approximately 120-240 km). In the Version 1 O2DEN data set two spectral channels \n	  are used, centered at 142- and 159-nm.\n      \n	  Since stars rise or set at approximately 3 km/sec, as observed from orbit, the 100-msec occultation \n	  cadence results in a measurement of extremely high (sub-km) vertical resolution. The data are binned \n	  to enhance signal-to-noise, producing an effective vertical resolution of 10 km or less, which is \n	  sufficient to easily resolve the scale height of the O2 thermospheric profile.\n      \n	  The algorithm uses an optimal estimation routine, which provide a complete error analysis and \n	  retrieval diagnostics such as averaging kernels and information content. A data vector constructed \n	  from the multiple spectral channels of slant path transmission is used to derive the atmospheric \n	  state vector – O2 density vs. geometric altitude – via a nonlinear, iterative inversion. The retrieved \n	  O2 density profile is reported on a fixed altitude grid with 5-km spacing. The valid altitude range \n	  varies for each event, but generally ranges from ~120 – 240. ",
-		"abstract": "O2 is derived from measurements of stellar occultation in the Shumann Runge continuum. \n	  As the star rises or sets relative to the satellite position the stellar spectrum is measured across \n	  the GOLD spectral bandpass, from 132 to 162 nm. Geolocation of the OCC L1B data provides the \n	  line-of-sight tangent altitude vs. time during the occultation. This results in a 2-dimensional \n	  map of the stellar signal, in counts or calibrated geophysical units (irradiance), vs. wavelength \n	  and tangent altitude. A sample of this image is represented in the top left panel of the OCC L1D \n	  image in Figure 3-22.\n	  \n      The measured counts profile is then normalized by the unattenuated, exo-atmospheric spectrum, yielding \n	  the slant path transmission profile vs. wavelength at the native L1C spectral sampling of 0.12 nm. \n	  The defining characteristic of the atmospheric transmission is that it is completely independent of \n	  instrument calibration or absolute accuracy. The full transmission spectrum is binned into a small \n	  number of 2-nm spectral channels for use in the retrievals. These retrieval channels are chosen to \n	  span the spectral dependence of the O2 absorption cross-section in order to maximize the O2 retrieval \n	  altitude range (approximately 120-240 km). In the Version 1 O2DEN data set two spectral channels \n	  are used, centered at 142- and 159-nm.\n      \n	  Since stars rise or set at approximately 3 km/sec, as observed from orbit, the 100-msec occultation \n	  cadence results in a measurement of extremely high (sub-km) vertical resolution. The data are binned \n	  to enhance signal-to-noise, producing an effective vertical resolution of 10 km or less, which is \n	  sufficient to easily resolve the scale height of the O2 thermospheric profile.\n      \n	  The algorithm uses an optimal estimation routine, which provide a complete error analysis and \n	  retrieval diagnostics such as averaging kernels and information content. A data vector constructed \n	  from the multiple spectral channels of slant path transmission is used to derive the atmospheric \n	  state vector – O2 density vs. geometric altitude – via a nonlinear, iterative inversion. The retrieved \n	  O2 density profile is reported on a fixed altitude grid with 5-km spacing. The valid altitude range \n	  varies for each event, but generally ranges from ~120 – 240. ",
-
-		"temporalCoverage": "2018-10-19T00:00:00/...",
-
-    "genre": "ImageIntensity",
-		"keywords": [  "Day disk data", "GOLD", "SES-14" ],
-		"license": "https://cdla.io/permissive-1-0/",
-
-    "audience":{
-        "@type": "Audience",
-        "audienceType": ["Space Physicist", "Space Community", "Data Scientists", "Machine Learning Users"]
-    }
+    "creator": [
+        {
+            "@type": "Person",
+            "affiliation": {
+                "@type": "Organization",
+                "name": "Laboratory for Atmospheric and Space Physics"
+            },
+            "familyName": "Eastes",
+            "givenName": "Richard",
+            "name": "Eastes, Richard"
+        }
+    ],
+    "dateCreated": "2025-11-14T16:02:21",
+    "dateModified": "2025-12-04T13:29:18",
+    "datePublished": "2025-11-14T16:02:21",
+    "description": "O2 is derived from measurements of stellar occultation in the Shumann Runge continuum. \n\t  As the star rises or sets relative to the satellite position the stellar spectrum is measured across \n\t  the GOLD spectral bandpass, from 132 to 162 nm. Geolocation of the OCC L1B data provides the \n\t  line-of-sight tangent altitude vs. time during the occultation. This results in a 2-dimensional \n\t  map of the stellar signal, in counts or calibrated geophysical units (irradiance), vs. wavelength \n\t  and tangent altitude. A sample of this image is represented in the top left panel of the OCC L1D \n\t  image in Figure 3-22.\n\t  \n      The measured counts profile is then normalized by the unattenuated, exo-atmospheric spectrum, yielding \n\t  the slant path transmission profile vs. wavelength at the native L1C spectral sampling of 0.12 nm. \n\t  The defining characteristic of the atmospheric transmission is that it is completely independent of \n\t  instrument calibration or absolute accuracy. The full transmission spectrum is binned into a small \n\t  number of 2-nm spectral channels for use in the retrievals. These retrieval channels are chosen to \n\t  span the spectral dependence of the O2 absorption cross-section in order to maximize the O2 retrieval \n\t  altitude range (approximately 120-240 km). In the Version 1 O2DEN data set two spectral channels \n\t  are used, centered at 142- and 159-nm.\n      \n\t  Since stars rise or set at approximately 3 km/sec, as observed from orbit, the 100-msec occultation \n\t  cadence results in a measurement of extremely high (sub-km) vertical resolution. The data are binned \n\t  to enhance signal-to-noise, producing an effective vertical resolution of 10 km or less, which is \n\t  sufficient to easily resolve the scale height of the O2 thermospheric profile.\n      \n\t  The algorithm uses an optimal estimation routine, which provide a complete error analysis and \n\t  retrieval diagnostics such as averaging kernels and information content. A data vector constructed \n\t  from the multiple spectral channels of slant path transmission is used to derive the atmospheric \n\t  state vector \u2013 O2 density vs. geometric altitude \u2013 via a nonlinear, iterative inversion. The retrieved \n\t  O2 density profile is reported on a fixed altitude grid with 5-km spacing. The valid altitude range \n\t  varies for each event, but generally ranges from ~120 \u2013 240. ",
+    "identifier": {
+        "@list": [
+            {
+                "@type": "PropertyValue",
+                "name": "DOI: 10.48322/ybkm-rz28",
+                "propertyID": "https://registry.identifiers.org/registry/doi",
+                "url": "https://doi.org/10.48322/ybkm-rz28",
+                "value": "doi:10.48322/ybkm-rz28"
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "SPASE",
+                "url": "https://spase-metadata.org/NASA/NumericalData/GOLD/L2/O2DEN/PT1200S",
+                "value": "spase://NASA/NumericalData/GOLD/L2/O2DEN/PT1200S"
+            }
+        ]
+    },
+    "inLanguage": "en",
+    "keywords": [
+        "Day disk data",
+        "GOLD",
+        "SES-14"
+    ],
+    "license": [
+        "https://spdx.org/licenses/CC0-1.0.html"
+    ],
+    "measurementMethod": {
+        "@type": "DefinedTerm",
+        "inDefinedTermSet": {
+            "@id": "https://spase-group.org/data/model/spase-latest/spase-latest_xsd.htm#MeasurementType",
+            "@type": "DefinedTermSet",
+            "name": "SPASE MeasurementType",
+            "url": "https://spase-group.org/data/model/spase-latest/spase-latest_xsd.htm#MeasurementType"
+        },
+        "name": "Image Intensity",
+        "termCode": "ImageIntensity"
+    },
+    "name": "Gold Level L2 Molecular Oxygen Density Profile",
+    "potentialAction": [
+        {
+            "@type": "SearchAction",
+            "target": {
+                "@type": "EntryPoint",
+                "contentType": "NetCDF",
+                "description": "Download dataset data as NetCDF file at this URL",
+                "name": "FTPS from SPDF (not with most browsers)",
+                "url": "ftps://spdf.gsfc.nasa.gov/pub/data/gold/level2/"
+            }
+        },
+        {
+            "@type": "SearchAction",
+            "target": {
+                "@id": "https://spdf.gsfc.nasa.gov/pub/data/gold/level2/",
+                "@type": "EntryPoint",
+                "contentType": "NetCDF",
+                "description": "Download dataset data as NetCDF file at this URL",
+                "identifier": "https://spdf.gsfc.nasa.gov/pub/data/gold/level2/",
+                "name": "HTTPS from SPDF",
+                "url": "https://spdf.gsfc.nasa.gov/pub/data/gold/level2/"
+            }
+        },
+        {
+            "@type": "SearchAction",
+            "target": {
+                "@id": "https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=GOLD_L2_O2DEN&index=sp_phys",
+                "@type": "EntryPoint",
+                "contentType": "NetCDF",
+                "description": "Download dataset data as NetCDF file at this URL using these product key(s): ['GOLD_L2_O2DEN']",
+                "identifier": "https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=GOLD_L2_O2DEN&index=sp_phys",
+                "name": "CDAWeb",
+                "url": "https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=GOLD_L2_O2DEN&index=sp_phys"
+            }
+        }
+    ],
+    "prov:wasGeneratedBy": [
+        {
+            "@type": [
+                "ResearchProject",
+                "prov:Activity"
+            ],
+            "prov:used": {
+                "@id": "https://spase-metadata.org/SMWG/Instrument/GOLD",
+                "@type": [
+                    "IndividualProduct",
+                    "prov:Entity",
+                    "sosa:System"
+                ],
+                "identifier": {
+                    "@id": "https://spase-metadata.org/SMWG/Instrument/GOLD",
+                    "@type": "PropertyValue",
+                    "propertyID": "SPASE Resource ID",
+                    "value": "spase://SMWG/Instrument/GOLD"
+                },
+                "name": "GOLD",
+                "url": "https://spase-metadata.org/SMWG/Instrument/GOLD"
+            }
+        }
+    ],
+    "publisher": {
+        "@type": "Organization",
+        "name": "Space Physics Data Facility"
+    },
+    "sameAs": [
+        "spase://VSPO/NumericalData/GOLD/L2/O2DEN/PT1200S",
+        "spase://NASA/NumericalData/SES-14/GOLD/L2/O2DEN/PT1200S"
+    ],
+    "spatialCoverage": [
+        {
+            "@type": "Place",
+            "keywords": {
+                "@type": "DefinedTerm",
+                "inDefinedTermSet": {
+                    "@id": "https://spase-group.org/data/model/spase-latest/spase-latest_xsd.htm#Region",
+                    "@type": "DefinedTermSet",
+                    "name": "SPASE Region",
+                    "url": "https://spase-group.org/data/model/spase-latest/spase-latest_xsd.htm#Region"
+                },
+                "termCode": "Earth.NearSurface.Ionosphere"
+            },
+            "name": "Earth NearSurface Ionosphere"
+        }
+    ],
+    "subjectOf": {
+        "@id": "https://spase-metadata.org/NASA/NumericalData/GOLD/L2/O2DEN/PT1200S",
+        "@type": "DataDownload",
+        "contentUrl": "https://spase-metadata.org/NASA/NumericalData/GOLD/L2/O2DEN/PT1200S",
+        "dateModified": "2025-12-04T13:29:18",
+        "description": "The SPASE metadata describing the indicated dataset.",
+        "encodingFormat": "application/xml",
+        "identifier": "https://spase-metadata.org/NASA/NumericalData/GOLD/L2/O2DEN/PT1200S",
+        "license": [
+            "https://spdx.org/licenses/CC0-1.0.html"
+        ],
+        "name": "SPASE metadata for dataset"
+    },
+    "temporal": [
+        "The time series is periodic with a 1200 second cadence",
+        "PT1200S"
+    ],
+    "temporalCoverage": "2018-10-19T00:00:00/..",
+    "url": "https://doi.org/10.48322/ybkm-rz28",
+    "variableMeasured": [
+        {
+            "@type": "PropertyValue",
+            "alternateName": "spectral_width",
+            "description": "Width of each data spectral channel.",
+            "name": "Spectral Width",
+            "unitText": "nm"
+        },
+        {
+            "@type": "PropertyValue",
+            "alternateName": "o2den_unc_ran",
+            "description": "Random uncertainty of retrieved O2.",
+            "name": "O2 Density Random Uncertainty",
+            "unitText": "mol/cm^3"
+        },
+        {
+            "@type": "PropertyValue",
+            "alternateName": "lon_ref",
+            "description": "Longitude at 225 km tangent point.",
+            "name": "Reference Longitude",
+            "unitText": "degrees"
+        },
+        {
+            "@type": "PropertyValue",
+            "alternateName": "o2den_unc_mod",
+            "description": "Model uncertainty of retrieved O2.",
+            "name": "O2 Density Model Uncertainty",
+            "unitText": "mol/cm^3"
+        },
+        {
+            "@type": "PropertyValue",
+            "alternateName": "temperature",
+            "description": "Assumed temperature profile.",
+            "name": "Temperature",
+            "unitText": "K"
+        },
+        {
+            "@type": "PropertyValue",
+            "alternateName": "zret",
+            "description": "Retrieval geometric altitude grid.",
+            "name": "Retrieval geometric altitude grid",
+            "unitText": "km"
+        },
+        {
+            "@type": "PropertyValue",
+            "alternateName": "o2den",
+            "description": "Retrieved O2 density.",
+            "name": "O2 Density",
+            "unitText": "mol/cm^3"
+        },
+        {
+            "@type": "PropertyValue",
+            "alternateName": "nzdat",
+            "description": "Number of points in data altitude grid.",
+            "name": "Number of Data Points"
+        },
+        {
+            "@type": "PropertyValue",
+            "alternateName": "TIME_UTC",
+            "description": "UTC date/time string: \"2017-06-21T23:46:38.015Z\".",
+            "name": "UTC time",
+            "unitText": "date/time"
+        },
+        {
+            "@type": "PropertyValue",
+            "alternateName": "n_iter",
+            "description": "Number of iterations to converge.",
+            "name": "Number of Iterations",
+            "unitText": "number"
+        },
+        {
+            "@type": "PropertyValue",
+            "alternateName": "convergence",
+            "description": "Retrieval convergence flag (= 1 if retrieval converged).",
+            "name": "Convergence flag"
+        },
+        {
+            "@type": "PropertyValue",
+            "alternateName": "nzret",
+            "description": "Number of levels in retrieval altitude grid.",
+            "name": "Number of Levels in Retrieval Altitude Grid",
+            "unitText": "number"
+        },
+        {
+            "@type": "PropertyValue",
+            "alternateName": "input_l1c_file",
+            "description": "L1C file name for each occultation.",
+            "name": "L1C File Name"
+        },
+        {
+            "@type": "PropertyValue",
+            "alternateName": "o2den_unc_sys",
+            "description": "Systematic uncertainty of retrieved O2.",
+            "name": "O2 Systematic Uncertainty"
+        },
+        {
+            "@type": "PropertyValue",
+            "alternateName": "lat_ref",
+            "description": "Latitude at 225 km tangent point.",
+            "name": "Reference Latitude",
+            "unitText": "degrees"
+        },
+        {
+            "@type": "PropertyValue",
+            "alternateName": "normalization",
+            "description": "Transmission normalization factor (unattenuated stellar brightness).",
+            "name": "Normalization",
+            "unitText": "counts"
+        },
+        {
+            "@type": "PropertyValue",
+            "alternateName": "o2den_dqi",
+            "description": "O2 data quality indicator per altitude (see table in The GOLD Public Science Data Products Guide).",
+            "name": "O2 Data Quality"
+        },
+        {
+            "@type": "PropertyValue",
+            "alternateName": "channel",
+            "description": "GOLD channel (\u2018A\u2019 or \u2018B\u2019).",
+            "name": "Channel"
+        },
+        {
+            "@type": "PropertyValue",
+            "alternateName": "central_wavelength",
+            "description": "Center wavelength of each data channel.",
+            "name": "Central Wavelength",
+            "unitText": "nm"
+        },
+        {
+            "@type": "PropertyValue",
+            "alternateName": "signal_to_noise",
+            "description": "Effective signal to noise (above atmosphere).",
+            "name": "Signal to Noise"
+        },
+        {
+            "@type": "PropertyValue",
+            "alternateName": "zdat",
+            "description": "Number of points in data altitude grid.",
+            "name": "Number of Points in Data Altitude Grid",
+            "unitText": "number"
+        },
+        {
+            "@type": "PropertyValue",
+            "alternateName": "dqi",
+            "description": "Overall data quality index per scan (see table below).",
+            "name": "Overall Quality Flag"
+        },
+        {
+            "@type": "PropertyValue",
+            "alternateName": "transmission_fit",
+            "description": "Forward model fit to data.",
+            "name": "Model Fit Data"
+        },
+        {
+            "@type": "PropertyValue",
+            "alternateName": "transmission",
+            "description": "Measured slant path transmission profile.",
+            "name": "Transmission Profile"
+        },
+        {
+            "@type": "PropertyValue",
+            "alternateName": "o2_apriori",
+            "description": "A priori O2 density used in retrieval.",
+            "name": "A Priori O2 Density",
+            "unitText": "mol/cm^3"
+        },
+        {
+            "@type": "PropertyValue",
+            "alternateName": "sza_ref",
+            "description": "Solar zenith angle at 225 km tangent point.",
+            "name": "Solar Zenith Angle at 225 km",
+            "unitText": "degrees"
+        },
+        {
+            "@type": "PropertyValue",
+            "alternateName": "transmission_unc",
+            "description": "Transmission variance.",
+            "name": "Transmission Profile Uncertainty"
+        },
+        {
+            "@type": "PropertyValue",
+            "alternateName": "target_star",
+            "description": "Name of target star.",
+            "name": "Name of Target Star"
+        }
+    ]
 }
-	  </script><style>
-/* http://spase-group.org/tools/xmlviewer */
+  </script>
+  <style>
+   /* http://spase-group.org/tools/xmlviewer */
 /* v1.0 | 20160908 */
 
 * {
@@ -291,28 +691,113 @@ a.xml-logo:visited {
 a.xml-logo:hover {
    text-decoration:underline; 
 }
-
-	  </style></head><body><div><a id="top"/></div><div class="header"><div class="middle">spase-metadata.org <a href="https://spase-group.org/">SPASE</a> landing pages.</div></div><div class="page"><div class="spase"><div class="abstract"><div class="access"><p class="box-title">Data Access</p><ul class="list"><li class="list"><a target="_blank" href="ftps://spdf.gsfc.nasa.gov/pub/data/gold/level2/">FTPS from SPDF (not with most browsers)</a></li><li class="list"><a target="_blank" href="https://spdf.gsfc.nasa.gov/pub/data/gold/level2/">HTTPS from SPDF</a></li><li class="list"><a target="_blank" href="https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=GOLD_L2_O2DEN&amp;index=sp_phys">CDAWeb</a></li></ul></div><div class="citation inset"><h1><a name="spase://NASA/NumericalData/GOLD/L2/O2DEN/PT1200S">Gold Level L2 Molecular Oxygen Density Profile</a></h1><p class="author">Eastes, Richard 
+  </style>
+ </head>
+ <body>
+  <div>
+   <a id="top">
+   </a>
+  </div>
+  <div class="header">
+   <div class="middle">
+    spase-metadata.org
+    <a href="https://spase-group.org/">
+     SPASE
+    </a>
+    landing pages.
+   </div>
+  </div>
+  <div class="page">
+   <div class="spase">
+    <div class="abstract">
+     <div class="access">
+      <p class="box-title">
+       Data Access
+      </p>
+      <ul class="list">
+       <li class="list">
+        <a href="ftps://spdf.gsfc.nasa.gov/pub/data/gold/level2/" target="_blank">
+         FTPS from SPDF (not with most browsers)
+        </a>
+       </li>
+       <li class="list">
+        <a href="https://spdf.gsfc.nasa.gov/pub/data/gold/level2/" target="_blank">
+         HTTPS from SPDF
+        </a>
+       </li>
+       <li class="list">
+        <a href="https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=GOLD_L2_O2DEN&amp;index=sp_phys" target="_blank">
+         CDAWeb
+        </a>
+       </li>
+      </ul>
+     </div>
+     <div class="citation inset">
+      <h1>
+       <a name="spase://NASA/NumericalData/GOLD/L2/O2DEN/PT1200S">
+        Gold Level L2 Molecular Oxygen Density Profile
+       </a>
+      </h1>
+      <p class="author">
+       Eastes, Richard 
 							(2025). 
 							Gold Level L2 Molecular Oxygen Density Profile
 			[Data set].
-		Space Physics Data Facility. 
-							<a href="https://doi.org/10.48322/ybkm-rz28">https://doi.org/10.48322/ybkm-rz28</a>. <span id="access_date"/><script>
-									var monthName=new Array("January","February","March","April","May","June","July","August","September","October","November","December"); 
+		Space Physics Data Facility.
+       <a href="https://doi.org/10.48322/ybkm-rz28">
+        https://doi.org/10.48322/ybkm-rz28
+       </a>
+       .
+       <span id="access_date">
+       </span>
+       <script>
+        var monthName=new Array("January","February","March","April","May","June","July","August","September","October","November","December"); 
 									var today = new Date(); 
 									var cur_div = document.getElementById('access_date');
 									var d_str = ' Accessed on '+today.getFullYear()+'-'+monthName[today.getMonth()]+'-'+today.getDate()+'.';
 									cur_div.innerText = d_str;
-								</script><br/><br/>	
-								Note: Proper references, including those in <a href="https://citation.crosscite.org/format?doi=10.48322/ybkm-rz28&amp;style=bibtex&amp;lang=en-US">BibTex</a> or <a href="https://citeas.org/cite/https://doi.org/10.48322/ybkm-rz28">other formats</a>, should include the "Accessed on date" as shown above to identify the version of the resource being cited in a given publication.
-							</p><p><div class="term">ResourceID</div><div class="definition">spase://NASA/NumericalData/GOLD/L2/O2DEN/PT1200S</div></p><p><div class="term">Description</div><div class="definition"><p>O2 is derived from measurements of stellar occultation in the Shumann Runge continuum.<br>
-As the star rises or sets relative to the satellite position the stellar spectrum is measured across<br>
-the GOLD spectral bandpass, from 132 to 162 nm. Geolocation of the OCC L1B data provides the<br>
-line-of-sight tangent altitude vs. time during the occultation. This results in a 2-dimensional<br>
-map of the stellar signal, in counts or calibrated geophysical units (irradiance), vs. wavelength<br>
-and tangent altitude. A sample of this image is represented in the top left panel of the OCC L1D<br>
-image in Figure 3-22.</p>
-<pre><code>  The measured counts profile is then normalized by the unattenuated, exo-atmospheric spectrum, yielding 
+       </script>
+       <br/>
+       <br/>
+       Note: Proper references, including those in
+       <a href="https://citation.crosscite.org/format?doi=10.48322/ybkm-rz28&amp;style=bibtex&amp;lang=en-US">
+        BibTex
+       </a>
+       or
+       <a href="https://citeas.org/cite/https://doi.org/10.48322/ybkm-rz28">
+        other formats
+       </a>
+       , should include the "Accessed on date" as shown above to identify the version of the resource being cited in a given publication.
+      </p>
+      <p>
+       <div class="term">
+        ResourceID
+       </div>
+       <div class="definition">
+        spase://NASA/NumericalData/GOLD/L2/O2DEN/PT1200S
+       </div>
+      </p>
+      <p>
+       <div class="term">
+        Description
+       </div>
+       <div class="definition">
+        <p>
+         O2 is derived from measurements of stellar occultation in the Shumann Runge continuum.
+         <br/>
+         As the star rises or sets relative to the satellite position the stellar spectrum is measured across
+         <br/>
+         the GOLD spectral bandpass, from 132 to 162 nm. Geolocation of the OCC L1B data provides the
+         <br/>
+         line-of-sight tangent altitude vs. time during the occultation. This results in a 2-dimensional
+         <br/>
+         map of the stellar signal, in counts or calibrated geophysical units (irradiance), vs. wavelength
+         <br/>
+         and tangent altitude. A sample of this image is represented in the top left panel of the OCC L1D
+         <br/>
+         image in Figure 3-22.
+        </p>
+        <pre><code>  The measured counts profile is then normalized by the unattenuated, exo-atmospheric spectrum, yielding 
   the slant path transmission profile vs. wavelength at the native L1C spectral sampling of 0.12 nm. 
   The defining characteristic of the atmospheric transmission is that it is completely independent of 
   instrument calibration or absolute accuracy. The full transmission spectrum is binned into a small 
@@ -332,16 +817,218 @@ image in Figure 3-22.</p>
   state vector – O2 density vs. geometric altitude – via a nonlinear, iterative inversion. The retrieved 
   O2 density profile is reported on a fixed altitude grid with 5-km spacing. The valid altitude range 
   varies for each event, but generally ranges from ~120 – 240.</code></pre>
-</div></p></div></div><div><p class="right"><a target="_blank" href="PT1200S.xml">View XML</a>
-				| <a target="_blank" href="PT1200S.json">View JSON</a>
-                | <a target="_blank" href="https://spase-editor.heliocloud.org/?edit=https://spase-metadata.org/NASA/NumericalData/GOLD/L2/O2DEN/PT1200S.xml">Edit</a></p><h1 class="detail">Details</h1></div><div><div class="product"><p class="version">Version:2.7.1</p><h1>MetadataRightsList</h1><div class="term">Rights</div><div class="definition"><div class="term">SchemeURI</div><div class="definition">https://spdx.org/licenses/</div><div class="term">RightsIdentifierScheme</div><div class="definition">SPDX</div><div class="term">RightsIdentifier</div><div class="definition">CC0-1.0</div><div class="term">RightsURI</div><div class="definition">https://spdx.org/licenses/CC0-1.0.html</div><div class="term">RightsName</div><div class="definition">Creative Commons Zero v1.0 Universal</div><div class="term">Note</div><div class="definition">CC0 1.0 Universal is the Creative Commons license applicable to all publicly available SPASE metadata descriptions</div></div></div><div class="product"><p class="version">Version:2.7.1</p><h1>NumericalData</h1><div class="term">ResourceID</div><div class="definition">spase://NASA/NumericalData/GOLD/L2/O2DEN/PT1200S</div><div class="term">NamingAuthority</div><div class="definition">NASA</div><div class="term">ResourceType</div><div class="definition">NumericalData</div><div class="term">ResourceHeader</div><div class="definition"><div class="term">ResourceName</div><div class="definition">Gold Level L2 Molecular Oxygen Density Profile</div><div class="term">DOI</div><div class="definition">https://doi.org/10.48322/ybkm-rz28</div><div class="term">ReleaseDate</div><div class="definition">2025-12-04 13:29:18Z</div><div class="term">RevisionHistory</div><div class="definition"><div class="term">RevisionEvent</div><div class="definition"><div class="term">ReleaseDate</div><div class="definition">2020-09-14 16:47:17Z</div><div class="term">Note</div><div class="definition">Only known prior ReleaseDate of the metadata</div></div><div class="term">RevisionEvent</div><div class="definition"><div class="term">ReleaseDate</div><div class="definition">2025-11-14 16:02:21Z</div><div class="term">Note</div><div class="definition">Added PublicationInfo. Added ResourceType and NamingAuthority. Changed http to https in top-level schemaLocation attribute. Fixed version number separator in top-level schemaLocation attribute. Matched version number in schemaLocation attribute to updated value in Version tag. ZCB</div></div><div class="term">RevisionEvent</div><div class="definition"><div class="term">ReleaseDate</div><div class="definition">2025-12-04 13:29:18Z</div><div class="term">Note</div><div class="definition">Added MetadataRightsList and RightsList(s). Updated to 2.7.1. ZCB</div></div><div class="term">RevisionEvent</div><div class="definition"><div class="term">ReleaseDate</div><div class="definition">2026-03-05 13:29:18Z</div><div class="term">Note</div><div class="definition">Added ProductKey. JMW</div></div></div><div class="term">Description</div><div class="definition"><p>O2 is derived from measurements of stellar occultation in the Shumann Runge continuum.<br>
-As the star rises or sets relative to the satellite position the stellar spectrum is measured across<br>
-the GOLD spectral bandpass, from 132 to 162 nm. Geolocation of the OCC L1B data provides the<br>
-line-of-sight tangent altitude vs. time during the occultation. This results in a 2-dimensional<br>
-map of the stellar signal, in counts or calibrated geophysical units (irradiance), vs. wavelength<br>
-and tangent altitude. A sample of this image is represented in the top left panel of the OCC L1D<br>
-image in Figure 3-22.</p>
-<pre><code>  The measured counts profile is then normalized by the unattenuated, exo-atmospheric spectrum, yielding 
+       </div>
+      </p>
+     </div>
+    </div>
+    <div>
+     <p class="right">
+      <a href="PT1200S.xml" target="_blank">
+       View XML
+      </a>
+      |
+      <a href="PT1200S.json" target="_blank">
+       View JSON
+      </a>
+      |
+      <a href="https://spase-editor.heliocloud.org/?edit=https://spase-metadata.org/NASA/NumericalData/GOLD/L2/O2DEN/PT1200S.xml" target="_blank">
+       Edit
+      </a>
+     </p>
+     <h1 class="detail">
+      Details
+     </h1>
+    </div>
+    <div>
+     <div class="product">
+      <p class="version">
+       Version:2.7.1
+      </p>
+      <h1>
+       MetadataRightsList
+      </h1>
+      <div class="term">
+       Rights
+      </div>
+      <div class="definition">
+       <div class="term">
+        SchemeURI
+       </div>
+       <div class="definition">
+        https://spdx.org/licenses/
+       </div>
+       <div class="term">
+        RightsIdentifierScheme
+       </div>
+       <div class="definition">
+        SPDX
+       </div>
+       <div class="term">
+        RightsIdentifier
+       </div>
+       <div class="definition">
+        CC0-1.0
+       </div>
+       <div class="term">
+        RightsURI
+       </div>
+       <div class="definition">
+        https://spdx.org/licenses/CC0-1.0.html
+       </div>
+       <div class="term">
+        RightsName
+       </div>
+       <div class="definition">
+        Creative Commons Zero v1.0 Universal
+       </div>
+       <div class="term">
+        Note
+       </div>
+       <div class="definition">
+        CC0 1.0 Universal is the Creative Commons license applicable to all publicly available SPASE metadata descriptions
+       </div>
+      </div>
+     </div>
+     <div class="product">
+      <p class="version">
+       Version:2.7.1
+      </p>
+      <h1>
+       NumericalData
+      </h1>
+      <div class="term">
+       ResourceID
+      </div>
+      <div class="definition">
+       spase://NASA/NumericalData/GOLD/L2/O2DEN/PT1200S
+      </div>
+      <div class="term">
+       NamingAuthority
+      </div>
+      <div class="definition">
+       NASA
+      </div>
+      <div class="term">
+       ResourceType
+      </div>
+      <div class="definition">
+       NumericalData
+      </div>
+      <div class="term">
+       ResourceHeader
+      </div>
+      <div class="definition">
+       <div class="term">
+        ResourceName
+       </div>
+       <div class="definition">
+        Gold Level L2 Molecular Oxygen Density Profile
+       </div>
+       <div class="term">
+        DOI
+       </div>
+       <div class="definition">
+        https://doi.org/10.48322/ybkm-rz28
+       </div>
+       <div class="term">
+        ReleaseDate
+       </div>
+       <div class="definition">
+        2025-12-04 13:29:18Z
+       </div>
+       <div class="term">
+        RevisionHistory
+       </div>
+       <div class="definition">
+        <div class="term">
+         RevisionEvent
+        </div>
+        <div class="definition">
+         <div class="term">
+          ReleaseDate
+         </div>
+         <div class="definition">
+          2020-09-14 16:47:17Z
+         </div>
+         <div class="term">
+          Note
+         </div>
+         <div class="definition">
+          Only known prior ReleaseDate of the metadata
+         </div>
+        </div>
+        <div class="term">
+         RevisionEvent
+        </div>
+        <div class="definition">
+         <div class="term">
+          ReleaseDate
+         </div>
+         <div class="definition">
+          2025-11-14 16:02:21Z
+         </div>
+         <div class="term">
+          Note
+         </div>
+         <div class="definition">
+          Added PublicationInfo. Added ResourceType and NamingAuthority. Changed http to https in top-level schemaLocation attribute. Fixed version number separator in top-level schemaLocation attribute. Matched version number in schemaLocation attribute to updated value in Version tag. ZCB
+         </div>
+        </div>
+        <div class="term">
+         RevisionEvent
+        </div>
+        <div class="definition">
+         <div class="term">
+          ReleaseDate
+         </div>
+         <div class="definition">
+          2025-12-04 13:29:18Z
+         </div>
+         <div class="term">
+          Note
+         </div>
+         <div class="definition">
+          Added MetadataRightsList and RightsList(s). Updated to 2.7.1. ZCB
+         </div>
+        </div>
+        <div class="term">
+         RevisionEvent
+        </div>
+        <div class="definition">
+         <div class="term">
+          ReleaseDate
+         </div>
+         <div class="definition">
+          2026-03-05 13:29:18Z
+         </div>
+         <div class="term">
+          Note
+         </div>
+         <div class="definition">
+          Added ProductKey. JMW
+         </div>
+        </div>
+       </div>
+       <div class="term">
+        Description
+       </div>
+       <div class="definition">
+        <p>
+         O2 is derived from measurements of stellar occultation in the Shumann Runge continuum.
+         <br/>
+         As the star rises or sets relative to the satellite position the stellar spectrum is measured across
+         <br/>
+         the GOLD spectral bandpass, from 132 to 162 nm. Geolocation of the OCC L1B data provides the
+         <br/>
+         line-of-sight tangent altitude vs. time during the occultation. This results in a 2-dimensional
+         <br/>
+         map of the stellar signal, in counts or calibrated geophysical units (irradiance), vs. wavelength
+         <br/>
+         and tangent altitude. A sample of this image is represented in the top left panel of the OCC L1D
+         <br/>
+         image in Figure 3-22.
+        </p>
+        <pre><code>  The measured counts profile is then normalized by the unattenuated, exo-atmospheric spectrum, yielding 
   the slant path transmission profile vs. wavelength at the native L1C spectral sampling of 0.12 nm. 
   The defining characteristic of the atmospheric transmission is that it is completely independent of 
   instrument calibration or absolute accuracy. The full transmission spectrum is binned into a small 
@@ -361,36 +1048,2442 @@ image in Figure 3-22.</p>
   state vector – O2 density vs. geometric altitude – via a nonlinear, iterative inversion. The retrieved 
   O2 density profile is reported on a fixed altitude grid with 5-km spacing. The valid altitude range 
   varies for each event, but generally ranges from ~120 – 240.</code></pre>
-</div><div class="term">Acknowledgement</div><div class="definition">National Aeronautics and Space Administration; Dr. Richard Eastes</div><div class="term">PublicationInfo</div><div class="definition"><div class="term">Authors</div><div class="definition">Eastes, Richard</div><div class="term">PublicationDate</div><div class="definition">2025-11-14 16:02:21Z</div><div class="term">PublishedBy</div><div class="definition">Space Physics Data Facility</div></div><div class="term">Contacts</div><dd><table class="nested" cellspacing="0"><tr><th/><th class="center">Role</th><th class="center">Person</th><th class="center">StartDate</th><th class="center">StopDate</th><th class="center">Note</th></tr><tbody><tr><td>1.</td><td>PrincipalInvestigator</td><td><a target="_blank" href="https://spase-metadata.org/SMWG/Person/Richard.Eastes.html">spase://SMWG/Person/Richard.Eastes</a></td><td/><td/><td/></tr><tr><td>2.</td><td>MetadataContact</td><td><a target="_blank" href="https://spase-metadata.org/SMWG/Person/James.M.Weygand.html">spase://SMWG/Person/James.M.Weygand</a></td><td/><td/><td/></tr></tbody></table></dd><div class="term">InformationURL</div><div class="definition"><div class="term">Name</div><div class="definition">GOLD Homepage web page</div><div class="term">URL</div><div class="definition"><a target="_blank" href="https://gold.cs.ucf.edu/">https://gold.cs.ucf.edu/</a></div><div class="term">Description</div><div class="definition"><p>GOLD web page with news and other information.</p>
-</div></div><div class="term">InformationURL</div><div class="definition"><div class="term">Name</div><div class="definition">GOLD Missions Space Science Reviews Article</div><div class="term">URL</div><div class="definition"><a target="_blank" href="https://doi.org/10.1007/s11214-017-0392-2">https://doi.org/10.1007/s11214-017-0392-2</a></div><div class="term">Description</div><div class="definition"><p>Eastes, R.W., McClintock, W.E., Burns, A.G. et al. Space Sci. Rev. (2017) vol. 212, pp.383.</p>
-</div></div><div class="term">PriorIDs</div><div class="definition">spase://VSPO/NumericalData/GOLD/L2/O2DEN/PT1200S</div><div class="definition">spase://NASA/NumericalData/SES-14/GOLD/L2/O2DEN/PT1200S</div></div><div class="term">AccessInformation</div><div class="definition"><div class="term">RepositoryID</div><div class="definition"><a href="https://spase-metadata.org/SMWG/Repository/NASA/GSFC/SPDF.html">spase://SMWG/Repository/NASA/GSFC/SPDF</a></div><div class="term">Availability</div><div class="definition">Online</div><div class="term">AccessRights</div><div class="definition">Open</div><div class="term">RightsList</div><div class="definition"><div class="term">Rights</div><div class="definition"><div class="term">SchemeURI</div><div class="definition">https://spdx.org/licenses/</div><div class="term">RightsIdentifierScheme</div><div class="definition">SPDX</div><div class="term">RightsIdentifier</div><div class="definition">CC0-1.0</div><div class="term">RightsURI</div><div class="definition">https://spdx.org/licenses/CC0-1.0.html</div><div class="term">RightsName</div><div class="definition">Creative Commons Zero v1.0 Universal</div><div class="term">Note</div><div class="definition">CC0 1.0 Universal is the Creative Commons license applicable to all publicly available NASA Heliophysics data products</div></div></div><div class="term">AccessURL</div><div class="definition"><div class="term">Name</div><div class="definition">FTPS from SPDF (not with most browsers)</div><div class="term">URL</div><div class="definition"><a target="_blank" href="ftps://spdf.gsfc.nasa.gov/pub/data/gold/level2/">ftps://spdf.gsfc.nasa.gov/pub/data/gold/level2/</a></div><div class="term">Description</div><div class="definition"><p>FTPS access to Gold Level L2 data</p>
-</div></div><div class="term">AccessURL</div><div class="definition"><div class="term">Name</div><div class="definition">HTTPS from SPDF</div><div class="term">URL</div><div class="definition"><a target="_blank" href="https://spdf.gsfc.nasa.gov/pub/data/gold/level2/">https://spdf.gsfc.nasa.gov/pub/data/gold/level2/</a></div><div class="term">Description</div><div class="definition"><p>HTTPS access to Gold Level L2 data</p>
-</div></div><div class="term">AccessURL</div><div class="definition"><div class="term">Name</div><div class="definition">CDAWeb</div><div class="term">URL</div><div class="definition"><a target="_blank" href="https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=GOLD_L2_O2DEN&amp;index=sp_phys">https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=GOLD_L2_O2DEN&amp;index=sp_phys</a></div><div class="term">ProductKey</div><div class="definition">GOLD_L2_O2DEN</div><div class="term">Description</div><div class="definition"></div></div><div class="term">Format</div><div class="definition">NetCDF</div><div class="term">Acknowledgement</div><div class="definition">Space Physics Data Facility of the NASA Goddard Space Flight Center; Robert E McGuire</div></div><div class="term">ProcessingLevel</div><div class="definition">Calibrated</div><div class="term">ProviderName</div><div class="definition">GOLD</div><div class="term">ProviderResourceName</div><div class="definition">Gold Level L2 Molecular Oxygen Density Profile</div><div class="term">ProviderProcessingLevel</div><div class="definition">Level 2</div><div class="term">ProviderVersion</div><div class="definition">1</div><div class="term">InstrumentIDs</div><div class="definition"><a target="_blank" href="https://spase-metadata.org/SMWG/Instrument/GOLD.html">spase://SMWG/Instrument/GOLD</a></div><div class="term">MeasurementType</div><div class="definition">ImageIntensity</div><div class="term">TemporalDescription</div><div class="definition"><div class="term">TimeSpan</div><div class="definition"><div class="term">StartDate</div><div class="definition">2018-10-19 00:00:00</div><div class="term">RelativeStopDate</div><div class="definition">P1D</div></div><div class="term">Cadence</div><div class="definition">PT1200S</div></div><div class="term">ObservedRegion</div><div class="definition">Earth.NearSurface.Ionosphere</div><div class="term">Keywords</div><div class="definition">Day disk data</div><div class="definition">GOLD</div><div class="definition">SES-14</div><div class="parameter">Parameter #1</div><div class="definition"><div class="term">Name</div><div class="definition">Spectral Width</div><div class="term">ParameterKey</div><div class="definition">spectral_width</div><div class="term">Description</div><div class="definition"><p>Width of each data spectral channel.</p>
-</div><div class="term">Caveats</div><div class="definition">The size of the data array varies with the number of stellar occultations.</div><div class="term">Cadence</div><div class="definition">PT1200S</div><div class="term">Units</div><div class="definition">nm</div><div class="term">ValidMin</div><div class="definition">0</div><div class="term">ValidMax</div><div class="definition">10</div><div class="term">FillValue</div><div class="definition">9.9692e+36</div><div class="term">Wave</div><div class="definition"><div class="term">WaveType</div><div class="definition">Photon</div><div class="term">Qualifier</div><div class="definition">Scalar</div><div class="term">WaveQuantity</div><div class="definition">Wavelength</div></div></div><div class="parameter">Parameter #2</div><div class="definition"><div class="term">Name</div><div class="definition">O2 Density Random Uncertainty</div><div class="term">ParameterKey</div><div class="definition">o2den_unc_ran</div><div class="term">Description</div><div class="definition"><p>Random uncertainty of retrieved O2.</p>
-</div><div class="term">Caveats</div><div class="definition">The size of the data array varies with the number of stellar occultations.</div><div class="term">Cadence</div><div class="definition">PT1200S</div><div class="term">Units</div><div class="definition">mol/cm^3</div><div class="term">ValidMin</div><div class="definition">100000</div><div class="term">ValidMax</div><div class="definition">999999986991104</div><div class="term">FillValue</div><div class="definition">9.9692e+36</div><div class="term">Support</div><div class="definition"><div class="term">Qualifier</div><div class="definition">Uncertainty</div><div class="term">SupportQuantity</div><div class="definition">Other</div></div></div><div class="parameter">Parameter #3</div><div class="definition"><div class="term">Name</div><div class="definition">Reference Longitude</div><div class="term">ParameterKey</div><div class="definition">lon_ref</div><div class="term">Description</div><div class="definition"><p>Longitude at 225 km tangent point.</p>
-</div><div class="term">Caveats</div><div class="definition">The size of the data array varies with the number of stellar occultations.</div><div class="term">Cadence</div><div class="definition">PT1200S</div><div class="term">Units</div><div class="definition">degrees</div><div class="term">ValidMin</div><div class="definition">-180</div><div class="term">ValidMax</div><div class="definition">180</div><div class="term">FillValue</div><div class="definition">9.9692e+36</div><div class="term">Support</div><div class="definition"><div class="term">Qualifier</div><div class="definition">Direction</div><div class="term">SupportQuantity</div><div class="definition">Positional</div></div></div><div class="parameter">Parameter #4</div><div class="definition"><div class="term">Name</div><div class="definition">O2 Density Model Uncertainty</div><div class="term">ParameterKey</div><div class="definition">o2den_unc_mod</div><div class="term">Description</div><div class="definition"><p>Model uncertainty of retrieved O2.</p>
-</div><div class="term">Caveats</div><div class="definition">The size of the data array varies with the number of stellar occultations.</div><div class="term">Cadence</div><div class="definition">PT1200S</div><div class="term">Units</div><div class="definition">mol/cm^3</div><div class="term">ValidMin</div><div class="definition">100000</div><div class="term">ValidMax</div><div class="definition">999999986991104</div><div class="term">FillValue</div><div class="definition">9.9692e+36</div><div class="term">Support</div><div class="definition"><div class="term">Qualifier</div><div class="definition">Uncertainty</div><div class="term">SupportQuantity</div><div class="definition">Other</div></div></div><div class="parameter">Parameter #5</div><div class="definition"><div class="term">Name</div><div class="definition">Temperature</div><div class="term">ParameterKey</div><div class="definition">temperature</div><div class="term">Description</div><div class="definition"><p>Assumed temperature profile.</p>
-</div><div class="term">Caveats</div><div class="definition">The size of the data array varies with the number of stellar occultations.</div><div class="term">Cadence</div><div class="definition">PT1200S</div><div class="term">Units</div><div class="definition">K</div><div class="term">ValidMin</div><div class="definition">0</div><div class="term">ValidMax</div><div class="definition">1000</div><div class="term">FillValue</div><div class="definition">9.9692e+36</div><div class="term">Particle</div><div class="definition"><div class="term">ParticleType</div><div class="definition">Molecule</div><div class="term">ParticleQuantity</div><div class="definition">Temperature</div><div class="term">AtomicNumber</div><div class="definition">16</div></div></div><div class="parameter">Parameter #6</div><div class="definition"><div class="term">Name</div><div class="definition">Retrieval geometric altitude grid</div><div class="term">ParameterKey</div><div class="definition">zret</div><div class="term">Description</div><div class="definition"><p>Retrieval geometric altitude grid.</p>
-</div><div class="term">Caveats</div><div class="definition">The size of the data array varies with the number of stellar occultations.</div><div class="term">Cadence</div><div class="definition">PT1200S</div><div class="term">Units</div><div class="definition">km</div><div class="term">ValidMin</div><div class="definition">0</div><div class="term">ValidMax</div><div class="definition">1000</div><div class="term">FillValue</div><div class="definition">9.9692e+36</div><div class="term">Support</div><div class="definition"><div class="term">Qualifier</div><div class="definition">Direction</div><div class="term">SupportQuantity</div><div class="definition">Positional</div></div></div><div class="parameter">Parameter #7</div><div class="definition"><div class="term">Name</div><div class="definition">O2 Density</div><div class="term">ParameterKey</div><div class="definition">o2den</div><div class="term">Description</div><div class="definition"><p>Retrieved O2 density.</p>
-</div><div class="term">Caveats</div><div class="definition">The size of the data array varies with the number of stellar occultations.</div><div class="term">Cadence</div><div class="definition">PT1200S</div><div class="term">Units</div><div class="definition">mol/cm^3</div><div class="term">ValidMin</div><div class="definition">100000</div><div class="term">ValidMax</div><div class="definition">999999986991104</div><div class="term">FillValue</div><div class="definition">9.9692e+36</div><div class="term">Particle</div><div class="definition"><div class="term">ParticleType</div><div class="definition">Molecule</div><div class="term">ParticleQuantity</div><div class="definition">NumberDensity</div><div class="term">AtomicNumber</div><div class="definition">16</div></div></div><div class="parameter">Parameter #8</div><div class="definition"><div class="term">Name</div><div class="definition">Number of Data Points</div><div class="term">ParameterKey</div><div class="definition">nzdat</div><div class="term">Description</div><div class="definition"><p>Number of points in data altitude grid.</p>
-</div><div class="term">Caveats</div><div class="definition">The size of the data array varies with the number of stellar occultations.</div><div class="term">Cadence</div><div class="definition">PT1200S</div><div class="term">FillValue</div><div class="definition">-2147483647</div><div class="term">Support</div><div class="definition"><div class="term">Qualifier</div><div class="definition">Scalar</div><div class="term">SupportQuantity</div><div class="definition">Other</div></div></div><div class="parameter">Parameter #9</div><div class="definition"><div class="term">Name</div><div class="definition">UTC time</div><div class="term">ParameterKey</div><div class="definition">TIME_UTC</div><div class="term">Description</div><div class="definition"><p>UTC date/time string: &quot;2017-06-21T23:46:38.015Z&quot;.</p>
-</div><div class="term">Caveats</div><div class="definition">The size of the data array varies with the number of stellar occultations.</div><div class="term">Cadence</div><div class="definition">PT1200S</div><div class="term">Units</div><div class="definition">date/time</div><div class="term">FillValue</div><div class="definition">' '</div><div class="term">Support</div><div class="definition"><div class="term">Qualifier</div><div class="definition">Magnitude</div><div class="term">SupportQuantity</div><div class="definition">Temporal</div></div></div><div class="parameter">Parameter #10</div><div class="definition"><div class="term">Name</div><div class="definition">Number of Iterations</div><div class="term">ParameterKey</div><div class="definition">n_iter</div><div class="term">Description</div><div class="definition"><p>Number of iterations to converge.</p>
-</div><div class="term">Caveats</div><div class="definition">The size of the data array varies with the number of stellar occultations.</div><div class="term">Cadence</div><div class="definition">PT1200S</div><div class="term">Units</div><div class="definition">number</div><div class="term">FillValue</div><div class="definition">-2147483647</div><div class="term">Support</div><div class="definition"><div class="term">Qualifier</div><div class="definition">Scalar</div><div class="term">SupportQuantity</div><div class="definition">Other</div></div></div><div class="parameter">Parameter #11</div><div class="definition"><div class="term">Name</div><div class="definition">Convergence flag</div><div class="term">ParameterKey</div><div class="definition">convergence</div><div class="term">Description</div><div class="definition"><p>Retrieval convergence flag (= 1 if retrieval converged).</p>
-</div><div class="term">Caveats</div><div class="definition">The size of the data array varies with the number of stellar occultations.</div><div class="term">Cadence</div><div class="definition">PT1200S</div><div class="term">FillValue</div><div class="definition">-2147483647</div><div class="term">Support</div><div class="definition"><div class="term">Qualifier</div><div class="definition">Scalar</div><div class="term">SupportQuantity</div><div class="definition">Other</div></div></div><div class="parameter">Parameter #12</div><div class="definition"><div class="term">Name</div><div class="definition">Number of Levels in Retrieval Altitude Grid</div><div class="term">ParameterKey</div><div class="definition">nzret</div><div class="term">Description</div><div class="definition"><p>Number of levels in retrieval altitude grid.</p>
-</div><div class="term">Caveats</div><div class="definition">The size of the data array varies with the number of stellar occultations.</div><div class="term">Cadence</div><div class="definition">PT1200S</div><div class="term">Units</div><div class="definition">number</div><div class="term">FillValue</div><div class="definition">-2147483647</div><div class="term">Support</div><div class="definition"><div class="term">Qualifier</div><div class="definition">Scalar</div><div class="term">SupportQuantity</div><div class="definition">Other</div></div></div><div class="parameter">Parameter #13</div><div class="definition"><div class="term">Name</div><div class="definition">L1C File Name</div><div class="term">ParameterKey</div><div class="definition">input_l1c_file</div><div class="term">Description</div><div class="definition"><p>L1C file name for each occultation.</p>
-</div><div class="term">Caveats</div><div class="definition">The size of the data array varies with the number of stellar occultations.</div><div class="term">Cadence</div><div class="definition">PT1200S</div><div class="term">FillValue</div><div class="definition">' '</div><div class="term">Support</div><div class="definition"><div class="term">Qualifier</div><div class="definition">Scalar</div><div class="term">SupportQuantity</div><div class="definition">Other</div></div></div><div class="parameter">Parameter #14</div><div class="definition"><div class="term">Name</div><div class="definition">O2 Systematic Uncertainty</div><div class="term">ParameterKey</div><div class="definition">o2den_unc_sys</div><div class="term">Description</div><div class="definition"><p>Systematic uncertainty of retrieved O2.</p>
-</div><div class="term">Caveats</div><div class="definition">The size of the data array varies with the number of stellar occultations.</div><div class="term">Cadence</div><div class="definition">PT1200S</div><div class="term">ValidMin</div><div class="definition">100000</div><div class="term">ValidMax</div><div class="definition">999999986991104</div><div class="term">FillValue</div><div class="definition">9.9692e+36</div><div class="term">Support</div><div class="definition"><div class="term">Qualifier</div><div class="definition">Uncertainty</div><div class="term">SupportQuantity</div><div class="definition">Other</div></div></div><div class="parameter">Parameter #15</div><div class="definition"><div class="term">Name</div><div class="definition">Reference Latitude</div><div class="term">ParameterKey</div><div class="definition">lat_ref</div><div class="term">Description</div><div class="definition"><p>Latitude at 225 km tangent point.</p>
-</div><div class="term">Caveats</div><div class="definition">The size of the data array varies with the number of stellar occultations.</div><div class="term">Cadence</div><div class="definition">PT1200S</div><div class="term">Units</div><div class="definition">degrees</div><div class="term">ValidMin</div><div class="definition">-90</div><div class="term">ValidMax</div><div class="definition">90</div><div class="term">FillValue</div><div class="definition">9.9692e+36</div><div class="term">Support</div><div class="definition"><div class="term">Qualifier</div><div class="definition">Direction</div><div class="term">SupportQuantity</div><div class="definition">Positional</div></div></div><div class="parameter">Parameter #16</div><div class="definition"><div class="term">Name</div><div class="definition">Normalization</div><div class="term">ParameterKey</div><div class="definition">normalization</div><div class="term">Description</div><div class="definition"><p>Transmission normalization factor (unattenuated stellar brightness).</p>
-</div><div class="term">Caveats</div><div class="definition">The size of the data array varies with the number of stellar occultations.</div><div class="term">Cadence</div><div class="definition">PT1200S</div><div class="term">Units</div><div class="definition">counts</div><div class="term">ValidMin</div><div class="definition">0</div><div class="term">ValidMax</div><div class="definition">90</div><div class="term">FillValue</div><div class="definition">NaN</div><div class="term">Support</div><div class="definition"><div class="term">Qualifier</div><div class="definition">Scalar</div><div class="term">SupportQuantity</div><div class="definition">Other</div></div></div><div class="parameter">Parameter #17</div><div class="definition"><div class="term">Name</div><div class="definition">O2 Data Quality</div><div class="term">ParameterKey</div><div class="definition">o2den_dqi</div><div class="term">Description</div><div class="definition"><p>O2 data quality indicator per altitude (see table in The GOLD Public Science Data Products Guide).</p>
-</div><div class="term">Caveats</div><div class="definition">The size of the data array varies with the number of stellar occultations.</div><div class="term">Cadence</div><div class="definition">PT1200S</div><div class="term">ValidMin</div><div class="definition">0</div><div class="term">ValidMax</div><div class="definition">2147483647</div><div class="term">FillValue</div><div class="definition">-2147483647</div><div class="term">Support</div><div class="definition"><div class="term">Qualifier</div><div class="definition">Scalar</div><div class="term">SupportQuantity</div><div class="definition">Other</div></div></div><div class="parameter">Parameter #18</div><div class="definition"><div class="term">Name</div><div class="definition">Channel</div><div class="term">ParameterKey</div><div class="definition">channel</div><div class="term">Description</div><div class="definition"><p>GOLD channel (‘A’ or ‘B’).</p>
-</div><div class="term">Caveats</div><div class="definition">The size of the data array varies with the number of stellar occultations.</div><div class="term">Cadence</div><div class="definition">PT1200S</div><div class="term">Support</div><div class="definition"><div class="term">Qualifier</div><div class="definition">Scalar</div><div class="term">SupportQuantity</div><div class="definition">Other</div></div></div><div class="parameter">Parameter #19</div><div class="definition"><div class="term">Name</div><div class="definition">Central Wavelength</div><div class="term">ParameterKey</div><div class="definition">central_wavelength</div><div class="term">Description</div><div class="definition"><p>Center wavelength of each data channel.</p>
-</div><div class="term">Caveats</div><div class="definition">The size of the data array varies with the number of stellar occultations.</div><div class="term">Cadence</div><div class="definition">PT1200S</div><div class="term">Units</div><div class="definition">nm</div><div class="term">ValidMin</div><div class="definition">0</div><div class="term">ValidMax</div><div class="definition">400</div><div class="term">FillValue</div><div class="definition">9.9692e+36</div><div class="term">Wave</div><div class="definition"><div class="term">WaveType</div><div class="definition">Photon</div><div class="term">Qualifier</div><div class="definition">Scalar</div><div class="term">WaveQuantity</div><div class="definition">Wavelength</div></div></div><div class="parameter">Parameter #20</div><div class="definition"><div class="term">Name</div><div class="definition">Signal to Noise</div><div class="term">ParameterKey</div><div class="definition">signal_to_noise</div><div class="term">Description</div><div class="definition"><p>Effective signal to noise (above atmosphere).</p>
-</div><div class="term">Caveats</div><div class="definition">The size of the data array varies with the number of stellar occultations.</div><div class="term">Cadence</div><div class="definition">PT1200S</div><div class="term">Support</div><div class="definition"><div class="term">Qualifier</div><div class="definition">Scalar</div><div class="term">SupportQuantity</div><div class="definition">Other</div></div></div><div class="parameter">Parameter #21</div><div class="definition"><div class="term">Name</div><div class="definition">Number of Points in Data Altitude Grid</div><div class="term">ParameterKey</div><div class="definition">zdat</div><div class="term">Description</div><div class="definition"><p>Number of points in data altitude grid.</p>
-</div><div class="term">Caveats</div><div class="definition">The size of the data array varies with the number of stellar occultations.</div><div class="term">Cadence</div><div class="definition">PT1200S</div><div class="term">Units</div><div class="definition">number</div><div class="term">Support</div><div class="definition"><div class="term">Qualifier</div><div class="definition">Scalar</div><div class="term">SupportQuantity</div><div class="definition">Other</div></div></div><div class="parameter">Parameter #22</div><div class="definition"><div class="term">Name</div><div class="definition">Overall Quality Flag</div><div class="term">ParameterKey</div><div class="definition">dqi</div><div class="term">Description</div><div class="definition"><p>Overall data quality index per scan (see table below).</p>
-</div><div class="term">Caveats</div><div class="definition">The size of the data array varies with the number of stellar occultations.</div><div class="term">Cadence</div><div class="definition">PT1200S</div><div class="term">ValidMin</div><div class="definition">0</div><div class="term">ValidMax</div><div class="definition">1000</div><div class="term">FillValue</div><div class="definition">9.9692e+36</div><div class="term">Support</div><div class="definition"><div class="term">Qualifier</div><div class="definition">Scalar</div><div class="term">SupportQuantity</div><div class="definition">Other</div></div></div><div class="parameter">Parameter #23</div><div class="definition"><div class="term">Name</div><div class="definition">Model Fit Data</div><div class="term">ParameterKey</div><div class="definition">transmission_fit</div><div class="term">Description</div><div class="definition"><p>Forward model fit to data.</p>
-</div><div class="term">Caveats</div><div class="definition">The size of the data array varies with the number of stellar occultations.</div><div class="term">Cadence</div><div class="definition">PT1200S</div><div class="term">ValidMin</div><div class="definition">0</div><div class="term">ValidMax</div><div class="definition">10</div><div class="term">FillValue</div><div class="definition">9.9692e+36</div><div class="term">Support</div><div class="definition"><div class="term">Qualifier</div><div class="definition">Scalar</div><div class="term">SupportQuantity</div><div class="definition">Other</div></div></div><div class="parameter">Parameter #24</div><div class="definition"><div class="term">Name</div><div class="definition">Transmission Profile</div><div class="term">ParameterKey</div><div class="definition">transmission</div><div class="term">Description</div><div class="definition"><p>Measured slant path transmission profile.</p>
-</div><div class="term">Caveats</div><div class="definition">The size of the data array varies with the number of stellar occultations.</div><div class="term">Cadence</div><div class="definition">PT1200S</div><div class="term">ValidMin</div><div class="definition">0</div><div class="term">ValidMax</div><div class="definition">10</div><div class="term">FillValue</div><div class="definition">9.9692e+36</div><div class="term">Support</div><div class="definition"><div class="term">Qualifier</div><div class="definition">Scalar</div><div class="term">SupportQuantity</div><div class="definition">Other</div></div></div><div class="parameter">Parameter #25</div><div class="definition"><div class="term">Name</div><div class="definition">A Priori O2 Density</div><div class="term">ParameterKey</div><div class="definition">o2_apriori</div><div class="term">Description</div><div class="definition"><p>A priori O2 density used in retrieval.</p>
-</div><div class="term">Caveats</div><div class="definition">The size of the data array varies with the number of stellar occultations.</div><div class="term">Cadence</div><div class="definition">PT1200S</div><div class="term">Units</div><div class="definition">mol/cm^3</div><div class="term">ValidMin</div><div class="definition">100000</div><div class="term">ValidMax</div><div class="definition">999999986991104</div><div class="term">FillValue</div><div class="definition">9.9692e+36</div><div class="term">Particle</div><div class="definition"><div class="term">ParticleType</div><div class="definition">Molecule</div><div class="term">ParticleQuantity</div><div class="definition">NumberDensity</div><div class="term">AtomicNumber</div><div class="definition">16</div></div></div><div class="parameter">Parameter #26</div><div class="definition"><div class="term">Name</div><div class="definition">Solar Zenith Angle at 225 km</div><div class="term">ParameterKey</div><div class="definition">sza_ref</div><div class="term">Description</div><div class="definition"><p>Solar zenith angle at 225 km tangent point.</p>
-</div><div class="term">Caveats</div><div class="definition">The size of the data array varies with the number of stellar occultations.</div><div class="term">Cadence</div><div class="definition">PT1200S</div><div class="term">Units</div><div class="definition">degrees</div><div class="term">ValidMin</div><div class="definition">0</div><div class="term">ValidMax</div><div class="definition">180</div><div class="term">FillValue</div><div class="definition">9.9692e+36</div><div class="term">Support</div><div class="definition"><div class="term">Qualifier</div><div class="definition">Direction</div><div class="term">SupportQuantity</div><div class="definition">Positional</div></div></div><div class="parameter">Parameter #27</div><div class="definition"><div class="term">Name</div><div class="definition">Transmission Profile Uncertainty</div><div class="term">ParameterKey</div><div class="definition">transmission_unc</div><div class="term">Description</div><div class="definition"><p>Transmission variance.</p>
-</div><div class="term">Caveats</div><div class="definition">The size of the data array varies with the number of stellar occultations.</div><div class="term">Cadence</div><div class="definition">PT1200S</div><div class="term">ValidMin</div><div class="definition">0</div><div class="term">ValidMax</div><div class="definition">10</div><div class="term">FillValue</div><div class="definition">9.9692e+36</div><div class="term">Support</div><div class="definition"><div class="term">Qualifier</div><div class="definition">Scalar</div><div class="term">SupportQuantity</div><div class="definition">Other</div></div></div><div class="parameter">Parameter #28</div><div class="definition"><div class="term">Name</div><div class="definition">Name of Target Star</div><div class="term">ParameterKey</div><div class="definition">target_star</div><div class="term">Description</div><div class="definition"><p>Name of target star.</p>
-</div><div class="term">Caveats</div><div class="definition">The size of the data array varies with the number of stellar occultations.</div><div class="term">Cadence</div><div class="definition">PT1200S</div><div class="term">ValidMin</div><div class="definition">0</div><div class="term">ValidMax</div><div class="definition">5</div><div class="term">FillValue</div><div class="definition">9.9692e+36</div><div class="term">Support</div><div class="definition"><div class="term">Qualifier</div><div class="definition">Scalar</div><div class="term">SupportQuantity</div><div class="definition">Other</div></div></div></div></div></div></div></body></html>
+       </div>
+       <div class="term">
+        Acknowledgement
+       </div>
+       <div class="definition">
+        National Aeronautics and Space Administration; Dr. Richard Eastes
+       </div>
+       <div class="term">
+        PublicationInfo
+       </div>
+       <div class="definition">
+        <div class="term">
+         Authors
+        </div>
+        <div class="definition">
+         Eastes, Richard
+        </div>
+        <div class="term">
+         PublicationDate
+        </div>
+        <div class="definition">
+         2025-11-14 16:02:21Z
+        </div>
+        <div class="term">
+         PublishedBy
+        </div>
+        <div class="definition">
+         Space Physics Data Facility
+        </div>
+       </div>
+       <div class="term">
+        Contacts
+       </div>
+       <dd>
+        <table cellspacing="0" class="nested">
+         <tr>
+          <th>
+          </th>
+          <th class="center">
+           Role
+          </th>
+          <th class="center">
+           Person
+          </th>
+          <th class="center">
+           StartDate
+          </th>
+          <th class="center">
+           StopDate
+          </th>
+          <th class="center">
+           Note
+          </th>
+         </tr>
+         <tbody>
+          <tr>
+           <td>
+            1.
+           </td>
+           <td>
+            PrincipalInvestigator
+           </td>
+           <td>
+            <a href="https://spase-metadata.org/SMWG/Person/Richard.Eastes.html" target="_blank">
+             spase://SMWG/Person/Richard.Eastes
+            </a>
+           </td>
+           <td>
+           </td>
+           <td>
+           </td>
+           <td>
+           </td>
+          </tr>
+          <tr>
+           <td>
+            2.
+           </td>
+           <td>
+            MetadataContact
+           </td>
+           <td>
+            <a href="https://spase-metadata.org/SMWG/Person/James.M.Weygand.html" target="_blank">
+             spase://SMWG/Person/James.M.Weygand
+            </a>
+           </td>
+           <td>
+           </td>
+           <td>
+           </td>
+           <td>
+           </td>
+          </tr>
+         </tbody>
+        </table>
+       </dd>
+       <div class="term">
+        InformationURL
+       </div>
+       <div class="definition">
+        <div class="term">
+         Name
+        </div>
+        <div class="definition">
+         GOLD Homepage web page
+        </div>
+        <div class="term">
+         URL
+        </div>
+        <div class="definition">
+         <a href="https://gold.cs.ucf.edu/" target="_blank">
+          https://gold.cs.ucf.edu/
+         </a>
+        </div>
+        <div class="term">
+         Description
+        </div>
+        <div class="definition">
+         <p>
+          GOLD web page with news and other information.
+         </p>
+        </div>
+       </div>
+       <div class="term">
+        InformationURL
+       </div>
+       <div class="definition">
+        <div class="term">
+         Name
+        </div>
+        <div class="definition">
+         GOLD Missions Space Science Reviews Article
+        </div>
+        <div class="term">
+         URL
+        </div>
+        <div class="definition">
+         <a href="https://doi.org/10.1007/s11214-017-0392-2" target="_blank">
+          https://doi.org/10.1007/s11214-017-0392-2
+         </a>
+        </div>
+        <div class="term">
+         Description
+        </div>
+        <div class="definition">
+         <p>
+          Eastes, R.W., McClintock, W.E., Burns, A.G. et al. Space Sci. Rev. (2017) vol. 212, pp.383.
+         </p>
+        </div>
+       </div>
+       <div class="term">
+        PriorIDs
+       </div>
+       <div class="definition">
+        spase://VSPO/NumericalData/GOLD/L2/O2DEN/PT1200S
+       </div>
+       <div class="definition">
+        spase://NASA/NumericalData/SES-14/GOLD/L2/O2DEN/PT1200S
+       </div>
+      </div>
+      <div class="term">
+       AccessInformation
+      </div>
+      <div class="definition">
+       <div class="term">
+        RepositoryID
+       </div>
+       <div class="definition">
+        <a href="https://spase-metadata.org/SMWG/Repository/NASA/GSFC/SPDF.html">
+         spase://SMWG/Repository/NASA/GSFC/SPDF
+        </a>
+       </div>
+       <div class="term">
+        Availability
+       </div>
+       <div class="definition">
+        Online
+       </div>
+       <div class="term">
+        AccessRights
+       </div>
+       <div class="definition">
+        Open
+       </div>
+       <div class="term">
+        RightsList
+       </div>
+       <div class="definition">
+        <div class="term">
+         Rights
+        </div>
+        <div class="definition">
+         <div class="term">
+          SchemeURI
+         </div>
+         <div class="definition">
+          https://spdx.org/licenses/
+         </div>
+         <div class="term">
+          RightsIdentifierScheme
+         </div>
+         <div class="definition">
+          SPDX
+         </div>
+         <div class="term">
+          RightsIdentifier
+         </div>
+         <div class="definition">
+          CC0-1.0
+         </div>
+         <div class="term">
+          RightsURI
+         </div>
+         <div class="definition">
+          https://spdx.org/licenses/CC0-1.0.html
+         </div>
+         <div class="term">
+          RightsName
+         </div>
+         <div class="definition">
+          Creative Commons Zero v1.0 Universal
+         </div>
+         <div class="term">
+          Note
+         </div>
+         <div class="definition">
+          CC0 1.0 Universal is the Creative Commons license applicable to all publicly available NASA Heliophysics data products
+         </div>
+        </div>
+       </div>
+       <div class="term">
+        AccessURL
+       </div>
+       <div class="definition">
+        <div class="term">
+         Name
+        </div>
+        <div class="definition">
+         FTPS from SPDF (not with most browsers)
+        </div>
+        <div class="term">
+         URL
+        </div>
+        <div class="definition">
+         <a href="ftps://spdf.gsfc.nasa.gov/pub/data/gold/level2/" target="_blank">
+          ftps://spdf.gsfc.nasa.gov/pub/data/gold/level2/
+         </a>
+        </div>
+        <div class="term">
+         Description
+        </div>
+        <div class="definition">
+         <p>
+          FTPS access to Gold Level L2 data
+         </p>
+        </div>
+       </div>
+       <div class="term">
+        AccessURL
+       </div>
+       <div class="definition">
+        <div class="term">
+         Name
+        </div>
+        <div class="definition">
+         HTTPS from SPDF
+        </div>
+        <div class="term">
+         URL
+        </div>
+        <div class="definition">
+         <a href="https://spdf.gsfc.nasa.gov/pub/data/gold/level2/" target="_blank">
+          https://spdf.gsfc.nasa.gov/pub/data/gold/level2/
+         </a>
+        </div>
+        <div class="term">
+         Description
+        </div>
+        <div class="definition">
+         <p>
+          HTTPS access to Gold Level L2 data
+         </p>
+        </div>
+       </div>
+       <div class="term">
+        AccessURL
+       </div>
+       <div class="definition">
+        <div class="term">
+         Name
+        </div>
+        <div class="definition">
+         CDAWeb
+        </div>
+        <div class="term">
+         URL
+        </div>
+        <div class="definition">
+         <a href="https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=GOLD_L2_O2DEN&amp;index=sp_phys" target="_blank">
+          https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=GOLD_L2_O2DEN&amp;index=sp_phys
+         </a>
+        </div>
+        <div class="term">
+         ProductKey
+        </div>
+        <div class="definition">
+         GOLD_L2_O2DEN
+        </div>
+        <div class="term">
+         Description
+        </div>
+        <div class="definition">
+        </div>
+       </div>
+       <div class="term">
+        Format
+       </div>
+       <div class="definition">
+        NetCDF
+       </div>
+       <div class="term">
+        Acknowledgement
+       </div>
+       <div class="definition">
+        Space Physics Data Facility of the NASA Goddard Space Flight Center; Robert E McGuire
+       </div>
+      </div>
+      <div class="term">
+       ProcessingLevel
+      </div>
+      <div class="definition">
+       Calibrated
+      </div>
+      <div class="term">
+       ProviderName
+      </div>
+      <div class="definition">
+       GOLD
+      </div>
+      <div class="term">
+       ProviderResourceName
+      </div>
+      <div class="definition">
+       Gold Level L2 Molecular Oxygen Density Profile
+      </div>
+      <div class="term">
+       ProviderProcessingLevel
+      </div>
+      <div class="definition">
+       Level 2
+      </div>
+      <div class="term">
+       ProviderVersion
+      </div>
+      <div class="definition">
+       1
+      </div>
+      <div class="term">
+       InstrumentIDs
+      </div>
+      <div class="definition">
+       <a href="https://spase-metadata.org/SMWG/Instrument/GOLD.html" target="_blank">
+        spase://SMWG/Instrument/GOLD
+       </a>
+      </div>
+      <div class="term">
+       MeasurementType
+      </div>
+      <div class="definition">
+       ImageIntensity
+      </div>
+      <div class="term">
+       TemporalDescription
+      </div>
+      <div class="definition">
+       <div class="term">
+        TimeSpan
+       </div>
+       <div class="definition">
+        <div class="term">
+         StartDate
+        </div>
+        <div class="definition">
+         2018-10-19 00:00:00
+        </div>
+        <div class="term">
+         RelativeStopDate
+        </div>
+        <div class="definition">
+         P1D
+        </div>
+       </div>
+       <div class="term">
+        Cadence
+       </div>
+       <div class="definition">
+        PT1200S
+       </div>
+      </div>
+      <div class="term">
+       ObservedRegion
+      </div>
+      <div class="definition">
+       Earth.NearSurface.Ionosphere
+      </div>
+      <div class="term">
+       Keywords
+      </div>
+      <div class="definition">
+       Day disk data
+      </div>
+      <div class="definition">
+       GOLD
+      </div>
+      <div class="definition">
+       SES-14
+      </div>
+      <div class="parameter">
+       Parameter #1
+      </div>
+      <div class="definition">
+       <div class="term">
+        Name
+       </div>
+       <div class="definition">
+        Spectral Width
+       </div>
+       <div class="term">
+        ParameterKey
+       </div>
+       <div class="definition">
+        spectral_width
+       </div>
+       <div class="term">
+        Description
+       </div>
+       <div class="definition">
+        <p>
+         Width of each data spectral channel.
+        </p>
+       </div>
+       <div class="term">
+        Caveats
+       </div>
+       <div class="definition">
+        The size of the data array varies with the number of stellar occultations.
+       </div>
+       <div class="term">
+        Cadence
+       </div>
+       <div class="definition">
+        PT1200S
+       </div>
+       <div class="term">
+        Units
+       </div>
+       <div class="definition">
+        nm
+       </div>
+       <div class="term">
+        ValidMin
+       </div>
+       <div class="definition">
+        0
+       </div>
+       <div class="term">
+        ValidMax
+       </div>
+       <div class="definition">
+        10
+       </div>
+       <div class="term">
+        FillValue
+       </div>
+       <div class="definition">
+        9.9692e+36
+       </div>
+       <div class="term">
+        Wave
+       </div>
+       <div class="definition">
+        <div class="term">
+         WaveType
+        </div>
+        <div class="definition">
+         Photon
+        </div>
+        <div class="term">
+         Qualifier
+        </div>
+        <div class="definition">
+         Scalar
+        </div>
+        <div class="term">
+         WaveQuantity
+        </div>
+        <div class="definition">
+         Wavelength
+        </div>
+       </div>
+      </div>
+      <div class="parameter">
+       Parameter #2
+      </div>
+      <div class="definition">
+       <div class="term">
+        Name
+       </div>
+       <div class="definition">
+        O2 Density Random Uncertainty
+       </div>
+       <div class="term">
+        ParameterKey
+       </div>
+       <div class="definition">
+        o2den_unc_ran
+       </div>
+       <div class="term">
+        Description
+       </div>
+       <div class="definition">
+        <p>
+         Random uncertainty of retrieved O2.
+        </p>
+       </div>
+       <div class="term">
+        Caveats
+       </div>
+       <div class="definition">
+        The size of the data array varies with the number of stellar occultations.
+       </div>
+       <div class="term">
+        Cadence
+       </div>
+       <div class="definition">
+        PT1200S
+       </div>
+       <div class="term">
+        Units
+       </div>
+       <div class="definition">
+        mol/cm^3
+       </div>
+       <div class="term">
+        ValidMin
+       </div>
+       <div class="definition">
+        100000
+       </div>
+       <div class="term">
+        ValidMax
+       </div>
+       <div class="definition">
+        999999986991104
+       </div>
+       <div class="term">
+        FillValue
+       </div>
+       <div class="definition">
+        9.9692e+36
+       </div>
+       <div class="term">
+        Support
+       </div>
+       <div class="definition">
+        <div class="term">
+         Qualifier
+        </div>
+        <div class="definition">
+         Uncertainty
+        </div>
+        <div class="term">
+         SupportQuantity
+        </div>
+        <div class="definition">
+         Other
+        </div>
+       </div>
+      </div>
+      <div class="parameter">
+       Parameter #3
+      </div>
+      <div class="definition">
+       <div class="term">
+        Name
+       </div>
+       <div class="definition">
+        Reference Longitude
+       </div>
+       <div class="term">
+        ParameterKey
+       </div>
+       <div class="definition">
+        lon_ref
+       </div>
+       <div class="term">
+        Description
+       </div>
+       <div class="definition">
+        <p>
+         Longitude at 225 km tangent point.
+        </p>
+       </div>
+       <div class="term">
+        Caveats
+       </div>
+       <div class="definition">
+        The size of the data array varies with the number of stellar occultations.
+       </div>
+       <div class="term">
+        Cadence
+       </div>
+       <div class="definition">
+        PT1200S
+       </div>
+       <div class="term">
+        Units
+       </div>
+       <div class="definition">
+        degrees
+       </div>
+       <div class="term">
+        ValidMin
+       </div>
+       <div class="definition">
+        -180
+       </div>
+       <div class="term">
+        ValidMax
+       </div>
+       <div class="definition">
+        180
+       </div>
+       <div class="term">
+        FillValue
+       </div>
+       <div class="definition">
+        9.9692e+36
+       </div>
+       <div class="term">
+        Support
+       </div>
+       <div class="definition">
+        <div class="term">
+         Qualifier
+        </div>
+        <div class="definition">
+         Direction
+        </div>
+        <div class="term">
+         SupportQuantity
+        </div>
+        <div class="definition">
+         Positional
+        </div>
+       </div>
+      </div>
+      <div class="parameter">
+       Parameter #4
+      </div>
+      <div class="definition">
+       <div class="term">
+        Name
+       </div>
+       <div class="definition">
+        O2 Density Model Uncertainty
+       </div>
+       <div class="term">
+        ParameterKey
+       </div>
+       <div class="definition">
+        o2den_unc_mod
+       </div>
+       <div class="term">
+        Description
+       </div>
+       <div class="definition">
+        <p>
+         Model uncertainty of retrieved O2.
+        </p>
+       </div>
+       <div class="term">
+        Caveats
+       </div>
+       <div class="definition">
+        The size of the data array varies with the number of stellar occultations.
+       </div>
+       <div class="term">
+        Cadence
+       </div>
+       <div class="definition">
+        PT1200S
+       </div>
+       <div class="term">
+        Units
+       </div>
+       <div class="definition">
+        mol/cm^3
+       </div>
+       <div class="term">
+        ValidMin
+       </div>
+       <div class="definition">
+        100000
+       </div>
+       <div class="term">
+        ValidMax
+       </div>
+       <div class="definition">
+        999999986991104
+       </div>
+       <div class="term">
+        FillValue
+       </div>
+       <div class="definition">
+        9.9692e+36
+       </div>
+       <div class="term">
+        Support
+       </div>
+       <div class="definition">
+        <div class="term">
+         Qualifier
+        </div>
+        <div class="definition">
+         Uncertainty
+        </div>
+        <div class="term">
+         SupportQuantity
+        </div>
+        <div class="definition">
+         Other
+        </div>
+       </div>
+      </div>
+      <div class="parameter">
+       Parameter #5
+      </div>
+      <div class="definition">
+       <div class="term">
+        Name
+       </div>
+       <div class="definition">
+        Temperature
+       </div>
+       <div class="term">
+        ParameterKey
+       </div>
+       <div class="definition">
+        temperature
+       </div>
+       <div class="term">
+        Description
+       </div>
+       <div class="definition">
+        <p>
+         Assumed temperature profile.
+        </p>
+       </div>
+       <div class="term">
+        Caveats
+       </div>
+       <div class="definition">
+        The size of the data array varies with the number of stellar occultations.
+       </div>
+       <div class="term">
+        Cadence
+       </div>
+       <div class="definition">
+        PT1200S
+       </div>
+       <div class="term">
+        Units
+       </div>
+       <div class="definition">
+        K
+       </div>
+       <div class="term">
+        ValidMin
+       </div>
+       <div class="definition">
+        0
+       </div>
+       <div class="term">
+        ValidMax
+       </div>
+       <div class="definition">
+        1000
+       </div>
+       <div class="term">
+        FillValue
+       </div>
+       <div class="definition">
+        9.9692e+36
+       </div>
+       <div class="term">
+        Particle
+       </div>
+       <div class="definition">
+        <div class="term">
+         ParticleType
+        </div>
+        <div class="definition">
+         Molecule
+        </div>
+        <div class="term">
+         ParticleQuantity
+        </div>
+        <div class="definition">
+         Temperature
+        </div>
+        <div class="term">
+         AtomicNumber
+        </div>
+        <div class="definition">
+         16
+        </div>
+       </div>
+      </div>
+      <div class="parameter">
+       Parameter #6
+      </div>
+      <div class="definition">
+       <div class="term">
+        Name
+       </div>
+       <div class="definition">
+        Retrieval geometric altitude grid
+       </div>
+       <div class="term">
+        ParameterKey
+       </div>
+       <div class="definition">
+        zret
+       </div>
+       <div class="term">
+        Description
+       </div>
+       <div class="definition">
+        <p>
+         Retrieval geometric altitude grid.
+        </p>
+       </div>
+       <div class="term">
+        Caveats
+       </div>
+       <div class="definition">
+        The size of the data array varies with the number of stellar occultations.
+       </div>
+       <div class="term">
+        Cadence
+       </div>
+       <div class="definition">
+        PT1200S
+       </div>
+       <div class="term">
+        Units
+       </div>
+       <div class="definition">
+        km
+       </div>
+       <div class="term">
+        ValidMin
+       </div>
+       <div class="definition">
+        0
+       </div>
+       <div class="term">
+        ValidMax
+       </div>
+       <div class="definition">
+        1000
+       </div>
+       <div class="term">
+        FillValue
+       </div>
+       <div class="definition">
+        9.9692e+36
+       </div>
+       <div class="term">
+        Support
+       </div>
+       <div class="definition">
+        <div class="term">
+         Qualifier
+        </div>
+        <div class="definition">
+         Direction
+        </div>
+        <div class="term">
+         SupportQuantity
+        </div>
+        <div class="definition">
+         Positional
+        </div>
+       </div>
+      </div>
+      <div class="parameter">
+       Parameter #7
+      </div>
+      <div class="definition">
+       <div class="term">
+        Name
+       </div>
+       <div class="definition">
+        O2 Density
+       </div>
+       <div class="term">
+        ParameterKey
+       </div>
+       <div class="definition">
+        o2den
+       </div>
+       <div class="term">
+        Description
+       </div>
+       <div class="definition">
+        <p>
+         Retrieved O2 density.
+        </p>
+       </div>
+       <div class="term">
+        Caveats
+       </div>
+       <div class="definition">
+        The size of the data array varies with the number of stellar occultations.
+       </div>
+       <div class="term">
+        Cadence
+       </div>
+       <div class="definition">
+        PT1200S
+       </div>
+       <div class="term">
+        Units
+       </div>
+       <div class="definition">
+        mol/cm^3
+       </div>
+       <div class="term">
+        ValidMin
+       </div>
+       <div class="definition">
+        100000
+       </div>
+       <div class="term">
+        ValidMax
+       </div>
+       <div class="definition">
+        999999986991104
+       </div>
+       <div class="term">
+        FillValue
+       </div>
+       <div class="definition">
+        9.9692e+36
+       </div>
+       <div class="term">
+        Particle
+       </div>
+       <div class="definition">
+        <div class="term">
+         ParticleType
+        </div>
+        <div class="definition">
+         Molecule
+        </div>
+        <div class="term">
+         ParticleQuantity
+        </div>
+        <div class="definition">
+         NumberDensity
+        </div>
+        <div class="term">
+         AtomicNumber
+        </div>
+        <div class="definition">
+         16
+        </div>
+       </div>
+      </div>
+      <div class="parameter">
+       Parameter #8
+      </div>
+      <div class="definition">
+       <div class="term">
+        Name
+       </div>
+       <div class="definition">
+        Number of Data Points
+       </div>
+       <div class="term">
+        ParameterKey
+       </div>
+       <div class="definition">
+        nzdat
+       </div>
+       <div class="term">
+        Description
+       </div>
+       <div class="definition">
+        <p>
+         Number of points in data altitude grid.
+        </p>
+       </div>
+       <div class="term">
+        Caveats
+       </div>
+       <div class="definition">
+        The size of the data array varies with the number of stellar occultations.
+       </div>
+       <div class="term">
+        Cadence
+       </div>
+       <div class="definition">
+        PT1200S
+       </div>
+       <div class="term">
+        FillValue
+       </div>
+       <div class="definition">
+        -2147483647
+       </div>
+       <div class="term">
+        Support
+       </div>
+       <div class="definition">
+        <div class="term">
+         Qualifier
+        </div>
+        <div class="definition">
+         Scalar
+        </div>
+        <div class="term">
+         SupportQuantity
+        </div>
+        <div class="definition">
+         Other
+        </div>
+       </div>
+      </div>
+      <div class="parameter">
+       Parameter #9
+      </div>
+      <div class="definition">
+       <div class="term">
+        Name
+       </div>
+       <div class="definition">
+        UTC time
+       </div>
+       <div class="term">
+        ParameterKey
+       </div>
+       <div class="definition">
+        TIME_UTC
+       </div>
+       <div class="term">
+        Description
+       </div>
+       <div class="definition">
+        <p>
+         UTC date/time string: "2017-06-21T23:46:38.015Z".
+        </p>
+       </div>
+       <div class="term">
+        Caveats
+       </div>
+       <div class="definition">
+        The size of the data array varies with the number of stellar occultations.
+       </div>
+       <div class="term">
+        Cadence
+       </div>
+       <div class="definition">
+        PT1200S
+       </div>
+       <div class="term">
+        Units
+       </div>
+       <div class="definition">
+        date/time
+       </div>
+       <div class="term">
+        FillValue
+       </div>
+       <div class="definition">
+        ' '
+       </div>
+       <div class="term">
+        Support
+       </div>
+       <div class="definition">
+        <div class="term">
+         Qualifier
+        </div>
+        <div class="definition">
+         Magnitude
+        </div>
+        <div class="term">
+         SupportQuantity
+        </div>
+        <div class="definition">
+         Temporal
+        </div>
+       </div>
+      </div>
+      <div class="parameter">
+       Parameter #10
+      </div>
+      <div class="definition">
+       <div class="term">
+        Name
+       </div>
+       <div class="definition">
+        Number of Iterations
+       </div>
+       <div class="term">
+        ParameterKey
+       </div>
+       <div class="definition">
+        n_iter
+       </div>
+       <div class="term">
+        Description
+       </div>
+       <div class="definition">
+        <p>
+         Number of iterations to converge.
+        </p>
+       </div>
+       <div class="term">
+        Caveats
+       </div>
+       <div class="definition">
+        The size of the data array varies with the number of stellar occultations.
+       </div>
+       <div class="term">
+        Cadence
+       </div>
+       <div class="definition">
+        PT1200S
+       </div>
+       <div class="term">
+        Units
+       </div>
+       <div class="definition">
+        number
+       </div>
+       <div class="term">
+        FillValue
+       </div>
+       <div class="definition">
+        -2147483647
+       </div>
+       <div class="term">
+        Support
+       </div>
+       <div class="definition">
+        <div class="term">
+         Qualifier
+        </div>
+        <div class="definition">
+         Scalar
+        </div>
+        <div class="term">
+         SupportQuantity
+        </div>
+        <div class="definition">
+         Other
+        </div>
+       </div>
+      </div>
+      <div class="parameter">
+       Parameter #11
+      </div>
+      <div class="definition">
+       <div class="term">
+        Name
+       </div>
+       <div class="definition">
+        Convergence flag
+       </div>
+       <div class="term">
+        ParameterKey
+       </div>
+       <div class="definition">
+        convergence
+       </div>
+       <div class="term">
+        Description
+       </div>
+       <div class="definition">
+        <p>
+         Retrieval convergence flag (= 1 if retrieval converged).
+        </p>
+       </div>
+       <div class="term">
+        Caveats
+       </div>
+       <div class="definition">
+        The size of the data array varies with the number of stellar occultations.
+       </div>
+       <div class="term">
+        Cadence
+       </div>
+       <div class="definition">
+        PT1200S
+       </div>
+       <div class="term">
+        FillValue
+       </div>
+       <div class="definition">
+        -2147483647
+       </div>
+       <div class="term">
+        Support
+       </div>
+       <div class="definition">
+        <div class="term">
+         Qualifier
+        </div>
+        <div class="definition">
+         Scalar
+        </div>
+        <div class="term">
+         SupportQuantity
+        </div>
+        <div class="definition">
+         Other
+        </div>
+       </div>
+      </div>
+      <div class="parameter">
+       Parameter #12
+      </div>
+      <div class="definition">
+       <div class="term">
+        Name
+       </div>
+       <div class="definition">
+        Number of Levels in Retrieval Altitude Grid
+       </div>
+       <div class="term">
+        ParameterKey
+       </div>
+       <div class="definition">
+        nzret
+       </div>
+       <div class="term">
+        Description
+       </div>
+       <div class="definition">
+        <p>
+         Number of levels in retrieval altitude grid.
+        </p>
+       </div>
+       <div class="term">
+        Caveats
+       </div>
+       <div class="definition">
+        The size of the data array varies with the number of stellar occultations.
+       </div>
+       <div class="term">
+        Cadence
+       </div>
+       <div class="definition">
+        PT1200S
+       </div>
+       <div class="term">
+        Units
+       </div>
+       <div class="definition">
+        number
+       </div>
+       <div class="term">
+        FillValue
+       </div>
+       <div class="definition">
+        -2147483647
+       </div>
+       <div class="term">
+        Support
+       </div>
+       <div class="definition">
+        <div class="term">
+         Qualifier
+        </div>
+        <div class="definition">
+         Scalar
+        </div>
+        <div class="term">
+         SupportQuantity
+        </div>
+        <div class="definition">
+         Other
+        </div>
+       </div>
+      </div>
+      <div class="parameter">
+       Parameter #13
+      </div>
+      <div class="definition">
+       <div class="term">
+        Name
+       </div>
+       <div class="definition">
+        L1C File Name
+       </div>
+       <div class="term">
+        ParameterKey
+       </div>
+       <div class="definition">
+        input_l1c_file
+       </div>
+       <div class="term">
+        Description
+       </div>
+       <div class="definition">
+        <p>
+         L1C file name for each occultation.
+        </p>
+       </div>
+       <div class="term">
+        Caveats
+       </div>
+       <div class="definition">
+        The size of the data array varies with the number of stellar occultations.
+       </div>
+       <div class="term">
+        Cadence
+       </div>
+       <div class="definition">
+        PT1200S
+       </div>
+       <div class="term">
+        FillValue
+       </div>
+       <div class="definition">
+        ' '
+       </div>
+       <div class="term">
+        Support
+       </div>
+       <div class="definition">
+        <div class="term">
+         Qualifier
+        </div>
+        <div class="definition">
+         Scalar
+        </div>
+        <div class="term">
+         SupportQuantity
+        </div>
+        <div class="definition">
+         Other
+        </div>
+       </div>
+      </div>
+      <div class="parameter">
+       Parameter #14
+      </div>
+      <div class="definition">
+       <div class="term">
+        Name
+       </div>
+       <div class="definition">
+        O2 Systematic Uncertainty
+       </div>
+       <div class="term">
+        ParameterKey
+       </div>
+       <div class="definition">
+        o2den_unc_sys
+       </div>
+       <div class="term">
+        Description
+       </div>
+       <div class="definition">
+        <p>
+         Systematic uncertainty of retrieved O2.
+        </p>
+       </div>
+       <div class="term">
+        Caveats
+       </div>
+       <div class="definition">
+        The size of the data array varies with the number of stellar occultations.
+       </div>
+       <div class="term">
+        Cadence
+       </div>
+       <div class="definition">
+        PT1200S
+       </div>
+       <div class="term">
+        ValidMin
+       </div>
+       <div class="definition">
+        100000
+       </div>
+       <div class="term">
+        ValidMax
+       </div>
+       <div class="definition">
+        999999986991104
+       </div>
+       <div class="term">
+        FillValue
+       </div>
+       <div class="definition">
+        9.9692e+36
+       </div>
+       <div class="term">
+        Support
+       </div>
+       <div class="definition">
+        <div class="term">
+         Qualifier
+        </div>
+        <div class="definition">
+         Uncertainty
+        </div>
+        <div class="term">
+         SupportQuantity
+        </div>
+        <div class="definition">
+         Other
+        </div>
+       </div>
+      </div>
+      <div class="parameter">
+       Parameter #15
+      </div>
+      <div class="definition">
+       <div class="term">
+        Name
+       </div>
+       <div class="definition">
+        Reference Latitude
+       </div>
+       <div class="term">
+        ParameterKey
+       </div>
+       <div class="definition">
+        lat_ref
+       </div>
+       <div class="term">
+        Description
+       </div>
+       <div class="definition">
+        <p>
+         Latitude at 225 km tangent point.
+        </p>
+       </div>
+       <div class="term">
+        Caveats
+       </div>
+       <div class="definition">
+        The size of the data array varies with the number of stellar occultations.
+       </div>
+       <div class="term">
+        Cadence
+       </div>
+       <div class="definition">
+        PT1200S
+       </div>
+       <div class="term">
+        Units
+       </div>
+       <div class="definition">
+        degrees
+       </div>
+       <div class="term">
+        ValidMin
+       </div>
+       <div class="definition">
+        -90
+       </div>
+       <div class="term">
+        ValidMax
+       </div>
+       <div class="definition">
+        90
+       </div>
+       <div class="term">
+        FillValue
+       </div>
+       <div class="definition">
+        9.9692e+36
+       </div>
+       <div class="term">
+        Support
+       </div>
+       <div class="definition">
+        <div class="term">
+         Qualifier
+        </div>
+        <div class="definition">
+         Direction
+        </div>
+        <div class="term">
+         SupportQuantity
+        </div>
+        <div class="definition">
+         Positional
+        </div>
+       </div>
+      </div>
+      <div class="parameter">
+       Parameter #16
+      </div>
+      <div class="definition">
+       <div class="term">
+        Name
+       </div>
+       <div class="definition">
+        Normalization
+       </div>
+       <div class="term">
+        ParameterKey
+       </div>
+       <div class="definition">
+        normalization
+       </div>
+       <div class="term">
+        Description
+       </div>
+       <div class="definition">
+        <p>
+         Transmission normalization factor (unattenuated stellar brightness).
+        </p>
+       </div>
+       <div class="term">
+        Caveats
+       </div>
+       <div class="definition">
+        The size of the data array varies with the number of stellar occultations.
+       </div>
+       <div class="term">
+        Cadence
+       </div>
+       <div class="definition">
+        PT1200S
+       </div>
+       <div class="term">
+        Units
+       </div>
+       <div class="definition">
+        counts
+       </div>
+       <div class="term">
+        ValidMin
+       </div>
+       <div class="definition">
+        0
+       </div>
+       <div class="term">
+        ValidMax
+       </div>
+       <div class="definition">
+        90
+       </div>
+       <div class="term">
+        FillValue
+       </div>
+       <div class="definition">
+        NaN
+       </div>
+       <div class="term">
+        Support
+       </div>
+       <div class="definition">
+        <div class="term">
+         Qualifier
+        </div>
+        <div class="definition">
+         Scalar
+        </div>
+        <div class="term">
+         SupportQuantity
+        </div>
+        <div class="definition">
+         Other
+        </div>
+       </div>
+      </div>
+      <div class="parameter">
+       Parameter #17
+      </div>
+      <div class="definition">
+       <div class="term">
+        Name
+       </div>
+       <div class="definition">
+        O2 Data Quality
+       </div>
+       <div class="term">
+        ParameterKey
+       </div>
+       <div class="definition">
+        o2den_dqi
+       </div>
+       <div class="term">
+        Description
+       </div>
+       <div class="definition">
+        <p>
+         O2 data quality indicator per altitude (see table in The GOLD Public Science Data Products Guide).
+        </p>
+       </div>
+       <div class="term">
+        Caveats
+       </div>
+       <div class="definition">
+        The size of the data array varies with the number of stellar occultations.
+       </div>
+       <div class="term">
+        Cadence
+       </div>
+       <div class="definition">
+        PT1200S
+       </div>
+       <div class="term">
+        ValidMin
+       </div>
+       <div class="definition">
+        0
+       </div>
+       <div class="term">
+        ValidMax
+       </div>
+       <div class="definition">
+        2147483647
+       </div>
+       <div class="term">
+        FillValue
+       </div>
+       <div class="definition">
+        -2147483647
+       </div>
+       <div class="term">
+        Support
+       </div>
+       <div class="definition">
+        <div class="term">
+         Qualifier
+        </div>
+        <div class="definition">
+         Scalar
+        </div>
+        <div class="term">
+         SupportQuantity
+        </div>
+        <div class="definition">
+         Other
+        </div>
+       </div>
+      </div>
+      <div class="parameter">
+       Parameter #18
+      </div>
+      <div class="definition">
+       <div class="term">
+        Name
+       </div>
+       <div class="definition">
+        Channel
+       </div>
+       <div class="term">
+        ParameterKey
+       </div>
+       <div class="definition">
+        channel
+       </div>
+       <div class="term">
+        Description
+       </div>
+       <div class="definition">
+        <p>
+         GOLD channel (‘A’ or ‘B’).
+        </p>
+       </div>
+       <div class="term">
+        Caveats
+       </div>
+       <div class="definition">
+        The size of the data array varies with the number of stellar occultations.
+       </div>
+       <div class="term">
+        Cadence
+       </div>
+       <div class="definition">
+        PT1200S
+       </div>
+       <div class="term">
+        Support
+       </div>
+       <div class="definition">
+        <div class="term">
+         Qualifier
+        </div>
+        <div class="definition">
+         Scalar
+        </div>
+        <div class="term">
+         SupportQuantity
+        </div>
+        <div class="definition">
+         Other
+        </div>
+       </div>
+      </div>
+      <div class="parameter">
+       Parameter #19
+      </div>
+      <div class="definition">
+       <div class="term">
+        Name
+       </div>
+       <div class="definition">
+        Central Wavelength
+       </div>
+       <div class="term">
+        ParameterKey
+       </div>
+       <div class="definition">
+        central_wavelength
+       </div>
+       <div class="term">
+        Description
+       </div>
+       <div class="definition">
+        <p>
+         Center wavelength of each data channel.
+        </p>
+       </div>
+       <div class="term">
+        Caveats
+       </div>
+       <div class="definition">
+        The size of the data array varies with the number of stellar occultations.
+       </div>
+       <div class="term">
+        Cadence
+       </div>
+       <div class="definition">
+        PT1200S
+       </div>
+       <div class="term">
+        Units
+       </div>
+       <div class="definition">
+        nm
+       </div>
+       <div class="term">
+        ValidMin
+       </div>
+       <div class="definition">
+        0
+       </div>
+       <div class="term">
+        ValidMax
+       </div>
+       <div class="definition">
+        400
+       </div>
+       <div class="term">
+        FillValue
+       </div>
+       <div class="definition">
+        9.9692e+36
+       </div>
+       <div class="term">
+        Wave
+       </div>
+       <div class="definition">
+        <div class="term">
+         WaveType
+        </div>
+        <div class="definition">
+         Photon
+        </div>
+        <div class="term">
+         Qualifier
+        </div>
+        <div class="definition">
+         Scalar
+        </div>
+        <div class="term">
+         WaveQuantity
+        </div>
+        <div class="definition">
+         Wavelength
+        </div>
+       </div>
+      </div>
+      <div class="parameter">
+       Parameter #20
+      </div>
+      <div class="definition">
+       <div class="term">
+        Name
+       </div>
+       <div class="definition">
+        Signal to Noise
+       </div>
+       <div class="term">
+        ParameterKey
+       </div>
+       <div class="definition">
+        signal_to_noise
+       </div>
+       <div class="term">
+        Description
+       </div>
+       <div class="definition">
+        <p>
+         Effective signal to noise (above atmosphere).
+        </p>
+       </div>
+       <div class="term">
+        Caveats
+       </div>
+       <div class="definition">
+        The size of the data array varies with the number of stellar occultations.
+       </div>
+       <div class="term">
+        Cadence
+       </div>
+       <div class="definition">
+        PT1200S
+       </div>
+       <div class="term">
+        Support
+       </div>
+       <div class="definition">
+        <div class="term">
+         Qualifier
+        </div>
+        <div class="definition">
+         Scalar
+        </div>
+        <div class="term">
+         SupportQuantity
+        </div>
+        <div class="definition">
+         Other
+        </div>
+       </div>
+      </div>
+      <div class="parameter">
+       Parameter #21
+      </div>
+      <div class="definition">
+       <div class="term">
+        Name
+       </div>
+       <div class="definition">
+        Number of Points in Data Altitude Grid
+       </div>
+       <div class="term">
+        ParameterKey
+       </div>
+       <div class="definition">
+        zdat
+       </div>
+       <div class="term">
+        Description
+       </div>
+       <div class="definition">
+        <p>
+         Number of points in data altitude grid.
+        </p>
+       </div>
+       <div class="term">
+        Caveats
+       </div>
+       <div class="definition">
+        The size of the data array varies with the number of stellar occultations.
+       </div>
+       <div class="term">
+        Cadence
+       </div>
+       <div class="definition">
+        PT1200S
+       </div>
+       <div class="term">
+        Units
+       </div>
+       <div class="definition">
+        number
+       </div>
+       <div class="term">
+        Support
+       </div>
+       <div class="definition">
+        <div class="term">
+         Qualifier
+        </div>
+        <div class="definition">
+         Scalar
+        </div>
+        <div class="term">
+         SupportQuantity
+        </div>
+        <div class="definition">
+         Other
+        </div>
+       </div>
+      </div>
+      <div class="parameter">
+       Parameter #22
+      </div>
+      <div class="definition">
+       <div class="term">
+        Name
+       </div>
+       <div class="definition">
+        Overall Quality Flag
+       </div>
+       <div class="term">
+        ParameterKey
+       </div>
+       <div class="definition">
+        dqi
+       </div>
+       <div class="term">
+        Description
+       </div>
+       <div class="definition">
+        <p>
+         Overall data quality index per scan (see table below).
+        </p>
+       </div>
+       <div class="term">
+        Caveats
+       </div>
+       <div class="definition">
+        The size of the data array varies with the number of stellar occultations.
+       </div>
+       <div class="term">
+        Cadence
+       </div>
+       <div class="definition">
+        PT1200S
+       </div>
+       <div class="term">
+        ValidMin
+       </div>
+       <div class="definition">
+        0
+       </div>
+       <div class="term">
+        ValidMax
+       </div>
+       <div class="definition">
+        1000
+       </div>
+       <div class="term">
+        FillValue
+       </div>
+       <div class="definition">
+        9.9692e+36
+       </div>
+       <div class="term">
+        Support
+       </div>
+       <div class="definition">
+        <div class="term">
+         Qualifier
+        </div>
+        <div class="definition">
+         Scalar
+        </div>
+        <div class="term">
+         SupportQuantity
+        </div>
+        <div class="definition">
+         Other
+        </div>
+       </div>
+      </div>
+      <div class="parameter">
+       Parameter #23
+      </div>
+      <div class="definition">
+       <div class="term">
+        Name
+       </div>
+       <div class="definition">
+        Model Fit Data
+       </div>
+       <div class="term">
+        ParameterKey
+       </div>
+       <div class="definition">
+        transmission_fit
+       </div>
+       <div class="term">
+        Description
+       </div>
+       <div class="definition">
+        <p>
+         Forward model fit to data.
+        </p>
+       </div>
+       <div class="term">
+        Caveats
+       </div>
+       <div class="definition">
+        The size of the data array varies with the number of stellar occultations.
+       </div>
+       <div class="term">
+        Cadence
+       </div>
+       <div class="definition">
+        PT1200S
+       </div>
+       <div class="term">
+        ValidMin
+       </div>
+       <div class="definition">
+        0
+       </div>
+       <div class="term">
+        ValidMax
+       </div>
+       <div class="definition">
+        10
+       </div>
+       <div class="term">
+        FillValue
+       </div>
+       <div class="definition">
+        9.9692e+36
+       </div>
+       <div class="term">
+        Support
+       </div>
+       <div class="definition">
+        <div class="term">
+         Qualifier
+        </div>
+        <div class="definition">
+         Scalar
+        </div>
+        <div class="term">
+         SupportQuantity
+        </div>
+        <div class="definition">
+         Other
+        </div>
+       </div>
+      </div>
+      <div class="parameter">
+       Parameter #24
+      </div>
+      <div class="definition">
+       <div class="term">
+        Name
+       </div>
+       <div class="definition">
+        Transmission Profile
+       </div>
+       <div class="term">
+        ParameterKey
+       </div>
+       <div class="definition">
+        transmission
+       </div>
+       <div class="term">
+        Description
+       </div>
+       <div class="definition">
+        <p>
+         Measured slant path transmission profile.
+        </p>
+       </div>
+       <div class="term">
+        Caveats
+       </div>
+       <div class="definition">
+        The size of the data array varies with the number of stellar occultations.
+       </div>
+       <div class="term">
+        Cadence
+       </div>
+       <div class="definition">
+        PT1200S
+       </div>
+       <div class="term">
+        ValidMin
+       </div>
+       <div class="definition">
+        0
+       </div>
+       <div class="term">
+        ValidMax
+       </div>
+       <div class="definition">
+        10
+       </div>
+       <div class="term">
+        FillValue
+       </div>
+       <div class="definition">
+        9.9692e+36
+       </div>
+       <div class="term">
+        Support
+       </div>
+       <div class="definition">
+        <div class="term">
+         Qualifier
+        </div>
+        <div class="definition">
+         Scalar
+        </div>
+        <div class="term">
+         SupportQuantity
+        </div>
+        <div class="definition">
+         Other
+        </div>
+       </div>
+      </div>
+      <div class="parameter">
+       Parameter #25
+      </div>
+      <div class="definition">
+       <div class="term">
+        Name
+       </div>
+       <div class="definition">
+        A Priori O2 Density
+       </div>
+       <div class="term">
+        ParameterKey
+       </div>
+       <div class="definition">
+        o2_apriori
+       </div>
+       <div class="term">
+        Description
+       </div>
+       <div class="definition">
+        <p>
+         A priori O2 density used in retrieval.
+        </p>
+       </div>
+       <div class="term">
+        Caveats
+       </div>
+       <div class="definition">
+        The size of the data array varies with the number of stellar occultations.
+       </div>
+       <div class="term">
+        Cadence
+       </div>
+       <div class="definition">
+        PT1200S
+       </div>
+       <div class="term">
+        Units
+       </div>
+       <div class="definition">
+        mol/cm^3
+       </div>
+       <div class="term">
+        ValidMin
+       </div>
+       <div class="definition">
+        100000
+       </div>
+       <div class="term">
+        ValidMax
+       </div>
+       <div class="definition">
+        999999986991104
+       </div>
+       <div class="term">
+        FillValue
+       </div>
+       <div class="definition">
+        9.9692e+36
+       </div>
+       <div class="term">
+        Particle
+       </div>
+       <div class="definition">
+        <div class="term">
+         ParticleType
+        </div>
+        <div class="definition">
+         Molecule
+        </div>
+        <div class="term">
+         ParticleQuantity
+        </div>
+        <div class="definition">
+         NumberDensity
+        </div>
+        <div class="term">
+         AtomicNumber
+        </div>
+        <div class="definition">
+         16
+        </div>
+       </div>
+      </div>
+      <div class="parameter">
+       Parameter #26
+      </div>
+      <div class="definition">
+       <div class="term">
+        Name
+       </div>
+       <div class="definition">
+        Solar Zenith Angle at 225 km
+       </div>
+       <div class="term">
+        ParameterKey
+       </div>
+       <div class="definition">
+        sza_ref
+       </div>
+       <div class="term">
+        Description
+       </div>
+       <div class="definition">
+        <p>
+         Solar zenith angle at 225 km tangent point.
+        </p>
+       </div>
+       <div class="term">
+        Caveats
+       </div>
+       <div class="definition">
+        The size of the data array varies with the number of stellar occultations.
+       </div>
+       <div class="term">
+        Cadence
+       </div>
+       <div class="definition">
+        PT1200S
+       </div>
+       <div class="term">
+        Units
+       </div>
+       <div class="definition">
+        degrees
+       </div>
+       <div class="term">
+        ValidMin
+       </div>
+       <div class="definition">
+        0
+       </div>
+       <div class="term">
+        ValidMax
+       </div>
+       <div class="definition">
+        180
+       </div>
+       <div class="term">
+        FillValue
+       </div>
+       <div class="definition">
+        9.9692e+36
+       </div>
+       <div class="term">
+        Support
+       </div>
+       <div class="definition">
+        <div class="term">
+         Qualifier
+        </div>
+        <div class="definition">
+         Direction
+        </div>
+        <div class="term">
+         SupportQuantity
+        </div>
+        <div class="definition">
+         Positional
+        </div>
+       </div>
+      </div>
+      <div class="parameter">
+       Parameter #27
+      </div>
+      <div class="definition">
+       <div class="term">
+        Name
+       </div>
+       <div class="definition">
+        Transmission Profile Uncertainty
+       </div>
+       <div class="term">
+        ParameterKey
+       </div>
+       <div class="definition">
+        transmission_unc
+       </div>
+       <div class="term">
+        Description
+       </div>
+       <div class="definition">
+        <p>
+         Transmission variance.
+        </p>
+       </div>
+       <div class="term">
+        Caveats
+       </div>
+       <div class="definition">
+        The size of the data array varies with the number of stellar occultations.
+       </div>
+       <div class="term">
+        Cadence
+       </div>
+       <div class="definition">
+        PT1200S
+       </div>
+       <div class="term">
+        ValidMin
+       </div>
+       <div class="definition">
+        0
+       </div>
+       <div class="term">
+        ValidMax
+       </div>
+       <div class="definition">
+        10
+       </div>
+       <div class="term">
+        FillValue
+       </div>
+       <div class="definition">
+        9.9692e+36
+       </div>
+       <div class="term">
+        Support
+       </div>
+       <div class="definition">
+        <div class="term">
+         Qualifier
+        </div>
+        <div class="definition">
+         Scalar
+        </div>
+        <div class="term">
+         SupportQuantity
+        </div>
+        <div class="definition">
+         Other
+        </div>
+       </div>
+      </div>
+      <div class="parameter">
+       Parameter #28
+      </div>
+      <div class="definition">
+       <div class="term">
+        Name
+       </div>
+       <div class="definition">
+        Name of Target Star
+       </div>
+       <div class="term">
+        ParameterKey
+       </div>
+       <div class="definition">
+        target_star
+       </div>
+       <div class="term">
+        Description
+       </div>
+       <div class="definition">
+        <p>
+         Name of target star.
+        </p>
+       </div>
+       <div class="term">
+        Caveats
+       </div>
+       <div class="definition">
+        The size of the data array varies with the number of stellar occultations.
+       </div>
+       <div class="term">
+        Cadence
+       </div>
+       <div class="definition">
+        PT1200S
+       </div>
+       <div class="term">
+        ValidMin
+       </div>
+       <div class="definition">
+        0
+       </div>
+       <div class="term">
+        ValidMax
+       </div>
+       <div class="definition">
+        5
+       </div>
+       <div class="term">
+        FillValue
+       </div>
+       <div class="definition">
+        9.9692e+36
+       </div>
+       <div class="term">
+        Support
+       </div>
+       <div class="definition">
+        <div class="term">
+         Qualifier
+        </div>
+        <div class="definition">
+         Scalar
+        </div>
+        <div class="term">
+         SupportQuantity
+        </div>
+        <div class="definition">
+         Other
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>

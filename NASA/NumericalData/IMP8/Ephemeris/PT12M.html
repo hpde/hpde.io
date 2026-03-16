@@ -1,30 +1,264 @@
 <?xml version="1.0"?>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><title>SPASE Resource Description</title><script type="application/ld+json">{
-		"@context": "https://schema.org/",
-		"@type" :"Dataset",
-		"name": "IMP 8 Spacecraft Positions",
-    
-		"dateModified": "2025-12-04",
-
-    "identifier": "spase://NASA/NumericalData/IMP8/Ephemeris/PT12M",
-
-    "creditText": "",
- 		"description": "IMP-8 spacecraft positions in various coordinate systems",
-		"abstract": "IMP-8 spacecraft positions in various coordinate systems",
-
-		"temporalCoverage": "1973-10-30T00:00:00Z/...",
-
-    "genre": "Ephemeris",
-		"keywords": [  ],
-		"license": "https://cdla.io/permissive-1-0/",
-
-    "audience":{
-        "@type": "Audience",
-        "audienceType": ["Space Physicist", "Space Community", "Data Scientists", "Machine Learning Users"]
-    }
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <title>
+   SPASE Resource Description
+  </title>
+  <script type="application/ld+json">
+   {
+    "@context": {
+        "@vocab": "https://schema.org/",
+        "prov": "http://www.w3.org/ns/prov#",
+        "sosa": "https://w3c.github.io/sdw-sosa-ssn/ssn/#SOSA"
+    },
+    "@id": "https://spase-metadata.org/NASA/NumericalData/IMP8/Ephemeris/PT12M",
+    "@type": "Dataset",
+    "dateCreated": "2021-04-27T15:38:11",
+    "dateModified": "2025-12-04T13:29:34",
+    "datePublished": "2021-04-27T15:38:11",
+    "description": "IMP-8 spacecraft positions in various coordinate systems",
+    "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "SPASE",
+        "url": "https://spase-metadata.org/NASA/NumericalData/IMP8/Ephemeris/PT12M",
+        "value": "spase://NASA/NumericalData/IMP8/Ephemeris/PT12M"
+    },
+    "inLanguage": "en",
+    "license": [
+        "https://spdx.org/licenses/CC0-1.0.html"
+    ],
+    "measurementMethod": {
+        "@type": "DefinedTerm",
+        "inDefinedTermSet": {
+            "@id": "https://spase-group.org/data/model/spase-latest/spase-latest_xsd.htm#MeasurementType",
+            "@type": "DefinedTermSet",
+            "name": "SPASE MeasurementType",
+            "url": "https://spase-group.org/data/model/spase-latest/spase-latest_xsd.htm#MeasurementType"
+        },
+        "name": "Ephemeris",
+        "termCode": "Ephemeris"
+    },
+    "name": "IMP 8 Spacecraft Positions",
+    "potentialAction": [
+        {
+            "@type": "SearchAction",
+            "target": {
+                "@type": "EntryPoint",
+                "contentType": "CDF",
+                "description": "Download dataset data as CDF file at this URL",
+                "name": "FTPS from SPDF (not with most browsers)",
+                "url": "ftps://spdf.gsfc.nasa.gov/pub/data/imp/imp8/orbit/or_ssc/"
+            }
+        },
+        {
+            "@type": "SearchAction",
+            "target": {
+                "@id": "https://spdf.gsfc.nasa.gov/pub/data/imp/imp8/orbit/or_ssc/",
+                "@type": "EntryPoint",
+                "contentType": "CDF",
+                "description": "Download dataset data as CDF file at this URL",
+                "identifier": "https://spdf.gsfc.nasa.gov/pub/data/imp/imp8/orbit/or_ssc/",
+                "name": "HTTPS from SPDF",
+                "url": "https://spdf.gsfc.nasa.gov/pub/data/imp/imp8/orbit/or_ssc/"
+            }
+        },
+        {
+            "@type": "SearchAction",
+            "target": {
+                "@id": "https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=I8_OR_SSC&index=sp_phys",
+                "@type": "EntryPoint",
+                "contentType": "Text",
+                "description": "Download dataset data as Text file at this URL using these product key(s): ['I8_OR_SSC']",
+                "identifier": "https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=I8_OR_SSC&index=sp_phys",
+                "name": "CDAWeb",
+                "url": "https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=I8_OR_SSC&index=sp_phys"
+            }
+        },
+        {
+            "@type": "SearchAction",
+            "target": {
+                "@id": "https://sscweb.gsfc.nasa.gov/cgi-bin/Locator.cgi",
+                "@type": "EntryPoint",
+                "contentType": "Text",
+                "description": "Download dataset data as Text file at this URL using these product key(s): ['imp8']",
+                "identifier": "https://sscweb.gsfc.nasa.gov/cgi-bin/Locator.cgi",
+                "name": "SSCWeb",
+                "url": "https://sscweb.gsfc.nasa.gov/cgi-bin/Locator.cgi"
+            }
+        },
+        {
+            "@type": "SearchAction",
+            "query-input": [
+                {
+                    "@type": "PropertyValueSpecification",
+                    "description": "A UTC ISO DateTime. Use 1973-10-30T00:00:00Z as default value.",
+                    "valueName": "start",
+                    "valuePattern": "(-?(?:[1-9][0-9]*)?[0-9]{4})-(1[0-2]|0[1-9])-(3[01]|0[1-9]|[12][0-9])T(2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9])(.[0-9]+)?(Z)?",
+                    "valueRequired": false
+                },
+                {
+                    "@type": "PropertyValueSpecification",
+                    "description": "A UTC ISO DateTime. Use 1973-10-30T00:01:00 as a test end value.",
+                    "valueName": "end",
+                    "valuePattern": "(-?(?:[1-9][0-9]*)?[0-9]{4})-(1[0-2]|0[1-9])-(3[01]|0[1-9]|[12][0-9])T(2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9])(.[0-9]+)?(Z)?",
+                    "valueRequired": false
+                }
+            ],
+            "target": {
+                "@id": "https://cdaweb.gsfc.nasa.gov/hapi",
+                "@type": "EntryPoint",
+                "contentType": "CSV",
+                "description": "Download dataset labeled by id in CSV format based on the requested start and end dates",
+                "httpMethod": "GET",
+                "identifier": "https://cdaweb.gsfc.nasa.gov/hapi",
+                "name": "CDAWeb HAPI Server",
+                "urlTemplate": "https://cdaweb.gsfc.nasa.gov/hapi/data?id=I8_OR_SSC&time.min={start}&time.max={end}"
+            }
+        }
+    ],
+    "prov:wasGeneratedBy": [
+        {
+            "@type": [
+                "ResearchProject",
+                "prov:Activity"
+            ],
+            "prov:used": {
+                "@id": "https://spase-metadata.org/SMWG/Instrument/IMP8/Ephemeris",
+                "@type": [
+                    "IndividualProduct",
+                    "prov:Entity",
+                    "sosa:System"
+                ],
+                "identifier": {
+                    "@id": "https://spase-metadata.org/SMWG/Instrument/IMP8/Ephemeris",
+                    "@type": "PropertyValue",
+                    "propertyID": "SPASE Resource ID",
+                    "value": "spase://SMWG/Instrument/IMP8/Ephemeris"
+                },
+                "name": "IMP 8 Spacecraft Position",
+                "url": "https://spase-metadata.org/SMWG/Instrument/IMP8/Ephemeris"
+            }
+        }
+    ],
+    "sameAs": [
+        "spase://VMO/NumericalData/IMP8/Ephemeris/PT12M",
+        "spase://VSPO/NumericalData/IMP8/Ephemeris/PT12M"
+    ],
+    "spatialCoverage": [
+        {
+            "@type": "Place",
+            "keywords": {
+                "@type": "DefinedTerm",
+                "inDefinedTermSet": {
+                    "@id": "https://spase-group.org/data/model/spase-latest/spase-latest_xsd.htm#Region",
+                    "@type": "DefinedTermSet",
+                    "name": "SPASE Region",
+                    "url": "https://spase-group.org/data/model/spase-latest/spase-latest_xsd.htm#Region"
+                },
+                "termCode": "Heliosphere.NearEarth"
+            },
+            "name": "Heliosphere NearEarth"
+        },
+        {
+            "@type": "Place",
+            "keywords": {
+                "@type": "DefinedTerm",
+                "inDefinedTermSet": {
+                    "@id": "https://spase-group.org/data/model/spase-latest/spase-latest_xsd.htm#Region"
+                },
+                "termCode": "Earth.Magnetosphere.Magnetotail"
+            },
+            "name": "Earth Magnetosphere Magnetotail"
+        }
+    ],
+    "subjectOf": {
+        "@type": "DataDownload",
+        "contentUrl": "https://spase-metadata.org/NASA/NumericalData/IMP8/Ephemeris/PT12M",
+        "dateModified": "2025-12-04T13:29:34",
+        "description": "The SPASE metadata describing the indicated dataset.",
+        "encodingFormat": "application/xml",
+        "identifier": "https://spase-metadata.org/NASA/NumericalData/IMP8/Ephemeris/PT12M",
+        "license": [
+            "https://spdx.org/licenses/CC0-1.0.html"
+        ],
+        "name": "SPASE metadata for dataset"
+    },
+    "temporal": [
+        "The time series is periodic with a 12 minute cadence",
+        "PT12M"
+    ],
+    "temporalCoverage": "1973-10-30T00:00:00Z/..",
+    "url": "https://spase-metadata.org/NASA/NumericalData/IMP8/Ephemeris/PT12M",
+    "variableMeasured": [
+        {
+            "@type": "PropertyValue",
+            "alternateName": "Epoch",
+            "description": "Number of milliseconds since the epoch 01-Jan-1956 00:00:00",
+            "name": "Epoch",
+            "unitText": "ms"
+        },
+        {
+            "@type": "PropertyValue",
+            "alternateName": "GSE_LAT",
+            "description": "Spacecraft latitude in GSE coordinates",
+            "name": "GSE Latitude",
+            "unitText": "deg"
+        },
+        {
+            "@type": "PropertyValue",
+            "alternateName": "GSE_LON",
+            "description": "Spacecraft longitude in GSE coordinates",
+            "name": "GSE Longitude",
+            "unitText": "deg"
+        },
+        {
+            "@type": "PropertyValue",
+            "alternateName": "GSE_LCT_T",
+            "description": "Local time in GSE coordinates",
+            "name": "GSE Local Time",
+            "unitText": "hr"
+        },
+        {
+            "@type": "PropertyValue",
+            "alternateName": "GSM_LAT",
+            "description": "Spacecraft latitude in GSM coordinates",
+            "name": "GSM Latitude",
+            "unitText": "deg"
+        },
+        {
+            "@type": "PropertyValue",
+            "alternateName": "GSM_LON",
+            "description": "Spacecraft longitude in GSM coordinates",
+            "name": "GSM Longitude",
+            "unitText": "deg"
+        },
+        {
+            "@type": "PropertyValue",
+            "alternateName": "RADIUS",
+            "description": "Radial distance from the center of Earth",
+            "name": "Radial distance",
+            "unitText": "Re"
+        },
+        {
+            "@type": "PropertyValue",
+            "alternateName": "XYZ_GSE",
+            "description": "Position in cartesian GSE coordinates",
+            "name": "GSE Position Vector",
+            "unitText": "Re"
+        },
+        {
+            "@type": "PropertyValue",
+            "alternateName": "XYZ_GSM",
+            "description": "Position in cartesian GSM coordinates",
+            "name": "GSM Position Vector",
+            "unitText": "Re"
+        }
+    ]
 }
-	  </script><style>
-/* http://spase-group.org/tools/xmlviewer */
+  </script>
+  <style>
+   /* http://spase-group.org/tools/xmlviewer */
 /* v1.0 | 20160908 */
 
 * {
@@ -281,22 +515,1660 @@ a.xml-logo:visited {
 a.xml-logo:hover {
    text-decoration:underline; 
 }
-
-	  </style></head><body><div><a id="top"/></div><div class="header"><div class="middle">spase-metadata.org <a href="https://spase-group.org/">SPASE</a> landing pages.</div></div><div class="page"><div class="spase"><div class="abstract"><div class="access"><p class="box-title">Data Access</p><ul class="list"><li class="list"><a target="_blank" href="ftps://spdf.gsfc.nasa.gov/pub/data/imp/imp8/orbit/or_ssc/">FTPS from SPDF (not with most browsers)</a></li><li class="list"><a target="_blank" href="https://spdf.gsfc.nasa.gov/pub/data/imp/imp8/orbit/or_ssc/">HTTPS from SPDF</a></li><li class="list"><a target="_blank" href="https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=I8_OR_SSC&amp;index=sp_phys">CDAWeb</a></li><li class="list"><a target="_blank" href="https://sscweb.gsfc.nasa.gov/cgi-bin/Locator.cgi">SSCWeb</a></li><li class="list"><a target="_blank" href="https://cdaweb.gsfc.nasa.gov/hapi">HAPI: CDAWeb HAPI Server</a></li></ul></div><div class="citation inset"><h1><a name="spase://NASA/NumericalData/IMP8/Ephemeris/PT12M">IMP 8 Spacecraft Positions</a></h1><p><div class="term">ResourceID</div><div class="definition">spase://NASA/NumericalData/IMP8/Ephemeris/PT12M</div></p><p><div class="term">Description</div><div class="definition"><p>IMP-8 spacecraft positions in various coordinate systems</p>
-</div></p></div></div><div><p class="right"><a target="_blank" href="PT12M.xml">View XML</a>
-				| <a target="_blank" href="PT12M.json">View JSON</a>
-                | <a target="_blank" href="https://spase-editor.heliocloud.org/?edit=https://spase-metadata.org/NASA/NumericalData/IMP8/Ephemeris/PT12M.xml">Edit</a></p><h1 class="detail">Details</h1></div><div><div class="product"><p class="version">Version:2.7.1</p><h1>MetadataRightsList</h1><div class="term">Rights</div><div class="definition"><div class="term">SchemeURI</div><div class="definition">https://spdx.org/licenses/</div><div class="term">RightsIdentifierScheme</div><div class="definition">SPDX</div><div class="term">RightsIdentifier</div><div class="definition">CC0-1.0</div><div class="term">RightsURI</div><div class="definition">https://spdx.org/licenses/CC0-1.0.html</div><div class="term">RightsName</div><div class="definition">Creative Commons Zero v1.0 Universal</div><div class="term">Note</div><div class="definition">CC0 1.0 Universal is the Creative Commons license applicable to all publicly available SPASE metadata descriptions</div></div></div><div class="product"><p class="version">Version:2.7.1</p><h1>NumericalData</h1><div class="term">ResourceID</div><div class="definition">spase://NASA/NumericalData/IMP8/Ephemeris/PT12M</div><div class="term">NamingAuthority</div><div class="definition">NASA</div><div class="term">ResourceType</div><div class="definition">NumericalData</div><div class="term">ResourceHeader</div><div class="definition"><div class="term">ResourceName</div><div class="definition">IMP 8 Spacecraft Positions</div><div class="term">ReleaseDate</div><div class="definition">2025-12-04 13:29:34Z</div><div class="term">RevisionHistory</div><div class="definition"><div class="term">RevisionEvent</div><div class="definition"><div class="term">ReleaseDate</div><div class="definition">2021-04-27 15:38:11Z</div><div class="term">Note</div><div class="definition">Only known prior ReleaseDate of the metadata</div></div><div class="term">RevisionEvent</div><div class="definition"><div class="term">ReleaseDate</div><div class="definition">2025-05-14 15:38:11Z</div><div class="term">Note</div><div class="definition">Added ObservedRegion. JMW</div></div><div class="term">RevisionEvent</div><div class="definition"><div class="term">ReleaseDate</div><div class="definition">2025-12-04 13:29:34Z</div><div class="term">Note</div><div class="definition">Added MetadataRightsList and RightsList(s). Added ResourceType and NamingAuthority. Updated to 2.7.1. Changed http to https in top-level schemaLocation attribute. Fixed version number separator in top-level schemaLocation attribute. ZCB</div></div></div><div class="term">Description</div><div class="definition"><p>IMP-8 spacecraft positions in various coordinate systems</p>
-</div><div class="term">Contacts</div><dd><table class="nested" cellspacing="0"><tr><th/><th class="center">Role</th><th class="center">Person</th><th class="center">StartDate</th><th class="center">StopDate</th><th class="center">Note</th></tr><tbody><tr><td>1.</td><td>Scientist</td><td><a target="_blank" href="https://spase-metadata.org/SMWG/Person/Adam.Szabo.html">spase://SMWG/Person/Adam.Szabo</a></td><td/><td/><td/></tr></tbody></table></dd><div class="term">PriorIDs</div><div class="definition">spase://VMO/NumericalData/IMP8/Ephemeris/PT12M</div><div class="definition">spase://VSPO/NumericalData/IMP8/Ephemeris/PT12M</div></div><div class="term">AccessInformation</div><div class="definition"><div class="term">RepositoryID</div><div class="definition"><a href="https://spase-metadata.org/SMWG/Repository/NASA/GSFC/SPDF/CDAWeb.html">spase://SMWG/Repository/NASA/GSFC/SPDF/CDAWeb</a></div><div class="term">Availability</div><div class="definition">Online</div><div class="term">AccessRights</div><div class="definition">Open</div><div class="term">RightsList</div><div class="definition"><div class="term">Rights</div><div class="definition"><div class="term">SchemeURI</div><div class="definition">https://spdx.org/licenses/</div><div class="term">RightsIdentifierScheme</div><div class="definition">SPDX</div><div class="term">RightsIdentifier</div><div class="definition">CC0-1.0</div><div class="term">RightsURI</div><div class="definition">https://spdx.org/licenses/CC0-1.0.html</div><div class="term">RightsName</div><div class="definition">Creative Commons Zero v1.0 Universal</div><div class="term">Note</div><div class="definition">CC0 1.0 Universal is the Creative Commons license applicable to all publicly available NASA Heliophysics data products</div></div></div><div class="term">AccessURL</div><div class="definition"><div class="term">Name</div><div class="definition">FTPS from SPDF (not with most browsers)</div><div class="term">URL</div><div class="definition"><a target="_blank" href="ftps://spdf.gsfc.nasa.gov/pub/data/imp/imp8/orbit/or_ssc/">ftps://spdf.gsfc.nasa.gov/pub/data/imp/imp8/orbit/or_ssc/</a></div><div class="term">Description</div><div class="definition"><p>NASA/GSFC CDAWeb ftp access to the data.</p>
-</div></div><div class="term">AccessURL</div><div class="definition"><div class="term">Name</div><div class="definition">HTTPS from SPDF</div><div class="term">URL</div><div class="definition"><a target="_blank" href="https://spdf.gsfc.nasa.gov/pub/data/imp/imp8/orbit/or_ssc/">https://spdf.gsfc.nasa.gov/pub/data/imp/imp8/orbit/or_ssc/</a></div><div class="term">Description</div><div class="definition"><p>In CDF via HTTP from SPDF</p>
-</div></div><div class="term">Format</div><div class="definition">CDF</div><div class="term">Encoding</div><div class="definition">None</div></div><div class="term">AccessInformation</div><div class="definition"><div class="term">RepositoryID</div><div class="definition"><a href="https://spase-metadata.org/SMWG/Repository/NASA/GSFC/SPDF.html">spase://SMWG/Repository/NASA/GSFC/SPDF</a></div><div class="term">Availability</div><div class="definition">Online</div><div class="term">AccessRights</div><div class="definition">Open</div><div class="term">RightsList</div><div class="definition"><div class="term">Rights</div><div class="definition"><div class="term">SchemeURI</div><div class="definition">https://spdx.org/licenses/</div><div class="term">RightsIdentifierScheme</div><div class="definition">SPDX</div><div class="term">RightsIdentifier</div><div class="definition">CC0-1.0</div><div class="term">RightsURI</div><div class="definition">https://spdx.org/licenses/CC0-1.0.html</div><div class="term">RightsName</div><div class="definition">Creative Commons Zero v1.0 Universal</div><div class="term">Note</div><div class="definition">CC0 1.0 Universal is the Creative Commons license applicable to all publicly available NASA Heliophysics data products</div></div></div><div class="term">AccessURL</div><div class="definition"><div class="term">Name</div><div class="definition">CDAWeb</div><div class="term">URL</div><div class="definition"><a target="_blank" href="https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=I8_OR_SSC&amp;index=sp_phys">https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=I8_OR_SSC&amp;index=sp_phys</a></div><div class="term">ProductKey</div><div class="definition">I8_OR_SSC</div><div class="term">Description</div><div class="definition"><p>I8_OR_SSC with subset, plot and list via CDAWeb</p>
-</div></div><div class="term">AccessURL</div><div class="definition"><div class="term">Name</div><div class="definition">SSCWeb</div><div class="term">URL</div><div class="definition"><a target="_blank" href="https://sscweb.gsfc.nasa.gov/cgi-bin/Locator.cgi">https://sscweb.gsfc.nasa.gov/cgi-bin/Locator.cgi</a></div><div class="term">ProductKey</div><div class="definition">imp8</div></div><div class="term">Format</div><div class="definition">Text</div><div class="term">Acknowledgement</div><div class="definition"> Please acknowledge the CDAWeb team at GSFC/SPDF.</div></div><div class="term">AccessInformation</div><div class="definition"><div class="term">RepositoryID</div><div class="definition"><a href="https://spase-metadata.org/SMWG/Repository/NASA/GSFC/SPDF.html">spase://SMWG/Repository/NASA/GSFC/SPDF</a></div><div class="term">Availability</div><div class="definition">Online</div><div class="term">AccessRights</div><div class="definition">Open</div><div class="term">RightsList</div><div class="definition"><div class="term">Rights</div><div class="definition"><div class="term">SchemeURI</div><div class="definition">https://spdx.org/licenses/</div><div class="term">RightsIdentifierScheme</div><div class="definition">SPDX</div><div class="term">RightsIdentifier</div><div class="definition">CC0-1.0</div><div class="term">RightsURI</div><div class="definition">https://spdx.org/licenses/CC0-1.0.html</div><div class="term">RightsName</div><div class="definition">Creative Commons Zero v1.0 Universal</div><div class="term">Note</div><div class="definition">CC0 1.0 Universal is the Creative Commons license applicable to all publicly available NASA Heliophysics data products</div></div></div><div class="term">AccessURL</div><div class="definition"><div class="term">Name</div><div class="definition">CDAWeb HAPI Server</div><div class="term">URL</div><div class="definition"><a target="_blank" href="https://cdaweb.gsfc.nasa.gov/hapi">https://cdaweb.gsfc.nasa.gov/hapi</a></div><div class="term">Style</div><div class="definition">HAPI</div><div class="term">ProductKey</div><div class="definition">I8_OR_SSC</div><div class="term">Description</div><div class="definition"><p>Web Service to this product using the HAPI interface.</p>
-</div></div><div class="term">Format</div><div class="definition">CSV</div><div class="term">Acknowledgement</div><div class="definition"> Please acknowledge the CDAWeb team at GSFC/SPDF.</div></div><div class="term">InstrumentIDs</div><div class="definition"><a target="_blank" href="https://spase-metadata.org/SMWG/Instrument/IMP8/Ephemeris.html">spase://SMWG/Instrument/IMP8/Ephemeris</a></div><div class="term">MeasurementType</div><div class="definition">Ephemeris</div><div class="term">TemporalDescription</div><div class="definition"><div class="term">TimeSpan</div><div class="definition"><div class="term">StartDate</div><div class="definition">1973-10-30 00:00:00Z</div><div class="term">RelativeStopDate</div><div class="definition">P0D</div></div><div class="term">Cadence</div><div class="definition">PT12M</div></div><div class="term">ObservedRegion</div><div class="definition">Heliosphere.NearEarth</div><div class="term">ObservedRegion</div><div class="definition">Earth.Magnetosphere.Magnetotail</div><div class="parameter">Parameter #1</div><div class="definition"><div class="term">Name</div><div class="definition">Epoch</div><div class="term">ParameterKey</div><div class="definition">Epoch</div><div class="term">Description</div><div class="definition"><p>Number of milliseconds since the epoch 01-Jan-1956 00:00:00</p>
-</div><div class="term">Units</div><div class="definition">ms</div><div class="term">UnitsConversion</div><div class="definition">1e-3&gt;s</div><div class="term">FillValue</div><div class="definition">-1.0e31</div><div class="term">Support</div><div class="definition"><div class="term">SupportQuantity</div><div class="definition">Temporal</div></div></div><div class="parameter">Parameter #2</div><div class="definition"><div class="term">Name</div><div class="definition">GSE Latitude</div><div class="term">ParameterKey</div><div class="definition">GSE_LAT</div><div class="term">Description</div><div class="definition"><p>Spacecraft latitude in GSE coordinates</p>
-</div><div class="term">Units</div><div class="definition">deg</div><div class="term">CoordinateSystem</div><div class="definition"><div class="term">CoordinateRepresentation</div><div class="definition">Spherical</div><div class="term">CoordinateSystemName</div><div class="definition">GSE</div></div><div class="term">ValidMin</div><div class="definition">-90.0</div><div class="term">ValidMax</div><div class="definition">90.0</div><div class="term">FillValue</div><div class="definition">-1.0e+31</div><div class="term">Support</div><div class="definition"><div class="term">Qualifier</div><div class="definition">DirectionAngle.ElevationAngle</div><div class="term">SupportQuantity</div><div class="definition">Positional</div></div></div><div class="parameter">Parameter #3</div><div class="definition"><div class="term">Name</div><div class="definition">GSE Longitude</div><div class="term">ParameterKey</div><div class="definition">GSE_LON</div><div class="term">Description</div><div class="definition"><p>Spacecraft longitude in GSE coordinates</p>
-</div><div class="term">Units</div><div class="definition">deg</div><div class="term">CoordinateSystem</div><div class="definition"><div class="term">CoordinateRepresentation</div><div class="definition">Spherical</div><div class="term">CoordinateSystemName</div><div class="definition">GSE</div></div><div class="term">ValidMin</div><div class="definition">0.0</div><div class="term">ValidMax</div><div class="definition">360.0</div><div class="term">FillValue</div><div class="definition">-1.0e+31</div><div class="term">Support</div><div class="definition"><div class="term">Qualifier</div><div class="definition">DirectionAngle.AzimuthAngle</div><div class="term">SupportQuantity</div><div class="definition">Positional</div></div></div><div class="parameter">Parameter #4</div><div class="definition"><div class="term">Name</div><div class="definition">GSE Local Time</div><div class="term">ParameterKey</div><div class="definition">GSE_LCT_T</div><div class="term">Description</div><div class="definition"><p>Local time in GSE coordinates</p>
-</div><div class="term">Units</div><div class="definition">hr</div><div class="term">UnitsConversion</div><div class="definition">3600&gt;s</div><div class="term">CoordinateSystem</div><div class="definition"><div class="term">CoordinateRepresentation</div><div class="definition">Spherical</div><div class="term">CoordinateSystemName</div><div class="definition">GSE</div></div><div class="term">ValidMin</div><div class="definition">0.0</div><div class="term">ValidMax</div><div class="definition">24.0</div><div class="term">FillValue</div><div class="definition">-1.0e+31</div><div class="term">Support</div><div class="definition"><div class="term">Qualifier</div><div class="definition">DirectionAngle.AzimuthAngle</div><div class="term">SupportQuantity</div><div class="definition">Positional</div></div></div><div class="parameter">Parameter #5</div><div class="definition"><div class="term">Name</div><div class="definition">GSM Latitude</div><div class="term">ParameterKey</div><div class="definition">GSM_LAT</div><div class="term">Description</div><div class="definition"><p>Spacecraft latitude in GSM coordinates</p>
-</div><div class="term">Units</div><div class="definition">deg</div><div class="term">CoordinateSystem</div><div class="definition"><div class="term">CoordinateRepresentation</div><div class="definition">Spherical</div><div class="term">CoordinateSystemName</div><div class="definition">GSM</div></div><div class="term">ValidMin</div><div class="definition">-90.0</div><div class="term">ValidMax</div><div class="definition">90.0</div><div class="term">FillValue</div><div class="definition">-1.0e+31</div><div class="term">Support</div><div class="definition"><div class="term">Qualifier</div><div class="definition">DirectionAngle.ElevationAngle</div><div class="term">SupportQuantity</div><div class="definition">Positional</div></div></div><div class="parameter">Parameter #6</div><div class="definition"><div class="term">Name</div><div class="definition">GSM Longitude</div><div class="term">ParameterKey</div><div class="definition">GSM_LON</div><div class="term">Description</div><div class="definition"><p>Spacecraft longitude in GSM coordinates</p>
-</div><div class="term">Units</div><div class="definition">deg</div><div class="term">CoordinateSystem</div><div class="definition"><div class="term">CoordinateRepresentation</div><div class="definition">Spherical</div><div class="term">CoordinateSystemName</div><div class="definition">GSM</div></div><div class="term">ValidMin</div><div class="definition">0.0</div><div class="term">ValidMax</div><div class="definition">360.0</div><div class="term">FillValue</div><div class="definition">-1.0e+31</div><div class="term">Support</div><div class="definition"><div class="term">Qualifier</div><div class="definition">DirectionAngle.AzimuthAngle</div><div class="term">SupportQuantity</div><div class="definition">Positional</div></div></div><div class="parameter">Parameter #7</div><div class="definition"><div class="term">Name</div><div class="definition">Radial distance</div><div class="term">ParameterKey</div><div class="definition">RADIUS</div><div class="term">Description</div><div class="definition"><p>Radial distance from the center of Earth</p>
-</div><div class="term">Units</div><div class="definition">Re</div><div class="term">UnitsConversion</div><div class="definition">6.378e6&gt;m</div><div class="term">CoordinateSystem</div><div class="definition"><div class="term">CoordinateRepresentation</div><div class="definition">Spherical</div><div class="term">CoordinateSystemName</div><div class="definition">GSE</div></div><div class="term">ValidMin</div><div class="definition">0.0</div><div class="term">ValidMax</div><div class="definition">250.0</div><div class="term">FillValue</div><div class="definition">-1.0e+31</div><div class="term">Support</div><div class="definition"><div class="term">Qualifier</div><div class="definition">Magnitude</div><div class="term">SupportQuantity</div><div class="definition">Positional</div></div></div><div class="parameter">Parameter #8</div><div class="definition"><div class="term">Name</div><div class="definition">GSE Position Vector</div><div class="term">ParameterKey</div><div class="definition">XYZ_GSE</div><div class="term">Description</div><div class="definition"><p>Position in cartesian GSE coordinates</p>
-</div><div class="term">Units</div><div class="definition">Re</div><div class="term">UnitsConversion</div><div class="definition">6.378e6&gt;m</div><div class="term">CoordinateSystem</div><div class="definition"><div class="term">CoordinateRepresentation</div><div class="definition">Cartesian</div><div class="term">CoordinateSystemName</div><div class="definition">GSE</div></div><div class="term">Structure</div><div class="definition"><div class="term">Size</div><div class="definition">3</div><div class="term">Element</div><div class="definition"><div class="term">Name</div><div class="definition">GSE X</div><div class="term">Qualifier</div><div class="definition">Component.I</div><div class="term">Index</div><div class="definition">1</div></div><div class="term">Element</div><div class="definition"><div class="term">Name</div><div class="definition">GSE Y</div><div class="term">Qualifier</div><div class="definition">Component.J</div><div class="term">Index</div><div class="definition">2</div></div><div class="term">Element</div><div class="definition"><div class="term">Name</div><div class="definition">GSE Z</div><div class="term">Qualifier</div><div class="definition">Component.K</div><div class="term">Index</div><div class="definition">3</div></div></div><div class="term">ValidMin</div><div class="definition">-250.0</div><div class="term">ValidMax</div><div class="definition">250.0</div><div class="term">FillValue</div><div class="definition">-1.0e+31</div><div class="term">Support</div><div class="definition"><div class="term">SupportQuantity</div><div class="definition">Positional</div></div></div><div class="parameter">Parameter #9</div><div class="definition"><div class="term">Name</div><div class="definition">GSM Position Vector</div><div class="term">ParameterKey</div><div class="definition">XYZ_GSM</div><div class="term">Description</div><div class="definition"><p>Position in cartesian GSM coordinates</p>
-</div><div class="term">Units</div><div class="definition">Re</div><div class="term">UnitsConversion</div><div class="definition">6.378e6&gt;m</div><div class="term">CoordinateSystem</div><div class="definition"><div class="term">CoordinateRepresentation</div><div class="definition">Cartesian</div><div class="term">CoordinateSystemName</div><div class="definition">GSM</div></div><div class="term">Structure</div><div class="definition"><div class="term">Size</div><div class="definition">3</div><div class="term">Element</div><div class="definition"><div class="term">Name</div><div class="definition">GSM X</div><div class="term">Qualifier</div><div class="definition">Component.I</div><div class="term">Index</div><div class="definition">1</div></div><div class="term">Element</div><div class="definition"><div class="term">Name</div><div class="definition">GSM Y</div><div class="term">Qualifier</div><div class="definition">Component.J</div><div class="term">Index</div><div class="definition">2</div></div><div class="term">Element</div><div class="definition"><div class="term">Name</div><div class="definition">GSM Z</div><div class="term">Qualifier</div><div class="definition">Component.K</div><div class="term">Index</div><div class="definition">3</div></div></div><div class="term">ValidMin</div><div class="definition">-250.0</div><div class="term">ValidMax</div><div class="definition">250.0</div><div class="term">FillValue</div><div class="definition">-1.0e+31</div><div class="term">Support</div><div class="definition"><div class="term">SupportQuantity</div><div class="definition">Positional</div></div></div></div></div></div></div></body></html>
+  </style>
+ </head>
+ <body>
+  <div>
+   <a id="top">
+   </a>
+  </div>
+  <div class="header">
+   <div class="middle">
+    spase-metadata.org
+    <a href="https://spase-group.org/">
+     SPASE
+    </a>
+    landing pages.
+   </div>
+  </div>
+  <div class="page">
+   <div class="spase">
+    <div class="abstract">
+     <div class="access">
+      <p class="box-title">
+       Data Access
+      </p>
+      <ul class="list">
+       <li class="list">
+        <a href="ftps://spdf.gsfc.nasa.gov/pub/data/imp/imp8/orbit/or_ssc/" target="_blank">
+         FTPS from SPDF (not with most browsers)
+        </a>
+       </li>
+       <li class="list">
+        <a href="https://spdf.gsfc.nasa.gov/pub/data/imp/imp8/orbit/or_ssc/" target="_blank">
+         HTTPS from SPDF
+        </a>
+       </li>
+       <li class="list">
+        <a href="https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=I8_OR_SSC&amp;index=sp_phys" target="_blank">
+         CDAWeb
+        </a>
+       </li>
+       <li class="list">
+        <a href="https://sscweb.gsfc.nasa.gov/cgi-bin/Locator.cgi" target="_blank">
+         SSCWeb
+        </a>
+       </li>
+       <li class="list">
+        <a href="https://cdaweb.gsfc.nasa.gov/hapi" target="_blank">
+         HAPI: CDAWeb HAPI Server
+        </a>
+       </li>
+      </ul>
+     </div>
+     <div class="citation inset">
+      <h1>
+       <a name="spase://NASA/NumericalData/IMP8/Ephemeris/PT12M">
+        IMP 8 Spacecraft Positions
+       </a>
+      </h1>
+      <p>
+       <div class="term">
+        ResourceID
+       </div>
+       <div class="definition">
+        spase://NASA/NumericalData/IMP8/Ephemeris/PT12M
+       </div>
+      </p>
+      <p>
+       <div class="term">
+        Description
+       </div>
+       <div class="definition">
+        <p>
+         IMP-8 spacecraft positions in various coordinate systems
+        </p>
+       </div>
+      </p>
+     </div>
+    </div>
+    <div>
+     <p class="right">
+      <a href="PT12M.xml" target="_blank">
+       View XML
+      </a>
+      |
+      <a href="PT12M.json" target="_blank">
+       View JSON
+      </a>
+      |
+      <a href="https://spase-editor.heliocloud.org/?edit=https://spase-metadata.org/NASA/NumericalData/IMP8/Ephemeris/PT12M.xml" target="_blank">
+       Edit
+      </a>
+     </p>
+     <h1 class="detail">
+      Details
+     </h1>
+    </div>
+    <div>
+     <div class="product">
+      <p class="version">
+       Version:2.7.1
+      </p>
+      <h1>
+       MetadataRightsList
+      </h1>
+      <div class="term">
+       Rights
+      </div>
+      <div class="definition">
+       <div class="term">
+        SchemeURI
+       </div>
+       <div class="definition">
+        https://spdx.org/licenses/
+       </div>
+       <div class="term">
+        RightsIdentifierScheme
+       </div>
+       <div class="definition">
+        SPDX
+       </div>
+       <div class="term">
+        RightsIdentifier
+       </div>
+       <div class="definition">
+        CC0-1.0
+       </div>
+       <div class="term">
+        RightsURI
+       </div>
+       <div class="definition">
+        https://spdx.org/licenses/CC0-1.0.html
+       </div>
+       <div class="term">
+        RightsName
+       </div>
+       <div class="definition">
+        Creative Commons Zero v1.0 Universal
+       </div>
+       <div class="term">
+        Note
+       </div>
+       <div class="definition">
+        CC0 1.0 Universal is the Creative Commons license applicable to all publicly available SPASE metadata descriptions
+       </div>
+      </div>
+     </div>
+     <div class="product">
+      <p class="version">
+       Version:2.7.1
+      </p>
+      <h1>
+       NumericalData
+      </h1>
+      <div class="term">
+       ResourceID
+      </div>
+      <div class="definition">
+       spase://NASA/NumericalData/IMP8/Ephemeris/PT12M
+      </div>
+      <div class="term">
+       NamingAuthority
+      </div>
+      <div class="definition">
+       NASA
+      </div>
+      <div class="term">
+       ResourceType
+      </div>
+      <div class="definition">
+       NumericalData
+      </div>
+      <div class="term">
+       ResourceHeader
+      </div>
+      <div class="definition">
+       <div class="term">
+        ResourceName
+       </div>
+       <div class="definition">
+        IMP 8 Spacecraft Positions
+       </div>
+       <div class="term">
+        ReleaseDate
+       </div>
+       <div class="definition">
+        2025-12-04 13:29:34Z
+       </div>
+       <div class="term">
+        RevisionHistory
+       </div>
+       <div class="definition">
+        <div class="term">
+         RevisionEvent
+        </div>
+        <div class="definition">
+         <div class="term">
+          ReleaseDate
+         </div>
+         <div class="definition">
+          2021-04-27 15:38:11Z
+         </div>
+         <div class="term">
+          Note
+         </div>
+         <div class="definition">
+          Only known prior ReleaseDate of the metadata
+         </div>
+        </div>
+        <div class="term">
+         RevisionEvent
+        </div>
+        <div class="definition">
+         <div class="term">
+          ReleaseDate
+         </div>
+         <div class="definition">
+          2025-05-14 15:38:11Z
+         </div>
+         <div class="term">
+          Note
+         </div>
+         <div class="definition">
+          Added ObservedRegion. JMW
+         </div>
+        </div>
+        <div class="term">
+         RevisionEvent
+        </div>
+        <div class="definition">
+         <div class="term">
+          ReleaseDate
+         </div>
+         <div class="definition">
+          2025-12-04 13:29:34Z
+         </div>
+         <div class="term">
+          Note
+         </div>
+         <div class="definition">
+          Added MetadataRightsList and RightsList(s). Added ResourceType and NamingAuthority. Updated to 2.7.1. Changed http to https in top-level schemaLocation attribute. Fixed version number separator in top-level schemaLocation attribute. ZCB
+         </div>
+        </div>
+       </div>
+       <div class="term">
+        Description
+       </div>
+       <div class="definition">
+        <p>
+         IMP-8 spacecraft positions in various coordinate systems
+        </p>
+       </div>
+       <div class="term">
+        Contacts
+       </div>
+       <dd>
+        <table cellspacing="0" class="nested">
+         <tr>
+          <th>
+          </th>
+          <th class="center">
+           Role
+          </th>
+          <th class="center">
+           Person
+          </th>
+          <th class="center">
+           StartDate
+          </th>
+          <th class="center">
+           StopDate
+          </th>
+          <th class="center">
+           Note
+          </th>
+         </tr>
+         <tbody>
+          <tr>
+           <td>
+            1.
+           </td>
+           <td>
+            Scientist
+           </td>
+           <td>
+            <a href="https://spase-metadata.org/SMWG/Person/Adam.Szabo.html" target="_blank">
+             spase://SMWG/Person/Adam.Szabo
+            </a>
+           </td>
+           <td>
+           </td>
+           <td>
+           </td>
+           <td>
+           </td>
+          </tr>
+         </tbody>
+        </table>
+       </dd>
+       <div class="term">
+        PriorIDs
+       </div>
+       <div class="definition">
+        spase://VMO/NumericalData/IMP8/Ephemeris/PT12M
+       </div>
+       <div class="definition">
+        spase://VSPO/NumericalData/IMP8/Ephemeris/PT12M
+       </div>
+      </div>
+      <div class="term">
+       AccessInformation
+      </div>
+      <div class="definition">
+       <div class="term">
+        RepositoryID
+       </div>
+       <div class="definition">
+        <a href="https://spase-metadata.org/SMWG/Repository/NASA/GSFC/SPDF/CDAWeb.html">
+         spase://SMWG/Repository/NASA/GSFC/SPDF/CDAWeb
+        </a>
+       </div>
+       <div class="term">
+        Availability
+       </div>
+       <div class="definition">
+        Online
+       </div>
+       <div class="term">
+        AccessRights
+       </div>
+       <div class="definition">
+        Open
+       </div>
+       <div class="term">
+        RightsList
+       </div>
+       <div class="definition">
+        <div class="term">
+         Rights
+        </div>
+        <div class="definition">
+         <div class="term">
+          SchemeURI
+         </div>
+         <div class="definition">
+          https://spdx.org/licenses/
+         </div>
+         <div class="term">
+          RightsIdentifierScheme
+         </div>
+         <div class="definition">
+          SPDX
+         </div>
+         <div class="term">
+          RightsIdentifier
+         </div>
+         <div class="definition">
+          CC0-1.0
+         </div>
+         <div class="term">
+          RightsURI
+         </div>
+         <div class="definition">
+          https://spdx.org/licenses/CC0-1.0.html
+         </div>
+         <div class="term">
+          RightsName
+         </div>
+         <div class="definition">
+          Creative Commons Zero v1.0 Universal
+         </div>
+         <div class="term">
+          Note
+         </div>
+         <div class="definition">
+          CC0 1.0 Universal is the Creative Commons license applicable to all publicly available NASA Heliophysics data products
+         </div>
+        </div>
+       </div>
+       <div class="term">
+        AccessURL
+       </div>
+       <div class="definition">
+        <div class="term">
+         Name
+        </div>
+        <div class="definition">
+         FTPS from SPDF (not with most browsers)
+        </div>
+        <div class="term">
+         URL
+        </div>
+        <div class="definition">
+         <a href="ftps://spdf.gsfc.nasa.gov/pub/data/imp/imp8/orbit/or_ssc/" target="_blank">
+          ftps://spdf.gsfc.nasa.gov/pub/data/imp/imp8/orbit/or_ssc/
+         </a>
+        </div>
+        <div class="term">
+         Description
+        </div>
+        <div class="definition">
+         <p>
+          NASA/GSFC CDAWeb ftp access to the data.
+         </p>
+        </div>
+       </div>
+       <div class="term">
+        AccessURL
+       </div>
+       <div class="definition">
+        <div class="term">
+         Name
+        </div>
+        <div class="definition">
+         HTTPS from SPDF
+        </div>
+        <div class="term">
+         URL
+        </div>
+        <div class="definition">
+         <a href="https://spdf.gsfc.nasa.gov/pub/data/imp/imp8/orbit/or_ssc/" target="_blank">
+          https://spdf.gsfc.nasa.gov/pub/data/imp/imp8/orbit/or_ssc/
+         </a>
+        </div>
+        <div class="term">
+         Description
+        </div>
+        <div class="definition">
+         <p>
+          In CDF via HTTP from SPDF
+         </p>
+        </div>
+       </div>
+       <div class="term">
+        Format
+       </div>
+       <div class="definition">
+        CDF
+       </div>
+       <div class="term">
+        Encoding
+       </div>
+       <div class="definition">
+        None
+       </div>
+      </div>
+      <div class="term">
+       AccessInformation
+      </div>
+      <div class="definition">
+       <div class="term">
+        RepositoryID
+       </div>
+       <div class="definition">
+        <a href="https://spase-metadata.org/SMWG/Repository/NASA/GSFC/SPDF.html">
+         spase://SMWG/Repository/NASA/GSFC/SPDF
+        </a>
+       </div>
+       <div class="term">
+        Availability
+       </div>
+       <div class="definition">
+        Online
+       </div>
+       <div class="term">
+        AccessRights
+       </div>
+       <div class="definition">
+        Open
+       </div>
+       <div class="term">
+        RightsList
+       </div>
+       <div class="definition">
+        <div class="term">
+         Rights
+        </div>
+        <div class="definition">
+         <div class="term">
+          SchemeURI
+         </div>
+         <div class="definition">
+          https://spdx.org/licenses/
+         </div>
+         <div class="term">
+          RightsIdentifierScheme
+         </div>
+         <div class="definition">
+          SPDX
+         </div>
+         <div class="term">
+          RightsIdentifier
+         </div>
+         <div class="definition">
+          CC0-1.0
+         </div>
+         <div class="term">
+          RightsURI
+         </div>
+         <div class="definition">
+          https://spdx.org/licenses/CC0-1.0.html
+         </div>
+         <div class="term">
+          RightsName
+         </div>
+         <div class="definition">
+          Creative Commons Zero v1.0 Universal
+         </div>
+         <div class="term">
+          Note
+         </div>
+         <div class="definition">
+          CC0 1.0 Universal is the Creative Commons license applicable to all publicly available NASA Heliophysics data products
+         </div>
+        </div>
+       </div>
+       <div class="term">
+        AccessURL
+       </div>
+       <div class="definition">
+        <div class="term">
+         Name
+        </div>
+        <div class="definition">
+         CDAWeb
+        </div>
+        <div class="term">
+         URL
+        </div>
+        <div class="definition">
+         <a href="https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=I8_OR_SSC&amp;index=sp_phys" target="_blank">
+          https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=I8_OR_SSC&amp;index=sp_phys
+         </a>
+        </div>
+        <div class="term">
+         ProductKey
+        </div>
+        <div class="definition">
+         I8_OR_SSC
+        </div>
+        <div class="term">
+         Description
+        </div>
+        <div class="definition">
+         <p>
+          I8_OR_SSC with subset, plot and list via CDAWeb
+         </p>
+        </div>
+       </div>
+       <div class="term">
+        AccessURL
+       </div>
+       <div class="definition">
+        <div class="term">
+         Name
+        </div>
+        <div class="definition">
+         SSCWeb
+        </div>
+        <div class="term">
+         URL
+        </div>
+        <div class="definition">
+         <a href="https://sscweb.gsfc.nasa.gov/cgi-bin/Locator.cgi" target="_blank">
+          https://sscweb.gsfc.nasa.gov/cgi-bin/Locator.cgi
+         </a>
+        </div>
+        <div class="term">
+         ProductKey
+        </div>
+        <div class="definition">
+         imp8
+        </div>
+       </div>
+       <div class="term">
+        Format
+       </div>
+       <div class="definition">
+        Text
+       </div>
+       <div class="term">
+        Acknowledgement
+       </div>
+       <div class="definition">
+        Please acknowledge the CDAWeb team at GSFC/SPDF.
+       </div>
+      </div>
+      <div class="term">
+       AccessInformation
+      </div>
+      <div class="definition">
+       <div class="term">
+        RepositoryID
+       </div>
+       <div class="definition">
+        <a href="https://spase-metadata.org/SMWG/Repository/NASA/GSFC/SPDF.html">
+         spase://SMWG/Repository/NASA/GSFC/SPDF
+        </a>
+       </div>
+       <div class="term">
+        Availability
+       </div>
+       <div class="definition">
+        Online
+       </div>
+       <div class="term">
+        AccessRights
+       </div>
+       <div class="definition">
+        Open
+       </div>
+       <div class="term">
+        RightsList
+       </div>
+       <div class="definition">
+        <div class="term">
+         Rights
+        </div>
+        <div class="definition">
+         <div class="term">
+          SchemeURI
+         </div>
+         <div class="definition">
+          https://spdx.org/licenses/
+         </div>
+         <div class="term">
+          RightsIdentifierScheme
+         </div>
+         <div class="definition">
+          SPDX
+         </div>
+         <div class="term">
+          RightsIdentifier
+         </div>
+         <div class="definition">
+          CC0-1.0
+         </div>
+         <div class="term">
+          RightsURI
+         </div>
+         <div class="definition">
+          https://spdx.org/licenses/CC0-1.0.html
+         </div>
+         <div class="term">
+          RightsName
+         </div>
+         <div class="definition">
+          Creative Commons Zero v1.0 Universal
+         </div>
+         <div class="term">
+          Note
+         </div>
+         <div class="definition">
+          CC0 1.0 Universal is the Creative Commons license applicable to all publicly available NASA Heliophysics data products
+         </div>
+        </div>
+       </div>
+       <div class="term">
+        AccessURL
+       </div>
+       <div class="definition">
+        <div class="term">
+         Name
+        </div>
+        <div class="definition">
+         CDAWeb HAPI Server
+        </div>
+        <div class="term">
+         URL
+        </div>
+        <div class="definition">
+         <a href="https://cdaweb.gsfc.nasa.gov/hapi" target="_blank">
+          https://cdaweb.gsfc.nasa.gov/hapi
+         </a>
+        </div>
+        <div class="term">
+         Style
+        </div>
+        <div class="definition">
+         HAPI
+        </div>
+        <div class="term">
+         ProductKey
+        </div>
+        <div class="definition">
+         I8_OR_SSC
+        </div>
+        <div class="term">
+         Description
+        </div>
+        <div class="definition">
+         <p>
+          Web Service to this product using the HAPI interface.
+         </p>
+        </div>
+       </div>
+       <div class="term">
+        Format
+       </div>
+       <div class="definition">
+        CSV
+       </div>
+       <div class="term">
+        Acknowledgement
+       </div>
+       <div class="definition">
+        Please acknowledge the CDAWeb team at GSFC/SPDF.
+       </div>
+      </div>
+      <div class="term">
+       InstrumentIDs
+      </div>
+      <div class="definition">
+       <a href="https://spase-metadata.org/SMWG/Instrument/IMP8/Ephemeris.html" target="_blank">
+        spase://SMWG/Instrument/IMP8/Ephemeris
+       </a>
+      </div>
+      <div class="term">
+       MeasurementType
+      </div>
+      <div class="definition">
+       Ephemeris
+      </div>
+      <div class="term">
+       TemporalDescription
+      </div>
+      <div class="definition">
+       <div class="term">
+        TimeSpan
+       </div>
+       <div class="definition">
+        <div class="term">
+         StartDate
+        </div>
+        <div class="definition">
+         1973-10-30 00:00:00Z
+        </div>
+        <div class="term">
+         RelativeStopDate
+        </div>
+        <div class="definition">
+         P0D
+        </div>
+       </div>
+       <div class="term">
+        Cadence
+       </div>
+       <div class="definition">
+        PT12M
+       </div>
+      </div>
+      <div class="term">
+       ObservedRegion
+      </div>
+      <div class="definition">
+       Heliosphere.NearEarth
+      </div>
+      <div class="term">
+       ObservedRegion
+      </div>
+      <div class="definition">
+       Earth.Magnetosphere.Magnetotail
+      </div>
+      <div class="parameter">
+       Parameter #1
+      </div>
+      <div class="definition">
+       <div class="term">
+        Name
+       </div>
+       <div class="definition">
+        Epoch
+       </div>
+       <div class="term">
+        ParameterKey
+       </div>
+       <div class="definition">
+        Epoch
+       </div>
+       <div class="term">
+        Description
+       </div>
+       <div class="definition">
+        <p>
+         Number of milliseconds since the epoch 01-Jan-1956 00:00:00
+        </p>
+       </div>
+       <div class="term">
+        Units
+       </div>
+       <div class="definition">
+        ms
+       </div>
+       <div class="term">
+        UnitsConversion
+       </div>
+       <div class="definition">
+        1e-3&gt;s
+       </div>
+       <div class="term">
+        FillValue
+       </div>
+       <div class="definition">
+        -1.0e31
+       </div>
+       <div class="term">
+        Support
+       </div>
+       <div class="definition">
+        <div class="term">
+         SupportQuantity
+        </div>
+        <div class="definition">
+         Temporal
+        </div>
+       </div>
+      </div>
+      <div class="parameter">
+       Parameter #2
+      </div>
+      <div class="definition">
+       <div class="term">
+        Name
+       </div>
+       <div class="definition">
+        GSE Latitude
+       </div>
+       <div class="term">
+        ParameterKey
+       </div>
+       <div class="definition">
+        GSE_LAT
+       </div>
+       <div class="term">
+        Description
+       </div>
+       <div class="definition">
+        <p>
+         Spacecraft latitude in GSE coordinates
+        </p>
+       </div>
+       <div class="term">
+        Units
+       </div>
+       <div class="definition">
+        deg
+       </div>
+       <div class="term">
+        CoordinateSystem
+       </div>
+       <div class="definition">
+        <div class="term">
+         CoordinateRepresentation
+        </div>
+        <div class="definition">
+         Spherical
+        </div>
+        <div class="term">
+         CoordinateSystemName
+        </div>
+        <div class="definition">
+         GSE
+        </div>
+       </div>
+       <div class="term">
+        ValidMin
+       </div>
+       <div class="definition">
+        -90.0
+       </div>
+       <div class="term">
+        ValidMax
+       </div>
+       <div class="definition">
+        90.0
+       </div>
+       <div class="term">
+        FillValue
+       </div>
+       <div class="definition">
+        -1.0e+31
+       </div>
+       <div class="term">
+        Support
+       </div>
+       <div class="definition">
+        <div class="term">
+         Qualifier
+        </div>
+        <div class="definition">
+         DirectionAngle.ElevationAngle
+        </div>
+        <div class="term">
+         SupportQuantity
+        </div>
+        <div class="definition">
+         Positional
+        </div>
+       </div>
+      </div>
+      <div class="parameter">
+       Parameter #3
+      </div>
+      <div class="definition">
+       <div class="term">
+        Name
+       </div>
+       <div class="definition">
+        GSE Longitude
+       </div>
+       <div class="term">
+        ParameterKey
+       </div>
+       <div class="definition">
+        GSE_LON
+       </div>
+       <div class="term">
+        Description
+       </div>
+       <div class="definition">
+        <p>
+         Spacecraft longitude in GSE coordinates
+        </p>
+       </div>
+       <div class="term">
+        Units
+       </div>
+       <div class="definition">
+        deg
+       </div>
+       <div class="term">
+        CoordinateSystem
+       </div>
+       <div class="definition">
+        <div class="term">
+         CoordinateRepresentation
+        </div>
+        <div class="definition">
+         Spherical
+        </div>
+        <div class="term">
+         CoordinateSystemName
+        </div>
+        <div class="definition">
+         GSE
+        </div>
+       </div>
+       <div class="term">
+        ValidMin
+       </div>
+       <div class="definition">
+        0.0
+       </div>
+       <div class="term">
+        ValidMax
+       </div>
+       <div class="definition">
+        360.0
+       </div>
+       <div class="term">
+        FillValue
+       </div>
+       <div class="definition">
+        -1.0e+31
+       </div>
+       <div class="term">
+        Support
+       </div>
+       <div class="definition">
+        <div class="term">
+         Qualifier
+        </div>
+        <div class="definition">
+         DirectionAngle.AzimuthAngle
+        </div>
+        <div class="term">
+         SupportQuantity
+        </div>
+        <div class="definition">
+         Positional
+        </div>
+       </div>
+      </div>
+      <div class="parameter">
+       Parameter #4
+      </div>
+      <div class="definition">
+       <div class="term">
+        Name
+       </div>
+       <div class="definition">
+        GSE Local Time
+       </div>
+       <div class="term">
+        ParameterKey
+       </div>
+       <div class="definition">
+        GSE_LCT_T
+       </div>
+       <div class="term">
+        Description
+       </div>
+       <div class="definition">
+        <p>
+         Local time in GSE coordinates
+        </p>
+       </div>
+       <div class="term">
+        Units
+       </div>
+       <div class="definition">
+        hr
+       </div>
+       <div class="term">
+        UnitsConversion
+       </div>
+       <div class="definition">
+        3600&gt;s
+       </div>
+       <div class="term">
+        CoordinateSystem
+       </div>
+       <div class="definition">
+        <div class="term">
+         CoordinateRepresentation
+        </div>
+        <div class="definition">
+         Spherical
+        </div>
+        <div class="term">
+         CoordinateSystemName
+        </div>
+        <div class="definition">
+         GSE
+        </div>
+       </div>
+       <div class="term">
+        ValidMin
+       </div>
+       <div class="definition">
+        0.0
+       </div>
+       <div class="term">
+        ValidMax
+       </div>
+       <div class="definition">
+        24.0
+       </div>
+       <div class="term">
+        FillValue
+       </div>
+       <div class="definition">
+        -1.0e+31
+       </div>
+       <div class="term">
+        Support
+       </div>
+       <div class="definition">
+        <div class="term">
+         Qualifier
+        </div>
+        <div class="definition">
+         DirectionAngle.AzimuthAngle
+        </div>
+        <div class="term">
+         SupportQuantity
+        </div>
+        <div class="definition">
+         Positional
+        </div>
+       </div>
+      </div>
+      <div class="parameter">
+       Parameter #5
+      </div>
+      <div class="definition">
+       <div class="term">
+        Name
+       </div>
+       <div class="definition">
+        GSM Latitude
+       </div>
+       <div class="term">
+        ParameterKey
+       </div>
+       <div class="definition">
+        GSM_LAT
+       </div>
+       <div class="term">
+        Description
+       </div>
+       <div class="definition">
+        <p>
+         Spacecraft latitude in GSM coordinates
+        </p>
+       </div>
+       <div class="term">
+        Units
+       </div>
+       <div class="definition">
+        deg
+       </div>
+       <div class="term">
+        CoordinateSystem
+       </div>
+       <div class="definition">
+        <div class="term">
+         CoordinateRepresentation
+        </div>
+        <div class="definition">
+         Spherical
+        </div>
+        <div class="term">
+         CoordinateSystemName
+        </div>
+        <div class="definition">
+         GSM
+        </div>
+       </div>
+       <div class="term">
+        ValidMin
+       </div>
+       <div class="definition">
+        -90.0
+       </div>
+       <div class="term">
+        ValidMax
+       </div>
+       <div class="definition">
+        90.0
+       </div>
+       <div class="term">
+        FillValue
+       </div>
+       <div class="definition">
+        -1.0e+31
+       </div>
+       <div class="term">
+        Support
+       </div>
+       <div class="definition">
+        <div class="term">
+         Qualifier
+        </div>
+        <div class="definition">
+         DirectionAngle.ElevationAngle
+        </div>
+        <div class="term">
+         SupportQuantity
+        </div>
+        <div class="definition">
+         Positional
+        </div>
+       </div>
+      </div>
+      <div class="parameter">
+       Parameter #6
+      </div>
+      <div class="definition">
+       <div class="term">
+        Name
+       </div>
+       <div class="definition">
+        GSM Longitude
+       </div>
+       <div class="term">
+        ParameterKey
+       </div>
+       <div class="definition">
+        GSM_LON
+       </div>
+       <div class="term">
+        Description
+       </div>
+       <div class="definition">
+        <p>
+         Spacecraft longitude in GSM coordinates
+        </p>
+       </div>
+       <div class="term">
+        Units
+       </div>
+       <div class="definition">
+        deg
+       </div>
+       <div class="term">
+        CoordinateSystem
+       </div>
+       <div class="definition">
+        <div class="term">
+         CoordinateRepresentation
+        </div>
+        <div class="definition">
+         Spherical
+        </div>
+        <div class="term">
+         CoordinateSystemName
+        </div>
+        <div class="definition">
+         GSM
+        </div>
+       </div>
+       <div class="term">
+        ValidMin
+       </div>
+       <div class="definition">
+        0.0
+       </div>
+       <div class="term">
+        ValidMax
+       </div>
+       <div class="definition">
+        360.0
+       </div>
+       <div class="term">
+        FillValue
+       </div>
+       <div class="definition">
+        -1.0e+31
+       </div>
+       <div class="term">
+        Support
+       </div>
+       <div class="definition">
+        <div class="term">
+         Qualifier
+        </div>
+        <div class="definition">
+         DirectionAngle.AzimuthAngle
+        </div>
+        <div class="term">
+         SupportQuantity
+        </div>
+        <div class="definition">
+         Positional
+        </div>
+       </div>
+      </div>
+      <div class="parameter">
+       Parameter #7
+      </div>
+      <div class="definition">
+       <div class="term">
+        Name
+       </div>
+       <div class="definition">
+        Radial distance
+       </div>
+       <div class="term">
+        ParameterKey
+       </div>
+       <div class="definition">
+        RADIUS
+       </div>
+       <div class="term">
+        Description
+       </div>
+       <div class="definition">
+        <p>
+         Radial distance from the center of Earth
+        </p>
+       </div>
+       <div class="term">
+        Units
+       </div>
+       <div class="definition">
+        Re
+       </div>
+       <div class="term">
+        UnitsConversion
+       </div>
+       <div class="definition">
+        6.378e6&gt;m
+       </div>
+       <div class="term">
+        CoordinateSystem
+       </div>
+       <div class="definition">
+        <div class="term">
+         CoordinateRepresentation
+        </div>
+        <div class="definition">
+         Spherical
+        </div>
+        <div class="term">
+         CoordinateSystemName
+        </div>
+        <div class="definition">
+         GSE
+        </div>
+       </div>
+       <div class="term">
+        ValidMin
+       </div>
+       <div class="definition">
+        0.0
+       </div>
+       <div class="term">
+        ValidMax
+       </div>
+       <div class="definition">
+        250.0
+       </div>
+       <div class="term">
+        FillValue
+       </div>
+       <div class="definition">
+        -1.0e+31
+       </div>
+       <div class="term">
+        Support
+       </div>
+       <div class="definition">
+        <div class="term">
+         Qualifier
+        </div>
+        <div class="definition">
+         Magnitude
+        </div>
+        <div class="term">
+         SupportQuantity
+        </div>
+        <div class="definition">
+         Positional
+        </div>
+       </div>
+      </div>
+      <div class="parameter">
+       Parameter #8
+      </div>
+      <div class="definition">
+       <div class="term">
+        Name
+       </div>
+       <div class="definition">
+        GSE Position Vector
+       </div>
+       <div class="term">
+        ParameterKey
+       </div>
+       <div class="definition">
+        XYZ_GSE
+       </div>
+       <div class="term">
+        Description
+       </div>
+       <div class="definition">
+        <p>
+         Position in cartesian GSE coordinates
+        </p>
+       </div>
+       <div class="term">
+        Units
+       </div>
+       <div class="definition">
+        Re
+       </div>
+       <div class="term">
+        UnitsConversion
+       </div>
+       <div class="definition">
+        6.378e6&gt;m
+       </div>
+       <div class="term">
+        CoordinateSystem
+       </div>
+       <div class="definition">
+        <div class="term">
+         CoordinateRepresentation
+        </div>
+        <div class="definition">
+         Cartesian
+        </div>
+        <div class="term">
+         CoordinateSystemName
+        </div>
+        <div class="definition">
+         GSE
+        </div>
+       </div>
+       <div class="term">
+        Structure
+       </div>
+       <div class="definition">
+        <div class="term">
+         Size
+        </div>
+        <div class="definition">
+         3
+        </div>
+        <div class="term">
+         Element
+        </div>
+        <div class="definition">
+         <div class="term">
+          Name
+         </div>
+         <div class="definition">
+          GSE X
+         </div>
+         <div class="term">
+          Qualifier
+         </div>
+         <div class="definition">
+          Component.I
+         </div>
+         <div class="term">
+          Index
+         </div>
+         <div class="definition">
+          1
+         </div>
+        </div>
+        <div class="term">
+         Element
+        </div>
+        <div class="definition">
+         <div class="term">
+          Name
+         </div>
+         <div class="definition">
+          GSE Y
+         </div>
+         <div class="term">
+          Qualifier
+         </div>
+         <div class="definition">
+          Component.J
+         </div>
+         <div class="term">
+          Index
+         </div>
+         <div class="definition">
+          2
+         </div>
+        </div>
+        <div class="term">
+         Element
+        </div>
+        <div class="definition">
+         <div class="term">
+          Name
+         </div>
+         <div class="definition">
+          GSE Z
+         </div>
+         <div class="term">
+          Qualifier
+         </div>
+         <div class="definition">
+          Component.K
+         </div>
+         <div class="term">
+          Index
+         </div>
+         <div class="definition">
+          3
+         </div>
+        </div>
+       </div>
+       <div class="term">
+        ValidMin
+       </div>
+       <div class="definition">
+        -250.0
+       </div>
+       <div class="term">
+        ValidMax
+       </div>
+       <div class="definition">
+        250.0
+       </div>
+       <div class="term">
+        FillValue
+       </div>
+       <div class="definition">
+        -1.0e+31
+       </div>
+       <div class="term">
+        Support
+       </div>
+       <div class="definition">
+        <div class="term">
+         SupportQuantity
+        </div>
+        <div class="definition">
+         Positional
+        </div>
+       </div>
+      </div>
+      <div class="parameter">
+       Parameter #9
+      </div>
+      <div class="definition">
+       <div class="term">
+        Name
+       </div>
+       <div class="definition">
+        GSM Position Vector
+       </div>
+       <div class="term">
+        ParameterKey
+       </div>
+       <div class="definition">
+        XYZ_GSM
+       </div>
+       <div class="term">
+        Description
+       </div>
+       <div class="definition">
+        <p>
+         Position in cartesian GSM coordinates
+        </p>
+       </div>
+       <div class="term">
+        Units
+       </div>
+       <div class="definition">
+        Re
+       </div>
+       <div class="term">
+        UnitsConversion
+       </div>
+       <div class="definition">
+        6.378e6&gt;m
+       </div>
+       <div class="term">
+        CoordinateSystem
+       </div>
+       <div class="definition">
+        <div class="term">
+         CoordinateRepresentation
+        </div>
+        <div class="definition">
+         Cartesian
+        </div>
+        <div class="term">
+         CoordinateSystemName
+        </div>
+        <div class="definition">
+         GSM
+        </div>
+       </div>
+       <div class="term">
+        Structure
+       </div>
+       <div class="definition">
+        <div class="term">
+         Size
+        </div>
+        <div class="definition">
+         3
+        </div>
+        <div class="term">
+         Element
+        </div>
+        <div class="definition">
+         <div class="term">
+          Name
+         </div>
+         <div class="definition">
+          GSM X
+         </div>
+         <div class="term">
+          Qualifier
+         </div>
+         <div class="definition">
+          Component.I
+         </div>
+         <div class="term">
+          Index
+         </div>
+         <div class="definition">
+          1
+         </div>
+        </div>
+        <div class="term">
+         Element
+        </div>
+        <div class="definition">
+         <div class="term">
+          Name
+         </div>
+         <div class="definition">
+          GSM Y
+         </div>
+         <div class="term">
+          Qualifier
+         </div>
+         <div class="definition">
+          Component.J
+         </div>
+         <div class="term">
+          Index
+         </div>
+         <div class="definition">
+          2
+         </div>
+        </div>
+        <div class="term">
+         Element
+        </div>
+        <div class="definition">
+         <div class="term">
+          Name
+         </div>
+         <div class="definition">
+          GSM Z
+         </div>
+         <div class="term">
+          Qualifier
+         </div>
+         <div class="definition">
+          Component.K
+         </div>
+         <div class="term">
+          Index
+         </div>
+         <div class="definition">
+          3
+         </div>
+        </div>
+       </div>
+       <div class="term">
+        ValidMin
+       </div>
+       <div class="definition">
+        -250.0
+       </div>
+       <div class="term">
+        ValidMax
+       </div>
+       <div class="definition">
+        250.0
+       </div>
+       <div class="term">
+        FillValue
+       </div>
+       <div class="definition">
+        -1.0e+31
+       </div>
+       <div class="term">
+        Support
+       </div>
+       <div class="definition">
+        <div class="term">
+         SupportQuantity
+        </div>
+        <div class="definition">
+         Positional
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>
