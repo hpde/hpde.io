@@ -1,0 +1,70 @@
+{
+  "Spase": {
+    "xmlns": "http://www.spase-group.org/data/schema",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema  http://www.spase-group.org/data/schema/spase-2_7_1.xsd",
+    "Version": "2.7.1",
+    "NumericalData": {
+      "ResourceID": "spase://ESA/NumericalData/SolarOrbiter/EUI/FSI/174/Level_2/PT10M",
+      "NamingAuthority": "ESA",
+      "ResourceHeader": {
+        "ResourceName": "Extreme UltraViolet Imager",
+        "ReleaseDate": "2026-03-16T00:00:00",
+        "Description": "The EUI instrument suite is composed of three telescopes: one dual-band full-sun imager (FSI) working alternatively at the 17.4 nm and 30.4 nm EUV passbands (named “FSI174/304”), and two high resolution imagers (HRI), one at the hydrogen Lyman-α line at 121.6 nm, (named “HRILy-α”) and one in the extreme UV line at 17.4 nm (named “HRIEUV”).",
+        "PublicationInfo": {
+          "Authors": "Rochus, Pierre.",
+          "PublicationDate": "2020-05-12T00:00:00",
+          "PublishedBy": "Solar Influences Data Analysis Center (SIDC)"
+        },
+        "Contact": {
+          "PersonID": "spase://SMWG/Person/Frederic.Auchere",
+          "Role": "PrincipalInvestigator"
+        },
+        "InformationURL": {
+          "Name": "The EUI paper.",
+          "URL": "https://doi.org/10.1051/0004-6361/201936663",
+          "Description": "The EUI paper."
+        }
+      },
+      "AccessInformation": {
+        "RepositoryID": "spase://SMWG/Repository/SIDC",
+        "Availability": "Online",
+        "AccessRights": "Open",
+        "AccessURL": [
+          {
+            "URL": "https://soar.esac.esa.int/soar/",
+            "Style": "File",
+            "Description": "EUI data archive. Level 2 (L2) data are produced by the euiprep python routine. This routine takes the L1 data and rectifies instrument deviations for which corrections are available. It also updates the WCS FITS keywords to correct for spacecraft pointing instabilities. The output of these calibration steps is distributed as L2 data. The euiprep routine is in continuous evolution. The L2 data are thus a snapshot of the best available corrections at the time of the L2 data production. The git version number of the euiprep S/W used to generate these L2 files is copied in the FITS header HISTORY keyword. For this release, the git SHA (first 8 characters) is (see also FITS header VERS_CAL keyword): ‘a57d9e42’ for files with DATE-BEG before 2023-01-10 15:00:00 and ‘f434d8b2’ for files with a DATE-BEG after this time.\n\nThe euiprep routine is only applied to lossless compressed or uncompressed Level-1 solar images, starting with the ‘first light’ images on 2020 May 12. Technical images such as e.g. darks or LEDs are not processed into L2 data. The selection is done with the IMGTYPE keyword which is set to IMGTYPE=“solar image” if * both the heat shield doors and instrument doors are open, AND * no LED is on AND * if the telescope has a filter wheel, that this filter is not in a blocking position.\n\nFor HRILYA, extra conditions are added to make sure the Screen and MCP voltages were properly configured for solar imaging. For HRILYA images with exposure time less or equal than 3s (XPOSURE LE 3.0) we require\n\nLYACSCR > 3450 AND ((GAINCOMB=\"low-only\" AND LYACMCP> 580) OR (GAINCOMB=\"high-only\" AND LYACMCP> 450))\n\nFor HRILYA images with exposure time larger than 3s (XPOSURE GT 3.0) we require\n\nLYACSCR > 3450 AND ((GAINCOMB=\"low-only\" AND LYACMCP> 480) OR (GAINCOMB=\"high-only\" AND LYACMCP> 350))\n\nThe L2 file version number is incremented every time the L2 file is updated and may thus differ from the L1 file version number."
+          },
+          {
+            "URL": "https://spase-metadata.org/ESA/Repository/SolarOrbiterArchive.html",
+            "Style": "File",
+            "Description": "EUI data archive. Level 2 (L2) data are produced by the euiprep python routine. This routine takes the L1 data and rectifies instrument deviations for which corrections are available. It also updates the WCS FITS keywords to correct for spacecraft pointing instabilities. The output of these calibration steps is distributed as L2 data. The euiprep routine is in continuous evolution. The L2 data are thus a snapshot of the best available corrections at the time of the L2 data production. The git version number of the euiprep S/W used to generate these L2 files is copied in the FITS header HISTORY keyword. For this release, the git SHA (first 8 characters) is (see also FITS header VERS_CAL keyword): ‘a57d9e42’ for files with DATE-BEG before 2023-01-10 15:00:00 and ‘f434d8b2’ for files with a DATE-BEG after this time.\n\nThe euiprep routine is only applied to lossless compressed or uncompressed Level-1 solar images, starting with the ‘first light’ images on 2020 May 12. Technical images such as e.g. darks or LEDs are not processed into L2 data. The selection is done with the IMGTYPE keyword which is set to IMGTYPE=“solar image” if * both the heat shield doors and instrument doors are open, AND * no LED is on AND * if the telescope has a filter wheel, that this filter is not in a blocking position.\n\nFor HRILYA, extra conditions are added to make sure the Screen and MCP voltages were properly configured for solar imaging. For HRILYA images with exposure time less or equal than 3s (XPOSURE LE 3.0) we require\n\nLYACSCR > 3450 AND ((GAINCOMB=\"low-only\" AND LYACMCP> 580) OR (GAINCOMB=\"high-only\" AND LYACMCP> 450))\n\nFor HRILYA images with exposure time larger than 3s (XPOSURE GT 3.0) we require\n\nLYACSCR > 3450 AND ((GAINCOMB=\"low-only\" AND LYACMCP> 480) OR (GAINCOMB=\"high-only\" AND LYACMCP> 350))\n\nThe L2 file version number is incremented every time the L2 file is updated and may thus differ from the L1 file version number."
+          }
+        ],
+        "Format": "FITS"
+      },
+      "ProcessingLevel": "Calibrated",
+      "MeasurementType": "ImageIntensity",
+      "TemporalDescription": {
+        "TimeSpan": {
+          "StartDate": "2020-03-03T15:30:11",
+          "RelativeStopDate": "-P1D"
+        }
+      },
+      "SpectralRange": "ExtremeUltraviolet",
+      "ObservedRegion": [
+        "Sun",
+        "Sun.Corona"
+      ],
+      "Parameter": {
+        "Name": "FITS Data Array",
+        "Description": "Data from one dual-band full-sun imager (FSI) working alternatively at the 174 Å and 304 Å EUV.",
+        "Wave": {
+          "WaveType": "Photon",
+          "WaveQuantity": "Intensity"
+        }
+      }
+    }
+  }
+}
