@@ -1,184 +1,30 @@
 <?xml version="1.0"?>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema">
- <head>
-  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
-  <title>
-   SPASE Resource Description
-  </title>
-  <script type="application/ld+json">
-   {
-    "@context": {
-        "@vocab": "https://schema.org/",
-        "prov": "http://www.w3.org/ns/prov#",
-        "sosa": "https://w3c.github.io/sdw-sosa-ssn/ssn/#SOSA"
-    },
-    "@id": "https://spase-metadata.org/NASA/NumericalData/Voyager1/PRA/Saturn/PT6S",
-    "@type": "Dataset",
-    "citation": [
-        {
-            "@id": "https://pds-ppi.igpp.ucla.edu/data/VG1-S-PRA-3-RDR-LOWBAND-6SEC-V1.0/AAREADME.TXT",
-            "@type": "CreativeWork",
-            "description": "The Document describing the Contents of the Collection.",
-            "identifier": "https://pds-ppi.igpp.ucla.edu/data/VG1-S-PRA-3-RDR-LOWBAND-6SEC-V1.0/AAREADME.TXT",
-            "name": "VG1-S-PRA-3-RDR-LOWBAND-6SEC-V1.0",
-            "url": "https://pds-ppi.igpp.ucla.edu/data/VG1-S-PRA-3-RDR-LOWBAND-6SEC-V1.0/AAREADME.TXT"
-        }
-    ],
-    "contributor": {
-        "@list": [
-            {
-                "@type": [
-                    "Role",
-                    "DefinedTerm"
-                ],
-                "contributor": {
-                    "@type": "Person",
-                    "affiliation": {
-                        "@type": "Organization",
-                        "name": "Institute of Geophysics and Planetary Physics, University of California, Los Angeles"
-                    },
-                    "familyName": "King",
-                    "givenName": "Todd A.",
-                    "name": "Todd A. King"
-                },
-                "inDefinedTermSet": {
-                    "@id": "https://spase-group.org/data/model/spase-latest/spase-latest_xsd.htm#Role",
-                    "@type": "DefinedTermSet",
-                    "name": "SPASE Role",
-                    "url": "https://spase-group.org/data/model/spase-latest/spase-latest_xsd.htm#Role"
-                },
-                "roleName": "Metadata Contact",
-                "termCode": "MetadataContact"
-            },
-            {
-                "@type": [
-                    "Role",
-                    "DefinedTerm"
-                ],
-                "contributor": {
-                    "@type": "Person",
-                    "affiliation": {
-                        "@type": "Organization",
-                        "name": "Department of Earth, Planetary, and Space Sciences, University of California, Los Angeles"
-                    },
-                    "familyName": "Bargatze",
-                    "givenName": "Lee F.",
-                    "name": "Lee F. Bargatze"
-                },
-                "inDefinedTermSet": {
-                    "@id": "https://spase-group.org/data/model/spase-latest/spase-latest_xsd.htm#Role",
-                    "@type": "DefinedTermSet",
-                    "name": "SPASE Role",
-                    "url": "https://spase-group.org/data/model/spase-latest/spase-latest_xsd.htm#Role"
-                },
-                "roleName": "Metadata Contact",
-                "termCode": "MetadataContact"
-            }
-        ]
-    },
-    "dateCreated": "2020-07-07T21:15:55",
-    "dateModified": "2025-12-04T13:32:31",
-    "datePublished": "2020-07-07T21:15:55",
-    "description": "* Data Set Overview\n* =================\n\nThis Data Set (VG1-S-PRA-3-RDR-LOWBAND-6SEC-V1.0) contains Data acquired by the Voyager 1 Planetary Radio Astronomy (PRA) Instrument during the Saturn Encounter. Since the PRA Instrument is able to observe Planetary Phenomenon at much larger Ranges than other Fields and Particles Experiments, thus the PRA Data cover a variable and longer Encounter Period. PRA Low Band Data provided here cover the entire Saturn Encounter Phase (1980-08-22 to 1980-12-14).\n\nVG1-S-PRA-3-RDR-LOWBAND-6SEC-V1.0 contains Data at the highest Time Resolution possible during Normal Operations. The Normal Mode of PRA Operations during the Planetary Encounters was to Sweep through the two Radio Receiver Bands, High Band (40.5 MHz to 1.5 MHz in 128 Channels spaced 0.3072 MHz apart) and Low Band (1326.0 kHz to 1.2 kHz in 70 Channels spaced 19.2 kHz apart) in a Period of 6 s. The Receivers measured, on alternate Samples, the left hand circular And right hand circular (radio definition) Power.\n\n* Measured Parameters\n* ===================\n\nThe Data here are from the Low Frequency Receiver Band and are \"packaged\" into Spacecraft Major Frame Records. Each Major Frame is 48 s long or eight Sweeps through the PRA Receiver. The Data are calibrated and are given in Units of \"millibels\" or mB, which is 1000 times the Log of the received Power. Zero mB corresponds to approximately 1.4\u00d710^-21 W m^-2 Hz^-1, however, this Value is never seen in practice. The minimum Values detected, which includes Receiver internal and Spacecraft generated Noise, are about 2300 mB to 2400 mB, or about 3.5\u00d710^-19 W m^-2 Hz^-1; even higher Values are seen at the very lowest Frequencies.\n\nThe Data Format is ASCII and consists of a Time Indicator followed by an Array containing the eight Low Band Sweeps. Time is Spacecraft Event Time (SCET) which is basically Universal Time at the Spacecraft. Specifically, Time is in the Form of YYMMDD and Seconds into YYMMDD. Both are written as I6. Example: July 1, 1979 at 12:00 SCET would be 790701, 43200. The Seconds corresponds, to the nearest Second, to the Start of the Sweep (which occurs in PRA High Band). The first Value in Low Band (1326.0 kHz) occurs some 3.9 s after this Time and Samples at successively lower Frequencies are spaced 0.03 s apart. Only one Time is given for the entire Major Frame, thus the Start of each Sweep is the Time given plus 6 times the Sweep Number minus 1 (i.e., 0 through 7).\n\nThe Data Array is dimensioned as 71 \u00d7 8 and written as I4 Format (i.e., 568I4). The \"8\" corresponds to the eight PRA Sweeps. The lowest 68 of the 70 Low Band Channels (1287.6 kHz to 1.2 kHz) are in Positions 2 to 69. Positions 70 and 71 should be ignored. Missing or Bad Data Values are set to Zero. In Position 1 of each Sweep is a Status Word where the 12 least significant Bits have used, although not all 12 have meaning for the PRA Low Band. Numbering those Bits 0 for least significant to 11 for most significant, the Bits that have meaning are as follows:\n\n* Bit Value(s)\n- 0: 15 dB Attenuator in use when equal to 1\n- 1: 30 dB Attenuator in use when equal to 1\n- 2: 45 dB Attenuator in use when equal to 1\n- 9 and 10 together: Polarization of first Channel sampled (1326.0 kHz) according to the Scheme:\n\n+-------------------------------------------------------+\n|                 | Value Bit 10 = 0 | Value Bit 10 = 1 |\n---------------------------------------------------------\n| Value Bit 9 = 0 | R                | L                |\n| Value Bit 9 = 1 | L                | R                |\n+-------------------------------------------------------+\n\nPolarization at successively lower Frequencies is opposite to the Frequency above it, i.e., either a LRLR or an RLRL Pattern. Successive 6 s Sweeps start on the opposite Polarization as the previous Sweep as indicated in the Status Bits. Note that this Polarization is the received Polarization, not necessarily the emitted Polarization. Correct Interpretation of the received Polarization depends on the Antenna Plane Orientation relative to the Radio Source. A good Description of this Concept can be found in (Le Blanc et al., 1987).\n\nMissing or Bad Data Values are set to Zero. If the Status Word is Zero, any Data in that Receiver Sweep should be discarded.",
-    "identifier": {
-        "@type": "PropertyValue",
-        "propertyID": "SPASE",
-        "url": "https://spase-metadata.org/NASA/NumericalData/Voyager1/PRA/Saturn/PT6S",
-        "value": "spase://NASA/NumericalData/Voyager1/PRA/Saturn/PT6S"
-    },
-    "inLanguage": "en",
-    "measurementMethod": {
-        "@type": "DefinedTerm",
-        "inDefinedTermSet": {
-            "@id": "https://spase-group.org/data/model/spase-latest/spase-latest_xsd.htm#MeasurementType",
-            "@type": "DefinedTermSet",
-            "name": "SPASE MeasurementType",
-            "url": "https://spase-group.org/data/model/spase-latest/spase-latest_xsd.htm#MeasurementType"
-        },
-        "name": "Waves. Passive",
-        "termCode": "Waves.Passive"
-    },
-    "name": "Voyager 1 Saturn Planetary Radio Astronomy (PRA) Calibrated Low-Frequency Receiver Band, Version 1.0, 6 s High Resolution Data",
-    "potentialAction": [
-        {
-            "@type": "SearchAction",
-            "target": {
-                "@id": "https://pds-ppi.igpp.ucla.edu/search/view/?f=yes&id=pds://PPI/VG1-S-PRA-3-RDR-LOWBAND-6SEC-V1.0",
-                "@type": "EntryPoint",
-                "contentType": "Text.ASCII",
-                "description": "Download dataset data as Text.ASCII file at this URL using these product key(s): ['VG1-S-PRA-3-RDR-LOWBAND-6SEC-V1.0']",
-                "identifier": "https://pds-ppi.igpp.ucla.edu/search/view/?f=yes&id=pds://PPI/VG1-S-PRA-3-RDR-LOWBAND-6SEC-V1.0",
-                "name": "PDS/PPI",
-                "url": "https://pds-ppi.igpp.ucla.edu/search/view/?f=yes&id=pds://PPI/VG1-S-PRA-3-RDR-LOWBAND-6SEC-V1.0"
-            }
-        }
-    ],
-    "prov:wasGeneratedBy": [
-        {
-            "@type": [
-                "ResearchProject",
-                "prov:Activity"
-            ],
-            "prov:used": {
-                "@id": "https://spase-metadata.org/SMWG/Instrument/Voyager1/PRA",
-                "@type": [
-                    "IndividualProduct",
-                    "prov:Entity",
-                    "sosa:System"
-                ],
-                "identifier": {
-                    "@id": "https://spase-metadata.org/SMWG/Instrument/Voyager1/PRA",
-                    "@type": "PropertyValue",
-                    "propertyID": "SPASE Resource ID",
-                    "value": "spase://SMWG/Instrument/Voyager1/PRA"
-                },
-                "name": "Voyager 1 Planetary Radio Astronomy (PRA) experiment",
-                "url": "https://spase-metadata.org/SMWG/Instrument/Voyager1/PRA"
-            }
-        }
-    ],
-    "sameAs": [
-        "spase://VMO/NumericalData/Voyager1/PRA/Saturn/PT6S",
-        "spase://VSPO/NumericalData/Voyager1/PRA/Saturn/PT6S"
-    ],
-    "spatialCoverage": [
-        {
-            "@type": "Place",
-            "keywords": {
-                "@type": "DefinedTerm",
-                "inDefinedTermSet": {
-                    "@id": "https://spase-group.org/data/model/spase-latest/spase-latest_xsd.htm#Region",
-                    "@type": "DefinedTermSet",
-                    "name": "SPASE Region",
-                    "url": "https://spase-group.org/data/model/spase-latest/spase-latest_xsd.htm#Region"
-                },
-                "termCode": "Saturn"
-            },
-            "name": "Saturn"
-        }
-    ],
-    "subjectOf": {
-        "@type": "DataDownload",
-        "contentUrl": "https://spase-metadata.org/NASA/NumericalData/Voyager1/PRA/Saturn/PT6S",
-        "dateModified": "2025-12-04T13:32:31",
-        "description": "The SPASE metadata describing the indicated dataset.",
-        "encodingFormat": "application/xml",
-        "identifier": "https://spase-metadata.org/NASA/NumericalData/Voyager1/PRA/Saturn/PT6S",
-        "license": [
-            "https://spdx.org/licenses/CC0-1.0.html"
-        ],
-        "name": "SPASE metadata for dataset"
-    },
-    "temporal": [
-        "The time series is periodic with a 6 second cadence",
-        "PT6S"
-    ],
-    "temporalCoverage": "1980-11-11T22:09:23.00/1980-11-16T23:59:47.00",
-    "url": "https://spase-metadata.org/NASA/NumericalData/Voyager1/PRA/Saturn/PT6S"
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><title>SPASE Resource Description</title><script type="application/ld+json">{
+		"@context": "https://schema.org/",
+		"@type" :"Dataset",
+		"name": "Voyager 1 Saturn Planetary Radio Astronomy (PRA) Calibrated Low-Frequency Receiver Band, Version 1.0, 6 s High Resolution Data",
+    
+		"dateModified": "2026-04-10",
+
+    "identifier": "spase://NASA/NumericalData/Voyager1/PRA/Saturn/PT6S",
+
+    "creditText": "",
+ 		"description": "* Data Set Overview\n* =================\n\nThis Data Set (VG1-S-PRA-3-RDR-LOWBAND-6SEC-V1.0) contains Data acquired by the Voyager 1 Planetary Radio Astronomy (PRA) Instrument during the Saturn Encounter. Since the PRA Instrument is able to observe Planetary Phenomenon at much larger Ranges than other Fields and Particles Experiments, thus the PRA Data cover a variable and longer Encounter Period. PRA Low Band Data provided here cover the entire Saturn Encounter Phase (1980-08-22 to 1980-12-14).\n\nVG1-S-PRA-3-RDR-LOWBAND-6SEC-V1.0 contains Data at the highest Time Resolution possible during Normal Operations. The Normal Mode of PRA Operations during the Planetary Encounters was to Sweep through the two Radio Receiver Bands, High Band (40.5 MHz to 1.5 MHz in 128 Channels spaced 0.3072 MHz apart) and Low Band (1326.0 kHz to 1.2 kHz in 70 Channels spaced 19.2 kHz apart) in a Period of 6 s. The Receivers measured, on alternate Samples, the left hand circular And right hand circular (radio definition) Power.\n\n* Measured Parameters\n* ===================\n\nThe Data here are from the Low Frequency Receiver Band and are \"packaged\" into Spacecraft Major Frame Records. Each Major Frame is 48 s long or eight Sweeps through the PRA Receiver. The Data are calibrated and are given in Units of \"millibels\" or mB, which is 1000 times the Log of the received Power. Zero mB corresponds to approximately 1.4×10^-21 W m^-2 Hz^-1, however, this Value is never seen in practice. The minimum Values detected, which includes Receiver internal and Spacecraft generated Noise, are about 2300 mB to 2400 mB, or about 3.5×10^-19 W m^-2 Hz^-1; even higher Values are seen at the very lowest Frequencies.\n\nThe Data Format is ASCII and consists of a Time Indicator followed by an Array containing the eight Low Band Sweeps. Time is Spacecraft Event Time (SCET) which is basically Universal Time at the Spacecraft. Specifically, Time is in the Form of YYMMDD and Seconds into YYMMDD. Both are written as I6. Example: July 1, 1979 at 12:00 SCET would be 790701, 43200. The Seconds corresponds, to the nearest Second, to the Start of the Sweep (which occurs in PRA High Band). The first Value in Low Band (1326.0 kHz) occurs some 3.9 s after this Time and Samples at successively lower Frequencies are spaced 0.03 s apart. Only one Time is given for the entire Major Frame, thus the Start of each Sweep is the Time given plus 6 times the Sweep Number minus 1 (i.e., 0 through 7).\n\nThe Data Array is dimensioned as 71 × 8 and written as I4 Format (i.e., 568I4). The \"8\" corresponds to the eight PRA Sweeps. The lowest 68 of the 70 Low Band Channels (1287.6 kHz to 1.2 kHz) are in Positions 2 to 69. Positions 70 and 71 should be ignored. Missing or Bad Data Values are set to Zero. In Position 1 of each Sweep is a Status Word where the 12 least significant Bits have used, although not all 12 have meaning for the PRA Low Band. Numbering those Bits 0 for least significant to 11 for most significant, the Bits that have meaning are as follows:\n\n* Bit Value(s)\n- 0: 15 dB Attenuator in use when equal to 1\n- 1: 30 dB Attenuator in use when equal to 1\n- 2: 45 dB Attenuator in use when equal to 1\n- 9 and 10 together: Polarization of first Channel sampled (1326.0 kHz) according to the Scheme:\n\n+-------------------------------------------------------+\n|                 | Value Bit 10 = 0 | Value Bit 10 = 1 |\n---------------------------------------------------------\n| Value Bit 9 = 0 | R                | L                |\n| Value Bit 9 = 1 | L                | R                |\n+-------------------------------------------------------+\n\nPolarization at successively lower Frequencies is opposite to the Frequency above it, i.e., either a LRLR or an RLRL Pattern. Successive 6 s Sweeps start on the opposite Polarization as the previous Sweep as indicated in the Status Bits. Note that this Polarization is the received Polarization, not necessarily the emitted Polarization. Correct Interpretation of the received Polarization depends on the Antenna Plane Orientation relative to the Radio Source. A good Description of this Concept can be found in (Le Blanc et al., 1987).\n\nMissing or Bad Data Values are set to Zero. If the Status Word is Zero, any Data in that Receiver Sweep should be discarded.",
+		"abstract": "* Data Set Overview\n* =================\n\nThis Data Set (VG1-S-PRA-3-RDR-LOWBAND-6SEC-V1.0) contains Data acquired by the Voyager 1 Planetary Radio Astronomy (PRA) Instrument during the Saturn Encounter. Since the PRA Instrument is able to observe Planetary Phenomenon at much larger Ranges than other Fields and Particles Experiments, thus the PRA Data cover a variable and longer Encounter Period. PRA Low Band Data provided here cover the entire Saturn Encounter Phase (1980-08-22 to 1980-12-14).\n\nVG1-S-PRA-3-RDR-LOWBAND-6SEC-V1.0 contains Data at the highest Time Resolution possible during Normal Operations. The Normal Mode of PRA Operations during the Planetary Encounters was to Sweep through the two Radio Receiver Bands, High Band (40.5 MHz to 1.5 MHz in 128 Channels spaced 0.3072 MHz apart) and Low Band (1326.0 kHz to 1.2 kHz in 70 Channels spaced 19.2 kHz apart) in a Period of 6 s. The Receivers measured, on alternate Samples, the left hand circular And right hand circular (radio definition) Power.\n\n* Measured Parameters\n* ===================\n\nThe Data here are from the Low Frequency Receiver Band and are \"packaged\" into Spacecraft Major Frame Records. Each Major Frame is 48 s long or eight Sweeps through the PRA Receiver. The Data are calibrated and are given in Units of \"millibels\" or mB, which is 1000 times the Log of the received Power. Zero mB corresponds to approximately 1.4×10^-21 W m^-2 Hz^-1, however, this Value is never seen in practice. The minimum Values detected, which includes Receiver internal and Spacecraft generated Noise, are about 2300 mB to 2400 mB, or about 3.5×10^-19 W m^-2 Hz^-1; even higher Values are seen at the very lowest Frequencies.\n\nThe Data Format is ASCII and consists of a Time Indicator followed by an Array containing the eight Low Band Sweeps. Time is Spacecraft Event Time (SCET) which is basically Universal Time at the Spacecraft. Specifically, Time is in the Form of YYMMDD and Seconds into YYMMDD. Both are written as I6. Example: July 1, 1979 at 12:00 SCET would be 790701, 43200. The Seconds corresponds, to the nearest Second, to the Start of the Sweep (which occurs in PRA High Band). The first Value in Low Band (1326.0 kHz) occurs some 3.9 s after this Time and Samples at successively lower Frequencies are spaced 0.03 s apart. Only one Time is given for the entire Major Frame, thus the Start of each Sweep is the Time given plus 6 times the Sweep Number minus 1 (i.e., 0 through 7).\n\nThe Data Array is dimensioned as 71 × 8 and written as I4 Format (i.e., 568I4). The \"8\" corresponds to the eight PRA Sweeps. The lowest 68 of the 70 Low Band Channels (1287.6 kHz to 1.2 kHz) are in Positions 2 to 69. Positions 70 and 71 should be ignored. Missing or Bad Data Values are set to Zero. In Position 1 of each Sweep is a Status Word where the 12 least significant Bits have used, although not all 12 have meaning for the PRA Low Band. Numbering those Bits 0 for least significant to 11 for most significant, the Bits that have meaning are as follows:\n\n* Bit Value(s)\n- 0: 15 dB Attenuator in use when equal to 1\n- 1: 30 dB Attenuator in use when equal to 1\n- 2: 45 dB Attenuator in use when equal to 1\n- 9 and 10 together: Polarization of first Channel sampled (1326.0 kHz) according to the Scheme:\n\n+-------------------------------------------------------+\n|                 | Value Bit 10 = 0 | Value Bit 10 = 1 |\n---------------------------------------------------------\n| Value Bit 9 = 0 | R                | L                |\n| Value Bit 9 = 1 | L                | R                |\n+-------------------------------------------------------+\n\nPolarization at successively lower Frequencies is opposite to the Frequency above it, i.e., either a LRLR or an RLRL Pattern. Successive 6 s Sweeps start on the opposite Polarization as the previous Sweep as indicated in the Status Bits. Note that this Polarization is the received Polarization, not necessarily the emitted Polarization. Correct Interpretation of the received Polarization depends on the Antenna Plane Orientation relative to the Radio Source. A good Description of this Concept can be found in (Le Blanc et al., 1987).\n\nMissing or Bad Data Values are set to Zero. If the Status Word is Zero, any Data in that Receiver Sweep should be discarded.",
+
+		"temporalCoverage": "1980-11-11T22:09:23.00/1980-11-16T23:59:47.00",
+
+    "genre": "Waves.Passive",
+		"keywords": [  ],
+		"license": "https://cdla.io/permissive-1-0/",
+
+    "audience":{
+        "@type": "Audience",
+        "audienceType": ["Space Physicist", "Space Community", "Data Scientists", "Machine Learning Users"]
+    }
 }
-  </script>
-  <style>
-   /* http://spase-group.org/tools/xmlviewer */
+	  </script><style>
+/* http://spase-group.org/tools/xmlviewer */
 /* v1.0 | 20160908 */
 
 * {
@@ -435,689 +281,74 @@ a.xml-logo:visited {
 a.xml-logo:hover {
    text-decoration:underline; 
 }
-  </style>
- </head>
- <body>
-  <div>
-   <a id="top">
-   </a>
-  </div>
-  <div class="header">
-   <div class="middle">
-    spase-metadata.org
-    <a href="https://spase-group.org/">
-     SPASE
-    </a>
-    landing pages.
-   </div>
-  </div>
-  <div class="page">
-   <div class="spase">
-    <div class="abstract">
-     <div class="access">
-      <p class="box-title">
-       Data Access
-      </p>
-      <ul class="list">
-       <li class="list">
-        <a href="https://pds-ppi.igpp.ucla.edu/search/view/?f=yes&amp;id=pds://PPI/VG1-S-PRA-3-RDR-LOWBAND-6SEC-V1.0" target="_blank">
-         PDS/PPI
-        </a>
-       </li>
-      </ul>
-     </div>
-     <div class="citation inset">
-      <h1>
-       <a name="spase://NASA/NumericalData/Voyager1/PRA/Saturn/PT6S">
-        Voyager 1 Saturn Planetary Radio Astronomy (PRA) Calibrated Low-Frequency Receiver Band, Version 1.0, 6 s High Resolution Data
-       </a>
-      </h1>
-      <p class="author">
-       Decker, Robert B.; Krimigis, Stamatios M. 
+
+	  </style></head><body><div><a id="top"/></div><div class="header"><div class="middle">spase-metadata.org <a href="https://spase-group.org/">SPASE</a> landing pages.</div></div><div class="page"><div class="spase"><div class="abstract"><div class="access"><p class="box-title">Data Access</p><ul class="list"><li class="list"><a target="_blank" href="https://pds-ppi.igpp.ucla.edu/search/view/?f=yes&amp;id=pds://PPI/VG1-S-PRA-3-RDR-LOWBAND-6SEC-V1.0">PDS/PPI</a></li></ul></div><div class="citation inset"><h1><a name="spase://NASA/NumericalData/Voyager1/PRA/Saturn/PT6S">Voyager 1 Saturn Planetary Radio Astronomy (PRA) Calibrated Low-Frequency Receiver Band, Version 1.0, 6 s High Resolution Data</a></h1><p class="author">Decker, Robert B.; Krimigis, Stamatios M. 
 							(2026). 
 							Voyager 1 Saturn Planetary Radio Astronomy (PRA) Calibrated Low-Frequency Receiver Band, Version 1.0, 6 s High Resolution Data
 			[Data set].
-		Space Physics Data Facility; Planetary Data System.
-      </p>
-      <p>
-       <div class="term">
-        ResourceID
-       </div>
-       <div class="definition">
-        spase://NASA/NumericalData/Voyager1/PRA/Saturn/PT6S
-       </div>
-      </p>
-      <p>
-       <div class="term">
-        Description
-       </div>
-       <div class="definition">
-        <ul>
-         <li>
-          Data Set Overview
-         </li>
-         <li>
-          =================
-         </li>
-        </ul>
-        <p>
-         This Data Set (VG1-S-PRA-3-RDR-LOWBAND-6SEC-V1.0) contains Data acquired by the Voyager 1 Planetary Radio Astronomy (PRA) Instrument during the Saturn Encounter. Since the PRA Instrument is able to observe Planetary Phenomenon at much larger Ranges than other Fields and Particles Experiments, thus the PRA Data cover a variable and longer Encounter Period. PRA Low Band Data provided here cover the entire Saturn Encounter Phase (1980-08-22 to 1980-12-14).
-        </p>
-        <p>
-         VG1-S-PRA-3-RDR-LOWBAND-6SEC-V1.0 contains Data at the highest Time Resolution possible during Normal Operations. The Normal Mode of PRA Operations during the Planetary Encounters was to Sweep through the two Radio Receiver Bands, High Band (40.5 MHz to 1.5 MHz in 128 Channels spaced 0.3072 MHz apart) and Low Band (1326.0 kHz to 1.2 kHz in 70 Channels spaced 19.2 kHz apart) in a Period of 6 s. The Receivers measured, on alternate Samples, the left hand circular And right hand circular (radio definition) Power.
-        </p>
-        <ul>
-         <li>
-          Measured Parameters
-         </li>
-         <li>
-          ===================
-         </li>
-        </ul>
-        <p>
-         The Data here are from the Low Frequency Receiver Band and are "packaged" into Spacecraft Major Frame Records. Each Major Frame is 48 s long or eight Sweeps through the PRA Receiver. The Data are calibrated and are given in Units of "millibels" or mB, which is 1000 times the Log of the received Power. Zero mB corresponds to approximately 1.4×10^-21 W m^-2 Hz^-1, however, this Value is never seen in practice. The minimum Values detected, which includes Receiver internal and Spacecraft generated Noise, are about 2300 mB to 2400 mB, or about 3.5×10^-19 W m^-2 Hz^-1; even higher Values are seen at the very lowest Frequencies.
-        </p>
-        <p>
-         The Data Format is ASCII and consists of a Time Indicator followed by an Array containing the eight Low Band Sweeps. Time is Spacecraft Event Time (SCET) which is basically Universal Time at the Spacecraft. Specifically, Time is in the Form of YYMMDD and Seconds into YYMMDD. Both are written as I6. Example: July 1, 1979 at 12:00 SCET would be 790701, 43200. The Seconds corresponds, to the nearest Second, to the Start of the Sweep (which occurs in PRA High Band). The first Value in Low Band (1326.0 kHz) occurs some 3.9 s after this Time and Samples at successively lower Frequencies are spaced 0.03 s apart. Only one Time is given for the entire Major Frame, thus the Start of each Sweep is the Time given plus 6 times the Sweep Number minus 1 (i.e., 0 through 7).
-        </p>
-        <p>
-         The Data Array is dimensioned as 71 × 8 and written as I4 Format (i.e., 568I4). The "8" corresponds to the eight PRA Sweeps. The lowest 68 of the 70 Low Band Channels (1287.6 kHz to 1.2 kHz) are in Positions 2 to 69. Positions 70 and 71 should be ignored. Missing or Bad Data Values are set to Zero. In Position 1 of each Sweep is a Status Word where the 12 least significant Bits have used, although not all 12 have meaning for the PRA Low Band. Numbering those Bits 0 for least significant to 11 for most significant, the Bits that have meaning are as follows:
-        </p>
-        <ul>
-         <li>
-          Bit Value(s)
-         </li>
-        </ul>
-        <ul>
-         <li>
-          0: 15 dB Attenuator in use when equal to 1
-         </li>
-         <li>
-          1: 30 dB Attenuator in use when equal to 1
-         </li>
-         <li>
-          2: 45 dB Attenuator in use when equal to 1
-         </li>
-         <li>
-          9 and 10 together: Polarization of first Channel sampled (1326.0 kHz) according to the Scheme:
-         </li>
-        </ul>
-        <p>
-         +-------------------------------------------------------+
-         <br/>
-         |                 | Value Bit 10 = 0 | Value Bit 10 = 1 |
-        </p>
-        <hr/>
-        <p>
-         | Value Bit 9 = 0 | R                | L                |
-         <br/>
-         | Value Bit 9 = 1 | L                | R                |
-         <br/>
-         +-------------------------------------------------------+
-        </p>
-        <p>
-         Polarization at successively lower Frequencies is opposite to the Frequency above it, i.e., either a LRLR or an RLRL Pattern. Successive 6 s Sweeps start on the opposite Polarization as the previous Sweep as indicated in the Status Bits. Note that this Polarization is the received Polarization, not necessarily the emitted Polarization. Correct Interpretation of the received Polarization depends on the Antenna Plane Orientation relative to the Radio Source. A good Description of this Concept can be found in (Le Blanc et al., 1987).
-        </p>
-        <p>
-         Missing or Bad Data Values are set to Zero. If the Status Word is Zero, any Data in that Receiver Sweep should be discarded.
-        </p>
-       </div>
-      </p>
-     </div>
-    </div>
-    <div>
-     <p class="right">
-      <a href="PT6S.xml" target="_blank">
-       View XML
-      </a>
-      |
-      <a href="PT6S.json" target="_blank">
-       View JSON
-      </a>
-      |
-      <a href="https://spase-editor.heliocloud.org/?edit=https://spase-metadata.org/NASA/NumericalData/Voyager1/PRA/Saturn/PT6S.xml" target="_blank">
-       Edit
-      </a>
-     </p>
-     <h1 class="detail">
-      Details
-     </h1>
-    </div>
-    <div>
-     <div class="product">
-      <p class="version">
-       Version:2.7.1
-      </p>
-      <h1>
-       MetadataRightsList
-      </h1>
-      <div class="term">
-       Rights
-      </div>
-      <div class="definition">
-       <div class="term">
-        SchemeURI
-       </div>
-       <div class="definition">
-        https://spdx.org/licenses/
-       </div>
-       <div class="term">
-        RightsIdentifierScheme
-       </div>
-       <div class="definition">
-        SPDX
-       </div>
-       <div class="term">
-        RightsIdentifier
-       </div>
-       <div class="definition">
-        CC0-1.0
-       </div>
-       <div class="term">
-        RightsURI
-       </div>
-       <div class="definition">
-        https://spdx.org/licenses/CC0-1.0.html
-       </div>
-       <div class="term">
-        RightsName
-       </div>
-       <div class="definition">
-        Creative Commons Zero v1.0 Universal
-       </div>
-       <div class="term">
-        Note
-       </div>
-       <div class="definition">
-        CC0 1.0 Universal is the Creative Commons license applicable to all publicly available SPASE metadata descriptions
-       </div>
-      </div>
-     </div>
-     <div class="product">
-      <p class="version">
-       Version:2.7.1
-      </p>
-      <h1>
-       NumericalData
-      </h1>
-      <div class="term">
-       ResourceID
-      </div>
-      <div class="definition">
-       spase://NASA/NumericalData/Voyager1/PRA/Saturn/PT6S
-      </div>
-      <div class="term">
-       NamingAuthority
-      </div>
-      <div class="definition">
-       NASA
-      </div>
-      <div class="term">
-       ResourceType
-      </div>
-      <div class="definition">
-       NumericalData
-      </div>
-      <div class="term">
-       ResourceHeader
-      </div>
-      <div class="definition">
-       <div class="term">
-        ResourceName
-       </div>
-       <div class="definition">
-        Voyager 1 Saturn Planetary Radio Astronomy (PRA) Calibrated Low-Frequency Receiver Band, Version 1.0, 6 s High Resolution Data
-       </div>
-       <div class="term">
-        ReleaseDate
-       </div>
-       <div class="definition">
-        2026-04-10 10:04:09Z
-       </div>
-       <div class="term">
-        RevisionHistory
-       </div>
-       <div class="definition">
-        <div class="term">
-         RevisionEvent
-        </div>
-        <div class="definition">
-         <div class="term">
-          ReleaseDate
-         </div>
-         <div class="definition">
-          2020-07-07 21:15:55Z
-         </div>
-         <div class="term">
-          Note
-         </div>
-         <div class="definition">
-          Only known prior ReleaseDate of the metadata
-         </div>
-        </div>
-        <div class="term">
-         RevisionEvent
-        </div>
-        <div class="definition">
-         <div class="term">
-          ReleaseDate
-         </div>
-         <div class="definition">
-          2025-12-04 13:32:31Z
-         </div>
-         <div class="term">
-          Note
-         </div>
-         <div class="definition">
-          Added MetadataRightsList. Added ResourceType and NamingAuthority. Updated to 2.7.1. Changed http to https in top-level schemaLocation attribute. Fixed version number separator in top-level schemaLocation attribute. ZCB
-         </div>
-        </div>
-        <div class="term">
-         RevisionEvent
-        </div>
-        <div class="definition">
-         <div class="term">
-          ReleaseDate
-         </div>
-         <div class="definition">
-          2026-04-10 09:59:17Z
-         </div>
-         <div class="term">
-          Note
-         </div>
-         <div class="definition">
-          Added new Contact(s). ZCB
-         </div>
-        </div>
-        <div class="term">
-         RevisionEvent
-        </div>
-        <div class="definition">
-         <div class="term">
-          ReleaseDate
-         </div>
-         <div class="definition">
-          2026-04-10 10:04:09Z
-         </div>
-         <div class="term">
-          Note
-         </div>
-         <div class="definition">
-          Added PublicationInfo. ZCB
-         </div>
-        </div>
-       </div>
-       <div class="term">
-        Description
-       </div>
-       <div class="definition">
-        <ul>
-         <li>
-          Data Set Overview
-         </li>
-         <li>
-          =================
-         </li>
-        </ul>
-        <p>
-         This Data Set (VG1-S-PRA-3-RDR-LOWBAND-6SEC-V1.0) contains Data acquired by the Voyager 1 Planetary Radio Astronomy (PRA) Instrument during the Saturn Encounter. Since the PRA Instrument is able to observe Planetary Phenomenon at much larger Ranges than other Fields and Particles Experiments, thus the PRA Data cover a variable and longer Encounter Period. PRA Low Band Data provided here cover the entire Saturn Encounter Phase (1980-08-22 to 1980-12-14).
-        </p>
-        <p>
-         VG1-S-PRA-3-RDR-LOWBAND-6SEC-V1.0 contains Data at the highest Time Resolution possible during Normal Operations. The Normal Mode of PRA Operations during the Planetary Encounters was to Sweep through the two Radio Receiver Bands, High Band (40.5 MHz to 1.5 MHz in 128 Channels spaced 0.3072 MHz apart) and Low Band (1326.0 kHz to 1.2 kHz in 70 Channels spaced 19.2 kHz apart) in a Period of 6 s. The Receivers measured, on alternate Samples, the left hand circular And right hand circular (radio definition) Power.
-        </p>
-        <ul>
-         <li>
-          Measured Parameters
-         </li>
-         <li>
-          ===================
-         </li>
-        </ul>
-        <p>
-         The Data here are from the Low Frequency Receiver Band and are "packaged" into Spacecraft Major Frame Records. Each Major Frame is 48 s long or eight Sweeps through the PRA Receiver. The Data are calibrated and are given in Units of "millibels" or mB, which is 1000 times the Log of the received Power. Zero mB corresponds to approximately 1.4×10^-21 W m^-2 Hz^-1, however, this Value is never seen in practice. The minimum Values detected, which includes Receiver internal and Spacecraft generated Noise, are about 2300 mB to 2400 mB, or about 3.5×10^-19 W m^-2 Hz^-1; even higher Values are seen at the very lowest Frequencies.
-        </p>
-        <p>
-         The Data Format is ASCII and consists of a Time Indicator followed by an Array containing the eight Low Band Sweeps. Time is Spacecraft Event Time (SCET) which is basically Universal Time at the Spacecraft. Specifically, Time is in the Form of YYMMDD and Seconds into YYMMDD. Both are written as I6. Example: July 1, 1979 at 12:00 SCET would be 790701, 43200. The Seconds corresponds, to the nearest Second, to the Start of the Sweep (which occurs in PRA High Band). The first Value in Low Band (1326.0 kHz) occurs some 3.9 s after this Time and Samples at successively lower Frequencies are spaced 0.03 s apart. Only one Time is given for the entire Major Frame, thus the Start of each Sweep is the Time given plus 6 times the Sweep Number minus 1 (i.e., 0 through 7).
-        </p>
-        <p>
-         The Data Array is dimensioned as 71 × 8 and written as I4 Format (i.e., 568I4). The "8" corresponds to the eight PRA Sweeps. The lowest 68 of the 70 Low Band Channels (1287.6 kHz to 1.2 kHz) are in Positions 2 to 69. Positions 70 and 71 should be ignored. Missing or Bad Data Values are set to Zero. In Position 1 of each Sweep is a Status Word where the 12 least significant Bits have used, although not all 12 have meaning for the PRA Low Band. Numbering those Bits 0 for least significant to 11 for most significant, the Bits that have meaning are as follows:
-        </p>
-        <ul>
-         <li>
-          Bit Value(s)
-         </li>
-        </ul>
-        <ul>
-         <li>
-          0: 15 dB Attenuator in use when equal to 1
-         </li>
-         <li>
-          1: 30 dB Attenuator in use when equal to 1
-         </li>
-         <li>
-          2: 45 dB Attenuator in use when equal to 1
-         </li>
-         <li>
-          9 and 10 together: Polarization of first Channel sampled (1326.0 kHz) according to the Scheme:
-         </li>
-        </ul>
-        <p>
-         +-------------------------------------------------------+
-         <br/>
-         |                 | Value Bit 10 = 0 | Value Bit 10 = 1 |
-        </p>
-        <hr/>
-        <p>
-         | Value Bit 9 = 0 | R                | L                |
-         <br/>
-         | Value Bit 9 = 1 | L                | R                |
-         <br/>
-         +-------------------------------------------------------+
-        </p>
-        <p>
-         Polarization at successively lower Frequencies is opposite to the Frequency above it, i.e., either a LRLR or an RLRL Pattern. Successive 6 s Sweeps start on the opposite Polarization as the previous Sweep as indicated in the Status Bits. Note that this Polarization is the received Polarization, not necessarily the emitted Polarization. Correct Interpretation of the received Polarization depends on the Antenna Plane Orientation relative to the Radio Source. A good Description of this Concept can be found in (Le Blanc et al., 1987).
-        </p>
-        <p>
-         Missing or Bad Data Values are set to Zero. If the Status Word is Zero, any Data in that Receiver Sweep should be discarded.
-        </p>
-       </div>
-       <div class="term">
-        PublicationInfo
-       </div>
-       <div class="definition">
-        <div class="term">
-         Authors
-        </div>
-        <div class="definition">
-         Decker, Robert B.; Krimigis, Stamatios M.
-        </div>
-        <div class="term">
-         PublicationDate
-        </div>
-        <div class="definition">
-         2026-04-10 10:04:09Z
-        </div>
-        <div class="term">
-         PublishedBy
-        </div>
-        <div class="definition">
-         Space Physics Data Facility; Planetary Data System
-        </div>
-       </div>
-       <div class="term">
-        Contacts
-       </div>
-       <dd>
-        <table cellspacing="0" class="nested">
-         <tr>
-          <th>
-          </th>
-          <th class="center">
-           Role
-          </th>
-          <th class="center">
-           Person
-          </th>
-          <th class="center">
-           StartDate
-          </th>
-          <th class="center">
-           StopDate
-          </th>
-          <th class="center">
-           Note
-          </th>
-         </tr>
-         <tbody>
-          <tr>
-           <td>
-            1.
-           </td>
-           <td>
-            CoPI
-           </td>
-           <td>
-            <a href="https://spase-metadata.org/SMWG/Person/Robert.B.Decker.html" target="_blank">
-             spase://SMWG/Person/Robert.B.Decker
-            </a>
-           </td>
-           <td>
-           </td>
-           <td>
-           </td>
-           <td>
-           </td>
-          </tr>
-          <tr>
-           <td>
-            2.
-           </td>
-           <td>
-            PrincipalInvestigator
-           </td>
-           <td>
-            <a href="https://spase-metadata.org/SMWG/Person/Stamatios.M.Krimigis.html" target="_blank">
-             spase://SMWG/Person/Stamatios.M.Krimigis
-            </a>
-           </td>
-           <td>
-           </td>
-           <td>
-           </td>
-           <td>
-           </td>
-          </tr>
-          <tr>
-           <td>
-            3.
-           </td>
-           <td>
-            MetadataContact
-           </td>
-           <td>
-            <a href="https://spase-metadata.org/SMWG/Person/Todd.A.King.html" target="_blank">
-             spase://SMWG/Person/Todd.A.King
-            </a>
-           </td>
-           <td>
-           </td>
-           <td>
-           </td>
-           <td>
-           </td>
-          </tr>
-          <tr>
-           <td>
-            4.
-           </td>
-           <td>
-            MetadataContact
-           </td>
-           <td>
-            <a href="https://spase-metadata.org/SMWG/Person/Lee.Frost.Bargatze.html" target="_blank">
-             spase://SMWG/Person/Lee.Frost.Bargatze
-            </a>
-           </td>
-           <td>
-           </td>
-           <td>
-           </td>
-           <td>
-           </td>
-          </tr>
-         </tbody>
-        </table>
-       </dd>
-       <div class="term">
-        InformationURL
-       </div>
-       <div class="definition">
-        <div class="term">
-         Name
-        </div>
-        <div class="definition">
-         VG1-S-PRA-3-RDR-LOWBAND-6SEC-V1.0
-        </div>
-        <div class="term">
-         URL
-        </div>
-        <div class="definition">
-         <a href="https://pds-ppi.igpp.ucla.edu/data/VG1-S-PRA-3-RDR-LOWBAND-6SEC-V1.0/AAREADME.TXT" target="_blank">
-          https://pds-ppi.igpp.ucla.edu/data/VG1-S-PRA-3-RDR-LOWBAND-6SEC-V1.0/AAREADME.TXT
-         </a>
-        </div>
-        <div class="term">
-         Description
-        </div>
-        <div class="definition">
-         <p>
-          The Document describing the Contents of the Collection.
-         </p>
-        </div>
-        <div class="term">
-         Language
-        </div>
-        <div class="definition">
-         En
-        </div>
-       </div>
-       <div class="term">
-        PriorIDs
-       </div>
-       <div class="definition">
-        spase://VMO/NumericalData/Voyager1/PRA/Saturn/PT6S
-       </div>
-       <div class="definition">
-        spase://VSPO/NumericalData/Voyager1/PRA/Saturn/PT6S
-       </div>
-      </div>
-      <div class="term">
-       AccessInformation
-      </div>
-      <div class="definition">
-       <div class="term">
-        RepositoryID
-       </div>
-       <div class="definition">
-        <a href="https://spase-metadata.org/SMWG/Repository/PDS/PPI.html">
-         spase://SMWG/Repository/PDS/PPI
-        </a>
-       </div>
-       <div class="term">
-        Availability
-       </div>
-       <div class="definition">
-        Online
-       </div>
-       <div class="term">
-        AccessRights
-       </div>
-       <div class="definition">
-        Open
-       </div>
-       <div class="term">
-        AccessURL
-       </div>
-       <div class="definition">
-        <div class="term">
-         Name
-        </div>
-        <div class="definition">
-         PDS/PPI
-        </div>
-        <div class="term">
-         URL
-        </div>
-        <div class="definition">
-         <a href="https://pds-ppi.igpp.ucla.edu/search/view/?f=yes&amp;id=pds://PPI/VG1-S-PRA-3-RDR-LOWBAND-6SEC-V1.0" target="_blank">
-          https://pds-ppi.igpp.ucla.edu/search/view/?f=yes&amp;id=pds://PPI/VG1-S-PRA-3-RDR-LOWBAND-6SEC-V1.0
-         </a>
-        </div>
-        <div class="term">
-         ProductKey
-        </div>
-        <div class="definition">
-         VG1-S-PRA-3-RDR-LOWBAND-6SEC-V1.0
-        </div>
-        <div class="term">
-         Description
-        </div>
-        <div class="definition">
-         <p>
-          This Collection is archived with NASA Planetary Data System.
-         </p>
-        </div>
-        <div class="term">
-         Language
-        </div>
-        <div class="definition">
-         En
-        </div>
-       </div>
-       <div class="term">
-        Format
-       </div>
-       <div class="definition">
-        Text.ASCII
-       </div>
-       <div class="term">
-        Acknowledgement
-       </div>
-       <div class="definition">
-        NASA Planetary Plasma Interactions (PPI) Node of the Planetary Data System (PDS) and the Principal Investigator for the Data.
-       </div>
-      </div>
-      <div class="term">
-       InstrumentIDs
-      </div>
-      <div class="definition">
-       <a href="https://spase-metadata.org/SMWG/Instrument/Voyager1/PRA.html" target="_blank">
-        spase://SMWG/Instrument/Voyager1/PRA
-       </a>
-      </div>
-      <div class="term">
-       MeasurementType
-      </div>
-      <div class="definition">
-       Waves.Passive
-      </div>
-      <div class="term">
-       TemporalDescription
-      </div>
-      <div class="definition">
-       <div class="term">
-        TimeSpan
-       </div>
-       <div class="definition">
-        <div class="term">
-         StartDate
-        </div>
-        <div class="definition">
-         1980-11-11 22:09:23.00
-        </div>
-        <div class="term">
-         StopDate
-        </div>
-        <div class="definition">
-         1980-11-16 23:59:47.00
-        </div>
-       </div>
-       <div class="term">
-        Cadence
-       </div>
-       <div class="definition">
-        PT6S
-       </div>
-      </div>
-      <div class="term">
-       ObservedRegion
-      </div>
-      <div class="definition">
-       Saturn
-      </div>
-     </div>
-    </div>
-   </div>
-  </div>
- </body>
-</html>
+		Space Physics Data Facility; Planetary Data System. 
+							</p><p><div class="term">ResourceID</div><div class="definition">spase://NASA/NumericalData/Voyager1/PRA/Saturn/PT6S</div></p><p><div class="term">Description</div><div class="definition"><ul>
+<li>Data Set Overview</li>
+<li>=================</li>
+</ul>
+<p>This Data Set (VG1-S-PRA-3-RDR-LOWBAND-6SEC-V1.0) contains Data acquired by the Voyager 1 Planetary Radio Astronomy (PRA) Instrument during the Saturn Encounter. Since the PRA Instrument is able to observe Planetary Phenomenon at much larger Ranges than other Fields and Particles Experiments, thus the PRA Data cover a variable and longer Encounter Period. PRA Low Band Data provided here cover the entire Saturn Encounter Phase (1980-08-22 to 1980-12-14).</p>
+<p>VG1-S-PRA-3-RDR-LOWBAND-6SEC-V1.0 contains Data at the highest Time Resolution possible during Normal Operations. The Normal Mode of PRA Operations during the Planetary Encounters was to Sweep through the two Radio Receiver Bands, High Band (40.5 MHz to 1.5 MHz in 128 Channels spaced 0.3072 MHz apart) and Low Band (1326.0 kHz to 1.2 kHz in 70 Channels spaced 19.2 kHz apart) in a Period of 6 s. The Receivers measured, on alternate Samples, the left hand circular And right hand circular (radio definition) Power.</p>
+<ul>
+<li>Measured Parameters</li>
+<li>===================</li>
+</ul>
+<p>The Data here are from the Low Frequency Receiver Band and are &quot;packaged&quot; into Spacecraft Major Frame Records. Each Major Frame is 48 s long or eight Sweeps through the PRA Receiver. The Data are calibrated and are given in Units of &quot;millibels&quot; or mB, which is 1000 times the Log of the received Power. Zero mB corresponds to approximately 1.4×10^-21 W m^-2 Hz^-1, however, this Value is never seen in practice. The minimum Values detected, which includes Receiver internal and Spacecraft generated Noise, are about 2300 mB to 2400 mB, or about 3.5×10^-19 W m^-2 Hz^-1; even higher Values are seen at the very lowest Frequencies.</p>
+<p>The Data Format is ASCII and consists of a Time Indicator followed by an Array containing the eight Low Band Sweeps. Time is Spacecraft Event Time (SCET) which is basically Universal Time at the Spacecraft. Specifically, Time is in the Form of YYMMDD and Seconds into YYMMDD. Both are written as I6. Example: July 1, 1979 at 12:00 SCET would be 790701, 43200. The Seconds corresponds, to the nearest Second, to the Start of the Sweep (which occurs in PRA High Band). The first Value in Low Band (1326.0 kHz) occurs some 3.9 s after this Time and Samples at successively lower Frequencies are spaced 0.03 s apart. Only one Time is given for the entire Major Frame, thus the Start of each Sweep is the Time given plus 6 times the Sweep Number minus 1 (i.e., 0 through 7).</p>
+<p>The Data Array is dimensioned as 71 × 8 and written as I4 Format (i.e., 568I4). The &quot;8&quot; corresponds to the eight PRA Sweeps. The lowest 68 of the 70 Low Band Channels (1287.6 kHz to 1.2 kHz) are in Positions 2 to 69. Positions 70 and 71 should be ignored. Missing or Bad Data Values are set to Zero. In Position 1 of each Sweep is a Status Word where the 12 least significant Bits have used, although not all 12 have meaning for the PRA Low Band. Numbering those Bits 0 for least significant to 11 for most significant, the Bits that have meaning are as follows:</p>
+<ul>
+<li>Bit Value(s)</li>
+</ul>
+<ul>
+<li>0: 15 dB Attenuator in use when equal to 1</li>
+<li>1: 30 dB Attenuator in use when equal to 1</li>
+<li>2: 45 dB Attenuator in use when equal to 1</li>
+<li>9 and 10 together: Polarization of first Channel sampled (1326.0 kHz) according to the Scheme:</li>
+</ul>
+<p>+-------------------------------------------------------+<br>
+|                 | Value Bit 10 = 0 | Value Bit 10 = 1 |</p>
+<hr>
+<p>| Value Bit 9 = 0 | R                | L                |<br>
+| Value Bit 9 = 1 | L                | R                |<br>
++-------------------------------------------------------+</p>
+<p>Polarization at successively lower Frequencies is opposite to the Frequency above it, i.e., either a LRLR or an RLRL Pattern. Successive 6 s Sweeps start on the opposite Polarization as the previous Sweep as indicated in the Status Bits. Note that this Polarization is the received Polarization, not necessarily the emitted Polarization. Correct Interpretation of the received Polarization depends on the Antenna Plane Orientation relative to the Radio Source. A good Description of this Concept can be found in (Le Blanc et al., 1987).</p>
+<p>Missing or Bad Data Values are set to Zero. If the Status Word is Zero, any Data in that Receiver Sweep should be discarded.</p>
+</div></p></div></div><div><p class="right"><a target="_blank" href="PT6S.xml">View XML</a>
+				| <a target="_blank" href="PT6S.json">View JSON</a>
+                | <a target="_blank" href="https://spase-editor.heliocloud.org/?edit=https://spase-metadata.org/NASA/NumericalData/Voyager1/PRA/Saturn/PT6S.xml">Edit</a></p><h1 class="detail">Details</h1></div><div><div class="product"><p class="version">Version:2.7.1</p><h1>MetadataRightsList</h1><div class="term">Rights</div><div class="definition"><div class="term">SchemeURI</div><div class="definition">https://spdx.org/licenses/</div><div class="term">RightsIdentifierScheme</div><div class="definition">SPDX</div><div class="term">RightsIdentifier</div><div class="definition">CC0-1.0</div><div class="term">RightsURI</div><div class="definition">https://spdx.org/licenses/CC0-1.0.html</div><div class="term">RightsName</div><div class="definition">Creative Commons Zero v1.0 Universal</div><div class="term">Note</div><div class="definition">CC0 1.0 Universal is the Creative Commons license applicable to all publicly available SPASE metadata descriptions</div></div></div><div class="product"><p class="version">Version:2.7.1</p><h1>NumericalData</h1><div class="term">ResourceID</div><div class="definition">spase://NASA/NumericalData/Voyager1/PRA/Saturn/PT6S</div><div class="term">NamingAuthority</div><div class="definition">NASA</div><div class="term">ResourceType</div><div class="definition">NumericalData</div><div class="term">ResourceHeader</div><div class="definition"><div class="term">ResourceName</div><div class="definition">Voyager 1 Saturn Planetary Radio Astronomy (PRA) Calibrated Low-Frequency Receiver Band, Version 1.0, 6 s High Resolution Data</div><div class="term">ReleaseDate</div><div class="definition">2026-04-10 10:04:09Z</div><div class="term">RevisionHistory</div><div class="definition"><div class="term">RevisionEvent</div><div class="definition"><div class="term">ReleaseDate</div><div class="definition">2020-07-07 21:15:55Z</div><div class="term">Note</div><div class="definition">Only known prior ReleaseDate of the metadata</div></div><div class="term">RevisionEvent</div><div class="definition"><div class="term">ReleaseDate</div><div class="definition">2025-12-04 13:32:31Z</div><div class="term">Note</div><div class="definition">Added MetadataRightsList. Added ResourceType and NamingAuthority. Updated to 2.7.1. Changed http to https in top-level schemaLocation attribute. Fixed version number separator in top-level schemaLocation attribute. ZCB</div></div><div class="term">RevisionEvent</div><div class="definition"><div class="term">ReleaseDate</div><div class="definition">2026-04-10 09:59:17Z</div><div class="term">Note</div><div class="definition">Added new Contact(s). ZCB</div></div><div class="term">RevisionEvent</div><div class="definition"><div class="term">ReleaseDate</div><div class="definition">2026-04-10 10:04:09Z</div><div class="term">Note</div><div class="definition">Added PublicationInfo. ZCB</div></div></div><div class="term">Description</div><div class="definition"><ul>
+<li>Data Set Overview</li>
+<li>=================</li>
+</ul>
+<p>This Data Set (VG1-S-PRA-3-RDR-LOWBAND-6SEC-V1.0) contains Data acquired by the Voyager 1 Planetary Radio Astronomy (PRA) Instrument during the Saturn Encounter. Since the PRA Instrument is able to observe Planetary Phenomenon at much larger Ranges than other Fields and Particles Experiments, thus the PRA Data cover a variable and longer Encounter Period. PRA Low Band Data provided here cover the entire Saturn Encounter Phase (1980-08-22 to 1980-12-14).</p>
+<p>VG1-S-PRA-3-RDR-LOWBAND-6SEC-V1.0 contains Data at the highest Time Resolution possible during Normal Operations. The Normal Mode of PRA Operations during the Planetary Encounters was to Sweep through the two Radio Receiver Bands, High Band (40.5 MHz to 1.5 MHz in 128 Channels spaced 0.3072 MHz apart) and Low Band (1326.0 kHz to 1.2 kHz in 70 Channels spaced 19.2 kHz apart) in a Period of 6 s. The Receivers measured, on alternate Samples, the left hand circular And right hand circular (radio definition) Power.</p>
+<ul>
+<li>Measured Parameters</li>
+<li>===================</li>
+</ul>
+<p>The Data here are from the Low Frequency Receiver Band and are &quot;packaged&quot; into Spacecraft Major Frame Records. Each Major Frame is 48 s long or eight Sweeps through the PRA Receiver. The Data are calibrated and are given in Units of &quot;millibels&quot; or mB, which is 1000 times the Log of the received Power. Zero mB corresponds to approximately 1.4×10^-21 W m^-2 Hz^-1, however, this Value is never seen in practice. The minimum Values detected, which includes Receiver internal and Spacecraft generated Noise, are about 2300 mB to 2400 mB, or about 3.5×10^-19 W m^-2 Hz^-1; even higher Values are seen at the very lowest Frequencies.</p>
+<p>The Data Format is ASCII and consists of a Time Indicator followed by an Array containing the eight Low Band Sweeps. Time is Spacecraft Event Time (SCET) which is basically Universal Time at the Spacecraft. Specifically, Time is in the Form of YYMMDD and Seconds into YYMMDD. Both are written as I6. Example: July 1, 1979 at 12:00 SCET would be 790701, 43200. The Seconds corresponds, to the nearest Second, to the Start of the Sweep (which occurs in PRA High Band). The first Value in Low Band (1326.0 kHz) occurs some 3.9 s after this Time and Samples at successively lower Frequencies are spaced 0.03 s apart. Only one Time is given for the entire Major Frame, thus the Start of each Sweep is the Time given plus 6 times the Sweep Number minus 1 (i.e., 0 through 7).</p>
+<p>The Data Array is dimensioned as 71 × 8 and written as I4 Format (i.e., 568I4). The &quot;8&quot; corresponds to the eight PRA Sweeps. The lowest 68 of the 70 Low Band Channels (1287.6 kHz to 1.2 kHz) are in Positions 2 to 69. Positions 70 and 71 should be ignored. Missing or Bad Data Values are set to Zero. In Position 1 of each Sweep is a Status Word where the 12 least significant Bits have used, although not all 12 have meaning for the PRA Low Band. Numbering those Bits 0 for least significant to 11 for most significant, the Bits that have meaning are as follows:</p>
+<ul>
+<li>Bit Value(s)</li>
+</ul>
+<ul>
+<li>0: 15 dB Attenuator in use when equal to 1</li>
+<li>1: 30 dB Attenuator in use when equal to 1</li>
+<li>2: 45 dB Attenuator in use when equal to 1</li>
+<li>9 and 10 together: Polarization of first Channel sampled (1326.0 kHz) according to the Scheme:</li>
+</ul>
+<p>+-------------------------------------------------------+<br>
+|                 | Value Bit 10 = 0 | Value Bit 10 = 1 |</p>
+<hr>
+<p>| Value Bit 9 = 0 | R                | L                |<br>
+| Value Bit 9 = 1 | L                | R                |<br>
++-------------------------------------------------------+</p>
+<p>Polarization at successively lower Frequencies is opposite to the Frequency above it, i.e., either a LRLR or an RLRL Pattern. Successive 6 s Sweeps start on the opposite Polarization as the previous Sweep as indicated in the Status Bits. Note that this Polarization is the received Polarization, not necessarily the emitted Polarization. Correct Interpretation of the received Polarization depends on the Antenna Plane Orientation relative to the Radio Source. A good Description of this Concept can be found in (Le Blanc et al., 1987).</p>
+<p>Missing or Bad Data Values are set to Zero. If the Status Word is Zero, any Data in that Receiver Sweep should be discarded.</p>
+</div><div class="term">PublicationInfo</div><div class="definition"><div class="term">Authors</div><div class="definition">Decker, Robert B.; Krimigis, Stamatios M.</div><div class="term">PublicationDate</div><div class="definition">2026-04-10 10:04:09Z</div><div class="term">PublishedBy</div><div class="definition">Space Physics Data Facility; Planetary Data System</div></div><div class="term">Contacts</div><dd><table class="nested" cellspacing="0"><tr><th/><th class="center">Role</th><th class="center">Person</th><th class="center">StartDate</th><th class="center">StopDate</th><th class="center">Note</th></tr><tbody><tr><td>1.</td><td>CoPI</td><td><a target="_blank" href="https://spase-metadata.org/SMWG/Person/Robert.B.Decker.html">spase://SMWG/Person/Robert.B.Decker</a></td><td/><td/><td/></tr><tr><td>2.</td><td>PrincipalInvestigator</td><td><a target="_blank" href="https://spase-metadata.org/SMWG/Person/Stamatios.M.Krimigis.html">spase://SMWG/Person/Stamatios.M.Krimigis</a></td><td/><td/><td/></tr><tr><td>3.</td><td>MetadataContact</td><td><a target="_blank" href="https://spase-metadata.org/SMWG/Person/Todd.A.King.html">spase://SMWG/Person/Todd.A.King</a></td><td/><td/><td/></tr><tr><td>4.</td><td>MetadataContact</td><td><a target="_blank" href="https://spase-metadata.org/SMWG/Person/Lee.Frost.Bargatze.html">spase://SMWG/Person/Lee.Frost.Bargatze</a></td><td/><td/><td/></tr></tbody></table></dd><div class="term">InformationURL</div><div class="definition"><div class="term">Name</div><div class="definition">VG1-S-PRA-3-RDR-LOWBAND-6SEC-V1.0</div><div class="term">URL</div><div class="definition"><a target="_blank" href="https://pds-ppi.igpp.ucla.edu/data/VG1-S-PRA-3-RDR-LOWBAND-6SEC-V1.0/AAREADME.TXT">https://pds-ppi.igpp.ucla.edu/data/VG1-S-PRA-3-RDR-LOWBAND-6SEC-V1.0/AAREADME.TXT</a></div><div class="term">Description</div><div class="definition"><p>The Document describing the Contents of the Collection.</p>
+</div><div class="term">Language</div><div class="definition">En</div></div><div class="term">PriorIDs</div><div class="definition">spase://VMO/NumericalData/Voyager1/PRA/Saturn/PT6S</div><div class="definition">spase://VSPO/NumericalData/Voyager1/PRA/Saturn/PT6S</div></div><div class="term">AccessInformation</div><div class="definition"><div class="term">RepositoryID</div><div class="definition"><a href="https://spase-metadata.org/SMWG/Repository/PDS/PPI.html">spase://SMWG/Repository/PDS/PPI</a></div><div class="term">Availability</div><div class="definition">Online</div><div class="term">AccessRights</div><div class="definition">Open</div><div class="term">AccessURL</div><div class="definition"><div class="term">Name</div><div class="definition">PDS/PPI</div><div class="term">URL</div><div class="definition"><a target="_blank" href="https://pds-ppi.igpp.ucla.edu/search/view/?f=yes&amp;id=pds://PPI/VG1-S-PRA-3-RDR-LOWBAND-6SEC-V1.0">https://pds-ppi.igpp.ucla.edu/search/view/?f=yes&amp;id=pds://PPI/VG1-S-PRA-3-RDR-LOWBAND-6SEC-V1.0</a></div><div class="term">ProductKey</div><div class="definition">VG1-S-PRA-3-RDR-LOWBAND-6SEC-V1.0</div><div class="term">Description</div><div class="definition"><p>This Collection is archived with NASA Planetary Data System.</p>
+</div><div class="term">Language</div><div class="definition">En</div></div><div class="term">Format</div><div class="definition">Text.ASCII</div><div class="term">Acknowledgement</div><div class="definition">NASA Planetary Plasma Interactions (PPI) Node of the Planetary Data System (PDS) and the Principal Investigator for the Data.</div></div><div class="term">InstrumentIDs</div><div class="definition"><a target="_blank" href="https://spase-metadata.org/SMWG/Instrument/Voyager1/PRA.html">spase://SMWG/Instrument/Voyager1/PRA</a></div><div class="term">MeasurementType</div><div class="definition">Waves.Passive</div><div class="term">TemporalDescription</div><div class="definition"><div class="term">TimeSpan</div><div class="definition"><div class="term">StartDate</div><div class="definition">1980-11-11 22:09:23.00</div><div class="term">StopDate</div><div class="definition">1980-11-16 23:59:47.00</div></div><div class="term">Cadence</div><div class="definition">PT6S</div></div><div class="term">ObservedRegion</div><div class="definition">Saturn</div></div></div></div></div></body></html>
