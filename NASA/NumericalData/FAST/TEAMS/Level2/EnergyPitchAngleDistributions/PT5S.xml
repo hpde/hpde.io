@@ -5,7 +5,7 @@
       <ResourceID>spase://NASA/NumericalData/FAST/TEAMS/Level2/EnergyPitchAngleDistributions/PT5S</ResourceID>
       <ResourceHeader>
          <ResourceName>FAST Time of Flight Energy Angle Mass Spectrograph (TEAMS) Energy-Pitch Angle Distributions, Level 2 (L2), 5 s Data</ResourceName>
-         <ReleaseDate>2025-05-06T15:38:11Z</ReleaseDate>
+         <ReleaseDate>2020-05-20T15:38:11Z</ReleaseDate>
          <RevisionHistory>
             <RevisionEvent>
                <ReleaseDate>2020-05-20T12:34:56.789Z</ReleaseDate>
@@ -22,6 +22,10 @@
             <RevisionEvent>
                <ReleaseDate>2025-05-06T15:38:11Z</ReleaseDate>
                <Note>Added ObservedRegion. JMW</Note>
+            </RevisionEvent>
+			 <RevisionEvent>
+               <ReleaseDate>2026-04-17T15:38:11Z</ReleaseDate>
+               <Note>Added new parameters. JMW</Note>
             </RevisionEvent>
          </RevisionHistory>
          <Description>Fast Auroral SnapshoT Explorer, FAST, Time-of-flight Energy Angle Mass Spectrograph, TEAMS, Level 2 Energy-Pitch Angle Distributions
@@ -41,7 +45,7 @@ The instrument axis of symmetry is perpendicular to the spacecraft spin axis and
             <Role>MetadataContact</Role>
          </Contact>
          <Contact>
-            <PersonID>spase://SMWG/Person/Lee.Frost.Bargatze</PersonID>
+            <PersonID>spase://SMWG/Person/James.M.Weygand</PersonID>
             <Role>MetadataContact</Role>
          </Contact>
          <InformationURL>
@@ -81,11 +85,6 @@ The instrument axis of symmetry is perpendicular to the spacecraft spin axis and
          <Availability>Online</Availability>
          <AccessRights>Open</AccessRights>
          <AccessURL>
-            <Name>FTPS from SPDF (not with most browsers)</Name>
-            <URL>ftps://spdf.gsfc.nasa.gov/pub/data/fast/teams/l2/</URL>
-            <Description>Access to Data in CDF Format via ftp from SPDF</Description>
-         </AccessURL>
-         <AccessURL>
             <Name>HTTPS from SPDF</Name>
             <URL>https://spdf.gsfc.nasa.gov/pub/data/fast/teams/l2/</URL>
             <Description>Access to Data in CDF Format via http from SPDF</Description>
@@ -106,8 +105,8 @@ The instrument axis of symmetry is perpendicular to the spacecraft spin axis and
       <MeasurementType>InstrumentStatus</MeasurementType>
       <TemporalDescription>
          <TimeSpan>
-            <StartDate>1998-09-23T12:31:47.000</StartDate>
-            <StopDate>1998-09-26T00:57:44.000</StopDate>
+            <StartDate>1996-09-20T00:00:00.000</StartDate>
+            <StopDate>2009-02-14T23:59:00.000</StopDate>
          </TimeSpan>
          <Cadence>PT5S</Cadence>
       </TemporalDescription>
@@ -120,7 +119,8 @@ The instrument axis of symmetry is perpendicular to the spacecraft spin axis and
          <ParameterKey>Epoch</ParameterKey>
          <Description>Epoch Time Tags in Terrestrial Time 2000, TT2000</Description>
          <Caveats>This Parameter exhibits an increasing Monotonic Progression</Caveats>
-         <Cadence>PT5S</Cadence>
+         <CadenceMin>PT5.1S</CadenceMin>
+		 <CadenceMax>PT20.4S</CadenceMax>
          <Units>ns</Units>
          <UnitsConversion>1.0e-9&gt;s</UnitsConversion>
          <RenderingHints>
@@ -141,7 +141,8 @@ The instrument axis of symmetry is perpendicular to the spacecraft spin axis and
          <ParameterKey>Epoch_Helium</ParameterKey>
          <Description>Epoch Time Tags in Terrestrial Time 2000, TT2000, Helium</Description>
          <Caveats>This Parameter exhibits an increasing Monotonic Progression</Caveats>
-         <Cadence>PT5S</Cadence>
+         <CadenceMin>PT5.1S</CadenceMin>
+		 <CadenceMax>PT20.4S</CadenceMax>
          <Units>ns</Units>
          <UnitsConversion>1.0e-9&gt;s</UnitsConversion>
          <RenderingHints>
@@ -158,6 +159,32 @@ The instrument axis of symmetry is perpendicular to the spacecraft spin axis and
          </Support>
       </Parameter>
       <Parameter>
+	     <Name>Delta Time</Name>
+		 <ParameterKey>delta_time</ParameterKey>
+		 <Description>Sample width: end time - start time</Description>
+		 <CadenceMin>PT5.1S</CadenceMin>
+		 <CadenceMax>PT20.4S</CadenceMax>
+		 <ValidMin>1</ValidMin>
+         <ValidMax>60</ValidMax>
+         <FillValue>-1.0000e+31</FillValue>
+         <Support>
+            <SupportQuantity>Temporal</SupportQuantity>
+         </Support>
+	  </Parameter>
+	  <Parameter>
+	     <Name>Helium Delta Time</Name>
+		 <ParameterKey>delta_time_helium</ParameterKey>
+		 <Description>Sample width: end time - start time</Description>
+		 <CadenceMin>PT5.1S</CadenceMin>
+		 <CadenceMax>PT20.4S</CadenceMax>
+		 <ValidMin>1</ValidMin>
+         <ValidMax>60</ValidMax>
+         <FillValue>-1.0000e+31</FillValue>
+         <Support>
+            <SupportQuantity>Temporal</SupportQuantity>
+         </Support>
+	  </Parameter>
+      <Parameter>
          <Name>Proton, Energy-Pitch Angle Distribution</Name>
          <Set>Time series defined by using: EPOCH</Set>
          <ParameterKey>proton_distribution</ParameterKey>
@@ -166,7 +193,8 @@ The instrument axis of symmetry is perpendicular to the spacecraft spin axis and
 * Column 1 Labels from ENERGY: [ 11200.0, 9560.00, 8060.00, 6610.00, 5540.00, 4780.00, 4040.00, 3300.00, 2760.00, 2390.00, 2020.00, 1660.00, 1380.00, 1200.00, 1010.00, 826.000, 691.000, 598.000, 504.000, 413.000, 346.000, 298.000, 252.000, 206.000, 173.000, 150.000, 126.000, 103.000, 86.4000, 74.7000, 63.0000, 51.6000, 43.2000, 37.3000, 31.5000, 25.9000, 21.6000, 18.6000, 15.8000, 12.9000, 10.8000, 9.35000, 7.87000, 6.31000, 4.74000, 3.28000, 1.97000, 1.15000].
 * Column 2 Labels from PITCH_ANGLE: [ 11.2500, 33.7500, 56.2500, 78.7500, 101.200, 123.800, 146.200, 168.800, 191.200, 213.800, 236.200, 258.800, 281.200, 303.800, 326.200, 348.800].</Description>
          <Caveats>Survey Resolution H+, flux</Caveats>
-         <Cadence>PT5S</Cadence>
+         <CadenceMin>PT5.1S</CadenceMin>
+		 <CadenceMax>PT20.4S</CadenceMax>
          <Units>eV/(cm^2 s sr eV)</Units>
          <UnitsConversion>1.0e4&gt;J/(m^2 s sr J)</UnitsConversion>
          <RenderingHints>
@@ -194,7 +222,8 @@ The instrument axis of symmetry is perpendicular to the spacecraft spin axis and
 * Column 1 Labels from ENERGY: [ 11200.0, 9560.00, 8060.00, 6610.00, 5540.00, 4780.00, 4040.00, 3300.00, 2760.00, 2390.00, 2020.00, 1660.00, 1380.00, 1200.00, 1010.00, 826.000, 691.000, 598.000, 504.000, 413.000, 346.000, 298.000, 252.000, 206.000, 173.000, 150.000, 126.000, 103.000, 86.4000, 74.7000, 63.0000, 51.6000, 43.2000, 37.3000, 31.5000, 25.9000, 21.6000, 18.6000, 15.8000, 12.9000, 10.8000, 9.35000, 7.87000, 6.31000, 4.74000, 3.28000, 1.97000, 1.15000].
 * Column 2 Labels from PITCH_ANGLE: [ 11.2500, 33.7500, 56.2500, 78.7500, 101.200, 123.800, 146.200, 168.800, 191.200, 213.800, 236.200, 258.800, 281.200, 303.800, 326.200, 348.800].</Description>
          <Caveats>Survey Resolution O+, flux</Caveats>
-         <Cadence>PT5S</Cadence>
+         <CadenceMin>PT5.1S</CadenceMin>
+		 <CadenceMax>PT20.4S</CadenceMax>
          <Units>eV/(cm^2 s sr eV)</Units>
          <UnitsConversion>1.0e4&gt;J/(m^2 s sr J)</UnitsConversion>
          <RenderingHints>
@@ -222,7 +251,8 @@ The instrument axis of symmetry is perpendicular to the spacecraft spin axis and
 * Column 1 Labels from ENERGY: [ 11200.0, 9560.00, 8060.00, 6610.00, 5540.00, 4780.00, 4040.00, 3300.00, 2760.00, 2390.00, 2020.00, 1660.00, 1380.00, 1200.00, 1010.00, 826.000, 691.000, 598.000, 504.000, 413.000, 346.000, 298.000, 252.000, 206.000, 173.000, 150.000, 126.000, 103.000, 86.4000, 74.7000, 63.0000, 51.6000, 43.2000, 37.3000, 31.5000, 25.9000, 21.6000, 18.6000, 15.8000, 12.9000, 10.8000, 9.35000, 7.87000, 6.31000, 4.74000, 3.28000, 1.97000, 1.15000].
 * Column 2 Labels from PITCH_ANGLE: [ 11.2500, 33.7500, 56.2500, 78.7500, 101.200, 123.800, 146.200, 168.800, 191.200, 213.800, 236.200, 258.800, 281.200, 303.800, 326.200, 348.800].</Description>
          <Caveats>Survey Resolution He+, flux</Caveats>
-         <Cadence>PT5S</Cadence>
+         <CadenceMin>PT5.1S</CadenceMin>
+		 <CadenceMax>PT20.4S</CadenceMax>
          <Units>eV/(cm^2 s sr eV)</Units>
          <UnitsConversion>1.0e4&gt;J/(m^2 s sr J)</UnitsConversion>
          <RenderingHints>
@@ -244,10 +274,11 @@ The instrument axis of symmetry is perpendicular to the spacecraft spin axis and
       <Parameter>
          <Name>Proton, Spin averaged fluxes</Name>
          <Set>Time series defined by using: EPOCH</Set>
-         <ParameterKey>proton_spin_ave_fluxes</ParameterKey>
+         <ParameterKey>proton_omni_flux</ParameterKey>
          <Description>Proton, H&#8314;, Spin averaged fluxes</Description>
          <Caveats>Survey Resolution H+, flux</Caveats>
-         <Cadence>PT5S</Cadence>
+         <CadenceMin>PT5.1S</CadenceMin>
+		 <CadenceMax>PT20.4S</CadenceMax>
          <Units>eV/(cm^2 s sr eV)</Units>
          <UnitsConversion>1.0e4&gt;J/(m^2 s sr J)</UnitsConversion>
          <RenderingHints>
@@ -609,10 +640,11 @@ The instrument axis of symmetry is perpendicular to the spacecraft spin axis and
       <Parameter>
          <Name>Singly-charged Oxygen, Spin averaged fluxes</Name>
          <Set>Time series defined by using: EPOCH</Set>
-         <ParameterKey>oxygen_spin_ave_fluxes</ParameterKey>
+         <ParameterKey>oxygen_omni_flux</ParameterKey>
          <Description>Singly-charged Oxygen, O&#8314;, Spin averaged fluxes</Description>
          <Caveats>Survey Resolution O+, flux</Caveats>
-         <Cadence>PT5S</Cadence>
+         <CadenceMin>PT5.1S</CadenceMin>
+		 <CadenceMax>PT20.4S</CadenceMax>
          <Units>eV/(cm^2 s sr eV)</Units>
          <UnitsConversion>1.0e4&gt;J/(m^2 s sr J)</UnitsConversion>
          <RenderingHints>
@@ -974,10 +1006,11 @@ The instrument axis of symmetry is perpendicular to the spacecraft spin axis and
       <Parameter>
          <Name>Singly-charged Helium, Spin averaged fluxes</Name>
          <Set>Time series defined by using: EPOCH_HELIUM</Set>
-         <ParameterKey>helium_spin_ave_fluxes</ParameterKey>
+         <ParameterKey>helium_omni_flux</ParameterKey>
          <Description>Singly-charged Helium, He&#8314;, Spin averaged fluxes</Description>
          <Caveats>Survey Resolution He+, flux</Caveats>
-         <Cadence>PT5S</Cadence>
+         <CadenceMin>PT5.1S</CadenceMin>
+		 <CadenceMax>PT20.4S</CadenceMax>
          <Units>eV/(cm^2 s sr eV)</Units>
          <UnitsConversion>1.0e4&gt;J/(m^2 s sr J)</UnitsConversion>
          <RenderingHints>
@@ -1342,7 +1375,8 @@ The instrument axis of symmetry is perpendicular to the spacecraft spin axis and
          <ParameterKey>proton_flag</ParameterKey>
          <Description>Survey Resolution Proton, H&#8314;, Data Quality Flag, non-zero values indicate that incomplete data was used</Description>
          <Caveats>0 is good, non-zero values indicate that incomplete data was used</Caveats>
-         <Cadence>PT5S</Cadence>
+         <CadenceMin>PT5.1S</CadenceMin>
+		 <CadenceMax>PT20.4S</CadenceMax>
          <RenderingHints>
             <DisplayType>TimeSeries</DisplayType>
             <AxisLabel>Flag</AxisLabel>
@@ -1354,7 +1388,7 @@ The instrument axis of symmetry is perpendicular to the spacecraft spin axis and
          <FillValue>255</FillValue>
          <Support>
             <Qualifier>Scalar</Qualifier>
-            <SupportQuantity>Velocity</SupportQuantity>
+            <SupportQuantity>Other</SupportQuantity>
          </Support>
       </Parameter>
       <Parameter>
@@ -1363,7 +1397,8 @@ The instrument axis of symmetry is perpendicular to the spacecraft spin axis and
          <ParameterKey>oxygen_flag</ParameterKey>
          <Description>Survey Resolution singly-charged Oxygen Flag, O&#8314;, Data Quality Flag, non-zero values indicate that incomplete data was used</Description>
          <Caveats>0 is good, non-zero values indicate that incomplete data was used</Caveats>
-         <Cadence>PT5S</Cadence>
+         <CadenceMin>PT5.1S</CadenceMin>
+		 <CadenceMax>PT20.4S</CadenceMax>
          <RenderingHints>
             <DisplayType>TimeSeries</DisplayType>
             <AxisLabel>Flag</AxisLabel>
@@ -1375,7 +1410,7 @@ The instrument axis of symmetry is perpendicular to the spacecraft spin axis and
          <FillValue>255</FillValue>
          <Support>
             <Qualifier>Scalar</Qualifier>
-            <SupportQuantity>Velocity</SupportQuantity>
+            <SupportQuantity>Other</SupportQuantity>
          </Support>
       </Parameter>
       <Parameter>
@@ -1384,7 +1419,8 @@ The instrument axis of symmetry is perpendicular to the spacecraft spin axis and
          <ParameterKey>helium_flag</ParameterKey>
          <Description>Survey Resolution singly-charged Helium Flag, He&#8314;, Data Quality Flag, non-zero values indicate that incomplete data was used</Description>
          <Caveats>0 is good, non-zero values indicate that incomplete data was used</Caveats>
-         <Cadence>PT5S</Cadence>
+         <CadenceMin>PT5.1S</CadenceMin>
+		 <CadenceMax>PT20.4S</CadenceMax>
          <RenderingHints>
             <DisplayType>TimeSeries</DisplayType>
             <AxisLabel>Flag</AxisLabel>
@@ -1396,14 +1432,15 @@ The instrument axis of symmetry is perpendicular to the spacecraft spin axis and
          <FillValue>255</FillValue>
          <Support>
             <Qualifier>Scalar</Qualifier>
-            <SupportQuantity>Velocity</SupportQuantity>
+            <SupportQuantity>Other</SupportQuantity>
          </Support>
       </Parameter>
       <Parameter>
          <Name>Bin Energy Values</Name>
          <ParameterKey>Energy</ParameterKey>
          <Description>Bin centered Energy Value Array</Description>
-         <Cadence>PT5S</Cadence>
+         <CadenceMin>PT5.1S</CadenceMin>
+		 <CadenceMax>PT20.4S</CadenceMax>
          <Units>eV</Units>
          <UnitsConversion>1.602176565e-19&gt;J</UnitsConversion>
          <RenderingHints>
@@ -1427,7 +1464,8 @@ The instrument axis of symmetry is perpendicular to the spacecraft spin axis and
          <Name>Bin Pitch Angles</Name>
          <ParameterKey>pitch_angle</ParameterKey>
          <Description>Bin centered Pitch Angle Value Array</Description>
-         <Cadence>PT5S</Cadence>
+         <CadenceMin>PT5.1S</CadenceMin>
+		 <CadenceMax>PT20.4S</CadenceMax>
          <Units>&#176;</Units>
          <UnitsConversion>0.0174532925&gt;rad</UnitsConversion>
          <RenderingHints>
@@ -1446,6 +1484,625 @@ The instrument axis of symmetry is perpendicular to the spacecraft spin axis and
             <Qualifier>DirectionAngle.PolarAngle</Qualifier>
             <ParticleQuantity>ArrivalDirection</ParticleQuantity>
          </Particle>
+      </Parameter>
+	  <Parameter>
+         <Name>Loss Cone Angle</Name>
+         <ParameterKey>loss_cone_angle</ParameterKey>
+         <Description>Loss Cone Angle. Calculated from dipole magnetic field.</Description>
+         <CadenceMin>PT5.1S</CadenceMin>
+		 <CadenceMax>PT20.4S</CadenceMax>
+         <Units>&#176;</Units>
+         <UnitsConversion>0.0174532925&gt;rad</UnitsConversion>
+         <Structure>
+            <Size>2</Size>
+         </Structure>
+         <ValidMin>0.0</ValidMin>
+         <ValidMax>360.0</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <Qualifier>Array</Qualifier>
+            <Qualifier>DirectionAngle</Qualifier>
+            <ParticleQuantity>ArrivalDirection</ParticleQuantity>
+         </Particle>
+      </Parameter>
+	  <Parameter>
+         <Name>Magnetic Field Vector</Name>
+         <ParameterKey>B_vec</ParameterKey>
+         <Description>B vector in TEAMS coordinate system with H+ time bins.</Description>
+         <CadenceMin>PT5.1S</CadenceMin>
+		 <CadenceMax>PT20.4S</CadenceMax>
+         <Units>nT</Units>
+		 <CoordinateSystem>
+		    <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+			<CoordinateSystemName>SC</CoordinateSystemName>
+		 </CoordinateSystem>
+         <Structure>
+            <Size>3</Size>
+         </Structure>
+         <ValidMin>-180</ValidMin>
+         <ValidMax>65600</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Field>
+            <Qualifier>Vector</Qualifier>
+            <FieldQuantity>Magnetic</FieldQuantity>
+         </Field>
+	  </Parameter>
+	  <Parameter>
+         <Name>Proton Error</Name>
+         <ParameterKey>proton_error</ParameterKey>
+         <Description>Poisson Error in H+ energy-pitch angle distribution.</Description>
+         <CadenceMin>PT5.1S</CadenceMin>
+		 <CadenceMax>PT20.4S</CadenceMax>
+         <Units>eV/(cm^2 s sr eV)</Units>
+         <UnitsConversion>1.0e4&gt;J/(m^2 s sr J)</UnitsConversion>
+		 <ValidMin>0.0</ValidMin>
+         <ValidMax>1.0e+10</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <ParticleType>Ion</ParticleType>
+            <Qualifier>Array</Qualifier>
+            <Qualifier>Average</Qualifier>
+            <ParticleQuantity>EnergyFlux</ParticleQuantity>
+            <AtomicNumber>2</AtomicNumber>
+         </Particle>
+      </Parameter>
+	  <Parameter>
+         <Name>Oxygen Error</Name>
+         <ParameterKey>oxygen_error</ParameterKey>
+         <Description>Poisson Error in oxygen energy-pitch angle distribution.</Description>
+         <CadenceMin>PT5.1S</CadenceMin>
+		 <CadenceMax>PT20.4S</CadenceMax>
+         <Units>eV/(cm^2 s sr eV)</Units>
+         <UnitsConversion>1.0e4&gt;J/(m^2 s sr J)</UnitsConversion>
+		 <ValidMin>0.0</ValidMin>
+         <ValidMax>1.0e+10</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <ParticleType>Ion</ParticleType>
+            <Qualifier>Array</Qualifier>
+            <Qualifier>Average</Qualifier>
+            <ParticleQuantity>EnergyFlux</ParticleQuantity>
+            <AtomicNumber>16</AtomicNumber>
+         </Particle>
+      </Parameter>
+	  <Parameter>
+         <Name>Helium Error</Name>
+         <ParameterKey>helium_error</ParameterKey>
+         <Description>Poisson Error in helium energy-pitch angle distribution.</Description>
+         <CadenceMin>PT5.1S</CadenceMin>
+		 <CadenceMax>PT20.4S</CadenceMax>
+         <Units>eV/(cm^2 s sr eV)</Units>
+         <UnitsConversion>1.0e4&gt;J/(m^2 s sr J)</UnitsConversion>
+		 <ValidMin>0.0</ValidMin>
+         <ValidMax>1.0e+10</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+            <ParticleType>Ion</ParticleType>
+            <Qualifier>Array</Qualifier>
+            <Qualifier>Average</Qualifier>
+            <ParticleQuantity>EnergyFlux</ParticleQuantity>
+            <AtomicNumber>4</AtomicNumber>
+         </Particle>
+      </Parameter>
+	  <Parameter>
+         <Name>Filtered O+ Velocity</Name>
+         <ParameterKey>v_o_filtered_gei</ParameterKey>
+         <Description>Filtered O+ Velocity in GEI in spacecraft frame.</Description>
+         <CadenceMin>PT5.1S</CadenceMin>
+		 <CadenceMax>PT20.4S</CadenceMax>
+         <Units>km/s</Units>
+		 <CoordinateSystem>
+		    <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+			<CoordinateSystemName>GEI</CoordinateSystemName>
+		 </CoordinateSystem>
+         <Structure>
+            <Size>3</Size>
+         </Structure>
+         <ValidMin>-11</ValidMin>
+         <ValidMax>11</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+		    <ParticleType>Ion</ParticleType>
+            <Qualifier>Vector</Qualifier>
+            <ParticleQuantity>Velocity</ParticleQuantity>
+			<AtomicNumber>16</AtomicNumber>
+         </Particle>
+	  </Parameter>
+	  <Parameter>
+         <Name>O+ Velocity in GEI</Name>
+         <ParameterKey>v_o_gei</ParameterKey>
+         <Description>O+ Velocity in GEI in spacecraft frame.</Description>
+         <CadenceMin>PT5.1S</CadenceMin>
+		 <CadenceMax>PT20.4S</CadenceMax>
+         <Units>km/s</Units>
+		 <CoordinateSystem>
+		    <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+			<CoordinateSystemName>GEI</CoordinateSystemName>
+		 </CoordinateSystem>
+         <Structure>
+            <Size>3</Size>
+         </Structure>
+         <ValidMin>-11</ValidMin>
+         <ValidMax>11</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+		    <ParticleType>Ion</ParticleType>
+            <Qualifier>Vector</Qualifier>
+            <ParticleQuantity>Velocity</ParticleQuantity>
+			<AtomicNumber>16</AtomicNumber>
+         </Particle>
+	  </Parameter>
+	  <Parameter>
+         <Name>Spacecraft Velocity in GEI</Name>
+         <ParameterKey>v_sc_gei</ParameterKey>
+         <Description>Spacecraft Velocity in GEI.</Description>
+         <CadenceMin>PT5.1S</CadenceMin>
+		 <CadenceMax>PT20.4S</CadenceMax>
+         <Units>km/s</Units>
+		 <CoordinateSystem>
+		    <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+			<CoordinateSystemName>SC</CoordinateSystemName>
+		 </CoordinateSystem>
+         <Structure>
+            <Size>3</Size>
+         </Structure>
+         <ValidMin>-11</ValidMin>
+         <ValidMax>11</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Support>
+            <Qualifier>Vector</Qualifier>
+            <SupportQuantity>Velocity</SupportQuantity>
+         </Support>
+	  </Parameter>
+	  <Parameter>
+         <Name>Convection Velocity in GEI</Name>
+         <ParameterKey>v_convect_gei</ParameterKey>
+         <Description>Convection Velocity in GEI derived from  O+ velocity.</Description>
+         <CadenceMin>PT5.1S</CadenceMin>
+		 <CadenceMax>PT20.4S</CadenceMax>
+         <Units>km/s</Units>
+		 <CoordinateSystem>
+		    <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+			<CoordinateSystemName>GEI</CoordinateSystemName>
+		 </CoordinateSystem>
+         <Structure>
+            <Size>3</Size>
+         </Structure>
+         <ValidMin>-11</ValidMin>
+         <ValidMax>11</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+		    <ParticleType>Ion</ParticleType>
+            <Qualifier>Vector</Qualifier>
+            <ParticleQuantity>Velocity</ParticleQuantity>
+			<AtomicNumber>16</AtomicNumber>
+         </Particle>
+	  </Parameter>
+	  <Parameter>
+         <Name>Filtered O+ Velocity in GSE</Name>
+         <ParameterKey>v_o_filtered_gse</ParameterKey>
+         <Description>Filtered O+ Velocity in GSE in spacecraft frame.</Description>
+         <CadenceMin>PT5.1S</CadenceMin>
+		 <CadenceMax>PT20.4S</CadenceMax>
+         <Units>km/s</Units>
+		 <CoordinateSystem>
+		    <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+			<CoordinateSystemName>GSE</CoordinateSystemName>
+		 </CoordinateSystem>
+         <Structure>
+            <Size>3</Size>
+         </Structure>
+         <ValidMin>-11</ValidMin>
+         <ValidMax>11</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+		    <ParticleType>Ion</ParticleType>
+            <Qualifier>Vector</Qualifier>
+            <ParticleQuantity>Velocity</ParticleQuantity>
+			<AtomicNumber>16</AtomicNumber>
+         </Particle>
+	  </Parameter>
+	  <Parameter>
+         <Name>O+ Velocity in GSE in spacecraft frame</Name>
+         <ParameterKey>v_o_gse</ParameterKey>
+         <Description>O+ Velocity in GSE in spacecraft frame.</Description>
+         <CadenceMin>PT5.1S</CadenceMin>
+		 <CadenceMax>PT20.4S</CadenceMax>
+         <Units>km/s</Units>
+		 <CoordinateSystem>
+		    <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+			<CoordinateSystemName>GSE</CoordinateSystemName>
+		 </CoordinateSystem>
+         <Structure>
+            <Size>3</Size>
+         </Structure>
+         <ValidMin>-11</ValidMin>
+         <ValidMax>11</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+		    <ParticleType>Ion</ParticleType>
+            <Qualifier>Vector</Qualifier>
+            <ParticleQuantity>Velocity</ParticleQuantity>
+			<AtomicNumber>16</AtomicNumber>
+         </Particle>
+	  </Parameter>
+	  <Parameter>
+         <Name>Spacecraft Velocity in GSE</Name>
+         <ParameterKey>v_sc_gse</ParameterKey>
+         <Description>Spacecraft Velocity in GSE.</Description>
+         <CadenceMin>PT5.1S</CadenceMin>
+		 <CadenceMax>PT20.4S</CadenceMax>
+         <Units>km/s</Units>
+		 <CoordinateSystem>
+		    <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+			<CoordinateSystemName>GSE</CoordinateSystemName>
+		 </CoordinateSystem>
+         <Structure>
+            <Size>3</Size>
+         </Structure>
+         <ValidMin>-11</ValidMin>
+         <ValidMax>11</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Support>
+            <Qualifier>Vector</Qualifier>
+            <SupportQuantity>Velocity</SupportQuantity>
+         </Support>
+	  </Parameter>
+	  <Parameter>
+         <Name>Convection Velocity in GSE</Name>
+         <ParameterKey>v_convect_gse</ParameterKey>
+         <Description>Convection Velocity in GSE derived from  O+ velocity.</Description>
+         <CadenceMin>PT5.1S</CadenceMin>
+		 <CadenceMax>PT20.4S</CadenceMax>
+         <Units>km/s</Units>
+		 <CoordinateSystem>
+		    <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+			<CoordinateSystemName>GSE</CoordinateSystemName>
+		 </CoordinateSystem>
+         <Structure>
+            <Size>3</Size>
+         </Structure>
+         <ValidMin>-11</ValidMin>
+         <ValidMax>11</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+		    <ParticleType>Ion</ParticleType>
+            <Qualifier>Vector</Qualifier>
+            <ParticleQuantity>Velocity</ParticleQuantity>
+			<AtomicNumber>16</AtomicNumber>
+         </Particle>
+	  </Parameter>
+	  <Parameter>
+         <Name>filtered O+ Velocity in SM in spacecraft frame</Name>
+         <ParameterKey>v_o_filtered_sm</ParameterKey>
+         <Description>filtered O+ Velocity in SM in spacecraft frame.</Description>
+         <CadenceMin>PT5.1S</CadenceMin>
+		 <CadenceMax>PT20.4S</CadenceMax>
+         <Units>km/s</Units>
+		 <CoordinateSystem>
+		    <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+			<CoordinateSystemName>SM</CoordinateSystemName>
+		 </CoordinateSystem>
+         <Structure>
+            <Size>3</Size>
+         </Structure>
+         <ValidMin>-11</ValidMin>
+         <ValidMax>11</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+		    <ParticleType>Ion</ParticleType>
+            <Qualifier>Vector</Qualifier>
+            <ParticleQuantity>Velocity</ParticleQuantity>
+			<AtomicNumber>16</AtomicNumber>
+         </Particle>
+	  </Parameter>
+	  <Parameter>
+         <Name>O+ Velocity in SM in spacecraft frame</Name>
+         <ParameterKey>v_o_sm</ParameterKey>
+         <Description>O+ Velocity in SM in spacecraft frame.</Description>
+         <CadenceMin>PT5.1S</CadenceMin>
+		 <CadenceMax>PT20.4S</CadenceMax>
+         <Units>km/s</Units>
+		 <CoordinateSystem>
+		    <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+			<CoordinateSystemName>SM</CoordinateSystemName>
+		 </CoordinateSystem>
+         <Structure>
+            <Size>3</Size>
+         </Structure>
+         <ValidMin>-11</ValidMin>
+         <ValidMax>11</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+		    <ParticleType>Ion</ParticleType>
+            <Qualifier>Vector</Qualifier>
+            <ParticleQuantity>Velocity</ParticleQuantity>
+			<AtomicNumber>16</AtomicNumber>
+         </Particle>
+	  </Parameter>
+	  <Parameter>
+         <Name>O+ Velocity in SM in spacecraft frame</Name>
+         <ParameterKey>v_sc_sm</ParameterKey>
+         <Description>O+ Velocity in SM in spacecraft frame.</Description>
+         <CadenceMin>PT5.1S</CadenceMin>
+		 <CadenceMax>PT20.4S</CadenceMax>
+         <Units>km/s</Units>
+		 <CoordinateSystem>
+		    <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+			<CoordinateSystemName>SM</CoordinateSystemName>
+		 </CoordinateSystem>
+         <Structure>
+            <Size>3</Size>
+         </Structure>
+         <ValidMin>-11</ValidMin>
+         <ValidMax>11</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+		    <ParticleType>Ion</ParticleType>
+            <Qualifier>Vector</Qualifier>
+            <ParticleQuantity>Velocity</ParticleQuantity>
+			<AtomicNumber>16</AtomicNumber>
+         </Particle>
+	  </Parameter>
+	  <Parameter>
+         <Name>Convection Velocity in SM</Name>
+         <ParameterKey>v_convect_sm</ParameterKey>
+         <Description>Convection Velocity in SM derived from  O+ velocity.</Description>
+         <CadenceMin>PT5.1S</CadenceMin>
+		 <CadenceMax>PT20.4S</CadenceMax>
+         <Units>km/s</Units>
+		 <CoordinateSystem>
+		    <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+			<CoordinateSystemName>SM</CoordinateSystemName>
+		 </CoordinateSystem>
+         <Structure>
+            <Size>3</Size>
+         </Structure>
+         <ValidMin>-11</ValidMin>
+         <ValidMax>11</ValidMax>
+         <FillValue>-1.0e+31</FillValue>
+         <Particle>
+		    <ParticleType>Ion</ParticleType>
+            <Qualifier>Vector</Qualifier>
+            <ParticleQuantity>Velocity</ParticleQuantity>
+			<AtomicNumber>16</AtomicNumber>
+         </Particle>
+	  </Parameter>
+	   <Parameter>
+         <Name>H+ and O+ Deadtime flag</Name>
+         <Set>Time series defined by using: EPOCH</Set>
+         <ParameterKey>DeadTimeEn</ParameterKey>
+         <Description>H+ and O+ Deadtime flag.</Description>
+         <CadenceMin>PT5.1S</CadenceMin>
+		 <CadenceMax>PT20.4S</CadenceMax>
+         <ValidMin>0</ValidMin>
+         <ValidMax>1</ValidMax>
+         <FillValue>255</FillValue>
+         <Support>
+            <Qualifier>Scalar</Qualifier>
+            <SupportQuantity>Other</SupportQuantity>
+         </Support>
+      </Parameter>
+	  <Parameter>
+         <Name>He+ Deadtime flag</Name>
+         <ParameterKey>DeadTimeEn_Helium</ParameterKey>
+         <Description>He+ Deadtime flag.</Description>
+         <CadenceMin>PT5.1S</CadenceMin>
+		 <CadenceMax>PT20.4S</CadenceMax>
+         <ValidMin>0</ValidMin>
+         <ValidMax>1</ValidMax>
+         <FillValue>255</FillValue>
+         <Support>
+            <Qualifier>Scalar</Qualifier>
+            <SupportQuantity>Other</SupportQuantity>
+         </Support>
+      </Parameter>
+	  <Parameter>
+         <Name>Spacecraft Potential</Name>
+         <ParameterKey>sc_potential</ParameterKey>
+         <Description>Spacecraft Potential.</Description>
+         <CadenceMin>PT5.1S</CadenceMin>
+		 <CadenceMax>PT20.4S</CadenceMax>
+		 <Units>V</Units>
+         <ValidMin>-60</ValidMin>
+         <ValidMax>60</ValidMax>
+         <FillValue>-1.0000e+31</FillValue>
+         <Field>
+            <Qualifier>Scalar</Qualifier>
+            <FieldQuantity>Potential</FieldQuantity>
+         </Field>
+      </Parameter>
+	  <Parameter>
+         <Name>Spacecraft Potential Flag</Name>
+         <ParameterKey>DeadTimeEn_Helium</ParameterKey>
+         <Description>Spacecraft Potential Flag.</Description>
+         <CadenceMin>PT5.1S</CadenceMin>
+		 <CadenceMax>PT20.4S</CadenceMax>
+         <ValidMin>0</ValidMin>
+         <ValidMax>2</ValidMax>
+         <FillValue>255</FillValue>
+         <Support>
+            <Qualifier>Scalar</Qualifier>
+            <SupportQuantity>Other</SupportQuantity>
+         </Support>
+      </Parameter>
+	  <Parameter>
+         <Name>Spacecraft High Potential Warning</Name>
+         <ParameterKey>high_potential</ParameterKey>
+         <Description>Spacecraft High Potential Warning. High Potential Warning flag, 0: pot &gt; -5V, 1: pot &lt; -5V.</Description>
+         <CadenceMin>PT5.1S</CadenceMin>
+		 <CadenceMax>PT20.4S</CadenceMax>
+         <ValidMin>0</ValidMin>
+         <ValidMax>60</ValidMax>
+         <FillValue>-1.0000e+31</FillValue>
+         <Support>
+            <Qualifier>Scalar</Qualifier>
+            <SupportQuantity>Other</SupportQuantity>
+         </Support>
+      </Parameter>
+	  <Parameter>
+         <Name>Spacecraft Orbit Number</Name>
+         <ParameterKey>orbit_number</ParameterKey>
+         <Description>Spacecraft Orbit Number.</Description>
+         <CadenceMin>PT5.1S</CadenceMin>
+		 <CadenceMax>PT20.4S</CadenceMax>
+         <ValidMin>0</ValidMin>
+         <ValidMax>52000</ValidMax>
+         <FillValue>4294967295</FillValue>
+         <Support>
+            <Qualifier>Scalar</Qualifier>
+            <SupportQuantity>Temporal</SupportQuantity>
+         </Support>
+      </Parameter>
+	  <Parameter>
+         <Name>Spacecraft position, GEI coordinate System</Name>
+         <ParameterKey>fa_pos_gei</ParameterKey>
+         <Description>Spacecraft position, GEI coordinate System.</Description>
+         <CadenceMin>PT5.1S</CadenceMin>
+		 <CadenceMax>PT20.4S</CadenceMax>
+		 <Units>km</Units>
+		 <CoordinateSystem>
+		    <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+			<CoordinateSystemName>GEI</CoordinateSystemName>
+		 </CoordinateSystem>
+         <Structure>
+            <Size>3</Size>
+         </Structure>
+         <ValidMin>-12742</ValidMin>
+         <ValidMax>12742</ValidMax>
+         <FillValue>-1.0000e+31</FillValue>
+         <Support>
+            <Qualifier>Scalar</Qualifier>
+            <SupportQuantity>Temporal</SupportQuantity>
+         </Support>
+      </Parameter>
+	  <Parameter>
+         <Name>Spacecraft position, GEI coordinate System</Name>
+         <ParameterKey>fa_pos_gei</ParameterKey>
+         <Description>Spacecraft position in GEI coordinate System.</Description>
+         <CadenceMin>PT5.1S</CadenceMin>
+		 <CadenceMax>PT20.4S</CadenceMax>
+		 <Units>km</Units>
+		 <CoordinateSystem>
+		    <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+			<CoordinateSystemName>GEI</CoordinateSystemName>
+		 </CoordinateSystem>
+         <Structure>
+            <Size>3</Size>
+         </Structure>
+         <ValidMin>-12742</ValidMin>
+         <ValidMax>12742</ValidMax>
+         <FillValue>-1.0000e+31</FillValue>
+         <Support>
+            <Qualifier>Scalar</Qualifier>
+            <SupportQuantity>Positional</SupportQuantity>
+         </Support>
+      </Parameter>
+	  <Parameter>
+         <Name>Spacecraft position, GSE coordinate System</Name>
+         <ParameterKey>fa_pos_gse</ParameterKey>
+         <Description>Spacecraft position in GSE coordinate System.</Description>
+         <CadenceMin>PT5.1S</CadenceMin>
+		 <CadenceMax>PT20.4S</CadenceMax>
+		 <Units>km</Units>
+		 <CoordinateSystem>
+		    <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+			<CoordinateSystemName>GSE</CoordinateSystemName>
+		 </CoordinateSystem>
+         <Structure>
+            <Size>3</Size>
+         </Structure>
+         <ValidMin>-12742</ValidMin>
+         <ValidMax>12742</ValidMax>
+         <FillValue>-1.0000e+31</FillValue>
+         <Support>
+            <Qualifier>Scalar</Qualifier>
+            <SupportQuantity>Positional</SupportQuantity>
+         </Support>
+      </Parameter>
+	  <Parameter>
+         <Name>Spacecraft position, SM coordinate System</Name>
+         <ParameterKey>fa_pos_sm</ParameterKey>
+         <Description>Spacecraft position in SM coordinate System.</Description>
+         <CadenceMin>PT5.1S</CadenceMin>
+		 <CadenceMax>PT20.4S</CadenceMax>
+		 <Units>km</Units>
+		 <CoordinateSystem>
+		    <CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+			<CoordinateSystemName>SM</CoordinateSystemName>
+		 </CoordinateSystem>
+         <Structure>
+            <Size>3</Size>
+         </Structure>
+         <ValidMin>-12742</ValidMin>
+         <ValidMax>12742</ValidMax>
+         <FillValue>-1.0000e+31</FillValue>
+         <Support>
+            <Qualifier>Scalar</Qualifier>
+            <SupportQuantity>Positional</SupportQuantity>
+         </Support>
+      </Parameter>
+	  <Parameter>
+         <Name>Spacecraft Altitude</Name>
+         <ParameterKey>altitude</ParameterKey>
+         <Description>Spacecraft Altitude.</Description>
+         <CadenceMin>PT5.1S</CadenceMin>
+		 <CadenceMax>PT20.4S</CadenceMax>
+		 <Units>km</Units>
+         <ValidMin>300</ValidMin>
+         <ValidMax>4500</ValidMax>
+         <FillValue>-1.0000e+31</FillValue>
+         <Support>
+            <Qualifier>Scalar</Qualifier>
+            <SupportQuantity>Positional</SupportQuantity>
+         </Support>
+      </Parameter>
+	  <Parameter>
+         <Name>Spacecraft Invariant Latitude</Name>
+         <ParameterKey>invariant_latitude</ParameterKey>
+         <Description>Spacecraft Invariant Latitude.</Description>
+         <CadenceMin>PT5.1S</CadenceMin>
+		 <CadenceMax>PT20.4S</CadenceMax>
+		 <Units>degree</Units>
+		 <UnitsConversion>0.0174532925&gt;rad</UnitsConversion>
+         <ValidMin>-90</ValidMin>
+         <ValidMax>90</ValidMax>
+         <FillValue>-1.0000e+31</FillValue>
+         <Support>
+            <Qualifier>Scalar</Qualifier>
+            <SupportQuantity>Positional</SupportQuantity>
+         </Support>
+      </Parameter>
+	  <Parameter>
+         <Name>Spacecraft Invariant Longitude</Name>
+         <ParameterKey>invariant_longitude</ParameterKey>
+         <Description>Spacecraft Invariant Longitude.</Description>
+         <CadenceMin>PT5.1S</CadenceMin>
+		 <CadenceMax>PT20.4S</CadenceMax>
+		 <Units>degree</Units>
+		 <UnitsConversion>0.0174532925&gt;rad</UnitsConversion>
+         <ValidMin>-180</ValidMin>
+         <ValidMax>180</ValidMax>
+         <FillValue>-1.0000e+31</FillValue>
+         <Support>
+            <Qualifier>Scalar</Qualifier>
+            <SupportQuantity>Positional</SupportQuantity>
+         </Support>
+      </Parameter>
+	  <Parameter>
+         <Name>Spacecraft Magnetic Local Time</Name>
+         <ParameterKey>mlt</ParameterKey>
+         <Description>Spacecraft Magnetic Local Time.</Description>
+         <CadenceMin>PT5.1S</CadenceMin>
+		 <CadenceMax>PT20.4S</CadenceMax>
+		 <Units>mlt</Units>
+         <ValidMin>0</ValidMin>
+         <ValidMax>24</ValidMax>
+         <FillValue>-1.0000e+31</FillValue>
+         <Support>
+            <Qualifier>Scalar</Qualifier>
+            <SupportQuantity>Positional</SupportQuantity>
+         </Support>
       </Parameter>
    </NumericalData>
 </Spase>

@@ -8,7 +8,7 @@
       "ResourceID": "spase://NASA/NumericalData/FAST/TEAMS/Level2/EnergyPitchAngleDistributions/PT5S",
       "ResourceHeader": {
         "ResourceName": "FAST Time of Flight Energy Angle Mass Spectrograph (TEAMS) Energy-Pitch Angle Distributions, Level 2 (L2), 5 s Data",
-        "ReleaseDate": "2025-05-06T15:38:11Z",
+        "ReleaseDate": "2020-05-20T15:38:11Z",
         "RevisionHistory": {
           "RevisionEvent": [
             {
@@ -26,6 +26,10 @@
             {
               "ReleaseDate": "2025-05-06T15:38:11Z",
               "Note": "Added ObservedRegion. JMW"
+            },
+            {
+              "ReleaseDate": "2026-04-17T15:38:11Z",
+              "Note": "Added new parameters. JMW"
             }
           ]
         },
@@ -41,7 +45,7 @@
             "Role": "MetadataContact"
           },
           {
-            "PersonID": "spase://SMWG/Person/Lee.Frost.Bargatze",
+            "PersonID": "spase://SMWG/Person/James.M.Weygand",
             "Role": "MetadataContact"
           }
         ],
@@ -85,11 +89,6 @@
         "AccessRights": "Open",
         "AccessURL": [
           {
-            "Name": "FTPS from SPDF (not with most browsers)",
-            "URL": "ftps://spdf.gsfc.nasa.gov/pub/data/fast/teams/l2/",
-            "Description": "Access to Data in CDF Format via ftp from SPDF"
-          },
-          {
             "Name": "HTTPS from SPDF",
             "URL": "https://spdf.gsfc.nasa.gov/pub/data/fast/teams/l2/",
             "Description": "Access to Data in CDF Format via http from SPDF"
@@ -113,8 +112,8 @@
       ],
       "TemporalDescription": {
         "TimeSpan": {
-          "StartDate": "1998-09-23T12:31:47.000",
-          "StopDate": "1998-09-26T00:57:44.000"
+          "StartDate": "1996-09-20T00:00:00.000",
+          "StopDate": "2009-02-14T23:59:00.000"
         },
         "Cadence": "PT5S"
       },
@@ -130,7 +129,8 @@
           "ParameterKey": "Epoch",
           "Description": "Epoch Time Tags in Terrestrial Time 2000, TT2000",
           "Caveats": "This Parameter exhibits an increasing Monotonic Progression",
-          "Cadence": "PT5S",
+          "CadenceMin": "PT5.1S",
+          "CadenceMax": "PT20.4S",
           "Units": "ns",
           "UnitsConversion": "1.0e-9>s",
           "RenderingHints": {
@@ -151,7 +151,8 @@
           "ParameterKey": "Epoch_Helium",
           "Description": "Epoch Time Tags in Terrestrial Time 2000, TT2000, Helium",
           "Caveats": "This Parameter exhibits an increasing Monotonic Progression",
-          "Cadence": "PT5S",
+          "CadenceMin": "PT5.1S",
+          "CadenceMax": "PT20.4S",
           "Units": "ns",
           "UnitsConversion": "1.0e-9>s",
           "RenderingHints": {
@@ -168,12 +169,39 @@
           }
         },
         {
+          "Name": "Delta Time",
+          "ParameterKey": "delta_time",
+          "Description": "Sample width: end time - start time",
+          "CadenceMin": "PT5.1S",
+          "CadenceMax": "PT20.4S",
+          "ValidMin": "1",
+          "ValidMax": "60",
+          "FillValue": "-1.0000e+31",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Helium Delta Time",
+          "ParameterKey": "delta_time_helium",
+          "Description": "Sample width: end time - start time",
+          "CadenceMin": "PT5.1S",
+          "CadenceMax": "PT20.4S",
+          "ValidMin": "1",
+          "ValidMax": "60",
+          "FillValue": "-1.0000e+31",
+          "Support": {
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
           "Name": "Proton, Energy-Pitch Angle Distribution",
           "Set": "Time series defined by using: EPOCH",
           "ParameterKey": "proton_distribution",
           "Description": "Proton, H⁺, Energy-Pitch Angle Distribution.\n\n* Column 1 Labels from ENERGY: [ 11200.0, 9560.00, 8060.00, 6610.00, 5540.00, 4780.00, 4040.00, 3300.00, 2760.00, 2390.00, 2020.00, 1660.00, 1380.00, 1200.00, 1010.00, 826.000, 691.000, 598.000, 504.000, 413.000, 346.000, 298.000, 252.000, 206.000, 173.000, 150.000, 126.000, 103.000, 86.4000, 74.7000, 63.0000, 51.6000, 43.2000, 37.3000, 31.5000, 25.9000, 21.6000, 18.6000, 15.8000, 12.9000, 10.8000, 9.35000, 7.87000, 6.31000, 4.74000, 3.28000, 1.97000, 1.15000].\n* Column 2 Labels from PITCH_ANGLE: [ 11.2500, 33.7500, 56.2500, 78.7500, 101.200, 123.800, 146.200, 168.800, 191.200, 213.800, 236.200, 258.800, 281.200, 303.800, 326.200, 348.800].",
           "Caveats": "Survey Resolution H+, flux",
-          "Cadence": "PT5S",
+          "CadenceMin": "PT5.1S",
+          "CadenceMax": "PT20.4S",
           "Units": "eV/(cm^2 s sr eV)",
           "UnitsConversion": "1.0e4>J/(m^2 s sr J)",
           "RenderingHints": {
@@ -198,7 +226,8 @@
           "ParameterKey": "oxygen_distribution",
           "Description": "Singly-charged Oxygen, O⁺, Energy-Pitch Angle Distribution.\n\n* Column 1 Labels from ENERGY: [ 11200.0, 9560.00, 8060.00, 6610.00, 5540.00, 4780.00, 4040.00, 3300.00, 2760.00, 2390.00, 2020.00, 1660.00, 1380.00, 1200.00, 1010.00, 826.000, 691.000, 598.000, 504.000, 413.000, 346.000, 298.000, 252.000, 206.000, 173.000, 150.000, 126.000, 103.000, 86.4000, 74.7000, 63.0000, 51.6000, 43.2000, 37.3000, 31.5000, 25.9000, 21.6000, 18.6000, 15.8000, 12.9000, 10.8000, 9.35000, 7.87000, 6.31000, 4.74000, 3.28000, 1.97000, 1.15000].\n* Column 2 Labels from PITCH_ANGLE: [ 11.2500, 33.7500, 56.2500, 78.7500, 101.200, 123.800, 146.200, 168.800, 191.200, 213.800, 236.200, 258.800, 281.200, 303.800, 326.200, 348.800].",
           "Caveats": "Survey Resolution O+, flux",
-          "Cadence": "PT5S",
+          "CadenceMin": "PT5.1S",
+          "CadenceMax": "PT20.4S",
           "Units": "eV/(cm^2 s sr eV)",
           "UnitsConversion": "1.0e4>J/(m^2 s sr J)",
           "RenderingHints": {
@@ -223,7 +252,8 @@
           "ParameterKey": "helium_distribution",
           "Description": "Singly-charged Helium, He⁺, Energy-Pitch Angle Distribution.\n\n* Column 1 Labels from ENERGY: [ 11200.0, 9560.00, 8060.00, 6610.00, 5540.00, 4780.00, 4040.00, 3300.00, 2760.00, 2390.00, 2020.00, 1660.00, 1380.00, 1200.00, 1010.00, 826.000, 691.000, 598.000, 504.000, 413.000, 346.000, 298.000, 252.000, 206.000, 173.000, 150.000, 126.000, 103.000, 86.4000, 74.7000, 63.0000, 51.6000, 43.2000, 37.3000, 31.5000, 25.9000, 21.6000, 18.6000, 15.8000, 12.9000, 10.8000, 9.35000, 7.87000, 6.31000, 4.74000, 3.28000, 1.97000, 1.15000].\n* Column 2 Labels from PITCH_ANGLE: [ 11.2500, 33.7500, 56.2500, 78.7500, 101.200, 123.800, 146.200, 168.800, 191.200, 213.800, 236.200, 258.800, 281.200, 303.800, 326.200, 348.800].",
           "Caveats": "Survey Resolution He+, flux",
-          "Cadence": "PT5S",
+          "CadenceMin": "PT5.1S",
+          "CadenceMax": "PT20.4S",
           "Units": "eV/(cm^2 s sr eV)",
           "UnitsConversion": "1.0e4>J/(m^2 s sr J)",
           "RenderingHints": {
@@ -245,10 +275,11 @@
         {
           "Name": "Proton, Spin averaged fluxes",
           "Set": "Time series defined by using: EPOCH",
-          "ParameterKey": "proton_spin_ave_fluxes",
+          "ParameterKey": "proton_omni_flux",
           "Description": "Proton, H⁺, Spin averaged fluxes",
           "Caveats": "Survey Resolution H+, flux",
-          "Cadence": "PT5S",
+          "CadenceMin": "PT5.1S",
+          "CadenceMax": "PT20.4S",
           "Units": "eV/(cm^2 s sr eV)",
           "UnitsConversion": "1.0e4>J/(m^2 s sr J)",
           "RenderingHints": {
@@ -614,10 +645,11 @@
         {
           "Name": "Singly-charged Oxygen, Spin averaged fluxes",
           "Set": "Time series defined by using: EPOCH",
-          "ParameterKey": "oxygen_spin_ave_fluxes",
+          "ParameterKey": "oxygen_omni_flux",
           "Description": "Singly-charged Oxygen, O⁺, Spin averaged fluxes",
           "Caveats": "Survey Resolution O+, flux",
-          "Cadence": "PT5S",
+          "CadenceMin": "PT5.1S",
+          "CadenceMax": "PT20.4S",
           "Units": "eV/(cm^2 s sr eV)",
           "UnitsConversion": "1.0e4>J/(m^2 s sr J)",
           "RenderingHints": {
@@ -983,10 +1015,11 @@
         {
           "Name": "Singly-charged Helium, Spin averaged fluxes",
           "Set": "Time series defined by using: EPOCH_HELIUM",
-          "ParameterKey": "helium_spin_ave_fluxes",
+          "ParameterKey": "helium_omni_flux",
           "Description": "Singly-charged Helium, He⁺, Spin averaged fluxes",
           "Caveats": "Survey Resolution He+, flux",
-          "Cadence": "PT5S",
+          "CadenceMin": "PT5.1S",
+          "CadenceMax": "PT20.4S",
           "Units": "eV/(cm^2 s sr eV)",
           "UnitsConversion": "1.0e4>J/(m^2 s sr J)",
           "RenderingHints": {
@@ -1355,7 +1388,8 @@
           "ParameterKey": "proton_flag",
           "Description": "Survey Resolution Proton, H⁺, Data Quality Flag, non-zero values indicate that incomplete data was used",
           "Caveats": "0 is good, non-zero values indicate that incomplete data was used",
-          "Cadence": "PT5S",
+          "CadenceMin": "PT5.1S",
+          "CadenceMax": "PT20.4S",
           "RenderingHints": {
             "DisplayType": "TimeSeries",
             "AxisLabel": "Flag",
@@ -1367,7 +1401,7 @@
           "FillValue": "255",
           "Support": {
             "Qualifier": "Scalar",
-            "SupportQuantity": "Velocity"
+            "SupportQuantity": "Other"
           }
         },
         {
@@ -1376,7 +1410,8 @@
           "ParameterKey": "oxygen_flag",
           "Description": "Survey Resolution singly-charged Oxygen Flag, O⁺, Data Quality Flag, non-zero values indicate that incomplete data was used",
           "Caveats": "0 is good, non-zero values indicate that incomplete data was used",
-          "Cadence": "PT5S",
+          "CadenceMin": "PT5.1S",
+          "CadenceMax": "PT20.4S",
           "RenderingHints": {
             "DisplayType": "TimeSeries",
             "AxisLabel": "Flag",
@@ -1388,7 +1423,7 @@
           "FillValue": "255",
           "Support": {
             "Qualifier": "Scalar",
-            "SupportQuantity": "Velocity"
+            "SupportQuantity": "Other"
           }
         },
         {
@@ -1397,7 +1432,8 @@
           "ParameterKey": "helium_flag",
           "Description": "Survey Resolution singly-charged Helium Flag, He⁺, Data Quality Flag, non-zero values indicate that incomplete data was used",
           "Caveats": "0 is good, non-zero values indicate that incomplete data was used",
-          "Cadence": "PT5S",
+          "CadenceMin": "PT5.1S",
+          "CadenceMax": "PT20.4S",
           "RenderingHints": {
             "DisplayType": "TimeSeries",
             "AxisLabel": "Flag",
@@ -1409,14 +1445,15 @@
           "FillValue": "255",
           "Support": {
             "Qualifier": "Scalar",
-            "SupportQuantity": "Velocity"
+            "SupportQuantity": "Other"
           }
         },
         {
           "Name": "Bin Energy Values",
           "ParameterKey": "Energy",
           "Description": "Bin centered Energy Value Array",
-          "Cadence": "PT5S",
+          "CadenceMin": "PT5.1S",
+          "CadenceMax": "PT20.4S",
           "Units": "eV",
           "UnitsConversion": "1.602176565e-19>J",
           "RenderingHints": {
@@ -1442,7 +1479,8 @@
           "Name": "Bin Pitch Angles",
           "ParameterKey": "pitch_angle",
           "Description": "Bin centered Pitch Angle Value Array",
-          "Cadence": "PT5S",
+          "CadenceMin": "PT5.1S",
+          "CadenceMax": "PT20.4S",
           "Units": "°",
           "UnitsConversion": "0.0174532925>rad",
           "RenderingHints": {
@@ -1462,6 +1500,633 @@
               "DirectionAngle.PolarAngle"
             ],
             "ParticleQuantity": "ArrivalDirection"
+          }
+        },
+        {
+          "Name": "Loss Cone Angle",
+          "ParameterKey": "loss_cone_angle",
+          "Description": "Loss Cone Angle. Calculated from dipole magnetic field.",
+          "CadenceMin": "PT5.1S",
+          "CadenceMax": "PT20.4S",
+          "Units": "°",
+          "UnitsConversion": "0.0174532925>rad",
+          "Structure": {
+            "Size": "2"
+          },
+          "ValidMin": "0.0",
+          "ValidMax": "360.0",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "Qualifier": [
+              "Array",
+              "DirectionAngle"
+            ],
+            "ParticleQuantity": "ArrivalDirection"
+          }
+        },
+        {
+          "Name": "Magnetic Field Vector",
+          "ParameterKey": "B_vec",
+          "Description": "B vector in TEAMS coordinate system with H+ time bins.",
+          "CadenceMin": "PT5.1S",
+          "CadenceMax": "PT20.4S",
+          "Units": "nT",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "SC"
+          },
+          "Structure": {
+            "Size": "3"
+          },
+          "ValidMin": "-180",
+          "ValidMax": "65600",
+          "FillValue": "-1.0e+31",
+          "Field": {
+            "Qualifier": "Vector",
+            "FieldQuantity": "Magnetic"
+          }
+        },
+        {
+          "Name": "Proton Error",
+          "ParameterKey": "proton_error",
+          "Description": "Poisson Error in H+ energy-pitch angle distribution.",
+          "CadenceMin": "PT5.1S",
+          "CadenceMax": "PT20.4S",
+          "Units": "eV/(cm^2 s sr eV)",
+          "UnitsConversion": "1.0e4>J/(m^2 s sr J)",
+          "ValidMin": "0.0",
+          "ValidMax": "1.0e+10",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Ion",
+            "Qualifier": [
+              "Array",
+              "Average"
+            ],
+            "ParticleQuantity": "EnergyFlux",
+            "AtomicNumber": "2"
+          }
+        },
+        {
+          "Name": "Oxygen Error",
+          "ParameterKey": "oxygen_error",
+          "Description": "Poisson Error in oxygen energy-pitch angle distribution.",
+          "CadenceMin": "PT5.1S",
+          "CadenceMax": "PT20.4S",
+          "Units": "eV/(cm^2 s sr eV)",
+          "UnitsConversion": "1.0e4>J/(m^2 s sr J)",
+          "ValidMin": "0.0",
+          "ValidMax": "1.0e+10",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Ion",
+            "Qualifier": [
+              "Array",
+              "Average"
+            ],
+            "ParticleQuantity": "EnergyFlux",
+            "AtomicNumber": "16"
+          }
+        },
+        {
+          "Name": "Helium Error",
+          "ParameterKey": "helium_error",
+          "Description": "Poisson Error in helium energy-pitch angle distribution.",
+          "CadenceMin": "PT5.1S",
+          "CadenceMax": "PT20.4S",
+          "Units": "eV/(cm^2 s sr eV)",
+          "UnitsConversion": "1.0e4>J/(m^2 s sr J)",
+          "ValidMin": "0.0",
+          "ValidMax": "1.0e+10",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Ion",
+            "Qualifier": [
+              "Array",
+              "Average"
+            ],
+            "ParticleQuantity": "EnergyFlux",
+            "AtomicNumber": "4"
+          }
+        },
+        {
+          "Name": "Filtered O+ Velocity",
+          "ParameterKey": "v_o_filtered_gei",
+          "Description": "Filtered O+ Velocity in GEI in spacecraft frame.",
+          "CadenceMin": "PT5.1S",
+          "CadenceMax": "PT20.4S",
+          "Units": "km/s",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GEI"
+          },
+          "Structure": {
+            "Size": "3"
+          },
+          "ValidMin": "-11",
+          "ValidMax": "11",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Ion",
+            "Qualifier": "Vector",
+            "ParticleQuantity": "Velocity",
+            "AtomicNumber": "16"
+          }
+        },
+        {
+          "Name": "O+ Velocity in GEI",
+          "ParameterKey": "v_o_gei",
+          "Description": "O+ Velocity in GEI in spacecraft frame.",
+          "CadenceMin": "PT5.1S",
+          "CadenceMax": "PT20.4S",
+          "Units": "km/s",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GEI"
+          },
+          "Structure": {
+            "Size": "3"
+          },
+          "ValidMin": "-11",
+          "ValidMax": "11",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Ion",
+            "Qualifier": "Vector",
+            "ParticleQuantity": "Velocity",
+            "AtomicNumber": "16"
+          }
+        },
+        {
+          "Name": "Spacecraft Velocity in GEI",
+          "ParameterKey": "v_sc_gei",
+          "Description": "Spacecraft Velocity in GEI.",
+          "CadenceMin": "PT5.1S",
+          "CadenceMax": "PT20.4S",
+          "Units": "km/s",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "SC"
+          },
+          "Structure": {
+            "Size": "3"
+          },
+          "ValidMin": "-11",
+          "ValidMax": "11",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "Qualifier": "Vector",
+            "SupportQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "Convection Velocity in GEI",
+          "ParameterKey": "v_convect_gei",
+          "Description": "Convection Velocity in GEI derived from  O+ velocity.",
+          "CadenceMin": "PT5.1S",
+          "CadenceMax": "PT20.4S",
+          "Units": "km/s",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GEI"
+          },
+          "Structure": {
+            "Size": "3"
+          },
+          "ValidMin": "-11",
+          "ValidMax": "11",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Ion",
+            "Qualifier": "Vector",
+            "ParticleQuantity": "Velocity",
+            "AtomicNumber": "16"
+          }
+        },
+        {
+          "Name": "Filtered O+ Velocity in GSE",
+          "ParameterKey": "v_o_filtered_gse",
+          "Description": "Filtered O+ Velocity in GSE in spacecraft frame.",
+          "CadenceMin": "PT5.1S",
+          "CadenceMax": "PT20.4S",
+          "Units": "km/s",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GSE"
+          },
+          "Structure": {
+            "Size": "3"
+          },
+          "ValidMin": "-11",
+          "ValidMax": "11",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Ion",
+            "Qualifier": "Vector",
+            "ParticleQuantity": "Velocity",
+            "AtomicNumber": "16"
+          }
+        },
+        {
+          "Name": "O+ Velocity in GSE in spacecraft frame",
+          "ParameterKey": "v_o_gse",
+          "Description": "O+ Velocity in GSE in spacecraft frame.",
+          "CadenceMin": "PT5.1S",
+          "CadenceMax": "PT20.4S",
+          "Units": "km/s",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GSE"
+          },
+          "Structure": {
+            "Size": "3"
+          },
+          "ValidMin": "-11",
+          "ValidMax": "11",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Ion",
+            "Qualifier": "Vector",
+            "ParticleQuantity": "Velocity",
+            "AtomicNumber": "16"
+          }
+        },
+        {
+          "Name": "Spacecraft Velocity in GSE",
+          "ParameterKey": "v_sc_gse",
+          "Description": "Spacecraft Velocity in GSE.",
+          "CadenceMin": "PT5.1S",
+          "CadenceMax": "PT20.4S",
+          "Units": "km/s",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GSE"
+          },
+          "Structure": {
+            "Size": "3"
+          },
+          "ValidMin": "-11",
+          "ValidMax": "11",
+          "FillValue": "-1.0e+31",
+          "Support": {
+            "Qualifier": "Vector",
+            "SupportQuantity": "Velocity"
+          }
+        },
+        {
+          "Name": "Convection Velocity in GSE",
+          "ParameterKey": "v_convect_gse",
+          "Description": "Convection Velocity in GSE derived from  O+ velocity.",
+          "CadenceMin": "PT5.1S",
+          "CadenceMax": "PT20.4S",
+          "Units": "km/s",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GSE"
+          },
+          "Structure": {
+            "Size": "3"
+          },
+          "ValidMin": "-11",
+          "ValidMax": "11",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Ion",
+            "Qualifier": "Vector",
+            "ParticleQuantity": "Velocity",
+            "AtomicNumber": "16"
+          }
+        },
+        {
+          "Name": "filtered O+ Velocity in SM in spacecraft frame",
+          "ParameterKey": "v_o_filtered_sm",
+          "Description": "filtered O+ Velocity in SM in spacecraft frame.",
+          "CadenceMin": "PT5.1S",
+          "CadenceMax": "PT20.4S",
+          "Units": "km/s",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "SM"
+          },
+          "Structure": {
+            "Size": "3"
+          },
+          "ValidMin": "-11",
+          "ValidMax": "11",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Ion",
+            "Qualifier": "Vector",
+            "ParticleQuantity": "Velocity",
+            "AtomicNumber": "16"
+          }
+        },
+        {
+          "Name": "O+ Velocity in SM in spacecraft frame",
+          "ParameterKey": "v_o_sm",
+          "Description": "O+ Velocity in SM in spacecraft frame.",
+          "CadenceMin": "PT5.1S",
+          "CadenceMax": "PT20.4S",
+          "Units": "km/s",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "SM"
+          },
+          "Structure": {
+            "Size": "3"
+          },
+          "ValidMin": "-11",
+          "ValidMax": "11",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Ion",
+            "Qualifier": "Vector",
+            "ParticleQuantity": "Velocity",
+            "AtomicNumber": "16"
+          }
+        },
+        {
+          "Name": "O+ Velocity in SM in spacecraft frame",
+          "ParameterKey": "v_sc_sm",
+          "Description": "O+ Velocity in SM in spacecraft frame.",
+          "CadenceMin": "PT5.1S",
+          "CadenceMax": "PT20.4S",
+          "Units": "km/s",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "SM"
+          },
+          "Structure": {
+            "Size": "3"
+          },
+          "ValidMin": "-11",
+          "ValidMax": "11",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Ion",
+            "Qualifier": "Vector",
+            "ParticleQuantity": "Velocity",
+            "AtomicNumber": "16"
+          }
+        },
+        {
+          "Name": "Convection Velocity in SM",
+          "ParameterKey": "v_convect_sm",
+          "Description": "Convection Velocity in SM derived from  O+ velocity.",
+          "CadenceMin": "PT5.1S",
+          "CadenceMax": "PT20.4S",
+          "Units": "km/s",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "SM"
+          },
+          "Structure": {
+            "Size": "3"
+          },
+          "ValidMin": "-11",
+          "ValidMax": "11",
+          "FillValue": "-1.0e+31",
+          "Particle": {
+            "ParticleType": "Ion",
+            "Qualifier": "Vector",
+            "ParticleQuantity": "Velocity",
+            "AtomicNumber": "16"
+          }
+        },
+        {
+          "Name": "H+ and O+ Deadtime flag",
+          "Set": "Time series defined by using: EPOCH",
+          "ParameterKey": "DeadTimeEn",
+          "Description": "H+ and O+ Deadtime flag.",
+          "CadenceMin": "PT5.1S",
+          "CadenceMax": "PT20.4S",
+          "ValidMin": "0",
+          "ValidMax": "1",
+          "FillValue": "255",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "He+ Deadtime flag",
+          "ParameterKey": "DeadTimeEn_Helium",
+          "Description": "He+ Deadtime flag.",
+          "CadenceMin": "PT5.1S",
+          "CadenceMax": "PT20.4S",
+          "ValidMin": "0",
+          "ValidMax": "1",
+          "FillValue": "255",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Spacecraft Potential",
+          "ParameterKey": "sc_potential",
+          "Description": "Spacecraft Potential.",
+          "CadenceMin": "PT5.1S",
+          "CadenceMax": "PT20.4S",
+          "Units": "V",
+          "ValidMin": "-60",
+          "ValidMax": "60",
+          "FillValue": "-1.0000e+31",
+          "Field": {
+            "Qualifier": "Scalar",
+            "FieldQuantity": "Potential"
+          }
+        },
+        {
+          "Name": "Spacecraft Potential Flag",
+          "ParameterKey": "DeadTimeEn_Helium",
+          "Description": "Spacecraft Potential Flag.",
+          "CadenceMin": "PT5.1S",
+          "CadenceMax": "PT20.4S",
+          "ValidMin": "0",
+          "ValidMax": "2",
+          "FillValue": "255",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Spacecraft High Potential Warning",
+          "ParameterKey": "high_potential",
+          "Description": "Spacecraft High Potential Warning. High Potential Warning flag, 0: pot > -5V, 1: pot < -5V.",
+          "CadenceMin": "PT5.1S",
+          "CadenceMax": "PT20.4S",
+          "ValidMin": "0",
+          "ValidMax": "60",
+          "FillValue": "-1.0000e+31",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "Other"
+          }
+        },
+        {
+          "Name": "Spacecraft Orbit Number",
+          "ParameterKey": "orbit_number",
+          "Description": "Spacecraft Orbit Number.",
+          "CadenceMin": "PT5.1S",
+          "CadenceMax": "PT20.4S",
+          "ValidMin": "0",
+          "ValidMax": "52000",
+          "FillValue": "4294967295",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Spacecraft position, GEI coordinate System",
+          "ParameterKey": "fa_pos_gei",
+          "Description": "Spacecraft position, GEI coordinate System.",
+          "CadenceMin": "PT5.1S",
+          "CadenceMax": "PT20.4S",
+          "Units": "km",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GEI"
+          },
+          "Structure": {
+            "Size": "3"
+          },
+          "ValidMin": "-12742",
+          "ValidMax": "12742",
+          "FillValue": "-1.0000e+31",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "Temporal"
+          }
+        },
+        {
+          "Name": "Spacecraft position, GEI coordinate System",
+          "ParameterKey": "fa_pos_gei",
+          "Description": "Spacecraft position in GEI coordinate System.",
+          "CadenceMin": "PT5.1S",
+          "CadenceMax": "PT20.4S",
+          "Units": "km",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GEI"
+          },
+          "Structure": {
+            "Size": "3"
+          },
+          "ValidMin": "-12742",
+          "ValidMax": "12742",
+          "FillValue": "-1.0000e+31",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Spacecraft position, GSE coordinate System",
+          "ParameterKey": "fa_pos_gse",
+          "Description": "Spacecraft position in GSE coordinate System.",
+          "CadenceMin": "PT5.1S",
+          "CadenceMax": "PT20.4S",
+          "Units": "km",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "GSE"
+          },
+          "Structure": {
+            "Size": "3"
+          },
+          "ValidMin": "-12742",
+          "ValidMax": "12742",
+          "FillValue": "-1.0000e+31",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Spacecraft position, SM coordinate System",
+          "ParameterKey": "fa_pos_sm",
+          "Description": "Spacecraft position in SM coordinate System.",
+          "CadenceMin": "PT5.1S",
+          "CadenceMax": "PT20.4S",
+          "Units": "km",
+          "CoordinateSystem": {
+            "CoordinateRepresentation": "Cartesian",
+            "CoordinateSystemName": "SM"
+          },
+          "Structure": {
+            "Size": "3"
+          },
+          "ValidMin": "-12742",
+          "ValidMax": "12742",
+          "FillValue": "-1.0000e+31",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Spacecraft Altitude",
+          "ParameterKey": "altitude",
+          "Description": "Spacecraft Altitude.",
+          "CadenceMin": "PT5.1S",
+          "CadenceMax": "PT20.4S",
+          "Units": "km",
+          "ValidMin": "300",
+          "ValidMax": "4500",
+          "FillValue": "-1.0000e+31",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Spacecraft Invariant Latitude",
+          "ParameterKey": "invariant_latitude",
+          "Description": "Spacecraft Invariant Latitude.",
+          "CadenceMin": "PT5.1S",
+          "CadenceMax": "PT20.4S",
+          "Units": "degree",
+          "UnitsConversion": "0.0174532925>rad",
+          "ValidMin": "-90",
+          "ValidMax": "90",
+          "FillValue": "-1.0000e+31",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Spacecraft Invariant Longitude",
+          "ParameterKey": "invariant_longitude",
+          "Description": "Spacecraft Invariant Longitude.",
+          "CadenceMin": "PT5.1S",
+          "CadenceMax": "PT20.4S",
+          "Units": "degree",
+          "UnitsConversion": "0.0174532925>rad",
+          "ValidMin": "-180",
+          "ValidMax": "180",
+          "FillValue": "-1.0000e+31",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "Positional"
+          }
+        },
+        {
+          "Name": "Spacecraft Magnetic Local Time",
+          "ParameterKey": "mlt",
+          "Description": "Spacecraft Magnetic Local Time.",
+          "CadenceMin": "PT5.1S",
+          "CadenceMax": "PT20.4S",
+          "Units": "mlt",
+          "ValidMin": "0",
+          "ValidMax": "24",
+          "FillValue": "-1.0000e+31",
+          "Support": {
+            "Qualifier": "Scalar",
+            "SupportQuantity": "Positional"
           }
         }
       ]
