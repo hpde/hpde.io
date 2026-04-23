@@ -1,41 +1,186 @@
 <?xml version="1.0"?>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><title>SPASE Resource Description</title><script type="application/ld+json">{
-		"@context": "https://schema.org/",
-		"@type" :"Dataset",
-		"name": "Voyager 2 LECP - Daily Average Interplanetary Data",
-    
-		"dateModified": "2026-02-17",
-
-    "identifier": "https://doi.org/10.48322/gngy-ee60",
-    "publication": "Krimigis, Stamatios M., Voyager 2 LECP - Daily Average Interplanetary Data,  (2025)",
-    "datePublished": "2025-11-14",
-    "creator":{
-       "@type": "Person",
-           "name": "Krimigis, Stamatios M."
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <title>
+   SPASE Resource Description
+  </title>
+  <script type="application/ld+json">
+   {
+    "@context": {
+        "@vocab": "https://schema.org/",
+        "prov": "http://www.w3.org/ns/prov#",
+        "sosa": "https://w3c.github.io/sdw-sosa-ssn/ssn/#SOSA"
     },
-    "publisher":{
-       "@type": "Organization",
-           "name": "Space Physics Data Facility"
+    "@id": "https://doi.org/10.48322/gngy-ee60",
+    "@type": "Dataset",
+    "contributor": [
+        {
+            "@type": [
+                "Role",
+                "DefinedTerm"
+            ],
+            "contributor": {
+                "@type": "Person",
+                "affiliation": {
+                    "@type": "Organization",
+                    "name": "Applied Physics Laboratory"
+                },
+                "familyName": "Decker",
+                "givenName": "Robert B.",
+                "name": "Robert B. Decker"
+            },
+            "inDefinedTermSet": {
+                "@id": "https://spase-group.org/data/model/spase-latest/spase-latest_xsd.htm#Role",
+                "@type": "DefinedTermSet",
+                "name": "SPASE Role",
+                "url": "https://spase-group.org/data/model/spase-latest/spase-latest_xsd.htm#Role"
+            },
+            "roleName": "Technical Contact",
+            "termCode": "TechnicalContact"
+        }
+    ],
+    "creator": [
+        {
+            "@type": "Person",
+            "affiliation": {
+                "@type": "Organization",
+                "name": "Applied Physics Laboratory"
+            },
+            "familyName": "Krimigis",
+            "givenName": "Stamatios M.",
+            "name": "Krimigis, Stamatios M."
+        }
+    ],
+    "dateCreated": "2025-11-14T16:03:01",
+    "dateModified": "2026-02-17T18:48:01",
+    "datePublished": "2025-11-14T16:03:01",
+    "description": "This data file contains 1 day averages of count rates for 11 energetic ion channels from the Low Energy Charged Particle (LECP) instrument on Voyager 2. The data listed are averaged over 24 hours, with the start time of the averging interval begining at the start of the day listed.  For \n example, 77/300 is an average over hours 0-23 on day 300 of 1977. Times are given in SCET-UT. The count rates R are in counts per second.  The statistical uncertainty for each channel is the inverse square root of the total number of counts during each 24 hour period times the average count rate R. Included in the data table are the passbands in KeV for protons, the logarithmic mean energy Em for the differential energy channels, the geometric factor \"g\" (cm**2-steradian), and the flux conversion factor \"f\".  To get from count rate R to differential in energy flux \"dj(E)/dE\", multiply R by f, \n i.e., \n\t\t\t\tdj(E)/dE=f*R. \n\n    Note that f is simply the inverse of the energy passband multiplied by\n the geometric factor. Generally one uses a more elaborate algorithm to \n calculate fluxes by determining the local slope of the energy spectrum within \n each energy passband, usually by an iterative algorithm, and then evaluating \n the flux corresponding to each channel using this slope.  However, if the \n slope of the energy spectrum is not to steep, the approximation dj(E)/dE=f*R \n is very good if the flux is evaluated at the mean energy Em=Sqrt(EL*EH),\n where EL and EH are the low and high energy ends of the passband.  Since the \n slopes of low energy ion spectra in the interplanetary medium are in the\n range of -1 to -3, the approximation is very good.\n",
+    "identifier": {
+        "@list": [
+            {
+                "@type": "PropertyValue",
+                "name": "DOI: 10.48322/gngy-ee60",
+                "propertyID": "https://registry.identifiers.org/registry/doi",
+                "url": "https://doi.org/10.48322/gngy-ee60",
+                "value": "doi:10.48322/gngy-ee60"
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "SPASE",
+                "url": "https://spase-metadata.org/NASA/NumericalData/Voyager2/LECP/Particle/PT24H",
+                "value": "spase://NASA/NumericalData/Voyager2/LECP/Particle/PT24H"
+            }
+        ]
     },
-
-    "creditText": "
-Use of these data in publications should be accompanied by acknowledgements of the NASA Space Physics Data Facility, the National Space Science Data Center and the responsible Principal Investigator defined in the experiment documentation provided here. ",
- 		"description": "This data file contains 1 day averages of count rates for 11 energetic ion channels from the Low Energy Charged Particle (LECP) instrument on Voyager 2. The data listed are averaged over 24 hours, with the start time of the averging interval begining at the start of the day listed.  For \n example, 77/300 is an average over hours 0-23 on day 300 of 1977. Times are given in SCET-UT. The count rates R are in counts per second.  The statistical uncertainty for each channel is the inverse square root of the total number of counts during each 24 hour period times the average count rate R. Included in the data table are the passbands in KeV for protons, the logarithmic mean energy Em for the differential energy channels, the geometric factor \"g\" (cm**2-steradian), and the flux conversion factor \"f\".  To get from count rate R to differential in energy flux \"dj(E)/dE\", multiply R by f, \n i.e., \n				dj(E)/dE=f*R. \n\n    Note that f is simply the inverse of the energy passband multiplied by\n the geometric factor. Generally one uses a more elaborate algorithm to \n calculate fluxes by determining the local slope of the energy spectrum within \n each energy passband, usually by an iterative algorithm, and then evaluating \n the flux corresponding to each channel using this slope.  However, if the \n slope of the energy spectrum is not to steep, the approximation dj(E)/dE=f*R \n is very good if the flux is evaluated at the mean energy Em=Sqrt(EL*EH),\n where EL and EH are the low and high energy ends of the passband.  Since the \n slopes of low energy ion spectra in the interplanetary medium are in the\n range of -1 to -3, the approximation is very good.\n",
-		"abstract": "This data file contains 1 day averages of count rates for 11 energetic ion channels from the Low Energy Charged Particle (LECP) instrument on Voyager 2. The data listed are averaged over 24 hours, with the start time of the averging interval begining at the start of the day listed.  For \n example, 77/300 is an average over hours 0-23 on day 300 of 1977. Times are given in SCET-UT. The count rates R are in counts per second.  The statistical uncertainty for each channel is the inverse square root of the total number of counts during each 24 hour period times the average count rate R. Included in the data table are the passbands in KeV for protons, the logarithmic mean energy Em for the differential energy channels, the geometric factor \"g\" (cm**2-steradian), and the flux conversion factor \"f\".  To get from count rate R to differential in energy flux \"dj(E)/dE\", multiply R by f, \n i.e., \n				dj(E)/dE=f*R. \n\n    Note that f is simply the inverse of the energy passband multiplied by\n the geometric factor. Generally one uses a more elaborate algorithm to \n calculate fluxes by determining the local slope of the energy spectrum within \n each energy passband, usually by an iterative algorithm, and then evaluating \n the flux corresponding to each channel using this slope.  However, if the \n slope of the energy spectrum is not to steep, the approximation dj(E)/dE=f*R \n is very good if the flux is evaluated at the mean energy Em=Sqrt(EL*EH),\n where EL and EH are the low and high energy ends of the passband.  Since the \n slopes of low energy ion spectra in the interplanetary medium are in the\n range of -1 to -3, the approximation is very good.\n",
-
-		"temporalCoverage": "1977-09-07T00:00:00/1994-12-30T23:59:59",
-
-    "genre": "EnergeticParticles",
-		"keywords": [  ],
-		"license": "https://cdla.io/permissive-1-0/",
-
-    "audience":{
-        "@type": "Audience",
-        "audienceType": ["Space Physicist", "Space Community", "Data Scientists", "Machine Learning Users"]
-    }
+    "inLanguage": "en",
+    "license": [
+        "https://spdx.org/licenses/CC0-1.0.html"
+    ],
+    "measurementMethod": {
+        "@type": "DefinedTerm",
+        "inDefinedTermSet": {
+            "@id": "https://spase-group.org/data/model/spase-latest/spase-latest_xsd.htm#MeasurementType",
+            "@type": "DefinedTermSet",
+            "name": "SPASE MeasurementType",
+            "url": "https://spase-group.org/data/model/spase-latest/spase-latest_xsd.htm#MeasurementType"
+        },
+        "name": "Energetic Particles",
+        "termCode": "EnergeticParticles"
+    },
+    "name": "Voyager 2 LECP - Daily Average Interplanetary Data",
+    "potentialAction": [
+        {
+            "@type": "SearchAction",
+            "target": {
+                "@type": "EntryPoint",
+                "contentType": "Text",
+                "description": "Download dataset data as Text file at this URL",
+                "name": "FTPS from SPDF (not with most browsers)",
+                "url": "ftps://spdf.gsfc.nasa.gov/pub/data/voyager/voyager2/particle/lecp/daily/"
+            }
+        },
+        {
+            "@type": "SearchAction",
+            "target": {
+                "@id": "https://spdf.gsfc.nasa.gov/pub/data/voyager/voyager2/particle/lecp/daily/",
+                "@type": "EntryPoint",
+                "contentType": "Text",
+                "description": "Download dataset data as Text file at this URL",
+                "identifier": "https://spdf.gsfc.nasa.gov/pub/data/voyager/voyager2/particle/lecp/daily/",
+                "name": "HTTPS from SPDF",
+                "url": "https://spdf.gsfc.nasa.gov/pub/data/voyager/voyager2/particle/lecp/daily/"
+            }
+        }
+    ],
+    "prov:wasGeneratedBy": [
+        {
+            "@type": [
+                "ResearchProject",
+                "prov:Activity"
+            ],
+            "prov:used": {
+                "@id": "https://spase-metadata.org/SMWG/Instrument/Voyager2/LECP",
+                "@type": [
+                    "IndividualProduct",
+                    "prov:Entity",
+                    "sosa:System"
+                ],
+                "identifier": {
+                    "@id": "https://spase-metadata.org/SMWG/Instrument/Voyager2/LECP",
+                    "@type": "PropertyValue",
+                    "propertyID": "SPASE Resource ID",
+                    "value": "spase://SMWG/Instrument/Voyager2/LECP"
+                },
+                "name": "Low-Energy Charged Particles (LECP)",
+                "url": "https://spase-metadata.org/SMWG/Instrument/Voyager2/LECP"
+            }
+        }
+    ],
+    "publisher": {
+        "@type": "Organization",
+        "name": "Space Physics Data Facility"
+    },
+    "sameAs": "spase://VSPO/NumericalData/Voyager2/LECP/Particle/PT24H",
+    "spatialCoverage": [
+        {
+            "@type": "Place",
+            "keywords": {
+                "@type": "DefinedTerm",
+                "inDefinedTermSet": {
+                    "@id": "https://spase-group.org/data/model/spase-latest/spase-latest_xsd.htm#Region",
+                    "@type": "DefinedTermSet",
+                    "name": "SPASE Region",
+                    "url": "https://spase-group.org/data/model/spase-latest/spase-latest_xsd.htm#Region"
+                },
+                "termCode": "Heliosphere"
+            },
+            "name": "Heliosphere"
+        }
+    ],
+    "subjectOf": {
+        "@id": "https://spase-metadata.org/NASA/NumericalData/Voyager2/LECP/Particle/PT24H",
+        "@type": "DataDownload",
+        "contentUrl": "https://spase-metadata.org/NASA/NumericalData/Voyager2/LECP/Particle/PT24H",
+        "dateModified": "2026-02-17T18:48:01",
+        "description": "The SPASE metadata describing the indicated dataset.",
+        "encodingFormat": "application/xml",
+        "identifier": "https://spase-metadata.org/NASA/NumericalData/Voyager2/LECP/Particle/PT24H",
+        "license": [
+            "https://spdx.org/licenses/CC0-1.0.html"
+        ],
+        "name": "SPASE metadata for dataset"
+    },
+    "temporal": [
+        "The time series is periodic with a 24 hour cadence",
+        "PT24H"
+    ],
+    "temporalCoverage": "1977-09-07T00:00:00/1994-12-30T23:59:59",
+    "url": "https://doi.org/10.48322/gngy-ee60"
 }
-	  </script><style>
-/* http://spase-group.org/tools/xmlviewer */
+  </script>
+  <style>
+   /* http://spase-group.org/tools/xmlviewer */
 /* v1.0 | 20160908 */
 
 * {
@@ -292,53 +437,655 @@ a.xml-logo:visited {
 a.xml-logo:hover {
    text-decoration:underline; 
 }
-
-	  </style></head><body><div><a id="top"/></div><div class="header"><div class="middle">spase-metadata.org <a href="https://spase-group.org/">SPASE</a> landing pages.</div></div><div class="page"><div class="spase"><div class="abstract"><div class="access"><p class="box-title">Data Access</p><ul class="list"><li class="list"><a target="_blank" href="ftps://spdf.gsfc.nasa.gov/pub/data/voyager/voyager2/particle/lecp/daily/">FTPS from SPDF (not with most browsers)</a></li><li class="list"><a target="_blank" href="https://spdf.gsfc.nasa.gov/pub/data/voyager/voyager2/particle/lecp/daily/">HTTPS from SPDF</a></li></ul></div><div class="citation inset"><h1><a name="spase://NASA/NumericalData/Voyager2/LECP/Particle/PT24H">Voyager 2 LECP - Daily Average Interplanetary Data</a></h1><p class="author">Krimigis, Stamatios M. 
+  </style>
+ </head>
+ <body>
+  <div>
+   <a id="top">
+   </a>
+  </div>
+  <div class="header">
+   <div class="middle">
+    spase-metadata.org
+    <a href="https://spase-group.org/">
+     SPASE
+    </a>
+    landing pages.
+   </div>
+  </div>
+  <div class="page">
+   <div class="spase">
+    <div class="abstract">
+     <div class="access">
+      <p class="box-title">
+       Data Access
+      </p>
+      <ul class="list">
+       <li class="list">
+        <a href="ftps://spdf.gsfc.nasa.gov/pub/data/voyager/voyager2/particle/lecp/daily/" target="_blank">
+         FTPS from SPDF (not with most browsers)
+        </a>
+       </li>
+       <li class="list">
+        <a href="https://spdf.gsfc.nasa.gov/pub/data/voyager/voyager2/particle/lecp/daily/" target="_blank">
+         HTTPS from SPDF
+        </a>
+       </li>
+      </ul>
+     </div>
+     <div class="citation inset">
+      <h1>
+       <a name="spase://NASA/NumericalData/Voyager2/LECP/Particle/PT24H">
+        Voyager 2 LECP - Daily Average Interplanetary Data
+       </a>
+      </h1>
+      <p class="author">
+       Krimigis, Stamatios M. 
 							(2025). 
 							Voyager 2 LECP - Daily Average Interplanetary Data
 			[Data set].
-		Space Physics Data Facility. 
-							<a href="https://doi.org/10.48322/gngy-ee60">https://doi.org/10.48322/gngy-ee60</a>. <span id="access_date"/><script>
-									var monthName=new Array("January","February","March","April","May","June","July","August","September","October","November","December"); 
+		Space Physics Data Facility.
+       <a href="https://doi.org/10.48322/gngy-ee60">
+        https://doi.org/10.48322/gngy-ee60
+       </a>
+       .
+       <span id="access_date">
+       </span>
+       <script>
+        var monthName=new Array("January","February","March","April","May","June","July","August","September","October","November","December"); 
 									var today = new Date(); 
 									var cur_div = document.getElementById('access_date');
 									var d_str = ' Accessed on '+today.getFullYear()+'-'+monthName[today.getMonth()]+'-'+today.getDate()+'.';
 									cur_div.innerText = d_str;
-								</script><br/><br/>	
-								Note: Proper references, including those in <a href="https://citation.crosscite.org/format?doi=10.48322/gngy-ee60&amp;style=bibtex&amp;lang=en-US">BibTex</a> or <a href="https://citeas.org/cite/https://doi.org/10.48322/gngy-ee60">other formats</a>, should include the "Accessed on date" as shown above to identify the version of the resource being cited in a given publication.
-							</p><p><div class="term">ResourceID</div><div class="definition">spase://NASA/NumericalData/Voyager2/LECP/Particle/PT24H</div></p><p><div class="term">Description</div><div class="definition"><p>This data file contains 1 day averages of count rates for 11 energetic ion channels from the Low Energy Charged Particle (LECP) instrument on Voyager 2. The data listed are averaged over 24 hours, with the start time of the averging interval begining at the start of the day listed.  For<br>
-example, 77/300 is an average over hours 0-23 on day 300 of 1977. Times are given in SCET-UT. The count rates R are in counts per second.  The statistical uncertainty for each channel is the inverse square root of the total number of counts during each 24 hour period times the average count rate R. Included in the data table are the passbands in KeV for protons, the logarithmic mean energy Em for the differential energy channels, the geometric factor &quot;g&quot; (cm*<em>2-steradian), and the flux conversion factor &quot;f&quot;.  To get from count rate R to differential in energy flux &quot;dj(E)/dE&quot;, multiply R by f,<br>
-i.e.,<br>
-dj(E)/dE=f</em>R.</p>
-<pre><code>Note that f is simply the inverse of the energy passband multiplied by
+       </script>
+       <br/>
+       <br/>
+       Note: Proper references, including those in
+       <a href="https://citation.crosscite.org/format?doi=10.48322/gngy-ee60&amp;style=bibtex&amp;lang=en-US">
+        BibTex
+       </a>
+       or
+       <a href="https://citeas.org/cite/https://doi.org/10.48322/gngy-ee60">
+        other formats
+       </a>
+       , should include the "Accessed on date" as shown above to identify the version of the resource being cited in a given publication.
+      </p>
+      <p>
+       <div class="term">
+        ResourceID
+       </div>
+       <div class="definition">
+        spase://NASA/NumericalData/Voyager2/LECP/Particle/PT24H
+       </div>
+      </p>
+      <p>
+       <div class="term">
+        Description
+       </div>
+       <div class="definition">
+        <p>
+         This data file contains 1 day averages of count rates for 11 energetic ion channels from the Low Energy Charged Particle (LECP) instrument on Voyager 2. The data listed are averaged over 24 hours, with the start time of the averging interval begining at the start of the day listed.  For
+         <br/>
+         example, 77/300 is an average over hours 0-23 on day 300 of 1977. Times are given in SCET-UT. The count rates R are in counts per second.  The statistical uncertainty for each channel is the inverse square root of the total number of counts during each 24 hour period times the average count rate R. Included in the data table are the passbands in KeV for protons, the logarithmic mean energy Em for the differential energy channels, the geometric factor "g" (cm*
+         <em>
+          2-steradian), and the flux conversion factor "f".  To get from count rate R to differential in energy flux "dj(E)/dE", multiply R by f,
+          <br/>
+          i.e.,
+          <br/>
+          dj(E)/dE=f
+         </em>
+         R.
+        </p>
+        <pre><code>Note that f is simply the inverse of the energy passband multiplied by
 </code></pre>
-<p>the geometric factor. Generally one uses a more elaborate algorithm to<br>
-calculate fluxes by determining the local slope of the energy spectrum within<br>
-each energy passband, usually by an iterative algorithm, and then evaluating<br>
-the flux corresponding to each channel using this slope.  However, if the<br>
-slope of the energy spectrum is not to steep, the approximation dj(E)/dE=f<em>R<br>
-is very good if the flux is evaluated at the mean energy Em=Sqrt(EL</em>EH),<br>
-where EL and EH are the low and high energy ends of the passband.  Since the<br>
-slopes of low energy ion spectra in the interplanetary medium are in the<br>
-range of -1 to -3, the approximation is very good.</p>
-</div></p></div></div><div><p class="right"><a target="_blank" href="PT24H.xml">View XML</a>
-				| <a target="_blank" href="PT24H.json">View JSON</a>
-                | <a target="_blank" href="https://spase-editor.heliocloud.org/?edit=https://spase-metadata.org/NASA/NumericalData/Voyager2/LECP/Particle/PT24H.xml">Edit</a></p><h1 class="detail">Details</h1></div><div><div class="product"><p class="version">Version:2.7.1</p><h1>MetadataRightsList</h1><div class="term">Rights</div><div class="definition"><div class="term">SchemeURI</div><div class="definition">https://spdx.org/licenses/</div><div class="term">RightsIdentifierScheme</div><div class="definition">SPDX</div><div class="term">RightsIdentifier</div><div class="definition">CC0-1.0</div><div class="term">RightsURI</div><div class="definition">https://spdx.org/licenses/CC0-1.0.html</div><div class="term">RightsName</div><div class="definition">Creative Commons Zero v1.0 Universal</div><div class="term">Note</div><div class="definition">CC0 1.0 Universal is the Creative Commons license applicable to all publicly available SPASE metadata descriptions</div></div></div><div class="product"><p class="version">Version:2.7.1</p><h1>NumericalData</h1><div class="term">ResourceID</div><div class="definition">spase://NASA/NumericalData/Voyager2/LECP/Particle/PT24H</div><div class="term">NamingAuthority</div><div class="definition">NASA</div><div class="term">ResourceType</div><div class="definition">NumericalData</div><div class="term">ResourceHeader</div><div class="definition"><div class="term">ResourceName</div><div class="definition">Voyager 2 LECP - Daily Average Interplanetary Data</div><div class="term">DOI</div><div class="definition">https://doi.org/10.48322/gngy-ee60</div><div class="term">ReleaseDate</div><div class="definition">2026-02-17 18:48:01Z</div><div class="term">RevisionHistory</div><div class="definition"><div class="term">RevisionEvent</div><div class="definition"><div class="term">ReleaseDate</div><div class="definition">2020-07-07 21:15:58Z</div><div class="term">Note</div><div class="definition">Only known prior ReleaseDate of the metadata</div></div><div class="term">RevisionEvent</div><div class="definition"><div class="term">ReleaseDate</div><div class="definition">2025-11-14 16:03:01Z</div><div class="term">Note</div><div class="definition">Added PublicationInfo. Added ResourceType and NamingAuthority. ZCB</div></div><div class="term">RevisionEvent</div><div class="definition"><div class="term">ReleaseDate</div><div class="definition">2025-12-04 13:32:36Z</div><div class="term">Note</div><div class="definition">Added MetadataRightsList and RightsList(s). Updated to 2.7.1. ZCB</div></div><div class="term">RevisionEvent</div><div class="definition"><div class="term">ReleaseDate</div><div class="definition">2026-02-17 18:48:01Z</div><div class="term">Note</div><div class="definition">Added DOI. TLK</div></div></div><div class="term">Description</div><div class="definition"><p>This data file contains 1 day averages of count rates for 11 energetic ion channels from the Low Energy Charged Particle (LECP) instrument on Voyager 2. The data listed are averaged over 24 hours, with the start time of the averging interval begining at the start of the day listed.  For<br>
-example, 77/300 is an average over hours 0-23 on day 300 of 1977. Times are given in SCET-UT. The count rates R are in counts per second.  The statistical uncertainty for each channel is the inverse square root of the total number of counts during each 24 hour period times the average count rate R. Included in the data table are the passbands in KeV for protons, the logarithmic mean energy Em for the differential energy channels, the geometric factor &quot;g&quot; (cm*<em>2-steradian), and the flux conversion factor &quot;f&quot;.  To get from count rate R to differential in energy flux &quot;dj(E)/dE&quot;, multiply R by f,<br>
-i.e.,<br>
-dj(E)/dE=f</em>R.</p>
-<pre><code>Note that f is simply the inverse of the energy passband multiplied by
+        <p>
+         the geometric factor. Generally one uses a more elaborate algorithm to
+         <br/>
+         calculate fluxes by determining the local slope of the energy spectrum within
+         <br/>
+         each energy passband, usually by an iterative algorithm, and then evaluating
+         <br/>
+         the flux corresponding to each channel using this slope.  However, if the
+         <br/>
+         slope of the energy spectrum is not to steep, the approximation dj(E)/dE=f
+         <em>
+          R
+          <br/>
+          is very good if the flux is evaluated at the mean energy Em=Sqrt(EL
+         </em>
+         EH),
+         <br/>
+         where EL and EH are the low and high energy ends of the passband.  Since the
+         <br/>
+         slopes of low energy ion spectra in the interplanetary medium are in the
+         <br/>
+         range of -1 to -3, the approximation is very good.
+        </p>
+       </div>
+      </p>
+     </div>
+    </div>
+    <div>
+     <p class="right">
+      <a href="PT24H.xml" target="_blank">
+       View XML
+      </a>
+      |
+      <a href="PT24H.json" target="_blank">
+       View JSON
+      </a>
+      |
+      <a href="https://spase-editor.heliocloud.org/?edit=https://spase-metadata.org/NASA/NumericalData/Voyager2/LECP/Particle/PT24H.xml" target="_blank">
+       Edit
+      </a>
+     </p>
+     <h1 class="detail">
+      Details
+     </h1>
+    </div>
+    <div>
+     <div class="product">
+      <p class="version">
+       Version:2.7.1
+      </p>
+      <h1>
+       MetadataRightsList
+      </h1>
+      <div class="term">
+       Rights
+      </div>
+      <div class="definition">
+       <div class="term">
+        SchemeURI
+       </div>
+       <div class="definition">
+        https://spdx.org/licenses/
+       </div>
+       <div class="term">
+        RightsIdentifierScheme
+       </div>
+       <div class="definition">
+        SPDX
+       </div>
+       <div class="term">
+        RightsIdentifier
+       </div>
+       <div class="definition">
+        CC0-1.0
+       </div>
+       <div class="term">
+        RightsURI
+       </div>
+       <div class="definition">
+        https://spdx.org/licenses/CC0-1.0.html
+       </div>
+       <div class="term">
+        RightsName
+       </div>
+       <div class="definition">
+        Creative Commons Zero v1.0 Universal
+       </div>
+       <div class="term">
+        Note
+       </div>
+       <div class="definition">
+        CC0 1.0 Universal is the Creative Commons license applicable to all publicly available SPASE metadata descriptions
+       </div>
+      </div>
+     </div>
+     <div class="product">
+      <p class="version">
+       Version:2.7.1
+      </p>
+      <h1>
+       NumericalData
+      </h1>
+      <div class="term">
+       ResourceID
+      </div>
+      <div class="definition">
+       spase://NASA/NumericalData/Voyager2/LECP/Particle/PT24H
+      </div>
+      <div class="term">
+       NamingAuthority
+      </div>
+      <div class="definition">
+       NASA
+      </div>
+      <div class="term">
+       ResourceType
+      </div>
+      <div class="definition">
+       NumericalData
+      </div>
+      <div class="term">
+       ResourceHeader
+      </div>
+      <div class="definition">
+       <div class="term">
+        ResourceName
+       </div>
+       <div class="definition">
+        Voyager 2 LECP - Daily Average Interplanetary Data
+       </div>
+       <div class="term">
+        DOI
+       </div>
+       <div class="definition">
+        https://doi.org/10.48322/gngy-ee60
+       </div>
+       <div class="term">
+        ReleaseDate
+       </div>
+       <div class="definition">
+        2026-02-17 18:48:01Z
+       </div>
+       <div class="term">
+        RevisionHistory
+       </div>
+       <div class="definition">
+        <div class="term">
+         RevisionEvent
+        </div>
+        <div class="definition">
+         <div class="term">
+          ReleaseDate
+         </div>
+         <div class="definition">
+          2020-07-07 21:15:58Z
+         </div>
+         <div class="term">
+          Note
+         </div>
+         <div class="definition">
+          Only known prior ReleaseDate of the metadata
+         </div>
+        </div>
+        <div class="term">
+         RevisionEvent
+        </div>
+        <div class="definition">
+         <div class="term">
+          ReleaseDate
+         </div>
+         <div class="definition">
+          2025-11-14 16:03:01Z
+         </div>
+         <div class="term">
+          Note
+         </div>
+         <div class="definition">
+          Added PublicationInfo. Added ResourceType and NamingAuthority. ZCB
+         </div>
+        </div>
+        <div class="term">
+         RevisionEvent
+        </div>
+        <div class="definition">
+         <div class="term">
+          ReleaseDate
+         </div>
+         <div class="definition">
+          2025-12-04 13:32:36Z
+         </div>
+         <div class="term">
+          Note
+         </div>
+         <div class="definition">
+          Added MetadataRightsList and RightsList(s). Updated to 2.7.1. ZCB
+         </div>
+        </div>
+        <div class="term">
+         RevisionEvent
+        </div>
+        <div class="definition">
+         <div class="term">
+          ReleaseDate
+         </div>
+         <div class="definition">
+          2026-02-17 18:48:01Z
+         </div>
+         <div class="term">
+          Note
+         </div>
+         <div class="definition">
+          Added DOI. TLK
+         </div>
+        </div>
+       </div>
+       <div class="term">
+        Description
+       </div>
+       <div class="definition">
+        <p>
+         This data file contains 1 day averages of count rates for 11 energetic ion channels from the Low Energy Charged Particle (LECP) instrument on Voyager 2. The data listed are averaged over 24 hours, with the start time of the averging interval begining at the start of the day listed.  For
+         <br/>
+         example, 77/300 is an average over hours 0-23 on day 300 of 1977. Times are given in SCET-UT. The count rates R are in counts per second.  The statistical uncertainty for each channel is the inverse square root of the total number of counts during each 24 hour period times the average count rate R. Included in the data table are the passbands in KeV for protons, the logarithmic mean energy Em for the differential energy channels, the geometric factor "g" (cm*
+         <em>
+          2-steradian), and the flux conversion factor "f".  To get from count rate R to differential in energy flux "dj(E)/dE", multiply R by f,
+          <br/>
+          i.e.,
+          <br/>
+          dj(E)/dE=f
+         </em>
+         R.
+        </p>
+        <pre><code>Note that f is simply the inverse of the energy passband multiplied by
 </code></pre>
-<p>the geometric factor. Generally one uses a more elaborate algorithm to<br>
-calculate fluxes by determining the local slope of the energy spectrum within<br>
-each energy passband, usually by an iterative algorithm, and then evaluating<br>
-the flux corresponding to each channel using this slope.  However, if the<br>
-slope of the energy spectrum is not to steep, the approximation dj(E)/dE=f<em>R<br>
-is very good if the flux is evaluated at the mean energy Em=Sqrt(EL</em>EH),<br>
-where EL and EH are the low and high energy ends of the passband.  Since the<br>
-slopes of low energy ion spectra in the interplanetary medium are in the<br>
-range of -1 to -3, the approximation is very good.</p>
-</div><div class="term">Acknowledgement</div><div class="definition">
-Use of these data in publications should be accompanied by acknowledgements of the NASA Space Physics Data Facility, the National Space Science Data Center and the responsible Principal Investigator defined in the experiment documentation provided here. </div><div class="term">PublicationInfo</div><div class="definition"><div class="term">Authors</div><div class="definition">Krimigis, Stamatios M.</div><div class="term">PublicationDate</div><div class="definition">2025-11-14 16:03:01Z</div><div class="term">PublishedBy</div><div class="definition">Space Physics Data Facility</div></div><div class="term">Contacts</div><dd><table class="nested" cellspacing="0"><tr><th/><th class="center">Role</th><th class="center">Person</th><th class="center">StartDate</th><th class="center">StopDate</th><th class="center">Note</th></tr><tbody><tr><td>1.</td><td>PrincipalInvestigator</td><td><a target="_blank" href="https://spase-metadata.org/SMWG/Person/Stamatios.M.Krimigis.html">spase://SMWG/Person/Stamatios.M.Krimigis</a></td><td/><td/><td/></tr><tr><td>2.</td><td>TechnicalContact</td><td><a target="_blank" href="https://spase-metadata.org/SMWG/Person/Robert.B.Decker.html">spase://SMWG/Person/Robert.B.Decker</a></td><td/><td/><td/></tr></tbody></table></dd><div class="term">PriorIDs</div><div class="definition">spase://VSPO/NumericalData/Voyager2/LECP/Particle/PT24H</div></div><div class="term">AccessInformation</div><div class="definition"><div class="term">RepositoryID</div><div class="definition"><a href="https://spase-metadata.org/SMWG/Repository/NASA/GSFC/SPDF.html">spase://SMWG/Repository/NASA/GSFC/SPDF</a></div><div class="term">Availability</div><div class="definition">Online</div><div class="term">AccessRights</div><div class="definition">Open</div><div class="term">RightsList</div><div class="definition"><div class="term">Rights</div><div class="definition"><div class="term">SchemeURI</div><div class="definition">https://spdx.org/licenses/</div><div class="term">RightsIdentifierScheme</div><div class="definition">SPDX</div><div class="term">RightsIdentifier</div><div class="definition">CC0-1.0</div><div class="term">RightsURI</div><div class="definition">https://spdx.org/licenses/CC0-1.0.html</div><div class="term">RightsName</div><div class="definition">Creative Commons Zero v1.0 Universal</div><div class="term">Note</div><div class="definition">CC0 1.0 Universal is the Creative Commons license applicable to all publicly available NASA Heliophysics data products</div></div></div><div class="term">AccessURL</div><div class="definition"><div class="term">Name</div><div class="definition">FTPS from SPDF (not with most browsers)</div><div class="term">URL</div><div class="definition"><a target="_blank" href="ftps://spdf.gsfc.nasa.gov/pub/data/voyager/voyager2/particle/lecp/daily/">ftps://spdf.gsfc.nasa.gov/pub/data/voyager/voyager2/particle/lecp/daily/</a></div><div class="term">Description</div><div class="definition"><p>In ASCII via FTP from SPDF</p>
-</div></div><div class="term">AccessURL</div><div class="definition"><div class="term">Name</div><div class="definition">HTTPS from SPDF</div><div class="term">URL</div><div class="definition"><a target="_blank" href="https://spdf.gsfc.nasa.gov/pub/data/voyager/voyager2/particle/lecp/daily/">https://spdf.gsfc.nasa.gov/pub/data/voyager/voyager2/particle/lecp/daily/</a></div><div class="term">Description</div><div class="definition"><p>In ASCII via HTTP from SPDF</p>
-</div></div><div class="term">Format</div><div class="definition">Text</div></div><div class="term">ProviderProcessingLevel</div><div class="definition">CALIBRATED</div><div class="term">InstrumentIDs</div><div class="definition"><a target="_blank" href="https://spase-metadata.org/SMWG/Instrument/Voyager2/LECP.html">spase://SMWG/Instrument/Voyager2/LECP</a></div><div class="term">MeasurementType</div><div class="definition">EnergeticParticles</div><div class="term">TemporalDescription</div><div class="definition"><div class="term">TimeSpan</div><div class="definition"><div class="term">StartDate</div><div class="definition">1977-09-07 00:00:00</div><div class="term">StopDate</div><div class="definition">1994-12-30 23:59:59</div></div><div class="term">Cadence</div><div class="definition">PT24H</div></div><div class="term">ObservedRegion</div><div class="definition">Heliosphere</div></div></div></div></div></body></html>
+        <p>
+         the geometric factor. Generally one uses a more elaborate algorithm to
+         <br/>
+         calculate fluxes by determining the local slope of the energy spectrum within
+         <br/>
+         each energy passband, usually by an iterative algorithm, and then evaluating
+         <br/>
+         the flux corresponding to each channel using this slope.  However, if the
+         <br/>
+         slope of the energy spectrum is not to steep, the approximation dj(E)/dE=f
+         <em>
+          R
+          <br/>
+          is very good if the flux is evaluated at the mean energy Em=Sqrt(EL
+         </em>
+         EH),
+         <br/>
+         where EL and EH are the low and high energy ends of the passband.  Since the
+         <br/>
+         slopes of low energy ion spectra in the interplanetary medium are in the
+         <br/>
+         range of -1 to -3, the approximation is very good.
+        </p>
+       </div>
+       <div class="term">
+        Acknowledgement
+       </div>
+       <div class="definition">
+        Use of these data in publications should be accompanied by acknowledgements of the NASA Space Physics Data Facility, the National Space Science Data Center and the responsible Principal Investigator defined in the experiment documentation provided here.
+       </div>
+       <div class="term">
+        PublicationInfo
+       </div>
+       <div class="definition">
+        <div class="term">
+         Authors
+        </div>
+        <div class="definition">
+         Krimigis, Stamatios M.
+        </div>
+        <div class="term">
+         PublicationDate
+        </div>
+        <div class="definition">
+         2025-11-14 16:03:01Z
+        </div>
+        <div class="term">
+         PublishedBy
+        </div>
+        <div class="definition">
+         Space Physics Data Facility
+        </div>
+       </div>
+       <div class="term">
+        Contacts
+       </div>
+       <dd>
+        <table cellspacing="0" class="nested">
+         <tr>
+          <th>
+          </th>
+          <th class="center">
+           Role
+          </th>
+          <th class="center">
+           Person
+          </th>
+          <th class="center">
+           StartDate
+          </th>
+          <th class="center">
+           StopDate
+          </th>
+          <th class="center">
+           Note
+          </th>
+         </tr>
+         <tbody>
+          <tr>
+           <td>
+            1.
+           </td>
+           <td>
+            PrincipalInvestigator
+           </td>
+           <td>
+            <a href="https://spase-metadata.org/SMWG/Person/Stamatios.M.Krimigis.html" target="_blank">
+             spase://SMWG/Person/Stamatios.M.Krimigis
+            </a>
+           </td>
+           <td>
+           </td>
+           <td>
+           </td>
+           <td>
+           </td>
+          </tr>
+          <tr>
+           <td>
+            2.
+           </td>
+           <td>
+            TechnicalContact
+           </td>
+           <td>
+            <a href="https://spase-metadata.org/SMWG/Person/Robert.B.Decker.html" target="_blank">
+             spase://SMWG/Person/Robert.B.Decker
+            </a>
+           </td>
+           <td>
+           </td>
+           <td>
+           </td>
+           <td>
+           </td>
+          </tr>
+         </tbody>
+        </table>
+       </dd>
+       <div class="term">
+        PriorIDs
+       </div>
+       <div class="definition">
+        spase://VSPO/NumericalData/Voyager2/LECP/Particle/PT24H
+       </div>
+      </div>
+      <div class="term">
+       AccessInformation
+      </div>
+      <div class="definition">
+       <div class="term">
+        RepositoryID
+       </div>
+       <div class="definition">
+        <a href="https://spase-metadata.org/SMWG/Repository/NASA/GSFC/SPDF.html">
+         spase://SMWG/Repository/NASA/GSFC/SPDF
+        </a>
+       </div>
+       <div class="term">
+        Availability
+       </div>
+       <div class="definition">
+        Online
+       </div>
+       <div class="term">
+        AccessRights
+       </div>
+       <div class="definition">
+        Open
+       </div>
+       <div class="term">
+        RightsList
+       </div>
+       <div class="definition">
+        <div class="term">
+         Rights
+        </div>
+        <div class="definition">
+         <div class="term">
+          SchemeURI
+         </div>
+         <div class="definition">
+          https://spdx.org/licenses/
+         </div>
+         <div class="term">
+          RightsIdentifierScheme
+         </div>
+         <div class="definition">
+          SPDX
+         </div>
+         <div class="term">
+          RightsIdentifier
+         </div>
+         <div class="definition">
+          CC0-1.0
+         </div>
+         <div class="term">
+          RightsURI
+         </div>
+         <div class="definition">
+          https://spdx.org/licenses/CC0-1.0.html
+         </div>
+         <div class="term">
+          RightsName
+         </div>
+         <div class="definition">
+          Creative Commons Zero v1.0 Universal
+         </div>
+         <div class="term">
+          Note
+         </div>
+         <div class="definition">
+          CC0 1.0 Universal is the Creative Commons license applicable to all publicly available NASA Heliophysics data products
+         </div>
+        </div>
+       </div>
+       <div class="term">
+        AccessURL
+       </div>
+       <div class="definition">
+        <div class="term">
+         Name
+        </div>
+        <div class="definition">
+         FTPS from SPDF (not with most browsers)
+        </div>
+        <div class="term">
+         URL
+        </div>
+        <div class="definition">
+         <a href="ftps://spdf.gsfc.nasa.gov/pub/data/voyager/voyager2/particle/lecp/daily/" target="_blank">
+          ftps://spdf.gsfc.nasa.gov/pub/data/voyager/voyager2/particle/lecp/daily/
+         </a>
+        </div>
+        <div class="term">
+         Description
+        </div>
+        <div class="definition">
+         <p>
+          In ASCII via FTP from SPDF
+         </p>
+        </div>
+       </div>
+       <div class="term">
+        AccessURL
+       </div>
+       <div class="definition">
+        <div class="term">
+         Name
+        </div>
+        <div class="definition">
+         HTTPS from SPDF
+        </div>
+        <div class="term">
+         URL
+        </div>
+        <div class="definition">
+         <a href="https://spdf.gsfc.nasa.gov/pub/data/voyager/voyager2/particle/lecp/daily/" target="_blank">
+          https://spdf.gsfc.nasa.gov/pub/data/voyager/voyager2/particle/lecp/daily/
+         </a>
+        </div>
+        <div class="term">
+         Description
+        </div>
+        <div class="definition">
+         <p>
+          In ASCII via HTTP from SPDF
+         </p>
+        </div>
+       </div>
+       <div class="term">
+        Format
+       </div>
+       <div class="definition">
+        Text
+       </div>
+      </div>
+      <div class="term">
+       ProviderProcessingLevel
+      </div>
+      <div class="definition">
+       CALIBRATED
+      </div>
+      <div class="term">
+       InstrumentIDs
+      </div>
+      <div class="definition">
+       <a href="https://spase-metadata.org/SMWG/Instrument/Voyager2/LECP.html" target="_blank">
+        spase://SMWG/Instrument/Voyager2/LECP
+       </a>
+      </div>
+      <div class="term">
+       MeasurementType
+      </div>
+      <div class="definition">
+       EnergeticParticles
+      </div>
+      <div class="term">
+       TemporalDescription
+      </div>
+      <div class="definition">
+       <div class="term">
+        TimeSpan
+       </div>
+       <div class="definition">
+        <div class="term">
+         StartDate
+        </div>
+        <div class="definition">
+         1977-09-07 00:00:00
+        </div>
+        <div class="term">
+         StopDate
+        </div>
+        <div class="definition">
+         1994-12-30 23:59:59
+        </div>
+       </div>
+       <div class="term">
+        Cadence
+       </div>
+       <div class="definition">
+        PT24H
+       </div>
+      </div>
+      <div class="term">
+       ObservedRegion
+      </div>
+      <div class="definition">
+       Heliosphere
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>
