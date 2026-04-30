@@ -2,21 +2,30 @@
   "Spase": {
     "xmlns": "http://www.spase-group.org/data/schema",
     "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
-    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_7_0.xsd",
-    "Version": "2.7.0",
+    "xsi:schemaLocation": "https://www.spase-group.org/data/schema https://www.spase-group.org/data/schema/spase-2.7.1.xsd",
+    "Version": "2.7.1",
     "NumericalData": {
       "ResourceID": "spase://NASA/NumericalData/TRACERS/TRACERS2/Level2/AnalyzerCuspElectrons/DEF/Variable",
       "NamingAuthority": "NASA",
       "ResourceType": "NumericalData",
       "ResourceHeader": {
         "ResourceName": "TRACERS 2 Analyzer of Cusp Electrons (ACE) Differential Energy Flux and Counts, Level 2 (L2), Data",
-        "DOI": "DOI_DOI",
-        "ReleaseDate": "2026-04-28T12:34:56.789",
+        "DOI": [
+          "DOI_DOI",
+          "https://doi.org/10.48322/vfwx-4a76"
+        ],
+        "ReleaseDate": "2026-04-30T14:30:23Z",
         "RevisionHistory": {
-          "RevisionEvent": {
-            "ReleaseDate": "2026-04-28T12:34:56.789",
-            "Note": "Initial release of metadata, ADAPT generated, SAB"
-          }
+          "RevisionEvent": [
+            {
+              "ReleaseDate": "2026-04-28T12:34:56.789",
+              "Note": "Initial release of metadata, ADAPT generated, SAB"
+            },
+            {
+              "ReleaseDate": "2026-04-30T14:30:23Z",
+              "Note": "Changed http to https in top-level schemaLocation attribute. Fixed version number separator in top-level schemaLocation attribute. Matched version number in schemaLocation attribute to updated value in Version tag. Added DOI. tlk"
+            }
+          ]
         },
         "Description": "The ACE L2 data consist of raw measured counts and calibrated differential energy fluxes as a function of anode angle and calibrated energy. Counts are accumulated in 21 discrete anodes with different viewing angles for each of 49 energy steps, with a basic measurement cadence of 50 ms. Counts are converted to differential energy flux by subtracting an estimate of the background and then dividing by the instrument calibration matrix. The estimated background count rates and calibration matrix are included in the L2 data files, enabling application of alternative background subtraction methods or calibrations.  Background estimates include two sources: 1) Instrumental background due to electronics crosstalk, which is constant across all anodes but varies with energy. 2) Natural background due to penetrating energetic particles and natural radioactivity in the microchannel plate detectors, which is constant across all anodes and energies. Subtraction of background can lead to negative differential energy fluxes, especially for low count rate data. Depending on the use case, these negative values can either be retained or replaced with zeroes.  The calibration matrix incorporates instrument sensitivity and relative sensitivity factors for each anode, both estimated based upon a combination of pre-flight laboratory calibrations and inflight data. Energy values for each energy step and anode are computed utilizing the known sweep voltage table and pre-flight laboratory calibrations.  The ACE instrument was intended to be operated in a particular spacecraft orientation, with the TSCS +Z axis aligned with the magnetic field. In this orientation, incoming electron trajectories are not occluded by the spacecraft. However, for a portion of the TRACERS mission, the spacecraft are oriented in the opposite sense, which leads to an occlusion of a portion of the instrument field of view by the spacecraft body for low-energy (<~200 eV) electrons. Low-energy ACE data should not be utilized for quantitative purposes when the spacecraft are in this orientation.",
         "Acknowledgement": "Jasper Halekas See the rules of use available at https://tracers.physics.uiowa.edu/rules-use.",
