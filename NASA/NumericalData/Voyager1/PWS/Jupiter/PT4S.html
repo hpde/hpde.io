@@ -15,7 +15,7 @@
             "sosa": "https://w3c.github.io/sdw-sosa-ssn/ssn/#SOSA"
         }
     ],
-    "@id": "https://spase-metadata.org/NASA/NumericalData/Voyager1/PWS/Jupiter/PT4S",
+    "@id": "https://doi.org/10.48322/djb2-1608",
     "@type": "Dataset",
     "citation": [
         {
@@ -104,14 +104,25 @@
         ]
     },
     "dateCreated": "2026-04-10T10:04:09",
-    "dateModified": "2026-04-10T10:04:09",
+    "dateModified": "2026-06-11T16:09:56",
     "datePublished": "2026-04-10T10:04:09",
     "description": "* Data Set Overview\n* =================\n\n* Version 1.1\n* ===========\n\nThis Version 1.1 Data Set replaces the Version 1.0 Data Set (DATA_SET_ID=VG1-J-PWS-2-SA-4.0SEC) previously archived with the PDS. Changes to this Version include the upgrade of the associated Labels and Templates to PDS Version 3 Compliance.\n\n* Data Set Description\n* ====================\n\nThis Data Set consists of 4 s edited, Wave Electric Field Intensities from the Voyager 1 Plasma Wave Receiver Spectrum Analyzer obtained in the Vicinity of the Jovian Magnetosphere. For each 4 s Interval, a Field Strength is determined for each of the sixteen Spectrum Analyzer Channels whose Center Frequencies range from 10 Hz to 56.2 kHz and which are logarithmically spaced in Frequency, four Channels per Decade. The Time associated with each Set of Intensities (sixteen Channels) is the Time of the Beginning of the Scan. During Data Gaps where complete 4 s Spectra are missing, no Entries exist in the File, that is, the Gaps are not Zero-filled or Tagged in any other way. When one or more Channels are missing within a Scan, the missing Measurements are Zero-filled. Data are edited but not calibrated. The Data Numbers in this Data Set can be plotted in raw Form for Event Searches and simple Trend Analysis since they are roughly proportional to the Log of the Electric Field Strength. Calibration Procedures and Tables are provided for use with this Data Set; the use of these is described below.\n\n* Use of Voyager PWS Calibration Tables\n* =====================================\n\nThe Voyager PWS Calibration Table is given in an ASCII Text File named VG1PWSCL.TAB (for Voyager 1). This provides Information to convert the uncalibrated $quot;Data Number$quot; Output of the PWS sixteen-channel Spectrum Analyzer to calibrated Antenna Voltages for each Frequency Channel. Following is a brief Description of these Files and a Tutorial in their Application.\n\nDescriptive Headers have been removed from this File. The Columns included are IDN, ICHAN01, ICHAN02, ICHAN03, ICHAN04, ICHAN05, ICHAN06, ..., ICHAN16.\n\nThe first Column lists an uncalibrated Data Number followed by the corresponding Value in calibrated Volts for each of the sixteen Frequency Channels of the PWS Spectrum Analyzer. Each Line contains Calibrations for successive Data Number Values ranging from 0 through 255. (Data Number 0 actually represents the Lack of Data since the Baseline Noise Values for each Channel are all above that.)\n\nA Data Analysis Program may load the appropriate Table into a Data Structure and thus provide a simple Look-up Scheme to obtain the appropriate Voltage for a given Data Number and Frequency Channel. For example, the following VAX FORTRAN Code may be used to load a Calibration Array for Voyager 1 PWS:\n\n* real*4 cal(16,0:255)\n* open(unit=10,file='VG1PWSCL.TAB'status='old')\n*\n* do i=0,255\n* read(10,*) idn,(cal(ichan,i),ichan=1,16)\n* end do\n*\n* close(10)\n\nThen, given an uncalibrated Data Value idn for the Frequency Channel ichan, the corresponding calibrated Antenna Voltage would be given by the following Array Reference:\n\n* volts=cal(ichan,idn)\n\nThis may be converted to a Wave Electric Field Amplitude by dividing by the effective Antenna Length in meters, 7.07 m. That is:\n\n* efield=cal(ichan,idn)/7.07\n\nSpectral Density Units may be obtained by dividing the Square of the Electric Field Value by the nominal Frequency Bandwidth of the corresponding Spectrum Analyzer Channel.\n\n* specdens=(cal(ichan,idn)/7.07)^2/bandwidth(ichan)\n\nFinally, Power Flux may be obtained by dividing the Spectral Density by the Impedance of Free Space in Ohms:\n\n* pwrflux=((cal(ichan,idn)/7.07)^2/bandwidth(ichan))/376.73\n\nOf course, for a particular Application, it may be more efficient to apply the above Conversions to the Calibration Table directly.\n\nThe Center Frequencies and Bandwidths of each PWS Spectrum Analyzer Channel for each Voyager Spacecraft are given below:",
     "identifier": {
-        "@type": "PropertyValue",
-        "propertyID": "SPASE",
-        "url": "https://spase-metadata.org/NASA/NumericalData/Voyager1/PWS/Jupiter/PT4S",
-        "value": "spase://NASA/NumericalData/Voyager1/PWS/Jupiter/PT4S"
+        "@list": [
+            {
+                "@type": "PropertyValue",
+                "name": "DOI: 10.48322/djb2-1608",
+                "propertyID": "https://registry.identifiers.org/registry/doi",
+                "url": "https://doi.org/10.48322/djb2-1608",
+                "value": "doi:10.48322/djb2-1608"
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "SPASE",
+                "url": "https://spase-metadata.org/NASA/NumericalData/Voyager1/PWS/Jupiter/PT4S",
+                "value": "spase://NASA/NumericalData/Voyager1/PWS/Jupiter/PT4S"
+            }
+        ]
     },
     "inLanguage": "en",
     "measurementMethod": {
@@ -189,9 +200,10 @@
         }
     ],
     "subjectOf": {
+        "@id": "https://spase-metadata.org/NASA/NumericalData/Voyager1/PWS/Jupiter/PT4S",
         "@type": "DataDownload",
         "contentUrl": "https://spase-metadata.org/NASA/NumericalData/Voyager1/PWS/Jupiter/PT4S",
-        "dateModified": "2026-04-10T10:04:09",
+        "dateModified": "2026-06-11T16:09:56",
         "description": "The SPASE metadata describing the indicated dataset.",
         "encodingFormat": "application/xml",
         "identifier": "https://spase-metadata.org/NASA/NumericalData/Voyager1/PWS/Jupiter/PT4S",
@@ -205,7 +217,7 @@
         "PT4S"
     ],
     "temporalCoverage": "1979-02-28T00:00:00.00/1979-03-23T00:00:00.00",
-    "url": "https://spase-metadata.org/NASA/NumericalData/Voyager1/PWS/Jupiter/PT4S"
+    "url": "https://doi.org/10.48322/djb2-1608"
 }
   </script>
   <style>
@@ -509,6 +521,30 @@ a.xml-logo:hover {
 							Voyager 1 Jupiter Plasma Wave Spectrometer (PWS) Edited Spectrum Analyzer, Version 1.1, 4 s Data
 			[Data set].
 		Space Physics Data Facility; Planetary Data System.
+       <a href="https://doi.org/10.48322/djb2-1608">
+        https://doi.org/10.48322/djb2-1608
+       </a>
+       .
+       <span id="access_date">
+       </span>
+       <script>
+        var monthName=new Array("January","February","March","April","May","June","July","August","September","October","November","December"); 
+									var today = new Date(); 
+									var cur_div = document.getElementById('access_date');
+									var d_str = ' Accessed on '+today.getFullYear()+'-'+monthName[today.getMonth()]+'-'+today.getDate()+'.';
+									cur_div.innerText = d_str;
+       </script>
+       <br/>
+       <br/>
+       Note: Proper references, including those in
+       <a href="https://citation.crosscite.org/format?doi=10.48322/djb2-1608&amp;style=bibtex&amp;lang=en-US">
+        BibTex
+       </a>
+       or
+       <a href="https://citeas.org/cite/https://doi.org/10.48322/djb2-1608">
+        other formats
+       </a>
+       , should include the "Accessed on date" as shown above to identify the version of the resource being cited in a given publication.
       </p>
       <p>
        <div class="term">
@@ -749,10 +785,16 @@ a.xml-logo:hover {
         Voyager 1 Jupiter Plasma Wave Spectrometer (PWS) Edited Spectrum Analyzer, Version 1.1, 4 s Data
        </div>
        <div class="term">
+        DOI
+       </div>
+       <div class="definition">
+        https://doi.org/10.48322/djb2-1608
+       </div>
+       <div class="term">
         ReleaseDate
        </div>
        <div class="definition">
-        2026-04-10 10:04:09Z
+        2026-06-11 16:09:56Z
        </div>
        <div class="term">
         RevisionHistory
@@ -824,6 +866,23 @@ a.xml-logo:hover {
          </div>
          <div class="definition">
           Added PublicationInfo. ZCB
+         </div>
+        </div>
+        <div class="term">
+         RevisionEvent
+        </div>
+        <div class="definition">
+         <div class="term">
+          ReleaseDate
+         </div>
+         <div class="definition">
+          2026-06-11 16:09:56Z
+         </div>
+         <div class="term">
+          Note
+         </div>
+         <div class="definition">
+          Added DOI. tlk
          </div>
         </div>
        </div>
