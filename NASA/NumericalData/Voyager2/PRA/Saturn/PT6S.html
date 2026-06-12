@@ -15,7 +15,7 @@
             "sosa": "https://w3c.github.io/sdw-sosa-ssn/ssn/#SOSA"
         }
     ],
-    "@id": "https://spase-metadata.org/NASA/NumericalData/Voyager2/PRA/Saturn/PT6S",
+    "@id": "https://doi.org/10.48322/4c16-k656",
     "@type": "Dataset",
     "citation": [
         {
@@ -104,17 +104,28 @@
         ]
     },
     "dateCreated": "2026-04-10T10:04:17",
-    "dateModified": "2026-04-10T10:04:17",
+    "dateModified": "2026-06-12T19:17:30",
     "datePublished": "2026-04-10T10:04:17",
     "description": [
         "* Data Set Overview\n* =================\n\nThis Data Set (VG2-S-PRA-3-RDR-LOWBAND-6SEC-V1.0) contains Data acquired by the Voyager 2 Planetary Radio Astronomy (PRA) Instrument during the Saturn Encounter. Since the PRA Instrument is able to observe Planetary Phenomenon at much larger Ranges than other Fields and Particles Experiments, thus the PRA Data cover a variable and longer Encounter Period. PRA Low Band Data provided here cover the entire Saturn Encounter Phase (1981-06-05 to 1981-09-28).\n\nVG2-S-PRA-3-RDR-LOWBAND-6SEC-V1.0 contains Data at the highest Time Resolution possible during Normal Operations. The Normal Mode of PRA Operations during the Planetary Encounters was to Sweep through the two Radio Receiver Bands, High Band (40.5 MHz to 1.5 MHz in 128 Channels spaced 0.3072 MHz apart) and Low Band (1326.0 kHz to 1.2 kHz in 70 Channels spaced 19.2 kHz apart) in a Period of 6 s. The Receivers measured, on alternate Samples, the left hand circular and right hand circular (radio definition) Power.\n\n* Measured Parameters\n* ===================\n\nThe Data here are from the Low Frequency Receiver Band and are \"packaged\" into Spacecraft Major Frame Records. Each Major Frame is 48 s long or eight Sweeps through the PRA Receiver. The Data are calibrated and are given in Units of \"millibels\" or mB, which is 1000 times the Log of the received Power. Zero mB corresponds to approximately 1.4\u00d710^-21 W m^-2 Hz^-1, however, this Value is never seen in practice. The minimum Values detected, which includes Receiver internal and Spacecraft generated Noise, are about 2300 mB to 2400 mB, or about 3.5\u00d710^-19 W m^-2 Hz^-1; even higher Values are seen at the very lowest Frequencies.\n\nThe Data Format is ASCII and consists of a Time Indicator followed by an Array containing the eight Low Band Sweeps. Time is Spacecraft Event Time (SCET) which is basically Universal Time at the Spacecraft. Specifically, Time is in the Form of YYMMDD and Seconds into YYMMDD. Both are written as I6. Example: July 1, 1979 at 12:00 SCET would be 790701, 43200. The Seconds corresponds, to the nearest Second, to the Start of the Sweep (which occurs in PRA High Band). The first Value in Low Band (1326.0 kHz) occurs some 3.9 s after this Time and Samples at successively lower Frequencies are spaced 0.03 s apart. Only one Time is given for the entire Major Frame, thus the Start of each Sweep is the Time given plus 6 times the Sweep Number minus 1 (i.e., 0 through 7).\n\nThe Data Array is dimensioned as 71 \u00d7 8 and written as I4 Format (i.e., 568I4). The \"8\" corresponds to the eight PRA Sweeps. The lowest 68 of the 70 Low Band Channels (1287.6 kHz to 1.2 kHz) are in Positions 2 to 69. Positions 70 and 71 should be ignored. Missing or Bad Data Values are set to Zero. In Position 1 of each Sweep is a Status Word where the 12 least significant Bits have used, although not all 12 have meaning for the PRA Low Band. Numbering those Bits 0 for least significant to 11 for most significant, the Bits that have meaning are as follows:\n\n* Bit Value(s)\n- 0: 15 dB Attenuator in use when equal to 1\n- 1: 30 dB Attenuator in use when equal to 1\n- 2: 45 dB Attenuator in use when equal to 1\n- 9 and 10 together: Polarization of first Channel sampled (1326.0 kHz) according to the Scheme:\n\n+-------------------------------------------------------+\n|                 | Value Bit 10 = 0 | Value Bit 10 = 1 |\n---------------------------------------------------------\n| Value Bit 9 = 0 | R                | L                |\n| Value Bit 9 = 1 | L                | R                |\n+-------------------------------------------------------+\n\nPolarization at successively lower Frequencies is opposite to the Frequency above it, i.e., either a LRLR or an RLRL Pattern. Successive 6 s Sweeps start on the opposite Polarization as the previous Sweep as indicated in the Status Bits. Note that this Polarization is the received Polarization, not necessarily the emitted Polarization. Correct Interpretation of the received Polarization depends on the Antenna Plane Orientation relative to the Radio Source. A good Description of this Concept can be found in (Le Blanc et al., 1987).\n\nMissing or Bad Data Values are set to Zero. If the Status Word is Zero, any Data in that Receiver Sweep should be discarded.\n\n* Data Coverage Volume ID: VGPR_1201\n* ==================================\n\n+-----------------------------------------------------------------------------+\n| Filename    | Records | Start                    | Stop                     |\n-------------------------------------------------------------------------------\n| PRA_I.TAB   | 37485   | 1981-06-05T00:00:07.000Z | 1981-06-30T23:59:16.000Z |\n| PRA_II.TAB  | 31873   | 1981-07-01T00:00:04.000Z | 1981-07-21T23:59:13.000Z |\n| PRA_III.TAB | 37592   | 1981-07-22T00:00:01.000Z | 1981-08-13T23:59:12.000Z |\n| PRA_IV.TAB  | 36831   | 1981-08-14T00:00:00.000Z | 1981-09-07T23:59:58.000Z |\n| PRA_V.TAB   | 34874   | 1981-09-08T00:00:46.000Z | 1981-09-28T23:59:08.000",
         "Z |\n+-----------------------------------------------------------------------------+"
     ],
     "identifier": {
-        "@type": "PropertyValue",
-        "propertyID": "SPASE",
-        "url": "https://spase-metadata.org/NASA/NumericalData/Voyager2/PRA/Saturn/PT6S",
-        "value": "spase://NASA/NumericalData/Voyager2/PRA/Saturn/PT6S"
+        "@list": [
+            {
+                "@type": "PropertyValue",
+                "name": "DOI: 10.48322/4c16-k656",
+                "propertyID": "https://registry.identifiers.org/registry/doi",
+                "url": "https://doi.org/10.48322/4c16-k656",
+                "value": "doi:10.48322/4c16-k656"
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "SPASE",
+                "url": "https://spase-metadata.org/NASA/NumericalData/Voyager2/PRA/Saturn/PT6S",
+                "value": "spase://NASA/NumericalData/Voyager2/PRA/Saturn/PT6S"
+            }
+        ]
     },
     "inLanguage": "en",
     "measurementMethod": {
@@ -192,9 +203,10 @@
         }
     ],
     "subjectOf": {
+        "@id": "https://spase-metadata.org/NASA/NumericalData/Voyager2/PRA/Saturn/PT6S",
         "@type": "DataDownload",
         "contentUrl": "https://spase-metadata.org/NASA/NumericalData/Voyager2/PRA/Saturn/PT6S",
-        "dateModified": "2026-04-10T10:04:17",
+        "dateModified": "2026-06-12T19:17:30",
         "description": "The SPASE metadata describing the indicated dataset.",
         "encodingFormat": "application/xml",
         "identifier": "https://spase-metadata.org/NASA/NumericalData/Voyager2/PRA/Saturn/PT6S",
@@ -208,7 +220,7 @@
         "PT6S"
     ],
     "temporalCoverage": "1981-06-05T00:00:07.00/1981-09-28T23:59:08.00",
-    "url": "https://spase-metadata.org/NASA/NumericalData/Voyager2/PRA/Saturn/PT6S"
+    "url": "https://doi.org/10.48322/4c16-k656"
 }
   </script>
   <style>
@@ -512,6 +524,30 @@ a.xml-logo:hover {
 							Voyager 2 Saturn Planetary Radio Astronomy (PRA) Calibrated Low-Frequency Receiver Band, Version 1.0, 6 s High Resolution Data
 			[Data set].
 		Space Physics Data Facility; Planetary Data System.
+       <a href="https://doi.org/10.48322/4c16-k656">
+        https://doi.org/10.48322/4c16-k656
+       </a>
+       .
+       <span id="access_date">
+       </span>
+       <script>
+        var monthName=new Array("January","February","March","April","May","June","July","August","September","October","November","December"); 
+									var today = new Date(); 
+									var cur_div = document.getElementById('access_date');
+									var d_str = ' Accessed on '+today.getFullYear()+'-'+monthName[today.getMonth()]+'-'+today.getDate()+'.';
+									cur_div.innerText = d_str;
+       </script>
+       <br/>
+       <br/>
+       Note: Proper references, including those in
+       <a href="https://citation.crosscite.org/format?doi=10.48322/4c16-k656&amp;style=bibtex&amp;lang=en-US">
+        BibTex
+       </a>
+       or
+       <a href="https://citeas.org/cite/https://doi.org/10.48322/4c16-k656">
+        other formats
+       </a>
+       , should include the "Accessed on date" as shown above to identify the version of the resource being cited in a given publication.
       </p>
       <p>
        <div class="term">
@@ -730,10 +766,16 @@ a.xml-logo:hover {
         Voyager 2 Saturn Planetary Radio Astronomy (PRA) Calibrated Low-Frequency Receiver Band, Version 1.0, 6 s High Resolution Data
        </div>
        <div class="term">
+        DOI
+       </div>
+       <div class="definition">
+        https://doi.org/10.48322/4c16-k656
+       </div>
+       <div class="term">
         ReleaseDate
        </div>
        <div class="definition">
-        2026-04-10 10:04:17Z
+        2026-06-12 19:17:30Z
        </div>
        <div class="term">
         RevisionHistory
@@ -805,6 +847,23 @@ a.xml-logo:hover {
          </div>
          <div class="definition">
           Added PublicationInfo. ZCB
+         </div>
+        </div>
+        <div class="term">
+         RevisionEvent
+        </div>
+        <div class="definition">
+         <div class="term">
+          ReleaseDate
+         </div>
+         <div class="definition">
+          2026-06-12 19:17:30Z
+         </div>
+         <div class="term">
+          Note
+         </div>
+         <div class="definition">
+          Added DOI. tlk
          </div>
         </div>
        </div>
