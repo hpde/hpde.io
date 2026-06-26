@@ -11,7 +11,6 @@
     "@context": [
         "https://schema.org/",
         {
-            "prov": "http://www.w3.org/ns/prov#",
             "sosa": "https://w3c.github.io/sdw-sosa-ssn/ssn/#SOSA",
             "ts": "http://resource.geosciml.org/vocabulary/timescale/"
         }
@@ -107,21 +106,9 @@
                 "DefinedTerm"
             ],
             "contributor": {
-                "@id": "https://orcid.org/0000-0002-7077-930X",
                 "@type": "Person",
-                "affiliation": {
-                    "@type": "Organization",
-                    "name": "University of Michigan"
-                },
                 "familyName": "Kasper",
                 "givenName": "Justin C.",
-                "identifier": {
-                    "@id": "https://orcid.org/0000-0002-7077-930X",
-                    "@type": "PropertyValue",
-                    "propertyID": "https://registry.identifiers.org/registry/orcid",
-                    "url": "https://orcid.org/0000-0002-7077-930X",
-                    "value": "orcid:0000-0002-7077-930X"
-                },
                 "name": "Justin C. Kasper"
             },
             "inDefinedTermSet": {
@@ -138,17 +125,6 @@
         "@list": [
             {
                 "@type": "Person",
-                "affiliation": {
-                    "@type": "Organization",
-                    "identifier": {
-                        "@id": "https://ror.org/042nb2s44",
-                        "@type": "PropertyValue",
-                        "propertyID": "https://registry.identifiers.org/registry/ror",
-                        "url": "https://ror.org/042nb2s44",
-                        "value": "ror:042nb2s44"
-                    },
-                    "name": "Massachusetts Institute of Technology"
-                },
                 "familyName": "Lazarus",
                 "givenName": "Alan J.",
                 "name": "Lazarus, Alan J."
@@ -167,17 +143,6 @@
             },
             {
                 "@type": "Person",
-                "affiliation": {
-                    "@type": "Organization",
-                    "identifier": {
-                        "@id": "https://ror.org/0171mag52",
-                        "@type": "PropertyValue",
-                        "propertyID": "https://registry.identifiers.org/registry/ror",
-                        "url": "https://ror.org/0171mag52",
-                        "value": "ror:0171mag52"
-                    },
-                    "name": "NASA Goddard Space Flight Center"
-                },
                 "familyName": "Ogilvie",
                 "givenName": "Keith W.",
                 "name": "Ogilvie, Keith W."
@@ -191,7 +156,7 @@
         ]
     },
     "dateCreated": "2021-01-01T00:00:00",
-    "dateModified": "2025-12-04T13:33:07",
+    "dateModified": "2026-06-26T13:32:03",
     "datePublished": "2021-01-01T00:00:00",
     "description": [
         "Wind SWE Key Parameter data: proton density, thermal speed, flow velocity vectors, and spacecraft position vectors. Various versions differ slightly from each other. The version at MIT has flow velocity vectors experessed bby using Geocentric Solar Ecliptic, GSE, Cartesian and spherical representations and GSE Cartesian position vectors. The version available via nssdcftp and FTPBrowser has temperature instead of thermal speed and has no flow direction angles. The CDAWeb version has flow velocity and spacecraft position vectors in both GSE and Geocentric Solar Magnetospheric, GSM, coordinates, flow dynamic pressure, NmV^2, and velocity and density quality flags. The data were progressively despiked in passing from CDAWeb to MIT to nssdcftp/FTPBrowser.\n\nUse of the Quality Variables:\n\nQuality flags are set in the analysis program that generates the KP data. Previous descriptions of their meaning were out of date.\n\nGood data is indicated by a quality flag equal to 0.\n\nThe quality flags for each parameter are given as integers 4 bytes long, integer*4.\n\nThe individual bits for each quality value are set or cleared in the analysis code by adding or subtracting a power of 2 as follows. To set the first bit, add 1, the second bit, add 2, the third bit, add 4, the fourth bit, add 8, and so on. See the table below.\n\n+------------------------------------------------------------------------------------------------------------------------------+\n| Bit | Set Value | MEANING                                                                                                    |\n|------------------------------------------------------------------------------------------------------------------------------|\n| 1   | 1         | Three point parabolic fits to proton peaks were not attempted.                                             |\n| 2   | 2         | Non-linear least squares fit was not attempted.                                                            |\n| 3   | 4         | Three point parabolic fits to proton peaks failed.                                                         |\n| 4   | 8         | Non-linear least squares fit failed.                                                                       |\n| 5   | 16        | Alpha parameters not valid since the non-linear least squares fit was done for protons only.               |\n|     |           | Not enough good energy channels to do simultaneous alpha fit. This value applies to iqual_core(5) only.    |\n| 6   | 32        | Analysis code unable to get good value for spin period.                                                    |\n| 7   | 64        | SWE instrument in mode 1, calibration state mode. Key parameters are produced in mode 1, science mode.     |\n| 8   | 128       | Three point fits done for cup 1 only. Split collector ratio of currents used to get the north/south angle. |\n|     |           | Either cup 2 turned off, or cup 2 densities were low indicating noise associated with vibration.           |\n| 9   | 256       | Fewer than ten fc_blocks in spectrum. Analysis skipped.                                                    |\n| 10  | 512       | Alpha particle non-linear fit produced values of density and thermal speed that do not seem reasonable.    |\n| 11  | 1024      | Three point parabolic fits to proton peaks done for cup 2 only. Probably Cup 1 is turned off.              |\n|     |           | The ratio of currents on split collectors used to get north/south angle.                                   |\n| 12  | 2048      | Single width windows. Delta E over E 6.5% instead of the default 13%.                                      |\n| 13  | 4096      | Tracking mode operation.                                                                                   |\n| 14  | 8192      | Limited tracking mode scan, not a full scan.                                                               |\n+------------------------------------------------------------------------------------------------------------------------------+\n\nParticular flag settings:\n\n+-------------------------------------------------------------------------------------------+\n| Flag Value | Meaning                                                                      |\n|-------------------------------------------------------------------------------------------|\n| 4098       | Tracking mode operation is full scan (4096) and No non-linear fits (2)       |\n| 14338      | Tracking mode operation is full scan (4096) and Limited tracking mode (8192) |\n+-------------------------------------------------------------------------------------------+\n\nComments:\n\n* Note that in bit 4 of the quality flag the non-linear fit may be reported as good for protons and, at the same time, not good for alphas.\n* Non-linear fits are not done for Key Parameters, KPs, but those parameter values are excellent and should be used to do science.\n* Non-linear fits are available are available in this data product, but they have proble",
@@ -288,14 +253,14 @@
             "query-input": [
                 {
                     "@type": "PropertyValueSpecification",
-                    "description": "A UTC ISO DateTime. Use 1994-11-01T12:00:00.000 as default value.",
+                    "description": "A UTC ISO DateTime. Use 1994-11-01T12:00:00.000Z as default value.",
                     "valueName": "start",
                     "valuePattern": "(-?(?:[1-9][0-9]*)?[0-9]{4})-(1[0-2]|0[1-9])-(3[01]|0[1-9]|[12][0-9])T(2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9])(.[0-9]+)?(Z)?",
                     "valueRequired": false
                 },
                 {
                     "@type": "PropertyValueSpecification",
-                    "description": "A UTC ISO DateTime. Data is available up to 2019-01-18T23:58:49.000. Use 1994-11-01T12:01:00 as a test end value.",
+                    "description": "A UTC ISO DateTime. Data is available up to 2019-01-18T23:58:49.000Z. Use 1994-11-01T12:01:00 as a test end value.",
                     "valueName": "end",
                     "valuePattern": "(-?(?:[1-9][0-9]*)?[0-9]{4})-(1[0-2]|0[1-9])-(3[01]|0[1-9]|[12][0-9])T(2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9])(.[0-9]+)?(Z)?",
                     "valueRequired": false
@@ -310,30 +275,6 @@
                 "identifier": "https://cdaweb.gsfc.nasa.gov/hapi",
                 "name": "CDAWeb HAPI Server",
                 "urlTemplate": "https://cdaweb.gsfc.nasa.gov/hapi/data?id=WI_K0_SWE&time.min={start}&time.max={end}"
-            }
-        }
-    ],
-    "prov:wasGeneratedBy": [
-        {
-            "@type": [
-                "ResearchProject",
-                "prov:Activity"
-            ],
-            "prov:used": {
-                "@id": "https://spase-metadata.org/SMWG/Instrument/Wind/SWE",
-                "@type": [
-                    "IndividualProduct",
-                    "prov:Entity",
-                    "sosa:System"
-                ],
-                "identifier": {
-                    "@id": "https://spase-metadata.org/SMWG/Instrument/Wind/SWE",
-                    "@type": "PropertyValue",
-                    "propertyID": "SPASE Resource ID",
-                    "value": "spase://SMWG/Instrument/Wind/SWE"
-                },
-                "name": "Wind Solar Wind Experiment (SWE)",
-                "url": "https://spase-metadata.org/SMWG/Instrument/Wind/SWE"
             }
         }
     ],
@@ -443,7 +384,7 @@
         "@id": "https://spase-metadata.org/NASA/NumericalData/Wind/SWE/IonMoments/KeyParameter/PT99S",
         "@type": "DataDownload",
         "contentUrl": "https://spase-metadata.org/NASA/NumericalData/Wind/SWE/IonMoments/KeyParameter/PT99S",
-        "dateModified": "2025-12-04T13:33:07",
+        "dateModified": "2026-06-26T13:32:03",
         "description": "The SPASE metadata describing the indicated dataset.",
         "encodingFormat": "application/xml",
         "identifier": "https://spase-metadata.org/NASA/NumericalData/Wind/SWE/IonMoments/KeyParameter/PT99S",
@@ -456,7 +397,7 @@
         "The time series is periodic with a 99 second cadence",
         "PT99S"
     ],
-    "temporalCoverage": "1994-11-01T12:00:00.000/2019-01-18T23:58:49.000",
+    "temporalCoverage": "1994-11-01T12:00:00.000Z/2019-01-18T23:58:49.000Z",
     "url": "https://doi.org/10.48322/3zky-gy15",
     "variableMeasured": [
         {
@@ -1173,7 +1114,7 @@ a.xml-logo:hover {
         ReleaseDate
        </div>
        <div class="definition">
-        2025-12-04 13:33:07Z
+        2026-06-26 13:32:03Z
        </div>
        <div class="term">
         RevisionHistory
@@ -1187,7 +1128,7 @@ a.xml-logo:hover {
           ReleaseDate
          </div>
          <div class="definition">
-          2021-05-31 12:34:56.789
+          2021-05-31 12:34:56.789Z
          </div>
          <div class="term">
           Note
@@ -1221,7 +1162,7 @@ a.xml-logo:hover {
           ReleaseDate
          </div>
          <div class="definition">
-          2025-10-23 12:34:56.789
+          2025-10-23 12:34:56.789Z
          </div>
          <div class="term">
           Note
@@ -1245,6 +1186,23 @@ a.xml-logo:hover {
          </div>
          <div class="definition">
           Added MetadataRightsList and RightsList(s). Updated to 2.7.1. ZCB
+         </div>
+        </div>
+        <div class="term">
+         RevisionEvent
+        </div>
+        <div class="definition">
+         <div class="term">
+          ReleaseDate
+         </div>
+         <div class="definition">
+          2026-06-26 13:32:03Z
+         </div>
+         <div class="term">
+          Note
+         </div>
+         <div class="definition">
+          Add 'Z' to RevisionEvent:ReleaseDate(s), PublicationDate, TemporalDescription:TimeSpan:StartDate, TemporalDescription:TimeSpan:StopDate. ZCB
          </div>
         </div>
        </div>
@@ -1390,7 +1348,7 @@ a.xml-logo:hover {
          PublicationDate
         </div>
         <div class="definition">
-         2021-01-01 00:00:00
+         2021-01-01 00:00:00Z
         </div>
         <div class="term">
          PublishedBy
@@ -2213,13 +2171,13 @@ a.xml-logo:hover {
          StartDate
         </div>
         <div class="definition">
-         1994-11-01 12:00:00.000
+         1994-11-01 12:00:00.000Z
         </div>
         <div class="term">
          StopDate
         </div>
         <div class="definition">
-         2019-01-18 23:58:49.000
+         2019-01-18 23:58:49.000Z
         </div>
        </div>
        <div class="term">

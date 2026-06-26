@@ -104,7 +104,7 @@
         ]
     },
     "dateCreated": "2026-04-10T10:04:07",
-    "dateModified": "2026-06-11T14:42:45",
+    "dateModified": "2026-06-26T13:31:00",
     "datePublished": "2026-04-10T10:04:07",
     "description": [
         "* Data Set Overview\n* =================\n\nThis Data Set contains hourly Averages of the Interplanetary Magnetic Field (IMF) Measurements obtained by the Triaxial Fluxgate Magnetometer Experiment on Voyager 1. Identical Instruments on Voyager 1 and 2 were designed to measure the IMF between Earth and Saturn (10 AU) during the primary Voyager Mission. The Design and Performance yielded Absolute Accuracies to better than <0.1 nT. In general, each Component of the hourly Average has an Uncertainty of up to (\u00b10.05 nT) in the Region beyond 10 AU. More accurate Measurements can be obtained by Special Processing of the Data, but it was not feasible to do this for the entire Data Set included here. The Magnetic Field Magnitude in nT is provided along with Angles of the Field Vector in the Spacecraft-centered Heliographic (HG) Coordinate System, also known as RTN.\n\n* Coordinate System\n* =================\n\nInterplanetary Magnetic Field Studies make use of two important Coordinate Systems, the Inertial Heliographic (IHG) Coordinate System and the Heliographic (HG) Coordinate System.\n\nThe IHG Coordinate System is used to define the Position of the Spacecraft. The IHG System is defined with its Origin at the Sun. There are three Orthogonal Axes, X(IHG), Y(IHG), and Z(IHG). The Z(IHG) Axis points northward along the Spin Axis of the Sun. The XY Plane of the IHG System lays in the Solar Equatorial Plane. The Intersection of the Solar Equatorial Plane with the Ecliptic Plane defines a Line, the Longitude of the Ascending Node, which is taken to be the X(IHG) Axis. The X(IHG) Axis drifts slowly with Time, approximately one degree per 72 years.\n\nThe Magnetic Field Orientation is defined in relation to the Spacecraft. Drawing a Line from the Center of the Sun, which is the Origin of the IHG System, to the Spacecraft defines the X Axis of the HG Coordinate System. The HG Coordinate System is defined with its Origin centered at the Spacecraft. Three orthogonal Axes are defined, X(HG), Y(HG), and Z(HG). The X(HG) Axis points radially away from the Sun and the Y(HG) Axis is parallel to the Solar Equatorial Plane and therefore parallel to the X(IHG)-Y(IHG) Plane as well. The Z(HG) Axis is chosen to complete the Orthonormal Triad.\n\nAn excellent Reference Guide with Diagrams explaining the IHG and HG Systems may be found in Space and Science Reviews, Volume 39 (1984), 255-316, MHD Processes in the Outer Heliosphere, L. F. Burlaga.\n\n* Data Formats\n* ============\n\n+--------------------------------------------------------------------------+\n| Num | Field         | Description for Data before 1990                   |\n----------------------------------------------------------------------------\n| 1   | Spacecraft ID | 1=Voyager 1, 2=Voyager 2                           |\n| 2   | Time (UTC)    | YY DDD HH where YY=year, DDD=day, and HH=hour      |\n| 3   | X             | X Position Component, in AU, IHG Coordinates       |\n| 4   | Y             | Y Position Component, in AU, IHG Coordinates       |\n| 5   | Z             | Z Position Component, in AU, IHG Coordinates       |\n| 6   | Range         | Heliocentric Range, equal to the sqrt(X^2+Y^2+Z^2) |\n| 7   | F1            | Field Magnitude, in nT, avg(F2(48sec))             |\n| 8   | F2            | Field Modulus, in nT, norm(B1,B2,B3)               |\n| 9   | delta         | Latitudinal Angle, in degrees, HG Coordinates      |\n| 10  | lambda        | Longitudinal Angle, in degrees, HG Coordinates     |\n+--------------------------------------------------------------------------+\n\n+-------------------------------------------------------------------------------------+\n| Num | Field                       | Description for Data after 1990                 |\n---------------------------------------------------------------------------------------\n| 1   | Spacecraft ID               | FLT1=Voyager 1, FLT2=Voyager 2                  |\n| 2   | Time (UTC)                  | Decimal Year Format (90.00000 is Day 1 of 1990) |\n| 3   | Magnetic Field Strength, F1 | computed from high-resolution Observations      |\n| 4   | Elevation Angle             | in degrees, HG Coordinates                      |\n| 5   | Azimuthal Angle             | in degrees, HG Coordinates                      |\n| 6   | Magnetic Field Strength, F2 | computed from hourly Averages of the Components |\n+-------------------------------------------------------------------------------------+\n\nThe Magnetic Field Components may be recovered by using F2, delta, and lambda. Note that Fortran Users need to convert from Degrees to Radians before using Trigonometric Functions.\n\n* BR = F2*cos(lambda)*cos(delta)\n* BT = F2*sin(lambda)*cos(delta)\n* BN = F2*sin(delta)\n\n* Contact Information\n* ===================\n\n+---------------------------------+\n| Principal Investigator          |\n-----------------------------------\n| Prof. Norman F. Ness            |\n| Bartol Research Institute       |\n| Univerity of Delaware           |\n| Newark, Delaware 19716-4793 ",
@@ -206,7 +206,7 @@
         "@id": "https://spase-metadata.org/NASA/NumericalData/Voyager1/MAG/Heliosphere/PT1H",
         "@type": "DataDownload",
         "contentUrl": "https://spase-metadata.org/NASA/NumericalData/Voyager1/MAG/Heliosphere/PT1H",
-        "dateModified": "2026-06-11T14:42:45",
+        "dateModified": "2026-06-26T13:31:00",
         "description": "The SPASE metadata describing the indicated dataset.",
         "encodingFormat": "application/xml",
         "identifier": "https://spase-metadata.org/NASA/NumericalData/Voyager1/MAG/Heliosphere/PT1H",
@@ -219,7 +219,7 @@
         "The time series is periodic with a 1 hour cadence",
         "PT1H"
     ],
-    "temporalCoverage": "1977-09-05T00:00:00.00/2004-12-31T01:00:00.000",
+    "temporalCoverage": "1977-09-05T00:00:00.00Z/2004-12-31T01:00:00.000Z",
     "url": "https://doi.org/10.48322/0v60-pg07"
 }
   </script>
@@ -850,7 +850,7 @@ a.xml-logo:hover {
         ReleaseDate
        </div>
        <div class="definition">
-        2026-06-11 14:42:45Z
+        2026-06-26 13:31:00Z
        </div>
        <div class="term">
         RevisionHistory
@@ -939,6 +939,23 @@ a.xml-logo:hover {
          </div>
          <div class="definition">
           Added DOI. tlk
+         </div>
+        </div>
+        <div class="term">
+         RevisionEvent
+        </div>
+        <div class="definition">
+         <div class="term">
+          ReleaseDate
+         </div>
+         <div class="definition">
+          2026-06-26 13:31:00Z
+         </div>
+         <div class="term">
+          Note
+         </div>
+         <div class="definition">
+          Add 'Z' to TemporalDescription:TimeSpan:StartDate, TemporalDescription:TimeSpan:StopDate. ZCB
          </div>
         </div>
        </div>
@@ -1390,13 +1407,13 @@ a.xml-logo:hover {
          StartDate
         </div>
         <div class="definition">
-         1977-09-05 00:00:00.00
+         1977-09-05 00:00:00.00Z
         </div>
         <div class="term">
          StopDate
         </div>
         <div class="definition">
-         2004-12-31 01:00:00.000
+         2004-12-31 01:00:00.000Z
         </div>
        </div>
        <div class="term">

@@ -104,7 +104,7 @@
         ]
     },
     "dateCreated": "2026-04-10T10:04:08",
-    "dateModified": "2026-06-11T16:09:51",
+    "dateModified": "2026-06-26T13:31:01",
     "datePublished": "2026-04-10T10:04:08",
     "description": [
         "* Data Set Overview\n* =================\n\nThis Data Set includes calibrated Magnetic Field Data acquired by the Voyager 1 Low Field Magnetometer (LFM) during the Saturn Encounter. Coverage begins in the Solar Wind inbound to Saturn and continues past the last outbound Bowshock Crossing. The Data are in Kronographic (L1) Coordinates and have been averaged from the 1.92 s Summary Rate to a 9.6 s Sample Rate. All Magnetic Field Measurements are given in nT. The Magnetic Field Data are calibrated (see the Calibration Description included in the Voyager 1 Magnetometer Instrument Catalog File for Details).\n\n* Parameters\n* ==========\n\nThe full LFM Instrument Sample Rate is one Sample per 0.06 s. Full Telemetry Resolution \"Detail\" Data must be obtained from the Instrument Team. For this Data Set, the Data have been resampled to 9.6 s from 1.92 s Summary Data. The 1.92 s Data were in turn resampled from the Detail Data.\n\n+--------------------------------------------------------+\n| Parameter Characteristics      | Value                 |\n----------------------------------------------------------\n| Sampling Parameter Name        | TIME                  |\n| Data Set Parameter Name        | MAGNETIC FIELD VECTOR |\n| Sampling Parameter Resolution  | 9.600000              |\n| Minimum Sampling Parameter     | 19770820120000.000000 |\n| Maximum Sampling Parameter     | UNK                   |\n| Sampling Parameter Interval    | 9.600000              |\n| Minimum Available Sampling Int | 0.060000              |\n| Data Set Parameter Unit        | NANOTESLA             |\n| Noise Level                    | 0.006000              |\n| Sampling Parameter Unit        | SECOND                |\n+--------------------------------------------------------+\n\nThe LFM has eight Dynamic Ranges. The Instrument is designed to switch between Dynamic Ranges automatically depending on the observed Magnetic Field Magnitude and Fluctuations. Instrument Digitization Uncertainty depends on the Dynamic Range as indicated in the following Table from (Behannon et al., 1977).\n\n* LFM Dynamic Ranges and Quantization Uncertainty\n* ===============================================\n\n+----------------------------------------------+\n| Range Num | Range (nT)   | Quantization (nT) |\n------------------------------------------------\n| 1         | \u00b18.8         | \u00b10.0022           |\n| 2         | \u00b126          | \u00b10.0063           |\n| 3         | \u00b179          | \u00b10.019            |\n| 4         | \u00b1240         | \u00b10.059            |\n| 5         | \u00b1710         | \u00b10.173            |\n| 6         | \u00b12,100       | \u00b10.513            |\n| 7         | \u00b16,400       | \u00b11.56             |\n| 8         | \u00b150,000      | \u00b112.2             |\n+----------------------------------------------+\n\n+------------------------------------------------------------+\n| Parameter Characteristics       | Value                    |\n--------------------------------------------------------------\n| Instrument Host ID              | VG1                      |\n| Data Set Parameter Name         | MAGNETIC FIELD VECTOR    |\n| Instrument Parameter Name       | MAGNETIC FIELD COMPONENT |\n| Important Instrument Parameters | 1                        |\n+------------------------------------------------------------+\n\n+-----------------------------------------------------------------+\n| Parameter Characteristics       | Value                         |\n-------------------------------------------------------------------\n| Instrument Host ID              | VG1                           |\n| Data Set Parameter Name         | MAGNETIC FIELD VECTOR         |\n| Instrument Parameter Name       | WAVE MAGNETIC FIELD INTENSITY |\n| Important Instrument Parameters | 1                             |\n+-----------------------------------------------------------------+\n\n* Processing\n* ==========\n\nVoyager EDRs undergo the following Processing in order to produce these 9.6 s averaged Summary Data:\n\n* Read EDR\n* Unpack Header Block (Receiver ID, Spacecraft ID, Telemetry Mode, FDS Counts, Data Flags)\n* Convert selected Time Tags to Integer Time (YY/DDD/HH:MM:SS.FFF)\n* Unpack Sub-header Block (MAG Status Words, Plasma Data)\n* Unpack Science Block (MAG Counts)\n* Convert Counts to nT\n* Apply Sensor and Boom Alignment Matrices\n* Rotate (optional) 1.92 s Averages while averaging Detail Data in nT to create 1.92 s Averages\n* Average 1.92 s Data to 9.6 s\n* Write Summary Record\n\nCounts are measured onboard using 12-bit Words that may represent Values ranging from 0 to 4096. Integer Counts are converted to Magnetic Field Units (nT) by subtracting a Zero Offset from the measured MAG Value and multiplying this Difference by the Sensitivity of the Instrument.\n\n+-----------------------------------------+\n| Processing Characteristics | Value      |\n-------------------------------------------\n| Processing Level ID        | 4          |\n| Software Flag              | Y          |\n| Processing Start Time      | 1988-09-21 |\n+-----------------------------------------+",
@@ -206,7 +206,7 @@
         "@id": "https://spase-metadata.org/NASA/NumericalData/Voyager1/MAG/Saturn/PT9.6S",
         "@type": "DataDownload",
         "contentUrl": "https://spase-metadata.org/NASA/NumericalData/Voyager1/MAG/Saturn/PT9.6S",
-        "dateModified": "2026-06-11T16:09:51",
+        "dateModified": "2026-06-26T13:31:01",
         "description": "The SPASE metadata describing the indicated dataset.",
         "encodingFormat": "application/xml",
         "identifier": "https://spase-metadata.org/NASA/NumericalData/Voyager1/MAG/Saturn/PT9.6S",
@@ -219,7 +219,7 @@
         "The time series is periodic with a 9.6 second cadence",
         "PT9.6S"
     ],
-    "temporalCoverage": "1980-11-10T00:00:34.92/1980-11-18T22:57:13.54",
+    "temporalCoverage": "1980-11-10T00:00:34.92Z/1980-11-18T22:57:13.54Z",
     "url": "https://doi.org/10.48322/gmef-dj59"
 }
   </script>
@@ -884,7 +884,7 @@ a.xml-logo:hover {
         ReleaseDate
        </div>
        <div class="definition">
-        2026-06-11 16:09:51Z
+        2026-06-26 13:31:01Z
        </div>
        <div class="term">
         RevisionHistory
@@ -973,6 +973,23 @@ a.xml-logo:hover {
          </div>
          <div class="definition">
           Added DOI. tlk
+         </div>
+        </div>
+        <div class="term">
+         RevisionEvent
+        </div>
+        <div class="definition">
+         <div class="term">
+          ReleaseDate
+         </div>
+         <div class="definition">
+          2026-06-26 13:31:01Z
+         </div>
+         <div class="term">
+          Note
+         </div>
+         <div class="definition">
+          Add 'Z' to TemporalDescription:TimeSpan:StartDate, TemporalDescription:TimeSpan:StopDate. ZCB
          </div>
         </div>
        </div>
@@ -1458,13 +1475,13 @@ a.xml-logo:hover {
          StartDate
         </div>
         <div class="definition">
-         1980-11-10 00:00:34.92
+         1980-11-10 00:00:34.92Z
         </div>
         <div class="term">
          StopDate
         </div>
         <div class="definition">
-         1980-11-18 22:57:13.54
+         1980-11-18 22:57:13.54Z
         </div>
        </div>
        <div class="term">

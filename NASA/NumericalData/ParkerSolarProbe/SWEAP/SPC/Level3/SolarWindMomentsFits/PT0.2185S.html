@@ -150,7 +150,7 @@
         ]
     },
     "dateCreated": "2020-01-01T00:00:00",
-    "dateModified": "2026-05-15T14:52:41",
+    "dateModified": "2026-06-26T13:26:03",
     "datePublished": "2020-01-01T00:00:00",
     "description": "SPC Level 3 Ion Data\n--------------------\n\nFile Naming Format: psp_swp_spc_l3i_YYYYMMDD_v01.cdf\n\nThis data product contains derived measurements of ion properties in the solar wind, including those for density, temperature, and velocity. These are determined both by a direct computation of the velocity moments of the reduced distribution function and by attempting to fit the primary peak in the ion I(V) curve with a Maxwellian model. These measurements correspond one to one with spectra in the psp_swp_spc_l2i file for the same date. It may be convenient for some applications to cross-reference the two. For example, the corresponding l3i file contains ephemeris and data quality flag information that may be useful for an investigator who is concerned only with l2i type measurements.\n\nConditions that impact measurement quality are documented in the DQF variable, which contains a 32 element flag array for each measurement time. Each element of the array is reserved to signify a specific condition. These conditions are described in the DQF_FLAGNAMES variable. In this version, for example, DQF_FLAGNAMES.DAT[23] is set to \"spacecraft maneuver\". If measurement \"i\" was made during a spacecraft maneuver, it is thus flagged with DQF.DAT[23,i] = 1.\n\nIn Version 01, measurements are not provided, i.e. variables are set to fill, during spacecraft maneuvers, under conditions of low signal-to-noise, and during certain observed transients. Such conditions are rare during encounters, but increasingly frequent in interplanetary cruise. These conditions are documented in the DQF variable. Remarks are also provided in the \"SPC Reduced Data Quality Periods\" table. In Version 01, the solar wind alpha particle component is not measured. Thus, variables are set equal to fill values.\n\nSPC Encounter 1 Remarks\n-----------------------\n\nData quality is very good for the duration of the encounter. The solar wind flow was within the optimal field of view for the SPC instrument for nearly the entire encounter. See the data flags for specific exceptions. As with all encounters, signal-to-noise is higher during ingress than egress, which is reflected in the typically smaller uncertainties and less frequent \"primary peak low signal\" flag events.\n\nSPC Cruise Phase Remarks\n------------------------\n\nMeasurements recorded during cruise phase are not all transmitted to Earth. The typical return is one spectrum out of every 32.\n\nSPC Encounter 2 Remarks\n-----------------------\n\nDue to an erroneous setting in the operating mode for this encounter, ion full scan spectra and certain spectra immediately following ion full scans are of reduced quality. In the affected full scan spectra, the energy steps over an initial portion of the measurement spectra have zero width, i.e. the Level 2 ion variables MV_LO.DAT = MV_HI.DAT, and the corresponding measurements are purely noise. In some cases, this results in a poor determination of the proton \"primary peak\" energy, which renders additional subsequent full scans that follow subject to the same incompleteness. In other cases, the energy range for the subsequent \"ion peak tracking mode\" scan is not ideal. The affected Level 3 ion measurements have been flagged with DQF.DAT[22]=1, which stands for \"energy ranging/peak tracking error\" and/or set to fill. The operating mode has been revised such that future encounters will not be so affected.\n\nParker Solar Probe SWEAP Rules of the Road\n------------------------------------------\n\nAs part of the development of collaboration with the broader Heliophysics community, the mission has drafted a \"Rules of the Road\" to govern how PSP instrument data are to be used.\n\n* 1) Users should consult with the PI to discuss the appropriate use of instrument data or model results and to ensure that the users are accessing the most recently available versions of the data and of the analysis routines. Instrument team Science Operations Centers, SOCs, and/or Virtual Observatories, VOs, should facilitate this process serving as the contact point between PI and users in most cases.\n\n* 2) Users should heed the caveats of investigators to the interpretations and limitations of data or model results. Investigators supplying data or models may insist that such caveats be published. Data and model version numbers should also be specified.\n\n* 3) Browse products, Quicklook, and Planning data are not intended for science analysis or publication and should not be used for those purposes without consent of the PI.\n\n* 4) Users should acknowledge the sources of data used in all publications, presentations, and reports: \"We acknowledge the NASA Parker Solar Probe Mission and the SWEAP team led by J. Kasper for use of data.\".\n\n* 5) Users are encouraged to provide the PI a copy of each manuscript that uses the PI data prior to submission of that manuscript for consideration of publication. On publication, the citation should be transmitted to the PI and any other providers of data.",
     "identifier": {
@@ -236,7 +236,7 @@
             "query-input": [
                 {
                     "@type": "PropertyValueSpecification",
-                    "description": "A UTC ISO DateTime. Use 2018-10-06T00:00:00.000 as default value.",
+                    "description": "A UTC ISO DateTime. Use 2018-10-06T00:00:00.000Z as default value.",
                     "valueName": "start",
                     "valuePattern": "(-?(?:[1-9][0-9]*)?[0-9]{4})-(1[0-2]|0[1-9])-(3[01]|0[1-9]|[12][0-9])T(2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9])(.[0-9]+)?(Z)?",
                     "valueRequired": false
@@ -365,7 +365,7 @@
         "@id": "https://spase-metadata.org/NASA/NumericalData/ParkerSolarProbe/SWEAP/SPC/Level3/SolarWindMomentsFits/PT0.2185S",
         "@type": "DataDownload",
         "contentUrl": "https://spase-metadata.org/NASA/NumericalData/ParkerSolarProbe/SWEAP/SPC/Level3/SolarWindMomentsFits/PT0.2185S",
-        "dateModified": "2026-05-15T14:52:41",
+        "dateModified": "2026-06-26T13:26:03",
         "description": "The SPASE metadata describing the indicated dataset.",
         "encodingFormat": "application/xml",
         "identifier": "https://spase-metadata.org/NASA/NumericalData/ParkerSolarProbe/SWEAP/SPC/Level3/SolarWindMomentsFits/PT0.2185S",
@@ -378,7 +378,7 @@
         "The time series is periodic with a 0.2185 second cadence",
         "PT0.2185S"
     ],
-    "temporalCoverage": "2018-10-06T00:00:00.000/..",
+    "temporalCoverage": "2018-10-06T00:00:00.000Z/..",
     "url": "https://doi.org/10.48322/49we-tr31",
     "variableMeasured": [
         {
@@ -1614,7 +1614,7 @@ a.xml-logo:hover {
         ReleaseDate
        </div>
        <div class="definition">
-        2026-05-15 14:52:41Z
+        2026-06-26 13:26:03Z
        </div>
        <div class="term">
         RevisionHistory
@@ -1686,6 +1686,23 @@ a.xml-logo:hover {
          </div>
          <div class="definition">
           Added MetadataRightsList and RightsList(s). Added ResourceType and NamingAuthority. Changed http to https in top-level schemaLocation attribute. Fixed version number separator in top-level schemaLocation attribute. Updated PublishedBy name to match ROR Registry. ZCB
+         </div>
+        </div>
+        <div class="term">
+         RevisionEvent
+        </div>
+        <div class="definition">
+         <div class="term">
+          ReleaseDate
+         </div>
+         <div class="definition">
+          2026-06-26 13:26:03Z
+         </div>
+         <div class="term">
+          Note
+         </div>
+         <div class="definition">
+          Add 'Z' to PublicationDate, TemporalDescription:TimeSpan:StartDate. ZCB
          </div>
         </div>
        </div>
@@ -1792,7 +1809,7 @@ NASA open data policy applies. Consultation with the instrument team is strongly
          PublicationDate
         </div>
         <div class="definition">
-         2020-01-01 00:00:00
+         2020-01-01 00:00:00Z
         </div>
         <div class="term">
          PublishedBy
@@ -2315,7 +2332,7 @@ NASA open data policy applies. Consultation with the instrument team is strongly
          StartDate
         </div>
         <div class="definition">
-         2018-10-06 00:00:00.000
+         2018-10-06 00:00:00.000Z
         </div>
         <div class="term">
          RelativeStopDate
