@@ -2,13 +2,12 @@
   "Spase": {
     "xmlns": "http://www.spase-group.org/data/schema",
     "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
-    "xsi:schemaLocation": "https://www.spase-group.org/data/schema https://www.spase-group.org/data/schema/spase-2.7.1.xsd",
+    "xsi:schemaLocation": "https://www.spase-group.org/data/schema  https://www.spase-group.org/data/schema/spase-2.7.1.xsd",
     "Version": "2.7.1",
     "MetadataRightsList": {
       "Rights": {
         "SchemeURI": "https://spdx.org/licenses/",
         "RightsIdentifierScheme": "SPDX",
-        "RightsIdentifier": "CC0-1.0",
         "RightsURI": "https://spdx.org/licenses/CC0-1.0.html",
         "RightsName": "Creative Commons Zero v1.0 Universal",
         "Note": "CC0 1.0 Universal is the Creative Commons license applicable to all publicly available SPASE metadata descriptions"
@@ -34,10 +33,14 @@
             {
               "ReleaseDate": "2026-06-26T13:25:34Z",
               "Note": "Add 'Z' to PublicationDate. Added ResourceType and NamingAuthority. Added MetadataRightsList. ZCB"
+            },
+            {
+              "ReleaseDate": "2026-07-20T00:08:46Z",
+              "Note": "Added Parameter descriptions for the SCI and PKT FITS extensions. SY."
             }
           ]
         },
-        "Description": "PADRE MeDDEA Level0 Photon FITS data are uncalibrated hard X-ray event data obtained by the Measuring Directivity to Determine Electron Anisotropy (MeDDEA) instrument on the Solar Polarization and Directivity X-Ray Experiment (PADRE) CubeSat observatory. The Level0 photon files contain the same photon event data as the raw MeDDEA binary data, but converted to FITS format for more convenient analysis. Each raw photon data file generates a single Level0 photon FITS file. The photon product is an on-demand X-ray photon list that is generally available during large flares and calibration periods. Level0 photon files contain event data from detector triggers, including packet-level timing information and science event information such as detector identifier, channel, clock value, and uncalibrated event energy in ADC counts. These data support investigations of the directivity of solar flare hard X-ray emission and the angular distribution of flare-accelerated electrons.",
+        "Description": "PADRE MeDDEA Level0 Photon FITS data are uncalibrated hard X-ray event data obtained by the Measuring Directivity to Determine Electron Anisotropy (MeDDEA) instrument on the Solar Polarization and Directivity X-Ray Experiment (PADRE) CubeSat observatory. The Level0 photon files contain the same photon event data as the raw MeDDEA binary data, but converted to FITS format for more convenient analysis. Each raw photon data file generates a single Level0 photon FITS file. The photon product is an on-demand X-ray photon list that is generally available during large flares and calibration periods. Level0 photon files contain event data from detector triggers, including packet-level timing information and science event information such as detector identifier, channel, clock value, and uncalibrated event pulse height in ADC counts. These data support investigations of the directivity of solar flare hard X-ray emission and the angular distribution of flare-accelerated electrons.",
         "PublicationInfo": {
           "Authors": "The PADRE MeDDEA Team: NASA Goddard Space Flight Center (USA); Space Sciences Laboratory, University of California Berkeley (USA); Southwest Research Institute (USA); University of Applied Sciences and Arts Northwestern Switzerland (Switzerland); CEA-Saclay (France)",
           "PublicationDate": "2025-11-24T00:00:00Z",
@@ -68,7 +71,6 @@
           "Rights": {
             "SchemeURI": "https://spdx.org/licenses/",
             "RightsIdentifierScheme": "SPDX",
-            "RightsIdentifier": "CC0-1.0",
             "RightsURI": "https://spdx.org/licenses/CC0-1.0.html",
             "RightsName": "Creative Commons Zero v1.0 Universal",
             "Note": "CC0 1.0 Universal is the Creative Commons license applicable to all publicly available NASA Heliophysics data products."
@@ -96,6 +98,25 @@
         "Sun",
         "Sun.Chromosphere",
         "Sun.Corona"
+      ],
+      "Parameter": [
+        {
+          "Name": "Photon Event Data, FITS Extension 1",
+          "ParameterKey": "SCI",
+          "Description": "FITS extension 1, named SCI, is a binary table containing one row for each detected photon event. Each row provides the packet sequence number, event clock, ASIC, electronic channel, uncalibrated pulse height in ADC counts, baseline, packet time, packet subsecond clock, and detector pixel identifier.",
+          "Wave": {
+            "WaveType": "Photon",
+            "WaveQuantity": "Intensity"
+          }
+        },
+        {
+          "Name": "Photon Packet Data, FITS Extension 2",
+          "ParameterKey": "PKT",
+          "Description": "FITS extension 2, named PKT, is a binary table containing one row for each telemetry packet. The table contains packet timing and acquisition information, instrument status and data-quality values, and packet-level event summary quantities. Its columns are seqcount, pkttimes, pktclock, pktlength, livetime, inttime, flags, decim_lvl, drop_cnt, int_time_flag, num_hits, rate, and corr_rate.",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        }
       ]
     }
   }
