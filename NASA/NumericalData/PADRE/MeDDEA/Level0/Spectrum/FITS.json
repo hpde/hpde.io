@@ -2,13 +2,12 @@
   "Spase": {
     "xmlns": "http://www.spase-group.org/data/schema",
     "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
-    "xsi:schemaLocation": "https://www.spase-group.org/data/schema https://www.spase-group.org/data/schema/spase-2.7.1.xsd",
+    "xsi:schemaLocation": "https://www.spase-group.org/data/schema  https://www.spase-group.org/data/schema/spase-2.7.1.xsd",
     "Version": "2.7.1",
     "MetadataRightsList": {
       "Rights": {
         "SchemeURI": "https://spdx.org/licenses/",
         "RightsIdentifierScheme": "SPDX",
-        "RightsIdentifier": "CC0-1.0",
         "RightsURI": "https://spdx.org/licenses/CC0-1.0.html",
         "RightsName": "Creative Commons Zero v1.0 Universal",
         "Note": "CC0 1.0 Universal is the Creative Commons license applicable to all publicly available SPASE metadata descriptions"
@@ -34,6 +33,10 @@
             {
               "ReleaseDate": "2026-06-26T13:25:35Z",
               "Note": "Add 'Z' to PublicationDate. Added ResourceType and NamingAuthority. Added MetadataRightsList. ZCB"
+            },
+            {
+              "ReleaseDate": "2026-07-21T00:08:46Z",
+              "Note": "Added Parameter descriptions for the SPEC and PKT FITS extensions. SY."
             }
           ]
         },
@@ -68,7 +71,6 @@
           "Rights": {
             "SchemeURI": "https://spdx.org/licenses/",
             "RightsIdentifierScheme": "SPDX",
-            "RightsIdentifier": "CC0-1.0",
             "RightsURI": "https://spdx.org/licenses/CC0-1.0.html",
             "RightsName": "Creative Commons Zero v1.0 Universal",
             "Note": "CC0 1.0 Universal is the Creative Commons license applicable to all publicly available NASA Heliophysics data products."
@@ -96,6 +98,25 @@
         "Sun",
         "Sun.Chromosphere",
         "Sun.Corona"
+      ],
+      "Parameter": [
+        {
+          "Name": "Photon Spectrum Data, FITS Extension 1",
+          "ParameterKey": "SPEC",
+          "Description": "FITS extension 1, named SPEC, contains the Level 0 photon spectrum data as a compressed three-dimensional image array. The first dimension contains 512 uncalibrated spectral channels, the second dimension contains 24 detector pixels, and the third dimension contains successive spectra acquired during the time interval covered by the file.",
+          "Wave": {
+            "WaveType": "Photon",
+            "WaveQuantity": "Intensity"
+          }
+        },
+        {
+          "Name": "Spectrum Packet Data, FITS Extension 2",
+          "ParameterKey": "PKT",
+          "Description": "FITS extension 2, named PKT, is a binary table containing packet-level information associated with the spectra in FITS extension 1. Each row provides the packet time, packet subsecond clock, ASIC identifiers and electronic channel numbers for the 24 detector pixels, and packet sequence number. Its columns are pkttimes, pktclock, asic, channel, and seqcount.",
+          "Support": {
+            "SupportQuantity": "Other"
+          }
+        }
       ]
     }
   }
