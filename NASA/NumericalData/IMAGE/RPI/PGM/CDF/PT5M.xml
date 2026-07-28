@@ -18,7 +18,7 @@
     <ResourceHeader>
       <ResourceName>IMAGE Radio Plasma Imager (RPI) Plasmagram data in CDF at NASA CDAWeb</ResourceName>
       <DOI>https://doi.org/10.48322/ssj2-gs96</DOI>
-      <ReleaseDate>2025-12-04T13:29:33Z</ReleaseDate>
+      <ReleaseDate>2026-07-21T12:05:21Z</ReleaseDate>
       <RevisionHistory>
         <RevisionEvent>
           <ReleaseDate>2020-07-07T21:14:38Z</ReleaseDate>
@@ -31,6 +31,10 @@
         <RevisionEvent>
           <ReleaseDate>2025-12-04T13:29:33Z</ReleaseDate>
           <Note>Added MetadataRightsList and RightsList(s). Updated to 2.7.1. ZCB</Note>
+        </RevisionEvent>
+        <RevisionEvent>
+          <ReleaseDate>2026-07-21T12:05:21Z</ReleaseDate>
+          <Note>Added HelioData InformationURL. JWL</Note>
         </RevisionEvent>
       </RevisionHistory>
       <Description>Software suggested by the science team for CDF file visualization: (1) Plotting tool at the CDAWeb portal, (2) For analysis beyond static image inspection, including color scale optimization, zooming, text export, alternative data representations in physical units, detailed frequency and time information, overlaid model fpe and fce graphs, and EPS quality figures, use BinBrowser software at UML, http://ulcar.uml.edu/rpi.html</Description>
@@ -60,6 +64,11 @@
         <URL>https://ulcar.uml.edu/rpi.html</URL>
         <Description>IMAGE RPI Instrument page maintained by University of Massachusetts Lowell with RPI description, team, software downloads, software user guides, access to CORPRAL automated prospecting results, mission planning tools and commanding guide, data model descriptions for Level 0 and 1, sonification files of 2003 Halloween storm, and useful links</Description>
         <Language>en</Language>
+      </InformationURL>
+      <InformationURL>
+        <Name>HelioData</Name>
+        <URL>https://helio.data.nasa.gov/dataset/IMAGE_RPI_PGM_CDF_PT5M</URL>
+        <Description>The HelioData dataset page provides an overview of the dataset with access links, associated variables, and more.</Description>
       </InformationURL>
       <Association>
         <AssociationID>spase://NASA/NumericalData/IMAGE/RPI/PGM/CCSDS/PT5M</AssociationID>
@@ -162,7 +171,6 @@
     </Parameter>
     <Parameter>
       <Name>Most Probable Amplitude</Name>
-      <!-- Parameter Key points to the CDF Variable in the file -->
       <ParameterKey>MPA</ParameterKey>
       <Description>Most probable amplitude</Description>
       <Units>3/4 dBnV/m</Units>
@@ -175,7 +183,6 @@
     </Parameter>
     <Parameter>
       <Name>Frequency</Name>
-      <!-- Parameter Key points to the CDF Variable in the file -->
       <ParameterKey>Frequency</ParameterKey>
       <Description>
 </Description>
@@ -198,7 +205,6 @@
     </Parameter>
     <Parameter>
       <Name>Actual Number of Frequencies</Name>
-      <!-- Parameter Key points to the CDF Variable in the file -->
       <ParameterKey>NumFreqs</ParameterKey>
       <Description>Number of frequencies. Detailed plasmagram picture has the original number of frequencies as specified by RPI measurement parameters. Frequency axis varies from plasmagram to plasmagram. Plasmagram *thumbnails* have a fixed frequency axis. The original plasmagram data often requires transformation into thumbnail format by averaging.</Description>
       <ValidMin>0</ValidMin>
@@ -210,7 +216,6 @@
     </Parameter>
     <Parameter>
       <Name>Time Line</Name>
-      <!-- Parameter Key points to the CDF Variable in the file -->
       <ParameterKey>Epoch</ParameterKey>
       <Description>Plasmagram Time. The time in EPOCH referes to the beginning of the plasmagram, Use Duration_ms to obtain stop time of the run.</Description>
       <Caveats>The 5 minutes refers to the nominal interval between measurements. Actual cadence of passive measurement varied between 3 to 6 minutes depending on the RPI science plan and design of measurement schedules.</Caveats>
@@ -222,7 +227,6 @@
     </Parameter>
     <Parameter>
       <Name>Measurement Duration</Name>
-      <!-- Parameter Key points to the CDF Variable in the file -->
       <ParameterKey>Duration_ms</ParameterKey>
       <Description>Duration of one plasmagram measurement.</Description>
       <Units>ms</Units>
@@ -232,7 +236,6 @@
     </Parameter>
     <Parameter>
       <Name>Base Gain</Name>
-      <!-- Parameter Key points to the CDF Variable in the file -->
       <ParameterKey>BaseGain</ParameterKey>
       <Description>Instrument setting describing receiver gains in X/Y and Z channels, encoded. See data model description at http://ulcar.uml.edu/rpi.html for additional details on base gain decoding procedure.</Description>
       <ValidMin>0</ValidMin>
@@ -244,7 +247,6 @@
     </Parameter>
     <Parameter>
       <Name>Program Specifications</Name>
-      <!-- Parameter Key points to the CDF Variable in the file -->
       <ParameterKey>ProgramSpecs</ParameterKey>
       <Description>List of 25 parameter values that specify RPI instrument configuration during the measurement. For further detail on parameter value interpretation see data model description document at http://ulcar.uml.edu/rpi.html.</Description>
       <Cadence>PT5M</Cadence>
@@ -262,7 +264,6 @@
     </Parameter>
     <Parameter>
       <Name>Nadir crossing MET</Name>
-      <!-- Parameter Key points to the CDF Variable in the file -->
       <ParameterKey>NadirMET</ParameterKey>
       <Description>Nadir crossing MET is the reference MET that uniquely identifies all RPI measurements. MET of the last Nadir crossing before the measurement starts.</Description>
       <Cadence>PT5M</Cadence>
@@ -273,7 +274,6 @@
     </Parameter>
     <Parameter>
       <Name>Start MET</Name>
-      <!-- Parameter Key points to the CDF Variable in the file -->
       <ParameterKey>StartMET</ParameterKey>
       <Description>Measurement start MET. Start MET is derived using the Nadir crossing MET and the time offset from the first packet header. Might not be unique due to telemetry losses.</Description>
       <Cadence>PT5M</Cadence>
@@ -284,7 +284,6 @@
     </Parameter>
     <Parameter>
       <Name>Operating Mode</Name>
-      <!-- Parameter Key points to the CDF Variable in the file -->
       <ParameterKey>OpMode</ParameterKey>
       <Description>Calibration, Sounding, Thermal Noise, Relaxation, Whistler, Test Pattern.</Description>
       <Cadence>PT5M</Cadence>
@@ -294,7 +293,6 @@
     </Parameter>
     <Parameter>
       <Name>Number of Dopplers</Name>
-      <!-- Parameter Key points to the CDF Variable in the file -->
       <ParameterKey>NumDopplers</ParameterKey>
       <Cadence>PT5M</Cadence>
       <Support>
@@ -303,7 +301,6 @@
     </Parameter>
     <Parameter>
       <Name>Pulse Repetition Rate</Name>
-      <!-- Parameter Key points to the CDF Variable in the file -->
       <ParameterKey>RepetitionRate</ParameterKey>
       <Description>0.5 pps (1 pulse every 2 sec), 1 pps, 2 pps, 4 pps, 10 pps, 20 pps, 50 pps.</Description>
       <Cadence>PT5M</Cadence>
@@ -314,7 +311,6 @@
     </Parameter>
     <Parameter>
       <Name>Xmtr Antenna Setting</Name>
-      <!-- Parameter Key points to the CDF Variable in the file -->
       <ParameterKey>XmtrAntenna</ParameterKey>
       <Description>1= Radio Silence (no Tx), 2= X antenna only, 3= Y antenna only, 4= X+Y Linearly polarized, 5= X+Y Right Circularly Polarized, 6= X+Y Left Circularly Polarized, 7= X+Y Right/Left Alternated, 8= X+Y Lin/Lin90 Alternated.</Description>
       <Cadence>PT5M</Cadence>
@@ -324,7 +320,6 @@
     </Parameter>
     <Parameter>
       <Name>Coupler Mode</Name>
-      <!-- Parameter Key points to the CDF Variable in the file -->
       <ParameterKey>Couplers</ParameterKey>
       <Description>0= OFF (untuned), 1= ON (tuned)</Description>
       <Cadence>PT5M</Cadence>
@@ -334,7 +329,6 @@
     </Parameter>
     <Parameter>
       <Name>Operating Mode</Name>
-      <!-- Parameter Key points to the CDF Variable in the file -->
       <ParameterKey>Waveform</ParameterKey>
       <Description>1= 16-chip complementary, 2= FM Chirp, 3= Staggered Pulse Sequence, 4= Long Pulse, 5= Short Pulse, 6= 0.5 s Pulse, 7= 1.95 s Pulse, 8= 8-chip complementary, 9= 4-chip complementary.</Description>
       <Cadence>PT5M</Cadence>
@@ -344,7 +338,6 @@
     </Parameter>
     <Parameter>
       <Name>Gain Control</Name>
-      <!-- Parameter Key points to the CDF Variable in the file -->
       <ParameterKey>GainControl</ParameterKey>
       <Description>0= Fixed Gain, 1= Auto Gain.</Description>
       <Cadence>PT5M</Cadence>
@@ -354,7 +347,6 @@
     </Parameter>
     <Parameter>
       <Name>Frequency Search Enabled</Name>
-      <!-- Parameter Key points to the CDF Variable in the file -->
       <ParameterKey>FreqSearch</ParameterKey>
       <Description>0= Search of quiet frequencies disabled, 1= Search of quiet frequencies enabled.</Description>
       <Cadence>PT5M</Cadence>
@@ -364,7 +356,6 @@
     </Parameter>
     <Parameter>
       <Name>Peak Power Constraint</Name>
-      <!-- Parameter Key points to the CDF Variable in the file -->
       <ParameterKey>PeakPower</ParameterKey>
       <Description>Total RPI Peak Power Consumption Constraint.</Description>
       <Cadence>PT5M</Cadence>
@@ -375,7 +366,6 @@
     </Parameter>
     <Parameter>
       <Name>Actual Number of Ranges</Name>
-      <!-- Parameter Key points to the CDF Variable in the file -->
       <ParameterKey>NumRanges</ParameterKey>
       <Description>Number of Ranges, depending on program setting and processing.</Description>
       <Cadence>PT5M</Cadence>
@@ -385,7 +375,6 @@
     </Parameter>
     <Parameter>
       <Name>Range</Name>
-      <!-- Parameter Key points to the CDF Variable in the file -->
       <ParameterKey>Range</ParameterKey>
       <Description>Range readings for 151 range bins.</Description>
       <Cadence>PT5M</Cadence>
@@ -396,7 +385,6 @@
     </Parameter>
     <Parameter>
       <Name>Echo Azimuth angle</Name>
-      <!-- Parameter Key points to the CDF Variable in the file -->
       <ParameterKey>Azimuth</ParameterKey>
       <Description>Echo Azimuth angle. Values 0 to 254 cover 0 to 360 degrees.</Description>
       <Cadence>PT5M</Cadence>
@@ -407,7 +395,6 @@
     </Parameter>
     <Parameter>
       <Name>Echo Zenith angle</Name>
-      <!-- Parameter Key points to the CDF Variable in the file -->
       <ParameterKey>Zenith</ParameterKey>
       <Description>Echo Zenith angle.</Description>
       <Cadence>PT5M</Cadence>
@@ -418,7 +405,6 @@
     </Parameter>
     <Parameter>
       <Name>Echo Doppler Number</Name>
-      <!-- Parameter Key points to the CDF Variable in the file -->
       <ParameterKey>DopplerNumber</ParameterKey>
       <Description>Echo Doppler Number.</Description>
       <Cadence>PT5M</Cadence>
@@ -429,7 +415,6 @@
     </Parameter>
     <Parameter>
       <Name>Doppler Translation</Name>
-      <!-- Parameter Key points to the CDF Variable in the file -->
       <ParameterKey>DopplerTranslation</ParameterKey>
       <Description>Translates Doppler Number to an actual Doppler Frequency. The entries are calculated from program parameters.</Description>
       <Cadence>PT5M</Cadence>
