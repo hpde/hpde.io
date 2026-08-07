@@ -2,12 +2,14 @@
   "Spase": {
     "xmlns": "http://www.spase-group.org/data/schema",
     "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
-    "xsi:schemaLocation": "https://www.spase-group.org/data/schema  https://www.spase-group.org/data/schema/spase-2.7.1.xsd",
-    "Version": "2.7.1",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema  http://www.spase-group.org/data/schema/spase-2_7_2.xsd",
+    "Version": "2.7.2",
+    "Status": "Deprecated",
     "MetadataRightsList": {
       "Rights": {
         "SchemeURI": "https://spdx.org/licenses/",
         "RightsIdentifierScheme": "SPDX",
+        "RightsIdentifier": "CC0-1.0",
         "RightsURI": "https://spdx.org/licenses/CC0-1.0.html",
         "RightsName": "Creative Commons Zero v1.0 Universal",
         "Note": "CC0 1.0 Universal is the Creative Commons license applicable to all publicly available SPASE metadata descriptions"
@@ -42,10 +44,14 @@
             {
               "ReleaseDate": "2026-07-21T12:06:41Z",
               "Note": "Added HelioData InformationURL. JWL"
+            },
+            {
+              "ReleaseDate": "2026-08-07T00:08:46Z",
+              "Note": "Marked the CIM resource as Deprecated. The PUNCH team confirmed that CIM continues to be generated as an intermediate processing product but is no longer distributed through the Solar Data Analysis Center. Changed Availability from Online to Offline, replaced the obsolete CIM AccessURL with the PUNCH Level 3 archive URL, and updated the description. SY"
             }
           ]
         },
-        "Description": "PUNCH level 3 science mosaic images in the clear polarization state. White light unpolarized intensity with F-corona subtraction and without starfield subtraction.\n\nThis dataset is a member of the Collection of PUNCH Level-3 Science Image dataset. Per instructions from the PUNCH team, reference to the entire Collection (including the DOI, see below) should be used when this and other member datasets in the Collection are needed for citation purposes: Southwest Research Institute (2025). PUNCH NFI-WFI Level-3 Science images [Collection]. Solar Data Analysis Center. https://doi.org/10.48322/nnv7-bn21. Access date (assigned on date of landing page access).",
+        "Description": "PUNCH Level 3 intermediate science mosaic images in the clear polarization state. The product contains white-light unpolarized intensity after F-corona subtraction but before starfield removal.\n\nThe PUNCH team continues to generate the CIM product as an intermediate processing product, but CIM is no longer distributed through the Solar Data Analysis Center because of its intermediate nature and large storage requirements. This SPASE record is retained for historical reference.\n\nCTM is the corresponding final clear trefoil science product after removal of F-corona, stray-light, and starfield backgrounds and full calibration. CIM and CTM are distinct processing stages; CTM does not directly supersede CIM.\n\nThis dataset is a member of the Collection of PUNCH Level-3 Science Image datasets. Per instructions from the PUNCH team, reference to the entire Collection, including the DOI below, should be used when this and other member datasets in the Collection are cited:\n\nSouthwest Research Institute (2025). PUNCH NFI-WFI Level-3 Science images [Collection]. Solar Data Analysis Center. https://doi.org/10.48322/nnv7-bn21. Access date (assigned on date of landing page access).",
         "PublicationInfo": {
           "Authors": "Southwest Research Institute",
           "PublicationDate": "2025-10-30T00:00:00Z",
@@ -99,19 +105,21 @@
       },
       "AccessInformation": {
         "RepositoryID": "spase://SMWG/Repository/SDAC",
-        "Availability": "Online",
+        "Availability": "Offline",
         "AccessRights": "Open",
         "RightsList": {
           "Rights": {
             "SchemeURI": "https://spdx.org/licenses/",
             "RightsIdentifierScheme": "SPDX",
-            "RightsURI": "https://spdx.org/licenses/CC0-1.0.html",
-            "RightsName": "Creative Commons Zero v1.0 Universal",
-            "Note": "CC0 1.0 Universal is the Creative Commons license applicable to all publicly available NASA Heliophysics data products"
+            "RightsIdentifier": "CC-BY-4.0",
+            "RightsURI": "https://spdx.org/licenses/CC-BY-4.0.html",
+            "RightsName": "Creative Commons Attribution 4.0 International",
+            "Note": "CC BY 4.0 is the license specified for PUNCH data products"
           }
         },
         "AccessURL": {
-          "URL": "https://umbra.nascom.nasa.gov/punch/3/CIM/"
+          "URL": "https://umbra.nascom.nasa.gov/punch/3/",
+          "Description": "PUNCH Level 3 data archive. CIM products are no longer distributed through the Solar Data Analysis Center and are therefore not available from this archive."
         },
         "Format": "FITS",
         "Encoding": "None"
@@ -123,13 +131,6 @@
         "spase://NASA/Instrument/PUNCH/WFI/3"
       ],
       "MeasurementType": "ImageIntensity",
-      "TemporalDescription": {
-        "TimeSpan": {
-          "StartDate": "2025-05-05T23:25:01Z",
-          "RelativeStopDate": "-P10D"
-        },
-        "Cadence": "PT8M"
-      },
       "ObservedRegion": [
         "Sun",
         "Sun.Corona"
