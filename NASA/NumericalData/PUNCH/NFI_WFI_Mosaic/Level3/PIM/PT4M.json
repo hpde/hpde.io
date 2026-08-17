@@ -2,8 +2,9 @@
   "Spase": {
     "xmlns": "http://www.spase-group.org/data/schema",
     "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
-    "xsi:schemaLocation": "https://www.spase-group.org/data/schema  https://www.spase-group.org/data/schema/spase-2.7.1.xsd",
-    "Version": "2.7.1",
+    "xsi:schemaLocation": "http://www.spase-group.org/data/schema  http://www.spase-group.org/data/schema/spase-2_7_2.xsd",
+    "Version": "2.7.2",
+    "Status": "Deprecated",
     "MetadataRightsList": {
       "Rights": {
         "SchemeURI": "https://spdx.org/licenses/",
@@ -42,10 +43,14 @@
             {
               "ReleaseDate": "2026-07-21T12:06:41Z",
               "Note": "Added HelioData InformationURL. JWL"
+            },
+            {
+              "ReleaseDate": "2026-08-17T00:08:46Z",
+              "Note": "Marked the PIM resource as Deprecated. The PUNCH team confirmed that PIM continues to be generated as an intermediate processing product but is no longer distributed through the Solar Data Analysis Center. Changed Availability from Online to Offline, replaced the obsolete PIM AccessURL with the PUNCH Level 3 archive URL, and updated the description. SY"
             }
           ]
         },
-        "Description": "PUNCH level 3 polarized data in the MZP (Minus, Zero, and Plus for –60°, 0°, and +60°) coordinate framework, proceeded with F-corona subtraction applied, starfield signal unremoved.  This dataset is a member of the Collection of PUNCH Level-3 Science Image dataset. Per instructions from the PUNCH team, reference to the entire Collection (including the DOI, see below) should be used when this and other member datasets in the Collection are needed for citation purposes:\n\nSouthwest Research Institute (2025). PUNCH NFI-WFI Level-3 Science images [Collection]. Solar Data Analysis Center. https://doi.org/10.48322/nnv7-bn21. Access date (assigned on date of landing page access).",
+        "Description": "PUNCH Level 3 intermediate polarized science mosaic images in the MZP (Minus, Zero, and Plus for −60°, 0°, and +60°) coordinate framework. The product contains white-light polarized intensity after F-corona subtraction but before starfield removal and polarization resolution into tB and pB.\n\nThe PUNCH team continues to generate the PIM product as an intermediate processing product, but PIM is no longer distributed through the Solar Data Analysis Center because of its intermediate nature and large storage requirements. This SPASE record is retained for historical reference.\n\nPTM is the corresponding final polarized trefoil science product after background removal and polarization resolution into tB and pB. PIM and PTM are distinct processing stages; PTM does not directly supersede PIM.\n\nThis dataset is a member of the Collection of PUNCH Level-3 Science Image datasets. Per instructions from the PUNCH team, reference to the entire Collection, including the DOI below, should be used when this and other member datasets in the Collection are cited:\n\nSouthwest Research Institute (2025). PUNCH NFI-WFI Level-3 Science images [Collection]. Solar Data Analysis Center. https://doi.org/10.48322/nnv7-bn21. Access date (assigned on date of landing page access).",
         "PublicationInfo": {
           "Authors": "Southwest Research Institute",
           "PublicationDate": "2025-10-30T00:00:00Z",
@@ -100,7 +105,7 @@
       },
       "AccessInformation": {
         "RepositoryID": "spase://SMWG/Repository/SDAC",
-        "Availability": "Online",
+        "Availability": "Offline",
         "AccessRights": "Open",
         "RightsList": {
           "Rights": {
@@ -112,7 +117,8 @@
           }
         },
         "AccessURL": {
-          "URL": "https://umbra.nascom.nasa.gov/punch/3/CIM/"
+          "URL": "https://umbra.nascom.nasa.gov/punch/3/",
+          "Description": "PUNCH Level 3 data archive. PIM products are no longer distributed through the Solar Data Analysis Center and are therefore not available from this archive."
         },
         "Format": "FITS",
         "Encoding": "None"
@@ -124,13 +130,6 @@
         "spase://NASA/Instrument/PUNCH/WFI/3"
       ],
       "MeasurementType": "ImageIntensity",
-      "TemporalDescription": {
-        "TimeSpan": {
-          "StartDate": "2025-06-20T00:02:29Z",
-          "RelativeStopDate": "-P10D"
-        },
-        "Cadence": "PT4M"
-      },
       "ObservedRegion": [
         "Sun",
         "Sun.Corona"
@@ -152,7 +151,7 @@
       "Parameter": [
         {
           "Name": "FITS Primary Data Array",
-          "Description": "White light polarized intensity in the MZP (Minus, Zero, and Plus for –60°, 0°, and +60°) coordinate with F-corona subtraction and without starfield subtraction; Array size: 4096x4096; Pixel Resolution: 81 arcsec; Field of view: 90 degrees",
+          "Description": "White-light polarized intensity in the MZP (Minus, Zero, and Plus for −60°, 0°, and +60°) coordinate framework after F-corona subtraction and before starfield subtraction; Array size: 4096x4096; Pixel Resolution: 81 arcsec; Field of view: 90 degrees",
           "Units": "Mean Solar Brightness",
           "Wave": {
             "WaveType": "Electromagnetic",
