@@ -220,7 +220,7 @@
         ]
     },
     "dateCreated": "2021-01-01T00:00:00",
-    "dateModified": "2026-07-21T12:09:25",
+    "dateModified": "2026-08-26T14:01:48",
     "datePublished": "2021-01-01T00:00:00",
     "description": "Wind Waves RAD2 data in CDF format. Radio receiver band 2 (RAD2) is the high frequency radio astronomy receiver. It sweeps over the range of 1.075 to 13.825 MHz with as many as 256 channels. However, some of the time the number of channels is restricted to 16 or 32 so that direction of arrival and polarization information can be obtained. Radio receiver band 1 (RAD1) is the low frequency radio astronomy receiver. It sweeps over the range of 20 to 1040 kHz with as  many as 256 channels. However, some of the time the number of channels is restricted to 16 or 32 so that direction of arrival and polarization information  can be obtained. The overall frequency range is 4 - 256 kHz. For more information: The Radio and Plasma Wave Investigation on the Wind Spacecraft, Sp.Sci.Rev.,Vol 71, pg, 231-263,1995",
     "identifier": {
@@ -293,43 +293,60 @@
                 "contentType": "CDF",
                 "description": "Download dataset data as CDF file at this URL",
                 "name": "FTPS from SPDF (not with most browsers)",
-                "url": "ftps://spdf.gsfc.nasa.gov/pub/data/wind/waves/rad1_l2/"
+                "url": "ftps://spdf.gsfc.nasa.gov/pub/data/wind/waves/rad2_l2/"
             }
         },
         {
             "@type": "SearchAction",
             "target": {
-                "@id": "https://spdf.gsfc.nasa.gov/pub/data/wind/waves/rad1_l2/",
+                "@id": "https://spdf.gsfc.nasa.gov/pub/data/wind/waves/rad2_l2/",
                 "@type": "EntryPoint",
                 "contentType": "CDF",
                 "description": "Download dataset data as CDF file at this URL",
-                "identifier": "https://spdf.gsfc.nasa.gov/pub/data/wind/waves/rad1_l2/",
+                "identifier": "https://spdf.gsfc.nasa.gov/pub/data/wind/waves/rad2_l2/",
                 "name": "HTTPS from SPDF",
-                "url": "https://spdf.gsfc.nasa.gov/pub/data/wind/waves/rad1_l2/"
+                "url": "https://spdf.gsfc.nasa.gov/pub/data/wind/waves/rad2_l2/"
             }
         },
         {
             "@type": "SearchAction",
             "target": {
-                "@id": "https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=wi_l2_wav_rad2&index=sp_phys",
+                "@id": "https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=WI_L2_WAV_RAD2&index=sp_phys",
                 "@type": "EntryPoint",
                 "contentType": "CDF",
                 "description": "Download dataset data as CDF file at this URL using these product key(s): ['WI_L2_WAV_RAD2']",
-                "identifier": "https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=wi_l2_wav_rad2&index=sp_phys",
+                "identifier": "https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=WI_L2_WAV_RAD2&index=sp_phys",
                 "name": "CDAWeb",
-                "url": "https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=wi_l2_wav_rad2&index=sp_phys"
+                "url": "https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=WI_L2_WAV_RAD2&index=sp_phys"
             }
         },
         {
             "@type": "SearchAction",
+            "query-input": [
+                {
+                    "@type": "PropertyValueSpecification",
+                    "description": "A UTC ISO DateTime. Use 1995-08-19T00:00:00Z as default value.",
+                    "valueName": "start",
+                    "valuePattern": "(-?(?:[1-9][0-9]*)?[0-9]{4})-(1[0-2]|0[1-9])-(3[01]|0[1-9]|[12][0-9])T(2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9])(.[0-9]+)?(Z)?",
+                    "valueRequired": false
+                },
+                {
+                    "@type": "PropertyValueSpecification",
+                    "description": "A UTC ISO DateTime. Use 1995-08-19T00:01:00 as a test end value.",
+                    "valueName": "end",
+                    "valuePattern": "(-?(?:[1-9][0-9]*)?[0-9]{4})-(1[0-2]|0[1-9])-(3[01]|0[1-9]|[12][0-9])T(2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9])(.[0-9]+)?(Z)?",
+                    "valueRequired": false
+                }
+            ],
             "target": {
                 "@id": "https://cdaweb.gsfc.nasa.gov/hapi",
                 "@type": "EntryPoint",
                 "contentType": "CSV",
-                "description": "Download dataset data as CSV file at this URL",
+                "description": "Download dataset labeled by id in CSV format based on the requested start and end dates",
+                "httpMethod": "GET",
                 "identifier": "https://cdaweb.gsfc.nasa.gov/hapi",
                 "name": "CDAWeb HAPI Server",
-                "url": "https://cdaweb.gsfc.nasa.gov/hapi"
+                "urlTemplate": "https://cdaweb.gsfc.nasa.gov/hapi/data?id=WI_L2_WAV_RAD2&time.min={start}&time.max={end}"
             }
         }
     ],
@@ -414,7 +431,7 @@
         "@id": "https://spase-metadata.org/NASA/NumericalData/Wind/WAVES/RAD2/L2/PT16S",
         "@type": "DataDownload",
         "contentUrl": "https://spase-metadata.org/NASA/NumericalData/Wind/WAVES/RAD2/L2/PT16S",
-        "dateModified": "2026-07-21T12:09:25",
+        "dateModified": "2026-08-26T14:01:48",
         "description": "The SPASE metadata describing the indicated dataset.",
         "encodingFormat": "application/xml",
         "identifier": "https://spase-metadata.org/NASA/NumericalData/Wind/WAVES/RAD2/L2/PT16S",
@@ -823,17 +840,17 @@ a.xml-logo:hover {
       </p>
       <ul class="list">
        <li class="list">
-        <a href="ftps://spdf.gsfc.nasa.gov/pub/data/wind/waves/rad1_l2/" target="_blank">
+        <a href="ftps://spdf.gsfc.nasa.gov/pub/data/wind/waves/rad2_l2/" target="_blank">
          FTPS from SPDF (not with most browsers)
         </a>
        </li>
        <li class="list">
-        <a href="https://spdf.gsfc.nasa.gov/pub/data/wind/waves/rad1_l2/" target="_blank">
+        <a href="https://spdf.gsfc.nasa.gov/pub/data/wind/waves/rad2_l2/" target="_blank">
          HTTPS from SPDF
         </a>
        </li>
        <li class="list">
-        <a href="https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=wi_l2_wav_rad2&amp;index=sp_phys" target="_blank">
+        <a href="https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=WI_L2_WAV_RAD2&amp;index=sp_phys" target="_blank">
          CDAWeb
         </a>
        </li>
@@ -1020,7 +1037,7 @@ a.xml-logo:hover {
         ReleaseDate
        </div>
        <div class="definition">
-        2026-07-21 12:09:25Z
+        2026-08-26 14:01:48Z
        </div>
        <div class="term">
         RevisionHistory
@@ -1109,6 +1126,23 @@ a.xml-logo:hover {
          </div>
          <div class="definition">
           Added HelioData InformationURL. JWL
+         </div>
+        </div>
+        <div class="term">
+         RevisionEvent
+        </div>
+        <div class="definition">
+         <div class="term">
+          ReleaseDate
+         </div>
+         <div class="definition">
+          2026-08-26 14:01:48Z
+         </div>
+         <div class="term">
+          Note
+         </div>
+         <div class="definition">
+          Fixed incorrect AccessURLs and missing HAPI ProductKey. ZCB
          </div>
         </div>
        </div>
@@ -1501,8 +1535,8 @@ a.xml-logo:hover {
          URL
         </div>
         <div class="definition">
-         <a href="ftps://spdf.gsfc.nasa.gov/pub/data/wind/waves/rad1_l2/" target="_blank">
-          ftps://spdf.gsfc.nasa.gov/pub/data/wind/waves/rad1_l2/
+         <a href="ftps://spdf.gsfc.nasa.gov/pub/data/wind/waves/rad2_l2/" target="_blank">
+          ftps://spdf.gsfc.nasa.gov/pub/data/wind/waves/rad2_l2/
          </a>
         </div>
         <div class="term">
@@ -1534,8 +1568,8 @@ a.xml-logo:hover {
          URL
         </div>
         <div class="definition">
-         <a href="https://spdf.gsfc.nasa.gov/pub/data/wind/waves/rad1_l2/" target="_blank">
-          https://spdf.gsfc.nasa.gov/pub/data/wind/waves/rad1_l2/
+         <a href="https://spdf.gsfc.nasa.gov/pub/data/wind/waves/rad2_l2/" target="_blank">
+          https://spdf.gsfc.nasa.gov/pub/data/wind/waves/rad2_l2/
          </a>
         </div>
         <div class="term">
@@ -1561,8 +1595,8 @@ a.xml-logo:hover {
          URL
         </div>
         <div class="definition">
-         <a href="https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=wi_l2_wav_rad2&amp;index=sp_phys" target="_blank">
-          https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=wi_l2_wav_rad2&amp;index=sp_phys
+         <a href="https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=WI_L2_WAV_RAD2&amp;index=sp_phys" target="_blank">
+          https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=WI_L2_WAV_RAD2&amp;index=sp_phys
          </a>
         </div>
         <div class="term">
@@ -1698,6 +1732,12 @@ a.xml-logo:hover {
         </div>
         <div class="definition">
          HAPI
+        </div>
+        <div class="term">
+         ProductKey
+        </div>
+        <div class="definition">
+         WI_L2_WAV_RAD2
         </div>
         <div class="term">
          Description
