@@ -218,7 +218,7 @@
         ]
     },
     "dateCreated": "2020-01-01T00:00:00",
-    "dateModified": "2026-07-21T12:06:14",
+    "dateModified": "2026-10-16T20:01:40",
     "datePublished": "2020-01-01T00:00:00",
     "description": "PSP FIELDS Digital Fields Board (DFB), Differential Voltage data:\n\nThe DFB is the low frequency, less than 75 kHz, component of the FIELDS experiment on the Parker Solar Probe spacecraft, see reference [1] below. For a full description of the FIELDS experiment, see reference [2]. For a description of the DFB, see reference [3].\n\nDFB burst waveform data consist of short bursts of time-series data from various FIELDS sensors. These data have been filtered by both analog and digital filters [3]. These data are pre-sorted by onboard competitive selection algorithms described in [3] before storage by FIELDS. A subset of this stored burst data is telemetered to Earth for scientist-selected regions of interest.\n\nThe Level 2 data products contained in this data file have been calibrated for:\n\n* 1) DFB in-band gain\n* 2) DFB analog filter gain/phase response\n* 3) DFB digital filter phase response\n* 4) The search coil preamplifier gain/phase response, when applicable\n\nCalibrations for the FIELDS voltage sensor preamplifiers have not been implemented as the preamplifier response is flat and equal to one through the DFB frequency range. Corrections for plasma sheath impedance gain and antenna effective length have not been applied to voltage sensor signals. These corrections will be applied in the Level 3 DFB data products. Therefore, all voltage sensor quantities when present in these Level 2 data products are expressed by using units of Volts. Likewise, all magnetic field quantities when present in these Level 2 data products are expressed by using units of nT.\n\nThe Level 2 voltage data products when present in these data files are expressed in sensor coordinates: [dV12,dV34] for voltage measurements. Likewise, the Level 2 search coil magnetomete data products when present in these data files are expressed in sensor coordinates: [u,v,w] for magnetic field measurements.\n\nThe time resolution of the DFB burst waveform data can vary by multiples of 2^N. During encounter when PSP is within 0.25 AU of the Sun, the DFB burst waveform data cadence is typically 150,000 samples/s. This rate is the sample rate of the analog to digital converters, ADC, and data taken at this rate do not pass through a digital filter.\n\nReferences:\n\n* 1) Fox, N.J., Velli, M.C., Bale, S.D. et al., Space Sci Rev (2016) 204:7. https://doi.org/10.1007/s1121401502116\n* 2) Bale, S.D., Goetz, K., Harvey, P.R. et al., Space Sci Rev (2016) 204:49. https://doi.org/10.1007/s1121401602445\n* 3) Malaspina, D.M., Ergun, R.E., Bolton, M. et al., JGR Space Phys. (2016), 121, 5088-5096. https://doi.org/10.1002/2016JA022344",
     "identifier": {
@@ -325,7 +325,10 @@
                 "httpMethod": "GET",
                 "identifier": "https://cdaweb.gsfc.nasa.gov/hapi",
                 "name": "CDAWeb HAPI Server",
-                "urlTemplate": "https://cdaweb.gsfc.nasa.gov/hapi/data?id=PSP_FLD_L2_DFB_DBM_DVAC&time.min={start}&time.max={end}"
+                "urlTemplate": [
+                    "https://cdaweb.gsfc.nasa.gov/hapi/data?id=PSP_FLD_L2_DFB_DBM_DVAC@0&time.min={start}&time.max={end}",
+                    "https://cdaweb.gsfc.nasa.gov/hapi/data?id=PSP_FLD_L2_DFB_DBM_DVAC@1&time.min={start}&time.max={end}"
+                ]
             }
         }
     ],
@@ -521,7 +524,7 @@
         "@id": "https://spase-metadata.org/NASA/NumericalData/ParkerSolarProbe/FIELDS/DFB/Level2/AC/BurstMemory/DV/PT0.0068267S",
         "@type": "DataDownload",
         "contentUrl": "https://spase-metadata.org/NASA/NumericalData/ParkerSolarProbe/FIELDS/DFB/Level2/AC/BurstMemory/DV/PT0.0068267S",
-        "dateModified": "2026-07-21T12:06:14",
+        "dateModified": "2026-10-16T20:01:40",
         "description": "The SPASE metadata describing the indicated dataset.",
         "encodingFormat": "application/xml",
         "identifier": "https://spase-metadata.org/NASA/NumericalData/ParkerSolarProbe/FIELDS/DFB/Level2/AC/BurstMemory/DV/PT0.0068267S",
@@ -1141,7 +1144,7 @@ a.xml-logo:hover {
     <div>
      <div class="product">
       <p class="version">
-       Version:2.7.1
+       Version:2.7.2
       </p>
       <h1>
        MetadataRightsList
@@ -1190,7 +1193,7 @@ a.xml-logo:hover {
      </div>
      <div class="product">
       <p class="version">
-       Version:2.7.1
+       Version:2.7.2
       </p>
       <h1>
        NumericalData
@@ -1233,7 +1236,7 @@ a.xml-logo:hover {
         ReleaseDate
        </div>
        <div class="definition">
-        2026-07-21 12:06:14Z
+        2026-10-16 20:01:40Z
        </div>
        <div class="term">
         RevisionHistory
@@ -1339,6 +1342,23 @@ a.xml-logo:hover {
          </div>
          <div class="definition">
           Added HelioData InformationURL. JWL
+         </div>
+        </div>
+        <div class="term">
+         RevisionEvent
+        </div>
+        <div class="definition">
+         <div class="term">
+          ReleaseDate
+         </div>
+         <div class="definition">
+          2026-10-16 20:01:40Z
+         </div>
+         <div class="term">
+          Note
+         </div>
+         <div class="definition">
+          Update to 2.7.2. Correct HAPI ProductKey. ZCB
          </div>
         </div>
        </div>
@@ -2146,7 +2166,13 @@ a.xml-logo:hover {
          ProductKey
         </div>
         <div class="definition">
-         PSP_FLD_L2_DFB_DBM_DVAC
+         PSP_FLD_L2_DFB_DBM_DVAC@0
+        </div>
+        <div class="term">
+         ProductKey
+        </div>
+        <div class="definition">
+         PSP_FLD_L2_DFB_DBM_DVAC@1
         </div>
         <div class="term">
          Description
