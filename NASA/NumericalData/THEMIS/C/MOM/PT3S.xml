@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.spase-group.org/data/schema https://www.spase-group.org/data/schema/spase-2.7.1.xsd">
-  <Version>2.7.1</Version>
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.spase-group.org/data/schema https://www.spase-group.org/data/schema/spase-2.7.2.xsd">
+  <Version>2.7.2</Version>
   <MetadataRightsList>
     <Rights>
       <SchemeURI>https://spdx.org/licenses/</SchemeURI>
@@ -19,7 +19,7 @@
       <ResourceName>THEMIS-C: On Board moments: ESA and SST Electron/Ion moments, density, flux, velocity, pressure and temperature.</ResourceName>
       <AlternateName>THEMIS-C MOM</AlternateName>
       <DOI>https://doi.org/10.48322/y91r-j665</DOI>
-      <ReleaseDate>2026-07-21T12:07:37Z</ReleaseDate>
+      <ReleaseDate>2026-10-23T12:54:49Z</ReleaseDate>
       <RevisionHistory>
         <RevisionEvent>
           <ReleaseDate>2021-04-27T15:38:11Z</ReleaseDate>
@@ -48,6 +48,10 @@
         <RevisionEvent>
           <ReleaseDate>2026-07-21T12:07:37Z</ReleaseDate>
           <Note>Added HelioData InformationURL. JWL</Note>
+        </RevisionEvent>
+        <RevisionEvent>
+          <ReleaseDate>2026-10-23T12:54:49Z</ReleaseDate>
+          <Note>Added HelioCloud S3 AccessURL. Updated to 2.7.2. ZCB</Note>
         </RevisionEvent>
       </RevisionHistory>
       <Description>THEMIS-C On Board moments. On board data outputs include number density, particle flux, energy flux, and a six component symetric momentum flux tensor. Other moments are calculated from these partial moments on the ground adding total pressure, velocity, plasma temperature (measured as a three dimensional energy vector), and a six component symetric pressure tensor to the list of data products. Number density and total pressure are scalar outputs. Velocity is calculated in DSL, GSE, GSM, and MFA coordinates (coordinate descriptions are listed below in Table 1). Magnetic Field Aligned pressure tensor and temperature are calculated as well. All quantities are calculated for both ions and electrons from a combination of ESA and SST data. Moments data are taken at spin resolution in all ESA survey modes except burst. The spacecraft potential, as measure by the EFI, is used to correct for spacecraft charging by shifting the particle energies for calculation; this eliminates contamination from photo-electrons. Also, weighting factors are used to account for instrument specific energy and angle efficiency variations. Table 1: Coordinate Descriptions. Despun Sun - L-vector (DSL): Z-axis points towards the spin axis, the Y-axis is obtained from the cross product of Z and the Spacecraft-Sun direction as viewed from the probe. The X-axis sits in the Z-axis-Sun plane and completes a right handed system. Geocentric Solar Ecliptic (GSE): Z-axis is normal to the solar ecliptic, the X-axis points from earth towards the Sun, and Y complets a right handed system. Geocentric solar Magnetosphereic (GSM): X-axis points from Earth to the Sun, the Y-axis is orthogonal to the Earth's magnetic dipole and points towards the dusk side, and the X-Z plane contains the dipole axis. Magnetic Field Aligned (MFA): Z-axis points along magnetic field lines, the Y-axis is the orthonormal cross product of the Z-axis and a vector pointing towards the Sun, and the X-axis completes the right handed system.</Description>
@@ -170,6 +174,31 @@
       </AccessURL>
       <Format>CDF</Format>
       <Encoding>None</Encoding>
+    </AccessInformation>
+    <AccessInformation>
+      <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF</RepositoryID>
+      <Availability>Online</Availability>
+      <AccessRights>Open</AccessRights>
+      <RightsList>
+        <Rights>
+          <SchemeURI>https://spdx.org/licenses/</SchemeURI>
+          <RightsIdentifierScheme>SPDX</RightsIdentifierScheme>
+          <RightsIdentifier>CC0-1.0</RightsIdentifier>
+          <RightsURI>https://spdx.org/licenses/CC0-1.0.html</RightsURI>
+          <RightsName>Creative Commons Zero v1.0 Universal</RightsName>
+          <Note>CC0 1.0 Universal is the Creative Commons license applicable to all publicly available NASA Heliophysics data products</Note>
+        </Rights>
+      </RightsList>
+      <AccessURL>
+        <Name>HelioCloud Catalog Endpoint</Name>
+        <URL>https://api.heliocloud.org/cloudcatalog?id=THC_L2_MOM</URL>
+        <Style>Overview</Style>
+        <ProductKey>THC_L2_MOM</ProductKey>
+        <Description>Endpoint to access the data from HelioCloud. Data is split into one CSV file per year.</Description>
+      </AccessURL>
+      <Format>CSV</Format>
+      <Encoding>S3_BUCKET</Encoding>
+      <Acknowledgement>Please acknowledge the THEMIS science team and the CDAWeb team at GSFC/SPDF.</Acknowledgement>
     </AccessInformation>
     <ProcessingLevel>Calibrated</ProcessingLevel>
     <ProviderProcessingLevel>Level 2</ProviderProcessingLevel>

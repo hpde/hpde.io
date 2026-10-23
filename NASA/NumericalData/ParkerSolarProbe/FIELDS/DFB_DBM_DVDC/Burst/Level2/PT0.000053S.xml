@@ -17,7 +17,7 @@
     <ResourceType>NumericalData</ResourceType>
     <ResourceHeader>
       <ResourceName>Digital Fields Board Differential Voltage Burst Waveform, Data</ResourceName>
-      <ReleaseDate>2026-10-16T20:01:40Z</ReleaseDate>
+      <ReleaseDate>2026-10-23T12:53:20Z</ReleaseDate>
       <RevisionHistory>
         <RevisionEvent>
           <ReleaseDate>2025-07-07T12:34:56.789Z</ReleaseDate>
@@ -38,6 +38,10 @@
         <RevisionEvent>
           <ReleaseDate>2026-10-16T20:01:40Z</ReleaseDate>
           <Note>Update to 2.7.2. Correct HAPI ProductKey. ZCB</Note>
+        </RevisionEvent>
+        <RevisionEvent>
+          <ReleaseDate>2026-10-23T12:53:20Z</ReleaseDate>
+          <Note>Added HelioCloud S3 AccessURL. ZCB</Note>
         </RevisionEvent>
       </RevisionHistory>
       <Description>PSP FIELDS Digital Fields Board (DFB), Differential Voltage data. The DFB is the low frequency (&lt; 75 kHz) component of the FIELDS experiment on the Parker Solar Probe spacecraft [1]. For a full description of the FIELDS experiment, see [2]. For a description of the DFB, see [3]. DFB burst waveform data consist of short bursts of time-series data from various FIELDS sensors. These data have been filtered by both analog and digital filters [3]. These data are pre-sorted by on-board competitive selection algorithms described in [3] before storage by FIELDS. A sub-set of this stored burst data is telemetered to Earth for scientist-selected regions of interest. The Level 2 data products contained in this data file have been calibrated for (i) DFB in-band gain, (ii) DFB analog filter gain/phase response, (iii) DFB digital filter phase response, and (iv) the search coil preamplifier gain/phase response (when applicable). Calibrations for the FIELDS voltage sensor preamplifiers have not been implemented, as the preamplifier response is flat and equal to 1 through the DFB frequency range.  Corrections for plasma sheath impedance gain and antenna effective length have not been applied to the voltage sensor data (these corrections will be applied in Level 3 DFB data), therefore units for all voltage sensor quantities are Volts.  Units for all magnetic field quantities are nT. The Level 2 data products contained in this data file are in sensor coordinates (e.g. dV12, dV34 for voltage measurements, and u,v,w for the search coil magnetometer). Time resolution for the DFB burst waveform data can vary by multiples of 2^N.  During encounter (when PSP is within 0.25 AU of the Sun), cadence for the DFB burst waveform data is typically 150,000 samples/second.  This rate is the sample rate of the ADC, and data taken at this rate do not pass through a digital filter.
@@ -130,6 +134,31 @@ References:
         <Description>Web Service to this product using the HAPI interface.</Description>
       </AccessURL>
       <Format>CSV</Format>
+      <Acknowledgement>Please acknowledge the Principal Investigator Stuart D. Bale (bale@ssl.berkeley.edu). Please acknowledge the Data Providers and CDAWeb when using these Data.</Acknowledgement>
+    </AccessInformation>
+    <AccessInformation>
+      <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF</RepositoryID>
+      <Availability>Online</Availability>
+      <AccessRights>Open</AccessRights>
+      <RightsList>
+        <Rights>
+          <SchemeURI>https://spdx.org/licenses/</SchemeURI>
+          <RightsIdentifierScheme>SPDX</RightsIdentifierScheme>
+          <RightsIdentifier>CC0-1.0</RightsIdentifier>
+          <RightsURI>https://spdx.org/licenses/CC0-1.0.html</RightsURI>
+          <RightsName>Creative Commons Zero v1.0 Universal</RightsName>
+          <Note>CC0 1.0 Universal is the Creative Commons license applicable to all publicly available NASA Heliophysics data products</Note>
+        </Rights>
+      </RightsList>
+      <AccessURL>
+        <Name>HelioCloud Catalog Endpoint</Name>
+        <URL>https://api.heliocloud.org/cloudcatalog?id=PSP_FLD_L2_DFB_DBM_DVDC</URL>
+        <Style>Overview</Style>
+        <ProductKey>PSP_FLD_L2_DFB_DBM_DVDC</ProductKey>
+        <Description>Endpoint to access the data from HelioCloud. Data is split into one CSV file per year.</Description>
+      </AccessURL>
+      <Format>CSV</Format>
+      <Encoding>S3_BUCKET</Encoding>
       <Acknowledgement>Please acknowledge the Principal Investigator Stuart D. Bale (bale@ssl.berkeley.edu). Please acknowledge the Data Providers and CDAWeb when using these Data.</Acknowledgement>
     </AccessInformation>
     <ProcessingLevel>Calibrated</ProcessingLevel>

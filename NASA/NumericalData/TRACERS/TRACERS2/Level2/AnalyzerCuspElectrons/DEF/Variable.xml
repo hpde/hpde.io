@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.spase-group.org/data/schema https://www.spase-group.org/data/schema/spase-2.7.1.xsd">
-  <Version>2.7.1</Version>
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.spase-group.org/data/schema https://www.spase-group.org/data/schema/spase-2.7.2.xsd">
+  <Version>2.7.2</Version>
   <MetadataRightsList>
     <Rights>
       <SchemeURI>https://spdx.org/licenses/</SchemeURI>
@@ -18,7 +18,7 @@
     <ResourceHeader>
       <ResourceName>TRACERS 2 Analyzer of Cusp Electrons (ACE) Differential Energy Flux and Counts, Level 2 (L2), Data</ResourceName>
       <DOI>https://doi.org/10.48322/vfwx-4a76</DOI>
-      <ReleaseDate>2026-07-21T12:08:12Z</ReleaseDate>
+      <ReleaseDate>2026-10-23T12:55:00Z</ReleaseDate>
       <RevisionHistory>
         <RevisionEvent>
           <ReleaseDate>2026-04-28T12:34:56.789Z</ReleaseDate>
@@ -35,6 +35,10 @@
         <RevisionEvent>
           <ReleaseDate>2026-07-21T12:08:12Z</ReleaseDate>
           <Note>Added HelioData InformationURL. JWL</Note>
+        </RevisionEvent>
+        <RevisionEvent>
+          <ReleaseDate>2026-10-23T12:55:00Z</ReleaseDate>
+          <Note>Added HelioCloud S3 AccessURL. Updated to 2.7.2. ZCB</Note>
         </RevisionEvent>
       </RevisionHistory>
       <Description>The ACE L2 data consist of raw measured counts and calibrated differential energy fluxes as a function of anode angle and calibrated energy. Counts are accumulated in 21 discrete anodes with different viewing angles for each of 49 energy steps, with a basic measurement cadence of 50 ms. Counts are converted to differential energy flux by subtracting an estimate of the background and then dividing by the instrument calibration matrix. The estimated background count rates and calibration matrix are included in the L2 data files, enabling application of alternative background subtraction methods or calibrations.  Background estimates include two sources: 1) Instrumental background due to electronics crosstalk, which is constant across all anodes but varies with energy. 2) Natural background due to penetrating energetic particles and natural radioactivity in the microchannel plate detectors, which is constant across all anodes and energies. Subtraction of background can lead to negative differential energy fluxes, especially for low count rate data. Depending on the use case, these negative values can either be retained or replaced with zeroes.  The calibration matrix incorporates instrument sensitivity and relative sensitivity factors for each anode, both estimated based upon a combination of pre-flight laboratory calibrations and inflight data. Energy values for each energy step and anode are computed utilizing the known sweep voltage table and pre-flight laboratory calibrations.  The ACE instrument was intended to be operated in a particular spacecraft orientation, with the TSCS +Z axis aligned with the magnetic field. In this orientation, incoming electron trajectories are not occluded by the spacecraft. However, for a portion of the TRACERS mission, the spacecraft are oriented in the opposite sense, which leads to an occlusion of a portion of the instrument field of view by the spacecraft body for low-energy (&lt;~200 eV) electrons. Low-energy ACE data should not be utilized for quantitative purposes when the spacecraft are in this orientation.</Description>
@@ -129,6 +133,31 @@
       </AccessURL>
       <Format>CDF</Format>
       <Encoding>None</Encoding>
+      <Acknowledgement>Please acknowledge the Principal Investigator . Please acknowledge the Data Providers and CDAWeb when using these Data.</Acknowledgement>
+    </AccessInformation>
+    <AccessInformation>
+      <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF</RepositoryID>
+      <Availability>Online</Availability>
+      <AccessRights>Open</AccessRights>
+      <RightsList>
+        <Rights>
+          <SchemeURI>https://spdx.org/licenses/</SchemeURI>
+          <RightsIdentifierScheme>SPDX</RightsIdentifierScheme>
+          <RightsIdentifier>CC0-1.0</RightsIdentifier>
+          <RightsURI>https://spdx.org/licenses/CC0-1.0.html</RightsURI>
+          <RightsName>Creative Commons Zero v1.0 Universal</RightsName>
+          <Note>CC0 1.0 Universal is the Creative Commons license applicable to all publicly available NASA Heliophysics data products</Note>
+        </Rights>
+      </RightsList>
+      <AccessURL>
+        <Name>HelioCloud Catalog Endpoint</Name>
+        <URL>https://api.heliocloud.org/cloudcatalog?id=TS2_L2_ACE_DEF</URL>
+        <Style>Overview</Style>
+        <ProductKey>TS2_L2_ACE_DEF</ProductKey>
+        <Description>Endpoint to access the data from HelioCloud. Data is split into one CSV file per year.</Description>
+      </AccessURL>
+      <Format>CSV</Format>
+      <Encoding>S3_BUCKET</Encoding>
       <Acknowledgement>Please acknowledge the Principal Investigator . Please acknowledge the Data Providers and CDAWeb when using these Data.</Acknowledgement>
     </AccessInformation>
     <ProcessingLevel>Calibrated</ProcessingLevel>

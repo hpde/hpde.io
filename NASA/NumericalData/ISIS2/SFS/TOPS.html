@@ -107,7 +107,7 @@
         }
     ],
     "dateCreated": "2025-11-14T16:02:28",
-    "dateModified": "2026-07-21T12:05:33",
+    "dateModified": "2026-10-23T12:52:08",
     "datePublished": "2025-11-14T16:02:28",
     "description": "This data set, provided by the Communications Research Centre (CRC) in Ottawa, Canada, consists of electron density profiles for the ionosphere above the F2 maximum (topside ionosphere). The data are computed from digital values of frequency and virtual height, scaled from ionograms that are measured by the ISIS 2 (International Satellites for Ionospheric Studies) Swept-Frequency Sounder. The data are ordered chronologically. Telemetry stations are not identified, but satellite location, Greenwich mean time of observation, solar zenith angle at the satellite, dip latitude at the satellite, total electron content down to the lowest height of topside signal reflection (normally near 300 km), and other relevant information is noted with each profile. The format gives sequences of numbers for each point scaled from the ionogram. These sequences include electron density at the successive points, and the coefficients a2, b3, b4, b5, etc. from which geometric heights can be calculated, using formulas 40 and 41 in J. E. Jackson, \"The reduction of topside ionograms to electron-density profiles,\" Proceedings of the IEEE., p. 960, June 1969. These formulas can also be used to calculate interpolated density-height values. A CRC interpolation program (available at NSSDC) can be used with this data set.\n\n     Format Description (ASCII):\n\n+------------------------------------------------+\n| M |              I5 |     number of records |\n+------------------------------------------------+\n\neach record consists of a header and then the electron density profile data\n\nHEADER:\n\n+------------------------------------------------+\n|itype  |         I1 |     spacecraft identifier |\n|iquality |        I2 |     quality index* |\n|date |           I6 |     yddd            year and day of year |\n|time  |           I6 |     hhmmss  hour minutes and seconds |\n|long |           F6.1 |   longitude in degrees |\n|lat |             F6.2 |   latitude in degrees |\n|dip |            F6.2 |   magnetic inclination (IGRF) |\n|L  |             F5.2 |   L value |\n|xhi |            F6.1 |   solar zenith angle at 100 km |\n|Rz12 |           I3 |      12-month-running mean of sunspot number |\n|IG12 |           I3 |     12-month-running mean of IG index |\n|rtec |            F6.2 |    TEC found in data set (units?) |\n|ln(NmF2) |       F7.4 |   IRI value for F2 peak in cm-3 |\n|hmF2  |          F5.1 |    IRI value for F2 peak height in km |\n|TEC_IRI | \t    F6.2 |   IRI value for TEC in TECU |\n|n |              I3 |      number of data points |\n+------------------------------------------------+\n\n (*) Quality index ranges from 0 (best) to 10 (worst), actually 4 to 10 for these \n   data sets, with a most likely value of 6. \n\n\n\nPROFILE DATA:\n\n+---------------------------------------+\n|n height values: |        14I5 |     h/km*10 |\n|n density values: |       10I7 |     ln(Ne/cm-3)*100000 |\n+---------------------------------------+\n\nstarting with the highest value (satellite height).\n\n\n      ",
     "identifier": {
@@ -223,6 +223,18 @@
                 "identifier": "https://cdaweb.gsfc.nasa.gov/hapi",
                 "name": "CDAWeb HAPI Server",
                 "urlTemplate": "https://cdaweb.gsfc.nasa.gov/hapi/data?id=I2_NEPROF_TOPS&time.min={start}&time.max={end}"
+            }
+        },
+        {
+            "@type": "SearchAction",
+            "target": {
+                "@id": "https://api.heliocloud.org/cloudcatalog?id=I2_NEPROF_TOPS",
+                "@type": "EntryPoint",
+                "contentType": "application/csv",
+                "description": "Download dataset data as application/csv file at this URL",
+                "identifier": "https://api.heliocloud.org/cloudcatalog?id=I2_NEPROF_TOPS",
+                "name": "HelioCloud Catalog Endpoint",
+                "url": "https://api.heliocloud.org/cloudcatalog?id=I2_NEPROF_TOPS"
             }
         }
     ],
@@ -355,7 +367,7 @@
         "@id": "https://spase-metadata.org/NASA/NumericalData/ISIS2/SFS/TOPS",
         "@type": "DataDownload",
         "contentUrl": "https://spase-metadata.org/NASA/NumericalData/ISIS2/SFS/TOPS",
-        "dateModified": "2026-07-21T12:05:33",
+        "dateModified": "2026-10-23T12:52:08",
         "description": "The SPASE metadata describing the indicated dataset.",
         "encodingFormat": "application/xml",
         "identifier": "https://spase-metadata.org/NASA/NumericalData/ISIS2/SFS/TOPS",
@@ -793,6 +805,11 @@ a.xml-logo:hover {
          HAPI: CDAWeb HAPI Server
         </a>
        </li>
+       <li class="list">
+        <a href="https://api.heliocloud.org/cloudcatalog?id=I2_NEPROF_TOPS" target="_blank">
+         Overview: HelioCloud Catalog Endpoint
+        </a>
+       </li>
       </ul>
      </div>
      <div class="citation inset">
@@ -949,7 +966,7 @@ a.xml-logo:hover {
     <div>
      <div class="product">
       <p class="version">
-       Version:2.7.1
+       Version:2.7.2
       </p>
       <h1>
        MetadataRightsList
@@ -998,7 +1015,7 @@ a.xml-logo:hover {
      </div>
      <div class="product">
       <p class="version">
-       Version:2.7.1
+       Version:2.7.2
       </p>
       <h1>
        NumericalData
@@ -1041,7 +1058,7 @@ a.xml-logo:hover {
         ReleaseDate
        </div>
        <div class="definition">
-        2026-07-21 12:05:33Z
+        2026-10-23 12:52:08Z
        </div>
        <div class="term">
         RevisionHistory
@@ -1164,6 +1181,23 @@ a.xml-logo:hover {
          </div>
          <div class="definition">
           Added HelioData InformationURL. JWL
+         </div>
+        </div>
+        <div class="term">
+         RevisionEvent
+        </div>
+        <div class="definition">
+         <div class="term">
+          ReleaseDate
+         </div>
+         <div class="definition">
+          2026-10-23 12:52:08Z
+         </div>
+         <div class="term">
+          Note
+         </div>
+         <div class="definition">
+          Added HelioCloud S3 AccessURL. Updated to 2.7.2. ZCB
          </div>
         </div>
        </div>
@@ -1861,6 +1895,128 @@ a.xml-logo:hover {
        </div>
        <div class="definition">
         CSV
+       </div>
+      </div>
+      <div class="term">
+       AccessInformation
+      </div>
+      <div class="definition">
+       <div class="term">
+        RepositoryID
+       </div>
+       <div class="definition">
+        <a href="https://spase-metadata.org/SMWG/Repository/NASA/GSFC/SPDF.html">
+         spase://SMWG/Repository/NASA/GSFC/SPDF
+        </a>
+       </div>
+       <div class="term">
+        Availability
+       </div>
+       <div class="definition">
+        Online
+       </div>
+       <div class="term">
+        AccessRights
+       </div>
+       <div class="definition">
+        Open
+       </div>
+       <div class="term">
+        RightsList
+       </div>
+       <div class="definition">
+        <div class="term">
+         Rights
+        </div>
+        <div class="definition">
+         <div class="term">
+          SchemeURI
+         </div>
+         <div class="definition">
+          https://spdx.org/licenses/
+         </div>
+         <div class="term">
+          RightsIdentifierScheme
+         </div>
+         <div class="definition">
+          SPDX
+         </div>
+         <div class="term">
+          RightsIdentifier
+         </div>
+         <div class="definition">
+          CC0-1.0
+         </div>
+         <div class="term">
+          RightsURI
+         </div>
+         <div class="definition">
+          https://spdx.org/licenses/CC0-1.0.html
+         </div>
+         <div class="term">
+          RightsName
+         </div>
+         <div class="definition">
+          Creative Commons Zero v1.0 Universal
+         </div>
+         <div class="term">
+          Note
+         </div>
+         <div class="definition">
+          CC0 1.0 Universal is the Creative Commons license applicable to all publicly available NASA Heliophysics data products
+         </div>
+        </div>
+       </div>
+       <div class="term">
+        AccessURL
+       </div>
+       <div class="definition">
+        <div class="term">
+         Name
+        </div>
+        <div class="definition">
+         HelioCloud Catalog Endpoint
+        </div>
+        <div class="term">
+         URL
+        </div>
+        <div class="definition">
+         <a href="https://api.heliocloud.org/cloudcatalog?id=I2_NEPROF_TOPS" target="_blank">
+          https://api.heliocloud.org/cloudcatalog?id=I2_NEPROF_TOPS
+         </a>
+        </div>
+        <div class="term">
+         Style
+        </div>
+        <div class="definition">
+         Overview
+        </div>
+        <div class="term">
+         ProductKey
+        </div>
+        <div class="definition">
+         I2_NEPROF_TOPS
+        </div>
+        <div class="term">
+         Description
+        </div>
+        <div class="definition markdown">
+         <p>
+          Endpoint to access the data from HelioCloud. Data is split into one CSV file per year.
+         </p>
+        </div>
+       </div>
+       <div class="term">
+        Format
+       </div>
+       <div class="definition">
+        CSV
+       </div>
+       <div class="term">
+        Encoding
+       </div>
+       <div class="definition">
+        S3_BUCKET
        </div>
       </div>
       <div class="term">

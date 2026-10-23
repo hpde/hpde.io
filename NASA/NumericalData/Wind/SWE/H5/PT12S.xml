@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<Spase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.spase-group.org/data/schema" xsi:schemaLocation="https://www.spase-group.org/data/schema https://www.spase-group.org/data/schema/spase-2.7.1.xsd">
-  <Version>2.7.1</Version>
+<Spase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.spase-group.org/data/schema" xsi:schemaLocation="https://www.spase-group.org/data/schema https://www.spase-group.org/data/schema/spase-2.7.2.xsd">
+  <Version>2.7.2</Version>
   <MetadataRightsList>
     <Rights>
       <SchemeURI>https://spdx.org/licenses/</SchemeURI>
@@ -19,7 +19,7 @@
       <ResourceName>Wind Solar Wind Experiment (SWE) Electron Quadrature Moments Parameters (12-15s rate) (New Mode)</ResourceName>
       <AlternateName>WI_H5_SWE_v01</AlternateName>
       <DOI>https://doi.org/10.48322/chaz-z942</DOI>
-      <ReleaseDate>2026-07-21T12:09:24Z</ReleaseDate>
+      <ReleaseDate>2026-10-23T12:55:30Z</ReleaseDate>
       <RevisionHistory>
         <RevisionEvent>
           <ReleaseDate>2021-05-31T12:34:56.789Z</ReleaseDate>
@@ -40,6 +40,10 @@
         <RevisionEvent>
           <ReleaseDate>2026-07-21T12:09:24Z</ReleaseDate>
           <Note>Added HelioData InformationURL. JWL</Note>
+        </RevisionEvent>
+        <RevisionEvent>
+          <ReleaseDate>2026-10-23T12:55:30Z</ReleaseDate>
+          <Note>Added HelioCloud S3 AccessURL. Updated to 2.7.2. ZCB</Note>
         </RevisionEvent>
       </RevisionHistory>
       <Description>Wind SWE electron moments from a later mode (post-VEIS-era) of the electron instrument. The electron moments included in this data set are derived from quadrature integration of the solar wind electron distributions (with some fitting) measured by the Wind/SWE electron instrument (see Ogilvie et al., "SWE, a comprehensive plasma instrument for the Wind spacecraft", Space Sci. Rev., 71, 55, 1995). Moment parameters are computed from 9s measurements which are usually separated by one or more 3s spin-periods. These quantities are reliable and citable with caution, meaning that the PI advises that the user should discuss their interpretations with a member of the SWE science team before publishing. The following comments are intended to aid in the use and interpretation of the prime quantities of this data set, the electron density, bulk-velocity and temperature. We compensate for the limited nature of our observations under this instrument mode by combining electron observations with bulk-velocity estimates derived from corresponding ion observations. The (13) energy channels over which observations are made are: E = 19.34, 38.68, 58.03, 77.37, 96.71, 116.1, 193.4, 290.1, 425.5, 580.3, 773.7, 1006., and 1238. eV; f(E,Az,El) [#/{cc*(cm/s)^3}] being obtained for each E, using an 8x6 grid of look-directions (Azimuth x Elevation, with ~45x9 deg. "pixels")--thus constituting an 'electron distribution'. A fitted Maxwellian model supplements the "core" regime of each distribution. N_elec [#/cc] gives the density value derived for the full distribution, while NcElec [#/cc] gives that of the core. U_eGSE and UceGSE [km/s, GSE], resp. supply the full and core bulk-velocity. P_eGSE [erg/cc, GSE] has the [Pxx, Pxy, Pxz, Pyy, Pyz, Pzz] components of the derived pressure-tensor. T_elec and TcElec [K], resp. provide the full and core total-temperatures; W_elec and WcElec [eV] specifying the corresponding thermal-energies. Te_pal, Te_per, TecPal and TecPer [K] give resp. full and core parallel- and perpendicular-temperatures (wrt B), with Te_ani and TecAni [unitless] furnishing the perpendicular/parallel temperature-anisotropies for each regime. Finally, Gyrtrp [unitless] indicates the derived electron gyrotropy. The data set reported here contains: N_elec, NcElec, U_eGSE, UceGSE, P_eGSE, T_elec, TcElec, W_elec, WcElec, Te_pal, Te_per, TecPal, TecPer, Te_ani, TecAni, and Gyrtrp (as described above).</Description>
@@ -120,6 +124,31 @@
         <Description>Web Service to this product using the HAPI interface.</Description>
       </AccessURL>
       <Format>CSV</Format>
+      <Acknowledgement>Please acknowledge the CDAWeb team and NASA/GSFC's NSSDC.</Acknowledgement>
+    </AccessInformation>
+    <AccessInformation>
+      <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF</RepositoryID>
+      <Availability>Online</Availability>
+      <AccessRights>Open</AccessRights>
+      <RightsList>
+        <Rights>
+          <SchemeURI>https://spdx.org/licenses/</SchemeURI>
+          <RightsIdentifierScheme>SPDX</RightsIdentifierScheme>
+          <RightsIdentifier>CC0-1.0</RightsIdentifier>
+          <RightsURI>https://spdx.org/licenses/CC0-1.0.html</RightsURI>
+          <RightsName>Creative Commons Zero v1.0 Universal</RightsName>
+          <Note>CC0 1.0 Universal is the Creative Commons license applicable to all publicly available NASA Heliophysics data products</Note>
+        </Rights>
+      </RightsList>
+      <AccessURL>
+        <Name>HelioCloud Catalog Endpoint</Name>
+        <URL>https://api.heliocloud.org/cloudcatalog?id=WI_H5_SWE</URL>
+        <Style>Overview</Style>
+        <ProductKey>WI_H5_SWE</ProductKey>
+        <Description>Endpoint to access the data from HelioCloud. Data is split into one CSV file per year.</Description>
+      </AccessURL>
+      <Format>CSV</Format>
+      <Encoding>S3_BUCKET</Encoding>
       <Acknowledgement>Please acknowledge the CDAWeb team and NASA/GSFC's NSSDC.</Acknowledgement>
     </AccessInformation>
     <ProviderResourceName>WI_H5_SWE</ProviderResourceName>

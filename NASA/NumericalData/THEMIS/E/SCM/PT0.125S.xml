@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.spase-group.org/data/schema https://www.spase-group.org/data/schema/spase-2.7.1.xsd">
-  <Version>2.7.1</Version>
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.spase-group.org/data/schema https://www.spase-group.org/data/schema/spase-2.7.2.xsd">
+  <Version>2.7.2</Version>
   <MetadataRightsList>
     <Rights>
       <SchemeURI>https://spdx.org/licenses/</SchemeURI>
@@ -18,7 +18,7 @@
     <ResourceHeader>
       <ResourceName>THEMIS-E: Search Coil Magnetometer 1/8s, 1/128s and 1/8192s Data</ResourceName>
       <DOI>https://doi.org/10.48322/bbh4-cv70</DOI>
-      <ReleaseDate>2026-07-21T12:07:40Z</ReleaseDate>
+      <ReleaseDate>2026-10-23T12:54:56Z</ReleaseDate>
       <RevisionHistory>
         <RevisionEvent>
           <ReleaseDate>2021-04-27T15:38:11Z</ReleaseDate>
@@ -47,6 +47,10 @@
         <RevisionEvent>
           <ReleaseDate>2026-07-21T12:07:40Z</ReleaseDate>
           <Note>Added HelioData InformationURL. JWL</Note>
+        </RevisionEvent>
+        <RevisionEvent>
+          <ReleaseDate>2026-10-23T12:54:56Z</ReleaseDate>
+          <Note>Added HelioCloud S3 AccessURL. Updated to 2.7.2. ZCB</Note>
         </RevisionEvent>
       </RevisionHistory>
       <Description>THEMIS-E: Search Coil Magnetometer (SCM) magnetic field measurements. Includes FAST SURVEY, PARTICLE BURST and WAVE BURST data. FAST SURVEY (SCF): 1/8 second time resolution. PARTICLE BURST (SCP): 1/128 second time resolution; only short bursts of data. WAVE BURST (SCW): 1/8192 second time resolution; only short bursts of data. Sensor and electronics design provided by LPP, Roux and Le Contel. SCM Telemetry Modes (Only first 3 apply to level 2 SCM products): +-------------------------------------------------------------------------------------------------------------------------+   Fast Survey (scf)   Waveform data for the 3 SCM components; sampling rate between 2 and 256 S/s, nominal value is 8.     Particle Burst (scp)   Waveform data nominally at 128 S/s.     Wave Burst (scw)   Waveform data nominally at 8192 S/s.     Filter Bank (fbk)^   Mean signal value over 6 frequency bands (4-2 kHz, 1-0.5 kHz, 256-128 Hz, 64-32 Hz, 16-8 Hz.     Particle Burst Spectra (ffp)^^   Compressed FFT spectra in 16, 32, or 64 frequency bins; sampling between 1/4 to 8 S/s.     Wave Burst Spectra (ffw)^^   Compressed FFT spectra in 16, 32, or 64 frequency bins; sampling between 1/4 to 8 S/s.   +-------------------------------------------------------------------------------------------------------------------------+ * ^Only two available inputs between all 3 SCM and 12 EFI data signals. * ^^Only four available inputs between 3 SCM and 16 other data signals.</Description>
@@ -155,6 +159,30 @@
       </AccessURL>
       <Format>CDF</Format>
       <Encoding>None</Encoding>
+    </AccessInformation>
+    <AccessInformation>
+      <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF</RepositoryID>
+      <Availability>Online</Availability>
+      <AccessRights>Open</AccessRights>
+      <RightsList>
+        <Rights>
+          <SchemeURI>https://spdx.org/licenses/</SchemeURI>
+          <RightsIdentifierScheme>SPDX</RightsIdentifierScheme>
+          <RightsIdentifier>CC0-1.0</RightsIdentifier>
+          <RightsURI>https://spdx.org/licenses/CC0-1.0.html</RightsURI>
+          <RightsName>Creative Commons Zero v1.0 Universal</RightsName>
+          <Note>CC0 1.0 Universal is the Creative Commons license applicable to all publicly available NASA Heliophysics data products</Note>
+        </Rights>
+      </RightsList>
+      <AccessURL>
+        <Name>HelioCloud Catalog Endpoint</Name>
+        <URL>https://api.heliocloud.org/cloudcatalog?id=THE_L2_SCM</URL>
+        <Style>Overview</Style>
+        <ProductKey>THE_L2_SCM</ProductKey>
+        <Description>Endpoint to access the data from HelioCloud. Data is split into one CSV file per year.</Description>
+      </AccessURL>
+      <Format>CSV</Format>
+      <Encoding>S3_BUCKET</Encoding>
     </AccessInformation>
     <ProcessingLevel>Calibrated</ProcessingLevel>
     <ProviderProcessingLevel>Level 2</ProviderProcessingLevel>

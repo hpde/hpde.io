@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.spase-group.org/data/schema https://www.spase-group.org/data/schema/spase-2.7.1.xsd">
-  <Version>2.7.1</Version>
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.spase-group.org/data/schema https://www.spase-group.org/data/schema/spase-2.7.2.xsd">
+  <Version>2.7.2</Version>
   <MetadataRightsList>
     <Rights>
       <SchemeURI>https://spdx.org/licenses/</SchemeURI>
@@ -18,7 +18,7 @@
     <ResourceHeader>
       <ResourceName>CNOFS CINDI IVM 500 ms Ion Drift Data</ResourceName>
       <DOI>https://doi.org/10.48322/r9x4-x639</DOI>
-      <ReleaseDate>2026-07-21T12:04:43Z</ReleaseDate>
+      <ReleaseDate>2026-10-23T12:50:54Z</ReleaseDate>
       <RevisionHistory>
         <RevisionEvent>
           <ReleaseDate>2021-04-27T15:38:11Z</ReleaseDate>
@@ -43,6 +43,10 @@
         <RevisionEvent>
           <ReleaseDate>2026-07-21T12:04:43Z</ReleaseDate>
           <Note>Added HelioData InformationURL. JWL</Note>
+        </RevisionEvent>
+        <RevisionEvent>
+          <ReleaseDate>2026-10-23T12:50:54Z</ReleaseDate>
+          <Note>Added HelioCloud S3 AccessURL. Updated to 2.7.2. ZCB</Note>
         </RevisionEvent>
       </RevisionHistory>
       <Description>This data set contains plasma parameters of the equatorial F-region in the ionosphere measured by the Ion Velocity Meter (IVM) of the Coupled Ion-Neutral Dynamics Investigation (CINDI) payload on board the CNOFS spacecraft. Data are available in HDF format, with an IDL program to read and plot them. Each file contains data from one day of spacecraft operation and the file contains eight primary geophysical parameters: the ion temperature (Ti) in degrees Kelvin, the ion flow in m/s in the ram (i.e.--spacecraft velocity) direction (+Vx in the direction of spacecraft velocity), the ion flows in m/s in the horizontal and vertical directions (Vy and Vz) at right angles to the ram direction (+Vz is downward, +Vy is roughly southward), the total ion density (Ni) (the sum of O+ and H+ and He+ concentrations) in ions/cc, and the individual H+, He+, and O+ concentrations in ions/cc. In addition, ion velocities also are given in the coordinate system of the local magnetic field (parallel, perpendicular, and meridional) in the plots and as ASCII data on the UT Dallas website. Based on the IGRF model, the data are transformed into magnetic coordinates only if all three ion velocities in the spacecraft coordinates are available and good.</Description>
@@ -160,6 +164,31 @@
         <URL>ftps://cdaweb.gsfc.nasa.gov/pub/data/cnofs/cindi/</URL>
       </AccessURL>
       <Format>HDF</Format>
+    </AccessInformation>
+    <AccessInformation>
+      <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF</RepositoryID>
+      <Availability>Online</Availability>
+      <AccessRights>Open</AccessRights>
+      <RightsList>
+        <Rights>
+          <SchemeURI>https://spdx.org/licenses/</SchemeURI>
+          <RightsIdentifierScheme>SPDX</RightsIdentifierScheme>
+          <RightsIdentifier>CC0-1.0</RightsIdentifier>
+          <RightsURI>https://spdx.org/licenses/CC0-1.0.html</RightsURI>
+          <RightsName>Creative Commons Zero v1.0 Universal</RightsName>
+          <Note>CC0 1.0 Universal is the Creative Commons license applicable to all publicly available NASA Heliophysics data products</Note>
+        </Rights>
+      </RightsList>
+      <AccessURL>
+        <Name>HelioCloud Catalog Endpoint</Name>
+        <URL>https://api.heliocloud.org/cloudcatalog?id=CNOFS_CINDI_IVM_500MS</URL>
+        <Style>Overview</Style>
+        <ProductKey>CNOFS_CINDI_IVM_500MS</ProductKey>
+        <Description>Endpoint to access the data from HelioCloud. Data is split into one CSV file per year.</Description>
+      </AccessURL>
+      <Format>CSV</Format>
+      <Encoding>S3_BUCKET</Encoding>
+      <Acknowledgement>the GSFC SPDF Team</Acknowledgement>
     </AccessInformation>
     <ProviderProcessingLevel>CALIBRATED</ProviderProcessingLevel>
     <InstrumentID>spase://SMWG/Instrument/CNOFS/CINDI/IVM</InstrumentID>

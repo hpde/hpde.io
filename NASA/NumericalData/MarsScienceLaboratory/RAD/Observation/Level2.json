@@ -22,7 +22,7 @@
         "ResourceName": "Mars Science Laboratory (MSL), Radiation Assessment Detector (RAD), Level 2 Observation Dosimetry, LET, and Neutral-Particle Data",
         "AlternateName": "MSL_RAD_OBS-L2",
         "DOI": "https://doi.org/10.48322/20qb-4e17",
-        "ReleaseDate": "2026-10-03T19:00:04Z",
+        "ReleaseDate": "2026-10-23T12:52:10Z",
         "RevisionHistory": {
           "RevisionEvent": [
             {
@@ -36,6 +36,10 @@
             {
               "ReleaseDate": "2026-10-03T19:00:04Z",
               "Note": "Added DOI. tlk"
+            },
+            {
+              "ReleaseDate": "2026-10-23T12:52:10Z",
+              "Note": "Added HelioCloud S3 AccessURL. ZCB"
             }
           ]
         },
@@ -65,44 +69,71 @@
           }
         ]
       },
-      "AccessInformation": {
-        "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF/CDAWeb",
-        "Availability": "Online",
-        "AccessRights": "Open",
-        "RightsList": {
-          "Rights": {
-            "SchemeURI": "https://spdx.org/licenses/",
-            "RightsIdentifierScheme": "SPDX",
-            "RightsIdentifier": "CC0-1.0",
-            "RightsURI": "https://spdx.org/licenses/CC0-1.0.html",
-            "RightsName": "Creative Commons Zero v1.0 Universal",
-            "Note": "CC0 1.0 Universal is the Creative Commons license applicable to all publicly available NASA Heliophysics data products"
-          }
+      "AccessInformation": [
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF/CDAWeb",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "RightsList": {
+            "Rights": {
+              "SchemeURI": "https://spdx.org/licenses/",
+              "RightsIdentifierScheme": "SPDX",
+              "RightsIdentifier": "CC0-1.0",
+              "RightsURI": "https://spdx.org/licenses/CC0-1.0.html",
+              "RightsName": "Creative Commons Zero v1.0 Universal",
+              "Note": "CC0 1.0 Universal is the Creative Commons license applicable to all publicly available NASA Heliophysics data products"
+            }
+          },
+          "AccessURL": [
+            {
+              "Name": "FTPS from SPDF (not with most browsers)",
+              "URL": "ftps://spdf.gsfc.nasa.gov/pub/data/aaa_planetary/msl/rad/cdf/obs-l2/",
+              "ProductKey": "MSL_RAD_OBS-L2",
+              "Description": "Access to Data in CDF Format via ftps from SPDF"
+            },
+            {
+              "Name": "HTTPS from SPDF",
+              "URL": "https://spdf.gsfc.nasa.gov/pub/data/aaa_planetary/msl/rad/cdf/obs-l2/",
+              "ProductKey": "MSL_RAD_OBS-L2",
+              "Description": "Access to Data in CDF Format via https from SPDF"
+            },
+            {
+              "Name": "CDAWeb",
+              "URL": "https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=MSL_RAD_OBS-L2&index=sp_phys",
+              "ProductKey": "MSL_RAD_OBS-L2",
+              "Description": "Access to ASCII, CDF, and plots via NASA/GSFC CDAWeb"
+            }
+          ],
+          "Format": "CDF",
+          "Encoding": "None",
+          "Acknowledgement": "Please acknowledge the Principal Investigator D.M. Hassler, the MSL/RAD data providers, and NASA/GSFC SPDF/CDAWeb when using these data."
         },
-        "AccessURL": [
-          {
-            "Name": "FTPS from SPDF (not with most browsers)",
-            "URL": "ftps://spdf.gsfc.nasa.gov/pub/data/aaa_planetary/msl/rad/cdf/obs-l2/",
-            "ProductKey": "MSL_RAD_OBS-L2",
-            "Description": "Access to Data in CDF Format via ftps from SPDF"
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "RightsList": {
+            "Rights": {
+              "SchemeURI": "https://spdx.org/licenses/",
+              "RightsIdentifierScheme": "SPDX",
+              "RightsIdentifier": "CC0-1.0",
+              "RightsURI": "https://spdx.org/licenses/CC0-1.0.html",
+              "RightsName": "Creative Commons Zero v1.0 Universal",
+              "Note": "CC0 1.0 Universal is the Creative Commons license applicable to all publicly available NASA Heliophysics data products"
+            }
           },
-          {
-            "Name": "HTTPS from SPDF",
-            "URL": "https://spdf.gsfc.nasa.gov/pub/data/aaa_planetary/msl/rad/cdf/obs-l2/",
+          "AccessURL": {
+            "Name": "HelioCloud Catalog Endpoint",
+            "URL": "https://api.heliocloud.org/cloudcatalog?id=MSL_RAD_OBS-L2",
+            "Style": "Overview",
             "ProductKey": "MSL_RAD_OBS-L2",
-            "Description": "Access to Data in CDF Format via https from SPDF"
+            "Description": "Endpoint to access the data from HelioCloud. Data is split into one CSV file per year."
           },
-          {
-            "Name": "CDAWeb",
-            "URL": "https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=MSL_RAD_OBS-L2&index=sp_phys",
-            "ProductKey": "MSL_RAD_OBS-L2",
-            "Description": "Access to ASCII, CDF, and plots via NASA/GSFC CDAWeb"
-          }
-        ],
-        "Format": "CDF",
-        "Encoding": "None",
-        "Acknowledgement": "Please acknowledge the Principal Investigator D.M. Hassler, the MSL/RAD data providers, and NASA/GSFC SPDF/CDAWeb when using these data."
-      },
+          "Format": "CSV",
+          "Encoding": "S3_BUCKET",
+          "Acknowledgement": "Please acknowledge the Principal Investigator D.M. Hassler, the MSL/RAD data providers, and NASA/GSFC SPDF/CDAWeb when using these data."
+        }
+      ],
       "ProcessingLevel": "Calibrated",
       "InstrumentID": "spase://SMWG/Instrument/MarsScienceLaboratory/RAD",
       "MeasurementType": "EnergeticParticles",

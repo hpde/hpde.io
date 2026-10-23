@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.spase-group.org/data/schema  https://www.spase-group.org/data/schema/spase-2.7.1.xsd">
-  <Version>2.7.1</Version>
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.spase-group.org/data/schema  https://www.spase-group.org/data/schema/spase-2.7.2.xsd">
+  <Version>2.7.2</Version>
   <MetadataRightsList>
     <Rights>
       <SchemeURI>https://spdx.org/licenses/</SchemeURI>
@@ -17,7 +17,7 @@
     <ResourceType>NumericalData</ResourceType>
     <ResourceHeader>
       <ResourceName>ST5-094 satellite position and magnetic field data</ResourceName>
-      <ReleaseDate>2026-07-21T12:07:17Z</ReleaseDate>
+      <ReleaseDate>2026-10-23T15:26:06Z</ReleaseDate>
       <RevisionHistory>
         <RevisionEvent>
           <ReleaseDate>2021-04-27T15:38:11Z</ReleaseDate>
@@ -34,6 +34,10 @@
         <RevisionEvent>
           <ReleaseDate>2026-07-21T12:07:17Z</ReleaseDate>
           <Note>Added HelioData InformationURL. JWL</Note>
+        </RevisionEvent>
+        <RevisionEvent>
+          <ReleaseDate>2026-10-23T15:26:06Z</ReleaseDate>
+          <Note>Corrected CDAWeb and SSCWeb AccessURLs. Added HelioCloud S3 AccessURL. Updated to 2.7.2. ZCB</Note>
         </RevisionEvent>
       </RevisionHistory>
       <Description>ST5-B satellite position and magnetic field model information.</Description>
@@ -66,43 +70,27 @@
       </RightsList>
       <AccessURL>
         <Name>SSCWeb</Name>
-        <URL>https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=st5b&amp;index=sp_phys</URL>
+        <URL>https://sscweb.gsfc.nasa.gov/</URL>
         <ProductKey>st5b</ProductKey>
       </AccessURL>
       <AccessURL>
         <Name>FTPS from SPDF (not with most browsers)</Name>
         <URL>ftps://spdf.gsfc.nasa.gov/pub/data/st5/094/</URL>
-        <Description>NASA/GSFC CDAWeb ftp access to the data.</Description>
+        <Description>NASA/GSFC CDAWeb ftps access to the data.</Description>
       </AccessURL>
       <AccessURL>
         <Name>HTTPS from SPDF</Name>
         <URL>https://spdf.gsfc.nasa.gov/pub/data/st5/094/</URL>
-        <Description>NASA/GSFC CDAWeb ftp access to the data.</Description>
+        <Description>NASA/GSFC CDAWeb https access to the data.</Description>
       </AccessURL>
-      <Format>CDF</Format>
-    </AccessInformation>
-    <AccessInformation>
-      <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF</RepositoryID>
-      <Availability>Online</Availability>
-      <AccessRights>Open</AccessRights>
-      <RightsList>
-        <Rights>
-          <SchemeURI>https://spdx.org/licenses/</SchemeURI>
-          <RightsIdentifierScheme>SPDX</RightsIdentifierScheme>
-          <RightsIdentifier>CC0-1.0</RightsIdentifier>
-          <RightsURI>https://spdx.org/licenses/CC0-1.0.html</RightsURI>
-          <RightsName>Creative Commons Zero v1.0 Universal</RightsName>
-          <Note>CC0 1.0 Universal is the Creative Commons license applicable to all publicly available NASA Heliophysics data products</Note>
-        </Rights>
-      </RightsList>
       <AccessURL>
         <Name>CDAWeb</Name>
-        <URL>https://cdaweb.gsfc.nasa.gov/sp_phys/</URL>
+        <URL>https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=ST5-094_1SEC_MAG&amp;index=sp_phys</URL>
         <ProductKey>ST5-094_1SEC_MAG</ProductKey>
-        <Description>Tri-axial magnetometer data from NASA Space Technology 5.</Description>
+        <Description>Access to Tri-axial magnetometer data in ASCII, CDF, and plots from NASA Space Technology 5 via NASA/GSFC CDAWeb</Description>
       </AccessURL>
-      <Format>Text</Format>
-      <Acknowledgement> Please acknowledge the CDAWeb team at GSFC/SPDF.</Acknowledgement>
+      <Format>CDF</Format>
+      <Acknowledgement>Please acknowledge the CDAWeb team at GSFC/SPDF.</Acknowledgement>
     </AccessInformation>
     <AccessInformation>
       <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF</RepositoryID>
@@ -126,7 +114,32 @@
         <Description>Web Service to this product using the HAPI interface.</Description>
       </AccessURL>
       <Format>CSV</Format>
-      <Acknowledgement> Please acknowledge the CDAWeb team at GSFC/SPDF.</Acknowledgement>
+      <Acknowledgement>Please acknowledge the CDAWeb team at GSFC/SPDF.</Acknowledgement>
+    </AccessInformation>
+    <AccessInformation>
+      <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF</RepositoryID>
+      <Availability>Online</Availability>
+      <AccessRights>Open</AccessRights>
+      <RightsList>
+        <Rights>
+          <SchemeURI>https://spdx.org/licenses/</SchemeURI>
+          <RightsIdentifierScheme>SPDX</RightsIdentifierScheme>
+          <RightsIdentifier>CC0-1.0</RightsIdentifier>
+          <RightsURI>https://spdx.org/licenses/CC0-1.0.html</RightsURI>
+          <RightsName>Creative Commons Zero v1.0 Universal</RightsName>
+          <Note>CC0 1.0 Universal is the Creative Commons license applicable to all publicly available NASA Heliophysics data products</Note>
+        </Rights>
+      </RightsList>
+      <AccessURL>
+        <Name>HelioCloud Catalog Endpoint</Name>
+        <URL>https://api.heliocloud.org/cloudcatalog?id=ST5-094_1SEC_MAG</URL>
+        <Style>Overview</Style>
+        <ProductKey>ST5-094_1SEC_MAG</ProductKey>
+        <Description>Endpoint to access the data from HelioCloud. Data is split into one CSV file per year.</Description>
+      </AccessURL>
+      <Format>CSV</Format>
+      <Encoding>S3_BUCKET</Encoding>
+      <Acknowledgement>Please acknowledge the CDAWeb team at GSFC/SPDF.</Acknowledgement>
     </AccessInformation>
     <InstrumentID>spase://SMWG/Instrument/ST5-094/Ephemeris</InstrumentID>
     <MeasurementType>Ephemeris</MeasurementType>

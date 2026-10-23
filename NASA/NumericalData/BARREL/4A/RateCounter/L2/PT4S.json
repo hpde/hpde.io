@@ -2,8 +2,8 @@
   "Spase": {
     "xmlns": "http://www.spase-group.org/data/schema",
     "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
-    "xsi:schemaLocation": "https://www.spase-group.org/data/schema https://www.spase-group.org/data/schema/spase-2.7.1.xsd",
-    "Version": "2.7.1",
+    "xsi:schemaLocation": "https://www.spase-group.org/data/schema https://www.spase-group.org/data/schema/spase-2.7.2.xsd",
+    "Version": "2.7.2",
     "MetadataRightsList": {
       "Rights": {
         "SchemeURI": "https://spdx.org/licenses/",
@@ -21,7 +21,7 @@
       "ResourceHeader": {
         "ResourceName": "BARREL 4A Rate Counter (RCNT) NaI Scintillator Diagnostics, Level 2, 4 s Data",
         "DOI": "https://doi.org/10.48322/s0hp-4t50",
-        "ReleaseDate": "2026-07-21T12:04:32Z",
+        "ReleaseDate": "2026-10-23T12:50:36Z",
         "RevisionHistory": {
           "RevisionEvent": [
             {
@@ -51,6 +51,10 @@
             {
               "ReleaseDate": "2026-07-21T12:04:32Z",
               "Note": "Added HelioData InformationURL. JWL"
+            },
+            {
+              "ReleaseDate": "2026-10-23T12:50:36Z",
+              "Note": "Added HelioCloud S3 AccessURL. Updated to 2.7.2. ZCB"
             }
           ]
         },
@@ -145,42 +149,69 @@
           }
         ]
       },
-      "AccessInformation": {
-        "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
-        "Availability": "Online",
-        "AccessRights": "Open",
-        "RightsList": {
-          "Rights": {
-            "SchemeURI": "https://spdx.org/licenses/",
-            "RightsIdentifierScheme": "SPDX",
-            "RightsIdentifier": "CC0-1.0",
-            "RightsURI": "https://spdx.org/licenses/CC0-1.0.html",
-            "RightsName": "Creative Commons Zero v1.0 Universal",
-            "Note": "CC0 1.0 Universal is the Creative Commons license applicable to all publicly available NASA Heliophysics data products"
-          }
+      "AccessInformation": [
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "RightsList": {
+            "Rights": {
+              "SchemeURI": "https://spdx.org/licenses/",
+              "RightsIdentifierScheme": "SPDX",
+              "RightsIdentifier": "CC0-1.0",
+              "RightsURI": "https://spdx.org/licenses/CC0-1.0.html",
+              "RightsName": "Creative Commons Zero v1.0 Universal",
+              "Note": "CC0 1.0 Universal is the Creative Commons license applicable to all publicly available NASA Heliophysics data products"
+            }
+          },
+          "AccessURL": [
+            {
+              "Name": "FTPS from SPDF (not with most browsers)",
+              "URL": "ftps://spdf.gsfc.nasa.gov/pub/data/barrel/l2/4a/rcnt/",
+              "Description": "Access to Data in CDF Format via ftps from SPDF"
+            },
+            {
+              "Name": "HTTPS from SPDF",
+              "URL": "https://spdf.gsfc.nasa.gov/pub/data/barrel/l2/4a/rcnt/",
+              "Description": "Access to Data in CDF Format via https from SPDF"
+            },
+            {
+              "Name": "CDAWeb",
+              "URL": "https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=BAR_4A_L2_RCNT&index=sp_phys",
+              "ProductKey": "BAR_4A_L2_RCNT",
+              "Description": "Access to ASCII, CDF, and Plots via NASA/GSFC CDAWeb"
+            }
+          ],
+          "Format": "CDF",
+          "Encoding": "None",
+          "Acknowledgement": "Please acknowledge the Principal Investigator R. Millan. Please acknowledge the Data Providers and CDAWeb when using these Data."
         },
-        "AccessURL": [
-          {
-            "Name": "FTPS from SPDF (not with most browsers)",
-            "URL": "ftps://spdf.gsfc.nasa.gov/pub/data/barrel/l2/4a/rcnt/",
-            "Description": "Access to Data in CDF Format via ftps from SPDF"
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "RightsList": {
+            "Rights": {
+              "SchemeURI": "https://spdx.org/licenses/",
+              "RightsIdentifierScheme": "SPDX",
+              "RightsIdentifier": "CC0-1.0",
+              "RightsURI": "https://spdx.org/licenses/CC0-1.0.html",
+              "RightsName": "Creative Commons Zero v1.0 Universal",
+              "Note": "CC0 1.0 Universal is the Creative Commons license applicable to all publicly available NASA Heliophysics data products"
+            }
           },
-          {
-            "Name": "HTTPS from SPDF",
-            "URL": "https://spdf.gsfc.nasa.gov/pub/data/barrel/l2/4a/rcnt/",
-            "Description": "Access to Data in CDF Format via https from SPDF"
-          },
-          {
-            "Name": "CDAWeb",
-            "URL": "https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=BAR_4A_L2_RCNT&index=sp_phys",
+          "AccessURL": {
+            "Name": "HelioCloud Catalog Endpoint",
+            "URL": "https://api.heliocloud.org/cloudcatalog?id=BAR_4A_L2_RCNT",
+            "Style": "Overview",
             "ProductKey": "BAR_4A_L2_RCNT",
-            "Description": "Access to ASCII, CDF, and Plots via NASA/GSFC CDAWeb"
-          }
-        ],
-        "Format": "CDF",
-        "Encoding": "None",
-        "Acknowledgement": "Please acknowledge the Principal Investigator R. Millan. Please acknowledge the Data Providers and CDAWeb when using these Data."
-      },
+            "Description": "Endpoint to access the data from HelioCloud. Data is split into one CSV file per year."
+          },
+          "Format": "CSV",
+          "Encoding": "S3_BUCKET",
+          "Acknowledgement": "Please acknowledge the Principal Investigator R. Millan. Please acknowledge the Data Providers and CDAWeb when using these Data."
+        }
+      ],
       "ProcessingLevel": "Calibrated",
       "InstrumentID": "spase://SMWG/Instrument/BARREL/4A/XRI",
       "MeasurementType": [

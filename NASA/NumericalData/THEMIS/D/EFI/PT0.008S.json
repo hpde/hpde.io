@@ -12,7 +12,7 @@
         "ResourceName": "Themis Probe D L2 DATA EFP",
         "AlternateName": "thd_l2_efp",
         "DOI": "https://doi.org/10.48322/jwpy-3010",
-        "ReleaseDate": "2026-10-22T23:41:35Z",
+        "ReleaseDate": "2026-10-23T12:54:50Z",
         "RevisionHistory": {
           "RevisionEvent": [
             {
@@ -26,6 +26,10 @@
             {
               "ReleaseDate": "2026-10-22T23:41:35Z",
               "Note": "Added DOI. tlk"
+            },
+            {
+              "ReleaseDate": "2026-10-23T12:54:50Z",
+              "Note": "Added HelioCloud S3 AccessURL. ZCB"
             }
           ]
         },
@@ -70,37 +74,64 @@
           }
         ]
       },
-      "AccessInformation": {
-        "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF/CDAWeb",
-        "Availability": "Online",
-        "AccessRights": "Open",
-        "RightsList": {
-          "Rights": {
-            "SchemeURI": "https://spdx.org/licenses/",
-            "RightsIdentifierScheme": "SPDX",
-            "RightsIdentifier": "CC0-1.0",
-            "RightsURI": "https://spdx.org/licenses/CC0-1.0.html",
-            "RightsName": "Creative Commons Zero v1.0 Universal",
-            "Note": "CC0 1.0 Universal is the Creative Commons license applicable to all publicly available NASA Heliophysics data products"
-          }
-        },
-        "AccessURL": [
-          {
-            "Name": "HTTPS from SPDF",
-            "URL": "https://spdf.gsfc.nasa.gov/pub/data/themis/thd/l2/efi/",
-            "Description": "In CDF via http from SPDF."
+      "AccessInformation": [
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF/CDAWeb",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "RightsList": {
+            "Rights": {
+              "SchemeURI": "https://spdx.org/licenses/",
+              "RightsIdentifierScheme": "SPDX",
+              "RightsIdentifier": "CC0-1.0",
+              "RightsURI": "https://spdx.org/licenses/CC0-1.0.html",
+              "RightsName": "Creative Commons Zero v1.0 Universal",
+              "Note": "CC0 1.0 Universal is the Creative Commons license applicable to all publicly available NASA Heliophysics data products"
+            }
           },
-          {
-            "Name": "CDAWeb",
-            "URL": "https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=THD_L2_EFI&index=sp_phys",
+          "AccessURL": [
+            {
+              "Name": "HTTPS from SPDF",
+              "URL": "https://spdf.gsfc.nasa.gov/pub/data/themis/thd/l2/efi/",
+              "Description": "In CDF via http from SPDF."
+            },
+            {
+              "Name": "CDAWeb",
+              "URL": "https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=THD_L2_EFI&index=sp_phys",
+              "ProductKey": "THD_L2_EFI",
+              "Description": "Access to ASCII, CDF, and plots via NASA/GSFC CDAWeb"
+            }
+          ],
+          "Format": "CDF",
+          "Encoding": "None",
+          "Acknowledgement": "Please acknowledge J. W. Bonnell (University of California, Berkeley). Please acknowledge the data providers and CDAWeb when using these data."
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "RightsList": {
+            "Rights": {
+              "SchemeURI": "https://spdx.org/licenses/",
+              "RightsIdentifierScheme": "SPDX",
+              "RightsIdentifier": "CC0-1.0",
+              "RightsURI": "https://spdx.org/licenses/CC0-1.0.html",
+              "RightsName": "Creative Commons Zero v1.0 Universal",
+              "Note": "CC0 1.0 Universal is the Creative Commons license applicable to all publicly available NASA Heliophysics data products"
+            }
+          },
+          "AccessURL": {
+            "Name": "HelioCloud Catalog Endpoint",
+            "URL": "https://api.heliocloud.org/cloudcatalog?id=THD_L2_EFI",
+            "Style": "Overview",
             "ProductKey": "THD_L2_EFI",
-            "Description": "Access to ASCII, CDF, and plots via NASA/GSFC CDAWeb"
-          }
-        ],
-        "Format": "CDF",
-        "Encoding": "None",
-        "Acknowledgement": "Please acknowledge J. W. Bonnell (University of California, Berkeley). Please acknowledge the data providers and CDAWeb when using these data."
-      },
+            "Description": "Endpoint to access the data from HelioCloud. Data is split into one CSV file per year."
+          },
+          "Format": "CSV",
+          "Encoding": "S3_BUCKET",
+          "Acknowledgement": "Please acknowledge J. W. Bonnell (University of California, Berkeley). Please acknowledge the data providers and CDAWeb when using these data."
+        }
+      ],
       "InstrumentID": "spase://SMWG/Instrument/THEMIS/D/EFI",
       "MeasurementType": "ElectricField",
       "ObservedRegion": "Earth.Magnetosphere"

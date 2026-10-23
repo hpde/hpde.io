@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.spase-group.org/data/schema https://www.spase-group.org/data/schema/spase-2.7.1.xsd">
-  <Version>2.7.1</Version>
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.spase-group.org/data/schema https://www.spase-group.org/data/schema/spase-2.7.2.xsd">
+  <Version>2.7.2</Version>
   <MetadataRightsList>
     <Rights>
       <SchemeURI>https://spdx.org/licenses/</SchemeURI>
@@ -18,7 +18,7 @@
     <ResourceHeader>
       <ResourceName>Van Allen Probe A RBSPICE High Energy Resolution Electron Rates converted Level-3 data</ResourceName>
       <DOI>https://doi.org/10.48322/zcrq-hj26</DOI>
-      <ReleaseDate>2026-07-21T12:06:51Z</ReleaseDate>
+      <ReleaseDate>2026-10-23T12:53:58Z</ReleaseDate>
       <RevisionHistory>
         <RevisionEvent>
           <ReleaseDate>2021-04-27T15:38:11Z</ReleaseDate>
@@ -47,6 +47,10 @@
         <RevisionEvent>
           <ReleaseDate>2026-07-21T12:06:51Z</ReleaseDate>
           <Note>Added HelioData InformationURL. JWL</Note>
+        </RevisionEvent>
+        <RevisionEvent>
+          <ReleaseDate>2026-10-23T12:53:58Z</ReleaseDate>
+          <Note>Added HelioCloud S3 AccessURL. Updated to 2.7.2. ZCB</Note>
         </RevisionEvent>
       </RevisionHistory>
       <Description>This data set contains Van Allen Probe A RBSPICE (Radiation Belt Storm Probes Ion Composition Experiment) high-energy resolution electron rates that are measured at low-time resolution. Unidirectional Differential Electron Flux (FEDU) measured by 6 telescopes in 64 channels from ~0.02-1.0 MeV are available in physical units (counts/(s*sr*cm^2*MeV) by telescope in sector order (T0= ~110 PA, T3= ~all PAs, T5= FEDU background). Also available are percentage error of measurement, quality flag, current sector number where each spin is dividied into 36 sectors, duration of the accumulation, current spin number of the spacecraft, orbit number, dipole L using the SM reference frame, and position of the spacecraft in SM coordinates. Level 3 data include all level 2 data plus spacecraft positions, pitch angles of the six telecopses, and derived magnetic field values. The processing is done in a series of algorithmic steps in which the EMFISIS (Electric and Magnetic Field Instrument Suite and Integrated Science) magnetic field data is loaded, the ECT (Energetic Particle, Composition and Thermal Plasma Suite) magnetic ephemeris data is loaded, the Level 2 intensity data file is copied, and the pitch angles are calculated and placed into the copied Level 2 file, creating a Level 3 file.</Description>
@@ -161,6 +165,30 @@
         <Description>Web Service to this product using the HAPI interface.</Description>
       </AccessURL>
       <Format>CSV</Format>
+    </AccessInformation>
+    <AccessInformation>
+      <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF</RepositoryID>
+      <Availability>Online</Availability>
+      <AccessRights>Open</AccessRights>
+      <RightsList>
+        <Rights>
+          <SchemeURI>https://spdx.org/licenses/</SchemeURI>
+          <RightsIdentifierScheme>SPDX</RightsIdentifierScheme>
+          <RightsIdentifier>CC0-1.0</RightsIdentifier>
+          <RightsURI>https://spdx.org/licenses/CC0-1.0.html</RightsURI>
+          <RightsName>Creative Commons Zero v1.0 Universal</RightsName>
+          <Note>CC0 1.0 Universal is the Creative Commons license applicable to all publicly available NASA Heliophysics data products</Note>
+        </Rights>
+      </RightsList>
+      <AccessURL>
+        <Name>HelioCloud Catalog Endpoint</Name>
+        <URL>https://api.heliocloud.org/cloudcatalog?id=RBSP-A-RBSPICE_LEV-3_ESRHELT</URL>
+        <Style>Overview</Style>
+        <ProductKey>RBSP-A-RBSPICE_LEV-3_ESRHELT</ProductKey>
+        <Description>Endpoint to access the data from HelioCloud. Data is split into one CSV file per year.</Description>
+      </AccessURL>
+      <Format>CSV</Format>
+      <Encoding>S3_BUCKET</Encoding>
     </AccessInformation>
     <InstrumentID>spase://SMWG/Instrument/RBSP/A/RBSPICE</InstrumentID>
     <MeasurementType>EnergeticParticles</MeasurementType>

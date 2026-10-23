@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.spase-group.org/data/schema https://www.spase-group.org/data/schema/spase-2.7.1.xsd">
-  <Version>2.7.1</Version>
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.spase-group.org/data/schema https://www.spase-group.org/data/schema/spase-2.7.2.xsd">
+  <Version>2.7.2</Version>
   <MetadataRightsList>
     <Rights>
       <SchemeURI>https://spdx.org/licenses/</SchemeURI>
@@ -18,7 +18,7 @@
     <ResourceHeader>
       <ResourceName>Van Allen Probe A DC-coupled EFW 1-second sensor potentials relative to spacecraft in volts</ResourceName>
       <DOI>https://doi.org/10.48322/7mwt-de58</DOI>
-      <ReleaseDate>2026-07-21T12:06:46Z</ReleaseDate>
+      <ReleaseDate>2026-10-23T12:53:50Z</ReleaseDate>
       <RevisionHistory>
         <RevisionEvent>
           <ReleaseDate>2021-04-27T15:38:11Z</ReleaseDate>
@@ -47,6 +47,10 @@
         <RevisionEvent>
           <ReleaseDate>2026-07-21T12:06:46Z</ReleaseDate>
           <Note>Added HelioData InformationURL. JWL</Note>
+        </RevisionEvent>
+        <RevisionEvent>
+          <ReleaseDate>2026-10-23T12:53:50Z</ReleaseDate>
+          <Note>Added HelioCloud S3 AccessURL. Updated to 2.7.2. ZCB</Note>
         </RevisionEvent>
       </RevisionHistory>
       <Description>This data set contains DC-coupled sensor potentials and negative of spacecraft potential relative to sensor floating potentials from the Electric Field and Waves Suite (EFW) onboard Van Allen Probe A. All six EFW sensor potentials are included. Also included are average potentials from opposing booms, i.e., (V1+V2)/2, (V3+V4)/2, and (V5+V6)/2, from autoscale and fixed scale (-15 to 5 V). These quantities are the negative of the spacecraft potential relative to the sensor floating potential, and have the contribution from the external electric field removed. Four spin-plane components of the electric field are measured at DC-12 Hz with 0.05 mV/m accuracy, and two spin-axis components, with ~3 mV/m accuracy. Spacecraft potentials cover cold plasma densities of 0.1 to ~100 cm-3 at 1-second cadence. The default sampling rate is 16 samp/s at 16-bit resolution, covering a +/- 225-V range. Further details on the EFW instrument in general or these data in particular can be found in the EFW Instrument paper, Wygant et al., 2013 (Space Science Reviews; submitted, 02/2013).</Description>
@@ -158,6 +162,30 @@
         <Description>Web Service to this product using the HAPI interface.</Description>
       </AccessURL>
       <Format>CSV</Format>
+    </AccessInformation>
+    <AccessInformation>
+      <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF</RepositoryID>
+      <Availability>Online</Availability>
+      <AccessRights>Open</AccessRights>
+      <RightsList>
+        <Rights>
+          <SchemeURI>https://spdx.org/licenses/</SchemeURI>
+          <RightsIdentifierScheme>SPDX</RightsIdentifierScheme>
+          <RightsIdentifier>CC0-1.0</RightsIdentifier>
+          <RightsURI>https://spdx.org/licenses/CC0-1.0.html</RightsURI>
+          <RightsName>Creative Commons Zero v1.0 Universal</RightsName>
+          <Note>CC0 1.0 Universal is the Creative Commons license applicable to all publicly available NASA Heliophysics data products</Note>
+        </Rights>
+      </RightsList>
+      <AccessURL>
+        <Name>HelioCloud Catalog Endpoint</Name>
+        <URL>https://api.heliocloud.org/cloudcatalog?id=RBSPA_EFW-L2_VSVY-HIRES</URL>
+        <Style>Overview</Style>
+        <ProductKey>RBSPA_EFW-L2_VSVY-HIRES</ProductKey>
+        <Description>Endpoint to access the data from HelioCloud. Data is split into one CSV file per year.</Description>
+      </AccessURL>
+      <Format>CSV</Format>
+      <Encoding>S3_BUCKET</Encoding>
     </AccessInformation>
     <InstrumentID>spase://SMWG/Instrument/RBSP/A/EFW</InstrumentID>
     <MeasurementType>ElectricField</MeasurementType>
