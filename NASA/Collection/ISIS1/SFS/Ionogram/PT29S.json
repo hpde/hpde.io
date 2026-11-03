@@ -2,8 +2,8 @@
   "Spase": {
     "xmlns": "http://www.spase-group.org/data/schema",
     "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
-    "xsi:schemaLocation": "https://www.spase-group.org/data/schema  https://www.spase-group.org/data/schema/spase-2.7.1.xsd",
-    "Version": "2.7.1",
+    "xsi:schemaLocation": "https://www.spase-group.org/data/schema  https://www.spase-group.org/data/schema/spase-2.7.2.xsd",
+    "Version": "2.7.2",
     "MetadataRightsList": {
       "Rights": {
         "SchemeURI": "https://spdx.org/licenses/",
@@ -22,12 +22,42 @@
         "ResourceName": "ISIS 1 Topside Sounder Ionograms",
         "AlternateName": "ISIS-1 Topside Sounder Ionogram CDFs at NASA's CDAWeb",
         "DOI": "https://doi.org/10.48322/7njf-d645",
-        "ReleaseDate": "2025-12-04T13:29:41Z",
+        "ReleaseDate": "2026-10-30T19:49:42Z",
         "RevisionHistory": {
-          "RevisionEvent": {
-            "ReleaseDate": "2026-05-15T13:29:41Z",
-            "Note": "ISIS 1 Collection metadata of ionograms created. JMW"
-          }
+          "RevisionEvent": [
+            {
+              "ReleaseDate": "2021-04-27T15:38:11Z",
+              "Note": "Only known prior ReleaseDate of the metadata"
+            },
+            {
+              "ReleaseDate": "2025-09-09T12:34:56.789Z",
+              "Note": "Revised ObservedRegions. JMW"
+            },
+            {
+              "ReleaseDate": "2025-11-14T16:02:28Z",
+              "Note": "Added PublicationInfo. Added ResourceType and NamingAuthority. Changed http to https in top-level schemaLocation attribute. Fixed version number separator in top-level schemaLocation attribute. Matched version number in schemaLocation attribute to updated value in Version tag. ZCB"
+            },
+            {
+              "ReleaseDate": "2025-12-04T13:29:41Z",
+              "Note": "Added MetadataRightsList and RightsList(s). Updated to 2.7.1. ZCB"
+            },
+            {
+              "ReleaseDate": "2026-05-15T13:29:41Z",
+              "Note": "ISIS 1 Collection metadata of ionograms created. JMW"
+            },
+            {
+              "ReleaseDate": "2026-06-26T13:18:18Z",
+              "Note": "Add 'Z' to RevisionEvent:ReleaseDate(s). ZCB"
+            },
+            {
+              "ReleaseDate": "2026-10-23T12:52:08Z",
+              "Note": "Added HelioCloud S3 AccessURL. Updated to 2.7.2. ZCB"
+            },
+            {
+              "ReleaseDate": "2026-10-30T19:49:42Z",
+              "Note": "Adding PriorID. ZCB"
+            }
+          ]
         },
         "Description": "These ionograms were digitized from the original ISIS-1 7-track analog telemetry tapes using the facilities of the former Data Evaluation Laboratory at the NASA/GSFC. This data restoration project is headed by Dr. R.F. Benson (NASA/GSFC). Ionograms were digitized at the rate of 40,000 16-bit samples/sec. This sample rate is higher than the Nyquist frequency of 30 kHz. The sample frequency of 40 kHz provides a measurement every 25 microseconds corresponding to an apparent range (c*t/2) interval of 3.75 km. Each ionogram consists of a fixed-frequency and and a swept-frequency portion. The time resolution between ionograms is typically 29 seconds.",
         "Acknowledgement": "Users please acknowledge the Coordinated Data Analysis Web (CDAWeb) at the NASA Goddard Space Flight Center, ISIS-1 SFS instrument Principal Investigator J. H. Whitteker and ISIS Data-Restoration project lead Robert F. Benson.",
@@ -66,7 +96,8 @@
         "PriorID": [
           "spase://VWO/NumericalData/ISIS1/SFS/ISIS1_Ionogram_CDF_PT29S",
           "spase://VWO/NumericalData/ISIS1/SFS/Ionogram.PT29S",
-          "spase://VSPO/NumericalData/ISIS1/SFS/Ionogram/PT29S"
+          "spase://VSPO/NumericalData/ISIS1/SFS/Ionogram/PT29S",
+          "spase://NASA/NumericalData/ISIS1/SFS/Ionogram/PT29S"
         ]
       },
       "AccessInformation": [
@@ -128,6 +159,31 @@
             "Description": "Web Service to this product using the HAPI interface."
           },
           "Format": "CSV",
+          "Acknowledgement": "Users please acknowledge the Coordinated Data Analysis Web (CDAWeb) at the NASA Goddard Space Flight Center, ISIS-1 SFS instrument Principal Investigator J. H. Whitteker and ISIS Data-Restoration project lead Robert F. Benson."
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "RightsList": {
+            "Rights": {
+              "SchemeURI": "https://spdx.org/licenses/",
+              "RightsIdentifierScheme": "SPDX",
+              "RightsIdentifier": "CC0-1.0",
+              "RightsURI": "https://spdx.org/licenses/CC0-1.0.html",
+              "RightsName": "Creative Commons Zero v1.0 Universal",
+              "Note": "CC0 1.0 Universal is the Creative Commons license applicable to all publicly available NASA Heliophysics data products"
+            }
+          },
+          "AccessURL": {
+            "Name": "HelioCloud Catalog Endpoint",
+            "URL": "https://api.heliocloud.org/cloudcatalog?id=I1_AV_ALL",
+            "Style": "Overview",
+            "ProductKey": "I1_AV_ALL",
+            "Description": "Endpoint to access the data from HelioCloud. Data is split into one CSV file per year."
+          },
+          "Format": "CSV",
+          "Encoding": "S3_BUCKET",
           "Acknowledgement": "Users please acknowledge the Coordinated Data Analysis Web (CDAWeb) at the NASA Goddard Space Flight Center, ISIS-1 SFS instrument Principal Investigator J. H. Whitteker and ISIS Data-Restoration project lead Robert F. Benson."
         }
       ],
