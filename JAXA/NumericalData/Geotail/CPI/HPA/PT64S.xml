@@ -1,12 +1,24 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema  http://www.spase-group.org/data/schema/spase-2_3_0.xsd'">
-  <Version>2.3.0</Version>
+<?xml version='1.0' encoding='UTF-8'?>
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.spase-group.org/data/schema  https://www.spase-group.org/data/schema/spase-2.3.0.xsd'">
+  <Version>2.7.2</Version>
   <NumericalData>
     <ResourceID>spase://JAXA/NumericalData/Geotail/CPI/HPA/PT64S</ResourceID>
+    <NamingAuthority>JAXA</NamingAuthority>
+    <ResourceType>NumericalData</ResourceType>
     <ResourceHeader>
       <ResourceName>Geotail CPI Hot Plasma Moments</ResourceName>
       <AlternateName>Geotail CPI HPA High Time Resolution Plasma Moments</AlternateName>
-      <ReleaseDate>2021-04-27T17:52:35Z</ReleaseDate>
+      <ReleaseDate>2026-11-04T16:08:36Z</ReleaseDate>
+      <RevisionHistory>
+        <RevisionEvent>
+          <ReleaseDate>2021-04-27T17:52:35Z</ReleaseDate>
+          <Note>Only known prior ReleaseDate of the metadata</Note>
+        </RevisionEvent>
+        <RevisionEvent>
+          <ReleaseDate>2026-11-04T16:08:36Z</ReleaseDate>
+          <Note>Added HelioCloud S3 AccessURL. Added ResourceType and NamingAuthority. Changed http to https in top-level schemaLocation attribute. Fixed version number separator in top-level schemaLocation attribute. Updated to 2.7.2. Add 'Z' to TemporalDescription:TimeSpan:StartDate. ZCB</Note>
+        </RevisionEvent>
+      </RevisionHistory>
       <Description>The CPI/HPA Hot Plasma Analyzer high time resolution moments of hot plasma:
 
             * Ion number density
@@ -82,11 +94,35 @@
       <Format>Text</Format>
       <Encoding>ASCII</Encoding>
     </AccessInformation>
+    <AccessInformation>
+      <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF</RepositoryID>
+      <Availability>Online</Availability>
+      <AccessRights>Open</AccessRights>
+      <RightsList>
+        <Rights>
+          <SchemeURI>https://spdx.org/licenses/</SchemeURI>
+          <RightsIdentifierScheme>SPDX</RightsIdentifierScheme>
+          <RightsIdentifier>CC0-1.0</RightsIdentifier>
+          <RightsURI>https://spdx.org/licenses/CC0-1.0.html</RightsURI>
+          <RightsName>Creative Commons Zero v1.0 Universal</RightsName>
+          <Note>CC0 1.0 Universal is the Creative Commons license applicable to all publicly available NASA Heliophysics data products</Note>
+        </Rights>
+      </RightsList>
+      <AccessURL>
+        <Name>HelioCloud Catalog Endpoint</Name>
+        <URL>https://api.heliocloud.org/cloudcatalog?id=GE_HPAMOM_CPI</URL>
+        <Style>Overview</Style>
+        <ProductKey>GE_HPAMOM_CPI</ProductKey>
+        <Description>Endpoint to access the data from HelioCloud. Data is split into one CSV file per year.</Description>
+      </AccessURL>
+      <Format>CSV</Format>
+      <Encoding>S3_BUCKET</Encoding>
+    </AccessInformation>
     <InstrumentID>spase://SMWG/Instrument/Geotail/CPI/HPA</InstrumentID>
     <MeasurementType>ThermalPlasma</MeasurementType>
     <TemporalDescription>
       <TimeSpan>
-        <StartDate>1992-10-06T00:00:28</StartDate>
+        <StartDate>1992-10-06T00:00:28Z</StartDate>
         <RelativeStopDate>-P2Y</RelativeStopDate>
       </TimeSpan>
       <Cadence>PT64S</Cadence>

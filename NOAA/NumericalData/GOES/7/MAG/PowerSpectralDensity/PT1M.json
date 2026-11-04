@@ -2,13 +2,27 @@
   "Spase": {
     "xmlns": "http://www.spase-group.org/data/schema",
     "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
-    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_3_0.xsd",
-    "Version": "2.3.0",
+    "xsi:schemaLocation": "https://www.spase-group.org/data/schema https://www.spase-group.org/data/schema/spase-2.7.2.xsd",
+    "Version": "2.7.2",
     "NumericalData": {
       "ResourceID": "spase://NOAA/NumericalData/GOES/7/MAG/PowerSpectralDensity/PT1M",
+      "NamingAuthority": "NOAA",
+      "ResourceType": "NumericalData",
       "ResourceHeader": {
         "ResourceName": "GOES 7 Magnetometer, MAG, Calculated Power Spectral Density, PSD, for the Hn Component",
-        "ReleaseDate": "2021-04-27T17:52:57Z",
+        "ReleaseDate": "2026-11-04T12:49:02Z",
+        "RevisionHistory": {
+          "RevisionEvent": [
+            {
+              "ReleaseDate": "2021-04-27T17:52:57Z",
+              "Note": "Only known prior ReleaseDate of the metadata"
+            },
+            {
+              "ReleaseDate": "2026-11-04T12:49:02Z",
+              "Note": "Added HelioCloud S3 AccessURL. Added ResourceType and NamingAuthority. Changed http to https in top-level schemaLocation attribute. Fixed version number separator in top-level schemaLocation attribute. Updated to 2.7.2. Add 'Z' to TemporalDescription:TimeSpan:StartDate, TemporalDescription:TimeSpan:StopDate. ZCB"
+            }
+          ]
+        },
         "Description": "The NOAA GOES satellites include two sensors: an Energetic Particle Sensor (EPS), and a Magnetometer, MAG. The satellites are in geostationary orbit. For older satellites, the orbital inclination may be up to 15°. Data sometimes contains errors, especially GOES 6 EPS and possibly both of the GOES 6 and GOES 7 magnetometers. The EPS data are 5 min averages, the MAG data are 1 min averages. The NOAA Space Environment Lab, SEL, Space Environmental Services Center (SESC), uses this data in real-time for forecasting and monitoring. Reference: GOES Spacecraft Operations Manual, Volume I, May 1980, Hughes Reference Number D5150 SCG 00169R GOES 8, with three Electron Sensors should launch in early 1993. The IE variables will be defined post-launch. For additional infomation, contact Dave Bouwer, NOAA/SEL, Mail Code R/E/SE, 325 Broadway, Boulder, CO 80303 USA, 303, 497-3899, SELVAX::DBOUWER or dbouwer@selvax.sel.bldrdoc.gov.",
         "Acknowledgement": "R. Zwickl",
         "Contact": [
@@ -72,6 +86,31 @@
           },
           "Format": "CSV",
           "Acknowledgement": "R. Zwickl. Please acknowledge the data providers and CDAWeb when using these data."
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "RightsList": {
+            "Rights": {
+              "SchemeURI": "https://spdx.org/licenses/",
+              "RightsIdentifierScheme": "SPDX",
+              "RightsIdentifier": "CC0-1.0",
+              "RightsURI": "https://spdx.org/licenses/CC0-1.0.html",
+              "RightsName": "Creative Commons Zero v1.0 Universal",
+              "Note": "CC0 1.0 Universal is the Creative Commons license applicable to all publicly available NASA Heliophysics data products"
+            }
+          },
+          "AccessURL": {
+            "Name": "HelioCloud Catalog Endpoint",
+            "URL": "https://api.heliocloud.org/cloudcatalog?id=G7_K1_MAG",
+            "Style": "Overview",
+            "ProductKey": "G7_K1_MAG",
+            "Description": "Endpoint to access the data from HelioCloud. Data is split into one CSV file per year."
+          },
+          "Format": "CSV",
+          "Encoding": "S3_BUCKET",
+          "Acknowledgement": "R. Zwickl. Please acknowledge the data providers and CDAWeb when using these data."
         }
       ],
       "ProcessingLevel": "Calibrated",
@@ -79,8 +118,8 @@
       "MeasurementType": "MagneticField",
       "TemporalDescription": {
         "TimeSpan": {
-          "StartDate": "1995-02-11T04:00:30",
-          "StopDate": "1995-04-09T00:59:30"
+          "StartDate": "1995-02-11T04:00:30Z",
+          "StopDate": "1995-04-09T00:59:30Z"
         },
         "Cadence": "PT1M"
       },

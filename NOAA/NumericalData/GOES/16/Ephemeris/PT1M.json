@@ -2,18 +2,30 @@
   "Spase": {
     "xmlns": "http://www.spase-group.org/data/schema",
     "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
-    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_3_0.xsd",
-    "Version": "2.3.0",
+    "xsi:schemaLocation": "https://www.spase-group.org/data/schema https://www.spase-group.org/data/schema/spase-2.7.2.xsd",
+    "Version": "2.7.2",
     "NumericalData": {
       "ResourceID": "spase://NOAA/NumericalData/GOES/16/Ephemeris/PT1M",
+      "NamingAuthority": "NOAA",
+      "ResourceType": "NumericalData",
       "ResourceHeader": {
         "ResourceName": "GOES 16 Ephemeris, Orbital Positions generated via Satellite Situation Center, SSC, Services, 1 min Data",
-        "ReleaseDate": "2021-04-27T17:52:57Z",
+        "ReleaseDate": "2026-11-04T12:49:01Z",
         "RevisionHistory": {
-          "RevisionEvent": {
-            "ReleaseDate": "2024-04-04T12:34:56.789",
-            "Note": "Removed spase://SMWG/Instrument/GOES/16/MAG as parent InstrumentID as it creates confusion in product/instrument/observatory hierarchy displays"
-          }
+          "RevisionEvent": [
+            {
+              "ReleaseDate": "2021-04-27T17:52:57Z",
+              "Note": "Only known prior ReleaseDate of the metadata"
+            },
+            {
+              "ReleaseDate": "2024-04-04T12:34:56.789Z",
+              "Note": "Removed spase://SMWG/Instrument/GOES/16/MAG as parent InstrumentID as it creates confusion in product/instrument/observatory hierarchy displays"
+            },
+            {
+              "ReleaseDate": "2026-11-04T12:49:01Z",
+              "Note": "Added HelioCloud S3 AccessURL. Added ResourceType and NamingAuthority. Changed http to https in top-level schemaLocation attribute. Fixed version number separator in top-level schemaLocation attribute. Updated to 2.7.2. Add 'Z' to ReleaseDate. ZCB"
+            }
+          ]
         },
         "Description": "GOES16 Ephemeris Data generated via Services provided by the Satellite Situation Center, SSC, which is an Operational Unit of the Space Physics Data Facility, SPDF.",
         "Acknowledgement": "Please acknowledge R. M. Candey, the NASA GSFC Satellite Situation Center, SSC, and the National Oceanic and Atmospheric Administration.",
@@ -75,6 +87,31 @@
             "Description": "Web Service to this product using the HAPI interface."
           },
           "Format": "CSV",
+          "Acknowledgement": "Please acknowledge R. M. Candey, the NASA GSFC Satellite Situation Center, SSC, and the National Oceanic and Atmospheric Administration. Please acknowledge the Data Providers and CDAWeb when using these Data."
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "RightsList": {
+            "Rights": {
+              "SchemeURI": "https://spdx.org/licenses/",
+              "RightsIdentifierScheme": "SPDX",
+              "RightsIdentifier": "CC0-1.0",
+              "RightsURI": "https://spdx.org/licenses/CC0-1.0.html",
+              "RightsName": "Creative Commons Zero v1.0 Universal",
+              "Note": "CC0 1.0 Universal is the Creative Commons license applicable to all publicly available NASA Heliophysics data products"
+            }
+          },
+          "AccessURL": {
+            "Name": "HelioCloud Catalog Endpoint",
+            "URL": "https://api.heliocloud.org/cloudcatalog?id=GOES16_EPHEMERIS_SSC",
+            "Style": "Overview",
+            "ProductKey": "GOES16_EPHEMERIS_SSC",
+            "Description": "Endpoint to access the data from HelioCloud. Data is split into one CSV file per year."
+          },
+          "Format": "CSV",
+          "Encoding": "S3_BUCKET",
           "Acknowledgement": "Please acknowledge R. M. Candey, the NASA GSFC Satellite Situation Center, SSC, and the National Oceanic and Atmospheric Administration. Please acknowledge the Data Providers and CDAWeb when using these Data."
         }
       ],

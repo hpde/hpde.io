@@ -2,13 +2,27 @@
   "Spase": {
     "xmlns": "http://www.spase-group.org/data/schema",
     "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
-    "xsi:schemaLocation": "http://www.spase-group.org/data/schema  http://www.spase-group.org/data/schema/spase-2_3_0.xsd'",
-    "Version": "2.3.0",
+    "xsi:schemaLocation": "https://www.spase-group.org/data/schema  https://www.spase-group.org/data/schema/spase-2.3.0.xsd'",
+    "Version": "2.7.2",
     "NumericalData": {
       "ResourceID": "spase://JAXA/NumericalData/Geotail/MGF/PT64S",
+      "NamingAuthority": "JAXA",
+      "ResourceType": "NumericalData",
       "ResourceHeader": {
         "ResourceName": "Geotail KP Magnetic Field Data (64s)",
-        "ReleaseDate": "2021-04-27T17:52:35Z",
+        "ReleaseDate": "2026-11-04T16:08:38Z",
+        "RevisionHistory": {
+          "RevisionEvent": [
+            {
+              "ReleaseDate": "2021-04-27T17:52:35Z",
+              "Note": "Only known prior ReleaseDate of the metadata"
+            },
+            {
+              "ReleaseDate": "2026-11-04T16:08:38Z",
+              "Note": "Added HelioCloud S3 AccessURL. Added ResourceType and NamingAuthority. Changed http to https in top-level schemaLocation attribute. Fixed version number separator in top-level schemaLocation attribute. Updated to 2.7.2. Add 'Z' to TemporalDescription:TimeSpan:StartDate. ZCB"
+            }
+          ]
+        },
         "Description": "This data set contains the investigator-selected Key Parameters from the Magnetic Field instrument (MGF) on Geotail, as made available via NSSDC's interactive WWW interface CDAWeb.\n\n            Selected references:\n\n            Kokubun, S., et al., Magnetic field measurement (MGF), In Geotail Prelaunch Report, SES-TD-92-007SY, Institute of Space and Astronautical Science, SES Data Center, pp. 58-70, Apr. 1992.\n\n            Nishida, A., et al., Geotail mission to explore earth's magnetotail, EOS, 73, No. 40, Oct. 1992.\n\n            Kokubun, S., et al., The GEOTAIL Magnetic Field Experiment, J. Geomag. Geoelectr., 46, No. 1, 7-21, 1994.",
         "Acknowledgement": "Data were provided by T. Nagai at Institute of Space and Astronautical Science, JAXA in Japan.",
         "Contact": [
@@ -77,13 +91,37 @@
             "Description": "Web Service to this product using the HAPI interface."
           },
           "Format": "CSV"
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "RightsList": {
+            "Rights": {
+              "SchemeURI": "https://spdx.org/licenses/",
+              "RightsIdentifierScheme": "SPDX",
+              "RightsIdentifier": "CC0-1.0",
+              "RightsURI": "https://spdx.org/licenses/CC0-1.0.html",
+              "RightsName": "Creative Commons Zero v1.0 Universal",
+              "Note": "CC0 1.0 Universal is the Creative Commons license applicable to all publicly available NASA Heliophysics data products"
+            }
+          },
+          "AccessURL": {
+            "Name": "HelioCloud Catalog Endpoint",
+            "URL": "https://api.heliocloud.org/cloudcatalog?id=GE_K0_MGF",
+            "Style": "Overview",
+            "ProductKey": "GE_K0_MGF",
+            "Description": "Endpoint to access the data from HelioCloud. Data is split into one CSV file per year."
+          },
+          "Format": "CSV",
+          "Encoding": "S3_BUCKET"
         }
       ],
       "InstrumentID": "spase://SMWG/Instrument/Geotail/MGF",
       "MeasurementType": "MagneticField",
       "TemporalDescription": {
         "TimeSpan": {
-          "StartDate": "1992-09-04T19:14:06",
+          "StartDate": "1992-09-04T19:14:06Z",
           "RelativeStopDate": "-P0D"
         },
         "Cadence": "PT64S"

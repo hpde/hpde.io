@@ -2,14 +2,28 @@
   "Spase": {
     "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
     "xmlns": "http://www.spase-group.org/data/schema",
-    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_3_2.xsd",
-    "Version": "2.3.2",
+    "xsi:schemaLocation": "https://www.spase-group.org/data/schema https://www.spase-group.org/data/schema/spase-2.7.2.xsd",
+    "Version": "2.7.2",
     "NumericalData": {
       "ResourceID": "spase://NOAA/NumericalData/POES/8/SEM/MEPED/KeyParameter/PT1M",
+      "NamingAuthority": "NOAA",
+      "ResourceType": "NumericalData",
       "ResourceHeader": {
         "ResourceName": "NOAA 08 Space Environment Monitor-1 (SEM-1) Medium Energy Proton and Electron Detector (MEPED) Re-processed Particle Count Rates, Fluxes, and Model Fields, 1 min Data",
-        "ReleaseDate": "2021-04-27T17:52:57Z",
-        "Description": "TIROS/NOAA SEM MEPED Reprocessed Data Archive.                      \r\n      This is the Reprocessed Version of the Medium Energy Proton Electron Detector, MEPED, Data Archive from the TIROS/NOAA Spacecraft. The raw Data from the NOAA Archive have been processed to 1 min Resolution. Magnetic Field Parameters including Geocentric Solar Magnetospheric, GSM, Bx, By, Bz, B/Bmin, and L Shell Values are derived by using four Magnetic Field Models:\r\n \r\n*  International Geomagnetic Reference Field, IGRF, \r\n*  Tsyganenko 1989, T89, \r\n*  Tsyganenko 1996, T96, and \r\n*  Tsyganenko 2001, T01.\r\n\r\nThe T89, T96, and T01 Magnetic Field Models have been driven with Solar Wind Input Parameters and Geomagnetic Indices obtained from the OMNI-2 Data Set. Detector Counts, Omnidirectional and Perpendicular Electron and Proton Fluxes are archived.  Processing was done by: S.F. Fung, L.C. Tan, and X. Shao, Space Physics Data Facility, Goddard Space Flight Center, NASA, Greenbelt, MD 20771, USA, e-mail: Shing.F.Fung@nasa.gov.",
+        "ReleaseDate": "2026-11-04T12:49:06Z",
+        "RevisionHistory": {
+          "RevisionEvent": [
+            {
+              "ReleaseDate": "2021-04-27T17:52:57Z",
+              "Note": "Only known prior ReleaseDate of the metadata"
+            },
+            {
+              "ReleaseDate": "2026-11-04T12:49:06Z",
+              "Note": "Added HelioCloud S3 AccessURL. Added ResourceType and NamingAuthority. Changed http to https in top-level schemaLocation attribute. Fixed version number separator in top-level schemaLocation attribute. Updated to 2.7.2. Add 'Z' to TemporalDescription:TimeSpan:StartDate, TemporalDescription:TimeSpan:StopDate. ZCB"
+            }
+          ]
+        },
+        "Description": "TIROS/NOAA SEM MEPED Reprocessed Data Archive.                      \n      This is the Reprocessed Version of the Medium Energy Proton Electron Detector, MEPED, Data Archive from the TIROS/NOAA Spacecraft. The raw Data from the NOAA Archive have been processed to 1 min Resolution. Magnetic Field Parameters including Geocentric Solar Magnetospheric, GSM, Bx, By, Bz, B/Bmin, and L Shell Values are derived by using four Magnetic Field Models:\n \n*  International Geomagnetic Reference Field, IGRF, \n*  Tsyganenko 1989, T89, \n*  Tsyganenko 1996, T96, and \n*  Tsyganenko 2001, T01.\n\nThe T89, T96, and T01 Magnetic Field Models have been driven with Solar Wind Input Parameters and Geomagnetic Indices obtained from the OMNI-2 Data Set. Detector Counts, Omnidirectional and Perpendicular Electron and Proton Fluxes are archived.  Processing was done by: S.F. Fung, L.C. Tan, and X. Shao, Space Physics Data Facility, Goddard Space Flight Center, NASA, Greenbelt, MD 20771, USA, e-mail: Shing.F.Fung@nasa.gov.",
         "Acknowledgement": "S.F. Fung, Please acknowledge NOAA/NGDC for providing the raw Data.",
         "Contact": [
           {
@@ -87,6 +101,31 @@
           },
           "Format": "CSV",
           "Acknowledgement": "S.F. Fung, Please acknowledge NOAA/NGDC for providing the raw Data. Please acknowledge the Data Providers and CDAWeb when using these Data."
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "RightsList": {
+            "Rights": {
+              "SchemeURI": "https://spdx.org/licenses/",
+              "RightsIdentifierScheme": "SPDX",
+              "RightsIdentifier": "CC0-1.0",
+              "RightsURI": "https://spdx.org/licenses/CC0-1.0.html",
+              "RightsName": "Creative Commons Zero v1.0 Universal",
+              "Note": "CC0 1.0 Universal is the Creative Commons license applicable to all publicly available NASA Heliophysics data products"
+            }
+          },
+          "AccessURL": {
+            "Name": "HelioCloud Catalog Endpoint",
+            "URL": "https://api.heliocloud.org/cloudcatalog?id=NOAA08_MEPED1MIN_SEM",
+            "Style": "Overview",
+            "ProductKey": "NOAA08_MEPED1MIN_SEM",
+            "Description": "Endpoint to access the data from HelioCloud. Data is split into one CSV file per year."
+          },
+          "Format": "CSV",
+          "Encoding": "S3_BUCKET",
+          "Acknowledgement": "S.F. Fung, Please acknowledge NOAA/NGDC for providing the raw Data. Please acknowledge the Data Providers and CDAWeb when using these Data."
         }
       ],
       "ProcessingLevel": "Calibrated",
@@ -99,8 +138,8 @@
       ],
       "TemporalDescription": {
         "TimeSpan": {
-          "StartDate": "1983-05-09T17:36:00.000",
-          "StopDate": "1985-10-14T12:18:00.000"
+          "StartDate": "1983-05-09T17:36:00.000Z",
+          "StopDate": "1985-10-14T12:18:00.000Z"
         },
         "Cadence": "PT1M"
       },

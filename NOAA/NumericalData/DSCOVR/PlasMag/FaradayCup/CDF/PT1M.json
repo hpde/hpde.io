@@ -2,8 +2,8 @@
   "Spase": {
     "xmlns": "http://www.spase-group.org/data/schema",
     "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
-    "xsi:schemaLocation": "https://www.spase-group.org/data/schema  https://www.spase-group.org/data/schema/spase-2.7.1.xsd",
-    "Version": "2.7.1",
+    "xsi:schemaLocation": "https://www.spase-group.org/data/schema  https://www.spase-group.org/data/schema/spase-2.7.2.xsd",
+    "Version": "2.7.2",
     "NumericalData": {
       "ResourceID": "spase://NOAA/NumericalData/DSCOVR/PlasMag/FaradayCup/CDF/PT1M",
       "NamingAuthority": "NOAA",
@@ -11,16 +11,20 @@
       "ResourceHeader": {
         "ResourceName": "DSCOVR Faraday Cup (FC) Isotropic Maxwellian Parameters for Solar Wind Protons 1 minute averages",
         "DOI": "https://doi.org/10.48322/ja0r-4j65",
-        "ReleaseDate": "2026-07-29T11:08:00Z",
+        "ReleaseDate": "2026-11-04T12:48:57Z",
         "RevisionHistory": {
           "RevisionEvent": [
             {
-              "ReleaseDate": "2026-07-24T13:09:42",
+              "ReleaseDate": "2026-07-24T13:09:42Z",
               "Note": "Added DOI TLK"
             },
             {
-              "ReleaseDate": "2026-07-29T11:08:00",
+              "ReleaseDate": "2026-07-29T11:08:00Z",
               "Note": "Adding publication info TLK"
+            },
+            {
+              "ReleaseDate": "2026-11-04T12:48:57Z",
+              "Note": "Added HelioCloud S3 AccessURL. Updated to 2.7.2. Add 'Z' to ReleaseDate, RevisionEvent:ReleaseDate(s), TemporalDescription:TimeSpan:StartDate. ZCB"
             }
           ]
         },
@@ -65,7 +69,7 @@
       },
       "AccessInformation": [
         {
-          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF/CDAWeb",
           "Availability": "Online",
           "AccessRights": "Open",
           "AccessURL": [
@@ -81,7 +85,7 @@
             },
             {
               "Name": "CDAWeb",
-              "URL": "https://cdaweb.gsfc.nasa.gov/index.html/",
+              "URL": "https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=DSCOVR_H1_FC&index=sp_phys",
               "ProductKey": "DSCOVR_H1_FC",
               "Description": "Access to ASCII, CDF, and plots via NASA/GSFC CDAWeb"
             }
@@ -103,6 +107,31 @@
           },
           "Format": "CSV",
           "Acknowledgement": "J.C. Kasper, M.L. Stevens, A.W. Case, This Research has made use of Deep Space Climate Observatory (DSCOVR) Faraday Cup Experiment Science Data. These Data are provided by the Space Plasma Group at the Smithsonian Astrophysical Observatory under NASA Grant NNX17AC98G. The DSCOVR Mission is a Project of the U.S. National Oceanic and Atmospheric Administration.. Please acknowledge the data providers and CDAWeb when using these data."
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "RightsList": {
+            "Rights": {
+              "SchemeURI": "https://spdx.org/licenses/",
+              "RightsIdentifierScheme": "SPDX",
+              "RightsIdentifier": "CC0-1.0",
+              "RightsURI": "https://spdx.org/licenses/CC0-1.0.html",
+              "RightsName": "Creative Commons Zero v1.0 Universal",
+              "Note": "CC0 1.0 Universal is the Creative Commons license applicable to all publicly available NASA Heliophysics data products"
+            }
+          },
+          "AccessURL": {
+            "Name": "HelioCloud Catalog Endpoint",
+            "URL": "https://api.heliocloud.org/cloudcatalog?id=DSCOVR_H1_FC",
+            "Style": "Overview",
+            "ProductKey": "DSCOVR_H1_FC",
+            "Description": "Endpoint to access the data from HelioCloud. Data is split into one CSV file per year."
+          },
+          "Format": "CSV",
+          "Encoding": "S3_BUCKET",
+          "Acknowledgement": "J.C. Kasper, M.L. Stevens, A.W. Case, This Research has made use of Deep Space Climate Observatory (DSCOVR) Faraday Cup Experiment Science Data. These Data are provided by the Space Plasma Group at the Smithsonian Astrophysical Observatory under NASA Grant NNX17AC98G. The DSCOVR Mission is a Project of the U.S. National Oceanic and Atmospheric Administration.. Please acknowledge the data providers and CDAWeb when using these data."
         }
       ],
       "ProcessingLevel": "Calibrated",
@@ -110,7 +139,7 @@
       "MeasurementType": "EnergeticParticles",
       "TemporalDescription": {
         "TimeSpan": {
-          "StartDate": "2016-06-03T00:00:00.000",
+          "StartDate": "2016-06-03T00:00:00.000Z",
           "RelativeStopDate": "-P2M"
         },
         "Cadence": "PT1M"

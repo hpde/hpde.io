@@ -2,17 +2,31 @@
   "Spase": {
     "xmlns": "http://www.spase-group.org/data/schema",
     "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
-    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_3_0.xsd",
-    "Version": "2.3.0",
+    "xsi:schemaLocation": "https://www.spase-group.org/data/schema https://www.spase-group.org/data/schema/spase-2.7.2.xsd",
+    "Version": "2.7.2",
     "NumericalData": {
       "ResourceID": "spase://NOAA/NumericalData/GOES/8/EPS/PT5M",
+      "NamingAuthority": "NOAA",
+      "ResourceType": "NumericalData",
       "ResourceHeader": {
         "ResourceName": "GOES 8 Energetic Particle Monitor Data at 5 min Time Resolution",
         "AlternateName": [
           "GOES 8 EPS data",
           "GOES 8 EP8 data"
         ],
-        "ReleaseDate": "2021-04-27T17:52:57Z",
+        "ReleaseDate": "2026-11-04T12:49:03Z",
+        "RevisionHistory": {
+          "RevisionEvent": [
+            {
+              "ReleaseDate": "2021-04-27T17:52:57Z",
+              "Note": "Only known prior ReleaseDate of the metadata"
+            },
+            {
+              "ReleaseDate": "2026-11-04T12:49:03Z",
+              "Note": "Added HelioCloud S3 AccessURL. Added ResourceType and NamingAuthority. Changed http to https in top-level schemaLocation attribute. Fixed version number separator in top-level schemaLocation attribute. Updated to 2.7.2. Add 'Z' to TemporalDescription:TimeSpan:StartDate, TemporalDescription:TimeSpan:StopDate. ZCB"
+            }
+          ]
+        },
         "Description": "The energetic particle sensor (now called EP8 instead of EPS or EPM) data consists of electron, proton, and alpha particle data. The electrons consists of 3 energy flux channels with energies greater than 0.6 MeV. The protons consist of 7 energy channels from 0.6 to 500 MeV and the alpha particles consist of 6 energy channels from 4 to 500 MeV.",
         "Acknowledgement": "NOAA Environmental Research Laboratories, Terry G. Onsager",
         "Contact": [
@@ -95,6 +109,30 @@
             "Description": "Web Service to this product using the HAPI interface."
           },
           "Format": "CSV"
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "RightsList": {
+            "Rights": {
+              "SchemeURI": "https://spdx.org/licenses/",
+              "RightsIdentifierScheme": "SPDX",
+              "RightsIdentifier": "CC0-1.0",
+              "RightsURI": "https://spdx.org/licenses/CC0-1.0.html",
+              "RightsName": "Creative Commons Zero v1.0 Universal",
+              "Note": "CC0 1.0 Universal is the Creative Commons license applicable to all publicly available NASA Heliophysics data products"
+            }
+          },
+          "AccessURL": {
+            "Name": "HelioCloud Catalog Endpoint",
+            "URL": "https://api.heliocloud.org/cloudcatalog?id=G8_K0_EP8",
+            "Style": "Overview",
+            "ProductKey": "G8_K0_EP8",
+            "Description": "Endpoint to access the data from HelioCloud. Data is split into one CSV file per year."
+          },
+          "Format": "CSV",
+          "Encoding": "S3_BUCKET"
         }
       ],
       "ProcessingLevel": "Calibrated",
@@ -104,8 +142,8 @@
       "MeasurementType": "EnergeticParticles",
       "TemporalDescription": {
         "TimeSpan": {
-          "StartDate": "1995-01-01T00:00:00",
-          "StopDate": "2003-06-30T23:59:59",
+          "StartDate": "1995-01-01T00:00:00Z",
+          "StopDate": "2003-06-30T23:59:59Z",
           "Note": "Time format in data files is year-month-day hour:minute:seconds."
         },
         "Cadence": "PT5M"

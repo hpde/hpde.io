@@ -1,12 +1,24 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_3_0.xsd">
-  <Version>2.3.0</Version>
+<?xml version='1.0' encoding='UTF-8'?>
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.spase-group.org/data/schema https://www.spase-group.org/data/schema/spase-2.7.2.xsd">
+  <Version>2.7.2</Version>
   <NumericalData>
     <ResourceID>spase://NOAA/NumericalData/GOES/12/MAG/PT1M</ResourceID>
+    <NamingAuthority>NOAA</NamingAuthority>
+    <ResourceType>NumericalData</ResourceType>
     <ResourceHeader>
       <ResourceName>GOES 12 Magnetic Field Sensor data at 1 min Time Resolution in Spacecraft Coordinates</ResourceName>
       <AlternateName>GOES 12 MFS data</AlternateName>
-      <ReleaseDate>2021-04-27T17:52:57Z</ReleaseDate>
+      <ReleaseDate>2026-11-04T12:48:59Z</ReleaseDate>
+      <RevisionHistory>
+        <RevisionEvent>
+          <ReleaseDate>2021-04-27T17:52:57Z</ReleaseDate>
+          <Note>Only known prior ReleaseDate of the metadata</Note>
+        </RevisionEvent>
+        <RevisionEvent>
+          <ReleaseDate>2026-11-04T12:48:59Z</ReleaseDate>
+          <Note>Added HelioCloud S3 AccessURL. Added ResourceType and NamingAuthority. Changed http to https in top-level schemaLocation attribute. Fixed version number separator in top-level schemaLocation attribute. Updated to 2.7.2. Add 'Z' to TemporalDescription:TimeSpan:StartDate, TemporalDescription:TimeSpan:StopDate. ZCB</Note>
+        </RevisionEvent>
+      </RevisionHistory>
       <Description>The magnetic field sensor, located at a few meters away from the spacecraft was designed to provide the orthogonal components of the magnetic field: Hp was parallel to the spin axis that was held nearly parallel to the rotation axis of the Earth, He was directed toward Earth center, and Hn pointed eastward. The magnetometer had a range of ±1000 nT (without saturation) and a resolution of 0.1 nT. Data files contain long descriptive header.</Description>
       <Acknowledgement>NASA Office of Space Science Applications (United States), NOAA National Environmental Satellite Service (United States), Howard J. Singer</Acknowledgement>
       <Contact>
@@ -71,6 +83,30 @@
       <Encoding>None</Encoding>
       <Acknowledgement>NASA, NOAA, Howard J. Singer</Acknowledgement>
     </AccessInformation>
+    <AccessInformation>
+      <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF</RepositoryID>
+      <Availability>Online</Availability>
+      <AccessRights>Open</AccessRights>
+      <RightsList>
+        <Rights>
+          <SchemeURI>https://spdx.org/licenses/</SchemeURI>
+          <RightsIdentifierScheme>SPDX</RightsIdentifierScheme>
+          <RightsIdentifier>CC0-1.0</RightsIdentifier>
+          <RightsURI>https://spdx.org/licenses/CC0-1.0.html</RightsURI>
+          <RightsName>Creative Commons Zero v1.0 Universal</RightsName>
+          <Note>CC0 1.0 Universal is the Creative Commons license applicable to all publicly available NASA Heliophysics data products</Note>
+        </Rights>
+      </RightsList>
+      <AccessURL>
+        <Name>HelioCloud Catalog Endpoint</Name>
+        <URL>https://api.heliocloud.org/cloudcatalog?id=GOES12_K0_MAG</URL>
+        <Style>Overview</Style>
+        <ProductKey>GOES12_K0_MAG</ProductKey>
+        <Description>Endpoint to access the data from HelioCloud. Data is split into one CSV file per year.</Description>
+      </AccessURL>
+      <Format>CSV</Format>
+      <Encoding>S3_BUCKET</Encoding>
+    </AccessInformation>
     <ProcessingLevel>Calibrated</ProcessingLevel>
     <ProviderResourceName>NOAA GOES 12 Magnetometer</ProviderResourceName>
     <ProviderProcessingLevel>Level-2</ProviderProcessingLevel>
@@ -78,8 +114,8 @@
     <MeasurementType>MagneticField</MeasurementType>
     <TemporalDescription>
       <TimeSpan>
-        <StartDate>2003-01-01T00:00:00</StartDate>
-        <StopDate>2010-08-31T23:59:00</StopDate>
+        <StartDate>2003-01-01T00:00:00Z</StartDate>
+        <StopDate>2010-08-31T23:59:00Z</StopDate>
         <Note>Time format in data files is year-month-day hour:minute:seconds. Data file may fill out the first month and last month with flags.</Note>
       </TimeSpan>
       <Cadence>PT1M</Cadence>

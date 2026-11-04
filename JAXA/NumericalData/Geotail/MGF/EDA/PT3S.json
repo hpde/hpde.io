@@ -2,13 +2,27 @@
   "Spase": {
     "xmlns": "http://www.spase-group.org/data/schema",
     "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
-    "xsi:schemaLocation": "http://www.spase-group.org/data/schema  http://www.spase-group.org/data/schema/spase-2_3_0.xsd'",
-    "Version": "2.3.0",
+    "xsi:schemaLocation": "https://www.spase-group.org/data/schema  https://www.spase-group.org/data/schema/spase-2.3.0.xsd'",
+    "Version": "2.7.2",
     "NumericalData": {
       "ResourceID": "spase://JAXA/NumericalData/Geotail/MGF/EDA/PT3S",
+      "NamingAuthority": "JAXA",
+      "ResourceType": "NumericalData",
       "ResourceHeader": {
         "ResourceName": "Geotail Editor-A 3-second Magnetic Field Data",
-        "ReleaseDate": "2021-04-27T17:52:35Z",
+        "ReleaseDate": "2026-11-04T16:08:38Z",
+        "RevisionHistory": {
+          "RevisionEvent": [
+            {
+              "ReleaseDate": "2021-04-27T17:52:35Z",
+              "Note": "Only known prior ReleaseDate of the metadata"
+            },
+            {
+              "ReleaseDate": "2026-11-04T16:08:38Z",
+              "Note": "Added HelioCloud S3 AccessURL. Added ResourceType and NamingAuthority. Changed http to https in top-level schemaLocation attribute. Fixed version number separator in top-level schemaLocation attribute. Updated to 2.7.2. Add 'Z' to TemporalDescription:TimeSpan:StartDate. ZCB"
+            }
+          ]
+        },
         "Description": "3-second Editor-A magnetic field data from the Geotail spacecraft.\n\n            As of February 1 2008 the Bz component of the magnetic field has been corrected in the data set.\n\n            The Geotail satellite has two editors onboard: The Editor-A data are only acquired with the real-time operation in Usuda Deep Space Center (UDSC) or Uchinoura Space Center (USC), Japan, while the Editor-B data are continuously recorded in the onboard tape recorders for 24 hours and are dumped to the NASA JPL Deep Space Network (DSN) stations.",
         "Acknowledgement": "In any publications, the use of the Geotail data should be acknowledged, for example, as \"Geotail magnetic field data were provided by T. Nagai, JAXA in Japan.\"",
         "Contact": [
@@ -87,13 +101,38 @@
           "Format": "Text",
           "Encoding": "ASCII",
           "Acknowledgement": "In any publications, the use of the Geotail data should be acknowledged, for example, as \"Geotail magnetic field data were provided by T. Nagai through DARTS at Institute of Space and Astronautical Science, JAXA in Japan.\""
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "RightsList": {
+            "Rights": {
+              "SchemeURI": "https://spdx.org/licenses/",
+              "RightsIdentifierScheme": "SPDX",
+              "RightsIdentifier": "CC0-1.0",
+              "RightsURI": "https://spdx.org/licenses/CC0-1.0.html",
+              "RightsName": "Creative Commons Zero v1.0 Universal",
+              "Note": "CC0 1.0 Universal is the Creative Commons license applicable to all publicly available NASA Heliophysics data products"
+            }
+          },
+          "AccessURL": {
+            "Name": "HelioCloud Catalog Endpoint",
+            "URL": "https://api.heliocloud.org/cloudcatalog?id=GE_EDA3SEC_MGF",
+            "Style": "Overview",
+            "ProductKey": "GE_EDA3SEC_MGF",
+            "Description": "Endpoint to access the data from HelioCloud. Data is split into one CSV file per year."
+          },
+          "Format": "CSV",
+          "Encoding": "S3_BUCKET",
+          "Acknowledgement": "Data provider T. Nagai at STELAB Nagoya University, Japan and CDAWeb."
         }
       ],
       "InstrumentID": "spase://SMWG/Instrument/Geotail/MGF",
       "MeasurementType": "MagneticField",
       "TemporalDescription": {
         "TimeSpan": {
-          "StartDate": "1993-09-01T09:52:07",
+          "StartDate": "1993-09-01T09:52:07Z",
           "RelativeStopDate": "-P2Y"
         },
         "Cadence": "PT3S"

@@ -2,22 +2,28 @@
   "Spase": {
     "xmlns": "http://www.spase-group.org/data/schema",
     "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
-    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_6_0.xsd",
-    "Version": "2.6.0",
+    "xsi:schemaLocation": "https://www.spase-group.org/data/schema https://www.spase-group.org/data/schema/spase-2.7.2.xsd",
+    "Version": "2.7.2",
     "NumericalData": {
       "ResourceID": "spase://NOAA/NumericalData/DSCOVR/Ephemeris/Attitude/Definitive/PT5S",
+      "NamingAuthority": "NOAA",
+      "ResourceType": "NumericalData",
       "ResourceHeader": {
         "ResourceName": "DSCOVR 3-Axis Stabilized Attitude (Ephemeris) Definitive Data",
-        "ReleaseDate": "2024-06-20T12:34:56.789",
+        "ReleaseDate": "2026-11-04T12:48:56Z",
         "RevisionHistory": {
           "RevisionEvent": [
             {
-              "ReleaseDate": "2021-04-27T17:52:57",
+              "ReleaseDate": "2021-04-27T17:52:57Z",
               "Note": "Only known prior ReleaseDate of the metadata"
             },
             {
-              "ReleaseDate": "2024-06-20T12:34:56.789",
+              "ReleaseDate": "2024-06-20T12:34:56.789Z",
               "Note": "Replaced StopDate with a RelativeStopDate equal to -P1M, SPASE versioned up to 2.6.0, LFB 20240620"
+            },
+            {
+              "ReleaseDate": "2026-11-04T12:48:56Z",
+              "Note": "Added HelioCloud S3 AccessURL. Added ResourceType and NamingAuthority. Changed http to https in top-level schemaLocation attribute. Fixed version number separator in top-level schemaLocation attribute. Updated to 2.7.2. Add 'Z' to ReleaseDate, RevisionEvent:ReleaseDate(s), TemporalDescription:TimeSpan:StartDate. ZCB"
             }
           ]
         },
@@ -46,7 +52,7 @@
       },
       "AccessInformation": [
         {
-          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF/CDAWeb",
           "Availability": "Online",
           "AccessRights": "Open",
           "AccessURL": [
@@ -62,7 +68,7 @@
             },
             {
               "Name": "CDAWeb",
-              "URL": "https://cdaweb.gsfc.nasa.gov/index.html/",
+              "URL": "https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=DSCOVR_AT_DEF&index=sp_phys",
               "ProductKey": "DSCOVR_AT_DEF",
               "Description": "Access to ASCII, CDF, and plots via NASA/GSFC CDAWeb"
             }
@@ -84,6 +90,31 @@
           },
           "Format": "CSV",
           "Acknowledgement": "A. Szabo. Please acknowledge the data providers and CDAWeb when using these data."
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "RightsList": {
+            "Rights": {
+              "SchemeURI": "https://spdx.org/licenses/",
+              "RightsIdentifierScheme": "SPDX",
+              "RightsIdentifier": "CC0-1.0",
+              "RightsURI": "https://spdx.org/licenses/CC0-1.0.html",
+              "RightsName": "Creative Commons Zero v1.0 Universal",
+              "Note": "CC0 1.0 Universal is the Creative Commons license applicable to all publicly available NASA Heliophysics data products"
+            }
+          },
+          "AccessURL": {
+            "Name": "HelioCloud Catalog Endpoint",
+            "URL": "https://api.heliocloud.org/cloudcatalog?id=DSCOVR_AT_DEF",
+            "Style": "Overview",
+            "ProductKey": "DSCOVR_AT_DEF",
+            "Description": "Endpoint to access the data from HelioCloud. Data is split into one CSV file per year."
+          },
+          "Format": "CSV",
+          "Encoding": "S3_BUCKET",
+          "Acknowledgement": "A. Szabo. Please acknowledge the data providers and CDAWeb when using these data."
         }
       ],
       "ProcessingLevel": "Calibrated",
@@ -91,7 +122,7 @@
       "MeasurementType": "Ephemeris",
       "TemporalDescription": {
         "TimeSpan": {
-          "StartDate": "2015-02-11T00:00:00.000",
+          "StartDate": "2015-02-11T00:00:00.000Z",
           "RelativeStopDate": "-P1M"
         },
         "Cadence": "PT5S"

@@ -1,11 +1,23 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_3_0.xsd">
-  <Version>2.3.0</Version>
+<?xml version='1.0' encoding='UTF-8'?>
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.spase-group.org/data/schema https://www.spase-group.org/data/schema/spase-2.7.2.xsd">
+  <Version>2.7.2</Version>
   <NumericalData>
     <ResourceID>spase://NOAA/NumericalData/GOES/10/SEM/PT300S</ResourceID>
+    <NamingAuthority>NOAA</NamingAuthority>
+    <ResourceType>NumericalData</ResourceType>
     <ResourceHeader>
       <ResourceName>GOES 10 Energetic Particle Sensor data Key Parameters at 5-min Resolution</ResourceName>
-      <ReleaseDate>2021-04-27T17:52:57Z</ReleaseDate>
+      <ReleaseDate>2026-11-04T12:48:58Z</ReleaseDate>
+      <RevisionHistory>
+        <RevisionEvent>
+          <ReleaseDate>2021-04-27T17:52:57Z</ReleaseDate>
+          <Note>Only known prior ReleaseDate of the metadata</Note>
+        </RevisionEvent>
+        <RevisionEvent>
+          <ReleaseDate>2026-11-04T12:48:58Z</ReleaseDate>
+          <Note>Added HelioCloud S3 AccessURL. Added ResourceType and NamingAuthority. Changed http to https in top-level schemaLocation attribute. Fixed version number separator in top-level schemaLocation attribute. Updated to 2.7.2. Add 'Z' to TemporalDescription:TimeSpan:StartDate. ZCB</Note>
+        </RevisionEvent>
+      </RevisionHistory>
       <Description>GOES 10 Energetic Particle Sensor, Key Parameters, 5-min fluxes of electrons &gt;0.6, &gt;2, &gt;4 MeV and of 0.7-4 MeV protons</Description>
       <Contact>
         <PersonID>spase://SMWG/Person/Terry.Onsager</PersonID>
@@ -57,12 +69,36 @@
       </AccessURL>
       <Format>Text</Format>
     </AccessInformation>
+    <AccessInformation>
+      <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF</RepositoryID>
+      <Availability>Online</Availability>
+      <AccessRights>Open</AccessRights>
+      <RightsList>
+        <Rights>
+          <SchemeURI>https://spdx.org/licenses/</SchemeURI>
+          <RightsIdentifierScheme>SPDX</RightsIdentifierScheme>
+          <RightsIdentifier>CC0-1.0</RightsIdentifier>
+          <RightsURI>https://spdx.org/licenses/CC0-1.0.html</RightsURI>
+          <RightsName>Creative Commons Zero v1.0 Universal</RightsName>
+          <Note>CC0 1.0 Universal is the Creative Commons license applicable to all publicly available NASA Heliophysics data products</Note>
+        </Rights>
+      </RightsList>
+      <AccessURL>
+        <Name>HelioCloud Catalog Endpoint</Name>
+        <URL>https://api.heliocloud.org/cloudcatalog?id=G0_K0_EP8</URL>
+        <Style>Overview</Style>
+        <ProductKey>G0_K0_EP8</ProductKey>
+        <Description>Endpoint to access the data from HelioCloud. Data is split into one CSV file per year.</Description>
+      </AccessURL>
+      <Format>CSV</Format>
+      <Encoding>S3_BUCKET</Encoding>
+    </AccessInformation>
     <ProviderProcessingLevel>CALIBRATED</ProviderProcessingLevel>
     <InstrumentID>spase://SMWG/Instrument/GOES/10/SEM</InstrumentID>
     <MeasurementType>EnergeticParticles</MeasurementType>
     <TemporalDescription>
       <TimeSpan>
-        <StartDate>1999-03-21T00:00:00</StartDate>
+        <StartDate>1999-03-21T00:00:00Z</StartDate>
         <RelativeStopDate>-P1D</RelativeStopDate>
         <Note>Data are current to within a day or so.</Note>
       </TimeSpan>

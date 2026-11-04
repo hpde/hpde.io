@@ -2,14 +2,28 @@
   "Spase": {
     "xmlns": "http://www.spase-group.org/data/schema",
     "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
-    "xsi:schemaLocation": "http://www.spase-group.org/data/schema  http://www.spase-group.org/data/schema/spase-2_3_0.xsd'",
-    "Version": "2.3.0",
+    "xsi:schemaLocation": "https://www.spase-group.org/data/schema  https://www.spase-group.org/data/schema/spase-2.3.0.xsd'",
+    "Version": "2.7.2",
     "NumericalData": {
       "ResourceID": "spase://JAXA/NumericalData/Geotail/CPI/HPA/PT64S",
+      "NamingAuthority": "JAXA",
+      "ResourceType": "NumericalData",
       "ResourceHeader": {
         "ResourceName": "Geotail CPI Hot Plasma Moments",
         "AlternateName": "Geotail CPI HPA High Time Resolution Plasma Moments",
-        "ReleaseDate": "2021-04-27T17:52:35Z",
+        "ReleaseDate": "2026-11-04T16:08:36Z",
+        "RevisionHistory": {
+          "RevisionEvent": [
+            {
+              "ReleaseDate": "2021-04-27T17:52:35Z",
+              "Note": "Only known prior ReleaseDate of the metadata"
+            },
+            {
+              "ReleaseDate": "2026-11-04T16:08:36Z",
+              "Note": "Added HelioCloud S3 AccessURL. Added ResourceType and NamingAuthority. Changed http to https in top-level schemaLocation attribute. Fixed version number separator in top-level schemaLocation attribute. Updated to 2.7.2. Add 'Z' to TemporalDescription:TimeSpan:StartDate. ZCB"
+            }
+          ]
+        },
         "Description": "The CPI/HPA Hot Plasma Analyzer high time resolution moments of hot plasma:\n\n            * Ion number density\n            * Ion average temperature\n            * Ion bulk flow velocity\n            * Electron number density\n            * Electron average temperature\n\n            The CPI/HPA data are good in the magnetosphere and may be usefull in the magnetosheath.",
         "Contact": [
           {
@@ -83,13 +97,37 @@
           },
           "Format": "Text",
           "Encoding": "ASCII"
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "RightsList": {
+            "Rights": {
+              "SchemeURI": "https://spdx.org/licenses/",
+              "RightsIdentifierScheme": "SPDX",
+              "RightsIdentifier": "CC0-1.0",
+              "RightsURI": "https://spdx.org/licenses/CC0-1.0.html",
+              "RightsName": "Creative Commons Zero v1.0 Universal",
+              "Note": "CC0 1.0 Universal is the Creative Commons license applicable to all publicly available NASA Heliophysics data products"
+            }
+          },
+          "AccessURL": {
+            "Name": "HelioCloud Catalog Endpoint",
+            "URL": "https://api.heliocloud.org/cloudcatalog?id=GE_HPAMOM_CPI",
+            "Style": "Overview",
+            "ProductKey": "GE_HPAMOM_CPI",
+            "Description": "Endpoint to access the data from HelioCloud. Data is split into one CSV file per year."
+          },
+          "Format": "CSV",
+          "Encoding": "S3_BUCKET"
         }
       ],
       "InstrumentID": "spase://SMWG/Instrument/Geotail/CPI/HPA",
       "MeasurementType": "ThermalPlasma",
       "TemporalDescription": {
         "TimeSpan": {
-          "StartDate": "1992-10-06T00:00:28",
+          "StartDate": "1992-10-06T00:00:28Z",
           "RelativeStopDate": "-P2Y"
         },
         "Cadence": "PT64S"

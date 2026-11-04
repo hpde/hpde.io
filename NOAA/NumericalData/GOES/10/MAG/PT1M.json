@@ -2,14 +2,28 @@
   "Spase": {
     "xmlns": "http://www.spase-group.org/data/schema",
     "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
-    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_3_0.xsd",
-    "Version": "2.3.0",
+    "xsi:schemaLocation": "https://www.spase-group.org/data/schema https://www.spase-group.org/data/schema/spase-2.7.2.xsd",
+    "Version": "2.7.2",
     "NumericalData": {
       "ResourceID": "spase://NOAA/NumericalData/GOES/10/MAG/PT1M",
+      "NamingAuthority": "NOAA",
+      "ResourceType": "NumericalData",
       "ResourceHeader": {
         "ResourceName": "GOES 10 Magnetic Field Sensor data at 1 min Time Resolution in Spacecraft Coordinates",
         "AlternateName": "GOES 10 Magnetic Field data",
-        "ReleaseDate": "2021-04-27T17:52:57Z",
+        "ReleaseDate": "2026-11-04T12:48:58Z",
+        "RevisionHistory": {
+          "RevisionEvent": [
+            {
+              "ReleaseDate": "2021-04-27T17:52:57Z",
+              "Note": "Only known prior ReleaseDate of the metadata"
+            },
+            {
+              "ReleaseDate": "2026-11-04T12:48:58Z",
+              "Note": "Added HelioCloud S3 AccessURL. Added ResourceType and NamingAuthority. Changed http to https in top-level schemaLocation attribute. Fixed version number separator in top-level schemaLocation attribute. Updated to 2.7.2. Add 'Z' to TemporalDescription:TimeSpan:StartDate, TemporalDescription:TimeSpan:StopDate. ZCB"
+            }
+          ]
+        },
         "Description": "The magnetic field sensor, located at a few meters away from the spacecraft was designed to provide the orthogonal components of the magnetic field: Hp was parallel to the spin axis that was held nearly parallel to the rotation axis of the Earth, He was directed toward Earth center, and Hn pointed eastward. The magnetometer had a range of ±1000 nT (without saturation) and a resolution of 0.1 nT. After temperature correction, and before (undescribed) stray field correction, the accuracy is at about 1 nT level. Data files contain long descriptive header.",
         "Acknowledgement": "NASA, NOAA, Howard J. Singer",
         "Contact": [
@@ -87,6 +101,30 @@
           "Format": "Text.ASCII",
           "Encoding": "None",
           "Acknowledgement": "NASA, NOAA, Howard J. Singer"
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "RightsList": {
+            "Rights": {
+              "SchemeURI": "https://spdx.org/licenses/",
+              "RightsIdentifierScheme": "SPDX",
+              "RightsIdentifier": "CC0-1.0",
+              "RightsURI": "https://spdx.org/licenses/CC0-1.0.html",
+              "RightsName": "Creative Commons Zero v1.0 Universal",
+              "Note": "CC0 1.0 Universal is the Creative Commons license applicable to all publicly available NASA Heliophysics data products"
+            }
+          },
+          "AccessURL": {
+            "Name": "HelioCloud Catalog Endpoint",
+            "URL": "https://api.heliocloud.org/cloudcatalog?id=G0_K0_MAG",
+            "Style": "Overview",
+            "ProductKey": "G0_K0_MAG",
+            "Description": "Endpoint to access the data from HelioCloud. Data is split into one CSV file per year."
+          },
+          "Format": "CSV",
+          "Encoding": "S3_BUCKET"
         }
       ],
       "ProcessingLevel": "Calibrated",
@@ -96,8 +134,8 @@
       "MeasurementType": "MagneticField",
       "TemporalDescription": {
         "TimeSpan": {
-          "StartDate": "1998-07-31T00:00:00",
-          "StopDate": "2009-12-31T23:59:00",
+          "StartDate": "1998-07-31T00:00:00Z",
+          "StopDate": "2009-12-31T23:59:00Z",
           "Note": "Time format in data files is year-month-day hour:minute:seconds. Data file may fill out the first month and last month with flags."
         },
         "Cadence": "PT1M"

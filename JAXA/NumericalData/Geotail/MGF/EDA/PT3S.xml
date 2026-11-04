@@ -1,11 +1,23 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema  http://www.spase-group.org/data/schema/spase-2_3_0.xsd'">
-  <Version>2.3.0</Version>
+<?xml version='1.0' encoding='UTF-8'?>
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.spase-group.org/data/schema  https://www.spase-group.org/data/schema/spase-2.3.0.xsd'">
+  <Version>2.7.2</Version>
   <NumericalData>
     <ResourceID>spase://JAXA/NumericalData/Geotail/MGF/EDA/PT3S</ResourceID>
+    <NamingAuthority>JAXA</NamingAuthority>
+    <ResourceType>NumericalData</ResourceType>
     <ResourceHeader>
       <ResourceName>Geotail Editor-A 3-second Magnetic Field Data</ResourceName>
-      <ReleaseDate>2021-04-27T17:52:35Z</ReleaseDate>
+      <ReleaseDate>2026-11-04T16:08:38Z</ReleaseDate>
+      <RevisionHistory>
+        <RevisionEvent>
+          <ReleaseDate>2021-04-27T17:52:35Z</ReleaseDate>
+          <Note>Only known prior ReleaseDate of the metadata</Note>
+        </RevisionEvent>
+        <RevisionEvent>
+          <ReleaseDate>2026-11-04T16:08:38Z</ReleaseDate>
+          <Note>Added HelioCloud S3 AccessURL. Added ResourceType and NamingAuthority. Changed http to https in top-level schemaLocation attribute. Fixed version number separator in top-level schemaLocation attribute. Updated to 2.7.2. Add 'Z' to TemporalDescription:TimeSpan:StartDate. ZCB</Note>
+        </RevisionEvent>
+      </RevisionHistory>
       <Description>3-second Editor-A magnetic field data from the Geotail spacecraft.
 
             As of February 1 2008 the Bz component of the magnetic field has been corrected in the data set.
@@ -82,11 +94,36 @@
       <Encoding>ASCII</Encoding>
       <Acknowledgement>In any publications, the use of the Geotail data should be acknowledged, for example, as "Geotail magnetic field data were provided by T. Nagai through DARTS at Institute of Space and Astronautical Science, JAXA in Japan."</Acknowledgement>
     </AccessInformation>
+    <AccessInformation>
+      <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF</RepositoryID>
+      <Availability>Online</Availability>
+      <AccessRights>Open</AccessRights>
+      <RightsList>
+        <Rights>
+          <SchemeURI>https://spdx.org/licenses/</SchemeURI>
+          <RightsIdentifierScheme>SPDX</RightsIdentifierScheme>
+          <RightsIdentifier>CC0-1.0</RightsIdentifier>
+          <RightsURI>https://spdx.org/licenses/CC0-1.0.html</RightsURI>
+          <RightsName>Creative Commons Zero v1.0 Universal</RightsName>
+          <Note>CC0 1.0 Universal is the Creative Commons license applicable to all publicly available NASA Heliophysics data products</Note>
+        </Rights>
+      </RightsList>
+      <AccessURL>
+        <Name>HelioCloud Catalog Endpoint</Name>
+        <URL>https://api.heliocloud.org/cloudcatalog?id=GE_EDA3SEC_MGF</URL>
+        <Style>Overview</Style>
+        <ProductKey>GE_EDA3SEC_MGF</ProductKey>
+        <Description>Endpoint to access the data from HelioCloud. Data is split into one CSV file per year.</Description>
+      </AccessURL>
+      <Format>CSV</Format>
+      <Encoding>S3_BUCKET</Encoding>
+      <Acknowledgement>Data provider T. Nagai at STELAB Nagoya University, Japan and CDAWeb.</Acknowledgement>
+    </AccessInformation>
     <InstrumentID>spase://SMWG/Instrument/Geotail/MGF</InstrumentID>
     <MeasurementType>MagneticField</MeasurementType>
     <TemporalDescription>
       <TimeSpan>
-        <StartDate>1993-09-01T09:52:07</StartDate>
+        <StartDate>1993-09-01T09:52:07Z</StartDate>
         <RelativeStopDate>-P2Y</RelativeStopDate>
       </TimeSpan>
       <Cadence>PT3S</Cadence>

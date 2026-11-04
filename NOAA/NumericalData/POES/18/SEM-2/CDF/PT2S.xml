@@ -1,11 +1,23 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema  http://www.spase-group.org/data/schema/spase-2_3_2.xsd">
-  <Version>2.3.2</Version>
+<?xml version='1.0' encoding='UTF-8'?>
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.spase-group.org/data/schema  https://www.spase-group.org/data/schema/spase-2.7.2.xsd">
+  <Version>2.7.2</Version>
   <NumericalData>
     <ResourceID>spase://NOAA/NumericalData/POES/18/SEM-2/CDF/PT2S</ResourceID>
+    <NamingAuthority>NOAA</NamingAuthority>
+    <ResourceType>NumericalData</ResourceType>
     <ResourceHeader>
       <ResourceName>NOAA 18 POES Space Environment Monitor-2 (SEM-2) 2-second Particle Precipitation Data</ResourceName>
-      <ReleaseDate>2021-04-27T17:52:57Z</ReleaseDate>
+      <ReleaseDate>2026-11-04T12:49:05Z</ReleaseDate>
+      <RevisionHistory>
+        <RevisionEvent>
+          <ReleaseDate>2021-04-27T17:52:57Z</ReleaseDate>
+          <Note>Only known prior ReleaseDate of the metadata</Note>
+        </RevisionEvent>
+        <RevisionEvent>
+          <ReleaseDate>2026-11-04T12:49:05Z</ReleaseDate>
+          <Note>Added HelioCloud S3 AccessURL. Added ResourceType and NamingAuthority. Changed http to https in top-level schemaLocation attribute. Fixed version number separator in top-level schemaLocation attribute. Updated to 2.7.2. Add 'Z' to TemporalDescription:TimeSpan:StartDate. ZCB</Note>
+        </RevisionEvent>
+      </RevisionHistory>
       <Description>POES-SEM2&gt;POES-Space Environment Monitor 2 POES N19 Data: POES/MetOp: Particle Precipitation Data, these Data have known Contamination Problems, Please consult the Data Provider, Rob Redmon, at rob.redmon@noaa.gov, for Usage Recommendations</Description>
       <Acknowledgement>NGDC, SWPC</Acknowledgement>
       <Contact>
@@ -74,12 +86,37 @@
       <Format>CSV</Format>
       <Acknowledgement>NGDC, SWPC. Please acknowledge the data providers and CDAWeb when using these data.</Acknowledgement>
     </AccessInformation>
+    <AccessInformation>
+      <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF</RepositoryID>
+      <Availability>Online</Availability>
+      <AccessRights>Open</AccessRights>
+      <RightsList>
+        <Rights>
+          <SchemeURI>https://spdx.org/licenses/</SchemeURI>
+          <RightsIdentifierScheme>SPDX</RightsIdentifierScheme>
+          <RightsIdentifier>CC0-1.0</RightsIdentifier>
+          <RightsURI>https://spdx.org/licenses/CC0-1.0.html</RightsURI>
+          <RightsName>Creative Commons Zero v1.0 Universal</RightsName>
+          <Note>CC0 1.0 Universal is the Creative Commons license applicable to all publicly available NASA Heliophysics data products</Note>
+        </Rights>
+      </RightsList>
+      <AccessURL>
+        <Name>HelioCloud Catalog Endpoint</Name>
+        <URL>https://api.heliocloud.org/cloudcatalog?id=NOAA18_POES-SEM2_FLUXES-2SEC</URL>
+        <Style>Overview</Style>
+        <ProductKey>NOAA18_POES-SEM2_FLUXES-2SEC</ProductKey>
+        <Description>Endpoint to access the data from HelioCloud. Data is split into one CSV file per year.</Description>
+      </AccessURL>
+      <Format>CSV</Format>
+      <Encoding>S3_BUCKET</Encoding>
+      <Acknowledgement>NGDC, SWPC. Please acknowledge the data providers and CDAWeb when using these data.</Acknowledgement>
+    </AccessInformation>
     <ProcessingLevel>Calibrated</ProcessingLevel>
     <InstrumentID>spase://SMWG/Instrument/NOAA/18/SEM-2</InstrumentID>
     <MeasurementType>EnergeticParticles</MeasurementType>
     <TemporalDescription>
       <TimeSpan>
-        <StartDate>2013-01-01T00:00:00.000</StartDate>
+        <StartDate>2013-01-01T00:00:00.000Z</StartDate>
         <RelativeStopDate>-P1D</RelativeStopDate>
       </TimeSpan>
       <Cadence>PT2S</Cadence>

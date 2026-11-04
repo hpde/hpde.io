@@ -2,13 +2,27 @@
   "Spase": {
     "xmlns": "http://www.spase-group.org/data/schema",
     "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
-    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_3_1.xsd",
-    "Version": "2.3.1",
+    "xsi:schemaLocation": "https://www.spase-group.org/data/schema https://www.spase-group.org/data/schema/spase-2.7.2.xsd",
+    "Version": "2.7.2",
     "NumericalData": {
       "ResourceID": "spase://NOAA/NumericalData/GOES/12/MAG/PT0.512S",
+      "NamingAuthority": "NOAA",
+      "ResourceType": "NumericalData",
       "ResourceHeader": {
         "ResourceName": "GOES 12 high resolution magnetometer data",
-        "ReleaseDate": "2021-04-27T17:52:57Z",
+        "ReleaseDate": "2026-11-04T12:48:59Z",
+        "RevisionHistory": {
+          "RevisionEvent": [
+            {
+              "ReleaseDate": "2021-04-27T17:52:57Z",
+              "Note": "Only known prior ReleaseDate of the metadata"
+            },
+            {
+              "ReleaseDate": "2026-11-04T12:48:59Z",
+              "Note": "Added HelioCloud S3 AccessURL. Added ResourceType and NamingAuthority. Changed http to https in top-level schemaLocation attribute. Fixed version number separator in top-level schemaLocation attribute. Updated to 2.7.2. Add 'Z' to TemporalDescription:TimeSpan:StartDate, TemporalDescription:TimeSpan:StopDate. ZCB"
+            }
+          ]
+        },
         "Description": "GOES 12 magnetic field data at 0.512 s time resolution. The vector magnetic field is given in the spacecraft Earth-referenced coordinate system:  Hp, He, Hn, and Ht, where  Hp is perpendicular to the satellite orbital plane, or parallel to spin axis of the Earth in the case of a 0° inclination orbit, He is perpendicular to Hp and directed earthward, Hn is perpendicular to both Hp and He and directed eastward, and Ht is the total field.\n\nThis data product also provides GOES 12 satellite positions and velocities derived from SSCWEB GEI ephemeris, interpolated to 1 min time resolution.\n\nThe magnetometer data are downlinked from the spacecraft in real-time to the NOAA Space Weather Prediction Center (SWPC) in Boulder, Colorado. The data from the raw Command and Data Acquisition (CDA) telemetry stream are processed by pre-processors at SWPC and from there 1 min averages are distributed to SWPC Space Weather Operations, as well a archived at the NOAA National Geophysical Data Center (NGDC) and the NASA Coordinated Data Analysis Web (http://cdaweb.gsfc.nasa.gov/). The raw high resolution data are corrected and processed at the NOAA SWPC, and later archived at NGDC.\n\nThe major issue for processing the high resolution data is correction for the magnetic signature of spacecraft torquer currents as briefly discussed in the magnetometer instrument descriptions. In normal operation, the magnetometer samples its three axes every 0.512 s, synchronized with the telemetry frames.  The magnetometer has an anti-aliasing low-pass filter on each axis.  As part of the attitude control on the spacecraft, there are two magnetic torquers.  At the magnetometers, these torquers can generate magnetic fields larger than the ambient fields to be measured.  Therefore signals from these torquer currents need to be removed. The torquer currents are measured at the same rate as the magnetometer rate, and the currents are used to correct the magnetometer measurements.\n\nHowever, the torquer currents were not low-pass filtered.  As a result, large instantaneous steps in the torquer currents show up in the magnetometer data as a delayed, slowly rising wave with some ringing, just what one would expect from the magnetometer low-pass filters. The so-called \"Farthing coefficients\" simulate, from a short past history of the torquer measurements, the effects of the magnetometer filters.  The torquer current changes are asynchronous with the telemetry frames and the timing between these events must be measured to a eighth of a telemetry frame interval for good performance. The transient responses in changes in torquer currents are reduced, but not eliminated for large changes in torquer currents.\n\nThere exists one opportunity at the beginning of each mission to perform a spacecraft rotation maneuver to determine magnetometer offsets. These offsets are used through the duration of the lifetime of each satellite.\n\nApproximate coefficients are:\n\n* 0.8 mA per torquer current count\n* 4 counts per torquer current command step (3.2 mA per command step)\n* 410 mA full scale current\n* 32 magnetometer counts per nT (approximate)\n* 8 torquer step counts can be up to approximately 0.5 nT (depends on axis, which torquer, which satellite, etc.)",
         "Acknowledgement": "NASA Contract NAS5-02099",
         "Contact": [
@@ -79,6 +93,30 @@
             "Description": "Web Service to this product using the HAPI interface."
           },
           "Format": "CSV"
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "RightsList": {
+            "Rights": {
+              "SchemeURI": "https://spdx.org/licenses/",
+              "RightsIdentifierScheme": "SPDX",
+              "RightsIdentifier": "CC0-1.0",
+              "RightsURI": "https://spdx.org/licenses/CC0-1.0.html",
+              "RightsName": "Creative Commons Zero v1.0 Universal",
+              "Note": "CC0 1.0 Universal is the Creative Commons license applicable to all publicly available NASA Heliophysics data products"
+            }
+          },
+          "AccessURL": {
+            "Name": "HelioCloud Catalog Endpoint",
+            "URL": "https://api.heliocloud.org/cloudcatalog?id=G12_L2_MAG",
+            "Style": "Overview",
+            "ProductKey": "G12_L2_MAG",
+            "Description": "Endpoint to access the data from HelioCloud. Data is split into one CSV file per year."
+          },
+          "Format": "CSV",
+          "Encoding": "S3_BUCKET"
         }
       ],
       "InstrumentID": "spase://SMWG/Instrument/GOES/12/MAG",
@@ -88,8 +126,8 @@
       ],
       "TemporalDescription": {
         "TimeSpan": {
-          "StartDate": "2007-09-15T23:59:58",
-          "StopDate": "2008-06-30T23:59:58"
+          "StartDate": "2007-09-15T23:59:58Z",
+          "StopDate": "2008-06-30T23:59:58Z"
         },
         "Cadence": "PT0.512S"
       },

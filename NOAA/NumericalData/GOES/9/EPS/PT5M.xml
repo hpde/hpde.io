@@ -1,13 +1,25 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_3_0.xsd">
-  <Version>2.3.0</Version>
+<?xml version='1.0' encoding='UTF-8'?>
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.spase-group.org/data/schema https://www.spase-group.org/data/schema/spase-2.7.2.xsd">
+  <Version>2.7.2</Version>
   <NumericalData>
     <ResourceID>spase://NOAA/NumericalData/GOES/9/EPS/PT5M</ResourceID>
+    <NamingAuthority>NOAA</NamingAuthority>
+    <ResourceType>NumericalData</ResourceType>
     <ResourceHeader>
       <ResourceName>GOES 9 Energetic Particle Monitor Data at 5 min Time Resolution</ResourceName>
       <AlternateName>GOES 9 EPS data</AlternateName>
       <AlternateName>GOES 9 EP8 data</AlternateName>
-      <ReleaseDate>2021-04-27T17:52:57Z</ReleaseDate>
+      <ReleaseDate>2026-11-04T12:49:03Z</ReleaseDate>
+      <RevisionHistory>
+        <RevisionEvent>
+          <ReleaseDate>2021-04-27T17:52:57Z</ReleaseDate>
+          <Note>Only known prior ReleaseDate of the metadata</Note>
+        </RevisionEvent>
+        <RevisionEvent>
+          <ReleaseDate>2026-11-04T12:49:03Z</ReleaseDate>
+          <Note>Added HelioCloud S3 AccessURL. Added ResourceType and NamingAuthority. Changed http to https in top-level schemaLocation attribute. Fixed version number separator in top-level schemaLocation attribute. Updated to 2.7.2. Add 'Z' to TemporalDescription:TimeSpan:StartDate, TemporalDescription:TimeSpan:StopDate. ZCB</Note>
+        </RevisionEvent>
+      </RevisionHistory>
       <Description>The energetic particle sensor (now called EP8 instead of EPS or EPM) data consists of electron, proton, and alpha particle data. The electrons consists of 3 energy flux channels with energies greater than 0.6 MeV. The protons consist of 7 energy channels from 0.6 to 500 MeV and the alpha particles consist of 6 energy channels from 4 to 500 MeV.</Description>
       <Acknowledgement>NOAA Environmental Research Laboratories, Terry G. Onsager</Acknowledgement>
       <Contact>
@@ -77,6 +89,30 @@
       </AccessURL>
       <Format>CSV</Format>
     </AccessInformation>
+    <AccessInformation>
+      <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF</RepositoryID>
+      <Availability>Online</Availability>
+      <AccessRights>Open</AccessRights>
+      <RightsList>
+        <Rights>
+          <SchemeURI>https://spdx.org/licenses/</SchemeURI>
+          <RightsIdentifierScheme>SPDX</RightsIdentifierScheme>
+          <RightsIdentifier>CC0-1.0</RightsIdentifier>
+          <RightsURI>https://spdx.org/licenses/CC0-1.0.html</RightsURI>
+          <RightsName>Creative Commons Zero v1.0 Universal</RightsName>
+          <Note>CC0 1.0 Universal is the Creative Commons license applicable to all publicly available NASA Heliophysics data products</Note>
+        </Rights>
+      </RightsList>
+      <AccessURL>
+        <Name>HelioCloud Catalog Endpoint</Name>
+        <URL>https://api.heliocloud.org/cloudcatalog?id=G9_K0_EP8</URL>
+        <Style>Overview</Style>
+        <ProductKey>G9_K0_EP8</ProductKey>
+        <Description>Endpoint to access the data from HelioCloud. Data is split into one CSV file per year.</Description>
+      </AccessURL>
+      <Format>CSV</Format>
+      <Encoding>S3_BUCKET</Encoding>
+    </AccessInformation>
     <ProcessingLevel>Calibrated</ProcessingLevel>
     <ProviderResourceName>NOAA GOES</ProviderResourceName>
     <ProviderProcessingLevel>Level-0</ProviderProcessingLevel>
@@ -84,8 +120,8 @@
     <MeasurementType>EnergeticParticles</MeasurementType>
     <TemporalDescription>
       <TimeSpan>
-        <StartDate>1996-04-01T00:00:00</StartDate>
-        <StopDate>1998-07-31T23:59:59</StopDate>
+        <StartDate>1996-04-01T00:00:00Z</StartDate>
+        <StopDate>1998-07-31T23:59:59Z</StopDate>
         <Note>Time format in data files is year-month-day hour:minute:seconds.</Note>
       </TimeSpan>
       <Cadence>PT5M</Cadence>

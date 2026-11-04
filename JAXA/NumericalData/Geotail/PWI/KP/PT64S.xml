@@ -1,11 +1,23 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spase-group.org/data/schema   http://www.spase-group.org/data/schema/spase-2_3_0.xsd">
-  <Version>2.3.0</Version>
+<?xml version='1.0' encoding='UTF-8'?>
+<Spase xmlns="http://www.spase-group.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.spase-group.org/data/schema   https://www.spase-group.org/data/schema/spase-2.7.2.xsd">
+  <Version>2.7.2</Version>
   <NumericalData>
     <ResourceID>spase://JAXA/NumericalData/Geotail/PWI/KP/PT64S</ResourceID>
+    <NamingAuthority>JAXA</NamingAuthority>
+    <ResourceType>NumericalData</ResourceType>
     <ResourceHeader>
       <ResourceName>Geotail PWI 64-sec Key Parameters</ResourceName>
-      <ReleaseDate>2021-04-27T17:52:35Z</ReleaseDate>
+      <ReleaseDate>2026-11-04T16:08:38Z</ReleaseDate>
+      <RevisionHistory>
+        <RevisionEvent>
+          <ReleaseDate>2021-04-27T17:52:35Z</ReleaseDate>
+          <Note>Only known prior ReleaseDate of the metadata</Note>
+        </RevisionEvent>
+        <RevisionEvent>
+          <ReleaseDate>2026-11-04T16:08:38Z</ReleaseDate>
+          <Note>Added HelioCloud S3 AccessURL. Added ResourceType and NamingAuthority. Changed http to https in top-level schemaLocation attribute. Fixed version number separator in top-level schemaLocation attribute. Updated to 2.7.2. Add 'Z' to TemporalDescription:TimeSpan:StartDate. ZCB</Note>
+        </RevisionEvent>
+      </RevisionHistory>
       <Description>This set of key paraments from the Geotail Plasma Wave Instrument includes: Peak and average electric and magnetic spectra from the multichannel analyzer MCA (at 5 frequencies from 5.6 Hz to 311 kHz for the electric antenna and at 4 frequencies from 5.6 Hz to 10 kHz for the magnetic coils); Peak and average spectra intentsities (scala only) averaged over 64 seconds from the Sweep Frequency Analyzer SFA (24 Hz to 800 kHz); Frequency corresponding to the peak of the spectral intensities (scalar only); and spacecraft position in GSE cartesian coordinates. </Description>
       <Contact>
         <PersonID>spase://SMWG/Person/Hiroshi.Matsumoto</PersonID>
@@ -81,13 +93,39 @@ E-MAIL: roger-r-anderson@uiowa.edu
       <Acknowledgement>Same as above
         </Acknowledgement>
     </AccessInformation>
+    <AccessInformation>
+      <RepositoryID>spase://SMWG/Repository/NASA/GSFC/SPDF</RepositoryID>
+      <Availability>Online</Availability>
+      <AccessRights>Open</AccessRights>
+      <RightsList>
+        <Rights>
+          <SchemeURI>https://spdx.org/licenses/</SchemeURI>
+          <RightsIdentifierScheme>SPDX</RightsIdentifierScheme>
+          <RightsIdentifier>CC0-1.0</RightsIdentifier>
+          <RightsURI>https://spdx.org/licenses/CC0-1.0.html</RightsURI>
+          <RightsName>Creative Commons Zero v1.0 Universal</RightsName>
+          <Note>CC0 1.0 Universal is the Creative Commons license applicable to all publicly available NASA Heliophysics data products</Note>
+        </Rights>
+      </RightsList>
+      <AccessURL>
+        <Name>HelioCloud Catalog Endpoint</Name>
+        <URL>https://api.heliocloud.org/cloudcatalog?id=GE_K0_PWI</URL>
+        <Style>Overview</Style>
+        <ProductKey>GE_K0_PWI</ProductKey>
+        <Description>Endpoint to access the data from HelioCloud. Data is split into one CSV file per year.</Description>
+      </AccessURL>
+      <Format>CSV</Format>
+      <Encoding>S3_BUCKET</Encoding>
+      <Acknowledgement>Same as above
+        </Acknowledgement>
+    </AccessInformation>
     <ProcessingLevel>Calibrated</ProcessingLevel>
     <InstrumentID>spase://SMWG/Instrument/Geotail/PWI</InstrumentID>
     <MeasurementType>MagneticField</MeasurementType>
     <MeasurementType>ThermalPlasma</MeasurementType>
     <TemporalDescription>
       <TimeSpan>
-        <StartDate>1992-09-08T07:30:05</StartDate>
+        <StartDate>1992-09-08T07:30:05Z</StartDate>
         <RelativeStopDate>-P14D</RelativeStopDate>
       </TimeSpan>
       <Cadence>PT64S</Cadence>

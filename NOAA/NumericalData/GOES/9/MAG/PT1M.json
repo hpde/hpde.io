@@ -2,14 +2,28 @@
   "Spase": {
     "xmlns": "http://www.spase-group.org/data/schema",
     "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
-    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_3_0.xsd",
-    "Version": "2.3.0",
+    "xsi:schemaLocation": "https://www.spase-group.org/data/schema https://www.spase-group.org/data/schema/spase-2.7.2.xsd",
+    "Version": "2.7.2",
     "NumericalData": {
       "ResourceID": "spase://NOAA/NumericalData/GOES/9/MAG/PT1M",
+      "NamingAuthority": "NOAA",
+      "ResourceType": "NumericalData",
       "ResourceHeader": {
         "ResourceName": "GOES 9 Space Environment Monitor (SEM) Triaxial Fluxgate Magnetometer (FGM), Magnetic Field and Ephemeris, Multiple Coordinate Systems, 1.0 min Data",
-        "ReleaseDate": "2021-04-27T17:52:57Z",
-        "Description": "The NOAA Geostationary Operational Environment Satellite (GOES) key parameters.  This data is a subset of the data available from the GOES Space Environment Monitor (SEM) instruments.  It contains vector magnetic field in three coordinate systems:\r\n\r\n* Spacecraft P,E,N\r\n* GSM X,Y,Z\r\n* GSE X,Y,Z\r\n\r\nSpacecraft magnetic field is defined as:\r\n\r\n* P perpendicular to the spacecraft orbital plane or parallel to the spin axis of the Earth in the case of a 0° inclination orbit\r\n* E perpendicular to P and directed earthward\r\n* N perpendicular to both P and E and directed eastward",
+        "ReleaseDate": "2026-11-04T12:49:03Z",
+        "RevisionHistory": {
+          "RevisionEvent": [
+            {
+              "ReleaseDate": "2021-04-27T17:52:57Z",
+              "Note": "Only known prior ReleaseDate of the metadata"
+            },
+            {
+              "ReleaseDate": "2026-11-04T12:49:03Z",
+              "Note": "Added HelioCloud S3 AccessURL. Added ResourceType and NamingAuthority. Changed http to https in top-level schemaLocation attribute. Fixed version number separator in top-level schemaLocation attribute. Updated to 2.7.2. Add 'Z' to TemporalDescription:TimeSpan:StartDate, TemporalDescription:TimeSpan:StopDate. ZCB"
+            }
+          ]
+        },
+        "Description": "The NOAA Geostationary Operational Environment Satellite (GOES) key parameters.  This data is a subset of the data available from the GOES Space Environment Monitor (SEM) instruments.  It contains vector magnetic field in three coordinate systems:\n\n* Spacecraft P,E,N\n* GSM X,Y,Z\n* GSE X,Y,Z\n\nSpacecraft magnetic field is defined as:\n\n* P perpendicular to the spacecraft orbital plane or parallel to the spin axis of the Earth in the case of a 0° inclination orbit\n* E perpendicular to P and directed earthward\n* N perpendicular to both P and E and directed eastward",
         "Acknowledgement": "Users should acknowledge the CDAWeb for providing access to the data as well as the P.I. H. Singer and originating institution NOAA Space Environment Center",
         "Contact": {
           "PersonID": "spase://SMWG/Person/Howard.J.Singer",
@@ -62,6 +76,30 @@
             "Description": "Web Service to this product using the HAPI interface."
           },
           "Format": "CSV"
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "RightsList": {
+            "Rights": {
+              "SchemeURI": "https://spdx.org/licenses/",
+              "RightsIdentifierScheme": "SPDX",
+              "RightsIdentifier": "CC0-1.0",
+              "RightsURI": "https://spdx.org/licenses/CC0-1.0.html",
+              "RightsName": "Creative Commons Zero v1.0 Universal",
+              "Note": "CC0 1.0 Universal is the Creative Commons license applicable to all publicly available NASA Heliophysics data products"
+            }
+          },
+          "AccessURL": {
+            "Name": "HelioCloud Catalog Endpoint",
+            "URL": "https://api.heliocloud.org/cloudcatalog?id=G9_K0_MAG",
+            "Style": "Overview",
+            "ProductKey": "G9_K0_MAG",
+            "Description": "Endpoint to access the data from HelioCloud. Data is split into one CSV file per year."
+          },
+          "Format": "CSV",
+          "Encoding": "S3_BUCKET"
         }
       ],
       "ProviderResourceName": "NOAA GOES 9",
@@ -77,8 +115,8 @@
       ],
       "TemporalDescription": {
         "TimeSpan": {
-          "StartDate": "1995-12-01T00:00:30",
-          "StopDate": "1998-07-27T23:59:30"
+          "StartDate": "1995-12-01T00:00:30Z",
+          "StopDate": "1998-07-27T23:59:30Z"
         },
         "Cadence": "PT1M"
       },
@@ -189,7 +227,7 @@
         {
           "Name": "Magnetic Field vector spacecraft coordinates",
           "ParameterKey": "B_lcl_c",
-          "Description": "Magnetic Field vector in spacecraft coordinates. Spacecraft magnetic field (P,E,N) is defined as:\r\n\r\n* P perpendicular to the spacecraft orbital plane or parallel to the spin axis of the Earth in the case of a 0° inclination orbit\r\n* E perpendicular to P and directed earthward\r\n* N perpendicular to both P and E and directed eastward",
+          "Description": "Magnetic Field vector in spacecraft coordinates. Spacecraft magnetic field (P,E,N) is defined as:\n\n* P perpendicular to the spacecraft orbital plane or parallel to the spin axis of the Earth in the case of a 0° inclination orbit\n* E perpendicular to P and directed earthward\n* N perpendicular to both P and E and directed eastward",
           "Cadence": "PT1M",
           "Units": "nT",
           "CoordinateSystem": {
@@ -376,7 +414,7 @@
         {
           "Name": "MGF Instrument Status",
           "ParameterKey": "MGF_stat",
-          "Description": "Status of the magnetic field instrument:\r\n\r\n* 0 OK\r\n* 1 minor problem\r\n* 2 major problem\r\n* 3 missing data",
+          "Description": "Status of the magnetic field instrument:\n\n* 0 OK\n* 1 minor problem\n* 2 major problem\n* 3 missing data",
           "Cadence": "PT1M",
           "Support": {
             "SupportQuantity": "Other"
@@ -385,7 +423,7 @@
         {
           "Name": "Magnetic field post-gap flag",
           "ParameterKey": "B_flag",
-          "Description": "Magnetic field data flag:\r\n\r\n* 0 no gap\r\n* 1 data not available",
+          "Description": "Magnetic field data flag:\n\n* 0 no gap\n* 1 data not available",
           "Cadence": "PT1M",
           "Support": {
             "SupportQuantity": "Other"
@@ -394,7 +432,7 @@
         {
           "Name": "Spacecraft post-gap flag",
           "ParameterKey": "SC_flag",
-          "Description": "Spacecraft location data flag:\r\n\r\n* 0 no gap\r\n* 1 data not available",
+          "Description": "Spacecraft location data flag:\n\n* 0 no gap\n* 1 data not available",
           "Cadence": "PT1M",
           "Support": {
             "SupportQuantity": "Other"
