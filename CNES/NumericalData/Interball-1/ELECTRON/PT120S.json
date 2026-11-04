@@ -1,12 +1,26 @@
 {
   "Spase": {
     "xmlns": "http://www.spase-group.org/data/schema",
-    "Version": "2.3.2",
+    "Version": "2.7.2",
     "NumericalData": {
       "ResourceID": "spase://CNES/NumericalData/Interball-1/ELECTRON/PT120S",
+      "NamingAuthority": "CNES",
+      "ResourceType": "NumericalData",
       "ResourceHeader": {
         "ResourceName": "Interball Tail Plasma Electron 2-min Key Parameters",
-        "ReleaseDate": "2021-06-01T00:00:00Z",
+        "ReleaseDate": "2026-11-04T16:29:21Z",
+        "RevisionHistory": {
+          "RevisionEvent": [
+            {
+              "ReleaseDate": "2021-06-01T00:00:00Z",
+              "Note": "Only known prior ReleaseDate of the metadata"
+            },
+            {
+              "ReleaseDate": "2026-11-04T16:29:21Z",
+              "Note": "Added HelioCloud S3 AccessURL. Added ResourceType and NamingAuthority. Updated to 2.7.2. Add 'Z' to TemporalDescription:TimeSpan:StartDate, TemporalDescription:TimeSpan:StopDate. ZCB"
+            }
+          ]
+        },
         "Description": "Interball Tail ELECTRON Plasma Electron 2-min Key Parameters (Density and Mean Energy)",
         "Contact": {
           "PersonID": "spase://SMWG/Person/Jean-Andre.C.Sauvaud",
@@ -53,6 +67,30 @@
             "Description": "Web Service to this product using the HAPI interface."
           },
           "Format": "CSV"
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "RightsList": {
+            "Rights": {
+              "SchemeURI": "https://spdx.org/licenses/",
+              "RightsIdentifierScheme": "SPDX",
+              "RightsIdentifier": "CC0-1.0",
+              "RightsURI": "https://spdx.org/licenses/CC0-1.0.html",
+              "RightsName": "Creative Commons Zero v1.0 Universal",
+              "Note": "CC0 1.0 Universal is the Creative Commons license applicable to all publicly available NASA Heliophysics data products"
+            }
+          },
+          "AccessURL": {
+            "Name": "HelioCloud Catalog Endpoint",
+            "URL": "https://api.heliocloud.org/cloudcatalog?id=IT_K0_ELE",
+            "Style": "Overview",
+            "ProductKey": "IT_K0_ELE",
+            "Description": "Endpoint to access the data from HelioCloud. Data is split into one CSV file per year."
+          },
+          "Format": "CSV",
+          "Encoding": "S3_BUCKET"
         }
       ],
       "ProviderProcessingLevel": "CALCULATED",
@@ -60,8 +98,8 @@
       "MeasurementType": "ThermalPlasma",
       "TemporalDescription": {
         "TimeSpan": {
-          "StartDate": "1995-08-15T00:00:00",
-          "StopDate": "2000-10-16T00:00:00"
+          "StartDate": "1995-08-15T00:00:00Z",
+          "StopDate": "2000-10-16T00:00:00Z"
         },
         "Cadence": "PT120S"
       },
