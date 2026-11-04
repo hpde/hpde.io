@@ -2,13 +2,27 @@
   "Spase": {
     "xmlns": "http://www.spase-group.org/data/schema",
     "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
-    "xsi:schemaLocation": "http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2_3_0.xsd",
-    "Version": "2.3.0",
+    "xsi:schemaLocation": "https://www.spase-group.org/data/schema https://www.spase-group.org/data/schema/spase-2.7.2.xsd",
+    "Version": "2.7.2",
     "NumericalData": {
       "ResourceID": "spase://GBO/NumericalData/DARN/Saskatoon/PT2M",
+      "NamingAuthority": "GBO",
+      "ResourceType": "NumericalData",
       "ResourceHeader": {
         "ResourceName": "SuperDARN Saskatoon (SAS), Ionospheric Convection Velocity",
-        "ReleaseDate": "2021-04-27T17:51:40Z",
+        "ReleaseDate": "2026-11-04T11:15:17Z",
+        "RevisionHistory": {
+          "RevisionEvent": [
+            {
+              "ReleaseDate": "2021-04-27T17:51:40Z",
+              "Note": "Only known prior ReleaseDate of the metadata"
+            },
+            {
+              "ReleaseDate": "2026-11-04T11:15:17Z",
+              "Note": "Added HelioCloud S3 AccessURL. Added ResourceType and NamingAuthority. Changed http to https in top-level schemaLocation attribute. Fixed version number separator in top-level schemaLocation attribute. Updated to 2.7.2. Add 'Z' to TemporalDescription:TimeSpan:StartDate, TemporalDescription:TimeSpan:StopDate. ZCB"
+            }
+          ]
+        },
         "Description": "Super Dual Auroral Radar Network, SuperDARN, Saskatoon, Key Parameters Data, Ionospheric Convection North and East Velocities",
         "Acknowledgement": "R. Greenwald",
         "Contact": [
@@ -99,6 +113,31 @@
           },
           "Format": "CSV",
           "Acknowledgement": "R. Greenwald. Please acknowledge the data providers and CDAWeb when using these data."
+        },
+        {
+          "RepositoryID": "spase://SMWG/Repository/NASA/GSFC/SPDF",
+          "Availability": "Online",
+          "AccessRights": "Open",
+          "RightsList": {
+            "Rights": {
+              "SchemeURI": "https://spdx.org/licenses/",
+              "RightsIdentifierScheme": "SPDX",
+              "RightsIdentifier": "CC0-1.0",
+              "RightsURI": "https://spdx.org/licenses/CC0-1.0.html",
+              "RightsName": "Creative Commons Zero v1.0 Universal",
+              "Note": "CC0 1.0 Universal is the Creative Commons license applicable to all publicly available NASA Heliophysics data products"
+            }
+          },
+          "AccessURL": {
+            "Name": "HelioCloud Catalog Endpoint",
+            "URL": "https://api.heliocloud.org/cloudcatalog?id=DN_K0_SASK",
+            "Style": "Overview",
+            "ProductKey": "DN_K0_SASK",
+            "Description": "Endpoint to access the data from HelioCloud. Data is split into one CSV file per year."
+          },
+          "Format": "CSV",
+          "Encoding": "S3_BUCKET",
+          "Acknowledgement": "R. Greenwald. Please acknowledge the data providers and CDAWeb when using these data."
         }
       ],
       "ProcessingLevel": "Calibrated",
@@ -106,8 +145,8 @@
       "MeasurementType": "Irradiance",
       "TemporalDescription": {
         "TimeSpan": {
-          "StartDate": "1994-07-02T12:00:52",
-          "StopDate": "1999-11-04T23:55:00"
+          "StartDate": "1994-07-02T12:00:52Z",
+          "StopDate": "1999-11-04T23:55:00Z"
         },
         "Cadence": "PT2M"
       },
