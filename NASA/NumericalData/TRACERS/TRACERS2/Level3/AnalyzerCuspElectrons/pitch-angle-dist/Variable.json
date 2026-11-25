@@ -14,10 +14,16 @@
         "DOI": "DOI_DOI",
         "ReleaseDate": "2026-07-22T19:58:25.529Z",
         "RevisionHistory": {
-          "RevisionEvent": {
-            "ReleaseDate": "2026-07-22T19:58:25.522Z",
-            "Note": "Only known prior ReleaseDate of the metadata, SAB"
-          }
+          "RevisionEvent": [
+            {
+              "ReleaseDate": "2026-07-22T19:58:25.522Z",
+              "Note": "Only known prior ReleaseDate of the metadata, SAB"
+            },
+            {
+              "ReleaseDate": "2026-11-25T12:00:00.000Z",
+              "Note": "Fixed Iowa L3 link. SAB"
+            }
+          ]
         },
         "Description": "The ACE L3 data consist of raw measured counts and calibrated differential energy fluxes as a function of pitch angle and calibrated energy. Counts are accumulated by ACE in 21 discrete anodes with different viewing angles for each of 49 energy steps, with a basic measurement cadence of 50 ms. Within the ACE L3 files, Magnetometer (MAG) data are utilized in conjunction with ACE L2 files to determine the corresponding pitch angles for each electron measurement collected over 49 energy steps, 21 discrete anodes, and 50 ms time intervals. The resulting measurements are subsampled into 10-degree pitch angle bins spanning 0 to 180 degrees, mirroring ACE's intrinsic angular resolution. Both high-cadence region of interest (ROI) and low-cadence back orbit (BOR) data are included in each ACE L3 file for a given calendar day. Counts are converted to differential energy flux by subtracting an estimate of the background and then dividing by the instrument calibration matrix. The estimated background count rates and calibration matrix are included in the ACE L2 data files, enabling application of alternative background subtraction methods or calibrations.  Background estimates include two sources: 1) Instrumental background due to electronics crosstalk, which is constant across all anodes but varies with energy. 2) Natural background due to penetrating energetic particles and natural radioactivity in the microchannel plate detectors, which is constant across all anodes and energies. Subtraction of background can lead to negative differential energy fluxes, especially for low count rate data. Depending on the use case, these negative values can either be retained or replaced with zeroes.  The calibration matrix incorporates instrument sensitivity and relative sensitivity factors for each anode, both estimated based upon a combination of pre-flight laboratory calibrations and inflight data. Energy values for each energy step and anode are computed utilizing the known sweep voltage table and pre-flight laboratory calibrations.  The ACE instrument was intended to be operated in a particular spacecraft orientation, with the +Z axis aligned with the magnetic field. In this orientation, incoming electron trajectories are not occluded by the spacecraft. However, for a portion of the TRACERS mission, the spacecraft are oriented in the opposite sense, which leads to an occlusion of a portion of the instrument field of view by the spacecraft body for low-energy (<~200 eV) electrons. Low-energy ACE data should not be utilized for quantitative purposes when the spacecraft are in this orientation. ",
         "Acknowledgement": "Jasper Halekas, See the rules of use available at https:tracers.physics.uiowa.edu/rules-use.",
@@ -72,7 +78,7 @@
           "AccessRights": "Open",
           "AccessURL": {
             "Name": "HTTPS from the TRACERS SDC",
-            "URL": "https://tracers.physics.uiowa.edu/l2-public-data-products",
+            "URL": "https://tracers.physics.uiowa.edu/l3-public-data-products",
             "Description": "In CDF via http from the TRACERS Science Data Center"
           },
           "Format": "CDF",
